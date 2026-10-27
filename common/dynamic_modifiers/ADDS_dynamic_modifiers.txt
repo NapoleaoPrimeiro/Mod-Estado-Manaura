@@ -1,0 +1,468 @@
+USA_gczydiantang = {
+	icon = GFX_idea_USA_diantang
+	enable = { always = yes }
+	remove_trigger = {
+		NOT = { has_government = communism }
+	}
+
+	custom_modifier_tooltip = USA_gczydiantang_tt
+	#custom_modifier_tooltip = idea_desc|GER_todt_reich_engineer
+}
+
+NATO_chengyuanguo_dm= {
+	icon = GFX_idea_nato
+	enable = { always = yes }
+	remove_trigger = {
+		NOT = { is_in_faction_with=USA}
+	}
+
+	custom_modifier_tooltip = NATO_chengyuanguo_dm_tt
+	#custom_modifier_tooltip = idea_desc|GER_todt_reich_engineer
+}
+
+USA_caituanzhizhi = {
+    enable = { always = yes }
+    icon = GFX_idea_SWE_gotaverken_retooled_for_rapid_repairs
+
+    stability_factor =                              USA_caituanzhizhi_stability_factor                                #稳定度
+    war_support_factor =                            USA_caituanzhizhi_war_support_factor                              #战争支持度
+    command_power_gain =                            USA_caituanzhizhi_command_power_gain                              #每日指挥点增长
+    political_power_gain =                          USA_caituanzhizhi_political_power_gain                            #每天获得的政治点
+    compliance_growth =                             USA_caituanzhizhi_compliance_growth                                #顺从度增长速度
+    production_speed_buildings_factor =             USA_caituanzhizhi_production_speed_buildings_factor              #建造速度
+    industrial_capacity_factory =                   USA_caituanzhizhi_industrial_capacity_factory                      #工厂产出
+    industrial_capacity_dockyard =                  USA_caituanzhizhi_industrial_capacity_dockyard                    #船坞产出
+    production_factory_max_efficiency_factor =      USA_caituanzhizhi_production_factory_max_efficiency_factor        #生产效率上限
+    production_factory_efficiency_gain_factor =     USA_caituanzhizhi_production_factory_efficiency_gain_factor       #生产效率增长
+    democratic_acceptance =                         USA_caituanzhizhi_democratic_acceptance                           #XXX党派接纳度
+    production_speed_infrastructure_factor =        USA_caituanzhizhi_production_speed_infrastructure_factor 
+    production_speed_industrial_complex_factor =    USA_caituanzhizhi_production_speed_industrial_complex_factor 
+    production_speed_arms_factory_factor =          USA_caituanzhizhi_production_speed_arms_factory_factor 
+    monthly_population =                            USA_caituanzhizhi_monthly_population  
+    consumer_goods_factor=                          USA_caituanzhizhi_consumer_goods_factor
+    global_building_slots_factor=                   USA_caituanzhizhi_global_building_slots_factor
+    local_resources_factor =                        USA_caituanzhizhi_local_resources_factor
+    army_attack_factor =                            USA_caituanzhizhi_army_attack_factor				#师攻击
+    army_core_defence_factor =                      USA_caituanzhizhi_army_core_defence_factor			#师防御
+    army_core_attack_factor =                       USA_caituanzhizhi_army_core_attack_factor				#师攻击
+    army_defence_factor =                           USA_caituanzhizhi_army_defence_factor			#师防御
+    training_time_army_factor =                     USA_caituanzhizhi_training_time_army_factor
+    army_org_factor =                               USA_caituanzhizhi_army_org_factor 					#陆军组织度
+}
+
+USA_army = {
+  
+	enable = { always = yes }
+
+    custom_modifier_tooltip = USA_army_modifier_tt
+
+	icon =GFX_idea_USA_army
+	conscription_factor = USA_conscription_factor 			                #适役人口修正
+    army_attack_factor = USA_army_attack_factor				                #师攻击
+    army_defence_factor =  USA_army_defence_factor			                #师防御
+    army_speed_factor = USA_army_speed_factor				                #师速度
+    army_core_attack_factor =  USA_army_core_attack_factor                  #核心攻
+    army_core_defence_factor =  USA_army_core_defence_factor                #核心防
+    planning_speed =USA_planning_speed						                #计划速度
+    max_planning =  USA_max_planning						                #计划上线
+    army_org_factor =USA_army_org_factor 					                #陆军组织度
+    army_morale_factor =USA_army_morale_factor 				                #组织度恢复
+    experience_loss_factor=USA_experience_loss_factor		                #有经验的士兵损失
+    army_armor_attack_factor =  USA_army_armor_attack_factor                #装甲师攻击
+    army_armor_defence_factor =  USA_army_armor_defence_factor              #装甲师防御
+	dig_in_speed_factor =USA_dig_in_speed_factor			                #堑壕速度
+	max_dig_in=USA_max_dig_in 								                #壕沟上限
+	supply_consumption_factor =  USA_supply_consumption_factor	            #补给消耗
+	army_artillery_attack_factor = USA_army_artillery_attack_factor         #炮兵攻击
+	army_artillery_defence_factor = USA_army_artillery_defence_factor       #炮兵防御
+	org_loss_when_moving = USA_org_loss_when_moving			                #陆军移动组织度损失
+    training_time_army_factor = USA_training_time_army_factor               #训练时间
+    experience_loss_factor = USA_experience_loss_factor                     #有经验的士兵损失
+    initiative_factor =      USA_initiative_factor                          #主动性
+    land_reinforce_rate =    USA_land_reinforce_rate                        #增援率
+    breakthrough_factor =    USA_army_breakthrough_factor                   #突破
+}
+
+USA_navy = {
+    enable = { always = yes }
+    icon =GFX_idea_USA_navy
+    experience_gain_navy_factor =          USA_experience_gain_navy_factor             #海军经验增长
+	naval_retreat_speed =                  USA_naval_retreat_speed                     #舰队撤退速度
+	navy_screen_attack_factor =            USA_navy_screen_attack_factor               #屏卫舰攻击
+	navy_screen_defence_factor =           USA_navy_screen_defence_factor              #屏卫舰防御
+	navy_capital_ship_attack_factor =      USA_navy_capital_ship_attack_factor         #主力舰攻击
+	navy_capital_ship_defence_factor =     USA_navy_capital_ship_defence_factor        #主力舰防御
+	positioning =                          USA_positioning                             #舰队阵位
+	spotting_chance =                      USA_spotting_chance                         #海军定位概率
+    sortie_efficiency =                    USA_sortie_efficiency                       #出击效率
+    navy_carrier_air_attack_factor =       USA_navy_carrier_air_attack_factor          #航母攻击
+    navy_carrier_air_targetting_factor =   USA_navy_carrier_air_targetting_factor      #航母瞄准
+    naval_speed_factor =                   USA_naval_speed_factor                      #海军速度
+    navy_max_range_factor =                USA_navy_max_range_factor                   #海军最大航程参数
+    naval_detection=                       USA_naval_detection                         #对海探测 
+
+
+}
+
+USA_air = {
+    enable = { always = yes }
+	icon = GFX_idea_USA_air
+
+    experience_gain_air_factor = USA_air_experience_gain_air_factor 
+    air_accidents =             USA_air_accidents                                                        #空军失事机率
+    air_attack_factor =             USA_air_attack_factor                                                #对空攻击
+    air_ace_generation_chance_factor =              USA_air_ace_generation_chance_factor                 #空战王牌生成机率
+    air_superiority_efficiency =                USA_air_superiority_efficiency                              #制空权效率
+    air_intercept_efficiency =              USA_air_intercept_efficiency                                 #空军拦截效率
+    air_cas_efficiency =                USA_air_cas_efficiency                                             #空中支援任务效率
+    air_range_factor =              USA_air_range_factor                                                 #空军航程
+    air_agility_factor =                USA_air_agility_factor                                             #空军机动性能（闪避）
+    air_strategic_bomber_bombing_factor =               USA_air_strategic_bomber_bombing_factor            #战略轰炸机命中率
+    air_cas_present_factor =                                            USA_air_cas_present_factor          #对地支援
+}
+
+USA_airforce = {
+    enable = { always = yes }
+	icon = GFX_idea_USA_air
+
+    experience_gain_air_factor = USA_air_experience_gain_air_factor 
+    air_accidents =             USA_air_accidents                                                        #空军失事机率
+    air_attack_factor =             USA_air_attack_factor                                                #对空攻击
+    air_ace_generation_chance_factor =              USA_air_ace_generation_chance_factor                 #空战王牌生成机率
+    air_superiority_efficiency =                USA_air_superiority_efficiency                              #制空权效率
+    air_intercept_efficiency =              USA_air_intercept_efficiency                                 #空军拦截效率
+    air_cas_efficiency =                USA_air_cas_efficiency                                             #空中支援任务效率
+    air_range_factor =              USA_air_range_factor                                                 #空军航程
+    air_agility_factor =                USA_air_agility_factor                                             #空军机动性能（闪避）
+    air_strategic_bomber_bombing_factor =               USA_air_strategic_bomber_bombing_factor            #战略轰炸机命中率
+    air_cas_present_factor =                                            USA_air_cas_present_factor          #对地支援
+}
+
+USA_meishishehuizhuyi = {
+    enable = { always = yes }
+    icon = GFX_idea_USA_meishishehuizhuyi
+
+    stability_factor =                              USA_communism_stability_factor                                #稳定度
+    war_support_factor =                            USA_communism_war_support_factor                              #战争支持度
+    command_power_gain =                            USA_communism_command_power_gain                              #每日指挥点增长
+    political_power_gain =                          USA_communism_political_power_gain                            #每天获得的政治点
+    compliance_growth =                             USA_communism_compliance_growth                                #顺从度增长速度
+    production_speed_buildings_factor =             USA_communism_production_speed_buildings_factor              #建造速度
+    industrial_capacity_factory =                   USA_communism_industrial_capacity_factory                      #工厂产出
+    industrial_capacity_dockyard =                  USA_communism_industrial_capacity_dockyard                    #船坞产出
+    production_factory_max_efficiency_factor =      USA_communism_production_factory_max_efficiency_factor        #生产效率上限
+    production_factory_efficiency_gain_factor =     USA_communism_production_factory_efficiency_gain_factor       #生产效率增长
+    democratic_acceptance =                         USA_communism_democratic_acceptance                           #XXX党派接纳度
+    consumer_goods_factor=                          USA_communism_consumer_goods_factor
+    production_speed_infrastructure_factor =        USA_communism_production_speed_infrastructure_factor 
+    production_speed_industrial_complex_factor =    USA_communism_production_speed_industrial_complex_factor 
+    production_speed_arms_factory_factor =          USA_communism_production_speed_arms_factory_factor 
+    monthly_population =                            USA_communism_monthly_population  
+    conscription_factor =                           USA_communism_conscription_factor 
+    research_speed_factor =                         USA_communism_research_speed_factor
+}
+USA_communism_dm = {
+    enable = { always = yes }
+    icon = GFX_idea_USA_meishishehuizhuyi
+
+    stability_factor =                              USA_communism_stability_factor                                #稳定度
+    war_support_factor =                            USA_communism_war_support_factor                              #战争支持度
+    command_power_gain =                            USA_communism_command_power_gain                              #每日指挥点增长
+    political_power_gain =                          USA_communism_political_power_gain                            #每天获得的政治点
+    compliance_growth =                             USA_communism_compliance_growth                                #顺从度增长速度
+    production_speed_buildings_factor =             USA_communism_production_speed_buildings_factor              #建造速度
+    industrial_capacity_factory =                   USA_communism_industrial_capacity_factory                      #工厂产出
+    industrial_capacity_dockyard =                  USA_communism_industrial_capacity_dockyard                    #船坞产出
+    production_factory_max_efficiency_factor =      USA_communism_production_factory_max_efficiency_factor        #生产效率上限
+    production_factory_efficiency_gain_factor =     USA_communism_production_factory_efficiency_gain_factor       #生产效率增长
+    consumer_goods_factor=                          USA_communism_consumer_goods_factor
+    production_speed_infrastructure_factor =        USA_communism_production_speed_infrastructure_factor 
+    production_speed_industrial_complex_factor =    USA_communism_production_speed_industrial_complex_factor 
+    production_speed_arms_factory_factor =          USA_communism_production_speed_arms_factory_factor 
+    monthly_population =                            USA_communism_monthly_population  
+    conscription_factor =                           USA_communism_conscription_factor
+    research_speed_factor =                         USA_communism_research_speed_factor 
+}
+USA_social_worker_party = {
+    enable = { always = yes }
+    icon = GFX_idea_USA_meishishehuizhuyi
+
+    stability_factor =                              USA_communism_stability_factor                                #稳定度
+    war_support_factor =                            USA_communism_war_support_factor                              #战争支持度
+    command_power_gain =                            USA_communism_command_power_gain                              #每日指挥点增长
+    political_power_gain =                          USA_communism_political_power_gain                            #每天获得的政治点
+    compliance_growth =                             USA_communism_compliance_growth                                #顺从度增长速度
+    production_speed_buildings_factor =             USA_communism_production_speed_buildings_factor              #建造速度
+    industrial_capacity_factory =                   USA_communism_industrial_capacity_factory                      #工厂产出
+    industrial_capacity_dockyard =                  USA_communism_industrial_capacity_dockyard                    #船坞产出
+    production_factory_max_efficiency_factor =      USA_communism_production_factory_max_efficiency_factor        #生产效率上限
+    production_factory_efficiency_gain_factor =     USA_communism_production_factory_efficiency_gain_factor       #生产效率增长
+    consumer_goods_factor=                          USA_communism_consumer_goods_factor
+    production_speed_infrastructure_factor =        USA_communism_production_speed_infrastructure_factor 
+    production_speed_industrial_complex_factor =    USA_communism_production_speed_industrial_complex_factor 
+    production_speed_arms_factory_factor =          USA_communism_production_speed_arms_factory_factor 
+    monthly_population =                            USA_communism_monthly_population  
+    conscription_factor =                           USA_communism_conscription_factor
+    research_speed_factor =                         USA_communism_research_speed_factor 
+}
+
+USA_dangnei_fenqi = {
+    enable = { always = yes }
+    icon = GFX_idea_generic_disjointed_gov
+
+    political_advisor_cost_factor =     USA_dangnei_fenqi_political_advisor_cost_factor
+    political_power_factor =            USA_dangnei_fenqi_political_power_factor 
+}
+
+
+USA_qiyeguoyouhua = {
+    enable = { always = yes }
+    icon = GFX_idea_ARG_political_corruption_modifier
+
+
+    production_speed_buildings_factor =             USA_guoyouhua_production_speed_buildings_factor    #建造速度
+    industrial_capacity_factory =                   USA_guoyouhua_industrial_capacity_factory        #工厂产出
+    industrial_capacity_dockyard =                  USA_guoyouhua_industrial_capacity_dockyard        #船坞产出
+     supply_consumption_factor =                    USA_guoyouhua_supply_consumption_factor	    #补给消耗
+    consumer_goods_factor =                         USA_guoyouhua_consumer_goods_factor 
+
+}
+
+
+USA_guominjingji = {
+    enable = { always = yes }
+    icon = GFX_idea_USA_guominjingji 
+
+    stability_factor =                              USA_guominjingji_stability_factor                                #稳定度
+    war_support_factor =                            USA_guominjingji_war_support_factor                              #战争支持度
+    command_power_gain =                            USA_guominjingji_command_power_gain                              #每日指挥点增长
+    political_power_gain =                          USA_guominjingji_political_power_gain                            #每天获得的政治点
+    compliance_growth =                             USA_guominjingji_compliance_growth                                #顺从度增长速度
+    production_speed_buildings_factor =             USA_guominjingji_production_speed_buildings_factor              #建造速度
+    industrial_capacity_factory =                   USA_guominjingji_industrial_capacity_factory                      #工厂产出
+    industrial_capacity_dockyard =                  USA_guominjingji_industrial_capacity_dockyard                    #船坞产出
+    production_factory_max_efficiency_factor =      USA_guominjingji_production_factory_max_efficiency_factor        #生产效率上限
+    production_factory_efficiency_gain_factor =     USA_guominjingji_production_factory_efficiency_gain_factor       #生产效率增长
+    democratic_acceptance =                         USA_guominjingji_democratic_acceptance                           #XXX党派接纳度
+    production_speed_infrastructure_factor =        USA_guominjingji_production_speed_infrastructure_factor 
+    production_speed_industrial_complex_factor =    USA_guominjingji_production_speed_industrial_complex_factor 
+    production_speed_arms_factory_factor =          USA_guominjingji_production_speed_arms_factory_factor 
+    monthly_population =                            USA_guominjingji_monthly_population  
+    consumer_goods_factor=                          USA_guominjingji_consumer_goods_factor
+    global_building_slots_factor=                   USA_guominjingji_global_building_slots_factor
+    local_resources_factor =                        USA_guominjingji_local_resources_factor
+}
+
+USA_meiguoyouxian = {
+    enable = { always = yes }
+    icon = GFX_idea_USA_meiguoyouxian
+
+    stability_factor =                              USA_meiguoyouxian_stability_factor                                #稳定度
+    war_support_factor =                            USA_meiguoyouxian_war_support_factor                              #战争支持度
+    command_power_gain =                            USA_meiguoyouxian_command_power_gain                              #每日指挥点增长
+    political_power_gain =                          USA_meiguoyouxian_political_power_gain                            #每天获得的政治点
+    compliance_growth =                             USA_meiguoyouxian_compliance_growth                                #顺从度增长速度
+    production_speed_buildings_factor =             USA_meiguoyouxian_production_speed_buildings_factor              #建造速度
+    industrial_capacity_factory =                   USA_meiguoyouxian_industrial_capacity_factory                      #工厂产出
+    industrial_capacity_dockyard =                  USA_meiguoyouxian_industrial_capacity_dockyard                    #船坞产出
+    production_factory_max_efficiency_factor =      USA_meiguoyouxian_production_factory_max_efficiency_factor        #生产效率上限
+    production_factory_efficiency_gain_factor =     USA_meiguoyouxian_production_factory_efficiency_gain_factor       #生产效率增长
+    democratic_acceptance =                         USA_meiguoyouxian_democratic_acceptance                           #XXX党派接纳度
+    production_speed_infrastructure_factor =        USA_meiguoyouxian_production_speed_infrastructure_factor 
+    production_speed_industrial_complex_factor =    USA_meiguoyouxian_production_speed_industrial_complex_factor 
+    production_speed_arms_factory_factor =          USA_meiguoyouxian_production_speed_arms_factory_factor 
+    army_core_attack_factor=                        USA_meiguoyouxian_army_core_attack_factor
+    army_core_defence_factor=                      USA_meiguoyouxian_army_core_defence_factor
+    conscription =                                  USA_meiguoyouxian_conscription                      #适役人口
+    training_time_army_factor =                     USA_meiguoyouxian_training_time_army_factor   #训练时间
+                                                      #月度人力(百分比形式 0.1 =10% )
+
+}
+
+USA_tianmingzhaozhao = {
+    enable = { always = yes }
+    icon = GFX_idea_USA_tianmingzhaozhao
+
+    defensive_war_stability_factor = USA_tianmingzhaozhao_defensive_war_stability_factor
+	offensive_war_stability_factor = USA_tianmingzhaozhao_offensive_war_stability_factor
+    subversive_activites_upkeep =    USA_tianmingzhaozhao_offensive_subversive_activites_upkeep
+    army_attack_factor =             USA_tianmingzhaozhao_army_attack_factor				#师攻击
+    army_defence_factor =            USA_tianmingzhaozhao_army_defence_factor			#师防御
+
+}
+
+USA_jurendejuexing = {
+    enable = { always = yes }
+    icon = GFX_idea_USA_jurendejuexing
+
+    stability_factor =                              USA_jurendejuexing_stability_factor                                #稳定度
+    war_support_factor =                            USA_jurendejuexing_war_support_factor                              #战争支持度
+    command_power_gain =                            USA_jurendejuexing_command_power_gain                              #每日指挥点增长
+    political_power_gain =                          USA_jurendejuexing_political_power_gain                            #每天获得的政治点
+    compliance_growth =                             USA_jurendejuexing_compliance_growth                                #顺从度增长速度
+    production_speed_buildings_factor =             USA_jurendejuexing_production_speed_buildings_factor              #建造速度
+    industrial_capacity_factory =                   USA_jurendejuexing_industrial_capacity_factory                      #工厂产出
+    industrial_capacity_dockyard =                  USA_jurendejuexing_industrial_capacity_dockyard                    #船坞产出
+    production_factory_max_efficiency_factor =      USA_jurendejuexing_production_factory_max_efficiency_factor        #生产效率上限
+    production_factory_efficiency_gain_factor =     USA_jurendejuexing_production_factory_efficiency_gain_factor       #生产效率增长
+    democratic_acceptance =                         USA_jurendejuexing_democratic_acceptance                           #XXX党派接纳度
+    production_speed_infrastructure_factor =        USA_jurendejuexing_production_speed_infrastructure_factor 
+    production_speed_industrial_complex_factor =    USA_jurendejuexing_production_speed_industrial_complex_factor 
+    production_speed_arms_factory_factor =          USA_jurendejuexing_production_speed_arms_factory_factor 
+    conscription =                                  USA_jurendejuexing_conscription                                  # 适役人口
+    training_time_army_factor =                     USA_jurendejuexing_training_time_army_factor                    #训练时间
+    consumer_goods_factor=                          USA_jurendejuexing_consumer_goods_factor
+    conversion_cost_civ_to_mil_factor =             USA_jurendejuexing_conversion_cost_civ_to_mil_factor 
+    local_resources_factor =                        USA_jurendejuexing_local_resources_factor                      #战略资源获取率战略资源获取率
+    min_export =                                    USA_jurendejuexing_min_export                                   #可出口资源可出口资源
+    global_building_slots_factor=                   USA_jurendejuexing_global_building_slots_factor
+}
+
+USA_new_deal = {
+    enable = { always = yes }
+    icon = GFX_idea_new_deal
+
+    stability_factor =                              USA_new_deal_stability_factor                                   #稳定度
+    production_speed_buildings_factor =             USA_new_deal_production_speed_buildings_factor                  #建造速度
+    industrial_capacity_factory =                   USA_new_deal_industrial_capacity_factory                        #工厂产出
+    industrial_capacity_dockyard =                  USA_new_deal_industrial_capacity_dockyard                       #船坞产出
+    production_factory_max_efficiency_factor =      USA_new_deal_production_factory_max_efficiency_factor           #生产效率上限
+    production_factory_efficiency_gain_factor =     USA_new_deal_production_factory_efficiency_gain_factor          #生产效率增长
+    production_speed_infrastructure_factor =        USA_new_deal_production_speed_infrastructure_factor             #基础设施建造速度
+    production_speed_industrial_complex_factor =    USA_new_deal_production_speed_industrial_complex_factor         #民用工厂建造速度
+    production_speed_arms_factory_factor =          USA_new_deal_production_speed_arms_factory_factor               #军工建造速度
+    consumer_goods_factor=                          USA_new_deal_consumer_goods_factor                              #消费品
+    conversion_cost_civ_to_mil_factor =             USA_new_deal_conversion_cost_civ_to_mil_factor                  #民转军
+    local_resources_factor =                        USA_new_deal_local_resources_factor                             #战略资源获取率战略资源获取率
+    min_export =                                    USA_new_deal_min_export                                         #可出口资源可出口资源
+    global_building_slots_factor=                   USA_new_deal_global_building_slots_factor                       #地区最大工厂
+    resource_trade_cost_bonus_per_factory =         USA_new_deal_resource_trade_cost_bonus_per_factory              #交易资源
+}
+
+USA_gop_dm = {
+    enable = { always = yes }
+    icon = GFX_idea_USA_gop
+
+
+    industrial_concern_cost_factor =                USA_gop_dm_industrial_concern_cost_factor 
+    stability_factor =                              USA_gop_dm_stability_factor                                   #稳定度
+    production_speed_buildings_factor =             USA_gop_dm_production_speed_buildings_factor                  #建造速度
+    industrial_capacity_factory =                   USA_gop_dm_industrial_capacity_factory                        #工厂产出
+    industrial_capacity_dockyard =                  USA_gop_dm_industrial_capacity_dockyard                       #船坞产出
+    production_factory_max_efficiency_factor =      USA_gop_dm_production_factory_max_efficiency_factor           #生产效率上限
+    production_factory_efficiency_gain_factor =     USA_gop_dm_production_factory_efficiency_gain_factor          #生产效率增长
+    production_speed_infrastructure_factor =        USA_gop_dm_production_speed_infrastructure_factor             #基础设施建造速度
+    production_speed_industrial_complex_factor =    USA_gop_dm_production_speed_industrial_complex_factor         #民用工厂建造速度
+    production_speed_arms_factory_factor =          USA_gop_dm_production_speed_arms_factory_factor               #军工建造速度
+    consumer_goods_factor=                          USA_gop_dm_consumer_goods_factor                              #消费品
+    conversion_cost_civ_to_mil_factor =             USA_gop_dm_conversion_cost_civ_to_mil_factor                  #民转军
+    local_resources_factor =                        USA_gop_dm_local_resources_factor                             #战略资源获取率战略资源获取率
+    min_export =                                    USA_gop_dm_min_export                                         #可出口资源可出口资源
+    global_building_slots_factor=                   USA_gop_dm_global_building_slots_factor                       #地区最大工厂
+    resource_trade_cost_bonus_per_factory =         USA_gop_dm_resource_trade_cost_bonus_per_factory              #交易资源
+    trade_opinion_factor =                          USA_gop_dm_trade_opinion_factor                               #贸易影响力
+}
+
+USA_dp_dm = {
+    enable = { always = yes }
+    icon = GFX_idea_USA_dp
+
+    political_power_factor          =               USA_dp_dm_political_power_factor 
+    stability_factor =                              USA_dp_dm_stability_factor                                   #稳定度
+    production_speed_buildings_factor =             USA_dp_dm_production_speed_buildings_factor                  #建造速度
+    industrial_capacity_factory =                   USA_dp_dm_industrial_capacity_factory                        #工厂产出
+    industrial_capacity_dockyard =                  USA_dp_dm_industrial_capacity_dockyard                       #船坞产出
+    production_factory_max_efficiency_factor =      USA_dp_dm_production_factory_max_efficiency_factor           #生产效率上限
+    production_factory_efficiency_gain_factor =     USA_dp_dm_production_factory_efficiency_gain_factor          #生产效率增长
+    production_speed_infrastructure_factor =        USA_dp_dm_production_speed_infrastructure_factor             #基础设施建造速度
+    production_speed_industrial_complex_factor =    USA_dp_dm_production_speed_industrial_complex_factor         #民用工厂建造速度
+    production_speed_arms_factory_factor =          USA_dp_dm_production_speed_arms_factory_factor               #军工建造速度
+    consumer_goods_factor=                          USA_dp_dm_consumer_goods_factor                              #消费品
+    conversion_cost_civ_to_mil_factor =             USA_dp_dm_conversion_cost_civ_to_mil_factor                  #民转军
+    local_resources_factor =                        USA_dp_dm_local_resources_factor                             #战略资源获取率战略资源获取率
+    min_export =                                    USA_dp_dm_min_export                                         #可出口资源可出口资源
+    global_building_slots_factor=                   USA_dp_dm_global_building_slots_factor                       #地区最大工厂
+    resource_trade_cost_bonus_per_factory =         USA_dp_dm_resource_trade_cost_bonus_per_factory              #交易资源
+    monthly_population =                            USA_dp_dm_monthly_population 
+}
+
+HAW_new_kingdom_dm = {
+    enable = { always = yes }
+    icon = GFX_idea_haw_kingdom
+
+    political_power_factor          =               HAW_new_kingdom_dm_political_power_factor 
+    stability_factor =                              HAW_new_kingdom_dm_stability_factor                                   #稳定度
+    production_speed_buildings_factor =             HAW_new_kingdom_dm_production_speed_buildings_factor                  #建造速度
+    industrial_capacity_factory =                   HAW_new_kingdom_dm_industrial_capacity_factory                        #工厂产出
+    industrial_capacity_dockyard =                  HAW_new_kingdom_dm_industrial_capacity_dockyard                       #船坞产出
+    production_factory_max_efficiency_factor =      HAW_new_kingdom_dm_production_factory_max_efficiency_factor           #生产效率上限
+    production_factory_efficiency_gain_factor =     HAW_new_kingdom_dm_production_factory_efficiency_gain_factor          #生产效率增长
+    production_speed_infrastructure_factor =        HAW_new_kingdom_dm_production_speed_infrastructure_factor             #基础设施建造速度
+    production_speed_industrial_complex_factor =    HAW_new_kingdom_dm_production_speed_industrial_complex_factor         #民用工厂建造速度
+    production_speed_arms_factory_factor =          HAW_new_kingdom_dm_production_speed_arms_factory_factor               #军工建造速度
+    consumer_goods_factor=                          HAW_new_kingdom_dm_consumer_goods_factor                              #消费品
+    conversion_cost_civ_to_mil_factor =             HAW_new_kingdom_dm_conversion_cost_civ_to_mil_factor                  #民转军
+    local_resources_factor =                        HAW_new_kingdom_dm_local_resources_factor                             #战略资源获取率战略资源获取率
+    min_export =                                    HAW_new_kingdom_dm_min_export                                         #可出口资源可出口资源
+    global_building_slots_factor=                   HAW_new_kingdom_dm_global_building_slots_factor                       #地区最大工厂
+    resource_trade_cost_bonus_per_factory =         HAW_new_kingdom_dm_resource_trade_cost_bonus_per_factory              #交易资源
+    monthly_population =                            HAW_new_kingdom_dm_monthly_population                                 #月度人力
+    democratic_acceptance           =               HAW_new_kingdom_dm_democratic_acceptance                              #民主党派接受度
+    research_speed_factor           =               HAW_new_kingdom_dm_research_speed_factor                              #研究速度
+}
+
+USA_park = { 
+	enable = { always = yes }
+
+	icon = GFX_modifiers_SWE_per_albin_bus
+	state_production_speed_buildings_factor = 0.15
+    state_resources_factor = 0.1
+    state_production_speed_industrial_complex_factor = 0.15
+	local_building_slots = 2
+}
+
+USA_nongyequ = { 
+	enable = { always = yes }
+	icon = GFX_modifiers_SWE_hygienic_housing
+	state_production_speed_industrial_complex_factor = 0.15
+	local_building_slots = 4
+}
+
+USA_gongyequ = { 
+	enable = { always = yes }
+	icon = GFX_modifiers_increased_metal_production
+	state_production_speed_arms_factory_factor = 0.15
+    state_resources_factor = 0.1
+	local_building_slots = 4
+}
+
+
+USA_engsguihua = { 
+	enable = { always = yes }
+	icon = GFX_modifiers_increased_metal_production
+	state_production_speed_arms_factory_factor = 0.15
+    state_resources_factor = 0.1
+	local_building_slots = 6
+}
+
+USA_shachenbaosilue = { 
+	enable = { always = yes }
+	icon = GFX_modifiers_RAJ_famine_state
+    state_resources_factor = -0.2
+    state_production_speed_buildings_factor = -0.15
+}
+
+HAW_travel_place = { 
+	enable = { always = yes }
+
+	icon = GFX_modifiers_SWE_per_albin_bus
+	state_production_speed_buildings_factor = 0.15
+    state_resources_factor = 0.1
+	local_building_slots = 2
+}
+
+	#state_production_speed_industrial_complex_factor = 0.15
+	#state_production_speed_synthetic_refinery_factor = 0.15
+	#state_production_speed_infrastructure_factor = 0.15
+	#state_production_speed_rail_way_factor = 0.15
+	#local_building_slots = 2

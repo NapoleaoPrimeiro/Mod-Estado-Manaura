@@ -1,0 +1,51 @@
+# France Rework - game rule for the AI behaviour of France
+FRW_france_ai_behavior = {
+	name = "RULE_FRW_FRANCE_AI"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = HISTORICAL
+		text = "RULE_FRW_FRANCE_AI_HISTORICAL"
+		desc = "RULE_FRW_FRANCE_AI_HISTORICAL_DESC"
+	}
+	option = {
+		name = DEMOCRATIC
+		text = "RULE_FRW_FRANCE_AI_DEMOCRATIC"
+		desc = "RULE_FRW_FRANCE_AI_DEMOCRATIC_DESC"
+	}
+	option = {
+		name = COMMUNIST
+		text = "RULE_FRW_FRANCE_AI_COMMUNIST"
+		desc = "RULE_FRW_FRANCE_AI_COMMUNIST_DESC"
+	}
+	option = {
+		name = FASCIST
+		text = "RULE_FRW_FRANCE_AI_FASCIST"
+		desc = "RULE_FRW_FRANCE_AI_FASCIST_DESC"
+	}
+	option = {
+		name = NONALIGNED
+		text = "RULE_FRW_FRANCE_AI_NONALIGNED"
+		desc = "RULE_FRW_FRANCE_AI_NONALIGNED_DESC"
+	}
+	option = {
+		name = RANDOM
+		text = "RULE_FRW_FRANCE_AI_RANDOM"
+		desc = "RULE_FRW_FRANCE_AI_RANDOM_DESC"
+	}
+}
+
+# France Rework - secret paths (the captain, the Alpine bargain, the Iberian corsair kingdom)
+FRW_secret_paths = {
+	name = "RULE_FRW_SECRET_PATHS"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = ENABLED
+		text = "RULE_FRW_SECRET_PATHS_ENABLED"
+		desc = "RULE_FRW_SECRET_PATHS_ENABLED_DESC"
+	}
+	option = {
+		name = DISABLED
+		text = "RULE_FRW_SECRET_PATHS_DISABLED"
+		desc = "RULE_FRW_SECRET_PATHS_DISABLED_DESC"
+	}
+}

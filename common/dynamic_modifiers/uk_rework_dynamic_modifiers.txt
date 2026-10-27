@@ -1,0 +1,23 @@
+ENG_hofbrauhaus_modifier = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_ENG_hofbrauhaus
+	
+	recruitable_population_factor = 0.15
+	local_building_slots_factor = 0.1
+	state_production_speed_buildings_factor = 0.2
+	compliance_growth = 0.15
+	local_factories = 0.3
+	local_supplies = 0.1
+}
+
+ENG_motorways_modifier = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_ETH_state_development
+
+	local_building_slots_factor = 0.1
+	state_production_speed_buildings_factor = 0.1
+	local_supplies = 0.15
+	army_speed_factor_for_controller = 0.15
+}

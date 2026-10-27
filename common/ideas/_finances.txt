@@ -1,0 +1,190 @@
+ideas = {
+
+	finances = {
+
+		law = yes
+
+		#Army Financing
+		finances_army = {
+
+			available = {
+				NOT = { has_idea = civilian_economy }
+			}
+
+			modifier = {
+				war_support_factor = 0.05
+				production_speed_arms_factory_factor = 0.05
+				production_speed_dockyard_factor = 0.05
+				production_speed_air_base_factor = 0.05
+			}
+
+			cost = 75
+
+			ai_will_do = {
+				base = 0
+				modifier = {
+					OR = { 
+						has_war = yes
+						date > 1938.1.1
+					}
+					add = 70
+				}
+				modifier = {
+					tag = AST
+					has_war = no
+					date < 1938.4.1
+					factor = 0
+				}
+				modifier = {
+					tag = NZL
+					has_war = no
+					date < 1938.4.1
+					factor = 0
+				}
+			}
+		}
+
+		#Resources
+		finances_resources = {
+
+			available = {
+				NOT = { has_idea = tot_economic_mobilisation }
+			}
+
+			modifier = {
+				local_resources_factor = 0.10
+				production_speed_steel_mill_factor = 0.1
+				production_speed_aluminum_mill_factor = 0.1
+				production_speed_rubber_refinery_factor = 0.1
+				production_speed_tungsten_factory_factor = 0.1
+				production_speed_chromium_factory_factor = 0.1
+			}
+
+			cost = 75
+
+			ai_will_do = {
+				base = 0
+			}
+		}
+
+		#Civilian Spendings
+		finances_civilian = {
+
+			available = {
+				OR = { 
+					NOT = {
+						has_idea = war_economy
+						has_idea = tot_economic_mobilisation
+					}
+					tag = JAP
+				}
+				if = {
+					limit = {
+						original_tag = SOV
+					}
+					has_government = democratic
+				}
+			}
+
+			modifier = {
+				political_power_factor = 0.05
+				production_speed_infrastructure_factor = 0.05
+				production_speed_industrial_complex_factor = 0.05
+				production_speed_fuel_silo_factor = 0.05
+			}
+
+			cost = 75
+
+			ai_will_do = {
+				base = 70
+				modifier = {
+					if = {
+						limit = { 
+							tag = ITA
+						}
+						date > 1937.4.4
+					}
+					OR = {
+						has_war = yes
+						date > 1938.1.1
+					}
+					factor = 0
+				}
+			}
+		}
+
+		#Foreign Subsidies
+		finances_foreign = {
+			available = {
+				NOT = {
+					has_country_flag = communist_or_fascist_country
+				}
+			}
+
+			modifier = {
+				political_power_factor = -0.05
+				local_resources_factor = 0.05
+				production_speed_buildings_factor = 0.05
+				global_building_slots_factor = 0.1
+			}
+
+			cost = 75
+
+			ai_will_do = {
+				base = 45
+			}
+		}
+
+		#Scientists Support
+		finances_science = {
+
+			available = {
+				NOT = {
+					has_country_flag = communist_or_fascist_country
+				}
+			}
+
+			modifier = {
+				research_speed_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+			}
+
+			cost = 75
+
+			ai_will_do = {
+				base = 0
+			}
+		}
+
+		#Scientists Support ideology
+		finances_science_ideology = {
+
+			available = {
+				has_country_flag = communist_or_fascist_country
+			}
+
+			modifier = {
+				research_speed_factor = 0.10
+				production_factory_max_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.07
+			}
+
+			cost = 75
+
+			ai_will_do = {
+				base = 0
+				#modifier = {
+				#	OR = {
+				#		has_war = yes
+				#		date > 1938.12.1
+				#	}
+				#	add = 7.5
+				#}
+			}
+		}
+
+		#Rapid Militarization (Only Germany)
+		#Rapid Militarization (Only Germany) #Hist Only
+	}
+}

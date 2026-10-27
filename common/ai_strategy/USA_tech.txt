@@ -1,0 +1,522 @@
+USA_useful_tech = {
+	allowed = {
+		original_tag = USA
+	}
+	enable = {
+        date > 1936.2.1
+		or = {
+			NOT = { has_tech = engines_2 }
+			NOT = { has_tech = interwar_antitank }
+			NOT = { has_tech = tech_maintenance_company }
+			NOT = { has_tech = support_weapons }
+			NOT = { has_tech = tech_field_hospital }
+			NOT = { has_tech = tech_logistics_company }
+			NOT = { has_tech = interwar_artillery }
+			NOT = { has_tech = synth_oil_experiments }
+			NOT = { has_tech = sp_armored_engineer_tech }
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_weight_factor
+		id =  engines_2
+		value = 999
+	}
+	ai_strategy = {
+		type = research_weight_factor
+		id = interwar_antitank
+		value = 999
+	}
+	ai_strategy = {
+		type = research_weight_factor
+		id = tech_maintenance_company
+		value = 999
+	}
+	ai_strategy = {
+		type = research_weight_factor
+		id = support_weapons
+		value = 999
+	}
+	ai_strategy = {
+		type = research_weight_factor
+		id = tech_field_hospital
+		value = 999
+	}
+	ai_strategy = {
+		type = research_weight_factor
+		id = tech_logistics_company
+		value = 999
+	}
+	ai_strategy = {
+		type = research_weight_factor
+		id = interwar_artillery
+		value = 999
+	}
+	ai_strategy = {
+		type = research_weight_factor
+		id = synth_oil_experiments
+		value = 999
+	}
+	ai_strategy = {
+		type = research_tech
+		id = sp_armored_engineer_tech
+		value = 999
+	}
+}
+USA_useless_tech = {
+	allowed = {
+		original_tag = USA
+	}
+	enable = {
+		always = yes
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = research_weight_factor
+		id =  excavation1
+		value = -100
+	}
+	ai_strategy = {
+		type = research_weight_factor
+		id = centralized_fire_control
+		value = -100
+	}
+	ai_strategy = {
+		type = research_weight_factor
+		id = tech_military_police
+		value = -100
+	}
+	ai_strategy = {
+		type = research_weight_factor
+		id = sp_armored_maintenance_tech
+		value = -100
+	}
+	ai_strategy = {
+		type = research_weight_factor
+		id = basic_fortification_tech
+		value = -100
+	}
+	ai_strategy = {
+		type = research_weight_factor
+		id = sp_armored_signal_tech
+		value = -100
+	}
+	ai_strategy = {
+		type = research_weight_factor
+		id = fuel_refining
+		value = -100
+	}
+}
+USA_robber_tech = {
+	allowed = {
+		original_tag = USA
+	}
+	enable = {
+		has_completed_focus=USA_rubber_reserve_company
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = research_weight_factor
+		id =  rubber_processing
+		value =999
+	}
+	ai_strategy = {
+		type = research_weight_factor
+		id =  improved_rubber_processing
+		value =999
+	}
+	ai_strategy = {
+		type = research_weight_factor
+		id =  advanced_rubber_processing
+		value =999
+	}
+}
+USA_infantry_equipment_2_tech = {
+	allowed = {
+		original_tag = USA
+	}
+	enable = {
+		not = { has_tech = infantry_equipment_2 }
+	}
+
+	abort = {
+		has_tech = infantry_equipment_2
+	}
+
+	ai_strategy = {
+		type = research_weight_factor
+		id = infantry_equipment_2
+		value = 9999
+	}
+}
+USA_sp_helicopter_med_evac_tech = {
+	allowed = {
+		original_tag = USA
+	}
+	enable = {
+		is_special_project_completed = sp:sp_air_helicopter
+		not = { has_tech = sp_helicopter_med_evac_tech }
+	}
+
+	abort = {
+		has_tech = sp_helicopter_med_evac_tech
+	}
+
+	ai_strategy = {
+		type = research_weight_factor
+		id = sp_helicopter_med_evac_tech
+		value = 9999
+	}
+}
+USA_tech_maintenance_company2= {
+	allowed = {
+		original_tag = USA
+	}
+	enable = {
+			date > 1938.10.1
+			not = { has_tech = tech_maintenance_company2 }
+	}
+
+	abort = {
+		has_tech = tech_maintenance_company2
+	}
+
+	ai_strategy = {
+		type = research_weight_factor
+		id = tech_maintenance_company2
+		value = 9999
+	}
+}
+USA_mechanised_infantry_tech = {
+	allowed = {	original_tag = USA }
+	enable = {
+		has_completed_focus=USA_armored_infantry
+	}
+	abort = {
+		has_tech = mechanised_infantry
+	}
+	ai_strategy = {
+		type = research_weight_factor
+		id = mechanised_infantry
+		value = 999
+	}
+}
+USA_amphibious_mechanized_infantry_tech = {
+	allowed = {	original_tag = USA }
+	enable = {
+		has_tech = mechanised_infantry
+	}
+	abort = {
+		has_tech = amphibious_mechanized_infantry
+	}
+	ai_strategy = {
+		type = research_weight_factor
+		id = amphibious_mechanized_infantry
+		value = 9999
+	}
+}
+USA_amphibious_mechanized_infantry_tech2 = {
+	allowed = {	original_tag = USA }
+	enable = {
+		date > 1942.11.1
+	}
+	abort = {
+		has_tech = amphibious_mechanized_infantry_2
+	}
+	ai_strategy = {
+		type = research_weight_factor
+		id =  amphibious_mechanized_infantry_2
+		value = 9999
+	}
+}
+USA_tank_tech = {
+	allowed = {
+		original_tag = USA
+	}
+	enable = {
+		OR={
+			AND={
+				date > 1938.1.1
+				not = { has_tech = basic_medium_tank_chassis }
+			}
+			has_completed_focus=USA_tank_experiments
+		}
+		
+	}
+
+	abort = {
+		has_tech = basic_medium_tank_chassis
+	}
+
+	ai_strategy = {
+		type = research_weight_factor
+		id = basic_medium_tank_chassis
+		value = 9999
+	}
+}
+USA_tank_tech2 = {
+	allowed = {
+		original_tag = USA
+	}
+	enable = {
+		date > 1939.10.1
+		not = { has_tech = improved_medium_tank_chassis }
+		has_completed_focus=USA_tank_experiments
+	}
+
+	abort = {
+		has_tech = improved_medium_tank_chassis
+	}
+
+	ai_strategy = {
+		type = research_weight_factor
+		id = improved_medium_tank_chassis
+		value = 9999
+	}
+}
+USA_artillery1_tech = {
+	allowed = {
+		original_tag = USA
+	}
+	enable = {	
+		date > 1939.1.1
+		not = { has_tech = artillery1 }
+	}
+
+	abort = {
+		has_tech = artillery1
+	}
+
+	ai_strategy = {
+		type = research_weight_factor
+		id = artillery1
+		value = 9999
+	}
+}
+USA_artillery2_tech  = {
+	allowed = {
+		original_tag = USA
+	}
+	enable = {
+		
+		date > 1940.1.1
+		not = { has_tech = artillery2 }
+	}
+
+	abort = {
+		has_tech = artillery2
+	}
+
+	ai_strategy = {
+		type = research_weight_factor
+		id = artillery2
+		value = 9999
+	}
+}
+USA_artillery3_tech  = {
+	allowed = {
+		original_tag = USA
+	}
+	enable = {		
+		date > 1941.1.1
+		not = { has_tech = artillery3 }
+	}
+
+	abort = {
+		has_tech = artillery3
+	}
+
+	ai_strategy = {
+		type = research_weight_factor
+		id = artillery3
+		value = 9999
+	}
+}
+USA_antitank1_tech  = {
+	allowed = {
+		original_tag = USA
+	}
+	enable = {	
+		date > 1939.1.1
+		not = { has_tech = antitank1 }
+	}
+
+	abort = {
+		has_tech = antitank1
+	}
+
+	ai_strategy = {
+		type = research_weight_factor
+		id = antitank1
+		value = 9999
+	}
+}
+USA_antitank2_tech  = {
+	allowed = {
+		original_tag = USA
+	}
+	enable = {	
+		date > 1940.1.1
+		not = { has_tech = antitank2 }
+	}
+
+	abort = {
+		has_tech = antitank2
+	}
+
+	ai_strategy = {
+		type = research_weight_factor
+		id = antitank2
+		value = 9999
+	}
+}
+USA_antitank3_tech  = {
+	allowed = {
+		original_tag = USA
+	}
+	enable = {		
+		date > 1941.1.1
+		not = { has_tech = antitank3 }
+	}
+
+	abort = {
+		has_tech = antitank3
+	}
+
+	ai_strategy = {
+		type = research_weight_factor
+		id = antitank3
+		value = 9999
+	}
+}
+USA_light_tank_tech = {
+	allowed = {
+		original_tag = USA
+	}
+	enable = {	
+		date > 1937.7.1
+		not = { has_tech = improved_light_tank_chassis }
+	}
+
+	abort = {
+		has_tech = improved_light_tank_chassis
+	}
+
+	ai_strategy = {
+		type = research_weight_factor
+		id = improved_light_tank_chassis
+		value = 9999
+	}
+}
+USA_mtg_landing_craft_tech = {
+	allowed = {
+		or = {
+			original_tag = USA
+		}
+	}
+	enable = {		
+		date > 1940.1.1
+		not = { has_tech = mtg_landing_craft }
+	}
+
+	abort = {
+		has_tech = mtg_landing_craft
+	}
+
+	ai_strategy = {
+		type = research_weight_factor
+		id = mtg_landing_craft
+		value = 9999
+	}
+}
+USA_plane_tech = {
+	allowed = {	original_tag = USA }
+	enable = {
+		date > 1939.10.1
+		or = {
+			not = { has_tech = improved_small_airframe }
+			not = { has_tech = engines_3 }
+		}
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = research_weight_factor
+		id = improved_small_airframe
+		value = 9999
+	}
+	ai_strategy = {
+		type = research_tech
+		id =  engines_3
+		value = 9999
+	}
+}
+USA_advanced_small_plane_tech = {
+	allowed = {
+		original_tag = USA
+	}
+	enable = {
+		has_completed_focus=USA_CAS
+		OR={
+			not = { has_tech = advanced_small_airframe }
+			not = { has_tech = engines_4 }
+		}
+		
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_weight_factor
+		id = advanced_small_airframe
+		value = 9999
+	}
+
+	ai_strategy = {
+		type = research_weight_factor
+		id = engines_4
+		value = 9999
+	}
+}
+USA_jet_plane_tech = {
+	allowed = {
+		or = {
+			original_tag = USA
+		}
+	}
+	enable = {
+		has_completed_focus=USA_focus32
+        or = {
+            not = { has_tech = modern_small_airframe }
+        }
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_weight_factor
+		id = modern_small_airframe
+		value = 9999
+	}
+}
+USA_jet_plane_tech = {
+	allowed = {
+		or = {
+			original_tag = USA
+		}
+	}
+	enable = {
+		has_completed_focus=USA_manhattan_project
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = research_weight_factor
+		id = atomic
+		value = 9999
+	}
+}
+
+

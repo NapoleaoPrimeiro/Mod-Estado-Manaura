@@ -1,0 +1,125 @@
+#eo
+GER_power_balance = {
+	initial_value = 0
+	left_side = default_left_side
+	right_side = default_right_side
+	decision_category = GER_balance_of_power_category
+	range = {
+		id = mid_range
+		min = -0.1
+		max = 0.1
+		modifier = {
+			command_power_gain_mult = -0.25
+		}
+	}
+	side = {
+		id = default_left_side
+		icon = GFX_bop_GER_ss
+		range = {
+			id = left_side_range
+			min = -0.5
+			max = -0.1
+			modifier = {
+				command_power_gain_mult = -0.3
+				planning_speed = 0.05
+				resistance_growth = -0.05
+			}
+		}
+		range = {
+			id = middle_left_side_range
+			min = -0.8
+			max = -0.5
+			modifier = {
+				command_power_gain_mult = -0.35
+				promote_cost_factor = 0.2
+				planning_speed = 0.05
+				org_loss_when_moving = -0.05
+				resistance_growth = -0.1
+			}
+		}
+		range = {
+			id = far_left_side_range
+			min = -0.99
+			max = -0.8
+			modifier = {
+				command_power_gain_mult = -0.4
+				promote_cost_factor = 0.35
+				army_leader_cost_factor = 0.5
+				planning_speed = 0.05
+				org_loss_when_moving = -0.1
+				command_abilities_cost_factor = -0.25
+				conscription_factor = 0.1
+				resistance_growth = -0.1
+			}	
+		}
+		range = {
+			id = coup_left_side_range
+			min = -1
+			max = -0.99
+			on_activate = {
+				#country_event = {
+							#id = ger_coup_of_wehrmacht.1
+						#}
+				#remove_power_balance = {
+					#id = GER_power_balance
+				#}
+			}
+		}
+	}
+
+	side = {
+		id = default_right_side
+		icon = GFX_bop_GER_balkenkreuz
+		range = {
+			id = right_side_range
+			min = 0.1
+			max = 0.5
+			modifier = {
+				command_power_gain_mult = -0.15
+				promote_cost_factor = -0.2
+				army_org_factor = 0.05
+			}
+		}
+		range = {
+			id = middle_right_side_range
+			min = 0.5
+			max = 0.8
+			modifier = {
+				command_power_gain_mult = -0.05
+				promote_cost_factor = -0.35
+				army_org_factor = 0.07
+				special_forces_training_time_factor = 0.05
+			}
+		}
+		range = {
+			id = far_right_side_range
+			min = 0.8
+			max = 0.99
+			modifier = {					
+				command_power_gain_mult = 0.15
+				promote_cost_factor = -0.5
+				army_org_factor = 0.07
+				recon_factor = 0.05
+				special_forces_attack_factor = 0.05
+				special_forces_cap = 0.02
+				special_forces_training_time_factor = 0.15
+				command_abilities_cost_factor = 0.15
+			}
+		}
+		range = {
+			id = coup_right_side_range
+			min = 0.99
+			max = 1
+			on_activate = {
+				#country_event = {
+							#id = ger_coup_of_ss.1
+						#}
+				#remove_power_balance = {
+					#id = GER_power_balance
+				#}
+			}
+		}
+	}
+	
+}
+#eo

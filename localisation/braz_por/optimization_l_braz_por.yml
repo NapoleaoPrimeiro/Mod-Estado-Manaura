@@ -1,0 +1,104 @@
+﻿l_braz_por:
+
+ # NO LAG BR - SOOO/SPOT Optimization
+ 
+ optimization_player_was_here:0 "Jogador em Controle"
+ optimization_player_was_here_desc:0 "Este espírito apenas indica que o país está sendo controlado por um jogador. Ao sair do país, utilize a decisão \"Jogador para IA\" no menu de otimização."
+ 
+ optimization_game_speed_balance:0 "Otimização da IA"
+ optimization_game_speed_balance_desc:0 "Este país está usando o perfil de IA otimizado. Caso passe a controlá-lo, utilize a decisão \"IA para Jogador\" para restaurar produção, recrutamento e acesso ao mercado."
+ 
+ optimization_player_to_ai_to_player:0 "Decisões de Otimização"
+ optimization_player_to_ai:0 "Jogador para IA"
+ optimization_player_to_ai_desc:0 "Aplica as restrições de desempenho exclusivas da IA antes de sair deste país."
+ optimization_ai_to_player:0 "IA para Jogador"
+ optimization_ai_to_player_desc:0 "Remove as restrições SOOO/SPOT e de mercado quando um jogador assume o controle."
+ optimization_rule:0 "Otimização da IA"
+ RULE_OPTION_optimization_HARD:0 "Ativar ideias de otimização"
+ RULE_OPTION_optimization_HARD_DESC:0 "Restringe países secundários controlados pela IA para reduzir o custo de simulação."
+ RULE_OPTION_optimization_NORMAL:0 "Desativar ideias de otimização"
+ RULE_OPTION_optimization_NORMAL_DESC:0 "Mantém a experiência normal, sem aplicar as ideias de otimização."
+ RULE_GROUP_optimization:0 "Otimização SOOO/SPOT"
+
+ RULE_OPTION_NO_LAG_NO:0 "§YNão§!"
+ RULE_OPTION_NO_LAG_YES:0 "§YSim§!"
+ RULE_OPTION_NO_LAG_ON:0 "§YAtivado§!"
+ RULE_OPTION_NO_LAG_OFF:0 "§YDesativado§!"
+ RULE_OPTION_NO_LAG_YES_EXCEPT_TURKEY:0 "§YSim (exceto a Turquia)§!"
+ RULE_OPTION_NO_LAG_YES_EXCEPT_SOVIET:0 "§YSim (exceto a União Soviética)§!"
+
+ RULE_NO_LAG_UNIFY_CHINA:0 "Anexar os senhores da guerra chineses"
+ RULE_NO_LAG_UNIFY_CHINA_NO_DESC:0 "Mantém os senhores da guerra chineses independentes."
+ RULE_NO_LAG_UNIFY_CHINA_YES_DESC:0 "Anexa os senhores da guerra configurados à China Nacionalista no início da partida."
+ RULE_NO_LAG_WASTELAND:0 "Consolidar países de baixo impacto"
+ RULE_NO_LAG_WASTELAND_NO_DESC:0 "Não realiza a consolidação opcional no WST."
+ RULE_NO_LAG_WASTELAND_YES_DESC:0 "Consolida países selecionados de baixo impacto e estados latino-americanos para reduzir a quantidade de países ativos."
+ RULE_NO_LAG_MEAST:0 "Consolidar o Oriente Médio"
+ RULE_NO_LAG_MEAST_NO_DESC:0 "Mantém separados os países configurados do Oriente Médio."
+ RULE_NO_LAG_MEAST_YES_DESC:0 "Transfere Afeganistão, Iêmen, Omã, Arábia Saudita, Iraque e Irã para o WST."
+ RULE_NO_LAG_ASIA:0 "Consolidar Ásia e Oceania"
+ RULE_NO_LAG_ASIA_NO_DESC:0 "Mantém separados os países configurados da Ásia e Oceania."
+ RULE_NO_LAG_ASIA_YES_DESC:0 "Transfere os países configurados da Ásia e Oceania para o WST; a União Soviética fica excluída."
+ RULE_NO_LAG_EUROPE:0 "Consolidar a Europa"
+ RULE_NO_LAG_EUROPE_NO_DESC:0 "Mantém separados os países europeus configurados."
+ RULE_NO_LAG_EUROPE_YES_DESC:0 "Transfere os países europeus configurados e seus estados controlados para o WST."
+ RULE_NO_LAG_NORTH_AMERICA:0 "Consolidar a América do Norte"
+ RULE_NO_LAG_NORTH_AMERICA_NO_DESC:0 "Mantém Estados Unidos, Canadá e México separados."
+ RULE_NO_LAG_NORTH_AMERICA_YES_DESC:0 "Transfere Estados Unidos, Canadá e México para o WST."
+ RULE_NO_LAG_MARKET:0 "Mercado Internacional"
+ RULE_NO_LAG_MARKET_ON_DESC:0 "Mantém o acesso ao mercado internacional disponível para países controlados pela IA."
+ RULE_NO_LAG_MARKET_OFF_DESC:0 "Desativa o acesso ao mercado internacional para países da IA e reduz o custo de avaliação. Jogadores não são afetados."
+
+ optimization.start.event.1.title:0 "Otimização da IA"
+ optimization.start.event.1.description:0 "Aplicar o perfil de otimização a este país controlado pela IA."
+ optimization.start.event.1.option_yes:0 "Aplicar"
+ optimization.start.event.1.option_no:0 "Manter comportamento normal"
+
+ #WST
+
+ WST_fascism:0 ""
+ WST_fascism_DEF:0 ""
+ WST_fascism_ADJ:0 ""
+ WST_democratic:0 ""
+ WST_democratic_DEF:0 ""
+ WST_democratic_ADJ:0 ""
+ WST_neutrality:0 ""
+ WST_neutrality_DEF:0 ""
+ WST_neutrality_ADJ:0 ""
+ WST_communism:0 ""
+ WST_communism_DEF:0 ""
+ WST_communism_ADJ:0 ""
+ WST:0 ""
+ WST_DEF:0 ""
+ WST_ADJ:0 ""
+ optimization_neutrality:0 "Zona Neutra"
+ optimization_neutrality_desc:0 "Este território fica fora da diplomacia normal para reduzir o custo de simulação."
+ optimization_wasteland:0 "Administração Wasteland"
+ optimization_wasteland_desc:0 "Um território consolidado para reduzir a quantidade de países ativos e de cálculos."
+
+#MARKET
+
+ dam_idea:0 "Mercado da IA desativado"
+ dam_idea_desc:0 "Impede este país controlado pela IA de avaliar ou usar o mercado internacional."
+ dam.1:0 "Mercado Internacional"
+ dam.1.t:0 "Regra do Mercado Internacional"
+ dam.1.d:0 "Desativa a avaliação do mercado internacional para este país controlado pela IA."
+ dam.1.a:0 "Desativar acesso da IA ao mercado"
+
+# shackles
+ remove_shackles:0 "Remover Shackles"
+ remove_shackles_desc:0 "Para manter o jogo jogável até a década de 1960, a capacidade de países menores de criar exércitos gigantes e produzir grandes quantidades de equipamento foi limitada. Caso você queira jogar com um país menor ou médio que tenha sido afetado por essas limitações, esta decisão removerá essas shackles."
+  
+ shackles.1.t:0 "Bem-vindo ao NO LAG BR!"
+ shackles.1.d:0 "Este remake mantém o jogo próximo do Vanilla e melhora o desempenho no multiplayer.\n\n§YPrincipais mudanças§!\n- O AI Shackles limita produção e recrutamento de países selecionados da IA; países humanos nunca mantêm essas limitações.\n- Jogadores em países minors recebem por padrão um espaço permanente de pesquisa e exatamente o antigo espírito de apoio por dois anos (+150% de construção, +30% de retenção ao trocar linha, +0,50 de poder político diário, +10% de fator de população recrutável e -20% de tempo de treinamento).\n- A União Soviética/Rússia começa com um espaço adicional de pesquisa.\n- Os custos de XP dos templates são zerados para criar grupos de brigadas, trocar brigadas e adicionar companhias de suporte.\n- O Colored Puppets está ativo, com cores alinhadas para as facções chinesas.\n- O Host Tool original do SPOT inicia com a Alemanha selecionada como controladora.\n- Somente o cenário de 1936 é suportado.\n\nConfirme abaixo para aplicar os limites da IA e começar."
+ shackles.1.a:0 "Aplicar limites da IA e continuar"
+ shackles.1.a.d:0 "Aplica os limites de otimização somente à IA; países humanos continuam sem restrições."
+ 
+ unindustrialized:0 "Não industrializado"
+ unindustrialized_desc:0 "Reduz a expansão industrial e a produção de equipamento de um país da IA sob shackles."
+ uninterested:0 "Desinteressado"
+ uninterested_desc:0 "Limita recrutamento, uso de combustível e diplomacia agressiva de um país da IA sob shackles."
+ 
+ unshackle_congo:0 "Remover shackles do Congo"
+
+ #Vanilla Fixes

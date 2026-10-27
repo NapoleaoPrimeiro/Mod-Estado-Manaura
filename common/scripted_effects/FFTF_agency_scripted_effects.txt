@@ -1,0 +1,254 @@
+#Create the array THIS.agency_queue_hold, containing valid upgrades -> Clear THIS.agency_queue -> Move THIS.agency_queue_hold into THIS.agency_queue and delete
+FFTF_agency_verify_agency_queue = {
+	if = {
+		limit = { has_variable = THIS.agency_queue^num }
+		resize_array = { array = THIS.agency_upgrades_in_queue_count size = THIS.agency_upgrades_completed_and_queued^num value = 0 }
+		
+		if = {
+			limit = { NOT = { check_variable = { THIS.agency_selected_upgrade = -1 } } }
+			add_to_variable = { THIS.agency_upgrades_in_queue_count^agency_selected_upgrade = 1 }
+		}
+		
+		for_each_loop = {
+			array = THIS.agency_queue
+			value = v
+			break = break
+			
+			if = {
+				limit = { 
+					NOT = { OR = {
+						#Check if the upgrade is complete or if the queue is full
+						meta_trigger = {
+							text = {
+								has_done_agency_upgrade = [AGENCY_UPGRADE]
+							}
+							AGENCY_UPGRADE = "[?global.agency_upgrades^v.GetTokenLocalizedKey]"
+						}
+						check_variable = { 
+							var = THIS.agency_upgrades_in_queue_count^v
+							value = global.agency_max_upgrades^v
+							compare = greater_than_or_equals 
+						}
+					} } 
+				}
+				
+				add_to_array = { THIS.agency_queue_hold = v }
+				add_to_variable = { THIS.agency_upgrades_in_queue_count^v = 1 }
+			}
+		}
+		
+		clear_array = THIS.agency_upgrades_in_queue_count
+		clear_array = THIS.agency_queue
+		
+		resize_array = { array = THIS.agency_queue value = 0 size = THIS.agency_queue_hold^num }
+		for_each_loop = {
+			array = THIS.agency_queue_hold
+			value = v
+			index = i
+			break = break
+			
+			set_variable = { THIS.agency_queue^i = v }
+		}
+		
+		clear_array = THIS.agency_queue_hold
+	}
+}
+
+#Find the first valid upgrade in queue -> Set the variable THIS.agency_selected_upgrade -> Remove from queue
+FFTF_agency_upgrade_find_first_valid_in_queue = {
+	FFTF_agency_verify_agency_queue = yes
+	
+	set_variable = { THIS.agency_selected_upgrade = -1 }
+	
+	#Find the first valid upgrade in the queue and break
+	if = {
+		limit = { 
+			has_intelligence_agency = yes
+			has_variable = THIS.agency_queue^num
+			check_variable = { THIS.agency_queue^num > 0 } 
+		}
+		
+		
+		for_each_loop = {
+			array = THIS.agency_queue
+			value = v
+			break = break
+			index = i
+			
+			if = {
+				limit = {
+					meta_trigger = {
+						text = {
+							FFTF_agency_can_select_upgrade_[AGENCY]_trigger = yes
+						}
+						AGENCY = "[?v]"
+					}
+					
+					set_temp_variable = { needed_factories = global.agency_factories^v }
+					subtract_from_temp_variable = { needed_factories = 1 }
+					
+					num_of_civilian_factories_available_for_projects > needed_factories
+				}
+				
+				set_variable = { THIS.agency_selected_upgrade = v }
+				set_variable = { idx_to_remove = i }
+				set_temp_variable = { break = 1 }
+			}
+			
+		}
+	}
+	
+	#If we don't have a selected upgrade, pick a random one if we are allowed to do so
+	if = {
+		limit = { check_variable = { THIS.agency_selected_upgrade = -1 } check_variable = { automate_agency_upgrades_choice = 2 } }
+		FFTF_select_random_agency = yes
+		
+		add_to_variable = { agency_upgrades_completed_and_queued^agency_selected_upgrade = 1 }
+	}
+	
+	#Otherwise, remove the found upgrade from the queue
+	else_if = {
+		limit = { 
+			NOT = { check_variable = { THIS.agency_selected_upgrade = -1 } } 
+		}
+		
+		set_temp_variable = { last = THIS.agency_queue^num } 
+		subtract_from_temp_variable = { last = 1 } 
+		
+		if = {
+			limit = { 
+				check_variable = { THIS.agency_queue^num > 1 } 
+				check_variable = { idx_to_remove < last } 
+			}
+			
+			set_temp_variable = { start_from = idx_to_remove }
+			add_to_temp_variable = { start_from = 1 }
+			
+			for_loop_effect = {
+				start = start_from
+				end = THIS.agency_queue^num
+				value = v2
+				
+				set_temp_variable = { above = v2 }
+				subtract_from_temp_variable = { above = 1 }
+				set_variable = { THIS.agency_queue^above = THIS.agency_queue^v2 }
+			}
+			
+			clear_variable = THIS.agency_queue^last
+			subtract_from_variable = { THIS.agency_queue^num = 1 }
+		}
+		else_if = {
+			limit = { check_variable = { THIS.agency_queue^num = 1 } }
+			clear_array = THIS.agency_queue
+		}
+		else = {
+			clear_variable = THIS.agency_queue^last
+			subtract_from_variable = { THIS.agency_queue^num = 1 }
+		}
+	}
+	
+	clear_variable = idx_to_remove
+}
+
+#Select a random upgrade by checking all the valid upgrades than adding their weighted amount to an array which we select a random entry from
+FFTF_select_random_agency = {
+	clear_array = random_agency_upgrade_to_select
+	
+	for_loop_effect = {
+		end = global.agency_upgrades^num
+		value = v
+		
+		set_temp_variable = { needed_factories = global.agency_factories^v }
+		subtract_from_temp_variable = { needed_factories = 1 }
+		
+		if = {
+			limit = {
+				num_of_civilian_factories_available_for_projects > needed_factories
+				meta_trigger = {
+					text = {
+						FFTF_agency_can_select_upgrade_[AGENCY]_trigger = yes
+					}
+					AGENCY = "[?v]"
+				}
+				meta_trigger = {
+					text = {
+						NOT = { has_done_agency_upgrade = [AGENCY_UPGRADE] }
+					}
+					AGENCY_UPGRADE = "[?global.agency_upgrades^v.GetTokenLocalizedKey]"
+				}
+			}
+			
+			for_loop_effect = {
+				end = global.agency_random_weight^v
+				value = v2
+				
+				add_to_array = { random_agency_upgrade_to_select = v }
+			}
+		}
+	}
+	
+	if = {
+		limit = { has_variable = random_agency_upgrade_to_select^num check_variable = { random_agency_upgrade_to_select^num > 0 } }
+		
+		set_temp_variable_to_random = {
+			var = random_num
+			min = 0
+			max = random_agency_upgrade_to_select^num
+			integer = yes
+		}
+		
+		set_variable = { agency_selected_upgrade = random_agency_upgrade_to_select^random_num }
+	}
+		
+		
+	clear_array = random_agency_upgrade_to_select
+}
+
+#Upgrade the agency (duh)
+FFTF_agency_upgrade_selected_agency = {
+	meta_effect = {
+		text = {
+			upgrade_intelligence_agency = [AGENCY]
+		}
+		AGENCY = "[?global.agency_upgrades^agency_selected_upgrade.GetTokenLocalizedKey]"
+	}
+	
+	#Clear the variable
+	set_variable = { agency_selected_upgrade = -1 }
+}
+
+#Get this country's agency upgrade time
+FFTF_get_agency_upgrade_time = {
+	set_variable = { THIS.agency_upgrade_time_days = modifier@agency_upgrade_time }
+	add_to_variable = { THIS.agency_upgrade_time_days = 1 }
+	multiply_variable = { THIS.agency_upgrade_time_days = global.agency_upgrade_time_days_base }
+	clamp_variable = { var = THIS.agency_upgrade_time_days min = 1 }
+	round_variable = THIS.agency_upgrade_time_days
+}
+
+#Check if we can start an upgrade, if so get the next upgrade and begin the mission and add the hidden factory idea
+FFTF_begin_automatic_upgrade_if_possible = {
+	if = {
+		limit = { 
+			FFTF_can_start_automated_agency_upgrade = yes
+		}
+		
+		FFTF_get_agency_upgrade_time = yes
+
+		FFTF_agency_upgrade_find_first_valid_in_queue = yes
+		
+		if = {
+			limit = { NOT = { check_variable = { THIS.agency_selected_upgrade = -1 } } }
+			
+			set_country_flag = spy_agency_upgrade_in_progress_flag
+			activate_mission = spy_agency_upgrade_in_progress
+			
+			meta_effect = {
+				text = {
+					add_ideas = automated_agency_upgrade_cost_[FACTORIES]
+				}
+				FACTORIES = "[?global.agency_factories^agency_selected_upgrade]"
+			}
+		}
+	}
+}

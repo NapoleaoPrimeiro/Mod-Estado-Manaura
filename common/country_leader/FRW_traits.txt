@@ -1,0 +1,336 @@
+leader_traits = {
+	# ---------- FRW trotsky ----------
+	FRW_trait_trotsky = {
+		random = no
+		sprite = 1
+		army_org_factor = 0.05
+		training_time_army_factor = -0.10
+		communism_drift = 0.05
+		political_power_factor = 0.05
+		ai_will_do = { factor = 1 }
+	}
+	# ---------- /FRW trotsky ----------
+	# ---------- FRW pirate captain ----------
+	FRW_pirate_captain = {
+		random = no
+		naval_damage_factor = 0.05
+		naval_morale_factor = 0.10
+		experience_gain_navy_factor = 0.10
+		convoy_raiding_efficiency_factor = 0.10
+	}
+	# ---------- /FRW pirate captain ----------
+	# Aymeric de Valmont, "le Roi-Amiral" (secret tree capstone)
+	FRW_admiral_king = {
+		random = no
+		sprite = 13
+		naval_damage_factor = 0.10
+		naval_defense_factor = 0.05
+		naval_morale_factor = 0.10
+		experience_gain_navy_factor = 0.15
+		naval_doctrine_cost_factor = -0.20
+		industrial_capacity_dockyard = 0.10
+		research_speed_factor = 0.03
+	}
+
+	# Frederic Joliot-Curie as political advisor (The Imperial University)
+	FRW_imperial_scientist = {
+		random = no
+		sprite = 1
+		research_speed_factor = 0.15
+		ai_will_do = { factor = 1 }
+	}
+
+	# ---------- custom political advisor traits ----------
+	FRW_trait_monnet = {
+		random = no
+		sprite = 1
+		production_factory_max_efficiency_factor = 0.05
+		trade_opinion_factor = 0.20
+		opinion_gain_monthly_factor = 0.10
+		war_support_factor = -0.03
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_dautry = {
+		random = no
+		sprite = 1
+		production_speed_arms_factory_factor = 0.10
+		line_change_production_efficiency_factor = 0.10
+		production_speed_buildings_factor = 0.03
+		stability_factor = -0.02
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_cot = {
+		random = no
+		sprite = 1
+		air_doctrine_cost_factor = -0.10
+		experience_gain_air_factor = 0.10
+		air_ace_generation_chance_factor = 0.10
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_mandel = {
+		random = no
+		sprite = 1
+		war_support_factor = 0.05
+		non_core_manpower = 0.05
+		justify_war_goal_time = -0.10
+		political_power_factor = -0.05
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_marty = {
+		random = no
+		sprite = 1
+		send_volunteer_size = 2
+		experience_gain_army_factor = 0.05
+		drift_defence_factor = 0.20
+		stability_factor = -0.03
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_ybarnegaray = {
+		random = no
+		sprite = 1
+		stability_factor = 0.05
+		conscription_factor = 0.05
+		party_popularity_stability_factor = 0.05
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_marion = {
+		random = no
+		sprite = 1
+		war_support_factor = 0.05
+		drift_defence_factor = 0.25
+		political_power_factor = 0.05
+		stability_factor = -0.03
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_bichelonne = {
+		random = no
+		sprite = 1
+		production_factory_efficiency_gain_factor = 0.10
+		industrial_capacity_factory = 0.04
+		conversion_cost_civ_to_mil_factor = -0.15
+		stability_factor = -0.03
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_sauvy = {
+		random = no
+		sprite = 1
+		monthly_population = 0.10
+		conscription_factor = 0.05
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_perrin = {
+		random = no
+		sprite = 1
+		research_speed_factor = 0.04
+		scientist_research_bonus_factor = 0.10
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_langevin = {
+		random = no
+		sprite = 1
+		research_speed_factor = 0.03
+		scientist_xp_gain_factor = 0.15
+		drift_defence_factor = -0.10
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_barre = {
+		random = no
+		sprite = 1
+		special_project_speed_factor = 0.10
+		scientist_xp_gain_factor = 0.10
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_fperrin = {
+		random = no
+		sprite = 1
+		special_project_speed_factor = 0.10
+		scientist_breakthrough_bonus_factor = 0.10
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_moulin = {
+		random = no
+		sprite = 1
+		resistance_growth_on_our_occupied_states = 0.15
+		civilian_intel_factor = 0.10
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_frenay = {
+		random = no
+		sprite = 1
+		resistance_damage_to_garrison_on_our_occupied_states = 0.15
+		army_intel_factor = 0.10
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_remy = {
+		random = no
+		sprite = 1
+		intel_network_gain_factor = 0.15
+		decryption_factor = 0.10
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_alibert = {
+		random = no
+		sprite = 1
+		stability_factor = 0.05
+		drift_defence_factor = 0.20
+		political_power_factor = 0.05
+		war_support_factor = -0.03
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_spinasse = {
+		random = no
+		sprite = 1
+		production_speed_industrial_complex_factor = 0.10
+		production_speed_infrastructure_factor = 0.10
+		consumer_goods_factor = -0.02
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_debroglie = {
+		random = no
+		sprite = 1
+		research_speed_factor = 0.04
+		scientist_xp_gain_factor = 0.10
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_ponte = {
+		random = no
+		sprite = 1
+		research_speed_factor = 0.03
+		encryption_factor = 0.15
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_caquot = {
+		random = no
+		sprite = 1
+		production_speed_facility_factor = 0.15
+		special_project_speed_factor = 0.05
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_coanda = {
+		random = no
+		sprite = 1
+		special_project_speed_factor = 0.05
+		scientist_xp_gain_factor = 0.15
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_leduc = {
+		random = no
+		sprite = 1
+		special_project_speed_factor = 0.08
+		experience_gain_air_factor = 0.05
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_dastier = {
+		random = no
+		sprite = 1
+		resistance_growth_on_our_occupied_states = 0.10
+		intel_from_operatives_factor = 0.15
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_brossolette = {
+		random = no
+		sprite = 1
+		boost_resistance_factor = 0.15
+		encryption_factor = 0.10
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_dormoy = {
+		random = no
+		sprite = 1
+		stability_factor = 0.05
+		drift_defence_factor = 0.15
+		party_popularity_stability_factor = 0.05
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_gmonnet = {
+		random = no
+		sprite = 1
+		consumer_goods_factor = -0.03
+		stability_factor = 0.03
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_laugier = {
+		random = no
+		sprite = 1
+		research_speed_factor = 0.03
+		scientist_research_bonus_factor = 0.10
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_esnault = {
+		random = no
+		sprite = 1
+		special_project_speed_factor = 0.07
+		scientist_research_bonus_factor = 0.05
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_paillole = {
+		random = no
+		sprite = 1
+		agency_upgrade_time = -0.20
+		enemy_operative_detection_chance_factor = 0.15
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_colson = {
+		random = no
+		sprite = 1
+		army_org_factor = 0.05
+		experience_gain_army_factor = 0.08
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_altmayer = {
+		random = no
+		sprite = 1
+		army_speed_factor = 0.05
+		army_attack_factor = 0.03
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_flavigny = {
+		random = no
+		sprite = 1
+		army_armor_attack_factor = 0.05
+		land_doctrine_cost_factor = -0.08
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_durandviel = {
+		random = no
+		sprite = 1
+		naval_doctrine_cost_factor = -0.10
+		experience_gain_navy_factor = 0.08
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_grobert = {
+		random = no
+		sprite = 1
+		navy_org_factor = 0.05
+		naval_hit_chance = 0.04
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_platon = {
+		random = no
+		sprite = 1
+		naval_torpedo_hit_chance_factor = 0.08
+		naval_speed_factor = 0.03
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_armengaud = {
+		random = no
+		sprite = 1
+		air_doctrine_cost_factor = -0.10
+		air_superiority_efficiency = 0.05
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_mendigal = {
+		random = no
+		sprite = 1
+		air_agility_factor = 0.05
+		experience_gain_air_factor = 0.08
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_bouscat = {
+		random = no
+		sprite = 1
+		air_mission_efficiency = 0.05
+		air_accidents_factor = -0.15
+		ai_will_do = { factor = 1 }
+	}
+}

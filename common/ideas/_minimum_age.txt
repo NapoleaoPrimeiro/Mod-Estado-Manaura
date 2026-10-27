@@ -1,0 +1,253 @@
+ideas = {
+
+	minimum_age_laws = {
+		law = yes
+
+		age_19 = {
+
+			cost = 75
+			removal_cost = -1
+			level = 7
+
+
+			ai_will_do = {
+				base = 1
+			}
+
+			modifier = {
+				training_time_army_factor = -0.1
+			}
+
+			cancel_if_invalid = no
+			default = yes
+		}
+		age_18 = {
+
+			cost = 75
+			removal_cost = -1
+			level = 6
+
+			available = {
+				if = {
+					limit = {
+						original_tag = FIN
+					}
+					OR = {
+						has_country_flag = FIN_winter_war_ongoing_flag
+						has_war = yes
+						date > 1939.11.1
+					}
+				}
+			}
+
+			ai_will_do = {
+				base = 1
+			}
+
+			modifier = {
+				training_time_army_factor = -0.05
+				conscription_factor = 0.05
+			}
+
+			cancel_if_invalid = no
+		}
+		age_17 = {
+
+			cost = 75
+			removal_cost = -1
+			level = 5
+
+			available = {
+				if = {
+					limit = {
+						original_tag = FIN
+					}
+					OR = {
+						has_country_flag = FIN_winter_war_ongoing_flag
+						has_war = yes
+						date > 1939.11.1
+					}
+				}
+			}
+
+			ai_will_do = {
+				base = 1
+				modifier = {
+					#Prio if low on manpower
+					add = 12
+					has_manpower < 50000
+					date > 1938.5.1
+				}
+			}
+
+			modifier = {
+				political_power_factor = -0.03
+				training_time_army_factor = 0.025
+				conscription_factor = 0.1
+			}
+
+			cancel_if_invalid = no
+		}
+		age_16 = {
+
+			cost = 75
+			removal_cost = -1
+			level = 4
+			visible = { #şuanlık bunu kullanan bir ai yok age 17 irq tarafından kullanılıyor #TODO
+				NOT = {
+					has_country_flag = ai_country
+				}
+			}
+			available = {
+				NOT = {
+					has_idea = volunteer_only
+					has_idea = disarmed_nation
+				}
+				if = {
+					limit = {
+						original_tag = FIN
+					}
+					OR = {
+						AND = {
+							NOT = { has_government = democratic }
+							threat > 0.75
+						}
+						AND = {
+							has_war = yes
+							enemies_strength_ratio > 1.5
+						}
+						AND = {
+							has_country_flag = FIN_winter_war_ongoing_flag
+							date > 1939.11.1
+						}
+					}
+				}
+				else = {
+					OR = {
+						AND = {
+							NOT = { has_government = democratic }
+							threat > 0.50
+						}
+						AND = {
+							has_war = yes
+							enemies_strength_ratio > 1.5
+						}
+					}
+				}
+			}
+
+			ai_will_do = {
+				base = 1
+			}
+
+			modifier = {
+				political_power_factor = -0.06
+				training_time_army_factor = 0.05
+				conscription_factor = 0.15
+			}
+
+			cancel_if_invalid = no
+		}
+		age_15 = {
+
+			cost = 75
+			removal_cost = -1
+			level = 3
+			visible = { #şuanlık bunu kullanan bir ai yok age 17 irq tarafından kullanılıyor #TODO
+				NOT = {
+					has_country_flag = ai_country
+				}
+			}
+			available = {
+				has_war = yes
+				enemies_strength_ratio > 1.5
+				NOT = {
+					hidden_trigger = {
+						has_country_flag = lim_vol_dis
+					}
+					has_idea = limited_conscription
+					has_idea = volunteer_only
+					has_idea = disarmed_nation
+				}
+			}
+
+			ai_will_do = {
+				base = 1
+			}
+
+			modifier = {
+				political_power_factor = -0.09
+				training_time_army_factor = 0.10
+				conscription_factor = 0.20
+			}
+
+			cancel_if_invalid = no
+		}
+		age_14 = {
+
+			cost = 75
+			removal_cost = -1
+			level = 2
+			visible = { #şuanlık bunu kullanan bir ai yok age 17 irq tarafından kullanılıyor #TODO
+				NOT = {
+					has_country_flag = ai_country
+				}
+			}
+			available = {
+				has_war = yes
+				enemies_strength_ratio > 1.5
+				NOT = {
+					has_idea = limited_conscription
+					has_idea = extensive_conscription
+					has_idea = volunteer_only
+					has_idea = disarmed_nation
+				}
+			}
+
+			ai_will_do = {
+				base = 1
+			}
+
+			modifier = {
+				conscription_factor = 0.25
+				training_time_army_factor = 0.15
+				political_power_factor = -0.12
+			}
+
+			cancel_if_invalid = no
+		}
+		all_must_serve_young = {
+
+			cost = 75
+			removal_cost = -1
+			level = 1
+			visible = { #şuanlık bunu kullanan bir ai yok age 17 irq tarafından kullanılıyor #TODO
+				NOT = {
+					has_country_flag = ai_country
+				}
+			}
+			available = {
+				has_war = yes
+				enemies_strength_ratio > 1.5
+				OR = {
+					has_idea = all_adults_serve
+					has_idea = scraping_the_barrel
+				}
+			}
+
+			ai_will_do = {
+				base = 1
+			}
+
+			modifier = {
+				conscription_factor = 0.35
+				training_time_army_factor = 0.20
+				political_power_factor = -0.15
+				stability_factor = -0.05
+			}
+
+			cancel_if_invalid = no
+		}
+	}
+}
+

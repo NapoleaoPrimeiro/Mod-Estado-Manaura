@@ -1,0 +1,292 @@
+﻿### eo
+focus_tree = {
+	id = german_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10000
+			tag = GER
+		}
+	}
+	continuous_focus_position = { x = 500 y = 1300 }
+	shortcut = {
+		name = "Göterdamerung dlc"
+		target = GER_dlc_oppose
+		scroll_wheel_factor = 1.0
+		trigger = {
+			always = yes
+			# If FALSE, this will not display. If true, it will not supercede allow conditions of target focus.
+		}
+	}
+	shortcut = {
+		name = "ger_6"
+		target = ger_6
+		scroll_wheel_factor = 1.0
+		trigger = {
+			always = yes
+			# If FALSE, this will not display. If true, it will not supercede allow conditions of target focus.
+		}
+	}
+	shortcut = {
+		name = "Revive the Kaiserreich"
+		target = ger_5
+				scroll_wheel_factor = 1.0
+		trigger = {
+			always = yes
+			# If FALSE, this will not display. If true, it will not supercede allow conditions of target focus.
+		}
+	}
+
+	shortcut = {
+		name = GER_historical_path_shortcut
+		target = ger_4
+		scroll_wheel_factor = 1.0
+		trigger = {
+			always = yes
+			# If FALSE, this will not display. If true, it will not supercede allow conditions of target focus.
+		}
+	}
+	shortcut = {
+		name = "Assinate of Führer"
+		target = ger_1
+		scroll_wheel_factor = 1.0
+		trigger = {
+			always = yes
+			# If FALSE, this will not display. If true, it will not supercede allow conditions of target focus.
+		}
+	}
+
+	shortcut = {
+		name = GER_economic_path_shortcut
+		target = GER_construct_the_reichsautobahn 
+		scroll_wheel_factor = 0.75
+	}
+	
+	shortcut = {
+		name = GER_air_doctrine_shortcut
+		target = GER_expanding_the_luftwaffe
+		scroll_wheel_factor = 1.0
+	}
+
+	shortcut = {
+		name = GER_military_doctrine_shortcut
+		target = GER_develop_modern_maneuver_warfare
+		scroll_wheel_factor = 1.0
+	}
+
+	default = no
+
+	shared_focus = GER_prioritize_economic_growth
+	shared_focus = GER_the_four_year_plan
+	shared_focus = GER_develop_modern_maneuver_warfare
+	shared_focus = GER_expanding_the_luftwaffe
+	shared_focus = GER_strengthen_the_kriegsmarine
+	
+	focus = {
+		id = ger_1
+		#icon = GFX_HUN_kgcjhd6h-348670
+		icon = GFX_goal_ger_kill_hitler
+		x = 8
+		y = 0
+		cost = 1
+		ai_will_do = {
+			factor = 10
+		}
+		mutually_exclusive = {focus = ger_4 }
+		mutually_exclusive = {focus = ger_5 }
+		mutually_exclusive = {focus = ger_6 }
+		mutually_exclusive = {focus = GER_dlc_oppose }
+		mutually_exclusive = {focus = GER_h02 }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+		relative_position_id = GER_the_four_year_plan
+		completion_reward = {
+		country_event = fracomev.67
+		remove_ideas = ger_wherm
+		add_stability = -0.05
+				mark_focus_tree_layout_dirty = yes
+		add_popularity = {
+    ideology = fascism
+    popularity = -0.05
+}
+		#country_event = germany.71
+		add_war_support = -0.1
+			42 = { set_demilitarized_zone = no }
+			51 = { set_demilitarized_zone = no }
+			978 = { set_demilitarized_zone = no }
+			custom_effect_tooltip = GER_rhineland_ultimatum
+			add_political_power = 120
+			army_experience = 5
+			add_named_threat = { threat = 5 name = GER_rhineland }
+			if = {
+				limit = { FRA = { is_subject = no } }
+				FRA = {
+					country_event = { id = germany.60 }
+					custom_effect_tooltip = may_provoke_hostility
+				}
+			}
+			 load_focus_tree = { tree = germany_dead_hitler keep_completed = yes }
+		}		
+	}
+	
+
+	
+	focus = {
+		id = ger_4 
+		icon = GFX_HUN_gjmdfkmg-348673
+		x = 2
+		y = 0
+		cost = 1
+		ai_will_do = {
+			factor = 10
+		}
+		mutually_exclusive = {focus = ger_1}
+		mutually_exclusive = {focus = ger_5}
+		mutually_exclusive = {focus = ger_6}
+		mutually_exclusive = {focus = GER_dlc_oppose}
+		mutually_exclusive = {focus = GER_h02}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		relative_position_id = ger_1
+		completion_reward = {
+				mark_focus_tree_layout_dirty = yes
+		set_power_balance = { 
+    id = GER_power_balance
+    left_side = default_left_side
+    right_side = default_right_side
+}
+add_stability = 0.05  
+add_country_leader_trait = empire_builder 
+#add_country_leader_trait = fascist_sympathies
+				add_ideas = fascist_influence
+		add_political_power = 150
+				load_focus_tree = { tree = germany_hitler keep_completed = yes }
+		}
+		
+	}
+	
+	focus = {
+		id = ger_5
+		icon = GFX_HUN_gjfxhxgfh-348682
+		x = 4
+		y = 0
+		cost = 1
+		ai_will_do = {
+			factor = 10
+		}
+		select_effect = {
+			country_event = {
+			    id = wuw_GER_civil_war.7
+			    days = 7
+			}
+		}
+		mutually_exclusive = {focus = ger_4}
+		mutually_exclusive = {focus = ger_1}
+		mutually_exclusive = {focus = ger_6}
+		mutually_exclusive = {focus = GER_dlc_oppose}
+		mutually_exclusive = {focus = GER_h02}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		relative_position_id = ger_1
+		completion_reward = {
+				mark_focus_tree_layout_dirty = yes
+				add_timed_idea = {
+				idea = neutrality_influence
+				days = 365
+			}
+			load_focus_tree = { tree = germany_kill_hitler keep_completed = yes }
+		}
+		
+	}
+	
+	focus = {
+		id = ger_6
+		icon = GFX_HUN_fgxjgfgfhxfg-348674   
+		x = 6	
+		y = 0
+		cost = 1
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id = ger_1
+		mutually_exclusive = {focus = ger_4}
+		mutually_exclusive = {focus = ger_5}
+		mutually_exclusive = {focus = ger_1}
+		mutually_exclusive = {focus = GER_dlc_oppose}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+				mark_focus_tree_layout_dirty = yes
+		add_war_support = 0.1
+				add_timed_idea = {
+				idea = communist_influence
+				days = 365
+			}
+			load_focus_tree = { tree = germany_bavyera keep_completed = yes }
+		}
+	}
+	focus = {
+		id = GER_dlc_oppose
+		icon = GFX_GER_SS_VT
+		x = 2
+		y = 0
+		cost = 1
+		ai_will_do = {
+			factor = 10
+		}
+		allow_branch = {
+			#has_dlc = "Gotterdammerung" 
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+				NOT = {
+					has_completed_focus = GER_rhineland
+				}
+			}
+		}
+		mutually_exclusive = {focus = ger_4}
+		mutually_exclusive = {focus = ger_1}
+		mutually_exclusive = {focus = ger_5}
+		mutually_exclusive = {focus = ger_6}
+		mutually_exclusive = {focus = GER_h02}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+		relative_position_id = ger_6
+		completion_reward = {
+				mark_focus_tree_layout_dirty = yes
+				add_timed_idea = {
+				idea = neutrality_influence
+				days = 220
+			}
+				mark_focus_tree_layout_dirty = yes
+			add_political_power = 120
+			 load_focus_tree = { tree = germany_dlc keep_completed = yes }
+		}		
+	}
+	focus = {
+		id = GER_h02 #test
+		icon = GFX_HUN_fgxjgfgfhxfg-348674   
+		x = 6	
+		y = 0
+		cost = 1
+		ai_will_do = {
+			factor = 10
+		}
+		relative_position_id = ger_1
+		mutually_exclusive = {focus = ger_4}
+		mutually_exclusive = {focus = ger_5}
+		mutually_exclusive = {focus = ger_1}
+		mutually_exclusive = {focus = GER_dlc_oppose}
+		allow_branch = {
+			always = no
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+				mark_focus_tree_layout_dirty = yes
+		add_war_support = 0.1
+			load_focus_tree = { tree = HRE_shared_focus keep_completed = yes }
+		}
+	}		
+}
+#eo

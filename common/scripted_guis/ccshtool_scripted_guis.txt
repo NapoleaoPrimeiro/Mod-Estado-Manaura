@@ -1,0 +1,1949 @@
+scripted_gui = {
+	ccshtool_toggle_visibility_window = {
+		context_type = player_context
+
+		window_name = "ccshtool_toggle_visibility_window"
+
+		visible = {
+			ROOT = { has_country_flag = ccshtool_enabled_cflag }
+		}
+
+		effects = {
+			ccshtool_toggle_visibility_button_click = {
+				if = {
+					limit = { ROOT = { has_country_flag = ccshtool_open_cflag } }
+					ROOT = { clr_country_flag = ccshtool_open_cflag }
+					set_variable = { global.ccshtool_target_var = 0 }
+					set_variable = { global.ccshtool_receiver_var = 0 }
+					clear_array = global.ccshtool_states_marked
+					log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Closed the Host Tool"
+				}
+				else = {
+					ROOT = { set_country_flag = ccshtool_open_cflag }
+					log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Opened the Host Tool"
+				}
+			}
+		}
+
+		ai_enabled = { always = no }
+	}
+
+	ccshtool_main_window = {
+		context_type = player_context
+
+		window_name = "ccshtool_main_window"
+
+		visible = {
+			ROOT = {
+				has_country_flag = ccshtool_enabled_cflag
+				has_country_flag = ccshtool_open_cflag
+			}
+		}
+
+		triggers = {
+		### Title bar
+			ccshtool_in_use_text_visible = {
+				# enable visual indicator if target/receiver is locked
+				OR = {
+					NOT = { check_variable = { global.ccshtool_target_var = 0 } }
+					NOT = { check_variable = { global.ccshtool_receiver_var = 0 } }
+				}
+			}
+			ccshtool_in_use_button_visible = {
+				# enable visual indicator if target/receiver is locked
+				OR = {
+					NOT = { check_variable = { global.ccshtool_target_var = 0 } }
+					NOT = { check_variable = { global.ccshtool_receiver_var = 0 } }
+				}
+			}
+			ccshtool_switch_button_click_enabled = {
+				# check if both target and receiver are locked
+				NOT = { check_variable = { global.ccshtool_target_var = 0 } }
+				NOT = { check_variable = { global.ccshtool_receiver_var = 0 } }
+			}
+			ccshtool_add_host_button_click_enabled = {
+				# check player isn't the target and if the target doesn't have host tool already
+				NOT = { var:global.ccshtool_target_var = { tag = ROOT } }
+				NOT = { var:global.ccshtool_target_var = { has_country_flag = ccshtool_enabled_cflag } }
+			}
+			ccshtool_remove_host_button_click_enabled = {
+				# check player isn't the target and if the target has the host tool
+				NOT = { var:global.ccshtool_target_var = { tag = ROOT } }
+				var:global.ccshtool_target_var = { has_country_flag = ccshtool_enabled_cflag }
+			}
+
+		### State tools
+			ccshtool_transfer_states_button_click_enabled = {
+				# check if receiver is locked and array is not empty, and this won't annex the country (use the annex tool)
+				NOT = { check_variable = { global.ccshtool_receiver_var = 0 } }
+				NOT = { check_variable = { global.ccshtool_states_marked^num = 0 } }
+				var:global.ccshtool_target_var = { num_of_controlled_states > global.ccshtool_states_marked^num }
+			}
+			ccshtool_set_compliance_button_click_enabled = {
+				# check if target is locked and array is not empty
+				NOT = { check_variable = { global.ccshtool_target_var = 0 } }
+				NOT = { check_variable = { global.ccshtool_states_marked^num = 0 } }
+			}
+			ccshtool_core_button_click_enabled = {
+				# check if target is locked and array is not empty
+				NOT = { check_variable = { global.ccshtool_target_var = 0 } }
+				NOT = { check_variable = { global.ccshtool_states_marked^num = 0 } }
+			}
+			ccshtool_claim_button_click_enabled = {
+				# check if target and receiver is locked and array is not empty
+				NOT = { check_variable = { global.ccshtool_target_var = 0 } }
+				NOT = { check_variable = { global.ccshtool_receiver_var = 0 } }
+				NOT = { check_variable = { global.ccshtool_states_marked^num = 0 } }
+			}
+
+		### Politics tools - Democratic
+			# Change ruling party checks if target is locked and isn't this ideology already
+			ccshtool_democratic_change_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } } }#   NOT = { var:global.ccshtool_target_var = { has_government = democratic } } }
+
+			# Add/remove buttons checks if target is locked and prevents % below 0 and above 100
+			ccshtool_democratic_add_1_button_click_enabled  = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { democratic < 0.99 } }
+			ccshtool_democratic_add_5_button_click_enabled  = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { democratic < 0.95 } }
+			ccshtool_democratic_add_10_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { democratic < 0.90 } }
+			ccshtool_democratic_sub_1_button_click_enabled  = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { democratic > 0.01 } }
+			ccshtool_democratic_sub_5_button_click_enabled  = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { democratic > 0.05 } }
+			ccshtool_democratic_sub_10_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { democratic > 0.10 } }
+
+			# Not all buttons are needed
+			ccshtool_democratic_subideology1_button_visible = { always = yes }	# top row
+			ccshtool_democratic_subideology2_button_visible = { always = yes }
+			ccshtool_democratic_subideology3_button_visible = { always = yes }
+			ccshtool_democratic_subideology4_button_visible = { always = yes }
+			ccshtool_democratic_subideology5_button_visible = { always = yes }
+			ccshtool_democratic_subideology6_button_visible = { always = yes }
+			ccshtool_democratic_subideology7_button_visible = { always = yes }
+			ccshtool_democratic_subideology8_button_visible = { always = yes }
+			ccshtool_democratic_subideology9_button_visible = { always = yes }
+			ccshtool_democratic_subideology10_button_visible = { always = yes }	# bottom row
+			ccshtool_democratic_subideology11_button_visible = { always = no }
+			ccshtool_democratic_subideology12_button_visible = { always = no }
+			ccshtool_democratic_subideology13_button_visible = { always = no }
+			ccshtool_democratic_subideology14_button_visible = { always = no }
+			ccshtool_democratic_subideology15_button_visible = { always = no }
+			ccshtool_democratic_subideology16_button_visible = { always = no }
+			ccshtool_democratic_subideology17_button_visible = { always = no }
+			ccshtool_democratic_subideology18_button_visible = { always = no }
+
+			# All _click_enabled triggers check the target is locked and has the correct ideology for these subideologies
+			ccshtool_democratic_subideology1_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = democratic } }	# top row
+			ccshtool_democratic_subideology2_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = democratic } }
+			ccshtool_democratic_subideology3_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = democratic } }
+			ccshtool_democratic_subideology4_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = democratic } }
+			ccshtool_democratic_subideology5_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = democratic } }
+			ccshtool_democratic_subideology6_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = democratic } }
+			ccshtool_democratic_subideology7_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = democratic } }
+			ccshtool_democratic_subideology8_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = democratic } }
+			ccshtool_democratic_subideology9_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = democratic } }
+			ccshtool_democratic_subideology10_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = democratic } }	# bottom row
+			ccshtool_democratic_subideology11_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = democratic } }
+			ccshtool_democratic_subideology12_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = democratic } }
+			ccshtool_democratic_subideology13_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = democratic } }
+			ccshtool_democratic_subideology14_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = democratic } }
+			ccshtool_democratic_subideology15_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = democratic } }
+			ccshtool_democratic_subideology16_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = democratic } }
+			ccshtool_democratic_subideology17_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = democratic } }
+			ccshtool_democratic_subideology18_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = democratic } }
+
+		### Politics tools - Communism
+			# Change ruling party checks if target is locked and isn't this ideology already
+			ccshtool_communism_change_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } } }#   NOT = { var:global.ccshtool_target_var = { has_government = communism } } }
+
+			# Add/remove buttons checks if target is locked and prevents % below 0 and above 100
+			ccshtool_communism_add_1_button_click_enabled  = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { communism < 0.99 } }
+			ccshtool_communism_add_5_button_click_enabled  = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { communism < 0.95 } }
+			ccshtool_communism_add_10_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { communism < 0.90 } }
+			ccshtool_communism_sub_1_button_click_enabled  = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { communism > 0.01 } }
+			ccshtool_communism_sub_5_button_click_enabled  = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { communism > 0.05 } }
+			ccshtool_communism_sub_10_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { communism > 0.10 } }
+
+			# Not all buttons are needed
+			ccshtool_communism_subideology1_button_visible = { always = yes }	# top row
+			ccshtool_communism_subideology2_button_visible = { always = yes }
+			ccshtool_communism_subideology3_button_visible = { always = yes }
+			ccshtool_communism_subideology4_button_visible = { always = yes }
+			ccshtool_communism_subideology5_button_visible = { always = yes }
+			ccshtool_communism_subideology6_button_visible = { always = yes }
+			ccshtool_communism_subideology7_button_visible = { always = yes }
+			ccshtool_communism_subideology8_button_visible = { always = yes }
+			ccshtool_communism_subideology9_button_visible = { always = yes }
+			ccshtool_communism_subideology10_button_visible = { always = yes }	# bottom row
+			ccshtool_communism_subideology11_button_visible = { always = yes }
+			ccshtool_communism_subideology12_button_visible = { always = yes }
+			ccshtool_communism_subideology13_button_visible = { always = no }
+			ccshtool_communism_subideology14_button_visible = { always = no }
+			ccshtool_communism_subideology15_button_visible = { always = no }
+			ccshtool_communism_subideology16_button_visible = { always = no }
+			ccshtool_communism_subideology17_button_visible = { always = no }
+			ccshtool_communism_subideology18_button_visible = { always = no }
+
+			# All _click_enabled triggers check the target is locked and has the correct ideology for these subideologies
+			ccshtool_communism_subideology1_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = communism } }	# top row
+			ccshtool_communism_subideology2_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = communism } }
+			ccshtool_communism_subideology3_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = communism } }
+			ccshtool_communism_subideology4_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = communism } }
+			ccshtool_communism_subideology5_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = communism } }
+			ccshtool_communism_subideology6_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = communism } }
+			ccshtool_communism_subideology7_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = communism } }
+			ccshtool_communism_subideology8_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = communism } }
+			ccshtool_communism_subideology9_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = communism } }
+			ccshtool_communism_subideology10_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = communism } }	# bottom row
+			ccshtool_communism_subideology11_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = communism } }
+			ccshtool_communism_subideology12_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = communism } }
+			ccshtool_communism_subideology13_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = communism } }
+			ccshtool_communism_subideology14_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = communism } }
+			ccshtool_communism_subideology15_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = communism } }
+			ccshtool_communism_subideology16_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = communism } }
+			ccshtool_communism_subideology17_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = communism } }
+			ccshtool_communism_subideology18_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = communism } }
+
+		### Politics tools - Fascism
+			# Change ruling party checks if target is locked and isn't this ideology already
+			ccshtool_fascism_change_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } } }#   NOT = { var:global.ccshtool_target_var = { has_government = fascism } } }
+
+			# Add/remove buttons checks if target is locked and prevents % below 0 and above 100
+			ccshtool_fascism_add_1_button_click_enabled  = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { fascism < 0.99 } }
+			ccshtool_fascism_add_5_button_click_enabled  = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { fascism < 0.95 } }
+			ccshtool_fascism_add_10_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { fascism < 0.90 } }
+			ccshtool_fascism_sub_1_button_click_enabled  = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { fascism > 0.01 } }
+			ccshtool_fascism_sub_5_button_click_enabled  = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { fascism > 0.05 } }
+			ccshtool_fascism_sub_10_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { fascism > 0.10 } }
+
+			# Not all buttons are needed
+			ccshtool_fascism_subideology1_button_visible = { always = yes }	# top row
+			ccshtool_fascism_subideology2_button_visible = { always = yes }
+			ccshtool_fascism_subideology3_button_visible = { always = yes }
+			ccshtool_fascism_subideology4_button_visible = { always = yes }
+			ccshtool_fascism_subideology5_button_visible = { always = yes }
+			ccshtool_fascism_subideology6_button_visible = { always = yes }
+			ccshtool_fascism_subideology7_button_visible = { always = yes }
+			ccshtool_fascism_subideology8_button_visible = { always = yes }
+			ccshtool_fascism_subideology9_button_visible = { always = yes }
+			ccshtool_fascism_subideology10_button_visible = { always = no }	# bottom row
+			ccshtool_fascism_subideology11_button_visible = { always = no }
+			ccshtool_fascism_subideology12_button_visible = { always = no }
+			ccshtool_fascism_subideology13_button_visible = { always = no }
+			ccshtool_fascism_subideology14_button_visible = { always = no }
+			ccshtool_fascism_subideology15_button_visible = { always = no }
+			ccshtool_fascism_subideology16_button_visible = { always = no }
+			ccshtool_fascism_subideology17_button_visible = { always = no }
+			ccshtool_fascism_subideology18_button_visible = { always = no }
+
+			# All _click_enabled triggers check the target is locked and has the correct ideology for these subideologies
+			ccshtool_fascism_subideology1_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = fascism } }	# top row
+			ccshtool_fascism_subideology2_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = fascism } }
+			ccshtool_fascism_subideology3_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = fascism } }
+			ccshtool_fascism_subideology4_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = fascism } }
+			ccshtool_fascism_subideology5_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = fascism } }
+			ccshtool_fascism_subideology6_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = fascism } }
+			ccshtool_fascism_subideology7_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = fascism } }
+			ccshtool_fascism_subideology8_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = fascism } }
+			ccshtool_fascism_subideology9_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = fascism } }
+			ccshtool_fascism_subideology10_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = fascism } }	# bottom row
+			ccshtool_fascism_subideology11_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = fascism } }
+			ccshtool_fascism_subideology12_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = fascism } }
+			ccshtool_fascism_subideology13_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = fascism } }
+			ccshtool_fascism_subideology14_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = fascism } }
+			ccshtool_fascism_subideology15_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = fascism } }
+			ccshtool_fascism_subideology16_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = fascism } }
+			ccshtool_fascism_subideology17_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = fascism } }
+			ccshtool_fascism_subideology18_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = fascism } }
+
+		### Politics tools - Neutrality
+			# Change ruling party checks if target is locked and isn't this ideology already
+			ccshtool_neutrality_change_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } } }#   NOT = { var:global.ccshtool_target_var = { has_government = neutrality } } }
+
+			# Add/remove buttons checks if target is locked and prevents % below 0 and above 100
+			ccshtool_neutrality_add_1_button_click_enabled  = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { neutrality < 0.99 } }
+			ccshtool_neutrality_add_5_button_click_enabled  = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { neutrality < 0.95 } }
+			ccshtool_neutrality_add_10_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { neutrality < 0.90 } }
+			ccshtool_neutrality_sub_1_button_click_enabled  = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { neutrality > 0.01 } }
+			ccshtool_neutrality_sub_5_button_click_enabled  = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { neutrality > 0.05 } }
+			ccshtool_neutrality_sub_10_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { neutrality > 0.10 } }
+
+			# Not all buttons are needed
+			ccshtool_neutrality_subideology1_button_visible = { always = yes }	# top row
+			ccshtool_neutrality_subideology2_button_visible = { always = yes }
+			ccshtool_neutrality_subideology3_button_visible = { always = yes }
+			ccshtool_neutrality_subideology4_button_visible = { always = yes }
+			ccshtool_neutrality_subideology5_button_visible = { always = yes }
+			ccshtool_neutrality_subideology6_button_visible = { always = yes }
+			ccshtool_neutrality_subideology7_button_visible = { always = yes }
+			ccshtool_neutrality_subideology8_button_visible = { always = yes }
+			ccshtool_neutrality_subideology9_button_visible = { always = yes }
+			ccshtool_neutrality_subideology10_button_visible = { always = yes }	# bottom row
+			ccshtool_neutrality_subideology11_button_visible = { always = yes }
+			ccshtool_neutrality_subideology12_button_visible = { always = yes }
+			ccshtool_neutrality_subideology13_button_visible = { always = yes }
+			ccshtool_neutrality_subideology14_button_visible = { always = yes }
+			ccshtool_neutrality_subideology15_button_visible = { always = yes }
+			ccshtool_neutrality_subideology16_button_visible = { always = yes }
+			ccshtool_neutrality_subideology17_button_visible = { always = yes }
+			ccshtool_neutrality_subideology18_button_visible = { always = yes }
+
+			# All _click_enabled triggers check the target is locked and has the correct ideology for these subideologies
+			ccshtool_neutrality_subideology1_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = neutrality } }	# top row
+			ccshtool_neutrality_subideology2_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = neutrality } }
+			ccshtool_neutrality_subideology3_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = neutrality } }
+			ccshtool_neutrality_subideology4_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = neutrality } }
+			ccshtool_neutrality_subideology5_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = neutrality } }
+			ccshtool_neutrality_subideology6_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = neutrality } }
+			ccshtool_neutrality_subideology7_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = neutrality } }
+			ccshtool_neutrality_subideology8_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = neutrality } }
+			ccshtool_neutrality_subideology9_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = neutrality } }
+			ccshtool_neutrality_subideology10_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = neutrality } }	# bottom row
+			ccshtool_neutrality_subideology11_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = neutrality } }
+			ccshtool_neutrality_subideology12_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = neutrality } }
+			ccshtool_neutrality_subideology13_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = neutrality } }
+			ccshtool_neutrality_subideology14_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = neutrality } }
+			ccshtool_neutrality_subideology15_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = neutrality } }
+			ccshtool_neutrality_subideology16_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = neutrality } }
+			ccshtool_neutrality_subideology17_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = neutrality } }
+			ccshtool_neutrality_subideology18_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_government = neutrality } }
+
+		### Autonomy tools
+			# add/remove autonomy points - check if target is locked and that they're a subject
+			ccshtool_autonomy_add_button_click_enabled = {
+				NOT = { check_variable = { global.ccshtool_target_var = 0 } }
+				var:global.ccshtool_target_var = { compare_autonomy_progress_ratio < 1 }
+			}
+			ccshtool_autonomy_sub_button_click_enabled = {
+				NOT = { check_variable = { global.ccshtool_target_var = 0 } }
+				var:global.ccshtool_target_var = { compare_autonomy_progress_ratio > 0 }
+				var:global.ccshtool_target_var = { compare_autonomy_progress_ratio < 1 }
+			}
+
+			# autonomy state and filler button visibility - disable with fillers when autonomy state doesn't exist
+			ccshtool_autonomy_annex_button_visible = { always = yes }
+			ccshtool_autonomy_puppet_button_visible = { always = yes }
+			ccshtool_autonomy_reichskommissariat_button_visible = { always = yes }
+			ccshtool_autonomy_imperial_associate_button_visible = { always = yes }
+			ccshtool_autonomy_colony_button_visible = { always = yes }
+			ccshtool_autonomy_dominion_button_visible = { always = yes }
+			ccshtool_autonomy_personal_union_button_visible = { always = yes }
+			ccshtool_autonomy_collaboration_government_button_visible = { always = yes }
+			ccshtool_autonomy_protected_government_button_visible = { always = no }
+			ccshtool_autonomy_free_button_visible = { always = yes }
+			ccshtool_autonomy_filler1_button_visible = { always = no }		# this button is used as the default autonomy state
+			ccshtool_autonomy_filler2_button_visible = { always = no }
+			ccshtool_autonomy_filler3_button_visible = { always = no }
+			ccshtool_autonomy_filler4_button_visible = { always = no }
+			ccshtool_autonomy_filler5_button_visible = { always = no }
+			ccshtool_autonomy_filler6_button_visible = { always = no }
+			ccshtool_autonomy_filler7_button_visible = { always = no }
+			ccshtool_autonomy_filler8_button_visible = { always = no }
+
+			# autonomy state and filler button _click_enabled - check if target and receiver are locked, and target doesn't already have this autonomy
+			ccshtool_autonomy_annex_button_click_enabled = {
+				# check if target is not ROOT (annexing yourself could be bad news)
+				NOT = { var:global.ccshtool_target_var = { tag = ROOT } }
+				NOT = { check_variable = { global.ccshtool_target_var = 0 } }
+				NOT = { check_variable = { global.ccshtool_receiver_var = 0 } }
+			}
+			ccshtool_autonomy_puppet_button_click_enabled = {
+				NOT = { check_variable = { global.ccshtool_target_var = 0 } }
+				NOT = { check_variable = { global.ccshtool_receiver_var = 0 } }
+				NOT = { var:global.ccshtool_target_var = { has_autonomy_state = autonomy_puppet } }
+			}
+			ccshtool_autonomy_reichskommissariat_button_click_enabled = {
+				NOT = { check_variable = { global.ccshtool_target_var = 0 } }
+				NOT = { check_variable = { global.ccshtool_receiver_var = 0 } }
+				has_dlc = "Death or Dishonor"
+				NOT = { var:global.ccshtool_target_var = { has_autonomy_state = autonomy_reichskommissariat } }
+			}
+			ccshtool_autonomy_imperial_associate_button_click_enabled = {
+				NOT = { check_variable = { global.ccshtool_target_var = 0 } }
+				NOT = { check_variable = { global.ccshtool_receiver_var = 0 } }
+				has_dlc = "Waking the Tiger"
+				NOT = { var:global.ccshtool_target_var = { has_autonomy_state = autonomy_wtt_imperial_associate } }
+			}
+			ccshtool_autonomy_colony_button_click_enabled = {
+				NOT = { check_variable = { global.ccshtool_target_var = 0 } }
+				NOT = { check_variable = { global.ccshtool_receiver_var = 0 } }
+				has_dlc = "Together for Victory"
+				NOT = { var:global.ccshtool_target_var = { has_autonomy_state = autonomy_colony } }
+			}
+			ccshtool_autonomy_dominion_button_click_enabled = {
+				NOT = { check_variable = { global.ccshtool_target_var = 0 } }
+				NOT = { check_variable = { global.ccshtool_receiver_var = 0 } }
+				has_dlc = "Together for Victory"
+				NOT = { var:global.ccshtool_target_var = { has_autonomy_state = autonomy_dominion } }
+			}
+			ccshtool_autonomy_personal_union_button_click_enabled = {
+				NOT = { check_variable = { global.ccshtool_target_var = 0 } }
+				NOT = { check_variable = { global.ccshtool_receiver_var = 0 } }
+				has_dlc = "No Step Back"
+				NOT = { var:global.ccshtool_target_var = { has_autonomy_state = autonomy_personal_union } }
+			}
+			ccshtool_autonomy_collaboration_government_button_click_enabled = {
+				NOT = { check_variable = { global.ccshtool_target_var = 0 } }
+				NOT = { check_variable = { global.ccshtool_receiver_var = 0 } }
+				has_dlc = "La Resistance"
+				NOT = { var:global.ccshtool_target_var = { has_autonomy_state = autonomy_collaboration_government } }
+			}
+
+			ccshtool_autonomy_free_button_click_enabled = {
+				NOT = { check_variable = { global.ccshtool_target_var = 0 } }
+				NOT = { check_variable = { global.ccshtool_receiver_var = 0 } }
+				var:global.ccshtool_target_var = { is_subject_of = var:global.ccshtool_receiver_var }
+			}
+			ccshtool_autonomy_filler1_button_click_enabled = {
+				# this button is used as the default autonomy state
+				NOT = { check_variable = { global.ccshtool_target_var = 0 } }
+				NOT = { check_variable = { global.ccshtool_receiver_var = 0 } }
+			}
+			ccshtool_autonomy_filler2_button_click_enabled = { always = no }
+			ccshtool_autonomy_filler3_button_click_enabled = { always = no }
+			ccshtool_autonomy_filler4_button_click_enabled = { always = no }
+			ccshtool_autonomy_filler5_button_click_enabled = { always = no }
+			ccshtool_autonomy_filler6_button_click_enabled = { always = no }
+			ccshtool_autonomy_filler7_button_click_enabled = { always = no }
+			ccshtool_autonomy_filler8_button_click_enabled = { always = no }
+
+		### Country tools - variables
+			# Stability - add/remove buttons checks if target is locked and prevents % below 0 and above 100 (exclusive)
+			ccshtool_stability_sub_5_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_stability > 0.05 } }
+			ccshtool_stability_sub_1_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_stability > 0.01 } }
+			ccshtool_stability_add_1_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_stability < 0.99 } }
+			ccshtool_stability_add_5_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_stability < 0.95 } }
+
+			# War Support - add/remove buttons checks if target is locked and prevents % below 0 and above 100 (exclusive)
+			ccshtool_war_support_sub_5_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_war_support > 0.05 } }
+			ccshtool_war_support_sub_1_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_war_support > 0.01 } }
+			ccshtool_war_support_add_1_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_war_support < 0.99 } }
+			ccshtool_war_support_add_5_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_war_support < 0.95 } }
+
+			# Political Power - add/remove buttons checks if target is locked and prevents pp below 0 and above 1000 (inclusive)
+			ccshtool_pp_sub_50_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_political_power > 49  } }
+			ccshtool_pp_sub_10_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_political_power > 9   } }
+			ccshtool_pp_add_10_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_political_power < 991 } }
+			ccshtool_pp_add_50_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_political_power < 951 } }
+
+			# Money (RT56 RP) - add/remove buttons checks if target is locked and prevents $ below 0 and above 100 (inclusive)
+			ccshtool_money_sub_5_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { check_variable = { THIS.si_money_var > 4   } } }
+			ccshtool_money_sub_1_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { check_variable = { THIS.si_money_var > 0   } } }
+			ccshtool_money_add_1_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { check_variable = { THIS.si_money_var < 100 } } }
+			ccshtool_money_add_5_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { check_variable = { THIS.si_money_var < 96  } } }
+
+			# Army XP - add/remove buttons checks if target is locked and prevents xp below 0 and above 500 (inclusive)
+			ccshtool_army_xp_sub_50_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_army_experience > 49  } }
+			ccshtool_army_xp_sub_10_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_army_experience > 9   } }
+			ccshtool_army_xp_add_10_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_army_experience < 491 } }
+			ccshtool_army_xp_add_50_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_army_experience < 451 } }
+
+			# Navy XP - add/remove buttons checks if target is locked and prevents xp below 0 and above 500 (inclusive)
+			ccshtool_navy_xp_sub_50_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_navy_experience > 49 } }
+			ccshtool_navy_xp_sub_10_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_navy_experience > 9   } }
+			ccshtool_navy_xp_add_10_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_navy_experience < 491 } }
+			ccshtool_navy_xp_add_50_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_navy_experience < 451 } }
+
+			# Air XP - add/remove buttons checks if target is locked and prevents xp below 0 and above 500 (inclusive)
+			ccshtool_air_xp_sub_50_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_air_experience > 49  } }
+			ccshtool_air_xp_sub_10_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_air_experience > 9   } }
+			ccshtool_air_xp_add_10_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_air_experience < 491 } }
+			ccshtool_air_xp_add_50_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } }   var:global.ccshtool_target_var = { has_air_experience < 451 } }
+
+		### Country tools - research boosts
+			# checks if target is locked
+			ccshtool_research_boost_add_10_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } } }
+			ccshtool_research_boost_add_50_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } } }
+
+		### Country tools - misc
+			# refresh focus tree - checks if target is locked
+			ccshtool_refresh_focus_button_click_enabled = { NOT = { check_variable = { global.ccshtool_target_var = 0 } } }
+			
+			# tag switch - checks if target and receiver is locked, and that the target is a player
+			ccshtool_tag_switch_button_click_enabled = {
+				NOT = { check_variable = { global.ccshtool_target_var = 0 } }
+				NOT = { check_variable = { global.ccshtool_receiver_var = 0 } }
+				var:global.ccshtool_target_var = { is_ai = no }
+			}
+
+			# checks if only the target is locked and at war, otherwise also if receiver is locked and they're at war with each other
+			ccshtool_white_peace_button_click_enabled = {
+				NOT = { check_variable = { global.ccshtool_target_var = 0 } }
+				OR = {
+					AND = {
+						check_variable = { global.ccshtool_receiver_var = 0 }
+						var:global.ccshtool_target_var = { has_war = yes }
+					}
+					AND = {
+						NOT = { check_variable = { global.ccshtool_receiver_var = 0 } }
+						var:global.ccshtool_target_var = { has_war_with = global.ccshtool_receiver_var }
+					}
+				}
+			}
+
+			# checks if the target and receiver is locked, they're not at war with each other, and they're not allies
+			ccshtool_declare_war_button_click_enabled = {
+				NOT = { check_variable = { global.ccshtool_target_var = 0 } }
+				NOT = { check_variable = { global.ccshtool_receiver_var = 0 } }
+				NOT = { var:global.ccshtool_target_var = { has_war_with = global.ccshtool_receiver_var } }
+				NOT = { var:global.ccshtool_target_var = { is_ally_with = global.ccshtool_receiver_var } }
+			}
+
+			# check if the target is in a faction and not the faction leader. Otherwise if both are locked, checks they're not allies
+			ccshtool_join_faction_button_click_enabled = {
+				NOT = { check_variable = { global.ccshtool_target_var = 0 } }
+				OR = {
+					AND = {
+						var:global.ccshtool_target_var = { is_faction_leader = no }
+						var:global.ccshtool_target_var = { is_in_faction = yes }
+					}
+					AND = {
+						NOT = { check_variable = { global.ccshtool_receiver_var = 0 } }
+						var:global.ccshtool_target_var = { is_in_faction = no }
+						NOT = { var:global.ccshtool_target_var = { is_ally_with = global.ccshtool_receiver_var } }
+					}
+				}
+			}
+
+			# check if the target is locked and in a faction
+			ccshtool_leave_faction_button_click_enabled = {
+				NOT = { check_variable = { global.ccshtool_target_var = 0 } }
+				var:global.ccshtool_target_var = { is_in_faction = yes }
+			}
+
+		### Dummy GUI used as placeholder during interface initialisation so it doesn't look shit
+			ccshtool_in_use_button_click_enabled = { always = no }
+			ccshtool_target_dummy_toggle_off_button_click_enabled = { always = no }
+			ccshtool_receiver_dummy_toggle_off_button_click_enabled = { always = no }
+			ccshtool_mark_state_dummy_button_click_enabled = { always = no }
+			ccshtool_unmark_state_dummy_button_click_enabled = { always = no }
+			ccshtool_mark_all_states_dummy_button_click_enabled = { always = no }
+			ccshtool_unmark_all_states_dummy_button_click_enabled = { always = no }
+		}
+
+		effects = {
+		### Title bar
+			ccshtool_close_button_click = {
+				# close host tool
+				ROOT = { clr_country_flag = ccshtool_open_cflag }
+				set_variable = { global.ccshtool_target_var = 0 }
+				set_variable = { global.ccshtool_receiver_var = 0 }
+				clear_array = global.ccshtool_states_marked
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Closed the Host Tool"
+			}
+			ccshtool_info_button_click = {
+				# info button can be used as a quick reset
+				set_variable = { global.ccshtool_target_var = 0 }
+				set_variable = { global.ccshtool_receiver_var = 0 }
+				clear_array = global.ccshtool_states_marked
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Info button quick reset"
+			}
+			ccshtool_switch_button_click = {
+				# make the switch using a temp variable
+				set_temp_variable = { global.ccshtool_temp = global.ccshtool_target_var }
+				set_variable = { global.ccshtool_target_var = global.ccshtool_receiver_var }
+				set_variable = { global.ccshtool_receiver_var = global.ccshtool_temp }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Switched Target and Receiver"
+			}
+			ccshtool_add_host_button_click = {
+				# add host tool to target
+				var:global.ccshtool_target_var = { set_country_flag = ccshtool_enabled_cflag }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Gave the Host Tool to ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_remove_host_button_click = {
+				# remove host tool to target and close the window to avoid the sus
+				var:global.ccshtool_target_var = {
+					clr_country_flag = ccshtool_enabled_cflag
+					clr_country_flag = ccshtool_open_cflag
+					log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Removed the Host Tool from ([?global.ccshtool_target_var.GetTag])"
+				}
+			}
+
+		### State tools
+			ccshtool_transfer_states_button_click = {
+				# make the receiver the new state owner and controller for each marked state in the array, then clear the array
+				for_each_loop = {
+					array = global.ccshtool_states_marked
+					value = v
+					var:global.ccshtool_receiver_var = { transfer_state = v }
+				}
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Transferred [?global.ccshtool_states_marked^num] states from ([?global.ccshtool_target_var.GetTag]) to ([?global.ccshtool_receiver_var.GetTag])"
+				clear_array = global.ccshtool_states_marked
+			}
+			ccshtool_set_compliance_button_click = {
+				# make the target's states at least 60% compliance (i.e. states with more won't lose the higher %), then clear the array
+				for_each_loop = {
+					array = global.ccshtool_states_marked
+					value = v
+					if = {
+						limit = { var:v = { compliance < 60 } }
+						var:v = { set_compliance = 60 }
+					}
+				}
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Set compliance in [?global.ccshtool_states_marked^num] states to 60 for ([?global.ccshtool_target_var.GetTag])"
+				clear_array = global.ccshtool_states_marked
+			}
+			ccshtool_core_button_click = {
+				# core the target's states if not already a core, then clear the array
+				for_each_loop = {
+					array = global.ccshtool_states_marked
+					value = v
+					if = {
+						limit = { NOT = { var:v = { is_core_of = global.ccshtool_target_var } } }
+						var:global.ccshtool_target_var = { add_state_core = v }
+					}
+				}
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Cored [?global.ccshtool_states_marked^num] states for ([?global.ccshtool_target_var.GetTag])"
+				clear_array = global.ccshtool_states_marked
+			}
+			ccshtool_claim_button_click = {
+				# give the receiver a claim on the target's states if not already a claim, then clear the array
+				for_each_loop = {
+					array = global.ccshtool_states_marked
+					value = v
+					if = {
+						limit = { NOT = { var:v = { is_claimed_by = global.ccshtool_receiver_var } } }
+						var:v = { add_claim_by = global.ccshtool_receiver_var }
+					}
+				}
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Claimed [?global.ccshtool_states_marked^num] states owned by ([?global.ccshtool_target_var.GetTag]) for ([?global.ccshtool_receiver_var.GetTag])"
+				clear_array = global.ccshtool_states_marked
+			}
+
+		### Politics tools - Democratic
+			# Change ruling party
+			ccshtool_democratic_change_button_click = {
+				if = {
+					limit = { var:global.ccshtool_target_var = { has_government = democratic } }
+					if = {
+						limit = { var:global.ccshtool_target_var = { has_elections = yes } }
+						var:global.ccshtool_target_var = { set_politics = { ruling_party = THIS   elections_allowed = no } }
+						log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Disabled democratic elections for ([?global.ccshtool_target_var.GetTag])"
+					}
+					else = {
+						var:global.ccshtool_target_var = { set_politics = { ruling_party = THIS   elections_allowed = yes   election_frequency = 24 } }
+						log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Enabled democratic elections for ([?global.ccshtool_target_var.GetTag])"
+					}
+				}
+				else = {
+					var:global.ccshtool_target_var = { set_politics = { ruling_party = democratic } }
+					log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed ruling party of ([?global.ccshtool_target_var.GetTag]) to democratic"
+				}
+			}
+
+			# Add/remove buttons
+			ccshtool_democratic_add_1_button_click  = {
+				var:global.ccshtool_target_var = { add_popularity = { ideology = democratic   popularity = 0.01  } }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Added 1 democratic popularity to ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_democratic_add_5_button_click  = {
+				var:global.ccshtool_target_var = { add_popularity = { ideology = democratic   popularity = 0.05  } }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Added 5 democratic popularity to ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_democratic_add_10_button_click = {
+				var:global.ccshtool_target_var = { add_popularity = { ideology = democratic   popularity = 0.10  } }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Added 10 democratic popularity to ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_democratic_sub_1_button_click  = {
+				var:global.ccshtool_target_var = { add_popularity = { ideology = democratic   popularity = -0.01 } }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Removed 1 democratic popularity from ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_democratic_sub_5_button_click  = {
+				var:global.ccshtool_target_var = { add_popularity = { ideology = democratic   popularity = -0.05 } }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Removed 5 democratic popularity from ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_democratic_sub_10_button_click = {
+				var:global.ccshtool_target_var = { add_popularity = { ideology = democratic   popularity = -0.10 } }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Removed 10 democratic popularity from ([?global.ccshtool_target_var.GetTag])"
+			}
+
+			# Change subideologies
+			ccshtool_democratic_subideology1_button_click = {
+				var:global.ccshtool_target_var = { set_country_leader_ideology = conservatism }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to conservatism"
+			}
+			ccshtool_democratic_subideology2_button_click = {
+				var:global.ccshtool_target_var = { set_country_leader_ideology = liberalism }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to liberalism"
+			}
+			ccshtool_democratic_subideology3_button_click = {
+				var:global.ccshtool_target_var = { set_country_leader_ideology = socialism }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to socialism"
+			}
+			ccshtool_democratic_subideology6_button_click = {
+				var:global.ccshtool_target_var = { set_country_leader_ideology = centrism_democratic }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to centrism_democratic"
+			}
+			#ccshtool_democratic_subideology11_button_click = {  }
+			#ccshtool_democratic_subideology12_button_click = {  }
+			#ccshtool_democratic_subideology13_button_click = {  }
+			#ccshtool_democratic_subideology14_button_click = {  }
+			#ccshtool_democratic_subideology15_button_click = {  }
+			#ccshtool_democratic_subideology16_button_click = {  }
+			#ccshtool_democratic_subideology17_button_click = {  }
+			#ccshtool_democratic_subideology18_button_click = {  }
+
+		### Politics tools - Communism
+			# Change ruling party
+			ccshtool_communism_change_button_click = {
+				if = {
+					limit = { var:global.ccshtool_target_var = { has_government = communism } }
+					if = {
+						limit = { var:global.ccshtool_target_var = { has_elections = yes } }
+						var:global.ccshtool_target_var = { set_politics = { ruling_party = THIS   elections_allowed = no } }
+						log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Disabled communism elections for ([?global.ccshtool_target_var.GetTag])"
+					}
+					else = {
+						var:global.ccshtool_target_var = { set_politics = { ruling_party = THIS   elections_allowed = yes   election_frequency = 24 } }
+						log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Enabled communism elections for ([?global.ccshtool_target_var.GetTag])"
+					}
+				}
+				else = {
+					var:global.ccshtool_target_var = { set_politics = { ruling_party = communism } }
+					log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed ruling party of ([?global.ccshtool_target_var.GetTag]) to communism"
+				}
+			}
+
+			# Add/remove buttons
+			ccshtool_communism_add_1_button_click  = {
+				var:global.ccshtool_target_var = { add_popularity = { ideology = communism   popularity = 0.01  } }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Added 1 communism popularity to ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_communism_add_5_button_click  = {
+				var:global.ccshtool_target_var = { add_popularity = { ideology = communism   popularity = 0.05  } }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Added 5 communism popularity to ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_communism_add_10_button_click = {
+				var:global.ccshtool_target_var = { add_popularity = { ideology = communism   popularity = 0.10  } }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Added 10 communism popularity to ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_communism_sub_1_button_click  = {
+				var:global.ccshtool_target_var = { add_popularity = { ideology = communism   popularity = -0.01 } }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Removed 1 communism popularity from ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_communism_sub_5_button_click  = {
+				var:global.ccshtool_target_var = { add_popularity = { ideology = communism   popularity = -0.05 } }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Removed 5 communism popularity from ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_communism_sub_10_button_click = {
+				var:global.ccshtool_target_var = { add_popularity = { ideology = communism   popularity = -0.10 } }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Removed 10 communism popularity from ([?global.ccshtool_target_var.GetTag])"
+			}
+
+			# Change subideologies
+			ccshtool_communism_subideology1_button_click = {
+				var:global.ccshtool_target_var = { set_country_leader_ideology = marxism }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to marxism"
+			}
+			ccshtool_communism_subideology2_button_click = {
+				var:global.ccshtool_target_var = { set_country_leader_ideology = leninism }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to leninism"
+			}
+			ccshtool_communism_subideology3_button_click = {
+				var:global.ccshtool_target_var = { set_country_leader_ideology = stalinism }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to stalinism"
+			}
+			ccshtool_communism_subideology4_button_click = {
+				var:global.ccshtool_target_var = { set_country_leader_ideology = anti_revisionism }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to anti_revisionism"
+			}
+			ccshtool_communism_subideology5_button_click = {
+				var:global.ccshtool_target_var = { set_country_leader_ideology = anarchist_communism }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to anarchist_communism"
+			}
+			ccshtool_communism_subideology6_button_click = {
+				var:global.ccshtool_target_var = { set_country_leader_ideology = islamic_socialism }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to islamic_socialism"
+			}
+			ccshtool_communism_subideology11_button_click = {
+				var:global.ccshtool_target_var = { set_country_leader_ideology = syndicalism }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to syndicalism"
+			}
+			#ccshtool_communism_subideology13_button_click = {  }
+			#ccshtool_communism_subideology14_button_click = {  }
+			#ccshtool_communism_subideology15_button_click = {  }
+			#ccshtool_communism_subideology16_button_click = {  }
+			#ccshtool_communism_subideology17_button_click = {  }
+			#ccshtool_communism_subideology18_button_click = {  }
+
+		### Politics tools - Fascism
+			# Change ruling party
+			ccshtool_fascism_change_button_click = {
+				if = {
+					limit = { var:global.ccshtool_target_var = { has_government = fascism } }
+					if = {
+						limit = { var:global.ccshtool_target_var = { has_elections = yes } }
+						var:global.ccshtool_target_var = { set_politics = { ruling_party = THIS   elections_allowed = no } }
+						log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Disabled fascism elections for ([?global.ccshtool_target_var.GetTag])"
+					}
+					else = {
+						var:global.ccshtool_target_var = { set_politics = { ruling_party = THIS   elections_allowed = yes   election_frequency = 24 } }
+						log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Enabled fascism elections for ([?global.ccshtool_target_var.GetTag])"
+					}
+				}
+				else = {
+					var:global.ccshtool_target_var = { set_politics = { ruling_party = fascism } }
+					log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed ruling party of ([?global.ccshtool_target_var.GetTag]) to fascism"
+				}
+			}
+
+			# Add/remove buttons
+			ccshtool_fascism_add_1_button_click  = {
+				var:global.ccshtool_target_var = { add_popularity = { ideology = fascism   popularity = 0.01  } }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Added 1 fascism popularity to ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_fascism_add_5_button_click  = {
+				var:global.ccshtool_target_var = { add_popularity = { ideology = fascism   popularity = 0.05  } }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Added 5 fascism popularity to ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_fascism_add_10_button_click = {
+				var:global.ccshtool_target_var = { add_popularity = { ideology = fascism   popularity = 0.10  } }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Added 10 fascism popularity to ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_fascism_sub_1_button_click  = {
+				var:global.ccshtool_target_var = { add_popularity = { ideology = fascism   popularity = -0.01 } }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Removed 1 fascism popularity from ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_fascism_sub_5_button_click  = {
+				var:global.ccshtool_target_var = { add_popularity = { ideology = fascism   popularity = -0.05 } }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Removed 5 fascism popularity from ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_fascism_sub_10_button_click = {
+				var:global.ccshtool_target_var = { add_popularity = { ideology = fascism   popularity = -0.10 } }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Removed 10 fascism popularity from ([?global.ccshtool_target_var.GetTag])"
+			}
+
+			# Change subideologies
+			ccshtool_fascism_subideology1_button_click = {
+				var:global.ccshtool_target_var = { set_country_leader_ideology = nazism }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to nazism"
+			}
+			ccshtool_fascism_subideology2_button_click = {
+				var:global.ccshtool_target_var = { set_country_leader_ideology = gen_nazism }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to gen_nazism"
+			}
+			ccshtool_fascism_subideology3_button_click = {
+				var:global.ccshtool_target_var = { set_country_leader_ideology = fascism_ideology }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to fascism_ideology"
+			}
+			ccshtool_fascism_subideology4_button_click = {
+				var:global.ccshtool_target_var = { set_country_leader_ideology = falangism }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to falangism"
+			}
+			ccshtool_fascism_subideology6_button_click = {
+				var:global.ccshtool_target_var = { set_country_leader_ideology = clerical_fascism }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to clerical_fascism"
+			}
+			ccshtool_fascism_subideology7_button_click = {
+				var:global.ccshtool_target_var = { set_country_leader_ideology = rexism }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to rexism"
+			}
+			ccshtool_fascism_subideology9_button_click = {
+				var:global.ccshtool_target_var = { set_country_leader_ideology = islamism }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to islamism"
+			}
+			#ccshtool_fascism_subideology10_button_click = {  }
+			#ccshtool_fascism_subideology11_button_click = {  }
+			#ccshtool_fascism_subideology12_button_click = {  }
+			#ccshtool_fascism_subideology13_button_click = {  }
+			#ccshtool_fascism_subideology14_button_click = {  }
+			#ccshtool_fascism_subideology15_button_click = {  }
+			#ccshtool_fascism_subideology16_button_click = {  }
+			#ccshtool_fascism_subideology17_button_click = {  }
+			#ccshtool_fascism_subideology18_button_click = {  }
+
+		### Politics tools - Neutrality
+			# Change ruling party
+			ccshtool_neutrality_change_button_click = {
+				if = {
+					limit = { var:global.ccshtool_target_var = { has_government = neutrality } }
+					if = {
+						limit = { var:global.ccshtool_target_var = { has_elections = yes } }
+						var:global.ccshtool_target_var = { set_politics = { ruling_party = THIS   elections_allowed = no } }
+						log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Disabled neutrality elections for ([?global.ccshtool_target_var.GetTag])"
+					}
+					else = {
+						var:global.ccshtool_target_var = { set_politics = { ruling_party = THIS   elections_allowed = yes   election_frequency = 24 } }
+						log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Enabled neutrality elections for ([?global.ccshtool_target_var.GetTag])"
+					}
+				}
+				else = {
+					var:global.ccshtool_target_var = { set_politics = { ruling_party = neutrality } }
+					log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed ruling party of ([?global.ccshtool_target_var.GetTag]) to neutrality"
+				}
+			}
+
+			# Add/remove buttons
+			ccshtool_neutrality_add_1_button_click  = {
+				var:global.ccshtool_target_var = { add_popularity = { ideology = neutrality   popularity = 0.01  } }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Added 1 neutrality popularity to ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_neutrality_add_5_button_click  = {
+				var:global.ccshtool_target_var = { add_popularity = { ideology = neutrality   popularity = 0.05  } }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Added 5 neutrality popularity to ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_neutrality_add_10_button_click = {
+				var:global.ccshtool_target_var = { add_popularity = { ideology = neutrality   popularity = 0.10  } }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Added 10 neutrality popularity to ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_neutrality_sub_1_button_click  = {
+				var:global.ccshtool_target_var = { add_popularity = { ideology = neutrality   popularity = -0.01 } }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Removed 1 neutrality popularity from ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_neutrality_sub_5_button_click  = {
+				var:global.ccshtool_target_var = { add_popularity = { ideology = neutrality   popularity = -0.05 } }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Removed 5 neutrality popularity from ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_neutrality_sub_10_button_click = {
+				var:global.ccshtool_target_var = { add_popularity = { ideology = neutrality   popularity = -0.10 } }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Removed 10 neutrality popularity from ([?global.ccshtool_target_var.GetTag])"
+			}
+
+			# Change subideologies
+			ccshtool_neutrality_subideology1_button_click = {
+				var:global.ccshtool_target_var = { set_country_leader_ideology = despotism }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to despotism"
+			}
+			ccshtool_neutrality_subideology5_button_click = {
+				var:global.ccshtool_target_var = { set_country_leader_ideology = anarchism }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to anarchism"
+			}
+			ccshtool_neutrality_subideology6_button_click = {
+				var:global.ccshtool_target_var = { set_country_leader_ideology = moderatism }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to moderatism"
+			}
+			ccshtool_neutrality_subideology7_button_click = {
+				var:global.ccshtool_target_var = { set_country_leader_ideology = oligarchism }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to oligarchism"
+			}
+			ccshtool_neutrality_subideology8_button_click = {
+				var:global.ccshtool_target_var = { set_country_leader_ideology = centrism }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to centrism"
+			}
+			ccshtool_neutrality_subideology14_button_click = {
+				var:global.ccshtool_target_var = { set_country_leader_ideology = military_junta }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to military_junta"
+			}
+			ccshtool_neutrality_subideology18_button_click = {
+				var:global.ccshtool_target_var = { set_country_leader_ideology = colonial_government }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to colonial_government"
+			}
+		
+		### Autonomy tools
+			# add/remove autonomy points
+			ccshtool_autonomy_add_button_click = {
+				var:global.ccshtool_target_var = { add_autonomy_score = { value = 100   localization = ccshtool_autonomy_add_button_tt2 } }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Added 100 autonomy score to ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_autonomy_sub_button_click = {
+				var:global.ccshtool_target_var = { add_autonomy_score = { value = -100   localization = ccshtool_autonomy_sub_button_tt2 } }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Removed 100 autonomy score to ([?global.ccshtool_target_var.GetTag])"
+			}
+
+			# autonomy state and default filler button
+			ccshtool_autonomy_annex_button_click = {
+				random_country = {
+					limit = { tag = global.ccshtool_target_var }
+					var:global.ccshtool_receiver_var = {
+						annex_country = {
+							target = PREV
+							transfer_troops = no
+						}
+					}
+				}
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Annexed ([?global.ccshtool_target_var.GetTag]) into ([?global.ccshtool_receiver_var.GetTag])"
+			}
+			ccshtool_autonomy_puppet_button_click = {
+				var:global.ccshtool_receiver_var = {
+					var:global.ccshtool_target_var = {
+						set_variable = { THIS_democratic_popularity = THIS.party_popularity_100@democratic }
+						clamp_variable = { var = THIS_democratic_popularity   min = 0   max = 100 }
+						
+						set_variable = { THIS_communism_popularity = THIS.party_popularity_100@communism }
+						clamp_variable = { var = THIS_communism_popularity   min = 0   max = 100 }
+						
+						set_variable = { THIS_neutrality_popularity = THIS.party_popularity_100@neutrality }
+						clamp_variable = { var = THIS_neutrality_popularity   min = 0   max = 100 }
+						
+						set_variable = { THIS_fascism_popularity = THIS.party_popularity_100@fascism }
+						clamp_variable = { var = THIS_fascism_popularity   min = 0   max = 100 }
+						
+						if = {
+							limit = { has_government = democratic }
+							set_country_flag = THIS_is_democratic_flag
+						}
+						
+						if = {
+							limit = { has_government = neutrality }
+							set_country_flag = THIS_is_neutral_flag
+						}
+						
+						if = {
+							limit = { has_government = communism }
+							set_country_flag = THIS_is_communistic_flag
+						}
+						
+						if = { 
+							limit = { has_government = fascism }
+							set_country_flag = THIS_is_fascist_flag
+						}
+						
+						if = { 
+							limit = { has_wargoal_against = global.ccshtool_receiver_var }
+							remove_wargoal = { type = all   target = global.ccshtool_receiver_var }
+						}
+					}
+					
+					set_autonomy = {
+						target = global.ccshtool_target_var
+						autonomous_state = autonomy_puppet
+						end_wars = no
+						end_civil_wars = no
+					}
+					
+					var:global.ccshtool_target_var = {
+						set_popularities = {
+							democratic = THIS_democratic_popularity
+							fascism = THIS_fascism_popularity
+							communism = THIS_communism_popularity
+							neutrality = THIS_neutrality_popularity
+						}
+						if = {
+							limit = { has_country_flag = THIS_is_democratic_flag }
+							set_politics = { ruling_party = democratic }
+							clr_country_flag = THIS_is_democratic_flag
+						}
+						if = {
+							limit = { has_country_flag = THIS_is_neutral_flag }
+							set_politics = { ruling_party = neutrality }
+							clr_country_flag = THIS_is_neutral_flag
+						}
+						if = {
+							limit = { has_country_flag = THIS_is_communistic_flag }
+							set_politics = { ruling_party = communism }
+							clr_country_flag = THIS_is_communistic_flag
+						}
+						if = {
+							limit = { has_country_flag = THIS_is_fascist_flag }
+							set_politics = { ruling_party = fascism }
+							clr_country_flag = THIS_is_fascist_flag
+						}
+					}
+				}
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Made ([?global.ccshtool_target_var.GetTag]) a puppet of ([?global.ccshtool_receiver_var.GetTag])"
+			}
+			ccshtool_autonomy_reichskommissariat_button_click = {
+				var:global.ccshtool_receiver_var = {
+					var:global.ccshtool_target_var = {
+						set_variable = { THIS_democratic_popularity = THIS.party_popularity_100@democratic }
+						clamp_variable = { var = THIS_democratic_popularity   min = 0   max = 100 }
+						
+						set_variable = { THIS_communism_popularity = THIS.party_popularity_100@communism }
+						clamp_variable = { var = THIS_communism_popularity   min = 0   max = 100 }
+						
+						set_variable = { THIS_neutrality_popularity = THIS.party_popularity_100@neutrality }
+						clamp_variable = { var = THIS_neutrality_popularity   min = 0   max = 100 }
+						
+						set_variable = { THIS_fascism_popularity = THIS.party_popularity_100@fascism }
+						clamp_variable = { var = THIS_fascism_popularity   min = 0   max = 100 }
+						
+						if = {
+							limit = { has_government = democratic }
+							set_country_flag = THIS_is_democratic_flag
+						}
+						
+						if = {
+							limit = { has_government = neutrality }
+							set_country_flag = THIS_is_neutral_flag
+						}
+						
+						if = {
+							limit = { has_government = communism }
+							set_country_flag = THIS_is_communistic_flag
+						}
+						
+						if = { 
+							limit = { has_government = fascism }
+							set_country_flag = THIS_is_fascist_flag
+						}
+						
+						if = { 
+							limit = { has_wargoal_against = global.ccshtool_receiver_var }
+							remove_wargoal = { type = all   target = global.ccshtool_receiver_var }
+						}
+					}
+					
+					set_autonomy = {
+						target = global.ccshtool_target_var
+						autonomous_state = autonomy_reichskommissariat
+						end_wars = no
+						end_civil_wars = no
+					}
+					
+					var:global.ccshtool_target_var = {
+						set_popularities = {
+							democratic = THIS_democratic_popularity
+							fascism = THIS_fascism_popularity
+							communism = THIS_communism_popularity
+							neutrality = THIS_neutrality_popularity
+						}
+						if = {
+							limit = { has_country_flag = THIS_is_democratic_flag }
+							set_politics = { ruling_party = democratic }
+							clr_country_flag = THIS_is_democratic_flag
+						}
+						if = {
+							limit = { has_country_flag = THIS_is_neutral_flag }
+							set_politics = { ruling_party = neutrality }
+							clr_country_flag = THIS_is_neutral_flag
+						}
+						if = {
+							limit = { has_country_flag = THIS_is_communistic_flag }
+							set_politics = { ruling_party = communism }
+							clr_country_flag = THIS_is_communistic_flag
+						}
+						if = {
+							limit = { has_country_flag = THIS_is_fascist_flag }
+							set_politics = { ruling_party = fascism }
+							clr_country_flag = THIS_is_fascist_flag
+						}
+					}
+				}
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Made ([?global.ccshtool_target_var.GetTag]) a reichskommissariat of ([?global.ccshtool_receiver_var.GetTag])"
+			}
+			ccshtool_autonomy_imperial_associate_button_click = {
+				var:global.ccshtool_receiver_var = {
+					var:global.ccshtool_target_var = {
+						set_variable = { THIS_democratic_popularity = THIS.party_popularity_100@democratic }
+						clamp_variable = { var = THIS_democratic_popularity   min = 0   max = 100 }
+						
+						set_variable = { THIS_communism_popularity = THIS.party_popularity_100@communism }
+						clamp_variable = { var = THIS_communism_popularity   min = 0   max = 100 }
+						
+						set_variable = { THIS_neutrality_popularity = THIS.party_popularity_100@neutrality }
+						clamp_variable = { var = THIS_neutrality_popularity   min = 0   max = 100 }
+						
+						set_variable = { THIS_fascism_popularity = THIS.party_popularity_100@fascism }
+						clamp_variable = { var = THIS_fascism_popularity   min = 0   max = 100 }
+						
+						if = {
+							limit = { has_government = democratic }
+							set_country_flag = THIS_is_democratic_flag
+						}
+						
+						if = {
+							limit = { has_government = neutrality }
+							set_country_flag = THIS_is_neutral_flag
+						}
+						
+						if = {
+							limit = { has_government = communism }
+							set_country_flag = THIS_is_communistic_flag
+						}
+						
+						if = { 
+							limit = { has_government = fascism }
+							set_country_flag = THIS_is_fascist_flag
+						}
+						
+						if = { 
+							limit = { has_wargoal_against = global.ccshtool_receiver_var }
+							remove_wargoal = { type = all   target = global.ccshtool_receiver_var }
+						}
+					}
+					
+					set_autonomy = {
+						target = global.ccshtool_target_var
+						autonomous_state = autonomy_wtt_imperial_associate
+						end_wars = no
+						end_civil_wars = no
+					}
+					
+					var:global.ccshtool_target_var = {
+						set_popularities = {
+							democratic = THIS_democratic_popularity
+							fascism = THIS_fascism_popularity
+							communism = THIS_communism_popularity
+							neutrality = THIS_neutrality_popularity
+						}
+						if = {
+							limit = { has_country_flag = THIS_is_democratic_flag }
+							set_politics = { ruling_party = democratic }
+							clr_country_flag = THIS_is_democratic_flag
+						}
+						if = {
+							limit = { has_country_flag = THIS_is_neutral_flag }
+							set_politics = { ruling_party = neutrality }
+							clr_country_flag = THIS_is_neutral_flag
+						}
+						if = {
+							limit = { has_country_flag = THIS_is_communistic_flag }
+							set_politics = { ruling_party = communism }
+							clr_country_flag = THIS_is_communistic_flag
+						}
+						if = {
+							limit = { has_country_flag = THIS_is_fascist_flag }
+							set_politics = { ruling_party = fascism }
+							clr_country_flag = THIS_is_fascist_flag
+						}
+					}
+				}
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Made ([?global.ccshtool_target_var.GetTag]) an imperial_associate of ([?global.ccshtool_receiver_var.GetTag])"
+			}
+			ccshtool_autonomy_colony_button_click = {
+				var:global.ccshtool_receiver_var = {
+					var:global.ccshtool_target_var = {
+						set_variable = { THIS_democratic_popularity = THIS.party_popularity_100@democratic }
+						clamp_variable = { var = THIS_democratic_popularity   min = 0   max = 100 }
+						
+						set_variable = { THIS_communism_popularity = THIS.party_popularity_100@communism }
+						clamp_variable = { var = THIS_communism_popularity   min = 0   max = 100 }
+						
+						set_variable = { THIS_neutrality_popularity = THIS.party_popularity_100@neutrality }
+						clamp_variable = { var = THIS_neutrality_popularity   min = 0   max = 100 }
+						
+						set_variable = { THIS_fascism_popularity = THIS.party_popularity_100@fascism }
+						clamp_variable = { var = THIS_fascism_popularity   min = 0   max = 100 }
+						
+						if = {
+							limit = { has_government = democratic }
+							set_country_flag = THIS_is_democratic_flag
+						}
+						
+						if = {
+							limit = { has_government = neutrality }
+							set_country_flag = THIS_is_neutral_flag
+						}
+						
+						if = {
+							limit = { has_government = communism }
+							set_country_flag = THIS_is_communistic_flag
+						}
+						
+						if = { 
+							limit = { has_government = fascism }
+							set_country_flag = THIS_is_fascist_flag
+						}
+						
+						if = { 
+							limit = { has_wargoal_against = global.ccshtool_receiver_var }
+							remove_wargoal = { type = all   target = global.ccshtool_receiver_var }
+						}
+					}
+					
+					set_autonomy = {
+						target = global.ccshtool_target_var
+						autonomous_state = autonomy_colony
+						end_wars = no
+						end_civil_wars = no
+					}
+					
+					var:global.ccshtool_target_var = {
+						set_popularities = {
+							democratic = THIS_democratic_popularity
+							fascism = THIS_fascism_popularity
+							communism = THIS_communism_popularity
+							neutrality = THIS_neutrality_popularity
+						}
+						if = {
+							limit = { has_country_flag = THIS_is_democratic_flag }
+							set_politics = { ruling_party = democratic }
+							clr_country_flag = THIS_is_democratic_flag
+						}
+						if = {
+							limit = { has_country_flag = THIS_is_neutral_flag }
+							set_politics = { ruling_party = neutrality }
+							clr_country_flag = THIS_is_neutral_flag
+						}
+						if = {
+							limit = { has_country_flag = THIS_is_communistic_flag }
+							set_politics = { ruling_party = communism }
+							clr_country_flag = THIS_is_communistic_flag
+						}
+						if = {
+							limit = { has_country_flag = THIS_is_fascist_flag }
+							set_politics = { ruling_party = fascism }
+							clr_country_flag = THIS_is_fascist_flag
+						}
+					}
+				}
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Made ([?global.ccshtool_target_var.GetTag]) a colony of ([?global.ccshtool_receiver_var.GetTag])"
+			}
+			ccshtool_autonomy_dominion_button_click = {
+				var:global.ccshtool_receiver_var = {
+					var:global.ccshtool_target_var = {
+						set_variable = { THIS_democratic_popularity = THIS.party_popularity_100@democratic }
+						clamp_variable = { var = THIS_democratic_popularity   min = 0   max = 100 }
+						
+						set_variable = { THIS_communism_popularity = THIS.party_popularity_100@communism }
+						clamp_variable = { var = THIS_communism_popularity   min = 0   max = 100 }
+						
+						set_variable = { THIS_neutrality_popularity = THIS.party_popularity_100@neutrality }
+						clamp_variable = { var = THIS_neutrality_popularity   min = 0   max = 100 }
+						
+						set_variable = { THIS_fascism_popularity = THIS.party_popularity_100@fascism }
+						clamp_variable = { var = THIS_fascism_popularity   min = 0   max = 100 }
+						
+						if = {
+							limit = { has_government = democratic }
+							set_country_flag = THIS_is_democratic_flag
+						}
+						
+						if = {
+							limit = { has_government = neutrality }
+							set_country_flag = THIS_is_neutral_flag
+						}
+						
+						if = {
+							limit = { has_government = communism }
+							set_country_flag = THIS_is_communistic_flag
+						}
+						
+						if = { 
+							limit = { has_government = fascism }
+							set_country_flag = THIS_is_fascist_flag
+						}
+						
+						if = { 
+							limit = { has_wargoal_against = global.ccshtool_receiver_var }
+							remove_wargoal = { type = all   target = global.ccshtool_receiver_var }
+						}
+					}
+					
+					set_autonomy = {
+						target = global.ccshtool_target_var
+						autonomous_state = autonomy_dominion
+						end_wars = no
+						end_civil_wars = no
+					}
+					
+					var:global.ccshtool_target_var = {
+						set_popularities = {
+							democratic = THIS_democratic_popularity
+							fascism = THIS_fascism_popularity
+							communism = THIS_communism_popularity
+							neutrality = THIS_neutrality_popularity
+						}
+						if = {
+							limit = { has_country_flag = THIS_is_democratic_flag }
+							set_politics = { ruling_party = democratic }
+							clr_country_flag = THIS_is_democratic_flag
+						}
+						if = {
+							limit = { has_country_flag = THIS_is_neutral_flag }
+							set_politics = { ruling_party = neutrality }
+							clr_country_flag = THIS_is_neutral_flag
+						}
+						if = {
+							limit = { has_country_flag = THIS_is_communistic_flag }
+							set_politics = { ruling_party = communism }
+							clr_country_flag = THIS_is_communistic_flag
+						}
+						if = {
+							limit = { has_country_flag = THIS_is_fascist_flag }
+							set_politics = { ruling_party = fascism }
+							clr_country_flag = THIS_is_fascist_flag
+						}
+					}
+				}
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Made ([?global.ccshtool_target_var.GetTag]) a dominion of ([?global.ccshtool_receiver_var.GetTag])"
+			}
+			ccshtool_autonomy_personal_union_button_click = {
+				var:global.ccshtool_receiver_var = {
+					var:global.ccshtool_target_var = {
+						set_variable = { THIS_democratic_popularity = THIS.party_popularity_100@democratic }
+						clamp_variable = { var = THIS_democratic_popularity   min = 0   max = 100 }
+						
+						set_variable = { THIS_communism_popularity = THIS.party_popularity_100@communism }
+						clamp_variable = { var = THIS_communism_popularity   min = 0   max = 100 }
+						
+						set_variable = { THIS_neutrality_popularity = THIS.party_popularity_100@neutrality }
+						clamp_variable = { var = THIS_neutrality_popularity   min = 0   max = 100 }
+						
+						set_variable = { THIS_fascism_popularity = THIS.party_popularity_100@fascism }
+						clamp_variable = { var = THIS_fascism_popularity   min = 0   max = 100 }
+						
+						if = {
+							limit = { has_government = democratic }
+							set_country_flag = THIS_is_democratic_flag
+						}
+						
+						if = {
+							limit = { has_government = neutrality }
+							set_country_flag = THIS_is_neutral_flag
+						}
+						
+						if = {
+							limit = { has_government = communism }
+							set_country_flag = THIS_is_communistic_flag
+						}
+						
+						if = { 
+							limit = { has_government = fascism }
+							set_country_flag = THIS_is_fascist_flag
+						}
+						
+						if = { 
+							limit = { has_wargoal_against = global.ccshtool_receiver_var }
+							remove_wargoal = { type = all   target = global.ccshtool_receiver_var }
+						}
+					}
+					
+					set_autonomy = {
+						target = global.ccshtool_target_var
+						autonomous_state = autonomy_personal_union
+						end_wars = no
+						end_civil_wars = no
+					}
+					
+					var:global.ccshtool_target_var = {
+						set_popularities = {
+							democratic = THIS_democratic_popularity
+							fascism = THIS_fascism_popularity
+							communism = THIS_communism_popularity
+							neutrality = THIS_neutrality_popularity
+						}
+						if = {
+							limit = { has_country_flag = THIS_is_democratic_flag }
+							set_politics = { ruling_party = democratic }
+							clr_country_flag = THIS_is_democratic_flag
+						}
+						if = {
+							limit = { has_country_flag = THIS_is_neutral_flag }
+							set_politics = { ruling_party = neutrality }
+							clr_country_flag = THIS_is_neutral_flag
+						}
+						if = {
+							limit = { has_country_flag = THIS_is_communistic_flag }
+							set_politics = { ruling_party = communism }
+							clr_country_flag = THIS_is_communistic_flag
+						}
+						if = {
+							limit = { has_country_flag = THIS_is_fascist_flag }
+							set_politics = { ruling_party = fascism }
+							clr_country_flag = THIS_is_fascist_flag
+						}
+					}
+				}
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Made ([?global.ccshtool_target_var.GetTag]) a junior partner of a personal union with ([?global.ccshtool_receiver_var.GetTag])"
+			}
+			ccshtool_autonomy_collaboration_government_button_click = {
+				var:global.ccshtool_receiver_var = {
+					var:global.ccshtool_target_var = {
+						set_variable = { THIS_democratic_popularity = THIS.party_popularity_100@democratic }
+						clamp_variable = { var = THIS_democratic_popularity   min = 0   max = 100 }
+						
+						set_variable = { THIS_communism_popularity = THIS.party_popularity_100@communism }
+						clamp_variable = { var = THIS_communism_popularity   min = 0   max = 100 }
+						
+						set_variable = { THIS_neutrality_popularity = THIS.party_popularity_100@neutrality }
+						clamp_variable = { var = THIS_neutrality_popularity   min = 0   max = 100 }
+						
+						set_variable = { THIS_fascism_popularity = THIS.party_popularity_100@fascism }
+						clamp_variable = { var = THIS_fascism_popularity   min = 0   max = 100 }
+						
+						if = {
+							limit = { has_government = democratic }
+							set_country_flag = THIS_is_democratic_flag
+						}
+						
+						if = {
+							limit = { has_government = neutrality }
+							set_country_flag = THIS_is_neutral_flag
+						}
+						
+						if = {
+							limit = { has_government = communism }
+							set_country_flag = THIS_is_communistic_flag
+						}
+						
+						if = { 
+							limit = { has_government = fascism }
+							set_country_flag = THIS_is_fascist_flag
+						}
+						
+						if = { 
+							limit = { has_wargoal_against = global.ccshtool_receiver_var }
+							remove_wargoal = { type = all   target = global.ccshtool_receiver_var }
+						}
+					}
+					
+					set_autonomy = {
+						target = global.ccshtool_target_var
+						autonomous_state = autonomy_collaboration_government
+						end_wars = no
+						end_civil_wars = no
+					}
+					
+					var:global.ccshtool_target_var = {
+						set_popularities = {
+							democratic = THIS_democratic_popularity
+							fascism = THIS_fascism_popularity
+							communism = THIS_communism_popularity
+							neutrality = THIS_neutrality_popularity
+						}
+						if = {
+							limit = { has_country_flag = THIS_is_democratic_flag }
+							set_politics = { ruling_party = democratic }
+							clr_country_flag = THIS_is_democratic_flag
+						}
+						if = {
+							limit = { has_country_flag = THIS_is_neutral_flag }
+							set_politics = { ruling_party = neutrality }
+							clr_country_flag = THIS_is_neutral_flag
+						}
+						if = {
+							limit = { has_country_flag = THIS_is_communistic_flag }
+							set_politics = { ruling_party = communism }
+							clr_country_flag = THIS_is_communistic_flag
+						}
+						if = {
+							limit = { has_country_flag = THIS_is_fascist_flag }
+							set_politics = { ruling_party = fascism }
+							clr_country_flag = THIS_is_fascist_flag
+						}
+					}
+				}
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Made ([?global.ccshtool_target_var.GetTag]) a collaboration government of ([?global.ccshtool_receiver_var.GetTag])"
+			}
+
+			ccshtool_autonomy_free_button_click = {
+				var:global.ccshtool_receiver_var = {
+					set_autonomy = {
+						target = global.ccshtool_target_var
+						autonomous_state = autonomy_free
+						end_wars = no
+					}
+				}
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Made ([?global.ccshtool_target_var.GetTag]) free from ([?global.ccshtool_receiver_var.GetTag])"
+			}
+			ccshtool_autonomy_filler1_button_click = { var:global.ccshtool_receiver_var = { puppet = var:global.ccshtool_target_var } }		# this button is used as the default autonomy state
+
+		### Country tools - variables
+			# Stability
+			ccshtool_stability_sub_5_button_click = {
+				var:global.ccshtool_target_var = { add_stability = -0.05 }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Removed 5 stability from ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_stability_sub_1_button_click = {
+				var:global.ccshtool_target_var = { add_stability = -0.01 }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Removed 1 stability from ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_stability_add_1_button_click = {
+				var:global.ccshtool_target_var = { add_stability =  0.01 }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Added 1 stability to ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_stability_add_5_button_click = {
+				var:global.ccshtool_target_var = { add_stability =  0.05 }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Added 5 stability to ([?global.ccshtool_target_var.GetTag])"
+			}
+
+			# War Support
+			ccshtool_war_support_sub_5_button_click = {
+				var:global.ccshtool_target_var = { add_war_support = -0.05 }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Removed 5 war support from ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_war_support_sub_1_button_click = {
+				var:global.ccshtool_target_var = { add_war_support = -0.01 }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Removed 1 war support from ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_war_support_add_1_button_click = {
+				var:global.ccshtool_target_var = { add_war_support =  0.01 }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Added 1 war support to ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_war_support_add_5_button_click = {
+				var:global.ccshtool_target_var = { add_war_support =  0.05 }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Added 5 war support to ([?global.ccshtool_target_var.GetTag])"
+			}
+
+			# Political Power
+			ccshtool_pp_sub_50_button_click = {
+				var:global.ccshtool_target_var = { add_political_power = -50 }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Removed 50 political power from ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_pp_sub_10_button_click = {
+				var:global.ccshtool_target_var = { add_political_power = -10 }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Removed 10 political power from ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_pp_add_10_button_click = {
+				var:global.ccshtool_target_var = { add_political_power =  10 }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Added 10 political power to ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_pp_add_50_button_click = {
+				var:global.ccshtool_target_var = { add_political_power =  50 }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Added 50 political power to ([?global.ccshtool_target_var.GetTag])"
+			}
+
+			# Money
+			ccshtool_money_sub_5_button_click = {
+				var:global.ccshtool_target_var = { add_to_variable = { THIS.si_money_var = -5 } }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Removed 5 money from ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_money_sub_1_button_click = {
+				var:global.ccshtool_target_var = { add_to_variable = { THIS.si_money_var = -1 } }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Removed 1 money from ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_money_add_1_button_click = {
+				var:global.ccshtool_target_var = { add_to_variable = { THIS.si_money_var =  1 } }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Added 1 money to ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_money_add_5_button_click = {
+				var:global.ccshtool_target_var = { add_to_variable = { THIS.si_money_var =  5 } }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Added 5 money to ([?global.ccshtool_target_var.GetTag])"
+			}
+
+			# Army XP
+			ccshtool_army_xp_sub_50_button_click = {
+				var:global.ccshtool_target_var = { army_experience = -50 }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Removed 50 army xp from ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_army_xp_sub_10_button_click = {
+				var:global.ccshtool_target_var = { army_experience = -10 }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Removed 10 army xp from ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_army_xp_add_10_button_click = {
+				var:global.ccshtool_target_var = { army_experience =  10 }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Added 10 army xp to ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_army_xp_add_50_button_click = {
+				var:global.ccshtool_target_var = { army_experience =  50 }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Added 50 army xp to ([?global.ccshtool_target_var.GetTag])"
+			}
+
+			# Navy XP
+			ccshtool_navy_xp_sub_50_button_click = {
+				var:global.ccshtool_target_var = { navy_experience = -50 }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Removed 50 navy xp from ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_navy_xp_sub_10_button_click = {
+				var:global.ccshtool_target_var = { navy_experience = -10 }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Removed 10 navy xp from ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_navy_xp_add_10_button_click = {
+				var:global.ccshtool_target_var = { navy_experience =  10 }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Added 10 navy xp to ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_navy_xp_add_50_button_click = {
+				var:global.ccshtool_target_var = { navy_experience =  50 }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Added 50 navy xp to ([?global.ccshtool_target_var.GetTag])"
+			}
+
+			# Air XP
+			ccshtool_air_xp_sub_50_button_click = {
+				var:global.ccshtool_target_var = { air_experience = -50 }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Removed 50 air xp from ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_air_xp_sub_10_button_click = {
+				var:global.ccshtool_target_var = { air_experience = -10 }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Removed 10 air xp from ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_air_xp_add_10_button_click = {
+				var:global.ccshtool_target_var = { air_experience =  10 }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Added 10 air xp to ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_air_xp_add_50_button_click = {
+				var:global.ccshtool_target_var = { air_experience =  50 }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Added 50 air xp to ([?global.ccshtool_target_var.GetTag])"
+			}
+
+		### Country tools - Research Boosts
+			ccshtool_research_boost_add_10_button_click = {
+				var:global.ccshtool_target_var = {
+					add_tech_bonus = { 
+						name = ccshtool_research_boost_add_10_button_tt2
+						bonus = 0.1
+						uses = 1
+						category = industry
+						category = infantry_weapons
+						category = support_tech
+						category = motorized_equipment
+						category = artillery
+						category = armor
+						category = naval_equipment
+						category = air_equipment 
+						category = electronics
+						category = nuclear
+
+						category = infantry_tech	# RT56
+					}
+				}
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Gave a 10 percent research bonus to ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_research_boost_add_50_button_click = {
+				var:global.ccshtool_target_var = {
+					add_tech_bonus = { 
+						name = ccshtool_research_boost_add_50_button_tt2
+						bonus = 0.5
+						uses = 1
+						category = industry
+						category = infantry_weapons
+						category = support_tech
+						category = motorized_equipment
+						category = artillery
+						category = armor
+						category = naval_equipment
+						category = air_equipment 
+						category = electronics
+						category = nuclear
+
+						category = infantry_tech	# RT56
+					}
+				}
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Gave a 50 percent research bonus to ([?global.ccshtool_target_var.GetTag])"
+			}
+
+		### Country tools - misc
+			# refresh focus tree
+			ccshtool_refresh_focus_button_click = {
+				var:global.ccshtool_target_var = { mark_focus_tree_layout_dirty = yes }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Refreshed the focus tree for ([?global.ccshtool_target_var.GetTag])"
+			}
+
+			# tag switch - checks if target and receiver is locked, and that the target is a player
+			ccshtool_tag_switch_button_click = {
+				if = {
+					limit = { var:global.ccshtool_target_var = { has_country_flag = ccshtool_enabled_cflag } }
+					# if the target has the host tool, move it to the receiver
+					var:global.ccshtool_receiver_var = { set_country_flag = ccshtool_enabled_cflag }
+					var:global.ccshtool_target_var = {
+						clr_country_flag = ccshtool_enabled_cflag
+						clr_country_flag = ccshtool_open_cflag
+					}
+				}
+				var:global.ccshtool_receiver_var = { change_tag_from = var:global.ccshtool_target_var }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Tag switched ([?global.ccshtool_target_var.GetTag]) to ([?global.ccshtool_receiver_var.GetTag])"
+				
+				set_variable = { global.ccshtool_target_var = 0 }
+				set_variable = { global.ccshtool_receiver_var = 0 }
+				clear_array = global.ccshtool_states_marked
+			}
+
+			# if only the target is locked and at war then white peace all wars, otherwise also if receiver is locked and they're at war with each other then white peace just them
+			ccshtool_white_peace_button_click = {
+				if = {
+					limit = {
+						NOT = { check_variable = { global.ccshtool_target_var = 0 } }
+						check_variable = { global.ccshtool_receiver_var = 0 }
+						var:global.ccshtool_target_var = { has_war = yes }
+					}
+					every_country = {
+						limit = { has_war_with = global.ccshtool_target_var }
+						var:global.ccshtool_target_var = {
+							white_peace = {
+								tag = PREV
+								message = ccshtool_white_peace_button_tt2
+							}
+						}
+					}
+					log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: White peaced ([?global.ccshtool_target_var.GetTag]) with all enemies"
+				}
+				else_if = {
+					limit = {
+						NOT = { check_variable = { global.ccshtool_receiver_var = 0 } }
+						var:global.ccshtool_target_var = { has_war_with = global.ccshtool_receiver_var }
+					}										
+					var:global.ccshtool_target_var = {
+						white_peace = {
+							tag = global.ccshtool_receiver_var
+							message = ccshtool_white_peace_button_tt2
+						}
+					}
+					log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: White peaced ([?global.ccshtool_target_var.GetTag]) with ([?global.ccshtool_receiver_var.GetTag])"
+				}
+			}
+
+			# force the target to declare war on the receiver
+			ccshtool_declare_war_button_click = {
+				var:global.ccshtool_target_var = {
+					declare_war_on = {
+						target = global.ccshtool_receiver_var
+						type = annex_everything
+					}
+				}
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Forced ([?global.ccshtool_target_var.GetTag]) to declare war on ([?global.ccshtool_receiver_var.GetTag])"
+			}
+
+			# force the target to join a faction or become it's leader
+			ccshtool_join_faction_button_click = {
+				if = {
+					limit = {
+						var:global.ccshtool_target_var = { is_faction_leader = no }
+						var:global.ccshtool_target_var = { is_in_faction = yes }
+					}
+					var:global.ccshtool_target_var = { set_faction_leader = yes }
+					log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Forced ([?global.ccshtool_target_var.GetTag]) to become faction leader"
+				}
+				else_if = {
+					limit = {
+						var:global.ccshtool_target_var = { is_in_faction = no }
+						var:global.ccshtool_receiver_var = { is_in_faction = no }
+					}
+					var:global.ccshtool_target_var = {
+						create_faction = ccshtool_join_faction_button_tt2
+						add_to_faction = global.ccshtool_receiver_var
+					}
+					log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Forced ([?global.ccshtool_target_var.GetTag]) to create a faction with ([?global.ccshtool_receiver_var.GetTag])"
+				}
+				else = {
+					random_country = {
+						limit = {
+							is_faction_leader = yes
+							is_in_faction_with = global.ccshtool_receiver_var
+						}
+						add_to_faction = global.ccshtool_target_var
+					}
+					log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Forced ([?global.ccshtool_target_var.GetTag]) to join the faction of ([?global.ccshtool_receiver_var.GetTag])"
+				}
+			}
+
+			# force the target to disband/leave their faction
+			ccshtool_leave_faction_button_click = {
+				if = {
+					limit = { var:global.ccshtool_target_var = { is_faction_leader = yes } }
+					var:global.ccshtool_target_var = { dismantle_faction = yes }
+					log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Forced ([?global.ccshtool_target_var.GetTag]) as faction leader to dismantle their faction"
+				}
+				else = {
+					var:global.ccshtool_target_var = { leave_faction = yes }
+					log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Forced ([?global.ccshtool_target_var.GetTag]) to leave their faction"
+				}
+			}
+		}
+
+
+		ai_enabled = { always = no }
+	}
+
+	ccshtool_target_window = {
+		#context_type = selected_country_context
+		context_type = selected_state_context
+		parent_window_name = "ccshtool_main_window"
+
+		window_name = "ccshtool_target_window"
+
+		visible = { always = yes }
+
+		triggers = {
+			ccshtool_target_toggle_off_button_visible = {
+				check_variable = { global.ccshtool_target_var = 0 }
+			}
+			ccshtool_target_toggle_on_button_visible = {
+				NOT = { check_variable = { global.ccshtool_target_var = 0 } }
+			}
+			ccshtool_target_toggle_off_button_click_enabled = {
+				NOT = { check_variable = { global.ccshtool_receiver_var = OWNER } }
+			}
+		}
+
+		effects = {
+			ccshtool_target_toggle_off_button_click = {
+				set_variable = { global.ccshtool_target_var = OWNER }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Set Target to ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_target_toggle_on_button_click = {
+				set_variable = { global.ccshtool_target_var = 0 }
+			}
+		}
+
+		ai_enabled = { always = no }
+	}
+
+	ccshtool_receiver_window = {
+		#context_type = selected_country_context
+		context_type = selected_state_context
+		parent_window_name = "ccshtool_main_window"
+
+		window_name = "ccshtool_receiver_window"
+		
+		visible = { always = yes }
+
+		triggers = {
+			ccshtool_receiver_toggle_off_button_visible = {
+				check_variable = { global.ccshtool_receiver_var = 0 }
+			}
+			ccshtool_receiver_toggle_on_button_visible = {
+				NOT = { check_variable = { global.ccshtool_receiver_var = 0 } }
+			}
+			ccshtool_receiver_toggle_off_button_click_enabled = {
+				NOT = { check_variable = { global.ccshtool_target_var = OWNER } }
+			}
+		}
+
+		effects = {
+			ccshtool_receiver_toggle_off_button_click = {
+				set_variable = { global.ccshtool_receiver_var = OWNER }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Set Receiver to ([?global.ccshtool_receiver_var.GetTag])"
+			}
+			ccshtool_receiver_toggle_on_button_click = {
+				set_variable = { global.ccshtool_receiver_var = 0 }
+			}
+		}
+
+		ai_enabled = { always = no }
+	}
+
+	ccshtool_state_tool_mark_unmark_window = {
+		context_type = selected_state_context
+		parent_window_name = "ccshtool_state_tool_window"
+
+		window_name = "ccshtool_state_tool_mark_unmark_window"
+		
+		visible = { always = yes }
+
+		triggers = {
+			ccshtool_mark_state_button_click_enabled = {
+				# check if state is owned by the target and is not in the array
+				owner = { check_variable = { global.ccshtool_target_var = THIS } }
+				NOT = { is_in_array = { array = global.ccshtool_states_marked   value = THIS } }
+			}
+			ccshtool_unmark_state_button_click_enabled = {
+				# check if state is owned by the target and is in the array
+				owner = { check_variable = { global.ccshtool_target_var = THIS } }
+				is_in_array = { array = global.ccshtool_states_marked   value = THIS }
+			}
+			ccshtool_mark_all_states_button_click_enabled = {
+				# check if the target is locked and all owned states are not already in the array
+				owner = { check_variable = { global.ccshtool_target_var = THIS } }
+				NOT = {
+					count_triggers = {
+						amount = 1
+						var:global.ccshtool_target_var = {
+							all_owned_state = { is_in_array = { array = global.ccshtool_states_marked   value = THIS } }
+						}
+					}
+				}
+			}
+			ccshtool_unmark_all_states_button_click_enabled = {
+				# check if array is not empty
+				NOT = { check_variable = { global.ccshtool_states_marked^num = 0 } }
+			}
+		}
+
+		effects = {
+			ccshtool_mark_state_button_click = {
+				# add this owned state to the array
+				add_to_array = { array = global.ccshtool_states_marked   value = THIS }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Marked State ([?FROM.GetID]) [?FROM.GetName]"
+			}
+			ccshtool_unmark_state_button_click = {
+				# remove this owned state from the array
+				remove_from_array = { array = global.ccshtool_states_marked   value = THIS }
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Unmarked State ([?FROM.GetID]) [?FROM.GetName]"
+			}
+			ccshtool_mark_all_states_button_click = {
+				# add all states the target owns to the array
+				every_state = {
+					limit = {
+						var:global.ccshtool_target_var = { owns_state = PREV }
+						NOT = { is_in_array = { array = global.ccshtool_states_marked   value = THIS } }
+					}
+					add_to_array = { array = global.ccshtool_states_marked   value = THIS }
+				}
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Marked all states owned by ([?global.ccshtool_target_var.GetTag])"
+			}
+			ccshtool_unmark_all_states_button_click = {
+				# remove all marked states from the array
+				clear_array = global.ccshtool_states_marked
+				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Unmarked all states"
+			}
+		}
+
+		ai_enabled = { always = no }
+	}
+}

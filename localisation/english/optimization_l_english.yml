@@ -1,0 +1,105 @@
+﻿l_english:
+
+ # Optimization
+ 
+ optimization_player_was_here:0 "Player Controlled"
+ optimization_player_was_here_desc:0 "This spirit marks a country controlled by a player. Before leaving it, use the Player to AI optimization decision."
+ 
+ optimization_game_speed_balance:0 "Optimization AI"
+ optimization_game_speed_balance_desc:0 "This country is controlled by the optimization AI profile. If you take control of it, use the AI to Player decision to restore normal production, recruitment and market access."
+ 
+ optimization_player_to_ai_to_player:0 "Optimization Decision"
+ optimization_player_to_ai:0 "Player to AI"
+ optimization_player_to_ai_desc:0 "Apply the AI-only performance restrictions before leaving this country."
+ optimization_ai_to_player:0 "AI to Player"
+ optimization_ai_to_player_desc:0 "Remove the SOOO/SPOT and market restrictions when a player takes control."
+ optimization_rule:0 "AI Optimization"
+ RULE_OPTION_optimization_HARD:0 "Enable optimization ideas"
+ RULE_OPTION_optimization_HARD_DESC:0 "Restricts secondary AI countries to reduce simulation cost."
+ RULE_OPTION_optimization_NORMAL:0 "Disable optimization ideas"
+ RULE_OPTION_optimization_NORMAL_DESC:0 "Keeps normal behavior without applying optimization ideas."
+ RULE_GROUP_optimization:0 "SOOO/SPOT Optimization"
+
+ RULE_OPTION_NO_LAG_NO:0 "§YNo§!"
+ RULE_OPTION_NO_LAG_YES:0 "§YYes§!"
+ RULE_OPTION_NO_LAG_ON:0 "§YOn§!"
+ RULE_OPTION_NO_LAG_OFF:0 "§YOff§!"
+ RULE_OPTION_NO_LAG_YES_EXCEPT_TURKEY:0 "§YYes (except Turkey)§!"
+ RULE_OPTION_NO_LAG_YES_EXCEPT_SOVIET:0 "§YYes (except the Soviet Union)§!"
+
+ RULE_NO_LAG_UNIFY_CHINA:0 "Annex Chinese Warlords"
+ RULE_NO_LAG_UNIFY_CHINA_NO_DESC:0 "Keep the Chinese warlords independent."
+ RULE_NO_LAG_UNIFY_CHINA_YES_DESC:0 "Annex the configured Chinese warlords into Nationalist China at game start."
+ RULE_NO_LAG_WASTELAND:0 "Consolidate Low-Impact Countries"
+ RULE_NO_LAG_WASTELAND_NO_DESC:0 "Do not perform the optional WST consolidation."
+ RULE_NO_LAG_WASTELAND_YES_DESC:0 "Consolidate selected low-impact countries and Latin American states to reduce the number of active countries."
+ RULE_NO_LAG_MEAST:0 "Consolidate the Middle East"
+ RULE_NO_LAG_MEAST_NO_DESC:0 "Keep the configured Middle Eastern countries separate."
+ RULE_NO_LAG_MEAST_YES_DESC:0 "Transfer Afghanistan, Yemen, Oman, Saudi Arabia, Iraq and Iran to WST."
+ RULE_NO_LAG_ASIA:0 "Consolidate Asia and Oceania"
+ RULE_NO_LAG_ASIA_NO_DESC:0 "Keep the configured Asian and Oceanian countries separate."
+ RULE_NO_LAG_ASIA_YES_DESC:0 "Transfer the configured Asian and Oceanian countries to WST; the Soviet Union is excluded."
+ RULE_NO_LAG_EUROPE:0 "Consolidate Europe"
+ RULE_NO_LAG_EUROPE_NO_DESC:0 "Keep the configured European countries separate."
+ RULE_NO_LAG_EUROPE_YES_DESC:0 "Transfer the configured European countries and their controlled states to WST."
+ RULE_NO_LAG_NORTH_AMERICA:0 "Consolidate North America"
+ RULE_NO_LAG_NORTH_AMERICA_NO_DESC:0 "Keep the United States, Canada and Mexico separate."
+ RULE_NO_LAG_NORTH_AMERICA_YES_DESC:0 "Transfer the United States, Canada and Mexico to WST."
+ RULE_NO_LAG_MARKET:0 "International Market"
+ RULE_NO_LAG_MARKET_ON_DESC:0 "Keep international-market access available to AI countries."
+ RULE_NO_LAG_MARKET_OFF_DESC:0 "Disable international-market access for AI countries to reduce evaluation cost. Players remain unaffected."
+
+ optimization.start.event.1.title:0 "AI Optimization"
+ optimization.start.event.1.description:0 "Apply the optimization profile to this AI country."
+ optimization.start.event.1.option_yes:0 "Apply"
+ optimization.start.event.1.option_no:0 "Keep normal behavior"
+
+ #WST
+
+ WST_fascism:0 ""
+ WST_fascism_DEF:0 ""
+ WST_fascism_ADJ:0 ""
+ WST_democratic:0 ""
+ WST_democratic_DEF:0 ""
+ WST_democratic_ADJ:0 ""
+ WST_neutrality:0 ""
+ WST_neutrality_DEF:0 ""
+ WST_neutrality_ADJ:0 ""
+ WST_communism:0 ""
+ WST_communism_DEF:0 ""
+ WST_communism_ADJ:0 ""
+ WST:0 ""
+ WST_DEF:0 ""
+ WST_ADJ:0 ""
+ optimization_neutrality:0 "Neutral Zone"
+ optimization_neutrality_desc:0 "This territory is kept outside normal diplomacy to reduce simulation overhead."
+ optimization_wasteland:0 "Wasteland Administration"
+ optimization_wasteland_desc:0 "A consolidated territory intended to reduce the number of active countries and calculations."
+
+#MARKET
+
+ dam_idea:0 "AI Market Disabled"
+ dam_idea_desc:0 "Prevents this AI country from evaluating or using the international market."
+ dam.1:0 "International Market"
+ dam.1.t:0 "International Market Rule"
+ dam.1.d:0 "Disable international-market evaluation for this AI country."
+ dam.1.a:0 "Disable AI market access"
+
+# shackles
+ remove_shackles:0 "Remove Shackles"
+ remove_shackles_desc:0 "In order to make the game playable until the 1960s the minor's ability to field massive armies and produce massive ammounts of equipment was limited. If you want to play with a minor or medium power that has been limited in any way, this decision will remove those shackles."
+  
+ shackles.1.t:0 "Welcome to NO LAG BR!"
+ shackles.1.d:0 "This remake keeps the game close to Vanilla while improving multiplayer performance.\n\n§YMain changes§!\n- AI Shackles limits the production and recruitment of selected AI countries; human countries never retain these limitations.\n- Human minor countries receive, by default, one permanent research slot and the exact pre-remake two-year support spirit (+150% construction, +30% line-change retention, +0.50 daily political power, +10% recruitable population factor and -20% training time).\n- The Soviet Union/Russia begins with one additional research slot.\n- Division-template XP costs are zero for creating brigade groups, replacing brigades and adding support companies.\n- Colored Puppets is active, with aligned colors for the Chinese factions.\n- The original SPOT Host Tool starts with Germany selected as controller.\n- Only the 1936 scenario is supported.\n\nConfirm below to apply the AI limits and begin."
+ shackles.1.a:0 "Apply AI limits and continue"
+ shackles.1.a.d:0 "Applies the optimization limits only to the AI; human countries remain unrestricted."
+ 
+ unindustrialized:0 "Unindustrialized"
+ unindustrialized_desc:0 "Reduces industrial expansion and equipment output for a shackled AI country."
+ uninterested:0 "Uninterested"
+ uninterested_desc:0 "Limits recruitment, fuel use and aggressive diplomacy for a shackled AI country."
+ 
+ unshackle_congo:0 "Remove Congo's shackles"
+
+ #Vanilla Fixes
+#eo

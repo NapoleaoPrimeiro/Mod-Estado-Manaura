@@ -1,0 +1,47 @@
+state = {
+	id = 73
+	name = "STATE_73"
+	manpower = 650300
+	
+	state_category = rural
+	
+	history = {
+		
+		owner = CZE
+
+		buildings = {
+			infrastructure = 3
+		}
+
+		victory_points = {
+			6571 1 # Yasinia
+		}
+
+		add_core_of = CZE
+		add_core_of = SLO
+		add_core_of = UKR
+		
+		# This should isntead be reclaimable through Hungarian focuses with ww
+		IF = {
+			limit = {
+				NOT = {
+					has_dlc = "Gotterdammerung"
+				}
+			}
+			add_claim_by = HUN
+		}
+
+		1939.3.14 = {
+			owner = HUN
+			controller = HUN
+			remove_claim_by = HUN
+			add_core_of = HUN
+		}
+	}
+
+	provinces = {
+		6571 9563 11536 
+	}
+
+	local_supplies = 0.0 
+}

@@ -1,0 +1,47 @@
+on_actions = {
+	on_daily_ENG = {
+		effect = {
+			# Preserve the empire on the communist path while removing only the
+			# decolonization ultimatum that would otherwise cause a civil war.
+			if = {
+				limit = {
+					has_government = communism
+					has_completed_focus = ENG_concessions_to_the_trade_unions
+					NOT = { has_country_flag = NO_LAG_ENG_communist_empire_secured }
+				}
+
+				if = {
+					limit = { has_active_mission = ENG_expected_decolonization }
+					remove_mission = ENG_expected_decolonization
+				}
+				clr_country_flag = ENG_switched_to_communism_civil_war_flag
+				clr_country_flag = ENG_switched_to_communism_civil_war_timer_flag
+
+				# The communist path keeps the historical dominions together.  These
+				# flags are also consumed by the shared Commonwealth focus checks.
+				if = {
+					limit = { CAN = { exists = yes is_subject_of = ROOT } }
+					CAN = { set_country_flag = ENG_dominions_stayed_with_fascist_britain_flag }
+				}
+				if = {
+					limit = { SAF = { exists = yes is_subject_of = ROOT } }
+					SAF = { set_country_flag = ENG_dominions_stayed_with_fascist_britain_flag }
+				}
+				if = {
+					limit = { RAJ = { exists = yes is_subject_of = ROOT } }
+					RAJ = { set_country_flag = ENG_dominions_stayed_with_fascist_britain_flag }
+				}
+				if = {
+					limit = { AST = { exists = yes is_subject_of = ROOT } }
+					AST = { set_country_flag = ENG_dominions_stayed_with_fascist_britain_flag }
+				}
+				if = {
+					limit = { NZL = { exists = yes is_subject_of = ROOT } }
+					NZL = { set_country_flag = ENG_dominions_stayed_with_fascist_britain_flag }
+				}
+
+				set_country_flag = NO_LAG_ENG_communist_empire_secured
+			}
+		}
+	}
+}

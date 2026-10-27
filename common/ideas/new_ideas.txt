@@ -1,0 +1,148 @@
+#eo
+ideas = {
+
+	economy = {
+		
+		unindustrialized = {
+			
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+		
+			# Industrial penalties were removed so shackled AI countries can
+			# construct factories and produce equipment normally. Their military
+			# expansion remains limited by uninterested and the optimization idea.
+			
+			allowed_to_remove = {
+				OR = {
+					has_war = yes
+				}
+			}
+			cancel_if_invalid = no
+		}
+	}
+	
+	mobilization_laws = {
+	
+		uninterested = {
+	
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.0001
+				generate_wargoal_tension = 1.00
+				join_faction_tension = 0.20
+				lend_lease_tension = 0.50
+				guarantee_tension = 1.00
+				max_fuel_factor = -0.45
+				fuel_gain_factor = -0.6
+				conscription_factor = -0.5
+			}
+			
+			allowed_to_remove = {
+				OR = {
+					has_war = yes
+				}
+			}
+			cancel_if_invalid = no
+			
+		}
+	}
+	country = {
+		optimization_game_speed_balance = {
+			picture = jap_supremacy_of_will
+
+			removal_cost = -1
+			
+			modifier = {
+                		join_faction_tension = 0.5
+				conscription = -1
+				# Equipment production stays enabled. Division growth remains blocked
+				# by conscription, the template lock and the existing military limits.
+				ai_get_ally_desire_factor = -200
+              		  	ai_join_ally_desire_factor = -200
+				custom_modifier_tooltip = BUL_army_restrictions_mobilization_law_tt
+				custom_modifier_tooltip = SPR_military_disloyalty_tt
+				disabled_ideas = 1
+			}
+			allowed_to_remove = {
+				OR = {
+					has_war = yes
+				}
+			}
+		}
+
+		dam_idea = {
+			picture = chi_army_corruption
+		
+			allowed = {  
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			rule = {
+				can_access_market = no
+				desc = can_not_access_market_closed_economy
+			}
+		}
+		optimization_neutrality = {
+			picture = generic_pp_unity_bonus
+		
+			allowed = {  
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			rule = {
+				can_join_factions = no
+				can_not_declare_war = yes
+			}
+			allowed_to_remove = {
+				OR = {
+					has_war = yes
+				}
+			}
+		}
+
+		optimization_wasteland = {
+			picture = chi_war_of_resistance
+
+			removal_cost = -1
+			
+			modifier = {
+				ai_focus_peaceful_factor = 100
+				political_power_gain = -5
+				global_building_slots_factor = -2
+				guarantee_tension = 1
+				local_resources_factor = 5
+				join_faction_tension = 1
+				lend_lease_tension = 1
+				consumer_goods_factor = 5
+				min_export = 1
+				enemy_declare_war_tension = 1
+				enemy_justify_war_goal_time = 1
+			}
+		}
+		optimization_player_was_here = {
+			picture = tfv_can_conscription_crisis
+
+			removal_cost = -1
+			
+			modifier = {
+
+
+			}
+		}		
+	}
+}
+#eo

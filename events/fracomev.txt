@@ -1,0 +1,2831 @@
+#eo
+add_namespace = fracomev
+
+country_event = {
+	id = fracomev.34
+	title = fracomev.2.t
+	desc = fracomev.2.d
+
+	picture = france_offers_allies-451
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.2.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 20 }
+	
+		GER = { add_to_faction = JAP }
+		
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.2.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.35
+	title = fracomev.35.t
+	desc = fracomev.35.d
+
+	picture = france_offers_allies-451
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.35.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 20 }
+	
+		TUR = {transfer_state = 183}
+		
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.35.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			add_war_support = -0.05
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.36
+	title = fracomev.36.t
+	desc = fracomev.36.d
+
+	picture = france_offers_allies-451
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.36.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 20 }
+	
+		add_political_power = 55
+	PER = {
+country_event = fracomev.37
+	random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				
+			}
+			}
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.36.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			add_political_power = -55
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.37
+	title = fracomev.37.t
+	desc = fracomev.37.d
+
+	picture = france_offers_allies-451
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.37.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 20 }
+	
+		add_political_power = -155
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+	
+}
+
+country_event = {
+	id = fracomev.38
+	title = fracomev.38.t
+	desc = fracomev.38.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.38.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 20 }
+	
+		PER = {add_to_faction = ROOT}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.38.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0 }
+	
+		add_political_power = -25
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.39
+	title = fracomev.39.t
+	desc = fracomev.39.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.39.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 20 }
+	
+		PER = { annex_country = {
+    target = ROOT
+    transfer_troops = yes
+}}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.39.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0 }
+	
+		PER = {
+		
+		create_wargoal = {
+    type = puppet_wargoal_focus
+    target = ROOT
+}
+		}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.40
+	title = fracomev.39.t
+	desc = fracomev.39.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.39.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 20 }
+	
+		PER = { annex_country = {
+    target = ROOT
+    transfer_troops = yes
+}}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.39.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0 }
+	
+		PER = {
+		
+		create_wargoal = {
+    type = puppet_wargoal_focus
+    target = ROOT
+}
+		}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.41
+	title = fracomev.39.t
+	desc = fracomev.39.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.39.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 10 }
+	
+		PER = { annex_country = {
+    target = ROOT
+    transfer_troops = yes
+}}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.39.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 5 }
+	
+		PER = {
+		
+		create_wargoal = {
+    type = puppet_wargoal_focus
+    target = ROOT
+}
+		}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.42
+	title = fracomev.39.t
+	desc = fracomev.39.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.39.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 20 }
+	
+		PER = { annex_country = {
+    target = ROOT
+    transfer_troops = yes
+}}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.39.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0 }
+	
+		PER = {
+		
+		create_wargoal = {
+    type = puppet_wargoal_focus
+    target = ROOT
+}
+		}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.43
+	title = fracomev.39.t
+	desc = fracomev.39.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.39.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 10 }
+	
+		PER = { annex_country = {
+    target = ROOT
+    transfer_troops = yes
+}}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.39.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 5 }
+	
+		PER = {
+		
+		create_wargoal = {
+    type = puppet_wargoal_focus
+    target = ROOT
+}
+		}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.44
+	title = fracomev.44.t
+	desc = fracomev.44.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.44.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 30 }
+	
+		
+		SOV = {puppet = PER}
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.44.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 5 }
+	
+		SOV = {add_to_faction = PER}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.45
+	title = fracomev.45.t
+	desc = fracomev.45.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.38.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 20 }
+	
+		PER = {puppet = TUR}
+		TUR = {set_cosmetic_tag = TUR_anatolia_seljuk}
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.38.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0 }
+	
+		add_political_power = -25
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.46
+	title = fracomev.45.t
+	desc = fracomev.45.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.38.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 20 }
+	
+		PER = {add_to_faction = HUN}
+		HUN = {set_cosmetic_tag = HUN_hun}
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.38.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0 }
+	
+		add_political_power = -25
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.47
+	title = fracomev.47.t
+	desc = fracomev.47.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.38.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 50 }
+	
+		
+		GER = {puppet = HUN}
+		HUN = {set_cosmetic_tag = FORM_AUH}	
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.38.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0 }
+	
+		add_political_power = -25
+		GER = {create_wargoal = {
+    type = puppet_wargoal_focus
+    target = HUN
+}
+	}		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.48
+	title = fracomev.48.t
+	desc = fracomev.48.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.38.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 50 }
+	
+		
+		HUN = {annex_country = {
+    target = AUS
+    transfer_troops = yes
+}}
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.38.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0 }
+	
+		add_political_power = -25
+	GER = {	create_wargoal = {
+    type = puppet_wargoal_focus
+    target = AUS
+}
+	}		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.49
+	title = fracomev.49.t
+	desc = fracomev.49.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.38.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 50 }
+	
+		
+		GER = {annex_country = {
+    target = CZE
+    transfer_troops = yes
+}}
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.38.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0 }
+	
+		add_political_power = -25
+	GER = {	create_wargoal = {
+    type = puppet_wargoal_focus
+    target = CZE
+}
+	}		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.50
+	title = fracomev.50.t
+	desc = fracomev.50.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.38.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 50 }
+	
+		
+		GER = {annex_country = {
+    target = HUN
+    transfer_troops = yes
+}}
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.38.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0 }
+	
+		add_political_power = -25
+	GER = {	create_wargoal = {
+    type = puppet_wargoal_focus
+    target = HUN
+}
+	}		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.51
+	title = fracomev.51.t
+	desc = fracomev.51.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.38.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 50 }
+	
+		
+		GER = {annex_country = {
+    target = CZE
+    
+}}
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.38.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0 }
+	
+		add_political_power = -25
+	GER = {	create_wargoal = {
+    type = puppet_wargoal_focus
+    target = CZE
+}
+	}		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.52
+	title = fracomev.51.t
+	desc = fracomev.51.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.38.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 50 }
+	
+		
+		GER = {annex_country = {
+    target = HOL
+    
+}
+annex_country = {
+    target = INS
+   
+}
+}
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.38.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0 }
+	
+		add_political_power = -25
+	GER = {	create_wargoal = {
+    type = puppet_wargoal_focus
+    target = HOL
+}
+	}		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.151
+	title = fracomev.151.t
+	desc = fracomev.151.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.151.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 70 }
+	
+		
+		GER = {annex_country = {
+    target = LUX
+    
+}
+
+}
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.151.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 30 }
+	
+		add_political_power = -25
+	GER = {	create_wargoal = {
+    type = puppet_wargoal_focus
+    target = LUX
+}
+	}		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.132
+	title = fracomev.132.t
+	desc = fracomev.132.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.132.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 70 }
+	
+		
+		GER = {annex_country = {
+    target = BEL
+    
+}
+
+}
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.132.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 30 }
+	
+		add_political_power = -25
+	GER = {	create_wargoal = {
+    type = puppet_wargoal_focus
+    target = BEL
+}
+	}		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.97
+	title = fracomev.97.t
+	desc = fracomev.97.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.97.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 70 }
+	
+		
+		GER = {annex_country = {
+    target = POL
+    
+}
+
+}
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.97.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 30 }
+	
+		add_political_power = -25
+	GER = {	create_wargoal = {
+    type = puppet_wargoal_focus
+    target = POL
+}
+	}		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.98
+	title = fracomev.98.t
+	desc = fracomev.98.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.98.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 70 }
+	
+		
+		GER = {annex_country = {
+    target = AUS
+    
+}
+
+}
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.98.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 30 }
+	
+		add_political_power = -25
+	GER = {	create_wargoal = {
+    type = puppet_wargoal_focus
+    target = AUS
+}
+	}		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.99
+	title = fracomev.99.t
+	desc = fracomev.99.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.99.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 70 }
+	
+		
+		GER = {annex_country = {
+    target = CZE
+    
+}
+
+}
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.99.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 30 }
+	
+		add_political_power = -25
+	GER = {	create_wargoal = {
+    type = puppet_wargoal_focus
+    target = CZE
+}
+	}		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.53
+	title = fracomev.51.t
+	desc = fracomev.51.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.38.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 50 }
+	
+		
+		GER = {annex_country = {
+    target = SWI
+    
+}
+
+}
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.38.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0 }
+	
+		add_political_power = -25
+	GER = {	create_wargoal = {
+    type = puppet_wargoal_focus
+    target = SWI
+}
+	}		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.54
+	title = fracomev.54.t
+	desc = fracomev.54.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.38.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 50 }
+	
+		
+		GER = {add_to_faction = TUR
+
+}
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.38.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0 }
+	
+		add_political_power = -25
+			
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.55
+	title = fracomev.54.t
+	desc = fracomev.54.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.38.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 50 }
+	
+		
+		GER = {add_to_faction = BUL
+
+}
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.38.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0 }
+	
+		add_political_power = -25
+			
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.56
+	title = fracomev.56.t
+	desc = fracomev.56.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.38.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 50 }
+	
+		
+		GER = {puppet = AUS
+
+}
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.38.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0 }
+	
+		add_political_power = -25
+			
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.57
+	title = fracomev.56.t
+	desc = fracomev.56.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.38.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 50 }
+	
+		
+		GER = {puppet = HOL
+
+}
+HOL = {
+promote_character = {
+				character = HOL_wilhelmina
+				ideology = centrism
+			}
+			set_politics = { ruling_party = neutrality elections_allowed = no }
+			remove_ideas = HOL_wilhelmina
+}
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.38.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0 }
+	
+		add_political_power = -25
+			
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.58
+	title = fracomev.58.t
+	desc = fracomev.58.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.38.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 50 }
+	
+		912 = {transfer_state_to = GER }
+
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.38.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 25 }
+	
+		GER = {	create_wargoal = {
+    type = puppet_wargoal_focus
+    target = DEN
+}
+	}
+			
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.59
+	title = fracomev.59.t
+	desc = fracomev.59.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.38.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 30 }
+	
+		
+		85 = {transfer_state_to = GER }
+			86 = {transfer_state_to = GER }
+			807 = {transfer_state_to = GER }	
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.38.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 5 }
+	
+		GER = {	create_wargoal = {
+    type = puppet_wargoal_focus
+    target = POL
+}
+	}
+			
+		hidden_effect = {
+			
+		}
+	}
+}
+
+
+
+country_event = {
+	id = fracomev.60
+	title = fracomev.60.t
+	desc = fracomev.60.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.39.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 20 }
+	
+		GER = {
+		 annex_country = {
+    target = ROOT
+    transfer_troops = yes
+}
+		
+		}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.39.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0 }
+	
+		GER = {
+		
+		create_wargoal = {
+    type = puppet_wargoal_focus
+    target = POL
+}
+		}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.61
+	title = fracomev.61.t
+	desc = fracomev.61.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	#fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.61.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 10 }
+	
+	set_cosmetic_tag = GER_aus_hun
+		retire_ideology_leader = neutrality
+		name = "GER_otto_von_habsburg"
+		create_country_leader = {
+			name = "GER_otto_von_habsburg"
+			picture = GFX_Portrait_hungary_otto_von_hapsburg
+			expire = "1965.1.1"
+			ideology = despotism
+			traits = {
+			HUN_the_habsburg_prince
+			    anti_democrat
+			    constitutional_monarch_minor
+			}
+		}
+			add_field_marshal_role = {
+				character = "GER_otto_von_habsburg"
+				traits={ infantry_officer war_hero }
+				skill=3
+				attack_skill=4
+				defense_skill=3
+				planning_skill=2
+				logistics_skill=2
+				legacy_id=-1
+			}
+	if = {
+  		  limit = {
+       		 		has_completed_focus = ger2
+    			}
+   		 complete_national_focus = ger_8
+		}
+
+	}
+	option = {
+		name = fracomev.61.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 10 }
+	
+		set_cosmetic_tag = GER_pol
+		retire_ideology_leader = neutrality
+		name = "GER_karl_albrecht"
+		create_country_leader = {
+			name = "GER_karl_albrecht"
+			picture = GFX_portrait_POL_karl_albrecht
+			expire = "1965.1.1"
+			ideology = despotism
+			traits = {
+			    HUN_the_habsburg_prince
+			    POL_soldier_king
+			    patriot_king
+			}
+		}
+			add_field_marshal_role = {
+				character = "GER_karl_albrecht"
+				traits={ infantry_officer war_hero }
+				skill=3
+				attack_skill=4
+				defense_skill=3
+				planning_skill=2
+				logistics_skill=2
+				legacy_id=-1
+			}
+	if = {
+  		  limit = {
+       		 		has_completed_focus = ger2
+    			}
+   		 complete_national_focus = ger_94
+		}
+	}
+ }
+
+
+country_event = {
+	id = fracomev.62
+	title = fracomev.60.t
+	desc = fracomev.60.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.39.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 20 }
+	
+		GER = {
+		 annex_country = {
+    target = LIT
+    transfer_troops = yes
+}
+		
+		}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.39.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0 }
+	
+		GER = {
+		
+		create_wargoal = {
+    type = puppet_wargoal_focus
+    target = LIT
+}
+		}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+}
+
+
+country_event = {
+	id = fracomev.63
+	title = fracomev.54.t
+	desc = fracomev.54.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.39.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 15 }
+	
+		GER = {
+		add_to_faction = ROM
+		
+		}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.39.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 5 }
+	
+		GER = {
+		
+		create_wargoal = {
+    type = puppet_wargoal_focus
+    target = ROM
+}
+		}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.64
+	title = fracomev.54.t
+	desc = fracomev.54.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.39.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 15 }
+	
+		GER = {
+		add_to_faction = CZE
+		
+		}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.39.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 5 }
+	
+		GER = {
+		
+		create_wargoal = {
+    type = puppet_wargoal_focus
+    target = CZE
+}
+		}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.65
+	title = fracomev.54.t
+	desc = fracomev.54.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.39.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 25 }
+	
+		GER = {
+		add_to_faction = FIN
+		
+		}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.39.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 5 }
+	
+		GER = {
+		
+		create_wargoal = {
+    type = puppet_wargoal_focus
+    target = FIN
+}
+		}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.66
+	title = fracomev.54.t
+	desc = fracomev.54.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.39.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 25 }
+	
+		GER = {
+		add_to_faction = ITA
+		
+		}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.39.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 5 }
+	
+		GER = {
+		
+		create_wargoal = {
+    type = puppet_wargoal_focus
+    target = FIN
+}
+		}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.67
+	title = fracomev.67.t
+	desc = fracomev.67.d
+	picture = GFX_report_event_europe_funeral
+		#fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.67.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 10 }
+	
+	set_cosmetic_tag = GER_mil
+					limit = {
+						has_country_leader = { character = GER_adolf_hitler ruling_only = yes }
+					}
+			ELSE= {	
+		kill_country_leader = yes
+	}
+				add_field_marshal_role = {
+					character = GER_heinrich_himmler
+					traits = { politically_connected infantry_officer offensive_doctrine aggressive_assaulter old_guard harsh_leader skilled_staffer expert_delegator organizer thorough_planner urban_assault_specialist organisational_leader }
+					skill = 5
+					attack_skill = 5
+					defense_skill = 5
+					planning_skill = 5
+					logistics_skill = 5
+					legacy_id = 59
+				}
+ 			create_country_leader = {
+ 				name = "GER_heinrich_himmler"
+ 				picture = GFX_portrait_GER_heinrich_himmler
+ 				expire = "1965.1.1"
+ 				ideology = nazism
+ 				traits = {
+ 				}
+ 			}
+		hidden_effect = {
+			news_event = { hours = 6 id = news.28 }
+		}
+	}
+	option = {
+		name = fracomev.67.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 10 }
+	
+			modifier = {
+				factor = 100
+					has_game_rule = {
+						rule = GER_ai_behavior
+						option = DEMOCRATIC
+				}
+			}
+		
+		set_cosmetic_tag = GER_mil
+							limit = {
+						has_country_leader = { character = GER_adolf_hitler ruling_only = yes }
+					}
+			ELSE= {	
+		kill_country_leader = yes
+	}
+		dismantle_faction = yes
+ 			create_country_leader = {
+ 				name = "GER_hermann_goring"
+ 				picture = GFX_portrait_GER_hermann_goring
+ 				expire = "1965.1.1"
+ 				ideology = nazism
+ 				traits = {
+ 				}
+ 			}
+		hidden_effect = {
+			news_event = { hours = 6 id = news.29 }
+		}
+	}
+	option = {
+		name = fracomev.67.c
+		trigger = {
+		}
+		ai_chance = { factor = 10 }
+	
+							limit = {
+						has_country_leader = { character = GER_adolf_hitler ruling_only = yes }
+					}
+			ELSE= {	
+		kill_country_leader = yes
+	}
+				add_field_marshal_role = {
+					character = GER_joseph_goebbels
+					traits = { politically_connected infantry_officer offensive_doctrine aggressive_assaulter old_guard harsh_leader skilled_staffer expert_delegator organizer thorough_planner urban_assault_specialist organisational_leader }
+					skill = 5
+					attack_skill = 5
+					defense_skill = 5
+					planning_skill = 5
+					logistics_skill = 5
+					legacy_id = 59
+				}
+ 			create_country_leader = {
+ 				name = "GER_joseph_goebbels"
+ 				picture = GFX_portrait_GER_joseph_goebbels
+ 				expire = "1965.1.1"
+ 				ideology = nazism
+ 				traits = {
+ 					harsh_propagandist
+ 				}
+ 			}	
+			
+		hidden_effect = {
+			#country_event = wtt_germany.50
+		}
+	}
+	option = {
+		name = fracomev.67.e
+		trigger = {
+		}
+		ai_chance = { factor = 10 }
+	
+							limit = {
+						has_country_leader = { character = GER_adolf_hitler ruling_only = yes }
+					}
+			ELSE= {	
+		kill_country_leader = yes
+	}
+ 			create_country_leader = {
+ 				name = "GER_albert_speer"
+ 				picture = GFX_portrait_GER_albert_speer
+ 				expire = "1965.1.1"
+ 				ideology = nazism
+ 				traits = {
+ 					technocrat
+ 				}
+ 			}	
+			
+		hidden_effect = {
+			#news_event = { hours = 6 id = wtt_germany.50 }
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.68
+	title = fracomev.54.t
+	desc = fracomev.54.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.39.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 30 }
+	
+		GER = {
+		add_to_faction = USA
+		
+		}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.39.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 30 }
+	
+				GER = {
+		
+		create_wargoal = {
+    type = puppet_wargoal_focus
+    target = USA
+}
+		}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.69
+	title = fracomev.60.t
+	desc = fracomev.60.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.39.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 10 }
+	
+		GER = {
+		 annex_country = {
+    target = HOL
+    transfer_troops = yes
+}
+		
+		}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.39.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 9 }
+	
+		GER = {
+		
+		create_wargoal = {
+    type = puppet_wargoal_focus
+    target = HOL
+}
+		}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.70
+	title = fracomev.60.t
+	desc = fracomev.60.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.39.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 10 }
+	
+		GER = {
+		 annex_country = {
+    target = BEL
+    transfer_troops = yes
+}
+		
+		}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.39.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 9 }
+	
+		GER = {
+		
+		create_wargoal = {
+    type = puppet_wargoal_focus
+    target = BEL
+}
+		}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.71
+	title = fracomev.60.t
+	desc = fracomev.60.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.39.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 10 }
+	
+		GER = {
+		 annex_country = {
+    target = LUX
+    transfer_troops = yes
+}
+		
+		}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.39.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 9 }
+	
+		GER = {
+		
+		create_wargoal = {
+    type = puppet_wargoal_focus
+    target = LUX
+}
+		}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.72
+	title = fracomev.54.t
+	desc = fracomev.54.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.39.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 15 }
+	
+		GER = {
+		add_to_faction = MEX
+		
+		}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.39.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 5 }
+	
+		
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.73
+	title = fracomev.48.t
+	desc = fracomev.48.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.38.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 20 }
+	
+		
+		GER = {annex_country = {
+    target = AUS
+    transfer_troops = yes
+}}
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.38.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 10 }
+	
+		add_political_power = -25
+	GER = {	create_wargoal = {
+    type = puppet_wargoal_focus
+    target = AUS
+}
+	}		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.74
+	title = fracomev.48.t
+	desc = fracomev.48.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.38.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 70 }
+	
+		
+		GER = {annex_country = {
+    target = CZE
+    transfer_troops = yes
+}}
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.38.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 10 }
+	
+		add_political_power = -25
+	GER = {	create_wargoal = {
+    type = puppet_wargoal_focus
+    target = CZE
+}
+	}		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.75
+	title = fracomev.48.t
+	desc = fracomev.48.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.38.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 20 }
+	
+		
+		GER = {transfer_state = 188}
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.38.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 10 }
+	
+		add_political_power = -25
+	GER = {	create_wargoal = {
+    type = puppet_wargoal_focus
+    target = LIT
+}
+	}		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.76
+	title = fracomev.48.t
+	desc = fracomev.48.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.38.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 20 }
+	
+		
+		GER = {transfer_state = 85
+		transfer_state = 807
+		transfer_state = 86
+		add_to_faction = POL
+		}
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.38.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 10 }
+	
+		add_political_power = -25
+	GER = {	create_wargoal = {
+    type = puppet_wargoal_focus
+    target = POL
+}
+	}		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.77
+	title = fracomev.54.t
+	desc = fracomev.54.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.39.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 25 }
+	
+		GER = {
+		add_to_faction = SPA
+		
+		}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.39.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 2 }
+	
+		
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.78
+	title = fracomev.54.t
+	desc = fracomev.54.d
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.39.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 25 }
+	
+		GER = {
+		add_to_faction = ITA
+		
+		}
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = fracomev.39.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 2 }
+	
+		
+		
+			
+		hidden_effect = {
+			
+		}
+	}
+}
+
+
+
+country_event = {
+	id = fracomev.arg3
+	title = fracomev.arg3.t
+	desc = fracomev.arg3.d
+
+	picture = GFX_report_event_generic_military_parade
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.arg3.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 25 }
+	
+		
+		add_ideas = arg_malvina_crisis
+			
+		hidden_effect = {
+			
+		}
+	}
+	
+}
+
+country_event = {
+	id = fracomev.79
+	title = fracomev.arg4.t
+	desc = fracomev.arg4.d
+
+	picture = GFX_report_event_generic_military_parade
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.arg4.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 25 }
+	
+		
+		add_country_leader_role = {
+    character = ARG_manuel_savio
+    promote_leader = yes
+    country_leader = {
+        ideology = fascism_ideology
+        expire = "1965.1.1.1"
+        
+    }
+}
+			
+		hidden_effect = {
+			
+		}
+	}
+	
+}
+
+country_event = {
+	id = fracomev.80
+	title = fracomev.arg4.t
+	desc = fracomev.arg4.d
+
+	picture = GFX_report_event_generic_military_parade
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.arg80.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 25 }
+	
+		
+		add_country_leader_role = {
+    character = ARG_edelmiro_farrell
+    promote_leader = yes
+    country_leader = {
+        ideology = fascism_ideology
+        expire = "1965.1.1.1"
+        
+    }
+}
+			
+		hidden_effect = {
+			
+		}
+	}
+	
+}
+
+country_event = {
+	id = fracomev.81
+	title = fracomev.arg4.t
+	desc = fracomev.arg4.d
+
+	picture = GFX_report_event_generic_military_parade
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.arg81.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 25 }
+	
+		
+		add_country_leader_role = {
+    character = ARG_carlos_marquez
+    promote_leader = yes
+    country_leader = {
+        ideology = fascism_ideology
+        expire = "1965.1.1.1"
+        
+    }
+}
+			
+		hidden_effect = {
+			
+		}
+	}
+	
+}
+
+country_event = {
+	id = fracomev.82
+	title = fracomev.arg4.t
+	desc = fracomev.arg4.d
+
+	picture = GFX_report_event_generic_military_parade
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.arg82.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 25 }
+	
+		
+		add_country_leader_role = {
+    character = ARG_arturo_rawson
+    promote_leader = yes
+    country_leader = {
+        ideology = fascism_ideology
+        expire = "1965.1.1.1"
+        
+    }
+}
+			
+		hidden_effect = {
+			
+		}
+	}
+	
+}
+
+country_event = {
+	id = fracomev.85
+	title = fracomev.85.t
+	desc = fracomev.arg4.d
+
+	picture = GFX_report_event_generic_military_parade
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = "Long Live Senor Hitler"
+		trigger = {
+			
+		}
+		ai_chance = { factor = 25 }
+		#hidden_effect = {
+						#ARG = {
+			#complete_national_focus = ARG_roberto_maria_ortiz
+			#}
+		#}
+				#GER = {
+				#retire_country_leader = yes
+				#}
+			GER = {
+			retire_country_leader = yes
+		 			create_country_leader = {
+ 				name = "GER_karl_donitz"
+ 				picture = GFX_portrait_GER_karl_donitz
+ 				expire = "1965.1.1"
+ 				ideology = nazism
+ 				traits = {
+ 					GER_der_fuhrer
+ 				}
+ 			}
+		}
+				ARG = {
+					set_politics = { ruling_party = fascism elections_allowed = no }
+					add_popularity = { ideology = fascism popularity = 0.5 }
+		set_party_name = {
+				ideology = fascism
+				long_name = ARG_gen_nazism_party_long
+				name = ARG_gen_nazism_party
+			}
+				}	
+				ARG = { 
+		set_country_flag = ARG_worst_timeline_flag  
+
+		mark_focus_tree_layout_dirty = yes
+				change_tag_from = GER 
+				retire_ideology_leader = fascism
+				}
+			ARG = {
+ 			create_country_leader = {
+ 				name = "ARG_senor_hitler"
+ 				picture = GFX_portrait_south_america_generic_leader_1
+ 				expire = "1965.1.1"
+ 				ideology = nazism
+ 				traits = {
+ 					dictator
+					incognito
+ 				}
+ 			}
+		}
+
+	}
+	
+}
+
+country_event = {
+	id = fracomev.87
+	title = fracomev.87.t
+	desc = fracomev.87.d
+
+	picture = GFX_report_event_generic_military_parade
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.87.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 25 }
+	
+		random_owned_controlled_state = {
+				
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex 
+					level = 1
+					instant_build = yes
+					}
+				}
+		
+		ARG	= {random_owned_controlled_state = {
+				
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex 
+					level = 3
+					instant_build = yes
+					}
+				}
+				}
+		hidden_effect = {
+			
+		}
+		}
+	
+	option = {
+		name = fracomev.87.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 2 }
+	
+		
+		add_opinion_modifier = {
+    target = ARG
+    modifier = small_decrease
+}
+			
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.88
+	title = fracomev.87.t
+	desc = fracomev.87.d
+
+	picture = GFX_report_event_generic_military_parade
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.87.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 25 }
+	
+		random_owned_controlled_state = {
+				
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex 
+					level = 1
+					instant_build = yes
+					}
+				}
+		
+		ARG	= {random_owned_controlled_state = {
+				
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex 
+					level = 3
+					instant_build = yes
+					}
+				}
+				}
+		hidden_effect = {
+			
+		}
+		}
+	
+	option = {
+		name = fracomev.87.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 2 }
+	
+		
+		add_opinion_modifier = {
+    target = ARG
+    modifier = small_decrease
+}
+			
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = fracomev.102 
+	title = fracomev.102.t
+	desc = fracomev.102.d
+
+	picture = GFX_report_event_generic_military_parade
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.102.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 10 }
+	add_stability = 0.1
+	set_politics = {
+	ruling_party = communism
+    elections_allowed = no
+    
+}
+		hidden_effect = {
+			
+		}
+		}
+	option = {
+		name = fracomev.102.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 30 }
+	add_country_leader_role = {
+    character = ARG_fanny_jabcovsky
+    promote_leader = yes
+    country_leader = {
+        ideology = marxism
+        expire = "1965.1.1.1"
+        
+    }
+}
+set_politics = {
+	ruling_party = communism
+    elections_allowed = no
+    
+}
+add_war_support = 0.1
+		hidden_effect = {
+			
+		}
+		}
+	
+}
+
+country_event = {
+	id = fracomev.100
+	title = fracomev.100.t
+	desc = fracomev.100.d
+
+	picture = GFX_report_event_generic_military_parade
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.100.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 20 }
+		remove_ideas = arg_counc
+		
+	start_civil_war = {
+    ideology = fascism
+    size = 0.1
+    states = 508 509 510
+   
+   
+}
+		hidden_effect = {
+			
+		}
+		}
+	
+	
+}
+
+country_event = {
+	id = fracomev.101
+	title = fracomev.101.t
+	desc = fracomev.101.d
+
+	picture = GFX_report_event_generic_military_parade
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.101.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 20 }
+	add_stability = 0.15
+	add_political_power = 200
+		}	
+	}
+	
+	
+	country_event = {
+	id = fracomev.150
+	title = fracomev.150.t
+	desc = ""
+
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = fracomev.150.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 50 }
+	
+		SPA = { annex_country = {
+    target = POR
+    transfer_troops = yes
+}}
+	}
+	option = {
+		name = fracomev.150.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 50 }
+	
+		SPA = {
+		
+		create_wargoal = {
+    type = puppet_wargoal_focus
+    target = POR
+}
+		}
+		GER = {
+		
+		create_wargoal = {
+    type = puppet_wargoal_focus
+    target = POR
+}
+		}
+		
+	}
+}
+#eo

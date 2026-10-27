@@ -1,0 +1,303 @@
+USA_rework_test = {
+
+	icon=GFX_decision_category_generic_political_actions
+
+	priority = 100
+
+	visible_when_empty = no
+	
+	allowed = {
+		original_tag = USA
+	}
+
+	visible = {
+		is_debug = yes
+	}
+
+	available ={
+		
+	}
+}
+
+USA_2ND_us_civil_war = {
+	picture = GFX_usa_gonggong_gongcheng
+
+	icon=GFX_decision_category_generic_political_actions
+
+	priority = 99
+
+	visible_when_empty = no
+	
+	allowed = {
+		original_tag = USA
+	}
+
+	visible = {
+		has_global_flag = USA_2ND_us_civil_war_BEGUN_flag
+	}
+
+	available ={
+		
+	}
+}
+
+
+USA_nongyegaige= {
+	
+	allowed = {
+	}
+	visible = {
+		has_completed_focus =USA_focus4
+	}
+	available ={
+		has_completed_focus = USA_focus4
+	}
+}
+
+USA_guoyouhua= {
+	
+	allowed = {
+	}
+	visible = {
+		has_completed_focus =USA_focus6
+	}
+	available ={
+		has_completed_focus = USA_focus6
+	}
+}
+
+
+USA_zhongzhiyuanfa= {
+	
+	allowed = {
+	}
+	visible = {
+		has_completed_focus =USA_focus17
+	}
+	available ={
+		has_completed_focus = USA_focus17
+	}
+}
+
+USA_gonggonggongcheng= {
+	picture = GFX_usa_gonggong_gongcheng
+
+	icon=GFX_decision_category_generic_political_actions
+
+	priority = 70
+
+	visible_when_empty = no
+	
+	allowed = {
+	}
+	visible = {
+		has_completed_focus =USA_wpa
+	}
+	available ={
+		has_completed_focus = USA_wpa
+	}
+}
+
+USA_zhanzhengxuanchuan = {
+	picture = GFX_usa_zhanzheng_xuanchuan
+
+    icon = GFX_decision_generic_USA_flag
+
+    visible_when_empty = yes
+
+    priority = 80
+	
+    allowed = {
+    	tag = USA
+    }
+    visible = {
+		OR={
+	 		has_completed_focus= USA_the_giant_wakes
+			AND = {
+				has_country_flag = USA_war_pro_test_FLAG
+				is_debug = yes
+			}			
+		}
+
+    }
+}
+
+USA_renmindahui = {
+	picture = GFX_decision_cat_picture_soviet_comecon
+
+    icon = GFX_decision_generic_USA_flag
+
+    visible_when_empty = yes
+
+    priority = 100
+
+    allowed = {
+    	tag = USA
+    }
+    visible = {
+		OR={
+	 		has_completed_focus= USA_focus3
+			AND = {
+				is_debug = yes
+				has_country_flag = USA_com_congress_test_FLAG
+			}			
+		}
+
+    }
+}
+
+USA_civil_war_communism = {
+	picture = GFX_decision_cat_picture_soviet_comecon
+
+    icon = GFX_decision_generic_USA_flag
+
+    visible_when_empty = yes
+
+    priority = 100
+
+    allowed = {
+    	tag = USA
+    }
+    visible = {
+		has_country_flag = mtg_usa_civil_war_fascists_2
+    }
+}
+
+
+USA_inner= {
+    icon = GFX_decision_generic_USA_flag
+    visible_when_empty = no
+    priority = 100
+
+    allowed = {
+    	tag = USA
+    }
+    visible = {
+			is_debug = yes
+    }
+}
+
+USA_balance_of_power_category= {
+    icon = GFX_decision_generic_USA_flag
+    visible_when_empty = no
+    priority = 100
+
+    allowed = {
+    	always = no
+    }
+    visible = {
+		always = no
+		
+    }
+}
+
+USA_liudongzijin_decision= {
+    icon = GFX_decision_generic_USA_flag
+    visible_when_empty = no
+    priority = 100
+
+    allowed = {
+    	tag = USA
+    }
+    visible = {
+		OR={
+			AND = {
+				has_country_flag = USA_zijin_test_FLAG
+				is_debug=yes
+			}		
+			has_completed_focus=USA_focus78
+		}		
+		
+    }
+}
+
+USA_ai= {
+    icon = GFX_decision_generic_USA_flag
+    visible_when_empty = no
+    priority = 100
+
+    allowed = {
+		TAG=USA	
+    }
+    visible = {
+		TAG=USA
+    	OR={
+			AND = {
+				has_country_flag = USA_AI_test_FLAG
+				is_debug=yes
+			}			
+			is_ai=yes
+		}		
+		
+    }
+}
+
+
+HAW_wangguo_shiwu = {
+    icon = GFX_decision_category_NOR_monarchist_prep
+	picture = GFX_decision_cat_picture_generic_shipbuilding
+
+    visible_when_empty = no
+    priority = 100
+
+    allowed = {
+    	tag = HAW
+    }
+    visible = {
+		has_completed_focus = HAW_zuihou_jihui						
+    }
+}
+
+HAW_zhetang_ju = {
+	icon = GFX_decision_category_NOR_monarchist_prep
+	picture = GFX_decision_cat_picture_ITA_colonial_management
+
+    visible_when_empty = no
+    priority = 100
+
+    allowed = {
+    	tag = HAW
+    }
+    visible = {
+		has_completed_focus = HAW_wangguo_zhetangju					
+    }
+}
+
+US_bond_can = {
+	icon = GFX_decision_category_generic_industry
+	picture = GFX_decision_cat_generic_mefo_bills
+
+    visible_when_empty = no
+    priority = 80
+
+    allowed = {
+    	tag = USA
+    }
+    visible = {
+		OR = {
+			CAN = {
+				OR = {
+					is_in_faction_with = USA
+					has_government = USA
+					is_subject_of = USA
+				}
+				NOT = {
+					has_War_with = USA
+				}
+			}
+			AND = {
+				CAN = {
+					exists = no
+				}
+				every_state = {
+					is_core_of = CAN
+					is_controlled_by = USA
+				}
+			}
+		}
+						
+    }
+
+	
+}
+

@@ -1,0 +1,32 @@
+# France Rework - path effects (1.1.0)
+FRW_decol_upgrade = {
+	if = { limit = { has_idea = FRW_fraternal_peoples_3 } add_political_power = 25 }
+	else_if = { limit = { has_idea = FRW_fraternal_peoples_2 } swap_ideas = { remove_idea = FRW_fraternal_peoples_2 add_idea = FRW_fraternal_peoples_3 } }
+	else_if = { limit = { has_idea = FRW_fraternal_peoples } swap_ideas = { remove_idea = FRW_fraternal_peoples add_idea = FRW_fraternal_peoples_2 } }
+	else = { add_ideas = FRW_fraternal_peoples }
+}
+FRW_liberation_peace = {
+	every_country = {
+		limit = { has_war_with = ROOT any_owned_state = { is_core_of = ROOT is_controlled_by = ROOT } }
+		set_country_flag = FRW_peace_target
+	}
+	every_state = {
+		limit = { is_core_of = ROOT is_controlled_by = ROOT NOT = { is_owned_by = ROOT } }
+		ROOT = { transfer_state = PREV }
+	}
+	every_country = {
+		limit = { has_country_flag = FRW_peace_target }
+		clr_country_flag = FRW_peace_target
+		ROOT = { white_peace = PREV }
+	}
+	if = { limit = { owns_state = 16 controls_state = 16 } set_capital = { state = 16 } }
+}
+FRW_gov_reform_start = {
+	if = {
+		limit = { has_idea = FRA_disjointed_government }
+		swap_ideas = { remove_idea = FRA_disjointed_government add_idea = FRW_disjointed_2 }
+		clr_country_flag = FRW_gov_reform
+		set_country_flag = FRW_gov_reform
+	}
+}
+

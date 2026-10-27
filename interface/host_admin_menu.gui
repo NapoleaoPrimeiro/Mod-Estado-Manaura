@@ -1,0 +1,197 @@
+guiTypes = {
+
+	containerWindowType = {
+		name = "admin_claim_window"
+		position = { x = 14 y = 16 }
+		size = { width = 16 height = 16 }
+		orientation = UPPER_LEFT
+		buttonType = { name = "admin_claim_button" position = { x = 0 y = 0 } spriteType = "GFX_admin_hotspot" }
+	}
+
+	containerWindowType = {
+		name = "admin_toggle_window"
+		position = { x = -340 y = 80 }
+		size = { width = 123 height = 34 }
+		orientation = UPPER_RIGHT
+		buttonType = { name = "admin_toggle_button" position = { x = 0 y = 0 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_TOGGLE" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_TOGGLE_TT" shortcut = "ctrl+F9" clicksound = click_default }
+	}
+
+	containerWindowType = {
+		name = "admin_main_window"
+		position = { x = -507 y = -345 }
+		size = { width = 1015 height = 690 }
+		orientation = CENTER
+		moveable = yes
+		background = { name = "admin_bg" quadTextureSprite = "GFX_tiled_window_2b_border" }
+		instantTextBoxType = { name = "admin_title" position = { x = 20 y = 14 } font = "hoi_24header" text = "ADMIN_TITLE" maxWidth = 600 maxHeight = 30 fixedsize = yes }
+		buttonType = { name = "admin_close_button" position = { x = 975 y = 10 } spriteType = "GFX_closebutton" shortcut = "ESCAPE" clicksound = click_close }
+		instantTextBoxType = { name = "admin_targets_header" position = { x = 20 y = 55 } font = "hoi_18mbs" text = "ADMIN_TARGETS_HEADER" maxWidth = 290 maxHeight = 20 fixedsize = yes }
+		buttonType = { name = "admin_sel_me" position = { x = 20 y = 80 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_SEL_ME" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_SEL_ME_TT" clicksound = click_default }
+		buttonType = { name = "admin_sel_all" position = { x = 150 y = 80 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_SEL_ALL" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_SEL_ALL_TT" clicksound = click_default }
+		buttonType = { name = "admin_sel_none" position = { x = 20 y = 118 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_SEL_NONE" buttonFont = "hoi_16mbs" clicksound = click_default }
+		buttonType = { name = "admin_refresh" position = { x = 150 y = 118 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_REFRESH" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_REFRESH_TT" clicksound = click_default }
+		instantTextBoxType = { name = "admin_sel_count_text" position = { x = 20 y = 160 } font = "hoi_16mbs" text = "ADMIN_SEL_COUNT" maxWidth = 290 maxHeight = 20 fixedsize = yes }
+		gridBoxType = {
+			name = "admin_player_grid"
+			position = { x = 20 y = 185 }
+			size = { width = 290 height = 490 }
+			slotsize = { width = 290 height = 46 }
+			max_slots_horizontal = 1
+			format = "UPPER_LEFT"
+		}
+		buttonType = { name = "admin_tab_boosts" position = { x = 330 y = 50 } spriteType = "GFX_button_148x34" buttonText = "ADMIN_TAB_boosts" buttonFont = "hoi_16mbs" clicksound = click_default }
+		instantTextBoxType = { name = "admin_tabmark_boosts" position = { x = 330 y = 84 } font = "hoi_16mbs" text = "ADMIN_TABMARK" maxWidth = 148 maxHeight = 20 fixedsize = yes }
+		buttonType = { name = "admin_tab_actions" position = { x = 485 y = 50 } spriteType = "GFX_button_148x34" buttonText = "ADMIN_TAB_actions" buttonFont = "hoi_16mbs" clicksound = click_default }
+		instantTextBoxType = { name = "admin_tabmark_actions" position = { x = 485 y = 84 } font = "hoi_16mbs" text = "ADMIN_TABMARK" maxWidth = 148 maxHeight = 20 fixedsize = yes }
+		buttonType = { name = "admin_tab_politics" position = { x = 640 y = 50 } spriteType = "GFX_button_148x34" buttonText = "ADMIN_TAB_politics" buttonFont = "hoi_16mbs" clicksound = click_default }
+		instantTextBoxType = { name = "admin_tabmark_politics" position = { x = 640 y = 84 } font = "hoi_16mbs" text = "ADMIN_TABMARK" maxWidth = 148 maxHeight = 20 fixedsize = yes }
+		buttonType = { name = "admin_tab_diplo" position = { x = 795 y = 50 } spriteType = "GFX_button_148x34" buttonText = "ADMIN_TAB_diplo" buttonFont = "hoi_16mbs" clicksound = click_default }
+		instantTextBoxType = { name = "admin_tabmark_diplo" position = { x = 795 y = 84 } font = "hoi_16mbs" text = "ADMIN_TABMARK" maxWidth = 148 maxHeight = 20 fixedsize = yes }
+		instantTextBoxType = { name = "admin_lbl_research" position = { x = 330 y = 116 } font = "hoi_16mbs" text = "ADMIN_B_research" maxWidth = 230 maxHeight = 20 fixedsize = yes pdx_tooltip = "ADMIN_B_research_TT" }
+		instantTextBoxType = { name = "admin_cnt_research" position = { x = 565 y = 116 } font = "hoi_16mbs" text = "ADMIN_CNT_research" maxWidth = 80 maxHeight = 20 fixedsize = yes pdx_tooltip = "ADMIN_CNT_TT" }
+		buttonType = { name = "admin_on_research" position = { x = 650 y = 108 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_ON" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_B_research_TT" clicksound = click_default }
+		buttonType = { name = "admin_off_research" position = { x = 780 y = 108 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_OFF" buttonFont = "hoi_16mbs" clicksound = click_default }
+		instantTextBoxType = { name = "admin_lbl_construction" position = { x = 330 y = 154 } font = "hoi_16mbs" text = "ADMIN_B_construction" maxWidth = 230 maxHeight = 20 fixedsize = yes pdx_tooltip = "ADMIN_B_construction_TT" }
+		instantTextBoxType = { name = "admin_cnt_construction" position = { x = 565 y = 154 } font = "hoi_16mbs" text = "ADMIN_CNT_construction" maxWidth = 80 maxHeight = 20 fixedsize = yes pdx_tooltip = "ADMIN_CNT_TT" }
+		buttonType = { name = "admin_on_construction" position = { x = 650 y = 146 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_ON" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_B_construction_TT" clicksound = click_default }
+		buttonType = { name = "admin_off_construction" position = { x = 780 y = 146 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_OFF" buttonFont = "hoi_16mbs" clicksound = click_default }
+		instantTextBoxType = { name = "admin_lbl_production" position = { x = 330 y = 192 } font = "hoi_16mbs" text = "ADMIN_B_production" maxWidth = 230 maxHeight = 20 fixedsize = yes pdx_tooltip = "ADMIN_B_production_TT" }
+		instantTextBoxType = { name = "admin_cnt_production" position = { x = 565 y = 192 } font = "hoi_16mbs" text = "ADMIN_CNT_production" maxWidth = 80 maxHeight = 20 fixedsize = yes pdx_tooltip = "ADMIN_CNT_TT" }
+		buttonType = { name = "admin_on_production" position = { x = 650 y = 184 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_ON" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_B_production_TT" clicksound = click_default }
+		buttonType = { name = "admin_off_production" position = { x = 780 y = 184 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_OFF" buttonFont = "hoi_16mbs" clicksound = click_default }
+		instantTextBoxType = { name = "admin_lbl_training" position = { x = 330 y = 230 } font = "hoi_16mbs" text = "ADMIN_B_training" maxWidth = 230 maxHeight = 20 fixedsize = yes pdx_tooltip = "ADMIN_B_training_TT" }
+		instantTextBoxType = { name = "admin_cnt_training" position = { x = 565 y = 230 } font = "hoi_16mbs" text = "ADMIN_CNT_training" maxWidth = 80 maxHeight = 20 fixedsize = yes pdx_tooltip = "ADMIN_CNT_TT" }
+		buttonType = { name = "admin_on_training" position = { x = 650 y = 222 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_ON" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_B_training_TT" clicksound = click_default }
+		buttonType = { name = "admin_off_training" position = { x = 780 y = 222 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_OFF" buttonFont = "hoi_16mbs" clicksound = click_default }
+		instantTextBoxType = { name = "admin_lbl_combat" position = { x = 330 y = 268 } font = "hoi_16mbs" text = "ADMIN_B_combat" maxWidth = 230 maxHeight = 20 fixedsize = yes pdx_tooltip = "ADMIN_B_combat_TT" }
+		instantTextBoxType = { name = "admin_cnt_combat" position = { x = 565 y = 268 } font = "hoi_16mbs" text = "ADMIN_CNT_combat" maxWidth = 80 maxHeight = 20 fixedsize = yes pdx_tooltip = "ADMIN_CNT_TT" }
+		buttonType = { name = "admin_on_combat" position = { x = 650 y = 260 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_ON" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_B_combat_TT" clicksound = click_default }
+		buttonType = { name = "admin_off_combat" position = { x = 780 y = 260 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_OFF" buttonFont = "hoi_16mbs" clicksound = click_default }
+		instantTextBoxType = { name = "admin_lbl_logistics" position = { x = 330 y = 306 } font = "hoi_16mbs" text = "ADMIN_B_logistics" maxWidth = 230 maxHeight = 20 fixedsize = yes pdx_tooltip = "ADMIN_B_logistics_TT" }
+		instantTextBoxType = { name = "admin_cnt_logistics" position = { x = 565 y = 306 } font = "hoi_16mbs" text = "ADMIN_CNT_logistics" maxWidth = 80 maxHeight = 20 fixedsize = yes pdx_tooltip = "ADMIN_CNT_TT" }
+		buttonType = { name = "admin_on_logistics" position = { x = 650 y = 298 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_ON" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_B_logistics_TT" clicksound = click_default }
+		buttonType = { name = "admin_off_logistics" position = { x = 780 y = 298 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_OFF" buttonFont = "hoi_16mbs" clicksound = click_default }
+		instantTextBoxType = { name = "admin_lbl_wargoal" position = { x = 330 y = 344 } font = "hoi_16mbs" text = "ADMIN_B_wargoal" maxWidth = 230 maxHeight = 20 fixedsize = yes pdx_tooltip = "ADMIN_B_wargoal_TT" }
+		instantTextBoxType = { name = "admin_cnt_wargoal" position = { x = 565 y = 344 } font = "hoi_16mbs" text = "ADMIN_CNT_wargoal" maxWidth = 80 maxHeight = 20 fixedsize = yes pdx_tooltip = "ADMIN_CNT_TT" }
+		buttonType = { name = "admin_on_wargoal" position = { x = 650 y = 336 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_ON" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_B_wargoal_TT" clicksound = click_default }
+		buttonType = { name = "admin_off_wargoal" position = { x = 780 y = 336 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_OFF" buttonFont = "hoi_16mbs" clicksound = click_default }
+		instantTextBoxType = { name = "admin_lbl_economy" position = { x = 330 y = 382 } font = "hoi_16mbs" text = "ADMIN_B_economy" maxWidth = 230 maxHeight = 20 fixedsize = yes pdx_tooltip = "ADMIN_B_economy_TT" }
+		instantTextBoxType = { name = "admin_cnt_economy" position = { x = 565 y = 382 } font = "hoi_16mbs" text = "ADMIN_CNT_economy" maxWidth = 80 maxHeight = 20 fixedsize = yes pdx_tooltip = "ADMIN_CNT_TT" }
+		buttonType = { name = "admin_on_economy" position = { x = 650 y = 374 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_ON" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_B_economy_TT" clicksound = click_default }
+		buttonType = { name = "admin_off_economy" position = { x = 780 y = 374 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_OFF" buttonFont = "hoi_16mbs" clicksound = click_default }
+		instantTextBoxType = { name = "admin_lbl_focus" position = { x = 330 y = 420 } font = "hoi_16mbs" text = "ADMIN_B_focus" maxWidth = 230 maxHeight = 20 fixedsize = yes pdx_tooltip = "ADMIN_B_focus_TT" }
+		instantTextBoxType = { name = "admin_cnt_focus" position = { x = 565 y = 420 } font = "hoi_16mbs" text = "ADMIN_CNT_focus" maxWidth = 80 maxHeight = 20 fixedsize = yes pdx_tooltip = "ADMIN_CNT_TT" }
+		buttonType = { name = "admin_on_focus" position = { x = 650 y = 412 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_ON" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_B_focus_TT" clicksound = click_default }
+		buttonType = { name = "admin_off_focus" position = { x = 780 y = 412 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_OFF" buttonFont = "hoi_16mbs" clicksound = click_default }
+		instantTextBoxType = { name = "admin_lbl_diplomacy" position = { x = 330 y = 458 } font = "hoi_16mbs" text = "ADMIN_B_diplomacy" maxWidth = 230 maxHeight = 20 fixedsize = yes pdx_tooltip = "ADMIN_B_diplomacy_TT" }
+		instantTextBoxType = { name = "admin_cnt_diplomacy" position = { x = 565 y = 458 } font = "hoi_16mbs" text = "ADMIN_CNT_diplomacy" maxWidth = 80 maxHeight = 20 fixedsize = yes pdx_tooltip = "ADMIN_CNT_TT" }
+		buttonType = { name = "admin_on_diplomacy" position = { x = 650 y = 450 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_ON" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_B_diplomacy_TT" clicksound = click_default }
+		buttonType = { name = "admin_off_diplomacy" position = { x = 780 y = 450 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_OFF" buttonFont = "hoi_16mbs" clicksound = click_default }
+		buttonType = { name = "admin_alloff" position = { x = 650 y = 494 } spriteType = "GFX_button_221x34" buttonText = "ADMIN_ALLOFF" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_ALLOFF_TT" clicksound = click_default }
+		instantTextBoxType = { name = "admin_legend" position = { x = 330 y = 543 } font = "hoi_16mbs" text = "ADMIN_LEGEND" maxWidth = 640 maxHeight = 60 fixedsize = yes }
+		buttonType = { name = "admin_act_pp" position = { x = 330 y = 108 } spriteType = "GFX_button_148x34" buttonText = "ADMIN_A_pp" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_A_pp_TT" clicksound = click_default }
+		buttonType = { name = "admin_act_manpower" position = { x = 490 y = 108 } spriteType = "GFX_button_148x34" buttonText = "ADMIN_A_manpower" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_A_manpower_TT" clicksound = click_default }
+		buttonType = { name = "admin_act_cp" position = { x = 650 y = 108 } spriteType = "GFX_button_148x34" buttonText = "ADMIN_A_cp" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_A_cp_TT" clicksound = click_default }
+		buttonType = { name = "admin_act_xp" position = { x = 810 y = 108 } spriteType = "GFX_button_148x34" buttonText = "ADMIN_A_xp" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_A_xp_TT" clicksound = click_default }
+		buttonType = { name = "admin_act_stab" position = { x = 330 y = 148 } spriteType = "GFX_button_148x34" buttonText = "ADMIN_A_stab" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_A_stab_TT" clicksound = click_default }
+		buttonType = { name = "admin_act_factories" position = { x = 490 y = 148 } spriteType = "GFX_button_148x34" buttonText = "ADMIN_A_factories" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_A_factories_TT" clicksound = click_default }
+		buttonType = { name = "admin_act_slot" position = { x = 650 y = 148 } spriteType = "GFX_button_148x34" buttonText = "ADMIN_A_slot" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_A_slot_TT" clicksound = click_default }
+		buttonType = { name = "admin_act_fuel" position = { x = 810 y = 148 } spriteType = "GFX_button_148x34" buttonText = "ADMIN_A_fuel" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_A_fuel_TT" clicksound = click_default }
+		buttonType = { name = "admin_act_equip" position = { x = 330 y = 188 } spriteType = "GFX_button_148x34" buttonText = "ADMIN_A_equip" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_A_equip_TT" clicksound = click_default }
+		buttonType = { name = "admin_act_nukes" position = { x = 490 y = 188 } spriteType = "GFX_button_148x34" buttonText = "ADMIN_A_nukes" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_A_nukes_TT" clicksound = click_default }
+		buttonType = { name = "admin_act_peace" position = { x = 650 y = 188 } spriteType = "GFX_button_148x34" buttonText = "ADMIN_A_peace" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_A_peace_TT" clicksound = click_default }
+		instantTextBoxType = { name = "admin_pol_header" position = { x = 330 y = 108 } font = "hoi_16mbs" text = "ADMIN_POL_HEADER" maxWidth = 660 maxHeight = 40 fixedsize = yes }
+		instantTextBoxType = { name = "admin_pol_lbl_democratic" position = { x = 330 y = 168 } font = "hoi_18mbs" text = "ADMIN_POL_democratic" maxWidth = 120 maxHeight = 20 fixedsize = yes }
+		instantTextBoxType = { name = "admin_pol_cnt_democratic" position = { x = 450 y = 168 } font = "hoi_16mbs" text = "ADMIN_POL_CNT_democratic" maxWidth = 50 maxHeight = 20 fixedsize = yes pdx_tooltip = "ADMIN_POL_CNT_TT" }
+		buttonType = { name = "admin_pol_pop_democratic" position = { x = 500 y = 160 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_POL_POP" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_POL_POP_TT" clicksound = click_default }
+		buttonType = { name = "admin_pol_gov_democratic" position = { x = 628 y = 160 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_POL_GOV" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_POL_GOV_TT" clicksound = click_default }
+		buttonType = { name = "admin_pol_drift_on_democratic" position = { x = 756 y = 160 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_POL_DRIFT_ON" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_POL_DRIFT_TT" clicksound = click_default }
+		buttonType = { name = "admin_pol_drift_off_democratic" position = { x = 884 y = 160 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_POL_DRIFT_OFF" buttonFont = "hoi_16mbs" clicksound = click_default }
+		instantTextBoxType = { name = "admin_pol_lbl_communism" position = { x = 330 y = 212 } font = "hoi_18mbs" text = "ADMIN_POL_communism" maxWidth = 120 maxHeight = 20 fixedsize = yes }
+		instantTextBoxType = { name = "admin_pol_cnt_communism" position = { x = 450 y = 212 } font = "hoi_16mbs" text = "ADMIN_POL_CNT_communism" maxWidth = 50 maxHeight = 20 fixedsize = yes pdx_tooltip = "ADMIN_POL_CNT_TT" }
+		buttonType = { name = "admin_pol_pop_communism" position = { x = 500 y = 204 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_POL_POP" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_POL_POP_TT" clicksound = click_default }
+		buttonType = { name = "admin_pol_gov_communism" position = { x = 628 y = 204 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_POL_GOV" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_POL_GOV_TT" clicksound = click_default }
+		buttonType = { name = "admin_pol_drift_on_communism" position = { x = 756 y = 204 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_POL_DRIFT_ON" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_POL_DRIFT_TT" clicksound = click_default }
+		buttonType = { name = "admin_pol_drift_off_communism" position = { x = 884 y = 204 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_POL_DRIFT_OFF" buttonFont = "hoi_16mbs" clicksound = click_default }
+		instantTextBoxType = { name = "admin_pol_lbl_fascism" position = { x = 330 y = 256 } font = "hoi_18mbs" text = "ADMIN_POL_fascism" maxWidth = 120 maxHeight = 20 fixedsize = yes }
+		instantTextBoxType = { name = "admin_pol_cnt_fascism" position = { x = 450 y = 256 } font = "hoi_16mbs" text = "ADMIN_POL_CNT_fascism" maxWidth = 50 maxHeight = 20 fixedsize = yes pdx_tooltip = "ADMIN_POL_CNT_TT" }
+		buttonType = { name = "admin_pol_pop_fascism" position = { x = 500 y = 248 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_POL_POP" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_POL_POP_TT" clicksound = click_default }
+		buttonType = { name = "admin_pol_gov_fascism" position = { x = 628 y = 248 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_POL_GOV" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_POL_GOV_TT" clicksound = click_default }
+		buttonType = { name = "admin_pol_drift_on_fascism" position = { x = 756 y = 248 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_POL_DRIFT_ON" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_POL_DRIFT_TT" clicksound = click_default }
+		buttonType = { name = "admin_pol_drift_off_fascism" position = { x = 884 y = 248 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_POL_DRIFT_OFF" buttonFont = "hoi_16mbs" clicksound = click_default }
+		instantTextBoxType = { name = "admin_pol_lbl_neutrality" position = { x = 330 y = 300 } font = "hoi_18mbs" text = "ADMIN_POL_neutrality" maxWidth = 120 maxHeight = 20 fixedsize = yes }
+		instantTextBoxType = { name = "admin_pol_cnt_neutrality" position = { x = 450 y = 300 } font = "hoi_16mbs" text = "ADMIN_POL_CNT_neutrality" maxWidth = 50 maxHeight = 20 fixedsize = yes pdx_tooltip = "ADMIN_POL_CNT_TT" }
+		buttonType = { name = "admin_pol_pop_neutrality" position = { x = 500 y = 292 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_POL_POP" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_POL_POP_TT" clicksound = click_default }
+		buttonType = { name = "admin_pol_gov_neutrality" position = { x = 628 y = 292 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_POL_GOV" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_POL_GOV_TT" clicksound = click_default }
+		buttonType = { name = "admin_pol_drift_on_neutrality" position = { x = 756 y = 292 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_POL_DRIFT_ON" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_POL_DRIFT_TT" clicksound = click_default }
+		buttonType = { name = "admin_pol_drift_off_neutrality" position = { x = 884 y = 292 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_POL_DRIFT_OFF" buttonFont = "hoi_16mbs" clicksound = click_default }
+		instantTextBoxType = { name = "admin_partner_text" position = { x = 330 y = 108 } font = "hoi_18mbs" text = "ADMIN_PARTNER_TEXT" maxWidth = 660 maxHeight = 20 fixedsize = yes pdx_tooltip = "ADMIN_PARTNER_TT" }
+		buttonType = { name = "admin_dip_war" position = { x = 330 y = 136 } spriteType = "GFX_button_221x34" buttonText = "ADMIN_DIP_war" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_DIP_war_TT" clicksound = click_default }
+		buttonType = { name = "admin_dip_peace" position = { x = 555 y = 136 } spriteType = "GFX_button_221x34" buttonText = "ADMIN_DIP_peace" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_DIP_peace_TT" clicksound = click_default }
+		buttonType = { name = "admin_dip_faction" position = { x = 780 y = 136 } spriteType = "GFX_button_221x34" buttonText = "ADMIN_DIP_faction" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_DIP_faction_TT" clicksound = click_default }
+		buttonType = { name = "admin_dip_access" position = { x = 330 y = 174 } spriteType = "GFX_button_221x34" buttonText = "ADMIN_DIP_access" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_DIP_access_TT" clicksound = click_default }
+		buttonType = { name = "admin_dip_guarantee" position = { x = 555 y = 174 } spriteType = "GFX_button_221x34" buttonText = "ADMIN_DIP_guarantee" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_DIP_guarantee_TT" clicksound = click_default }
+		buttonType = { name = "admin_dip_nap" position = { x = 780 y = 174 } spriteType = "GFX_button_221x34" buttonText = "ADMIN_DIP_nap" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_DIP_nap_TT" clicksound = click_default }
+		buttonType = { name = "admin_dip_opinion" position = { x = 330 y = 212 } spriteType = "GFX_button_221x34" buttonText = "ADMIN_DIP_opinion" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_DIP_opinion_TT" clicksound = click_default }
+		buttonType = { name = "admin_dip_puppet" position = { x = 555 y = 212 } spriteType = "GFX_button_221x34" buttonText = "ADMIN_DIP_puppet" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_DIP_puppet_TT" clicksound = click_default }
+		buttonType = { name = "admin_dip_annex" position = { x = 780 y = 212 } spriteType = "GFX_button_221x34" buttonText = "ADMIN_DIP_annex" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_DIP_annex_TT" clicksound = click_default }
+		instantTextBoxType = { name = "admin_dip_help" position = { x = 330 y = 260 } font = "hoi_16mbs" text = "ADMIN_DIP_HELP" maxWidth = 660 maxHeight = 40 fixedsize = yes }
+		instantTextBoxType = { name = "admin_country_header" position = { x = 330 y = 314 } font = "hoi_18mbs" text = "ADMIN_COUNTRY_HEADER" maxWidth = 200 maxHeight = 20 fixedsize = yes }
+		buttonType = { name = "admin_page_prev" position = { x = 620 y = 306 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_PAGE_PREV" buttonFont = "hoi_16mbs" clicksound = click_default }
+		instantTextBoxType = { name = "admin_page_text" position = { x = 748 y = 314 } font = "hoi_16mbs" text = "ADMIN_PAGE_TEXT" maxWidth = 110 maxHeight = 20 fixedsize = yes }
+		buttonType = { name = "admin_page_next" position = { x = 860 y = 306 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_PAGE_NEXT" buttonFont = "hoi_16mbs" clicksound = click_default }
+		gridBoxType = {
+			name = "admin_country_grid"
+			position = { x = 330 y = 346 }
+			size = { width = 660 height = 190 }
+			slotsize = { width = 330 height = 38 }
+			max_slots_horizontal = 2
+			format = "UPPER_LEFT"
+		}
+	}
+
+	containerWindowType = {
+		name = "admin_country_entry"
+		position = { x = 0 y = 0 }
+		size = { width = 330 height = 38 }
+		instantTextBoxType = { name = "admin_cl_name" position = { x = 5 y = 10 } font = "hoi_16mbs" text = "ADMIN_CL_NAME" maxWidth = 190 maxHeight = 20 fixedsize = yes pdx_tooltip = "ADMIN_CL_NAME_TT" }
+		buttonType = { name = "admin_cl_pick" position = { x = 198 y = 2 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_CL_PICK" buttonFont = "hoi_16mbs" clicksound = click_default }
+		buttonType = { name = "admin_cl_picked" position = { x = 198 y = 2 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_CL_PICKED" buttonFont = "hoi_16mbs" clicksound = click_default }
+	}
+
+	containerWindowType = {
+		name = "admin_player_entry"
+		position = { x = 0 y = 0 }
+		size = { width = 290 height = 44 }
+		instantTextBoxType = { name = "admin_pl_name" position = { x = 5 y = 4 } font = "hoi_16mbs" text = "ADMIN_PL_NAME" maxWidth = 150 maxHeight = 18 fixedsize = yes pdx_tooltip = "ADMIN_PL_NAME_TT" }
+		instantTextBoxType = { name = "admin_st_research_on" position = { x = 5 y = 24 } font = "hoi_16mbs" text = "ADMIN_ST_research_ON" maxWidth = 15 maxHeight = 18 fixedsize = yes pdx_tooltip = "ADMIN_B_research" }
+		instantTextBoxType = { name = "admin_st_research_off" position = { x = 5 y = 24 } font = "hoi_16mbs" text = "ADMIN_ST_research_OFF" maxWidth = 15 maxHeight = 18 fixedsize = yes pdx_tooltip = "ADMIN_B_research" }
+		instantTextBoxType = { name = "admin_st_construction_on" position = { x = 20 y = 24 } font = "hoi_16mbs" text = "ADMIN_ST_construction_ON" maxWidth = 15 maxHeight = 18 fixedsize = yes pdx_tooltip = "ADMIN_B_construction" }
+		instantTextBoxType = { name = "admin_st_construction_off" position = { x = 20 y = 24 } font = "hoi_16mbs" text = "ADMIN_ST_construction_OFF" maxWidth = 15 maxHeight = 18 fixedsize = yes pdx_tooltip = "ADMIN_B_construction" }
+		instantTextBoxType = { name = "admin_st_production_on" position = { x = 35 y = 24 } font = "hoi_16mbs" text = "ADMIN_ST_production_ON" maxWidth = 15 maxHeight = 18 fixedsize = yes pdx_tooltip = "ADMIN_B_production" }
+		instantTextBoxType = { name = "admin_st_production_off" position = { x = 35 y = 24 } font = "hoi_16mbs" text = "ADMIN_ST_production_OFF" maxWidth = 15 maxHeight = 18 fixedsize = yes pdx_tooltip = "ADMIN_B_production" }
+		instantTextBoxType = { name = "admin_st_training_on" position = { x = 50 y = 24 } font = "hoi_16mbs" text = "ADMIN_ST_training_ON" maxWidth = 15 maxHeight = 18 fixedsize = yes pdx_tooltip = "ADMIN_B_training" }
+		instantTextBoxType = { name = "admin_st_training_off" position = { x = 50 y = 24 } font = "hoi_16mbs" text = "ADMIN_ST_training_OFF" maxWidth = 15 maxHeight = 18 fixedsize = yes pdx_tooltip = "ADMIN_B_training" }
+		instantTextBoxType = { name = "admin_st_combat_on" position = { x = 65 y = 24 } font = "hoi_16mbs" text = "ADMIN_ST_combat_ON" maxWidth = 15 maxHeight = 18 fixedsize = yes pdx_tooltip = "ADMIN_B_combat" }
+		instantTextBoxType = { name = "admin_st_combat_off" position = { x = 65 y = 24 } font = "hoi_16mbs" text = "ADMIN_ST_combat_OFF" maxWidth = 15 maxHeight = 18 fixedsize = yes pdx_tooltip = "ADMIN_B_combat" }
+		instantTextBoxType = { name = "admin_st_logistics_on" position = { x = 80 y = 24 } font = "hoi_16mbs" text = "ADMIN_ST_logistics_ON" maxWidth = 15 maxHeight = 18 fixedsize = yes pdx_tooltip = "ADMIN_B_logistics" }
+		instantTextBoxType = { name = "admin_st_logistics_off" position = { x = 80 y = 24 } font = "hoi_16mbs" text = "ADMIN_ST_logistics_OFF" maxWidth = 15 maxHeight = 18 fixedsize = yes pdx_tooltip = "ADMIN_B_logistics" }
+		instantTextBoxType = { name = "admin_st_wargoal_on" position = { x = 95 y = 24 } font = "hoi_16mbs" text = "ADMIN_ST_wargoal_ON" maxWidth = 15 maxHeight = 18 fixedsize = yes pdx_tooltip = "ADMIN_B_wargoal" }
+		instantTextBoxType = { name = "admin_st_wargoal_off" position = { x = 95 y = 24 } font = "hoi_16mbs" text = "ADMIN_ST_wargoal_OFF" maxWidth = 15 maxHeight = 18 fixedsize = yes pdx_tooltip = "ADMIN_B_wargoal" }
+		instantTextBoxType = { name = "admin_st_economy_on" position = { x = 110 y = 24 } font = "hoi_16mbs" text = "ADMIN_ST_economy_ON" maxWidth = 15 maxHeight = 18 fixedsize = yes pdx_tooltip = "ADMIN_B_economy" }
+		instantTextBoxType = { name = "admin_st_economy_off" position = { x = 110 y = 24 } font = "hoi_16mbs" text = "ADMIN_ST_economy_OFF" maxWidth = 15 maxHeight = 18 fixedsize = yes pdx_tooltip = "ADMIN_B_economy" }
+		instantTextBoxType = { name = "admin_st_focus_on" position = { x = 125 y = 24 } font = "hoi_16mbs" text = "ADMIN_ST_focus_ON" maxWidth = 15 maxHeight = 18 fixedsize = yes pdx_tooltip = "ADMIN_B_focus" }
+		instantTextBoxType = { name = "admin_st_focus_off" position = { x = 125 y = 24 } font = "hoi_16mbs" text = "ADMIN_ST_focus_OFF" maxWidth = 15 maxHeight = 18 fixedsize = yes pdx_tooltip = "ADMIN_B_focus" }
+		instantTextBoxType = { name = "admin_st_diplomacy_on" position = { x = 140 y = 24 } font = "hoi_16mbs" text = "ADMIN_ST_diplomacy_ON" maxWidth = 15 maxHeight = 18 fixedsize = yes pdx_tooltip = "ADMIN_B_diplomacy" }
+		instantTextBoxType = { name = "admin_st_diplomacy_off" position = { x = 140 y = 24 } font = "hoi_16mbs" text = "ADMIN_ST_diplomacy_OFF" maxWidth = 15 maxHeight = 18 fixedsize = yes pdx_tooltip = "ADMIN_B_diplomacy" }
+		buttonType = { name = "admin_pl_on" position = { x = 162 y = 5 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_PL_ON" buttonFont = "hoi_16mbs" clicksound = click_default }
+		buttonType = { name = "admin_pl_off" position = { x = 162 y = 5 } spriteType = "GFX_button_123x34" buttonText = "ADMIN_PL_OFF" buttonFont = "hoi_16mbs" clicksound = click_default }
+	}
+
+	containerWindowType = {
+		name = "admin_diplo_window"
+		position = { x = 300 y = 14 }
+		size = { width = 221 height = 34 }
+		buttonType = { name = "admin_dpanel_pick" position = { x = 0 y = 0 } spriteType = "GFX_button_221x34" buttonText = "ADMIN_DPANEL_PICK" buttonFont = "hoi_16mbs" pdx_tooltip = "ADMIN_DPANEL_PICK_TT" clicksound = click_default }
+	}
+}

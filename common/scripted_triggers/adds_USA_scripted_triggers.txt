@@ -1,0 +1,128 @@
+has_USA_slot = {
+	custom_trigger_tooltip = {
+		tooltip = has_USA_slot_trigger_tooltip
+		check_variable = {
+			var = USA_slot_var
+			value = 1
+			compare = greater_than_or_equals
+		}
+	}
+}
+
+USA_inner_circle_is_ascension_cd_over = {
+	NOT = {
+		has_country_flag = {
+			flag = USA_inner_circle_cd_flag
+			days < 100
+		}
+	}
+}
+
+USA_WW2_NATO={
+	custom_trigger_tooltip = {
+		tooltip = USA_focus70_tt
+		AND={
+			USA={
+				NOT={has_War_with=GER}				
+			}
+			SOV={
+				exists = yes
+				is_major = yes
+				is_subject = no
+				has_army_manpower = { size > 2000000 }
+				num_of_factories > 400
+			}
+			OR={
+				GER={has_government=democratic}
+				NOT={GER={country_exists=yes}}
+				GER={has_government=communism  is_subject_of=SOV}
+			}
+		}	
+	}
+	
+}
+
+USA_quanlijuezhu_trigger={
+	custom_trigger_tooltip = {
+		tooltip = USA_focus76_ttt
+		is_debug=yes	
+	}
+}
+
+USA_quanlijuezhu_trigger_zongtong={
+	custom_trigger_tooltip = {
+		tooltip = USA_focus76_tttt
+		is_debug=yes	
+	}
+}
+
+USA_quanlijuezhu_trigger_caituan={
+	custom_trigger_tooltip = {
+		tooltip = USA_focus76_ttttt
+		is_debug=yes	
+	}
+}
+
+USA_final_dengta_trigger = {
+	custom_trigger_tooltip = {
+		tooltip = USA_final_dengta_trigger_ttt
+		USA = {
+			has_government = democratic
+		}
+		ENG = {
+			OR = {
+				NOT = {
+					has_government = democratic
+				}
+				has_capitulated = yes
+				exists = no
+			}		
+		}	
+		FRA = {
+			OR = {
+				NOT = {
+					has_government = democratic
+				}
+				has_capitulated = yes
+				exists = no
+			}
+		}
+	}
+}
+
+NATO_basic_joint_trigger = {
+	custom_trigger_tooltip = {
+		tooltip = NATO_is_joint_focus_member_TT
+		is_in_faction = yes 
+		is_in_faction_with=USA 		
+	}	
+}
+
+NATO_basic_available_trigger = {
+	NATO_basic_joint_trigger = yes	
+	any_allied_country = {
+		NATO_basic_joint_trigger = yes
+	}
+}
+
+
+NATO_chengli_trigger = {
+		original_tag=USA
+		has_completed_focus=USA_focus70		
+		is_faction_leader=yes
+		has_government=democratic
+		
+}
+
+Belongs_to_US = {
+	OR = {
+		original_tag = USA
+		TAG = USA
+		TAG = UFE
+		TAG = CFA
+		TAG = KKK
+		TAG = UCF
+		TAG = APG
+	}
+}
+

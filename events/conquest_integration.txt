@@ -1,0 +1,235 @@
+add_namespace = conquest_integration
+
+# ============================================================================
+# .1  ANNEX  -  fired from on_annex. ROOT = annexer, event_target:ci_conquered_country = annexed.
+# ============================================================================
+country_event = {
+	id = conquest_integration.1
+	title = conquest_integration.1.t
+	desc = conquest_integration.1.desc
+	picture = GFX_report_event_german_soldiers_marching
+
+	is_triggered_only = yes
+
+	# Integrate the advisors only -> War Trials cull
+	option = {
+		name = conquest_integration.1.advisors
+		trigger = {
+			event_target:ci_conquered_country = {
+				any_character = { is_advisor = yes }
+			}
+		}
+		set_country_flag = ci_trial_advisors
+		country_event = { id = conquest_integration.2 days = 0 }
+	}
+
+	# Integrate the commanders (generals & admirals) only -> War Trials cull
+	option = {
+		name = conquest_integration.1.commanders
+		trigger = {
+			event_target:ci_conquered_country = {
+				any_character = { is_unit_leader = yes }
+			}
+		}
+		set_country_flag = ci_trial_commanders
+		country_event = { id = conquest_integration.2 days = 0 }
+	}
+
+	# Integrate their scientists only -> War Trials cull
+	option = {
+		name = conquest_integration.1.scientists
+		trigger = {
+			event_target:ci_conquered_country = {
+				any_scientist = { always = yes }
+			}
+		}
+		set_country_flag = ci_trial_scientists
+		country_event = { id = conquest_integration.2 days = 0 }
+	}
+
+	# Integrate their war industry -> stacking production buff (national spirit)
+	option = {
+		name = conquest_integration.1.industry
+		add_to_variable = { ci_mio_level = 1 }
+		# bonus magnitudes = level * per-country value
+		set_variable = { ci_industry_bonus = ci_mio_level }
+		multiply_variable = { ci_industry_bonus = 0.02 }      # +2% output per country
+		set_variable = { ci_consumer_goods_bonus = ci_mio_level }
+		multiply_variable = { ci_consumer_goods_bonus = -0.01 } # -1% consumer goods per country
+		add_dynamic_modifier = { modifier = ci_integrated_industry }   # idempotent; variable drives scaling
+	}
+
+	# Integrate everyone and everything
+	option = {
+		name = conquest_integration.1.all
+		ai_chance = { base = 100 }   # AI grabs everything when the rule lets it play
+		set_country_flag = ci_trial_advisors
+		set_country_flag = ci_trial_commanders
+		set_country_flag = ci_trial_scientists
+		country_event = { id = conquest_integration.2 days = 0 }
+		add_to_variable = { ci_mio_level = 1 }
+		set_variable = { ci_industry_bonus = ci_mio_level }
+		multiply_variable = { ci_industry_bonus = 0.02 }
+		set_variable = { ci_consumer_goods_bonus = ci_mio_level }
+		multiply_variable = { ci_consumer_goods_bonus = -0.01 }
+		add_dynamic_modifier = { modifier = ci_integrated_industry }
+	}
+
+	# Take none of them
+	option = {
+		name = conquest_integration.1.decline
+		ai_chance = { base = 0 }
+	}
+}
+
+# ============================================================================
+# .2  THE WAR TRIALS  -  only a random fraction of the integrated characters
+#     survive the tribunals. Flags from .1 decide which categories are culled.
+# ============================================================================
+country_event = {
+	id = conquest_integration.2
+	title = conquest_integration.2.t
+	desc = conquest_integration.2.desc
+	picture = GFX_report_event_soviet_purge_trial
+
+	is_triggered_only = yes
+
+	option = {
+		name = conquest_integration.2.a
+
+		# survival % comes from the pre-game rule (default 25)
+		if = {
+			limit = { has_game_rule = { rule = ci_war_trials_survival option = CI_WT_10 } }
+			set_variable = { global.ci_trial_chance = 10 }
+		}
+		else_if = {
+			limit = { has_game_rule = { rule = ci_war_trials_survival option = CI_WT_50 } }
+			set_variable = { global.ci_trial_chance = 50 }
+		}
+		else_if = {
+			limit = { has_game_rule = { rule = ci_war_trials_survival option = CI_WT_75 } }
+			set_variable = { global.ci_trial_chance = 75 }
+		}
+		else = {
+			set_variable = { global.ci_trial_chance = 25 }
+		}
+
+		if = {
+			limit = { has_country_flag = ci_trial_advisors }
+			event_target:ci_conquered_country = {
+				every_character = {
+					limit = { is_advisor = yes }
+					random = { chance = global.ci_trial_chance set_nationality = ROOT }
+				}
+			}
+		}
+		if = {
+			limit = { has_country_flag = ci_trial_commanders }
+			event_target:ci_conquered_country = {
+				every_character = {
+					limit = { is_unit_leader = yes }
+					random = { chance = global.ci_trial_chance set_nationality = ROOT }
+				}
+			}
+		}
+		if = {
+			limit = { has_country_flag = ci_trial_scientists }
+			event_target:ci_conquered_country = {
+				every_scientist = {
+					random = { chance = global.ci_trial_chance set_nationality = ROOT }
+				}
+			}
+		}
+		clr_country_flag = ci_trial_advisors
+		clr_country_flag = ci_trial_commanders
+		clr_country_flag = ci_trial_scientists
+	}
+}
+
+# ============================================================================
+# .5  SEIZE THEIR FLEET  -  fired from on_capitulation. ROOT = winner,
+#     event_target:ci_capitulated_navy_country = the country that capitulated.
+# ============================================================================
+country_event = {
+	id = conquest_integration.5
+	title = conquest_integration.5.t
+	desc = conquest_integration.5.desc
+	picture = GFX_report_event_ast_navy
+
+	is_triggered_only = yes
+
+	# Seize their fleet (carriers excluded by the engine)
+	option = {
+		name = conquest_integration.5.a
+		ai_chance = { base = 100 }
+		event_target:ci_capitulated_navy_country = {
+			transfer_navy = { target = ROOT }
+		}
+	}
+
+	# Leave it
+	option = {
+		name = conquest_integration.5.b
+		ai_chance = { base = 0 }
+	}
+}
+
+# ============================================================================
+# .6  SEIZE THEIR PRODUCTION LICENSES  -  fired from on_capitulation. ROOT = winner
+#     (license receiver), event_target:ci_defeated_licensor = the capitulated country
+#     (design originator, still exists at capitulation so the license stays valid).
+# ============================================================================
+country_event = {
+	id = conquest_integration.6
+	title = conquest_integration.6.t
+	desc = conquest_integration.6.desc
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	# Seize their production licenses (tanks, aircraft, warships)
+	option = {
+		name = conquest_integration.6.a
+		ai_chance = { base = 100 }
+
+		# license production penalty comes from the pre-game rule (default free)
+		if = {
+			limit = { has_game_rule = { rule = ci_license_cost option = CI_LIC_HALF } }
+			set_variable = { global.ci_lic_cost = 0.5 }
+		}
+		else_if = {
+			limit = { has_game_rule = { rule = ci_license_cost option = CI_LIC_FULL } }
+			set_variable = { global.ci_lic_cost = 1 }
+		}
+		else = {
+			set_variable = { global.ci_lic_cost = 0 }
+		}
+
+		# new_prioritised defaults yes -> grabs their latest variant of each type.
+		# Types they never designed silently create no license.
+		# ponytail: verify cost_factor accepts a variable in-game; if not, split the
+		# list by rule option with literal cost_factors.
+		event_target:ci_defeated_licensor = {
+			create_production_license = { target = ROOT cost_factor = global.ci_lic_cost equipment = { type = light_tank_chassis } }
+			create_production_license = { target = ROOT cost_factor = global.ci_lic_cost equipment = { type = medium_tank_chassis } }
+			create_production_license = { target = ROOT cost_factor = global.ci_lic_cost equipment = { type = heavy_tank_chassis } }
+			create_production_license = { target = ROOT cost_factor = global.ci_lic_cost equipment = { type = super_heavy_tank_chassis } }
+			create_production_license = { target = ROOT cost_factor = global.ci_lic_cost equipment = { type = modern_tank_chassis } }
+			create_production_license = { target = ROOT cost_factor = global.ci_lic_cost equipment = { type = small_plane_airframe } }
+			create_production_license = { target = ROOT cost_factor = global.ci_lic_cost equipment = { type = medium_plane_airframe } }
+			create_production_license = { target = ROOT cost_factor = global.ci_lic_cost equipment = { type = large_plane_airframe } }
+			create_production_license = { target = ROOT cost_factor = global.ci_lic_cost equipment = { type = cv_small_plane_airframe } }
+			create_production_license = { target = ROOT cost_factor = global.ci_lic_cost equipment = { type = ship_hull_light } }
+			create_production_license = { target = ROOT cost_factor = global.ci_lic_cost equipment = { type = ship_hull_cruiser } }
+			create_production_license = { target = ROOT cost_factor = global.ci_lic_cost equipment = { type = ship_hull_heavy } }
+			create_production_license = { target = ROOT cost_factor = global.ci_lic_cost equipment = { type = ship_hull_carrier } }
+			create_production_license = { target = ROOT cost_factor = global.ci_lic_cost equipment = { type = ship_hull_submarine } }
+		}
+	}
+
+	# Decline
+	option = {
+		name = conquest_integration.6.b
+		ai_chance = { base = 0 }
+	}
+}

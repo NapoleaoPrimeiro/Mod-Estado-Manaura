@@ -1,0 +1,18 @@
+# NO LAG BR - Greece-only ideas for the Byzantine flavor extension.
+
+ideas = {
+	country = {
+		NO_LAG_GRE_byzantine_prosperity_spirit = {
+			allowed = { original_tag = GRE }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_production_bonus
+
+			modifier = {
+				global_building_slots_factor = 0.20
+				production_factory_max_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.15
+			}
+		}
+	}
+}

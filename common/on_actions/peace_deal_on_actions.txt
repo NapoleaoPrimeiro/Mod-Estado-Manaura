@@ -1,0 +1,60 @@
+on_actions = {
+	on_capitulation_immediate = {
+		effect = {
+			if = {
+				limit = {
+					is_in_faction = yes
+					is_faction_leader = no
+				}
+				 #if = {
+				 #	limit = { has_dlc = "No Compromise, No Surrender" }
+				 #	set_variable = { pre_cap_weight = faction_influence_ratio }
+				 #}
+				set_temp_variable = { member_ic = num_of_owned_factories }
+				faction_leader = {
+					set_temp_variable = { leader_ic = num_of_owned_factories }
+				}
+				if = {
+					limit = { check_variable = { leader_ic > 0 } }
+					divide_temp_variable = { member_ic = var:leader_ic }
+					clamp_temp_variable = { var = member_ic min = 0.0 max = 1 }
+					set_variable = { pre_cap_weight = var:member_ic }
+				}
+				else = {
+					set_variable = { pre_cap_weight = 0.01 }
+				}
+			}
+			else_if = {
+				limit = {
+					is_puppet = yes
+				}	
+				set_temp_variable = { member_ic = num_of_owned_factories }
+				overlord = {
+					set_temp_variable = { leader_ic = num_of_owned_factories }
+				}
+				if = {
+					limit = { check_variable = { leader_ic > 0 } }
+					divide_temp_variable = { member_ic = var:leader_ic }
+					clamp_temp_variable = { var = member_ic min = 0.0 max = 1 }
+					set_variable = { pre_cap_weight = var:member_ic }
+				}
+				else = {
+					set_variable = { pre_cap_weight = 0.01 }
+				}
+			}
+		}	
+		
+	}
+	
+	on_peaceconference_ended = {
+		effect = {
+			ROOT = {
+				clr_country_flag = custom_peace_in_progress
+			}
+			FROM = {
+				clr_country_flag = custom_peace_in_progress
+			}
+		}
+	}
+
+}	

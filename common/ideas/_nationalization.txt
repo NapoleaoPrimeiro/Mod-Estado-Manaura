@@ -1,0 +1,100 @@
+ideas = {
+
+	nationalization = {
+
+		law = yes
+
+		#State Property
+		nationalization_full = {
+			available = {
+				has_government = communism
+				NOT = {
+					tag = SOV
+				}
+			}
+
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				local_resources_factor = 0.05
+				min_export = -0.15
+				stability_factor = -0.05
+				war_support_factor = 0.05
+				factory_energy_consumption = -0.05
+			}
+			cost = 100
+
+
+
+			ai_will_do = {
+				base = 80
+			}
+		}
+
+		#Soviet Wealth
+		#Soviet Wealth
+		#State Capitalism
+		nationalization_partial = {
+			available = {
+				NOT = {
+					has_government = communism
+				}
+			}
+
+
+			modifier = {
+				local_building_slots_factor = 0.05
+				production_speed_buildings_factor = 0.05
+				local_resources_factor = 0.125
+				min_export = -0.10
+				factory_energy_consumption = -0.05
+
+			}
+			cost = 100
+
+
+			ai_will_do = {
+				base = 45
+			}
+		}
+
+		#Capitalism
+		nationalization_capital = {
+			available = {
+				NOT = {
+					has_country_flag = communist_or_fascist_country
+				}
+			}
+
+			modifier = {
+				stability_factor = -0.05
+				research_speed_factor = 0.05
+				local_resources_factor = 0.20
+				min_export = 0.1
+				resource_trade_cost_bonus_per_factory = 1
+			}
+			cost = 100
+
+
+			ai_will_do = { #suanlık bunu bazı durumlarda alcak bise eklemedim onu yerine state capitalism alıcak
+				base = 0
+				modifier = {
+					is_major = yes
+					OR = {
+						check_variable = {
+							resource_produced@steel > 200
+						}
+						check_variable = {
+							resource_produced@aluminium > 200
+						}
+						check_variable = {
+							resource_produced@tungsten > 200
+						}
+					}
+					add = 75
+				}
+			}
+		}
+
+		#Owner of Capitalism
+	}
+}

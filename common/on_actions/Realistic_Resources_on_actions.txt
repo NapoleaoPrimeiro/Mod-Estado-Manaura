@@ -1,0 +1,5507 @@
+on_actions = {
+
+	on_weekly = {
+		effect = {
+			every_country = {
+			limit = { 
+			is_ai = no 
+			has_war = no 
+		    }
+			add_ideas = peacetraining
+			}
+		}   
+	}
+
+	on_monthly = {
+		effect = {
+			every_country = {
+				limit = {
+					is_subject = yes
+				}
+				add_ideas = ainocore
+			}
+		}
+	}
+
+	on_startup = {
+        #events = {
+        #    safon_china.1
+        #}
+		effect = {
+            #CHI = {
+              #  annex_country = {
+             #   target = TIB
+            #    }
+           # }
+		
+#			1 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			2 = { #
+				add_resource = {
+					type = oil
+					amount = 4
+				}
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+				add_resource = {
+					type = tungsten
+					amount = 11
+				}
+			}
+
+			3 = { #
+				add_resource = {
+					type = oil
+					amount = 4
+				}
+				add_resource = {
+					type = rubber
+					amount = 3
+				}
+				add_resource = {
+					type = chromium
+					amount = 35
+				}
+			}
+
+			4 = { #Lower Austria, Aus
+				add_resource = {
+					type = oil
+					amount = 2
+				}
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+			}
+
+#			5 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			6 = { #
+				add_resource = {
+					type = steel
+					amount = 11
+				}
+				add_resource = {
+					type = oil
+					amount = 3
+				}
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+			}
+		
+			7 = { #Holland, Netherlands
+				add_resource = {
+					type = steel
+					amount = 21
+				}
+				add_resource = {
+					type = oil
+					amount = 3
+				}
+				add_resource = {
+					type = tungsten
+					amount = 9
+				}
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+			}
+			
+			8 = { #
+				add_resource = {
+					type = steel
+					amount = 7
+				}
+				add_resource = {
+					type = aluminium
+					amount = 6
+				}
+			}
+			
+			9 = { #Bohemia, Cze
+				add_resource = {
+					type = steel 
+					amount = 41
+				}
+				add_resource = {
+					type = coal
+					amount = 12
+				}
+			}
+
+			10 = { #Warszawa, Poland
+				add_resource = {
+					type = steel
+					amount = 8
+				}
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+			}
+			
+			
+			11 = { # Capital, LIT
+				add_resource = {
+					type = oil
+					amount = 3 
+				}
+				add_resource = {
+					type = rubber
+					amount = 1 
+				}
+				add_resource = {
+					type = steel
+					amount = 15
+				}
+			}
+
+			12 = { # Vidzeme, LAT
+				add_resource = {
+					type = steel
+					amount = 23
+				}
+				add_resource = {
+					type = aluminium
+					amount = 11
+				}
+			}
+
+			13 = { # Parnu. EST
+				add_resource = {
+					type = steel
+					amount = 30
+				}
+				add_resource = {
+					type = aluminium
+					amount = 11
+				}
+			}
+
+#			14 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			15 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			16 = { #Ide France, Fra
+				add_resource = {
+					type = oil
+					amount = 4 
+				}
+				add_resource = {
+					type = rubber
+					amount = 2 
+				}
+			}
+
+#			17 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			18 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			19 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			20 = { #
+				add_resource = {
+					type = coal
+					amount = 50
+				}
+				add_resource = {
+					type = oil
+					amount = 2
+				}
+				add_resource = {
+					type = rubber
+					amount = 1
+				}
+			}
+
+#			21 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			22 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			23 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			24 = { #
+				add_resource = {
+					type = oil
+					amount = 2
+				}
+				add_resource = {
+					type = rubber
+					amount = 1
+				}
+			}
+
+#			25 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			26 = { #
+				add_resource = {
+					type = coal
+					amount = 37
+				}
+			}
+
+#			27 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			28 = { #
+				add_resource = {
+					type = coal
+					amount = 10
+				}
+			}
+
+#			29 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			30 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			31 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			31 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			32 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			33 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			34 = { #
+				add_resource = {
+					type = aluminium
+					amount = 9
+				}
+				add_resource = {
+					type = coal
+					amount = 15
+				}
+			}
+
+			35 = { #
+				add_resource = {
+					type = aluminium
+					amount = 11
+				}
+				add_resource = {
+					type = coal
+					amount = 7
+				}
+			}
+
+#			36 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			37 = { #
+				add_resource = {
+					type = steel
+					amount = 22
+				}
+				add_resource = {
+					type = aluminium
+					amount = 12
+				}
+				add_resource = {
+					type = oil 
+					amount = 4
+				}
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+			}
+			
+			38 = { #Norrland, Sweden
+				add_resource = {
+					type = aluminium
+					amount = 38   
+				}
+			}
+			
+#			39 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			40 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+			
+			41 = { #Western Aragon, Spain
+				add_resource = {
+					type = aluminium
+					amount = 11
+				}
+				add_resource = {
+					type = oil
+					amount = 5
+				}
+				add_resource = {
+					type = rubber
+					amount = 3
+				}
+			}
+			
+			42 = { #
+				add_resource = {
+					type = oil
+					amount = 2
+				}
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+			}
+			
+			43 = { #Northern Hungary
+				add_resource = {
+					type = steel
+					amount = 42
+				}
+				add_resource = {
+					type = coal
+					amount = 32
+				}
+			}
+			
+			44 = { #
+				add_resource = {
+					type = oil
+					amount = 3
+				}
+				add_resource = {
+					type = steel
+					amount = 11
+				}
+				add_resource = {
+					type = aluminium
+					amount = 6
+				}
+				add_resource = {
+					type = chromium
+					amount = 4
+				}
+			}
+
+#			45 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			46 = { #Mutenia, Rom
+				add_resource = {
+					type = rubber
+					amount = 3
+				}
+				add_resource = {
+					type = oil
+					amount = 20
+				}
+			}
+			
+			47 = { #Attica, Greece
+				add_resource = {
+					type = steel
+					amount = 58
+				}
+				add_resource = {
+					type = oil
+					amount = 5
+				}
+				add_resource = {
+					type = rubber
+					amount = 3
+				}
+				
+			}
+			
+			48 = { #Sofia, Bulgaria
+				add_resource = {
+					type = aluminium
+					amount = 13
+				}
+				add_resource = {
+					type = steel
+					amount = 24
+				}
+			}
+			
+			49 = { #
+				add_resource = {
+					type = oil
+					amount = 6
+				}
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+			}
+
+#			50 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			51 = { #
+				add_resource = {
+					type = oil
+					amount = 2
+				}
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+			}
+
+#			52 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			53 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			54 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			55 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			56 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			57 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			58 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			59 = { #
+				add_resource = {
+					type = oil
+					amount = 2
+				}
+				add_resource = {
+					type = rubber
+					amount = 1
+				}
+			}
+
+			60 = { #
+				add_resource = {
+					type = tungsten
+					amount = 11
+				}
+				add_resource = {
+					type = chromium
+					amount = 11
+				}
+				add_resource = {
+					type = steel
+					amount = 21
+				}
+			}
+
+#			61 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			62 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			63 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			64 = { #
+				add_resource = {
+					type = rubber
+					amount = 1
+				}
+				add_resource = {
+					type = oil
+					amount = 2
+				}
+			}
+
+#			65 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			66 = { #
+				add_resource = {
+					type = steel
+					amount = 42
+				}
+				add_resource = {
+					type = aluminium
+					amount = 5
+				}
+				add_resource = {
+					type = coal
+					amount = 15
+				}
+			}
+
+#			67 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			68 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			69 = { #
+				add_resource = {
+					type = steel
+					amount = 21
+				}
+				add_resource = {
+					type = coal
+					amount = 19
+				}
+			}
+			
+			70 = { #Slovakia, Czechoslovakia
+				add_resource = {
+					type = tungsten
+					amount = 18
+				}
+				add_resource = {
+					type = aluminium
+					amount = 21
+				}
+			}
+			
+#			71 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			72 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			73 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			74 = { #
+				add_resource = {
+					type = coal
+					amount = 20
+				}
+			}
+			
+			75 = { #Moravia, Czechoslovakia
+				add_resource = {
+					type = steel
+					amount = 21
+				}
+				add_resource = {
+					type = oil
+					amount = 4
+				}
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+				add_resource = {
+					type = coal
+					amount = 8
+				}
+			}
+			
+			76 = { #North Transylvania, Romania
+				add_resource = {
+					type = steel
+					amount = 54
+				}
+			}
+			
+			77 = { #Dobrudja, Romania
+				add_resource = {
+					type = oil
+					amount = 12
+				}
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+			}
+			
+#			78 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			79 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			80 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+			
+			81 = { #Oltenia, Romania
+				add_resource = {
+					type = tungsten
+					amount = 9
+				}
+			}
+			
+			82 = { #Banat, Romania
+				add_resource = {
+					type = aluminium
+					amount = 21
+				}
+				add_resource = {
+					type = chromium
+					amount = 16
+				}
+			}
+			
+			83 = { #Crisana, Romania
+				add_resource = {
+					type = aluminium
+					amount = 15
+				}
+			}
+			
+			84 = { #Transylvania, Romania
+				add_resource = {
+					type = steel
+					amount = 21
+				}
+				add_resource = {
+					type = coal
+					amount = 15
+				}
+			}
+			
+			85 = { # Gdansk, Pol
+				add_resource = {
+					type = steel
+					amount = 15
+				}
+				add_resource = {
+					type = aluminium
+					amount = 5
+				}
+				add_resource = {
+					type = oil
+					amount = 2
+				}
+				add_resource = {
+					type = rubber
+					amount = 1
+				}
+			}
+
+			86 = { #
+				add_resource = {
+					type = steel
+					amount = 5
+				}
+				add_resource = {
+					type = coal
+					amount = 3
+				}
+			}
+
+#			87 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+			
+			88 = { #Krakow, Poland
+				add_resource = {
+					type = steel
+					amount = 30
+				}
+				add_resource = {
+					type = oil
+					amount = 3
+				}
+				add_resource = {
+					type = aluminium
+					amount = 15
+				}
+				add_resource = {
+					type = rubber
+					amount = 1
+				}
+				add_resource = {
+					type = coal
+					amount = 12
+				}
+			}
+			
+			89 = { #Stanislowow, Poland
+				add_resource = {
+					type = steel
+					amount = 12
+				}
+				add_resource = {
+					type = oil
+					amount = 4
+				}
+			}
+			
+			90 = { #Kielce, Poland
+				add_resource = {
+					type = steel
+					amount = 15
+				}
+				add_resource = {
+					type = aluminium
+					amount = 6
+				}
+				add_resource = {
+					type = coal
+					amount = 15
+				}
+			}
+			
+			
+			91 = { #Lwow, Poland
+				add_resource = {
+					type = steel
+					amount = 20
+				}
+				add_resource = {
+					type = aluminium
+					amount = 11
+				}
+				add_resource = {
+					type = oil
+					amount = 7
+				}
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+			}
+			
+			92 = { #Lublin, Poland
+				add_resource = {
+					type = steel
+					amount =   67
+				}
+				add_resource = {
+					type = oil
+					amount = 1
+				}
+				add_resource = {
+					type = coal
+					amount = 5
+				}
+			}
+			
+#			93 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			94 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			95 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			96 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			97 = { #Bialtystok, Poland
+				add_resource = {
+					type = tungsten
+					amount = 18
+				}
+				add_resource = {
+					type = chromium
+					amount = 13
+				}
+			}
+
+#			98 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			99 = { #
+				add_resource = {
+					type = steel
+					amount = 21
+				}
+				add_resource = {
+					type = tungsten
+					amount = 8
+				}
+			}
+			
+			100 = { #Iceland (Denmark)
+				add_resource = {
+					type = aluminium
+					amount = 18
+				}
+			}
+			
+			101 = { #Greenland, Denmark
+				add_resource = {
+					type = aluminium
+					amount = 6
+				}
+				add_resource = {
+					type = oil
+					amount = 6
+				}
+				add_resource = {
+					type = steel
+					amount = 2
+				}
+			}
+			
+			102 = { #Slovenia (Yugoslavia)
+				add_resource = {
+					type = aluminium
+					amount = 8
+				}
+			}
+			
+#			103 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+			
+			104 = { #Bosnia (Yugoslavia)
+				add_resource = {
+					type = steel
+					amount = 56
+				}
+				add_resource = {
+					type = aluminium
+					amount = 19
+				}
+			}
+			
+#			105 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			106 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			107 = { #
+				add_resource = {
+					type = oil
+					amount = 5
+				}
+				add_resource = {
+					type = rubber
+					amount = 3
+				}
+				add_resource = {
+					type = coal
+					amount = 11
+				}
+			}
+
+			108 = { #
+				add_resource = {
+					type = tungsten
+					amount = 11
+				}
+			}
+
+#			109 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			110 = { #Oslo Nor
+				add_resource = {
+					type = oil
+					amount = 5
+				}
+				add_resource = {
+					type = rubber
+					amount = 3
+				}
+			}
+
+			111 = { #
+				add_resource = {
+					type = oil
+					amount = 6 
+				}
+				add_resource = {
+					type = rubber
+					amount = 4 
+				}
+				add_resource = {
+					type = steel
+					amount = 30
+				}
+			}
+
+			112 = { #Lisbon, Portugal
+				add_resource = {
+					type = oil
+					amount = 4
+				}
+				add_resource = {
+					type = rubber
+					amount = 3
+				}
+			}
+			
+			113 = { #Leinster, Ireland
+				add_resource = {
+					type = aluminium
+					amount = 8
+				}
+				add_resource = {
+					type = steel
+					amount = 24
+				}
+				add_resource = {
+					type = oil
+					amount = 4 
+				}
+				add_resource = {
+					type = rubber
+					amount = 2 
+				}
+			}
+			
+#			114 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			115 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			116 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			117 = { #
+				add_resource = {
+					type = steel
+					amount = 21
+				}
+			}
+
+#			118 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			119 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			120 = { #
+				add_resource = {
+					type = chromium
+					amount = 14
+				}
+				add_resource = {
+					type = tungsten
+					amount = 7
+				}
+			}
+
+#			121 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			122 = { #
+				add_resource = {
+					type = coal
+					amount = 20
+				}
+			}
+
+#			123 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			124 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			125 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			126 = { #London, England
+				add_resource = {
+					type = oil
+					amount = 5
+				}
+				add_resource = {
+					type = rubber
+					amount = 3
+				}
+			}
+
+#			127 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			128 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			129 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			130 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			131 = { #
+				add_resource = {
+					type = steel
+					amount = 23
+				}
+				add_resource = {
+					type = coal
+					amount = 20
+				}
+			}
+
+			132 = { #
+				add_resource = {
+					type = oil
+					amount = 11
+				}
+				add_resource = {
+					type = rubber
+					amount = 5
+				}
+			}
+
+			133 = { #
+				add_resource = {
+					type = oil
+					amount = 8
+				}
+				add_resource = {
+					type = rubber
+					amount = 3
+				}
+				add_resource = {
+					type = coal
+					amount = 50
+				}
+			}
+
+#			134 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			135 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			136 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			137 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			138 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			139 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			140 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+			
+			141 = { #Svealand, Sweden
+				add_resource = {
+					type = aluminium
+					amount = 11
+				}
+				add_resource = {
+					type = oil
+					amount = 7
+				}
+				add_resource = {
+					type = rubber
+					amount = 4
+				}
+			}
+			
+			142 = { #
+				add_resource = {
+					type = steel
+					amount = 23
+				}
+				add_resource = {
+					type = chromium
+					amount = 7
+				}
+				add_resource = {
+					type = aluminium
+					amount = 11
+				}
+				add_resource = {
+					type = coal
+					amount = 15
+				}
+			}
+
+#			143 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			144 = { #
+				add_resource = {
+					type = oil
+					amount = 19
+				}
+				add_resource = {
+					type = steel
+					amount = 34
+				}
+			}
+
+#			145 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			146 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			147 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+			
+			148 = { #Lapland, Finland
+				add_resource = {
+					type = steel
+					amount = 28
+				}
+				add_resource = {
+					type = chromium
+					amount = 11
+				}
+				add_resource = {
+					type = tungsten
+					amount = 15
+				}
+				add_resource = {
+					type = coal
+					amount = 6
+				}
+			}
+			
+#			149 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			150 = { #
+				add_resource = {
+					type = steel
+					amount = 15
+				}
+				add_resource = {
+					type = aluminium
+					amount = 95
+				}
+			}
+
+			151 = { #East Switzerland
+				add_resource = {
+					type = steel
+					amount = 41
+				}
+				add_resource = {
+					type = aluminium
+					amount = 11
+				}
+			}
+			
+			152 = { #Upper Austria
+				add_resource = {
+					type = steel
+					amount = 13
+				}
+				add_resource = {
+					type = tungsten
+					amount = 23
+				}
+				add_resource = {
+					type = aluminium
+					amount = 11
+				}
+				add_resource = {
+					type = coal
+					amount = 20
+				}
+			}
+			
+#			153 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			154 = { #
+				add_resource = {
+					type = tungsten
+					amount = 9
+				}
+			}
+
+			155 = { #
+				add_resource = {
+					type = oil
+					amount = 3 
+				}
+				add_resource = {
+					type = rubber
+					amount = 2 
+				}
+			}
+
+#			156 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			157 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			158 = { #
+				add_resource = {
+					type = steel
+					amount = 31
+				}
+				add_resource = {
+					type = aluminium
+					amount = 11
+				}
+				add_resource = {
+					type = chromium
+					amount = 7
+				}
+				add_resource = {
+					type = tungsten
+					amount = 11
+				}
+				add_resource = {
+					type = coal
+					amount = 4
+				}
+			}
+
+			159 = { #
+				add_resource = {
+					type = steel
+					amount = 74
+				}
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+				add_resource = {
+					type = coal
+					amount = 2
+				}
+			}
+
+			160 = { #
+				add_resource = {
+					type = steel
+					amount = 21
+				}
+				add_resource = {
+					type = aluminium
+					amount = 11
+				}
+				add_resource = {
+					type = tungsten
+					amount = 8
+				}
+				add_resource = {
+					type = coal
+					amount = 3
+				}
+			}
+
+			161 = { #
+				add_resource = {
+					type = chromium
+					amount = 15
+				}
+				add_resource = {
+					type = oil
+					amount = 3
+				}
+				add_resource = {
+					type = rubber
+					amount = 1
+				}
+			}
+
+#			162 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			163 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			164 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			165 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			166 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			167 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			168 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			169 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+			
+			170 = { #Extremadura, Spain
+				add_resource = {
+					type = steel
+					amount = 18
+				}
+				add_resource = {
+					type = aluminium
+					amount = 1
+				}
+				add_resource = {
+					type = tungsten
+					amount = 18
+				}
+			}
+			
+			171 = { #Galicia, Spain
+				add_resource = {
+					type = aluminium
+					amount = 64
+				}
+			}
+			
+			172 = { #Navarra, Spain
+				add_resource = {
+					type = steel
+					amount = 60
+				}
+			}
+			
+			173 = { #
+				add_resource = {
+					type = chromium
+					amount = 11
+				}
+			}
+			
+			174 = { #León, Spain
+				add_resource = {
+					type = tungsten
+					amount = 12
+				}
+				add_resource = {
+					type = aluminium
+					amount = 28
+				}
+				add_resource = {
+					type = coal
+					amount = 15
+				}
+			}
+			
+#			175 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			176 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			1   = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			178 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			179 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+			
+			180 = { #Guarda, Portugal
+				add_resource = {
+					type = steel
+					amount = 28
+				}
+			}
+			
+			181	= { #
+				add_resource = {
+					type = steel
+					amount = 23
+				}
+				add_resource = {
+					type = aluminium
+					amount = 9
+				}
+			}
+
+			182 = { #
+				add_resource = {
+					type = steel
+					amount = 32
+				}
+				add_resource = {
+					type = aluminium
+					amount = 11
+				}
+			}
+			
+			183 = { #Cyprus (U.K.)
+				add_resource = {
+					type = chromium
+					amount = 5
+				}
+			}
+			
+#			184 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+			
+			185 = { #Epirus, Greece
+				add_resource = {
+					type = steel
+					amount = 14
+				}
+			}
+			
+			186 = { #Peloponnese, Greece
+				add_resource = {
+					type = steel
+					amount = 2
+				}
+			}
+			
+#			187 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			188   = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			189 = { # Zematia, LIT
+				add_resource = {
+					type = steel
+					amount = 22
+				}
+				add_resource = {
+					type = aluminium
+					amount = 9
+				}
+			}
+
+			190 = { # Kurzeme, LAT
+				add_resource = {
+					type = tungsten
+					amount = 11
+				}
+			}
+
+			191 = { # Tartu, EST
+				add_resource = {
+					type = tungsten
+					amount = 10
+				}
+			}
+
+#			192 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			193 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			194 = { #
+				add_resource = {
+					type = coal
+					amount = 15
+				}
+			}
+
+			195 = { #
+				add_resource = {
+					type = steel
+					amount = 25
+				}
+				add_resource = {
+					type = aluminium
+					amount = 10
+				}
+				add_resource = {
+					type = oil
+					amount = 3
+				}
+				add_resource = {
+					type = rubber
+					amount = 1
+				}
+			}
+
+#			196 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			197 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			198 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			199 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			200 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			201 = { #
+				add_resource = {
+					type = coal
+					amount = 11
+				}
+			}
+
+#			202 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			203 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			204 = { #
+#				add_resource = {
+#					type = aluminium
+#					amount = 11
+#				}
+#			}
+
+#			205 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			206 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			207 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			208 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			209 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			210 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+			
+			211 = { #Burgas, Bulgaria
+				add_resource = {
+					type = oil
+					amount = 7
+				}
+				add_resource = {
+					type = rubber
+					amount = 4
+				}
+			}
+			
+			212 = { #Plovdiv, Bulgaria
+				add_resource = {
+					type = steel
+					amount = 21
+				}
+				add_resource = {
+					type = tungsten
+					amount = 7
+				}
+				add_resource = {
+					type = coal
+					amount = 6
+				}
+			}
+			
+#			213 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+			
+			214 = { #Arkhangelsk, Russia (USSR)
+				add_resource = {
+					type = steel
+					amount = 126
+				}
+			}
+			
+#			215 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			216 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			217 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			218 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			219 = { # Moscow, SOV
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+				add_resource = {
+					type = oil
+					amount = 3
+				}
+				add_resource = {
+					type = tungsten
+					amount = 6
+				}
+			}
+
+#			220 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			221 = { #
+				add_resource = {
+					type = steel
+					amount = 34
+				}
+				add_resource = {
+					type = chromium
+					amount = 19
+				}
+				add_resource = {
+					type = coal
+					amount = 50
+				}
+			}
+
+#			222 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			223 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			224 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			225 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			226 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			227 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			228 = { #
+				add_resource = {
+					type = steel
+					amount = 24
+				}
+				add_resource = {
+					type = tungsten
+					amount = 9
+				}
+				add_resource = {
+					type = oil
+					amount = 4
+				}
+				add_resource = {
+					type = coal
+					amount = 64
+				}
+			}
+			
+			229 = { #Baku, Azerbaijan (USSR)
+				add_resource = {
+					type = oil
+					amount = 65
+				}
+				add_resource = {
+					type = steel
+					amount = 15
+				}
+				add_resource = {
+					type = rubber
+					amount = 3
+				}
+			}
+			
+#			230 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			231 = { #
+				add_resource = {
+					type = coal
+					amount = 15
+				}
+			}
+			
+			232 = { #Grozny, Russia (USSR)
+				add_resource = {
+					type = oil
+					amount = 11
+				}
+				add_resource = {
+					type = rubber
+					amount = 3
+				}
+			}
+			
+#			233 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			234 = { #
+				add_resource = {
+					type = oil 
+					amount = 5
+				}
+				add_resource = {
+					type = rubber
+					amount = 1
+				}
+			}
+
+#			235 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			236 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			237 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			238 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			239 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			240 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			241 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			242 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			243 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			244 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			245 = { #
+				add_resource = {
+					type = coal
+					amount = 40
+				}
+			}
+
+#			246 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			247 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			248 = { #
+				add_resource = {
+					type = aluminium
+					amount = 20
+				}
+			}
+
+#			249 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			250 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			251 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			252 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			253 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			254 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			255 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			256 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			257 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			258 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			259 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			260 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			261 = { #
+				add_resource = {
+					type = coal
+					amount = 70
+				}
+			}
+
+#			262 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			263 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			264 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			265 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			266 = { #
+				add_resource = {
+					type = oil
+					amount = 4
+				}
+				add_resource = {
+					type = rubber
+					amount = 3
+				}
+			}
+			
+			267 = { #Kabul, Afghanistan
+				add_resource = {
+					type = tungsten
+					amount = 13
+				}
+				add_resource = {
+					type = steel
+					amount = 42
+				}
+				add_resource = {
+					type = oil
+					amount = 22
+				}
+				add_resource = {
+					type = rubber
+					amount = 5
+				}
+				add_resource = {
+					type = chromium
+					amount = 18
+				}
+			}
+			
+#			268 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			269 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			270 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+			
+			271 = { #Ethiopia
+				add_resource = {
+					type = oil
+					amount = 3
+				}
+				add_resource = {
+					type = aluminium
+					amount = 11
+				}
+				add_resource = {
+					type = steel
+					amount = 23
+				}
+				add_resource = {
+					type = chromium
+					amount = 5
+				}
+				add_resource = {
+					type = tungsten
+					amount = 8
+				}
+			}
+			
+			272 = { #Senegal (France)
+				add_resource = {
+					type = steel
+					amount = 1
+				}
+			}
+			
+			273 = { #Libyan Desert (Italy)
+				add_resource = {
+					type = steel
+					amount = 2
+				}
+			}
+			
+			274 = { #Ghana (U.K.)
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+				add_resource = {
+					type = aluminium
+					amount = 6
+				}
+			}
+			
+			275 = { #Tranvaal, South Africa
+				add_resource = {
+					type = steel
+					amount = 13
+				}
+				add_resource = {
+					type = oil
+					amount = 4
+				}
+				add_resource = {
+					type = rubber
+					amount = 3
+				
+				add_resource = {
+					type = coal
+					amount = 25
+				}
+			}
+			
+			276 = { #Southern Ontario, Canada
+				add_resource = {
+					type = aluminium
+					amount = 12
+				}
+				add_resource = {
+					type = oil
+					amount = 6
+				}
+				add_resource = {
+					type = rubber
+					amount = 3
+				}
+				add_resource = {
+					type = coal
+					amount = 11
+				}
+			}
+			
+			277 = { #
+				add_resource = {
+					type = steel
+					amount = 15
+				}
+				add_resource = {
+					type = aluminium
+					amount = 8
+				}
+				add_resource = {
+					type = oil
+					amount = 8
+				}
+				add_resource = {
+					type = rubber
+					amount = 4
+				}
+				add_resource = {
+					type = coal
+					amount = 4
+				}
+			}
+			
+			278 = { #Pampas, Argentina
+				add_resource = {
+					type = aluminium
+					amount = 40
+				}
+			}
+			
+			279 = { #Santiago, Chile
+				add_resource = {
+					type = steel
+					amount = 8
+				}
+				add_resource = {
+					type = aluminium
+					amount = 7 
+				}
+				add_resource = {
+					type = oil
+					amount = 2
+				}
+				add_resource = {
+					type = rubber
+					amount = 1
+				}
+			}
+			
+			280 = { #Mato Grosso, Brazil
+				add_resource = {
+					type = rubber
+					amount = 4
+				}
+			}
+			
+#			281 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			282 = { #
+				add_resource = {
+					type = oil
+					amount = 5
+				}
+				add_resource = {
+					type = rubber
+					amount = 3
+				}
+			}
+			
+			283 = { #Gansu, China (Xibei San Ma)
+				add_resource = {
+					type = steel
+					amount = 1
+				}
+			}
+			
+			284 = { #North Island, New Zealand
+				add_resource = {
+					type = steel
+					amount = 20
+				}
+			}
+			
+			285 = { #New South Wales, Australia
+				add_resource = {
+					type = chromium
+					amount = 8
+				}
+				add_resource = {
+					type = aluminium
+					amount = 8
+				}
+			}
+			
+			286 = { #Southern Indochina, Vietnam (France)
+				add_resource = {
+					type = rubber
+					amount = 11
+				}
+				add_resource = {
+					type = aluminium
+					amount = 12
+				}
+				add_resource = {
+					type = oil
+					amount = 15
+				}
+			}
+			
+#			287 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+			
+			288 = { #Burma (British Raj)
+				add_resource = {
+					type = steel
+					amount =   34
+				}
+				add_resource = {
+					type = tungsten
+					amount = 14
+				}
+			}
+			
+			289 = { #Siam
+				add_resource = {
+					type = rubber
+					amount = 78
+				}
+				add_resource = {
+					type = tungsten
+					amount = 12  
+				}
+				add_resource = {
+					type = steel
+					amount = 18
+				}
+				add_resource = {
+					type = aluminium
+					amount = 9
+				}
+			}
+			
+#			290 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+			
+			291 = { #Baghdad, Iraq
+				add_resource = {
+					type = oil
+					amount = 26
+				}
+				add_resource = {
+					type = steel
+					amount = 11
+				}
+				add_resource = {
+					type = aluminium
+					amount = 5
+				}
+				add_resource = {
+					type = rubber
+					amount = 4
+				}
+			}
+			
+			292 = { #Nejd, Saudi Arabia
+				add_resource = {
+					type = oil
+					amount = 10
+				}
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+				add_resource = {
+					type = steel
+					amount = 22
+				}
+				add_resource = {
+					type = aluminium
+					amount = 12
+				}
+			}
+			
+#			293 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+			
+			294 = { #Oman
+				add_resource = {
+					type = chromium
+					amount = 2
+				}
+			}
+			
+			295 = { #Leopoldville, Congo
+				add_resource = {
+					type = steel
+					amount = 30  
+				}
+				add_resource = {
+					type = tungsten
+					amount = 11  
+				}
+				add_resource = {
+					type = rubber
+					amount = 18
+				}
+			}
+			
+#			296 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+			
+			297 = { #Equatorial Guinea (Spain)
+				add_resource = {
+					type = rubber
+					amount = 8
+				}
+			}
+			
+			298 = { #Liberia
+				add_resource = {
+					type = steel
+					amount = 12
+				}
+				add_resource = {
+					type = rubber
+					amount = 14
+				}
+			}
+			
+#			299 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			300 = { #
+				add_resource = {
+					type = steel
+					amount = 10
+				}
+				add_resource = {
+					type = aluminium
+					amount = 5
+				}
+				add_resource = {
+					type = oil
+					amount = 2
+				}
+				add_resource = {
+					type = rubber
+					amount = 1
+				}
+			}
+
+#			301 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+			
+			302 = { #La Paz, Bolivia
+				add_resource = {
+					type = steel
+					amount = 20
+				}
+				add_resource = {
+					type = oil
+					amount = 8
+				}
+				add_resource = {
+					type = coal
+					amount = 4
+				}
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+			}
+			
+			303 = { #
+				add_resource = {
+					type = rubber
+					amount = 3
+				}
+				add_resource = {
+					type = coal
+					amount = 4
+				}
+			}
+
+			304 = { #
+				add_resource = {
+					type = oil
+					amount = 9
+				}
+				add_resource = {
+					type = steel
+					amount = 12
+				}
+			}
+			
+			305 = { #Ecuador
+				add_resource = {
+					type = steel
+					amount = 24
+				}
+				add_resource = {
+					type = aluminium
+					amount = 11
+				}
+				add_resource = {
+					type = rubber
+					amount = 12
+				}
+			}
+			
+			306 = { #Cundinamarca, Columbia
+				add_resource = {
+					type = steel
+					amount = 30
+				}
+				add_resource = {
+					type = aluminium
+					amount = 10
+				}
+			}
+			
+			307 = { #
+				add_resource = {
+					type = rubber
+					amount = 20
+				}
+				add_resource = {
+					type = steel
+					amount = 30
+				}
+			}
+
+#			308 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			309 = { #
+				add_resource = {
+					type = steel
+					amount = 30
+				}
+				add_resource = {
+					type = rubber
+					amount = 10
+				}
+				add_resource = {
+					type = oil
+					amount = 5
+				}
+			}
+
+			310 = { #
+				add_resource = {
+					type = steel
+					amount = 20
+				}
+				add_resource = {
+					type = aluminium
+					amount = 9
+				}
+				add_resource = {
+					type = rubber
+					amount = 10
+				}
+				add_resource = {
+					type = oil
+					amount = 5
+				}
+			}
+
+#			311 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			312 = { #
+				add_resource = {
+					type = steel
+					amount = 12
+				}
+				add_resource = {
+					type = aluminium
+					amount = 6
+				}
+				add_resource = {
+					type = chromium
+					amount = 30
+				}
+			}
+			
+			313 = { #Guatemala
+				add_resource = {
+					type = chromium
+					amount = 5
+				}
+				add_resource = {
+					type = rubber
+					amount = 12
+				}
+				add_resource = {
+					type = steel
+					amount = 10
+				}
+				add_resource = {
+					type = aluminium
+					amount = 4
+				}
+			}
+			
+			314 = { #
+				add_resource = {
+					type = steel
+					amount = 20
+				}
+			}
+
+#			315 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			316 = { #
+				add_resource = {
+					type = steel
+					amount = 18
+				}
+				add_resource = {
+					type = aluminium
+					amount = 7
+				}
+				add_resource = {
+					type = rubber
+					amount = 20
+				}
+			}
+
+			317 = { #
+				add_resource = {
+					type = steel
+					amount = 15
+				}
+				add_resource = {
+					type = tungsten
+					amount = 28
+				}
+			}
+
+#			318 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			319 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			320 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			321 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+			
+			322 = { #Nagqu, Tibet
+				add_resource = {
+					type = chromium
+					amount = 14
+				}
+				add_resource = {
+					type = steel
+					amount = 25
+				}
+			}
+			
+			323 = { #
+				add_resource = {
+					type = steel
+					amount = 25
+				}
+				add_resource = {
+					type = aluminium
+					amount = 11
+				}
+				add_resource = {
+					type = chromium
+					amount = 35
+				}
+			}
+
+			324 = { #
+				add_resource = {
+					type = steel
+					amount = 20
+				}
+				add_resource = {
+					type = aluminium
+					amount = 9
+				}
+				add_resource = {
+					type = tungsten
+					amount = 30
+				}
+			}
+			
+			325 = { #Yunnan, China
+				add_resource = {
+					type = tungsten
+					amount = 7
+				}
+				add_resource = {
+					type = steel
+					amount = 30
+				}
+				add_resource = {
+					type = aluminium
+					amount = 13
+				}
+				add_resource = {
+					type = rubber
+					amount = 18
+				}
+			}
+			
+#			326 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			327 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			328 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			329 = { # Tanu Tuva, TAN
+				add_resource = {
+					type = steel
+					amount = 69
+				}
+				add_resource = {
+					type = aluminium
+					amount = 13
+				}
+				add_resource = {
+					type = tungsten
+					amount = 21
+				}
+				add_resource = {
+					type = chromium
+					amount = 11
+				}
+			}
+			
+			330 = { #Mongolia
+				add_resource = {
+					type = steel
+					amount = 28
+				}
+				add_resource = {
+					type = aluminium
+					amount = 11
+				}
+				add_resource = {
+					type = chromium
+					amount = 20
+				}
+			}
+			
+#			331 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			332 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			333 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			334 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+			
+			335 = { #Java, Dutch East Indies
+				add_resource = {
+					type = steel
+					amount = 4
+				}
+				add_resource = {
+					type = coal
+					amount = 4
+				}
+			}
+			
+#			336 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			337 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			338 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			339 = { #Malaya, MAL
+				add_resource = {
+					type = coal
+					amount = 4
+				}
+			}
+
+#			340 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			341 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			342 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			343 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			344 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			345 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+			
+			346 = { #Konya, Turkey
+				add_resource = {
+					type = steel
+					amount = 60
+				}
+				add_resource = {
+					type = aluminium
+					amount = 28
+				}
+			}
+			
+			347 = { #
+				add_resource = {
+					type = coal
+					amount = 10
+				}
+			}
+			
+			348 = { #Kayseri, Turkey
+				add_resource = {
+					type = steel
+					amount = 12
+				}
+			}
+			
+			349 = { #Silvas, Turkey
+				add_resource = {
+					type = steel
+					amount = 4
+				}
+				add_resource = {
+					type = oil 
+					amount = 2
+				}
+				add_resource = {
+					type = rubber 
+					amount = 1
+				}
+			}
+			
+			350 = { #Diyarbakir, Turkey
+				add_resource = {
+					type = steel
+					amount = 27
+				}
+				add_resource = {
+					type = tungsten
+					amount = 11
+				}
+				add_resource = {
+					type = oil
+					amount = 13
+				}
+			}
+			
+#			351 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			352 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			353 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+#			354 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+
+			355 = { #
+				add_resource = {
+					type = coal
+					amount = 5
+				}
+			}
+
+			356 = { #
+				add_resource = {
+					type = coal
+					amount = 3
+				}
+			}
+			
+			357 = { #New England, USA
+				add_resource = {
+					type = aluminium
+					amount = 4
+				}
+			}
+			
+			358 = { #New York, USA
+				add_resource = {
+					type = aluminium
+					amount = 4
+				}
+			}
+			
+#			359 = { #
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+			
+			360 = { #Pennsylvania, USA
+				add_resource = {
+					type = aluminium
+					amount = 8
+				}
+			}
+			
+			361 = { #Washington, USA
+				add_resource = {
+					type = oil
+					amount = 11
+				}
+				add_resource = {
+					type = rubber
+					amount = 6
+				}
+			}
+			
+			367 = { #
+				add_resource = {
+					type = coal
+					amount = 60
+				}
+			}
+			
+			369 = { #
+				add_resource = {
+					type = coal
+					amount = 60
+				}
+			}
+			
+			374 = { #Oglagama, USA
+				add_resource = {
+					type = rubber
+					amount = 7
+				}
+			}
+
+			375 = { #Texas, USA 
+				add_resource = {
+					type = rubber
+					amount =  13 
+					}
+				add_resource = {
+					type = coal
+					amount =  50
+				}
+			}
+
+			382 = { #
+				add_resource = {
+					type = coal
+					amount = 40
+				}
+			}
+			
+			388 = { #Montana, USA
+				add_resource = {
+					type = chromium
+					amount = 56
+				}
+			}
+			
+			389 = { #Idaho, USA
+				add_resource = {
+					type = chromium
+					amount = 34
+				}
+			}
+			
+			389 = { #
+				add_resource = {
+					type = coal
+					amount = 40
+					}
+				}
+			395 = { #
+				add_resource = {
+					type = coal
+					amount = 80
+					}
+				}
+			396 = { #
+				add_resource = {
+					type = coal
+					amount = 45
+					}
+				}
+			
+			405 = { #Tashkent, Uzbekistan (USSR)
+				add_resource = {
+					type = chromium
+					amount = 16
+				}
+				add_resource = {
+					type = coal
+					amount = 20
+				}
+			}
+			
+			411 = { #Isfahan, Persia
+				add_resource = {
+					type = oil
+					amount = 4
+				}
+				add_resource = {
+					type = rubber
+					amount = 5
+				}
+				add_resource = {
+					type = aluminium
+					amount = 21
+				}
+				add_resource = {
+					type = steel
+					amount = 53
+				}
+			}
+			
+			412 = { #Fars, Persia
+				add_resource = {
+					type = oil
+					amount = 1
+				}
+				add_resource = {
+					type = steel
+					amount = 42
+				}
+				add_resource = {
+					type = aluminium
+					amount = 15
+				}
+				add_resource = {
+					type = tungsten
+					amount = 11
+				}
+			}
+			
+			413 = { #Khuzestan, Persia
+				add_resource = {
+					type = steel
+					amount = 35
+				}
+			}
+			
+			414 = { #Kerman, Persia
+				add_resource = {
+					type = aluminium
+					amount = 8
+				}
+				add_resource = {
+					type = tungsten
+					amount = 11
+				}
+			}
+			
+			415 = { #Herat, Afghanistan
+				add_resource = {
+					type = tungsten
+					amount = 11
+				}
+				add_resource = {
+					type = steel
+					amount = 56
+				}
+				add_resource = {
+					type = aluminium
+					amount = 18
+				}
+			}
+			
+			416 = { #Khorasan, Persia
+				add_resource = {
+					type = chromium
+					amount = 16
+				}
+				add_resource = {
+					type = coal
+					amount = 20
+				}
+			}
+			
+			418 = { #Semnan, Persia
+				add_resource = {
+					type = chromium
+					amount = 8
+				}
+			}
+			
+			419 = { #Tibriz, Persia
+				add_resource = {
+					type = aluminium
+					amount = 8
+				}
+				add_resource = {
+					type = steel
+					amount = 2
+				}
+			}
+
+			423 = { #Madurai, India (British Raj)
+				add_resource = {
+					type = aluminium
+					amount = 6
+				}
+			}
+			
+			424 = { #Madras, India (British Raj)
+				add_resource = {
+					type = aluminium
+					amount = 3
+				}
+			}
+			
+			426 = { #Orissa, India (British Raj)
+				add_resource = {
+					type = aluminium
+					amount = 9
+				}
+			}
+			
+			428 = { #Gujarat, India (British Raj)
+				add_resource = {
+					type = aluminium
+					amount = 6
+				}
+			}
+			
+			429 = { #Bombay, India (British Raj)
+				add_resource = {
+					type = aluminium
+					amount = 5
+				}
+			}
+			
+			430 = { #East Bengal, Bangladesh (British Raj)
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+			}
+			
+			436 = { #Jabalpur, India (British Raj)
+				add_resource = {
+					type = steel
+					amount = 4
+				}
+				add_resource = {
+					type = aluminium
+					amount = 8
+				}
+			}
+
+			439 = { #Delhi, British Raj
+				add_resource = {
+					type = steel
+					amount = 28
+				}
+				add_resource = {
+					type = aluminium
+					amount = 11
+				}
+				add_resource = {
+					type = oil
+					amount = 5
+				}
+				add_resource = {
+					type = rubber
+					amount = 3
+				}
+				add_resource = {
+					type = coal
+					amount = 6
+				}
+			}
+			
+			440 = { #Punjab, Pakistan (British Raj)
+				add_resource = {
+					type = aluminium
+					amount = 4
+				}
+			}
+			
+			442 = { #Peshawar, Pakistan (British Raj)
+				add_resource = {
+					type = steel
+					amount = 60
+				}
+				add_resource = {
+					type = aluminium
+					amount = 19
+				}
+			}
+			
+			444 = { #Baluchistan, Pakistan (British Raj)
+				add_resource = {
+					type = steel
+					amount = 2
+				}
+			}
+			
+			445 = { #Quetta, Pakistan (British Raj)
+				add_resource = {
+					type = chromium
+					amount = 8
+				}
+			}
+			
+			446 = { #Cairo, Egypt (U.K.)
+				add_resource = {
+					type = steel
+					amount = 16
+				}
+			}
+			
+			447 = { #
+				add_resource = {
+					type = steel
+					amount = 40
+				}
+				add_resource = {
+					type = aluminium
+					amount = 19
+				}
+				add_resource = {
+					type = oil
+					amount = 12
+				}
+				add_resource = {
+					type = rubber
+					amount = 7
+				}
+			}
+			
+			448 = { #Tripoli, Libya (Italy)
+				add_resource = {
+					type = steel
+					amount = 21
+				}
+				add_resource = {
+					type = oil
+					amount = 5
+				}
+				add_resource = {
+					type = rubber
+					amount = 3
+				}
+				add_resource = {
+					type = chromium
+					amount = 9
+				}
+			}
+
+			450 = { #Benghasi, Ita
+				add_resource = {
+					type = steel
+					amount = 45	
+				}
+				add_resource = {
+					type = oil
+					amount = 4
+				}
+				add_resource = {
+					type = rubber
+					amount = 3
+				}
+				add_resource = {
+					type = tungsten
+					amount = 13
+				}
+			}
+			
+			452 = { #
+			add_resource = {
+				type = oil
+				amount = 7
+				}
+			}
+
+			453 = { #Sinai, Egypt (U.K.)
+				add_resource = {
+					type = steel
+					amount = 15 
+				}
+			}
+			
+			454 = { #Palestine, PAL; Palpatine XD
+				add_resource = {
+					type = steel
+					amount = 12 
+				}
+			}
+
+			455 = { #Jordan, JOR; Transjordan 
+				add_resource = {
+					type = steel
+					amount = 20
+				}
+				add_resource = {
+					type = aluminium
+					amount = 9
+				}
+			}
+			
+			456 = { #Aswan, Egypt (U.K.)
+				add_resource = {
+					type = steel
+					amount = 8
+				}
+				add_resource = {
+					type = aluminium
+					amount = 2
+				}
+			}
+			
+			457 = { #Eastern Desert, Egypt (U.K.)
+				add_resource = {
+					type = steel
+					amount = 12
+				}
+			}
+			
+			458 = { #
+				add_resource = {
+					type = steel
+					amount = 21
+				}
+				add_resource = {
+					type = tungsten
+					amount = 21
+				}
+				add_resource = {
+					type = chromium
+					amount = 9
+				}
+				add_resource = {
+					type = rubber
+					amount = 8
+				}
+			}
+			
+			459 = { #
+				add_resource = {
+					type = aluminium
+					amount = 15
+				}
+			}
+			
+			461 = { #
+				add_resource = {
+					type = chromium
+					amount = 7
+				}
+			}
+			
+			462 = { #Marrakech, Morocco (France)
+				add_resource = {
+					type = steel
+					amount = 4
+				}
+			}
+			
+			466 = { #Quebec, Canada
+				add_resource = {
+					type = chromium
+					amount = 15
+				}
+			}
+			
+			470 = { #Alberta, Canada
+				add_resource = {
+					type = oil
+					amount = 6
+				}
+			}
+			
+			471 = { #Northwestern Canada, a.k.a. Yukon
+				add_resource = {
+					type = tungsten
+					amount = 26
+				}
+			}
+			
+			472 = { #Northwest Territories, Canada
+				add_resource = {
+					type = chromium
+					amount = 88
+				}
+				add_resource = {
+					type = steel
+					amount = 12
+				}
+				add_resource = {
+					type = tungsten
+					amount = 26
+				}
+			}
+			
+			473 = { #British Columbia, Canada
+				add_resource = {
+					type = tungsten
+					amount = 8
+				}
+				add_resource = {
+					type = steel
+					amount = 8
+				}
+				add_resource = {
+					type = coal
+					amount = 35
+				}
+			}
+			
+			478 = { #Jalisco, Mexico
+				add_resource = {
+					type = tungsten
+					amount = 2
+				}
+				add_resource = {
+					type = steel
+					amount = 22
+				}
+			}
+			
+			480 = { #Coahuila, Mexico
+				add_resource = {
+					type = oil
+					amount = 40
+				}
+				add_resource = {
+					type = steel
+					amount = 2
+				}
+			}
+			
+			481 = { #Durango, Mexico
+				add_resource = {
+					type = steel
+					amount = 4
+				}
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+			}
+			
+			482 = { #Chihuahua, Mexico
+				add_resource = {
+					type = steel
+					amount = 20
+				}
+				add_resource = {
+					type = aluminium
+					amount = 8
+				}
+				add_resource = {
+					type = coal
+					amount = 12
+				}
+			}
+			
+			483 = { #Sonora, Mexico
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+			}
+			
+			488 = { #
+				add_resource = {
+					type = tungsten
+					amount = 19
+				}
+			}
+			
+			489 = { #Zulias, Venezuala
+				add_resource = {
+					type = oil
+					amount = 35
+				}
+				add_resource = {
+					type = steel
+					amount = 28
+				}
+				add_resource = {
+					type = aluminium
+					amount = 22
+				}
+				add_resource = {
+					type = coal
+					amount = 3
+				}
+			}
+			
+			492 = { #Arequipa, Peru
+				add_resource = {
+					type = steel
+					amount = 23
+				}
+				add_resource = {
+					type = aluminium
+					amount = 9
+				}
+			}
+			
+			493 = { #La Libertad, Columbia
+				add_resource = {
+					type = steel
+					amount = 2
+				}
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+				add_resource = {
+					type = coal
+					amount = 5
+				}
+			}
+			
+			495 = { #Amazonas, Brazil
+				add_resource = {
+					type = aluminium
+					amount = 4
+				}
+				add_resource = {
+					type = rubber
+					amount = 96
+				}
+			}
+			
+			496 = { #Para, Brazil
+				add_resource = {
+					type = steel
+					amount = 15
+				}
+				add_resource = {
+					type = tungsten
+					amount = 12
+				}
+				add_resource = {
+					type = chromium
+					amount = 22
+				}
+				add_resource = {
+					type = aluminium
+					amount = 44
+				}	
+				add_resource = {
+					type = coal
+					amount = 10
+				}
+			}
+			
+			497 = { #Maranhao, Brazil
+				add_resource = {
+					type = rubber
+					amount = 7
+				}
+				add_resource = {
+					type = steel
+					amount = 8
+				}
+				add_resource = {
+					type = aluminium
+					amount = 8
+				}
+			}
+			
+			498 = { #Rio Grande, Brazil
+				add_resource = {
+					type = aluminium
+					amount = 12
+				}
+				add_resource = {
+					type = steel
+					amount = 12
+				}
+			}
+			
+			499 = { #Bahia, Brazil
+				add_resource = {
+					type = steel
+					amount = 40 
+				}
+				add_resource = {
+					type = tungsten
+					amount = 22
+				}
+				add_resource = {
+					type = chromium
+					amount = 40
+				}
+			}
+			
+			500 = { #Rio de Janerio, BRA
+				add_resource = {
+					type = steel
+					amount = 24
+				}
+				add_resource = {
+					type = aluminium
+					amount = 11
+				}
+				add_resource = {
+					type = oil
+					amount = 5
+				}
+			}
+			
+			501 = { #Sao Paulo, Brazil
+				add_resource = {
+					type = aluminium
+					amount = 24
+				}
+			}
+			
+			502 = { #Rio Grande Sul, Brazil
+				add_resource = {
+					type = aluminium
+					amount = 8
+				add_resource = {
+					type = oil
+					amount = 4
+				}
+			}
+			
+			503 = { #Santa Catarina, Brazil
+				add_resource = {
+					type = aluminium
+					amount = 24
+				}
+			}
+			
+			505 = { #Goias, Brazil
+				add_resource = {
+					type = tungsten
+					amount = 6
+				}
+				add_resource = {
+					type = rubber
+					amount = 6
+				}
+			}
+			
+			507 = { #Magallanes, Chile
+				add_resource = {
+					type = aluminium
+					amount = 8
+				}
+				add_resource = {
+					type = oil
+					amount = 3
+				}
+				add_resource = {
+					type = coal
+					amount = 7
+				}
+			}
+			
+			509 = { #Chaco Austral, Argentina
+				add_resource = {
+					type = aluminium
+					amount = 8
+				}
+				add_resource = {
+					type = steel
+					amount = 40
+				}
+			}
+			
+			510 = { #Mesopotamia, Argentina
+				add_resource = {
+					type = oil
+					amount = 14
+				}
+				add_resource = {
+					type = rubber
+					amount = 6
+				}
+			}
+			
+			511 = { #Mendoza, Argentina
+				add_resource = {
+					type = aluminium
+					amount = 48
+				}
+				add_resource = {
+					type = chromium
+					amount = 80
+				}
+			}
+			
+			512 = { #Patagonia, Argentina
+				add_resource = {
+					type = aluminium
+					amount = 22
+				}
+			}
+			
+			517 = { #Victoria, Australia
+				add_resource = {
+					type = steel
+					amount = 4
+				}
+				add_resource = {
+					type = chromium
+					amount = 2
+				}
+				add_resource = {
+					type = oil
+					amount = 4
+				}
+			}
+			
+			518 = { #Tasmania, Australia
+				add_resource = {
+					type = aluminium
+					amount = 8
+				}
+			}
+			
+			519 = { #South Australia
+				add_resource = {
+					type = chromium
+					amount = 2
+				}
+			}
+			
+			521 = { #Queensland, Australia
+				add_resource = {
+					type = aluminium
+					amount = 4
+				}
+			}
+			
+			522 = { #Western Australia
+				add_resource = {
+					type = aluminium
+					amount = 18
+				}
+			}
+			
+			523 = { #Papua New Giunea (Australia)
+				add_resource = {
+					type = rubber
+					amount = 8
+				}
+			}
+			
+			524 = { #Taiwan (Japan)
+				add_resource = {
+					type = rubber
+					amount = 3
+				}
+				add_resource = {
+					type = steel
+					amount = 3
+				}
+				add_resource = {
+					type = aluminium
+					amount = 2
+				}
+				add_resource = {
+					type = chromium
+					amount = 2
+				}
+				add_resource = {
+					type = tungsten
+					amount = 2
+				}
+			}
+			
+			525 = { #South Korea
+				add_resource = {
+					type = steel
+					amount = 40
+				}
+				add_resource = {
+					type = aluminium
+					amount = 21
+				}
+				add_resource = {
+					type = tungsten
+					amount = 17
+				}
+				add_resource = {
+					type = chromium
+					amount = 11
+				}
+				add_resource = {
+					type = oil
+					amount = 2
+				}
+			}
+			528 = { #
+				add_resource = {
+					type = coal
+					amount = 21
+				}
+				add_resource = {
+					type = steel
+					amount = 15
+				}
+			}
+			
+			533 = { #
+				add_resource = {
+					type = steel
+					amount = 21
+				}
+			add_resource = {
+					type = aluminium
+					amount = 11
+				}
+			}
+
+			535 = { #
+				add_resource = {
+					type = steel
+					amount = 44
+				}
+				add_resource = {
+					type = aluminium
+					amount = 22
+				}
+			}
+			
+			536 = { # Kokkaido, JAP
+				add_resource = {
+					type = oil
+					amount = 2
+				}
+				add_resource = {
+				type = steel
+				amount = 11
+				}
+				add_resource = {
+				type = coal
+				amount = 30
+				}
+			}
+			
+			539 = { #Gabon (France)
+				add_resource = {
+				type = chromium
+				amount = 9
+				}
+				add_resource = {
+					type = tungsten
+					amount = 9
+				}
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+				add_resource = {
+					type = aluminium
+					amount = 6
+				}
+			}
+			
+			540 = { #South Angola (Portugual)
+				add_resource = {
+					type = steel
+					amount = 6
+				}
+			}
+			
+			541 = { #South West Africa, Namibia (South Africa)
+				add_resource = {
+					type = steel
+					amount = 2
+				}
+			}
+			
+			543 = { #Madagascar (France)
+				add_resource = {
+					type = steel
+					amount = 30
+				}
+				add_resource = {
+					type = aluminium
+					amount = 10
+				}
+				add_resource = {
+					type = chromium
+					amount = 16
+				}
+				add_resource = {
+					type = rubber
+					amount = 25
+				}
+				add_resource = {
+					type = oil
+					amount = 15
+				}
+			}
+			
+			544 = { #Mozambique (Portugal)
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+				add_resource = {
+					type = aluminium
+					amount = 14
+				}
+			}
+			
+			545 = { #Rhodesia, Zimbabwe (U.K.)
+				add_resource = {
+					type = steel
+					amount = 8
+				}
+				add_resource = {
+					type = chromium
+					amount = 35
+				}
+				add_resource = {
+					type = tungsten
+					amount = 8
+				}
+			}
+
+			547 = { #Kenya (U.K.)
+				add_resource = {
+					type = steel
+					amount = 2
+				}
+				add_resource = {
+					type = coal
+					amount = 20
+				}
+			}
+			
+			548 = { #Uganda (U.K.)
+				add_resource = {
+					type = rubber
+					amount = 3
+				}
+				add_resource = {
+					type = tungsten
+					amount = 14
+				}
+			}
+			
+			549 = { #Sudan (U.K.)
+				add_resource = {
+					type = oil
+					amount = 4
+				}
+				add_resource = {
+					type = chromium
+					amount = 12
+				}
+			}
+			
+			551 = { #Khartoum, Sudan (U.K.)
+				add_resource = {
+					type = rubber
+					amount = 1
+				}
+			}
+			
+			552 = { #Western Desert, Egypt (U.K.)
+				add_resource = {
+					type = steel
+					amount = 2
+				}
+			}
+			
+			553 = { #Leabanon, LEB
+				add_resource = {
+					type = steel
+					amount = 20
+				}
+				add_resource = {
+					type = aluminium
+					amount = 10
+				}
+			}
+			
+			554 = { #Damascus, Syria (France)
+				add_resource = {
+					type = steel
+					amount = 16
+				}
+			}
+			
+			557 = { #Mauritania (France)
+				add_resource = {
+					type = steel
+					amount = 8
+				}
+			}
+			
+			558 = { #Nigeria (U.K.)
+				add_resource = {
+					type = rubber
+					amount = 12
+				}
+				add_resource = {
+					type = steel
+					amount = 2
+				}
+				add_resource = {
+					type = aluminium
+					amount = 2
+				}
+			}
+			569 = { #
+				add_resource = {
+				type = coal
+				amount = 80
+				}
+			}
+			578 = { #
+				add_resource = {
+				type = coal
+				amount = 28
+				}
+			}
+			581 = { #
+				add_resource = {
+					type = oil
+					amount = 11
+					}
+				add_resource = {
+					type = coal
+					amount = 30
+				}
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+			}
+			
+			584 = { #Ashkhabad, Turkmenistan (USSR)
+				add_resource = {
+					type = steel
+					amount = 55  
+				}
+				add_resource = {
+					type = oil
+					amount =  23 
+				}
+			}
+			
+			585 = { #Urgench, Uzbekistan (USSR)
+				add_resource = {
+					type = steel
+					amount = 20
+				}
+				add_resource = {
+					type = chromium
+					amount = 12
+				}
+				add_resource = {
+					type = tungsten
+					amount = 4
+				}
+				add_resource = {
+					type = aluminium
+					amount = 46
+				}
+				add_resource = {
+					type = coal
+					amount = 10
+				}
+			}
+
+			
+			591 = { #Hainan, China (Guangxi Clique)
+				add_resource = {
+					type = rubber
+					amount = 16
+				}
+			}
+			
+			592 = { #Guangzhou, China (Guangxi Clique)
+				add_resource = {
+					type = tungsten
+					amount = 14
+				}
+				add_resource = {
+					type = aluminium
+					amount = 14
+				}
+			}
+			
+			593 = { #Guangdong, China (Guangxi Clique)
+				add_resource = {
+					type = tungsten
+					amount = 33
+				}
+			}
+			
+			594 = { #Nanning, China (Guangxi Clique)
+				add_resource = {
+					type = tungsten
+					amount = 22
+				}
+				add_resource = {
+					type = rubber
+					amount = 5
+				}
+			}
+			
+			595 = { #Fujian, China (Nationalist China)
+				add_resource = {
+					type = rubber
+					amount = 3
+				}
+				add_resource = {
+					type = tungsten
+					amount = 3
+				}
+			}
+			
+			596 = { #Zhejiang, China (Nationalist China)
+				add_resource = {
+					type = aluminium
+					amount = 18
+				}
+			}
+			
+			597 = { #Shandong, China (Nationalist China)
+				add_resource = {
+					type = aluminium
+					amount = 14
+				}
+			}
+			
+			598 = { #Jiansu, China (Nationalist China)
+				add_resource = {
+					type = aluminium
+					amount = 12
+				}
+			}
+			
+			599 = { #Guanxi, China (Guangxi Clique)
+				add_resource = {
+					type = tungsten
+					amount = 13
+				}
+				add_resource = {
+					type = rubber
+					amount = 6
+				}
+			}
+			
+			600 = { #Jiangxi, China (Nationalist China)
+				add_resource = {
+					type = steel
+					amount = 4
+				}
+				add_resource = {
+					type = tungsten
+					amount = 8
+				}
+			}
+			
+#			601 = { #Xikang, Tibet/China (Nationalist China)
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+			
+			602 = { #Hunnan, China (Nationalist China)
+				add_resource = {
+					type = tungsten
+					amount = 4
+				}
+				add_resource = {
+					type = steel
+					amount = 4
+				}
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+			}
+			
+#			603 = { #Guizhou, China (Nationalist China)
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+			
+#			604 = { #Qinghai, China (Xibei San Ma)
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+			
+			605 = { #Sichuan, China (Nationalist China)
+				add_resource = {
+					type = steel
+					amount = 6
+				}
+				add_resource = {
+					type = aluminium
+					amount = 2
+				}
+				add_resource = {
+					type = oil
+					amount = 12
+				}
+			}
+			
+#			606 = { #Anhui, China (Nationalist China)
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+			
+			607 = { #Henan, China (Nationalist China)
+				add_resource = {
+					type = aluminium
+					amount = 2
+				}
+			}
+			
+			608 = { #Beijing, China (Nationalist China)
+				add_resource = {
+					type = steel
+					amount = 4
+				}
+			}
+			
+			609 = { #East Hebei, China (Japan)
+				add_resource = {
+					type = steel
+					amount = 1
+				}
+			}
+			
+#			610 = { #Jehol, China (Manchukuo)
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+			
+			611 = { #South Chahar, China (Mengkukuo)
+				add_resource = {
+					type = aluminium
+					amount =  63 
+				}
+			}
+			
+			612 = { #Chahar, China (Mengkukuo)
+				add_resource = {
+					type = aluminium
+					amount = 8
+				}
+			}
+			
+			613 = { #Shanghai, China (Nationalist China)
+				add_resource = {
+					type = steel
+					amount = 20
+				}
+				add_resource = {
+					type = aluminium
+					amount = 22
+				}
+				add_resource = {
+					type = oil
+					amount = 4
+				}
+				add_resource = {
+					type = rubber
+					amount = 3
+				}
+			}
+			
+			614 = { #Hebei, China (Nationalist China)
+				add_resource = {
+					type = steel
+					amount = 6
+				}
+			}
+			
+			615 = { #Shanxi, China (Shanxi Clique)
+				add_resource = {
+					type = steel
+					amount = 20
+				}
+				add_resource = {
+					type = aluminium
+					amount = 9
+				}
+			}
+			
+			616 = { #Ningxia, China (Xibei San Ma)
+				add_resource = {
+					type = steel
+					amount = 15
+				}
+				add_resource = {
+					type = tungsten
+					amount = 4
+				}
+			}
+			
+			617 = { #Urumqi, China (Sinkiang)
+				add_resource = {
+					type = aluminium
+					amount = 9
+				}
+				add_resource = {
+					type = oil
+					amount = 2
+				}
+				add_resource = {
+					type = rubber
+					amount = 1
+				}
+			}
+			
+			618 = { #Dzungaria, China (Sinkiang)
+				add_resource = {
+					type = coal
+					amount = 40
+				}
+			}
+			
+			619 = { #Yarkand, China (Sinkiang)
+				add_resource = {
+					type = steel
+					amount = 32
+				}
+				add_resource = {
+					type = chromium
+					amount = 11
+				}
+			}
+			
+			620 = { #Hubei, China (Nationalist China)
+				add_resource = {
+					type = steel
+					amount = 6
+				}
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+			}
+			
+#			621 = { #Suiyuan, China (Shanxi Clique)
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+			
+			622 = { #Shaanxi, China (Communist China)
+				add_resource = {
+					type = steel
+					amount = 19
+				}
+				add_resource = {
+					type = tungsten
+					amount = 5
+				}
+				add_resource = {
+					type = aluminium
+					amount = 12
+				}
+				add_resource = {
+					type = chromium
+					amount = 8
+				}
+			}
+			
+			623 = { #Luzon, Philippines
+				add_resource = {
+					type = rubber
+					amount = 27
+				}
+			}
+			
+			625 = { #Samar, Philippines
+				add_resource = {
+					type = steel
+					amount = 25
+				}
+				add_resource = {
+					type = aluminium
+					amount = 13
+				}
+				add_resource = {
+					type = chromium
+					amount = 6
+				}
+			}
+			
+			636 = { #Switzerland
+				add_resource = {
+					type = steel
+					amount = 8
+				}
+			}
+			
+#			640 = { #Mandalay, Burma (British Raj)
+#				add_resource = {
+#					type = 
+#					amount = 
+#				}
+#			}
+			
+			656 = { #Kuwait, KUW
+				add_resource = {
+					type = steel
+					amount = 10  
+				}
+				add_resource = {
+					type = aluminium
+					amount = 4
+				}
+			}
+			
+			658 = { #Abu Dhabi, United Arab Emirates (U.K.)
+				add_resource = {
+					type = steel
+					amount = 10  
+				}
+				add_resource = {
+					type = aluminium
+					amount = 62
+				}
+			}
+			
+			660 = { #Equatorial Africa, Central African Republic (France)
+				add_resource = {
+					type = rubber
+					amount = 1
+				}
+				add_resource = {
+					type = steel
+					amount = 4
+				}
+			}
+
+			664 = { #Sout Slov, Cze
+			add_resource = {
+				type = chromium
+				amount = 88
+				}
+			add_resource = {
+				type = steel
+				amount = 12
+				}
+			}
+			
+			666 = { #
+			add_resource = {
+				type = coal
+				amount = 7
+				}
+			}
+			
+			671 = { #Tonkin, Vietnam (France)
+				add_resource = {
+					type = chromium
+					amount = 6
+				}
+				add_resource = {
+					type = steel
+					amount = 12
+				}
+				add_resource = {
+					type = coal
+					amount = 10
+				}
+			}
+			
+			674 = { #Central Australia
+				add_resource = {
+					type = oil
+					amount = 2
+				}
+			}
+
+			676 = { #Mosul, Saudi Arabia
+				add_resource = {
+					type = steel
+					amount = 12
+				}
+				add_resource = {
+					type = aluminium
+					amount = 4
+				}
+				add_resource = {
+					type = tungsten
+					amount = 9
+				}
+				add_resource = {
+					type = chromium
+					amount = 4
+				}
+			}
+			
+			677 = { #Aleppo, SYR
+				add_resource = {
+					type = steel
+					amount = 15
+				}
+				add_resource = {
+					type = aluminium
+					amount = 7
+				}
+			}
+			
+			678 = { #Rub al Khali, Saudi Arabia
+				add_resource = {
+					type = oil
+					amount = 12
+				}
+			}
+			
+			681 = { #Cape, South Africa
+				add_resource = {
+					type = steel
+					amount = 46
+				}
+			}
+			
+			683 = { #Northeastern Canada, a.k.a. Nunavut
+				add_resource = {
+					type = aluminium
+					amount = 14
+				}
+				add_resource = {
+					type = steel
+					amount = 42
+				}
+			}
+			
+			680 = { #Deizaizur, Afr, Fra
+			add_resource = {
+				type = oil
+				amount = 27
+				}
+			add_resource = {
+				type = rubber
+				amount = 4
+				}
+			}
+			
+			688 = { #
+				add_resource = {
+					type = steel
+					amount = 10
+				}
+				add_resource = {
+					type = aluminium
+					amount = 5
+				}
+			}
+			
+			689 = { #Jamaica (U.K.)
+				add_resource = {
+					type = aluminium
+					amount = 18
+				}
+				add_resource = {
+					type = chromium
+					amount = 20
+				}
+				add_resource = {
+					type = rubber
+					amount = 12
+				}
+			}
+			
+			704 = { #Steinmark, AUS 
+			add_resource = {
+				type = steel
+				amount = 12
+				}
+			add_resource = {
+				type = chromium
+				amount = 6
+				}
+			}
+			
+			716 = { #
+				add_resource = {
+					type = coal
+					amount = 40
+				}
+			}
+			
+			717 = { #Sungkiang, China (Manchukuo)
+				add_resource = {
+					type = tungsten
+					amount = 2
+				}
+			}
+			
+			719 = { #Natal, South Africa
+				add_resource = {
+					type = steel
+					amount = 2
+				}
+				add_resource = {
+					type = aluminium
+					amount = 18
+				}
+			}
+			
+			723 = { #South Island, New Zealand
+				add_resource = {
+					type = tungsten
+					amount = 2
+				}
+				add_resource = {
+					type = steel
+					amount = 2
+				}
+			}
+			
+			724 = { #North Malay, Siam
+				add_resource = {
+					type = rubber
+					amount = 184
+				}
+			}
+			
+			726 = { #Samoa (New Zealand)
+				add_resource = {
+					type = rubber
+					amount = 3
+				}
+			}
+			
+			740 = { #Vancouver Island, Canada
+				add_resource = {
+					type = tungsten
+					amount = 2
+				}
+			}
+
+			746 = { #
+				add_resource = {
+					type = aluminium
+					amount = 15
+				}
+			}
+			
+			757 = { #Shigatse, Tibet
+				add_resource = {
+					type = chromium
+					amount = 6
+				}
+				add_resource = {
+					type = steel
+					amount = 2
+				}
+			}
+
+			760 = { #
+				add_resource = {
+					type = coal
+					amount = 20
+				}
+			}
+			
+			762 = { #Katiowice, Pol
+				add_resource = {
+					type = steel
+					amount = 87
+				}
+				add_resource = {
+					type = aluminium
+					amount = 35
+				}
+				add_resource = {
+					type = coal
+					amount = 100
+				}
+			}
+			
+			773 = { #Cameron, Fra
+				add_resource = {
+					type = steel
+					amount = 40
+				}
+				add_resource = {
+					type = aluminium
+					amount = 11
+				}
+				add_resource = {
+					type = oil
+					amount = 15
+				}
+				add_resource = {
+					type = rubber
+					amount = 3
+				}
+			}
+			
+			790 = { #
+				add_resource = {
+					type = coal
+					amount = 8
+				}
+			}
+			
+			805 = { #Northern Epirus, Albania
+				add_resource = {
+					type = steel
+					amount = 2
+				}
+			}
+			
+			808 = { #Riga, LAT
+				add_resource = {
+					type = oil
+					amount = 3
+				}
+				add_resource = {
+					type = rubber
+					amount = 1
+				}
+				add_resource = {
+					type = steel
+					amount = 11
+				}
+			}
+			
+			810 = { #Latgale, LAT
+				add_resource = {
+					type = chromium
+					amount = 13
+				}
+			}
+			
+			812 = { #Hajru, EST
+				add_resource = {
+					type = oil
+					amount = 3
+				}
+				add_resource = {
+					type = rubber
+					amount = 1
+				}
+				add_resource = {
+					type = steel
+					amount = 15
+				}
+				}
+			815 = { #Aksta, LIT
+				add_resource = {
+					type = tungsten
+					amount = 6
+				}
+			}
+			
+			816 = { #
+				add_resource = {
+					type = coal
+					amount = 40
+				}
+			}
+			
+			818 = { #Khovd, MON
+				add_resource = {
+					type = tungsten
+					amount = 9
+				}
+			}
+			
+			821 = { #Grozny, SOV
+				add_resource = {
+					type = oil
+					amount = 11
+				}
+			}
+			
+			847 = { #
+				add_resource = {
+					type = coal
+					amount = 11
+				}
+			}
+			
+			847 = { #
+				add_resource = {
+					type = tungsten
+					amount = 59
+				}
+			}
+			
+			869 = { #Lanna, SIA
+				add_resource = {
+					type = oil
+					amount = 5
+				}
+				add_resource = {
+					type = coal
+					amount = 9
+				}
+			}
+			
+			881 = { #
+				add_resource = {
+					type = coal
+					amount = 25
+				}
+			}
+			
+			889 = { #
+				add_resource = {
+					type = aluminium
+					amount = 14
+				}
+				add_resource = {
+					type = coal
+					amount = 8
+				}
+			}
+			
+			908 = { # Assusa
+				add_resource = {
+					type = steel
+					amount = 20
+				}
+				add_resource = {
+					type = aluminium
+					amount = 9
+				}
+			}
+			
+			923 = { #
+				add_resource = {
+					type = tungsten
+					amount = 11
+				}
+				add_resource = {
+					type = steel
+					amount = 44
+				}
+			}
+			
+			925 = { #
+				add_resource = {
+					type = coal
+					amount = 11
+				}
+			}
+			
+			929 = { #
+				add_resource = {
+					type = aluminium
+					amount = 11
+				}
+			}
+			
+			
+			954 = { #
+				add_resource = {
+					type = coal
+					amount = 7
+				}
+			}
+			
+			995 = { #Pegu, BRM
+				add_resource = {
+					type = oil
+					amount = 3
+				}
+				add_resource = {
+					type = rubber
+					amount = 1
+				}
+				add_resource = {
+					type = steel
+					amount = 23
+				}
+				add_resource = {
+					type = aluminium
+					amount = 11
+				}
+			}
+
+			999 = { #Federated Shan, BRM
+				add_resource = {
+					type = coal
+					amount = 8
+				}
+			}
+
+			1000 = { #East Azerbaijan, IRAN
+				add_resource = {
+					type = steel
+					amount = 33
+				}
+			}
+
+			1011 = { #Ai Basrah, Iraq
+				add_resource = {
+					type = steel
+					amount = 45
+				}
+				add_resource = {
+					type = aluminium
+					amount = 21
+				}
+				add_resource = {
+					type = tungsten
+					amount = 11
+				}
+				add_resource = {
+					type = chromium
+					amount = 7
+				}
+			}
+			
+			1026 = { #Northern Minanao, PHI
+				add_resource = {
+					type = tungsten
+					amount = 30
+				}
+				add_resource = {
+					type = coal
+					amount = 6
+				}
+			}
+			
+			1037 = { #
+				add_resource = {
+					type = coal
+					amount = 10
+				}
+			}
+			
+			1041 = { #Cumbria, Eng
+				add_resource = {
+					type = steel
+					amount = 58
+				}
+			}
+		}
+	}
+}
+}
+}

@@ -1,0 +1,104 @@
+add_namespace = frw_ret
+
+# request
+country_event = {
+	id = frw_ret.1
+	title = frw_ret.1.t
+	desc = frw_ret.1.d
+	picture = GFX_report_event_french_british_officers
+	is_triggered_only = yes
+	option = {
+		name = frw_ret.1.a
+		custom_effect_tooltip = frw_ret.hand_tt
+		hidden_effect = {
+			every_controlled_state = {
+				limit = { FRW_french_africa_land = yes }
+				FRA = { transfer_state = PREV }
+			}
+			FRA = { clr_country_flag = FRW_return_pending country_event = { id = frw_ret.10 hours = 6 } }
+		}
+		ai_chance = {
+			factor = 50
+			modifier = { add = 15 FRA = { check_variable = { FRW_ff_prestige > 40 } } }
+			modifier = { add = 15 FRA = { check_variable = { FRW_ff_prestige > 60 } } }
+			modifier = { add = 15 FRA = { check_variable = { FRW_ff_prestige > 80 } } }
+		}
+	}
+	option = {
+		name = frw_ret.1.b
+		hidden_effect = { FRA = { clr_country_flag = FRW_return_pending country_event = { id = frw_ret.11 hours = 6 } } }
+		ai_chance = { factor = 50 modifier = { factor = 0.1 FRA = { check_variable = { FRW_ff_prestige > 80 } } } }
+	}
+}
+
+# purchase with political power
+country_event = {
+	id = frw_ret.2
+	title = frw_ret.2.t
+	desc = frw_ret.2.d
+	picture = GFX_report_event_french_british_officers
+	is_triggered_only = yes
+	option = {
+		name = frw_ret.2.a
+		add_political_power = 60
+		custom_effect_tooltip = frw_ret.hand_tt
+		hidden_effect = {
+			every_controlled_state = {
+				limit = { FRW_french_africa_land = yes }
+				FRA = { transfer_state = PREV }
+			}
+			FRA = { clr_country_flag = FRW_return_pending country_event = { id = frw_ret.10 hours = 6 } }
+		}
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = frw_ret.2.b
+		hidden_effect = { FRA = { add_political_power = 100 clr_country_flag = FRW_return_pending country_event = { id = frw_ret.11 hours = 6 } } }
+		ai_chance = { factor = 0 }
+	}
+}
+
+# purchase with gold
+country_event = {
+	id = frw_ret.3
+	title = frw_ret.3.t
+	desc = frw_ret.3.d
+	picture = GFX_report_event_french_british_officers
+	is_triggered_only = yes
+	option = {
+		name = frw_ret.3.a
+		add_timed_idea = { idea = FRW_french_gold_payment days = 365 }
+		custom_effect_tooltip = frw_ret.hand_tt
+		hidden_effect = {
+			every_controlled_state = {
+				limit = { FRW_french_africa_land = yes }
+				FRA = { transfer_state = PREV }
+			}
+			FRA = { clr_country_flag = FRW_return_pending country_event = { id = frw_ret.10 hours = 6 } }
+		}
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = frw_ret.3.b
+		hidden_effect = { FRA = { add_to_variable = { FRW_gold = 300 } clr_country_flag = FRW_return_pending country_event = { id = frw_ret.11 hours = 6 } } }
+		ai_chance = { factor = 0 }
+	}
+}
+
+country_event = {
+	id = frw_ret.10
+	title = frw_ret.10.t
+	desc = frw_ret.10.d
+	picture = GFX_report_event_france_parade
+	is_triggered_only = yes
+	option = { name = frw_ret.10.a FRW_ff_set_capital = yes }
+}
+
+country_event = {
+	id = frw_ret.11
+	title = frw_ret.11.t
+	desc = frw_ret.11.d
+	picture = GFX_report_event_worried_french
+	is_triggered_only = yes
+	option = { name = frw_ret.11.a }
+}

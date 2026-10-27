@@ -1,0 +1,167 @@
+scripted_gui = {
+	ranker = {
+		window_name = "nation_ranker"
+		context_type = player_context
+
+		visible = {
+			has_country_flag = open_ranker
+		}
+
+		dynamic_lists = {
+			rank_absolute_power = {
+				array = global.absolute_power
+				entry_container = charters_list_entry
+				change_scope = yes
+			}
+			rank_dominant_power = {
+				array = global.dominant_power
+				entry_container = charters_list_entry
+				change_scope = yes
+			}
+			rank_great_power = {
+				array = global.great_power
+				entry_container = charters_list_entry
+				change_scope = yes
+			}
+			rank_superior_power = {
+				array = global.superior_power
+				entry_container = charters_list_entry
+				change_scope = yes
+			}
+			rank_regional_power = {
+				array = global.regional_power
+				entry_container = charters_list_entry
+				change_scope = yes
+			}
+			rank_emerging_power = {
+				array = global.emerging_power
+				entry_container = charters_list_entry
+				change_scope = yes
+			}
+			rank_lesser_power = {
+				array = global.lesser_power
+				entry_container = charters_list_entry
+				change_scope = yes
+			}
+			rank_weak_power = {
+				array = global.weak_power
+				entry_container = charters_list_entry
+				change_scope = yes
+			}
+			rank_factions = {
+				array = global.weak_poweractions
+				entry_container = charters_list_entry_factions
+				change_scope = yes
+			}
+		}
+
+		effects = {
+			close_ranker_click = {
+				clr_country_flag = open_ranker
+			}
+		}
+
+		triggers = {
+			close_ranker_visible = {
+				has_country_flag = open_ranker
+			}
+		}
+
+		properties = {
+			member_country_flag = { image = [THIS.GetFlag] }
+		}
+	}
+
+	ranker_prompt = {
+		window_name = "ranker_startup"
+		context_type = player_context
+
+		visible = {
+			is_ai = no
+		}
+
+		effects = {
+			open_ranker_click = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = open_ranker }
+					}
+					set_country_flag = open_ranker
+				}
+				else = {
+					clr_country_flag = open_ranker
+				}
+				clear_array = global.weak_power
+				clear_array = global.lesser_power
+				clear_array = global.emerging_power
+				clear_array = global.regional_power
+				clear_array = global.superior_power
+				clear_array = global.great_power
+				clear_array = global.dominant_power
+				clear_array = global.absolute_power
+				clear_array = global.weak_poweractions
+
+				every_country = {
+					#limit = { check_variable = { rank > 0 } }
+					#limit = {
+						#OR = { is_ai = no   is_faction_leader = yes   tag = GER   tag = SOV   tag = ENG   tag = FRA   tag = ITA   tag = USA   tag = JAP   tag = CHI }
+					#}
+					if = {
+						limit = { check_variable = { rank = 8 } }
+						add_to_array = { array = global.absolute_power     value = THIS.id }
+					}
+					else_if = {
+						limit = { check_variable = { rank = 7 } }
+						add_to_array = { array = global.dominant_power     value = THIS.id }
+					}
+					else_if = {
+						limit = { check_variable = { rank = 6 } }
+						add_to_array = { array = global.great_power     value = THIS.id }
+					}
+					else_if = {
+						limit = { check_variable = { rank = 5 } }
+						add_to_array = { array = global.superior_power     value = THIS.id }
+					}
+					else_if = {
+						limit = { check_variable = { rank = 4 } }
+						add_to_array = { array = global.regional_power     value = THIS.id }
+					}
+					else_if = {
+						limit = { check_variable = { rank = 3 } }
+						add_to_array = { array = global.emerging_power     value = THIS.id }
+					}
+					else_if = {
+						limit = { check_variable = { rank = 2 } }
+						add_to_array = { array = global.lesser_power     value = THIS.id }
+					}
+					else_if = {
+						limit = { check_variable = { rank = 1 } }
+						add_to_array = { array = global.weak_power     value = THIS.id }
+					}
+
+					if = {
+						limit = { check_variable = { THIS.faction_leader = THIS.id } }
+						add_to_array = { array = global.weak_poweractions     value = THIS.id }
+						set_variable = { fac_score = 0 }
+						set_variable = { dr_faction_space_avail_var = dr_faction_limit_var }
+						for_each_loop = {
+							array = THIS.faction_members
+							value = v
+							add_to_variable = { fac_score = v:dr_country_score_var }
+						}
+						subtract_from_variable = { dr_faction_space_avail_var = fac_score }
+					}
+				}
+
+				every_country = {
+					limit = {
+						is_in_faction = yes
+						is_faction_leader = no
+					}
+					faction_leader = { set_variable = { PREV.dr_faction_space_avail_var = THIS.dr_faction_space_avail_var } }
+				}
+				
+			}
+		}
+	}
+}

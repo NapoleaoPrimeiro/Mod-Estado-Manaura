@@ -1,0 +1,79 @@
+
+
+WAR_advanced_weapon_projects_effect = {
+	if = {
+		limit = { 
+			NOT={has_dynamic_modifier = { modifier = WAR_advanced_weapon_projects }}			
+		}
+		hidden_effect={add_dynamic_modifier={modifier = WAR_advanced_weapon_projects }}
+		custom_effect_tooltip = WAR_advanced_weapon_projects_modifier_tt
+		
+	}
+	else_if = {
+		limit = { 
+			has_dynamic_modifier = { modifier = WAR_advanced_weapon_projects  }
+		}
+		custom_effect_tooltip = WAR_advanced_weapon_projects_modifier_ttt
+	}
+}
+
+#不同的国家，他们获得的陆军dm名称不同
+WAR_devil_army_effect = {
+	if = {
+		limit = { 
+			NOT={
+				has_dynamic_modifier = { modifier = WAR_devil_army_usa }
+			}			
+		}
+		hidden_effect={add_dynamic_modifier={modifier = WAR_devil_army_usa }}
+
+		custom_effect_tooltip = WAR_devil_army_usa_tt
+		add_to_variable = { WAR_devil_army_core_defence_factor = 0.05   tooltip = army_core_defence_factor_tt    }		
+	}
+	if = {
+		limit = { 
+			has_dynamic_modifier = { modifier = WAR_devil_army_usa  }
+		}
+		custom_effect_tooltip = WAR_devil_army_usa_ttt
+	}
+}
+#不同的国家，他们获得的空军dm名称不同
+WAR_devil_air_effect = {
+	if = {
+		limit = { 
+			NOT={
+				has_dynamic_modifier = { modifier = WAR_devil_air_usa }
+			}			
+		}
+		hidden_effect={add_dynamic_modifier={modifier = WAR_devil_air_usa }}
+
+		custom_effect_tooltip = WAR_devil_air_usa_tt
+		add_to_variable = { WAR_devil_air_ace_generation_chance_factor = 0.1   tooltip = air_ace_generation_chance_factor_tt    }		
+	}
+	if = {
+		limit = { 
+			has_dynamic_modifier = { modifier = WAR_devil_air_usa  }
+		}
+		custom_effect_tooltip = WAR_devil_air_usa_ttt
+	}
+}
+#不同的国家，他们获得的海军dm名称不同
+WAR_devil_navy_effect = {
+	if = {
+		limit = { 
+			NOT={
+				has_dynamic_modifier = { modifier = WAR_naval_force_usa }
+			}			
+		}
+		hidden_effect={add_dynamic_modifier={modifier = WAR_naval_force_usa }}
+
+		custom_effect_tooltip = WAR_naval_force_usa_tt
+		add_to_variable = { WAR_naval_force_experience_gain_navy_factor = 0.1   tooltip = experience_gain_navy_factor_tt    }		
+	}
+	if = {
+		limit = { 
+			has_dynamic_modifier = { modifier = WAR_naval_force_usa  }
+		}
+		custom_effect_tooltip = WAR_naval_force_usa_ttt
+	}
+}

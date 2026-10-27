@@ -1,0 +1,112 @@
+﻿l_japanese:
+
+ #STATE BUILDINGS
+ 
+ infrastructure: "£infrastructure_building_texticon  インフラ"
+ infrastructure_plural: "£infrastructure_building_texticon  インフラ"
+ GER_autobahn_tt:0 "£infrastructure_building_texticon  §Yブランデンブルク§!、§Yハノーファー§!、§Yチューリンゲン§!、§Yフランケン§!の§Yインフラ§!が最大になる。"
+ SPA_facilitate_pyrenees_freight_transports_tt: "£infrastructure_building_texticon  §Yマドリード§!、§Yグアダラハラ§!、§Yアラゴン東部§!、§Yカタルーニャ§!、§Yブルゴス§!、§Yパイス・バスコ§!の§Yインフラ§!が最大になる。"
+ 
+ air_base: "£air_base_building_texticon  航空基地"
+ air_base_plural: "£air_base_building_texticon  航空基地"
+ 
+ anti_air_building: "£anti_air_building_texticon  対空砲"
+ anti_air_building_plural: "対空砲"
+ air_defense_focus_tt:1 "£anti_air_building_texticon  §Yイースト・アングリア§!、§Yサセックス§!、§Yイングランド南西部§!の§Y対空砲§!が最大になる。"
+ 
+ radar_station: "£radar_station_building_texticon  レーダー基地"
+ radar_station_plural: "£radar_station_building_texticon  レーダー基地"
+ 
+ #SHARED BUILDINGS
+ 
+ EFFECT_ADD_EXTRA_STATE_SHARED_BUILDING_SLOTS: "£building_slot_building_texticon  建築スロットを$COUNT|G$個追加する。"
+ EFFECT_REMOVE_EXTRA_STATE_SHARED_BUILDING_SLOTS: "£building_slot_building_texticon  建築スロットを$COUNT|R$個削除する。"
+ UNLOCKED_SLOTS: "$NUM|Y$/$MAX|Y$ £building_slot_building_texticon  Unlocked Slots"
+ 
+ arms_factory: "£military_factory_building_texticon  軍需工場"
+ arms_factory_plural: "£military_factory_building_texticon  軍需工場"
+ 
+ industrial_complex: "£civilian_factory_building_texticon  民需工場"
+ industrial_complex_plural: "£civilian_factory_building_texticon  民需工場"
+ 
+ dockyard: "£naval_dockyard_building_texticon  海軍造船所"
+ dockyard_plural: "£naval_dockyard_building_texticon  海軍造船所"
+ 
+ synthetic_refinery: "£synthetic_refinery_building_texticon  合成精製所"
+ synthetic_refinery_plural: "£synthetic_refinery_building_texticon  合成精製所"
+ 
+ fuel_silo: "£fuel_silo_building_texticon  燃料貯蔵庫"
+ fuel_silo_plural: "£fuel_silo_building_texticon  燃料貯蔵庫"
+ 
+ rocket_site: "£rocket_site_building_texticon  ロケット発射場"
+ rocket_site_plural: "£rocket_site_building_texticon  ロケット発射場"
+ 
+ energy_infrastructure: "£reinforced_electrical_grid_building_texticon  強化された電力網"
+ 
+ industrial_infrastructure: "£high_capacity_electrical_grid_building_texticon  大容量の電力網"
+ 
+ #PROVINCE BUILDINGS
+ 
+ supply_node: "£supply_hub_building_texticon  補給ハブ"
+ supply_node_plural: "£supply_hub_building_texticon  補給ハブ"
+ 
+ rail_way: "£railway_building_texticon  鉄道"
+ EFFECT_BUILD_RAILWAY: "£railway_building_texticon  $FROM|Y$から$TO|Y$へレベル$LEVEL|Y$の鉄道を建設する。"
+ EFFECT_BUILD_RAILWAY_IN_STATE: "£railway_building_texticon  $STATE|Y$にレベル$LEVEL|Y$の鉄道を建設する。"
+ GER_expand_the_reichsautobahn_south_tt: "Add §G1§! §Y$infrastructure$§! in §Y[53.GetName]§!, §Y[52.GetName]§!, §Y[152.GetName]§!, §Y[4.GetName]§! and a level §Y1§! £railway_building_texticon  railway from §Y[53.GetName]§! to §Y[4.GetName]§!, if §Y[ROOT.GetName]§! or a German subject controls the states. Current effect:"
+ GER_expand_the_reichsautobahn_east_tt: "Add §G1§! §Y$infrastructure$§! in §Y[68.GetName]§!, §Y[63.GetName]§!, §Y[807.GetName]§!, §Y[85.GetName]§! and a level §Y1§! £railway_building_texticon  railway from §Y[63.GetName]§! to §Y[85.GetName]§!, if §Y[ROOT.GetName]§! or a German subject controls the states. Current effect:"
+ 
+ naval_base: "£naval_base_building_texticon  海軍基地"
+ naval_base_plural: "£naval_base_building_texticon  海軍基地"
+ 
+ cat_fortification: "£land_fort_building_texticon  要塞技術"
+ 
+ bunker: "£land_fort_building_texticon  陸上要塞"
+ bunker_plural: "£land_fort_building_texticon  陸上要塞"
+ modifier_state_bunker_max_level_terrain_limit: "Maximum $bunker$ Level"
+ 
+ coastal_bunker: "£coastal_fort_building_texticon  沿岸要塞"
+ coastal_bunker_plural: "£coastal_fort_building_texticon  沿岸要塞"
+ modifier_state_coastal_bunker_max_level_terrain_limit: "Maximum $coastal_bunker$ Level"
+ 
+ naval_supply_hub: "£naval_supply_hub_building_texticon  海軍補給ハブ"
+ 
+ naval_headquarters: "£naval_headquarters_building_texticon  海軍司令部"
+ 
+ # EXPERIMENTAL FACILITIES
+ 
+ naval_facility: "£naval_facility_building_texticon  海軍技術研究施設"
+ naval_facility_plural: "£naval_facility_building_texticon  海軍技術研究施設"
+ 
+ nuclear_facility: "£nuclear_facility_building_texticon  核研究施設"
+ nuclear_facility_plural: "£nuclear_facility_building_texticon  核研究施設"
+ 
+ air_facility: "£air_facility_building_texticon  航空力学・航空電子工学研究施設"
+ air_facility_plural: "£ari_facility_building_texticon  航空力学・航空電子工学研究施設"
+ 
+ land_facility: "£land_facility_building_texticon  陸戦研究施設"
+ land_facility_plural: "£land_facility_building_texticon  陸戦研究施設"
+ 
+ # SPECIAL BUILDINGS
+ 
+ dam: "£dam_building_texticon  ダム"
+ dam_plural: "£dam_building_texticon  ダム"
+ 
+ stronghold_network: "£stronghold_network_building_texticon  拠点ネットワーク"
+ stronghold_network_plural: "£stronghold_network_building_texticon  拠点ネットワーク"
+ 
+ mega_gun_emplacement: "£mega_gun_building_texticon  多薬室大口径砲"
+ mega_gun_emplacement_plural: "£mega_gu_building_texticon  多薬室口径砲"
+ 
+ nuclear_reactor: "£nuclear_reactor_building_texticon  原子炉"
+ nuclear_reactor_plural: "£nuclear_reactor_building_texticon  原子炉"
+ 
+ nuclear_reactor_heavy_water: "£heavy_water_nuclear_reactor_building_texticon  重水炉"
+ nuclear_reactor_heavy_water_plural: "£heavy_water_nuclear_reactor_building_texticon  重水炉"
+ 
+ commercial_nuclear_reactor: "£civilian_nuclear_reactor_building_texticon  民生用原子炉"
+ commercial_nuclear_reactor_plural: "£civilian_nuclear_reactor_building_texticon  民生用原子炉"
+ sp_commercial_nuclear_reactor: "£civilian_nuclear_reactor_building_texticon  商用原子炉"
+ 
+ canal_kiel: "£canal_locks_building_texticon  キール運河の閘門"
+ canal_panama: "£canal_locks_building_texticon  パナマ運河の閘門"

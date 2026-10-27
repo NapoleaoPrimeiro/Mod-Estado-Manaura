@@ -1,0 +1,25 @@
+###########################################################
+# France Rework - feedback 3: Rhineland reward, AI political fallback
+###########################################################
+on_actions = {
+	on_weekly_FRA = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_country_flag = FRW_rhine_held }
+					GER = { has_country_flag = GER_rhineland_backed_down }
+				}
+				set_country_flag = FRW_rhine_held
+				country_event = { id = frw_fb3.1 }
+			}
+		}
+	}
+	on_monthly = {
+		effect = {
+			if = {
+				limit = { tag = FRA is_ai = yes }
+				FRW_ai_political_fallback = yes
+			}
+		}
+	}
+}

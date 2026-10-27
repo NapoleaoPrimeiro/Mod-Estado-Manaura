@@ -1,0 +1,146 @@
+# =========================================================================
+# Reasonable Guarantees - the guarantee decision
+# =========================================================================
+# A country-targeted decision, taken only by the AI, that re-implements
+# guarantees with sane rules. It lives inside the vanilla "political_actions"
+# category so we don't have to ship any new interface art.
+#
+# Scopes:  ROOT = guarantor (a major)   FROM = candidate target
+# =========================================================================
+
+political_actions = {
+
+	rg_offer_guarantee = {
+
+		# Candidate pool: every country (array built in on_actions/on_startup).
+		target_array = global.rg_targets
+
+		# ---- GUARANTOR gate (cheap, checked daily before scanning targets) ----
+		# Only peacetime major democracies / non-aligned powers act as guarantors,
+		# and nobody guarantees anyone before world tension reaches 20% (vanilla
+		# gates its auto-guarantees on tension too). Keeps the 1936 map quiet.
+		# Fascist & communist majors conquer rather than guarantee, so they're
+		# excluded - which also keeps non-historical games sensible (e.g. a UK
+		# that goes fascist simply stops handing out guarantees).
+		# Want communist USSR to guarantee too? Add: has_government = communism
+		target_root_trigger = {
+			is_major = yes
+			is_subject = no
+			has_war = no
+			threat > 0.2                            # world tension must reach 20% first
+			check_variable = { rg_active_guarantees < 4 }        # hard cap (Britain's real 1939 count; recounted monthly in on_actions)
+			OR = {
+				has_government = democratic
+				has_government = neutrality
+			}
+		}
+
+		# ---- TARGET eligibility ----
+		target_trigger = {
+			FROM = {
+				exists = yes
+				is_major = no                       # don't guarantee fellow great powers
+				is_subject = no                     # not someone's puppet
+				is_in_faction = no                  # not already in an alliance
+				has_war = no                        # already at war = too late; a guarantee only triggers on FUTURE declarations
+				NOT = { is_in_faction_with = ROOT }
+				NOT = { has_war_with = ROOT }
+				NOT = { is_guaranteed_by = ROOT }   # don't double up
+			}
+			NOT = { has_wargoal_against = FROM }     # don't guarantee a country we plan to attack
+			# Stick to fellow democracies / non-aligned until the world is
+			# truly on fire - mirrors vanilla's rule that democracies may only
+			# guarantee other ideology groups above 40% world tension.
+			OR = {
+				FROM = {
+					OR = {
+						has_government = democratic
+						has_government = neutrality
+					}
+				}
+				threat > 0.4
+			}
+			# The 30-day pacing applies to PREVENTIVE guarantees only; countries
+			# someone actively holds or is justifying a war goal on are crisis
+			# responses and skip the queue (the 4-guarantee cap still binds).
+			OR = {
+				NOT = { has_country_flag = rg_guarantee_cooldown }
+				rg_concretely_threatened = yes
+			}
+			rg_is_reachable = yes                    # <-- the realism rule
+			rg_is_threatened = yes                   # <-- only when actually in danger
+		}
+
+		# AI-only: hide from human players (they guarantee manually anyway).
+		visible = {
+			is_ai = yes
+		}
+
+		cost = 25   # political power, same ballpark as a vanilla guarantee
+
+		ai_will_do = {
+			factor = 50
+
+			# Actual war-goal victims outrank generically exposed neighbours -
+			# with only 4 slots, spend them on countries someone is really after.
+			modifier = {
+				factor = 4
+				rg_concretely_threatened = yes
+			}
+
+			# Frontline states (bordering a proven aggressor) before sheltered
+			# ones - this is what puts Poland ahead of Romania/Greece in 1939.
+			modifier = {
+				factor = 2
+				FROM = {
+					any_neighbor_country = {
+						is_major = yes
+						OR = {
+							has_government = fascism
+							has_government = communism
+						}
+						has_added_tension_amount > 25
+					}
+				}
+			}
+
+			# Prefer guaranteeing direct neighbours first.
+			modifier = {
+				factor = 2
+				FROM = { is_neighbor_of = ROOT }
+			}
+
+			# Democracies favour fellow democracies & non-aligned states.
+			modifier = {
+				factor = 1.5
+				has_government = democratic
+				FROM = { OR = { has_government = democratic has_government = neutrality } }
+			}
+
+			# Historical games: lean harder into the recognisable WW2 European
+			# pattern. In non-historical games this bonus simply doesn't apply,
+			# so behaviour stays geographically reasonable without scripting tags.
+			modifier = {
+				factor = 1.5
+				is_historical_focus_on = yes
+				FROM = { capital_scope = { is_on_continent = europe } }   # is_on_continent is state-scope
+			}
+		}
+
+		complete_effect = {
+			# The commitment (PP, cooldown, cap slot) is made the day the cabinet
+			# decides, but the guarantee itself arrives after a random 0-24 day
+			# deliberation - see events/rg_events.txt. It fizzles there if the
+			# target is already at war by delivery time.
+			FROM = { country_event = { id = rg_guarantee.1 days = 0 random_days = 24 } }
+			# Pacing: one guarantee per guarantor per 30 days, so a major doesn't
+			# blanket every threatened neighbour the week tension crosses 20%.
+			set_country_flag = { flag = rg_guarantee_cooldown value = 1 days = 30 }
+			# Keep the cap current between the monthly recounts in on_actions.
+			# rg_pending marks the in-flight delivery so the recount can't
+			# erase its reserved slot; the delivery event settles it.
+			add_to_variable = { rg_active_guarantees = 1 }
+			add_to_variable = { rg_pending_guarantees = 1 }
+		}
+	}
+}

@@ -1,0 +1,16 @@
+host_admin_menu_rule = {
+	name = "RULE_HOST_ADMIN_MENU"
+	group = "RULE_GROUP_GAMEPLAY"
+	default = {
+		name = ENABLED
+		text = "RULE_HOST_ADMIN_MENU_ENABLED"
+		desc = "RULE_HOST_ADMIN_MENU_ENABLED_DESC"
+		allow_achievements = no
+	}
+	option = {
+		name = DISABLED
+		text = "RULE_HOST_ADMIN_MENU_DISABLED"
+		desc = "RULE_HOST_ADMIN_MENU_DISABLED_DESC"
+		allow_achievements = yes
+	}
+}

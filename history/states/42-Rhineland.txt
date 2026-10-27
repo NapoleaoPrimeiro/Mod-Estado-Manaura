@@ -1,0 +1,66 @@
+state = {
+	id = 42
+	name = "STATE_42"
+	manpower = 2207739
+	resources = {
+		steel = 12
+		aluminium = 14
+	}
+	
+	state_category = large_city
+
+	history = {
+
+		owner = GER
+		add_core_of = GER
+		add_core_of = RHI
+		add_core_of = PRE
+ 
+
+		#victory_points = { 
+		#	3423 3 # Koblenz
+		#}
+
+		victory_points = { 
+			9575 3 # Trier
+		}
+
+		victory_points = {
+			11560 2 # Mainz
+		}
+
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+		}
+	
+		set_demilitarized_zone = yes
+		
+		1936.3.7 = {
+			set_demilitarized_zone = no
+		}
+
+		1939.1.1 = {
+			buildings = {
+				radar_station = 1
+				synthetic_refinery = 3
+				#Westwall Forts
+				9575 = {
+					bunker = 2
+				}
+				563 = {
+					bunker = 2
+				}
+				3558 = {
+					bunker = 2
+				}
+			}
+		}
+	}
+
+	provinces = {
+		563 3423 3558 9575 11547 11560
+	}
+	
+	local_supplies = 0.0 
+}

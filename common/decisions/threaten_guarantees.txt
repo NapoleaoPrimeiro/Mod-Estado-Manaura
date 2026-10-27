@@ -1,0 +1,111 @@
+threaten_guarantee_category = {
+    #decizia mare care porneste totul
+    threaten_guarantee_decision = {
+        icon = generic_diplomacy
+        cost = 100
+        fire_only_once = no
+
+        target_trigger = {
+            OR = {
+                any_country = {
+                    has_guaranteed = FROM
+                }
+                FROM = {
+                    has_country_flag = threatened_by_@ROOT
+                }
+            }
+        }
+
+        visible = {
+            is_justifying_wargoal_against = FROM
+ 
+        }
+
+        available = {
+            is_justifying_wargoal_against = FROM
+            FROM = {
+                NOT = {
+                    custom_trigger_tooltip = {
+                        tooltip = tg_pressure_cooldown_tt
+                        has_country_flag = threatened_by_@ROOT
+                    }
+                }
+                
+                if = {
+                    limit = {
+                        any_country = {
+                            has_guaranteed = FROM
+                            ROOT = { 
+                                strength_ratio = { 
+                                    tag = PREV ratio > 1.6
+                                } 
+                            }
+                        }
+                    }
+                    custom_trigger_tooltip = {
+                        tooltip = strength_good_tt
+                    }
+                }
+                else = {
+                    custom_trigger_tooltip = {
+                        tooltip = strength_bad_tt
+                    }
+                }
+            }
+        }
+
+        complete_effect = {
+            FROM = {
+                set_country_flag = {
+                    flag = threatened_by_@ROOT
+                    days = 180
+                    value = 1
+                }
+                save_event_target_as = guaranteed_nation
+            }
+            save_event_target_as = threatener_nation
+
+            EVERY_COUNTRY = {
+                limit = {
+                    has_guaranteed = FROM
+                }
+
+                country_event = { 
+                    id = threaten_guarantee.1 
+                }
+            }
+        }
+
+        ai_will_do = {
+            base = 10
+
+            modifier = {
+                factor = 0
+                has_political_power < 100
+            }
+
+            modifier = {
+                factor = 0
+                FROM = { 
+                    has_country_flag = threatened_by_@ROOT
+                }
+            }
+
+            modifier = {
+                factor = 2
+                FROM = {
+                    any_country = {
+                        has_guaranteed = PREV
+                        ROOT = {
+                            strength_ratio = {
+                                tag = PREV ratio > 1.6
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+}

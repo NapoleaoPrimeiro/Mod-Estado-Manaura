@@ -1,0 +1,18 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = optimization_rule
+						option = optimization_HARD
+					}
+				}
+				every_country = {
+					limit = { is_ai = yes }
+					country_event = optimization.start.event.1
+				}
+			}
+		}
+	}
+}

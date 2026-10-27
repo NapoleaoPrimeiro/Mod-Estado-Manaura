@@ -1,0 +1,28 @@
+state={
+	id=1105
+	name="STATE_1105"
+	manpower = 286500
+	
+	state_category = town
+
+	history={
+		owner = YUG
+		buildings = {
+			infrastructure = 2
+			3924 = {
+				naval_base = 3
+			}
+		}
+		add_core_of = YUG
+		add_core_of = CRO
+        victory_points = { #Split
+			3924 3
+		}
+	}
+
+	provinces={
+		984 3924
+	}
+
+	local_supplies=1.0 
+}

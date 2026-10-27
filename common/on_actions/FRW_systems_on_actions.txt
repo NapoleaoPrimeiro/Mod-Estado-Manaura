@@ -1,0 +1,57 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			FRA = {
+				if = { limit = { date > 1939.1.1 } set_variable = { FRW_inflation = 35 } }
+				else = { set_variable = { FRW_inflation = 20 } }
+				if = { limit = { date > 1939.1.1 } set_variable = { FRW_gold = 2400 } }
+				else = { set_variable = { FRW_gold = 2500 } }
+				FRW_inflation_update = yes
+			}
+		}
+	}
+	on_monthly = {
+		effect = {
+			if = {
+				limit = { tag = FRA has_variable = FRW_inflation has_capitulated = no }
+				FRW_inflation_monthly = yes
+			}
+			if = {
+				limit = { tag = FRA has_variable = FRW_ff_prestige has_war = yes }
+				FRW_ff_monthly = yes
+			}
+		}
+	}
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					ROOT = { tag = FRA has_variable = FRW_ff_prestige }
+					FROM.FROM = { is_core_of = FRA is_on_continent = europe NOT = { has_state_flag = FRW_liberated_once } }
+					FROM = { has_war_with = FRA }
+				}
+				FROM.FROM = { set_state_flag = FRW_liberated_once }
+				add_to_variable = { FRW_ff_prestige = 2 }
+				FRW_ff_update = yes
+			}
+		}
+	}
+	on_weekly_FRA = {
+		effect = {
+			if = {
+				limit = { has_focus_tree = free_french_focus }
+				FRW_ff_restore_tree = yes
+			}
+			if = { limit = { has_variable = FRW_gold } FRW_gold_check = yes }
+			if = {
+				limit = {
+					has_completed_focus = FRW_appeal_of_18_june
+					NOT = { has_country_flag = FRW_fleet_question }
+					any_country = { FRW_is_vichy = yes has_navy_size = { size > 4 } }
+				}
+				set_country_flag = FRW_fleet_question
+				country_event = { id = frw_sys.10 days = 2 }
+			}
+		}
+	}
+}

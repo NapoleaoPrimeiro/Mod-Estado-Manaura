@@ -1,0 +1,97 @@
+
+
+#先进武器项目
+WAR_advanced_weapon_projects = {
+	icon = GFX_idea_JAP_advanced_weapons_programs 
+	enable = { always = yes }
+	production_speed_land_facility_factor = WAR_advanced_weapons_production_speed_land_facility_factor
+	production_speed_air_facility_factor = WAR_advanced_weapons_production_speed_air_facility_factor
+	sp_tag_jet_speed_factor = WAR_advanced_weapons_sp_tag_jet_speed_factor
+	sp_tag_rocket_speed_factor = WAR_advanced_weapons_sp_tag_rocket_speed_factor
+	sp_tag_tank_speed_factor = WAR_advanced_weapons_sp_tag_tank_speed_factor
+	sp_tag_artillery_speed_factor = WAR_advanced_weapons_sp_tag_artillery_speed_factor
+	sp_tag_surface_ship_speed_factor = WAR_advanced_weapons_sp_tag_surface_ship_speed_factor
+	sp_commercial_nuclear_reactor_speed_factor = WAR_advanced_weapons_sp_commercial_nuclear_reactor_speed_factor
+	sp_nuclear_warheads_speed_factor = WAR_advanced_weapons_sp_nuclear_warheads_speed_factor
+	sp_nuclear_bomb_speed_factor = WAR_advanced_weapons_sp_nuclear_bomb_speed_factor
+	production_speed_nuclear_reactor_factor = WAR_advanced_weapons_production_speed_nuclear_reactor_factor
+	sp_air_intercontinental_bomber_speed_factor = WAR_advanced_weapons_sp_air_intercontinental_bomber_speed_factor
+	sp_air_mothership_aircraft_speed_factor = WAR_advanced_weapons_sp_air_mothership_aircraft_speed_factor
+	sp_nuclear_engines_speed_factor = WAR_advanced_weapons_sp_nuclear_engines_speed_factor
+}
+
+#美国：美国陆军
+WAR_devil_army_usa = {
+  
+	enable = { always = yes }
+	icon =  GFX_idea_haw_army
+
+	conscription_factor =                           WAR_devil_conscription_factor 			                #适役人口修正
+    army_attack_factor =                            WAR_devil_army_attack_factor				            #师攻击
+    army_defence_factor =                           WAR_devil_army_defence_factor			                #师防御
+    army_speed_factor =                             WAR_devil_army_speed_factor				                #师速度
+    army_core_attack_factor =                       WAR_devil_army_core_attack_factor                       #核心攻
+    army_core_defence_factor =                      WAR_devil_army_core_defence_factor                      #核心防
+    planning_speed =                                WAR_devil_planning_speed						        #计划速度
+    max_planning =                                  WAR_devil_max_planning						            #计划上线
+    supply_consumption_factor =                     WAR_devil_supply_consumption_factor	                    #补给消耗
+    army_org_factor =                               WAR_devil_army_org_factor 					            #陆军组织度
+    army_morale_factor =                            WAR_devil_army_morale_factor 				            #组织度恢复
+    experience_loss_factor=                         WAR_devil_experience_loss_factor		                #有经验的士兵损失
+    army_armor_attack_factor =                      WAR_devil_army_armor_attack_factor                      #装甲师攻击
+    army_armor_defence_factor =                     WAR_devil_army_armor_defence_factor                     #装甲师防御
+	dig_in_speed_factor =                           WAR_devil_dig_in_speed_factor			                #堑壕速度
+	max_dig_in=                                     WAR_devil_max_dig_in 								    #壕沟上限
+	supply_consumption_factor =                     WAR_devil_supply_consumption_factor	                    #补给消耗
+	army_artillery_attack_factor =                  WAR_devil_army_artillery_attack_factor                  #炮兵攻击
+	army_artillery_defence_factor =                 WAR_devil_army_artillery_defence_factor                 #炮兵防御
+	org_loss_when_moving =                          WAR_devil_org_loss_when_moving			                #陆军移动组织度损失
+    training_time_army_factor =                     WAR_devil_training_time_army_factor                     #训练时间
+    experience_loss_factor =                        WAR_devil_experience_loss_factor                        #有经验的士兵损失
+}
+
+#美国：陆军航空队
+WAR_devil_air_usa = {
+    enable = { always = yes }
+	icon = GFX_idea_haw_air
+    air_accidents =                                 WAR_devil_air_accidents                             #空军失事机率
+    air_attack_factor =                             WAR_devil_air_attack_factor                         #对空攻击
+    air_ace_generation_chance_factor =              WAR_devil_air_ace_generation_chance_factor          #空战王牌生成机率
+    air_superiority_efficiency =                    WAR_devil_air_superiority_efficiency                #制空权效率
+    air_intercept_efficiency =                      WAR_devil_air_intercept_efficiency                  #空军拦截效率
+    air_cas_efficiency =                            WAR_devil_air_cas_efficiency                        #空中支援任务效率
+    air_range_factor =                              WAR_devil_air_range_factor                          #空军航程
+    air_agility_factor =                            WAR_devil_air_agility_factor                        #空军机动性能（闪避）
+    air_strategic_bomber_bombing_factor =           WAR_devil_air_strategic_bomber_bombing_factor       #战略轰炸机命中率
+    air_cas_present_factor =                        WAR_devil_air_cas_present_factor                    #对地支援
+    air_defence_factor =                            WAR_devil_air_defence_factor                        #空军防御
+    air_wing_xp_loss_when_killed_factor =           WAR_devil_air_wing_xp_loss_when_killed_factor       #经验损失
+    
+}
+
+
+#美国：美国海军
+WAR_naval_force_usa = {
+    enable = { always = yes }
+    icon = GFX_idea_haw_navy
+
+    experience_gain_navy_factor  =          WAR_naval_force_experience_gain_navy_factor             #海军经验增长
+	naval_retreat_speed  =                  WAR_naval_force_naval_retreat_speed                     #舰队撤退速度
+	navy_screen_attack_factor  =            WAR_naval_force_navy_screen_attack_factor               #屏卫舰攻击
+	navy_screen_defence_factor  =           WAR_naval_force_navy_screen_defence_factor              #屏卫舰防御
+	navy_capital_ship_attack_factor  =      WAR_naval_force_navy_capital_ship_attack_factor         #主力舰攻击
+	navy_capital_ship_defence_factor  =     WAR_naval_force_navy_capital_ship_defence_factor        #主力舰防御
+	positioning  =                          WAR_naval_force_positioning                             #舰队阵位
+	spotting_chance  =                      WAR_naval_force_spotting_chance                         #海军定位概率
+    sortie_efficiency  =                    WAR_naval_force_sortie_efficiency                       #出击效率
+    navy_carrier_air_attack_factor  =       WAR_naval_force_navy_carrier_air_attack_factor          #航母攻击
+    navy_carrier_air_targetting_factor  =   WAR_naval_force_navy_carrier_air_targetting_factor      #航母瞄准
+    naval_speed_factor  =                   WAR_naval_force_naval_speed_factor                      #海军速度
+    navy_max_range_factor  =                WAR_naval_force_navy_max_range_factor                   #海军最大航程参数
+    naval_coordination =                    WAR_naval_force_naval_coordination                      #舰队协同
+    navy_org_factor =                       WAR_naval_force_navy_org_factor                         #舰队组织
+}
+
+
+
+

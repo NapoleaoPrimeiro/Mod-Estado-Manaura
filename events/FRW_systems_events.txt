@@ -1,0 +1,458 @@
+add_namespace = frw_sys
+
+# Inflation warning
+country_event = {
+	id = frw_sys.1
+	title = frw_sys.1.t
+	desc = frw_sys.1.d
+	picture = GFX_report_event_worried_french
+	is_triggered_only = yes
+	option = {
+		name = frw_sys.1.a
+		custom_effect_tooltip = FRW_inf_tt_m8 hidden_effect = { add_to_variable = { FRW_inflation = -8 } FRW_inflation_update = yes }
+		add_political_power = -40
+		ai_chance = { factor = 70 }
+	}
+	option = {
+		name = frw_sys.1.b
+		add_stability = -0.03
+		add_war_support = 0.02
+		ai_chance = { factor = 30 }
+	}
+}
+
+# Our tree after the fall
+country_event = {
+	id = frw_sys.2
+	title = frw_sys.2.t
+	desc = frw_sys.2.d
+	picture = GFX_report_event_french_british_officers
+	is_triggered_only = yes
+	option = { name = frw_sys.2.a }
+}
+
+# The fleet at Mers-el-Kebir
+country_event = {
+	id = frw_sys.10
+	title = frw_sys.10.t
+	desc = frw_sys.10.d
+	picture = GFX_report_event_french_british_officers
+	is_triggered_only = yes
+	option = {
+		name = frw_sys.10.a
+		custom_effect_tooltip = frw_sys.10.a.tt
+		hidden_effect = {
+			set_temp_variable_to_random = { var = roll min = 0 max = 100 }
+			set_temp_variable = { c = FRW_ff_prestige }
+			multiply_temp_variable = { c = 0.4 }
+			add_to_temp_variable = { c = 20 }
+			if = {
+				limit = { check_variable = { roll < c } }
+				every_country = {
+					limit = { FRW_is_vichy = yes }
+					transfer_units_fraction = { target = ROOT size = 0 stockpile_ratio = 0 army_ratio = 0 air_ratio = 0 navy_ratio = 0.35 }
+				}
+				add_to_variable = { FRW_ff_prestige = 5 }
+				country_event = { id = frw_sys.11 days = 3 }
+			}
+			else = {
+				add_to_variable = { FRW_ff_prestige = -5 }
+				country_event = { id = frw_sys.12 days = 3 }
+			}
+			FRW_ff_update = yes
+		}
+		ai_chance = { factor = 60 }
+	}
+	option = {
+		name = frw_sys.10.b
+		trigger = { ENG = { exists = yes has_war_with = GER } }
+		custom_effect_tooltip = frw_sys.10.b.tt
+		hidden_effect = {
+			every_country = {
+				limit = { FRW_is_vichy = yes }
+				destroy_ships = { type = battleship count = 1 }
+				destroy_ships = { type = battle_cruiser count = 1 }
+				destroy_ships = { type = destroyer count = 3 }
+			}
+		}
+		custom_effect_tooltip = FRW_ffp_tt_m10 hidden_effect = { add_to_variable = { FRW_ff_prestige = -10 } FRW_ff_update = yes }
+		ai_chance = { factor = 25 }
+	}
+	option = {
+		name = frw_sys.10.c
+		custom_effect_tooltip = FRW_ffp_tt_p5 hidden_effect = { add_to_variable = { FRW_ff_prestige = 5 } FRW_ff_update = yes }
+		ai_chance = { factor = 15 }
+	}
+}
+
+country_event = {
+	id = frw_sys.11
+	title = frw_sys.11.t
+	desc = frw_sys.11.d
+	picture = GFX_report_event_french_british_officers
+	is_triggered_only = yes
+	option = { name = frw_sys.11.a }
+}
+
+country_event = {
+	id = frw_sys.12
+	title = frw_sys.12.t
+	desc = frw_sys.12.d
+	picture = GFX_report_event_worried_french
+	is_triggered_only = yes
+	option = { name = frw_sys.12.a }
+}
+
+# Vichy: a governor defects
+country_event = {
+	id = frw_sys.40
+	title = frw_sys.40.t
+	desc = frw_sys.40.d
+	picture = GFX_report_event_worried_french
+	is_triggered_only = yes
+	option = { name = frw_sys.40.a }
+}
+
+country_event = {
+	id = frw_sys.20
+	title = frw_sys.20.t
+	desc = frw_sys.20.d
+	picture = GFX_report_event_france_victory_syria
+	is_triggered_only = yes
+	option = { name = frw_sys.20.a }
+}
+
+country_event = {
+	id = frw_sys.30
+	title = frw_sys.30.t
+	desc = frw_sys.30.d
+	picture = GFX_report_event_worried_french
+	is_triggered_only = yes
+	option = { name = frw_sys.30.a }
+}
+
+country_event = {
+	id = frw_sys.60
+	title = frw_sys.60.t
+	desc = frw_sys.60.d
+	picture = GFX_report_event_french_tanks
+	is_triggered_only = yes
+	option = { name = frw_sys.60.a }
+}
+
+country_event = {
+	id = frw_sys.70
+	title = frw_sys.70.t
+	desc = frw_sys.70.d
+	picture = GFX_report_event_soldiers_in_france
+	is_triggered_only = yes
+	option = { name = frw_sys.70.a }
+}
+
+country_event = {
+	id = frw_sys.21
+	title = frw_sys.21.t
+	desc = frw_sys.21.d
+	picture = GFX_report_event_france_victory_syria
+	is_triggered_only = yes
+	option = { name = frw_sys.21.a }
+}
+
+country_event = {
+	id = frw_sys.31
+	title = frw_sys.31.t
+	desc = frw_sys.31.d
+	picture = GFX_report_event_worried_french
+	is_triggered_only = yes
+	option = { name = frw_sys.31.a }
+}
+
+country_event = {
+	id = frw_sys.61
+	title = frw_sys.61.t
+	desc = frw_sys.61.d
+	picture = GFX_report_event_french_tanks
+	is_triggered_only = yes
+	option = { name = frw_sys.61.a }
+}
+
+country_event = {
+	id = frw_sys.71
+	title = frw_sys.71.t
+	desc = frw_sys.71.d
+	picture = GFX_report_event_soldiers_in_france
+	is_triggered_only = yes
+	option = { name = frw_sys.71.a }
+}
+
+country_event = {
+	id = frw_sys.22
+	title = frw_sys.22.t
+	desc = frw_sys.22.d
+	picture = GFX_report_event_france_victory_syria
+	is_triggered_only = yes
+	option = { name = frw_sys.22.a }
+}
+
+country_event = {
+	id = frw_sys.32
+	title = frw_sys.32.t
+	desc = frw_sys.32.d
+	picture = GFX_report_event_worried_french
+	is_triggered_only = yes
+	option = { name = frw_sys.32.a }
+}
+
+country_event = {
+	id = frw_sys.62
+	title = frw_sys.62.t
+	desc = frw_sys.62.d
+	picture = GFX_report_event_french_tanks
+	is_triggered_only = yes
+	option = { name = frw_sys.62.a }
+}
+
+country_event = {
+	id = frw_sys.72
+	title = frw_sys.72.t
+	desc = frw_sys.72.d
+	picture = GFX_report_event_soldiers_in_france
+	is_triggered_only = yes
+	option = { name = frw_sys.72.a }
+}
+
+country_event = {
+	id = frw_sys.23
+	title = frw_sys.23.t
+	desc = frw_sys.23.d
+	picture = GFX_report_event_france_victory_syria
+	is_triggered_only = yes
+	option = { name = frw_sys.23.a }
+}
+
+country_event = {
+	id = frw_sys.33
+	title = frw_sys.33.t
+	desc = frw_sys.33.d
+	picture = GFX_report_event_worried_french
+	is_triggered_only = yes
+	option = { name = frw_sys.33.a }
+}
+
+country_event = {
+	id = frw_sys.63
+	title = frw_sys.63.t
+	desc = frw_sys.63.d
+	picture = GFX_report_event_french_tanks
+	is_triggered_only = yes
+	option = { name = frw_sys.63.a }
+}
+
+country_event = {
+	id = frw_sys.73
+	title = frw_sys.73.t
+	desc = frw_sys.73.d
+	picture = GFX_report_event_soldiers_in_france
+	is_triggered_only = yes
+	option = { name = frw_sys.73.a }
+}
+
+country_event = {
+	id = frw_sys.24
+	title = frw_sys.24.t
+	desc = frw_sys.24.d
+	picture = GFX_report_event_france_victory_syria
+	is_triggered_only = yes
+	option = { name = frw_sys.24.a }
+}
+
+country_event = {
+	id = frw_sys.34
+	title = frw_sys.34.t
+	desc = frw_sys.34.d
+	picture = GFX_report_event_worried_french
+	is_triggered_only = yes
+	option = { name = frw_sys.34.a }
+}
+
+country_event = {
+	id = frw_sys.64
+	title = frw_sys.64.t
+	desc = frw_sys.64.d
+	picture = GFX_report_event_french_tanks
+	is_triggered_only = yes
+	option = { name = frw_sys.64.a }
+}
+
+country_event = {
+	id = frw_sys.74
+	title = frw_sys.74.t
+	desc = frw_sys.74.d
+	picture = GFX_report_event_soldiers_in_france
+	is_triggered_only = yes
+	option = { name = frw_sys.74.a }
+}
+
+country_event = {
+	id = frw_sys.25
+	title = frw_sys.25.t
+	desc = frw_sys.25.d
+	picture = GFX_report_event_france_victory_syria
+	is_triggered_only = yes
+	option = { name = frw_sys.25.a }
+}
+
+country_event = {
+	id = frw_sys.35
+	title = frw_sys.35.t
+	desc = frw_sys.35.d
+	picture = GFX_report_event_worried_french
+	is_triggered_only = yes
+	option = { name = frw_sys.35.a }
+}
+
+country_event = {
+	id = frw_sys.65
+	title = frw_sys.65.t
+	desc = frw_sys.65.d
+	picture = GFX_report_event_french_tanks
+	is_triggered_only = yes
+	option = { name = frw_sys.65.a }
+}
+
+country_event = {
+	id = frw_sys.75
+	title = frw_sys.75.t
+	desc = frw_sys.75.d
+	picture = GFX_report_event_soldiers_in_france
+	is_triggered_only = yes
+	option = { name = frw_sys.75.a }
+}
+
+country_event = {
+	id = frw_sys.26
+	title = frw_sys.26.t
+	desc = frw_sys.26.d
+	picture = GFX_report_event_france_victory_syria
+	is_triggered_only = yes
+	option = { name = frw_sys.26.a }
+}
+
+country_event = {
+	id = frw_sys.36
+	title = frw_sys.36.t
+	desc = frw_sys.36.d
+	picture = GFX_report_event_worried_french
+	is_triggered_only = yes
+	option = { name = frw_sys.36.a }
+}
+
+country_event = {
+	id = frw_sys.66
+	title = frw_sys.66.t
+	desc = frw_sys.66.d
+	picture = GFX_report_event_french_tanks
+	is_triggered_only = yes
+	option = { name = frw_sys.66.a }
+}
+
+country_event = {
+	id = frw_sys.76
+	title = frw_sys.76.t
+	desc = frw_sys.76.d
+	picture = GFX_report_event_soldiers_in_france
+	is_triggered_only = yes
+	option = { name = frw_sys.76.a }
+}
+
+# The vaults run low
+country_event = {
+	id = frw_sys.5
+	title = frw_sys.5.t
+	desc = frw_sys.5.d
+	picture = GFX_report_event_worried_french
+	is_triggered_only = yes
+	option = {
+		name = frw_sys.5.a
+		trigger = { NOT = { has_country_flag = FRW_exchange_controls } }
+		set_country_flag = FRW_exchange_controls
+		add_ideas = FRW_exchange_controls_idea
+		custom_effect_tooltip = FRW_exchange_controls_tt
+		ai_chance = { factor = 50 }
+	}
+	option = {
+		name = frw_sys.5.b
+		trigger = { ENG = { exists = yes has_government = democratic NOT = { has_war_with = ROOT } } }
+		custom_effect_tooltip = FRW_gold_p400_tt hidden_effect = { add_to_variable = { FRW_gold = 400 } FRW_inflation_update = yes }
+		add_timed_idea = { idea = FRW_gold_loan days = 730 }
+		ai_chance = { factor = 50 }
+	}
+	option = {
+		name = frw_sys.5.c
+		add_stability = -0.03
+		ai_chance = { factor = 5 }
+	}
+}
+
+
+# Hyperinflation
+country_event = {
+	id = frw_sys.3
+	title = frw_sys.3.t
+	desc = frw_sys.3.d
+	picture = GFX_report_event_worried_french
+	is_triggered_only = yes
+	option = {
+		name = frw_sys.3.a
+		custom_effect_tooltip = FRW_inf_tt_m35 hidden_effect = { add_to_variable = { FRW_inflation = -35 } FRW_inflation_update = yes }
+		add_timed_idea = { idea = FRW_new_franc days = 365 }
+		add_political_power = -75
+		ai_chance = { factor = 70 }
+	}
+	option = {
+		name = frw_sys.3.b
+		add_timed_idea = { idea = FRW_price_riots days = 180 }
+		ai_chance = { factor = 30 }
+	}
+}
+
+# The gold is lost
+country_event = {
+	id = frw_sys.4
+	title = frw_sys.4.t
+	desc = frw_sys.4.d
+	picture = GFX_report_event_worried_french
+	is_triggered_only = yes
+	option = { name = frw_sys.4.a }
+}
+
+# Prestige milestones
+country_event = {
+	id = frw_sys.50
+	title = frw_sys.50.t
+	desc = frw_sys.50.d
+	picture = GFX_report_event_french_british_officers
+	is_triggered_only = yes
+	option = {
+		name = frw_sys.50.a
+		add_offsite_building = { type = arms_factory level = 2 }
+		add_equipment_to_stockpile = { type = infantry_equipment amount = 2000 }
+		add_equipment_to_stockpile = { type = support_equipment amount = 300 }
+		if = {
+			limit = { is_in_faction = no ENG = { exists = yes is_faction_leader = yes has_war_with = GER NOT = { has_war_with = ROOT } } }
+			ENG = { add_to_faction = ROOT }
+		}
+	}
+}
+
+country_event = {
+	id = frw_sys.51
+	title = frw_sys.51.t
+	desc = frw_sys.51.d
+	picture = GFX_report_event_france_parade
+	is_triggered_only = yes
+	option = {
+		name = frw_sys.51.a
+		add_ideas = FRW_fighting_france
+	}
+}

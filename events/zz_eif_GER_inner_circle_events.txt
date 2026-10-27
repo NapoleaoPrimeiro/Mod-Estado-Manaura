@@ -1,0 +1,103 @@
+country_event = {
+	id = germany.2000
+	title = germany.2000.t
+	desc = {
+		text = germany.2000.desc
+		trigger = {
+			NOT = { has_completed_focus = GER_reorganize_the_wehrmacht }
+		}
+	}
+	desc = {
+		text = germany.2000.alt.desc
+		trigger = {
+			has_completed_focus = GER_reorganize_the_wehrmacht
+		}
+	}
+	picture = GFX_report_event_german_reichstag_gathering
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = germany.2000.a
+	}
+}
+
+country_event = {
+	id = germany.2001
+	title = germany.2001.t
+	desc = germany.2001.desc
+	picture = GFX_report_event_german_reichstag_gathering
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = germany.2001.a
+		add_stability = -0.1
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		custom_effect_tooltip = GER_purge_nsdap_members_tt
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		effect_tooltip = {
+			uncomplete_national_focus = {
+				focus = GER_ascension_of_himmler
+				uncomplete_children = no
+				refund_political_power = no
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		custom_effect_tooltip = {
+			localization_key = replace_ascended_advisor_tt
+			CHARACTER = GER_heinrich_himmler
+			TRAIT = [GetHimmlerTraitForPurge]
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		custom_effect_tooltip = remove_political_advisor
+		show_ideas_tooltip = GER_reinhard_heydrich
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		custom_effect_tooltip = GER_purge_ss_commanders_tt
+		character_list_tooltip = {
+			limit = {
+				has_trait = trait_GER_SS
+			}
+		}
+
+		hidden_effect = {
+			every_army_leader = {
+				limit = {
+					has_trait = trait_GER_SS
+				}
+				remove_unit_leader_role = yes
+			}
+			set_country_flag = GER_speer_purge_flag
+			retire_character = GER_heinrich_himmler
+			GER_remove_himmler_effects = yes
+		}
+	}
+}
+
+country_event = {
+	id = germany.2002
+	title = germany.2002.t
+	desc = germany.2002.desc
+	picture = GFX_report_event_german_reichstag_gathering
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = germany.2002.a
+		add_political_power = -15
+		add_stability = 0.01
+	}
+}

@@ -1,0 +1,1788 @@
+focus_tree = {
+	id = APG_focus
+	
+	country = {
+		factor = 0		
+		
+		modifier = {
+			add = 10
+			TAG = APG
+		}
+	}
+
+	#shared_focus = USA_civil_war_begins
+
+	continuous_focus_position = { x = 50 y = 1600 }
+	default = no
+
+
+	focus = {
+		id = USA_luys_in_war
+		icon = GFX_focus_91
+		x = 20
+		y = 0
+		#prerequisite = { focus = USA_civil_war_begins }
+		#relative_position_id = USA_civil_war_begins
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 75
+
+			hidden_effect = {
+				country_event = {
+					id = apg.2
+					days = 15
+				}	
+			}
+		}
+	}
+
+	focus = {
+		id = USA_luyi_democratic
+		icon = GFX_focus_94
+		x = -8
+		y = 1
+		prerequisite = { focus = USA_luys_in_war }
+		relative_position_id = USA_luys_in_war
+		cost = 4
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+			add_stability = 0.1
+		}
+	}
+
+	focus = {
+		id = USA_tigao_shuishou
+		icon = GFX_focus_104
+		x = -3
+		y = 1
+		prerequisite = { focus = USA_luyi_democratic }
+		relative_position_id = USA_luyi_democratic
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+			USA_great_depression_level_down = yes
+			custom_effect_tooltip=generic_skip_one_line_tt
+
+			APG_new_xianfa_dm_effect = yes
+			add_to_variable = { 
+				APG_new_xianfa_dm_consumer_goods_factor = -0.15
+				tooltip =  consumer_goods_factor_tt 
+			}
+		}
+	}
+
+	focus = {
+		id = USA_feizhi_gongwuyuan
+		icon = GFX_focus_98
+		x = 0
+		y = 1
+		prerequisite = { focus = USA_luyi_democratic }
+		relative_position_id = USA_luyi_democratic
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = APG_xingzheng_hunluan
+				add_idea = APG_xingzheng_hunluan2
+			}
+			
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = USA_ensure_political_machine
+		icon = GFX_focus_87
+		x = 0
+		y = 2
+		prerequisite = { focus = USA_feizhi_gongwuyuan }
+		relative_position_id = USA_feizhi_gongwuyuan
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+			remove_ideas = HAW_cuiruo_zhengquan			
+		}
+	}
+
+	focus = {
+		id = USA_liantong_daolu
+		icon = GFX_focus_generic_road_investment
+		x = -2
+		y = 1
+		prerequisite = { focus = USA_tigao_shuishou }
+		relative_position_id = USA_tigao_shuishou
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+			APG_new_xianfa_dm_effect = yes
+			add_to_variable = { 
+				APG_new_xianfa_dm_production_speed_infrastructure_factor = 0.1
+				tooltip =  production_speed_infrastructure_factor_tt 
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			every_core_state = {
+				random_select_amount = 3
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = USA_puji_yiyuan
+		icon = GFX_focus_generic_field_hostpital
+		x = 0
+		y = 1
+		prerequisite = { focus = USA_tigao_shuishou }
+		relative_position_id = USA_tigao_shuishou
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+			APG_new_xianfa_dm_effect = yes
+			add_to_variable = { 
+				APG_new_xianfa_dm_monthly_population = 0.1
+				tooltip =  monthly_population_tt 
+			}
+			add_to_variable = { 
+				APG_new_xianfa_dm_stability_factor = 0.05
+				tooltip =  stability_factor_tt 
+			}
+			add_to_variable = { 
+				APG_new_xianfa_dm_experience_loss_factor = -0.1
+				tooltip =  experience_loss_factor_tt 
+			}
+		}
+	}
+
+	focus = {
+		id = USA_mianfei_xuexiao
+		icon = GFX_focus_93
+		x = 2
+		y = 1
+		prerequisite = { focus = USA_tigao_shuishou }
+		relative_position_id = USA_tigao_shuishou
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+			APG_new_xianfa_dm_effect = yes
+			add_to_variable = { 
+				APG_new_xianfa_dm_research_speed_factor = 0.05
+				tooltip = research_speed_factor_tt 
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_timed_idea = {
+				idea = APG_touzi_jiaoyu
+				days = 180
+			}
+		}
+	}
+
+	focus = {
+		id = USA_happy_luys
+		icon = GFX_focus_102
+		x = 0
+		y = 1
+		prerequisite = { focus = USA_puji_yiyuan }
+		prerequisite = { focus = USA_liantong_daolu }
+		prerequisite = { focus = USA_mianfei_xuexiao }
+		relative_position_id = USA_puji_yiyuan
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+			add_political_power = 100
+			add_manpower = 75000
+
+			country_event = {
+				id = apg.1
+				days = 3
+			}
+		}
+	}
+
+
+	focus = {
+		id = USA_new_usa
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 0
+		y = 5
+		#prerequisite = { focus = USA_civil_war_begins }
+		relative_position_id = USA_luys_in_war
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		available = {
+			any_state = {
+				is_core_of = USA
+				is_controlled_by = ROOT
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = USA_fight_poor
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = -3
+		y = 1
+		prerequisite = { focus = USA_new_usa }
+		relative_position_id = USA_new_usa
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = USA_fight_unfair
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = -1
+		y = 1
+		prerequisite = { focus = USA_new_usa }
+		relative_position_id = USA_new_usa
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = USA_fight_decrease
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 1
+		y = 1
+		prerequisite = { focus = USA_new_usa }
+		relative_position_id = USA_new_usa
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = USA_fight_knowledge
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 3
+		y = 1
+		prerequisite = { focus = USA_new_usa }
+		relative_position_id = USA_new_usa
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = USA_continue_gggc
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = -2
+		y = 2
+		prerequisite = { focus = USA_new_usa }
+		relative_position_id = USA_new_usa
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = USA_sitian_gongzuo_jihua
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 2
+		y = 2
+		prerequisite = { focus = USA_new_usa }
+		relative_position_id = USA_new_usa
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = USA_jizhong_zhouquan
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 0
+		y = 2
+		prerequisite = { focus = USA_new_usa }
+		relative_position_id = USA_new_usa
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+
+		}
+	}
+
+
+	focus = {
+		id = USA_fenxiang_caifu_jihua
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 0
+		y = 1
+		prerequisite = { 
+			focus = USA_jizhong_zhouquan
+		}
+		prerequisite = { 
+			focus = USA_sitian_gongzuo_jihua
+		}
+		prerequisite = { 
+			focus = USA_continue_gggc
+		}
+		relative_position_id = USA_jizhong_zhouquan
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+
+		available = {
+			any_other_country = {
+				original_tag = USA
+				has_government = communism
+				has_war_with = ROOT
+			}
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = USA_luyisi_fuxing
+		icon = GFX_focus_CHL_enlarge_the_textile_industries
+		x = 3
+		y = 1
+		prerequisite = { focus = USA_luyi_democratic }
+		relative_position_id = USA_luyi_democratic
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+			USA_great_depression_level_down = yes
+			custom_effect_tooltip=generic_skip_one_line_tt
+
+			every_core_state = {
+				random_select_amount = 2
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = USA_zhiye_peixun
+		icon = GFX_focus_92
+		x = 2
+		y = 1
+		prerequisite = { focus = USA_luyisi_fuxing }
+		relative_position_id = USA_luyisi_fuxing
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = USA_gongye_fuxing_choubei
+				bonus = 0.75
+				uses = 2
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = USA_zhufang_kuozhang
+		icon = GFX_focus_SWE_hygienic_housing
+		x = 0
+		y = 1
+		prerequisite = { focus = USA_luyisi_fuxing }
+		relative_position_id = USA_luyisi_fuxing
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+			every_core_state = {
+				random_select_amount = 3
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = USA_shiyou_kaicai
+		icon = GFX_focus_PER_increase_oil_sales
+		x = -2
+		y = 1
+		prerequisite = { focus = USA_luyisi_fuxing }
+		relative_position_id = USA_luyisi_fuxing
+		cost = 4
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+			USA_great_depression_level_down = yes
+			custom_effect_tooltip=generic_skip_one_line_tt
+
+			371 = {
+				add_resource = {
+					type = oil
+					amount = 14
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = USA_rich_luyisi
+		icon = GFX_focus_95
+		x = 0
+		y = 1
+		prerequisite = { focus = USA_zhiye_peixun }
+		prerequisite = { focus = USA_zhufang_kuozhang }
+		prerequisite = { focus = USA_shiyou_kaicai }
+		relative_position_id = USA_zhufang_kuozhang
+		cost = 8
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+			USA_great_depression_level_down = yes
+			custom_effect_tooltip=generic_skip_one_line_tt
+
+			every_core_state = {
+				random_select_amount = 3
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = USA_luys_fight
+		icon = GFX_focus_96
+		x = 7
+		y = 1
+		prerequisite = { focus = USA_luys_in_war }
+		relative_position_id = USA_luys_in_war
+		
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+			USA_shengchan_effect = yes
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			army_experience = 25
+			add_doctrine_cost_reduction = {
+				name = USA_luys_fight
+				cost_reduction = 0.25
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = USA_luyisi_yaosai
+		icon = GFX_focus_97
+		x = 3
+		y = 1
+		prerequisite = { focus = USA_luys_fight }
+		relative_position_id = USA_luys_fight
+		
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = USA_1minute_man
+		icon = GFX_focus_99
+		x = -1
+		y = 1
+		prerequisite = { focus = USA_luys_fight }
+		relative_position_id = USA_luys_fight
+		
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+			add_ideas = APG_minute_man
+		}
+	}
+
+
+	focus = {
+		id = USA_zhengguihua_minbin
+		icon = GFX_focus_chi_army_reform
+		x = -1
+		y = 1
+		prerequisite = { focus = USA_1minute_man }
+		relative_position_id = USA_1minute_man
+
+		
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = APG_minute_man
+				add_idea = APG_minute_man2
+			}
+		}
+	}
+
+	focus = {
+		id = USA_gangtie_jilv
+		icon = GFX_focus_101
+		x = 0
+		y = 1
+		prerequisite = { focus = USA_zhengguihua_minbin }
+		relative_position_id = USA_zhengguihua_minbin
+
+		
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = APG_minute_man2
+				add_idea = APG_minute_man3
+			}
+		}
+	}
+
+	focus = {
+		id = USA_2nd_dalujun
+		icon = GFX_focus_103
+		x = 1
+		y = 1
+		prerequisite = { 
+			focus = USA_luys_fight
+		}
+		relative_position_id = USA_luys_fight
+
+		cost = 8
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+			371 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip=generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+
+			custom_effect_tooltip=generic_skip_one_line_tt
+			add_ideas = APG_2nd_army
+		}
+	}
+
+	focus = {
+		id = USA_baozheng_ranyou
+		icon = GFX_goal_generic_oil_refinery
+		x = -3
+		y = 1
+		prerequisite = { 
+			focus = USA_luys_fight
+		}
+		relative_position_id = USA_luys_fight
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+			371 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			add_tech_bonus = {
+				name = USA_baozheng_ranyou
+				bonus = 1
+				uses = 1
+				category = synth_resources
+			}
+		}
+	}
+
+	focus = {
+		id = USA_jidonghua_kuangchao
+		icon = GFX_focus_generic_tank_production
+		x = -1
+		y = 1
+		prerequisite = { 
+			focus = USA_baozheng_ranyou
+		}
+		relative_position_id = USA_baozheng_ranyou
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+			USA_shengchan_effect = yes
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = { has_template = "Armor Army" }
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "division_template = \"Armor Army\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+						owner = APG
+						count = 2
+					}
+				}
+			}
+			else = {
+				division_template = {
+					name = "Armor Army"
+					is_locked = no
+					division_names_group = USA_INF_01
+					role = infantry
+					priority = 0
+					regiments = {
+						light_armor = { x = 0 y = 0 }
+						light_armor = { x = 0 y = 1 }
+						light_armor = { x = 0 y = 2 }
+						light_armor = { x = 0 y = 3 }
+						motorized = { x = 1 y = 0 }
+						motorized = { x = 1 y = 1 }
+						motorized = { x = 1 y = 2 }
+						motorized = { x = 1 y = 3 }
+						motorized = { x = 2 y = 0 }
+						motorized = { x = 2 y = 1 }
+						motorized = { x = 2 y = 2 }
+						motorized = { x = 2 y = 3 }
+
+					}
+					support = {
+						mot_recon = { x = 0 y = 0 }
+						engineer = { x = 0 y = 1 }
+						artillery = { x = 0 y = 2 }
+					}
+				}
+
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "division_template = \"Armor Army\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+						owner = APG
+						count = 2
+					}
+				}
+			}
+
+			
+
+		}
+	}
+
+	focus = {
+		id = USA_luys_dongyuan
+		icon = GFX_focus_PRC_arms_recovery_efforts
+		x = -1
+		y = 1
+		prerequisite = { 
+			focus = USA_2nd_dalujun
+		}
+		relative_position_id = USA_2nd_dalujun
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+			add_war_support = 0.05
+
+			country_event = {
+				id = apg.4
+				days = 3
+			}
+		}
+	}
+
+	focus = {
+		id = USA_buji_xian
+		icon = GFX_focus_generic_reinforcing_the_supply_network
+		x = 1
+		y = 1
+		prerequisite = { 
+			focus = USA_2nd_dalujun
+		}
+		relative_position_id = USA_2nd_dalujun
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+			add_equipment_to_stockpile = { 
+				type = motorized_equipment
+				amount = 200
+				producer = USA
+			}
+
+			custom_effect_tooltip=generic_skip_one_line_tt
+			add_timed_idea = {
+				idea = APG_baozhang_houqin
+				days = 720
+			}
+		}
+	}
+
+	focus = {
+		id = USA_lujun_canmoubu
+		icon = GFX_focus_generic_army_doctrines_2
+		x = 3
+		y = 1
+		prerequisite = { 
+			focus = USA_2nd_dalujun
+		}
+		relative_position_id = USA_2nd_dalujun
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = APG_2nd_army
+				add_idea = APG_2nd_army2
+			}
+		}
+	}
+
+	focus = {
+		id = USA_strong_luyisi
+		icon = GFX_focus_100
+		x = 0
+		y = 2
+		prerequisite = { 
+			focus = USA_luys_dongyuan
+		}
+		prerequisite = { 
+			focus = USA_buji_xian
+		}
+		relative_position_id = USA_2nd_dalujun
+
+		cost = 8
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+			every_core_state = {
+				random_select_amount = 2
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip=generic_skip_one_line_tt
+			country_event = {
+				id = apg.5
+				days = 3
+			}
+		}
+	}
+
+
+	focus = {
+		id = USA_luys_war_plan
+		icon = GFX_focus_96
+		x = 0
+		y = 1
+		prerequisite = { focus = USA_luys_in_war }
+		relative_position_id = USA_luys_in_war
+		
+		cost = 3
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+			add_command_power = 20
+		}
+	}
+
+	focus = {
+		id = USA_luys_yanxi
+		icon = GFX_focus_96
+		x = -2
+		y = 1
+		prerequisite = { focus = USA_luys_war_plan }
+		relative_position_id = USA_luys_war_plan
+		
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+			add_manpower = 10000
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			army_experience = 25
+			add_doctrine_cost_reduction = {
+				name = USA_luys_fight
+				cost_reduction = 0.25
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = USA_tielu_xiujian
+		icon = GFX_focus_96
+		x = 2
+		y = 1
+		prerequisite = { focus = USA_luys_war_plan }
+		relative_position_id = USA_luys_war_plan
+		
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+			build_railway = {
+				start_province = 10337
+				target_province = 1562
+			}
+		}
+	}
+
+	focus = {
+		id = USA_paichu_yanxian
+		icon = GFX_focus_96
+		x = 0
+		y = 1
+		prerequisite = { focus = USA_luys_war_plan }
+		relative_position_id = USA_luys_war_plan
+		
+		cost = 8
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+			IF = {
+				limit = {
+					has_intelligence_agency = no
+				}
+				create_intelligence_agency = yes
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_dlc = "La Resistance"
+					}
+				}
+				add_ideas = office_of_strategic_services
+			}
+			else = {
+				add_ideas = USA_CIA
+			}
+		}
+	}
+
+	focus = {
+		id = USA_jiemao_xingdong
+		icon = GFX_focus_96
+		x = 1
+		y = 1
+		prerequisite = { 
+			focus = USA_luys_yanxi
+			focus = USA_tielu_xiujian
+			focus = USA_paichu_yanxian
+		}
+		relative_position_id = USA_luys_yanxi
+		
+		cost = 3
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = USA_jiaohuang_xingdong
+		icon = GFX_focus_96
+		x = 3
+		y = 1
+		prerequisite = { 
+			focus = USA_luys_yanxi
+			focus = USA_tielu_xiujian
+			focus = USA_paichu_yanxian
+		}
+		relative_position_id = USA_luys_yanxi
+		
+		cost = 3
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = USA_feichu_jimu_kelao
+		icon = GFX_focus_96
+		x = -1
+		y = 1
+		prerequisite = { 
+			focus = USA_jiemao_xingdong
+		}
+		relative_position_id = USA_jiemao_xingdong
+		
+		cost = 3
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = USA_jiaohui_hezuo
+		icon = GFX_focus_96
+		x = 1
+		y = 1
+		prerequisite = { 
+			focus = USA_jiaohuang_xingdong
+		}
+		relative_position_id = USA_jiaohuang_xingdong
+		
+		cost = 3
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = USA_xianzhang_xingdong
+		icon = GFX_focus_96
+		x = -1
+		y = 1
+		prerequisite = { 
+			focus = USA_jiaohuang_xingdong
+			focus = USA_jiemao_xingdong
+		}
+		relative_position_id = USA_jiaohuang_xingdong
+		
+		cost = 3
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+
+		}
+	}
+}

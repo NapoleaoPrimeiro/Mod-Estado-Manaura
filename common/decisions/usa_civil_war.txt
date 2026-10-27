@@ -1,0 +1,91 @@
+USA_2ND_us_civil_war = {
+	debug_start = { 
+		priority = 99
+
+		icon = GFX_decision_generic_electricity
+
+		ai_will_do = {
+			base = -1
+			
+			
+		}
+
+		allowed = {
+			original_tag = USA
+		}
+
+		available = {
+			is_debug = yes				
+		}
+
+		visible = {
+			is_debug = yes	
+		}
+		days_remove = 0
+
+		cost = 0
+
+		modifier = {
+			
+		}
+
+		complete_effect = {
+			UFE = {
+				USA = {
+					declare_war_on = {
+						target = PREV 
+						type = civil_war
+					}
+				}
+
+				CFA = {
+					declare_war_on = {
+						target = PREV 
+						type = civil_war
+					}
+				}
+			}
+
+			CFA = {
+				USA = {
+					declare_war_on = {
+						target = PREV 
+						type = civil_war
+					}
+				}
+
+				UFE = {
+					declare_war_on = {
+						target = PREV 
+						type = civil_war
+					}
+				}
+			}
+
+			USA = {
+				CFA = {
+					declare_war_on = {
+						target = PREV 
+						type = civil_war
+					}
+				}
+
+				UFE = {
+					declare_war_on = {
+						target = PREV 
+						type = civil_war
+					}
+				}
+			}
+
+
+			add_threat = -30
+
+						
+		}
+
+		remove_effect ={
+
+		}
+	}
+}

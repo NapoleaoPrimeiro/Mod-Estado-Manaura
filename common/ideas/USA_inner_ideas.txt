@@ -1,0 +1,406 @@
+ideas = {
+	hidden_ideas = {
+
+#max马克思
+		USA_max_idea1={
+			modifier={
+			research_speed_factor=0.025
+			drift_defence_factor=0.1
+			}
+		}
+		USA_max_idea2={
+			modifier={
+			research_speed_factor=0.05
+			drift_defence_factor=0.15
+			}
+		}
+		USA_max_idea3={
+			modifier={
+			research_speed_factor=0.075
+			drift_defence_factor=0.15
+			}
+		}
+		USA_max_idea4={
+			modifier={
+			research_speed_factor=0.1
+			drift_defence_factor=0.15
+			}
+		}
+		USA_max_idea5={
+			modifier={
+			research_speed_factor=0.15
+			drift_defence_factor=0.3
+			}
+		}
+#engs恩格斯
+		USA_engs_idea1={
+			modifier={
+			production_factory_efficiency_gain_factor = 0.05				
+			production_factory_max_efficiency_factor = 0.05		
+			}
+		}
+		USA_engs_idea2={
+			modifier={
+			production_factory_efficiency_gain_factor = 0.05				
+			production_factory_max_efficiency_factor = 0.05	
+			industrial_capacity_factory = 0.05
+			line_change_production_efficiency_factor =0.05
+			}
+		}
+		USA_engs_idea3={
+			modifier={
+			production_factory_efficiency_gain_factor = 0.075				
+			production_factory_max_efficiency_factor = 0.075	
+			industrial_capacity_factory = 0.075		
+			line_change_production_efficiency_factor =0.075	
+			}
+		}
+		USA_engs_idea4={
+			modifier={
+			production_factory_efficiency_gain_factor = 0.1				
+			production_factory_max_efficiency_factor = 0.1	
+			industrial_capacity_factory = 0.1	
+			line_change_production_efficiency_factor =0.1		
+			}
+		}
+		USA_engs_idea5={
+			modifier={
+			production_factory_efficiency_gain_factor = 0.15				
+			production_factory_max_efficiency_factor = 0.15	
+			industrial_capacity_factory = 0.15	
+			line_change_production_efficiency_factor =0.15		
+			}
+		}
+#liening列宁
+		USA_liening_idea1={
+			modifier={
+			stability_factor=0.05
+
+			}
+		}
+		USA_liening_idea2={
+			modifier={
+			stability_factor=0.075
+			political_power_gain=0.1
+			}
+		}
+		USA_liening_idea3={
+			modifier={
+			stability_factor=0.1
+			political_power_gain=0.1
+			consumer_goods_factor=-0.05	
+			}
+		}
+		USA_liening_idea4={
+			modifier={
+			stability_factor=0.1
+			political_power_gain=0.1
+			consumer_goods_factor=-0.1
+			mobilization_laws_cost_factor = -0.2
+			trade_laws_cost_factor  = -0.2
+			economy_cost_factor = -0.2
+			political_advisor_cost_factor = -0.2
+			}
+		}
+		USA_liening_idea5={
+			modifier={
+			stability_factor=0.15
+			political_power_gain=0.2
+			consumer_goods_factor=-0.15
+			mobilization_laws_cost_factor = -0.25
+			trade_laws_cost_factor  = -0.25
+			economy_cost_factor = -0.25
+			political_advisor_cost_factor = -0.25
+			}
+		}
+#stalin斯大林
+		USA_stalin_idea1={
+			modifier={
+			production_speed_arms_factory_factor = 0.025				
+			local_resources_factor= 0.025	
+			production_speed_buildings_factor  = 0.025			
+			}
+		}
+		USA_stalin_idea2={
+			modifier={
+			production_speed_arms_factory_factor = 0.05				
+			local_resources_factor= 0.05	
+			production_speed_buildings_factor  = 0.05
+			}
+		}
+		USA_stalin_idea3={
+			modifier={
+			production_speed_arms_factory_factor = 0.075				
+			local_resources_factor= 0.075	
+			production_speed_buildings_factor  = 0.075			
+			}
+		}
+		USA_stalin_idea4={
+			modifier={
+			production_speed_arms_factory_factor = 0.1				
+			local_resources_factor= 0.1	
+			production_speed_buildings_factor  = 0.1			
+			}
+		}
+		USA_stalin_idea5={
+			modifier={
+			production_speed_arms_factory_factor =0.15			
+			local_resources_factor=0.15
+			production_speed_buildings_factor  =0.15	
+			}
+		}
+#mao毛泽东
+		USA_mao_idea1={
+			modifier={
+			production_speed_industrial_complex_factor  = 0.025				
+			war_support_factor = 0.025	
+			max_command_power = 10			
+			}
+		}
+		USA_mao_idea2={
+			modifier={
+			production_speed_industrial_complex_factor  = 0.05				
+			war_support_factor = 0.05	
+			max_command_power = 25
+			}
+		}
+		USA_mao_idea3={
+			modifier={
+			production_speed_industrial_complex_factor  = 0.075				
+			war_support_factor = 0.075	
+			max_command_power =50		
+			}
+		}
+		USA_mao_idea4={
+			modifier={
+			production_speed_industrial_complex_factor  = 0.075				
+			war_support_factor = 0.075	
+			max_command_power =50
+			planning_speed = 0.05
+			max_planning = 0.1		
+			}
+		}
+		USA_mao_idea5={
+			modifier={
+			production_speed_industrial_complex_factor  =0.15			
+			war_support_factor =0.15
+			max_command_power =100	
+			planning_speed = 0.1
+			max_planning = 0.15
+			}
+		}
+#NATO
+		NATO_chengyuanguo={
+			modifier={
+			political_power_gain=0.1
+			}
+		}
+#nato_army
+		NATO_army1_idea={
+			modifier={experience_gain_army_factor = 0.1}
+			
+		}
+		NATO_army2_idea={
+			modifier={
+			experience_gain_army_factor = 0.1
+			planning_speed = 0.1
+			max_planning = 0.05
+			}
+			
+
+		}
+		NATO_army3_idea={
+			modifier={
+			experience_gain_army_factor = 0.1
+			planning_speed = 0.1
+			max_planning = 0.05
+			army_attack_factor=0.05
+			army_defence_factor=0.05				
+			}
+			
+		}
+		NATO_army4_idea={
+			modifier={
+				experience_gain_army_factor = 0.1
+			planning_speed = 0.1
+			max_planning = 0.05
+			army_attack_factor=0.05
+			army_defence_factor=0.05
+			army_armor_attack_factor = 0.05
+			army_armor_defence_factor = 0.05
+			}
+			
+		}
+		NATO_army5_idea={
+			modifier={
+				experience_gain_army_factor = 0.1
+			planning_speed = 0.1
+			max_planning = 0.05
+			army_attack_factor=0.1
+			army_defence_factor=0.1
+			}
+			
+		}
+#nato_air
+		NATO_air1_idea={
+			modifier={
+				air_attack_factor = 0.05	
+			}
+					
+		}
+		NATO_air2_idea={
+			modifier={
+			air_attack_factor = 0.05
+			air_ace_generation_chance_factor =0.25	
+			air_accidents = -0.1
+			}
+			
+		}
+		NATO_air3_idea={
+			modifier={
+			air_attack_factor = 0.05
+			air_ace_generation_chance_factor =0.25	
+			air_accidents = -0.1	
+			}
+			equipment_bonus = {
+				small_plane_airframe = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				cv_small_plane_airframe = {
+					build_cost_ic = -0.1 instant = yes
+				}
+			}
+				
+		}
+		NATO_air4_idea={
+			modifier={
+			air_attack_factor = 0.05
+			air_ace_generation_chance_factor =0.25	
+			air_accidents = -0.1
+			air_strategic_bomber_bombing_factor =0.15	
+			}
+			equipment_bonus = {
+				small_plane_airframe = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				cv_small_plane_airframe = {
+					build_cost_ic = -0.1 instant = yes
+				}
+			}
+				
+		}
+		NATO_air5_idea={
+			modifier={
+			air_attack_factor = 0.15
+			air_superiority_efficiency =0.1
+			air_ace_generation_chance_factor =0.25	
+			air_accidents = -0.1	
+			}
+			equipment_bonus = {
+				small_plane_airframe = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				cv_small_plane_airframe = {
+					build_cost_ic = -0.1 instant = yes
+				}
+			}
+					
+		}
+#NATO_navy
+		NATO_navy1_idea={
+			modifier={
+				naval_speed_factor = 0.1
+				navy_max_range_factor = 0.1
+			}
+		}
+		NATO_navy2_idea={
+			modifier={
+				naval_speed_factor = 0.1
+				navy_max_range_factor = 0.1
+				positioning = 0.1
+			}
+		}
+		NATO_navy3_idea={
+			modifier={
+				naval_speed_factor = 0.1
+				navy_max_range_factor = 0.1
+				positioning = 0.1
+				navy_carrier_air_attack_factor = 0.1
+				navy_carrier_air_targetting_factor = 0.1
+
+			}
+		}
+		NATO_navy4_idea={
+			modifier={
+				naval_speed_factor = 0.1
+				navy_max_range_factor = 0.1
+				positioning = 0.1
+				invasion_preparation = -0.1
+				amphibious_invasion = 0.1
+
+			}
+		}
+		NATO_navy5_idea={
+			modifier={
+				naval_speed_factor = 0.1
+				navy_max_range_factor = 0.1
+				positioning = 0.1
+				navy_carrier_air_attack_factor = 0.1
+				navy_carrier_air_targetting_factor = 0.1
+				invasion_preparation = -0.1
+				amphibious_invasion = 0.1
+			}
+		}
+#NATO_keyan
+		NATO_keyan_idea1={
+			modifier={
+				research_speed_factor=0.05
+			}
+		}
+		NATO_keyan_idea2={
+			modifier={
+				research_speed_factor=0.1
+			}
+		}
+#NATO_gongye
+		NATO_gongye_idea1={
+			modifier={
+				consumer_goods_factor=-0.15
+			}
+		}
+		NATO_gongye_idea2={
+			modifier={
+				consumer_goods_factor=-0.15
+				industrial_capacity_factory =0.1
+				production_speed_buildings_factor =0.1
+			}
+		}
+		NATO_gongye_idea3={
+			modifier={
+				consumer_goods_factor=-0.1
+				industrial_capacity_factory =0.15
+				production_speed_buildings_factor =0.15
+				production_speed_arms_factory_factor = 0.1
+				production_speed_industrial_complex_factor = 0.1
+			}
+		}
+		NATO_gongye_idea4={
+			modifier={
+				consumer_goods_factor=-0.1
+				industrial_capacity_factory =0.15
+				production_speed_buildings_factor =0.15
+				production_speed_arms_factory_factor = 0.1
+				production_speed_industrial_complex_factor = 0.1
+			}
+		}
+		NATO_gongye_idea5={
+			modifier={
+				consumer_goods_factor=-0.1
+				industrial_capacity_factory =0.15
+				production_speed_buildings_factor =0.15
+				production_speed_arms_factory_factor = 0.1
+				production_speed_industrial_complex_factor = 0.1
+			}
+		}
+	}
+}

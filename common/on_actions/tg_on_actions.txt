@@ -1,0 +1,32 @@
+
+# verifica guaranteeurile si le scoate pe alaea ne dorite
+
+on_actions = {
+    on_daily = {
+        effect = {
+            if = {
+                limit = { 
+                    check_variable = { 
+                        tg_blocked_targets^num > 0 
+                    } 
+                }
+
+                for_each_scope_loop = {
+                    array = tg_blocked_targets
+                    ROOT = {
+                        if = {
+                            limit = { 
+                                has_guaranteed = PREV 
+                            }
+                            diplomatic_relation = {
+                                country = PREV
+                                relation = guarantee
+                                active = no
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

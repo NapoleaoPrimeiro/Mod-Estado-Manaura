@@ -1,0 +1,145 @@
+# =========================================================================
+# Reasonable Guarantees - scripted triggers
+# =========================================================================
+# When evaluated inside the decision's target_trigger:
+#   THIS / ROOT = the potential GUARANTOR (a major power)
+#   FROM        = the candidate country being considered for a guarantee
+# =========================================================================
+
+
+# -------------------------------------------------------------------------
+# rg_is_reachable
+# A guarantor only cares about countries it can plausibly project power to:
+#   * shares a land border with the target, OR
+#   * is on the SAME CONTINENT as the target.
+#
+# This is why the UK guarantees Poland & Greece (Europe) but NOT Afghanistan
+# or Iraq (Asia / Middle East).
+#
+# NOTE: is_on_continent is a STATE-scope trigger. ROOT and FROM are COUNTRIES,
+# so we route through capital_scope and compare each country's CAPITAL state's
+# continent. The Middle East is its own continent in the base map and is
+# intentionally omitted, so European powers do not reach it via "same
+# continent" - exactly the behaviour we want.
+# -------------------------------------------------------------------------
+# Pair form: THIS = the candidate target, PREV = the guarantor. Used directly
+# by the weekly crisis-eviction check in rg_on_actions.txt (where FROM is not
+# bound) and via the rg_is_reachable wrapper by the decision.
+rg_reachable_pair = {
+	OR = {
+		is_neighbor_of = PREV                              # shared land border
+
+		AND = { capital_scope = { is_on_continent = europe }        PREV = { capital_scope = { is_on_continent = europe } } }
+		AND = { capital_scope = { is_on_continent = asia }          PREV = { capital_scope = { is_on_continent = asia } } }
+		AND = { capital_scope = { is_on_continent = africa }        PREV = { capital_scope = { is_on_continent = africa } } }
+		AND = { capital_scope = { is_on_continent = north_america } PREV = { capital_scope = { is_on_continent = north_america } } }
+		AND = { capital_scope = { is_on_continent = south_america } PREV = { capital_scope = { is_on_continent = south_america } } }
+		AND = { capital_scope = { is_on_continent = australia }     PREV = { capital_scope = { is_on_continent = australia } } }
+	}
+}
+
+# FROM wrapper for the decision's target_trigger (inside the FROM block,
+# PREV = ROOT = the guarantor).
+rg_is_reachable = {
+	FROM = { rg_reachable_pair = yes }
+}
+
+
+# -------------------------------------------------------------------------
+# rg_this_concretely_threatened   (evaluate ON the country itself)
+# Someone has - or is JUSTIFYING - an actual war goal against THIS country.
+# Reacting already during justification matters: once the goal completes the
+# DoW may be days away, and a target already at war can no longer be
+# guaranteed.
+# -------------------------------------------------------------------------
+rg_this_concretely_threatened = {
+	any_other_country = {
+		OR = {
+			has_wargoal_against = PREV
+			is_justifying_wargoal_against = PREV
+		}
+	}
+}
+
+
+# -------------------------------------------------------------------------
+# rg_concretely_threatened   (FROM wrapper for the decision's target_trigger
+# and ai_will_do, where FROM = the candidate target)
+# -------------------------------------------------------------------------
+rg_concretely_threatened = {
+	FROM = { rg_this_concretely_threatened = yes }
+}
+
+
+# -------------------------------------------------------------------------
+# rg_this_is_threatened   (evaluate ON the country itself)
+# A country counts as actually in danger if one of three branches holds:
+#
+#   (a) BOTH MODES: a war goal exists or is being justified against it.
+#       This is also the escape hatch when a "historical" game diverges -
+#       e.g. a player Germany justifying on Switzerland makes Switzerland
+#       eligible even in historical mode.
+#
+#   (b) NON-HISTORICAL: it borders a hostile major that has PROVEN itself
+#       an aggressor (generated 25+ world tension). Whoever turns aggressive
+#       exposes its neighbours - an aggressive USSR exposes the Baltics, a
+#       quiet Germany exposes nobody. Merely bordering a peaceful
+#       dictatorship is NOT a threat (that rule was what blanketed half of
+#       Europe in guarantees).
+#
+#   (c) HISTORICAL: the real-life 1939 guarantee recipients - Poland,
+#       Romania, Greece, Turkey - unlocked once a fascist major has proven
+#       itself an aggressor (25+ tension: Germany crosses that right around
+#       seizing Prague, which is when Britain really switched from
+#       appeasement to guarantees). Austria, Czechoslovakia, the Baltics,
+#       Finland, Switzerland etc. are deliberately NOT listed - as in real
+#       life. Want more (e.g. Belgium)? Add its tag to the OR below.
+#
+# Used by the decision (via the rg_is_threatened FROM wrapper) AND by the
+# monthly stale-guarantee review in rg_on_actions.txt, which revokes
+# mod-issued guarantees once this stops being true.
+# -------------------------------------------------------------------------
+rg_this_is_threatened = {
+	OR = {
+		# (a) concrete threat - any mode
+		rg_this_concretely_threatened = yes
+
+		# (b) systemic rule - non-historical games
+		AND = {
+			is_historical_focus_on = no
+			any_neighbor_country = {
+				is_major = yes
+				OR = {
+					has_government = fascism
+					has_government = communism
+				}
+				has_added_tension_amount > 25
+			}
+		}
+
+		# (c) the real WW2 list - historical games
+		AND = {
+			is_historical_focus_on = yes
+			OR = {
+				original_tag = POL
+				original_tag = ROM
+				original_tag = GRE
+				original_tag = TUR
+			}
+			any_country = {
+				is_major = yes
+				has_government = fascism
+				has_added_tension_amount > 25
+			}
+		}
+	}
+}
+
+
+# -------------------------------------------------------------------------
+# rg_is_threatened   (FROM wrapper for the decision's target_trigger,
+# where FROM = the candidate target)
+# -------------------------------------------------------------------------
+rg_is_threatened = {
+	FROM = { rg_this_is_threatened = yes }
+}

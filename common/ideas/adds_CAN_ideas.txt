@@ -1,0 +1,387 @@
+ideas = {
+	country= {
+		CAN_us_trade = {
+			picture = usa_can_trade
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				OR = {
+					has_War_with = CAN					
+				}			
+			}
+		
+			modifier = {
+				consumer_goods_factor = -0.05
+			}	
+			
+			targeted_modifier = {
+				tag = CAN
+				trade_cost_for_target_factor = -0.2
+			}	
+			
+			on_remove = {
+				if = {
+					limit = {
+						CAN = {
+							NOT = {
+								has_War_with = USA
+							}
+						}
+					}
+					country_event = {
+						id = usa_extra.18
+						days = 15
+					}
+				}
+				
+			}
+		}
+
+
+		US_can_cooperate = {
+			picture = usa_can_trade
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				OR = {
+					has_War_with = USA
+					NOT = {
+						has_government = USA
+					}
+				}			
+			}
+		
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.05
+			}	
+			
+			#targeted_modifier = {
+			#	tag = USA
+			#	cic_to_target_factor = 0.1 
+			#	trade_cost_for_target_factor = -0.25
+			#}		
+		}
+		US_can_cooperate2 = {
+			picture = usa_can_trade
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				OR = {
+					has_War_with = USA
+					NOT = {
+						has_government = USA
+					}
+				}			
+			}
+		
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.05
+			}	
+			
+			targeted_modifier = {
+				tag = USA
+				cic_to_target_factor = 0.02 
+				trade_cost_for_target_factor = -0.02
+			}		
+		}
+		US_can_cooperate3 = {
+			picture = usa_can_trade
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				OR = {
+					has_War_with = USA
+					NOT = {
+						has_government = USA
+					}
+				}			
+			}
+		
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.05
+			}	
+			
+			targeted_modifier = {
+				tag = USA
+				cic_to_target_factor = 0.04 
+				trade_cost_for_target_factor = -0.04
+			}		
+		}
+		US_can_cooperate4 = {
+			picture = usa_can_trade
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				OR = {
+					has_War_with = USA
+					NOT = {
+						has_government = USA
+					}
+				}			
+			}
+		
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.05
+			}	
+			
+			targeted_modifier = {
+				tag = USA
+				cic_to_target_factor = 0.06 
+				trade_cost_for_target_factor = -0.06
+			}		
+		}
+		US_can_cooperate5 = {
+			picture = usa_can_trade
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				OR = {
+					has_War_with = USA
+					NOT = {
+						has_government = USA
+					}
+				}			
+			}
+		
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.05
+			}	
+			
+			targeted_modifier = {
+				tag = USA
+				cic_to_target_factor = 0.08 
+				trade_cost_for_target_factor = -0.08
+			}		
+		}
+		US_can_cooperate6 = {
+			picture = usa_can_trade
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				OR = {
+					has_War_with = USA
+					NOT = {
+						has_government = USA
+					}
+				}			
+			}
+		
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.05
+			}	
+			
+			targeted_modifier = {
+				tag = USA
+				cic_to_target_factor = 0.1 
+				trade_cost_for_target_factor = -0.1
+			}		
+		}
+		US_can_cooperate7 = {
+			picture = usa_can_trade
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				OR = {
+					has_War_with = USA
+					NOT = {
+						has_government = USA
+					}
+				}			
+			}
+		
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.05
+			}	
+			
+			targeted_modifier = {
+				tag = USA
+				cic_to_target_factor = 0.12 
+				trade_cost_for_target_factor = -0.12
+			}		
+		}
+		US_can_cooperate8 = {
+			picture = usa_can_trade
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				OR = {
+					has_War_with = USA
+					NOT = {
+						has_government = USA
+					}
+				}			
+			}
+		
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.05
+			}	
+			
+			targeted_modifier = {
+				tag = USA
+				cic_to_target_factor = 0.14 
+				trade_cost_for_target_factor = -0.14
+			}		
+		}
+		US_can_cooperate9 = {
+			picture = usa_can_trade
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				OR = {
+					has_War_with = USA
+					NOT = {
+						has_government = USA
+					}
+				}			
+			}
+		
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.05
+			}	
+			
+			targeted_modifier = {
+				tag = USA
+				cic_to_target_factor = 0.16 
+				trade_cost_for_target_factor = -0.16
+			}		
+		}
+		US_can_cooperate10 = {
+			picture = usa_can_trade
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				OR = {
+					has_War_with = USA
+					NOT = {
+						has_government = USA
+					}
+				}			
+			}
+		
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.05
+			}	
+			
+			targeted_modifier = {
+				tag = USA
+				cic_to_target_factor = 0.15 
+				trade_cost_for_target_factor = -0.15
+			}		
+		}
+
+
+
+		US_can_us_influence = {
+			picture = usa_guide_us
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				OR = {
+					has_War_with = USA
+					NOT = {
+						has_government = USA
+					}
+				}
+			}
+		
+			modifier = {
+				autonomy_gain  = 0.5
+				weekly_manpower = 100
+				custom_modifier_tooltip = US_can_us_influence_tt
+			}
+
+			research_bonus = {
+				industry = 0.1
+				electronics = 0.1
+			}		
+
+			on_add = {
+				add_ai_strategy = {
+					type = support
+					id = USA
+					value = 400
+				}
+				add_ai_strategy = {
+					type = protect
+					id = USA
+					value = 400
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = USA
+					value = 400
+				}
+			}	
+		}
+	}
+}

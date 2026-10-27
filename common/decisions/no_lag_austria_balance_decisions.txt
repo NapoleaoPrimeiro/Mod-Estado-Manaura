@@ -1,0 +1,88 @@
+NO_LAG_AUS_HABSBURG_DIPLOMACY = {
+	NO_LAG_AUS_prepare_imperial_outreach = {
+		icon = GFX_decision_generic_monarchy
+		priority = 75
+		targets = { HUN CZE YUG ROM POL }
+
+		allowed = {
+			original_tag = AUS
+		}
+
+		target_trigger = {
+			FROM = {
+				exists = yes
+				is_subject = no
+				OR = {
+					original_tag = HUN
+					original_tag = CZE
+					original_tag = YUG
+					original_tag = ROM
+					original_tag = POL
+				}
+				NOT = { has_war_with = ROOT }
+				NOT = { is_in_faction_with = ROOT }
+				NOT = { has_country_flag = NO_LAG_AUS_imperial_outreach_prepared }
+				NOT = { has_country_flag = AUS_subjugation_demand_sent_flag }
+				NOT = { has_country_flag = AUS_annexation_demand_sent_flag }
+				NOT = {
+					AND = {
+						has_country_flag = AUS_sent_industrial_suuport_flag
+						has_country_flag = AUS_held_joint_military_exercises_flag
+					}
+				}
+			}
+		}
+
+		visible = {
+			has_completed_focus = AUS_legacy_of_the_empire
+		}
+
+		available = {
+			is_ai = no
+			is_subject = no
+			has_completed_focus = AUS_legacy_of_the_empire
+			FROM = {
+				has_opinion = {
+					target = ROOT
+					value > -25
+				}
+			}
+		}
+
+		cost = 35
+		days_remove = 30
+		fire_only_once = no
+
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+
+		remove_effect = {
+			FROM = {
+				set_country_flag = NO_LAG_AUS_imperial_outreach_prepared
+				if = {
+					limit = {
+						NOT = { has_country_flag = AUS_sent_industrial_suuport_flag }
+					}
+					set_country_flag = {
+						flag = AUS_sent_industrial_suuport_flag
+						days = 1825
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_country_flag = AUS_held_joint_military_exercises_flag }
+					}
+					set_country_flag = {
+						flag = AUS_held_joint_military_exercises_flag
+						days = 1825
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,353 @@
+﻿
+########################################################################################################################
+													# < INFORMATION > #
+########################################################################################################################
+		# Name mod: Generic Focus Tree: Redux
+		# Author: BoznaWhere
+		# Comment language: ENG / UKR
+########################################################################################################################
+													# < CONTENT > #
+########################################################################################################################
+	# INDEPENDENCE
+	
+########################################################################################################################
+													# < INDEPENDENCE > #
+########################################################################################################################
+add_namespace = GFTR_E_independence
+add_namespace = GFTR_E_independence_response
+add_namespace = GFTR_E_change_of_power
+# # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # #
+country_event = {
+	id = GFTR_E_independence.1
+	title = GFTR_E_independence.1.t
+	desc = GFTR_E_independence.1.d
+	picture = GFX_report_event_ast_army
+	is_triggered_only = yes
+	# # #
+	option = {
+		name = GFTR_E_independence.1.a
+		ai_chance = {
+			factor = 1
+		}
+
+		set_autonomy = {
+			target = ROOT
+			autonomy_state = autonomy_free
+		}
+
+		leave_faction = yes
+		
+		declare_war_on = {
+			target = event_target:GFTR_save_overlord
+			type = annex_everything
+		}
+	}
+}
+# # # # # # # # # # # # # # #
+country_event = {
+	id = GFTR_E_independence.2
+	title = GFTR_E_independence.2.t
+	desc = GFTR_E_independence.2.d
+	picture = GFX_report_event_baltic_entente_one
+	is_triggered_only = yes
+	# # #
+	option = {
+		name = GFTR_E_independence.2.a
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1
+				has_government = communism
+			}
+			modifier = {
+				factor = 1
+				has_government = neutrality
+			}
+			modifier = {
+				factor = 1
+				has_government = fascism
+			}
+			modifier = {
+				factor = 0.6
+				has_government = democratic
+			}
+		}
+		
+		add_political_power = -100
+		
+		FROM = {
+			country_event = {
+				id = GFTR_E_independence_response.1
+				days = 0
+			}
+		}
+	}
+	# # #
+	option = {
+		name = GFTR_E_independence.2.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0.7
+				has_government = communism
+			}
+			modifier = {
+				factor = 1
+				has_government = neutrality
+			}
+			modifier = {
+				factor = 0.6
+				has_government = fascism
+			}
+			modifier = {
+				factor = 1
+				has_government = democratic
+			}
+		}
+
+		set_autonomy = {
+			target = FROM
+			autonomy_state = autonomy_free
+		}
+
+		FROM = {
+			country_event = {
+				id = GFTR_E_independence_response.2
+				days = 0
+			}
+		}
+	}
+	# # #
+	option = {
+		name = GFTR_E_independence.2.c
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0.2
+				has_government = communism
+			}
+			modifier = {
+				factor = 0.8
+				has_government = neutrality
+			}
+			modifier = {
+				factor = 0.2
+				has_government = fascism
+			}
+			modifier = {
+				factor = 0.9
+				has_government = democratic
+			}
+		}
+		
+		set_autonomy = {
+			target = FROM
+			autonomy_state = autonomy_free
+		}
+		
+		FROM = {
+			leave_faction = yes
+			
+			country_event = {
+				id = GFTR_E_independence_response.3
+				days = 0
+			}
+		}
+	}
+	# # #
+	option = {
+		name = GFTR_E_independence.2.d
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1
+				has_government = communism
+			}
+			modifier = {
+				factor = 0.8
+				has_government = neutrality
+			}
+			modifier = {
+				factor = 1
+				has_government = fascism
+			}
+			modifier = {
+				factor = 0.3
+				has_government = democratic
+			}
+		}
+
+		set_autonomy = {
+			target = FROM
+			autonomy_state = autonomy_free
+		}
+		FROM = {
+			leave_faction = yes
+			
+			country_event = {
+				id = GFTR_E_independence_response.4
+				days = 0
+			}
+		}
+		declare_war_on = {
+			target = FROM
+			type = annex_everything
+		}
+	}
+}
+# # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # #
+country_event = {
+	id = GFTR_E_independence_response.0
+	title = GFTR_E_independence_response.0.t
+	desc = GFTR_E_independence_response.0.d
+	picture = GFX_report_event_ast_army
+	is_triggered_only = yes
+	# # #
+	option = {
+		name = GFTR_E_independence_response.0.a
+		ai_chance = {
+			factor = 1
+		}
+		
+	}
+}
+# # # # # # # # # # # # # # #
+country_event = {
+	id = GFTR_E_independence_response.1
+	title = GFTR_E_independence_response.1.t
+	desc = GFTR_E_independence_response.1.d
+	picture = GFX_report_event_baltic_entente_one
+	is_triggered_only = yes
+	# # #
+	option = {
+		name = GFTR_E_independence_response.1.a
+		ai_chance = {
+			factor = 0.2
+		}
+
+		add_political_power = -100
+		add_stability = -0.05
+		add_war_support = -0.1
+		
+		FROM = {
+			set_autonomy = {
+				target = ROOT
+				autonomy_state = autonomy_free
+			}
+		}
+
+		leave_faction = yes
+		
+		declare_war_on = {
+			target = event_target:GFTR_save_overlord
+			type = annex_everything
+		}
+	}
+	# # #
+	option = {
+		name = GFTR_E_independence_response.1.b
+		ai_chance = {
+			factor = 1
+		}
+
+		add_political_power = 50
+		add_autonomy_score = { value = -1000 }
+	}
+}
+# # # # # # # # # # # # # # #
+country_event = {
+	id = GFTR_E_independence_response.2
+	title = GFTR_E_independence_response.2.t
+	desc = GFTR_E_independence_response.2.d
+	picture = GFX_report_event_DEN_danish_politics
+	is_triggered_only = yes
+	# # #
+	option = {
+		name = GFTR_E_independence_response.2.a
+		ai_chance = {
+			factor = 1
+		}
+		
+	}
+}
+# # # # # # # # # # # # # # #
+country_event = {
+	id = GFTR_E_independence_response.3
+	title = GFTR_E_independence_response.3.t
+	desc = GFTR_E_independence_response.3.d
+	picture = GFX_report_event_china_ledo_road
+	is_triggered_only = yes
+	# # #
+	option = {
+		name = GFTR_E_independence_response.3.a
+		ai_chance = {
+			factor = 1
+		}
+		
+	}
+}
+# # # # # # # # # # # # # # #
+country_event = {
+	id = GFTR_E_independence_response.4
+	title = GFTR_E_independence_response.4.t
+	desc = GFTR_E_independence_response.4.d
+	picture = GFX_report_event_ast_army
+	is_triggered_only = yes
+	# # #
+	option = {
+		name = GFTR_E_independence_response.4.a
+		ai_chance = {
+			factor = 1
+		}
+		
+	}
+}
+# # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # #
+country_event = {
+	id = GFTR_E_change_of_power.1
+	title = GFTR_E_change_of_power.1.t
+	desc = GFTR_E_change_of_power.1.d
+	picture = GFX_report_event_baltic_entente_one
+	is_triggered_only = yes
+	# # #
+	option = {
+		name = GFTR_E_change_of_power.1.a
+		ai_chance = {
+			factor = 1
+		}
+		
+	}
+}
+# # # # # # # # # # # # # # #
+country_event = {
+	id = GFTR_E_change_of_power.2
+	title = GFTR_E_change_of_power.2.t
+	desc = GFTR_E_change_of_power.2.d
+	picture = GFX_report_event_ast_army
+	is_triggered_only = yes
+	# # #
+	option = {
+		name = GFTR_E_change_of_power.2.a
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+# # # # # # # # # # # # # # #
+country_event = {
+	id = GFTR_E_change_of_power.3
+	title = GFTR_E_change_of_power.3.t
+	desc = GFTR_E_change_of_power.3.d
+	picture = GFX_report_event_ast_army
+	is_triggered_only = yes
+	# # #
+	option = {
+		name = GFTR_E_change_of_power.3.a
+		ai_chance = {
+			factor = 1
+		}
+	}
+}

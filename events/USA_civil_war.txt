@@ -1,0 +1,1257 @@
+﻿###########################
+# USA Civil War Events
+###########################
+
+add_namespace = usa_civil_war
+add_namespace = usa_civil_war_com
+add_namespace = usa_civil_war_dem
+add_namespace = usa_civil_war_neu
+
+#裂开的房子
+country_event = {
+	id = usa_civil_war.1
+	title = usa_civil_war.1.t
+	desc = usa_civil_war.1.desc
+	is_triggered_only = yes
+	#picture = GFX_report_event_gre_megali_conference_signing
+
+	option = {
+		name = usa_civil_war.1.a
+		
+	}
+}
+
+#裂开的房子--分裂！（选择共产主义路线）
+country_event = {
+	id = usa_civil_war.2
+	title = usa_civil_war.2.t
+	desc = usa_civil_war.2.desc
+	is_triggered_only = yes
+	#picture = GFX_report_event_gre_megali_conference_signing
+
+	immediate = {
+		hidden_effect = {
+			ROOT = {
+				add_offsite_building = { type = arms_factory level = 5 }
+				add_ideas = war_economy
+				add_timed_idea = {
+					idea = USA_guoji_zongdui
+					days = 200
+				}
+
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}	
+				add_popularity = {
+					ideology = communism
+					popularity = 0.7
+				}
+
+				division_template = {
+					name = "Angry Workers"
+					is_locked = no
+					division_names_group = USA_INF_01
+					role = infantry
+					priority = 0
+					regiments = {
+						militia = { x = 0 y = 0 }
+						militia = { x = 0 y = 1 }
+						militia = { x = 0 y = 2 }
+						militia = { x = 1 y = 0 }
+						militia = { x = 1 y = 1 }
+						militia = { x = 1 y = 2 }
+						militia = { x = 2 y = 0 }
+						militia = { x = 2 y = 1 }
+						militia = { x = 2 y = 2 }
+					}
+					support = {
+					}
+				}
+
+				create_country_leader = {
+					name = "William Foster"
+					#desc = "POLITICS_ALF_LANDON_DESC"
+					picture = GFX_portrait_USA_willam_foster_large
+					expire = "1965.1.1"
+					ideology = marxism
+					traits = {
+						USA_gonghuizuzhizhe
+					}
+				}
+
+				
+
+				add_equipment_to_stockpile = { 
+					type = infantry_equipment
+					amount = 8000
+					producer = USA
+				}
+				add_equipment_to_stockpile = { 
+					type = infantry_equipment
+					amount = 5000
+					producer = SOV
+				}
+
+				delete_unit = {
+					disband = yes
+				}
+			}
+			###美利坚联盟国
+			create_dynamic_country = {
+				original_tag = USA
+				set_politics = {
+					ruling_party = fascism
+					elections_allowed = no
+				}	
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.7
+				}
+
+				every_state = {
+					limit = {
+						OR = {
+							state = 374
+							state = 375
+							state = 376
+							state = 377
+							#state = 379
+							state = 380
+							state = 381
+							state = 382
+							state = 383
+							state = 384
+							state = 387
+							state = 388
+							state = 389
+							state = 390
+						}
+					}
+					transfer_state_to = PREV
+				}
+			}
+			390 = {
+				controller = {
+					USA = {
+						every_unit_leader = {
+							random_select_amount = 12
+							set_nationality = PREV
+						}
+					}
+					
+					add_offsite_building = { type = arms_factory level = 5 }
+					add_ideas = war_economy
+					add_ideas = USA_jingji_tingzhi
+					add_ideas = great_depression
+					add_ideas = US_silver_army		
+
+					add_dynamic_modifier = {modifier= USA_army}
+					add_to_variable = {USA_conscription_factor = -0.3}
+					add_to_variable = {USA_army_attack_factor = -0.10 }
+					add_to_variable = {USA_army_defence_factor = -0.10 }
+
+					
+
+
+					division_template = {
+						name = "Sliver Army"
+						is_locked = no
+						division_names_group = USA_INF_01
+						role = infantry
+						priority = 0
+						regiments = {
+							militia = { x = 0 y = 0 }
+							militia = { x = 0 y = 1 }
+							militia = { x = 0 y = 2 }
+							militia = { x = 1 y = 0 }
+							militia = { x = 1 y = 1 }
+							militia = { x = 1 y = 2 }
+							militia = { x = 2 y = 0 }
+							militia = { x = 2 y = 1 }
+							militia = { x = 2 y = 2 }
+						}
+						support = {
+						}
+					}
+
+					create_country_leader = {
+						name = "William Dudley Pelley"
+						desc = "POLITICS_pelly_DESC"
+						picture = GFX_Portrait_USA_William_Dudley_Pelley
+						expire = "1965.1.1"
+						ideology = fascism_ideology
+						traits = {
+							
+						}
+					}
+
+					random_owned_controlled_state = {
+						create_unit = {
+							division = "division_template = \"Sliver Army\" start_experience_factor = 0.7 start_equipment_factor = 0.7"
+							owner = PREV
+							count = 60
+						}
+					}
+
+					add_equipment_to_stockpile = { 
+						type = infantry_equipment
+						amount = 8000
+						producer = USA
+					}
+				}
+			}
+
+			###美利坚合众国
+			create_dynamic_country = {
+				original_tag = USA
+				set_politics = {
+					ruling_party = democratic
+					elections_allowed = no
+				}	
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.7
+				}
+
+				every_state = {
+					limit = {
+						OR = {
+							#西海岸
+							state = 385
+							state = 386
+							state = 378
+							state = 379
+							#东海岸
+							state = 357
+							state = 358
+							state = 359
+							state = 360
+							state = 361
+						}
+					}
+					transfer_state_to = PREV
+				}
+			}
+			361 = {
+				controller = {
+					USA = {
+						every_unit_leader = {
+							random_select_amount = 12
+							set_nationality = PREV
+						}
+					}
+
+					load_focus_tree = { tree = usa_focus keep_completed = no }
+					unlock_national_focus = USA_zhunbei_37_xuanju
+					unlock_national_focus = USA_continue_the_new_deal
+					unlock_national_focus = USA_neutrality_act
+					set_variable = { var = senators_support value = 64 }
+					set_variable = { var = senators_total value = 96 }
+					set_variable = { var = representatives_support value = 288 }
+					set_variable = { var = representatives_total value = 435 }
+					set_variable = { var = quorum_low value = 39 }
+					set_variable = { var = quorum_medium value = 49 }
+					set_variable = { var = quorum_high value = 58 }
+
+
+					add_offsite_building = { type = arms_factory level = 5 }
+					add_ideas = USA_jingji_tingzhi
+					add_ideas = great_depression
+					add_ideas = war_economy
+					add_ideas = USA_fight_for_us 
+					add_timed_idea = {
+						idea = USA_yingfa_ganshe
+						days = 200
+					}
+
+					add_dynamic_modifier = {modifier= USA_army}
+					add_to_variable = {USA_conscription_factor = -0.3}
+					add_to_variable = {USA_army_attack_factor = -0.10 }
+					add_to_variable = {USA_army_defence_factor = -0.10 }
+
+					create_country_leader = {
+						name = "Franklin Delano Roosevelt"
+						desc = "POLITICS_roosevelt_DESC"
+						picture = GFX_Portrait_USA_William_Dudley_Pelley
+						expire = "1965.1.1"
+						ideology = liberalism
+						traits = {
+							
+						}
+					}
+
+					360 = {
+						create_unit = {
+							division = "division_template = \"Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+							owner = PREV
+							count = 6
+						}
+					}
+
+					361 = {
+						create_unit = {
+							division = "division_template = \"National Guard Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+							owner = PREV
+							count = 6
+						}
+					}
+
+					379 = {
+						create_unit = {
+							division = "division_template = \"Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+							owner = PREV
+							count = 12
+						}
+					}
+
+					385 = {
+						create_unit = {
+							division = "division_template = \"National Guard Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+							owner = PREV
+							count = 6
+						}
+					}
+
+					386 = {
+						create_unit = {
+							division = "division_template = \"Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+							owner = PREV
+							count = 12
+						}
+					}
+
+					add_equipment_to_stockpile = { 
+						type = infantry_equipment
+						amount = 8000
+						producer = USA
+					}
+				}
+			}
+
+			######分享财富运动#######
+			create_dynamic_country = {
+				original_tag = USA
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+				}	
+				add_popularity = {
+					ideology = neutrality
+					popularity = 0.7
+				}
+
+				every_state = {
+					limit = {
+						OR = {
+							state = 370
+							state = 371
+							state = 372
+						}
+					}
+					transfer_state_to = PREV
+				}
+			}
+			370 = {
+				controller = {
+					add_offsite_building = { type = arms_factory level = 5 }
+					add_ideas = war_economy
+					add_ideas = US_Heritage_of_long
+					add_ideas = USA_jingji_tingzhi
+					add_ideas = great_depression
+				
+					division_template = {
+						name = "US inf"
+						is_locked = no
+						division_names_group = USA_INF_01
+						role = infantry
+						priority = 0
+						regiments = {
+							militia = { x = 0 y = 0 }
+							militia = { x = 0 y = 1 }
+							militia = { x = 0 y = 2 }
+							militia = { x = 1 y = 0 }
+							militia = { x = 1 y = 1 }
+							militia = { x = 1 y = 2 }
+							militia = { x = 2 y = 0 }
+							militia = { x = 2 y = 1 }
+							militia = { x = 2 y = 2 }
+						}
+						support = {
+						}
+					}
+
+					set_cosmetic_tag = USA_APG
+
+					create_country_leader = {
+						name = "Earl K Long"
+						desc = "POLITICS_Earl_DESC"
+						picture = GFX_Earl_K_long
+						expire = "1965.1.1"
+						ideology = moderatism
+						traits = {
+							
+						}
+					}
+
+					random_owned_controlled_state = {
+						create_unit = {
+							division = "division_template = \"US inf\" start_experience_factor = 0.7 start_equipment_factor = 0.7"
+							owner = PREV
+							count = 20
+						}
+					}
+
+					add_equipment_to_stockpile = { 
+						type = infantry_equipment
+						amount = 1000
+						producer = USA
+					}
+				}
+			}
+
+			#######基督教阵线#######
+			create_dynamic_country = {
+				original_tag = USA
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+				}	
+				add_popularity = {
+					ideology = neutrality
+					popularity = 0.7
+				}
+
+				every_state = {
+					limit = {
+						OR = {
+							state = 362
+							state = 363
+							state = 368
+							state = 369
+							state = 816
+						}
+					}
+					transfer_state_to = PREV
+				}
+
+				362 = {
+					controller = {
+						add_offsite_building = { type = arms_factory level = 5 }
+						add_ideas = war_economy
+						add_ideas = US_listen_to_father
+						add_ideas = USA_jingji_tingzhi
+						add_ideas = great_depression
+
+
+						division_template = {
+							name = "UCF inf"
+							is_locked = no
+							division_names_group = USA_INF_01
+							role = infantry
+							priority = 0
+							regiments = {
+								militia = { x = 0 y = 0 }
+								militia = { x = 0 y = 1 }
+								militia = { x = 0 y = 2 }
+								militia = { x = 1 y = 0 }
+								militia = { x = 1 y = 1 }
+								militia = { x = 1 y = 2 }
+							}
+							support = {
+							}
+						}
+
+						set_cosmetic_tag = USA_UCF
+
+						create_country_leader = {
+							name = "Charles Coughlin"
+							#desc = "POLITICS_ALF_LANDON_DESC"
+							picture = GFX_charls_kaoflin
+							expire = "1965.1.1"
+							ideology = moderatism
+							traits = {
+								
+							}
+						}
+
+						random_owned_controlled_state = {
+							create_unit = {
+								division = "division_template = \"UCF inf\" start_experience_factor = 0.7 start_equipment_factor = 0.7"
+								owner = PREV
+								count = 20
+							}
+						}
+
+						add_equipment_to_stockpile = { 
+							type = infantry_equipment
+							amount = 1000
+							producer = USA
+						}
+					}
+				}		
+			}
+
+
+			#######3K党##########
+			create_dynamic_country = {
+				original_tag = USA
+				set_politics = {
+					ruling_party = fascism
+					elections_allowed = no
+				}	
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.7
+				}
+
+				every_state = {
+					limit = {
+						OR = {
+							state = 364
+							state = 365
+							state = 366
+							state = 367
+
+						}
+					}
+					transfer_state_to = PREV
+				}
+
+				364 = {
+					controller = {
+						add_offsite_building = { type = arms_factory level = 5 }
+						add_ideas = war_economy
+						add_ideas = USA_jingji_tingzhi
+						add_ideas = great_depression
+
+
+						division_template = {
+							name = "KKK inf"
+							is_locked = no
+							division_names_group = USA_INF_01
+							role = infantry
+							priority = 0
+							regiments = {
+								militia = { x = 0 y = 0 }
+								militia = { x = 0 y = 1 }
+								militia = { x = 0 y = 2 }
+								militia = { x = 1 y = 0 }
+								militia = { x = 1 y = 1 }
+								militia = { x = 1 y = 2 }
+							}
+							support = {
+							}
+						}
+
+						set_cosmetic_tag = USA_KKK
+
+						create_country_leader = {
+							name = "Charles Coughlin"
+							#desc = "POLITICS_ALF_LANDON_DESC"
+							picture = GFX_charls_kaoflin
+							expire = "1965.1.1"
+							ideology = fascism_ideology 
+							traits = {
+								
+							}
+						}
+
+						random_owned_controlled_state = {
+							create_unit = {
+								division = "division_template = \"KKK inf\" start_experience_factor = 0.7 start_equipment_factor = 0.7"
+								owner = PREV
+								count = 20
+							}
+						}
+
+						add_equipment_to_stockpile = { 
+							type = infantry_equipment
+							amount = 1000
+							producer = USA
+						}
+					}
+				}		
+			}
+			
+
+
+		}
+	
+	}
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = usa_civil_war.2.a
+		set_global_flag = USA_2ND_us_civil_war_BEGUN_flag
+
+		hidden_effect = {
+			every_country = {
+				limit = {
+					original_tag = USA
+				}
+				set_country_flag = no_to_unification_flag
+			}
+			395 = {
+				create_unit = {
+					division = "division_template = \"Angry Workers\" start_experience_factor = 0.7 start_equipment_factor = 0.7"
+					owner = ROOT
+					count = 8
+				}
+			}
+
+			396 = {
+				create_unit = {
+					division = "division_template = \"Angry Workers\" start_experience_factor = 0.7 start_equipment_factor = 0.7"
+					owner = ROOT
+					count = 8
+				}
+			}
+
+			391 = {
+				create_unit = {
+					division = "division_template = \"Angry Workers\" start_experience_factor = 0.7 start_equipment_factor = 0.7"
+					owner = ROOT
+					count = 8
+				}
+			}
+
+			392 = {
+				create_unit = {
+					division = "division_template = \"National Guard Division\" start_experience_factor = 0.7 start_equipment_factor = 0.7"
+					owner = ROOT
+					count = 6
+				}
+			}
+
+			393 = {
+				create_unit = {
+					division = "division_template = \"National Guard Division\" start_experience_factor = 0.7 start_equipment_factor = 0.7"
+					owner = ROOT
+					count = 6
+				}
+			}
+		}
+		
+		
+	}
+}
+
+#裂开的房子--分裂！修正版
+country_event = {
+	id = usa_civil_war.3
+	title = usa_civil_war.3.t
+	desc = usa_civil_war.3.desc
+	is_triggered_only = yes
+	#picture = GFX_report_event_gre_megali_conference_signing
+
+	immediate = {
+		hidden_effect = {
+			UFE = {
+				USA = {
+					USA_lucian_truscott = {
+						set_nationality = UFE
+					}
+					USA_mark_clark = {
+						set_nationality = UFE
+					}
+					USA_douglas_macarthur = {
+						set_nationality = UFE
+					}
+					USA_walter_krueger = {
+						set_nationality = UFE
+					}
+					USA_lloyd_fredendall = {
+						set_nationality = UFE
+					}
+					USA_leslie_mcnair = {
+						set_nationality = UFE
+					}
+					USA_jonathan_wainwright = {
+						set_nationality = UFE
+					}
+					USA_russell_hartle = {
+						set_nationality = UFE
+					}
+					USA_leonard_gerow = {
+						set_nationality = UFE
+					}
+					USA_edward_brooks = {
+						set_nationality = UFE
+					}
+				}
+
+				every_state = {
+					limit = {
+						OR = {
+							state = 374
+							state = 375
+							state = 376
+							state = 377
+							#state = 379
+							state = 380
+							state = 381
+							state = 382
+							state = 383
+							state = 384
+							state = 387
+							state = 388
+							state = 389
+							state = 390
+						}
+					}
+					transfer_state_to = UFE
+					add_core_of = UFE
+				}
+				390 = {
+					controller = {
+						USA = {
+							every_unit_leader = {
+								random_select_amount = 12
+								set_nationality = PREV
+							}
+						}
+						
+						
+						add_ideas = war_economy
+						add_ideas = USA_jingji_tingzhi
+						add_ideas = great_depression
+						add_ideas = US_silver_army		
+
+						add_dynamic_modifier = {modifier= USA_army}
+						add_to_variable = {USA_conscription_factor = -0.3}
+						add_to_variable = {USA_army_attack_factor = -0.10 }
+						add_to_variable = {USA_army_defence_factor = -0.10 }
+
+						
+
+
+						division_template = {
+							name = "Sliver Army"
+							is_locked = no
+							division_names_group = USA_INF_01
+							role = infantry
+							priority = 0
+							regiments = {
+								militia = { x = 0 y = 0 }
+								militia = { x = 0 y = 1 }
+								militia = { x = 0 y = 2 }
+								militia = { x = 1 y = 0 }
+								militia = { x = 1 y = 1 }
+								militia = { x = 1 y = 2 }
+								militia = { x = 2 y = 0 }
+								militia = { x = 2 y = 1 }
+								militia = { x = 2 y = 2 }
+							}
+							support = {
+							}
+						}
+
+						
+
+						random_owned_controlled_state = {
+							create_unit = {
+								division = "division_template = \"Sliver Army\" start_experience_factor = 0.7 start_equipment_factor = 0.7"
+								owner = UFE
+								count = 60
+							}
+						}
+
+						add_equipment_to_stockpile = { 
+							type = infantry_equipment
+							amount = 8000
+							producer = USA
+						}
+					}
+				}
+			}
+						
+			USA = {
+
+				delete_unit = {
+					disband = yes
+				}
+
+				every_state = {
+					limit = {
+						OR = {
+							#西海岸
+							state = 385
+							state = 386
+							state = 378
+							state = 379
+							#东海岸
+							state = 357
+							state = 358
+							state = 359
+							state = 360
+							state = 361
+						}
+					}
+					transfer_state_to = PREV
+				}
+
+				load_focus_tree = { tree = usa_focus keep_completed = no }
+				unlock_national_focus = USA_zhunbei_37_xuanju
+				unlock_national_focus = USA_continue_the_new_deal
+				unlock_national_focus = USA_neutrality_act
+				set_variable = { var = senators_support value = 64 }
+				set_variable = { var = senators_total value = 96 }
+				set_variable = { var = representatives_support value = 288 }
+				set_variable = { var = representatives_total value = 435 }
+				set_variable = { var = quorum_low value = 39 }
+				set_variable = { var = quorum_medium value = 49 }
+				set_variable = { var = quorum_high value = 58 }
+
+				add_ideas = war_economy
+				add_timed_idea = {
+					idea = USA_yingfa_ganshe
+					days = 200
+				}
+
+
+				create_country_leader = {
+					name = "Franklin Delano Roosevelt"
+					desc = "POLITICS_roosevelt_DESC"
+					picture = GFX_Portrait_USA_William_Dudley_Pelley
+					expire = "1965.1.1"
+					ideology = liberalism
+					traits = {
+						
+					}
+				}
+
+				360 = {
+					create_unit = {
+						division = "division_template = \"Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+						owner = USA
+						count = 6
+					}
+				}
+
+				361 = {
+					create_unit = {
+						division = "division_template = \"National Guard Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+						owner = USA
+						count = 6
+					}
+				}
+
+				379 = {
+					create_unit = {
+						division = "division_template = \"Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+						owner = USA
+						count = 12
+					}
+				}
+
+				385 = {
+					create_unit = {
+						division = "division_template = \"National Guard Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+						owner = USA
+						count = 6
+					}
+				}
+
+				386 = {
+					create_unit = {
+						division = "division_template = \"Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+						owner = USA
+						count = 12
+					}
+				}
+
+				add_equipment_to_stockpile = { 
+					type = infantry_equipment
+					amount = 3000
+					producer = USA
+				}
+			}
+
+			APG = {
+				every_state = {
+					limit = {
+						OR = {
+							state = 370
+							state = 371
+							state = 372
+						}
+					}
+					transfer_state_to = APG
+					add_core_of = APG
+				}
+
+				load_focus_tree = APG_focus
+
+
+				add_ideas = war_economy
+				add_ideas = US_Heritage_of_long
+				add_ideas = USA_jingji_tingzhi
+				add_ideas = great_depression
+				add_ideas = APG_xingzheng_hunluan
+				add_ideas = HAW_cuiruo_zhengquan
+
+				division_template = {
+					name = "US inf"
+					is_locked = no
+					division_names_group = USA_INF_01
+					role = infantry
+					priority = 0
+					regiments = {
+						militia = { x = 0 y = 0 }
+						militia = { x = 0 y = 1 }
+						militia = { x = 0 y = 2 }
+						militia = { x = 1 y = 0 }
+						militia = { x = 1 y = 1 }
+						militia = { x = 1 y = 2 }
+						militia = { x = 2 y = 0 }
+						militia = { x = 2 y = 1 }
+						militia = { x = 2 y = 2 }
+					}
+					support = {
+					}
+				}
+
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "division_template = \"US inf\" start_experience_factor = 0.7 start_equipment_factor = 0.7"
+						owner = APG
+						count = 20
+					}
+				}
+
+				add_equipment_to_stockpile = { 
+					type = infantry_equipment
+					amount = 1000
+					producer = USA
+				}
+			}
+
+			UCF = {
+				every_state = {
+					limit = {
+						OR = {
+							state = 362
+							state = 363
+							state = 368
+							state = 369
+							state = 816
+						}
+					}
+					transfer_state_to = UCF
+					add_core_of = UCF
+				}
+
+				362 = {
+					controller = {
+
+						add_ideas = war_economy
+						add_ideas = US_listen_to_father
+						add_ideas = USA_jingji_tingzhi
+						add_ideas = great_depression
+
+
+						division_template = {
+							name = "UCF inf"
+							is_locked = no
+							division_names_group = USA_INF_01
+							role = infantry
+							priority = 0
+							regiments = {
+								militia = { x = 0 y = 0 }
+								militia = { x = 0 y = 1 }
+								militia = { x = 0 y = 2 }
+								militia = { x = 1 y = 0 }
+								militia = { x = 1 y = 1 }
+								militia = { x = 1 y = 2 }
+							}
+							support = {
+							}
+						}
+
+						create_country_leader = {
+							name = "Charles Coughlin"
+							#desc = "POLITICS_ALF_LANDON_DESC"
+							picture = GFX_charls_kaoflin
+							expire = "1965.1.1"
+							ideology = moderatism
+							traits = {
+								
+							}
+						}
+
+						random_owned_controlled_state = {
+							create_unit = {
+								division = "division_template = \"UCF inf\" start_experience_factor = 0.7 start_equipment_factor = 0.7"
+								owner = UCF
+								count = 20
+							}
+						}
+
+						add_equipment_to_stockpile = { 
+							type = infantry_equipment
+							amount = 1000
+							producer = USA
+						}
+					}
+				}
+			}
+
+			KKK = {
+				every_state = {
+					limit = {
+						OR = {
+							state = 364
+							state = 365
+							state = 366
+							state = 367
+
+						}
+					}
+					add_core_of = KKK
+					transfer_state_to = KKK
+				}
+
+				364 = {
+					controller = {
+
+						add_ideas = war_economy
+						add_ideas = USA_jingji_tingzhi
+						add_ideas = great_depression
+
+
+						division_template = {
+							name = "KKK inf"
+							is_locked = no
+							division_names_group = USA_INF_01
+							role = infantry
+							priority = 0
+							regiments = {
+								militia = { x = 0 y = 0 }
+								militia = { x = 0 y = 1 }
+								militia = { x = 0 y = 2 }
+								militia = { x = 1 y = 0 }
+								militia = { x = 1 y = 1 }
+								militia = { x = 1 y = 2 }
+							}
+							support = {
+							}
+						}
+
+						create_country_leader = {
+							name = "Charles Coughlin"
+							#desc = "POLITICS_ALF_LANDON_DESC"
+							picture = GFX_charls_kaoflin
+							expire = "1965.1.1"
+							ideology = fascism_ideology 
+							traits = {
+								
+							}
+						}
+
+						random_owned_controlled_state = {
+							create_unit = {
+								division = "division_template = \"KKK inf\" start_experience_factor = 0.7 start_equipment_factor = 0.7"
+								owner = KKK
+								count = 20
+							}
+						}
+
+						add_equipment_to_stockpile = { 
+							type = infantry_equipment
+							amount = 1000
+							producer = USA
+						}
+					}
+				}	
+			}
+
+			CFA = {
+				USA = {
+					USA_GCGJ = {
+						set_nationality = CFA
+					}
+					USA_tuomasi_handy = {
+						set_nationality = CFA
+					}
+					USA_yuesefu_maikenani = {
+						set_nationality = CFA
+					}
+					USA_anna_luochebao = {
+						set_nationality = CFA
+					}
+					USA_willam_foster = {
+						set_nationality = CFA
+					}
+					USA_earl_browder = {
+						set_nationality = CFA
+					}
+				}
+				every_state = {
+					limit = {
+						OR = {
+							state = 391
+							state = 392
+							state = 393
+							state = 394
+							state = 395
+							state = 396
+							state = 373
+
+						}
+					}
+					add_core_of = CFA
+					transfer_state_to = CFA
+				}
+
+				division_template = {
+					name = "Angry Workers"
+					is_locked = no
+					division_names_group = USA_INF_01
+					role = infantry
+					priority = 0
+					regiments = {
+						militia = { x = 0 y = 0 }
+						militia = { x = 0 y = 1 }
+						militia = { x = 0 y = 2 }
+						militia = { x = 1 y = 0 }
+						militia = { x = 1 y = 1 }
+						militia = { x = 1 y = 2 }
+						militia = { x = 2 y = 0 }
+						militia = { x = 2 y = 1 }
+						militia = { x = 2 y = 2 }
+					}
+					support = {
+					}
+				}
+
+				add_ideas = war_economy
+				add_timed_idea = {
+					idea = USA_guoji_zongdui
+					days = 200
+				}
+
+				
+
+				hidden_effect = {
+					395 = {
+						create_unit = {
+							division = "division_template = \"Angry Workers\" start_experience_factor = 0.7 start_equipment_factor = 0.7"
+							owner = CFA
+							count = 8
+						}
+					}
+
+					396 = {
+						create_unit = {
+							division = "division_template = \"Angry Workers\" start_experience_factor = 0.7 start_equipment_factor = 0.7"
+							owner = CFA
+							count = 8
+						}
+					}
+
+					391 = {
+						create_unit = {
+							division = "division_template = \"Angry Workers\" start_experience_factor = 0.7 start_equipment_factor = 0.7"
+							owner = CFA
+							count = 8
+						}
+					}
+
+					392 = {
+						create_unit = {
+							division = "division_template = \"National Guard Division\" start_experience_factor = 0.7 start_equipment_factor = 0.7"
+							owner = CFA
+							count = 6
+						}
+					}
+
+					393 = {
+						create_unit = {
+							division = "division_template = \"National Guard Division\" start_experience_factor = 0.7 start_equipment_factor = 0.7"
+							owner = CFA
+							count = 6
+						}
+					}
+				}
+			}	
+
+			every_country = {
+				limit = {
+					OR = {
+						TAG = USA
+						TAG = UFE
+						TAG = CFA
+						TAG = KKK
+						TAG = UCF
+						TAG = APG
+					}
+				}
+				add_ideas = USA_fight_for_us2
+
+				add_offsite_building = { type = arms_factory level = 5 }
+
+				add_equipment_to_stockpile = { 
+					type = infantry_equipment
+					amount = 3000
+					producer = USA
+				}
+
+				set_country_flag = no_to_unification_flag
+			}		
+		}
+	
+	}
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = usa_civil_war.3.a
+		set_global_flag = USA_2ND_us_civil_war_BEGUN_flag
+			
+	}
+}
+
+#裂开的房子--美共转入地下
+country_event = {
+	id = usa_civil_war_com.1
+	title = usa_civil_war_com.1.t
+	desc = usa_civil_war_com.1.desc
+	is_triggered_only = yes
+	#picture = GFX_report_event_gre_megali_conference_signing
+
+	option = {
+		name = usa_civil_war_com.1.a
+		
+	}
+}
+
+#裂开的房子--民主党共和党宣布结成联盟
+country_event = {
+	id = usa_civil_war_dem.1
+	title = usa_civil_war_dem.1.t
+	desc = usa_civil_war_dem.1.desc
+	is_triggered_only = yes
+	#picture = GFX_report_event_gre_megali_conference_signing
+
+	option = {
+		name = usa_civil_war_dem.1.a
+		
+	}
+}
+
+#裂开的房子--路易斯安娜州纪念朗游行
+country_event = {
+	id = usa_civil_war_neu.1
+	title = usa_civil_war_neu.1.t
+	desc = usa_civil_war_neu.1.desc
+	is_triggered_only = yes
+	#picture = GFX_report_event_gre_megali_conference_signing
+
+	option = {
+		name = usa_civil_war_neu.1.a
+		
+	}
+}
+

@@ -1,0 +1,1331 @@
+# National spirits
+# I id|picture|Name (English, shown in game)
+# M modifier = value   (any number of M lines)
+# Balance guideline (MP): path spirits max ~3 effects, single values <= 15 % except deliberate trade-offs.
+
+# ---------- General / transition ----------
+I FRW_revolutionary_upheaval|generic_disjointed_gov|Revolutionary Upheaval
+M stability_factor = -0.10
+M political_power_gain = -0.20
+
+# ---------- Democratic ----------
+I FRW_popular_front|generic_democratic_drift_bonus|Front Populaire
+M political_power_gain = 0.10
+M stability_factor = 0.05
+
+I FRW_national_union|generic_pp_unity_bonus|Union Nationale
+M political_power_gain = 0.10
+M war_support_factor = 0.05
+
+I FRW_paid_holidays|generic_goods_red_bonus|Congés Payés
+M stability_factor = 0.05
+M monthly_population = 0.05
+
+I FRW_republican_volunteers_spirit|generic_volunteer_expedition_bonus|Republican Volunteers
+M send_volunteer_size = 2
+M experience_gain_army = 0.05
+
+I FRW_decree_laws_spirit|generic_political_support|Decree Laws
+M political_power_gain = 0.10
+M war_support_factor = 0.05
+M stability_factor = -0.03
+
+I FRW_armee_de_metier_spirit|generic_army_war_college|Armée de Métier
+M experience_gain_army = 0.10
+M army_org_factor = 0.05
+M conscription_factor = -0.10
+
+I FRW_presidential_republic|generic_constitutional_guarantees|Presidential Republic
+M political_power_gain = 0.10
+M stability_factor = 0.05
+M army_attack_factor = 0.03
+
+I FRW_european_ideal|generic_conference|The European Ideal
+M opinion_gain_monthly_factor = 0.20
+M trade_opinion_factor = 0.20
+
+I FRW_edc|generic_research_bonus|Common Defence Council
+M research_speed_factor = 0.05
+M army_defence_factor = 0.05
+
+I FRW_benelux_customs|generic_foreign_capital|Customs Union with Belgium
+M local_resources_factor = 0.05
+M production_speed_buildings_factor = 0.03
+
+I FRW_republican_consensus|generic_pp_unity_bonus|Republican Consensus
+M stability_factor = 0.05
+M war_support_factor = 0.05
+M political_power_gain = 0.05
+
+# ---------- Democratic: extension ----------
+I FRW_forty_hours|generic_goods_red_bonus|The Forty-Hour Week
+M stability_factor = 0.08
+M production_factory_efficiency_gain_factor = -0.05
+
+I FRW_forty_hours_exempt|generic_goods_red_bonus|The Forty-Hour Week (Arsenals Exempt)
+M stability_factor = 0.06
+M production_speed_arms_factory_factor = 0.05
+
+I FRW_jean_zay|generic_research_bonus|The Jean Zay Reforms
+M research_speed_factor = 0.05
+M monthly_population = 0.03
+
+I FRW_popular_front_2|generic_democratic_drift_bonus|Bread, Peace and Liberty
+M political_power_gain = 0.10
+M stability_factor = 0.10
+M war_support_factor = 0.03
+
+I FRW_mandel_mobilisation|generic_army_african_1|Mandel's Colonial Levy
+M conscription = 0.005
+M experience_gain_army = 0.03
+
+I FRW_edge_of_sword|generic_army_war_college|The Edge of the Sword
+M command_power_gain_mult = 0.10
+M army_leader_start_level = 1
+
+I FRW_certaine_idee_spirit|generic_constitutional_guarantees|A Certain Idea of France
+M political_power_gain = 0.10
+M stability_factor = 0.08
+M war_support_factor = 0.05
+
+# ---------- Communist ----------
+I FRW_party_discipline|generic_communism_drift_bonus|Party Discipline
+M political_power_gain = 0.10
+M drift_defence_factor = 0.20
+
+I FRW_permanent_revolution|generic_syndicalism|Permanent Revolution
+M war_support_factor = 0.05
+M conscription_factor = 0.05
+
+I FRW_armee_rouge|generic_communist_army|Armée Rouge
+M conscription_factor = 0.10
+M army_defence_factor = 0.05
+
+I FRW_workers_councils_spirit|generic_local_self_management|Workers' Councils
+M production_factory_efficiency_gain_factor = 0.10
+M stability_factor = 0.05
+
+I FRW_milices_ouvrieres|generic_manpower_bonus|Workers' Militias
+M conscription_factor = 0.15
+M army_org_factor = -0.05
+
+I FRW_world_revolution|generic_communism_drift_bonus|World Revolution
+M justify_war_goal_time = -0.25
+M communism_drift = 0.05
+
+I FRW_fraternal_peoples|generic_org_of_african_unity|Fraternal Peoples
+M research_speed_factor = 0.03
+M opinion_gain_monthly_factor = 0.15
+
+I FRW_lutte_finale|generic_morale_bonus|C'est la Lutte Finale
+M army_attack_factor = 0.05
+M war_support_factor = 0.05
+
+# ---------- Communist: extension ----------
+I FRW_fils_du_peuple_spirit|generic_communism_drift_bonus|Son of the People
+M political_power_gain = 0.10
+M drift_defence_factor = 0.30
+M stability_factor = 0.05
+
+I FRW_armee_rouge_2|generic_communist_army|Armée Rouge – Commissar System
+M conscription_factor = 0.15
+M army_defence_factor = 0.08
+M army_attack_factor = 0.03
+
+I FRW_commune_federation|generic_local_self_management|Federation of Communes
+M stability_factor = 0.05
+M political_power_gain = 0.10
+M production_speed_buildings_factor = 0.05
+
+I FRW_armee_ouvriere|generic_manpower_bonus|The Workers' Army
+M conscription_factor = 0.15
+M army_morale_factor = 0.05
+
+I FRW_permanent_revolution_2|generic_syndicalism|The Republic of Labour
+M war_support_factor = 0.08
+M conscription_factor = 0.05
+M production_factory_efficiency_gain_factor = 0.05
+
+# ---------- Fascist ----------
+I FRW_travail_famille_patrie|generic_fascism_drift_bonus|Travail, Famille, Patrie
+M stability_factor = 0.05
+M political_power_gain = 0.05
+M monthly_population = 0.05
+
+I FRW_parti_populaire|generic_fascism_rising|Parti Populaire Français
+M war_support_factor = 0.10
+M conscription_factor = 0.05
+
+I FRW_corporatism|generic_industrial_concern_1|The Corporatist State
+M production_speed_buildings_factor = 0.05
+M consumer_goods_factor = -0.03
+
+I FRW_colonial_legions_spirit|generic_army_african_1|Colonial Legions
+M monthly_population = 0.05
+M experience_gain_army = 0.05
+
+I FRW_single_party|generic_secret_police|The Single Party
+M political_power_gain = 0.10
+M drift_defence_factor = 0.30
+
+I FRW_jeunesse|generic_women_in_the_army|The National Youth
+M monthly_population = 0.05
+M war_support_factor = 0.03
+
+I FRW_imperium|generic_war_preparation|The Imperial Mission
+M army_attack_factor = 0.05
+M justify_war_goal_time = -0.20
+
+I FRW_new_order|generic_production_bonus|Leadership of Latin Europe
+M army_attack_factor = 0.03
+M production_factory_max_efficiency_factor = 0.03
+
+# ---------- Fascist: extension ----------
+I FRW_corporatism_2|generic_industrial_concern_1|The Corporative Chambers
+M production_speed_buildings_factor = 0.10
+M consumer_goods_factor = -0.05
+M stability_factor = 0.03
+
+I FRW_travail_famille_patrie_2|generic_fascism_drift_bonus|The French Social State
+M stability_factor = 0.10
+M political_power_gain = 0.10
+M monthly_population = 0.05
+M army_org_factor = 0.05
+
+I FRW_single_party_2|generic_secret_police|The Party Militia
+M political_power_gain = 0.10
+M drift_defence_factor = 0.30
+M stability_factor = 0.05
+
+I FRW_parti_populaire_2|generic_fascism_rising|The Cult of the Chef
+M war_support_factor = 0.12
+M conscription_factor = 0.08
+M political_power_gain = 0.05
+M training_time_army_factor = -0.10
+
+# ---------- Non-aligned: Pétain ----------
+I FRW_revolution_nationale|generic_shield_against_communism|Révolution Nationale
+M stability_factor = 0.10
+M political_power_gain = 0.05
+
+I FRW_return_to_land|generic_agrarian_society|Return to the Land
+M monthly_population = 0.10
+M stability_factor = 0.05
+M industrial_capacity_factory = -0.05
+
+I FRW_fortress_france_spirit|generic_wall_line|Fortress France
+M army_core_defence_factor = 0.10
+M production_speed_bunker_factor = 0.25
+
+I FRW_armee_dafrique|generic_army_african_2|Armée d'Afrique
+M conscription = 0.005
+M supply_consumption_factor = -0.05
+
+I FRW_armed_neutrality_spirit|generic_neutrality_drift_bonus|Armed Neutrality
+M enemy_justify_war_goal_time = 0.50
+M defensive_war_stability_factor = 0.10
+
+I FRW_charte_du_travail_spirit|generic_industrial_concern_1|The Labour Charter
+M stability_factor = 0.05
+M consumer_goods_factor = -0.03
+
+I FRW_revolution_nationale_2|generic_shield_against_communism|Maréchal, nous voilà!
+M stability_factor = 0.12
+M political_power_gain = 0.10
+M war_support_factor = 0.05
+
+I FRW_armed_neutrality_2|generic_wall_line|Unconquerable France
+M enemy_justify_war_goal_time = 0.50
+M defensive_war_stability_factor = 0.15
+M army_core_defence_factor = 0.05
+
+# ---------- Non-aligned: Orléans ----------
+I FRW_royal_legitimacy|generic_king_handled|Royal Legitimacy
+M stability_factor = 0.10
+M political_power_gain = 0.05
+
+I FRW_constitutional_charter|generic_constitutional_guarantees|The Charter
+M stability_factor = 0.05
+M political_power_gain = 0.10
+
+I FRW_integral_nationalism|generic_fascism_drift_2|Nationalisme Intégral
+M drift_defence_factor = 0.20
+M war_support_factor = 0.05
+
+I FRW_royal_army_spirit|generic_army_europe_1|The Royal Army
+M army_org_factor = 0.05
+M experience_gain_army = 0.05
+
+I FRW_crowned_republic|generic_democratic_drift_bonus|The Crowned Republic
+M political_power_gain = 0.10
+M stability_factor = 0.05
+M research_speed_factor = 0.03
+
+I FRW_absolute_crown_spirit|generic_monarchist_uprising|The Crown Rules
+M political_power_gain = 0.10
+M stability_factor = 0.05
+M war_support_factor = 0.05
+
+I FRW_royal_legitimacy_2|generic_king_handled|The Most Christian King
+M stability_factor = 0.15
+M political_power_gain = 0.10
+
+# ---------- Non-aligned: Bonapartist ----------
+I FRW_bonapartist_fervor|generic_morale_bonus|Bonapartist Fervour
+M war_support_factor = 0.05
+
+I FRW_imperial_glory|generic_victors_of_ww1|Imperial Glory
+M war_support_factor = 0.10
+M political_power_gain = 0.05
+
+I FRW_imperial_glory_2|generic_victors_of_ww1|Glory of the Grand Empire
+M war_support_factor = 0.10
+M political_power_gain = 0.10
+M stability_factor = 0.05
+
+I FRW_code_napoleon_spirit|generic_central_management|Code Napoléon
+M stability_factor = 0.05
+M political_power_gain = 0.05
+M compliance_growth = 0.10
+
+I FRW_garde_imperiale|generic_army_europe_2|Garde Impériale
+M army_attack_factor = 0.05
+M army_morale_factor = 0.05
+
+I FRW_marshalate|generic_army_chief_off_western_european_2d|The Marshalate
+M max_planning = 0.10
+M planning_speed = 0.10
+
+I FRW_continental_system_spirit|generic_flexible_foreign_policy|The Continental System
+M local_resources_factor = 0.10
+M trade_opinion_factor = -0.20
+
+I FRW_hundred_days|generic_morale_bonus|Spirit of the Hundred Days
+M war_support_factor = 0.05
+M army_speed_factor = 0.03
+
+I FRW_legion_of_honour_spirit|generic_army_chief_off_western_european_2d|The Legion of Honour
+M experience_gain_army = 0.08
+M army_leader_start_level = 1
+
+I FRW_emperor_of_the_west_spirit|generic_victors_of_ww1|Emperor of the West
+M army_attack_factor = 0.05
+M justify_war_goal_time = -0.25
+M compliance_growth = 0.10
+
+# ---------- Expansion ----------
+I FRW_reunited_nation|generic_pp_unity_bonus|The Reunited Nation
+M stability_factor = 0.05
+M compliance_growth = 0.10
+M political_power_gain = 0.05
+
+# ---------- Economy ----------
+I FRW_devalued_franc|generic_devalue_currency|Devalued Franc
+M consumer_goods_factor = -0.05
+M stability_factor = -0.02
+
+I FRW_sncf|generic_train_tracks|SNCF
+M production_speed_infrastructure_factor = 0.20
+M supply_consumption_factor = -0.03
+
+I FRW_economie_de_guerre|generic_production_bonus|The War Economy
+M production_factory_max_efficiency_factor = 0.05
+M production_speed_arms_factory_factor = 0.10
+
+I FRW_war_production_board_spirit|generic_improved_industries|Ministry of Armament
+M production_factory_efficiency_gain_factor = 0.10
+
+# ---------- Army ----------
+I FRW_methodical_battle_spirit|generic_artillery_regiments|The Methodical Battle
+M army_defence_factor = 0.05
+M max_planning = 0.10
+
+I FRW_war_of_movement_spirit|generic_acquire_tanks|The War of Movement
+M army_speed_factor = 0.05
+M army_armor_attack_factor = 0.05
+
+I FRW_maginot_extension_spirit|generic_fortify_the_borders|Extended Maginot Line
+M production_speed_bunker_factor = 0.50
+M army_core_defence_factor = 0.05
+
+I FRW_troupes_coloniales|generic_army_african_3|Troupes Coloniales
+M conscription = 0.005
+
+I FRW_legion_etrangere|generic_army_europe_3|Foreign Legion
+M special_forces_cap = 0.15
+M army_morale_factor = 0.05
+
+I FRW_general_staff|generic_army_war_college|Reformed General Staff
+M experience_gain_army = 0.10
+
+I FRW_desert_corps|generic_supply_lines|Desert Corps
+M attrition = -0.10
+M supply_consumption_factor = -0.05
+
+I FRW_reserve_system_spirit|generic_reserve_divisions|The Reserve System
+M conscription_factor = 0.10
+M training_time_army_factor = -0.05
+
+I FRW_modern_army|generic_army_europe_4|A Modern Army
+M army_org_factor = 0.05
+M land_reinforce_rate = 0.02
+
+# ---------- Navy / Air ----------
+I FRW_mediterranean_fleet_spirit|generic_sea_focused_navy|The Mediterranean Fleet
+M naval_damage_factor = 0.05
+M navy_max_range_factor = 0.10
+
+I FRW_fleet_in_being_spirit|generic_navy_bonus|A Balanced Fleet
+M navy_org_factor = 0.10
+M production_speed_dockyard_factor = 0.05
+
+I FRW_pilot_schools_spirit|generic_air_research|Flight Schools
+M experience_gain_air = 0.10
+M air_ace_generation_chance_factor = 0.25
+
+I FRW_air_superiority_spirit|generic_air_interception|Air Superiority
+M air_superiority_efficiency = 0.05
+M air_mission_efficiency = 0.05
+
+# ---------- Diplomacy ----------
+I FRW_quai_dorsay|generic_conference|Quai d'Orsay
+M improve_relations_maintain_cost_factor = -0.05
+M opinion_gain_monthly_factor = 0.05
+
+I FRW_deuxieme_bureau_spirit|generic_intel_bonus|Deuxième Bureau
+M intel_network_gain_factor = 0.10
+M decryption_factor = 0.05
+M encryption_factor = 0.05
+
+I FRW_american_credit|generic_foreign_capital|American Credits
+M license_production_speed = 0.10
+M consumer_goods_factor = -0.02
+
+I FRW_arms_exports_spirit|generic_license_production|Arms Exports
+M trade_opinion_factor = 0.15
+M production_speed_arms_factory_factor = 0.03
+
+I FRW_diplomatic_shield_spirit|generic_flexible_foreign_policy2|Diplomatic Shield
+M enemy_justify_war_goal_time = 0.15
+
+I FRW_grande_nation|generic_pp_unity_bonus|La Grande Nation
+M political_power_gain = 0.05
+M opinion_gain_monthly_factor = 0.10
+
+# ---------- Colonial empire ----------
+I FRW_colonial_ministry|generic_central_management|Ministry of the Colonies
+M compliance_growth = 0.10
+M resistance_growth = -0.10
+
+I FRW_aof_federation_spirit|generic_army_african_4|French West Africa
+M monthly_population = 0.05
+M compliance_growth = 0.05
+
+I FRW_levant_administration|generic_central_management|Administration of the Levant
+M compliance_growth = 0.10
+M resistance_growth = -0.10
+
+I FRW_eurafrique_spirit|generic_economic_increase|Eurafrique
+M local_resources_factor = 0.10
+M monthly_population = 0.05
+
+I FRW_imperial_preference_spirit|generic_foreign_capital|Imperial Preference
+M local_resources_factor = 0.05
+M consumer_goods_factor = -0.02
+
+# ---------- Society ----------
+I FRW_code_famille|generic_immigration|The Family Code
+M monthly_population = 0.10
+
+I FRW_rural_modernization_spirit|generic_agrarian_reform|Modernised Agriculture
+M consumer_goods_factor = -0.02
+M conscription_factor = 0.03
+
+I FRW_women_industry|generic_women_in_the_army|Women in Industry
+M industrial_capacity_factory = 0.03
+M conscription_factor = 0.03
+
+I FRW_union_sacree_spirit|generic_pp_unity_bonus|L'Union Sacrée
+M stability_factor = 0.05
+M war_support_factor = 0.05
+M political_power_gain = 0.05
+
+# ---------- Decisions / events / formables ----------
+I FRW_french_gold|generic_foreign_capital|French Gold
+M political_power_gain = 0.10
+M production_speed_buildings_factor = 0.05
+
+I FRW_colonial_debt|generic_economic_crisis|Colonial Loans
+M consumer_goods_factor = 0.02
+
+I FRW_franco_british_union_spirit|generic_conference|Franco-British Union
+M research_speed_factor = 0.05
+M production_factory_max_efficiency_factor = 0.05
+M naval_doctrine_cost_factor = -0.1
+
+I FRW_union_francaise_formed|generic_org_of_african_unity|Union Française
+M monthly_population = 0.05
+M compliance_growth = 0.1
+M resistance_growth = -0.1
+M non_core_manpower = 0.05
+
+I FRW_european_federation|generic_conference|European Federation
+M research_speed_factor = 0.05
+M production_factory_max_efficiency_factor = 0.05
+M stability_factor = 0.1
+M political_power_gain = 0.1
+
+I FRW_grand_empire_idea|generic_victors_of_ww1|Grand Empire
+M army_attack_factor = 0.1
+M army_org_factor = 0.05
+M experience_gain_army = 0.1
+M land_doctrine_cost_factor = -0.15
+M compliance_growth = 0.15
+
+I FRW_francia_idea|generic_king_handled|Heir of Charlemagne
+M stability_factor = 0.1
+M political_power_gain = 0.10
+M compliance_growth = 0.15
+M army_org_factor = 0.05
+
+I FRW_latin_empire_idea|generic_war_preparation|Latin Empire
+M naval_damage_factor = 0.1
+M naval_speed_factor = 0.1
+M industrial_capacity_dockyard = 0.1
+M army_attack_factor = 0.05
+
+I FRW_eurafrican_federation_idea|generic_org_of_african_unity|Eurafrican Federation
+M local_resources_factor = 0.15
+M monthly_population = 0.05
+M non_core_manpower = 0.05
+M resistance_growth = -0.15
+
+# ---------- Balancing pass: former filler focuses ----------
+I FRW_radio_paris|generic_political_support|Radio-Paris
+M war_support_factor = 0.03
+M drift_defence_factor = 0.15
+
+I FRW_concordat|generic_constitutional_guarantees|The Concordat
+M stability_factor = 0.03
+M monthly_population = 0.03
+
+I FRW_league_prestige|generic_conference|Champion of the League
+M opinion_gain_monthly_factor = 0.10
+M enemy_justify_war_goal_time = 0.10
+
+I FRW_swiss_credit|generic_foreign_capital|Swiss Bank Credits
+M production_speed_buildings_factor = 0.05
+
+I FRW_banque_de_france|generic_central_management|Reformed Banque de France
+M political_power_gain = 0.05
+M consumer_goods_factor = -0.02
+
+I FRW_paris_expo_spirit|generic_conference|Paris World Fair
+M trade_opinion_factor = 0.20
+M opinion_gain_monthly_factor = 0.10
+
+I FRW_return_to_land_2|generic_agrarian_society|The Peasant Corporation
+M monthly_population = 0.10
+M stability_factor = 0.05
+M industrial_capacity_factory = -0.02
+
+I FRW_throne_and_altar|generic_king_handled|Throne and Altar
+M stability_factor = 0.05
+M drift_defence_factor = 0.15
+
+I FRW_crowned_republic_2|generic_democratic_drift_bonus|The King's Government
+M political_power_gain = 0.10
+M stability_factor = 0.08
+M research_speed_factor = 0.05
+
+I FRW_absolute_crown_2|generic_monarchist_uprising|The Conseil du Roi
+M political_power_gain = 0.10
+M stability_factor = 0.05
+M command_power_gain_mult = 0.10
+
+I FRW_social_catholicism_spirit|generic_fascism_drift_bonus|Social Catholicism
+M stability_factor = 0.05
+M political_power_gain = 0.05
+
+# ---------- Secret branch ----------
+I FRW_alpine_bargain|AUS_bankverein|Swiss Gold
+M consumer_goods_factor = -0.10
+M production_speed_buildings_factor = 0.10
+
+# ---------- Black Flag formable ----------
+I FRW_drapeau_noir|SWE_neither_death_nor_dishonor|Le Pavillon Corsaire
+M army_core_defence_factor = 0.15
+M army_core_attack_factor = 0.15
+M war_support_factor = 0.10
+
+# ---------- Army: mountain troops ----------
+I FRW_chasseurs_alpins_spirit|generic_army_europe_1|Chasseurs Alpins
+M modifier_army_sub_unit_mountaineers_attack_factor = 0.15
+M modifier_army_sub_unit_mountaineers_defence_factor = 0.15
+M modifier_army_sub_unit_mountaineers_max_org_factor = 0.10
+M modifier_army_sub_unit_mountaineers_speed_factor = 0.10
+
+# ---------- Administration (quality of life) ----------
+I FRW_admin_reform_1|generic_central_management|Administrative Reform
+M political_advisor_cost_factor = -0.15
+
+I FRW_admin_reform_2|generic_central_management|A Leaner Cabinet
+M political_advisor_cost_factor = -0.15
+M economy_cost_factor = -0.10
+M trade_laws_cost_factor = -0.10
+M mobilization_laws_cost_factor = -0.10
+
+I FRW_admin_reform_3|generic_central_management|The Modern State
+M political_advisor_cost_factor = -0.20
+M economy_cost_factor = -0.15
+M trade_laws_cost_factor = -0.15
+M mobilization_laws_cost_factor = -0.15
+
+I FRW_staff_college|generic_army_war_college|The Staff College
+M army_leader_cost_factor = -0.15
+M command_power_gain_mult = 0.05
+M planning_speed = 0.05
+
+I FRW_logistics_bureau|generic_supply_lines|Bureau of Logistics
+M supply_consumption_factor = -0.03
+M army_fuel_consumption_factor = -0.05
+M truck_attrition_factor = -0.10
+
+I FRW_standard_equipment|generic_production_bonus|Standardised Equipment
+M production_lack_of_resource_penalty_factor = -0.15
+M equipment_conversion_speed = 0.15
+
+# ---------- Formables: Burgundy / Western Union ----------
+I FRW_burgundy_idea|generic_king_handled|Burgundian Inheritance
+M industrial_capacity_factory = 0.08
+M production_factory_max_efficiency_factor = 0.05
+M local_resources_factor = 0.05
+M consumer_goods_factor = -0.03
+
+I FRW_western_union_idea|generic_conference|The Western Union
+M army_defence_factor = 0.1
+M research_speed_factor = 0.05
+M industrial_capacity_factory = 0.05
+
+# ---------- Secret tree capstone ----------
+I FRW_eternal_kingdom_spirit|HUN_hungarian_monarchy|The Eternal Kingdom
+M army_attack_factor = 0.05
+M army_defence_factor = 0.05
+M production_factory_max_efficiency_factor = 0.05
+M industrial_capacity_factory = 0.05
+M consumer_goods_factor = -0.05
+M stability_factor = 0.05
+
+# ---------- Secret path: corsair economy ----------
+I FRW_corsair_gold|generic_foreign_capital|Corsair Gold
+M production_speed_buildings_factor = 0.10
+M consumer_goods_factor = -0.03
+
+I FRW_plundered_treasury|generic_economic_crisis|Plundered Treasury
+M stability_factor = -0.10
+M production_speed_buildings_factor = -0.15
+M consumer_goods_factor = 0.05
+
+I FRW_saint_malo_shipyards|generic_coastal_defense_ships|The Shipyards of Saint-Malo
+M industrial_capacity_dockyard = 0.15
+M production_speed_dockyard_factor = 0.15
+
+I FRW_prize_economy|generic_improved_industries|The Prize Economy
+M industrial_capacity_factory = 0.10
+M production_factory_max_efficiency_factor = 0.05
+M consumer_goods_factor = -0.03
+
+# ---------- Economic models (Economy branch, 3 levels each) ----------
+I FRW_econ_dirigiste_1|generic_central_management|Directed Economy
+M production_speed_buildings_factor = 0.05
+M consumer_goods_factor = 0.02
+
+I FRW_econ_dirigiste_2|generic_central_management|Directed Economy
+M production_speed_buildings_factor = 0.10
+M industrial_capacity_factory = 0.03
+M consumer_goods_factor = 0.02
+
+I FRW_econ_dirigiste_3|generic_central_management|Directed Economy
+M production_speed_buildings_factor = 0.15
+M industrial_capacity_factory = 0.05
+M consumer_goods_factor = 0.01
+
+I FRW_econ_liberal_1|generic_foreign_capital|Economic Liberalism
+M industrial_capacity_factory = 0.05
+M political_power_gain = -0.05
+
+I FRW_econ_liberal_2|generic_foreign_capital|Economic Liberalism
+M industrial_capacity_factory = 0.08
+M research_speed_factor = 0.03
+M political_power_gain = -0.05
+
+I FRW_econ_liberal_3|generic_foreign_capital|Economic Liberalism
+M industrial_capacity_factory = 0.10
+M research_speed_factor = 0.05
+M production_factory_max_efficiency_factor = 0.05
+
+I FRW_econ_rearmament_1|generic_production_bonus|Rearmament First
+M production_speed_arms_factory_factor = 0.10
+M war_support_factor = 0.03
+M stability_factor = -0.03
+
+I FRW_econ_rearmament_2|generic_production_bonus|Rearmament First
+M production_speed_arms_factory_factor = 0.15
+M production_factory_efficiency_gain_factor = 0.05
+M war_support_factor = 0.05
+M stability_factor = -0.03
+
+I FRW_econ_rearmament_3|generic_production_bonus|Rearmament First
+M production_speed_arms_factory_factor = 0.20
+M production_factory_efficiency_gain_factor = 0.10
+M war_support_factor = 0.05
+M consumer_goods_factor = -0.02
+
+# ---------- 1.1.0: new path content ----------
+I FRW_imperial_redoubt|generic_fortify_the_borders|The Imperial Redoubt
+M army_defence_factor = 0.05
+M non_core_manpower = 0.05
+
+I FRW_imperial_redoubt_2|generic_fortify_the_borders|The Imperial Redoubt
+M army_defence_factor = 0.10
+M non_core_manpower = 0.10
+M production_speed_arms_factory_factor = 0.05
+
+I FRW_marshals_france|generic_pp_unity_bonus|The Marshal's France
+M stability_factor = 0.10
+M political_power_gain = 0.10
+M army_defence_factor = 0.05
+M consumer_goods_factor = -0.03
+
+I FRW_continental_empire_spirit|generic_army_europe_3|The Continental Empire
+M army_attack_factor = 0.10
+M war_support_factor = 0.10
+M army_org_factor = 0.05
+
+I FRW_free_france_spirit|generic_army_african_2|Free France
+M war_support_factor = 0.10
+M non_core_manpower = 0.15
+M army_morale_factor = 0.10
+M army_attack_factor = 0.05
+M production_speed_buildings_factor = 0.10
+
+I FRW_brazzaville_spirit|generic_org_of_african_unity|The Brazzaville Promise
+M non_core_manpower = 0.05
+M local_resources_factor = 0.10
+
+I FRW_liberation_spirit|generic_pp_unity_bonus|The Liberation
+M stability_factor = 0.10
+M war_support_factor = 0.10
+M army_attack_factor = 0.10
+M army_org_factor = 0.05
+M political_power_gain = 0.05
+
+I FRW_european_partner|generic_economic_increase|European Partner
+M industrial_capacity_factory = 0.05
+M research_speed_factor = 0.03
+
+I FRW_european_market|generic_economic_increase|The European Market
+M industrial_capacity_factory = 0.05
+M trade_opinion_factor = 0.20
+
+I FRW_fraternal_peoples_2|generic_org_of_african_unity|Fraternal Peoples
+M research_speed_factor = 0.05
+M stability_factor = 0.03
+M opinion_gain_monthly_factor = 0.15
+
+I FRW_fraternal_peoples_3|generic_org_of_african_unity|Fraternal Peoples
+M research_speed_factor = 0.05
+M stability_factor = 0.05
+M political_power_gain = 0.10
+M opinion_gain_monthly_factor = 0.20
+
+I FRW_lend_lease_spirit|generic_foreign_capital|Lend-Lease
+M license_production_speed = 0.20
+M production_speed_buildings_factor = 0.10
+M production_factory_max_efficiency_factor = 0.05
+
+I FRW_resistance_spirit|generic_intel_bonus|The Resistance
+M resistance_growth_on_our_occupied_states = 0.25
+M intel_network_gain_factor = 0.15
+
+I FRW_provisional_government_spirit|generic_pp_unity_bonus|Provisional Government
+M stability_factor = 0.05
+M political_power_gain = 0.10
+M army_morale_factor = 0.05
+M army_attack_factor = 0.05
+
+I FRW_fight_on_spirit|generic_army_europe_2|We Fight On
+M army_attack_factor = 0.10
+M army_defence_factor = 0.10
+M army_morale_factor = 0.10
+
+I FRW_oath_of_kufra|generic_army_african_1|The Oath of Kufra
+M army_attack_factor = 0.05
+M special_forces_attack_factor = 0.10
+M experience_gain_army_factor = 0.10
+
+I FRW_latin_destiny_spirit|generic_coastal_defense_ships|A Latin Destiny
+M navy_max_range_factor = 0.10
+M naval_damage_factor = 0.05
+M compliance_growth = 0.05
+
+# ---------- Legitimist path ----------
+I FRW_legitimist_crown|generic_pp_unity_bonus|The Legitimist Crown
+M stability_factor = 0.05
+M political_power_gain = 0.05
+
+I FRW_legitimist_crown_2|generic_pp_unity_bonus|Throne and Altar
+M stability_factor = 0.10
+M political_power_gain = 0.10
+M monthly_population = 0.05
+
+I FRW_two_crowns_spirit|generic_license_production|The Family Pact
+M license_production_speed = 0.15
+M trade_opinion_factor = 0.20
+M army_defence_factor = 0.05
+
+I FRW_bourbon_partner|generic_economic_increase|Bourbon Partner
+M industrial_capacity_factory = 0.05
+M stability_factor = 0.05
+
+I FRW_grand_siecle|generic_victors_of_ww1|Le Grand Siècle
+M army_attack_factor = 0.05
+M production_factory_max_efficiency_factor = 0.05
+M political_power_gain = 0.10
+M war_support_factor = 0.05
+
+I FRW_grand_siecle_2|generic_victors_of_ww1|Nec Pluribus Impar
+M army_attack_factor = 0.08
+M production_factory_max_efficiency_factor = 0.05
+M political_power_gain = 0.10
+M war_support_factor = 0.05
+M stability_factor = 0.05
+
+I FRW_double_monarchy_idea|generic_pp_unity_bonus|The Double Monarchy
+M stability_factor = 0.10
+M non_core_manpower = 0.10
+M industrial_capacity_factory = 0.05
+M compliance_growth = 0.10
+
+# ---------- Staged debuffs (like the Soviet purges: they fade over time) ----------
+I FRW_disjointed_2|generic_disjointed_gov|A Fragile Government
+M political_power_cost = 0.4
+M stability_factor = -0.05
+M surrender_limit = -0.25
+
+I FRW_disjointed_3|generic_disjointed_gov|A Stabilising Government
+M political_power_cost = 0.2
+M surrender_limit = -0.10
+
+I FRW_victors_2|generic_victors_of_ww1|The Victor's Doubts
+M conscription = -0.0015
+M war_support_factor = -0.03
+M land_doctrine_cost_factor = 0.25
+M land_mastery_gain_factor = -0.08
+
+
+# ---------- Starting debuffs (removed in stages) ----------
+I FRW_strike_wave|FRA_factory_strikes|The Strike Wave
+M stability_factor = -0.05
+M production_speed_buildings_factor = -0.10
+M industrial_capacity_factory = -0.05
+
+# ---------- Military starting debuffs (only military focuses remove them) ----------
+I FRW_generals_of_1918|generic_army_problems|The Generals of 1918
+M army_attack_factor = -0.10
+M planning_speed = -0.20
+M army_org_factor = -0.05
+
+I FRW_generals_of_1918_2|generic_army_problems|A Command in Transition
+M army_attack_factor = -0.05
+M planning_speed = -0.10
+
+I FRW_divided_fleet|generic_neglected_military|A Divided Fleet
+M navy_org_factor = -0.10
+M naval_coordination = -0.10
+M experience_gain_navy_factor = -0.15
+
+I FRW_divided_fleet_2|generic_neglected_military|A Fleet in Reform
+M navy_org_factor = -0.05
+M naval_coordination = -0.05
+
+I FRW_obsolete_air_force|generic_neglected_military|An Obsolete Air Force
+M air_attack_factor = -0.10
+M air_agility_factor = -0.10
+M experience_gain_air_factor = -0.15
+
+I FRW_obsolete_air_force_2|generic_neglected_military|An Air Force in Transition
+M air_attack_factor = -0.05
+M air_agility_factor = -0.05
+
+
+
+# --- FRW features ---
+I FRW_gold_abroad|generic_production_bonus|The Gold in Dakar
+M stability_factor = 0.05
+M war_support_factor = 0.05
+M political_power_gain = 0.15
+
+I FRW_line_of_the_loire|generic_fortify_the_borders|Behind the Loire
+M army_defence_factor = 0.10
+M army_org_regain = 0.10
+M army_attack_factor = -0.05
+# --- /FRW features ---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ---------- FRW secret ideology paths ----------
+I FRW_neosocialism|generic_central_management|Neo-Socialism
+M political_power_gain = 0.05
+M production_speed_buildings_factor = 0.05
+M war_support_factor = -0.05
+
+I FRW_planist_republic|generic_economic_increase|The Planist Republic
+M production_speed_buildings_factor = 0.08
+M stability_factor = 0.05
+M war_support_factor = -0.05
+
+I FRW_rnp_spirit|generic_fascist_workers|Rassemblement National Populaire
+M political_power_gain = 0.10
+M war_support_factor = 0.05
+M stability_factor = -0.05
+
+I FRW_rnp_spirit_2|generic_fascist_workers|The Revolutionary National Front
+M political_power_gain = 0.10
+M war_support_factor = 0.08
+M stability_factor = 0.03
+
+I FRW_lvf_spirit|generic_volunteer_expedition_bonus|The Legion of French Volunteers
+M send_volunteer_size = 2
+M experience_gain_army = 0.05
+
+I FRW_continental_economy|generic_economic_recovery|The Continental Economy
+M production_factory_max_efficiency_factor = 0.05
+M research_speed_factor = 0.03
+
+I FRW_syndicalist_order|generic_syndicalism|The Syndicalist Order
+M stability_factor = 0.05
+M production_factory_efficiency_gain_factor = 0.05
+M political_power_gain = -0.10
+
+I FRW_syndicalist_order_2|generic_syndicalism|The Libertarian Commune
+M stability_factor = 0.08
+M production_factory_max_efficiency_factor = 0.05
+M political_power_gain = -0.05
+
+I FRW_red_black_columns|generic_communist_army|The Red and Black Columns
+M conscription_factor = 0.10
+M army_morale_factor = 0.10
+M army_org_factor = -0.05
+# ---------- /FRW secret ideology paths ----------
+
+# ---------- FRW pirate path ----------
+I FRW_black_flag|FRW_black_flag|Le Pavillon Noir
+M naval_damage_factor = 0.05
+M convoy_raiding_efficiency_factor = 0.15
+M experience_gain_navy_factor = 0.10
+
+I FRW_black_flag_2|FRW_black_flag_2|The Sea Wolves
+M naval_damage_factor = 0.10
+M convoy_raiding_efficiency_factor = 0.25
+M naval_speed_factor = 0.05
+M experience_gain_navy_factor = 0.15
+
+I FRW_black_flag_3|FRW_black_flag_3|Under the Jolly Roger
+M naval_damage_factor = 0.15
+M naval_defense_factor = 0.10
+M convoy_raiding_efficiency_factor = 0.35
+M naval_morale_factor = 0.15
+M experience_gain_navy_factor = 0.15
+
+I FRW_boarders|AUS_naval_efficiency_idea|The Boarding Parties
+M modifier_army_sub_unit_marine_attack_factor = 0.15
+M modifier_army_sub_unit_marine_defence_factor = 0.10
+M naval_invasion_capacity = 10
+
+I FRW_free_port|COG_transports_et_ports|A New Tortuga
+M consumer_goods_factor = -0.05
+M production_speed_dockyard_factor = 0.10
+M political_power_gain = 0.10
+
+I FRW_island_bases|ARG_buying_the_islands|The Republic of the Isles
+M naval_invasion_capacity = 20
+M naval_invasion_prep_speed = 0.25
+M naval_supply_consumption_factor = -0.15
+M coastal_bunker_effectiveness_factor = 0.15
+# ---------- /FRW pirate path ----------
+
+# ---------- FRW franc column ----------
+I FRW_strong_franc|generic_economic_increase|A Strong Franc
+M production_speed_buildings_factor = 0.05
+M consumer_goods_factor = -0.02
+M stability_factor = 0.02
+
+I FRW_war_finance|generic_production_bonus|War Finance
+M production_speed_arms_factory_factor = 0.05
+M consumer_goods_factor = -0.03
+M stability_factor = -0.02
+# ---------- /FRW franc column ----------
+
+# ---------- FRW feedback 3 ----------
+I FRW_rhine_held|generic_political_support|The Rhine Held
+M stability_factor = 0.10
+M war_support_factor = 0.05
+# ---------- /FRW feedback 3 ----------
+
+# --- FRW systems ---
+I FRW_tight_money|generic_production_bonus|Tight Money
+M production_speed_buildings_factor = -0.05
+M consumer_goods_factor = -0.02
+
+I FRW_austerity|generic_production_bonus|Austerity
+M stability_factor = -0.05
+M production_speed_buildings_factor = -0.05
+
+I FRW_price_riots|generic_production_bonus|Price Riots
+M stability_factor = -0.10
+M war_support_factor = -0.05
+M consumer_goods_factor = 0.03
+
+I FRW_new_franc|generic_production_bonus|The New Franc
+M stability_factor = -0.05
+M political_power_gain = -0.10
+
+I FRW_fighting_france|generic_army_african_2|Fighting France
+M experience_gain_army_factor = 0.10
+M political_power_gain = 0.10
+M army_morale_factor = 0.05
+
+I FRW_exchange_controls_idea|generic_production_bonus|Exchange Controls
+M production_factory_efficiency_gain_factor = -0.05
+M stability_factor = -0.02
+
+I FRW_foreign_contracts|generic_production_bonus|Arms Contracts Abroad
+M production_speed_arms_factory_factor = 0.05
+
+I FRW_gold_loan|generic_production_bonus|The London Gold Loan
+M political_power_gain = -0.05
+
+I FRW_printing_press|generic_production_bonus|The Printing Press
+M production_speed_arms_factory_factor = 0.10
+M production_speed_industrial_complex_factor = 0.10
+# --- /FRW systems ---
+
+# --- FRW free france ideas ---
+I FRW_ff_chequers_spirit|generic_political_support|The Chequers Agreement
+M political_power_gain = 0.10
+M war_support_factor = 0.05
+
+I FRW_ff_national_committee_spirit|generic_pp_unity_bonus|French National Committee
+M stability_factor = 0.05
+M political_power_gain = 0.05
+
+I FRW_ff_bcra_spirit|generic_intel_bonus|The BCRA
+M intel_network_gain_factor = 0.20
+M encryption_factor = 0.10
+
+I FRW_ff_cnr_spirit|generic_intel_bonus|National Council of the Resistance
+M resistance_growth_on_our_occupied_states = 0.20
+M resistance_damage_to_garrison_on_our_occupied_states = 0.15
+
+I FRW_ff_bir_hakeim_spirit|generic_army_african_3|The Spirit of Bir Hakeim
+M army_defence_factor = 0.05
+M army_morale_factor = 0.05
+M army_org_factor = 0.05
+
+I FRW_ff_fafl_spirit|generic_air_interception|Free French Air Force
+M air_superiority_efficiency = 0.05
+M experience_gain_air_factor = 0.10
+
+I FRW_ff_normandie_spirit|generic_air_research|Normandie-Niemen
+M air_ace_generation_chance_factor = 0.25
+M air_agility_factor = 0.05
+
+I FRW_ff_fnfl_spirit|generic_navy_bonus|Free French Naval Forces
+M convoy_escort_efficiency = 0.10
+M navy_submarine_detection_factor = 0.10
+
+I FRW_ff_securite_sociale_spirit|generic_goods_red_bonus|Sécurité Sociale
+M stability_factor = 0.10
+M consumer_goods_factor = 0.02
+
+I FRW_ff_reconstruction_spirit|generic_production_bonus|Reconstruction
+M production_speed_buildings_factor = 0.15
+M production_speed_infrastructure_factor = 0.25
+
+I FRW_ff_fourth_republic_spirit|generic_democratic_drift_bonus|The Fourth Republic
+M stability_factor = 0.10
+M political_power_gain = 0.10
+M democratic_drift = 0.02
+
+I FRW_ff_eurafrican_assembly_spirit|generic_org_of_african_unity|The Eurafrican Assembly
+M non_core_manpower = 0.05
+M political_power_gain = 0.05
+M local_resources_factor = 0.05
+
+I FRW_ff_lorraine_spirit|generic_air_research|The Groupe Lorraine
+M air_strategic_bomber_bombing_factor = 0.10
+M air_cas_efficiency = 0.05
+
+I FRW_ff_richelieu_spirit|generic_navy_bonus|The Richelieu
+M navy_capital_ship_attack_factor = 0.10
+M navy_capital_ship_defence_factor = 0.05
+
+I FRW_ff_maquis_spirit|generic_intel_bonus|The Maquis
+M resistance_growth_on_our_occupied_states = 0.15
+M special_forces_attack_factor = 0.10
+
+I FRW_ff_colonial_recruitment_spirit|generic_army_african_4|Colonial Recruitment
+M non_core_manpower = 0.10
+M training_time_army_factor = -0.05
+
+I FRW_ff_cfln_spirit|generic_pp_unity_bonus|Committee of National Liberation
+M political_power_gain = 0.10
+M stability_factor = 0.05
+M war_support_factor = 0.05
+
+I FRW_ff_cef_spirit|generic_army_african_2|The Expeditionary Corps
+M breakthrough_factor = 0.10
+
+I FRW_ff_dragoon_spirit|generic_army_europe_3|Landing in Provence
+M naval_invasion_capacity = 2
+M naval_invasion_penalty = -0.25
+# --- /FRW free france ideas ---
+
+# --- FRW return ideas ---
+I FRW_french_gold_payment|generic_production_bonus|Gold for French Africa
+M consumer_goods_factor = -0.05
+# --- /FRW return ideas ---

@@ -1,0 +1,976 @@
+#eo
+add_namespace = gerevents
+add_namespace = GER_gertro
+
+#Socialist German Order Invites
+country_event = {
+	id = GER_gertro.1
+	title = GER_gertro.1.t
+	desc = GER_gertro.1.d
+
+	picture = GER_socialist_german_order_invites-466
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GER_gertro.1.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0 }
+		GER = {annex_country = {
+    target = YUG
+    transfer_troops = yes
+}
+}
+
+
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = GER_gertro.1.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0 }
+		
+		start_civil_war = {
+    ruling_party = ROOT
+    ideology = communism
+    size = 0.7
+
+}
+		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = GER_gertro.2
+	title = GER_gertro.1.t
+	desc = GER_gertro.1.d
+
+	picture = GER_socialist_german_order_invites-466
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GER_gertro.1.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0 }
+		GER = {annex_country = {
+    target = CZE
+    transfer_troops = yes
+}
+}
+
+
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = GER_gertro.1.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0}
+		
+		start_civil_war = {
+    ruling_party = ROOT
+    ideology = communism
+    size = 0.7
+
+}
+		
+		hidden_effect = {
+			
+		}
+	}
+}
+country_event = {
+	id = GER_gertro.3
+	title = GER_gertro.1.t
+	desc = GER_gertro.1.d
+
+	picture = GER_socialist_german_order_invites-466
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GER_gertro.1.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0 }
+		GER = {annex_country = {
+    target = HUN
+    transfer_troops = yes
+}
+}
+
+
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = GER_gertro.1.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0}
+		
+		start_civil_war = {
+    ruling_party = ROOT
+    ideology = communism
+    size = 0.7
+
+}
+		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = GER_gertro.4
+	title = GER_gertro.1.t
+	desc = GER_gertro.1.d
+
+	picture = GER_socialist_german_order_invites-466
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GER_gertro.1.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0 }
+		GER = {annex_country = {
+    target = FRA
+    transfer_troops = yes
+}
+}
+
+
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = GER_gertro.1.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0 }
+		
+		start_civil_war = {
+    ruling_party = ROOT
+    ideology = communism
+    size = 0.7
+
+}
+		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = GER_gertro.5
+	title = GER_gertro.1.t
+	desc = GER_gertro.1.d
+
+	picture = GER_socialist_german_order_invites-466
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GER_gertro.1.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0 }
+		GER = {annex_country = {
+    target = POL
+    transfer_troops = yes
+}
+}
+
+
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = GER_gertro.1.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0 }
+		
+		start_civil_war = {
+    ruling_party = ROOT
+    ideology = communism
+    size = 0.7
+
+}
+		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = GER_gertro.6
+	title = GER_gertro.1.t
+	desc = GER_gertro.1.d
+
+	picture = GER_socialist_german_order_invites-466
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GER_gertro.1.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0 }
+		GER = {annex_country = {
+    target = ITA
+    transfer_troops = yes
+			}
+		}
+	}
+	option = {
+		name = GER_gertro.1.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 0 }
+		
+		start_civil_war = {
+    ruling_party = ROOT
+    ideology = communism
+    size = 0.7
+		}
+	}
+}
+
+##Event: The Habsburgs Invite
+country_event = {
+	id = gerevents.1
+	title = gerevents.1.title
+	desc = gerevents.1.desc
+	picture = GFX_report_event_hol_cabinet_gerbrandy
+	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = gerevents.1.a
+		ai_chance = { factor = 4}
+		GER = {
+annex_country= {
+ target = HUN transfer_troops = yes
+}
+}
+	}
+	option = {
+		name = gerevents.1.b
+		ai_chance = { factor = 2}
+		GER = {
+create_wargoal= { 
+type = annex_everything 
+target = HUN
+}
+}
+	}
+}
+##Event: The Germans Want Our State
+country_event = {
+	id = gerevents.2
+	title = gerevents.2.title
+	desc = gerevents.2.desc
+	picture = GFX_report_event_pla_in_beijing
+	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = gerevents.2.a
+		ai_chance = { factor = 5}
+		GER = {
+transfer_state = 28  }
+	}
+	option = {
+		name = gerevents.2.b
+		ai_chance = { factor = 1}
+		GER = {
+create_wargoal= { 
+type = annex_everything 
+target = FRA
+}
+}
+	}
+}
+
+country_event = {
+	id = gerevents.3
+	title = gerevents.2.title
+	desc = gerevents.2.desc
+	picture = GFX_report_event_pla_in_beijing
+	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = gerevents.2.a
+		ai_chance = { factor = 10}
+		GER = {
+transfer_state = 743 }
+	}
+	option = {
+	}
+}
+
+country_event = {
+	id = gerevents.4
+	title = gerevents.2.title
+	desc = gerevents.2.desc
+	picture = GFX_report_event_pla_in_beijing
+	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = gerevents.2.a
+		ai_chance = { factor = 0 }
+		GER = {
+puppet = CHI}
+	}
+	option = {
+	ai_chance = { factor = 10 }
+	}
+}
+
+
+
+
+
+country_event = {
+	id = gerevents.5
+	title = gerevents.1.title
+	desc = gerevents.1.desc
+	picture = GFX_report_event_hol_cabinet_gerbrandy
+	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = gerevents.1.a
+		ai_chance = { factor = 4}
+		GER = {
+annex_country= {
+ target = LUX transfer_troops = yes
+}
+
+}
+	}
+	option = {
+		name = gerevents.1.b
+		ai_chance = { factor = 1}
+		GER = {
+create_wargoal= { 
+type = annex_everything 
+target = LUX
+}
+}
+	}
+}
+
+country_event = {
+	id = gerevents.6
+	title = gerevents.1.title
+	desc = gerevents.1.desc
+	picture = GFX_report_event_hol_cabinet_gerbrandy
+	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = gerevents.1.a
+		ai_chance = { factor = 4}
+		GER = {
+annex_country= {
+ target = AUS transfer_troops = yes
+}
+
+}
+	}
+	option = {
+		name = gerevents.1.b
+		ai_chance = { factor = 1}
+		GER = {
+create_wargoal= { 
+type = annex_everything 
+target = AUS
+}
+}
+	}
+	}
+
+
+country_event = {
+	id = gerevents.7
+	title = gerevents.1.title
+	desc = gerevents.1.desc
+	picture = GFX_report_event_hol_cabinet_gerbrandy
+	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = gerevents.1.a
+		ai_chance = { factor = 4}
+		GER = {
+annex_country= {
+ target = CZE transfer_troops = yes
+}
+
+}
+	}
+	option = {
+		name = gerevents.1.b
+		ai_chance = { factor = 1}
+		GER = {
+create_wargoal= { 
+type = annex_everything 
+target = CZE
+}
+}
+	}
+}
+
+country_event = {
+	id = gerevents.8
+	title = gerevents.1.title
+	desc = gerevents.1.desc
+	picture = GFX_report_event_hol_cabinet_gerbrandy
+	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = gerevents.1.a
+		ai_chance = { factor = 4}
+		GER = {
+annex_country= {
+ target = POL transfer_troops = yes
+}
+
+}
+	}
+	option = {
+		name = gerevents.1.b
+		ai_chance = { factor = 1}
+		GER = {
+create_wargoal= { 
+type = annex_everything 
+target = POL
+}
+}
+	}
+}
+
+country_event = {
+	id = gerevents.9
+	title = gerevents.1.title
+	desc = gerevents.1.desc
+	picture = GFX_report_event_hol_cabinet_gerbrandy
+	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = gerevents.1.a
+		ai_chance = { factor = 4}
+		GER = {
+annex_country= {
+ target = LAT transfer_troops = yes
+}
+
+}
+	}
+	option = {
+		name = gerevents.1.b
+		ai_chance = { factor = 1}
+		GER = {
+create_wargoal= { 
+type = annex_everything 
+target = LAT
+}
+}
+	}
+}
+
+country_event = {
+	id = gerevents.10
+	title = gerevents.1.title
+	desc = gerevents.1.desc
+	picture = GFX_report_event_hol_cabinet_gerbrandy
+	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = gerevents.1.a
+		ai_chance = { factor = 4}
+		GER = {
+annex_country= {
+ target = EST transfer_troops = yes
+}
+
+}
+	}
+	option = {
+		name = gerevents.1.b
+		ai_chance = { factor = 1}
+		GER = {
+create_wargoal= { 
+type = annex_everything 
+target = EST
+}
+}
+	}
+}
+
+country_event = {
+	id = gerevents.11
+	title = gerevents.1.title
+	desc = gerevents.1.desc
+	picture = GFX_report_event_hol_cabinet_gerbrandy
+	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = gerevents.1.a
+		ai_chance = { factor = 4}
+		GER = {
+annex_country= {
+ target = LIT transfer_troops = yes
+}
+
+}
+	}
+	option = {
+		name = gerevents.1.b
+		ai_chance = { factor = 1}
+		GER = {
+create_wargoal= { 
+type = annex_everything 
+target = LIT
+}
+}
+	}
+	}
+	
+	country_event = {
+	id = gerevents.12
+	title = gerevents.1.title
+	desc = gerevents.1.desc
+	picture = GFX_report_event_hol_cabinet_gerbrandy
+	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = gerevents.1.a
+		ai_chance = { factor = 4}
+		GER = {
+annex_country= {
+ target = BEL transfer_troops = yes
+}
+
+}
+	}
+	option = {
+		name = gerevents.1.b
+		ai_chance = { factor = 1}
+		GER = {
+create_wargoal= { 
+type = annex_everything 
+target = BEL
+}
+}
+	}
+}
+
+country_event = {
+	id = gerevents.13
+	title = gerevents.1.title
+	desc = gerevents.1.desc
+	picture = GFX_report_event_hol_cabinet_gerbrandy
+	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = gerevents.1.a
+		ai_chance = { factor = 4}
+		GER = {
+annex_country= {
+ target = HOL transfer_troops = yes
+}
+
+}
+	}
+	option = {
+		name = gerevents.1.b
+		ai_chance = { factor = 1}
+		GER = {
+create_wargoal= { 
+type = annex_everything 
+target = HOL
+}
+}
+	}
+}
+country_event = {
+	id = gerevents.14
+	title = gerevents.1.title
+	desc = gerevents.1.desc
+	picture = GFX_report_event_hol_cabinet_gerbrandy
+	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = gerevents.1.a
+		ai_chance = { factor = 10}
+		FIN = {
+annex_country= {
+ target = EST transfer_troops = yes
+}
+}
+	}
+	option = {
+		name = gerevents.1.b
+		ai_chance = { factor = 1}
+		FIN = {
+create_wargoal= { 
+type = annex_everything 
+target = EST
+}
+}
+	}
+}
+
+country_event = {
+	id = gerevents.15
+	title = gerevents.15.title
+	desc = gerevents.15.desc
+	picture = GFX_report_event_hol_cabinet_gerbrandy
+	is_triggered_only = yes
+	fire_only_once = no
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = gerevents.15.a
+		ai_chance = { factor = 10}
+		
+	}
+	
+}
+
+
+country_event = {
+	id = gerevents.16
+	title = gerevents.16.title
+	desc = gerevents.16.desc
+	picture = GFX_report_event_hol_cabinet_gerbrandy
+	is_triggered_only = yes
+	fire_only_once = no
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = gerevents.16.a
+		ai_chance = { factor = 10}
+		
+	}
+	
+}
+
+country_event = {
+	id = gerevents.17
+	title = gerevents.17.title
+	desc = gerevents.17.desc
+	picture = GFX_report_event_hol_cabinet_gerbrandy
+	is_triggered_only = yes
+	fire_only_once = no
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = gerevents.17.a
+		ai_chance = { factor = 10}
+		add_ideas = ger_infulances
+		GER = {country_event = gerevents.16}
+	}
+	option = {
+		name = gerevents.17.b
+		ai_chance = { factor = 1}
+		GER = {country_event = gerevents.15}
+		add_opinion_modifier = {
+    target = GER
+    modifier = small_decrease
+}
+	}
+}
+
+country_event = {
+	id = gerevents.18
+	title = gerevents.18.title
+	desc = gerevents.18.desc
+	picture = GFX_report_event_hol_cabinet_gerbrandy
+	is_triggered_only = yes
+	fire_only_once = no
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = gerevents.18.a
+		ai_chance = { factor = 10}
+		add_ideas = GER_arians
+	}
+	
+}
+
+country_event = {
+	id = gerevents.19
+	title = gerevents.19.title
+	desc = gerevents.19.desc
+	picture = GFX_report_event_iww_demonstration
+	is_triggered_only = yes
+	fire_only_once = no
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = gerevents.19.a
+		ai_chance = { factor = 10}
+		add_tech_bonus = {
+    bonus = 1.0
+    uses = 1
+    category = mountaineers_tech
+}
+		GER = {country_event = gerevents.20}
+	}
+	option = {
+		name = gerevents.19.b
+		ai_chance = { factor = 1}
+		GER = {country_event = gerevents.15}
+		add_opinion_modifier = {
+    target = GER
+    modifier = small_decrease
+}
+	}
+}
+
+country_event = {
+	id = gerevents.20
+	title = gerevents.16.title
+	desc = gerevents.16.desc
+	picture = GFX_report_event_hol_cabinet_gerbrandy
+	is_triggered_only = yes
+	fire_only_once = no
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = gerevents.16.a
+		ai_chance = { factor = 10}
+		add_tech_bonus = {
+    bonus = 1.0
+    uses = 1
+    category = mountaineers_tech
+}
+	}
+	
+}
+
+country_event = {
+	id = gerevents.22
+	title = gerevents.15.title
+	desc = gerevents.15.desc
+	picture = GFX_report_event_hol_cabinet_gerbrandy
+	is_triggered_only = yes
+	fire_only_once = no
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = gerevents.22.a 
+		ai_chance = { factor = 10}
+		send_embargo = POL
+	}
+	
+}
+
+country_event = {
+	id = gerevents.21
+	title = gerevents.21.title
+	desc = gerevents.21.desc
+	picture = GFX_report_event_iww_demonstration
+	is_triggered_only = yes
+	fire_only_once = no
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = gerevents.19.a
+		ai_chance = { factor = 10}
+		POL = {release = DNZ}
+		GER = {country_event = gerevents.16}
+	}
+	option = {
+		name = gerevents.19.b
+		ai_chance = { factor = 1}
+		GER = {country_event = gerevents.22}
+		GER = {add_state_claim = 85}
+	}
+}
+
+country_event = {
+	id = gerevents.23
+	title = gerevents.23.title 
+	desc = gerevents.21.desc
+	picture = GFX_report_event_iww_demonstration
+	is_triggered_only = yes
+	fire_only_once = no
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = gerevents.19.a
+		ai_chance = { factor = 20}
+		GER = {puppet = DNZ}
+		GER = {country_event = gerevents.16}
+	}
+	option = {
+		name = gerevents.19.b
+		ai_chance = { factor = 0}
+		GER = {country_event = gerevents.15}
+		GER = {create_wargoal = {
+    type = puppet_wargoal_focus
+    target = ROOT
+}
+	}
+	}
+	}
+
+
+country_event = {
+	id = gerevents.24 
+	title = gerevents.24.title
+	desc = gerevents.24.desc
+	picture = GFX_report_event_hol_cabinet_gerbrandy
+	is_triggered_only = yes
+	fire_only_once = no
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = gerevents.24.a
+		ai_chance = { factor = 10}
+		diplomatic_relation = {
+    country = GER
+    relation = non_aggression_pact
+    active = yes
+}
+
+        every_other_country = {
+            limit = {
+                is_in_faction_with = JAP
+                NOT = { tag = JAP }
+            }
+            leave_faction = yes
+            GER = {
+                add_to_faction = PREV
+            }
+        }
+
+        JAP = {
+            leave_faction = yes
+            GER = {
+                add_to_faction = JAP
+            }
+        }
+
+		GER = {country_event = gerevents.16}
+	}
+	option = {
+		name = gerevents.24.b
+		ai_chance = { factor = 1}
+		GER = {country_event = gerevents.15}
+		add_opinion_modifier = {
+    target = GER
+    modifier = small_decrease
+}
+	}
+}
+
+country_event = {
+	id = gerevents.25
+	title = gerevents.25.title
+	desc = gerevents.25.desc
+	picture = GFX_report_event_hol_cabinet_gerbrandy
+	is_triggered_only = yes
+	fire_only_once = no
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = gerevents.25.a
+		ai_chance = { factor = 10}
+		diplomatic_relation = {
+    country = GER
+    relation = non_aggression_pact
+    active = yes
+}
+		GER = {country_event = gerevents.16}
+	}
+	option = {
+		name = gerevents.24.b
+		ai_chance = { factor = 1}
+		GER = {country_event = gerevents.15}
+		add_opinion_modifier = {
+    target = GER
+    modifier = small_decrease
+}
+	}
+
+}
+#eo

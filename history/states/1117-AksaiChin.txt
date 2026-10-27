@@ -1,0 +1,49 @@
+state={
+	id=1117
+	name="STATE_1117"
+	manpower = 10
+	
+	state_category = wasteland
+
+	history={
+		owner = RAJ
+		add_core_of = SIK
+		add_core_of = CHI
+		add_core_of = PRC
+
+		# 1936.1.1 = {
+		# 	IF = {
+		# 		limit = {
+		# 			has_dlc = "No Compromise, No Surrender" 
+		# 		}
+		# 		KHM = { transfer_state = PREV }
+		# 		add_core_of = KHM
+		# 	}
+		# }	
+
+		# 1938.10.25 = {
+		# 	IF = {
+		# 		limit = {
+		# 			has_dlc = "No Compromise, No Surrender" 
+		# 		}
+		# 		remove_core_of = KHM
+		# 	}	
+		# 	owner = SIK
+		# 	controller = SIK		
+		# }
+
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = PAK
+		add_claim_by = RAJ
+		add_core_of = KAS
+		add_core_of = KHL 
+	}
+
+	provinces={
+		5042
+	}
+
+	local_supplies=0.0 
+}

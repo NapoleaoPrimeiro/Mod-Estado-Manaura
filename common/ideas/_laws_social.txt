@@ -1,0 +1,200 @@
+#####---------------------------------------------------------------------> Mod by Sig "GreatExperiment" Altre
+
+ideas = {
+
+	ef_laws_social = {
+
+		use_list_view = yes
+
+		law = yes
+
+		#Cultural Norms
+		ef_laws_social_normal = {
+
+			available = {
+				NOT = {
+					has_country_flag = EF_anarchist_country
+				}
+			}
+
+			modifier = {
+				drift_defence_factor = 0.30
+				local_resources_factor = 0.05
+				industrial_capacity_factory = 0.05
+				stability_factor = 0.05
+			}
+
+			cost = 175
+
+			cancel_if_invalid = no
+
+			ai_will_do = {
+				base = 7.5
+				modifier = {
+					has_country_flag = communist_or_fascist_country
+					date < 1939.1.1
+					has_war = no
+					factor = 0
+				}
+			}
+		}
+
+		#Hierarchy
+		ef_laws_social_hierarchy = {
+
+			available = {
+				NOT = {
+					has_country_flag = EF_anarchist_country
+				}
+			}
+
+			modifier = {
+				max_command_power = 10
+				production_speed_arms_factory_factor = 0.1
+				production_speed_dockyard_factor = 0.1
+				stability_factor = -0.05
+			}
+
+			cost = 175
+
+			ai_will_do = {
+				base = 0
+				modifier = {
+					date > 1937.9.15
+					add = 85
+				}
+				modifier = {
+					tag = SOV
+					date < 1939.1.1
+					factor = 0
+				}
+				modifier = {
+					tag = AST
+					has_war = no
+					date < 1938.4.1
+					factor = 0
+				}
+				modifier = {
+					tag = NZL
+					has_war = no
+					date < 1938.4.1
+					factor = 0
+				}
+				modifier = {
+					tag = FRA
+					is_historical_focus_on = yes
+					add = 10
+				}
+				modifier = {
+					tag = ENG
+					date > 1937.4.1
+					add = 30
+				}
+			}
+		}
+
+		#Revolutionary Mindset
+		ef_laws_social_revolutionary = {
+
+			modifier = {
+				research_speed_factor = 0.05
+				production_speed_nuclear_reactor_factor = 0.1
+				production_speed_rocket_site_factor = 0.1
+				production_speed_facility_factor = 0.05
+				stability_factor = -0.05
+			}
+
+			cost = 150
+
+			cancel_if_invalid = no
+
+			ai_will_do = {
+				base = 0
+			}
+		}
+
+		#Melting Pot
+		ef_laws_social_diversity = {
+
+			available = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+
+			modifier = {
+				MONTHLY_POPULATION = 1.25
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_infrastructure_factor = 0.15
+				compliance_gain = 0.02
+				stability_factor = -0.05
+			}
+
+			cost = 200
+
+			ai_will_do = {
+				base = 0
+				modifier = {
+					date < 1937.9.15
+					add = 16
+				}
+				modifier = {
+					has_government = democratic
+					add = 5
+				}
+				modifier = {
+					tag = FRA
+					is_historical_focus_on = yes
+					factor = 0
+				}
+			}
+		}
+
+		#The Greater Good
+		ef_laws_social_unity = {
+
+			available = {
+				if = {
+					limit = {
+						original_tag = FIN
+					}
+					OR = {
+						has_country_flag = FIN_winter_war_ongoing_flag
+						has_war = yes
+						date > 1939.11.1
+					}
+				}
+			}
+
+			modifier = {
+				conscription = 0.006
+				production_speed_bunker_factor = 0.15
+				production_speed_coastal_bunker_factor = 0.15
+				stability_factor = -0.05
+
+			}
+
+			cost = 175
+
+			cancel_if_invalid = no
+
+			ai_will_do = {
+				base = 0
+				modifier = {
+					manpower_per_military_factory < 800
+					date > 1939.1.1
+					add = 12
+				}
+				modifier = {
+					NOT = {
+						has_country_flag = communist_or_fascist_country	
+					}
+					has_war = no
+					factor = 0
+				}
+			}
+		}
+	}
+}
+
+#####---------------------------------------------------------------------> End

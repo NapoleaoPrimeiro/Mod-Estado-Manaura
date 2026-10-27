@@ -1,0 +1,10 @@
+# Strength scales with the ci_* variables set on the country each time it
+# integrates a conquered nation's industry (see events/conquest_integration.txt).
+ci_integrated_industry = {
+	icon = GFX_idea_ci_seized_industry
+
+	industrial_capacity_factory = ci_industry_bonus
+	industrial_capacity_dockyard = ci_industry_bonus
+	production_speed_buildings_factor = ci_industry_bonus
+	consumer_goods_factor = ci_consumer_goods_bonus
+}

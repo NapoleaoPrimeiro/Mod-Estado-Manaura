@@ -1,0 +1,32 @@
+@manifest_fulfilled_value = 0.75
+
+
+# An Iron Curtain 
+faction_manifest_an_iron_curtain_usa = {
+	name = an_iron_curtain_goal_name
+	description = an_iron_curtain_goal_name_desc
+	is_manifest = yes
+	ratio_progress = {
+		total_amount_collection = game:all_states
+		completed_amount_collection = collection:world_non_communist_states
+		
+		scale = {
+			trade_opinion_factor = 0.250
+			subjects_autonomy_gain = 0.10
+			guarantee_cost = -0.50
+		}
+		
+		progress_sections = {
+			manifest_fulfilled = {
+				min = 0 # WAD
+	
+				modifier = {
+					industrial_capacity_factory = 0.1
+					democratic_drift_from_guarantees = 0.12
+					can_guarantee_other_ideologies = 1
+					generate_wargoal_tension = 0.15
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,15 @@
+FRW_franc = {
+	icon = GFX_idea_generic_production_bonus
+	enable = { always = yes }
+	remove_trigger = { has_capitulated = yes }
+	consumer_goods_factor = FRW_inf_cg
+	stability_factor = FRW_inf_stab
+	production_speed_buildings_factor = FRW_inf_build
+}
+
+FRW_ff_prestige_mod = {
+	icon = GFX_idea_generic_army_african_2
+	enable = { always = yes }
+	political_power_gain = FRW_ffp_pp
+	recruitable_population_factor = FRW_ffp_mp
+}

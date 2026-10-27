@@ -1,0 +1,30 @@
+SS_demands = { 
+	allowed = {
+		original_tag = GER
+	}
+
+	visible = {
+		has_country_leader = { character = GER_heinrich_himmler }
+	}
+}
+SS_recruitment = { 
+	allowed = {
+		original_tag = GER
+	}
+
+	available = {
+		has_government = fascism
+	}
+
+	visible = {
+			OR = {
+		has_completed_focus = gerarm5
+		has_completed_focus = GER_expand_ss_recruitment
+		}
+	}
+}
+wehrmacht_demands = {
+	allowed = {
+		original_tag = GER
+	}
+}

@@ -1,0 +1,554 @@
+rule_resistance_growth = {
+	name = "RULE_RESISTANCE_GROWTH_T"
+	group = "RULE_GROUP_GAMEPLAY"
+	icon = "GFX_rule_resistance"
+	default = {
+		name = "RULE_RESISTANCE_GROWTH_DEFAULT" # DEFAULT
+		text = RULE_RESISTANCE_GROWTH_DEFAULT
+		desc = "RULE_RESISTANCE_GROWTH_DEFAULT_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_RESISTANCE_GROWTH_1" # +5%
+		text = RULE_RESISTANCE_GROWTH_1
+		desc = "RULE_RESISTANCE_GROWTH_1_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_RESISTANCE_GROWTH_2" # +10%
+		text = RULE_RESISTANCE_GROWTH_2
+		desc = "RULE_RESISTANCE_GROWTH_2_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_RESISTANCE_GROWTH_3" # +15%
+		text = RULE_RESISTANCE_GROWTH_3
+		desc = "RULE_RESISTANCE_GROWTH_3_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_RESISTANCE_GROWTH_4" # -5%
+		text = RULE_RESISTANCE_GROWTH_4
+		desc = "RULE_RESISTANCE_GROWTH_4_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_RESISTANCE_GROWTH_5" # -10%
+		text = RULE_RESISTANCE_GROWTH_5
+		desc = "RULE_RESISTANCE_GROWTH_5_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_RESISTANCE_GROWTH_6" # -15%
+		text = RULE_RESISTANCE_GROWTH_6
+		desc = "RULE_RESISTANCE_GROWTH_6_DESC"
+	}
+}
+
+rule_compliance_growth = {
+	name = "RULE_COMPLIANCE_GROWTH_T"
+	group = "RULE_GROUP_GAMEPLAY"
+	icon = "GFX_rule_compliance"
+	default = {
+		name = "RULE_COMPLIANCE_GROWTH_DEFAULT" # DEFAULT
+		text = RULE_COMPLIANCE_GROWTH_DEFAULT
+		desc = "RULE_COMPLIANCE_GROWTH_DEFAULT_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_COMPLIANCE_GROWTH_1" # +5%
+		text = RULE_COMPLIANCE_GROWTH_1
+		desc = "RULE_COMPLIANCE_GROWTH_1_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_COMPLIANCE_GROWTH_2" # +10%
+		text = RULE_COMPLIANCE_GROWTH_2
+		desc = "RULE_COMPLIANCE_GROWTH_2_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_COMPLIANCE_GROWTH_3" # +15%
+		text = RULE_COMPLIANCE_GROWTH_3
+		desc = "RULE_COMPLIANCE_GROWTH_3_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_COMPLIANCE_GROWTH_4" # -5%
+		text = RULE_COMPLIANCE_GROWTH_4
+		desc = "RULE_COMPLIANCE_GROWTH_4_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_COMPLIANCE_GROWTH_5" # -10%
+		text = RULE_COMPLIANCE_GROWTH_5
+		desc = "RULE_COMPLIANCE_GROWTH_5_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_COMPLIANCE_GROWTH_6" # -15%
+		text = RULE_COMPLIANCE_GROWTH_6
+		desc = "RULE_COMPLIANCE_GROWTH_6_DESC"
+	}
+}
+
+rule_supply_cost = {
+	name = "RULE_SUPPLY_COST_T"
+	group = "RULE_GROUP_GAMEPLAY"
+	icon = "GFX_rule_supply"
+	default = {
+		name = "RULE_SUPPLY_COST_DEFAULT" # DEFAULT
+		text = RULE_SUPPLY_COST_DEFAULT
+		desc = "RULE_SUPPLY_COST_DEFAULT_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_SUPPLY_COST_1" # +100% / -25%
+		text = RULE_SUPPLY_COST_1
+		desc = "RULE_SUPPLY_COST_1_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_SUPPLY_COST_2" # +150% / -35%
+		text = RULE_SUPPLY_COST_2
+		desc = "RULE_SUPPLY_COST_2_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_SUPPLY_COST_3" # +200% / -45%
+		text = RULE_SUPPLY_COST_3
+		desc = "RULE_SUPPLY_COST_3_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_SUPPLY_COST_4" # +250% / -55%
+		text = RULE_SUPPLY_COST_4
+		desc = "RULE_SUPPLY_COST_4_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_SUPPLY_COST_5" # +300% / -65%
+		text = RULE_SUPPLY_COST_5
+		desc = "RULE_SUPPLY_COST_5_DESC"
+	}
+}
+
+rule_railway_cost = {
+	name = "RULE_RAILWAY_COST_T"
+	group = "RULE_GROUP_GAMEPLAY"
+	icon = "GFX_rule_railway"
+	default = {
+		name = "RULE_RAILWAY_COST_DEFAULT"
+		text = RULE_RAILWAY_COST_DEFAULT
+		desc = "RULE_RAILWAY_COST_DEFAULT_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_RAILWAY_COST_1"
+		text = RULE_RAILWAY_COST_1
+		desc = "RULE_RAILWAY_COST_1_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_RAILWAY_COST_2"
+		text = RULE_RAILWAY_COST_2
+		desc = "RULE_RAILWAY_COST_2_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_RAILWAY_COST_3"
+		text = RULE_RAILWAY_COST_3
+		desc = "RULE_RAILWAY_COST_3_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_RAILWAY_COST_4"
+		text = RULE_RAILWAY_COST_4
+		desc = "RULE_RAILWAY_COST_4_DESC"
+	}
+}
+
+rule_no_faction = {
+	name = "RULE_NO_FACTION_T"
+	group = "RULE_GROUP_GAMEPLAY"
+	icon = "GFX_rule_faction"
+	default = {
+		name = "RULE_FACTION_DEFAULT" # DEFAULT
+		text = RULE_FACTION_DEFAULT
+		desc = "RULE_FACTION_DEFAULT_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_FACTION_1" # No Starting Faction
+		text = RULE_FACTION_1
+		desc = "RULE_FACTION_1_DESC"
+	}
+}
+
+rule_volunteers_limit = {
+	name = "RULE_VOLUNTEERS_LIMIT_T"
+	group = "RULE_GROUP_GAMEPLAY"
+	icon = "GFX_rule_volunteers"
+	default = {
+		name = "RULE_VOLUNTEERS_LIMIT_DEFAULT" # DEFAULT
+		text = RULE_VOLUNTEERS_LIMIT_DEFAULT
+		desc = "RULE_VOLUNTEERS_LIMIT_DEFAULT_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_VOLUNTEERS_LIMIT_1" # SIZE= 5, DIVISIONS_REQUIRED= 10, WORLD_TENSION= -0.0, AIR_CAP= 150
+		text = RULE_VOLUNTEERS_LIMIT_1
+		desc = "RULE_VOLUNTEERS_LIMIT_1_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_VOLUNTEERS_LIMIT_2" # SIZE= 10, DIVISIONS_REQUIRED= 15, WORLD_TENSION= -0.0, AIR_CAP= 200
+		text = RULE_VOLUNTEERS_LIMIT_2
+		desc = "RULE_VOLUNTEERS_LIMIT_2_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_VOLUNTEERS_LIMIT_3" # SIZE= 15, DIVISIONS_REQUIRED= 20, WORLD_TENSION= -0.0, AIR_CAP= 300
+		text = RULE_VOLUNTEERS_LIMIT_3
+		desc = "RULE_VOLUNTEERS_LIMIT_3_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_VOLUNTEERS_LIMIT_4" # SIZE= 20, DIVISIONS_REQUIRED= 25, WORLD_TENSION= -0.0, AIR_CAP= 400
+		text = RULE_VOLUNTEERS_LIMIT_4
+		desc = "RULE_VOLUNTEERS_LIMIT_4_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_VOLUNTEERS_LIMIT_5" # SIZE= 100, DIVISIONS_REQUIRED= 0, WORLD_TENSION= -0.0, AIR_CAP= 5000 (NO LIMIT)
+		text = RULE_VOLUNTEERS_LIMIT_5
+		desc = "RULE_VOLUNTEERS_LIMIT_5_DESC"
+	}
+}
+
+rule_special_forces = {
+	name = "RULE_SPECIAL_FORCES_T"
+	group = "RULE_GROUP_GAMEPLAY"
+	icon = "GFX_rule_special_forces"
+	default = {
+		name = "RULE_SPECIAL_FORCES_DEFAULT" # DEFAULT
+		text = RULE_SPECIAL_FORCES_DEFAULT
+		desc = "RULE_SPECIAL_FORCES_DEFAULT_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_SPECIAL_FORCES_1" # TRAINING TIME= 0.10, LIMIT(%)= 0.05
+		text = RULE_SPECIAL_FORCES_1
+		desc = "RULE_SPECIAL_FORCES_1_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_SPECIAL_FORCES_2" # TRAINING TIME= 0.20, LIMIT(%)= 0.15
+		text = RULE_SPECIAL_FORCES_2
+		desc = "RULE_SPECIAL_FORCES_2_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_SPECIAL_FORCES_3" # TRAINING TIME= 0.30, LIMIT(%)= 0.20
+		text = RULE_SPECIAL_FORCES_3
+		desc = "RULE_SPECIAL_FORCES_3_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_SPECIAL_FORCES_4" # LIMIT= 10000 (NO LIMIT)
+		text = RULE_SPECIAL_FORCES_4
+		desc = "RULE_SPECIAL_FORCES_4_DESC"
+	}
+}
+
+rule_training_time = {
+	name = "RULE_TRAINING_TIME_T"
+	group = "RULE_GROUP_GAMEPLAY"
+	icon = "GFX_rule_training_time"
+	default = {
+		name = "RULE_TRAINING_TIME_DEFAULT" # DEFAULT
+		text = RULE_TRAINING_TIME_DEFAULT
+		desc = "RULE_TRAINING_TIME_DEFAULT_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_TRAINING_TIME_1" # 0.2 / 20%
+		text = RULE_TRAINING_TIME_1
+		desc = "RULE_TRAINING_TIME_1_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_TRAINING_TIME_2" # 0.3 / 30%
+		text = RULE_TRAINING_TIME_2
+		desc = "RULE_TRAINING_TIME_2_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_TRAINING_TIME_3" # 0.4 / 40%
+		text = RULE_TRAINING_TIME_3
+		desc = "RULE_TRAINING_TIME_3_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_TRAINING_TIME_4" # 0.5 / 50%
+		text = RULE_TRAINING_TIME_4
+		desc = "RULE_TRAINING_TIME_4_DESC"
+	}
+}
+
+rule_dockyard_output = {
+	name = "RULE_DOCKYARD_OUTPUT_T"
+	group = "RULE_GROUP_GAMEPLAY"
+	icon = "GFX_rule_dockyard_output"
+	default = {
+		name = "RULE_DOCKYARD_OUTPUT_DEFAULT" # DEFAULT
+		text = RULE_DOCKYARD_OUTPUT_DEFAULT
+		desc = "RULE_DOCKYARD_OUTPUT_DEFAULT_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_DOCKYARD_OUTPUT_1" # 0.5 / +50%
+		text = RULE_DOCKYARD_OUTPUT_1
+		desc = "RULE_DOCKYARD_OUTPUT_1_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_DOCKYARD_OUTPUT_2" # 1.0 / +100%
+		text = RULE_DOCKYARD_OUTPUT_2
+		desc = "RULE_DOCKYARD_OUTPUT_2_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_DOCKYARD_OUTPUT_3" # 1.5 / +150%
+		text = RULE_DOCKYARD_OUTPUT_3
+		desc = "RULE_DOCKYARD_OUTPUT_3_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_DOCKYARD_OUTPUT_4" # 2.0 / +200%
+		text = RULE_DOCKYARD_OUTPUT_4
+		desc = "RULE_DOCKYARD_OUTPUT_4_DESC"
+	}
+}
+
+rule_faction_joining = {
+	name = "RULE_FACTION_JOINING_T"
+	group = "RULE_GROUP_GAMEPLAY"
+	icon = "GFX_rule_faction_joining"
+	default = {
+		name = "RULE_FACTION_JOINING_DEFAULT" # DEFAULT
+		text = RULE_FACTION_JOINING_DEFAULT
+		desc = "RULE_FACTION_JOINING_DEFAULT_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_FACTION_JOINING_1" # join_faction_tension = 0.4
+		text = RULE_FACTION_JOINING_1
+		desc = "RULE_FACTION_JOINING_1_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_FACTION_JOINING_2" # join_faction_tension = 0.3
+		text = RULE_FACTION_JOINING_2
+		desc = "RULE_FACTION_JOINING_2_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_FACTION_JOINING_3" # join_faction_tension = 0.2
+		text = RULE_FACTION_JOINING_3
+		desc = "RULE_FACTION_JOINING_3_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_FACTION_JOINING_4" # join_faction_tension = 0.1
+		text = RULE_FACTION_JOINING_4
+		desc = "RULE_FACTION_JOINING_4_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_FACTION_JOINING_5" # join_faction_tension = 0.0
+		text = RULE_FACTION_JOINING_5
+		desc = "RULE_FACTION_JOINING_5_DESC"
+	}
+}
+
+rule_invasion_limit = {
+	name = "RULE_INVASION_LIMIT_T"
+	group = "RULE_GROUP_GAMEPLAY"
+	icon = "GFX_rule_invasion_limit"
+	default = {
+		name = "RULE_INVASION_LIMIT_DEFAULT"
+		text = RULE_INVASION_LIMIT_DEFAULT
+		desc = "RULE_INVASION_LIMIT_DEFAULT_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_INVASION_LIMIT_1"
+		text = RULE_INVASION_LIMIT_1
+		desc = "RULE_INVASION_LIMIT_1_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_INVASION_LIMIT_2"
+		text = RULE_INVASION_LIMIT_2
+		desc = "RULE_INVASION_LIMIT_2_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_INVASION_LIMIT_3"
+		text = RULE_INVASION_LIMIT_3
+		desc = "RULE_INVASION_LIMIT_3_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_INVASION_LIMIT_4"
+		text = RULE_INVASION_LIMIT_4
+		desc = "RULE_INVASION_LIMIT_4_DESC"
+	}
+}
+
+rule_research_speed = {
+	name = "RULE_RESEARCH_SPEED_T"
+	group = "RULE_GROUP_GAMEPLAY"
+	icon = "GFX_rule_research_speed"
+	default = {
+		name = "RULE_RESEARCH_SPEED_DEFAULT"
+		text = RULE_RESEARCH_SPEED_DEFAULT
+		desc = "RULE_RESEARCH_SPEED_DEFAULT_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_RESEARCH_SPEED_1"
+		text = RULE_RESEARCH_SPEED_1
+		desc = "RULE_RESEARCH_SPEED_1_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_RESEARCH_SPEED_2"
+		text = RULE_RESEARCH_SPEED_2
+		desc = "RULE_RESEARCH_SPEED_2_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_RESEARCH_SPEED_3"
+		text = RULE_RESEARCH_SPEED_3
+		desc = "RULE_RESEARCH_SPEED_3_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_RESEARCH_SPEED_4"
+		text = RULE_RESEARCH_SPEED_4
+		desc = "RULE_RESEARCH_SPEED_4_DESC"
+	}
+}
+
+rule_land_lease_tension = {
+	name = "RULE_LAND_LEASE_TENSION_T"
+	group = "RULE_GROUP_GAMEPLAY"
+	icon = "GFX_rule_land_lease_tension"
+	default = {
+		name = "RULE_LAND_LEASE_TENSION_DEFAULT"
+		text = RULE_LAND_LEASE_TENSION_DEFAULT
+		desc = "RULE_LAND_LEASE_TENSION_DEFAULT_DESC"
+	}
+	option = {
+		allow_achievements = yes #30
+		name = "RULE_LAND_LEASE_TENSION_1"
+		text = RULE_LAND_LEASE_TENSION_1
+		desc = "RULE_LAND_LEASE_TENSION_1_DESC"
+	}
+	option = {
+		allow_achievements = yes #20
+		name = "RULE_LAND_LEASE_TENSION_2"
+		text = RULE_LAND_LEASE_TENSION_2
+		desc = "RULE_LAND_LEASE_TENSION_2_DESC"
+	}
+	option = {
+		allow_achievements = yes #10
+		name = "RULE_LAND_LEASE_TENSION_3"
+		text = RULE_LAND_LEASE_TENSION_3
+		desc = "RULE_LAND_LEASE_TENSION_3_DESC"
+	}
+	option = {
+		allow_achievements = yes #0
+		name = "RULE_LAND_LEASE_TENSION_4"
+		text = RULE_LAND_LEASE_TENSION_4
+		desc = "RULE_LAND_LEASE_TENSION_4_DESC"
+	}
+}
+
+rule_special_project_speed = {
+	name = "RULE_SPECIAL_PROJECT_SPEED_T"
+	group = "RULE_GROUP_GAMEPLAY"
+	icon = "GFX_rule_special_project_speed"
+	default = {
+		name = "RULE_SPECIAL_PROJECT_SPEED_DEFAULT"
+		text = RULE_SPECIAL_PROJECT_SPEED_DEFAULT
+		desc = "RULE_SPECIAL_PROJECT_SPEED_DEFAULT_DESC"
+	}
+	option = {
+		allow_achievements = yes #10
+		name = "RULE_SPECIAL_PROJECT_SPEED_1"
+		text = RULE_SPECIAL_PROJECT_SPEED_1
+		desc = "RULE_SPECIAL_PROJECT_SPEED_1_DESC"
+	}
+	option = {
+		allow_achievements = yes #20
+		name = "RULE_SPECIAL_PROJECT_SPEED_2"
+		text = RULE_SPECIAL_PROJECT_SPEED_2
+		desc = "RULE_SPECIAL_PROJECT_SPEED_2_DESC"
+	}
+	option = {
+		allow_achievements = yes #30
+		name = "RULE_SPECIAL_PROJECT_SPEED_3"
+		text = RULE_SPECIAL_PROJECT_SPEED_3
+		desc = "RULE_SPECIAL_PROJECT_SPEED_3_DESC"
+	}
+	option = {
+		allow_achievements = yes #40
+		name = "RULE_SPECIAL_PROJECT_SPEED_4"
+		text = RULE_SPECIAL_PROJECT_SPEED_4
+		desc = "RULE_SPECIAL_PROJECT_SPEED_4_DESC"
+	}
+}
+
+rule_political_power_gain = {
+	name = "RULE_POLITICAL_POWER_GAIN_T"
+	group = "RULE_GROUP_GAMEPLAY"
+	icon = "GFX_rule_political_power_gain"
+	default = {
+		name = "RULE_POLITICAL_POWER_GAIN_DEFAULT"
+		text = RULE_POLITICAL_POWER_GAIN_DEFAULT
+		desc = "RULE_POLITICAL_POWER_GAIN_DEFAULT_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_POLITICAL_POWER_GAIN_1"
+		text = RULE_POLITICAL_POWER_GAIN_1
+		desc = "RULE_POLITICAL_POWER_GAIN_1_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_POLITICAL_POWER_GAIN_2"
+		text = RULE_POLITICAL_POWER_GAIN_2
+		desc = "RULE_POLITICAL_POWER_GAIN_2_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_POLITICAL_POWER_GAIN_3"
+		text = RULE_POLITICAL_POWER_GAIN_3
+		desc = "RULE_POLITICAL_POWER_GAIN_3_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_POLITICAL_POWER_GAIN_4"
+		text = RULE_POLITICAL_POWER_GAIN_4
+		desc = "RULE_POLITICAL_POWER_GAIN_4_DESC"
+	}
+	option = {
+		allow_achievements = yes
+		name = "RULE_POLITICAL_POWER_GAIN_5"
+		text = RULE_POLITICAL_POWER_GAIN_5
+		desc = "RULE_POLITICAL_POWER_GAIN_5_DESC"
+	}
+}

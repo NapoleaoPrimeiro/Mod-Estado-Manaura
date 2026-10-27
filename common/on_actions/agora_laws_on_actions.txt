@@ -1,0 +1,99 @@
+# Agora Laws — bayrak bakimi
+# Bazi kanunlarin available/visible bloklari bu bayraklara bakar.
+# Bu dosya olmazsa o kanunlar ya hic acilmaz ya da yanlis zamanda gorunur.
+on_actions = {
+
+	on_startup = {
+		effect = {
+			every_country = {
+				limit = {
+					OR = {
+						has_government = communism
+						has_government = fascism
+					}
+				}
+				set_country_flag = communist_or_fascist_country
+			}
+		}
+	}
+
+	on_government_change = {
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						has_government = communism
+						has_government = fascism
+					}
+				}
+				set_country_flag = communist_or_fascist_country
+			}
+			else_if = {
+				limit = { has_country_flag = communist_or_fascist_country }
+				clr_country_flag = communist_or_fascist_country
+			}
+		}
+	}
+
+	on_ruling_party_change = {
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						has_government = communism
+						has_government = fascism
+					}
+				}
+				set_country_flag = communist_or_fascist_country
+			}
+			else_if = {
+				limit = { has_country_flag = communist_or_fascist_country }
+				clr_country_flag = communist_or_fascist_country
+			}
+		}
+	}
+
+	on_weekly = {
+		effect = {
+			every_country = {
+				if = {
+					limit = {
+						is_ai = yes
+						NOT = { has_country_flag = ai_country }
+					}
+					set_country_flag = ai_country
+				}
+				else_if = {
+					limit = {
+						is_ai = no
+						has_country_flag = ai_country
+					}
+					clr_country_flag = ai_country
+				}
+			}
+		}
+	}
+
+	# ------------------------------------------------------------------
+	# SADECE modunda anarchism / anarchist_communism alt-ideolojisi VARSA ac.
+	# Yoksa error.log'u doldurur. Kapali birakirsan tek kayip,
+	# "ef_laws_leadership_communal_decision_making" kanununun hic acilmamasi olur.
+	# ------------------------------------------------------------------
+	# on_ruling_party_change = {
+	#	effect = {
+	#		if = {
+	#			limit = {
+	#				OR = {
+	#					has_country_leader_ideology = anarchism
+	#					has_country_leader_ideology = anarchist_communism
+	#				}
+	#			}
+	#			set_country_flag = EF_anarchist_country
+	#		}
+	#		else_if = {
+	#			limit = { has_country_flag = EF_anarchist_country }
+	#			clr_country_flag = EF_anarchist_country
+	#		}
+	#	}
+	# }
+}

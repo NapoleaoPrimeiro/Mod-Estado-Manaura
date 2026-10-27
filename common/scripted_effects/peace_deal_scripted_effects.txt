@@ -1,0 +1,595 @@
+trigger_peace_deal = { #offensive
+	set_temp_variable = { ceasefire_score = PREV.surrender_progress }
+	
+	log = "peace_score_off1: [?ceasefire_score]"
+	
+	subtract_from_temp_variable = { ceasefire_score = ROOT.surrender_progress }
+	
+	set_temp_variable = { total_uncontrolled = 0 }
+	set_temp_variable = { sender_holds = 0 }
+
+	if = {
+		limit = {
+			check_variable = { ceasefire_score > 0 }
+		}	
+		every_owned_state = {
+			limit = {
+				NOT = { is_controlled_by = PREV }
+				is_core_of = PREV
+			}	
+			add_to_temp_variable = { total_uncontrolled = 1 }
+			if = {
+				limit = { is_controlled_by_ROOT_or_ally = yes }
+				add_to_temp_variable = { sender_holds = 1 }
+			}
+		}
+		log = "occupation_uncontrolled: [?total_uncontrolled]"
+		log = "occupation_root_holds: [?sender_holds]"
+	
+		if = {
+			limit = { check_variable = { total_uncontrolled > 0 } }
+			divide_temp_variable = { sender_holds = var:total_uncontrolled }
+			multiply_temp_variable = { ceasefire_score = var:sender_holds }
+			log = "occupation_ratio: [?sender_holds]"
+			log = "peace_score_after_occupation: [?ceasefire_score]"
+		}
+	}
+	
+	if = {
+		limit = {
+			check_variable = { ceasefire_score < 0 }
+		}
+		ROOT = {
+			set_temp_variable = { total_uncontrolled = 0 }
+			set_temp_variable = { sender_holds = 0 }
+			every_owned_state = {
+				limit = {
+					NOT = { is_controlled_by = PREV }
+					is_core_of = PREV
+				}
+				add_to_temp_variable = { total_uncontrolled = 1 }
+				if = {
+					limit = {
+						OR = {
+							is_controlled_by = PREV.PREV
+							controller = {
+								is_ally_with = PREV.PREV
+							}	
+						}
+					}	
+					add_to_temp_variable = { sender_holds = 1 }
+				}
+			}
+		
+			log = "occupation_uncontrolled_onroot: [?total_uncontrolled]"
+			log = "occupation_root_holds_onroot: [?sender_holds]"
+		
+			if = {
+				limit = { check_variable = { total_uncontrolled > 0 } }
+				divide_temp_variable = { sender_holds = var:total_uncontrolled }
+				multiply_temp_variable = { ceasefire_score = var:sender_holds }
+				log = "occupation_ratio_onroot: [?sender_holds]"
+				log = "peace_score_after_occupation_onroot: [?ceasefire_score]"
+			}
+		}
+	}	
+	
+	log = "peace_score_off2: [?ceasefire_score]"
+	
+	if = {
+        limit = { THIS = { is_faction_leader = yes } }
+		log = "member_count_start: true"
+		if = {
+			limit = {
+				has_dlc = "No Compromise, No Surrender"
+				has_capitulated = no
+			}
+			multiply_temp_variable = { ceasefire_score = THIS.faction_influence_ratio }
+		}
+		else = {
+			multiply_temp_variable = { ceasefire_score = 0.75 }
+		}
+		log = "member_count_cfs_in_faction: [?ceasefire_score]"
+        every_faction_member = { # var
+			set_temp_variable = { member_score = 0 }
+            limit = {
+				has_war_with = ROOT
+                is_faction_leader = no
+                surrender_progress > 0
+				any_owned_state = {
+					is_controlled_by_ROOT_or_ally = yes
+				}	
+            }
+			log = "member_count_start2: true"
+			if = {
+				limit = {
+					has_capitulated = yes
+				}
+				add_to_temp_variable = { member_score = 1 }
+				multiply_temp_variable = { member_score = var:pre_cap_weight }
+			}
+			else = {
+				add_to_temp_variable = { member_score = surrender_progress }
+			}
+			log = "member_score_off1: [?member_score]"
+			if = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender"
+					has_capitulated = no
+				}
+				multiply_temp_variable = { member_score = faction_influence_ratio }
+				log = "member_score_off2: [?member_score]"
+			}
+			else_if = { #FALLBACK, in case the playes doesnt have ncns
+				limit = {
+					has_capitulated = no
+				}	
+				set_temp_variable = { member_ic = num_of_owned_factories }
+				PREV = { # scoping back to leader
+					set_temp_variable = { leader_ic = num_of_owned_factories }
+				}
+				if = {	
+					limit = { check_variable = { leader_ic > 0 } }
+					divide_temp_variable = { member_ic = var:leader_ic }
+					clamp_temp_variable = { var = member_ic min = 0.0 max = 0.75 }
+					multiply_temp_variable = { member_score = var:member_ic }
+				}
+				else = {
+					multiply_temp_variable = { member_score = 0.01 }
+				}
+			}
+			log = "member_score_off3: [?member_score]"
+			
+			multiply_temp_variable = { member_score = 0.75 }
+			
+			log = "member_score_off4: [?member_score]"
+			
+			add_to_temp_variable = { var = ceasefire_score value = var:member_score }
+			
+			log = "member_score_off5: [?ceasefire_score]"
+		}	
+    }
+	
+	if = {
+		limit = { ROOT = { is_faction_leader = yes } }
+		log = "member_count_start_onroot: true"
+		if = {
+			limit = {
+				has_dlc = "No Compromise, No Surrender"
+				has_capitulated = no
+			}
+			multiply_temp_variable = { ceasefire_score = ROOT.faction_influence_ratio }
+		}
+		else = {
+			multiply_temp_variable = { ceasefire_score = 0.75 }
+		}
+		log = "member_count_cfs_in_faction: [?ceasefire_score]"
+		ROOT = {
+			every_faction_member = { # var
+				set_temp_variable = { member_score = 0 }
+				limit = {
+					has_war_with = PREV.PREV
+					is_faction_leader = no
+					surrender_progress > 0
+					any_owned_state = {
+						OR = {
+							is_controlled_by = PREV.PREV
+							controller = {
+								is_ally_with = PREV.PREV
+							}
+						}	
+					}
+				}
+				log = "member_count_start2: true"
+				if = {
+					limit = {
+						has_capitulated = yes
+					}
+					add_to_temp_variable = { member_score = 1 }
+					multiply_temp_variable = { member_score = var:pre_cap_weight }
+				}
+				else = {
+					add_to_temp_variable = { member_score = surrender_progress }
+				}
+				log = "member_score_off1: [?member_score]"
+				if = {
+					limit = {
+						has_dlc = "No Compromise, No Surrender"
+						has_capitulated = no
+					}
+					multiply_temp_variable = { member_score = faction_influence_ratio }
+					log = "member_score_off2: [?member_score]"
+				}
+				else_if = { #FALLBACK, in case the playes doesnt have ncns
+					limit = {
+						has_capitulated = no
+					}	
+					set_temp_variable = { member_ic = num_of_owned_factories }
+					PREV = { # scoping back to leader
+						set_temp_variable = { leader_ic = num_of_owned_factories }
+					}
+					if = {	
+						limit = { check_variable = { leader_ic > 0 } }
+						divide_temp_variable = { member_ic = var:leader_ic }
+						clamp_temp_variable = { var = member_ic min = 0.0 max = 0.75 }
+						multiply_temp_variable = { member_score = var:member_ic }
+					}
+					else = {
+						multiply_temp_variable = { member_score = 0.01 }
+					}
+				}
+				log = "member_score_off3: [?member_score]"
+				
+				multiply_temp_variable = { member_score = 0.75 }
+				
+				log = "member_score_off4: [?member_score]"
+				
+				subtract_from_temp_variable  = { var = ceasefire_score value = var:member_score }
+				
+				log = "member_score_off5: [?ceasefire_score]"
+			}
+		}
+	}
+
+	ROOT = {
+		if = { # CONTROLLED NON CORE CALCULATIONS
+			limit = {
+				any_controlled_state = {
+					is_owned_by = THIS
+					NOT = { is_core_of = THIS }
+				}
+			}
+			
+			log = "statevalue = true"
+			
+			set_temp_variable = { controlled_states_value = 0 }
+			
+			every_controlled_state = {
+				limit = {
+					is_owned_by = PREV.PREV
+					NOT = { is_core_of = PREV.PREV }
+				}
+				
+				set_temp_variable = { this_state_value = state_and_terrain_strategic_value }
+				
+				log = "statevalue_1 = [?state_and_terrain_strategic_value]"
+				
+				divide_temp_variable = { this_state_value = 25 }
+				
+				log = "statevalue_2 = [?this_state_value]"
+				
+				multiply_temp_variable = { this_state_value = 0.75 }
+				
+				log = "statevalue_3 = [?this_state_value]"
+				
+				add_to_temp_variable = { controlled_states_value = var:this_state_value }
+				
+				log = "statevalue_4 = [?controlled_states_value]"
+			}
+			divide_temp_variable = { controlled_states_value = PREV.num_owned_states }
+			
+			log = "statevalue_5 = [?controlled_states_value]"
+			
+			clamp_temp_variable = {
+				var = controlled_states_value
+				min = 0.0
+				max = 1
+			}
+			
+			log = "statevalue_6 = [?controlled_states_value]"
+			
+			add_to_temp_variable = { ceasefire_score = var:controlled_states_value }
+		}
+	}	
+	
+	if = { # CONTROLLED NON CORE CALCULATIONS
+		limit = {
+			any_controlled_state = {
+				is_owned_by = ROOT
+				NOT = { is_core_of = ROOT }
+			}
+		}
+		
+		log = "statevalue = true"
+		
+		set_temp_variable = { controlled_states_value = 0 }
+		
+		every_controlled_state = {
+			limit = {
+				is_owned_by = ROOT
+				NOT = { is_core_of = ROOT }
+			}
+			
+			set_temp_variable = { this_state_value = state_and_terrain_strategic_value }
+			
+			log = "statevalue_1 = [?state_and_terrain_strategic_value]"
+			
+			divide_temp_variable = { this_state_value = 25 }
+			
+			log = "statevalue_2 = [?this_state_value]"
+			
+			multiply_temp_variable = { this_state_value = 0.75 }
+			
+			log = "statevalue_3 = [?this_state_value]"
+			
+			add_to_temp_variable = { controlled_states_value = var:this_state_value }
+			
+			log = "statevalue_4 = [?controlled_states_value]"
+		}
+		
+		divide_temp_variable = { controlled_states_value = ROOT.num_owned_states }
+		
+		log = "statevalue_5 = [?controlled_states_value]"
+		
+		clamp_temp_variable = {
+			var = controlled_states_value
+			min = 0.0
+			max = 1
+		}
+		
+		log = "statevalue_6 = [?controlled_states_value]"
+		
+		subtract_from_temp_variable = { ceasefire_score = var:controlled_states_value }
+	}
+	
+	THIS = {
+		if = {
+			limit = {
+				is_faction_leader = no
+			}	
+			every_subject_country = {
+				limit = {
+					has_war_with = ROOT
+					OR = {
+						has_capitulated = yes
+						surrender_progress > 0
+						any_owned_state = {
+							is_controlled_by_ROOT_or_ally = yes
+						}
+					}
+				}
+				set_temp_variable = { subject_score = 0 }
+				if = {
+					limit = { has_capitulated = yes }
+					add_to_temp_variable = { subject_score = 1 }
+					multiply_temp_variable = { subject_score = var:pre_cap_weight }
+				}
+				else = {
+					add_to_temp_variable = { subject_score = surrender_progress }
+				}
+				log = "subject_score_THIS_raw: [?subject_score]"
+				set_temp_variable = { subject_ic = num_of_owned_factories }
+				PREV = {
+					set_temp_variable = { overlord_ic = num_of_owned_factories }
+				}
+				if = {
+					limit = { check_variable = { overlord_ic > 0 } }
+					divide_temp_variable = { subject_ic = var:overlord_ic }
+					clamp_temp_variable = { var = subject_ic min = 0.0 max = 0.75 }
+					multiply_temp_variable = { subject_score = var:subject_ic }
+				}
+				else = {
+					multiply_temp_variable = { subject_score = 0.01 }
+				}
+				multiply_temp_variable = { subject_score = 0.75 } # puppets weigh less than core
+				log = "subject_score_THIS_final: [?subject_score]"
+				add_to_temp_variable = { var = ceasefire_score value = var:subject_score }
+			}
+		}	
+	}
+	
+	ROOT = {
+		if = {
+			limit = {
+				is_faction_leader = no
+			}
+			every_subject_country = {
+				limit = {
+					has_war_with = PREV.PREV
+					OR = {
+						has_capitulated = yes
+						surrender_progress > 0
+						any_owned_state = {
+							OR = {
+								is_controlled_by = PREV.PREV
+								controller = {
+									is_ally_with = PREV.PREV
+								}
+							}	
+						}
+					}
+				}
+				set_temp_variable = { subject_score = 0 }
+				if = {
+					limit = { has_capitulated = yes }
+					add_to_temp_variable = { subject_score = 1 }
+					multiply_temp_variable = { subject_score = var:pre_cap_weight }
+				}
+				else = {
+					add_to_temp_variable = { subject_score = surrender_progress }
+				}
+				log = "subject_score_ROOT_raw: [?subject_score]"
+				set_temp_variable = { subject_ic = num_of_owned_factories }
+				PREV = {
+					set_temp_variable = { overlord_ic = num_of_owned_factories }
+				}
+				if = {
+					limit = { check_variable = { overlord_ic > 0 } }
+					divide_temp_variable = { subject_ic = var:overlord_ic }
+					clamp_temp_variable = { var = subject_ic min = 0.0 max = 0.75 }
+					multiply_temp_variable = { subject_score = var:subject_ic }
+				}
+				else = {
+					multiply_temp_variable = { subject_score = 0.01 }
+				}
+				multiply_temp_variable = { subject_score = 0.75 }
+				log = "subject_score_ROOT_final: [?subject_score]"
+				subtract_from_temp_variable = { var = ceasefire_score value = var:subject_score }
+			}
+		}	
+	}
+	
+	clamp_temp_variable = {
+		var = ceasefire_score
+		min = -1
+		max = 1
+	}
+	
+	log = "peace_score_off3: [?ceasefire_score]"
+	
+	if = {
+		limit = {
+			check_variable = { ceasefire_score < 0 }
+		}
+		multiply_temp_variable = { ceasefire_score = -1 }
+		set_country_flag = custom_peace_in_progress
+		start_peace_conference = {
+			tag = ROOT
+			score_factor = var:ceasefire_score
+		}
+	}
+	else = {
+		ROOT = {
+			set_country_flag = custom_peace_in_progress	
+			start_peace_conference = {
+				tag = PREV
+				score_factor = var:ceasefire_score
+			}
+		}	
+	}
+}	
+
+#trigger_peace_deal_defensive = {
+#	set_temp_variable = { ceasefire_score = ROOT.surrender_progress }
+#	
+#	log = "peace_score_def1: [?ceasefire_score]"
+#	
+#	if = {
+#        limit = { ROOT = { is_faction_leader = yes } }
+#		log = "member_count_start: true"
+#        ROOT = {
+#            every_faction_member = { # var
+#				set_temp_variable = { member_score = 0 }
+#                limit = {
+#					has_war_with = PREV.PREV
+#                    is_faction_leader = no
+#                    surrender_progress > 0
+#                }
+#				log = "member_count_start2: true"
+#				if = {
+#					limit = {
+#						has_capitulated = yes
+#					}
+#					add_to_temp_variable = { member_score = 1 }
+#					multiply_temp_variable = { member_score = var:pre_cap_weight }
+#				}
+#				else = {
+#					add_to_temp_variable = { member_score = surrender_progress }
+#				}
+#				log = "member_score_off1: [?member_score]"
+#				if = {
+#					limit = {
+#						has_dlc = "No Compromise, No Surrender"
+#						has_capitulated = no
+#					}
+#					multiply_temp_variable = { member_score = faction_influence_ratio }
+#					log = "member_score_off2: [?member_score]"
+#				}
+#				else_if = { #FALLBACK, in case the playes doesnt have ncns
+#					limit = {
+#						has_capitulated = no
+#					}	
+#					set_temp_variable = { member_ic = num_of_owned_factories }
+#					PREV = { # scoping back to leader
+#						set_temp_variable = { leader_ic = num_of_owned_factories }
+#					}
+#					if = {	
+#						limit = { check_variable = { leader_ic > 0 } }
+#						divide_temp_variable = { member_ic = var:leader_ic }
+#						clamp_temp_variable = { var = member_ic min = 0.0 max = 0.75 }
+#						multiply_temp_variable = { member_score = var:member_ic }
+#					}
+#					else = {
+#						multiply_temp_variable = { member_score = 0.01 }
+#					}
+#				}
+#				log = "member_score_off3: [?member_score]"
+#				
+#				multiply_temp_variable = { member_score = 0.75 }
+#				
+#				log = "member_score_off4: [?member_score]"
+#				
+#				add_to_temp_variable = { var = ceasefire_score value = var:member_score }
+#				
+#				log = "member_score_off5: [?ceasefire_score]"
+#            }
+#        }
+#    }
+#	
+#	if = { # CONTROLLED NON CORE CALCULATIONS
+#		limit = {
+#			THIS = {
+#				any_controlled_state = {
+#					is_owned_by = ROOT
+#					NOT = { is_core_of = ROOT }
+#				}
+#			}	
+#		}
+#		
+#		log = "statevalue = true"
+#		
+#		set_temp_variable = { controlled_states_value = 0 }
+#		
+#		every_controlled_state = {
+#			limit = {
+#				is_owned_by = ROOT
+#				NOT = { is_core_of = ROOT }
+#			}
+#			
+#			set_temp_variable = { this_state_value = state_and_terrain_strategic_value }
+#			
+#			log = "statevalue_1 = [?state_and_terrain_strategic_value]"
+#			
+#			divide_temp_variable = { this_state_value = 25 }
+#			
+#			log = "statevalue_2 = [?this_state_value]"
+#			
+#			multiply_temp_variable = { this_state_value = 0.75 }
+#			
+#			log = "statevalue_3 = [?this_state_value]"
+#			
+#			add_to_temp_variable = { controlled_states_value = var:this_state_value }
+#			
+#			log = "statevalue_4 = [?controlled_states_value]"
+#		}
+#		divide_temp_variable = { controlled_states_value = ROOT.num_owned_states }
+#		
+#		log = "statevalue_5 = [?controlled_states_value]"
+#		
+#		clamp_temp_variable = {
+#			var = controlled_states_value
+#			min = 0.0
+#			max = 1
+#		}
+#		
+#		log = "statevalue_6 = [?controlled_states_value]"
+#		
+#		add_to_temp_variable = { ceasefire_score = var:controlled_states_value }
+#	}
+#	
+#	multiply_temp_variable = { ceasefire_score = 0.75 }
+#	log = "peace_score_def2: [?ceasefire_score]"
+#
+#	clamp_variable = {
+#		var = ceasefire_score
+#		min = 0.0
+#		max = 1.0
+#	}
+#	
+#	log = "peace_score_def3: [?ceasefire_score]"
+#	
+#	start_peace_conference = {
+#		tag = ROOT
+#		score_factor = var:ceasefire_score
+#	}
+#}

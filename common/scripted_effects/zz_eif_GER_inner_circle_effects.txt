@@ -1,0 +1,311 @@
+GER_modify_industrial_modifier = {
+	if = {
+		limit = {
+			has_dynamic_modifier = { modifier = GER_mefo_bills_modifier }
+		}
+		custom_effect_tooltip = GER_modify_mefo_bills_modifier_tt
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = { modifier = GER_economy_of_conquest_modifier }
+		}
+		custom_effect_tooltip = GER_modify_economy_of_conquest_modifier_tt
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = { modifier = GER_recovering_economy_modifier }
+		}
+		custom_effect_tooltip = GER_modify_recovering_economy_modifier_tt
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = { modifier = GER_wirtschaftswunder_modifier }
+		}
+		custom_effect_tooltip = GER_modify_wirtschaftswunder_modifier_tt
+	}
+}
+
+GER_modify_army_modifier = {
+	if = {
+		limit = {
+			has_dynamic_modifier = { modifier = GER_army_modifier }
+		}
+		custom_effect_tooltip = GER_modify_army_modifier_tt
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = { modifier = GER_army_communist_modifier }
+		}
+		custom_effect_tooltip = GER_modify_army_communist_modifier_tt
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = { modifier = GER_ss_army_modifier }
+		}
+		custom_effect_tooltip = GER_modify_ss_army_modifier_tt
+	}
+}
+
+GER_modify_navy_modifier = {
+	if = {
+		limit = {
+			has_dynamic_modifier = { modifier = GER_navy_fascist_modifier }
+		}
+		custom_effect_tooltip = GER_modify_navy_fascist_modifier_tt
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = { modifier = GER_navy_democratic_modifier }
+		}
+		custom_effect_tooltip = GER_modify_navy_democratic_modifier_tt
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = { modifier = GER_navy_imperial_modifier }
+		}
+		custom_effect_tooltip = GER_modify_navy_imperial_modifier_tt
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = { modifier = GER_navy_communist_modifier }
+		}
+		custom_effect_tooltip = GER_modify_navy_communist_modifier_tt
+	}
+}
+
+GER_modify_airforce_modifier = {
+	if = {
+		limit = {
+			has_dynamic_modifier = { modifier = GER_airforce_modifier }
+		}
+		custom_effect_tooltip = GER_modify_airforce_modifier_tt
+	}
+	else_if = {
+		limit = {
+			has_dynamic_modifier = { modifier = GER_airforce_communist_modifier }
+		}
+		custom_effect_tooltip = GER_modify_airforce_communist_modifier_tt
+	}
+}
+
+GER_add_or_modify_wunderwaffen = {
+	if = {
+		limit = {
+			NOT = { has_dynamic_modifier = { modifier = GER_wunderwaffen_modifier }}
+		}
+		custom_effect_tooltip = GER_add_wunderwaffen_modifier_tt
+		hidden_effect = {
+			add_dynamic_modifier = { modifier = GER_wunderwaffen_modifier }
+		}
+	}
+	else = {
+		custom_effect_tooltip = GER_modify_wunderwaffen_modifier_tt
+	}
+}
+
+GER_add_or_modify_wehrwirtschaft = {
+	if = {
+		limit = {
+			NOT = { has_dynamic_modifier = { modifier = GER_wehrwirtschaft_modifier }}
+		}
+		custom_effect_tooltip = GER_add_wehrwirtschaft_modifier_tt
+		hidden_effect = {
+			add_dynamic_modifier = { modifier = GER_wehrwirtschaft_modifier }
+		}
+	}
+	else = {
+		custom_effect_tooltip = GER_modify_wehrwirtschaft_modifier_tt
+	}
+}
+
+GER_wehrmacht_civil_war = {
+	start_civil_war = {
+		ideology = neutrality
+		size = 0.5
+		keep_all_characters = yes
+		PREV = {	# Original country
+			GER_wilhelm_iv = { # Character
+				set_nationality = PREV.PREV
+				# Transfers to breakaway
+			}
+			GER_wilhelm_canaris = { # Character
+				set_nationality = PREV.PREV
+				# Transfers to breakaway
+			}
+			GER_hans_oster = { # Character
+				set_nationality = PREV.PREV
+				# Transfers to breakaway
+			}
+			GER_ludwig_beck = { # Character
+				set_nationality = PREV.PREV
+				# Transfers to breakaway
+			}
+			GER_franz_halder = { # Character
+				set_nationality = PREV.PREV
+				# Transfers to breakaway
+			}
+			GER_walther_von_brauchitsch = { # Character
+				set_nationality = PREV.PREV
+				# Transfers to breakaway
+			}
+			GER_werner_von_fritsch = { # Character
+				set_nationality = PREV.PREV
+				# Transfers to breakaway
+			}
+			GER_werner_von_blomberg = { # Character
+				set_nationality = PREV.PREV
+				# Transfers to breakaway
+			}
+		}
+
+		IF = {
+			limit = {
+				PREV.PREV = {
+					NOT = {
+						has_country_leader = {
+							ruling_only = yes
+							character = GER_walther_von_brauchitsch
+						}
+					}
+					has_civil_war = yes
+				}
+			}
+			PREV.PREV = {
+				GER_walther_von_brauchitsch = {
+					add_country_leader_role = {
+						promote_leader = yes
+						country_leader = {
+							ideology = military_junta
+							expire = "1965.1.1.1"
+							traits = { GER_iron_cross }
+						}
+					}
+				}
+			}
+		}
+
+		PREV.PREV = {
+			set_variable = { GER_military_army_org_factor = 0.05 }
+			set_variable = { GER_military_army_artillery_attack_factor = 0 }
+			set_variable = { GER_military_army_org_regain = 0 }
+			set_variable = { GER_military_planning_speed = 0.25 }
+			set_variable = { GER_military_supply_consumption_factor = -0.15 }
+			set_variable = { GER_military_equipment_capture = 0 }
+			set_variable = { GER_military_initiative_factor = 0 }
+			set_variable = { GER_military_army_fuel_consumption_factor = 0 }
+			set_variable = { GER_military_coordination_bonus = 0 }
+			set_variable = { GER_military_air_superiority_bonus_in_combat = 0 }
+			set_variable = { GER_military_max_dig_in_factor = 0 }
+			set_variable = { GER_military_army_artillery_defence_factor = 0 }
+			set_variable = { GER_military_railway_gun_bombardment_factor = 0 }
+			set_variable = { GER_military_special_forces_cap = 0 }
+			set_variable = { GER_military_acclimatization_hot_climate_gain_factor = 0 }
+			set_variable = { GER_military_acclimatization_cold_climate_gain_factor = 0 }
+			set_variable = { GER_military_land_doctrine_cost_factor = 0 }
+			set_variable = { GER_military_modifier_army_sub_unit_militia_attack_factor = 0 }
+			set_variable = { GER_military_modifier_army_sub_unit_militia_defence_factor = 0 }
+			set_variable = { GER_military_modifier_army_sub_unit_militia_max_org_factor = 0 }
+			set_variable = { GER_military_experience_gain_army_factor = 0 }
+			set_variable = { GER_military_army_morale_factor = 0 }
+			set_variable = { GER_military_mobilization_speed = 0 }
+			set_variable = { GER_military_minimum_training_level = 0 }
+			set_variable = { GER_military_unit_leader_as_advisor_cp_cost_factor = 0 }
+			set_variable = { GER_military_command_power_gain_mult = 0 }
+			add_dynamic_modifier = { modifier = GER_army_modifier }
+
+			set_variable = { GER_military_naval_heavy_gun_hit_chance_factor = 0 }
+			set_variable = { GER_military_screening_efficiency = 0 }
+			set_variable = { GER_military_screening_without_screens = 0.1 }
+			set_variable = { GER_military_navy_max_range_factor = 0 }
+			set_variable = { GER_military_naval_defense_factor = -0.1 }
+			add_dynamic_modifier = { modifier = GER_navy_fascist_modifier }
+
+			set_variable = { GER_military_air_accidents_factor = 0.10 }
+			set_variable = { GER_military_air_manpower_requirement_factor = 0.10 }
+			set_variable = { GER_military_air_agility_factor = 0 }
+			set_variable = { GER_military_air_attack_factor = 0 }
+			set_variable = { GER_military_air_ace_generation_chance_factor = 0 }
+			set_variable = { GER_military_air_nav_efficiency = 0 }
+			set_variable = { GER_military_air_cas_efficiency = 0 }
+			set_variable = { GER_military_air_strategic_bomber_bombing_factor = 0 }
+			set_variable = { GER_military_air_range_factor = 0 }
+			add_dynamic_modifier = { modifier = GER_airforce_modifier }
+
+			set_party_name = {
+				ideology = neutrality
+				long_name = GER_neutrality_party_civil_war
+				name = GER_neutrality_party_civil_war
+			}
+
+			set_cosmetic_tag = GER_provisional_gvt
+
+			remove_ideas = GER_radical_laws
+			add_ideas = GER_crush_nazi_terror
+			set_country_flag = german_rebels
+
+			add_popularity = { ideology = fascism popularity = 0.2 }
+		}
+	}
+
+	news_event = { hours = 6 id = germany.1102 }
+}
+GER_remove_fuhrer_ambition = {
+	effect_tooltip = {
+		if = {
+			limit = {
+				NOT = {
+					has_idea = GER_hitler_ambition_1
+					has_idea = GER_hitler_ambition_2
+					has_idea = GER_hitler_ambition_3
+					has_idea = GER_hitler_ambition_4
+					has_idea = GER_hitler_ambition_5
+				}
+			}
+			remove_ideas = GER_hitler_ambition_1
+		}
+	}
+	if = {
+		limit = {
+			has_idea = GER_hitler_ambition_1
+		}
+		remove_ideas = GER_hitler_ambition_1
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_hitler_ambition_2
+		}
+		remove_ideas = GER_hitler_ambition_2
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_hitler_ambition_3
+		}
+		remove_ideas = GER_hitler_ambition_3
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_hitler_ambition_4
+		}
+		remove_ideas = GER_hitler_ambition_4
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_hitler_ambition_5
+		}
+		remove_ideas = GER_hitler_ambition_5
+	}
+}
+GER_add_or_modify_military_intelligence_service = {
+	if = {
+		limit = {
+			NOT = { has_dynamic_modifier = { modifier = GER_military_intelligence_service_modifier } }
+		}
+		custom_effect_tooltip = GER_add_military_intelligence_service_modifier_tt
+		hidden_effect = {
+			add_dynamic_modifier = { modifier = GER_military_intelligence_service_modifier }
+		}
+	}
+	else = {
+		custom_effect_tooltip = GER_modify_military_intelligence_service_modifier_tt
+	}
+}

@@ -1,0 +1,127 @@
+#####---------------------------------------------------------------------> Mod by Sig "GreatExperiment" Altre
+
+ideas = {
+
+	ef_laws_war = {
+
+		use_list_view = yes
+
+		law = yes
+
+		#Lessons of History
+		ef_laws_war_historical = {
+
+			available = {
+				if = {
+					limit = {
+						original_tag = FIN
+					}
+					threat > 0.30
+				}
+				else = {
+					threat > 0.25
+				}
+
+			}
+
+			modifier = {
+				attrition = -0.05
+				max_dig_in_factor = 0.10
+				justify_war_goal_time = 0.25
+				political_power_cost = 0.05
+			}
+
+			cancel_if_invalid = no
+
+			ai_will_do = {
+				base = 0
+
+				modifier = {
+					has_political_power > 150
+					add = 2
+				}
+				modifier = {
+					has_war = yes
+					date > 1940.4.4
+					add = 4
+				}
+				modifier = {
+					tag = SAU
+					has_country_flag = natideas_innovation_5_completed
+					add = 15
+				}
+			}
+		}
+
+		#Ideological Struggle
+		ef_laws_war_ideological = {
+
+			cost = 125
+
+			available = {
+				threat > 0.05
+			}
+
+			modifier = {
+				army_core_attack_factor = 0.01
+				mobilization_speed = 0.15
+				justify_war_goal_time = -0.15
+				political_power_cost = 0.05
+			}
+
+			cancel_if_invalid = no
+
+			ai_will_do = {
+				base = 0
+
+			}
+		}
+
+		#Brinksmanship
+		ef_laws_war_brinkmanship = {
+
+			available = {
+				threat > 0.05
+			}
+
+			modifier = {
+				army_speed_factor = 0.01
+				generate_wargoal_tension = -0.25
+				justify_war_goal_time = -0.15
+				political_power_cost = 0.05
+			}
+
+			cancel_if_invalid = no
+
+			ai_will_do = {
+				base = 0
+			}
+		}
+
+		#Diplomatic Efforts
+		ef_laws_war_diplomacy = {
+
+			available = {
+				threat > 0.25
+
+			}
+
+			cost = 100
+
+			modifier = {
+				army_org_factor = 0.01
+				lend_lease_tension = -0.25
+				send_volunteers_tension = -0.25
+				political_power_cost = 0.05
+			}
+
+			cancel_if_invalid = no
+
+			ai_will_do = {
+				base = 0
+			}
+		}
+	}
+}
+
+#####---------------------------------------------------------------------> End

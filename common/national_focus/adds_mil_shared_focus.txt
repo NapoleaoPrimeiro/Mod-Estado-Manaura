@@ -1,0 +1,1986 @@
+	shared_focus = {
+		id = Shared_mil_focus1
+		icon = GFX_goal_generic_army_doctrines
+		x = 35
+		y = 0
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+
+
+		available = {
+
+		}
+
+
+		bypass = {
+
+		}	
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			army_experience = 25
+			navy_experience = 25
+			air_experience = 25
+		}
+	}
+
+	shared_focus = {
+		id = Shared_mil_focus2
+		icon = GFX_focus_generic_reorient_production
+		prerequisite = { focus = Shared_mil_focus1 }
+		x = 0
+		y = 1
+		relative_position_id = Shared_mil_focus1
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}			
+		}
+	}
+
+	
+	
+	shared_focus = {
+		id = Shared_mil_focus3
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = Shared_mil_focus2 }
+		x = -1
+		y = 1
+		relative_position_id = Shared_mil_focus2
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			army_experience = 15
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_doctrine_cost_reduction = {
+				name = Shared_mil_focus3
+				uses = 1
+				cost_reduction = 0.25
+				category = land_doctrine
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_daily_mastery = {
+				amount = 1
+				days = 50
+				name =  Shared_mil_focus3
+				track = infantry					
+			}
+			add_daily_mastery = {
+				amount = 1
+				days = 50
+				name =  Shared_mil_focus3
+				track = armor					
+			}
+		}
+	}
+
+	shared_focus = {
+		id = Shared_mil_focus4
+		icon = GFX_focus_generic_university_3
+		prerequisite = { focus = Shared_mil_focus2 }
+		x = 1
+		y = 1
+		relative_position_id = Shared_mil_focus2
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				name = Shared_mil_focus4
+				category = infantry_weapons
+				category = artillery
+				category = support_tech
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			WAR_advanced_weapon_projects_effect = yes
+			add_to_variable = { WAR_advanced_weapons_sp_tag_artillery_speed_factor = 0.1   tooltip = sp_tag_artillery_speed_factor_tt    }	
+		}
+	}
+
+	shared_focus = {
+		id = Shared_mil_focus5
+		icon = GFX_focus_generic_limited_social_mobilization
+		prerequisite = { 
+			focus = Shared_mil_focus3
+			focus = Shared_mil_focus4
+		}
+		x = 1
+		y = 1
+		relative_position_id = Shared_mil_focus3
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			WAR_devil_army_effect = yes
+			add_to_variable = { WAR_devil_conscription_factor = 0.2   tooltip = conscription_factor_tt    }	
+			
+		}
+	}
+
+	shared_focus = {
+		id = Shared_mil_focus6
+		icon = GFX_focus_generic_full_social_mobilization
+		prerequisite = { 
+			focus = Shared_mil_focus5
+		}
+		x = -2
+		y = 1
+		relative_position_id = Shared_mil_focus5
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			add_mastery_bonus = {
+				bonus = 0.1
+				days = 180
+				track = infantry
+				name = Shared_mil_focus6
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				name = Shared_mil_focus6
+				category = infantry_weapons
+			}	
+		}
+	}
+
+	shared_focus = {
+		id = Shared_mil_focus11
+		icon = GFX_focus_GER_proletarian_dictatorship
+		prerequisite = { 
+			focus = Shared_mil_focus6
+		}
+		x = -1
+		y = 1
+		relative_position_id = Shared_mil_focus6
+		mutually_exclusive = { focus = Shared_mil_focus12 }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			WAR_devil_army_effect = yes
+			add_to_variable = { WAR_devil_conscription_factor = 0.2   tooltip = conscription_factor_tt    }	
+			#add_to_variable = { WAR_devil_training_time_army_factor = -0.2  tooltip = training_time_army_factor_tt    }
+			add_to_variable = { WAR_devil_experience_loss_factor = 0.1   tooltip = experience_loss_factor_tt }
+		}
+	}
+
+	shared_focus = {
+		id = Shared_mil_focus12
+		icon = GFX_focus_PRC_army_command
+		prerequisite = { 
+			focus = Shared_mil_focus6
+		}
+		x = 1
+		y = 1
+		relative_position_id = Shared_mil_focus6
+		mutually_exclusive = { focus = Shared_mil_focus11 }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			WAR_devil_army_effect = yes
+			add_to_variable = { WAR_devil_conscription_factor = -0.4   tooltip = conscription_factor_tt    }	
+			#add_to_variable = { WAR_devil_training_time_army_factor = 0.1   tooltip = training_time_army_factor_tt }
+			add_to_variable = { WAR_devil_army_org_factor = 0.1   tooltip = army_org_factor_tt    }
+			add_to_variable = { WAR_devil_army_morale_factor = 0.1   tooltip = army_morale_factor_tt    }
+			add_to_variable = { WAR_devil_experience_loss_factor = -0.1   tooltip = experience_loss_factor_tt }
+		}
+	}
+
+	shared_focus = {
+		id = Shared_mil_focus16
+		icon = GFX_focus_JAP_army_weapons_administration_hq
+		prerequisite = { 
+			focus = Shared_mil_focus11
+			focus = Shared_mil_focus12
+		}
+		x = 1
+		y = 1
+		relative_position_id = Shared_mil_focus11
+		cost = 7
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			add_breakthrough_progress = {
+				specialization = specialization_land
+				value = 0.25
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			WAR_devil_army_effect = yes
+			add_to_variable = { WAR_devil_army_artillery_attack_factor =  0.1   tooltip = army_artillery_attack_factor_tt    }	
+			add_to_variable = { WAR_devil_army_artillery_defence_factor = 0.1  	tooltip = army_artillery_defence_factor_tt    }	
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			WAR_advanced_weapon_projects_effect = yes
+			add_to_variable = { WAR_advanced_weapons_production_speed_land_facility_factor = 0.1   tooltip = production_speed_land_facility_factor_tt    }
+		}
+	}
+
+
+	shared_focus = {
+		id = Shared_mil_focus15
+		icon = GFX_goal_generic_production
+		prerequisite = { 
+			focus = Shared_mil_focus5
+		}
+		x = 0
+		y = 1
+		relative_position_id = Shared_mil_focus5
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}	
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			WAR_devil_army_effect = yes
+			add_to_variable = { WAR_devil_max_dig_in = 2.0   tooltip = max_dig_in_tt  }	
+			add_to_variable = { WAR_devil_dig_in_speed_factor = 0.1   tooltip = dig_in_speed_factor_tt    }
+		}
+	}
+
+
+	shared_focus = {
+		id = Shared_mil_focus7
+		icon = GFX_focus_generic_truck
+		prerequisite = { 
+			focus = Shared_mil_focus15
+		}
+		x = 0
+		y = 2
+		relative_position_id = Shared_mil_focus15
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			add_ideas = WAR_jixiehua_budui
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			WAR_devil_army_effect = yes
+			add_to_variable = { WAR_devil_org_loss_when_moving = -0.10   tooltip = org_loss_when_moving_tt  }	
+			add_to_variable = { WAR_devil_army_speed_factor = 0.1   tooltip = army_speed_factor_tt    }
+		}
+	}
+
+	shared_focus = {
+		id = Shared_mil_focus8
+		icon = GFX_focus_generic_tank_assault
+		prerequisite = { 
+			focus = Shared_mil_focus5
+		}
+		x = 2
+		y = 1
+		relative_position_id = Shared_mil_focus5
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+		allow_branch = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			add_mastery_bonus = {
+				bonus = 0.1
+				days = 180
+				track = armor
+				name = Shared_mil_focus8
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			army_experience = 25
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_doctrine_cost_reduction = {
+				name = Shared_mil_focus8
+				cost_reduction = 0.25
+				uses = 1
+				category = land_doctrine
+			}
+			add_tech_bonus = {
+				name = Shared_mil_focus8
+				bonus = 1
+				ahead_reduction = 1
+				uses = 1
+				category = armor	
+			}
+		}
+	}
+
+	shared_focus = {
+		id = Shared_mil_focus13
+		icon = GFX_focus_generic_heavy_tank
+		prerequisite = { 
+			focus = Shared_mil_focus8
+		}
+		x = -1
+		y = 1
+		relative_position_id = Shared_mil_focus8
+		mutually_exclusive = { focus = Shared_mil_focus14 }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			add_ideas = WAR_zhuangjia_zhiliang
+		}
+	}
+
+	shared_focus = {
+		id = Shared_mil_focus14
+		icon = GFX_focus_generic_tank_production 
+		prerequisite = { 
+			focus = Shared_mil_focus8
+		}
+		x = 1
+		y = 1
+		relative_position_id = Shared_mil_focus8
+		mutually_exclusive = { focus = Shared_mil_focus13 }
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			add_ideas = WAR_zhuangjia_chanliang 
+		}
+	}
+
+	shared_focus = {
+		id = Shared_mil_focus17
+		icon = GFX_focus_generic_tank_assembly
+		prerequisite = { 
+			focus = Shared_mil_focus13
+			focus = Shared_mil_focus14
+		}
+		x = 1
+		y = 1
+		relative_position_id = Shared_mil_focus13
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = Shared_mil_focus17
+				bonus = 1
+				uses = 1
+				category = armor	
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			WAR_devil_army_effect = yes
+			add_to_variable = { WAR_devil_army_armor_attack_factor = 0.1   tooltip = army_armor_attack_factor_tt    }	
+			add_to_variable = { WAR_devil_army_armor_defence_factor = 0.1  tooltip = army_armor_defence_factor_tt    }	
+		}
+	}
+
+	shared_focus = {
+		id = Shared_mil_focus9
+		icon = GFX_focus_generic_reinforcing_the_supply_network
+		prerequisite = { 
+			focus = Shared_mil_focus7
+		}
+		x = -1
+		y = 1
+		relative_position_id = Shared_mil_focus7
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			WAR_devil_army_effect = yes
+			add_to_variable = { WAR_devil_experience_loss_factor = -0.10   tooltip =  experience_loss_factor_tt  }	
+			add_to_variable = { WAR_devil_supply_consumption_factor = -0.1   tooltip = supply_consumption_factor_tt    }
+		}
+	}
+
+	shared_focus = {
+		id = Shared_mil_focus10
+		icon = GFX_focus_generic_mechanized
+		prerequisite = { 
+			focus = Shared_mil_focus7
+		}
+		x = 1
+		y = 1
+		relative_position_id = Shared_mil_focus7
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = Shared_mil_focus10
+				uses = 1
+				bonus = 1.0
+				category = motorized_equipment
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			swap_ideas = {
+				remove_idea = WAR_jixiehua_budui
+				add_idea = WAR_jixiehua_budui2
+			}
+
+
+		}
+	}
+
+
+
+
+
+	shared_focus = {
+		id = Shared_navy_focus1
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = Shared_mil_focus1 }
+		x = -7
+		y = 1
+		relative_position_id = Shared_mil_focus1
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+
+		bypass = {
+
+		}
+
+		
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}	
+
+	shared_focus = {
+		id = Shared_navy_focus2
+		icon = GFX_focus_generic_navy_research_bonus
+		prerequisite = { focus = Shared_navy_focus1 }
+		x = 0
+		y = 1
+		relative_position_id = Shared_navy_focus1
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			navy_experience = 25
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			WAR_devil_navy_effect = yes
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_tech_bonus = {
+				name = Shared_navy_focus2
+				bonus = 0.4
+				uses = 1
+				category = dd_tech
+				# technology  = technology_id # optional
+			}
+			add_tech_bonus = {
+				name = Shared_navy_focus2
+				bonus = 0.3
+				uses = 1
+				category = mio_cat_tech_all_submarine_and_modules
+				# technology  = technology_id # optional
+			}
+			add_tech_bonus = {
+				name = Shared_navy_focus2
+				bonus = 0.3
+				uses = 2
+				category = mio_cat_tech_all_cruiser_and_modules
+				# technology  = technology_id # optional
+			}
+			add_tech_bonus = {
+				name = Shared_navy_focus2
+				bonus = 0.3
+				uses = 1
+				category = bb_tech
+				# technology  = technology_id # optional
+			}
+		}
+	}	
+
+	
+	
+	shared_focus = {
+		id = Shared_navy_focus3
+		icon = GFX_focus_generic_battleship_guns
+		prerequisite = { focus = Shared_navy_focus2 }
+		x = -1
+		y = 1
+		relative_position_id = Shared_navy_focus2
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			add_breakthrough_progress = {
+				specialization = specialization_naval
+				value = 0.25
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				name = Shared_navy_focus3
+				bonus = 0.25
+				uses = 1
+				category = mio_cat_tech_all_capital_ship_and_modules
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+
+			WAR_devil_navy_effect = yes
+			custom_effect_tooltip = Shared_navy_focus3_tt
+			add_to_variable = { 
+				WAR_naval_force_navy_capital_ship_attack_factor = 0.1   
+				#tooltip = navy_capital_ship_attack_factor_tt    
+			}
+			add_to_variable = { 
+				WAR_naval_force_navy_capital_ship_defence_factor = 0.1   
+				tooltip = navy_capital_ship_defence_factor_tt    
+			}
+		}
+	}
+
+	shared_focus = {
+		id = Shared_navy_focus5
+		icon = GFX_goal_generic_navy_anti_submarine
+		prerequisite = { focus = Shared_navy_focus3 }
+		x = -1
+		y = 1
+		relative_position_id = Shared_navy_focus3
+		cost = 10
+
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = Shared_navy_focus5
+				bonus = 0.25
+				uses = 4
+				category = ship_modules_tech
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			WAR_devil_navy_effect = yes
+			add_to_variable = { 
+				WAR_naval_force_spotting_chance = 0.1   
+				tooltip = spotting_chance_tt    
+			}
+			custom_effect_tooltip = Shared_navy_focus5_tt
+
+
+
+			
+		}
+	}
+
+	shared_focus = {
+		id = Shared_navy_focus8
+		icon = GFX_focus_JAP_naval_armaments_program
+		prerequisite = { focus = Shared_navy_focus5 }
+		x = 0
+		y = 1
+		relative_position_id = Shared_navy_focus5
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			navy_experience = 25
+			add_mastery = {
+				amount = 50
+				track = screens
+			}
+			add_mastery_bonus = {
+				name = Shared_navy_focus8
+				bonus = 0.1
+				days = 180
+				track = screens
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+
+			WAR_devil_navy_effect = yes
+			add_to_variable = { 
+				WAR_naval_force_navy_screen_attack_factor = 0.1   
+				tooltip = navy_screen_attack_factor_tt    
+			}
+			add_to_variable = { 
+				WAR_naval_force_navy_screen_defence_factor = 0.1   
+				tooltip = navy_screen_defence_factor_tt    
+			}
+		}
+	}
+
+	shared_focus = {
+		id = Shared_navy_focus4
+		icon = GFX_focus_SMB_blue_water_fleet
+		prerequisite = { focus = Shared_navy_focus2 }
+		x = 1
+		y = 1
+		relative_position_id = Shared_navy_focus2
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			add_breakthrough_progress = {
+				specialization = specialization_naval
+				value = 0.25
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				name = Shared_navy_focus4
+				bonus = 0.25
+				uses = 1
+				category = cv_tech
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+
+			WAR_devil_navy_effect = yes
+			custom_effect_tooltip = Shared_navy_focus4_tt
+			add_to_variable = { 
+				WAR_naval_force_navy_carrier_air_attack_factor = 0.1   
+				#tooltip = navy_carrier_air_attack_factor_tt    
+			}
+			add_to_variable = { 
+				WAR_naval_force_navy_carrier_air_targetting_factor = 0.1   
+				#tooltip = navy_carrier_air_targetting_factor_tt    
+			}
+		}
+	}
+
+	shared_focus = {
+		id = Shared_navy_focus7
+		icon = GFX_focus_JAP_assure_superior_naval_quality
+		prerequisite = { focus = Shared_navy_focus4 }
+		x = 1
+		y = 1
+		relative_position_id = Shared_navy_focus4
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			WAR_devil_navy_effect = yes
+			custom_effect_tooltip = Shared_navy_focus7_tt
+			add_to_variable = { 
+				WAR_naval_force_naval_retreat_speed = 0.1   
+				#tooltip = naval_retreat_speed_tt    
+			}
+			add_to_variable = { 
+				WAR_naval_force_naval_speed_factor = 0.1   
+				#tooltip = naval_speed_factor_tt    
+			}
+		}
+	}
+
+	shared_focus = {
+		id = Shared_navy_focus10
+		icon = GFX_focus_CHI_the_hump
+		prerequisite = { focus = Shared_navy_focus7 }
+		x = 0
+		y = 1
+		relative_position_id = Shared_navy_focus7
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			WAR_devil_navy_effect = yes
+			add_to_variable = { 
+				WAR_naval_force_sortie_efficiency = 0.2 
+				tooltip = sortie_efficiency_tt    
+			}
+		}
+	}
+
+
+	shared_focus = {
+		id = Shared_navy_focus6
+		icon = GFX_focus_POL_develop_polish_shipbuilding
+		prerequisite = { 
+			focus = Shared_navy_focus4 
+			focus = Shared_navy_focus3
+		}
+		x = -1
+		y = 1
+		relative_position_id = Shared_navy_focus4
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = british_convoy_discount
+		}
+	}
+
+	shared_focus = {
+		id = Shared_navy_focus9
+		icon = GFX_focus_generic_refit_civilian_ships
+		prerequisite = { focus = Shared_navy_focus6 }
+		x = 0
+		y = 1
+		relative_position_id = Shared_navy_focus6
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				#set_state_flag = ENG_expand_the_repair_yards_2dockyard
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = ENG_expand_the_repair_yards
+		}
+	}
+
+
+	shared_focus = {
+		id = Shared_navy_focus11
+		icon = GFX_focus_generic_large_navy
+		prerequisite = { 
+			focus = Shared_navy_focus8
+			focus = Shared_navy_focus10
+			focus = Shared_navy_focus9
+		}
+		x = 0
+		y = 1
+		relative_position_id = Shared_navy_focus9
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			add_breakthrough_progress = {
+				specialization = specialization_naval
+				value = 0.5
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			WAR_devil_navy_effect = yes
+			add_to_variable = { 
+				WAR_naval_force_navy_max_range_factor = 0.1   
+				tooltip = navy_max_range_factor_tt    
+			}
+			add_to_variable = {
+				WAR_naval_force_naval_coordination = 0.05
+				tooltip = naval_coordination_tt
+			}
+			add_to_variable = {
+				WAR_naval_force_navy_org_factor = 0.05
+				tooltip = navy_org_factor_tt
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_doctrine_cost_reduction = {
+				name = Shared_navy_focus11
+				cost_reduction = 0.25
+				uses = 2
+				category = naval_doctrine
+			}
+
+
+		}
+	}
+
+	shared_focus = {
+		id = Shared_air_focus12
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = Shared_mil_focus1 }
+		x = 7
+		y = 1
+		relative_position_id = Shared_mil_focus1
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}	
+		}
+	}
+	
+
+
+	shared_focus = {
+		id = Shared_air_focus2
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = Shared_air_focus12 }
+		x = -1
+		y = 1
+		relative_position_id = Shared_air_focus12
+		#mutually_exclusive = {focus = Shared_air_focus3}
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			IF = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+					TAG = USA
+				}	
+				mio:USA_north_american_aviation_organization = {
+					add_mio_funds_gain_factor = 0.05
+					add_mio_research_bonus = 0.05
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+			add_tech_bonus = {
+				name = Shared_air_focus2
+				bonus = 1
+				ahead_reduction = 1
+				category = light_air
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_breakthrough_progress = {
+				specialization = specialization_air
+				value = 0.25
+			}
+		}
+	}
+
+	shared_focus = {
+		id = Shared_air_focus3
+		icon =  GFX_goal_generic_air_bomber
+		prerequisite = { focus = Shared_air_focus12 }
+		x = 1
+		y = 1
+		relative_position_id = Shared_air_focus12
+		#mutually_exclusive = {focus = Shared_air_focus2}
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			IF = {
+				limit = {
+					TAG = USA
+					has_dlc = "Arms Against Tyranny"
+				}	
+				mio:USA_boeing_organization = {
+					add_mio_funds_gain_factor = 0.05
+					add_mio_research_bonus = 0.05
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+			add_tech_bonus = {
+				name = Shared_air_focus3
+				bonus = 1
+				ahead_reduction = 1
+				category = medium_air
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_breakthrough_progress = {
+				specialization = specialization_air
+				value = 0.25
+			}
+		}
+	}
+
+	shared_focus = {
+		id = Shared_air_focus1
+		icon = GFX_focus_generic_air_research_boost
+		prerequisite = { 
+			focus = Shared_air_focus2 
+			focus = Shared_air_focus3 
+		}
+		x = 0
+		y = 2
+		relative_position_id = Shared_air_focus12
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			if = { ## If don't have an air facility, then grant it, otherwise give tech bonuses 
+				limit = {
+					any_owned_state = {
+						is_controlled_by = ROOT
+						air_facility < 1
+					}
+				}
+				random_owned_controlled_state = { 	
+					construct_building_in_random_province = {
+						air_facility = 1
+					}
+				}		
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			add_doctrine_cost_reduction = {
+				name = Shared_air_focus1
+				cost_reduction = 0.25
+				uses = 1
+				category = air_doctrine
+			}
+			add_tech_bonus = {
+				name = Shared_air_focus1 
+				bonus = 0.25
+				uses = 1
+				category = light_fighter 
+			}
+			add_tech_bonus = {
+				name = Shared_air_focus1 
+				bonus = 0.25
+				uses = 1
+				category = medium_air 
+			}
+		}
+	}	
+
+	shared_focus = {
+		id = Shared_air_focus4
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { 
+			focus = Shared_air_focus1
+		}
+		x = -1
+		y = 1
+		relative_position_id = Shared_air_focus1
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			WAR_devil_air_effect = yes
+			add_to_variable = { WAR_devil_air_superiority_efficiency = 0.1   tooltip = air_superiority_efficiency_tt    }
+			#add_to_variable = { WAR_devil_air_accidents = -0.1   tooltip = air_accidents_tt    }
+			add_to_variable = { WAR_devil_air_defence_factor = 0.1 tooltip = air_defence_factor_tt }
+		}
+	}
+
+	shared_focus = {
+		id = Shared_air_focus5
+		icon = GFX_focus_generic_copy_plane_designs
+		prerequisite = {  focus = Shared_air_focus4  }
+		x = -1
+		y = 1
+		relative_position_id = Shared_air_focus4
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			air_experience = 25
+
+			add_doctrine_cost_reduction = {
+				name = Shared_air_focus5
+				cost_reduction = 0.25
+				uses = 2
+				category = air_doctrine
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			WAR_devil_air_effect = yes
+			add_to_variable = { 
+				WAR_devil_air_wing_xp_loss_when_killed_factor = -0.1  
+				tooltip = air_wing_xp_loss_when_killed_factor_tt    
+			}
+			add_to_variable = { 
+				WAR_devil_air_intercept_efficiency = 0.1 
+				tooltip = air_intercept_efficiency_tt    
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+
+
+
+		}
+	}
+
+	shared_focus = {
+		id = Shared_air_focus10
+		icon = GFX_focus42
+		prerequisite = {  focus = Shared_air_focus5  }
+		x = 0
+		y = 1
+		relative_position_id = Shared_air_focus5
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			add_breakthrough_progress = {
+				specialization = specialization_air
+				value = 0.5
+			}
+
+			add_tech_bonus = {
+				name = Shared_air_focus10
+				bonus = 0.5
+				uses = 2
+				category = jet_technology
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			WAR_advanced_weapon_projects_effect = yes
+			add_to_variable = { 
+				WAR_advanced_weapons_sp_tag_jet_speed_factor = 0.1 
+				tooltip = sp_tag_jet_speed_factor_tt 
+			}
+		}
+	}
+
+
+
+	shared_focus = {
+		id = Shared_air_focus8
+		icon = GFX_focus_generic_long_range_aircraft
+		prerequisite = { 
+			focus = Shared_air_focus1 
+		}
+		x = 1
+		y = 1
+		relative_position_id = Shared_air_focus1
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			WAR_devil_air_effect = yes
+			add_to_variable = { WAR_devil_air_range_factor = 0.1  tooltip = air_range_factor_tt    }
+			add_to_variable = { WAR_devil_air_strategic_bomber_bombing_factor = 0.1 tooltip = air_strategic_bomber_bombing_factor_tt }
+		}
+	}
+
+	shared_focus = {
+		id = Shared_air_focus6
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { 
+			focus = Shared_air_focus4
+			focus = Shared_air_focus8  
+		}
+		x = 0
+		y = 2
+		relative_position_id = Shared_air_focus1
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			air_experience = 25
+			
+			add_doctrine_cost_reduction = {
+				name = Shared_air_focus6
+				cost_reduction = 0.25
+				uses = 2
+				category = air_doctrine
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			WAR_devil_air_effect = yes
+			add_to_variable = { 
+				WAR_devil_air_attack_factor = 0.05   
+				tooltip = air_attack_factor_tt    
+			}
+
+		}
+	}
+
+	shared_focus = {
+		id = Shared_air_focus7
+		icon = GFX_focus_SOV_flying_clubs
+		prerequisite = {  focus = Shared_air_focus6  }
+		x = 0
+		y = 1
+		relative_position_id = Shared_air_focus6
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			WAR_devil_air_effect = yes
+			add_to_variable = { 
+				WAR_devil_air_ace_generation_chance_factor = 0.1  
+				tooltip = air_ace_generation_chance_factor_tt    
+			}
+			add_to_variable = { 
+				WAR_devil_air_agility_factor = 0.05  
+				tooltip = air_agility_factor_tt    
+			}
+		}
+	}
+
+	shared_focus = {
+		id = Shared_air_focus9
+		icon = GFX_focus_JAP_z_bomber_project
+		prerequisite = {  focus = Shared_air_focus8  }
+		x = 1
+		y = 1
+		relative_position_id = Shared_air_focus8
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			add_breakthrough_progress = {
+				specialization = specialization_air
+				value = 0.25
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = {
+					has_dlc = "Gotterdammerung"
+				}
+				WAR_advanced_weapon_projects_effect = yes
+
+				IF = {
+					limit = {
+						NOT = { is_special_project_completed = sp_air_intercontinental_bomber }
+					}
+					add_to_variable = { 
+						WAR_advanced_weapons_sp_air_intercontinental_bomber_speed_factor = 0.2
+						tooltip = sp_air_intercontinental_bomber_speed_factor_tt
+					}
+				}
+				IF = {
+					limit = {
+						NOT = { is_special_project_completed = sp_air_mothership_aircraft }
+					}
+					add_to_variable = { 
+						WAR_advanced_weapons_sp_air_mothership_aircraft_speed_factor = 0.15
+						tooltip = sp_air_mothership_aircraft_speed_factor_tt
+					}
+				}
+				add_to_variable = { WAR_advanced_weapons_production_speed_air_facility_factor = 0.1 tooltip = production_speed_air_facility_factor_tt }
+
+			}
+
+			else = {
+				add_tech_bonus = {
+					name = Shared_air_focus9
+					bonus = 1
+					uses = 1
+					category = transport_planes_cat
+					category = cat_strategic_bomber
+				}
+				WAR_advanced_weapon_projects_effect = yes
+				add_to_variable = { 
+					WAR_advanced_weapons_production_speed_air_facility_factor = 0.1 
+					tooltip = production_speed_air_facility_factor_tt 
+				}
+			}
+			
+		}
+	}
+
+	shared_focus = {
+		id = Shared_air_focus13
+		icon = GFX_focus_rocketry
+		prerequisite = {  focus = Shared_air_focus9  }
+		x = 0
+		y = 1
+		relative_position_id = Shared_air_focus9
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = Shared_air_focus13
+				bonus = 0.5
+				uses = 1
+				category = rocketry
+			}
+			add_breakthrough_progress = {
+				specialization = specialization_air
+				value = 0.25
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			WAR_advanced_weapon_projects_effect = yes
+			add_to_variable = { 
+				WAR_advanced_weapons_sp_tag_rocket_speed_factor = 0.1 
+				tooltip = sp_tag_rocket_speed_factor_tt 
+			}
+		}
+	}
+
+	shared_focus = {
+		id = Shared_air_focus11
+		icon = GFX_focus_generic_aircraft_production
+		prerequisite = {  
+			focus = Shared_air_focus10
+			focus = Shared_air_focus7 
+			focus = Shared_air_focus13
+		}
+		x = 0
+		y = 1
+		relative_position_id = Shared_air_focus7
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		
+
+		completion_reward = {
+			add_ideas = WAR_kongjun_zhiyuan
+		}
+	}
+
+
+
+	

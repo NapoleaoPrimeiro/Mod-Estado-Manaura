@@ -1,0 +1,162 @@
+FFTF_agency_can_select_upgrade_0_trigger = {
+}
+FFTF_agency_can_select_upgrade_1_trigger = {
+}
+FFTF_agency_can_select_upgrade_2_trigger = {
+}
+FFTF_agency_can_select_upgrade_3_trigger = {
+}
+FFTF_agency_can_select_upgrade_4_trigger = {
+}
+FFTF_agency_can_select_upgrade_5_trigger = {
+}
+FFTF_agency_can_select_upgrade_6_trigger = {
+}
+FFTF_agency_can_select_upgrade_7_trigger = {
+	has_tech = radio
+}
+FFTF_agency_can_select_upgrade_8_trigger = {
+}
+FFTF_agency_can_select_upgrade_9_trigger = {
+}
+FFTF_agency_can_select_upgrade_10_trigger = {
+}
+FFTF_agency_can_select_upgrade_11_trigger = {
+}
+FFTF_agency_can_select_upgrade_12_trigger = {
+}
+FFTF_agency_can_select_upgrade_13_trigger = {
+}
+FFTF_agency_can_select_upgrade_14_trigger = {
+}
+FFTF_agency_can_select_upgrade_15_trigger = {
+}
+FFTF_agency_can_select_upgrade_16_trigger = {
+}
+FFTF_agency_can_select_upgrade_17_trigger = {
+	has_done_agency_upgrade = upgrade_form_department
+}
+FFTF_agency_can_select_upgrade_18_trigger = {
+	has_done_agency_upgrade = upgrade_decryption_boost
+	has_tech = mechanical_computing
+}
+FFTF_agency_can_select_upgrade_19_trigger = {
+	has_done_agency_upgrade = upgrade_form_department
+}
+FFTF_agency_can_select_upgrade_20_trigger = {
+	has_done_agency_upgrade = upgrade_crypto_strength
+	has_tech = mechanical_computing
+}
+
+can_upgrade_intelligence_agency = {
+	custom_trigger_tooltip = {
+		tooltip = can_upgrade_intelligence_agency_tt
+		
+		OR = {
+			AND = {
+				num_of_civilian_factories_available_for_projects > 4
+				NOT = { has_done_agency_upgrade = upgrade_economy_civilian }
+			}
+			AND = {
+				num_of_civilian_factories_available_for_projects > 4
+				NOT = { has_done_agency_upgrade = upgrade_army_department }
+			}
+			AND = {
+				num_of_civilian_factories_available_for_projects > 4
+				NOT = { has_done_agency_upgrade = upgrade_naval_department }
+			}
+			AND = {
+				num_of_civilian_factories_available_for_projects > 4
+				NOT = { has_done_agency_upgrade = upgrade_airforce_department }
+			}
+			
+			AND = {
+				num_of_civilian_factories_available_for_projects > 4
+				NOT = { has_done_agency_upgrade = upgrade_passive_defense }
+			}
+			AND = {
+				num_of_civilian_factories_available_for_projects > 4
+				NOT = { has_done_agency_upgrade = upgrade_anti_partisan }
+			}
+			
+			AND = {
+				num_of_civilian_factories_available_for_projects > 4
+				NOT = { has_done_agency_upgrade = upgrade_blueprint_stealing }
+			}
+			AND = {
+				num_of_civilian_factories_available_for_projects > 7
+				FFTF_agency_can_select_upgrade_7_trigger = yes
+				NOT = { has_done_agency_upgrade = upgrade_portable_radios }
+			}
+			AND = {
+				num_of_civilian_factories_available_for_projects > 4
+				NOT = { has_done_agency_upgrade = upgrade_invisible_ink }
+			}
+			AND = {
+				num_of_civilian_factories_available_for_projects > 7
+				NOT = { has_done_agency_upgrade = upgrade_plastic_explosives }
+			}
+			AND = {
+				num_of_civilian_factories_available_for_projects > 4
+				NOT = { has_done_agency_upgrade = upgrade_suicide_pills }
+			}
+			
+			AND = {
+				num_of_civilian_factories_available_for_projects > 9
+				NOT = { has_done_agency_upgrade = upgrade_training_centers }
+			}
+			AND = {
+				num_of_civilian_factories_available_for_projects > 4
+				NOT = { has_done_agency_upgrade = upgrade_commando_training }
+			}
+			AND = {
+				num_of_civilian_factories_available_for_projects > 4
+				NOT = { has_done_agency_upgrade = upgrade_interrogation_techniques }
+			}
+			AND = {
+				num_of_civilian_factories_available_for_projects > 4
+				NOT = { has_done_agency_upgrade = upgrade_diplo_training }
+			}
+			AND = {
+				num_of_civilian_factories_available_for_projects > 7
+				NOT = { has_done_agency_upgrade = upgrade_psycho_warfare }
+			}
+			
+			AND = {
+				num_of_civilian_factories_available_for_projects > 7
+				NOT = { has_done_agency_upgrade = upgrade_form_department }
+			}
+			AND = {
+				num_of_civilian_factories_available_for_projects > 4
+				NOT = { has_done_agency_upgrade = upgrade_decryption_boost }
+				FFTF_agency_can_select_upgrade_17_trigger = yes
+			}
+			AND = {
+				num_of_civilian_factories_available_for_projects > 9
+				NOT = { has_done_agency_upgrade = upgrade_decryption_boost_2 }
+				FFTF_agency_can_select_upgrade_18_trigger = yes
+			}
+			AND = {
+				num_of_civilian_factories_available_for_projects > 4
+				NOT = { has_done_agency_upgrade = upgrade_crypto_strength }
+				FFTF_agency_can_select_upgrade_19_trigger = yes
+			}
+			AND = {
+				num_of_civilian_factories_available_for_projects > 14
+				NOT = { has_done_agency_upgrade = upgrade_crypto_strength_2 }
+				FFTF_agency_can_select_upgrade_20_trigger = yes
+			}
+		}
+	}
+}
+
+FFTF_can_start_automated_agency_upgrade = {
+	has_intelligence_agency = yes
+	
+	can_upgrade_intelligence_agency = yes
+	
+	check_variable = { automate_agency_upgrades_choice > 1 }
+	
+	NOT = { has_country_flag = spy_agency_upgrade_in_progress_flag } 
+	check_variable = { modifier@FFTF_is_working_on_agency_upgrades_boolean = 0 }
+}

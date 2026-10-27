@@ -1,0 +1,913 @@
+on_actions = {
+	# ROOT is capitulated country, FROM is winner
+	on_startup = {
+		effect = {
+			set_global_flag = NHMMAP_is_enabled #this is so other modders can detect if this mod is enabled or not
+		}
+	}
+	on_capitulation = {
+		effect = {	
+			if = { # communist cze capitulating will peace out germany and soviets 
+				limit = {
+					ROOT = {
+						original_tag = CZE
+						has_government = communism
+						is_in_faction_with = SOV
+						NOT = { is_in_faction_with = POL }
+						NOT = { is_in_faction_with = HUN }
+					}
+					FROM = {
+						original_tag = GER
+					}
+					NOT = {
+						any_country = {
+							is_major = yes
+							has_government = democratic
+							has_war_with = GER
+						}
+					}
+				}	
+				SOV = { country_event = czech.60 }
+			}
+			
+			if = { # making sure japan eats ALL of Manchuria if they rebel. Otherwise the AI annoyingly just leaves half the country there
+				limit = {
+					ROOT = {
+						original_tag = MAN
+						has_completed_focus = MAN_independence_war
+						is_in_faction = no
+					}
+					FROM = {
+						original_tag = JAP
+					}
+				}	
+				JAP = { annex_country = { target = MAN transfer_troops = no } }
+			}
+
+			if = { # Soviets peace out allies if germany & soviet double team poland and signed ribbentrop pact
+			limit = {
+				ROOT = {
+					original_tag = POL
+					has_war_with = GER
+					has_war_with = SOV
+					is_in_faction_with = ENG
+					NOT = { is_in_faction_with = LIT }
+					NOT = { is_in_faction_with = LAT }
+					NOT = { is_in_faction_with = EST }
+					NOT = { is_in_faction_with = FIN }
+					NOT = { is_in_faction_with = ROM }
+					NOT = { is_in_faction_with = USA }
+					NOT = { is_in_faction_with = JAP }
+					NOT = { is_in_faction_with = TUR }
+					ENG = {
+						is_faction_leader = yes
+						has_war_with = GER
+						has_war_with = SOV
+					}
+				}
+				FROM = {
+					OR = {
+						AND = {
+							original_tag = SOV
+							has_war_with = POL
+							has_government = communism
+							has_global_flag = sov_yes_pact
+							NOT =  { has_war_with = GER }
+						}
+						AND = {
+							original_tag = GER
+							has_war_with = POL
+							has_government = fascism
+							has_global_flag = sov_yes_pact
+							NOT =  { has_war_with = SOV }
+						}
+					}
+					
+				}
+			}	
+			ENG = { country_event = nonhist_ENG.2 }
+		}
+		IF = {
+			limit = {
+				ROOT = {
+					original_tag = MAN
+					has_country_flag = NHMMAP_MAN_is_russia
+				}
+			}
+			# Set capital 
+			country_event = {
+				id = NSB_soviet_civil_war_common.002
+				days = 7
+				random_days = 5
+			}
+			# De-stalinization 
+			country_event = {
+				id = NSB_soviet_civil_war_common.010
+				days = 21
+				random_days = 7
+			}
+			hidden_effect = {
+				news_event = { id = nsb_news.10 hours = 8 }
+			}
+			if = {
+				limit = {
+					has_global_flag = MAN_fin_will_get_claims
+					FIN = {
+						exists = yes
+					}
+				}
+				clr_global_flag = MAN_fin_will_get_claims
+				FIN = {
+					transfer_state = 215
+					transfer_state = 216
+					transfer_state = 213
+				}
+				if = {
+					limit = {
+						any_country = {
+							OR = {
+								original_tag = MAN
+								original_tag = SOV
+							}
+							OR = {
+								controls_state = 722
+								controls_state = 146
+								controls_state = 147
+							}
+							
+						}
+					}
+					FIN = {
+						transfer_state = 722
+						transfer_state = 147
+						transfer_state = 146
+					}
+				}
+				every_state = {
+					limit = {
+						OR = {
+							state = 146
+							state = 147
+							state = 722
+							state = 215
+							state = 216
+							state = 213
+						}
+					}
+					add_core_of = FIN
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = MAN_eng_will_get_armenia
+					ENG = {
+						exists = yes
+					}
+				}
+				ENG = { 
+					transfer_state = 230
+					release_autonomy = { 
+						target = ARM
+						autonomy_state = autonomy_puppet
+						freedom_level = 0.2
+					}
+				}
+				ARM = {
+					set_cosmetic_tag = ARM_UK 
+				}
+				every_state = {
+					limit = {
+						region = 134
+					}
+					transfer_state_to = ARM
+				}
+				231 = { add_core_of = ARM }
+				826 = { add_core_of = ARM }
+				229 = { add_core_of = ARM }
+				clr_global_flag = MAN_eng_will_get_armenia
+			}
+			if = {
+				limit = {
+					has_global_flag = MAN_ukr_blr_decision_GER_will_get_them
+					GER = {
+						exists = yes
+					}
+				}
+				every_state = {
+					limit = {
+						OR = {
+							is_controlled_by = MAN
+							is_controlled_by = SOV
+						}
+						OR = {
+							is_core_of = UKR
+							is_core_of = BLR
+						}
+					}
+					transfer_state_to = GER
+				}
+				if = {
+					limit = {
+						GER = {
+							has_government = fascism
+						}
+					}
+					GER = {
+						GER_improve_rosenbergs_trait_effect = yes
+
+						custom_effect_tooltip = generic_skip_one_line_tt
+			
+						808 = {
+							IF = {
+								limit = {
+									OWNER = {
+										NOT = {
+											original_tag = GER
+										}
+									}
+								}
+								OWNER = {
+									set_country_flag = GER_RK_capital_state_trasferred_RKO_victim_flag
+									set_country_flag = GER_reichskommissariats_puppet_flag
+								}
+							}
+							transfer_state_to = RKO
+							set_state_flag = GER_RK_capital_state_trasferred_RKO_flag
+							add_compliance = 25
+						}
+			
+						custom_effect_tooltip = GER_reichskommissariat_ostland_effect_tt
+			
+						set_autonomy = { 
+							target = RKO
+							autonomy_state = autonomy_integrated_puppet 
+						}
+			
+						hidden_effect = {
+							every_state = {
+								limit = {
+									GER_is_RKO_state = yes
+									NOT = {
+										state = 808
+									}
+									OR = {
+										is_owned_by = ROOT
+										owner = { is_subject_of = ROOT }
+									}
+								}
+								transfer_state_to = RKO
+								add_compliance = 25
+							}
+							every_state = {	
+								limit = {
+									GER_is_RKO_state = yes
+									NOT = {
+										state = 808
+									}
+									NOT = {
+										OR = {
+											is_owned_by = ROOT
+											any_country = {
+												is_subject_of = ROOT
+												owns_state = PREV
+											}
+										}
+									}
+								}
+								add_contested_owner = RKO
+								set_state_owner_to = RKO
+								add_claim_by = RKO
+								add_compliance = 25
+							}
+			
+							RKO = {
+								add_manpower = 50000
+								add_equipment_to_stockpile = { 
+									type = infantry_equipment
+									amount = 5000
+									producer = GER
+								}	
+								add_equipment_to_stockpile = { 
+									type = support_equipment
+									amount = 500
+									producer = GER
+								}	
+								inherit_technology = GER
+								add_offsite_building = { type = arms_factory level = 3 }
+								load_oob = "RK_OOB"
+							}
+						}
+			
+						custom_effect_tooltip = generic_skip_one_line_tt
+			
+						country_event = {
+							id = wuw_GER_reichskommissariats.5
+							hours = 0
+						}	
+						GER_improve_rosenbergs_trait_effect = yes
+
+						custom_effect_tooltip = generic_skip_one_line_tt
+
+						202 = {
+							IF = {
+								limit = {
+									OWNER = {
+										NOT = {
+											original_tag = GER
+										}
+									}
+								}
+								OWNER = {
+									set_country_flag = GER_RK_capital_state_trasferred_RKU_victim_flag
+									set_country_flag = GER_reichskommissariats_puppet_flag
+								}
+							}
+							transfer_state_to = RKU
+							set_state_flag = GER_RK_capital_state_trasferred_RKU_flag
+							add_compliance = 25
+						}
+
+						custom_effect_tooltip = GER_reichskommissariat_ukraine_effect_tt
+						
+						set_autonomy = { 
+							target = RKU 
+							autonomy_state = autonomy_integrated_puppet 
+						}
+						
+						hidden_effect = {
+							every_state = {
+								limit = {
+									GER_is_RKU_state = yes
+									NOT = {
+										GER_is_soviet_greater_romania_state = yes
+									}
+									NOT = {
+										state = 202
+									}
+									OR = {
+										is_owned_by = ROOT
+										owner = { is_subject_of = ROOT }
+									}
+								}
+								transfer_state_to = RKU
+								add_compliance = 25
+							}
+							every_state = {	
+								limit = {
+									GER_is_RKU_state = yes
+									NOT = {
+										GER_is_soviet_greater_romania_state = yes
+									}
+									NOT = {
+										state = 202
+									}
+									NOT = {
+										OR = {
+											is_owned_by = ROOT
+											any_country = {
+												is_subject_of = ROOT
+												owns_state = PREV
+											}
+										}
+									}
+								}
+								add_contested_owner = RKU
+								set_state_owner_to = RKU
+								add_claim_by = RKU
+								add_compliance = 25
+							}
+
+							RKU = {
+								add_manpower = 50000
+								add_equipment_to_stockpile = { 
+									type = infantry_equipment
+									amount = 5000
+									producer = GER
+								}	
+								add_equipment_to_stockpile = { 
+									type = support_equipment
+									amount = 500
+									producer = GER
+								}	
+								inherit_technology = GER
+								add_offsite_building = { type = arms_factory level = 3 }
+								load_oob = "RK_OOB"
+							}
+						}
+
+						custom_effect_tooltip = generic_skip_one_line_tt
+
+						country_event = {
+							id = wuw_GER_reichskommissariats.4
+							hours = 0
+						}	
+					}
+				}
+				else = {
+					GER = { 
+						release_autonomy = { 
+							target = UKR
+							autonomy_state = autonomy_puppet
+							freedom_level = 0.2
+						}
+					}
+				}
+				
+				ARM = {
+					set_cosmetic_tag = ARM_UK 
+				}
+				every_state = {
+					limit = {
+						region = 134
+					}
+					transfer_state_to = ARM
+				}
+				231 = { add_core_of = ARM }
+				826 = { add_core_of = ARM }
+				229 = { add_core_of = ARM }
+				clr_global_flag = MAN_ukr_blr_decision_GER_will_get_them
+			}
+		}
+		}
+	}
+	on_civil_war_end = {
+		effect = {
+			if = { #AST actually puppets INS if they started a civil war
+				limit = {
+					ROOT = {
+						original_tag = INS
+						has_government = fascism
+						controls_state = 334
+						controls_state = 673
+						controls_state = 669
+						controls_state = 668
+						controls_state = 738
+						controls_state = 667
+						controls_state = 672
+						controls_state = 335
+					}
+					FROM = {
+						original_tag = INS
+						NOT = { has_government = fascism }
+					}
+					AST = { has_completed_focus = AST_support_indonesian_uprising } 
+				}
+				AST = {
+					country_event = { id = tfv_australia.41 }
+				}
+			}
+			if = { #if SAF civil war loses, become eng puppet again
+				limit = {
+					ROOT = {
+						original_tag = SAF
+						has_government = democratic
+						is_subject = no
+						controls_state = 681  
+						controls_state = 275
+						controls_state = 719
+					}
+					FROM = {
+						original_tag = SAF
+						NOT = { has_government = democratic }
+					}
+				}
+				ENG = { 
+					add_to_faction = ROOT
+					diplomatic_relation = {
+						country = ROOT
+						relation = puppet
+						active = yes
+					}
+					set_autonomy = {
+						target = ROOT
+						autonomy_state = autonomy_integrated_puppet
+					}
+				}
+			}
+			if = {
+				limit = { #if raj civilwar loses, become eng puppet again
+					ROOT = {
+						original_tag = RAJ
+						has_government = neutrality
+						is_subject = no
+						controls_state = 439
+						controls_state = 433
+						controls_state = 428
+						controls_state = 437
+						controls_state = 429
+						controls_state = 436
+						controls_state = 427
+						controls_state = 423
+						controls_state = 425
+						controls_state = 426
+						controls_state = 438
+					}
+					FROM = {
+						original_tag = RAJ
+						NOT = { has_government = neutrality }
+					}
+					ENG = { NOT = { has_completed_focus = ENG_revisit_colonial_policy } }
+					ENG = { NOT = { has_completed_focus = ENG_a_change_in_course } }
+					OR = {
+						has_global_flag = RAJ_seek_help_from_germany_promised
+						has_global_flag = RAJ_seek_help_from_soviet_promised
+					}
+				}
+				ENG = { 
+					add_to_faction = PREV
+					diplomatic_relation = {
+						country = PREV
+						relation = puppet
+						active = yes
+					}
+					set_autonomy = {
+						target = PREV
+						autonomy_state = autonomy_integrated_puppet
+					}
+				}
+				PREV = { 
+					add_popularity = {
+						ideology = neutrality
+						popularity = 0.5
+					}
+					set_politics = {
+						ruling_party = neutrality
+					} 
+				}
+			}
+			# STOP italy being at war with eth if they won and italy had a civil war
+			if = {
+				limit = {
+					original_tag = ITA
+					has_government = fascism
+					any_country = {
+						OR = {
+							original_tag = ETH
+							original_tag = AFA
+						}
+						has_war_with = ROOT
+						has_capitulated = no
+					}
+					NOT = {
+						any_country = {
+							NOT = { 
+								OR = {
+									original_tag = ETH
+									original_tag = AFA
+								}
+							}
+							has_war_with = ROOT
+							has_capitulated = no
+						}
+					}
+				}
+				set_country_flag = ITA_defeat_in_ethiopia_flag
+				unlock_national_focus = ITA_the_abyssinian_fiasco
+				unlock_national_focus = ITA_servizio_informazione_militare
+				unlock_national_focus = ITA_triumph_in_africa_bba
+				unlock_national_focus = ITA_culto_del_duce
+
+				every_other_country = {
+					limit = {
+						OR = {
+							original_tag = ETH
+							original_tag = AFA
+						}
+						has_war_with = ITA
+						has_capitulated = no
+					}
+					every_controlled_state = {
+						limit = {
+							is_on_continent = africa 
+							is_owned_by = ITA 
+						}
+						PREV = { 
+							transfer_state = PREV 
+						}
+					}
+					white_peace = ITA
+				}
+				set_global_flag = ethiopia_recognized_flag
+				
+			}	
+			if = { #True Union communsts won civil war in england, free scotland and wales
+				limit = {
+					original_tag = ENG
+					has_government = communism
+					has_country_flag = ENG_communist_civil_war_rebels
+				}
+				country_event = { id = nonhist_ENG.1 }
+			}
+		}
+	}
+
+	#ROOT is new controller #ROOT is new controller, FROM is old controller #FROM.FROM is state ID
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						original_tag = ROM
+					}
+					FROM = { has_country_flag = ROM_allies_guarantee_sanitaire }
+					FROM = { is_faction_leader = yes }
+					any_country = {
+						original_tag = POL
+						is_in_faction_with = FROM
+						has_capitulated = yes
+					}
+					FROM.FROM = {
+						OR = {
+							state = 81
+							state = 79
+						}	
+					}
+					OR = {
+						ENG = {
+							has_government = FROM
+							has_war_with = ROOT
+							is_faction_leader = yes
+						}
+						FRA = {
+							has_government = FROM
+							has_war_with = ROOT
+							is_faction_leader = yes
+						}
+						GER = {
+							has_government = FROM
+							has_war_with = ROOT
+							is_faction_leader = yes
+						}
+						ITA = {
+							has_government = FROM
+							has_war_with = ROOT
+							is_faction_leader = yes
+						}
+
+					}
+					
+				}
+				FROM = {
+					country_event = DOD_romania.400
+				}
+			}
+			if = {
+				limit = {
+					FROM = { #is losing a defensive war, and is a faction leader with an ideology that isnt grey
+						is_faction_leader = yes
+						surrender_progress > 0.05
+						NOT = { has_country_flag = alliance_merger_proposed }
+						NOT = { has_government = neutrality }
+					}
+					var:ROOT.faction_leader = { #is attacking FROM, and is a big bully with double their industry in their faction leader
+						has_offensive_war_with = FROM
+						ic_ratio = {
+							tag = FROM
+							ratio > 2
+						}
+						any_other_country = { #is also defending against ROOT's faction leader, is a faction leader themselves with the same ideology as FROM, and also being bullied by ROOT
+							NOT = { tag = FROM }
+							has_government = FROM
+							is_faction_leader = yes
+							has_defensive_war_with = PREV
+							ic_ratio = {
+								tag = PREV
+								ratio < 1
+							}
+							OR = { #is losing a their war against ROOT's faction leader
+								surrender_progress > 0.05
+								any_allied_country = {
+									AND = {
+										is_major = yes
+										has_capitulated = yes
+									}
+								}
+							}
+							OR = { #is neighbors with FROM or a surrendering ally is a neighbor with FROM
+								any_neighbor_country = {
+									tag = FROM
+								}
+								any_allied_country = {
+									AND = {
+										is_major = yes
+										has_government = FROM
+										OR = {
+											has_capitulated = yes
+											surrender_progress > 0.7
+										}
+										any_neighbor_country = {
+											tag = FROM
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				random_other_country = {
+					limit = {
+						is_faction_leader = yes
+						has_defensive_war_with = ROOT
+						has_government = FROM
+						OR = { #is losing a defensive war against the same enemy
+							surrender_progress > 0.05
+							any_allied_country = {
+								AND = {
+									is_major = yes
+									has_capitulated = yes
+								}
+							}
+						}
+						OR = { #is neighbor or a surrendering ally is a neighbor
+							any_neighbor_country = {
+								tag = FROM
+							}
+							any_allied_country = {
+								AND = {
+									is_major = yes
+									has_government = FROM
+									OR = {
+										has_capitulated = yes
+										surrender_progress > 0.7
+									}
+									any_neighbor_country = {
+										tag = FROM
+									}
+								}
+							}
+						}
+					}
+					hidden_effect = {
+						set_variable = {
+							global.major_alliance_merger = THIS 
+						}
+					}
+				}
+				FROM = {
+					country_event = nonhist_generic.4
+					set_country_flag = alliance_merger_proposed
+				}
+				
+			}
+			if = {
+				limit = {
+					FROM = {
+						tag = CHI
+					}
+					FROM = { is_faction_leader = no }
+					FROM = { has_war_with = PRC }
+					FROM = { has_war_with = JAP }
+					FROM.FROM = {
+						OR = {
+							state = 597
+							state = 743
+							state = 613
+						}	
+					}
+					ROOT = {
+						original_tag = JAP
+					}
+
+
+					
+				}
+				CHI = {
+					country_event = wtt_xian_incident.300
+				}
+			}
+			
+		}
+	}
+
+	on_war_relation_added = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_global_flag = NOR_norwegian_fascist_cw_started }
+					ROOT = {
+						original_tag = GER 
+						has_government = fascism
+						is_faction_leader = yes 
+					}
+					FROM = {
+						original_tag = NOR
+						NOT = { has_government = fascism }
+						has_civil_war = no 
+						NOT = { has_country_flag = NOR_refused_to_switch_to_fasc_NHMMAP }
+					}
+				}
+				NOR = {
+					if = { # Norway has chosen Fascist branch
+						limit = {
+							has_completed_focus = NOR_lurk_in_the_shadows
+							NOT = { has_completed_focus = NOR_nasjonal_samling }
+	
+						}
+						####################
+						#IMPORTANT: THIS IS ALREADY IN 09_aat_on_actions.txt NOT NEEDED IN NHMMAP
+						####################
+						# country_event = {  
+						# 	id = AAT_norway.199
+						# 	hours = 1
+						# }
+					}
+						
+					###################
+					#But THIS part IS needed in NHMMAP:
+					###################
+	
+					else_if = {  # Democratic but Quisling is still around
+						limit = {
+							NOR = {	 
+								has_completed_focus = NOR_continue_nygaardsvold_government 
+								NOT = { has_completed_focus = NOR_arrest_quisling }
+								is_subject = no
+							}
+						}
+						if = {
+							limit = {
+								NOR = { NOT = { has_completed_focus = NOR_fascist_invasion_of_norway } }
+							}
+							complete_national_focus = NOR_fascist_invasion_of_norway
+						}
+						country_event = {
+							id = nonhist_NOR.1
+							hours = 1 
+						}
+					}
+					else_if = { # Democratic but Quisling is arrrested
+						limit = {
+							NOR = {
+								has_completed_focus = NOR_continue_nygaardsvold_government 
+								is_subject = no
+							}
+						}
+						if = {
+							limit = {
+								NOR = { NOT = { has_completed_focus = NOR_fascist_invasion_of_norway } }
+							}
+							complete_national_focus = NOR_fascist_invasion_of_norway
+						}
+					}
+				}
+			}
+		}
+	}
+	on_peaceconference_ended = { #if any country owns north libya, give them south libya for free (empty desert tile) this is done to prevent bordergore.
+		effect = {
+			if = {
+				limit = {
+					ROOT = {
+						any_owned_state = {
+							ITA_state_is_in_north_africa = yes
+						}
+					}
+					any_country = {
+						owns_state = 661
+						owns_state = 662
+						owns_state = 663
+					}
+				}
+				662 = {
+					OWNER = {
+						transfer_state = 273
+					}
+				}
+			}
+		}
+	}
+
+	on_send_volunteers = { 
+
+		#sets a flag when AUS sends volunteers to spain, i've got the tags here that the DLC forgot about
+		effect = {
+			IF = { 
+				limit = {
+					original_tag = AUS
+					FROM = { 
+						tag = SPB
+					}
+				}
+				ROOT = { set_country_flag = AUS_volunteer_effort_SPB_flag }
+			}
+			IF = { 
+				limit = {
+					original_tag = AUS
+					FROM = { 
+						tag = SPC
+					}
+				}
+				ROOT = { set_country_flag = AUS_volunteer_effort_SPC_flag }
+			}
+			IF = { 
+				limit = {
+					original_tag = AUS
+					FROM = { 
+						tag = SPD
+					}
+				}
+				ROOT = { set_country_flag = AUS_volunteer_effort_SPD_flag }
+			}	
+		}
+	}
+}

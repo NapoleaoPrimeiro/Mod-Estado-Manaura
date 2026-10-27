@@ -1,0 +1,5121 @@
+#### GERMANY LUXEMBOURG UK REWORK ####
+UK_integrate_lands = {
+	UK_form_uk_gb_france = {
+		icon = GFX_decision_generic_form_nation
+        cost = 100
+		days_remove = 0
+		fire_only_once = yes
+        visible = {
+			has_completed_focus = ENG_reclaim_france
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = form_eu_france_required_states_tt
+				controls_state = 29
+				controls_state = 18
+				controls_state = 17
+				controls_state = 28
+				controls_state = 15
+				controls_state = 16
+				controls_state = 27
+				controls_state = 14
+				controls_state = 30
+				controls_state = 24
+				controls_state = 23
+				controls_state = 33
+				controls_state = 26
+				controls_state = 20
+				controls_state = 32
+				controls_state = 735
+				controls_state = 25
+				controls_state = 22
+				controls_state = 21
+				controls_state = 851
+				controls_state = 19
+				controls_state = 1
+				controls_state = 785
+				controls_state = 31
+				controls_state = 806
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			IF = {
+				limit = {
+					NOT = {
+						has_completed_focus = ENG_imperial_federation
+					}
+				}
+				set_cosmetic_tag = ENG_ENGLAND_FRANCE_UNION
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+			custom_effect_tooltip = form_eu_france_coring_states_tt
+			hidden_effect = {
+				29 = { add_core_of = ROOT } # Nord-pas-de-calais
+				18 = { add_core_of = ROOT } # Champagne
+				17 = { add_core_of = ROOT } # Franche-Comte
+				28 = { add_core_of = ROOT } # Alsace-Lorraine
+				15 = { add_core_of = ROOT } # Normandy
+				16 = { add_core_of = ROOT } # Ile de France
+				27 = { add_core_of = ROOT } # Bourgogne
+				14 = { add_core_of = ROOT } # Brittany
+				30 = { add_core_of = ROOT } # Loire
+				24 = { add_core_of = ROOT } # Centre
+				23 = { add_core_of = ROOT } # Poitou
+				33 = { add_core_of = ROOT } # Centre-sud
+				26 = { add_core_of = ROOT } # Auveragne
+				20 = { add_core_of = ROOT } # Rhone
+				32 = { add_core_of = ROOT } # Alpes
+				735 = { add_core_of = ROOT } # Savoy
+				25 = { add_core_of = ROOT } # Limousin
+				22 = { add_core_of = ROOT } # Languedoc
+				21 = { add_core_of = ROOT } # Bouches-du-Rhone
+				851 = { add_core_of = ROOT } # Var
+				19 = { add_core_of = ROOT } # Aquitaine
+				1 = { add_core_of = ROOT } # Corsica
+				785 = { add_core_of = ROOT } # Picardy
+				31 = { add_core_of = ROOT } # Midi Pyrinees
+				806 = { add_core_of = ROOT } # Pyrinees-Atlantique
+			}
+        }
+		remove_effect = {
+		}
+    }
+	UK_reintegrate_hanover = {
+		icon = GFX_decision_generic_form_nation
+        cost = 25
+		days_remove = 0
+		fire_only_once = yes
+        visible = {
+			has_completed_focus = ENG_reclaim_hanover
+		}
+		available = {
+			controls_state = 56
+			controls_state = 59
+        }
+		modifier = {
+		}
+        complete_effect = {
+			IF = {
+				limit = {
+					NOT = {
+						has_completed_focus = ENG_imperial_federation
+					}
+				}
+				set_cosmetic_tag = ENG_HANOVER
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+			every_state = {
+				limit = {
+					is_core_of = HAN
+				}
+				add_core_of = ROOT
+			}
+			set_country_flag = ENG_has_integrated_hanover
+        }
+		remove_effect = {
+		}
+    }
+	UK_reintegrate_ireland = {
+		icon = GFX_decision_generic_form_nation
+        cost = 25
+		days_remove = 0
+		fire_only_once = yes
+        visible = {
+			OR = {
+				has_country_flag = ENG_integrate_ireland_allowed
+				has_completed_focus = ENG_recover_ireland
+			}
+		}
+		available = {
+			OR = {
+				AND = {
+					controls_state = 134
+					controls_state = 135
+					controls_state = 113
+					controls_state = 119
+				}
+				IRE = {
+					is_subject_of = ROOT
+				}
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			add_state_core = 134
+			add_state_core = 135
+			add_state_core = 113
+			add_state_core = 119
+			IF = {
+				limit = {
+					IRE = {
+						is_subject_of = ROOT
+					}
+				}
+				annex_country = {
+					target = IRE
+					transfer_troops = yes
+				}
+			}
+        }
+		remove_effect = {
+		}
+    }
+}
+UK_BAF_countercoup_decisions = {
+	UK_execute_coup = {
+		icon = GFX_decision_generic_tank
+        cost = 0
+		days_remove = 0
+		fire_only_once = no
+        visible = {
+		}
+		available = {
+			neutrality > 0.5
+        }
+		modifier = {
+		}
+        complete_effect = {
+			country_event = ukrework.5
+        }
+		remove_effect = {
+		}
+    }
+	UK_anti_communist_propoganda = {
+		icon = GFX_decision_eng_propaganda_campaigns
+        cost = 50
+		days_remove = 35
+		fire_only_once = no
+        visible = {
+		}
+		available = {
+        }
+		modifier = {
+			political_power_gain = -0.15
+			neutrality_drift = 0.05
+		}
+        complete_effect = {
+        }
+		remove_effect = {
+			add_popularity = {
+				ideology = communism
+				popularity = -0.1
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+		}
+    }
+	UK_organize_baf_in_state = {
+		icon = GFX_decision_CHL_carabineros
+        cost = 25
+		days_remove = 7
+		fire_only_once = yes
+        visible = {
+		}
+		state_target = yes
+		target_trigger = {
+			FROM = {
+				is_core_of = ROOT
+				NOT = {
+					OR = {
+						is_core_of = SCO
+						is_core_of = WLS
+					}
+				}
+				is_in_home_area = yes
+				any_neighbor_state = {
+					is_demilitarized_zone = yes
+				}
+			}
+		}
+		available = {
+        }
+		modifier = {
+			political_power_gain = -0.05
+		}
+        complete_effect = {
+        }
+		remove_effect = {
+			FROM = {
+				set_demilitarized_zone = yes
+				set_state_flag = ENG_baf_has_been_organized_in_state
+				custom_effect_tooltip = generic_skip_one_line_tt
+				set_temp_variable = { ROOT.state_population = state_population_k }
+			}
+			divide_temp_variable = {
+				var = state_population
+				value = ROOT.max_manpower_k
+			}
+			ROOT = {
+				add_popularity = {
+					ideology = neutrality
+					popularity = state_population
+				}
+			}
+			multiply_temp_variable = {
+				var = state_population
+				value = -2
+			}
+			ROOT = {
+				add_stability = state_population
+			}
+		}
+    }
+}
+UK_parliament_decisions = {
+	UK_parliament_guide = {
+		icon = GFX_decision_eng_trade_unions_support
+        cost = 0
+		days_remove = 0
+		fire_only_once = no
+        visible = {
+			OR = {
+				has_country_flag = ENG_is_currently_focused_on_commons_flag
+				has_country_flag = ENG_is_currently_focused_on_lords_flag
+				has_country_flag = ENG_is_currently_focused_on_acts_flag
+			}
+		}
+		available = {
+			always = false
+        }
+		modifier = {
+		}
+        remove_effect = {
+        }
+    }
+	UK_lobby_commons = {
+		icon = GFX_decision_generic_political_discourse
+        cost = 25
+		days_remove = 70
+		fire_only_once = no
+        visible = {
+			has_country_flag = ENG_is_currently_focused_on_commons_flag
+		}
+		available = {
+        }
+		modifier = {
+			political_power_factor = -0.1
+			consumer_goods_factor = 0.05
+		}
+        remove_effect = {
+			set_variable = {
+				var = ENG_support_to_add_min_var
+				value = 1
+			}
+			set_variable = {
+				var = ENG_support_to_add_max_var
+				value = 3
+			}
+			custom_effect_tooltip = {
+				localization_key = ENG_add_support_to_house_of_commons_tt
+				MAXIMUM = 3
+			}
+			ENG_add_support_to_house_of_commons_effect = yes
+			ENG_check_if_support_is_valid_parliament_effect = yes
+        }
+    }
+	UK_political_briberies_commons = {
+		icon = GFX_decision_generic_fundraising
+        cost = 25
+		days_remove = 120
+		fire_only_once = no
+        visible = {
+			has_country_flag = ENG_is_currently_focused_on_commons_flag
+		}
+		available = {
+        }
+		modifier = {
+			political_power_factor = -0.1
+			consumer_goods_factor = 0.15
+		}
+        remove_effect = {
+			set_variable = {
+				var = ENG_support_to_add_min_var
+				value = 4
+			}
+			set_variable = {
+				var = ENG_support_to_add_max_var
+				value = 5
+			}
+			custom_effect_tooltip = {
+				localization_key = ENG_add_support_to_house_of_commons_tt
+				MAXIMUM = 5
+			}
+			ENG_add_support_to_house_of_commons_effect = yes
+			ENG_check_if_support_is_valid_parliament_effect = yes
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_stability = -0.01
+        }
+    }
+	UK_pm_speech_commons = {
+		icon = GFX_decision_eng_blackshirt_speech
+        cost = 5
+		days_remove = 365
+		fire_only_once = no
+        visible = {
+			has_country_flag = ENG_is_currently_focused_on_commons_flag
+		}
+		available = {
+        }
+		modifier = {
+		}
+        complete_effect = {
+			set_variable = {
+				var = ENG_support_to_add_min_var
+				value = 4
+			}
+			set_variable = {
+				var = ENG_support_to_add_max_var
+				value = 5
+			}
+			custom_effect_tooltip = {
+				localization_key = ENG_add_support_to_house_of_commons_tt
+				MAXIMUM = 5
+			}
+			ENG_add_support_to_house_of_commons_effect = yes
+			ENG_check_if_support_is_valid_parliament_effect = yes
+        }
+    }
+	UK_government_slander_commons = {
+		icon = GFX_decision_generic_political_address
+        cost = 50
+		days_remove = 70
+		fire_only_once = no
+        visible = {
+			has_country_flag = ENG_is_currently_focused_on_commons_flag
+			always = no
+		}
+		available = {
+        }
+		modifier = {
+			political_power_factor = -0.15
+		}
+        remove_effect = {
+			set_variable = {
+				var = ENG_support_to_add_min_var
+				value = 4
+			}
+			set_variable = {
+				var = ENG_support_to_add_max_var
+				value = 5
+			}
+			custom_effect_tooltip = {
+				localization_key = ENG_remove_support_to_house_of_commons_tt
+				MAXIMUM = 5
+			}
+			ENG_remove_support_to_house_of_commons_effect = yes
+			ENG_check_if_support_is_valid_parliament_effect = yes
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_stability = -0.01
+        }
+    }
+	UK_fill_empty_seat_lords = {
+		icon = GFX_decision_SWI_elect_confederation_president
+        cost = 50
+		days_remove = 180
+		fire_only_once = no
+        visible = {
+			has_country_flag = ENG_is_currently_focused_on_lords_flag
+		}
+		available = {
+        }
+		modifier = {
+			political_power_factor = -0.05
+		}
+        remove_effect = {
+			set_variable = {
+				var = ENG_support_to_add_min_var
+				value = 2
+			}
+			set_variable = {
+				var = ENG_support_to_add_max_var
+				value = 5
+			}
+			custom_effect_tooltip = {
+				localization_key = ENG_add_support_to_house_of_lords_tt
+				MAXIMUM = 5
+			}
+			ENG_add_support_to_house_of_lords_effect = yes
+			ENG_check_if_support_is_valid_parliament_effect = yes
+        }
+    }
+	UK_political_briberies_lords = {
+		icon = GFX_decision_generic_fundraising
+        cost = 25
+		days_remove = 120
+		fire_only_once = no
+        visible = {
+			has_country_flag = ENG_is_currently_focused_on_lords_flag
+		}
+		available = {
+        }
+		modifier = {
+			political_power_factor = -0.1
+			consumer_goods_factor = 0.15
+		}
+        remove_effect = {
+			set_variable = {
+				var = ENG_support_to_add_min_var
+				value = 1
+			}
+			set_variable = {
+				var = ENG_support_to_add_max_var
+				value = 3
+			}
+			custom_effect_tooltip = {
+				localization_key = ENG_add_support_to_house_of_lords_tt
+				MAXIMUM = 3
+			}
+			ENG_add_support_to_house_of_lords_effect = yes
+			ENG_check_if_support_is_valid_parliament_effect = yes
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_stability = -0.01
+        }
+    }
+	UK_pm_speech_lords = {
+		icon = GFX_decision_eng_blackshirt_speech
+        cost = 5
+		days_remove = 365
+		fire_only_once = no
+        visible = {
+			has_country_flag = ENG_is_currently_focused_on_lords_flag
+		}
+		available = {
+        }
+		modifier = {
+		}
+        complete_effect = {
+			set_variable = {
+				var = ENG_support_to_add_min_var
+				value = 4
+			}
+			set_variable = {
+				var = ENG_support_to_add_max_var
+				value = 5
+			}
+			custom_effect_tooltip = {
+				localization_key = ENG_add_support_to_house_of_lords_tt
+				MAXIMUM = 5
+			}
+			ENG_add_support_to_house_of_lords_effect = yes
+			ENG_check_if_support_is_valid_parliament_effect = yes
+        }
+    }
+	UK_factory_act = {
+		icon = GFX_decision_generic_factory
+        cost = 25
+		days_remove = 0
+		fire_only_once = yes
+        visible = {
+			has_country_flag = ENG_is_currently_focused_on_acts_flag
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_has_normal_commons_support_tt
+				check_variable = {
+					var = ENG_parliament_commons_support_amount_var
+					value = 55
+					compare = greater_than
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ENG_has_normal_lords_support_tt
+				check_variable = {
+					var = ENG_parliament_lords_support_amount_var
+					value = 55
+					compare = greater_than
+				}
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			add_ideas = ENG_factory_act_idea
+			custom_effect_tooltip = generic_skip_one_line_tt
+			set_variable = {
+				var = ENG_support_to_add_min_var
+				value = 2
+			}
+			set_variable = {
+				var = ENG_support_to_add_max_var
+				value = 3
+			}
+			custom_effect_tooltip = {
+				localization_key = ENG_remove_support_to_house_of_lords_tt
+				MAXIMUM = 3
+			}
+			ENG_remove_support_to_house_of_lords_effect = yes
+			custom_effect_tooltip = {
+				localization_key = ENG_remove_support_to_house_of_commons_tt
+				MAXIMUM = 3
+			}
+			ENG_remove_support_to_house_of_commons_effect = yes
+			ENG_check_if_support_is_valid_parliament_effect = yes
+        }
+    }
+	UK_military_training_act = {
+		icon = GFX_decision_generic_reorganize_irregulars
+        cost = 25
+		days_remove = 0
+		fire_only_once = yes
+        visible = {
+			has_country_flag = ENG_is_currently_focused_on_acts_flag
+			has_government = democratic
+			NOT = {
+				OR = {
+					has_completed_focus = ENG_global_defense
+					has_completed_focus = ENG_a_change_in_course
+				}
+			}
+		}
+		available = {
+			has_completed_focus = ENG_issue_gasmasks
+			OR = {
+				threat > 0.5
+				has_war = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = ENG_has_normal_commons_support_tt
+				check_variable = {
+					var = ENG_parliament_commons_support_amount_var
+					value = 55
+					compare = greater_than
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ENG_has_normal_lords_support_tt
+				check_variable = {
+					var = ENG_parliament_lords_support_amount_var
+					value = 55
+					compare = greater_than
+				}
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			remove_ideas = ENG_the_war_to_end_all_wars
+			custom_effect_tooltip = generic_skip_one_line_tt
+			set_rule = { can_send_volunteers = yes }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			set_variable = {
+				var = ENG_support_to_add_min_var
+				value = 3
+			}
+			set_variable = {
+				var = ENG_support_to_add_max_var
+				value = 5
+			}
+			custom_effect_tooltip = {
+				localization_key = ENG_remove_support_to_house_of_lords_tt
+				MAXIMUM = 5
+			}
+			ENG_remove_support_to_house_of_lords_effect = yes
+			custom_effect_tooltip = {
+				localization_key = ENG_remove_support_to_house_of_commons_tt
+				MAXIMUM = 5
+			}
+			ENG_remove_support_to_house_of_commons_effect = yes
+			ENG_check_if_support_is_valid_parliament_effect = yes
+        }
+    }
+	UK_emergency_powers_act = {
+		icon = GFX_decision_SWI_consolidate_council_power
+        cost = 50
+		days_remove = 0
+		fire_only_once = yes
+        visible = {
+			has_country_flag = ENG_is_currently_focused_on_acts_flag
+		}
+		available = {
+			has_war_with_major = yes
+			custom_trigger_tooltip = {
+				tooltip = ENG_has_normal_commons_support_tt
+				check_variable = {
+					var = ENG_parliament_commons_support_amount_var
+					value = 55
+					compare = greater_than
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ENG_has_normal_lords_support_tt
+				check_variable = {
+					var = ENG_parliament_lords_support_amount_var
+					value = 55
+					compare = greater_than
+				}
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			add_ideas = ENG_emergency_powers_act_idea
+			custom_effect_tooltip = generic_skip_one_line_tt
+			set_variable = {
+				var = ENG_support_to_add_min_var
+				value = 4
+			}
+			set_variable = {
+				var = ENG_support_to_add_max_var
+				value = 6
+			}
+			custom_effect_tooltip = {
+				localization_key = ENG_remove_support_to_house_of_lords_tt
+				MAXIMUM = 6
+			}
+			ENG_remove_support_to_house_of_lords_effect = yes
+			custom_effect_tooltip = {
+				localization_key = ENG_remove_support_to_house_of_commons_tt
+				MAXIMUM = 6
+			}
+			ENG_remove_support_to_house_of_commons_effect = yes
+			ENG_check_if_support_is_valid_parliament_effect = yes
+        }
+    }
+	UK_national_service_act = {
+		icon = GFX_decision_generic_military
+        cost = 50
+		days_remove = 0
+		fire_only_once = yes
+        visible = {
+			has_country_flag = ENG_is_currently_focused_on_acts_flag
+		}
+		available = {
+			has_war_with_major = yes
+			custom_trigger_tooltip = {
+				tooltip = ENG_has_normal_commons_support_tt
+				check_variable = {
+					var = ENG_parliament_commons_support_amount_var
+					value = 55
+					compare = greater_than
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ENG_has_normal_lords_support_tt
+				check_variable = {
+					var = ENG_parliament_lords_support_amount_var
+					value = 55
+					compare = greater_than
+				}
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			add_ideas = UK_national_service_act_idea
+			custom_effect_tooltip = generic_skip_one_line_tt
+			set_variable = {
+				var = ENG_support_to_add_min_var
+				value = 3
+			}
+			set_variable = {
+				var = ENG_support_to_add_max_var
+				value = 5
+			}
+			custom_effect_tooltip = {
+				localization_key = ENG_remove_support_to_house_of_lords_tt
+				MAXIMUM = 5
+			}
+			ENG_remove_support_to_house_of_lords_effect = yes
+			custom_effect_tooltip = {
+				localization_key = ENG_remove_support_to_house_of_commons_tt
+				MAXIMUM = 5
+			}
+			ENG_remove_support_to_house_of_commons_effect = yes
+			ENG_check_if_support_is_valid_parliament_effect = yes
+        }
+    }
+	UK_education_act = {
+		icon = GFX_decision_SOV_place_hq
+        cost = 25
+		days_remove = 0
+		fire_only_once = yes
+        visible = {
+			has_country_flag = ENG_is_currently_focused_on_acts_flag
+		}
+		available = {
+			has_completed_focus = uk_extra_tech_slot
+			custom_trigger_tooltip = {
+				tooltip = ENG_has_normal_commons_support_tt
+				check_variable = {
+					var = ENG_parliament_commons_support_amount_var
+					value = 55
+					compare = greater_than
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ENG_has_normal_lords_support_tt
+				check_variable = {
+					var = ENG_parliament_lords_support_amount_var
+					value = 55
+					compare = greater_than
+				}
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			add_ideas = UK_education_act_idea
+			custom_effect_tooltip = generic_skip_one_line_tt
+			set_variable = {
+				var = ENG_support_to_add_min_var
+				value = 2
+			}
+			set_variable = {
+				var = ENG_support_to_add_max_var
+				value = 3
+			}
+			custom_effect_tooltip = {
+				localization_key = ENG_remove_support_to_house_of_lords_tt
+				MAXIMUM = 3
+			}
+			ENG_remove_support_to_house_of_lords_effect = yes
+			custom_effect_tooltip = {
+				localization_key = ENG_remove_support_to_house_of_commons_tt
+				MAXIMUM = 3
+			}
+			ENG_remove_support_to_house_of_commons_effect = yes
+			ENG_check_if_support_is_valid_parliament_effect = yes
+        }
+    }
+	UK_nhs_act = {
+		icon = GFX_decision_eng_trade_unions_demand
+        cost = 50
+		days_remove = 0
+		fire_only_once = yes
+        visible = {
+			has_country_flag = ENG_is_currently_focused_on_acts_flag
+		}
+		available = {
+			OR = {
+				has_country_leader = {
+					character = ENG_oswald_mosley
+				}
+				has_country_leader = {
+					character = ENG_clement_attlee
+				}
+				has_completed_focus = ENG_work_with_the_tuc
+				has_government = communism
+			}
+			custom_trigger_tooltip = {
+				tooltip = ENG_has_normal_commons_support_tt
+				check_variable = {
+					var = ENG_parliament_commons_support_amount_var
+					value = 55
+					compare = greater_than
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ENG_has_normal_lords_support_tt
+				check_variable = {
+					var = ENG_parliament_lords_support_amount_var
+					value = 55
+					compare = greater_than
+				}
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			add_ideas = UK_nhs_act_idea
+			custom_effect_tooltip = generic_skip_one_line_tt
+			set_variable = {
+				var = ENG_support_to_add_min_var
+				value = 5
+			}
+			set_variable = {
+				var = ENG_support_to_add_max_var
+				value = 7
+			}
+			custom_effect_tooltip = {
+				localization_key = ENG_remove_support_to_house_of_lords_tt
+				MAXIMUM = 7
+			}
+			ENG_remove_support_to_house_of_lords_effect = yes
+			custom_effect_tooltip = {
+				localization_key = ENG_remove_support_to_house_of_commons_tt
+				MAXIMUM = 7
+			}
+			ENG_remove_support_to_house_of_commons_effect = yes
+			ENG_check_if_support_is_valid_parliament_effect = yes
+        }
+    }
+	UK_new_spending_resolution = {
+		icon = GFX_decision_gre_paying_ifc_debt
+        cost = 50
+		days_remove = 70
+		days_re_enable = 180
+		fire_only_once = no
+        visible = {
+			has_country_flag = ENG_is_currently_focused_on_acts_flag
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_has_normal_commons_support_tt
+				check_variable = {
+					var = ENG_parliament_commons_support_amount_var
+					value = 55
+					compare = greater_than
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ENG_has_normal_lords_support_tt
+				check_variable = {
+					var = ENG_parliament_lords_support_amount_var
+					value = 55
+					compare = greater_than
+				}
+			}
+        }
+		modifier = {
+			consumer_goods_factor = -0.2
+		}
+        complete_effect = {
+			set_variable = {
+				var = ENG_support_to_add_min_var
+				value = 4
+			}
+			set_variable = {
+				var = ENG_support_to_add_max_var
+				value = 6
+			}
+			custom_effect_tooltip = {
+				localization_key = ENG_remove_support_to_house_of_lords_tt
+				MAXIMUM = 6
+			}
+			ENG_remove_support_to_house_of_lords_effect = yes
+			custom_effect_tooltip = {
+				localization_key = ENG_remove_support_to_house_of_commons_tt
+				MAXIMUM = 6
+			}
+			ENG_remove_support_to_house_of_commons_effect = yes
+			ENG_check_if_support_is_valid_parliament_effect = yes
+        }
+    }
+	UK_increase_bureaucracy = {
+		icon = GFX_decision_SOV_place_hq_exiles
+        cost = 10
+		days_remove = 70
+		days_re_enable = 180
+		fire_only_once = no
+        visible = {
+			has_country_flag = ENG_is_currently_focused_on_acts_flag
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_has_normal_commons_support_tt
+				check_variable = {
+					var = ENG_parliament_commons_support_amount_var
+					value = 55
+					compare = greater_than
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ENG_has_normal_lords_support_tt
+				check_variable = {
+					var = ENG_parliament_lords_support_amount_var
+					value = 55
+					compare = greater_than
+				}
+			}
+        }
+		modifier = {
+			consumer_goods_factor = 0.1
+			political_power_gain = 1
+		}
+        complete_effect = {
+			set_variable = {
+				var = ENG_support_to_add_min_var
+				value = 4
+			}
+			set_variable = {
+				var = ENG_support_to_add_max_var
+				value = 6
+			}
+			custom_effect_tooltip = {
+				localization_key = ENG_remove_support_to_house_of_lords_tt
+				MAXIMUM = 6
+			}
+			ENG_remove_support_to_house_of_lords_effect = yes
+			custom_effect_tooltip = {
+				localization_key = ENG_remove_support_to_house_of_commons_tt
+				MAXIMUM = 6
+			}
+			ENG_remove_support_to_house_of_commons_effect = yes
+			ENG_check_if_support_is_valid_parliament_effect = yes
+        }
+    }
+}
+UK_commonwealth_protectorate_decisions = {
+	UK_create_protectorate = {
+		icon = GFX_decision_generic_form_nation
+        cost = 25
+		days_remove = 70
+		fire_only_once = yes
+		target_trigger = {
+			FROM = {
+				is_subject_of = ROOT
+				NOT = {
+					has_cosmetic_tag = ENG_PROTECTORATE_SATELLITE
+				}
+			}
+		}
+        visible = {
+			
+		}
+		available = {
+			
+        }
+		modifier = {
+			political_power_gain = -0.15
+		}
+        complete_effect = {
+        }
+		remove_effect = {
+			FROM = {
+				set_cosmetic_tag = ENG_PROTECTORATE_SATELLITE
+				custom_effect_tooltip = generic_skip_one_line_tt
+				set_party_name = {
+					ideology = neutrality
+					long_name = ENG_protectorate_long
+					name = ENG_protectorate
+				}
+				set_politics = {
+					ruling_party = neutrality
+    				elections_allowed = no
+				}
+				create_country_leader = {
+					name = "The Protectorate"
+					picture = GFX_Portrait_ENG_BAF_Command
+					expire = "1965.1.1"
+					ideology = oligarchism
+					traits = {
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				add_ideas = ENG_protectorate_idea
+			}
+		}
+    }
+	UK_integrate_protectorate = {
+		icon = GFX_decision_generic_nationalism
+        cost = 25
+		days_remove = 70
+		fire_only_once = yes
+		target_trigger = {
+			FROM = {
+				has_cosmetic_tag = ENG_PROTECTORATE_SATELLITE
+				is_subject_of = ROOT
+				OR = {
+					AND = {
+						ROOT = {
+							has_completed_focus = ENG_reestablish_irish_commonwealth
+						}
+						tag = IRE
+					}
+					AND = {
+						ROOT = {
+							has_completed_focus = ENG_commonwealth_of_nations_form
+						}
+						OR = {
+							tag = USA
+							tag = AST
+							tag = NZL
+							tag = CAN
+						}
+					}
+					AND = {
+						ROOT = {
+							has_completed_focus = ENG_commonwealth_of_europe_form
+						}
+						capital_scope = {
+							is_on_continent = europe
+						}
+					}
+				}
+			}
+		}
+        visible = {
+			
+		}
+		available = {
+			
+        }
+		modifier = {
+			political_power_gain = -0.15
+		}
+        complete_effect = {
+        }
+		remove_effect = {
+			every_state = {
+				limit = {
+					is_core_of = FROM
+				}
+				add_core_of = ROOT
+			}
+			annex_country = {
+				target = FROM
+				transfer_troops = yes
+			}
+		}
+    }
+}
+UK_europe_alliance_decisions = {
+	UK_invite_country_to_alliance = {
+		icon = GFX_decision_generic_ENG_invite_country_to_alliance
+        cost = 25
+		days_remove = 30
+		fire_only_once = yes
+		target_trigger = {
+			FROM = {
+				has_government = democratic
+				is_in_faction = no
+				is_subject = no
+				capital_scope = {
+					is_on_continent = europe
+				}
+				NOT = {
+					has_war_with = ROOT
+				}
+			}
+		}
+        visible = {
+			is_in_faction = yes
+			has_government = democratic
+		}
+		available = {
+			
+        }
+		modifier = {
+			political_power_gain = -0.15
+		}
+        complete_effect = {
+        }
+		remove_effect = {
+			FROM = {
+				country_event = {
+					id = generic.5
+					days = 1
+				}
+			}
+		}
+    }
+	UK_propose_federalization_to_country = {
+		icon = GFX_decision_generic_ENG_european_union
+        cost = 100
+		days_remove = 30
+		fire_only_once = yes
+		target_trigger = {
+			FROM = {
+				is_subject = no
+				is_in_faction_with = ROOT
+				capital_scope = {
+					is_on_continent = europe
+				}
+			}
+		}
+        visible = {
+			is_in_faction = yes
+			has_government = democratic
+			has_completed_focus = ENG_preparations_for_a_european_union
+		}
+		available = {
+			
+        }
+		modifier = {
+			political_power_gain = -0.25
+		}
+        complete_effect = {
+        }
+		remove_effect = {
+			FROM = {
+				country_event = {
+					id = ukrework.31
+					days = 1
+				}
+			}
+		}
+    }
+	UK_integrate_country_eu = {
+		icon = GFX_decision_generic_ENG_pawn
+        cost = 100
+		days_remove = 70
+		fire_only_once = yes
+		target_trigger = {
+			FROM = {
+				is_subject_of = ROOT
+				capital_scope = {
+					is_on_continent = europe
+				}
+			}
+		}
+        visible = {
+			is_in_faction = yes
+			has_government = democratic
+		}
+		available = {
+			FROM = {
+				has_autonomy_state = autonomy_integrated_puppet
+			}
+        }
+		modifier = {
+			political_power_gain = -0.5
+		}
+        complete_effect = {
+        }
+		remove_effect = {
+			ROOT = {
+				annex_country = {
+					target = FROM
+					transfer_troops = yes
+				}
+			}
+		}
+    }
+	UK_promote_federalization_in_britain = {
+		icon = GFX_decision_generic_ENG_european_union
+        cost = 50
+		days_remove = 70
+		fire_only_once = no
+        visible = {
+			is_in_faction = yes
+			has_government = democratic
+			has_completed_focus = ENG_preparations_for_a_european_union
+			NOT = {
+				has_cosmetic_tag = EUR_UNIFIED
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_has_promoted_support_less_than_5_times_tt
+				check_variable = {
+					var = UK_promote_federalization_in_britain_times_completed_var
+					value = 5
+					compare = less_than
+				}
+			}
+        }
+		modifier = {
+			political_power_gain = -0.5
+			stability_weekly = -0.005
+		}
+        complete_effect = {
+        }
+		remove_effect = {
+			custom_effect_tooltip = ENG_prevent_brexit_tt
+			add_to_variable = {
+				var = UK_promote_federalization_in_britain_times_completed_var
+				value = 1
+			}
+		}
+    }
+}
+UK_form_atlantic_union_decisions = {
+	UK_form_atlantic_union= {
+		icon = GFX_decision_generic_ENG_nato
+        cost = 0
+		fire_only_once = yes
+        visible = {
+		}
+		available = {
+			controls_state = 126
+			controls_state = 113
+			controls_state = 100
+			controls_state = 101
+			controls_state = 276
+			controls_state = 361
+        }
+		modifier = {
+		}
+        complete_effect = {
+			add_stability = 0.05
+			add_war_support = 0.05
+			custom_effect_tooltip = generic_skip_one_line_tt
+			set_cosmetic_tag = ENG_NATO_UNIFIED
+        }
+    }
+	UK_propose_greater_coop_with_country = {
+		icon = GFX_decision_generic_political_discourse
+        cost = 25
+		days_remove = 30
+		fire_only_once = yes
+		target_trigger = {
+			FROM = {
+				is_in_faction_with = ROOT
+				is_subject = no
+				OR = {
+					tag = CAN
+					tag = IRE
+					tag = USA
+					tag = GRN
+					tag = ICE
+				}
+			}
+		}
+        visible = {
+			is_in_faction = yes
+			has_government = democratic
+		}
+		available = {
+			
+        }
+		modifier = {
+			political_power_gain = -0.15
+		}
+        complete_effect = {
+        }
+		remove_effect = {
+			FROM = {
+				country_event = {
+					id = ukrework.31
+					days = 1
+				}
+			}
+		}
+    }
+	UK_integrate_country_nato = {
+		icon = GFX_decision_generic_ENG_pawn
+        cost = 100
+		days_remove = 70
+		fire_only_once = yes
+		target_trigger = {
+			FROM = {
+				is_subject_of = ROOT
+				OR = {
+					tag = CAN
+					tag = IRE
+					tag = USA
+					tag = GRN
+					tag = ICE
+				}
+			}
+		}
+        visible = {
+			is_in_faction = yes
+			has_government = democratic
+		}
+		available = {
+			FROM = {
+				has_autonomy_state = autonomy_integrated_puppet
+			}
+        }
+		modifier = {
+			political_power_gain = -0.5
+		}
+        complete_effect = {
+        }
+		remove_effect = {
+			every_state = {
+				limit = {
+					is_core_of = FROM
+				}
+				add_core_of = ROOT
+			}
+			ROOT = {
+				annex_country = {
+					target = FROM
+					transfer_troops = yes
+				}
+			}
+		}
+    }
+}
+UK_integrate_habsburg_lands_decisions = {
+	UK_declare_the_empires_united = {
+		icon = GFX_decision_generic_ENG_invite_country_to_alliance
+        cost = 0
+		fire_only_once = yes
+        visible = {
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = UK_declare_the_empires_united_tt
+				check_variable = {
+				    ENG_number_of_habsburg_lands_integrated = 9
+				}
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			add_stability = 0.05
+			add_war_support = 0.05
+			custom_effect_tooltip = generic_skip_one_line_tt
+			set_cosmetic_tag = ENG_UNITED_EMPIRES
+			IF = {
+				limit = {
+					controls_state = 6
+				}
+				set_country_flag = ENG_AUS_can_form_EU_flag
+				mark_focus_tree_layout_dirty = yes
+			}
+        }
+    }
+	UK_integrate_hungary = {
+		icon = GFX_decision_generic_ENG_hungary
+        cost = 150
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 155
+				state = 43
+				state = 974
+				state = 973
+				state = 154
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 155
+				controls_state = 43
+				controls_state = 974
+				controls_state = 973
+				controls_state = 154
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 155
+				add_state_core = 43
+				add_state_core = 974
+				add_state_core = 973
+				add_state_core = 154
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+			add_to_variable = {
+			    var = ENG_number_of_habsburg_lands_integrated
+			    value = 1
+			}
+        }
+    }
+	UK_integrate_bohemia = {
+		icon = GFX_decision_generic_ENG_bohemia
+        cost = 150
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 9
+				state = 69
+				state = 972
+				state = 75
+				state = 74
+				state = 72
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 9
+				controls_state = 69
+				controls_state = 972
+				controls_state = 75
+				controls_state = 74
+				controls_state = 72
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 9
+				add_state_core = 69
+				add_state_core = 972
+				add_state_core = 75
+				add_state_core = 74
+				add_state_core = 72
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+			add_to_variable = {
+			    var = ENG_number_of_habsburg_lands_integrated
+			    value = 1
+			}
+        }
+    }
+	UK_integrate_illyria = {
+		icon = GFX_decision_generic_ENG_illyria
+        cost = 150
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 853
+				state = 102
+				state = 109
+				state = 45
+				state = 764
+				state = 103
+				state = 104
+				state = 804
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 853
+				controls_state = 102
+				controls_state = 109
+				controls_state = 45
+				controls_state = 764
+				controls_state = 103
+				controls_state = 104
+				controls_state = 804
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 853
+				add_state_core = 102
+				add_state_core = 109
+				add_state_core = 45
+				add_state_core = 764
+				add_state_core = 103
+				add_state_core = 104
+				add_state_core = 804
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+			add_to_variable = {
+			    var = ENG_number_of_habsburg_lands_integrated
+			    value = 1
+			}
+        }
+    }
+	UK_integrate_galicia = {
+		icon = GFX_decision_generic_ENG_galicia
+        cost = 150
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 88
+				state = 91
+				state = 89
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 88
+				controls_state = 91
+				controls_state = 89
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 88
+				add_state_core = 91
+				add_state_core = 89
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+			add_to_variable = {
+			    var = ENG_number_of_habsburg_lands_integrated
+			    value = 1
+			}
+        }
+    }
+	UK_integrate_north_italy = {
+		icon = GFX_decision_generic_ENG_italy
+        cost = 150
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 159
+				state = 160
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 159
+				controls_state = 160
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 159
+				add_state_core = 160
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+			add_to_variable = {
+			    var = ENG_number_of_habsburg_lands_integrated
+			    value = 1
+			}
+        }
+    }
+	UK_integrate_slovakia = {
+		icon = GFX_decision_generic_ENG_slovakia
+        cost = 100
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 70
+				state = 71
+				state = 664
+				state = 73
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 70
+				controls_state = 71
+				controls_state = 664
+				controls_state = 73
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 70
+				add_state_core = 71
+				add_state_core = 664
+				add_state_core = 73
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+			add_to_variable = {
+			    var = ENG_number_of_habsburg_lands_integrated
+			    value = 1
+			}
+        }
+    }
+	UK_integrate_transylvania = {
+		icon = GFX_decision_generic_ENG_transylvania
+        cost = 100
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 80
+				state = 76
+				state = 84
+				state = 83
+				state = 82
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 80
+				controls_state = 76
+				controls_state = 84
+				controls_state = 83
+				controls_state = 82
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 80
+				add_state_core = 76
+				add_state_core = 84
+				add_state_core = 83
+				add_state_core = 82
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+			add_to_variable = {
+			    var = ENG_number_of_habsburg_lands_integrated
+			    value = 1
+			}
+        }
+    }
+	UK_integrate_italian_slavs = {
+		icon = GFX_decision_generic_ENG_italy
+        cost = 50
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 736
+				state = 852
+				state = 163
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 736
+				controls_state = 852
+				controls_state = 163
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 736
+				add_state_core = 852
+				add_state_core = 163
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+			add_to_variable = {
+			    var = ENG_number_of_habsburg_lands_integrated
+			    value = 1
+			}
+        }
+    }
+	UK_integrate_south_tyrol = {
+		icon = GFX_decision_generic_ENG_south_tyrol
+        cost = 25
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 39
+				state = 850
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 39
+				controls_state = 850
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 39
+				add_state_core = 850
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+			add_to_variable = {
+			    var = ENG_number_of_habsburg_lands_integrated
+			    value = 1
+			}
+        }
+    }
+}
+UK_integrate_the_german_kingdoms_decisions = {
+	UK_declare_the_kaiserreich_united = {
+		icon = GFX_decision_generic_ENG_invite_country_to_alliance
+        cost = 0
+		fire_only_once = yes
+        visible = {
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = UK_declare_the_kaiserreich_united_tt
+				check_variable = {
+				    ENG_num_of_german_kingdoms_integrated = 12
+				}
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			add_stability = 0.05
+			add_war_support = 0.05
+			custom_effect_tooltip = generic_skip_one_line_tt
+			set_cosmetic_tag = ENG_KAISERREICH_DEUTSCHLAND
+			set_country_flag = ENG_has_united_the_kaiserreichs
+        }
+    }
+	UK_integrate_preussen = {
+		icon = GFX_decision_generic_ENG_coa_preussen
+        cost = 200
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 62
+				state = 64
+				state = 63
+				state = 68
+				state = 66
+				state = 67
+				state = 763
+				state = 5
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 62
+				controls_state = 64
+				controls_state = 63
+				controls_state = 68
+				controls_state = 66
+				controls_state = 67
+				controls_state = 763
+				controls_state = 5
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 62
+				add_state_core = 64
+				add_state_core = 63
+				add_state_core = 68
+				add_state_core = 66
+				add_state_core = 67
+				add_state_core = 763
+				add_state_core = 5
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+			add_to_variable = {
+			    var = ENG_num_of_german_kingdoms_integrated
+			    value = 1
+			}
+        }
+    }
+	UK_integrate_bayern = {
+		icon = GFX_decision_generic_ENG_coa_bayern
+        cost = 100
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 52
+				state = 53
+				state = 54
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 52
+				controls_state = 53
+				controls_state = 54
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 52
+				add_state_core = 53
+				add_state_core = 54
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+			add_to_variable = {
+			    var = ENG_num_of_german_kingdoms_integrated
+			    value = 1
+			}
+        }
+    }
+	UK_integrate_westfalen = {
+		icon = GFX_decision_generic_ENG_coa_westfalen
+        cost = 100
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 57
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 57
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 57
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+			add_to_variable = {
+			    var = ENG_num_of_german_kingdoms_integrated
+			    value = 1
+			}
+        }
+    }
+	UK_integrate_hanover = {
+		icon = GFX_decision_generic_ENG_coa_hanover
+        cost = 100
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 56
+				state = 59
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 56
+				controls_state = 59
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 56
+				add_state_core = 59
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+			add_to_variable = {
+			    var = ENG_num_of_german_kingdoms_integrated
+			    value = 1
+			}
+        }
+    }
+	UK_integrate_rhein = {
+		icon = GFX_decision_generic_ENG_coa_rhein
+        cost = 100
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 42
+				state = 51
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 42
+				controls_state = 51
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 42
+				add_state_core = 51
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+			add_to_variable = {
+			    var = ENG_num_of_german_kingdoms_integrated
+			    value = 1
+			}
+        }
+    }
+	UK_integrate_sachsen = {
+		icon = GFX_decision_generic_ENG_coa_sachsen
+        cost = 100
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 65
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 65
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 65
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+			add_to_variable = {
+			    var = ENG_num_of_german_kingdoms_integrated
+			    value = 1
+			}
+        }
+    }
+	UK_integrate_wuerttemburg = {
+		icon = GFX_decision_generic_ENG_coa_wuerttemburg
+        cost = 50
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 50
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 50
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 50
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+			add_to_variable = {
+			    var = ENG_num_of_german_kingdoms_integrated
+			    value = 1
+			}
+        }
+    }
+	UK_integrate_hessen = {
+		icon = GFX_decision_generic_ENG_coa_hessen
+        cost = 50
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 55
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 55
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 55
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+			add_to_variable = {
+			    var = ENG_num_of_german_kingdoms_integrated
+			    value = 1
+			}
+        }
+    }
+	UK_integrate_baden = {
+		icon = GFX_decision_generic_ENG_coa_baden
+        cost = 50
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 978
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 978
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 978
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+			add_to_variable = {
+			    var = ENG_num_of_german_kingdoms_integrated
+			    value = 1
+			}
+        }
+    }
+	UK_integrate_mecklenburg_schwerin = {
+		icon = GFX_decision_generic_ENG_coa_mecklenburg_schwerin
+        cost = 50
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 61
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 61
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 61
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+			add_to_variable = {
+			    var = ENG_num_of_german_kingdoms_integrated
+			    value = 1
+			}
+        }
+    }
+	UK_integrate_thueringen = {
+		icon = GFX_decision_generic_ENG_coa_thueringen
+        cost = 50
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 60
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 60
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 60
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+			add_to_variable = {
+			    var = ENG_num_of_german_kingdoms_integrated
+			    value = 1
+			}
+        }
+    }
+	UK_integrate_schleswig_holstein = {
+		icon = GFX_decision_generic_ENG_coa_schleswig_holstein
+        cost = 50
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 909
+				state = 58
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 909
+				controls_state = 58
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 909
+				add_state_core = 58
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+			add_to_variable = {
+			    var = ENG_num_of_german_kingdoms_integrated
+			    value = 1
+			}
+        }
+    }
+	UK_expand_prussia = {
+		icon = GFX_decision_generic_ENG_coa_preussen
+        cost = 100
+		fire_only_once = yes
+        visible = {
+			has_completed_focus = ENG_retake_ost_preussen
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 85
+				state = 807
+				state = 86
+				state = 762
+				state = 188
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 85
+				controls_state = 807
+				controls_state = 86
+				controls_state = 762
+				controls_state = 188
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 85
+				add_state_core = 807
+				add_state_core = 86
+				add_state_core = 762
+				add_state_core = 188
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_alsace_lorraine = {
+		icon = GFX_decision_generic_ENG_alsace_lorraine
+        cost = 50
+		fire_only_once = yes
+        visible = {
+			has_completed_focus = ENG_retake_alsace_lorraine
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 28
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 28
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 28
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_luxembourg_german = {
+		icon = GFX_decision_generic_ENG_n_coa_luxembourg
+        cost = 25
+		fire_only_once = yes
+        visible = {
+			has_completed_focus = ENG_retake_alsace_lorraine
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 8
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 8
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 8
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_north_schleswig = {
+		icon = GFX_decision_generic_ENG_coa_schleswig_holstein
+        cost = 25
+		fire_only_once = yes
+        visible = {
+			has_completed_focus = ENG_retake_north_schleswig
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 912
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 912
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 912
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+}
+UK_integrate_schweiz_decisions = {
+	UK_integrate_swiss_state = {
+		icon = GFX_decision_SWI_focus_on_swiss_unity
+        cost = 75
+		days_remove = 70
+		fire_only_once = yes
+        visible = {
+		}
+		state_target = yes
+		target_trigger = {
+			FROM = {
+				is_core_of = SWI
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
+		}
+		available = {
+        }
+		modifier = {
+			political_power_gain = -0.1
+		}
+        complete_effect = {
+        }
+		remove_effect = {
+			add_state_core = FROM
+		}
+    }
+}
+UK_netherland_decisions = {
+	UK_integrate_belgium = {
+		icon = GFX_decision_generic_ENG_n_coa_belgium
+        cost = 100
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 6
+				state = 34
+				state = 977
+				state = 980
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 6
+				controls_state = 34
+				controls_state = 977
+				controls_state = 980
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 6
+				add_state_core = 34
+				add_state_core = 977
+				add_state_core = 980
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_luxembourg = {
+		icon = GFX_decision_generic_ENG_n_coa_luxembourg
+        cost = 25
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 8
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 8
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 8
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_frisia = {
+		icon = GFX_decision_generic_ENG_n_coa_frisia
+        cost = 100
+		fire_only_once = yes
+        visible = {
+			has_completed_focus = ENG_liberate_frisia
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 56
+				state = 59
+				state = 909
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 56
+				controls_state = 59
+				controls_state = 909
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 56
+				add_state_core = 59
+				add_state_core = 909
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_low_germany = {
+		icon = GFX_decision_BOL_reintegrate_litoral_department
+        cost = 200
+		fire_only_once = yes
+        visible = {
+			has_completed_focus = ENG_liberate_low_germans
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 56
+				state = 59
+				state = 909
+				state = 58
+				state = 57
+				state = 64
+				state = 62
+				state = 61
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 56
+				controls_state = 59
+				controls_state = 909
+				controls_state = 58
+				controls_state = 57
+				controls_state = 64
+				controls_state = 62
+				controls_state = 61
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 56
+				add_state_core = 59
+				add_state_core = 909
+				add_state_core = 58
+				add_state_core = 57
+				add_state_core = 64
+				add_state_core = 62
+				add_state_core = 61
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_nassau = {
+		icon = GFX_decision_generic_ENG_orange_nassau
+        cost = 100
+		fire_only_once = yes
+        visible = {
+			has_completed_focus = ENG_take_back_orange_and_nassau
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 51
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 51
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 51
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+			51 = {
+				set_state_name = STATE_51_NASSAU
+			}
+			set_victory_points = {
+				province = 529
+				value = 15
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_stability = 0.025
+        }
+    }
+	UK_integrate_orange = {
+		icon = GFX_decision_generic_ENG_orange_nassau
+        cost = 50
+		fire_only_once = yes
+        visible = {
+			has_completed_focus = ENG_take_back_orange_and_nassau
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 21
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 21
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 21
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+			21 = {
+				set_state_name = STATE_21_ORANGE
+			}
+			set_victory_points = {
+				province = 958
+				value = 15
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_stability = 0.025
+        }
+    }
+	UK_integrate_pennsylvania = {
+		icon = GFX_decision_generic_ENG_pennsylvania
+        cost = 150
+		fire_only_once = yes
+        visible = {
+			has_completed_focus = ENG_free_pennsylvania_dutch
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 360
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 360
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 360
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+			360 = {
+				set_state_name = STATE_360_PENN_DUTCH
+			}
+			set_province_name = {
+			    id = 6845
+			    name = VICTORY_POINTS_6845_PENN_DUTCH
+			}
+        }
+    }
+	UK_integrate_new_amsterdam = {
+		icon = GFX_decision_generic_ENG_new_york
+        cost = 200
+		fire_only_once = yes
+        visible = {
+			has_completed_focus = ENG_reclaim_new_amsterdam
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 358
+				state = 359
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 358
+				controls_state = 359
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 358
+				add_state_core = 359
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+			358 = {
+				set_state_name = STATE_358_AMSTERDAM
+			}
+			set_province_name = {
+			    id = 3878
+			    name = VICTORY_POINTS_3878_AMSTERDAM
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			359 = {
+				set_state_name = STATE_359_AMSTERDAM
+			}
+			set_victory_points = {
+				province = 11900
+				value = 10
+			}
+        }
+    }
+}
+UK_german_usa_decisions = {
+	UK_integrate_german_new_york = {
+		icon = GFX_decision_generic_ENG_US_GERMAN_STATE
+        cost = 250
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 358
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 358
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 358
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_german_pennsylvania = {
+		icon = GFX_decision_generic_ENG_US_GERMAN_STATE
+        cost = 200
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 360
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 360
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 360
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_german_ohio = {
+		icon = GFX_decision_generic_ENG_US_GERMAN_STATE
+        cost = 150
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 261
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 261
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 261
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_german_illinois = {
+		icon = GFX_decision_generic_ENG_US_GERMAN_STATE
+        cost = 150
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 395
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 395
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 395
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_german_michigan = {
+		icon = GFX_decision_generic_ENG_US_GERMAN_STATE
+        cost = 150
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 393
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 393
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 393
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_german_missouri = {
+		icon = GFX_decision_generic_ENG_US_GERMAN_STATE
+        cost = 150
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 373
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 373
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 373
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_german_indiana = {
+		icon = GFX_decision_generic_ENG_US_GERMAN_STATE
+        cost = 100
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 396
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 396
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 396
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_german_wisconsin = {
+		icon = GFX_decision_generic_ENG_US_GERMAN_STATE
+        cost = 100
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 394
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 394
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 394
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_german_iowa = {
+		icon = GFX_decision_generic_ENG_US_GERMAN_STATE
+        cost = 100
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 392
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 392
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 392
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_german_minnesota = {
+		icon = GFX_decision_generic_ENG_US_GERMAN_STATE
+        cost = 100
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 391
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 391
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 391
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_german_nebraska = {
+		icon = GFX_decision_generic_ENG_US_GERMAN_STATE
+        cost = 100
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 384
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 384
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 384	
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_german_dakota_north = {
+		icon = GFX_decision_generic_ENG_US_GERMAN_STATE
+        cost = 50
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 389
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 389
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 389	
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_german_dakota_south = {
+		icon = GFX_decision_generic_ENG_US_GERMAN_STATE
+        cost = 50
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 390
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 390
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 390	
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+}
+UK_hofbrauhaus_international_decisions = {
+	UK_proclaim_hofbrauhaus = {
+		icon = GFX_decision_generic_ENG_hbh
+        cost = 50
+		days_remove = 140
+		fire_only_once = yes
+		state_target = yes
+		target_trigger = {
+			FROM = {
+				OR = {
+					state = 261
+					state = 395
+					state = 379
+					state = 366
+					state = 525
+					state = 59
+					state = 64
+					state = 51
+					state = 658
+					state = 158
+					state = 358
+					state = 289
+					state = 394
+				}
+			}
+		}
+		available = {
+			FROM = {
+				OR = {
+					is_controlled_by = ROOT
+					controller = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+        }
+		modifier = {
+			political_power_gain = -0.05
+			consumer_goods_factor = 0.075
+		}
+        complete_effect = {
+        }
+		remove_effect = {
+			FROM = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+				    type = industrial_complex
+				    level = 2
+				    instant_build = yes
+				}
+				add_dynamic_modifier = {
+					modifier = ENG_hofbrauhaus_modifier
+				}
+			}
+		}
+    }
+}
+UK_the_greater_british_empire_decisions = {
+	UK_integrate_oregon_country_empire = {
+		icon = GFX_decision_generic_ENG_canada
+        cost = 100
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 387
+				state = 386
+				state = 385
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 387
+				controls_state = 386
+				controls_state = 385
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 387
+				add_state_core = 386
+				add_state_core = 385	
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_quebec_empire = {
+		icon = GFX_decision_generic_ENG_canada
+        cost = 100
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 468
+				state = 863
+				state = 860
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 468
+				controls_state = 863
+				controls_state = 860
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 468
+				add_state_core = 863	
+				add_state_core = 860
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_ontario_empire = {
+		icon = GFX_decision_generic_ENG_canada
+        cost = 100
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 276
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 276
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 276	
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_ruperts_land_empire = {
+		icon = GFX_decision_generic_ENG_canada
+        cost = 100
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 466
+				state = 861
+				state = 862
+				state = 466
+				state = 861
+				state = 682
+				state = 866
+				state = 467
+				state = 867
+				state = 469
+				state = 865
+				state = 470
+				state = 683
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 466
+				controls_state = 861
+				controls_state = 862
+				controls_state = 466
+				controls_state = 861
+				controls_state = 682
+				controls_state = 866
+				controls_state = 467
+				controls_state = 867
+				controls_state = 469
+				controls_state = 865
+				controls_state = 470
+				controls_state = 683
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 466
+				add_state_core = 861	
+				add_state_core = 862
+				add_state_core = 466
+				add_state_core = 861	
+				add_state_core = 682
+				add_state_core = 866
+				add_state_core = 467	
+				add_state_core = 867
+				add_state_core = 469
+				add_state_core = 865	
+				add_state_core = 470
+				add_state_core = 683
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_bc_empire = {
+		icon = GFX_decision_generic_ENG_canada
+        cost = 50
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 473
+				state = 471
+				state = 740
+				state = 739
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 473
+				controls_state = 471
+				controls_state = 740
+				controls_state = 739
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 473
+				add_state_core = 471	
+				add_state_core = 740
+				add_state_core = 739
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_new_brunswick_empire = {
+		icon = GFX_decision_generic_ENG_canada
+        cost = 25
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 465
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 465
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 465	
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_nova_scotia_empire = {
+		icon = GFX_decision_generic_ENG_canada
+        cost = 25
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 464
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 464
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 464	
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_nw_territories_empire = {
+		icon = GFX_decision_generic_ENG_canada
+        cost = 10
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 864
+				state = 472
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 864
+				controls_state = 472
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 864
+				add_state_core = 472	
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_new_york_empire = {
+		icon = GFX_decision_generic_ENG_america
+        cost = 100
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 358
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 358
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 358	
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_new_england_empire = {
+		icon = GFX_decision_generic_ENG_america
+        cost = 100
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 357
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 357
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 357	
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_pennsylvania_empire = {
+		icon = GFX_decision_generic_ENG_america
+        cost = 100
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 360
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 360
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 360	
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_virginia_empire = {
+		icon = GFX_decision_generic_ENG_america
+        cost = 100
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 362
+				state = 816
+				state = 369
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 362
+				controls_state = 816
+				controls_state = 369
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 362
+				add_state_core = 816
+				add_state_core = 369
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_carolina_empire = {
+		icon = GFX_decision_generic_ENG_america
+        cost = 100
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 363
+				state = 364
+				state = 368
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 363
+				controls_state = 364
+				controls_state = 368
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 363
+				add_state_core = 364
+				add_state_core = 368
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_georgia_empire = {
+		icon = GFX_decision_generic_ENG_america
+        cost = 100
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 365
+				state = 367
+				state = 370
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 365
+				controls_state = 367
+				controls_state = 370
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 365
+				add_state_core = 367
+				add_state_core = 370
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_new_jersey_empire = {
+		icon = GFX_decision_generic_ENG_america
+        cost = 75
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 359
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 359
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 359	
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_maryland_delaware_empire = {
+		icon = GFX_decision_generic_ENG_america
+        cost = 50
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 361
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 361
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 361	
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_florida_empire = {
+		icon = GFX_decision_generic_ENG_america
+        cost = 50
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 366
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 366
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 366	
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_nz_empire = {
+		icon = GFX_decision_generic_ENG_australia
+        cost = 100
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 284
+				state = 723
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 284
+				controls_state = 723
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 284
+				add_state_core = 723	
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_nsw_empire = {
+		icon = GFX_decision_generic_ENG_australia
+        cost = 100
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 285
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 285
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 285	
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_victoria_empire = {
+		icon = GFX_decision_generic_ENG_australia
+        cost = 100
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 517
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 517
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 517	
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_queensland_empire = {
+		icon = GFX_decision_generic_ENG_australia
+        cost = 50
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 872
+				state = 521
+				state = 873
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 872
+				controls_state = 521
+				controls_state = 873
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 872
+				add_state_core = 521
+				add_state_core = 873
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_west_ast_empire = {
+		icon = GFX_decision_generic_ENG_australia
+        cost = 25
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 871
+				state = 522
+				state = 870
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 871
+				controls_state = 522
+				controls_state = 870
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 871
+				add_state_core = 522
+				add_state_core = 870	
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_south_ast_empire = {
+		icon = GFX_decision_generic_ENG_australia
+        cost = 25
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 519
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 519
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 519	
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_tasmania_empire = {
+		icon = GFX_decision_generic_ENG_australia
+        cost = 25
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 518
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 518
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 518	
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_northern_territory_empire = {
+		icon = GFX_decision_generic_ENG_australia
+        cost = 10
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 520
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 520
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 520	
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+}
+UK_imperial_protectorates = {
+	UK_create_iroquois_protectorate = {
+		icon = GFX_decision_CHL_mapuche_reorganize_the_american_government
+        cost = 25
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 395
+				state = 396
+				state = 261
+				state = 393
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 395
+				controls_state = 396
+				controls_state = 261
+				controls_state = 393
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				USB = {
+					every_state = {
+						limit = {
+							OR = {
+								state = 393
+								state = 395
+								state = 396
+								state = 261
+							}
+						}
+						add_core_of = PREV
+					}
+					set_cosmetic_tag = USB_IROQUOIS
+					create_country_leader = {
+						name = ENG_iroquois_people
+						picture = GFX_Portrait_ENG_iroquois
+						expire = "1965.1.1"
+						ideology = oligarchism
+						traits = {
+							non_aligned_council_trait
+						}
+					}
+					set_party_name = {
+						ideology = neutrality
+						long_name = ENG_iroquois_people
+						name = ENG_iroquois_people_short
+					}
+					ROOT = {
+						release_autonomy = {
+						    target = PREV
+						    autonomy_state = autonomy_puppet
+						    freedom_level = 0.5
+						}
+					}
+					set_capital = {state = 393}
+					every_state = {
+						limit = {
+							OR = {
+								state = 276
+								state = 358
+								state = 360
+								state = 816
+								state = 369
+							}
+						}
+						add_core_of = USB
+					}
+				}
+			}
+			custom_effect_tooltip = ENG_protectorate_highlighted_states_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_stability = 0.01
+        }
+    }
+	UK_create_hannover_protectorate = {
+		icon = GFX_decision_generic_ENG_coa_hanover
+        cost = 25
+		fire_only_once = yes
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 56
+				state = 59
+			}
+		}
+		available = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = ENG_controls_highlighted_states_tt
+					controls_state = 56
+					controls_state = 59
+				}
+				HAN = {
+					is_subject_of = ROOT
+				}
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				IF = {
+					limit = {
+						HAN = {
+							exists = no
+						}
+					}
+					release_autonomy = {
+					    target = HAN
+					    autonomy_state = autonomy_personal_union
+					    freedom_level = 0.5
+					}
+				}
+				HAN = {
+					set_cosmetic_tag = HAN_PERSONAL_UNION_GB
+				}
+			}
+			custom_effect_tooltip = ENG_protectorate_highlighted_states_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_stability = 0.01
+        }
+    }
+}
+UK_motorways = {
+	UK_open_motorway_in_state = {
+		icon = GFX_decision_generic_ENG_highway
+        cost = 50
+		days_remove = 140
+		fire_only_once = yes
+		state_target = yes
+		target_trigger = {
+			FROM = {
+				is_core_of = ROOT
+				is_controlled_by = ROOT
+			}
+		}
+		available = {
+			FROM = {
+				is_controlled_by = ROOT
+			}
+        }
+		modifier = {
+			political_power_gain = -0.05
+			consumer_goods_factor = 0.075
+		}
+        complete_effect = {
+        }
+		remove_effect = {
+			FROM = {
+				add_extra_state_shared_building_slots = 1
+				IF = {
+					limit = {
+						free_building_slots = {
+							building = infrastructure
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_building_construction = {
+					    type = infrastructure
+					    level = 1
+					    instant_build = yes
+					}
+				}
+				add_dynamic_modifier = {
+					modifier = ENG_motorways_modifier
+				}
+			}
+		}
+    }
+}
+UK_get_path_guide = {
+	UK_secret_path_guide = {
+		icon = GFX_decision_onmap_recruit_operative
+        cost = 0
+		fire_only_once = no
+        visible = {
+		}
+		available = {
+        }
+		modifier = {
+		}
+        complete_effect = {
+			country_event = ukrework_utility.1
+        }
+    }
+}
+UK_german_confederation_decisions = {
+	UK_germany_integrate_austria = {
+		icon = GFX_decision_generic_ENG_pawn
+        cost = 0
+		fire_only_once = yes
+        visible = {
+			GER = {
+				NOT = {
+					controls_state = 4
+					controls_state = 975
+					controls_state = 976
+					controls_state = 152
+					controls_state = 153
+					controls_state = 848
+				}
+			}
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 4
+				state = 975
+				state = 976
+				state = 152
+				state = 153
+				state = 848
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_2_tt
+				4 = {
+					controller = {
+						OR = {
+							is_subject_of = ROOT
+							tag = ROOT
+						}
+					}
+				}
+				975 = {
+					controller = {
+						OR = {
+							is_subject_of = ROOT
+							tag = ROOT
+						}
+					}
+				}
+				976 = {
+					controller = {
+						OR = {
+							is_subject_of = ROOT
+							tag = ROOT
+						}
+					}
+				}
+				152 = {
+					controller = {
+						OR = {
+							is_subject_of = ROOT
+							tag = ROOT
+						}
+					}
+				}
+				153 = {
+					controller = {
+						OR = {
+							is_subject_of = ROOT
+							tag = ROOT
+						}
+					}
+				}
+				848 = {
+					controller = {
+						OR = {
+							is_subject_of = ROOT
+							tag = ROOT
+						}
+					}
+				}
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			GER = {
+				hidden_effect = {
+					add_state_core = 4
+					add_state_core = 975
+					add_state_core = 976
+					add_state_core = 152
+					add_state_core = 153
+					add_state_core = 848
+					transfer_state = 4
+					transfer_state = 975
+					transfer_state = 976
+					transfer_state = 152
+					transfer_state = 153
+					transfer_state = 848
+				}
+				custom_effect_tooltip = ENG_core_highlighted_states_tt
+			}
+        }
+    }
+	UK_germany_integrate_slovenia = {
+		icon = GFX_decision_generic_ENG_pawn
+        cost = 0
+		fire_only_once = yes
+        visible = {
+			GER = {
+				NOT = {
+					controls_state = 102
+					controls_state = 853
+					controls_state = 736
+				}
+			}
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 102
+				state = 853
+				state = 736
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_2_tt
+				102 = {
+					controller = {
+						OR = {
+							is_subject_of = ROOT
+							tag = ROOT
+						}
+					}
+				}
+				853 = {
+					controller = {
+						OR = {
+							is_subject_of = ROOT
+							tag = ROOT
+						}
+					}
+				}
+				736 = {
+					controller = {
+						OR = {
+							is_subject_of = ROOT
+							tag = ROOT
+						}
+					}
+				}
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			GER = {
+				hidden_effect = {
+					add_state_core = 102
+					add_state_core = 853
+					add_state_core = 736
+					transfer_state = 102
+					transfer_state = 853
+					transfer_state = 736
+				}
+				custom_effect_tooltip = ENG_core_highlighted_states_tt
+			}
+        }
+    }
+	UK_germany_integrate_czechia = {
+		icon = GFX_decision_generic_ENG_pawn
+        cost = 0
+		fire_only_once = yes
+        visible = {
+			GER = {
+				NOT = {
+					controls_state = 69
+					controls_state = 9
+					controls_state = 972
+					controls_state = 75
+					controls_state = 74
+					controls_state = 72
+				}
+			}
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 69
+				state = 9
+				state = 972
+				state = 75
+				state = 74
+				state = 72
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_2_tt
+				69 = {
+					controller = {
+						OR = {
+							is_subject_of = ROOT
+							tag = ROOT
+						}
+					}
+				}
+				9 = {
+					controller = {
+						OR = {
+							is_subject_of = ROOT
+							tag = ROOT
+						}
+					}
+				}
+				972 = {
+					controller = {
+						OR = {
+							is_subject_of = ROOT
+							tag = ROOT
+						}
+					}
+				}
+				75 = {
+					controller = {
+						OR = {
+							is_subject_of = ROOT
+							tag = ROOT
+						}
+					}
+				}
+				74 = {
+					controller = {
+						OR = {
+							is_subject_of = ROOT
+							tag = ROOT
+						}
+					}
+				}
+				72 = {
+					controller = {
+						OR = {
+							is_subject_of = ROOT
+							tag = ROOT
+						}
+					}
+				}
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			GER = {
+				hidden_effect = {
+					add_state_core = 69
+					add_state_core = 9
+					add_state_core = 972
+					add_state_core = 75
+					add_state_core = 74
+					add_state_core = 72
+					transfer_state = 69
+					transfer_state = 9
+					transfer_state = 972
+					transfer_state = 75
+					transfer_state = 74
+					transfer_state = 72
+				}
+				custom_effect_tooltip = ENG_core_highlighted_states_tt
+			}
+        }
+    }
+	UK_germany_integrate_tyrol_sued = {
+		icon = GFX_decision_generic_ENG_pawn
+        cost = 0
+		fire_only_once = yes
+        visible = {
+			GER = {
+				NOT = {
+					controls_state = 39
+					controls_state = 850
+				}
+			}
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 39
+				state = 850
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_2_tt
+				39 = {
+					controller = {
+						OR = {
+							is_subject_of = ROOT
+							tag = ROOT
+						}
+					}
+				}
+				850 = {
+					controller = {
+						OR = {
+							is_subject_of = ROOT
+							tag = ROOT
+						}
+					}
+				}
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			GER = {
+				hidden_effect = {
+					add_state_core = 39
+					add_state_core = 850
+					transfer_state = 39
+					transfer_state = 850
+				}
+				custom_effect_tooltip = ENG_core_highlighted_states_tt
+			}
+        }
+    }
+	UK_germany_integrate_luxembourg = {
+		icon = GFX_decision_generic_ENG_pawn
+        cost = 0
+		fire_only_once = yes
+        visible = {
+			GER = {
+				NOT = {
+					controls_state = 980
+					controls_state = 8
+				}
+			}
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 980
+				state = 8
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_2_tt
+				980 = {
+					controller = {
+						OR = {
+							is_subject_of = ROOT
+							tag = ROOT
+						}
+					}
+				}
+				8 = {
+					controller = {
+						OR = {
+							is_subject_of = ROOT
+							tag = ROOT
+						}
+					}
+				}
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			GER = {
+				hidden_effect = {
+					add_state_core = 980
+					add_state_core = 8
+					transfer_state = 980
+					transfer_state = 8
+				}
+				custom_effect_tooltip = ENG_core_highlighted_states_tt
+			}
+        }
+    }
+}
+UK_nse_decisions = {
+	UK_declare_north_sea_empire = {
+		icon = GFX_decision_generic_form_nation
+        cost = 0
+		fire_only_once = yes
+		on_map_mode = decision_view_only
+        visible = {
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 110
+				state = 142
+				state = 143
+				state = 144
+				state = 920
+				state = 921
+				state = 922
+				state = 923
+				state = 924
+				state = 925
+				state = 37
+				state = 99
+				state = 911
+				state = 912
+				state = 138
+				state = 915
+				state = 123
+				state = 125
+				state = 126
+				state = 127
+				state = 128
+				state = 129
+				state = 130
+				state = 131
+				state = 931
+				state = 132
+				state = 338
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 110
+				controls_state = 142
+				controls_state = 143
+				controls_state = 144
+				controls_state = 920
+				controls_state = 921
+				controls_state = 922
+				controls_state = 923
+				controls_state = 924
+				controls_state = 925
+				controls_state = 37
+				controls_state = 99
+				controls_state = 911
+				controls_state = 912
+				controls_state = 138
+				controls_state = 915
+				controls_state = 123
+				controls_state = 125
+				controls_state = 126
+				controls_state = 127
+				controls_state = 128
+				controls_state = 129
+				controls_state = 130
+				controls_state = 131
+				controls_state = 931
+				controls_state = 132
+				controls_state = 338
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			set_country_flag = ENG_has_formed_nse_flag
+			IF = {
+				limit = {
+					NOT = {
+						OR = {
+							has_cosmetic_tag = ENG_imperial_federation_unified
+							has_cosmetic_tag = ENG_imperial_federation_india_unified
+						}
+					}
+				}
+				set_cosmetic_tag = ENG_NORTH_SEA_EMPIRE
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+			hidden_effect = {
+				add_state_core = 110
+				add_state_core = 142
+				add_state_core = 143
+				add_state_core = 144
+				add_state_core = 920
+				add_state_core = 921
+				add_state_core = 922
+				add_state_core = 923
+				add_state_core = 924
+				add_state_core = 925
+				add_state_core = 37
+				add_state_core = 99
+				add_state_core = 911
+				add_state_core = 912
+				add_state_core = 138
+				add_state_core = 915
+				add_state_core = 123
+				add_state_core = 125
+				add_state_core = 126
+				add_state_core = 127
+				add_state_core = 128
+				add_state_core = 129
+				add_state_core = 130
+				add_state_core = 131
+				add_state_core = 931
+				add_state_core = 132
+				add_state_core = 338
+				add_state_core = 121
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_normandy = {
+		icon = GFX_decision_generic_nationalism
+        cost = 50
+		fire_only_once = yes
+        visible = {
+			has_completed_focus = ENG_restore_rule_of_normandy
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 15
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 15
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 15
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_pan_scandinavianism = {
+		icon = GFX_decision_generic_nationalism
+        cost = 150
+		fire_only_once = yes
+        visible = {
+			has_completed_focus = ENG_an_empire_of_the_north
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 38
+				state = 124
+				state = 138
+				state = 139
+				state = 140
+				state = 141
+				state = 666
+				state = 913
+				state = 915
+				state = 916
+				state = 917
+				state = 918
+				state = 919
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 38
+				controls_state = 124
+				controls_state = 138
+				controls_state = 139
+				controls_state = 140
+				controls_state = 141
+				controls_state = 666
+				controls_state = 913
+				controls_state = 915
+				controls_state = 916
+				controls_state = 917
+				controls_state = 918
+				controls_state = 919
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 38
+				add_state_core = 124
+				add_state_core = 138
+				add_state_core = 139
+				add_state_core = 140
+				add_state_core = 141
+				add_state_core = 666
+				add_state_core = 913
+				add_state_core = 915
+				add_state_core = 916
+				add_state_core = 917
+				add_state_core = 918
+				add_state_core = 919
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_finland = {
+		icon = GFX_decision_generic_nationalism
+        cost = 150
+		fire_only_once = yes
+        visible = {
+			has_completed_focus = ENG_an_empire_of_the_north
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 111
+				state = 145
+				state = 148
+				state = 149
+				state = 150
+				state = 926
+				state = 927
+				state = 928
+				state = 929
+				state = 930
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 111
+				controls_state = 145
+				controls_state = 148
+				controls_state = 149
+				controls_state = 150
+				controls_state = 926
+				controls_state = 927
+				controls_state = 928
+				controls_state = 929
+				controls_state = 930
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 111
+				add_state_core = 145
+				add_state_core = 148
+				add_state_core = 149
+				add_state_core = 150
+				add_state_core = 926
+				add_state_core = 927
+				add_state_core = 928
+				add_state_core = 929
+				add_state_core = 930
+				add_state_core = 146
+				add_state_core = 147
+				add_state_core = 722
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_baltics = {
+		icon = GFX_decision_generic_nationalism
+        cost = 150
+		fire_only_once = yes
+        visible = {
+			has_completed_focus = ENG_an_empire_of_the_north
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 13
+				state = 191
+				state = 811
+				state = 812
+				state = 813
+				state = 12
+				state = 190
+				state = 808
+				state = 809
+				state = 810
+				state = 11
+				state = 189
+				state = 814
+				state = 815
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 13
+				controls_state = 191
+				controls_state = 811
+				controls_state = 812
+				controls_state = 813
+				controls_state = 12
+				controls_state = 190
+				controls_state = 808
+				controls_state = 809
+				controls_state = 810
+				controls_state = 11
+				controls_state = 189
+				controls_state = 814
+				controls_state = 815
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 13
+				add_state_core = 191
+				add_state_core = 811
+				add_state_core = 812
+				add_state_core = 813
+				add_state_core = 12
+				add_state_core = 190
+				add_state_core = 808
+				add_state_core = 809
+				add_state_core = 810
+				add_state_core = 11
+				add_state_core = 189
+				add_state_core = 814
+				add_state_core = 815
+				add_state_core = 188
+				add_state_core = 784
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_ingria = {
+		icon = GFX_decision_generic_nationalism
+        cost = 100
+		fire_only_once = yes
+        visible = {
+			has_completed_focus = ENG_an_empire_of_the_north
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 195
+				state = 208
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 195
+				controls_state = 208
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 195
+				add_state_core = 208
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_the_islands = {
+		icon = GFX_decision_generic_nationalism
+        cost = 50
+		fire_only_once = yes
+        visible = {
+			has_completed_focus = ENG_an_empire_of_the_north
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 337
+				state = 914
+				state = 100
+				state = 101
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 337
+				controls_state = 914
+				controls_state = 100
+				controls_state = 101
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 337
+				add_state_core = 914
+				add_state_core = 100
+				add_state_core = 101
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_vinland = {
+		icon = GFX_decision_generic_nationalism
+        cost = 50
+		fire_only_once = yes
+        visible = {
+			has_completed_focus = ENG_an_empire_of_the_north
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 332
+				state = 331
+				state = 860
+				state = 861
+				state = 466
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 332
+				controls_state = 331
+				controls_state = 860
+				controls_state = 861
+				controls_state = 466
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 332
+				add_state_core = 331
+				add_state_core = 860
+				add_state_core = 861
+				add_state_core = 466
+				add_state_core = 730
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_karelia = {
+		icon = GFX_decision_generic_nationalism
+        cost = 50
+		fire_only_once = yes
+        visible = {
+			has_completed_focus = ENG_an_empire_of_the_north
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 722
+				state = 213
+				state = 215
+				state = 147
+				state = 216
+				state = 146
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 722
+				controls_state = 213
+				controls_state = 215
+				controls_state = 147
+				controls_state = 216
+				controls_state = 146
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 722
+				add_state_core = 213
+				add_state_core = 215
+				add_state_core = 147
+				add_state_core = 216
+				add_state_core = 146
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+}
+UK_germanic_empire_decisions = {
+	UK_integrate_nederland = {
+		icon = GFX_decision_generic_ENG_orange_nassau
+        cost = 150
+		fire_only_once = yes
+        visible = {
+			has_completed_focus = ENG_the_low_countries_germanic
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 36
+				state = 35
+				state = 7
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 36
+				controls_state = 35
+				controls_state = 7
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 36
+				add_state_core = 35
+				add_state_core = 7
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_flanders = {
+		icon = GFX_decision_generic_ENG_n_coa_belgium
+        cost = 100
+		fire_only_once = yes
+        visible = {
+			has_completed_focus = ENG_the_low_countries_germanic
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 6
+				state = 977
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 6
+				controls_state = 977
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 6
+				add_state_core = 977
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_gross_luxembourg = {
+		icon = GFX_decision_generic_ENG_n_coa_luxembourg
+        cost = 50
+		fire_only_once = yes
+        visible = {
+			has_completed_focus = ENG_the_low_countries_germanic
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 980
+				state = 8
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 980
+				controls_state = 8
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 980
+				add_state_core = 8
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_westdeutschland = {
+		icon = GFX_decision_generic_ENG_coa_rhein
+        cost = 250
+		fire_only_once = yes
+        visible = {
+			has_completed_focus = ENG_north_germany_germanic
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 42
+				state = 55
+				state = 57
+				state = 51
+				state = 59
+				state = 56
+				state = 909
+				state = 58
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 42
+				controls_state = 55
+				controls_state = 57
+				controls_state = 51
+				controls_state = 59
+				controls_state = 56
+				controls_state = 909
+				controls_state = 58
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 42
+				add_state_core = 55
+				add_state_core = 57
+				add_state_core = 51
+				add_state_core = 59
+				add_state_core = 56
+				add_state_core = 909
+				add_state_core = 58
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_ostdeutschland = {
+		icon = GFX_decision_generic_pickelhaube
+        cost = 250
+		fire_only_once = yes
+        visible = {
+			has_completed_focus = ENG_north_germany_germanic
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 61
+				state = 62
+				state = 64
+				state = 65
+				state = 60
+				state = 63
+				state = 68
+				state = 66
+				state = 67
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 61
+				controls_state = 62
+				controls_state = 64
+				controls_state = 65
+				controls_state = 60
+				controls_state = 63
+				controls_state = 68
+				controls_state = 66
+				controls_state = 67
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 61
+				add_state_core = 62
+				add_state_core = 64
+				add_state_core = 65
+				add_state_core = 60
+				add_state_core = 63
+				add_state_core = 68
+				add_state_core = 66
+				add_state_core = 67
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_ostpreussen = {
+		icon = GFX_decision_generic_ENG_coa_preussen
+        cost = 250
+		fire_only_once = yes
+        visible = {
+			has_completed_focus = ENG_north_germany_germanic
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 763
+				state = 5
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 763
+				controls_state = 5
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 763
+				add_state_core = 5
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_suddeutschland = {
+		icon = GFX_decision_generic_ENG_coa_bayern
+        cost = 250
+		fire_only_once = yes
+        visible = {
+			has_completed_focus = ENG_south_germany_germanic
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 54
+				state = 53
+				state = 52
+				state = 50
+				state = 978
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 54
+				controls_state = 53
+				controls_state = 52
+				controls_state = 50
+				controls_state = 978
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 54
+				add_state_core = 53
+				add_state_core = 52
+				add_state_core = 50
+				add_state_core = 978
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_osterreich = {
+		icon = GFX_decision_generic_ENG_south_tyrol
+        cost = 150
+		fire_only_once = yes
+        visible = {
+			has_completed_focus = ENG_south_germany_germanic
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 848
+				state = 153
+				state = 152
+				state = 976
+				state = 4
+				state = 975
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 848
+				controls_state = 153
+				controls_state = 152
+				controls_state = 976
+				controls_state = 4
+				controls_state = 975
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 848
+				add_state_core = 153
+				add_state_core = 152
+				add_state_core = 976
+				add_state_core = 4
+				add_state_core = 975
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+	UK_integrate_schweiz = {
+		icon = GFX_decision_SWI_focus_on_swiss_unity
+        cost = 100
+		fire_only_once = yes
+        visible = {
+			has_completed_focus = ENG_south_germany_germanic
+		}
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 3
+				state = 151
+				state = 847
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENG_controls_highlighted_states_tt
+				controls_state = 3
+				controls_state = 151
+				controls_state = 847
+			}
+        }
+		modifier = {
+		}
+        complete_effect = {
+			hidden_effect = {
+				add_state_core = 3
+				add_state_core = 151
+				add_state_core = 847
+			}
+			custom_effect_tooltip = ENG_core_highlighted_states_tt
+        }
+    }
+}

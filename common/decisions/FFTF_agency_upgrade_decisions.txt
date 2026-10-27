@@ -1,0 +1,97 @@
+political_actions = {
+	spy_agency_upgrade_in_progress = {
+		priority = 999
+		
+		icon = SWI_expand_covert_operations
+		allowed = { always = no }
+
+		selectable_mission = yes
+
+		available = { hidden_trigger = { always = yes } }
+		
+		is_good = yes
+		days_mission_timeout = THIS.agency_upgrade_time_days
+		
+
+		timeout_effect = {
+			FFTF_agency_upgrade_selected_agency = yes
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			if = {
+				limit = { has_idea = automated_agency_upgrade_cost_5 }
+				remove_ideas = automated_agency_upgrade_cost_5
+			}
+			else_if = {
+				limit = { has_idea = automated_agency_upgrade_cost_8 }
+				remove_ideas = automated_agency_upgrade_cost_8
+			}
+			else_if = {
+				limit = { has_idea = automated_agency_upgrade_cost_10 }
+				remove_ideas = automated_agency_upgrade_cost_10
+			}
+			else_if = {
+				limit = { has_idea = automated_agency_upgrade_cost_15 }
+				remove_ideas = automated_agency_upgrade_cost_15
+			}
+			
+			clr_country_flag = spy_agency_upgrade_in_progress_flag
+			
+			FFTF_begin_automatic_upgrade_if_possible = yes
+		}
+		
+#		cancel_trigger = {
+#			hidden_trigger = { NOT = { can_upgrade_intelligence_agency = yes } }
+#		}
+		
+		complete_effect = {
+			custom_effect_tooltip = FFTF_will_cancel_agency_upgrade
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			subtract_from_variable = { agency_upgrades_completed_and_queued^agency_selected_upgrade = 1 }
+			
+			if = {
+				limit = { has_idea = automated_agency_upgrade_cost_5 }
+				remove_ideas = automated_agency_upgrade_cost_5
+			}
+			else_if = {
+				limit = { has_idea = automated_agency_upgrade_cost_8 }
+				remove_ideas = automated_agency_upgrade_cost_8
+			}
+			else_if = {
+				limit = { has_idea = automated_agency_upgrade_cost_10 }
+				remove_ideas = automated_agency_upgrade_cost_10
+			}
+			else_if = {
+				limit = { has_idea = automated_agency_upgrade_cost_15 }
+				remove_ideas = automated_agency_upgrade_cost_15
+			}
+			
+			clr_country_flag = spy_agency_upgrade_in_progress_flag
+		}
+		
+#		cancel_effect = {
+#			hidden_effect = {
+#				if = {
+#					limit = { has_idea = automated_agency_upgrade_cost_5 }
+#					remove_ideas = automated_agency_upgrade_cost_5
+#				}
+#				else_if = {
+#					limit = { has_idea = automated_agency_upgrade_cost_8 }
+#					remove_ideas = automated_agency_upgrade_cost_8
+#				}
+#				else_if = {
+#					limit = { has_idea = automated_agency_upgrade_cost_10 }
+#					remove_ideas = automated_agency_upgrade_cost_10
+#				}
+#				else_if = {
+#					limit = { has_idea = automated_agency_upgrade_cost_15 }
+#					remove_ideas = automated_agency_upgrade_cost_15
+#				}
+#				
+#				clr_country_flag = spy_agency_upgrade_in_progress_flag
+#			}
+#		}
+	}
+}

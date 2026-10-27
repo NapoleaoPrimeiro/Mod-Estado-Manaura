@@ -1,0 +1,44 @@
+#  #  ##  ##  
+#  # #   #  # 
+#  #  #  #### 
+#  #   # #  # 
+ ##  ##  #  # 
+
+
+faction_goal_end_the_cold_war = {
+	name = end_the_cold_war
+	description = end_the_cold_war_desc
+	category = long_term
+	group = FOCUS_FILTER_POLITICAL_CHARACTER
+	visible = {
+		FROM = { 
+			original_tag = USA 
+			has_completed_focus = USA_focus70
+		}
+	}
+	completed = {
+		if = {
+			limit = {
+				SOV = {
+					has_government = communism
+					is_major = yes
+				}
+			}
+			SOV = {		
+				exists = no
+			}
+		}
+		
+	}
+	complete_effect = {
+		add_faction_power_projection = 2000
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = INFLUENCE_ABOVE_30_PERCENT
+		every_faction_member = {
+			limit = { faction_influence_ratio > 0.3}
+			add_political_power = 200
+			add_faction_initiative = 1
+		}
+	}
+	
+}

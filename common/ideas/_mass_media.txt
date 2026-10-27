@@ -1,0 +1,122 @@
+ideas = {
+
+	mass_media = {
+
+		law = yes
+
+		# Government Propaganda
+		mass_media_propaganda = {
+			available = {
+				NOT = {
+					has_government = democratic
+				}
+			}
+
+			modifier = {
+				stability_factor = -0.05
+				war_support_factor = 0.1
+				consumer_goods_factor = 0.075
+				political_power_factor = -0.15
+				conscription_factor = 0.10
+				drift_defence_factor = 0.50
+				army_morale_factor = 0.1
+				compliance_gain = 0.05
+			}
+
+			cost = 150
+
+			ai_will_do = {
+				base = 0
+				modifier = {
+					has_country_flag = communist_or_fascist_country
+					add = 5
+				}
+				modifier = {
+					add = 100
+					OR = {
+						tag = GER
+						tag = JAP
+					}
+					has_war = yes
+				}
+			}
+		}
+
+		# Censorship
+		mass_media_censorship = {
+
+			modifier = {
+				war_support_factor = -0.05
+				consumer_goods_factor = 0.025
+				conscription_factor = 0.05
+				political_power_factor = 0.10
+				army_morale_factor = 0.05
+				compliance_gain = 0.025
+			}
+			cost = 150
+
+			ai_will_do = {
+				base = 0
+			}
+			available = {
+				NOT = {
+					has_government = democratic
+				}
+			}
+		}
+
+		# Free Press
+		mass_media_free = {
+
+			available = {
+				if = {
+					limit = {
+						original_tag = SAU
+						has_completed_focus = SAU_promote_free_speech
+					}
+					NOT = {
+						has_country_flag = communist_or_fascist_country
+					}
+				}
+				else = {
+					has_government = democratic
+				}
+			}
+
+			allowed_to_remove = {
+				if = {
+					limit = {
+						original_tag = SOV
+						has_completed_focus = SOV_freedom_of_the_press
+					}
+					NOT = { has_completed_focus = SOV_freedom_of_the_press }
+				}
+				if = {
+					limit = {
+						has_completed_focus = GEN_endorse_free_speech
+					}
+					NOT = { has_completed_focus = GEN_endorse_free_speech }
+				}
+			}
+
+			modifier = {
+				consumer_goods_factor = -0.09
+				stability_factor = 0.05
+				war_support_factor = -0.15
+				conscription_factor = -0.10
+				research_speed_factor = 0.10
+				political_power_factor = 0.1
+				drift_defence_factor = -0.2
+				army_morale_factor = 0.05
+				land_reinforce_rate = 0.02
+			}
+
+			cost = 150
+
+			ai_will_do = {
+				base = 5
+			}
+		}
+
+	}
+}

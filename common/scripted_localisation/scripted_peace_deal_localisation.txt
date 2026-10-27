@@ -1,0 +1,373 @@
+defined_text = { #
+    name = GetDefensiveScoreDirection
+	text = {
+		trigger = {
+            set_temp_variable = { ceasefire_score_preview = surrender_progress }
+            subtract_from_temp_variable = { ceasefire_score_preview = ROOT.surrender_progress }
+            multiply_temp_variable = { ceasefire_score_preview = 100 }
+            clamp_temp_variable = { var = ceasefire_score_preview min = -100 max = 100 }
+            round_temp_variable = ceasefire_score_preview
+			if = {
+				limit = {
+					NOT = {
+						THIS = {
+							any_owned_state = {
+								is_controlled_by_ROOT_or_ally = yes
+							}
+						}
+						ROOT = {
+							any_owned_state = {
+								OR = {
+									is_controlled_by = PREV
+									controller = {
+										is_ally_with = PREV
+									}	
+								}
+							}	
+						}
+					}
+				}
+				multiply_temp_variable = { ceasefire_score_preview = 0 }
+			}	
+            check_variable = {
+                var = ceasefire_score_preview
+                value = 0
+                compare = equals
+            }
+        }
+        localization_key = "score_neither"
+	}
+	
+    text = {
+        trigger = {
+            set_temp_variable = { ceasefire_score_preview = surrender_progress }
+			subtract_from_temp_variable = { ceasefire_score_preview = ROOT.surrender_progress }
+			multiply_temp_variable = { ceasefire_score_preview = 100 }
+			
+			clamp_temp_variable = {
+				temp_var= ceasefire_score_preview
+				min = -100
+				max = 100
+			}
+			
+			log = "ceasefire_score_preview: [THIS.GetTag] - [ROOT.GetTag] = [?ceasefire_score_preview]"
+			
+			round_temp_variable = ceasefire_score_preview
+			
+			if = {
+				limit = {
+					check_variable = { ceasefire_score_preview < 0 }
+				}
+				always = no
+			}	
+        }
+		
+        localization_key = "score_we_win"
+    }
+	
+	text = {
+		localization_key = "score_they_win"
+	}	
+}
+
+defined_text = { #
+    name = GetDefensiveScoreDirectionRecieve
+	text = {
+		trigger = {
+            set_temp_variable = { ceasefire_score_preview = surrender_progress }
+            subtract_from_temp_variable = { ceasefire_score_preview = ROOT.surrender_progress }
+            multiply_temp_variable = { ceasefire_score_preview = 100 }
+            clamp_temp_variable = { var = ceasefire_score_preview min = -100 max = 100 }
+            round_temp_variable = ceasefire_score_preview
+			
+			if = {
+				limit = {
+					NOT = {
+						THIS = {
+							any_owned_state = {
+								is_controlled_by_ROOT_or_ally = yes
+							}
+						}
+						ROOT = {
+							any_owned_state = {
+								OR = {
+									is_controlled_by = PREV
+									controller = {
+										is_ally_with = PREV
+									}	
+								}
+							}	
+						}
+					}
+				}
+				multiply_temp_variable = { ceasefire_score_preview = 0 }
+			}
+
+            check_variable = {
+                var = ceasefire_score_preview
+                value = 0
+                compare = equals
+            }
+        }
+        localization_key = "score_neither"
+	}
+	
+    text = {
+        trigger = {
+            set_temp_variable = { ceasefire_score_preview = ROOT.surrender_progress }
+			subtract_from_temp_variable = { ceasefire_score_preview = surrender_progress }
+			multiply_temp_variable = { ceasefire_score_preview = 100 }
+			
+			
+			
+			clamp_temp_variable = {
+				temp_var= ceasefire_score_preview
+				min = -100
+				max = 100
+			}
+			
+			log = "ceasefire_score_preview: [THIS.GetTag] - [ROOT.GetTag] = [?ceasefire_score_preview]"
+			
+			round_temp_variable = ceasefire_score_preview
+			
+			if = {
+				limit = {
+					check_variable = { ceasefire_score_preview < 0 }
+				}
+				always = no
+			}	
+        }
+		
+        localization_key = "score_we_win_recieve"
+    }
+	
+	text = {
+		localization_key = "score_they_win_recieve"
+	}	
+}
+
+defined_text = { #
+    name = GetVariableScorePreview
+    text = {
+        trigger = {
+            set_temp_variable = { ceasefire_score_preview = surrender_progress }
+			subtract_from_temp_variable = { ceasefire_score_preview = ROOT.surrender_progress }
+			multiply_temp_variable = { ceasefire_score_preview = 100 }
+			
+			if = {
+				limit = {
+					check_variable = { ceasefire_score_preview < 0 }
+				}
+				multiply_temp_variable = { ceasefire_score_preview = -1 }
+			}	
+			
+			clamp_temp_variable = {
+				temp_var= ceasefire_score_preview
+				min = 0
+				max = 100
+			}
+			
+			log = "ceasefire_score_preview: [?ceasefire_score_preview]"
+			
+			round_temp_variable = ceasefire_score_preview	
+        }
+		
+        localization_key = "[?ceasefire_score_preview]"
+    }	
+}
+
+defined_text = {
+	name = CheckIfWhitePeace
+	text = {
+		trigger = {
+			
+			NOT = {
+				ROOT = {
+					any_allied_country = {
+						surrender_progress > 0
+						has_war_with = PREV.PREV
+					}
+				}
+			}
+			
+			NOT = {
+				PREV = {
+					any_allied_country = {
+						surrender_progress > 0
+						has_war_with = ROOT
+					}
+				}
+			}
+			
+			NOT = {
+				NonCoreControlledAlliesTHIS = yes	
+			}
+			
+			NOT = {
+				NonCoreControlledAlliesROOT = yes
+			}
+			
+			NOT = {
+				ControlledAlliesTHIS = yes	
+			}
+			
+			NOT = {
+				ControlledAlliesROOT = yes
+			}
+			
+			set_temp_variable = { ceasefire_score_preview = surrender_progress }
+			subtract_from_temp_variable = { ceasefire_score_preview = ROOT.surrender_progress }
+			multiply_temp_variable = { ceasefire_score_preview = 100 }
+			
+			if = {
+				limit = {
+					NOT = {
+						THIS = {
+							any_owned_state = {
+								is_controlled_by_ROOT_or_ally = yes
+							}
+						}
+						ROOT = {
+							any_owned_state = {
+								OR = {
+									is_controlled_by = PREV
+									controller = {
+										is_ally_with = PREV
+									}	
+								}
+							}	
+						}
+					}
+				}
+				multiply_temp_variable = { ceasefire_score_preview = 0 }
+			}
+			
+			log = "ceasefire_score_preview: [?ceasefire_score_preview]"
+			
+			round_temp_variable = ceasefire_score_preview
+			
+			check_variable = {
+				var = ceasefire_score_preview
+				value = 0
+				compare = equals
+			}	
+        }
+		localization_key = CheckIfWhitePeaceTrue
+	}
+}
+
+
+	
+defined_text = { #
+    name = GetVariableScorePreviewAlly
+    text = {
+        trigger = {
+			THIS = {
+				any_allied_country = {
+					surrender_progress > 0
+					has_war_with = ROOT
+				}
+			}	
+		}	
+		localization_key = ScorePreviewAlly
+	}
+}
+
+defined_text = { #
+    name = GetVariableScorePreviewAllyDef
+    text = {
+        trigger = {
+			ROOT = {
+				any_allied_country = {
+					surrender_progress > 0
+					has_war_with = PREV.PREV
+				}
+			}	
+		}	
+		localization_key = ScorePreviewAllyDef
+	}
+}
+
+defined_text = { #
+    name = GetControlledPreview
+    text = {
+        trigger = {
+			NonCoreControlledAlliesROOT = yes
+		}	
+		localization_key = ControlledPreview
+	}
+}
+
+defined_text = { #
+    name = GetControlledPreviewDef
+    text = {
+        trigger = {
+			NonCoreControlledAlliesTHIS = yes	
+		}	
+		localization_key = ControlledPreviewDef
+	}
+}
+
+############## Recieve ################
+
+defined_text = { #
+    name = GetVariableScorePreviewAllyRecieve
+    text = {
+        trigger = {
+			THIS = {
+				any_allied_country = {
+					surrender_progress > 0
+					has_war_with = ROOT
+				}
+			}	
+		}	
+		localization_key = ScorePreviewAllyRecieve
+	}
+}
+
+defined_text = { #
+    name = GetVariableScorePreviewAllyDefRecieve
+    text = {
+        trigger = {
+			ROOT = {
+				any_allied_country = {
+					surrender_progress > 0
+					has_war_with = PREV.PREV
+				}
+			}	
+		}	
+		localization_key = ScorePreviewAllyDefRecieve
+	}
+}
+
+defined_text = { #
+    name = GetControlledPreviewRecieve
+    text = {
+        trigger = {
+			any_owned_state = {
+				NOT = {
+					is_core_of = THIS
+				}
+				is_controlled_by = ROOT
+			}
+		}	
+		localization_key = ControlledPreviewRecieve
+	}
+}
+
+defined_text = { #
+    name = GetControlledPreviewDefRecieve
+    text = {
+        trigger = {
+			THIS = {
+				any_controlled_state = {
+					is_owned_by = ROOT
+					NOT = {
+						is_core_of = ROOT
+					}
+				}
+			}	
+		}	
+		localization_key = ControlledPreviewDefRecieve
+	}
+}

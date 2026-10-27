@@ -1,0 +1,2636 @@
+#	joint_focus = {
+#		id = NATO_
+#		icon = GFX_
+#		prerequisite = { focus = }
+#		mutually_exclusive = { focus =  }
+#		x = -3
+#		y = 0
+#		relative_position_id = 
+#
+#		cost = 10
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		joint_trigger = {
+#  			NATO_basic_joint_trigger = yes 
+#		}
+#
+#	available = {
+#
+#		}
+#		
+#		bypass = {
+#
+#		}
+#
+#		cancel_if_invalid = yes
+#		continue_if_invalid = no
+#		available_if_capitulated = no
+#
+#		complete_tooltip = {
+#
+#		}
+#
+#		completion_reward = {
+#
+#		}
+#	}
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+
+
+joint_focus = {
+	id = NATO_form_joint_alliance
+	
+	dynamic = yes 
+	
+	icon =GFX_focus_NORDIC_dem_form_alliance
+	allow_branch = {
+		#NATO_chengli_trigger = yes
+		has_idea=NATO_chengyuanguo
+		USA={
+			has_completed_focus=USA_focus70
+		}
+	}
+	x = 50
+	y = 9
+	#relative_position_id = USA_the_giant_wakes
+	#CAN
+	offset = {
+			x = 0
+			y = -5
+			trigger = {
+				has_focus_tree =canadian_focus
+			}
+		}
+	cost = 2
+	available = {
+		has_idea=NATO_chengyuanguo
+		is_subject = no 		
+	}
+	ai_will_do = {
+		base = 1
+		modifier = {
+			factor = 0
+			is_historical_focus_on = yes 
+		}
+	}
+	completion_reward = {
+		add_political_power=100
+		NATO_zhenying=yes
+		hidden_effect={
+			every_other_country={
+			NATO_zhenying=yes
+			}
+		}
+
+		hidden_effect={
+			clr_global_flag=NATO_IDEA_LOCKED1	
+			clr_global_flag=NATO_IDEA_LOCKED2
+			clr_global_flag=NATO_IDEA_LOCKED3
+			clr_global_flag=NATO_IDEA_LOCKED4
+			clr_global_flag=NATO_IDEA_LOCKED5
+			USA={
+				add_dynamic_modifier = {
+					modifier = NATO_chengyuanguo_dm
+				}
+			}
+				
+			every_other_country = {
+					limit = {
+						has_idea=NATO_chengyuanguo
+					}
+					add_dynamic_modifier = {
+						modifier = NATO_chengyuanguo_dm
+						}
+				}
+		}
+	}
+}
+
+joint_focus = {
+	id = NATO_jundui
+	
+	icon = GFX_goal_generic_army_doctrines
+	
+	prerequisite = { focus = NATO_form_joint_alliance }
+	
+	x = 0
+	y = 1
+	relative_position_id = NATO_form_joint_alliance
+	cost = 5
+
+	text_icon =NATO_focus_style
+
+	available = {
+		NATO_basic_available_trigger = yes
+		has_stability > 0.5
+		has_war_support > 0.25
+	}
+
+	search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_NAVY_XP FOCUS_FILTER_AIR_XP }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+
+	completion_reward = {
+		air_experience = 25
+		navy_experience = 25
+		army_experience = 25
+		add_command_power = 25		
+	}
+}
+
+shared_focus = {
+	id = NATO_zhengzhi1
+	icon = GFX_focus_generic_improve_the_administration
+	prerequisite = { focus = NATO_form_joint_alliance }
+
+	x = -6
+	y = 1
+	relative_position_id = NATO_form_joint_alliance
+	cost = 5
+
+	text_icon = USA_focus_style
+
+	available = {
+		TAG=USA
+		NATO_basic_available_trigger = yes
+		is_faction_leader = yes
+	}
+
+	search_filters = { FOCUS_FILTER_POLITICAL }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+	completion_reward = {
+		every_other_country = {
+				limit = {
+					AND={
+						NOT={has_government=communism}
+						NOT = {
+								has_war_with = USA
+							}	
+						OR = {					
+							tag = SWE
+							tag = FIN
+							tag = NOR
+							tag = DEN
+							tag = TUR
+							tag = GRE
+						}
+					}					
+				}
+				country_event=usa.999
+			}
+	}
+
+	
+}
+
+
+shared_focus = {
+	id = NATO_zhengzhi2
+	
+	icon =  GFX_focus_NORDIC_dem_institution_2
+	
+	prerequisite = { focus = NATO_zhengzhi1 }
+
+	x = 0
+	y = 1
+	relative_position_id = NATO_zhengzhi1
+	cost = 10
+
+	text_icon = USA_focus_style
+
+	available = {
+		TAG=USA
+		NATO_basic_available_trigger = yes
+	}
+
+	search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+
+	completion_reward = {
+		every_other_country = {
+				limit = {
+					AND={
+						has_government = ROOT
+						NOT = {
+								has_war_with = USA
+							}	
+						OR = {					
+							tag = GER
+							original_tag = ITA
+						}
+					}					
+				}
+				country_event=usa.999
+			}
+	}
+
+	
+}
+
+shared_focus = {
+	id = NATO_zhengzhi3
+
+	dynamic = yes
+
+	icon = GFX_focus_NORDIC_dem_institution_1
+
+	prerequisite = { focus = NATO_zhengzhi2 }
+
+	x = 0
+	y = 1
+	relative_position_id = NATO_zhengzhi2
+	cost = 10
+
+	text_icon = USA_focus_style
+
+	available = {
+		TAG=USA
+		NATO_basic_available_trigger = yes	
+		is_faction_leader = yes 
+	}
+
+	search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+
+	completion_reward = {
+		every_other_country = {
+				limit = {
+					AND={
+						NOT={has_government = communism}
+						
+						NOT = {
+								has_war_with = USA
+							}	
+						OR = {					
+							tag = SPR
+							tag = POR
+						}
+					}					
+				}
+				country_event=usa.999
+			}
+	}
+
+}
+
+
+shared_focus = {
+	id = NATO_gongye1
+	
+	icon =  GFX_focus_NORDIC_dem_capstone_civilian
+	
+	prerequisite = { focus = NATO_form_joint_alliance }
+	#prerequisite = { focus = NATO_gongye4 }
+
+	x = -10
+	y = 1
+	relative_position_id = NATO_form_joint_alliance
+	cost = 10
+
+	text_icon = USA_focus_style
+
+	available = {
+		TAG=USA
+		NATO_basic_available_trigger = yes
+		has_stability > 0.55
+		num_of_civilian_factories > 17	
+	}
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+
+	completion_reward = {
+		USA={	add_ideas=NATO_gongye_idea1	}
+
+		every_other_country = {
+			limit = {
+				has_idea=NATO_chengyuanguo
+			}
+			add_ideas=NATO_gongye_idea1
+		}
+				if = {
+					limit = {
+						check_variable = { NATO_idea_slot_1 = 0 }
+					}
+					every_country={
+						set_global_flag=NATO_IDEA_LOCKED5
+						limit={has_idea=NATO_chengyuanguo}
+						set_variable = { NATO_idea_slot_1 = 5 }						
+					}
+
+				}
+				else_if = {
+					limit = {
+						NOT={has_global_flag=NATO_IDEA_LOCKED5}
+						check_variable = { NATO_idea_slot_2 = 0 }
+					}
+					every_country={
+						set_global_flag=NATO_IDEA_LOCKED5
+						limit={has_idea=NATO_chengyuanguo}
+						set_variable = { NATO_idea_slot_2 = 5 }						
+					}
+				}
+				else_if = {
+					limit = {
+						NOT={has_global_flag=NATO_IDEA_LOCKED5}
+						check_variable = { NATO_idea_slot_3 = 0 }
+					}
+					every_country={
+						set_global_flag=NATO_IDEA_LOCKED5
+						limit={has_idea=NATO_chengyuanguo}
+						set_variable = { NATO_idea_slot_3 = 5 }						
+					}
+				}
+				else_if = {
+					limit = {
+						NOT={has_global_flag=NATO_IDEA_LOCKED5}
+						check_variable = { NATO_idea_slot_4 = 0 }
+					}
+					every_country={
+						set_global_flag=NATO_IDEA_LOCKED5
+						limit={has_idea=NATO_chengyuanguo}
+						set_variable = { NATO_idea_slot_4= 5 }						
+					}
+				}
+				else_if = {
+					limit = {
+						NOT={has_global_flag=NATO_IDEA_LOCKED5}
+						check_variable = { NATO_idea_slot_5 = 0 }
+					}
+					every_country={
+						limit={has_idea=NATO_chengyuanguo}
+						set_variable = { NATO_idea_slot_5 = 5 }						
+					}
+				}
+
+				
+		
+	}
+
+}
+
+
+joint_focus = {
+	id = NATO_army1
+	icon = GFX_focus_NORDIC_dem_army
+
+	dynamic = yes 
+	
+	prerequisite = { focus = NATO_jundui }
+
+	x = 3
+	y = 1
+	relative_position_id = NATO_jundui
+	cost = 10
+
+	text_icon =NATO_focus_style
+
+	available = {
+		NATO_basic_available_trigger = yes
+		has_army_manpower = { size > 84999 } 
+		num_divisions > 15
+	}
+
+	search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MANPOWER }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+
+	completion_reward = {
+		USA={	add_ideas=NATO_army1_idea		}
+		every_other_country = {
+				limit = {
+					has_idea=NATO_chengyuanguo
+				}
+				add_ideas=NATO_army1_idea
+		}
+				if = {
+					limit = {
+						check_variable = { NATO_idea_slot_1 = 0 }
+					}
+					every_country={
+						limit={has_idea=NATO_chengyuanguo}
+						set_variable = { NATO_idea_slot_1 = 1 }	
+						set_global_flag=NATO_IDEA_LOCKED1					
+					}
+
+				}
+				else_if = {
+					limit = {
+						NOT={has_global_flag=NATO_IDEA_LOCKED1}
+						check_variable = { NATO_idea_slot_2 = 0 }
+					}
+					every_country={
+						limit={has_idea=NATO_chengyuanguo}
+						set_variable = { NATO_idea_slot_2 = 1 }	
+						set_global_flag=NATO_IDEA_LOCKED1						
+					}
+				}
+				else_if = {
+					limit = {
+						NOT={has_global_flag=NATO_IDEA_LOCKED1}
+						check_variable = { NATO_idea_slot_3 = 0 }
+					}
+					every_country={
+						limit={has_idea=NATO_chengyuanguo}
+						set_variable = { NATO_idea_slot_3 = 1 }	
+						set_global_flag=NATO_IDEA_LOCKED1						
+					}
+				}
+				else_if = {
+					limit = {
+						NOT={has_global_flag=NATO_IDEA_LOCKED1}
+						check_variable = { NATO_idea_slot_4 = 0 }
+					}
+					every_country={
+						limit={has_idea=NATO_chengyuanguo}
+						set_variable = { NATO_idea_slot_4= 1 }	
+						set_global_flag=NATO_IDEA_LOCKED1						
+					}
+				}
+				else_if = {
+					limit = {
+						NOT={has_global_flag=NATO_IDEA_LOCKED1}
+						check_variable = { NATO_idea_slot_5 = 0 }
+					}
+					every_country={
+						limit={has_idea=NATO_chengyuanguo}
+						set_variable = { NATO_idea_slot_5 = 1 }						
+					}
+				}
+				
+		
+	}
+
+}
+
+joint_focus = {
+	id = NATO_army2
+	
+	icon = GFX_focus_generic_military_mission
+	
+	prerequisite = { focus = NATO_army1 }
+
+	x = 0
+	y = 1
+	relative_position_id = NATO_army1
+	cost = 5
+
+	text_icon =NATO_focus_style
+
+	available = {
+		NATO_basic_available_trigger = yes
+		has_army_manpower = { size > 89999 } 
+		num_divisions > 20
+	}
+
+	search_filters = { FOCUS_FILTER_RESEARCH }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+
+	completion_reward = {
+		USA={
+			swap_ideas={
+					remove_idea=NATO_army1_idea
+					add_idea=NATO_army2_idea
+				}
+		}
+		every_other_country = {
+			limit = {
+					has_idea=NATO_chengyuanguo
+				}
+			if={
+				limit = {
+					has_idea=NATO_chengyuanguo
+					has_idea=NATO_army1_idea
+				}
+				swap_ideas={
+					remove_idea=NATO_army1_idea
+					add_idea=NATO_army2_idea
+				}
+			}
+			else={
+				
+				add_ideas=NATO_army2_idea
+			}
+			
+		}
+	}
+
+}
+
+joint_focus = {
+	id = NATO_army3
+	
+	icon = GFX_focus_chi_army_reform
+	
+	prerequisite = { focus = NATO_army2 }
+
+	x = 0
+	y = 1
+	relative_position_id = NATO_army2
+	cost = 10
+
+	text_icon =NATO_focus_style
+
+	available = {
+		NATO_basic_available_trigger = yes
+		has_army_manpower = { size > 89999 } 
+		num_divisions > 20
+	}
+
+	search_filters = { FOCUS_FILTER_MANPOWER }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+	completion_reward={
+		USA={
+			swap_ideas={
+					remove_idea=NATO_army2_idea
+					add_idea=NATO_army3_idea
+				}
+		}
+		every_other_country = {
+			limit = {
+					has_idea=NATO_chengyuanguo
+				}
+			if={
+				limit = {
+					has_idea=NATO_chengyuanguo
+					has_idea=NATO_army2_idea
+				}
+				swap_ideas={
+					remove_idea=NATO_army2_idea
+					add_idea=NATO_army3_idea
+				}
+			}
+			else={
+				
+				add_ideas=NATO_army3_idea
+			}
+			
+		}
+	}
+}
+
+joint_focus = {
+	id = NATO_army4
+	
+	icon = GFX_goal_generic_army_tanks
+	
+	prerequisite = { focus = NATO_army3 }
+	mutually_exclusive = { focus = NATO_army5 }
+	x = -1
+	y = 1
+	relative_position_id = NATO_army3
+	cost = 5
+
+	text_icon =NATO_focus_style
+
+	available = {
+		NATO_basic_available_trigger = yes
+
+	}
+
+	search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+
+	completion_reward = {
+		USA={
+			swap_ideas={
+					remove_idea=NATO_army3_idea
+					add_idea=NATO_army4_idea
+				}
+		}
+		every_other_country = {
+			limit = {
+					has_idea=NATO_chengyuanguo
+				}
+			if={
+				limit = {
+					has_idea=NATO_chengyuanguo
+					has_idea=NATO_army3_idea
+				}
+				swap_ideas={
+					remove_idea=NATO_army3_idea
+					add_idea=NATO_army4_idea
+				}
+			}
+			else={
+				
+				add_ideas=NATO_army4_idea
+			}
+			
+		}
+	}
+
+}
+
+joint_focus = {
+	id = NATO_army5
+	
+	icon = GFX_goal_generic_allies_build_infantry
+	
+	prerequisite = { focus = NATO_army3 }
+	mutually_exclusive = { focus = NATO_army4 }
+	x = 1
+	y = 1
+	relative_position_id = NATO_army3
+	cost = 5
+
+	text_icon =NATO_focus_style
+
+	available = {
+		NATO_basic_available_trigger = yes
+	}
+
+	search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+
+	completion_reward = {
+		USA={
+			swap_ideas={
+					remove_idea=NATO_army3_idea
+					add_idea=NATO_army5_idea
+				}
+		}
+		every_other_country = {
+			limit = {
+					has_idea=NATO_chengyuanguo
+				}
+			if={
+				limit = {
+					has_idea=NATO_chengyuanguo
+					has_idea=NATO_army3_idea
+				}
+				swap_ideas={
+					remove_idea=NATO_army3_idea
+					add_idea=NATO_army5_idea
+				}
+			}
+			else={
+				add_ideas=NATO_army5_idea
+			}
+			
+		}
+	}
+
+}
+
+joint_focus = {
+	id = NATO_navy1
+
+	icon = GFX_focus_NORDIC_dem_navy
+
+	dynamic = yes 
+	
+	prerequisite = { focus = NATO_jundui }
+
+	x = 0
+	y = 1
+	relative_position_id = NATO_jundui
+	cost = 10
+
+	text_icon =NATO_focus_style
+
+	available = {
+		NATO_basic_available_trigger = yes
+		has_navy_size = {
+			size > 24
+		}
+	}
+
+	search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+	completion_reward = {
+		USA={add_ideas=NATO_navy1_idea}
+		every_other_country = {
+				limit = {
+					has_idea=NATO_chengyuanguo
+				}
+				add_ideas=NATO_navy1_idea
+		}
+							
+				if = {
+					limit = {
+						check_variable = { NATO_idea_slot_1 = 0 }
+					}
+					every_country={
+						set_global_flag=NATO_IDEA_LOCKED3
+						limit={has_idea=NATO_chengyuanguo}
+						set_variable = { NATO_idea_slot_1 = 3 }						
+					}
+				}
+				else_if = {
+					limit = {
+						NOT={has_global_flag=NATO_IDEA_LOCKED3}
+						check_variable = { NATO_idea_slot_2 = 0 }
+					}
+					every_country={
+						set_global_flag=NATO_IDEA_LOCKED3
+						limit={has_idea=NATO_chengyuanguo}
+						set_variable = { NATO_idea_slot_2 = 3 }						
+					}
+				}
+				else_if = {
+					limit = {
+						NOT={has_global_flag=NATO_IDEA_LOCKED3}
+						check_variable = { NATO_idea_slot_3 = 0 }
+					}
+					every_country={
+						set_global_flag=NATO_IDEA_LOCKED3
+						limit={has_idea=NATO_chengyuanguo}
+						set_variable = { NATO_idea_slot_3 = 3 }						
+					}
+				}
+				else_if = {
+					limit = {
+						NOT={has_global_flag=NATO_IDEA_LOCKED3}
+						check_variable = { NATO_idea_slot_4 = 0 }
+					}
+					every_country={
+						set_global_flag=NATO_IDEA_LOCKED3
+						limit={has_idea=NATO_chengyuanguo}
+						set_variable = { NATO_idea_slot_4 = 3 }						
+					}
+				}
+				else_if = {
+					limit = {
+						NOT={has_global_flag=NATO_IDEA_LOCKED3}
+						check_variable = { NATO_idea_slot_5 = 0 }
+					}
+					every_country={
+						limit={has_idea=NATO_chengyuanguo}
+						set_variable = { NATO_idea_slot_5 = 3 }						
+					}
+				}
+	}
+
+	completion_reward_joint_originator = {
+		add_command_power = 60
+	}
+
+	completion_reward_joint_member = {
+		add_command_power = 40
+	}
+}
+
+joint_focus = {
+	id = NATO_navy2
+	
+	icon = GFX_focus_generic_naval_discipline
+	
+	prerequisite = { focus = NATO_navy1 }
+
+	x = 0
+	y = 1
+	relative_position_id = NATO_navy1
+	cost = 10
+
+	text_icon =NATO_focus_style
+
+	available = {
+		NATO_basic_available_trigger = yes
+	}
+
+	search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_RESEARCH }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+	completion_reward = {
+		USA={
+			swap_ideas={
+					remove_idea=NATO_navy1_idea
+					add_idea=NATO_navy2_idea
+				}
+		}
+		every_other_country = {
+			limit = {
+					has_idea=NATO_chengyuanguo
+				}
+			if={
+				limit = {
+					has_idea=NATO_chengyuanguo
+					has_idea=NATO_navy1_idea
+				}
+				swap_ideas={
+					remove_idea=NATO_navy1_idea
+					add_idea=NATO_navy2_idea
+				}
+			}
+			else={
+				
+				add_ideas=NATO_navy2_idea
+			}
+			
+		}
+	}
+
+	completion_reward_joint_originator = {
+		add_doctrine_cost_reduction = {
+			name = NATO_navy2
+			cost_reduction = 0.2
+			uses = 3
+			category = naval_doctrine 
+		}
+	}
+
+	completion_reward_joint_member = {
+		add_doctrine_cost_reduction = {
+			name = NATO_navy2
+			cost_reduction = 0.10
+			uses = 2
+			category = naval_doctrine 
+		}		 
+	}
+}
+
+
+
+joint_focus = {
+	id = NATO_navy5
+	
+	icon = GFX_goal_generic_navy_doctrines_tactics
+	
+	prerequisite = { focus = NATO_navy3 }
+	prerequisite = { focus = NATO_navy4 }
+	x = 0
+	y = 3
+	relative_position_id =  NATO_navy2
+	cost = 5
+
+	text_icon =NATO_focus_style
+
+	available = {
+		NATO_basic_available_trigger = yes
+		num_of_naval_factories > 14
+		num_researched_technologies > 25
+	}
+
+	search_filters = { FOCUS_FILTER_RESEARCH }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+	completion_reward={
+		every_country={
+			limit={
+				has_idea=NATO_chengyuanguo
+			}
+		}
+		navy_experience=50
+		add_doctrine_cost_reduction = {
+			name = NATO_navy2
+			cost_reduction = 0.2
+			uses = 3
+			category = naval_doctrine 
+		}
+		add_tech_bonus = {
+			name = NATO_navy3
+			bonus = 0.25
+			uses = 3 
+			category = naval_equipment
+		}
+	}
+
+}
+
+
+joint_focus = {
+	id = NATO_army6
+	
+	icon = GFX_goal_generic_special_forces
+	
+	prerequisite = { focus = NATO_army4 focus = NATO_army5 }
+
+	x = 1
+	y = 1
+	relative_position_id = NATO_army4
+	cost = 5
+
+	text_icon =NATO_focus_style
+
+	available = {
+		NATO_basic_available_trigger = yes	
+	}
+
+	search_filters = { FOCUS_FILTER_RESEARCH }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+	completion_reward={
+		every_country={
+			limit={
+				has_idea=NATO_chengyuanguo
+			}
+		}
+		army_experience = 50
+		add_doctrine_cost_reduction = {
+			cost_reduction = 0.75
+			uses = 1
+			category = special_forces_doctrine
+		}
+	}
+}
+
+
+joint_focus = {
+	id = NATO_air1
+	
+	icon = GFX_focus_NORDIC_dem_airforce
+
+	dynamic = yes 
+	
+	prerequisite = { focus = NATO_jundui }
+
+	x = -3
+	y = 0
+	relative_position_id = NATO_navy1
+	cost = 10
+
+	text_icon =NATO_focus_style
+
+	available = {
+		NATO_basic_available_trigger = yes
+		has_deployed_air_force_size = {
+			size > 199
+		}
+	}
+
+	search_filters = {}
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+	completion_reward= {
+		USA={add_ideas=NATO_air1_idea}
+		every_other_country = {
+				limit = {
+					has_idea=NATO_chengyuanguo
+				}
+				add_ideas=NATO_air1_idea
+		}
+				if = {
+					limit = {
+						check_variable = { NATO_idea_slot_1 = 0 }
+					}
+					every_country={
+						set_global_flag=NATO_IDEA_LOCKED2
+						limit={has_idea=NATO_chengyuanguo}
+						set_variable = { NATO_idea_slot_1 = 2 }						
+					}
+				}
+				else_if = {
+					limit = {
+						NOT={has_global_flag=NATO_IDEA_LOCKED2}
+						check_variable = { NATO_idea_slot_2 = 0 }
+					}
+					every_country={
+						set_global_flag=NATO_IDEA_LOCKED2
+						limit={has_idea=NATO_chengyuanguo}
+						set_variable = { NATO_idea_slot_2 = 2 }						
+					}
+				}
+				else_if = {
+					limit = {
+						NOT={has_global_flag=NATO_IDEA_LOCKED2}
+						check_variable = { NATO_idea_slot_3 = 0 }
+					}
+					every_country={
+						set_global_flag=NATO_IDEA_LOCKED2
+						limit={has_idea=NATO_chengyuanguo}
+						set_variable = { NATO_idea_slot_3 = 2 }						
+					}
+				}
+				else_if = {
+					limit = {
+						NOT={has_global_flag=NATO_IDEA_LOCKED2}
+						check_variable = { NATO_idea_slot_4 = 0 }
+					}
+					every_country={
+						set_global_flag=NATO_IDEA_LOCKED2
+						limit={has_idea=NATO_chengyuanguo}
+						set_variable = { NATO_idea_slot_4= 2 }						
+					}
+				}
+				else_if = {
+					limit = {
+						NOT={has_global_flag=NATO_IDEA_LOCKED2}
+						check_variable = { NATO_idea_slot_5 = 0 }
+					}
+					every_country={
+						limit={has_idea=NATO_chengyuanguo}
+						set_variable = { NATO_idea_slot_5 = 2 }						
+					}
+				}
+			
+	}
+
+}
+
+joint_focus = {
+	id = NATO_air2
+	icon = GFX_focus_SOV_flying_clubs
+	prerequisite = { focus = NATO_air1 }
+
+	x = 0
+	y = 1
+	relative_position_id = NATO_air1
+	cost = 10
+
+	text_icon =NATO_focus_style
+
+	available = {
+		NATO_basic_available_trigger = yes
+		has_deployed_air_force_size = {
+			size > 349
+		}
+	}
+
+	search_filters = { FOCUS_FILTER_AIR_XP FOCUS_FILTER_RESEARCH }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+	completion_reward={
+		USA={
+			swap_ideas={
+					remove_idea=NATO_air1_idea
+					add_idea=NATO_air2_idea
+				}
+		}
+		every_other_country = {
+			limit={
+				has_idea=NATO_chengyuanguo
+			}
+			if={
+				limit = {
+					has_idea=NATO_air1_idea
+				}
+				swap_ideas={
+					remove_idea=NATO_air1_idea
+					add_idea=NATO_air2_idea
+				}
+			}
+			else={
+				add_ideas=NATO_air2_idea
+			}
+			
+		}
+	}
+	completion_reward_joint_originator = {
+		air_experience = 100
+		add_doctrine_cost_reduction = {
+			name = NATO_air2
+			cost_reduction = 0.25
+			uses = 2
+			category = air_doctrine 
+		}	
+	}
+
+	completion_reward_joint_member = {
+		air_experience = 50
+		add_doctrine_cost_reduction = {
+			name = NATO_air2
+			cost_reduction = 0.15
+			uses = 2
+			category = air_doctrine 
+		}	
+	}
+}
+joint_focus = {
+	id = NATO_navy3
+	icon = GFX_goal_generic_navy_carrier
+	prerequisite = { focus = NATO_navy2 }
+	prerequisite = { focus = NATO_air2 }
+	x = -1
+	y = 1
+	relative_position_id = NATO_navy2 
+	cost = 10
+
+	text_icon =NATO_focus_style
+
+	available = {
+		NATO_basic_available_trigger = yes
+		has_deployed_air_force_size = {
+			size > 349
+		}
+	}
+
+	search_filters = { FOCUS_FILTER_AIR_XP FOCUS_FILTER_RESEARCH }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+	completion_reward={
+		every_country = {
+			limit={
+				has_idea=NATO_chengyuanguo
+			}
+			if={
+				limit = {
+					has_idea=NATO_navy2_idea
+				}
+				swap_ideas={
+					remove_idea=NATO_navy2_idea
+					add_idea=NATO_navy3_idea
+				}
+			}
+			else_if={
+				limit = {
+					has_idea=NATO_navy4_idea
+				}
+				swap_ideas={
+					remove_idea=NATO_navy4_idea
+					add_idea=NATO_navy5_idea
+				}
+			}
+			else={
+				add_ideas=NATO_navy3_idea
+			}
+			
+		}
+	}
+	completion_reward_joint_originator = {
+		air_experience = 100
+		add_doctrine_cost_reduction = {
+			name = NATO_air2
+			cost_reduction = 0.25
+			uses = 2
+			category = air_doctrine 
+		}	
+	}
+
+	completion_reward_joint_member = {
+		air_experience = 50
+		add_doctrine_cost_reduction = {
+			name = NATO_air2
+			cost_reduction = 0.15
+			uses = 2
+			category = air_doctrine 
+		}	
+	}
+}
+joint_focus = {
+	id = NATO_navy4
+	icon = GFX_goal_generic_amphibious_assault
+	prerequisite = { focus = NATO_navy2 }
+	prerequisite = { focus = NATO_army2 }
+	x = 1
+	y = 1
+	relative_position_id = NATO_navy2 
+	cost = 10
+
+	text_icon =NATO_focus_style
+
+	available = {
+		NATO_basic_available_trigger = yes
+		has_deployed_air_force_size = {
+			size > 349
+		}
+	}
+
+	search_filters = { FOCUS_FILTER_AIR_XP FOCUS_FILTER_RESEARCH }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+	completion_reward={
+		USA={
+			swap_ideas={
+					remove_idea=NATO_navy2_idea
+					add_idea=NATO_navy3_idea
+				}
+		}
+		every_other_country = {
+			limit={
+				has_idea=NATO_chengyuanguo
+			}
+			if={
+				limit = {
+					has_idea=NATO_navy2_idea
+				}
+				swap_ideas={
+					remove_idea=NATO_navy2_idea
+					add_idea=NATO_navy4_idea
+				}
+			}
+			else_if={
+				limit = {
+					has_idea=NATO_navy3_idea
+				}
+				swap_ideas={
+					remove_idea=NATO_navy3_idea
+					add_idea=NATO_navy5_idea
+				}
+			}
+			else={
+				add_ideas=NATO_navy4_idea
+			}
+			
+		}
+	}
+	completion_reward_joint_originator = {
+		air_experience = 100
+		add_doctrine_cost_reduction = {
+			name = NATO_air2
+			cost_reduction = 0.25
+			uses = 2
+			category = air_doctrine 
+		}	
+	}
+
+	completion_reward_joint_member = {
+		air_experience = 50
+		add_doctrine_cost_reduction = {
+			name = NATO_air2
+			cost_reduction = 0.15
+			uses = 2
+			category = air_doctrine 
+		}	
+	}
+}
+joint_focus = {
+	id =NATO_air3
+	
+	icon = GFX_focus_generic_aircraft_production
+	
+	prerequisite = { focus = NATO_air2 }
+
+	x = 0
+	y = 1
+	relative_position_id = NATO_air2
+	cost = 10
+
+	text_icon =NATO_focus_style
+
+	available = {
+		NATO_basic_available_trigger = yes
+		has_deployed_air_force_size = {
+			size > 299
+		}
+	}
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+	completion_reward={
+		USA={
+			swap_ideas={
+					remove_idea=NATO_air2_idea
+					add_idea=NATO_air3_idea
+				}
+		}
+		every_other_country = {
+			limit={
+				has_idea=NATO_chengyuanguo
+			}
+			if={
+				limit = {
+					has_idea=NATO_air2_idea
+				}
+				swap_ideas={
+					remove_idea=NATO_air2_idea
+					add_idea=NATO_air3_idea
+				}
+			}
+			else={
+				add_ideas=NATO_air3_idea
+			}
+			
+		}
+	}
+
+}
+
+
+
+joint_focus = {
+	id = NATO_air4
+	
+	icon = GFX_goal_generic_air_bomber
+	
+	prerequisite = { focus =NATO_air3 }
+
+	mutually_exclusive = { focus = NATO_air5 }
+
+	x = -1
+	y = 1
+	relative_position_id =NATO_air3
+	cost = 5
+
+	text_icon =NATO_focus_style
+
+	available = {
+		NATO_basic_available_trigger = yes
+		OR = {
+			has_deployed_air_force_size = {
+				size > 249
+				type = cas
+			}
+			has_deployed_air_force_size = {
+				size > 249
+				type = tactical_bomber
+			}
+			has_deployed_air_force_size = {
+				size > 249
+				type = strategic_bomber
+			}
+		}
+	}
+
+	search_filters = {} 
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+	completion_reward = {
+		USA={
+			swap_ideas={
+					remove_idea=NATO_air3_idea
+					add_idea=NATO_air4_idea
+				}
+		}
+		every_other_country = {
+			limit={
+				has_idea=NATO_chengyuanguo
+			}
+			if={
+				limit = {
+					has_idea=NATO_air3_idea
+				}
+				swap_ideas={
+					remove_idea=NATO_air3_idea
+					add_idea=NATO_air4_idea
+				}
+			}
+			else={
+				add_ideas=NATO_air4_idea
+			}
+			
+		}
+	}
+
+	
+}
+
+joint_focus = {
+	id = NATO_air5
+	icon = GFX_goal_generic_air_fighter2
+	prerequisite = { focus =NATO_air3 }
+
+	mutually_exclusive = { focus = NATO_air4 }
+
+	x = 1
+	y = 1
+	relative_position_id =NATO_air3
+	cost = 5
+
+	text_icon =NATO_focus_style
+
+	available = {
+		NATO_basic_available_trigger = yes
+		OR = {
+			has_deployed_air_force_size = {
+				size > 349
+				type = heavy_fighter
+			}
+			has_deployed_air_force_size = {
+				size > 349
+				type = fighter
+			}
+		}
+	}
+
+	search_filters = {}
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+	completion_reward = {
+		USA={
+			swap_ideas={
+					remove_idea=NATO_air3_idea
+					add_idea=NATO_air5_idea
+				}
+		}
+		every_other_country = {
+			limit = {
+					has_idea=NATO_chengyuanguo
+				}
+			if={
+				limit = {
+					has_idea=NATO_chengyuanguo
+					has_idea=NATO_air3_idea
+				}
+				swap_ideas={
+					remove_idea=NATO_air3_idea
+					add_idea=NATO_air5_idea
+				}
+			}
+			else={
+				
+				add_ideas=NATO_air5_idea
+			}
+			
+		}
+	}
+	
+}
+
+joint_focus = {
+	id = NATO_air6
+	
+	icon = GFX_focus_generic_air_bases
+	
+	prerequisite = { focus = NATO_air5 focus = NATO_air4 }
+
+	x = 1
+	y = 1
+	relative_position_id = NATO_air4
+	cost = 5
+
+	text_icon =NATO_focus_style
+
+	available = {
+		NATO_basic_available_trigger = yes
+	}
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+	completion_reward={
+		if={
+			limit={
+				FRA={
+					is_in_faction_with=USA
+					has_idea=NATO_chengyuanguo
+				}
+			}
+			random_state={
+				limit={
+				is_core_of=FRA
+				is_owned_by=FRA
+				}
+				add_building_construction={
+					type = air_base
+					level = 5
+					instant_build = yes
+				}
+			}
+			random_state={
+				limit={
+				is_core_of=FRA
+				is_owned_by=FRA
+				}
+				add_building_construction={
+					type = air_base
+					level = 5
+					instant_build = yes
+				}
+			}
+			random_state={
+				limit={
+				is_core_of=FRA
+				is_owned_by=FRA
+				}
+				add_building_construction={
+					type = air_base
+					level = 5
+					instant_build = yes
+				}
+			}
+		}
+		if={
+			limit={
+				ENG={
+					is_in_faction_with=USA
+					has_idea=NATO_chengyuanguo
+				}
+			}
+			random_state={
+				limit={
+				is_core_of=ENG
+				is_owned_by=ENG
+				}
+				add_building_construction={
+					type = air_base
+					level = 5
+					instant_build = yes
+				}
+			}
+			random_state={
+				limit={
+				is_core_of=ENG
+				is_owned_by=ENG
+				}
+				add_building_construction={
+					type = air_base
+					level = 5
+					instant_build = yes
+				}
+			}
+			random_state={
+				limit={
+				is_core_of=ENG
+				is_owned_by=ENG
+				}
+				add_building_construction={
+					type = air_base
+					level = 5
+					instant_build = yes
+				}
+			}
+		}
+		if={
+			limit={
+				BEL={
+					is_in_faction_with=USA
+					has_idea=NATO_chengyuanguo
+				}
+			}
+			random_state={
+				limit={
+				is_core_of=BEL
+				is_owned_by=BEL
+				}
+				add_building_construction={
+					type = air_base
+					level = 5
+					instant_build = yes
+				}
+			}
+			random_state={
+				limit={
+				is_core_of=BEL
+				is_owned_by=BEL
+				}
+				add_building_construction={
+					type = air_base
+					level = 5
+					instant_build = yes
+				}
+			}
+			random_state={
+				limit={
+				is_core_of=BEL
+				is_owned_by=BEL
+				}
+				add_building_construction={
+					type = air_base
+					level = 5
+					instant_build = yes
+				}
+			}
+		}
+	}
+}
+
+
+
+joint_focus = {
+	id = NATO_keyan1
+
+	icon = GFX_focus_NORDIC_dem_research
+
+	dynamic = yes 
+	
+	prerequisite = { focus = NATO_form_joint_alliance }
+
+	x = 8
+	y = 1
+	relative_position_id = NATO_form_joint_alliance
+	cost = 10
+
+	text_icon =NATO_focus_style
+
+	available = {
+		NATO_basic_available_trigger = yes
+		num_researched_technologies > 25
+
+	}
+
+	search_filters = { FOCUS_FILTER_RESEARCH }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+	completion_reward = {
+		USA={	add_ideas=NATO_keyan_idea1	}
+		every_other_country = {
+				limit = {
+					has_idea=NATO_chengyuanguo
+				}
+				add_ideas=NATO_keyan_idea1
+		}
+				if = {
+					limit = {
+						check_variable = { NATO_idea_slot_1 = 0 }
+					}
+					every_country={
+						set_global_flag=NATO_IDEA_LOCKED4
+						limit={has_idea=NATO_chengyuanguo}
+						set_variable = { NATO_idea_slot_1 = 4 }						
+					}
+
+				}
+				else_if = {
+					limit = {
+						NOT={has_global_flag=NATO_IDEA_LOCKED4}
+						check_variable = { NATO_idea_slot_2 = 0 }
+					}
+					every_country={
+						set_global_flag=NATO_IDEA_LOCKED4
+						limit={has_idea=NATO_chengyuanguo}
+						set_variable = { NATO_idea_slot_2 = 4 }						
+					}
+				}
+				else_if = {
+					limit = {
+						NOT={has_global_flag=NATO_IDEA_LOCKED4}
+						check_variable = { NATO_idea_slot_3 = 0 }
+					}
+					every_country={
+						set_global_flag=NATO_IDEA_LOCKED4
+						limit={has_idea=NATO_chengyuanguo}
+						set_variable = { NATO_idea_slot_3 = 4 }						
+					}
+				}
+				else_if = {
+					limit = {
+						NOT={has_global_flag=NATO_IDEA_LOCKED4}
+						check_variable = { NATO_idea_slot_4 = 0 }
+					}
+					every_country={
+						set_global_flag=NATO_IDEA_LOCKED4
+						limit={has_idea=NATO_chengyuanguo}
+						set_variable = { NATO_idea_slot_4= 4 }						
+					}
+				}
+				else_if = {
+					limit = {
+						NOT={has_global_flag=NATO_IDEA_LOCKED4}
+						check_variable = { NATO_idea_slot_5 = 0 }
+					}
+					every_country={
+						limit={has_idea=NATO_chengyuanguo}
+						set_variable = { NATO_idea_slot_5 = 4 }						
+					}
+				}
+
+				
+		
+	}
+
+	completion_reward_joint_originator = { 
+	}
+
+	completion_reward_joint_member = {
+	}
+}
+joint_focus = {
+	id = NATO_keyan2
+	
+	icon = GFX_goal_generic_construction
+	
+	prerequisite = { focus = NATO_keyan1 }
+
+	x = -1
+	y = 1
+	relative_position_id = NATO_keyan1
+	cost = 5
+
+	text_icon =NATO_focus_style
+
+	available = {
+		NATO_basic_available_trigger = yes
+		num_researched_technologies > 30
+	}
+
+	search_filters = { FOCUS_FILTER_RESEARCH }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+	completion_reward={
+		every_country={
+			limit={
+				has_idea=NATO_chengyuanguo
+			}
+		}
+		add_tech_bonus = {
+			name = NATO_keyan2
+			bonus = 1 
+			uses = 2 
+			category = construction_tech
+		}
+	}
+}
+
+joint_focus = {
+	id = NATO_keyan3
+	
+	icon = GFX_focus_generic_university_3
+	
+	prerequisite = { focus = NATO_keyan1 }
+
+	x = 3
+	y = 1
+	relative_position_id = NATO_keyan1
+	cost = 10
+
+	text_icon =NATO_focus_style
+
+	available = {
+		NATO_basic_available_trigger = yes
+		num_researched_technologies > 50
+	}
+
+	search_filters = { FOCUS_FILTER_RESEARCH }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+	completion_reward={
+		every_country={
+			limit={
+				has_idea=NATO_chengyuanguo
+			}
+		}
+		add_tech_bonus = {
+				bonus = 1.0
+				uses = 3
+				category = infantry_weapons
+				category = support_tech
+			}
+	}
+
+}
+
+shared_focus = {
+	id = NATO_gongye2
+
+	icon = GFX_focus_NORDIC_dem_materiel
+
+	dynamic = yes
+	
+	prerequisite = { focus = NATO_gongye1 }
+
+	x = 0
+	y = 1 
+	relative_position_id = NATO_gongye1
+	cost = 10
+
+	text_icon = USA_focus_style
+
+	available = {
+		TAG=USA
+		NATO_basic_available_trigger = yes
+		num_of_military_factories > 10
+	}
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+	completion_reward={
+		USA={
+			swap_ideas={
+					remove_idea=NATO_gongye_idea1
+					add_idea=NATO_gongye_idea2
+				}
+		}
+		every_other_country = {
+			limit={
+				has_idea=NATO_chengyuanguo
+			}
+			if={
+				limit = {
+					has_idea=NATO_gongye_idea1
+				}
+				swap_ideas={
+					remove_idea=NATO_gongye_idea1
+					add_idea=NATO_gongye_idea2
+				}
+			}
+			else={
+				add_ideas=NATO_gongye_idea2
+			}
+			
+		}
+	}
+
+	completion_reward_joint_originator = {
+		add_dynamic_modifier = {
+			modifier = NATO_mil_industry_originator_dmod
+		}
+		random_owned_state = {
+			limit = {
+				is_controlled_by = ROOT 
+				free_building_slots = {
+					building = arms_factory
+					size > 1
+					include_locked = yes  
+				}
+			}
+			add_extra_state_shared_building_slots = 2 
+			add_building_construction = {
+				type = arms_factory
+				level = 2 
+				instant_build = yes 
+			}
+		}
+	}
+
+	completion_reward_joint_member = {
+		add_dynamic_modifier = {
+			modifier = NATO_mil_industry_member_dmod
+		}
+		random_owned_state = {
+			limit = {
+				is_controlled_by = ROOT 
+				free_building_slots = {
+					building = arms_factory
+					size > 0
+					include_locked = yes  
+				}
+			}
+			add_extra_state_shared_building_slots = 1 
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes 
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = NATO_gongye4
+	
+	icon = GFX_goal_generic_construct_civ_factory
+	
+	prerequisite = { focus = NATO_gongye2 }
+
+	x = -1
+	y = 1
+
+	relative_position_id = NATO_gongye2
+
+	cost = 5
+
+
+	text_icon = USA_focus_style
+
+	available = {
+		TAG=USA
+		NATO_basic_available_trigger = yes
+		num_of_civilian_factories > 20
+	}
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+	completion_reward={
+		every_other_country={
+			limit={
+				has_idea=NATO_chengyuanguo
+				
+			}
+			add_offsite_building = { type = industrial_complex level = 2 }
+		}
+	}
+}
+
+
+joint_focus = {
+	id = NATO_keyan4
+	
+	icon = GFX_goal_generic_construction2
+	
+	prerequisite = { focus = NATO_keyan2  }
+
+	x = 0
+	y = 1
+	relative_position_id =NATO_keyan2
+	cost = 5
+
+	text_icon =NATO_focus_style
+
+	available = {
+		NATO_basic_available_trigger = yes
+	}
+
+	search_filters = { FOCUS_FILTER_RESEARCH }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+	completion_reward={
+		every_country={
+			limit={
+				has_idea=NATO_chengyuanguo
+			}
+		}
+		add_tech_bonus = {
+			name = NATO_keyan2
+			bonus = 1 
+			uses = 2 
+			category = industry
+		}
+	}
+}
+joint_focus = {
+	id = NATO_keyan10
+	
+	icon = GFX_focus_NORDIC_dem_research
+	
+	prerequisite = { focus=NATO_keyan1 }
+	x = -3
+	y = 1
+	relative_position_id =NATO_keyan1
+	cost = 5
+
+	text_icon =NATO_focus_style
+
+	available = {
+		NATO_basic_available_trigger = yes
+	}
+
+	search_filters = { FOCUS_FILTER_RESEARCH }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+	completion_reward={
+		every_country = {
+			limit = {
+					has_idea=NATO_chengyuanguo
+				}
+			
+			if={
+				limit = {
+					has_idea=NATO_chengyuanguo
+					has_idea=NATO_keyan_idea1
+				}
+				swap_ideas={
+					remove_idea=NATO_keyan_idea1
+					add_idea=NATO_keyan_idea2
+				}
+			}
+			else={				
+				add_ideas=NATO_keyan_idea2
+			}
+			
+		}
+	}
+
+}
+joint_focus = {
+	id = NATO_keyan8
+	
+	icon = GFX_focus_NORDIC_dem_capstone_research
+	
+	prerequisite = { focus=NATO_keyan1 }
+	x = -3
+	y = 3
+	relative_position_id =NATO_keyan1
+	cost = 5
+
+	text_icon =NATO_focus_style
+
+	available = {
+		NATO_basic_available_trigger = yes
+	}
+
+	search_filters = { FOCUS_FILTER_RESEARCH }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+	completion_reward = {
+		every_country = {
+			limit = {
+					has_idea=NATO_chengyuanguo
+				}		
+			add_to_tech_sharing_group = NATO_research
+			
+		}
+	}
+}
+joint_focus = {
+	id = NATO_keyan9
+	
+	icon = GFX_focus_PER_construct_air_defenses
+	
+	prerequisite = { focus=NATO_keyan3 }
+	x = 0
+	y = 1
+	relative_position_id =NATO_keyan3
+	cost = 5
+
+	text_icon =NATO_focus_style
+
+	available = {
+		NATO_basic_available_trigger = yes
+	}
+
+	search_filters = { FOCUS_FILTER_RESEARCH }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+	completion_reward={
+		every_country={
+			limit={
+				has_idea=NATO_chengyuanguo
+			}
+		}
+		army_experience=30
+		add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = artillery
+			}
+	}
+
+}
+joint_focus = {
+	id = NATO_keyan7
+	
+	icon = GFX_focus_generic_license_production
+	
+	prerequisite = { focus = NATO_keyan9}
+	
+	x = 0
+	y = 1
+	relative_position_id = NATO_keyan9
+	cost = 10
+
+	text_icon =NATO_focus_style
+
+	available = {
+		NATO_basic_available_trigger = yes
+		num_of_military_factories > 25
+	}
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+	completion_reward={
+		every_country={
+			limit={
+				has_idea=NATO_chengyuanguo
+			}
+		}
+		army_experience=30
+		add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+	}
+	completion_reward_joint_originator = {		
+	}
+	completion_reward_joint_member = {
+	}
+}
+
+joint_focus = {
+	id = NATO_keyan6
+	
+	icon = GFX_focus_rocketry
+	
+	prerequisite = { focus = NATO_keyan1}
+
+	x = 1
+	y = 1
+	relative_position_id = NATO_keyan1
+	cost = 5
+
+	text_icon =NATO_focus_style
+
+	available = {
+		NATO_basic_available_trigger = yes
+		num_researched_technologies > 55
+	}
+
+	search_filters = { FOCUS_FILTER_RESEARCH }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+	completion_reward={
+		every_country={
+			limit={
+				has_idea=NATO_chengyuanguo
+			}
+		}
+		add_tech_bonus = {
+			name = NATO_keyan6
+			bonus = 0.25
+			uses = 2 
+			category = rocketry
+		}
+	}
+
+}
+
+joint_focus = {
+	id = NATO_keyan5
+	
+	icon = GFX_focus_generic_jet_planes 
+
+	dynamic = yes 
+	prerequisite = { focus = NATO_keyan6 }
+	x = 0
+	y = 1
+	relative_position_id = NATO_keyan6
+	cost = 10
+
+	text_icon =NATO_focus_style
+
+	available = {
+		NATO_basic_available_trigger = yes
+		has_deployed_air_force_size = {
+			size > 999
+		}
+	}
+
+	search_filters = { FOCUS_FILTER_RESEARCH }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+
+	completion_reward={
+		every_country={
+			limit={
+				has_idea=NATO_chengyuanguo
+			}
+		}
+		add_breakthrough_progress = {
+			specialization = specialization_air
+			value = 0.5
+		}
+
+		add_tech_bonus = {
+			name = NATO_keyan5
+			bonus = 1 # was 2
+			ahead_reduction = 1
+			uses = 2
+			category = jet_technology 
+		}
+	}
+	completion_reward_joint_originator = {
+	}
+
+	completion_reward_joint_member = {
+	}
+}
+
+
+
+
+
+shared_focus = {
+	id = NATO_gongye5
+	
+	icon =GFX_goal_generic_construct_mil_factory
+	
+	prerequisite = { focus = NATO_gongye2 }
+
+	x = 1
+	y = 1
+	relative_position_id = NATO_gongye2
+	cost = 5
+
+	text_icon = USA_focus_style
+
+	available = {
+		TAG=USA
+		NATO_basic_available_trigger = yes
+		num_of_military_factories > 20
+	}
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+	completion_reward={
+		every_other_country={
+			limit={
+				has_idea=NATO_chengyuanguo
+				
+			}
+			add_offsite_building = { type = arms_factory 		level = 2 }
+		}
+	}
+}
+
+shared_focus = {
+	id = NATO_gongye6
+	
+	icon = GFX_focus_NORDIC_dem_selector_civilian
+	
+	prerequisite = { focus = NATO_gongye5 }
+	prerequisite = { focus = NATO_gongye4 }
+	x = -1
+	y = 1
+	relative_position_id = NATO_gongye5
+	cost = 10
+
+	text_icon = USA_focus_style
+
+	available = {
+		TAG=USA
+		NATO_basic_available_trigger = yes
+		num_of_military_factories > 15
+		any_owned_state = {
+			arms_factory > 3
+		}
+	}
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+	completion_reward={
+		swap_ideas={
+					remove_idea=NATO_gongye_idea2
+					add_idea=NATO_gongye_idea3
+		}
+	}
+
+}
+
+
+
+shared_focus = {
+	id = NATO_gongye8
+	
+	icon = GFX_focus_chi_reach_out_to_france
+	
+	prerequisite = { focus = NATO_gongye6  }
+
+	x = 0
+	y = 1
+	relative_position_id = NATO_gongye6
+	cost = 10
+
+	text_icon = USA_focus_style
+
+	available = {
+		TAG=USA
+		FRA={
+			has_idea=NATO_chengyuanguo
+			is_in_faction_with=USA
+			
+		}
+	}
+
+	search_filters = { FOCUS_FILTER_RESEARCH }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+	completion_reward={
+		effect_tooltip = {
+			FRA = {
+				swap_ideas={
+					remove_idea=NATO_gongye_idea2
+					add_idea=NATO_gongye_idea4
+				}
+				add_offsite_building = { type = industrial_complex level = 2 }
+				add_offsite_building = { type = arms_factory 		level = 2 }
+			}
+		}
+		if = {
+			limit = {
+				FRA={
+					has_idea=NATO_chengyuanguo
+					has_idea=NATO_gongye_idea2
+				}			
+			}
+			FRA = {
+				swap_ideas={
+					remove_idea=NATO_gongye_idea2
+					add_idea=NATO_gongye_idea4
+				}
+				add_offsite_building = { type = industrial_complex level = 2 }
+				add_offsite_building = { type = arms_factory 		level = 2 }
+			}
+		}
+	}
+}
+
+shared_focus= {
+	id = NATO_gongye9
+	
+	icon = GFX_focus_chi_british_cooperation
+	
+	prerequisite = { focus = NATO_gongye6  }
+
+	x = -2
+	y = 1
+	relative_position_id = NATO_gongye6
+	cost = 10
+
+	text_icon = USA_focus_style
+
+	available = {
+		TAG=USA
+		ENG={
+			has_idea=NATO_chengyuanguo
+			is_in_faction_with=USA
+			
+		}
+	}
+
+	search_filters = { FOCUS_FILTER_RESEARCH }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+	completion_reward={
+		effect_tooltip = {
+			ENG = {
+				swap_ideas={
+					remove_idea=NATO_gongye_idea2
+					add_idea=NATO_gongye_idea4
+				}
+				add_offsite_building = { type = industrial_complex level = 2 }
+				add_offsite_building = { type = arms_factory 		level = 2 }
+			}
+		}
+		if = {
+			limit = {
+				ENG = {
+					has_idea=NATO_chengyuanguo
+					has_idea=NATO_gongye_idea2
+				}			
+			}
+			ENG = {
+				swap_ideas={
+					remove_idea=NATO_gongye_idea2
+					add_idea=NATO_gongye_idea4
+				}
+				add_offsite_building = { type = industrial_complex level = 2 }
+				add_offsite_building = { type = arms_factory 		level = 2 }
+			}
+		}
+	}
+}
+shared_focus = {
+	id = NATO_gongye10
+	
+	icon = GFX_focus_chi_mission_to_the_us
+	
+	prerequisite = { focus = NATO_gongye6  }
+
+	x = 2
+	y = 1
+	relative_position_id = NATO_gongye6
+	cost = 10
+
+	text_icon = USA_focus_style
+
+	available = {
+		TAG=USA
+		CAN={
+			has_idea=NATO_chengyuanguo
+			is_in_faction_with=USA
+			
+		}
+	}
+
+	search_filters = { FOCUS_FILTER_RESEARCH }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+	completion_reward={
+		effect_tooltip = {
+			CAN = {
+				swap_ideas={
+					remove_idea=NATO_gongye_idea2
+					add_idea=NATO_gongye_idea4
+				}
+				add_offsite_building = { type = industrial_complex level = 2 }
+				add_offsite_building = { type = arms_factory 		level = 2 }
+			}
+		}
+		if = {
+			limit = {
+				CAN = {
+					has_idea=NATO_chengyuanguo
+					has_idea=NATO_gongye_idea2
+				}			
+			}
+			CAN = {
+				swap_ideas={
+					remove_idea=NATO_gongye_idea2
+					add_idea=NATO_gongye_idea4
+				}
+				add_offsite_building = { type = industrial_complex level = 2 }
+				add_offsite_building = { type = arms_factory 		level = 2 }
+			}
+		}
+	}
+}
+shared_focus = {
+	id = NATO_gongye11
+	
+	icon = GFX_focus_BEL_independent_neutral_and_loyal
+	
+	prerequisite = { focus = NATO_gongye6  }
+
+	x = 4
+	y = 1
+	relative_position_id = NATO_gongye6
+	cost = 10
+
+	text_icon = USA_focus_style
+
+	available = {
+		TAG=USA
+		OR={
+			BEL={
+			has_idea=NATO_chengyuanguo
+			is_in_faction_with=USA		
+				}
+			HOL={
+			has_idea=NATO_chengyuanguo
+			is_in_faction_with=USA		
+				}
+			LUX={
+			has_idea=NATO_chengyuanguo
+			is_in_faction_with=USA		
+				}
+		}
+	}
+
+	search_filters = { FOCUS_FILTER_RESEARCH }
+
+	#joint_trigger = {
+  	#	NATO_basic_joint_trigger = yes 
+	#}
+
+	completion_reward={
+		effect_tooltip = {
+			every_other_country = {
+				limit = {
+					OR = {
+						TAG = BEL
+						TAG = HOL
+						TAG = LUX
+					}
+				}
+				swap_ideas={
+					remove_idea=NATO_gongye_idea2
+					add_idea=NATO_gongye_idea4
+				}
+				add_offsite_building = { type = industrial_complex level = 2 }
+				add_offsite_building = { type = arms_factory 		level = 2 }
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					BEL = {
+						has_idea=NATO_chengyuanguo
+						has_idea=NATO_gongye_idea2
+					}			
+				}
+				BEL = {
+					swap_ideas={
+						remove_idea=NATO_gongye_idea2
+						add_idea=NATO_gongye_idea4
+					}
+					add_offsite_building = { type = industrial_complex level = 2 }
+					add_offsite_building = { type = arms_factory 		level = 2 }
+				}
+			}
+
+			if = {
+				limit = {
+					HOL = {
+						has_idea=NATO_chengyuanguo
+						has_idea=NATO_gongye_idea2
+					}			
+				}
+				HOL = {
+					swap_ideas={
+						remove_idea=NATO_gongye_idea2
+						add_idea=NATO_gongye_idea4
+					}
+					add_offsite_building = { type = industrial_complex level = 2 }
+					add_offsite_building = { type = arms_factory 		level = 2 }
+				}
+			}
+
+			if = {
+				limit = {
+					LUX = {
+						has_idea=NATO_chengyuanguo
+						has_idea=NATO_gongye_idea2
+					}			
+				}
+				LUX = {
+					swap_ideas={
+						remove_idea=NATO_gongye_idea2
+						add_idea=NATO_gongye_idea4
+					}
+					add_offsite_building = { type = industrial_complex level = 2 }
+					add_offsite_building = { type = arms_factory 		level = 2 }
+				}
+			}
+		}
+	}
+}

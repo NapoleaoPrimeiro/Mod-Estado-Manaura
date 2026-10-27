@@ -1,0 +1,83 @@
+ideas = {
+	country = {
+		NO_LAG_ROM_red_officers = {
+			picture = smersh
+			allowed = { original_tag = ROM }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+
+			modifier = {
+				max_planning = 0.1
+				army_morale_factor = 0.05
+			}
+		}
+
+		NO_LAG_ROM_soviet_threat = {
+			picture = generic_attack_soviet_union
+			allowed = { original_tag = ROM }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+
+			targeted_modifier = {
+				tag = SOV
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+		}
+
+		NO_LAG_ROM_fight_against_tyranny = {
+			picture = SPR_anti_fascist_crusade
+			allowed = { original_tag = ROM }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+
+			modifier = {
+				fascism_drift = -0.15
+				army_morale_factor = 0.05
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				army_org_factor = 0.05
+			}
+		}
+
+		NO_LAG_ROM_horthyist_royal_guard = {
+			picture = generic_reserve_divisions
+			allowed = {
+				original_tag = ROM
+			}
+			available = {
+				
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				mobilization_speed = 0.1
+				army_core_defence_factor = 0.1
+			}
+		}
+
+		NO_LAG_ROM_horthyist_royal_guard_and_paramilitary = {
+			name = NO_LAG_ROM_horthyist_royal_guard
+			picture = generic_reserve_divisions
+			allowed = {
+				original_tag = ROM
+			}
+			available = {
+				
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				mobilization_speed = 0.1
+				army_core_defence_factor = 0.1
+				conscription_factor = 0.1
+				drift_defence_factor = 0.15
+				custom_modifier_tooltip = FIN_lotta_svard_support_battalions_bonus_tt
+			}
+		}
+	}
+}

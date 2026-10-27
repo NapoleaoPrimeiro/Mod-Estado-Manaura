@@ -1,0 +1,197 @@
+add_namespace = threaten_guarantee
+
+country_event = {
+    id = threaten_guarantee.1
+    title = threaten_guarantee.1.t
+    desc = threaten_guarantee.1.d
+    picture = GFX_report_event_generic_diplomacy
+    is_triggered_only = yes
+
+    
+    option = {
+        name = threaten_guarantee.1.a
+
+        save_event_target_as = demanded_prov_target
+
+        diplomatic_relation = {
+            country = event_target:guaranteed_nation
+            relation = guarantee
+            active = no
+        }
+        
+        add_to_array = {
+            array = tg_blocked_targets
+            value = event_target:guaranteed_nation
+        }
+
+        country_event = { 
+            id = threaten_guarantee.10 days = 365 
+        }
+
+
+        add_opinion_modifier = {
+            target = event_target:threatener_nation
+            modifier = threatened_our_guarantee
+        }
+
+        event_target:threatener_nation = {
+            country_event = { 
+                id = threaten_guarantee.2 
+                days = 1
+            }
+        }
+
+        ai_chance = {
+            base = 0
+
+
+            modifier = {
+                add = 25
+                has_opinion = {
+                    target = event_target:threatener_nation
+                    value > 0
+                }
+            }
+
+            modifier = {
+                add = 50
+                has_opinion = {
+                    target = event_target:threatener_nation
+                    value > 50
+                }
+            }
+
+            modifier = {
+                add = 10
+                event_target:threatener_nation = {
+                    strength_ratio = {
+                        tag = ROOT ratio > 1.6
+                    }
+                }
+            }
+
+            modifier = {
+                add = 20
+                event_target:threatener_nation = {
+                    is_in_faction = yes
+                    faction_leader = {
+                        strength_ratio = { 
+                            tag = ROOT ratio > 1.6
+                        }
+                    }
+                }
+            }
+
+            modifier = {
+                factor = 0
+                is_in_faction = yes
+                faction_leader = {
+                    strength_ratio = {
+                        tag = event_target:threatener_nation ratio > 1.5
+                    }
+                }
+            }
+
+            # Never back down if the guaranteed nation is in our faction
+            modifier = {
+                factor = 0
+                is_in_faction_with = event_target:guaranteed_nation
+            }
+        }
+    }
+
+    option = {
+        name = threaten_guarantee.1.b
+
+        save_event_target_as = demanded_prov_target
+
+        add_opinion_modifier = {
+            target = event_target:threatener_nation
+            modifier = threatened_our_guarantee
+        }
+
+        create_wargoal = {
+            type = puppet_wargoal_focus
+            target = event_target:threatener_nation
+        }
+
+        event_target:threatener_nation = {
+            country_event = { 
+                id = threaten_guarantee.3 days = 1
+            }
+        }
+
+        ai_chance = {
+            base = 10
+
+            modifier = {
+                add = 25
+                has_opinion = {
+                    target = event_target:threatener_nation
+                    value < 0
+                }
+            }
+
+            modifier = {
+                add = 50
+                has_opinion = {
+                    target = event_target:threatener_nation
+                    value < -50
+                }
+            }
+
+            modifier = {
+                factor = 5
+                NOT = {
+                    event_target:threatener_nation = {
+                        strength_ratio = { 
+                            tag = ROOT ratio > 1.6
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+# answer 1 
+country_event = {
+    id = threaten_guarantee.2
+    title = threaten_guarantee.2.t
+    desc = threaten_guarantee.2.d
+    picture = GFX_report_event_generic_sign_treaty2
+    is_triggered_only = yes
+
+    option = {
+        name = threaten_guarantee.2.a
+    }
+}
+
+# answer 2
+country_event = {
+    id = threaten_guarantee.3
+    title = threaten_guarantee.3.t
+    desc = threaten_guarantee.3.d
+    picture = GFX_report_event_generic_sign_treaty2
+    is_triggered_only = yes
+
+    option = {
+        name = threaten_guarantee.3.a
+    }
+}
+
+
+# sa dispara guaranteeu. legat de common/opinion_modifiers/threaten_guarantee_opinion.txt care il face sa mearga
+country_event = {
+    id = threaten_guarantee.10
+    hidden = yes
+    is_triggered_only = yes
+
+    immediate = {
+        remove_from_array = {
+            array = tg_blocked_targets
+            value = event_target:guaranteed_nation
+        }
+    }
+}

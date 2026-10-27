@@ -1,0 +1,83 @@
+@LORDS_TEXT_X = 16
+@COMMONS_TEXT_X = 212
+@HEADERS_Y = 67
+@STATUS_Y = 52
+guiTypes = {
+
+	containerWindowType = {
+		name = "eng_parliament_decision_ui_window"
+		position = { x = 0 y = 10 }
+		size = { width = 100% height= 100 }
+
+		buttonType = {
+			name ="lords_icon"
+			spriteType = "GFX_decision_category_eng_parliament_lords_ui"
+			position = { x= 84	 y = -17 }
+			tooltip = "LORDS_ICON_TOOLTIP"
+			clicksound = click_expand
+			hoversound = click_mouse_over_02
+		}
+
+		instantTextBoxType = {
+			name ="lords_support_header"
+			position = { x = @LORDS_TEXT_X y = @HEADERS_Y }
+			font = "hoi_24header"
+			text = "ENG_parliament_lords_support_header"
+			format = center
+			maxHeight = 24
+			tooltip = "LORDS_INFO_TOOLTIP"
+		}
+
+		instantTextBoxType = {
+			name ="status_lords"
+			position = { x = @LORDS_TEXT_X y = @STATUS_Y }
+			font = "hoi_18mbs"
+			text = "ENG_parliament_lords_support_amount"
+			format = center
+			maxHeight = 24
+			tooltip = "LORDS_SUPPORT_TOOLTIP"
+		}
+
+		buttonType = {
+			name ="commons_icon"
+			spriteType = "GFX_decision_category_eng_parliament_commons_ui"
+			position = { x= 322 y = -17 }
+			tooltip = "COMMONS_ICON_TOOLTIP"
+			clicksound = click_expand
+			hoversound = click_mouse_over_02
+		}
+
+		instantTextBoxType = {
+			name ="status_commons"
+			position = { x= @COMMONS_TEXT_X y = @STATUS_Y }
+			font = "hoi_18mbs"
+			text = "ENG_parliament_commons_support_amount"
+			format = center
+			fixedsize = yes
+			maxWidth = 280
+			tooltip = "COMMONS_SUPPORT_TOOLTIP"
+		}
+
+		instantTextBoxType = {
+			name ="commons_support_header"
+			position = { x= @COMMONS_TEXT_X y = @HEADERS_Y }
+			font = "hoi_24header"
+			text = "ENG_parliament_commons_support_header"
+			format = center
+			maxHeight = 24
+			fixedsize = yes
+			maxWidth = 280
+			tooltip = "COMMONS_INFO_TOOLTIP"
+		}
+
+		buttonType = {
+			name ="acts_icon"
+			spriteType = "GFX_decision_category_eng_parliament_acts_ui"
+			position = { x= 205 y = -17 }
+			tooltip = "ACTS_ICON_TOOLTIP"
+			clicksound = click_expand
+			hoversound = click_mouse_over_01
+		}
+
+	}
+}

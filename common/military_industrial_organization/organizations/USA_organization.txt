@@ -1,0 +1,3547 @@
+#####################
+
+###  ##  #  # # #  ## 
+ #  #  # ## # # # #   
+ #  #### # ## ##   #  
+ #  #  # #  # # #   # 
+ #  #  # #  # # # ## 
+
+ #################### 
+
+
+USA_marmon_herrington_organization = {
+	include = generic_mobile_tank_organization
+	icon = GFX_idea_marmon_herrington
+	allowed = {	
+		OR = {
+			original_TAG = USA
+			tag = USA
+			AND = {
+				tag = BRA
+				has_dlc = "Trial of Allegiance"
+			}
+			TAG = HAW
+		}
+	}
+	available = {
+		IF = {
+			limit = {
+				FROM = {
+					TAG = HAW
+				}
+			}
+			FROM = {
+				has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+			}
+		}
+		IF = {
+			limit = {
+				FROM = { NOT = { original_tag = USA } }
+			}
+			FROM = { NOT = { has_war_with = USA } }
+		}
+		IF = {
+			limit = { FROM = { original_tag = BRA } }
+			custom_trigger_tooltip = {
+				tooltip = has_invited_mio_tt
+				FROM = {
+					has_completed_focus = BRA_invite_foreign_companies
+					has_country_flag = has_marmon_herrington_mio_flag
+				}
+			}
+		}
+	}
+}
+
+USA_chrysler_organization = {
+	include = generic_infantry_tank_organization
+	icon = GFX_idea_chrysler
+	
+	allowed = {	
+		OR = {
+			original_TAG = USA
+			tag = USA 
+			AND = {
+				tag = MEX 
+				has_dlc = "Man the Guns"
+			}
+			NOR_AAT = yes 
+			PHI_SEA = yes
+
+			AND = {
+				TAG = HAW
+				has_country_flag = HAW_USA_tanke_jishu_over_flag
+			}
+			AND = {
+				tag = HAW
+				#has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+			}
+		}
+	}
+
+	available = {
+		IF = {
+			limit = {
+				FROM = {
+					TAG = HAW
+				}
+			}
+			FROM = {
+				OR = {
+					has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+					has_country_flag = HAW_USA_tanke_jishu_over_flag
+				}
+				
+			}
+		}
+		# When in a Foreign MIO, countries need to be at peace with original country
+		IF = {
+			limit = {
+				FROM = { NOT = { original_tag = USA } }
+			}
+			FROM = { NOT = { has_war_with = USA } }
+		}
+
+		if = {
+			limit = {
+				FROM = { tag = MEX }
+			}
+			FROM = { is_in_faction_with = USA }
+		} 
+		else_if = {
+			limit = {
+				FROM = {
+					original_tag = PHI
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_completed_focus = PHI_declare_military_emergency
+					}
+				}
+				FROM = {
+					has_completed_focus = PHI_declare_military_emergency
+				}
+			}
+			else = {
+				FROM = {
+					has_completed_focus = PHI_align_with_the_usa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { tag = NOR }
+			}
+			FROM = { 
+				has_completed_focus = NOR_invite_transnational_manufacturers
+			}
+		}
+	}
+
+	initial_trait = {
+		name = USA_mio_trait_medium_tank_manufacturer
+
+		limit_to_equipment_type = { mio_cat_eq_all_medium_tank }
+
+		equipment_bonus = {
+			reliability = 0.1
+			soft_attack = 0.02
+			hard_attack = 0.03
+			defense = -0.15
+		}
+	}
+
+	add_trait = { 
+		token = USA_mio_trait_strict_design_specifications
+		name = USA_mio_trait_strict_design_specifications
+		icon = GFX_generic_mio_trait_icon_reliability
+		special_trait_background = yes
+
+		position = { x=1 y=1 }
+		relative_position_id =  generic_mio_trait_single_engine
+
+		any_parent = { generic_mio_trait_single_engine generic_mio_trait_dual_engine_redundancy }
+		limit_to_equipment_type = { mio_cat_eq_all_medium_tank }
+
+		equipment_bonus = {
+			reliability = 0.1
+		}
+	}
+
+	add_trait = { 
+		token = USA_mio_trait_expanded_production_facilities
+		name = USA_mio_trait_expanded_production_facilities
+		icon = GFX_generic_mio_trait_icon_build_cost_ic
+		special_trait_background = yes
+
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_trait_interleaved_track_wheels
+
+		any_parent = { generic_mio_trait_interleaved_track_wheels generic_mio_trait_overlapped_track_wheels }
+		production_bonus = {
+			production_cost_factor = -0.1
+			production_capacity_factor = 0.05
+		}
+	}
+
+	add_trait = {
+		token = GER_mio_trait_steel_wheel_design
+		name = GER_mio_trait_steel_wheel_design
+		icon = GFX_generic_mio_department_icon_tank_medium_tank_quality
+		special_trait_background = yes
+
+		limit_to_equipment_type = { mio_cat_eq_all_medium_tank }
+
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_trait_adaptable_turret_ring
+
+		all_parents = { generic_mio_trait_adaptable_turret_ring }
+
+		visible = {
+
+		}
+
+		equipment_bonus = {
+			reliability = 0.03
+			breakthrough = 0.05
+			armor_value = 0.05
+		}
+
+		production_bonus = {
+			production_cost_factor = 0.03
+		}
+	}
+}
+
+USA_army_ordnance_department_organization = {
+	include = generic_heavy_tank_organization
+	icon = GFX_idea_army_ordnance_department
+	
+	allowed = {	
+		OR = {
+			original_TAG = USA
+			AND = {
+				tag = HAW
+				#has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+			}
+			TAG = USA
+		}
+		#tag = USA
+		
+	}
+
+	available = {
+		IF = {
+			limit = {
+				FROM = {
+					TAG = HAW
+				}
+			}
+			FROM = {
+				OR = {
+					has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+					#has_country_flag = HAW_USA_tanke_jishu_over_flag
+				}
+				
+			}
+		}
+	}
+
+	add_trait = { 
+		token = USA_mio_trait_periscope_sights
+		name = USA_mio_trait_periscope_sights
+		icon = GFX_generic_mio_department_icon_tank_medium_tank_armor
+		special_trait_background = yes
+
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_trait_wide_tracks
+		all_parents = { generic_mio_trait_wide_tracks}
+		equipment_bonus = {
+			breakthrough = 0.1
+			defense = 0.05
+		}
+	}
+
+	add_trait = { 
+		token = USA_mio_trait_mass_production_of_armor
+		name = USA_mio_trait_mass_production_of_armor
+		icon = GFX_generic_mio_department_icon_tank_medium_tank_line_efficiency
+		special_trait_background = yes
+
+		position = { x=0 y=-1 }
+		relative_position_id =USA_mio_trait_periscope_sights
+
+		#all_parents = { USA_mio_trait_periscope_sights}
+		production_bonus = {
+			production_efficiency_cap_factor = 0.05
+			production_efficiency_gain_factor = 0.1
+		}
+	}
+
+	tree_header_text = {
+		text = mio_header_engine_and_drive_system
+		x = 0.5
+	}
+
+	tree_header_text = {
+		text = mio_header_chassis
+		x = 4
+	}
+
+	tree_header_text = {
+		text = mio_header_guns_and_turret
+		x = 7
+	}
+
+	override_trait = {
+		token = generic_mio_trait_wide_tracks
+		
+		position = { x=0 y=0 }
+	}
+
+	override_trait = {
+		token = generic_mio_trait_one_piece_hull_side_coverings
+		
+		position = { x=3 y=0 }
+	}
+
+	override_trait = {
+		token = generic_mio_trait_improved_crew_ergonomics
+
+		position = { x=0 y=2 }
+	}
+
+	override_trait = {
+		token = generic_mio_trait_fully_cast_turret
+
+		position = { x=4 y=0 }
+	}
+
+
+
+	add_trait = {
+		token = GER_mio_trait_multi_role_tanks
+		name = GER_mio_trait_multi_role_tanks
+		icon = GFX_generic_mio_department_icon_tank_heavy_tank_aa
+		special_trait_background = yes
+
+		position = { x=2 y=0 }
+		relative_position_id = generic_mio_trait_one_piece_hull_side_coverings
+
+		visible = {
+			
+		}
+
+		available = {
+		}
+
+		equipment_bonus = {
+			soft_attack = 0.05
+			air_attack = 0.05
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
+
+	add_trait = {
+		token = GER_mio_trait_anti_tank_specialization
+		name = GER_mio_trait_anti_tank_specialization
+		icon = GFX_generic_mio_department_icon_tank_heavy_tank_at
+		special_trait_background = yes
+
+		all_parents = {
+            generic_mio_trait_one_piece_hull_side_coverings
+            GER_mio_trait_multi_role_tanks
+        }
+
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_trait_one_piece_hull_side_coverings
+
+		visible = {
+			
+		}
+
+		available = {
+		}
+
+		equipment_bonus = {
+			hard_attack = 0.05
+			ap_attack = 0.05
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
+
+	add_trait = {
+		token = GER_mio_trait_unorthodox_transmission_design
+		name = GER_mio_trait_unorthodox_transmission_design
+		icon = GFX_generic_mio_department_icon_tank_heavy_tank_engine
+		special_trait_background = yes
+
+		all_parents = {
+            generic_mio_trait_simplified_transmission_system
+        }
+
+		position = { x=-1 y=1 }
+		relative_position_id = generic_mio_trait_simplified_transmission_system
+
+		visible = {
+			
+		}
+
+		available = {
+			
+		}
+
+		limit_to_equipment_type = { 
+			armor
+		}
+
+		equipment_bonus = {
+			maximum_speed = 0.05
+			reliability = -0.02
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
+}
+
+USA_detroit_arsenal_organization = {
+	name = detroit_arsenal
+	include = generic_tank_organization
+	icon = GFX_idea_generic_industrial_concern_1
+	allowed = {	
+		OR = {
+			original_TAG = USA
+			tag = USA
+			PHI_SEA = yes
+			AND = {
+				tag = HAW
+				#has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+			}
+		}
+	}
+	available = {
+		IF = {
+			limit = {
+				FROM = {
+					TAG = HAW
+				}
+			}
+			FROM = {
+				OR = {
+					has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+					#has_country_flag = HAW_USA_tanke_jishu_over_flag
+				}
+				
+			}
+		}
+		IF = {
+			limit = {
+				FROM = { NOT = { original_tag = USA } }
+			}
+			FROM = { NOT = { has_war_with = USA } }
+		}
+
+		IF = {
+			limit = {
+				FROM = { original_tag = USA } 
+			}
+			FROM = { has_completed_focus = USA_main_battle_tanks }
+		}
+
+		if = {
+			limit = {
+				FROM = {
+					original_tag = PHI
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_completed_focus = PHI_declare_military_emergency
+					}
+				}
+				FROM = {
+					has_completed_focus = PHI_declare_military_emergency
+				}
+			}
+			else = {
+				FROM = {
+					has_completed_focus = PHI_align_with_the_usa
+				}
+			}
+		}
+
+		IF = {
+			limit = {
+				FROM = { original_tag = PHI } 
+			}
+			USA = { has_completed_focus = USA_main_battle_tanks }
+		}
+	}
+
+	initial_trait = {
+		name = USA_mio_trait_dedicated_tank_factory
+		
+		equipment_bonus = {
+			armor_value = -0.05
+			defense =-0.05
+			build_cost_ic = -0.02
+		}
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.1
+		}
+	}
+
+	add_trait = { 
+		token = USA_mio_trait_arsenal_of_democracy
+		name = USA_mio_trait_arsenal_of_democracy
+		icon = GFX_generic_mio_department_icon_tank_medium_tank_line_efficiency
+		special_trait_background = yes
+
+		position = { x=-1 y=1 }
+		relative_position_id = generic_mio_trait_standardized_components
+
+		all_parents = { generic_mio_trait_standardized_components }
+		production_bonus = {
+			production_efficiency_cap_factor = 0.05
+		}
+	}
+
+	add_trait = {
+		token = USA_mio_trait_mass_production_of_armor
+		name = USA_mio_trait_mass_production_of_armor
+		icon = GFX_generic_mio_trait_icon_production_capacity
+		special_trait_background = yes
+
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_trait_standardized_components
+		all_parents = { generic_mio_trait_standardized_components }
+
+		on_complete = {
+			
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.1
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
+
+	add_trait = {
+		token = GER_mio_trait_ford_facilities
+		name = USA_mio_ditelv
+		icon = GFX_generic_mio_trait_icon_production_capacity
+		special_trait_background = yes
+
+		position = { x=1 y=0 }  
+		relative_position_id=generic_mio_trait_defensive_equipment
+		visible = {
+			FROM = {
+				TAG = USA
+			}
+		}
+
+		available = {
+			FROM = {
+				OR={
+					has_completed_focus = USA_focus47
+					has_completed_focus =  USA_focus6
+					has_completed_focus =  USA_america_first
+				}
+				
+			}
+		}
+
+		
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}
+
+		on_complete = {
+			393={
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
+
+	add_trait = {
+		token = GER_mio_trait_efficiency_in_mass_production
+		name = GER_mio_trait_efficiency_in_mass_production
+		icon = GFX_generic_mio_trait_icon_efficiency_cap
+		special_trait_background = yes
+
+		position = { x=0 y=1 }
+		relative_position_id = GER_mio_trait_ford_facilities
+
+		any_parent = { GER_mio_trait_ford_facilities }
+
+		visible = {
+			FROM = {
+				TAG = USA
+			}
+		}
+
+		production_bonus = {
+			production_efficiency_cap_factor = 0.1
+			production_efficiency_gain_factor=0.05
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
+}
+
+	#####重置了自行反坦克炮mio 来源于捷克自行反坦克炮
+USA_tank_destroyer_board_organization = {
+	name = tank_destroyer_board
+	#include = generic_mobile_tank_organization
+	icon = GFX_idea_usa_tank_destroyer_board
+	allowed = {	
+		OR = {
+			original_TAG = USA
+			TAG = USA
+			AND = {
+				tag = HAW
+				#has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+			}
+		}
+	}
+	available = {
+
+		IF = {
+			limit = {
+				FROM = {
+					TAG = HAW
+				}
+			}
+			FROM = {
+				OR = {
+					has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+					#has_country_flag = HAW_USA_tanke_jishu_over_flag
+				}
+				
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					TAG = USA
+				}
+			}
+			FROM = { has_completed_focus = USA_tank_destroyer_doctrine }
+		}
+		
+	}
+	equipment_type = { light_tank_destroyer_chassis medium_tank_destroyer_chassis heavy_tank_destroyer_chassis }
+	research_categories = { mio_cat_tech_all_armor_and_modules cat_anti_tank  }
+
+	tree_header_text = {
+		text = mio_header_light_tank_destroyers_department
+		x = 1
+	}
+
+	tree_header_text = {
+		text = mio_header_medium_tank_destroyers_department
+		x = 4.2
+	}
+
+	tree_header_text = {
+		text = mio_header_heavy_tank_destroyers_department
+		x = 7.1
+	}
+
+	initial_trait = {
+		name = USA_mio_trait_initial_trait_tank_destroyer_guns_organization
+		
+		limit_to_equipment_type = { 
+			light_tank_destroyer_chassis medium_tank_destroyer_chassis heavy_tank_destroyer_chassis
+		}
+		
+		equipment_bonus = {
+			hard_attack = 0.10
+			armor_value = 0.05
+		}
+	}
+
+
+	trait = {
+		token = USA_mio_trait_mobile_tank_destroyers
+		name = USA_mio_trait_mobile_tank_destroyers
+		icon = GFX_generic_mio_department_icon_tank_light_tank_at
+
+		position = { x = 1 y = 0 }
+		
+		limit_to_equipment_type = { light_tank_destroyer_chassis }
+
+		equipment_bonus = {
+			hard_attack = 0.05
+			maximum_speed = 0.15
+		}
+	}
+
+	trait = {
+		token = USA_mio_trait_light_tank_destroyer_artillery_gun_combo
+		name = USA_mio_trait_light_tank_destroyer_artillery_gun_combo
+		icon = GFX_generic_mio_department_icon_tank_light_tank_spg
+		
+		position = { x = -1  y = 2 }
+
+		relative_position_id = USA_mio_trait_mobile_tank_destroyers
+		
+		all_parents = { USA_mio_trait_mobile_tank_destroyers }
+
+		mutually_exclusive = { USA_mio_trait_light_tank_destroyer_gun_improved_muzzle_breaks }
+
+		limit_to_equipment_type = { light_tank_destroyer_chassis }
+
+		equipment_bonus = {
+			breakthrough = 0.05
+			soft_attack = 0.15
+		}
+	}
+
+	trait = {
+		token = USA_mio_trait_light_tank_destroyer_gun_improved_muzzle_breaks
+		name = USA_mio_trait_light_tank_destroyer_gun_improved_muzzle_breaks
+		icon = GFX_generic_mio_trait_icon_ap_attack
+				
+		position = { x = 1  y = 2 }
+
+		relative_position_id = USA_mio_trait_mobile_tank_destroyers
+		
+		all_parents = { USA_mio_trait_mobile_tank_destroyers }
+
+		mutually_exclusive = { USA_mio_trait_light_tank_destroyer_artillery_gun_combo }
+
+		limit_to_equipment_type = { light_tank_destroyer_chassis }
+
+		equipment_bonus = {
+			reliability = 0.05
+			ap_attack = 0.15
+		}
+	}
+
+	trait = {
+		token = USA_mio_trait_multi_purpose_ammunition_tank_destoryer 
+		name = USA_mio_trait_multi_purpose_ammunition_tank_destoryer 
+		icon = GFX_generic_mio_department_icon_tank_light_tank_weapons
+		
+		position = { x = 0  y = 1 }
+
+		relative_position_id = USA_mio_trait_mobile_tank_destroyers
+		
+		all_parents = { USA_mio_trait_mobile_tank_destroyers }
+
+		#mutually_exclusive = { USA_mio_trait_light_tank_destroyer_artillery_gun_combo }
+
+		limit_to_equipment_type = { light_tank_destroyer_chassis }
+
+		equipment_bonus = {
+			hard_attack = 0.05
+			soft_attack = 0.05
+		}
+	}
+
+	trait = {
+		token = USA_mio_trait_medium_tank_hunters_tank_destoryer
+		name = USA_mio_trait_medium_tank_hunters_tank_destoryer
+		icon = GFX_generic_mio_department_icon_tank_medium_tank_at
+		
+		position = { x = 3 y = 0 }
+
+		relative_position_id = USA_mio_trait_mobile_tank_destroyers
+		
+		#all_parents = { USA_mio_trait_mobile_tank_destroyers }
+
+		#mutually_exclusive = { USA_mio_trait_light_tank_destroyer_gun_improved_muzzle_breaks }
+
+		limit_to_equipment_type = { medium_tank_destroyer_chassis }
+
+		equipment_bonus = {
+			maximum_speed = 0.05
+			ap_attack = 0.05
+			defense = 0.05
+		}
+	}
+
+	trait = {
+		token = USA_mio_trait_low_profile_ambushers_tank_destoryer
+		name = USA_mio_trait_low_profile_ambushers_tank_destoryer
+		icon = GFX_generic_mio_trait_icon_defense
+
+		position = { x = -1 y = 1 }
+		relative_position_id = USA_mio_trait_medium_tank_hunters_tank_destoryer
+
+		any_parent = { USA_mio_trait_medium_tank_hunters_tank_destoryer USA_mio_trait_mobile_tank_destroyers }
+
+		mutually_exclusive = { USA_mio_trait_armor_reinforced_sloped_armor_tank_destroyer }
+
+		equipment_bonus = {
+			defense = 0.05
+		}
+		
+		production_bonus = {
+			production_resource_penalty_factor = -0.10
+		}
+	}
+
+	trait = {
+		token = USA_mio_trait_armor_reinforced_sloped_armor_tank_destroyer
+		name = USA_mio_trait_armor_reinforced_sloped_armor_tank_destroyer
+		icon = GFX_generic_mio_department_icon_tank_general_armor
+
+		position = { x = 1 y = 1 }
+		relative_position_id = USA_mio_trait_medium_tank_hunters_tank_destoryer
+
+		any_parent = { USA_mio_trait_medium_tank_hunters_tank_destoryer USA_mio_trait_heavy_mobile_siege_cannons }
+
+		mutually_exclusive = { USA_mio_trait_low_profile_ambushers_tank_destoryer }
+		
+		equipment_bonus = {
+			defense = 0.05
+			armor_value = 0.1
+		}
+	}
+
+	trait = {
+		token = USA_mio_trait_rear_and_low_ammo_compartment_tank_destroyer
+		name = USA_mio_trait_rear_and_low_ammo_compartment_tank_destroyer
+		icon = GFX_generic_mio_department_icon_tank_medium_tank_weapons
+
+		position = { x = 1 y = 1 }
+		relative_position_id = USA_mio_trait_low_profile_ambushers_tank_destoryer
+
+		any_parent = { USA_mio_trait_low_profile_ambushers_tank_destoryer USA_mio_trait_armor_reinforced_sloped_armor_tank_destroyer }
+
+		#mutually_exclusive = { USA_mio_trait_armor_reinforced_sloped_armor_tank_destroyer }
+		
+		#production_bonus = {
+		#	production_resource_penalty_factor = -0.15
+		#}
+
+		limit_to_equipment_type = { medium_tank_destroyer_chassis }
+
+		equipment_bonus = {
+			defense = 0.05
+			breakthrough = 0.05
+			reliability = 0.1
+		}
+	}
+	
+	trait = {
+		token = USA_mio_trait_medium_tank_destroyer_extended_barrel_length
+		name = USA_mio_trait_medium_tank_destroyer_extended_barrel_length
+		icon = GFX_generic_mio_department_icon_tank_heavy_tank_production
+
+		position = { x = 2 y = 2 }
+		relative_position_id = USA_mio_trait_medium_tank_hunters_tank_destoryer
+
+		any_parent = { USA_mio_trait_medium_tank_hunters_tank_destoryer USA_mio_trait_heavy_mobile_siege_cannons }
+
+		#mutually_exclusive = { USA_mio_trait_armor_reinforced_sloped_armor_tank_destroyer }
+		
+		#production_bonus = {
+		#	production_resource_penalty_factor = -0.15
+		#}
+
+		equipment_bonus = {
+			ap_attack = 0.05
+			soft_attack = 0.05
+			reliability = -0.05
+			breakthrough = 0.05
+		}
+	}
+
+	trait = {
+		token = USA_mio_trait_heavy_mobile_siege_cannons
+		name = USA_mio_trait_heavy_mobile_siege_cannons
+		icon = GFX_generic_mio_department_icon_tank_heavy_tank_at
+		
+		position = { x = 6  y = 0 }
+
+		relative_position_id = USA_mio_trait_mobile_tank_destroyers
+		
+		#all_parents = { USA_mio_trait_mobile_tank_destroyers }
+
+		#mutually_exclusive = { USA_mio_trait_light_tank_destroyer_gun_improved_muzzle_breaks }
+
+		limit_to_equipment_type = { heavy_tank_destroyer_chassis }
+
+		equipment_bonus = {
+			maximum_speed = -0.1
+			ap_attack = 0.25
+		}
+	}
+
+	trait = {
+		token = USA_mio_traitfully_cast_turret_tank_destroyer_gun
+		name = generic_mio_trait_fully_cast_turret_assault_gun
+		icon = GFX_generic_mio_trait_icon_armor_value
+
+		position = { x = 0 y = 1 }
+		relative_position_id = USA_mio_trait_heavy_mobile_siege_cannons
+
+		all_parents = { USA_mio_trait_heavy_mobile_siege_cannons }
+
+		limit_to_equipment_type = { heavy_tank_destroyer_chassis }
+		
+		equipment_bonus = {
+			armor_value = 0.05
+			defense = 0.05
+		}
+	}
+
+	trait = {
+		token = USA_mio_trait_tank_destroyer_gun_improved_tracks
+		name = generic_mio_trait_assault_gun_improved_tracks
+		icon = GFX_generic_mio_department_icon_tank_general_engine
+
+		position = { x = 1 y = 2 }
+		relative_position_id = USA_mio_trait_heavy_mobile_siege_cannons
+
+		all_parents = { USA_mio_trait_heavy_mobile_siege_cannons }
+
+		limit_to_equipment_type = { heavy_tank_destroyer_chassis }
+		
+		equipment_bonus = {
+			maximum_speed = 0.1
+			reliability = 0.05
+		}
+	}
+
+	trait = {
+		token = USA_mio_trait_medium_tank_destroyer_gun_high_velocity_rounds
+		name = USA_mio_trait_medium_tank_destroyer_gun_high_velocity_rounds
+		icon = GFX_generic_mio_department_icon_tank_general_weapons 
+
+		position = { x = 0 y = 1 }
+		relative_position_id = USA_mio_trait_rear_and_low_ammo_compartment_tank_destroyer
+
+		all_parents = { USA_mio_trait_rear_and_low_ammo_compartment_tank_destroyer }
+
+		available = {
+			owner = {
+				has_tech = antitank2
+			}
+		}
+
+		#mutually_exclusive = { USA_mio_trait_armor_reinforced_sloped_armor_tank_destroyer }
+		
+		#production_bonus = {
+		#	production_resource_penalty_factor = -0.15
+		#}
+
+		limit_to_equipment_type = { medium_tank_destroyer_chassis }
+
+		equipment_bonus = {
+			breakthrough = 0.15
+			ap_attack = 0.15
+			reliability = -0.1
+		}
+	}
+}
+
+USA_buick_tank_destroyer_board_organization = {
+	name = USA_buick_tank_destroyer_board_organization
+	include = generic_mobile_tank_organization
+	icon = GFX_idea_buick
+	allowed = {	
+		OR = {
+			original_TAG = USA
+			TAG = USA
+			AND = {
+				tag = HAW
+				#has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+			}
+		}
+	}
+	available = {
+		IF = {
+			limit = {
+				FROM = {
+					TAG = HAW
+				}
+			}
+			FROM = {
+				OR = {
+					has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+					#has_country_flag = HAW_USA_tanke_jishu_over_flag
+				}
+				
+			}
+		}
+	}
+	initial_trait = {
+		name = ROM_mio_trait_mobile_tank_destroyers
+		
+		limit_to_equipment_type = { 
+			mio_cat_eq_all_tank_destroyers
+		}
+		
+		equipment_bonus = {
+			reliability = 0.05
+			hard_attack = 0.05
+			ap_attack = 0.05
+		}
+	}
+
+	override_trait = {
+		token = generic_mio_enlarged_breech
+		limit_to_equipment_type = { 
+			mio_cat_eq_all_tank_destroyers
+		}
+		equipment_bonus = {
+			hard_attack = 0.05
+			ap_attack = 0.1
+		}
+		special_trait_background = yes
+	}
+}
+
+
+
+USA_lima_company_organization = {
+	include = generic_tank_refurbishment_plant_organization
+	icon = GFX_idea_generic_tank_manufacturer_3
+	
+	allowed = {	 
+		OR = {
+			original_TAG = USA
+			TAG = USA
+			AND = {
+				TAG = HAW
+				#has_country_flag = HAW_lima_jiche_chang_over_flag
+			}
+			
+		}		
+	}
+	
+	visible = {
+		
+	}
+	
+	available = {
+		IF = {
+			limit = {
+				FROM = {
+					TAG = HAW
+				}
+			}
+			FROM = {
+				OR = {
+					has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+					has_country_flag = HAW_lima_jiche_chang_over_flag
+				}
+				
+			}
+		}
+	}
+
+	add_trait = {
+		token = generic_mio_trait_compulsory_tank_designer
+		name = generic_mio_trait_compulsory_tank_designer
+		icon = GFX_generic_mio_department_icon_tank_general_production
+		special_trait_background = yes
+
+		position = { x=8 y=2 }
+		relative_position_id = generic_mio_trait_enemy_tank_refitting
+
+		visible = {
+			FROM = { 
+				original_tag = USA
+			}
+		}
+
+		available = {
+			
+		}
+
+		limit_to_equipment_type = { armor }
+
+		equipment_bonus = {
+			armor_value = 0.05
+		}
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.025
+		}
+	}
+
+	add_trait = {
+		token = generic_mio_trait_off_the_board_designs
+		name = generic_mio_trait_off_the_board_designs
+		icon = GFX_generic_mio_department_icon_tank_general_line_efficiency
+		special_trait_background = yes
+
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_compulsory_tank_designer
+
+		visible = {
+			FROM = { 
+				original_tag = USA
+			}
+		}
+
+		all_parents = { generic_mio_trait_compulsory_tank_designer }
+
+		limit_to_equipment_type = { armor }
+
+		production_bonus = {
+			production_capacity_factor = 0.03
+			production_efficiency_gain_factor = 0.03
+		}
+	}
+
+	add_trait = {
+		token = generic_mio_trait_armor_improvements
+		name = generic_mio_trait_armor_improvements
+		icon = GFX_generic_mio_department_icon_tank_general_armor
+		special_trait_background = yes
+
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_off_the_board_designs
+
+		visible = {
+			FROM = { 
+				original_tag = USA
+			}
+		}
+
+		all_parents = { generic_mio_trait_off_the_board_designs }
+
+		limit_to_equipment_type = { armor }
+
+		equipment_bonus = {
+			defense = 0.05
+			armor_value = 0.05
+		}
+	}
+
+	# override_trait = {
+	# 	token = generic_mio_trait_flying_fortress
+	# 	position = { x=-1 y=1 }
+	# }
+}
+
+
+
+
+#####################
+
+ ## #  # ### ###   ## 
+#   #  #  #  #  # #   
+ #  ####  #  ###   #  
+  # #  #  #  #      # 
+##  #  # ### #    ##  
+ 
+#####################
+
+
+USA_norfolk_naval_yard_organization = {
+	include = generic_escort_ship_organization
+	icon = GFX_idea_norfolk_naval_yard
+	allowed = {	
+		OR = {
+			original_TAG = USA
+			TAG = USA
+			AND = {
+				tag = HAW
+				#has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+			}
+		}
+		#tag = USA 
+	}
+
+	available = {
+		IF = {
+			limit = {
+				FROM = {
+					TAG = HAW
+				}
+			}
+			FROM = {
+				OR = {
+					has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+					#has_country_flag = HAW_lima_jiche_chang_over_flag
+				}
+				
+			}
+		}
+	}
+
+	add_trait = { 
+		token = USA_mio_trait_shipyard_expansion
+		name = USA_mio_trait_shipyard_expansion
+		icon = GFX_generic_mio_trait_icon_production_capacity
+		special_trait_background = yes
+
+		position = { x=2 y=0 }
+
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}
+	}
+
+	add_trait = { 
+		token = USA_mio_trait_naval_station_norfolk
+		name = USA_mio_trait_naval_station_norfolk
+		icon = GFX_generic_mio_trait_icon_naval_range
+		special_trait_background = yes
+
+		all_parents = { USA_mio_trait_shipyard_expansion }
+
+		position = { x=0 y=1 }
+		relative_position_id = USA_mio_trait_shipyard_expansion
+
+		equipment_bonus = {
+			reliability = 0.1
+			naval_range = 0.1
+		}
+	}
+
+}
+
+USA_electric_boat_company_organization = {
+	include = generic_submarine_organization
+	icon = GFX_idea_electric_boat_company
+	allowed = {	
+		OR = {
+			original_TAG = USA
+			tag = USA 
+			PHI_SEA = yes
+			AND = {
+				tag = HAW
+				#has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+			}
+		}
+	}
+
+	available = {
+		IF = {
+			limit = {
+				FROM = {
+					TAG = HAW
+				}
+			}
+			FROM = {
+				OR = {
+					has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+					#has_country_flag = HAW_lima_jiche_chang_over_flag
+				}
+				
+			}
+		}
+		IF = {
+			limit = {
+				FROM = { NOT = { original_tag = USA } }
+			}
+			FROM = { NOT = { has_war_with = USA } }
+		}
+		
+		if = {
+			limit = {
+				FROM = {
+					original_tag = PHI
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_completed_focus = PHI_declare_military_emergency
+					}
+				}
+				FROM = {
+					has_completed_focus = PHI_declare_military_emergency
+				}
+			}
+			else = {
+				FROM = {
+					has_completed_focus = PHI_align_with_the_usa
+				}
+			}
+		}
+	}
+
+	add_trait = { 
+		token = USA_mio_trait_gould_centrifugal_pump
+		name = USA_mio_trait_gould_centrifugal_pump
+		icon = GFX_generic_mio_trait_icon_sub_visibility
+		special_trait_background = yes
+
+		any_parent = { generic_mio_trait_efficient_fuel_engines generic_mio_trait_high_powered_engines }
+
+		position = { x=-1 y=1 }
+		relative_position_id = generic_mio_trait_efficient_fuel_engines
+
+		equipment_bonus = {
+			sub_visibility = -0.03
+		}
+	}
+
+	add_trait = { 
+		token = USA_mio_trait_radar_experimentation
+		name = USA_mio_trait_radar_experimentation
+		icon = GFX_generic_mio_trait_icon_surface_detection
+		special_trait_background = yes
+
+		all_parents = { generic_mio_trait_experimental_anechoic_tiles generic_mio_trait_improved_torpedo_detonators }
+
+		available = {
+			FROM = {
+				has_tech = centimetric_radar
+			}
+		}
+
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_experimental_anechoic_tiles
+
+		equipment_bonus = {
+			sub_visibility = -0.03
+			surface_detection = 0.03
+		}
+	}
+
+	add_trait = {
+		token = PHI_mio_trait_ethanol_fuel_adaptations
+		name = PHI_mio_trait_ethanol_fuel_adaptations
+		icon = GFX_generic_mio_trait_icon_fuel_consumption
+		special_trait_background = yes
+
+		position = { x = 9 y = 0 }  
+		
+		visible = {
+			FROM = { original_tag = PHI }
+		}
+
+		available = {
+		}
+
+		on_complete = {
+		}
+
+		equipment_bonus = {
+			fuel_consumption = -0.05
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
+
+	add_trait = {
+		token = PHI_mio_trait_coconut_fuel_adaptations
+		name = PHI_mio_trait_coconut_fuel_adaptations
+		icon = GFX_generic_mio_trait_icon_fuel_consumption
+		special_trait_background = yes
+
+		position = { x = 0 y = 1 }  
+		
+		visible = {
+			FROM = { original_tag = PHI }
+		}
+
+		available = {
+			FROM = {
+				PHI_vicente_lava = {
+					is_hired_as_advisor = yes
+				}
+			}
+		}
+
+		relative_position_id = PHI_mio_trait_ethanol_fuel_adaptations
+		any_parent = { PHI_mio_trait_ethanol_fuel_adaptations }
+
+		on_complete = {
+		}
+
+		equipment_bonus = {
+			fuel_consumption = -0.10
+			reliability = -0.05
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
+
+}
+
+USA_brooklyn_naval_yard_organization = {
+	include = generic_battle_line_ship_organization
+	icon = GFX_idea_brooklyn_naval_yard
+	allowed = {	
+		OR = {
+			original_TAG = USA
+			TAG = USA
+			AND = {
+				tag = HAW
+				#has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+			}
+		}
+	}
+
+	available = {
+		IF = {
+			limit = {
+				FROM = {
+					TAG = HAW
+				}
+			}
+			FROM = {
+				OR = {
+					has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+					#has_country_flag = HAW_lima_jiche_chang_over_flag
+				}
+				
+			}
+		}
+	}
+
+	add_trait = { 
+		token = USA_mio_trait_the_can_do_shipyard
+		name = USA_mio_trait_the_can_do_shipyard
+		icon = GFX_generic_mio_trait_icon_production_capacity
+		special_trait_background = yes
+
+		all_parents = {   }
+
+		position = { x=3 y=0 }
+
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}
+	}
+
+	add_trait = { 
+		token = USA_mio_trait_drydock_expansion
+		name = USA_mio_trait_drydock_expansion
+		icon = GFX_generic_mio_department_icon_ship_capital_ship_production
+		special_trait_background = yes
+
+		limit_to_equipment_type = {
+			capital_ship
+		}
+
+		all_parents = { USA_mio_trait_the_can_do_shipyard }
+
+		position = { x=0 y=1 }
+		relative_position_id = USA_mio_trait_the_can_do_shipyard
+
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}
+	}
+}
+
+USA_newport_news_shipbuilding_organization = {
+	include = generic_task_force_ship_organization
+	icon = GFX_idea_newport_news_shipbuilding
+	allowed = {	
+		OR = {
+			original_TAG = USA
+			tag = USA
+			AND = {
+				tag = BRA
+				has_dlc = "Trial of Allegiance"
+			}
+			AND = {
+				tag = HAW
+				#has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+			}
+		}
+	}
+	available = {
+		IF = {
+			limit = {
+				FROM = {
+					TAG = HAW
+				}
+			}
+			FROM = {
+				OR = {
+					has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+					#has_country_flag = HAW_lima_jiche_chang_over_flag
+				}
+				
+			}
+		}
+		IF = {
+			limit = {
+				FROM = { NOT = { original_tag = USA } }
+			}
+			FROM = { NOT = { has_war_with = USA } }
+		}
+		IF = {
+			limit = { FROM = { original_tag = BRA } }
+			custom_trigger_tooltip = {
+				tooltip = has_invited_mio_tt
+				FROM = {
+					has_completed_focus = BRA_invite_foreign_companies
+					has_country_flag = has_newport_news_shipbuilding_mio_flag
+				}
+			}
+		}
+	}
+
+	initial_trait = {
+		name = USA_mio_trait_carrier_specialists
+		
+		limit_to_equipment_type = { 
+			carrier
+		}
+		
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}
+
+	}
+
+	add_trait = { 
+		token = USA_mio_trait_north_carolina_shipbuilding_company
+		name = USA_mio_trait_north_carolina_shipbuilding_company
+		icon = GFX_generic_mio_department_icon_ship_screen_ship_production
+		special_trait_background = yes
+
+		limit_to_equipment_type = {
+			screen_ship
+		}
+
+		all_parents = {  }
+
+		position = { x=3 y=0 }
+
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}
+	}
+
+}
+
+###########################
+
+###  #    ##  #  # ###  ## 
+#  # #   #  # ## # #   #   
+###  #   #### # ## ##   #  
+#    #   #  # #  # #     # 
+#    ### #  # #  # ### ##  
+
+###########################
+
+USA_north_american_aviation_organization = {
+	include = generic_light_aircraft_organization
+	icon = GFX_idea_north_american_aviation
+	
+	allowed = {	
+		OR = {
+			original_TAG = USA
+			tag = USA 
+			AND = {
+				tag = BRA
+				has_dlc = "Trial of Allegiance"
+			}
+			PHI_SEA = yes
+			AND = {
+				tag = HAW
+				#has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+			}
+		}
+	}
+
+	available = {
+		IF = {
+			limit = {
+				FROM = {
+					TAG = HAW
+				}
+			}
+			FROM = {
+				OR = {
+					has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+					#has_country_flag = HAW_lima_jiche_chang_over_flag
+				}
+				
+			}
+		}
+		IF = {
+			limit = {
+				FROM = { NOT = { original_tag = USA } }
+			}
+			FROM = { NOT = { has_war_with = USA } }
+		}
+		IF = {
+			limit = { FROM = { original_tag = BRA } }
+			custom_trigger_tooltip = {
+				tooltip = has_invited_mio_tt
+				FROM = {
+					has_completed_focus = BRA_invite_foreign_companies
+					has_country_flag = has_invited_north_american_aviation_mio_flag
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					original_tag = PHI
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_completed_focus = PHI_declare_military_emergency
+					}
+				}
+				FROM = {
+					has_completed_focus = PHI_declare_military_emergency
+				}
+			}
+			else = {
+				FROM = {
+					has_completed_focus = PHI_align_with_the_usa
+				}
+			}
+		}
+	}
+
+	initial_trait = {
+		name = USA_mio_trait_light_long_range_aircraft
+	}
+	
+	add_trait = {
+		token = USA_mio_trait_outsourced_engines
+		name = USA_mio_trait_outsourced_engines
+		icon = GFX_generic_mio_trait_icon_air_agility
+		special_trait_background = yes
+		
+		position = { x=0 y=1 }  
+		relative_position_id =  generic_mio_trait_expanded_production_facilities
+		
+		all_parents= {  generic_mio_trait_expanded_production_facilities }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_small_plane }
+
+		available = {
+			FROM = {
+				is_in_faction_with = ENG	
+			}
+		}
+		
+		equipment_bonus = {
+			air_agility = 0.05
+			maximum_speed = 0.05
+		}
+	}
+
+	add_trait = {
+		token = USA_mio_trait_light_aircraft_development
+		name = USA_mio_trait_light_aircraft_development
+		icon = GFX_generic_mio_department_icon_plane_light_combat
+		special_trait_background = yes
+		
+		position = { x=0 y=1 }  
+		relative_position_id = USA_mio_trait_outsourced_engines
+		
+		all_parents = { USA_mio_trait_outsourced_engines }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_small_plane }
+
+		equipment_bonus = {
+			air_agility = 0.05
+			air_ground_attack = 0.05
+			air_attack = 0.02
+		}
+	}
+
+	add_trait = {
+		token = GER_mio_trait_maintenance_first_design
+		name = GER_mio_trait_maintenance_first_design
+
+		icon = GFX_generic_mio_department_icon_plane_fighter_line_efficiency
+		special_trait_background = yes
+		
+		position = { x=-2 y=1 }
+		relative_position_id = generic_mio_trait_expanded_production_facilities
+
+		all_parents =  {generic_mio_trait_expanded_production_facilities }
+
+		equipment_bonus = {
+			reliability = 0.05
+		}
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.05
+		}
+	}
+
+	add_trait = {
+		token = GER_mio_trait_fuselage_based_weapons
+		name = GER_mio_trait_fuselage_based_weapons
+
+		icon = GFX_generic_mio_trait_icon_anti_air_attack
+		special_trait_background = yes
+		
+		position = { x=0 y=1 }
+		relative_position_id = GER_mio_trait_maintenance_first_design
+
+		all_parents = {GER_mio_trait_maintenance_first_design }
+
+		equipment_bonus = {
+			air_attack = 0.05
+			air_agility = 0.05
+		} 
+	}
+
+
+	add_trait = {
+		token = PHI_mio_trait_engine_filters
+		name = PHI_mio_trait_engine_filters
+		icon = GFX_generic_mio_trait_icon_reliability
+		special_trait_background = yes
+
+		position = { x = 1 y = 0 }  
+		
+		visible = {
+			FROM = { original_tag = PHI }
+		}
+
+		available = {
+		}
+
+		on_complete = {
+		}
+
+		equipment_bonus = {
+			reliability = 0.10
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}	
+}
+
+USA_lockheed_organization = {
+	include = generic_medium_aircraft_organization
+	icon = GFX_idea_lockheed
+	
+	allowed = {	
+		OR = {
+			original_TAG = USA
+			tag = USA 
+			PHI_SEA = yes
+			AND = {
+				tag = HAW
+				#has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+			}
+		}
+	}
+
+	available = {
+		IF = {
+			limit = {
+				FROM = {
+					TAG = HAW
+				}
+			}
+			FROM = {
+				OR = {
+					has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+					#has_country_flag = HAW_lima_jiche_chang_over_flag
+				}
+				
+			}
+		}
+		IF = {
+			limit = {
+				FROM = { NOT = { original_tag = USA } }
+			}
+			FROM = { NOT = { has_war_with = USA } }
+		}
+		
+		if = {
+			limit = {
+				FROM = {
+					original_tag = PHI
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_completed_focus = PHI_declare_military_emergency
+					}
+				}
+				FROM = {
+					has_completed_focus = PHI_declare_military_emergency
+				}
+			}
+			else = {
+				FROM = {
+					has_completed_focus = PHI_align_with_the_usa
+				}
+			}
+		}
+	}
+	
+	equipment_type = {
+		mio_cat_eq_all_medium_plane 
+		transport_plane_equipment
+	}
+	
+	initial_trait = {
+		name = USA_mio_trait_medium_long_range_aircraft
+		limit_to_equipment_type = { mio_cat_eq_all_medium_plane }
+
+		equipment_bonus = {
+			air_range = 0.15
+			air_attack = 0.05
+		}
+	}
+	
+	add_trait = {
+		token = USA_mio_trait_mechanized_production
+		name = USA_mio_trait_mechanized_production
+		icon = GFX_generic_mio_department_icon_plane_medium_technology
+		special_trait_background = yes
+		
+		position = { x=0 y=1 }  
+		relative_position_id = generic_mio_trait_narrow_build
+		
+		any_parent = { generic_mio_trait_narrow_build }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_medium_plane }
+		
+		production_bonus = {
+			production_efficiency_cap_factor = 0.05
+		} 
+	}
+	
+	override_trait = {
+		token = generic_mio_trait_heavy_fighter_specialization
+		equipment_bonus = {
+			air_range = 0.1
+			air_attack = 0.05
+		}
+	}
+}
+
+USA_douglas_aircraft_company_organization = {
+	include = generic_cas_aircraft_organization
+	icon = GFX_idea_douglas_aircraft_company
+	
+	allowed = {	
+		OR = {
+			original_TAG = USA
+			TAG = USA
+			AND = {
+				tag = HAW
+				#has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+			}
+		}
+	}
+
+	available = {
+		IF = {
+			limit = {
+				FROM = {
+					TAG = HAW
+				}
+			}
+			FROM = {
+				OR = {
+					has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+					#has_country_flag = HAW_lima_jiche_chang_over_flag
+				}
+				
+			}
+		}
+	}
+
+	override_trait = {
+		token = generic_mio_trait_low_altitude_attacks
+		position = { x=3 y=0 }
+	}
+
+	add_trait = {
+		token = USA_mio_trait_remote_controlled_turrets
+		name = USA_mio_trait_remote_controlled_turrets
+		icon = GFX_generic_mio_trait_icon_air_attack
+
+		special_trait_background = yes
+		
+		position = { x=0 y=1 }  
+		relative_position_id = generic_mio_trait_low_altitude_attacks
+		
+		available = {
+			FROM = {
+				has_tech = computing_machine
+			}
+		}
+
+		any_parent = { generic_mio_trait_low_altitude_attacks }
+			
+		equipment_bonus = {
+			air_attack = 0.1
+		}
+	}
+
+	add_trait = {
+		token = USA_mio_trait_specialist_nose_configurations
+		name = USA_mio_trait_specialist_nose_configurations
+		icon = GFX_generic_mio_department_icon_plane_cas_combat
+
+		special_trait_background = yes
+		
+		position = { x=0 y=2 }  
+		relative_position_id = generic_mio_trait_heavily_armed_aircraft
+
+		any_parent = { generic_mio_trait_air_brakes generic_mio_trait_wingborne_fuel_tanks }
+		any_parent = {generic_mio_trait_heavily_armed_aircraft }
+			
+		equipment_bonus = {
+			air_ground_attack = 0.1
+		}
+	}
+}
+
+USA_boeing_organization = {
+	include = generic_heavy_aircraft_organization
+	icon = GFX_idea_boeing
+	
+	allowed = {	
+		OR = {
+			original_TAG = USA
+			TAG = USA
+			AND = {
+				tag = HAW
+				#has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+			}
+		}
+	}
+
+	available ={
+		IF = {
+			limit = {
+				FROM = {
+					TAG = HAW
+				}
+			}
+			FROM = {
+				OR = {
+					has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+					#has_country_flag = HAW_lima_jiche_chang_over_flag
+				}
+				
+			}
+		}
+	}
+	
+	override_trait = {
+		token = generic_mio_trait_flying_fortress
+		position = { x=-1 y=1 }
+	}
+	
+	override_trait = {
+		token = generic_mio_trait_advanced_instruments
+		position = { x=1 y=1 }
+	}
+	
+	add_trait = {
+		token = USA_mio_trait_superfortress
+		name = USA_mio_trait_superfortress
+		icon = GFX_generic_mio_department_icon_plane_general_engine
+		special_trait_background = yes
+		
+		position = { x=0 y=1 }  
+		relative_position_id = generic_mio_trait_flying_fortress
+		
+		any_parent = { generic_mio_trait_flying_fortress }
+		limit_to_equipment_type = { mio_cat_eq_only_strategic_bomber large_plane_maritime_patrol_plane_airframe }
+			
+		equipment_bonus = {
+			air_defence = 0.1
+			air_range = 0.1
+			air_agility = -0.05
+			fuel_consumption = 0.05
+		}
+	}
+
+	add_trait = {
+		token = USA_mio_yinqing
+		name = USA_mio_yinqing
+		icon = GFX_generic_mio_department_icon_plane_heavy_engine
+		special_trait_background = yes
+		
+		position = { x=3 y=0 }
+		relative_position_id = generic_mio_trait_reinforced_frames
+
+		available={
+			owner = {
+				has_completed_focus=USA_strategic_bombing
+			}		
+		}
+		equipment_bonus = {
+			maximum_speed = 0.05
+			air_bombing = 0.05
+		} 
+	} 
+
+	add_trait = {
+		token = GER_mio_trait_advanced_night_equipment
+		name = GER_mio_trait_advanced_night_equipment
+		icon = GFX_generic_mio_trait_icon_detection
+		special_trait_background = yes
+		
+		position = { x=-1 y=1 }
+		relative_position_id = generic_mio_trait_pressurized_cockpit
+		all_parents = { generic_mio_trait_pressurized_cockpit }
+
+		equipment_bonus = {
+			night_penalty = -0.05
+		} 
+	} 
+
+	add_trait = {
+		token = GER_mio_trait_stepless_cockpit
+		name = GER_mio_trait_stepless_cockpit
+		icon = GFX_generic_mio_trait_icon_strategic_attack
+		special_trait_background = yes
+		
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_trait_pressurized_cockpit
+		all_parents = { generic_mio_trait_pressurized_cockpit }
+
+		limit_to_equipment_type = { mio_cat_eq_only_strategic_bomber }
+
+		equipment_bonus = {
+			air_bombing = 0.05
+		} 
+	} 	
+}
+
+USA_grumman_organization = {
+	include = generic_naval_aircraft_organization
+	icon = GFX_idea_grumman
+	
+	allowed = {	 
+		OR = {
+			original_TAG = USA
+			TAG = USA
+			AND = {
+				tag = HAW
+				#has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+			}
+		}
+	}
+
+	available = {
+		IF = {
+			limit = {
+				FROM = {
+					TAG = HAW
+				}
+			}
+			FROM = {
+				OR = {
+					has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+					#has_country_flag = HAW_lima_jiche_chang_over_flag
+				}
+				
+			}
+		}
+	}
+	
+	add_trait = {
+		token = USA_mio_trait_smooth_finish
+		name = USA_mio_trait_smooth_finish
+		icon = GFX_generic_mio_trait_icon_air_agility
+		special_trait_background = yes
+		
+		position = { x=2 y=1 }  
+		relative_position_id = generic_mio_trait_reinforced_fuselage
+		
+		any_parent = { generic_mio_trait_reinforced_fuselage }
+		limit_to_equipment_type = { mio_cat_eq_all_cv_aircraft small_plane_naval_bomber_airframe }
+			
+		equipment_bonus = {
+			air_agility = 0.05
+			maximum_speed = 0.05
+		}
+	}
+	
+	override_trait = {
+		token = generic_mio_advanced_materials
+		position = { x=-1 y=1 }
+	}
+	
+	add_trait = {
+		token = USA_mio_trait_jet_fighter_design
+		name = USA_mio_trait_jet_fighter_design
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+		special_trait_background = yes
+
+		available = {
+			FROM = {
+				is_special_project_completed = sp:sp_air_jet_engine
+			}
+		}
+		position = { x=1 y=1 }  
+		relative_position_id = generic_mio_water_injection
+		
+		any_parent = { generic_mio_water_injection }
+		limit_to_equipment_type = { mio_cat_eq_all_cv_aircraft }
+			
+		equipment_bonus = {
+			maximum_speed = 0.1
+		}
+	}
+
+	add_trait = {
+		token = GER_mio_trait_maintenance_first_design
+		name = GER_mio_trait_maintenance_first_design
+
+		icon = GFX_generic_mio_department_icon_plane_fighter_line_efficiency
+		special_trait_background = yes
+		
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_high_speed_torpedo_release
+
+		all_parents =  {generic_mio_trait_high_speed_torpedo_release }
+
+		equipment_bonus = {
+			air_attack = 0.05
+			naval_strike_attack =0.05
+		}
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.05
+		}
+	}
+
+	add_trait = {
+		token = GER_mio_trait_fuselage_based_weapons
+		name = GER_mio_trait_fuselage_based_weapons
+
+		icon = GFX_generic_mio_trait_icon_anti_air_attack
+		special_trait_background = yes
+		
+		position = { x=0 y=1 }
+		relative_position_id = GER_mio_trait_maintenance_first_design
+
+		all_parents = {GER_mio_trait_maintenance_first_design }
+
+		equipment_bonus = {
+			naval_strike_attack = 0.05
+			air_agility = 0.05
+		} 
+	}
+}
+
+USA_Curtiss_Wright_organization = {
+	include = generic_multi_role_aircraft_organization
+	icon = GFX_idea_write
+	allowed = {	 
+		OR = {
+			original_TAG = USA
+			TAG = USA
+			AND = {
+				tag = HAW
+				#has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+			}
+		}
+	}
+
+	available = {
+		IF = {
+			limit = {
+				FROM = {
+					TAG = HAW
+				}
+			}
+			FROM = {
+				OR = {
+					has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+					#has_country_flag = HAW_lima_jiche_chang_over_flag
+				}
+				
+			}
+		}
+	}
+
+	tree_header_text = {
+		text = mio_header_light_aircraft
+		x = 2
+	}
+
+	tree_header_text = {
+		text = mio_header_medium_aircraft
+		x = 6
+	}
+
+
+	override_trait = {
+		token = generic_mio_trait_armored_cockpit
+
+		position = { x=2 y=0 }
+	}
+
+	override_trait = {
+		token = generic_mio_trait_escort_designs
+
+		position = { x=4 y=0 }
+	}
+	override_trait = {
+		token = generic_mio_trait_not_enough_guns_never_enough_guns
+
+		position = { x=2 y=0 }
+		relative_position_id = generic_mio_trait_upgraded_engines
+	}
+
+	
+
+
+	add_trait = {
+		token = USA_mio_trait_expanded_production_facilities
+		name = USA_mio_trait_expanded_production_facilities
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		position = { x=1 y=0 }
+		relative_position_id = generic_mio_trait_upgraded_engines
+
+		any_parent = { generic_mio_trait_light_airframe  generic_mio_trait_medium_airframe }
+		production_bonus = {
+			production_cost_factor = -0.05
+			production_capacity_factor = 0.05
+		}
+	}
+
+	add_trait = {
+		token = USA_C46_yunshuji
+		name = USA_C46_yunshuji
+		icon = GFX_generic_mio_department_icon_plane_medium_technology
+		special_trait_background = yes
+		
+		position = { x=3 y=0 }  
+		relative_position_id = generic_mio_trait_escort_designs
+		
+		#any_parent = { USA_P40_fighter }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_medium_plane }
+		
+		production_bonus = {
+			production_efficiency_cap_factor = 0.1
+		} 
+	}	
+}
+
+USA_republic_aviation_organization = {
+	include = generic_high_agility_fighter_aircraft_organization
+	icon = GFX_idea_republic_aviation
+	
+	allowed = {	 
+		OR = {
+			original_TAG = USA
+			TAG = USA
+			AND = {
+				tag = HAW
+				#has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+			}
+		}
+	}
+
+	available = {
+		IF = {
+			limit = {
+				FROM = {
+					TAG = HAW
+				}
+			}
+			FROM = {
+				OR = {
+					has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+					#has_country_flag = HAW_lima_jiche_chang_over_flag
+				}
+				
+			}
+		}
+	}
+
+	equipment_type = {
+		mio_cat_eq_all_small_plane
+	}	
+
+	research_categories = {	
+		mio_cat_all_light_fighter_and_modules 
+			#mio_cat_all_naval_bomber_and_modules 
+			#Could be used to allow Supermarine to research naval bombs, but this could overpower English fighter MIO trait gain early on.
+	}
+
+	override_trait = {
+		token = generic_mio_trait_fuel_injection_engines
+		
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_bigger_engines
+	}
+
+	override_trait = {
+		token = generic_mio_trait_high_octane_fuels
+		
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_trait_bigger_engines
+	}
+
+	override_trait = {
+		token = generic_mio_trait_subsidiary_suppliers
+		
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_fuel_injection_engines
+	}
+
+
+
+	add_trait = { 
+		token = ENG_mio_trait_elliptical_wings
+		name = ENG_mio_trait_elliptical_wings
+		icon = GFX_generic_mio_trait_icon_defense
+		special_trait_background = yes
+
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_cantilever_wing_structure
+
+		any_parent = { generic_mio_trait_cantilever_wing_structure }
+
+		equipment_bonus = {
+			air_defence = 0.1	
+		}
+	}
+
+	add_trait = { 
+		token = ENG_mio_trait_supercharger
+		name = ENG_mio_trait_supercharger
+		icon = GFX_generic_mio_trait_icon_defense
+		special_trait_background = yes
+
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_trait_fuel_injection_engines
+
+		all_parents = { generic_mio_trait_fuel_injection_engines generic_mio_trait_high_octane_fuels }
+
+		equipment_bonus = {
+			air_defence = 0.1	
+		}
+	}
+
+	
+
+}
+
+
+################################### 
+
+#   #  ##  ### ### ###  ### ### #   
+## ## #  #  #  #   #  #  #  #   #   
+# # # ####  #  ##  ###   #  ##  #   
+#   # #  #  #  #   #  #  #  #   #   
+#   # #  #  #  ### #  # ### ### ### 
+
+
+###################################
+
+USA_springfield_armory_organization = {
+	include = generic_infantry_equipment_organization
+	icon = GFX_idea_springfield_armory
+	
+	allowed = {	 
+		OR = {
+			original_TAG = USA
+			tag = USA 
+			AND = {
+				original_tag = PHI 
+				has_dlc = "No Compromise, No Surrender"
+			}
+
+			AND = {
+				TAG = HAW
+				#has_country_flag = HAW_chuntian_shejiju_over_flag
+			}
+			
+		}
+	}
+
+	available = {
+		IF = {
+			limit = {
+				FROM = {
+					TAG = HAW
+				}
+			}
+			FROM = {
+				OR = {
+					has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+					has_country_flag = HAW_chuntian_shejiju_over_flag
+				}
+				
+			}
+		}
+		IF = {
+			limit = {
+				FROM = { NOT = { original_tag = USA } }
+			}
+			FROM = { NOT = { has_war_with = USA } }
+		}
+
+		if = {
+			limit = {
+				FROM = {
+					original_tag = PHI
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_completed_focus = PHI_declare_military_emergency
+					}
+				}
+				FROM = {
+					has_completed_focus = PHI_declare_military_emergency
+				}
+			}
+			else = {
+				FROM = {
+					has_completed_focus = PHI_align_with_the_usa
+				}
+			}
+		}
+	}
+
+
+	add_trait = {
+		token = GER_mio_trait_export_models
+		name = USA_mio_daoqishi
+		icon = GFX_generic_mio_trait_icon_production_capacity
+		special_trait_background = yes
+
+		position = { x=1 y=1 }  
+		relative_position_id = generic_mio_trait_drum_pattern_sights
+		all_parents={generic_mio_trait_drum_pattern_sights}
+		visible = {
+		}
+
+		equipment_bonus = {
+			soft_attack = 0.03
+		}
+		production_bonus = {
+			production_capacity_factor = 0.01
+		}
+		
+		ai_will_do = {
+			base = 2
+		}
+	}
+
+	add_trait = {
+		token = GER_mio_trait_sturmgewehr
+		name = GER_mio_trait_sturmgewehr
+		icon = GFX_generic_mio_department_icon_infantry_offense
+		special_trait_background = yes
+
+		position = { x=2 y=2 }
+		relative_position_id = generic_mio_trait_bolt_action
+
+		any_parent = { generic_mio_trait_semi_auto generic_mio_trait_bolt_action }
+
+		visible = {
+		}
+
+		available = {
+			FROM = {
+				has_tech = advanced_infantry_weapons
+			}
+		}
+
+		equipment_bonus = {
+			soft_attack = 0.03
+			breakthrough = 0.01
+		}
+
+		production_bonus = {
+			production_cost_factor = 0.03
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
+
+	add_trait = {
+		token = GER_mio_trait_experienced_manufacturer
+		name = USA_mio_guangxuemiaozhunjing
+		icon = GFX_generic_mio_department_icon_infantry_offense
+		special_trait_background = yes
+
+		position = { x=0 y=1 }  
+		relative_position_id = generic_mio_trait_quality_materials
+		all_parents={generic_mio_trait_quality_materials}
+		visible = {
+		}
+
+		equipment_bonus = {
+			soft_attack = 0.05
+		}
+
+		production_bonus = {
+			production_cost_factor = 0.02
+		}
+		ai_will_do = {
+			base = 2
+		}
+	}
+
+}
+
+USA_jiaerwen_organization = {
+	include = generic_support_equipment_organization
+	icon = GFX_idea_jiaerwen
+	
+	allowed = {	 
+		OR = {
+			original_TAG = USA
+			tag = USA 
+			AND = {
+				original_tag = PHI 
+				has_dlc = "No Compromise, No Surrender"
+			}
+			AND = {
+				tag = HAW
+				#has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+			}
+		}
+	}
+
+	available = {
+		IF = {
+			limit = {
+				FROM = {
+					TAG = HAW
+				}
+			}
+			FROM = {
+				OR = {
+					has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+					#has_country_flag = HAW_lima_jiche_chang_over_flag
+				}
+				
+			}
+		}
+		IF = {
+			limit = {
+				FROM = { NOT = { original_tag = USA } }
+			}
+			FROM = { NOT = { has_war_with = USA } }
+		}
+
+		if = {
+			limit = {
+				FROM = {
+					original_tag = PHI
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_completed_focus = PHI_declare_military_emergency
+					}
+				}
+				FROM = {
+					has_completed_focus = PHI_declare_military_emergency
+				}
+			}
+			else = {
+				FROM = {
+					has_completed_focus = PHI_align_with_the_usa
+				}
+			}
+		}
+	}
+
+	add_trait = { 
+		token = PHI_mio_trait_rugged_construction
+		name = PHI_mio_trait_rugged_construction
+		icon = GFX_generic_mio_trait_icon_reliability
+		special_trait_background = yes
+
+		position = { x=0 y=0 }  
+
+		visible = {
+			FROM = {
+				original_tag = PHI
+			}
+		}
+
+		equipment_bonus = {
+			reliability = 0.05
+		}
+	}
+
+	add_trait = { 
+		token = PHI_mio_trait_use_local_materials
+		name = PHI_mio_trait_use_local_materials
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		position = { x=0 y=1 }  
+
+		visible = {
+			FROM = {
+				original_tag = PHI
+			}
+		}
+
+		any_parent = { PHI_mio_trait_rugged_construction }
+
+		production_bonus = { 
+			production_cost_factor = -0.05 
+		}
+	}
+
+	add_trait = {
+		token = GER_mio_trait_innovative_safety_features
+		name = GER_mio_trait_innovative_safety_features
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		position = { x=1 y=1 } 
+		relative_position_id = generic_mio_trait_private_scientists_program
+		
+		all_parents = { generic_mio_trait_private_scientists_program }
+
+		ai_will_do = {
+			base = 2
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+			military_industrial_organization_design_team_assign_cost = -0.05
+			military_industrial_organization_industrial_manufacturer_assign_cost = -0.05
+		}
+	}
+
+	add_trait = {
+		token = GER_mio_trait_policiary_equipment
+		name = GER_mio_trait_policiary_equipment
+		icon = GFX_generic_mio_department_icon_support_equipment
+		special_trait_background = yes
+
+		position = { x=0 y=1 } 
+		relative_position_id = generic_mio_trait_private_tenders
+		
+		all_parents = { generic_mio_trait_private_tenders }
+
+		ai_will_do = {
+			base = 2
+		}
+
+		limit_to_equipment_type = { support_equipment }
+
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.05
+		}
+
+		equipment_bonus = {
+			build_cost_ic = -0.05
+		}
+	}
+}
+
+USA_ford_motor_company_organization = {
+	include = generic_motorized_mechanized_organization
+	icon = GFX_idea_ford_motor_company
+	
+	allowed = {	 
+		OR = {
+			original_TAG = USA
+			tag = USA 
+			AND = {
+				tag = POL # If Poland sets up a local one
+				OR = {
+					has_dlc = "Poland: United and Ready"
+					has_dlc = "No Step Back"
+				}
+			}
+			AND = {
+				tag = ROM
+				has_dlc = "Death or Dishonor"
+			}
+			tag = MEX # Mexican Ford
+			AND = {
+				tag = GRE # Greek Ford
+				has_dlc = "Battle for the Bosporus"
+			}
+			AND = {
+				OR = {
+					original_TAG = LAT
+					original_TAG = LIT
+					original_TAG = EST
+				}
+				has_dlc = "No Step Back"
+			}
+			AND = {
+				original_TAG = BRA
+				# TODO_JUNO: Add juno DLC name here!!
+				has_dlc = "Arms Against Tyranny"
+			}
+			AND = {
+				original_tag = PHI 
+				has_dlc = "No Compromise, No Surrender"
+			}
+
+			AND = {
+				TAG = HAW
+				#has_country_flag = HAW_ford_shejiju_over_flag
+			}
+			
+		}
+	}
+	
+	visible = {
+		IF = { 
+			limit = {
+				FROM = { tag = POL }
+			}
+			FROM = {
+				has_country_flag = POL_ford_motors
+			}
+		}
+		IF = { 
+			limit = {
+				FROM = { tag = BRA }
+			}
+			FROM = {
+				has_country_flag = BRA_toa_DLC
+			}
+		}
+	}
+	
+	available = {
+		IF = {
+			limit = {
+				FROM = {
+					TAG = HAW
+				}
+			}
+			FROM = {
+				OR = {
+					has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+					has_country_flag = HAW_ford_shejiju_over_flag
+				}
+				
+			}
+		}
+		# When in a Foreign MIO, countries need to be at peace with original country
+		IF = {
+			limit = {
+				FROM = { NOT = { original_tag = USA } }
+			}
+			FROM = { NOT = { has_war_with = USA } }
+		}
+
+		IF = {
+			limit = { FROM = { original_tag = ROM } }
+			FROM = { has_country_flag = USA_mot_chosen }
+		}
+		if = {
+			limit = {
+				FROM = {
+					OR = {
+						original_TAG = LAT
+						original_TAG = LIT
+						original_TAG = EST
+					}
+				}
+			}
+			FROM = {
+				has_completed_focus = BALTIC_ford_motors
+			}
+		}
+		IF = {
+			limit = {
+				FROM = {
+					original_TAG = BRA
+				}
+			}
+			FROM = {
+				has_completed_focus = BRA_expand_fordlandia
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					original_tag = PHI
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_completed_focus = PHI_declare_military_emergency
+					}
+				}
+				FROM = {
+					has_completed_focus = PHI_declare_military_emergency
+				}
+			}
+			else = {
+				FROM = {
+					has_completed_focus = PHI_align_with_the_usa
+				}
+			}
+		}
+	}
+	
+	initial_trait = {
+		equipment_bonus = {
+			build_cost_ic = -0.05
+		}
+	}
+
+	add_trait = {
+		token = GER_mio_trait_ford_facilities
+		name = USA_fute_tt
+		icon = GFX_generic_mio_trait_icon_production_capacity
+		special_trait_background = yes
+
+		position={x=1 y=0}
+		relative_position_id=generic_mio_trait_closed_chassi
+		visible = {
+			FROM = {
+				original_tag = USA
+			}
+
+		}
+
+		available = {
+			owner = {
+				OR={
+					has_completed_focus = USA_focus47
+					has_completed_focus =  USA_focus6
+					has_completed_focus =  USA_america_first
+				}
+				
+			}
+		}
+
+		
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
+
+	add_trait = {
+		token = GER_mio_trait_efficiency_in_mass_production
+		name = GER_mio_trait_efficiency_in_mass_production
+		icon = GFX_generic_mio_trait_icon_efficiency_cap
+		special_trait_background = yes
+
+		position = { x=0 y=1 }
+		relative_position_id = GER_mio_trait_ford_facilities
+
+		any_parent = { GER_mio_trait_ford_facilities }
+
+		visible = {
+			FROM = {
+				original_tag = USA
+			}
+		}
+
+		production_bonus = {
+			production_efficiency_cap_factor = 0.1
+			production_efficiency_gain_factor=0.05
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
+
+	add_trait = {
+		token = GER_mio_trait_improved_engines
+		name = GER_mio_trait_improved_engines
+		icon = GFX_generic_mio_department_icon_motorized_mechanized_engine
+		special_trait_background = yes
+
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_steel_cargo_bed
+
+		any_parent = {generic_mio_trait_steel_cargo_bed}
+
+		visible = {
+			FROM = {
+				original_tag = USA
+			}
+		}
+
+		equipment_bonus = {
+			maximum_speed = 0.05
+			reliability = 0.03
+			build_cost_ic = 0.02
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
+
+	add_trait = {
+		token = PHI_mio_trait_ethanol_fuel_adaptations
+		name = PHI_mio_trait_ethanol_fuel_adaptations
+		icon = GFX_generic_mio_trait_icon_fuel_consumption
+		special_trait_background = yes
+
+		position = { x = 9 y = 0 }  
+		
+		visible = {
+			FROM = { original_tag = PHI }
+		}
+
+		available = {
+		}
+
+		on_complete = {
+		}
+
+		equipment_bonus = {
+			fuel_consumption = -0.05
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
+
+	add_trait = {
+		token = PHI_mio_trait_coconut_fuel_adaptations
+		name = PHI_mio_trait_coconut_fuel_adaptations
+		icon = GFX_generic_mio_trait_icon_fuel_consumption
+		special_trait_background = yes
+
+		position = { x = 0 y = 1 }  
+		
+		visible = {
+			FROM = { original_tag = PHI }
+		}
+
+		available = {
+			FROM = {
+				PHI_vicente_lava = {
+					is_hired_as_advisor = yes
+				}
+			}
+		}
+
+		relative_position_id = PHI_mio_trait_ethanol_fuel_adaptations
+		any_parent = { PHI_mio_trait_ethanol_fuel_adaptations }
+
+		on_complete = {
+		}
+
+		equipment_bonus = {
+			fuel_consumption = -0.10
+			reliability = -0.05
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
+
+}
+
+USA_fmc_company_organization = {
+	#include = generic_armored_car_organization
+	name = USA_fmc_company_organization
+	icon = GFX_idea_fmc
+	
+	allowed = {	 
+		OR = {
+			original_TAG = USA
+			TAG = USA
+			AND = {
+				tag = HAW
+				#has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+			}
+		}
+	}
+	
+	visible = {
+		
+	}
+	
+	available = {
+		IF = {
+			limit = {
+				FROM = {
+					TAG = HAW
+				}
+			}
+			FROM = {
+				OR = {
+					has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+					#has_country_flag = HAW_lima_jiche_chang_over_flag
+				}
+				
+			}
+		}
+	}
+
+	equipment_type = { armored_car_equipment   amphibious_mechanized_equipment mechanized_equipment  }
+	research_categories = { cat_armored_cars  amphibious_mechanized_infantry cat_mechanized_equipment  }
+
+	tree_header_text = {
+		text = mio_header_design_and_production
+		x = 3
+	}
+
+	tree_header_text = {
+		text = mio_header_equipment_and_specialization
+		x = 7
+	}
+
+	
+	initial_trait = {
+		name = USA_armored_car_mot_design_company
+		equipment_bonus = {
+			armor_value = 0.03
+			defense =0.03
+			build_cost_ic = -0.03
+		}
+		production_bonus = {
+			production_cost_factor = -0.05
+		}
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.1
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_simplified_suspension
+		name = generic_mio_trait_simplified_suspension
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		equipment_bonus = {
+			reliability = 0.05
+		}
+		position = { x=1 y=0 }
+	}
+	
+	trait = {
+		token = generic_mio_trait_crew_ergonomics
+		name = generic_mio_trait_crew_ergonomics
+		icon = GFX_generic_mio_trait_icon_defense
+
+
+		equipment_bonus = {
+			maximum_speed = 0.02
+			defense = 0.02
+		}
+		position = { x=4 y=0 }
+		relative_position_id = generic_mio_trait_simplified_suspension
+	}
+	
+	trait = {
+		token = generic_mio_trait_reinforced_wheels
+		name = generic_mio_trait_reinforced_wheels
+		icon = GFX_generic_mio_department_icon_mechanized_engine
+		any_parent = { generic_mio_trait_simplified_suspension }
+
+		equipment_bonus = {
+			reliability = 0.05
+			maximum_speed = 0.05
+		}
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_simplified_suspension
+	}
+
+	trait = {
+		token = generic_mio_trait_command_upgrades
+		name = generic_mio_trait_command_upgrades
+		icon = GFX_generic_mio_trait_icon_breakthrough
+		any_parent = { generic_mio_trait_crew_ergonomics }
+
+
+		equipment_bonus = {
+			breakthrough = 0.05
+		}
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_crew_ergonomics
+	}
+	
+	trait = {
+		token = generic_mio_trait_standardized_components
+		name = generic_mio_trait_standardized_components
+		icon = GFX_generic_mio_department_icon_mechanized_line_efficiency
+		all_parents = { generic_mio_trait_simplified_suspension generic_mio_trait_crew_ergonomics }
+
+
+		position = { x=2 y=1 }
+		relative_position_id = generic_mio_trait_simplified_suspension
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.15
+			production_resource_need_factor = -0.15
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_improved_tooling
+		name = generic_mio_trait_improved_tooling
+		icon = GFX_generic_mio_department_icon_mechanized_technology
+
+		all_parents = { generic_mio_trait_reinforced_wheels generic_mio_trait_standardized_components generic_mio_trait_command_upgrades }
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_standardized_components
+
+		production_bonus = {
+			production_efficiency_cap_factor = 0.1
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_mass_production
+		name = generic_mio_trait_mass_production
+		icon = GFX_generic_mio_department_icon_mechanized_line_efficiency
+		any_parent = { generic_mio_trait_improved_tooling }
+		mutually_exclusive = { generic_mio_trait_quality_improvements }
+
+		position = { x=-1 y=1 }
+		relative_position_id = generic_mio_trait_improved_tooling
+
+		production_bonus = {
+			production_cost_factor = -0.05
+			production_efficiency_gain_factor = 0.1
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_quality_improvements
+		name = generic_mio_trait_quality_improvements
+		icon = GFX_generic_mio_department_icon_tank_general_armor
+		any_parent = { generic_mio_trait_improved_tooling }
+		mutually_exclusive = { generic_mio_trait_mass_production}
+
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_trait_improved_tooling
+
+		equipment_bonus = {
+			armor_value = 0.1
+			defense = 0.1
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_defensive_equipment
+		name = generic_mio_trait_defensive_equipment
+		icon = GFX_generic_mio_trait_icon_soft_attack
+
+		equipment_bonus = {
+			soft_attack = 0.02
+			defense = 0.02
+		}
+		position = { x=2 y=0 }
+		relative_position_id = generic_mio_trait_crew_ergonomics
+	}
+
+	trait = {
+		token = generic_mio_trait_long_barreled_guns
+		name = generic_mio_trait_long_barreled_guns
+		icon = GFX_generic_mio_trait_icon_soft_attack
+
+		all_parents = { generic_mio_trait_crew_ergonomics generic_mio_trait_defensive_equipment }
+
+		position = { x=0 y=2 }
+		relative_position_id = generic_mio_trait_defensive_equipment
+
+		equipment_bonus = {
+			ap_attack = 0.05
+			hard_attack = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_heavy_anti_tank_gun
+		name = generic_mio_trait_heavy_anti_tank_gun
+		icon = GFX_generic_mio_trait_icon_hard_attack
+		any_parent = { generic_mio_trait_long_barreled_guns }
+		mutually_exclusive = { generic_mio_trait_officer_support_car }
+
+		position = { x=-1 y=2 }
+		relative_position_id = generic_mio_trait_long_barreled_guns
+
+		equipment_bonus = {
+			armor_value = 0.05
+			hard_attack = 0.05
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_officer_support_car
+		name = generic_mio_trait_officer_support_car
+		icon = GFX_generic_mio_trait_icon_soft_attack
+		any_parent = { generic_mio_trait_long_barreled_guns }
+		mutually_exclusive = { generic_mio_trait_heavy_anti_tank_gun }
+
+		position = { x=1 y=2 }
+		relative_position_id = generic_mio_trait_long_barreled_guns
+
+		equipment_bonus = {
+			soft_attack = 0.05
+			build_cost_ic = -0.03
+		}
+	}	
+
+
+
+}
+
+USA_rock_island_arsenal_organization = {
+	include = generic_artillery_organization
+	icon = GFX_idea_rock_island_arsenal
+	
+	allowed = {	 
+		OR = {
+			original_TAG = USA
+			tag = USA 
+			AND = {
+				original_tag = PHI 
+				has_dlc = "No Compromise, No Surrender"
+			}
+			AND = {
+				tag = HAW
+				#has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+			}
+		}
+	}
+
+	available = {
+		IF = {
+			limit = {
+				FROM = {
+					TAG = HAW
+				}
+			}
+			FROM = {
+				OR = {
+					has_country_flag = HAW_us_tongyi_qiye_quebao_flag
+					#has_country_flag = HAW_lima_jiche_chang_over_flag
+				}
+				
+			}
+		}
+		IF = {
+			limit = {
+				FROM = { NOT = { original_tag = USA } }
+			}
+			FROM = { NOT = { has_war_with = USA } }
+		}
+		
+		if = {
+			limit = {
+				FROM = {
+					original_tag = PHI
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_completed_focus = PHI_declare_military_emergency
+					}
+				}
+				FROM = {
+					has_completed_focus = PHI_declare_military_emergency
+				}
+			}
+			else = {
+				FROM = {
+					has_completed_focus = PHI_align_with_the_usa
+				}
+			}
+		}
+	}
+
+	add_trait = { 
+		token = PHI_mio_trait_naval_caliber_artillery
+		name = PHI_mio_trait_naval_caliber_artillery
+		icon = GFX_generic_mio_trait_icon_soft_attack
+		special_trait_background = yes
+
+		position = { x=7 y=1 }  
+
+		visible = {
+			FROM = {
+				OR = {
+					tag = USA
+					original_tag = PHI
+				}
+
+			}
+		}
+
+		available = {
+			OR = {
+				owner = {
+					original_tag = USA 
+				}
+				
+				FROM = {
+					has_completed_focus = PHI_coastal_artillery
+				}
+			}
+			
+		}
+
+		any_parent = { generic_mio_trait_big_guns }
+
+		equipment_bonus = {
+			soft_attack = 0.03
+		}
+	}
+}
+
+USA_sikorsky_organization = {
+	include = generic_helicopter_organization
+	icon = GFX_idea_generic_helicopter_1
+	
+	allowed = {	
+		original_tag = USA 
+		has_dlc = "Gotterdammerung"		
+	}
+}
+
+USA_baldwin_locomotive_works_organization = {
+	include = generic_train_organization
+	icon = GFX_idea_USA_blw
+	allowed = {
+		original_tag = USA
+	}
+
+	equipment_type = { train_equipment railway_gun_equipment support_equipment armor }
+	research_categories = { train_tech support_tech }
+
+	tree_header_text = {
+		text = mio_header_tank_production
+		x = 0.11
+	}
+
+	tree_header_text = {
+		text = mio_header_design_and_production
+		x = 5
+	}
+
+	tree_header_text = {
+		text = mio_header_support
+		x = 2
+	}
+
+	tree_header_text = {
+		text = mio_header_weapons
+		x = 8
+	}
+
+	initial_trait = {
+		name = generic_mio_initial_trait_generic_train_manufacturer
+		limit_to_equipment_type = { 
+			train_equipment 
+			#support_equipment
+		}
+
+		production_bonus = {
+			production_efficiency_cap_factor = 0.03
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0 #5%
+		}
+	}
+
+	override_trait = {
+		token = generic_mio_trait_material_improvements
+
+		position = { x=4 y=0 }
+	}
+
+	override_trait = {
+		token = generic_mio_trait_joint_stock_scheme
+
+		position = { x=6 y=0 }
+	}
+
+	
+	# override_trait = {
+	# 	token = generic_mio_trait_improved_wagon_design
+	#
+	# 	position = { x=-2 y=1 }
+	# 	relative_position_id = generic_mio_trait_improved_axle_fitting
+	# }
+
+	add_trait = {
+		token = generic_mio_trait_compulsory_tank_designer
+		name = generic_mio_trait_compulsory_tank_designer
+		icon = GFX_generic_mio_department_icon_tank_general_production
+		special_trait_background = yes
+
+		position = { x=0 y=0 }
+
+		visible = {
+			FROM = { 
+				original_tag = USA
+			}
+		}
+
+		available = {
+			FROM = {
+				has_completed_focus = USA_department_of_defense
+			}
+		}
+
+		limit_to_equipment_type = { armor }
+
+		equipment_bonus = {
+			maximum_speed = 0.05
+			reliability = -0.05
+			armor_value = 0.05
+		}
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.02
+		}
+	}
+
+	add_trait = {
+		token = generic_mio_trait_off_the_board_designs
+		name = generic_mio_trait_off_the_board_designs
+		icon = GFX_generic_mio_department_icon_tank_general_line_efficiency
+		special_trait_background = yes
+
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_compulsory_tank_designer
+
+		visible = {
+			FROM = { 
+				original_tag = USA
+			}
+		}
+
+		all_parents = { generic_mio_trait_compulsory_tank_designer }
+
+		limit_to_equipment_type = { armor }
+
+		production_bonus = {
+			production_capacity_factor = 0.03
+			production_efficiency_gain_factor = 0.03
+		}
+	}
+
+	add_trait = {
+		token = generic_mio_trait_armor_improvements
+		name = generic_mio_trait_armor_improvements
+		icon = GFX_generic_mio_department_icon_tank_general_armor
+		special_trait_background = yes
+
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_off_the_board_designs
+
+		visible = {
+			FROM = { 
+				original_tag = USA
+			}
+		}
+
+		all_parents = { generic_mio_trait_off_the_board_designs }
+
+		limit_to_equipment_type = { armor }
+
+		equipment_bonus = {
+			defense = 0.05
+			armor_value = 0.05
+		}
+	}
+
+	add_trait = {
+		token = generic_mio_trait_improved_tracks
+		name = generic_mio_trait_improved_tracks
+		icon = GFX_generic_mio_department_icon_tank_general_engine
+		special_trait_background = yes
+
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_armor_improvements
+
+		visible = {
+			FROM = { 
+				original_tag = USA
+			}
+		}
+
+		all_parents = { generic_mio_trait_armor_improvements }
+
+		limit_to_equipment_type = { armor }
+
+		equipment_bonus = {
+			maximum_speed = 0.05
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.02
+		}
+	}
+
+	add_trait = {
+		token = generic_mio_trait_additional_anti_aircraft_machine_guns
+		name =  generic_mio_trait_additional_anti_aircraft_machine_guns
+		icon = GFX_generic_mio_department_icon_tank_general_aa
+		special_trait_background = yes
+
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_improved_tracks
+
+		visible = {
+			FROM = { 
+				original_tag = USA
+			}
+		}
+
+		all_parents = { generic_mio_trait_improved_tracks }
+
+		limit_to_equipment_type = { armor }
+
+		equipment_bonus = {
+			defense = 0.05
+			air_attack = 0.10
+		}
+	}
+}

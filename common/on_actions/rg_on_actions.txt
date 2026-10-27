@@ -1,0 +1,155 @@
+# =========================================================================
+# Reasonable Guarantees - on_actions
+# =========================================================================
+# Builds a global array of every country. The guarantee decision targets
+# this array (target_array = global.rg_targets).
+#
+# Two things keep the array correct over a whole campaign:
+#   * on_startup CLEARS before rebuilding - on_startup re-fires every time
+#     a save is loaded, so appending without clearing would duplicate every
+#     country once per session.
+#   * on_monthly lets countries born mid-game (civil-war tags, released
+#     nations, formables) register themselves. Fires per-country once a
+#     month - negligible cost.
+# =========================================================================
+
+on_actions = {
+
+	on_startup = {
+		effect = {
+			clear_array = global.rg_targets
+			every_country = {
+				add_to_array = { array = global.rg_targets value = THIS }
+
+				# Initialize the cap bookkeeping IMMEDIATELY - without this,
+				# vanilla 1936 starting guarantees (France holds 4!) are
+				# invisible to the cap until the first monthly recount, and
+				# majors overshoot their limit in the opening weeks.
+				set_variable = { rg_pending_guarantees = 0 }
+				set_variable = { rg_active_guarantees = 0 }
+				every_other_country = {
+					limit = { is_guaranteed_by = PREV }
+					PREV = { add_to_variable = { rg_active_guarantees = 1 } }
+				}
+			}
+		}
+	}
+
+	on_monthly = {
+		effect = {
+			if = {
+				limit = { NOT = { is_in_array = { array = global.rg_targets value = THIS } } }
+				add_to_array = { array = global.rg_targets value = THIS }
+			}
+
+			# Revoke guarantees whose reason has evaporated (war goal expired -
+			# manual ones lapse ~60 days after completion if unused - or the
+			# aggressor neighbour is gone). Only guarantees THE MOD issued (the
+			# rg_issued_guarantees ledger) are eligible; vanilla starting
+			# guarantees like France's Little Entente are never touched.
+			# 50% chance per monthly review = revoked ~2 months on average
+			# after the threat fades. (Urgent slot recovery doesn't wait for
+			# this - see the weekly crisis eviction below.)
+			every_other_country = {
+				limit = {
+					is_guaranteed_by = PREV
+					has_war = no
+					PREV = { is_in_array = { array = rg_issued_guarantees value = PREV } }
+					OR = {
+						NOT = { rg_this_is_threatened = yes }
+						# A guarantor that flipped to fascism/communism sheds
+						# its mod-issued guarantees too (vanilla ones stay).
+						PREV = {
+							NOT = {
+								OR = {
+									has_government = democratic
+									has_government = neutrality
+								}
+							}
+						}
+					}
+				}
+				random_list = {
+					50 = {
+						PREV = { diplomatic_relation = { country = PREV relation = guarantee active = no } }
+					}
+					50 = { }
+				}
+			}
+
+			# Recount active guarantees so lapsed ones (target annexed, war
+			# started, guarantee ended or revoked above) free up a slot under
+			# the 4-guarantee cap. Add in-flight deliveries (rg_pending) so the
+			# recount can't wipe their reserved slots, then reset pending -
+			# every delivery resolves within 24 days, i.e. before the next
+			# recount, and resetting also self-heals the rare leak where a
+			# delivery event dies because its target was annexed mid-flight.
+			set_variable = { rg_active_guarantees = 0 }
+			every_other_country = {
+				limit = { is_guaranteed_by = PREV }
+				PREV = { add_to_variable = { rg_active_guarantees = 1 } }
+			}
+			add_to_variable = { rg_active_guarantees = rg_pending_guarantees }
+			set_variable = { rg_pending_guarantees = 0 }
+		}
+	}
+
+	# ---------------------------------------------------------------------
+	# Weekly crisis eviction. A guarantor AT its 4-guarantee cap that sees a
+	# reachable, eligible country under a CONCRETE war goal/justification with
+	# no guarantee from it drops its least-needed guarantee to free the slot
+	# (the decision then covers the victim - concrete targets skip the
+	# cooldown). This is what makes slot-stuffing with decoy justifications
+	# pointless: every new justification on a real target reclaims a slot.
+	# Only mod-issued (ledger) guarantees are evictable; one eviction a week.
+	# ---------------------------------------------------------------------
+	on_weekly = {
+		effect = {
+			if = {
+				limit = {
+					check_variable = { rg_active_guarantees > 3 }      # at the cap
+					any_other_country = {                              # unserved crisis in reach
+						rg_this_concretely_threatened = yes
+						rg_reachable_pair = yes
+						is_major = no
+						is_subject = no
+						is_in_faction = no
+						has_war = no
+						NOT = { is_guaranteed_by = PREV }
+					}
+				}
+				set_variable = { rg_evict_done = 0 }
+				# pass 1: prefer dropping a guarantee on a country in no danger at all
+				every_other_country = {
+					limit = {
+						check_variable = { PREV.rg_evict_done < 1 }
+						is_guaranteed_by = PREV
+						has_war = no
+						NOT = { rg_this_is_threatened = yes }
+						PREV = { is_in_array = { array = rg_issued_guarantees value = PREV } }
+					}
+					PREV = {
+						add_to_variable = { rg_evict_done = 1 }
+						diplomatic_relation = { country = PREV relation = guarantee active = no }
+						subtract_from_variable = { rg_active_guarantees = 1 }   # slot usable immediately
+					}
+				}
+				# pass 2: otherwise drop a merely-preventive one (no concrete war goal on it)
+				every_other_country = {
+					limit = {
+						check_variable = { PREV.rg_evict_done < 1 }
+						is_guaranteed_by = PREV
+						has_war = no
+						NOT = { rg_this_concretely_threatened = yes }
+						PREV = { is_in_array = { array = rg_issued_guarantees value = PREV } }
+					}
+					PREV = {
+						add_to_variable = { rg_evict_done = 1 }
+						diplomatic_relation = { country = PREV relation = guarantee active = no }
+						subtract_from_variable = { rg_active_guarantees = 1 }
+					}
+				}
+			}
+		}
+	}
+}

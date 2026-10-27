@@ -1,0 +1,589 @@
+admin_rebuild_player_list = {
+	clear_array = global.admin_players
+	every_country = {
+		limit = { is_ai = no }
+		add_to_array = { array = global.admin_players value = THIS }
+	}
+	admin_count_selected = yes
+	admin_build_country_page = yes
+}
+
+admin_set_partner = {
+	every_country = {
+		limit = { has_country_flag = admin_is_partner }
+		clr_country_flag = admin_is_partner
+	}
+	set_country_flag = admin_is_partner
+	set_variable = { global.admin_partner = THIS }
+}
+
+admin_build_country_page = {
+	clear_array = global.admin_countries
+	if = {
+		limit = { check_variable = { global.admin_tab = 3 } }
+		set_variable = { global.admin_c = 0 }
+		set_variable = { global.admin_lo = global.admin_page }
+		multiply_variable = { global.admin_lo = 10 }
+		every_country = {
+			limit = { exists = yes }
+			set_variable = { global.admin_d = global.admin_c }
+			subtract_from_variable = { global.admin_d = global.admin_lo }
+			if = {
+				limit = {
+					check_variable = { global.admin_d > -1 }
+					check_variable = { global.admin_d < 10 }
+				}
+				add_to_array = { array = global.admin_countries value = THIS }
+			}
+			add_to_variable = { global.admin_c = 1 }
+		}
+		set_variable = { global.admin_lo1 = global.admin_lo }
+		add_to_variable = { global.admin_lo1 = 1 }
+		set_variable = { global.admin_hi_shown = global.admin_lo }
+		add_to_variable = { global.admin_hi_shown = 10 }
+		set_variable = { global.admin_rest = global.admin_c }
+		subtract_from_variable = { global.admin_rest = global.admin_hi_shown }
+		if = {
+			limit = { check_variable = { global.admin_rest > 0 } }
+			set_variable = { global.admin_has_next = 1 }
+		}
+		else = {
+			set_variable = { global.admin_has_next = 0 }
+			set_variable = { global.admin_hi_shown = global.admin_c }
+		}
+	}
+}
+
+admin_page_next = {
+	if = {
+		limit = { check_variable = { global.admin_has_next = 1 } }
+		add_to_variable = { global.admin_page = 1 }
+	}
+	admin_build_country_page = yes
+}
+
+admin_page_prev = {
+	if = {
+		limit = { check_variable = { global.admin_page > 0 } }
+		subtract_from_variable = { global.admin_page = 1 }
+	}
+	admin_build_country_page = yes
+}
+
+admin_clear_selection = {
+	every_country = {
+		limit = { has_country_flag = admin_sel }
+		clr_country_flag = admin_sel
+	}
+}
+
+admin_count_selected = {
+	set_variable = { global.admin_sel_count = 0 }
+	set_variable = { global.admin_cnt_research = 0 }
+	set_variable = { global.admin_cnt_construction = 0 }
+	set_variable = { global.admin_cnt_production = 0 }
+	set_variable = { global.admin_cnt_training = 0 }
+	set_variable = { global.admin_cnt_combat = 0 }
+	set_variable = { global.admin_cnt_logistics = 0 }
+	set_variable = { global.admin_cnt_wargoal = 0 }
+	set_variable = { global.admin_cnt_economy = 0 }
+	set_variable = { global.admin_cnt_focus = 0 }
+	set_variable = { global.admin_cnt_diplomacy = 0 }
+	set_variable = { global.admin_cnt_drift_democratic = 0 }
+	set_variable = { global.admin_cnt_drift_communism = 0 }
+	set_variable = { global.admin_cnt_drift_fascism = 0 }
+	set_variable = { global.admin_cnt_drift_neutrality = 0 }
+	every_country = {
+		limit = { has_country_flag = admin_sel }
+		add_to_variable = { global.admin_sel_count = 1 }
+		if = { limit = { has_country_flag = admin_b_research } add_to_variable = { global.admin_cnt_research = 1 } }
+		if = { limit = { has_country_flag = admin_b_construction } add_to_variable = { global.admin_cnt_construction = 1 } }
+		if = { limit = { has_country_flag = admin_b_production } add_to_variable = { global.admin_cnt_production = 1 } }
+		if = { limit = { has_country_flag = admin_b_training } add_to_variable = { global.admin_cnt_training = 1 } }
+		if = { limit = { has_country_flag = admin_b_combat } add_to_variable = { global.admin_cnt_combat = 1 } }
+		if = { limit = { has_country_flag = admin_b_logistics } add_to_variable = { global.admin_cnt_logistics = 1 } }
+		if = { limit = { has_country_flag = admin_b_wargoal } add_to_variable = { global.admin_cnt_wargoal = 1 } }
+		if = { limit = { has_country_flag = admin_b_economy } add_to_variable = { global.admin_cnt_economy = 1 } }
+		if = { limit = { has_country_flag = admin_b_focus } add_to_variable = { global.admin_cnt_focus = 1 } }
+		if = { limit = { has_country_flag = admin_b_diplomacy } add_to_variable = { global.admin_cnt_diplomacy = 1 } }
+		if = { limit = { has_country_flag = admin_d_democratic } add_to_variable = { global.admin_cnt_drift_democratic = 1 } }
+		if = { limit = { has_country_flag = admin_d_communism } add_to_variable = { global.admin_cnt_drift_communism = 1 } }
+		if = { limit = { has_country_flag = admin_d_fascism } add_to_variable = { global.admin_cnt_drift_fascism = 1 } }
+		if = { limit = { has_country_flag = admin_d_neutrality } add_to_variable = { global.admin_cnt_drift_neutrality = 1 } }
+	}
+}
+
+admin_enable_research = {
+	every_country = {
+		limit = { has_country_flag = admin_sel NOT = { has_country_flag = admin_b_research } }
+		set_country_flag = admin_b_research
+		add_to_variable = { admin_boost_count = 1 }
+		add_dynamic_modifier = { modifier = admin_dm_research }
+		force_update_dynamic_modifier = yes
+	}
+	admin_count_selected = yes
+}
+
+admin_disable_research = {
+	every_country = {
+		limit = { has_country_flag = admin_sel has_country_flag = admin_b_research }
+		clr_country_flag = admin_b_research
+		subtract_from_variable = { admin_boost_count = 1 }
+		remove_dynamic_modifier = { modifier = admin_dm_research }
+		force_update_dynamic_modifier = yes
+	}
+	admin_count_selected = yes
+}
+
+admin_enable_construction = {
+	every_country = {
+		limit = { has_country_flag = admin_sel NOT = { has_country_flag = admin_b_construction } }
+		set_country_flag = admin_b_construction
+		add_to_variable = { admin_boost_count = 1 }
+		add_dynamic_modifier = { modifier = admin_dm_construction }
+		force_update_dynamic_modifier = yes
+	}
+	admin_count_selected = yes
+}
+
+admin_disable_construction = {
+	every_country = {
+		limit = { has_country_flag = admin_sel has_country_flag = admin_b_construction }
+		clr_country_flag = admin_b_construction
+		subtract_from_variable = { admin_boost_count = 1 }
+		remove_dynamic_modifier = { modifier = admin_dm_construction }
+		force_update_dynamic_modifier = yes
+	}
+	admin_count_selected = yes
+}
+
+admin_enable_production = {
+	every_country = {
+		limit = { has_country_flag = admin_sel NOT = { has_country_flag = admin_b_production } }
+		set_country_flag = admin_b_production
+		add_to_variable = { admin_boost_count = 1 }
+		add_dynamic_modifier = { modifier = admin_dm_production }
+		force_update_dynamic_modifier = yes
+	}
+	admin_count_selected = yes
+}
+
+admin_disable_production = {
+	every_country = {
+		limit = { has_country_flag = admin_sel has_country_flag = admin_b_production }
+		clr_country_flag = admin_b_production
+		subtract_from_variable = { admin_boost_count = 1 }
+		remove_dynamic_modifier = { modifier = admin_dm_production }
+		force_update_dynamic_modifier = yes
+	}
+	admin_count_selected = yes
+}
+
+admin_enable_training = {
+	every_country = {
+		limit = { has_country_flag = admin_sel NOT = { has_country_flag = admin_b_training } }
+		set_country_flag = admin_b_training
+		add_to_variable = { admin_boost_count = 1 }
+		add_dynamic_modifier = { modifier = admin_dm_training }
+		force_update_dynamic_modifier = yes
+	}
+	admin_count_selected = yes
+}
+
+admin_disable_training = {
+	every_country = {
+		limit = { has_country_flag = admin_sel has_country_flag = admin_b_training }
+		clr_country_flag = admin_b_training
+		subtract_from_variable = { admin_boost_count = 1 }
+		remove_dynamic_modifier = { modifier = admin_dm_training }
+		force_update_dynamic_modifier = yes
+	}
+	admin_count_selected = yes
+}
+
+admin_enable_combat = {
+	every_country = {
+		limit = { has_country_flag = admin_sel NOT = { has_country_flag = admin_b_combat } }
+		set_country_flag = admin_b_combat
+		add_to_variable = { admin_boost_count = 1 }
+		add_dynamic_modifier = { modifier = admin_dm_combat }
+		force_update_dynamic_modifier = yes
+	}
+	admin_count_selected = yes
+}
+
+admin_disable_combat = {
+	every_country = {
+		limit = { has_country_flag = admin_sel has_country_flag = admin_b_combat }
+		clr_country_flag = admin_b_combat
+		subtract_from_variable = { admin_boost_count = 1 }
+		remove_dynamic_modifier = { modifier = admin_dm_combat }
+		force_update_dynamic_modifier = yes
+	}
+	admin_count_selected = yes
+}
+
+admin_enable_logistics = {
+	every_country = {
+		limit = { has_country_flag = admin_sel NOT = { has_country_flag = admin_b_logistics } }
+		set_country_flag = admin_b_logistics
+		add_to_variable = { admin_boost_count = 1 }
+		add_dynamic_modifier = { modifier = admin_dm_logistics }
+		force_update_dynamic_modifier = yes
+	}
+	admin_count_selected = yes
+}
+
+admin_disable_logistics = {
+	every_country = {
+		limit = { has_country_flag = admin_sel has_country_flag = admin_b_logistics }
+		clr_country_flag = admin_b_logistics
+		subtract_from_variable = { admin_boost_count = 1 }
+		remove_dynamic_modifier = { modifier = admin_dm_logistics }
+		force_update_dynamic_modifier = yes
+	}
+	admin_count_selected = yes
+}
+
+admin_enable_wargoal = {
+	every_country = {
+		limit = { has_country_flag = admin_sel NOT = { has_country_flag = admin_b_wargoal } }
+		set_country_flag = admin_b_wargoal
+		add_to_variable = { admin_boost_count = 1 }
+		add_dynamic_modifier = { modifier = admin_dm_wargoal }
+		force_update_dynamic_modifier = yes
+	}
+	admin_count_selected = yes
+}
+
+admin_disable_wargoal = {
+	every_country = {
+		limit = { has_country_flag = admin_sel has_country_flag = admin_b_wargoal }
+		clr_country_flag = admin_b_wargoal
+		subtract_from_variable = { admin_boost_count = 1 }
+		remove_dynamic_modifier = { modifier = admin_dm_wargoal }
+		force_update_dynamic_modifier = yes
+	}
+	admin_count_selected = yes
+}
+
+admin_enable_economy = {
+	every_country = {
+		limit = { has_country_flag = admin_sel NOT = { has_country_flag = admin_b_economy } }
+		set_country_flag = admin_b_economy
+		add_to_variable = { admin_boost_count = 1 }
+		add_dynamic_modifier = { modifier = admin_dm_economy }
+		force_update_dynamic_modifier = yes
+	}
+	admin_count_selected = yes
+}
+
+admin_disable_economy = {
+	every_country = {
+		limit = { has_country_flag = admin_sel has_country_flag = admin_b_economy }
+		clr_country_flag = admin_b_economy
+		subtract_from_variable = { admin_boost_count = 1 }
+		remove_dynamic_modifier = { modifier = admin_dm_economy }
+		force_update_dynamic_modifier = yes
+	}
+	admin_count_selected = yes
+}
+
+admin_enable_focus = {
+	every_country = {
+		limit = { has_country_flag = admin_sel NOT = { has_country_flag = admin_b_focus } }
+		set_country_flag = admin_b_focus
+		add_to_variable = { admin_boost_count = 1 }
+	}
+	admin_count_selected = yes
+}
+
+admin_disable_focus = {
+	every_country = {
+		limit = { has_country_flag = admin_sel has_country_flag = admin_b_focus }
+		clr_country_flag = admin_b_focus
+		subtract_from_variable = { admin_boost_count = 1 }
+	}
+	admin_count_selected = yes
+}
+
+admin_enable_diplomacy = {
+	every_country = {
+		limit = { has_country_flag = admin_sel NOT = { has_country_flag = admin_b_diplomacy } }
+		set_country_flag = admin_b_diplomacy
+		add_to_variable = { admin_boost_count = 1 }
+		add_dynamic_modifier = { modifier = admin_dm_diplomacy }
+		force_update_dynamic_modifier = yes
+		every_other_country = { add_opinion_modifier = { target = PREV modifier = admin_opinion_good } }
+	}
+	admin_count_selected = yes
+}
+
+admin_disable_diplomacy = {
+	every_country = {
+		limit = { has_country_flag = admin_sel has_country_flag = admin_b_diplomacy }
+		clr_country_flag = admin_b_diplomacy
+		subtract_from_variable = { admin_boost_count = 1 }
+		remove_dynamic_modifier = { modifier = admin_dm_diplomacy }
+		force_update_dynamic_modifier = yes
+		every_other_country = { remove_opinion_modifier = { target = PREV modifier = admin_opinion_good } }
+	}
+	admin_count_selected = yes
+}
+
+admin_disable_all = {
+	admin_disable_research = yes
+	admin_disable_construction = yes
+	admin_disable_production = yes
+	admin_disable_training = yes
+	admin_disable_combat = yes
+	admin_disable_logistics = yes
+	admin_disable_wargoal = yes
+	admin_disable_economy = yes
+	admin_disable_focus = yes
+	admin_disable_diplomacy = yes
+}
+
+admin_act_pp = {
+	every_country = {
+		limit = { has_country_flag = admin_sel }
+		add_political_power = 500
+	}
+}
+admin_act_manpower = {
+	every_country = {
+		limit = { has_country_flag = admin_sel }
+		add_manpower = 100000
+	}
+}
+admin_act_cp = {
+	every_country = {
+		limit = { has_country_flag = admin_sel }
+		add_command_power = 100
+	}
+}
+admin_act_xp = {
+	every_country = {
+		limit = { has_country_flag = admin_sel }
+		army_experience = 500 navy_experience = 500 air_experience = 500
+	}
+}
+admin_act_stab = {
+	every_country = {
+		limit = { has_country_flag = admin_sel }
+		add_stability = 1 add_war_support = 1
+	}
+}
+admin_act_factories = {
+	every_country = {
+		limit = { has_country_flag = admin_sel }
+		capital_scope = { add_extra_state_shared_building_slots = 10 add_building_construction = { type = arms_factory level = 5 instant_build = yes } add_building_construction = { type = industrial_complex level = 5 instant_build = yes } }
+	}
+}
+admin_act_slot = {
+	every_country = {
+		limit = { has_country_flag = admin_sel }
+		add_research_slot = 1
+	}
+}
+admin_act_fuel = {
+	every_country = {
+		limit = { has_country_flag = admin_sel }
+		add_fuel = 100000
+	}
+}
+admin_act_equip = {
+	every_country = {
+		limit = { has_country_flag = admin_sel }
+		add_equipment_to_stockpile = { type = infantry_equipment amount = 10000 } add_equipment_to_stockpile = { type = support_equipment amount = 2000 } add_equipment_to_stockpile = { type = artillery_equipment amount = 2000 }
+	}
+}
+admin_act_nukes = {
+	every_country = {
+		limit = { has_country_flag = admin_sel }
+		add_nuclear_bombs = 5
+	}
+}
+admin_act_peace = {
+	every_country = {
+		limit = { has_country_flag = admin_sel }
+		every_country = { limit = { has_war_with = PREV } white_peace = PREV }
+	}
+}
+
+admin_pol_pop_democratic = {
+	every_country = { limit = { has_country_flag = admin_sel } add_popularity = { ideology = democratic popularity = 0.2 } }
+}
+admin_pol_gov_democratic = {
+	every_country = {
+		limit = { has_country_flag = admin_sel }
+		add_popularity = { ideology = democratic popularity = 0.5 }
+		set_politics = { ruling_party = democratic elections_allowed = yes }
+	}
+}
+admin_pol_drift_on_democratic = {
+	every_country = {
+		limit = { has_country_flag = admin_sel NOT = { has_country_flag = admin_d_democratic } }
+		set_country_flag = admin_d_democratic
+		add_dynamic_modifier = { modifier = admin_dm_drift_democratic }
+		force_update_dynamic_modifier = yes
+	}
+	admin_count_selected = yes
+}
+admin_pol_drift_off_democratic = {
+	every_country = {
+		limit = { has_country_flag = admin_sel has_country_flag = admin_d_democratic }
+		clr_country_flag = admin_d_democratic
+		remove_dynamic_modifier = { modifier = admin_dm_drift_democratic }
+		force_update_dynamic_modifier = yes
+	}
+	admin_count_selected = yes
+}
+admin_pol_pop_communism = {
+	every_country = { limit = { has_country_flag = admin_sel } add_popularity = { ideology = communism popularity = 0.2 } }
+}
+admin_pol_gov_communism = {
+	every_country = {
+		limit = { has_country_flag = admin_sel }
+		add_popularity = { ideology = communism popularity = 0.5 }
+		set_politics = { ruling_party = communism elections_allowed = no }
+	}
+}
+admin_pol_drift_on_communism = {
+	every_country = {
+		limit = { has_country_flag = admin_sel NOT = { has_country_flag = admin_d_communism } }
+		set_country_flag = admin_d_communism
+		add_dynamic_modifier = { modifier = admin_dm_drift_communism }
+		force_update_dynamic_modifier = yes
+	}
+	admin_count_selected = yes
+}
+admin_pol_drift_off_communism = {
+	every_country = {
+		limit = { has_country_flag = admin_sel has_country_flag = admin_d_communism }
+		clr_country_flag = admin_d_communism
+		remove_dynamic_modifier = { modifier = admin_dm_drift_communism }
+		force_update_dynamic_modifier = yes
+	}
+	admin_count_selected = yes
+}
+admin_pol_pop_fascism = {
+	every_country = { limit = { has_country_flag = admin_sel } add_popularity = { ideology = fascism popularity = 0.2 } }
+}
+admin_pol_gov_fascism = {
+	every_country = {
+		limit = { has_country_flag = admin_sel }
+		add_popularity = { ideology = fascism popularity = 0.5 }
+		set_politics = { ruling_party = fascism elections_allowed = no }
+	}
+}
+admin_pol_drift_on_fascism = {
+	every_country = {
+		limit = { has_country_flag = admin_sel NOT = { has_country_flag = admin_d_fascism } }
+		set_country_flag = admin_d_fascism
+		add_dynamic_modifier = { modifier = admin_dm_drift_fascism }
+		force_update_dynamic_modifier = yes
+	}
+	admin_count_selected = yes
+}
+admin_pol_drift_off_fascism = {
+	every_country = {
+		limit = { has_country_flag = admin_sel has_country_flag = admin_d_fascism }
+		clr_country_flag = admin_d_fascism
+		remove_dynamic_modifier = { modifier = admin_dm_drift_fascism }
+		force_update_dynamic_modifier = yes
+	}
+	admin_count_selected = yes
+}
+admin_pol_pop_neutrality = {
+	every_country = { limit = { has_country_flag = admin_sel } add_popularity = { ideology = neutrality popularity = 0.2 } }
+}
+admin_pol_gov_neutrality = {
+	every_country = {
+		limit = { has_country_flag = admin_sel }
+		add_popularity = { ideology = neutrality popularity = 0.5 }
+		set_politics = { ruling_party = neutrality elections_allowed = no }
+	}
+}
+admin_pol_drift_on_neutrality = {
+	every_country = {
+		limit = { has_country_flag = admin_sel NOT = { has_country_flag = admin_d_neutrality } }
+		set_country_flag = admin_d_neutrality
+		add_dynamic_modifier = { modifier = admin_dm_drift_neutrality }
+		force_update_dynamic_modifier = yes
+	}
+	admin_count_selected = yes
+}
+admin_pol_drift_off_neutrality = {
+	every_country = {
+		limit = { has_country_flag = admin_sel has_country_flag = admin_d_neutrality }
+		clr_country_flag = admin_d_neutrality
+		remove_dynamic_modifier = { modifier = admin_dm_drift_neutrality }
+		force_update_dynamic_modifier = yes
+	}
+	admin_count_selected = yes
+}
+
+admin_dip_war = {
+	random_country = { limit = { has_country_flag = admin_is_partner } save_event_target_as = admin_partner_t }
+	every_country = {
+		limit = { has_country_flag = admin_sel NOT = { tag = event_target:admin_partner_t } }
+		if = { limit = { NOT = { has_war_with = event_target:admin_partner_t } } declare_war_on = { target = event_target:admin_partner_t type = annex_everything } }
+	}
+}
+admin_dip_peace = {
+	random_country = { limit = { has_country_flag = admin_is_partner } save_event_target_as = admin_partner_t }
+	every_country = {
+		limit = { has_country_flag = admin_sel NOT = { tag = event_target:admin_partner_t } }
+		if = { limit = { has_war_with = event_target:admin_partner_t } white_peace = event_target:admin_partner_t }
+	}
+}
+admin_dip_faction = {
+	random_country = { limit = { has_country_flag = admin_is_partner } save_event_target_as = admin_partner_t }
+	every_country = {
+		limit = { has_country_flag = admin_sel NOT = { tag = event_target:admin_partner_t } }
+		if = { limit = { is_in_faction = no } create_faction = ADMIN_FACTION_NAME } event_target:admin_partner_t = { if = { limit = { is_in_faction = yes NOT = { is_in_faction_with = PREV } } leave_faction = yes } } if = { limit = { is_faction_leader = yes NOT = { is_in_faction_with = event_target:admin_partner_t } } add_to_faction = event_target:admin_partner_t } else_if = { limit = { NOT = { is_in_faction_with = event_target:admin_partner_t } } random_country = { limit = { is_faction_leader = yes is_in_faction_with = PREV } add_to_faction = event_target:admin_partner_t } }
+	}
+}
+admin_dip_access = {
+	random_country = { limit = { has_country_flag = admin_is_partner } save_event_target_as = admin_partner_t }
+	every_country = {
+		limit = { has_country_flag = admin_sel NOT = { tag = event_target:admin_partner_t } }
+		event_target:admin_partner_t = { give_military_access = PREV }
+	}
+}
+admin_dip_guarantee = {
+	random_country = { limit = { has_country_flag = admin_is_partner } save_event_target_as = admin_partner_t }
+	every_country = {
+		limit = { has_country_flag = admin_sel NOT = { tag = event_target:admin_partner_t } }
+		event_target:admin_partner_t = { give_guarantee = PREV }
+	}
+}
+admin_dip_nap = {
+	random_country = { limit = { has_country_flag = admin_is_partner } save_event_target_as = admin_partner_t }
+	every_country = {
+		limit = { has_country_flag = admin_sel NOT = { tag = event_target:admin_partner_t } }
+		diplomatic_relation = { country = event_target:admin_partner_t relation = non_aggression_pact active = yes }
+	}
+}
+admin_dip_opinion = {
+	random_country = { limit = { has_country_flag = admin_is_partner } save_event_target_as = admin_partner_t }
+	every_country = {
+		limit = { has_country_flag = admin_sel NOT = { tag = event_target:admin_partner_t } }
+		event_target:admin_partner_t = { add_opinion_modifier = { target = PREV modifier = admin_opinion_good } }
+	}
+}
+admin_dip_puppet = {
+	random_country = { limit = { has_country_flag = admin_is_partner } save_event_target_as = admin_partner_t }
+	every_country = {
+		limit = { has_country_flag = admin_sel NOT = { tag = event_target:admin_partner_t } }
+		puppet = event_target:admin_partner_t
+	}
+}
+admin_dip_annex = {
+	random_country = { limit = { has_country_flag = admin_is_partner } save_event_target_as = admin_partner_t }
+	every_country = {
+		limit = { has_country_flag = admin_sel NOT = { tag = event_target:admin_partner_t } }
+		if = { limit = { event_target:admin_partner_t = { exists = yes } } annex_country = { target = event_target:admin_partner_t transfer_troops = yes } }
+	}
+}

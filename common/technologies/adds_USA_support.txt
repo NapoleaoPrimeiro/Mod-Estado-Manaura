@@ -1,0 +1,91 @@
+technologies = {
+
+	@1918 = 0
+	@1936 = 2
+	@1938 = 4
+	@1939 = 6
+	@1940 = 8
+	@1941 = 10
+	@1942 = 12
+	@1943 = 14
+	@1944 = 16
+	@1945 = 18
+	@1946 = 20
+
+	@field_hospital_x = 9 #it is actually Y :D
+	@logistic_x = 11 #it is actually Y :D
+	@signal_x = 14 #it is actually Y :D
+
+	USA_special_training = {
+		allow = { always = no }
+		enable_subunits = {
+			
+			#engineer
+		}
+		research_cost = 1
+		start_year = 1942
+		sub_tech_index = 1
+
+		categories = {
+			support_tech
+			engineers_tech
+		}
+		special_project_specialization = { specialization_land }
+
+		engineer = {
+			entrenchment = 0.50
+			forest = {
+		    	attack = 0.1
+				movement = 0.1
+			}
+			desert = {
+		    	attack = 0.1
+				movement = 0.1
+			}
+
+			snow = {
+				attack = 0.1
+				movement = 0.1
+			}
+		}
+
+		assault_engineer = {
+			breakthrough = 0.1
+			forest = {
+		    	attack = 0.1
+				movement = 0.1
+			}
+			desert = {
+		    	attack = 0.1
+				movement = 0.1
+			}
+
+			snow = {
+				attack = 0.1
+				movement = 0.1
+			}
+		}
+
+		armored_engineer = {
+			entrenchment = 1
+
+			forest = {
+		    	attack = 0.1
+				movement = 0.1
+			}
+			desert = {
+		    	attack = 0.1
+				movement = 0.1
+			}
+
+			snow = {
+				attack = 0.1
+				movement = 0.1
+			}
+		}
+	}
+
+
+
+
+}

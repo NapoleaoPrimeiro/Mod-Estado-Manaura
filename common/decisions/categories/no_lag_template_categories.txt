@@ -1,0 +1,9 @@
+division_templates = {
+	icon = category_generic
+	# Higher than the highest Vanilla category priority (1000), so the
+	# template tools stay at the top of the Decisions screen.
+	priority = 1001
+	visible = {
+		always = yes
+	}
+}

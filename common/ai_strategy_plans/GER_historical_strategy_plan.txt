@@ -1,0 +1,284 @@
+#eo
+German_historical = {
+	name = "German historical plan"
+	desc = "Essentially historical behaviour for Germany"
+
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		or = {
+			AND = {
+				is_historical_focus_on = yes
+				OR = {
+					not = { has_dlc = "Waking the Tiger" }
+					has_game_rule = {
+						rule = GER_ai_behavior
+						option = DEFAULT
+					}
+				}	
+			}
+			has_country_flag = GER_AI_RANDOM_FASCIST
+			has_game_rule = {
+				rule = GER_ai_behavior
+				option = FASCIST
+			}
+		}
+	}
+	abort = {
+		OR = {
+			SWE = {
+				has_government = communism #prio 1, crush Sweden
+			}
+			SOV = {
+				NOT = {
+					has_government = communism
+				}
+			}
+			ENG = {
+				NOT = {
+					has_government = democratic
+				}
+			}
+			any_country_with_original_tag = {
+				original_tag_to_check = HUN
+				has_completed_focus = HUN_invite_the_habsburg_prince
+			}
+			any_country_with_original_tag = {
+				original_tag_to_check = FRA
+				OR = {
+					has_completed_focus = FRA_utilize_the_leagues
+					has_completed_focus = FRA_invite_communist_ministers
+					has_completed_focus = FRA_leftist_rhetoric
+					has_completed_focus = FRA_right_wing_rhetoric
+				}
+			}
+			any_country_with_original_tag = {
+				original_tag_to_check = USA
+				OR = {
+					has_completed_focus = USA_war_plan_red
+					has_completed_focus = USA_war_plan_white
+				}
+			}
+		}
+	}
+
+	ai_national_focuses = {
+		#Focus 									#Days 	#Historical Daye
+		GER_improve_national_spirit
+		GER_total_war
+		#1936 
+		ger_4	
+		ger23		
+		GER_rhineland # 4 feb 36
+		GER_the_four_year_plan # 11 mar 36
+
+		GER_construct_the_reichsautobahn # 4 jun 36
+		GER_autarky_efforts # 9 jul
+		GER_institute_price_controls # 14 aug 36
+		GER_fuhrerprinzip # 2 sep 36
+		GER_party_chancellor_bormann
+		GER_accelerate_the_rearmament_program
+		GER_kdf_wagen_factories
+		GER_steel_barons
+		GER_improve_steel_barons
+		GER_develop_modern_maneuver_warfare
+		GER_anti_comitern_pact
+
+		#1937
+		GER_adopt_new_panzer_doctrine
+		GER_coal_liquefaction
+		GER_ascension_of_todt
+		GER_establish_buna_werke
+		GER_fortify_the_vaterland
+		GER_expanding_the_luftwaffe
+		GER_establish_the_reichswerke
+		GER_aeronautical_research_institute
+		ger24
+		ger_195
+		GER_concentrated_armament_program
+		GER_ascension_of_goebbels
+		GER_panzer_troops_school
+		GER_war_economi
+
+		#1938
+		GER_anschluss
+		GER_advanced_panzer_research
+		GER_panzer_production
+		GER_bribe_senior_officers
+		GER_demand_sudetenland
+		GER_first_vienna_award
+
+		#1939
+		GER_develop_heraeus_facilities
+		GER_end_of_czechoslovakia
+		GER_demand_memel
+		GER_military_reform1
+		GER_mol_rib_pact
+		GER_schwerer_gustav
+		GER_danzig_or_war
+		GER_destory_barons
+		GER_dive_bombers
+		GER_combined_arms
+		GER_form_the_jagdwaffe
+
+		#1940
+		GER_operation_weserubung		
+		GER_around_maginot	 
+		GER_war_with_france	
+		GER_develop_the_knickebein
+		GER_strengthen_the_kriegsmarine
+		GER_instill_auftragstaktik
+		GER_panzergrenadier
+		GER_subsidize_hoesch_benzin
+		GER_second_vienna_award
+		GER_defense_of_the_reich
+		GER_japan_friend
+		GER_subjugate_romanian_economy
+
+		#1941
+		GER_uplift_the_rosenberg_office	
+		GER_expand_kummersdorfs_capacity
+		GER_ussr_war_goal
+		GER_construct_the_kammhuber_line
+		GER_establish_the_afrikakorps
+		GER_trade_interdiction
+		GER_wolfpack_tactics
+		GER_u_boat_efforts
+
+		#1942
+		GER_establish_production_targets
+		GER_seize_foreign_industries
+		GER_demands_to_sweden
+		GER_nationalize_ford_factories
+		GER_rocketry_innovations
+		GER_zentrale_planung
+		GER_armament_rationalization
+		GER_re_establish_the_seekriegsleitung
+		GER_atlantic_naval_bases
+
+		#1943
+		GER_create_rustungsstab
+		GER_totaler_krieg
+		GER_ascension_of_himmler
+		GER_build_the_rur_dam
+		GER_army_indoctrination
+		GER_strafbataillon
+		GER_aerodynamic_research_institute
+
+		GER_autarky_achieved	
+		
+		############## Now do whatever really ################
+	}
+
+	research = {
+		infantry_weapons = 50.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+	}
+
+	ideas = {
+		hjalmar_schacht = 10
+	}
+
+	traits = {
+		captain_of_industry = 5
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = medium_armor
+		value = 111
+	}
+
+	focus_factors = {
+		GER_rhineland = 1.0
+	}
+
+}
+GER_minor_allies = { #used to make minor European nations like Axis more
+	name = "Minor German Allies"
+
+	allowed = {
+		OR = {
+			original_tag = ROM
+			original_tag = HUN
+			original_tag = BUL
+			original_tag = YUG
+			original_tag = ITA
+			original_tag = CZE
+			original_tag = DEN
+			original_tag = NOR
+			original_tag = SWE
+			original_tag = FIN
+			original_tag = SPR
+			original_tag = POR
+			original_tag = HOL
+			original_tag = BEL
+			original_tag = LUX
+			original_tag = POL
+			original_tag = LAT
+			original_tag = LIT
+			original_tag = EST
+			original_tag = CRO
+			original_tag = SLO
+		}
+	}
+	enable = {
+		OR = {
+			has_government = fascism
+			fascism > 0.5
+		}
+		is_in_faction = no
+		GER = {
+			has_government = fascism
+		}
+		OR = {
+			original_tag = ROM
+			original_tag = HUN
+			original_tag = BUL
+			original_tag = YUG
+			original_tag = ITA
+			original_tag = CZE
+			original_tag = DEN
+			original_tag = NOR
+			original_tag = SWE
+			original_tag = FIN
+			original_tag = SPR
+			original_tag = POR
+			original_tag = HOL
+			original_tag = BEL
+			original_tag = LUX
+			original_tag = POL
+			original_tag = LAT
+			original_tag = LIT
+			original_tag = EST
+			original_tag = CRO
+			original_tag = SLO
+		}
+	}
+	abort = {
+		GER = {
+			NOT = {
+				has_government = fascism
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "JAP"
+		value = -500
+	}
+}
+#eo

@@ -1,0 +1,130 @@
+#eo
+optimization_rule = {
+	name = "optimization_rule"
+	group = "RULE_GROUP_optimization"
+	icon = "GFX_production_licenses"
+	default = {
+		name = optimization_HARD
+		text = "RULE_OPTION_optimization_HARD"
+		desc = "RULE_OPTION_optimization_HARD_DESC"
+	}
+	option = {
+		name = optimization_NORMAL
+		text = "RULE_OPTION_optimization_NORMAL"
+		desc = "RULE_OPTION_optimization_NORMAL_DESC"
+		allow_achievements = yes
+	}
+}
+unify_china = {
+	name = RULE_NO_LAG_UNIFY_CHINA
+	group = "RULE_GROUP_optimization"
+	icon = "GFX_decision_jap_conquer_china"
+	option = {
+		name = no
+		text = RULE_OPTION_NO_LAG_NO
+		desc = RULE_NO_LAG_UNIFY_CHINA_NO_DESC
+	}
+	option = {
+		name = yes
+		text = RULE_OPTION_NO_LAG_YES
+		desc = RULE_NO_LAG_UNIFY_CHINA_YES_DESC
+		allow_achievements = yes
+	}
+}
+wasteland = {
+	name = RULE_NO_LAG_WASTELAND
+	group = "RULE_GROUP_optimization"
+	icon = "GFX_decision_generic_form_nation"
+	option = {
+		name = no
+		text = RULE_OPTION_NO_LAG_NO
+		desc = RULE_NO_LAG_WASTELAND_NO_DESC
+	}
+	option = {
+		name = yes
+		text = RULE_OPTION_NO_LAG_YES
+		desc = RULE_NO_LAG_WASTELAND_YES_DESC
+		allow_achievements = yes
+	}
+}
+meast = {
+	name = RULE_NO_LAG_MEAST
+	group = "RULE_GROUP_optimization"
+	icon = "GFX_wargoals"
+	option = {
+		name = no
+		text = RULE_OPTION_NO_LAG_NO
+		desc = RULE_NO_LAG_MEAST_NO_DESC
+	}
+	option = {
+		name = yes
+		text = RULE_OPTION_NO_LAG_YES_EXCEPT_TURKEY
+		desc = RULE_NO_LAG_MEAST_YES_DESC
+		allow_achievements = yes
+	}
+}
+asian_countries = {
+	name = RULE_NO_LAG_ASIA
+	group = "RULE_GROUP_optimization"
+	icon = "GFX_military_access_docking_rights"
+	option = {
+		name = no
+		text = RULE_OPTION_NO_LAG_NO
+		desc = RULE_NO_LAG_ASIA_NO_DESC
+	}
+	option = {
+		name = yes
+		text = RULE_OPTION_NO_LAG_YES_EXCEPT_SOVIET
+		desc = RULE_NO_LAG_ASIA_YES_DESC
+		allow_achievements = yes
+	}
+}
+european_countries = {
+	name = RULE_NO_LAG_EUROPE
+	group = "RULE_GROUP_optimization"
+	icon = "GFX_volunteers"
+	option = {
+		name = no
+		text = RULE_OPTION_NO_LAG_NO
+		desc = RULE_NO_LAG_EUROPE_NO_DESC
+	}
+	option = {
+		name = yes
+		text = RULE_OPTION_NO_LAG_YES
+		desc = RULE_NO_LAG_EUROPE_YES_DESC
+		allow_achievements = yes
+	}
+}
+north_america = {
+	name = RULE_NO_LAG_NORTH_AMERICA
+	group = "RULE_GROUP_optimization"
+	icon = "GFX_guarantee_independence"
+	option = {
+		name = no
+		text = RULE_OPTION_NO_LAG_NO
+		desc = RULE_NO_LAG_NORTH_AMERICA_NO_DESC
+	}
+	option = {
+		name = yes
+		text = RULE_OPTION_NO_LAG_YES
+		desc = RULE_NO_LAG_NORTH_AMERICA_YES_DESC
+		allow_achievements = yes
+	}
+}
+international_market = {
+	name = RULE_NO_LAG_MARKET
+	group = "RULE_GROUP_optimization"
+	icon = "GFX_release_nations"
+	option = {
+		name = yes
+		text = RULE_OPTION_NO_LAG_ON
+		desc = RULE_NO_LAG_MARKET_ON_DESC
+	}
+	option = {
+		name = no
+		text = RULE_OPTION_NO_LAG_OFF
+		desc = RULE_NO_LAG_MARKET_OFF_DESC
+		allow_achievements = yes
+	}
+}
+#eo

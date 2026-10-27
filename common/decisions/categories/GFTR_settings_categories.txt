@@ -1,0 +1,24 @@
+
+########################################################################################################################
+													# < INFORMATION > #
+########################################################################################################################
+		# Name mod: Generic Focus Tree: Redux
+		# Author: BoznaWhere
+		# Comment language: ENG / UKR
+########################################################################################################################
+													# < CATEGORIES > #
+########################################################################################################################
+GFTR_categories_settings = {
+	icon = GFX_decision_category_SWI_absolute_neutrality
+	picture = GFX_decision_cat_picture_GFTR_settings
+	priority = 0
+}
+GFTR_categories_create_alliance = {
+	icon = GFX_decision_category_generic_political_actions
+	picture = GFX_decision_cat_picture_government_in_exile
+	priority = 10
+	visible = {
+		has_country_flag = GFTR_flag_categories_create_alliance
+		is_in_faction = no
+	}
+}

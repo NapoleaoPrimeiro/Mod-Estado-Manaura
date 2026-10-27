@@ -1,0 +1,79 @@
+﻿
+########################################################################################################################
+							# < INFORMATION > #
+########################################################################################################################
+		# Name mod: Generic Focus Tree: Redux
+		# Author: BoznaWhere
+		# Comment language: ENG / UKR
+########################################################################################################################
+							# < CONTENT > #
+########################################################################################################################
+    # SETTINGS
+    # CREATE ALLIANCE
+########################################################################################################################
+							# < SETTINGS > #
+########################################################################################################################
+l_english:
+# # # # # # # # # # # # # # #
+GFTR_categories_settings: "Settings"
+GFTR_categories_settings_desc: "Greetings! I am very glad that you have subscribed to the mod §YGeneric Focus Tree: Redux!§! If you like the work I have done, please support the mod on its Steam Workshop page :) \nThere you can also see all the latest changes, report any issues with the mod, or bugs."
+# # # # # # # # # # # # # # #
+GFTR_D_set_focus_tree_SHOW: "1. Set focus tree?"
+GFTR_D_set_focus_tree_SHOW_tt: "Here you can install or remove various focus trees for your country and others."
+GFTR_D_set_focus_tree_HIDE: "1. §RClose section§!"
+GFTR_D_set_gftr_a: "          1. Install (GFT: Redux)"
+GFTR_D_set_gftr_a_tt: "The current country will have §YGeneric Focus Tree: Redux§! installed or updated. \n~~~ \nPlease note: if you replace the focus tree of countries that have unique vanilla or DLC focus trees (for example: Germany, France, Iran, etc.), you will only be able to restore their original trees by §Lstarting a new game§! or §Lusing the console§!."
+GFTR_D_set_gftr_b: "          1. Install (GFT: Redux) for AI"
+GFTR_D_set_gftr_b_tt: "§YGeneric Focus Tree: Redux§! will be installed or updated for absolutely ALL countries controlled by the AI. \n~~~ \n§LBe careful§! — pressing this will give every single AI-controlled country the new focus tree. §GIt is recommended§! to use this decision only at the very start of the game and to also remove national spirits and special mechanics from all countries (using the decisions below)."
+GFTR_D_set_generic_focus: "          1. Install vanilla tree"
+GFTR_D_set_generic_focus_tt: "The current country will have the §Gvanilla§! generic focus tree installed or updated.\n~~~ \nNote that this function loads the current vanilla tree present in your game, which may have been modified by other large mods. In such cases, this will install the modified tree rather than the true vanilla one."
+GFTR_D_deleted_focus_tree: "          1. Remove focus tree"
+GFTR_D_deleted_focus_tree_tt: "The current country’s focus tree will be §Rremoved§!. More precisely, it will be replaced with a completely empty tree that contains no focuses (except the so-called “continuous” ones). \n~~~ \nI honestly don’t know why you might need this §YXD§!. Perhaps you want to make a country “inactive” — disabling its focus tree may slightly improve performance."
+GFTR_D_test_focus_tree: "          1. Test the mod"
+GFTR_D_test_focus_tree_tt: "An exact copy of §YGeneric Focus Tree: Redux§! will be installed, but every focus will take only 1 day to complete. \n~~~ \nThis feature is primarily intended for testing AI behavior — to quickly see how the AI acts and which focuses it chooses. Feel free to use it to help me identify AI-related issues. \n~~~ \nIt might also be fun for your own playthrough."
+# # # # # # # # # # # # # # #
+GFTR_D_remove_national_spirits_SHOW: "2. Remove national spirits?"
+GFTR_D_remove_national_spirits_SHOW_tt: "Here you can remove various national spirits from your country and others."
+GFTR_D_remove_national_spirits_HIDE: "2. §RClose section§!"
+GFTR_D_remove_gftr_national_spirits_a: "          2. Remove spirits (GFT: Redux)"
+GFTR_D_remove_gftr_national_spirits_a_tt: "All national spirits added by §YGeneric Focus Tree: Redux§! will be removed from the current country. \n~~~ \nTechnical national spirits will not be removed."
+GFTR_D_remove_gftr_national_spirits_b: "          2. Remove spirits (GFT: Redux) from AI"
+GFTR_D_remove_gftr_national_spirits_b_tt: "All national spirits added by §YGeneric Focus Tree: Redux§! will be removed from absolutely ALL AI-controlled countries. \n~~~ \nTechnical national spirits will not be removed. \n~~~ \n§RBe careful§! — removing national spirits may cause a brief freeze."
+GFTR_D_remove_vanilla_national_spirits_a: "          2. Remove vanilla spirits"
+GFTR_D_remove_vanilla_national_spirits_a_tt: "All starting §Gvanilla§! national spirits will be removed from the current country! \n~~~ \nUnfortunately, the game has no simple “remove all spirits” function, so this only removes a predefined list of spirits that every country has at the 1936 start. Using this later in the game will likely have little effect. §GIt is recommended§! to use this decision only at the very beginning of the game."
+GFTR_D_remove_vanilla_national_spirits_b: "          2. Remove vanilla spirits from AI"
+GFTR_D_remove_vanilla_national_spirits_b_tt: "All starting §Gvanilla§! starting national spirits will be removed from absolutely ALL AI-controlled countries. \n~~~ \nUnfortunately, the game has no simple “remove all spirits” function, so this only removes a predefined list of spirits that every country has at the 1936 start. Using this later in the game will likely have little effect. §GIt is recommended§! to use this decision only at the very beginning of the game. \n~~~ \n§RBe careful§! — removing national spirits may cause a brief freeze."
+# # # # # # # # # # # # # # #
+GFTR_D_remove_unique_mechanics_SHOW: "3. Remove unique mechanics?"
+GFTR_D_remove_unique_mechanics_SHOW_tt: "Here you can remove special mechanics, decisions, and modifiers that some countries have and that might interfere with replacing their native focus trees."
+GFTR_D_remove_unique_mechanics_HIDE: "3. §RClose section§!"
+GFTR_D_remove_state_modifier_a: "          3. Remove state modifiers"
+GFTR_D_remove_state_modifier_a_tt: "Certain state modifiers will be removed from the current country. \n~~~ \n§YState modifiers§! are special modifiers applied only to specific provinces. Examples include “Decentralization” in Ethiopian provinces or “Kurdish Separatism” in Turkey. \n~~~ \n§GWhen you replace§! a country’s §Gnative§! focus tree, these modifiers become permanent problems because they cannot be removed otherwise. This decision exists to solve that. \n~~~ \nThe countries affected are listed in the “Requirements” section above. §L(This also applies to the AI version)§! \n~~~ \n§GRecommended§! to use at game start, as later these modifiers may be replaced by others that this decision does not remove."
+GFTR_D_remove_state_modifier_b: "          3. Remove state modifiers from AI"
+GFTR_D_remove_state_modifier_b_tt: "State modifiers will be removed from regions owned by AI-controlled countries. \n~~~ \nSee the decision above for a description of these modifiers and the list of affected countries in the §L“Requirements”§! section. Ownership does not matter — modifiers will be removed regardless. \n~~~ \n§GRecommended§! only if you plan to replace the native focus trees of all AI countries."
+GFTR_D_remove_special_mechanics_a: "          3. Remove special mechanics"
+GFTR_D_remove_special_mechanics_a_tt: "Special mechanics will be removed from the current country. \n~~~ \n§YSpecial mechanics§! are country-unique systems that can only be managed through specific focuses. Examples include the “Balance of Power” system (Ethiopia, Denmark, etc.), Soviet “Paranoia”, and Polish “Peasant Uprising”. \n~~~ \n§GWhen you replace§! a country’s §Gnative§! focus tree, these mechanics become impossible to remove by any other means. \n~~~ \nAffected countries are listed in the "Requirements" section above and apply to the AI version below."
+GFTR_D_remove_special_mechanics_b: "          3. Remove special mechanics from AI"
+GFTR_D_remove_special_mechanics_b_tt: "Special mechanics will be removed from certain AI-controlled countries. \n~~~ \nSee the decision above for a description and the list of affected countries. \n~~~ \n§GRecommended§! only if you plan to replace the native focus trees of all AI countries."
+# # # # # # # # # # # # # # #
+GFTR_D_ai_management_SHOW: "4. Configure AI behavior?"
+GFTR_D_ai_management_SHOW_tt: "Here you can control the behavior of AI-controlled countries."
+GFTR_D_ai_management_HIDE: "4. §RClose section§!"
+GFTR_D_ai_political_freedom: "          4. "Political Freedom""
+GFTR_D_ai_political_freedom_tt: "All AI-controlled countries will receive the national spirit §Y$GFTR_idea_ai_political_freedom$§!. \n~~~ \nBy default in this mod, AI slightly prefers the political branch matching its current ideology, and in historical mode it never changes ideology or forms non-historical alliances. \n§YPolitical Freedom§! removes these restrictions. Even with historical mode enabled, AI will have more freedom and act more randomly. \n~~~ \nThis feature is less useful in vanilla but was created for compatibility with mods that add many new countries. A good example is §L"Every State Independent"§!, where hundreds of neutral countries exist and would otherwise heavily favor the monarchy branch without this spirit. \n~~~ \nUse this if you want AI to choose political branches with equal probability or to ignore historical mode."
+GFTR_D_ai_limit: "          4. Restrict AI"
+GFTR_D_ai_limit_tt: "The current country will receive the national spirit §Y$GFTR_idea_ai_limit$§! \n~~~ \nThis can be useful if you want to effectively “disable” the AI in a specific country, which may improve performance. It won’t replace proper optimization mods, but it allows selective restriction (requires console command "observe"). \n~~~ \n§GReminder§! You can also find the decision above to completely remove a country’s focus tree for even stronger AI limitation. \n~~~ \n"
+GFTR_D_ai_madness_mode: "          4. "Madness" Mode"
+GFTR_D_ai_madness_mode_tt: "All AI-controlled countries will receive the national spirit §Y$GFTR_idea_ai_madness_mode$§!. \n~~~ \n§Y"Madness" Mode§! forces AI to choose only war-oriented paths. Dive into total chaos where everyone fights everyone! §RNote§!, this only affects countries that have §YGeneric Focus Tree: Redux§! installed."
+GFTR_D_remove_management_ideas: "          4. Remove technical spirits"
+GFTR_D_remove_management_ideas_tt: "All possible technical national spirits added by this mod will be removed from every country in the game."
+########################################################################################################################
+# < CREATE ALLIANCE > #
+########################################################################################################################
+GFTR_categories_create_alliance: "Create Alliance"
+GFTR_categories_create_alliance_desc: "In recent times we have grown stronger and more confident, to the point where we are seriously considering forming our own alliance. We are one step away from making it a reality!"
+# # # # # # # # # # # # # # #
+GFTR_D_alliance_communism: "Communist Alliance"
+GFTR_D_alliance_neutrality: "Monarchist Alliance"
+GFTR_D_alliance_fascism: "Fascist Alliance"
+GFTR_D_alliance_democratic: "Democratic Alliance"

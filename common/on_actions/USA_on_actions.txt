@@ -1,0 +1,391 @@
+on_actions = {
+
+	on_startup = {
+		effect = {
+			CAN = {
+				add_ideas = US_can_cooperate
+				add_ideas = US_can_us_influence
+			}
+
+			USA={
+				add_timed_idea = {
+					idea = CAN_us_trade
+					days = 800
+				}
+
+				country_event=usa.0
+				USA_new_deal_effect = yes
+
+				country_event = {
+					id = usa_extra.17
+					days = 70
+				}
+			}
+			USA={
+				every_owned_state = {
+					limit = {
+						is_core_of=USA
+					}	
+					random_select_amount = 20	
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				every_owned_state = {
+					limit = {
+						is_core_of=USA
+					}	
+					random_select_amount = 5	
+					add_resource = {
+						type = steel
+						amount = 75
+					}
+					
+				}
+				every_owned_state = {
+					limit = {
+						is_core_of = USA
+					}	
+					random_select_amount = 5	
+					add_resource = {
+						type = coal
+						amount = 10
+					}
+					
+				}
+			}
+			if={
+				limit={
+					USA={
+						is_ai=yes
+					}						
+				}
+				USA={
+					every_owned_state = {
+						limit = {
+							is_core_of=USA
+							infrastructure< 2
+						}		
+						add_building_construction = {
+							type = infrastructure
+							level = 2
+							instant_build = yes
+						}
+					}
+					every_owned_state = {
+						limit = {
+							is_core_of=USA
+							infrastructure< 3
+						}		
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}	
+				}
+							
+				393 = {
+						add_building_construction = {
+							type = land_facility
+							level = 1
+							province = 6710
+							instant_build = yes
+							}
+					}
+				375 = {
+						add_building_construction = {
+							type = air_facility
+							level = 1
+							province = 10337
+							instant_build = yes
+							}
+					}
+				USA={
+					add_political_power = -400
+					add_ideas = USA_robert_taft
+					add_ideas = USA_fulangxisi_bojinsi
+					add_ideas = USA_weilian_laixi
+					add_ideas = douglas_macarthur
+				}
+			}
+			
+		}
+	}
+
+
+	on_monthly_USA = {
+		effect = {
+			if = {
+				limit = { 
+					OR = {
+						has_idea = USA_sixiangjiefang1
+						has_idea = USA_sixiangjiefang2
+						has_idea = USA_kexuejiagangwan
+						has_idea = USA_kexuejiagangwan2
+						has_idea = USA_kexuejiagangwan3
+					}
+				}
+
+				add_breakthrough_progress = {
+					specialization = specialization_land
+					value = 0.05
+				}
+
+				add_breakthrough_progress = {
+					specialization = specialization_naval
+					value = 0.05
+				}
+				
+				add_breakthrough_progress = {
+					specialization = specialization_air
+					value = 0.05
+				}
+
+			}
+		}
+	}
+
+	on_war = { 
+		effect = {
+			if = {
+				limit = {
+					tag = USA
+					has_war = yes
+					has_completed_focus = USA_qianghua_laogong_quanyi
+					has_country_flag = USA_cooperation_with_Trade_union_flag
+				}
+				country_event = {
+					id = usa_extra.9
+					days = 3
+				}
+			}
+
+			if = {
+				limit = {
+					tag = USA
+					has_war = yes
+					OR = {
+						has_idea = USA_jingji_tingzhi
+						has_idea = USA_jingji_tingzhi2
+					}
+					
+				}
+				country_event = {
+					id = usa_extra.14
+					days = 20
+				}
+			}
+
+			if = {
+				limit = {
+					tag = USA
+					has_war = yes
+					OR = {
+						has_idea = great_depression_4
+						has_idea = great_depression_3
+						has_idea = great_depression_2
+						has_idea = great_depression
+					}
+					
+				}
+				country_event = {
+					id = usa_extra.15
+					days = 45
+				}
+			}
+
+		}
+	}
+
+
+	on_civil_war_end_before_annexation = {
+		effect = {
+			
+			if = {
+				limit = {
+					original_tag = USA
+					OR ={
+						has_government = fascism
+						has_government = neutrality
+					}
+					
+					has_completed_focus = USA_focus100
+				}
+				
+				random_other_country = {
+					limit = {
+						original_tag = USA
+						has_government = democratic
+					}
+
+					every_unit_leader = {					
+						set_nationality = HAW
+					}
+				}
+
+				HAW = {
+					country_event = {
+						id = haw_extra.9
+						days = 6
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					original_tag = USA
+					OR ={
+						has_government = communism
+					}
+					
+					has_completed_focus = USA_suspend_the_presecution
+				}
+				
+				IF = {
+					limit = {
+						NOT = {
+							has_completed_focus = USA_focus27
+						}
+					}
+					USA = {
+						complete_national_focus = {
+							focus = USA_focus27
+							use_side_message = yes
+						}
+					}
+				}
+
+			}
+		}
+	}
+
+	on_civil_war_end = {
+		effect = {
+			#complete  focus27
+			if = {
+				limit = {
+					original_tag = USA
+					OR ={
+						has_government = communism
+					}
+					
+					has_completed_focus = USA_suspend_the_presecution
+				}
+				
+				IF = {
+					limit = {
+						NOT = {
+							has_completed_focus = USA_focus27
+						}
+					}
+					USA = {
+						complete_national_focus = {
+							focus = USA_focus27
+							use_side_message = yes
+						}
+					}
+				}
+
+			}
+		}
+	}
+
+	# ROOT is capitulated country, FROM is winner
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					Belongs_to_US = yes
+					FROM = { Belongs_to_US = yes }
+				}
+				transfer_navy = { target = FROM }
+				every_owned_state = {
+					transfer_state_to = FROM
+				}
+			}
+
+		}
+
+		effect = {
+
+			IF = {
+				limit = {
+					ROOT = {
+						Belongs_to_US = yes
+						
+					}
+					FROM = {
+						Belongs_to_US = yes
+
+					}
+					
+				}
+				FROM = {
+					annex_country = {
+						target = ROOT
+						transfer_troops = no
+					}
+				}
+			}
+
+			IF = {
+				limit = {
+					ROOT = {
+						TAG = UFE
+					}
+					FROM = {
+						OR = {
+							TAG = CFA
+							TAG = USA
+						}
+					}
+					CFA = {
+						exists = yes
+					}
+					USA = {
+						exists = yes
+					}
+				}
+
+
+				every_state = {
+					limit = {
+						OR = {						
+							state = 376
+							state = 377
+							#state = 379
+							state = 380
+							state = 381	
+							state = 382						
+							state = 387
+							state = 388
+						}
+					}
+					transfer_state_to = USA
+					add_core_of = USA
+				}
+
+				every_state = {
+					limit = {
+						OR = {													
+							state = 383
+							state = 384
+							state = 374
+							state = 375
+							state = 389
+							state = 390
+						}
+					}
+					transfer_state_to = CFA
+					add_core_of = CFA
+				}
+
+			}
+		}
+	}
+	
+}

@@ -1,0 +1,29 @@
+characters = {
+	FRW_adv_trotsky = {
+		name = FRW_adv_trotsky
+		portraits = {
+			civilian = { large = GFX_portrait_SOV_lev_trotsky small = GFX_idea_SOV_lev_trotsky }
+			army = { small = GFX_idea_SOV_lev_trotsky }
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_trotsky
+			allowed = { original_tag = FRA }
+			visible = { has_country_flag = FRW_trotsky_in_france }
+			available = { has_government = communism }
+			cost = 100
+			traits = { FRW_trait_trotsky }
+			ai_will_do = { factor = 1 }
+		}
+	}
+	FRW_louis_napoleon_marshal = {
+		name = FRW_leader_napoleon
+		portraits = { army = { large = GFX_FRW_portrait_napoleon } }
+		field_marshal = { traits = { offensive_doctrine } skill = 3 attack_skill = 3 defense_skill = 2 planning_skill = 3 logistics_skill = 2 }
+	}
+	FRW_louis_napoleon_marshal_nodlc = {
+		name = FRW_leader_napoleon
+		portraits = { army = { large = GFX_FRW_portrait_napoleon_nodlc } }
+		field_marshal = { traits = { offensive_doctrine } skill = 3 attack_skill = 3 defense_skill = 2 planning_skill = 3 logistics_skill = 2 }
+	}
+}

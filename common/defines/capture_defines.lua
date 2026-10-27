@@ -1,0 +1,1 @@
+NDefines.NMilitary.BASE_CAPTURE_EQUIPMENT_RATIO = 0.05

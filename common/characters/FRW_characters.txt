@@ -1,0 +1,713 @@
+# France Rework - additional characters
+characters = {
+	# Political advisor unlocked by "The Imperial University" (Bonapartist path)
+	FRW_joliot_curie_advisor = {
+		name = FRW_joliot_curie_advisor
+		portraits = {
+			army = {
+				small = GFX_idea_frederic_irene_joliot_curie
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_joliot_curie_advisor
+			allowed = { original_tag = FRA }
+			visible = { has_completed_focus = FRW_imperial_university }
+			available = { has_completed_focus = FRW_imperial_university }
+			cost = 150
+			traits = { FRW_imperial_scientist }
+			ai_will_do = { factor = 2 }
+		}
+	}
+
+	# ---------- France Rework: custom political advisors (Council of Ministers decisions) ----------
+	FRW_adv_monnet = {
+		name = FRW_adv_monnet
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_monnet small = GFX_idea_FRW_adv_monnet } army = { small = GFX_idea_FRW_adv_monnet } }
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_monnet
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_monnet_appointed } }
+			cost = 50
+			traits = { FRW_trait_monnet }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_dautry = {
+		name = FRW_adv_dautry
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_dautry small = GFX_idea_FRW_adv_dautry } army = { small = GFX_idea_FRW_adv_dautry } }
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_dautry
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_dautry_appointed } }
+			cost = 50
+			traits = { FRW_trait_dautry }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_cot = {
+		name = FRW_adv_cot
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_cot small = GFX_idea_FRW_adv_cot } army = { small = GFX_idea_FRW_adv_cot } }
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_cot
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_cot_appointed } }
+			cost = 50
+			traits = { FRW_trait_cot }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_mandel = {
+		name = FRW_adv_mandel
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_mandel small = GFX_idea_FRW_adv_mandel } army = { small = GFX_idea_FRW_adv_mandel } }
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_mandel
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_mandel_appointed } }
+			cost = 50
+			traits = { FRW_trait_mandel }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_marty = {
+		name = FRW_adv_marty
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_marty small = GFX_idea_FRW_adv_marty } army = { small = GFX_idea_FRW_adv_marty } }
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_marty
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_marty_appointed } }
+			cost = 50
+			traits = { FRW_trait_marty }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_ybarnegaray = {
+		name = FRW_adv_ybarnegaray
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_ybarnegaray small = GFX_idea_FRW_adv_ybarnegaray } army = { small = GFX_idea_FRW_adv_ybarnegaray } }
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_ybarnegaray
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_ybarnegaray_appointed } }
+			cost = 50
+			traits = { FRW_trait_ybarnegaray }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_marion = {
+		name = FRW_adv_marion
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_marion small = GFX_idea_FRW_adv_marion } army = { small = GFX_idea_FRW_adv_marion } }
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_marion
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_marion_appointed } }
+			cost = 50
+			traits = { FRW_trait_marion }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_bichelonne = {
+		name = FRW_adv_bichelonne
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_bichelonne small = GFX_idea_FRW_adv_bichelonne } army = { small = GFX_idea_FRW_adv_bichelonne } }
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_bichelonne
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_bichelonne_appointed } }
+			cost = 50
+			traits = { FRW_trait_bichelonne }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_sauvy = {
+		name = FRW_adv_sauvy
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_sauvy small = GFX_idea_FRW_adv_sauvy } army = { small = GFX_idea_FRW_adv_sauvy } }
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_sauvy
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_sauvy_appointed } }
+			cost = 50
+			traits = { FRW_trait_sauvy }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_perrin = {
+		name = FRW_adv_perrin
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_perrin small = GFX_idea_FRW_adv_perrin } army = { small = GFX_idea_FRW_adv_perrin } }
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_perrin
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_perrin_appointed } }
+			cost = 50
+			traits = { FRW_trait_perrin }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_langevin = {
+		name = FRW_adv_langevin
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_langevin small = GFX_idea_FRW_adv_langevin } army = { small = GFX_idea_FRW_adv_langevin } }
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_langevin
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_langevin_appointed } }
+			cost = 50
+			traits = { FRW_trait_langevin }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_barre = {
+		name = FRW_adv_barre
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_barre small = GFX_idea_FRW_adv_barre } army = { small = GFX_idea_FRW_adv_barre } }
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_barre
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_barre_appointed } }
+			cost = 50
+			traits = { FRW_trait_barre }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_fperrin = {
+		name = FRW_adv_fperrin
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_fperrin small = GFX_idea_FRW_adv_fperrin } army = { small = GFX_idea_FRW_adv_fperrin } }
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_fperrin
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_fperrin_appointed } }
+			cost = 50
+			traits = { FRW_trait_fperrin }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_moulin = {
+		name = FRW_adv_moulin
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_moulin small = GFX_idea_FRW_adv_moulin } army = { small = GFX_idea_FRW_adv_moulin } }
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_moulin
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_moulin_appointed } }
+			cost = 50
+			traits = { FRW_trait_moulin }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_frenay = {
+		name = FRW_adv_frenay
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_frenay small = GFX_idea_FRW_adv_frenay } army = { small = GFX_idea_FRW_adv_frenay } }
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_frenay
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_frenay_appointed } }
+			cost = 50
+			traits = { FRW_trait_frenay }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_remy = {
+		name = FRW_adv_remy
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_remy small = GFX_idea_FRW_adv_remy } army = { small = GFX_idea_FRW_adv_remy } }
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_remy
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_remy_appointed } }
+			cost = 50
+			traits = { FRW_trait_remy }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_alibert = {
+		name = FRW_adv_alibert
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_alibert small = GFX_idea_FRW_adv_alibert } army = { small = GFX_idea_FRW_adv_alibert } }
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_alibert
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_alibert_appointed } }
+			cost = 50
+			traits = { FRW_trait_alibert }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_spinasse = {
+		name = FRW_adv_spinasse
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_spinasse small = GFX_idea_FRW_adv_spinasse } army = { small = GFX_idea_FRW_adv_spinasse } }
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_spinasse
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_spinasse_appointed } }
+			cost = 50
+			traits = { FRW_trait_spinasse }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_debroglie = {
+		name = FRW_adv_debroglie
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_debroglie small = GFX_idea_FRW_adv_debroglie } army = { small = GFX_idea_FRW_adv_debroglie } }
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_debroglie
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_debroglie_appointed } }
+			cost = 50
+			traits = { FRW_trait_debroglie }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_ponte = {
+		name = FRW_adv_ponte
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_ponte small = GFX_idea_FRW_adv_ponte } army = { small = GFX_idea_FRW_adv_ponte } }
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_ponte
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_ponte_appointed } }
+			cost = 50
+			traits = { FRW_trait_ponte }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_caquot = {
+		name = FRW_adv_caquot
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_caquot small = GFX_idea_FRW_adv_caquot } army = { small = GFX_idea_FRW_adv_caquot } }
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_caquot
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_caquot_appointed } }
+			cost = 50
+			traits = { FRW_trait_caquot }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_coanda = {
+		name = FRW_adv_coanda
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_coanda small = GFX_idea_FRW_adv_coanda } army = { small = GFX_idea_FRW_adv_coanda } }
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_coanda
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_coanda_appointed } }
+			cost = 50
+			traits = { FRW_trait_coanda }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_leduc = {
+		name = FRW_adv_leduc
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_leduc small = GFX_idea_FRW_adv_leduc } army = { small = GFX_idea_FRW_adv_leduc } }
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_leduc
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_leduc_appointed } }
+			cost = 50
+			traits = { FRW_trait_leduc }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_dastier = {
+		name = FRW_adv_dastier
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_dastier small = GFX_idea_FRW_adv_dastier } army = { small = GFX_idea_FRW_adv_dastier } }
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_dastier
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_dastier_appointed } }
+			cost = 50
+			traits = { FRW_trait_dastier }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_brossolette = {
+		name = FRW_adv_brossolette
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_brossolette small = GFX_idea_FRW_adv_brossolette } army = { small = GFX_idea_FRW_adv_brossolette } }
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_brossolette
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_brossolette_appointed } }
+			cost = 50
+			traits = { FRW_trait_brossolette }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_dormoy = {
+		name = FRW_adv_dormoy
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_dormoy small = GFX_idea_FRW_adv_dormoy } army = { small = GFX_idea_FRW_adv_dormoy } }
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_dormoy
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_dormoy_appointed } }
+			cost = 50
+			traits = { FRW_trait_dormoy }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_gmonnet = {
+		name = FRW_adv_gmonnet
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_gmonnet small = GFX_idea_FRW_adv_gmonnet } army = { small = GFX_idea_FRW_adv_gmonnet } }
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_gmonnet
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_gmonnet_appointed } }
+			cost = 50
+			traits = { FRW_trait_gmonnet }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_laugier = {
+		name = FRW_adv_laugier
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_laugier small = GFX_idea_FRW_adv_laugier } army = { small = GFX_idea_FRW_adv_laugier } }
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_laugier
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_laugier_appointed } }
+			cost = 50
+			traits = { FRW_trait_laugier }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_esnault = {
+		name = FRW_adv_esnault
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_esnault small = GFX_idea_FRW_adv_esnault } army = { small = GFX_idea_FRW_adv_esnault } }
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_esnault
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_esnault_appointed } }
+			cost = 50
+			traits = { FRW_trait_esnault }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_paillole = {
+		name = FRW_adv_paillole
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_paillole small = GFX_idea_FRW_adv_paillole } army = { small = GFX_idea_FRW_adv_paillole } }
+		advisor = {
+			slot = political_advisor
+			idea_token = FRW_adv_paillole
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_paillole_appointed } }
+			cost = 50
+			traits = { FRW_trait_paillole }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_colson = {
+		name = FRW_adv_colson
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_colson small = GFX_idea_FRW_adv_colson } army = { small = GFX_idea_FRW_adv_colson } }
+		advisor = {
+			slot = army_chief
+			idea_token = FRW_adv_colson
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_colson_appointed } }
+			cost = 50
+			traits = { FRW_trait_colson }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_altmayer = {
+		name = FRW_adv_altmayer
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_altmayer small = GFX_idea_FRW_adv_altmayer } army = { small = GFX_idea_FRW_adv_altmayer } }
+		advisor = {
+			slot = army_chief
+			idea_token = FRW_adv_altmayer
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_altmayer_appointed } }
+			cost = 50
+			traits = { FRW_trait_altmayer }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_flavigny = {
+		name = FRW_adv_flavigny
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_flavigny small = GFX_idea_FRW_adv_flavigny } army = { small = GFX_idea_FRW_adv_flavigny } }
+		advisor = {
+			slot = army_chief
+			idea_token = FRW_adv_flavigny
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_flavigny_appointed } }
+			cost = 50
+			traits = { FRW_trait_flavigny }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_durandviel = {
+		name = FRW_adv_durandviel
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_durandviel small = GFX_idea_FRW_adv_durandviel } army = { small = GFX_idea_FRW_adv_durandviel } }
+		advisor = {
+			slot = navy_chief
+			idea_token = FRW_adv_durandviel
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_durandviel_appointed } }
+			cost = 50
+			traits = { FRW_trait_durandviel }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_grobert = {
+		name = FRW_adv_grobert
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_grobert small = GFX_idea_FRW_adv_grobert } army = { small = GFX_idea_FRW_adv_grobert } }
+		advisor = {
+			slot = navy_chief
+			idea_token = FRW_adv_grobert
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_grobert_appointed } }
+			cost = 50
+			traits = { FRW_trait_grobert }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_platon = {
+		name = FRW_adv_platon
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_platon small = GFX_idea_FRW_adv_platon } army = { small = GFX_idea_FRW_adv_platon } }
+		advisor = {
+			slot = navy_chief
+			idea_token = FRW_adv_platon
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_platon_appointed } }
+			cost = 50
+			traits = { FRW_trait_platon }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_armengaud = {
+		name = FRW_adv_armengaud
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_armengaud small = GFX_idea_FRW_adv_armengaud } army = { small = GFX_idea_FRW_adv_armengaud } }
+		advisor = {
+			slot = air_chief
+			idea_token = FRW_adv_armengaud
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_armengaud_appointed } }
+			cost = 50
+			traits = { FRW_trait_armengaud }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_mendigal = {
+		name = FRW_adv_mendigal
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_mendigal small = GFX_idea_FRW_adv_mendigal } army = { small = GFX_idea_FRW_adv_mendigal } }
+		advisor = {
+			slot = air_chief
+			idea_token = FRW_adv_mendigal
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_mendigal_appointed } }
+			cost = 50
+			traits = { FRW_trait_mendigal }
+			ai_will_do = { factor = 2 }
+		}
+	}
+	FRW_adv_bouscat = {
+		name = FRW_adv_bouscat
+		portraits = { civilian = { large = GFX_portrait_FRW_adv_bouscat small = GFX_idea_FRW_adv_bouscat } army = { small = GFX_idea_FRW_adv_bouscat } }
+		advisor = {
+			slot = air_chief
+			idea_token = FRW_adv_bouscat
+			allowed = { original_tag = FRA }
+			available = { custom_trigger_tooltip = { tooltip = FRW_adv_appoint_req has_country_flag = FRW_adv_bouscat_appointed } }
+			cost = 50
+			traits = { FRW_trait_bouscat }
+			ai_will_do = { factor = 2 }
+		}
+	}
+
+	# ---------- France Rework: additional commanders ----------
+	FRW_gen_corap = {
+		name = FRW_gen_corap
+		portraits = { army = { large = "gfx/leaders/FRA/Portrait_France_Generic_land_1.dds" } }
+		corps_commander = {
+			traits = { old_guard trait_cautious infantry_officer }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+	FRW_gen_touchon = {
+		name = FRW_gen_touchon
+		portraits = { army = { large = "gfx/leaders/FRA/Portrait_France_Generic_land_2.dds" } }
+		corps_commander = {
+			traits = { old_guard defensive_doctrine FRW_trait_ecole_de_guerre }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	FRW_gen_pretelat = {
+		name = FRW_gen_pretelat
+		portraits = { army = { large = "gfx/leaders/FRA/Portrait_France_Generic_land_3.dds" } }
+		field_marshal = {
+			traits = { old_guard defensive_doctrine FRW_trait_ecole_de_guerre }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+	FRW_gen_prioux = {
+		name = FRW_gen_prioux
+		portraits = { army = { large = "gfx/leaders/FRA/Portrait_France_Generic_land_4.dds" } }
+		corps_commander = {
+			traits = { career_officer cavalry_officer FRW_trait_armoured_pioneer }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	FRW_gen_delestraint = {
+		name = FRW_gen_delestraint
+		portraits = { army = { large = "gfx/leaders/FRA/Portrait_France_Generic_land_5.dds" } }
+		corps_commander = {
+			traits = { career_officer armor_officer FRW_trait_armoured_pioneer }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 1
+		}
+	}
+	FRW_gen_frere = {
+		name = FRW_gen_frere
+		portraits = { army = { large = "gfx/leaders/FRA/Portrait_France_Generic_land_6.dds" } }
+		corps_commander = {
+			traits = { old_guard infantry_officer }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	FRW_gen_bethouart = {
+		name = FRW_gen_bethouart
+		portraits = { army = { large = "gfx/leaders/FRA/Portrait_France_Generic_land_7.dds" } }
+		corps_commander = {
+			traits = { career_officer trait_mountaineer FRW_trait_alpine_school }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+	FRW_gen_larminat = {
+		name = FRW_gen_larminat
+		portraits = { army = { large = "gfx/leaders/FRA/Portrait_France_Generic_land_8.dds" } }
+		corps_commander = {
+			traits = { career_officer infantry_officer FRW_trait_army_of_africa }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+	FRW_gen_legentilhomme = {
+		name = FRW_gen_legentilhomme
+		portraits = { army = { large = "gfx/leaders/FRA/Portrait_France_Generic_land_9.dds" } }
+		corps_commander = {
+			traits = { career_officer infantry_officer FRW_trait_army_of_africa }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	FRW_gen_catroux = {
+		name = FRW_gen_catroux
+		portraits = { army = { large = "gfx/leaders/FRA/portrait_fra_georges_catroux.dds" } }
+		field_marshal = {
+			traits = { old_guard FRW_trait_army_of_africa }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+	FRW_gen_koenig = {
+		name = FRW_gen_koenig
+		portraits = { army = { large = "gfx/leaders/FRA/portrait_fra_marie_pierre_koenig.dds" } }
+		corps_commander = {
+			traits = { career_officer defensive_doctrine }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	FRW_gen_gensoul = {
+		name = FRW_gen_gensoul
+		portraits = { army = { large = "gfx/leaders/FRA/Portrait_France_Generic_navy_1.dds" } }
+		navy_leader = {
+			traits = { old_guard_navy battleship_adherent }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 2
+		}
+	}
+	FRW_gen_auphan = {
+		name = FRW_gen_auphan
+		portraits = { army = { large = "gfx/leaders/FRA/Portrait_France_Generic_navy_2.dds" } }
+		navy_leader = {
+			traits = { naval_lineage }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 3
+		}
+	}
+	FRW_gen_argenlieu = {
+		name = FRW_gen_argenlieu
+		portraits = { army = { large = "gfx/leaders/FRA/Portrait_France_Generic_navy_3.dds" } }
+		navy_leader = {
+			traits = { aviation_enthusiast }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 2
+		}
+	}
+	FRW_gen_muselier = {
+		name = FRW_gen_muselier
+		portraits = { army = { large = "gfx/leaders/FRA/portrait_fra_emilie_muselier.dds" } }
+		navy_leader = {
+			traits = { bold superior_tactician }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			maneuvering_skill = 3
+			coordination_skill = 2
+		}
+	}
+}

@@ -1,0 +1,1110 @@
+﻿###########################################################
+# France Rework - Events
+###########################################################
+add_namespace = frw
+
+# ---------------------------------------------------------
+# Die Krise der Dritten Republik
+# ---------------------------------------------------------
+country_event = {
+	id = frw.1
+	title = frw.1.t
+	desc = frw.1.d
+	picture = GFX_report_event_worried_french
+	is_triggered_only = yes
+
+	option = {
+		name = frw.1.a
+		add_stability = 0.03
+	}
+	option = {
+		name = frw.1.b
+		add_political_power = 50
+	}
+}
+
+# ---------------------------------------------------------
+# Nachrichten: Regimewechsel in Frankreich
+# ---------------------------------------------------------
+news_event = {
+	id = frw.2
+	title = frw.2.t
+	desc = frw.2.d
+	picture = GFX_news_event_generic_communist_militia
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = frw.2.a
+		trigger = { NOT = { tag = FRA } }
+	}
+	option = {
+		name = frw.2.b
+		trigger = { tag = FRA }
+	}
+}
+
+news_event = {
+	id = frw.3
+	title = frw.3.t
+	desc = frw.3.d
+	picture = GFX_news_event_generic_rally
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = frw.3.a
+		trigger = { NOT = { tag = FRA } }
+	}
+	option = {
+		name = frw.3.b
+		trigger = { tag = FRA }
+	}
+}
+
+news_event = {
+	id = frw.4
+	title = frw.4.t
+	desc = frw.4.d
+	picture = GFX_news_event_generic_parliament
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = frw.4.a
+	}
+}
+
+news_event = {
+	id = frw.5
+	title = frw.5.t
+	desc = frw.5.d
+	picture = GFX_news_event_french_parade
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = frw.5.a
+		trigger = { NOT = { tag = FRA } }
+	}
+	option = {
+		name = frw.5.b
+		trigger = { tag = FRA }
+	}
+}
+
+news_event = {
+	id = frw.6
+	title = frw.6.t
+	desc = frw.6.d
+	picture = GFX_news_event_king_speech
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = frw.6.a
+		trigger = { NOT = { tag = FRA } }
+	}
+	option = {
+		name = frw.6.b
+		trigger = { tag = FRA }
+	}
+}
+
+# ---------------------------------------------------------
+# Frankreich bittet um Aufnahme in eine Fraktion
+# (ROOT = Fraktionsfuehrer, FROM = Frankreich)
+# ---------------------------------------------------------
+country_event = {
+	id = frw.10
+	title = frw.10.t
+	desc = frw.10.d
+	picture = GFX_report_event_french_british_officers
+	is_triggered_only = yes
+
+	option = {
+		name = frw.10.a
+		ai_chance = {
+			base = 70
+			modifier = { factor = 0 has_war_with = FROM }
+		}
+		add_to_faction = FROM
+		FROM = { country_event = frw.11 }
+	}
+	option = {
+		name = frw.10.b
+		ai_chance = { base = 30 }
+		FROM = { country_event = frw.12 }
+	}
+}
+
+country_event = {
+	id = frw.11
+	title = frw.11.t
+	desc = frw.11.d
+	picture = GFX_report_event_french_british_officers
+	is_triggered_only = yes
+	option = { name = frw.11.a }
+}
+
+country_event = {
+	id = frw.12
+	title = frw.12.t
+	desc = frw.12.d
+	picture = GFX_report_event_worried_french
+	is_triggered_only = yes
+	option = {
+		name = frw.12.a
+		add_political_power = 25
+	}
+}
+
+# ---------------------------------------------------------
+# Frankreich laedt in seine Fraktion ein
+# (ROOT = eingeladenes Land, FROM = Frankreich)
+# ---------------------------------------------------------
+country_event = {
+	id = frw.16
+	title = frw.16.t
+	desc = frw.16.d
+	picture = GFX_report_event_france_parade
+	is_triggered_only = yes
+
+	option = {
+		name = frw.16.a
+		ai_chance = {
+			base = 50
+			modifier = { factor = 0 has_war_with = FROM }
+			modifier = { factor = 0 is_in_faction = yes }
+			modifier = { factor = 2 has_opinion = { target = FROM value > 30 } }
+		}
+		trigger = { is_in_faction = no }
+		FROM = {
+			add_to_faction = ROOT
+			country_event = frw.17
+		}
+	}
+	option = {
+		name = frw.16.b
+		ai_chance = { base = 50 }
+		FROM = { country_event = frw.18 }
+	}
+}
+
+country_event = {
+	id = frw.17
+	title = frw.17.t
+	desc = frw.17.d
+	picture = GFX_report_event_france_parade
+	is_triggered_only = yes
+	option = { name = frw.17.a }
+}
+
+country_event = {
+	id = frw.18
+	title = frw.18.t
+	desc = frw.18.d
+	picture = GFX_report_event_worried_french
+	is_triggered_only = yes
+	option = { name = frw.18.a }
+}
+
+# ---------------------------------------------------------
+# Franzoesisch-Britische Union (ROOT = ENG, FROM = FRA)
+# ---------------------------------------------------------
+country_event = {
+	id = frw.20
+	title = frw.20.t
+	desc = frw.20.d
+	picture = GFX_report_event_french_british_officers
+	is_triggered_only = yes
+
+	option = {
+		name = frw.20.a
+		ai_chance = {
+			base = 30
+			modifier = { factor = 3 has_war = yes }
+		}
+		FROM = {
+			FRW_form_fruk = yes
+			country_event = frw.21
+		}
+	}
+	option = {
+		name = frw.20.b
+		ai_chance = { base = 70 }
+		FROM = { country_event = frw.22 }
+	}
+}
+
+country_event = {
+	id = frw.21
+	title = frw.21.t
+	desc = frw.21.d
+	picture = GFX_report_event_french_british_officers
+	is_triggered_only = yes
+	option = { name = frw.21.a }
+}
+
+country_event = {
+	id = frw.22
+	title = frw.22.t
+	desc = frw.22.d
+	picture = GFX_report_event_worried_french
+	is_triggered_only = yes
+	option = {
+		name = frw.22.a
+		add_political_power = 50
+	}
+}
+
+# ---------------------------------------------------------
+# Protektorat ueber Liberia (ROOT = LIB, FROM = FRA)
+# ---------------------------------------------------------
+country_event = {
+	id = frw.25
+	title = frw.25.t
+	desc = frw.25.d
+	picture = GFX_report_event_france_victory_syria
+	is_triggered_only = yes
+
+	option = {
+		name = frw.25.a
+		ai_chance = {
+			base = 15
+			modifier = { factor = 2 strength_ratio = { tag = FROM ratio < 0.75 } }
+			modifier = { factor = 2 strength_ratio = { tag = FROM ratio < 0.5 } }
+			modifier = { factor = 2 strength_ratio = { tag = FROM ratio < 0.25 } }
+			modifier = { factor = 1.5 has_opinion = { target = FROM value > 25 } }
+			modifier = { factor = 2 has_opinion = { target = FROM value > 75 } }
+			modifier = { factor = 0.3 has_opinion = { target = FROM value < -25 } }
+			modifier = { factor = 0.2 is_in_faction = yes NOT = { is_in_faction_with = FROM } }
+		}
+		FROM = {
+			puppet = ROOT
+			country_event = frw.26
+		}
+	}
+	option = {
+		name = frw.25.b
+		ai_chance = { base = 50 }
+		FROM = { country_event = frw.27 }
+	}
+}
+
+country_event = {
+	id = frw.26
+	title = frw.26.t
+	desc = frw.26.d
+	picture = GFX_report_event_france_victory_syria
+	is_triggered_only = yes
+	option = { name = frw.26.a }
+}
+
+country_event = {
+	id = frw.27
+	title = frw.27.t
+	desc = frw.27.d
+	picture = GFX_report_event_worried_french
+	is_triggered_only = yes
+	option = {
+		name = frw.27.a
+		add_political_power = 25
+	}
+}
+
+# ---------------------------------------------------------
+# Kolonialkauf (ROOT = Verkaeufer, FROM = Frankreich)
+# ---------------------------------------------------------
+country_event = {
+	id = frw.50
+	title = frw.50.t
+	desc = frw.50.d
+	picture = GFX_report_event_france_victory_syria
+	is_triggered_only = yes
+
+	option = {
+		name = frw.50.a
+		ai_chance = {
+			base = 60
+			modifier = { factor = 0 has_war_with = FROM }
+			modifier = { factor = 0.3 has_opinion = { target = FROM value < 0 } }
+			modifier = { factor = 2 is_in_faction_with = FROM }
+			modifier = { factor = 1.5 has_war = yes }
+		}
+		FRW_execute_colonial_purchase = yes
+		add_political_power = 100
+		add_timed_idea = { idea = FRW_french_gold days = 365 }
+		FROM = { country_event = frw.51 }
+	}
+	option = {
+		name = frw.50.b
+		ai_chance = { base = 40 }
+		FRW_clear_purchase_flags = yes
+		FROM = { country_event = frw.52 }
+	}
+}
+
+country_event = {
+	id = frw.51
+	title = frw.51.t
+	desc = frw.51.d
+	picture = GFX_report_event_france_victory_syria
+	is_triggered_only = yes
+	option = {
+		name = frw.51.a
+		add_timed_idea = { idea = FRW_colonial_debt days = 365 }
+	}
+}
+
+country_event = {
+	id = frw.52
+	title = frw.52.t
+	desc = frw.52.d
+	picture = GFX_report_event_worried_french
+	is_triggered_only = yes
+	option = {
+		name = frw.52.a
+		add_political_power = 50
+	}
+}
+
+# ---------------------------------------------------------
+# Formbare Nationen (Nachrichten)
+# ---------------------------------------------------------
+news_event = {
+	id = frw.60
+	title = frw.60.t
+	desc = frw.60.d
+	picture = GFX_news_event_generic_sign_treaty1
+	major = yes
+	is_triggered_only = yes
+	option = { name = frw.60.a }
+}
+
+news_event = {
+	id = frw.61
+	title = frw.61.t
+	desc = frw.61.d
+	picture = GFX_news_event_french_parade
+	major = yes
+	is_triggered_only = yes
+	option = { name = frw.61.a }
+}
+
+news_event = {
+	id = frw.62
+	title = frw.62.t
+	desc = frw.62.d
+	picture = GFX_news_event_generic_african_unity
+	major = yes
+	is_triggered_only = yes
+	option = { name = frw.62.a }
+}
+
+# ---------------------------------------------------------
+# "Anschluss": France demands union (ROOT = target, FROM = France)
+# ---------------------------------------------------------
+country_event = {
+	id = frw.70
+	title = frw.70.t
+	desc = frw.70.d
+	picture = GFX_report_event_soldiers_in_france
+	is_triggered_only = yes
+
+	option = {
+		name = frw.70.a
+		ai_chance = {
+			# Grundchance; Ablehnung hat konstant 50 -> Annahme = A / (A + 50)
+			base = 10
+			# Frankreichs Heer im Vergleich (ROOT-Stärke / Frankreich-Stärke): bis x8
+			modifier = { factor = 2 strength_ratio = { tag = FROM ratio < 0.75 } }
+			modifier = { factor = 2 strength_ratio = { tag = FROM ratio < 0.5 } }
+			modifier = { factor = 2 strength_ratio = { tag = FROM ratio < 0.25 } }
+			modifier = { factor = 0.2 strength_ratio = { tag = FROM ratio > 1 } }
+			# Beziehung zu Frankreich: bis x3 bzw. x0.3
+			modifier = { factor = 1.5 has_opinion = { target = FROM value > 25 } }
+			modifier = { factor = 2 has_opinion = { target = FROM value > 75 } }
+			modifier = { factor = 0.3 has_opinion = { target = FROM value < -25 } }
+			# Bündnisse
+			modifier = { factor = 2 is_in_faction_with = FROM }
+			modifier = { factor = 0.2 is_in_faction = yes NOT = { is_in_faction_with = FROM } }
+			modifier = { factor = 0.5 has_war = yes NOT = { has_war_with = FROM } }
+			modifier = { factor = 0 is_major = yes }
+			modifier = { factor = 0 is_faction_leader = yes }
+		}
+		FROM = {
+			country_event = { id = frw.72 }
+			annex_country = { target = ROOT transfer_troops = yes }
+		}
+	}
+	option = {
+		name = frw.70.b
+		ai_chance = { base = 50 }
+		FROM = { country_event = { id = frw.73 } }
+	}
+}
+
+# France demands territory (ROOT = target, FROM = France)
+country_event = {
+	id = frw.71
+	title = frw.71.t
+	desc = frw.71.d
+	picture = GFX_report_event_worried_french
+	is_triggered_only = yes
+
+	option = {
+		name = frw.71.a
+		ai_chance = {
+			# Grundchance; Ablehnung hat konstant 50 -> Annahme = A / (A + 50)
+			base = 15
+			# Frankreichs Heer im Vergleich (ROOT-Stärke / Frankreich-Stärke): bis x8
+			modifier = { factor = 2 strength_ratio = { tag = FROM ratio < 0.75 } }
+			modifier = { factor = 2 strength_ratio = { tag = FROM ratio < 0.5 } }
+			modifier = { factor = 2 strength_ratio = { tag = FROM ratio < 0.25 } }
+			modifier = { factor = 0.2 strength_ratio = { tag = FROM ratio > 1 } }
+			# Beziehung zu Frankreich: bis x3 bzw. x0.3
+			modifier = { factor = 1.5 has_opinion = { target = FROM value > 25 } }
+			modifier = { factor = 2 has_opinion = { target = FROM value > 75 } }
+			modifier = { factor = 0.3 has_opinion = { target = FROM value < -25 } }
+			# Bündnisse
+			modifier = { factor = 2 is_in_faction_with = FROM }
+			modifier = { factor = 0.2 is_in_faction = yes NOT = { is_in_faction_with = FROM } }
+			modifier = { factor = 0.5 has_war = yes NOT = { has_war_with = FROM } }
+			modifier = { factor = 0.25 is_major = yes }
+			modifier = { factor = 0 is_faction_leader = yes }
+		}
+		FRW_transfer_demanded_states = yes
+		FROM = { country_event = { id = frw.72 } }
+	}
+	option = {
+		name = frw.71.b
+		ai_chance = { base = 50 }
+		FROM = { country_event = { id = frw.74 } }
+	}
+}
+
+country_event = {
+	id = frw.72
+	title = frw.72.t
+	desc = frw.72.d
+	picture = GFX_report_event_france_parade
+	is_triggered_only = yes
+	option = {
+		name = frw.72.a
+		add_stability = 0.02
+	}
+}
+
+# Union refused (ROOT = France, FROM = target)
+country_event = {
+	id = frw.73
+	title = frw.73.t
+	desc = frw.73.d
+	picture = GFX_report_event_french_tanks
+	is_triggered_only = yes
+	option = {
+		name = frw.73.a
+		trigger = { NOT = { has_government = democratic } }
+		ai_chance = { base = 70 }
+		create_wargoal = { type = annex_everything target = FROM }
+	}
+	option = {
+		name = frw.73.b
+		ai_chance = { base = 30 }
+		add_political_power = 25
+	}
+}
+
+# Territorial demand refused (ROOT = France, FROM = target)
+country_event = {
+	id = frw.74
+	title = frw.74.t
+	desc = frw.74.d
+	picture = GFX_report_event_french_tanks
+	is_triggered_only = yes
+	option = {
+		name = frw.74.a
+		trigger = { NOT = { has_government = democratic } }
+		ai_chance = { base = 70 }
+		FRW_demand_refused_wargoals = yes
+	}
+	option = {
+		name = frw.74.b
+		ai_chance = { base = 30 }
+		FRW_clear_demand_flags = yes
+		add_political_power = 25
+	}
+}
+
+# ---------------------------------------------------------
+# France demands vassalage (ROOT = target, FROM = France)
+# ---------------------------------------------------------
+country_event = {
+	id = frw.75
+	title = frw.75.t
+	desc = frw.75.d
+	picture = GFX_report_event_worried_french
+	is_triggered_only = yes
+
+	option = {
+		name = frw.75.a
+		ai_chance = {
+			# Grundchance; Ablehnung hat konstant 50 -> Annahme = A / (A + 50)
+			base = 10
+			# Frankreichs Heer im Vergleich (ROOT-Stärke / Frankreich-Stärke): bis x8
+			modifier = { factor = 2 strength_ratio = { tag = FROM ratio < 0.75 } }
+			modifier = { factor = 2 strength_ratio = { tag = FROM ratio < 0.5 } }
+			modifier = { factor = 2 strength_ratio = { tag = FROM ratio < 0.25 } }
+			modifier = { factor = 0.2 strength_ratio = { tag = FROM ratio > 1 } }
+			# Beziehung zu Frankreich: bis x3 bzw. x0.3
+			modifier = { factor = 1.5 has_opinion = { target = FROM value > 25 } }
+			modifier = { factor = 2 has_opinion = { target = FROM value > 75 } }
+			modifier = { factor = 0.3 has_opinion = { target = FROM value < -25 } }
+			# Bündnisse
+			modifier = { factor = 2 is_in_faction_with = FROM }
+			modifier = { factor = 0.2 is_in_faction = yes NOT = { is_in_faction_with = FROM } }
+			modifier = { factor = 0.5 has_war = yes NOT = { has_war_with = FROM } }
+			modifier = { factor = 0 is_major = yes }
+			modifier = { factor = 0 is_faction_leader = yes }
+		}
+		FROM = {
+			country_event = { id = frw.72 }
+			puppet = ROOT
+		}
+	}
+	option = {
+		name = frw.75.b
+		ai_chance = { base = 50 }
+		FROM = { country_event = { id = frw.76 } }
+	}
+}
+
+# Vassalage refused (ROOT = France, FROM = target)
+country_event = {
+	id = frw.76
+	title = frw.76.t
+	desc = frw.76.d
+	picture = GFX_report_event_french_tanks
+	is_triggered_only = yes
+	option = {
+		name = frw.76.a
+		trigger = { NOT = { has_government = democratic } }
+		ai_chance = { base = 70 }
+		create_wargoal = { type = puppet_wargoal_focus target = FROM }
+	}
+	option = {
+		name = frw.76.b
+		ai_chance = { base = 30 }
+		add_political_power = 25
+	}
+}
+
+# ---------------------------------------------------------
+# New formables (news)
+# ---------------------------------------------------------
+news_event = {
+	id = frw.63
+	title = frw.63.t
+	desc = frw.63.d
+	picture = GFX_news_event_french_parade
+	major = yes
+	is_triggered_only = yes
+	option = { name = frw.63.a }
+}
+
+news_event = {
+	id = frw.64
+	title = frw.64.t
+	desc = frw.64.d
+	picture = GFX_news_event_generic_rally
+	major = yes
+	is_triggered_only = yes
+	option = { name = frw.64.a }
+}
+
+news_event = {
+	id = frw.65
+	title = frw.65.t
+	desc = frw.65.d
+	picture = GFX_news_event_generic_african_unity
+	major = yes
+	is_triggered_only = yes
+	option = { name = frw.65.a }
+}
+
+# ---------------------------------------------------------
+# Secret branch: The Alpine Bargain
+# ---------------------------------------------------------
+# France offers the Alps (ROOT = SWI, FROM = France)
+country_event = {
+	id = frw.80
+	title = frw.80.t
+	desc = frw.80.d
+	picture = GFX_report_event_worried_french
+	is_triggered_only = yes
+
+	option = {
+		name = frw.80.a
+		ai_chance = {
+			base = 95
+			modifier = { factor = 0 has_war_with = FROM }
+		}
+		if = { limit = { 735 = { is_owned_by = FROM } } transfer_state = 735 }
+		if = { limit = { 32 = { is_owned_by = FROM } } transfer_state = 32 }
+		FROM = {
+			set_country_flag = FRW_alps_ceded
+			add_ideas = FRW_alpine_bargain
+			country_event = { id = frw.82 }
+		}
+	}
+	option = {
+		name = frw.80.b
+		ai_chance = { base = 5 }
+		FROM = { set_country_flag = FRW_alps_refused country_event = { id = frw.83 } }
+	}
+}
+
+# The secret branch is revealed (ROOT = France)
+country_event = {
+	id = frw.81
+	title = frw.81.t
+	desc = frw.81.d
+	picture = GFX_report_event_generic_train
+	is_triggered_only = yes
+	option = { name = frw.81.a }
+}
+
+# Switzerland accepted (ROOT = France)
+country_event = {
+	id = frw.82
+	title = frw.82.t
+	desc = frw.82.d
+	picture = GFX_report_event_france_parade
+	is_triggered_only = yes
+	option = { name = frw.82.a }
+}
+
+# Switzerland refused (ROOT = France)
+country_event = {
+	id = frw.83
+	title = frw.83.t
+	desc = frw.83.d
+	picture = GFX_report_event_worried_french
+	is_triggered_only = yes
+	option = {
+		name = frw.83.a
+		add_stability = 0.05
+	}
+}
+
+# ---------------------------------------------------------
+# Iberia: intervention in the Spanish Civil War (ROOT = France)
+# ---------------------------------------------------------
+country_event = {
+	id = frw.90
+	title = frw.90.t
+	desc = frw.90.d
+	picture = GFX_report_event_french_tanks
+	is_triggered_only = yes
+
+	option = {	# back the Republic (non-fascist side), fight the Nationalists
+		name = frw.90.a
+		trigger = { any_country = { original_tag = SPR has_civil_war = yes has_government = fascism } }
+		ai_chance = { base = 50 modifier = { factor = 0 has_government = fascism } }
+		set_country_flag = FRW_iberian_intervention
+		every_country = {
+			limit = { original_tag = SPR has_civil_war = yes NOT = { has_government = fascism } }
+			set_country_flag = FRW_french_backed
+		}
+		every_country = {
+			limit = { original_tag = SPR has_civil_war = yes has_government = fascism NOT = { has_war_with = ROOT } }
+			ROOT = { declare_war_on = { target = PREV type = annex_everything } }
+		}
+	}
+	option = {	# back the Nationalists, fight the Republic
+		name = frw.90.b
+		trigger = { any_country = { original_tag = SPR has_civil_war = yes has_government = fascism } }
+		ai_chance = { base = 50 modifier = { factor = 0 has_government = communism } modifier = { factor = 0 has_government = democratic } }
+		set_country_flag = FRW_iberian_intervention
+		every_country = {
+			limit = { original_tag = SPR has_civil_war = yes has_government = fascism }
+			set_country_flag = FRW_french_backed
+		}
+		every_country = {
+			limit = { original_tag = SPR has_civil_war = yes NOT = { has_government = fascism } NOT = { has_war_with = ROOT } }
+			ROOT = { declare_war_on = { target = PREV type = annex_everything } }
+		}
+	}
+	option = {	# fallback: no fascist side in this civil war -> back the original government
+		name = frw.90.c
+		trigger = { NOT = { any_country = { original_tag = SPR has_civil_war = yes has_government = fascism } } }
+		set_country_flag = FRW_iberian_intervention
+		SPR = { set_country_flag = FRW_french_backed }
+		every_country = {
+			limit = { original_tag = SPR has_civil_war = yes NOT = { tag = SPR } NOT = { has_war_with = ROOT } }
+			ROOT = { declare_war_on = { target = PREV type = annex_everything } }
+		}
+	}
+}
+
+# ---------------------------------------------------------
+# Iberia: France demands union with Portugal (ROOT = POR, FROM = France)
+# ---------------------------------------------------------
+country_event = {
+	id = frw.92
+	title = frw.92.t
+	desc = frw.92.d
+	picture = GFX_report_event_soldiers_in_france
+	is_triggered_only = yes
+
+	option = {
+		name = frw.92.a
+		ai_chance = {
+			# refusal is a constant 50 -> chance = A / (A + 50)
+			base = 20
+			modifier = { factor = 2 strength_ratio = { tag = FROM ratio < 0.5 } }
+			modifier = { factor = 3 strength_ratio = { tag = FROM ratio < 0.34 } }
+			modifier = { factor = 2 strength_ratio = { tag = FROM ratio < 0.2 } }
+			modifier = { factor = 0.2 is_in_faction = yes NOT = { is_in_faction_with = FROM } }
+			modifier = { factor = 0.5 has_opinion = { target = FROM value < -25 } }
+		}
+		FROM = {
+			country_event = { id = frw.72 }
+			annex_country = { target = ROOT transfer_troops = yes }
+		}
+	}
+	option = {
+		name = frw.92.b
+		ai_chance = { base = 50 }
+		FROM = { country_event = { id = frw.93 } }
+	}
+}
+
+# Portugal refused (ROOT = France, FROM = POR)
+country_event = {
+	id = frw.93
+	title = frw.93.t
+	desc = frw.93.d
+	picture = GFX_report_event_french_tanks
+	is_triggered_only = yes
+	option = {
+		name = frw.93.a
+		ai_chance = { base = 80 }
+		create_wargoal = { type = annex_everything target = FROM }
+	}
+	option = {
+		name = frw.93.b
+		ai_chance = { base = 20 }
+		add_political_power = 25
+	}
+}
+
+# The Black Flag is raised (news)
+news_event = {
+	id = frw.95
+	title = frw.95.t
+	desc = frw.95.d
+	picture = GFX_news_event_french_parade
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = frw.95.a
+		trigger = { NOT = { tag = FRA } }
+	}
+	option = {
+		name = frw.95.b
+		trigger = { tag = FRA }
+	}
+}
+
+# ---------------------------------------------------------
+# Atlantic: Shetland request (ROOT = ENG, FROM = France)
+# ---------------------------------------------------------
+country_event = {
+	id = frw.96
+	title = frw.96.t
+	desc = frw.96.d
+	picture = GFX_report_event_french_british_officers
+	is_triggered_only = yes
+
+	option = {
+		name = frw.96.a
+		ai_chance = {
+			# depends ONLY on relations; refusal is a constant 50
+			base = 4
+			modifier = { factor = 2 has_opinion = { target = FROM value > 25 } }
+			modifier = { factor = 2 has_opinion = { target = FROM value > 50 } }
+			modifier = { factor = 2 has_opinion = { target = FROM value > 75 } }
+			modifier = { factor = 1.5 has_opinion = { target = FROM value > 100 } }
+			modifier = { factor = 1.5 has_opinion = { target = FROM value > 150 } }
+			modifier = { factor = 0.1 has_opinion = { target = FROM value < 0 } }
+			modifier = { factor = 2 is_in_faction_with = FROM }
+			modifier = { factor = 0 has_war_with = FROM }
+		}
+		if = { limit = { 933 = { is_owned_by = ROOT } } FROM = { transfer_state = 933 } }
+		FROM = { country_event = { id = frw.72 } }
+	}
+	option = {
+		name = frw.96.b
+		ai_chance = { base = 50 }
+		FROM = { country_event = { id = frw.98 } }
+	}
+}
+
+# Highlands request (ROOT = ENG, FROM = France)
+country_event = {
+	id = frw.97
+	title = frw.97.t
+	desc = frw.97.d
+	picture = GFX_report_event_french_british_officers
+	is_triggered_only = yes
+
+	option = {
+		name = frw.97.a
+		ai_chance = {
+			# depends ONLY on relations; refusal is a constant 50
+			base = 2
+			modifier = { factor = 2 has_opinion = { target = FROM value > 25 } }
+			modifier = { factor = 2 has_opinion = { target = FROM value > 50 } }
+			modifier = { factor = 2 has_opinion = { target = FROM value > 75 } }
+			modifier = { factor = 1.5 has_opinion = { target = FROM value > 100 } }
+			modifier = { factor = 1.5 has_opinion = { target = FROM value > 150 } }
+			modifier = { factor = 0.1 has_opinion = { target = FROM value < 0 } }
+			modifier = { factor = 2 is_in_faction_with = FROM }
+			modifier = { factor = 0 has_war_with = FROM }
+		}
+		if = { limit = { 120 = { is_owned_by = ROOT } } FROM = { transfer_state = 120 } }
+		if = { limit = { 136 = { is_owned_by = ROOT } } FROM = { transfer_state = 136 } }
+		FROM = { country_event = { id = frw.72 } }
+	}
+	option = {
+		name = frw.97.b
+		ai_chance = { base = 50 }
+		FROM = { country_event = { id = frw.98 } }
+	}
+}
+
+# London refuses (ROOT = France)
+country_event = {
+	id = frw.98
+	title = frw.98.t
+	desc = frw.98.d
+	picture = GFX_report_event_worried_french
+	is_triggered_only = yes
+	option = {
+		name = frw.98.a
+		add_political_power = 25
+	}
+}
+
+news_event = {
+	id = frw.99
+	title = frw.99.t
+	desc = frw.99.d
+	picture = GFX_news_event_french_parade
+	major = yes
+	is_triggered_only = yes
+	option = { name = frw.99.a }
+}
+
+news_event = {
+	id = frw.100
+	title = frw.100.t
+	desc = frw.100.d
+	picture = GFX_news_event_generic_sign_treaty1
+	major = yes
+	is_triggered_only = yes
+	option = { name = frw.100.a }
+}
+
+news_event = {
+	id = frw.101
+	title = frw.101.t
+	desc = frw.101.d
+	picture = GFX_news_event_king_speech
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = frw.101.a
+		trigger = { NOT = { tag = FRA } }
+	}
+	option = {
+		name = frw.101.b
+		trigger = { tag = FRA }
+	}
+}
+
+# ---------------------------------------------------------
+# Secret branch: the letter from Geneva (pops up after 60 idle days)
+# ---------------------------------------------------------
+country_event = {
+	id = frw.84
+	title = frw.84.t
+	desc = frw.84.d
+	picture = GFX_report_event_finnish_letter
+	is_triggered_only = yes
+	option = { name = frw.84.a }
+}
+
+# ---------------------------------------------------------
+# Secret branch: death of Malo Kervadec (start of "The Eternal Kingdom of Francia")
+# ---------------------------------------------------------
+country_event = {
+	id = frw.102
+	title = frw.102.t
+	desc = frw.102.d
+	picture = GFX_report_event_generic_funeral
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			if = { limit = { has_country_leader_with_trait = adventurous_daredevil } kill_country_leader = yes }
+		}
+	}
+	option = {
+		name = frw.102.a
+		add_war_support = 0.05
+	}
+}
+
+# 1.1.0 – invitation into a French-led faction (Latin Neutral Bloc)
+country_event = {
+	id = frw.120
+	title = frw.120.t
+	desc = frw.120.d
+	picture = GFX_report_event_french_british_officers
+	is_triggered_only = yes
+
+	option = {
+		name = frw.120.a
+		ai_chance = {
+			base = 60
+			modifier = { factor = 0 has_war_with = FROM }
+			modifier = { factor = 0 is_in_faction = yes }
+			modifier = { factor = 2 has_opinion = { target = FROM value > 30 } }
+		}
+		trigger = { is_in_faction = no }
+		FROM = { add_to_faction = ROOT }
+	}
+	option = {
+		name = frw.120.b
+		ai_chance = { base = 40 }
+	}
+}
+
+# 1.1.0 – a member of the European Community is asked to join the European Federation
+country_event = {
+	id = frw.121
+	title = frw.121.t
+	desc = frw.121.d
+	picture = GFX_report_event_french_british_officers
+	is_triggered_only = yes
+
+	option = {
+		name = frw.121.a
+		ai_chance = {
+			base = 60
+			modifier = { factor = 2 has_opinion = { target = FROM value > 50 } }
+			modifier = { factor = 2 has_war = yes is_in_faction_with = FROM }
+			modifier = { factor = 1.5 is_guaranteed_by = FROM }
+			modifier = { factor = 1.5 threat > 0.5 }
+			modifier = { factor = 0.3 has_opinion = { target = FROM value < 0 } }
+			modifier = { factor = 0 is_major = yes }
+		}
+		trigger = { NOT = { has_war_with = FROM } is_subject = no }
+		FROM = { annex_country = { target = ROOT transfer_troops = yes } }
+	}
+	option = {
+		name = frw.121.b
+		ai_chance = { base = 40 }
+	}
+}
+
+# 1.1.0 – Free France: liberated territory, make peace or fight on
+country_event = {
+	id = frw.130
+	title = frw.130.t
+	desc = frw.130.d
+	picture = GFX_report_event_french_british_officers
+	is_triggered_only = yes
+
+	option = {
+		name = frw.130.a
+		custom_effect_tooltip = frw.130.a.tt
+		hidden_effect = { FRW_liberation_peace = yes }
+		add_stability = 0.10
+		ai_chance = { base = 50 }
+	}
+	option = {
+		name = frw.130.b
+		custom_effect_tooltip = frw.130.b.tt
+		add_war_support = 0.05
+		if = { limit = { NOT = { has_idea = FRW_fight_on_spirit } } add_timed_idea = { idea = FRW_fight_on_spirit days = 180 } }
+		ai_chance = { base = 50 }
+	}
+}
+
+# 1.1.0 – Legitimist path: Spain is asked to accept the Bourbon King of France (ROOT = SPR, FROM = France)
+country_event = {
+	id = frw.140
+	title = frw.140.t
+	desc = frw.140.d
+	picture = GFX_report_event_french_british_officers
+	is_triggered_only = yes
+
+	option = {
+		name = frw.140.a
+		ai_chance = {
+			base = 20
+			modifier = { factor = 3 has_government = neutrality }
+			modifier = { factor = 1.5 has_government = fascism }
+			modifier = { factor = 0 has_government = communism }
+			modifier = { factor = 2 has_opinion = { target = FROM value > 25 } }
+			modifier = { factor = 2 strength_ratio = { tag = FROM ratio < 0.5 } }
+			modifier = { factor = 0 is_faction_leader = yes }
+		}
+		FROM = { puppet = ROOT }
+		FROM = { country_event = { id = frw.143 days = 1 } }
+	}
+	option = {
+		name = frw.140.b
+		ai_chance = { base = 60 }
+		FROM = {
+			if = { limit = { NOT = { has_wargoal_against = ROOT } } create_wargoal = { type = puppet_wargoal_focus target = ROOT } }
+			country_event = { id = frw.144 days = 1 }
+		}
+	}
+}
+
+news_event = {
+	id = frw.141
+	title = frw.141.t
+	desc = frw.141.d
+	picture = GFX_news_event_french_parade
+	major = yes
+	is_triggered_only = yes
+	option = { name = frw.141.a }
+}
+
+news_event = {
+	id = frw.142
+	title = frw.142.t
+	desc = frw.142.d
+	picture = GFX_news_event_french_parade
+	major = yes
+	is_triggered_only = yes
+	option = { name = frw.142.a }
+}
+
+country_event = {
+	id = frw.143
+	title = frw.143.t
+	desc = frw.143.d
+	picture = GFX_report_event_french_british_officers
+	is_triggered_only = yes
+	option = { name = frw.143.a add_political_power = 50 }
+}
+
+country_event = {
+	id = frw.144
+	title = frw.144.t
+	desc = frw.144.d
+	picture = GFX_report_event_worried_french
+	is_triggered_only = yes
+	option = { name = frw.144.a add_war_support = 0.05 }
+}

@@ -1,0 +1,27 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = NO_LAG_MINOR_PLAYER_BONUS
+						option = NO_LAG_MINOR_PLAYER_BONUS_ON
+					}
+				}
+				every_country = {
+					limit = {
+						exists = yes
+						is_ai = no
+						is_major = no
+						NOT = { original_tag = WST }
+						NOT = { has_country_flag = NO_LAG_minor_player_bonus_applied }
+					}
+					# The legacy spirit lasted exactly two years; its research slot was permanent.
+					add_timed_idea = { idea = NO_LAG_minor_player_bonus days = 730 }
+					add_research_slot = 1
+					set_country_flag = NO_LAG_minor_player_bonus_applied
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,49 @@
+# France Rework - Formable-Bedingungen (generiert von formables/build.py)
+FRW_can_form_union_francaise = {
+	always = yes
+}
+FRW_can_form_european_federation = {
+	OR = { owns_state = 6 BEL = { exists = yes is_subject_of = ROOT } } OR = { owns_state = 7 HOL = { exists = yes is_subject_of = ROOT } } OR = { owns_state = 8 LUX = { exists = yes is_subject_of = ROOT } } OR = { has_completed_focus = FRW_european_federation_focus owns_state = 2 ITA = { exists = yes is_subject_of = ROOT } owns_state = 64 GER = { exists = yes is_subject_of = ROOT } }
+}
+FRW_can_form_western_union = {
+	OR = { owns_state = 6 BEL = { exists = yes is_subject_of = ROOT } } OR = { owns_state = 7 HOL = { exists = yes is_subject_of = ROOT } } OR = { owns_state = 8 LUX = { exists = yes is_subject_of = ROOT } }
+}
+FRW_can_form_latin_empire = {
+	OR = { owns_state = 2 ITA = { exists = yes is_subject_of = ROOT } AND = { has_country_flag = FRW_latin_union ITA = { exists = yes is_in_faction_with = ROOT } } } OR = { owns_state = 41 SPR = { exists = yes is_subject_of = ROOT } } OR = { owns_state = 112 POR = { exists = yes is_subject_of = ROOT } }
+}
+FRW_can_form_eurafrica = {
+	OR = { controls_state = 459 controls_state = 272 controls_state = 772 controls_state = 774 }
+}
+FRW_can_form_francia = {
+	owns_state = 42 owns_state = 51 OR = { owns_state = 6 BEL = { exists = yes is_subject_of = ROOT } } OR = { owns_state = 7 HOL = { exists = yes is_subject_of = ROOT } }
+}
+FRW_can_form_burgundy = {
+	owns_state = 6 owns_state = 7 owns_state = 8 owns_state = 34
+}
+FRW_can_form_grand_empire = {
+	owns_state = 42 owns_state = 51 owns_state = 158 OR = { owns_state = 6 BEL = { exists = yes is_subject_of = ROOT } } OR = { owns_state = 7 HOL = { exists = yes is_subject_of = ROOT } }
+}
+FRW_can_form_bourbon = {
+	OR = { owns_state = 41 SPR = { exists = yes is_subject_of = ROOT } }
+}
+FRW_can_form_fruk = {
+	always = yes
+}
+FRW_can_form_corsair = {
+	always = yes
+}
+FRW_can_form_eternal = {
+	always = yes
+}
+# ---------- FRW feedback 2 ----------
+# a European democracy that can be asked to join the European Federation (ROOT = France)
+FRW_federation_candidate = {
+	exists = yes
+	NOT = { tag = ROOT }
+	is_major = no
+	is_subject = no
+	has_government = democratic
+	capital_scope = { is_on_continent = europe }
+	NOT = { has_war_with = ROOT }
+	OR = { is_in_faction_with = ROOT is_guaranteed_by = ROOT }
+}

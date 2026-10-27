@@ -1,0 +1,109 @@
+ideas={
+	hidden_ideas = {
+		#We could use a dynamic modifier for this using global.agency_factories^agency_selected_upgrade, but since the only values are 5/8/10/15, we might as well use ideas to reduce lag
+		automated_agency_upgrade_cost_5 = {
+			name = "automated_agency_upgrade_cost"
+			allowed = { always = no }
+			modifier = { civilian_factory_use = 5 }
+		}
+		automated_agency_upgrade_cost_8 = {
+			name = "automated_agency_upgrade_cost"
+			allowed = { always = no }
+			modifier = { civilian_factory_use = 8 }
+		}
+		automated_agency_upgrade_cost_10 = {
+			name = "automated_agency_upgrade_cost"
+			allowed = { always = no }
+			modifier = { civilian_factory_use = 10 }
+		}
+		automated_agency_upgrade_cost_15 = {
+			name = "automated_agency_upgrade_cost"
+			allowed = { always = no }
+			modifier = { civilian_factory_use = 15 }
+		}
+		
+		FFTF_agency_00_civilian_intelligence = {}
+		FFTF_agency_00_civilian_intelligence_name = {}
+		FFTF_agency_00_civilian_intelligence_gfx = {}
+		
+		FFTF_agency_01_army_intelligence = {}
+		FFTF_agency_01_army_intelligence_name = {}
+		FFTF_agency_01_army_intelligence_gfx = {}
+		
+		FFTF_agency_02_naval_intelligence = {}
+		FFTF_agency_02_naval_intelligence_name = {}
+		FFTF_agency_02_naval_intelligence_gfx = {}
+		
+		FFTF_agency_03_air_force_intelligence = {}
+		FFTF_agency_03_air_force_intelligence_name = {}
+		FFTF_agency_03_air_force_intelligence_gfx = {}
+		
+		FFTF_agency_04_passive_defence = {}
+		FFTF_agency_04_passive_defence_name = {}
+		FFTF_agency_04_passive_defence_gfx = {}
+		
+		FFTF_agency_05_anti_partisan = {}
+		FFTF_agency_05_anti_partisan_name = {}
+		FFTF_agency_05_anti_partisan_gfx = {}
+		
+		FFTF_agency_06_blueprint_stealing = {}
+		FFTF_agency_06_blueprint_stealing_name = {}
+		FFTF_agency_06_blueprint_stealing_gfx = {}
+		
+		FFTF_agency_07_portable_radios = {}
+		FFTF_agency_07_portable_radios_name = {}
+		FFTF_agency_07_portable_radios_gfx = {}
+		
+		FFTF_agency_08_invisible_ink = {}
+		FFTF_agency_08_invisible_ink_name = {}
+		FFTF_agency_08_invisible_ink_gfx = {}
+		
+		FFTF_agency_09_plastic_explosives = {}
+		FFTF_agency_09_plastic_explosives_name = {}
+		FFTF_agency_09_plastic_explosives_gfx = {}
+		
+		FFTF_agency_10_suicide_pills = {}
+		FFTF_agency_10_suicide_pills_name = {}
+		FFTF_agency_10_suicide_pills_gfx = {}
+		
+		FFTF_agency_11_localised_training_centers = {}
+		FFTF_agency_11_localised_training_centers_name = {}
+		FFTF_agency_11_localised_training_centers_gfx = {}
+		
+		FFTF_agency_12_commando_training = {}
+		FFTF_agency_12_commando_training_name = {}
+		FFTF_agency_12_commando_training_gfx = {}
+		
+		FFTF_agency_13_interrogation_techniques = {}
+		FFTF_agency_13_interrogation_techniques_name = {}
+		FFTF_agency_13_interrogation_techniques_gfx = {}
+		
+		FFTF_agency_14_diplomatic_training = {}
+		FFTF_agency_14_diplomatic_training_name = {}
+		FFTF_agency_14_diplomatic_training_gfx = {}
+		
+		FFTF_agency_15_psychological_warfare = {}
+		FFTF_agency_15_psychological_warfare_name = {}
+		FFTF_agency_15_psychological_warfare_gfx = {}
+		
+		FFTF_agency_16_form_department = {}
+		FFTF_agency_16_form_department_name = {}
+		FFTF_agency_16_form_department_gfx = {}
+		
+		FFTF_agency_17_radio_interception_group = {}
+		FFTF_agency_17_radio_interception_group_name = {}
+		FFTF_agency_17_radio_interception_group_gfx = {}
+		
+		FFTF_agency_18_machine_assisted_decryption = {}
+		FFTF_agency_18_machine_assisted_decryption_name = {}
+		FFTF_agency_18_machine_assisted_decryption_gfx = {}
+		
+		FFTF_agency_19_government_cypher_school = {}
+		FFTF_agency_19_government_cypher_school_name = {}
+		FFTF_agency_19_government_cypher_school_gfx = {}
+		
+		FFTF_agency_20_machine_assissted_encryption = {}
+		FFTF_agency_20_machine_assissted_encryption_name = {}
+		FFTF_agency_20_machine_assissted_encryption_gfx = {}
+	}
+}

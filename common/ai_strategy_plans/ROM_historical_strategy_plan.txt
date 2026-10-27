@@ -1,0 +1,132 @@
+ROM_historical = {
+	name = "Romanian historical plan"
+	desc = ""
+
+	allowed = {
+		original_tag = ROM
+		has_dlc = "Death or Dishonor"
+	}
+	enable = {
+		OR = {
+			AND = {
+				is_historical_focus_on = yes
+				has_game_rule = {
+					rule = ROM_ai_behavior
+					option = DEFAULT
+				}
+			}
+			has_country_flag = ROM_AI_RANDOM_FASCIST_HISTORICAL
+			has_game_rule = {
+				rule = ROM_ai_behavior
+				option = FASCIST_HISTORICAL
+			}
+		}
+	}
+	abort = {
+
+	}
+
+	ai_national_focuses = {
+		#coup if losing
+		ROM_king_michaels_coup
+	
+		####
+
+		# 1936
+		ROM_preserve_greater_romania
+		ROM_civil_works
+		ROM_agrarian_reform
+		ROM_danubian_transport_network
+		ROM_malaxa #35
+		ROM_invite_foreign_motor_companies #35
+
+		# 1937
+		ROM_hunedoara_steel_works
+		ROM_invest_in_the_iar
+		ROM_expand_the_air_force #35
+		ROM_local_development
+		ROM_air_superiority #35
+		ROM_iar_80
+		ROM_institute_royal_dictatorship # completes near the historical date
+
+		# 1938
+		ROM_revise_the_constitution
+		ROM_the_royal_foundation
+		ROM_crack_down_on_extremism #35
+		ROM_army_maneuvers #35
+		ROM_army_war_college
+		ROM_flexible_foreign_policy #35	
+
+		# 1939
+		ROM_trade_treaty_with_germany
+		ROM_expand_the_galati_shipyards
+		ROM_appoint_allied_friendly_government # this helps various alt-history paths for other countries
+		ROM_royal_guards_divisions
+		ROM_reserve_divisions
+
+		# 1940
+		ROM_the_zb_53
+		ROM_artillery_modernization
+		ROM_invite_german_advisors
+		ROM_appoint_german_friendly_government # completes aug 40, historically sep 40
+		ROM_iron_guard
+		ROM_force_abdication
+		ROM_join_axis # completes 21 nov 40, historically 23 nov 40
+
+		# 1941
+		ROM_air_defense_network #35
+		ROM_white_squadron_focus #35
+		ROM_license_german_equipment
+		ROM_demand_transnistria
+		ROM_expand_ploiesti_oil_production
+
+
+		# 1942
+		ROM_german_romanian_oil_exploitation_company
+		ROM_expand_resita_steel_works
+		ROM_expand_the_university_of_bucharest
+		ROM_acquire_modern_tanks 
+		ROM_mobile_tank_destroyers
+
+		# 1943
+		ROM_vanatori_de_munte
+		ROM_cas
+		ROM_mountain_artillery
+		ROM_coastal_defense_navy
+		ROM_modern_destroyers
+	}
+
+	research = {
+		industry = 50.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+		air_equipment = 5.0
+	}
+
+	ideas = {
+		
+	}
+
+	traits = {
+		silent_workhorse = 10
+		captain_of_industry = 5
+		war_industrialist = 5
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		
+	}
+
+}
+
+

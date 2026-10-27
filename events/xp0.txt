@@ -1,0 +1,12 @@
+namespace = my_mod
+
+event = my_mod.1 {
+    { id = my_mod.1
+        title = "XP Harcamasini Sifira İndir"
+        desc = "Şablon düzenleme sirasinda XP harcamasini sifira indirin."
+        immediate = {
+        # Burada XP harcamasını sıfıra indirmek için bir ayar yapabilirsiniz
+        set_variable = { name = "xp_spent" value = 0 }
+        }
+    }
+}

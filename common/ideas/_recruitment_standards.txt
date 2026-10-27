@@ -1,0 +1,130 @@
+ideas = {
+
+	recruitment_standard_laws = {
+		law = yes
+
+		healthy_standard = {
+
+			cost = 75
+			removal_cost = -1
+			level = 4
+
+			ai_will_do = {
+				base = 0
+			}
+
+			modifier = {
+				army_org_factor = 0.05
+			}
+
+			cancel_if_invalid = no
+			default = yes
+		}
+
+		loose_standard = {
+
+			cost = 75
+			removal_cost = -1
+			level = 3
+
+			available = {
+				NOT = {
+					has_idea = volunteer_only
+					has_idea = disarmed_nation
+				}
+				OR = {
+					has_war = yes
+					if = {
+						limit = {
+							original_tag = FIN
+						}
+						threat > 0.50
+					}
+					else = {
+						threat > 0.40
+					}
+				}
+			}
+
+			ai_will_do = {
+				base = 0
+				modifier = {
+					#Prio if low on manpower
+					add = 5
+					manpower_per_military_factory < 800
+					date > 1939.1.1
+				}
+			}
+
+			modifier = {
+				conscription = 0.01
+				army_org_factor = 0.02
+
+			}
+
+			cancel_if_invalid = no
+		}
+
+		no_exemptions = {
+
+			cost = 75
+			removal_cost = -1
+			level = 2
+
+			available = {
+				has_war = yes
+				enemies_strength_ratio > 1.5
+				NOT = {
+					hidden_trigger = {
+						has_country_flag = lim_vol_dis
+					}
+					has_idea = limited_conscription
+					has_idea = volunteer_only
+					has_idea = disarmed_nation
+				}
+			}
+
+			ai_will_do = {
+				base = 0
+			}
+
+			modifier = {
+				conscription = 0.025
+				army_org_factor = -0.10
+			}
+
+			cancel_if_invalid = no
+		}
+
+		scraping_the_barrel_standard = {
+
+			cost = 75
+			removal_cost = -1
+			level = 1
+
+			available = {
+				has_war = yes
+				enemies_strength_ratio > 2.0
+				NOT = {
+					hidden_trigger = {
+						has_country_flag = lim_vol_dis
+					}
+					has_idea = limited_conscription
+					has_idea = volunteer_only
+					has_idea = disarmed_nation
+				}
+			}
+
+			ai_will_do = {
+				base = 0
+			}
+
+			modifier = {
+				conscription = 0.05
+				army_org_factor = -0.20
+			}
+
+			cancel_if_invalid = no
+		}
+	}
+}

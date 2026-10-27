@@ -1,0 +1,103 @@
+# France Rework - additional French military-industrial organisations
+
+FRW_dewoitine_organization = {
+	include = generic_high_agility_fighter_aircraft_organization
+	icon = GFX_idea_generic_air_manufacturer_1
+	allowed = { original_tag = FRA }
+	initial_trait = {
+		name = FRW_dewoitine_organization_initial
+		equipment_bonus = { reliability = 0.05 }
+	}
+}
+
+FRW_potez_organization = {
+	include = generic_multi_role_aircraft_organization
+	icon = GFX_idea_generic_air_manufacturer_3
+	allowed = { original_tag = FRA }
+	initial_trait = {
+		name = FRW_potez_organization_initial
+		organization_modifier = { military_industrial_organization_funds_gain = 0.10 }
+	}
+}
+
+FRW_breguet_organization = {
+	include = generic_cas_aircraft_organization
+	icon = GFX_idea_generic_air_manufacturer_1
+	allowed = { original_tag = FRA }
+	available = {
+		custom_trigger_tooltip = { tooltip = FRW_mio_breguet_req_tt FROM = { has_completed_focus = FRW_plan_v } }
+	}
+	initial_trait = {
+		name = FRW_breguet_organization_initial
+		organization_modifier = { military_industrial_organization_research_bonus = 0.05 }
+	}
+}
+
+FRW_gnome_rhone_organization = {
+	include = generic_general_aircraft_organization
+	icon = GFX_idea_generic_air_manufacturer_2
+	allowed = { original_tag = FRA }
+	available = {
+		custom_trigger_tooltip = { tooltip = FRW_mio_gnome_rhone_req_tt FROM = { has_completed_focus = FRW_plan_v } }
+	}
+	initial_trait = {
+		name = FRW_gnome_rhone_organization_initial
+		production_bonus = { production_capacity_factor = 0.05 }
+	}
+}
+
+FRW_latecoere_organization = {
+	include = generic_naval_aircraft_organization
+	icon = GFX_idea_generic_air_manufacturer_1
+	allowed = { original_tag = FRA }
+	available = {
+		custom_trigger_tooltip = { tooltip = FRW_mio_latecoere_req_tt FROM = { has_completed_focus = FRW_darlan_programme } }
+	}
+	initial_trait = {
+		name = FRW_latecoere_organization_initial
+		equipment_bonus = { reliability = 0.05 }
+	}
+}
+
+FRW_brest_organization = {
+	include = generic_battle_line_ship_organization
+	icon = GFX_idea_generic_naval_manufacturer_2
+	allowed = { original_tag = FRA }
+	available = {
+		custom_trigger_tooltip = { tooltip = FRW_mio_brest_req_tt FROM = { has_completed_focus = FRW_darlan_programme } }
+	}
+	initial_trait = {
+		name = FRW_brest_organization_initial
+		organization_modifier = { military_industrial_organization_size_up_requirement = -0.10 }
+	}
+}
+
+FRW_citroen_organization = {
+	include = generic_motorized_mechanized_organization
+	icon = GFX_idea_generic_motorized_equipment_manufacturer_3
+	allowed = { original_tag = FRA }
+	initial_trait = {
+		name = FRW_citroen_organization_initial
+		production_bonus = { production_capacity_factor = 0.05 }
+	}
+}
+
+FRW_brandt_organization = {
+	include = generic_support_equipment_organization
+	icon = GFX_idea_generic_infantry_equipment_manufacturer_1
+	allowed = { original_tag = FRA }
+	initial_trait = {
+		name = FRW_brandt_organization_initial
+		organization_modifier = { military_industrial_organization_research_bonus = 0.05 }
+	}
+}
+
+FRW_hispano_organization = {
+	include = generic_artillery_organization
+	icon = GFX_idea_generic_artillery_manufacturer_2
+	allowed = { original_tag = FRA }
+	initial_trait = {
+		name = FRW_hispano_organization_initial
+		organization_modifier = { military_industrial_organization_task_capacity = 1 }
+	}
+}

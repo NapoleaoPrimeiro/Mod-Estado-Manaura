@@ -1,0 +1,3037 @@
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+
+focus_tree = {
+	id = HRE_shared_focus
+	
+	country = {
+		factor = 0
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 140 y = 820 }
+
+	############################
+	##### INDUSTRY SECTION #####
+	############################
+	
+	focus = {
+		id = HRE_four_year_plan
+		icon = GFX_focus_HRE_four_year_plan
+		x = 0
+		y = 0
+
+		cost = 5.13
+		ai_will_do = {
+            factor = 100
+        }
+
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = HRE_four_year_plan_idea
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 1
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = HRE_focus_on_industrialization
+		icon = GFX_GENERIC_Nationalize_Industry
+		prerequisite = { focus = HRE_four_year_plan }
+		relative_position_id = HRE_four_year_plan
+		x = -2
+		y = 1
+
+		cost = 5.13
+		ai_will_do = {
+            factor = 100
+        }
+
+		mutually_exclusive = { focus =  HRE_focus_on_infrastructure }
+
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = HRE_four_year_plan_idea
+				add_idea = HRE_four_year_plan_idea_civ
+			}
+		}
+	}
+	focus = {
+		id = HRE_urbanize_the_capital
+		icon = GFX_focus_HRE_urbanize_the_capital
+		prerequisite = { focus = HRE_focus_on_industrialization focus = HRE_focus_on_infrastructure }
+		relative_position_id = HRE_four_year_plan
+		x = 0
+		y = 2
+
+		cost = 10
+		ai_will_do = {
+            factor = 100
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure 
+					level = 2 
+					instant_build = yes 
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = HRE_heavy_industry
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = HRE_focus_on_industrialization }
+		relative_position_id = HRE_focus_on_industrialization
+		x = 0
+		y = 1
+
+		cost = 5.13
+		ai_will_do = {
+            factor = 50
+        }
+
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = HRE_develop_rural_areas
+		icon = GFX_focus_HRE_develop_rural_areas
+		prerequisite = { focus = HRE_focus_on_industrialization }
+		relative_position_id = HRE_focus_on_industrialization
+		x = -2
+		y = 1
+
+		cost = 5.13
+		ai_will_do = {
+            factor = 50
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = HRE_civilian_industry5
+		icon = GFX_GENERIC_Military_Production
+		prerequisite = { focus = HRE_develop_rural_areas }
+		prerequisite = { focus = HRE_heavy_industry }
+		relative_position_id = HRE_develop_rural_areas
+		x = 0
+		y = 1
+
+		cost = 5.13
+		ai_will_do = {
+            factor = 40
+        }
+		mutually_exclusive = { focus =  HRE_civilian_industry6 }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = HRE_four_year_plan_idea_civ
+				add_idea = HRE_four_year_plan_idea_civ_out_2
+			}
+		}
+	}
+	focus = {
+		id = HRE_civilian_industry6
+		icon = GFX_GENERIC_Military_Industrial_Complexes
+		prerequisite = { focus = HRE_heavy_industry }
+		prerequisite = { focus = HRE_develop_rural_areas }
+		relative_position_id = HRE_heavy_industry
+		x = 0
+		y = 1
+
+		cost = 5.13
+		ai_will_do = {
+            factor = 60
+        }
+		mutually_exclusive = { focus =  HRE_civilian_industry5 }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = HRE_four_year_plan_idea_civ
+				add_idea = HRE_four_year_plan_idea_civ_more_2
+			}
+		}
+	}
+	focus = {
+		id = HRE_focus_on_key_industries
+		icon = GFX_GENERIC_Public_Works
+		prerequisite = { focus = HRE_civilian_industry5 focus = HRE_civilian_industry6 }
+		relative_position_id = HRE_civilian_industry5
+		x = 1
+		y = 1
+
+		cost = 8
+		ai_will_do = {
+            factor = 100
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = HRE_finish_the_four_year_plan
+		icon = GFX_GENERIC_Stimulus_Plan
+		prerequisite = { focus = HRE_focus_on_key_industries focus = HRE_restoration_and_development }
+		relative_position_id = HRE_focus_on_key_industries
+		x = 3
+		y = 1
+
+		cost = 10
+		ai_will_do = {
+            factor = 10
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = HRE_four_year_plan_idea_inf_more2
+				}
+				swap_ideas = {
+					remove_idea = HRE_four_year_plan_idea_inf_more2
+					add_idea = HRE_finish_four_year_plan_idea_inf
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = HRE_four_year_plan_idea_civ_more_2
+				}
+				swap_ideas = {
+					remove_idea = HRE_four_year_plan_idea_civ_more_2
+					add_idea = HRE_finsih_four_year_plan_idea_civ
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = HRE_four_year_plan_idea_civ_out_2
+					add_idea = HRE_finish_four_year_plan_idea_civ_out
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = HRE_focus_on_infrastructure
+		icon = GFX_GENERIC_Road_Construction
+		prerequisite = { focus = HRE_four_year_plan }
+		relative_position_id = HRE_four_year_plan
+		x = 2
+		y = 1
+
+		cost = 5.13
+		ai_will_do = {
+            factor = 30
+        }
+
+		mutually_exclusive = { focus = HRE_focus_on_industrialization }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = HRE_four_year_plan_idea
+				add_idea = HRE_four_year_plan_idea_inf
+			}
+		}
+	}
+	focus = {
+		id = HRE_distribution_industry
+		icon = GFX_focus_SOV_the_road_of_life
+
+		prerequisite = { focus = HRE_focus_on_infrastructure }
+		relative_position_id = HRE_focus_on_infrastructure
+		x = 2
+		y = 1
+
+		cost = 5.13
+		ai_will_do = {
+            factor = 50
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			random_core_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			swap_ideas = {
+				remove_idea = HRE_four_year_plan_idea_inf
+				add_idea =  HRE_four_year_plan_idea_inf_more1
+
+			}
+		}
+	}
+	focus = {
+		id = HRE_infrastructure_effort
+		icon = GFX_focus_generic_improve_roads
+		prerequisite = { focus = HRE_focus_on_infrastructure }
+		relative_position_id = HRE_focus_on_infrastructure
+		x = 0
+		y = 1
+
+		cost = 8
+		ai_will_do = {
+            factor = 50
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			random_core_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = infrastructure 
+					level = 2 
+					instant_build = yes 
+				}
+			}
+		}
+	}
+	focus = {
+		id = HRE_expand_our_roads
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = HRE_infrastructure_effort }
+		relative_position_id = HRE_infrastructure_effort
+		x = -1
+		y = 1
+
+		cost = 8
+		ai_will_do = {
+            factor = 50
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			random_core_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = infrastructure 
+					level = 2 
+					instant_build = yes 
+				}
+			}
+		}
+	}
+	focus = {
+		id = HRE_expand_the_airports
+		icon = GFX_focus_generic_industry_1
+		prerequisite = { focus = HRE_distribution_industry  }
+		relative_position_id = HRE_distribution_industry
+		x = 1
+		y = 1
+
+		cost = 5.13
+		ai_will_do = {
+            factor = 50
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			random_core_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			random_core_state = {
+				limit = {
+					free_building_slots = {
+						building = air_base
+						size > 2
+					}
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = HRE_improve_railway_network
+		icon = GFX_focus_generic_industry_2
+		prerequisite = { focus = HRE_distribution_industry }
+		prerequisite = { focus = HRE_infrastructure_effort }
+		relative_position_id = HRE_infrastructure_effort
+		x = 1
+		y = 1
+
+		cost = 5.13
+		ai_will_do = {
+            factor = 50
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			random_core_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					tag = SHL
+				}
+				build_railway = { 
+					path = { 11366 3231 3368 9347 6257 6389 9320 }				
+				}
+			}
+			if = {
+				limit = {
+					tag = MEK
+				}
+				build_railway = { 
+					path = { 11305 321 11276 9294 }				
+				}
+			}
+			if = {
+				limit = {
+					tag = HAN
+				}
+				build_railway = { 
+					path = { 241 11360 11264 9281 11388 247 309 3326 }				
+				}
+			}
+			if = {
+				limit = {
+					tag = WST
+				}
+				build_railway = { 
+					path = { 11346 6622 495 6535 9443 11431 3355 405 9509 }				
+				}
+			}
+			if = {
+				limit = {
+					tag = HES
+				}
+				build_railway = { 
+					path = { 564 11533 3524 6549 9524 }				
+				}
+			}
+			if = {
+				limit = {
+					tag = WUR
+				}
+				build_railway = { 
+					path = { 9545 11499 3690 9655 6934 3679 3692 11640 }				
+				}
+			}
+			if = {
+				limit = {
+					tag = BAY
+				}
+				build_railway = { 
+					path = { 708 3705 692 6693 11638 11653 9652  }				
+				}
+			}
+			if = {
+				limit = {
+					tag = THU
+				}
+				build_railway = { 
+					path = { 3561 425 6582 6501 538 6524 482  }				
+				}
+			}
+			if = {
+				limit = {
+					tag = SAX
+				}
+				build_railway = { 
+					path = { 11481 3535 6441 514 9535 }				
+				}
+			}
+			if = {
+				limit = {
+					tag = SIL
+				}
+				build_railway = { 
+					path = { 9457 11467 9511 6462 9570 }				
+				}
+			}
+		}
+	}
+	focus = {
+		id = HRE_restoration_and_development
+		icon = GFX_focus_generic_industry_3
+		prerequisite = { focus = HRE_expand_our_roads focus = HRE_expand_the_airports focus = HRE_improve_railway_network }
+		relative_position_id = HRE_expand_the_airports
+		x = -2
+		y = 1
+
+		cost = 10
+		ai_will_do = {
+            factor = 50
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			random_core_state = {
+				add_extra_state_shared_building_slots = 2
+				add_resource = {
+					type = aluminium
+					amount = 4
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			swap_ideas = {
+				remove_idea = HRE_four_year_plan_idea_inf_more1
+				add_idea = HRE_four_year_plan_idea_inf_more2
+			}
+		}
+	}
+
+	############################
+	##### army SECTION #####
+	############################
+	
+	focus = {
+		id = HRE_army_effort
+		icon = GFX_focus_HRE_army_effort
+		relative_position_id = HRE_four_year_plan
+		x = 14
+		y = 0
+
+		cost = 5.13
+		ai_will_do = {
+            factor = 100
+        }
+
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			army_experience = 25 
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_doctrine_cost_reduction = {
+				name = HRE_army_effort
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = { 
+		id = HRE_luftstreitkrafte
+		icon = GFX_GER_Deutsche_Luftstreitkrafte
+		prerequisite = { focus = HRE_army_effort }
+		relative_position_id = HRE_army_effort
+		x = -6
+		y = 1
+		ai_will_do = {
+            factor = 15
+        }
+
+		cost = 5.13
+
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			air_experience = 25
+			add_doctrine_cost_reduction = {
+				name = air_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = HRE_fighter_focus
+		icon = GFX_GER_Do17
+		prerequisite = { focus = HRE_luftstreitkrafte }
+		mutually_exclusive = { focus = HRE_bomber_focus }
+		x = -1
+		y = 1
+		relative_position_id = HRE_luftstreitkrafte
+		cost = 5
+		ai_will_do = {
+            factor = 5
+        }
+
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 1.0
+				uses = 1
+				category = light_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = HRE_fighter_focus_2
+		icon = GFX_GER_Fw190
+		prerequisite = { focus = HRE_fighter_focus focus = HRE_bomber_focus }
+		mutually_exclusive = { focus = HRE_bomber_focus_2 }
+		x = -1
+		y = 2
+		relative_position_id = HRE_luftstreitkrafte
+		cost = 5
+		ai_will_do = {
+            factor = 5
+        }
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 0.5
+				uses = 1
+				category = light_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = HRE_bomber_focus
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = HRE_luftstreitkrafte }
+		mutually_exclusive = { focus = HRE_fighter_focus }
+		x = 1
+		y = 1
+		relative_position_id = HRE_luftstreitkrafte
+		cost = 5
+		ai_will_do = {
+            factor = 5
+        }
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 1.0
+				uses = 1
+				category = cat_strategic_bomber
+				category = tactical_bomber
+				category = heavy_air
+			}
+		}
+	}
+
+	focus = {
+		id = HRE_bomber_focus_2
+		icon = GFX_GER_Blitzbomber
+		prerequisite = {focus = HRE_bomber_focus focus = HRE_fighter_focus  }
+		mutually_exclusive = { focus = HRE_fighter_focus_2 }
+		x = 1
+		y = 2
+		relative_position_id = HRE_luftstreitkrafte
+		cost = 5
+		ai_will_do = {
+            factor = 5
+        }
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_strategic_bomber
+				category = tactical_bomber
+				category = heavy_air
+			}
+		}
+	}
+
+	focus = {
+		id = HRE_CAS_effort
+		icon = GFX_focus_generic_cas_aircraft
+		prerequisite = { focus = HRE_fighter_focus_2 focus = HRE_bomber_focus_2 }
+		mutually_exclusive = { focus = HRE_NAV_effort }
+		x = 0
+		y = 1
+		relative_position_id = HRE_fighter_focus_2
+		cost = 9
+		ai_will_do = {
+            factor = 5
+        }
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = CAS_bonus
+				bonus = 1.0
+				uses = 1
+				category = cat_air_guns
+			}
+		}
+	}
+	focus = {
+		id = HRE_CAS_effort_2
+		icon = GFX_focus_generic_tank_air_support
+		prerequisite = { focus = HRE_CAS_effort focus = HRE_NAV_effort }
+		mutually_exclusive = { focus = HRE_NAV_effort_2 }
+		x = 1
+		y = 2
+		relative_position_id = HRE_fighter_focus_2
+		cost = 10
+		ai_will_do = {
+            factor = 5
+        }
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = CAS_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = air_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = HRE_NAV_effort
+		icon = GFX_goal_generic_air_naval_bomber
+		prerequisite = { focus = HRE_fighter_focus_2 focus = HRE_bomber_focus_2 }
+		mutually_exclusive = { focus = HRE_CAS_effort }
+		x = 2
+		y = 1
+		relative_position_id = HRE_fighter_focus_2
+		cost = 10
+		ai_will_do = {
+            factor = 5
+        }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = nav_bomber_bonus
+				bonus = 1.0
+				uses = 1
+				category = cat_air_bombs
+			}
+		}
+	}
+	focus = {
+		id = HRE_NAV_effort_2 
+		icon = GFX_focus_generic_multi_role_aircraft
+		prerequisite = { focus = CAS_effort focus = NAV_effort }
+		mutually_exclusive = { focus = HRE_CAS_effort_2 }
+		x = 2
+		y = 2
+		relative_position_id = HRE_fighter_focus_2
+		cost = 10
+		ai_will_do = {
+            factor = 5
+        }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = nav_bomber_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = air_equipment
+			}
+		}
+	}
+
+
+	focus = { 
+		id = HRE_kaiserliche_marine
+		icon = GFX_GENERIC_Fleet_in_Being
+		prerequisite = { focus = HRE_army_effort }
+		relative_position_id = HRE_army_effort
+		x = 7
+		y = 1
+
+		cost = 5.13
+		ai_will_do = {
+            factor = 100
+        }
+
+		available = {
+			any_controlled_state = {
+				is_coastal = yes
+			}
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			navy_experience = 25
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_doctrine_cost_reduction = {
+				name = naval_doctrine
+				cost_reduction = 0.25
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = HRE_flexible_navy
+		text = flexible_navy
+		icon = GFX_goal_generic_build_navy
+		x = -1
+		y = 1
+		relative_position_id = HRE_kaiserliche_marine
+		mutually_exclusive = { focus = HRE_large_navy }
+		prerequisite = { focus = HRE_kaiserliche_marine }
+		cost = 7.2
+		ai_will_do = {
+            factor = 25
+        }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		
+		available_if_capitulated = yes
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = navy_doc_bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = cat_trade_interdiction
+			}
+		}
+	}
+
+	focus = {
+		id = HRE_large_navy
+		text = large_navy
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 1
+		y = 1
+		relative_position_id = HRE_kaiserliche_marine
+		mutually_exclusive = { focus = HRE_flexible_navy }
+		prerequisite = { focus = HRE_kaiserliche_marine }
+		cost = 7.2
+		ai_will_do = {
+            factor = 25
+        }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		
+		available_if_capitulated = yes
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = navy_doc_bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = cat_fleet_in_being
+			}
+		}
+	}
+
+	focus = {
+		id = HRE_ensure_commercial_protection
+		icon = GFX_focus_generic_cruiser2
+		x = -1
+		y = 1
+		relative_position_id = HRE_flexible_navy
+		prerequisite = { focus = HRE_flexible_navy }
+		cost = 7.2
+		ai_will_do = {
+            factor = 5
+        }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		
+		available_if_capitulated = yes
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = ca_tech
+			}
+			if = {
+				limit = {
+					has_dlc = "Man the Guns"
+				}
+				add_tech_bonus = {
+					name = HRE_ensure_commercial_protection
+					bonus = 1.0
+					uses = 2
+					category = naval_minesweeping
+				}				
+			}
+		}
+	}
+
+	focus = {
+		id = HRE_dominate_the_blue_water
+		icon = GFX_focus_ARG_study_the_battle_of_the_river_plate
+		x = 1
+		y = 1
+		relative_position_id = HRE_large_navy
+		prerequisite = { focus = HRE_large_navy }
+		cost = 7.2
+		ai_will_do = {
+            factor = 5
+        }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		
+		available_if_capitulated = yes
+		completion_reward = {
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 1
+				uses = 1
+				category = bb_tech
+				category = bc_tech
+			}
+		}
+	}
+
+	focus = {
+		id = HRE_protection_of_baltic_and_north_sea
+		icon = GFX_goal_generic_navy_anti_submarine
+		x = -1
+		y = 3
+		relative_position_id = HRE_kaiserliche_marine
+		prerequisite = { focus = HRE_ensure_commercial_protection focus = HRE_dominate_the_blue_water }
+		cost = 7.2
+		ai_will_do = {
+            factor = 5
+        }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY_XP
+		}
+		
+		available_if_capitulated = yes
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				name = HRE_protection_of_strait_of_hormuz
+				bonus = 1.0
+				ahead_reduction = 1
+				uses = 1
+				category = dd_tech
+			}
+		}
+	}
+
+	focus = {
+		id = HRE_produce_submarines
+		icon = GFX_goal_generic_navy_submarine
+		x = 1
+		y = 3
+		relative_position_id = HRE_kaiserliche_marine
+		prerequisite = { focus = HRE_ensure_commercial_protection focus = HRE_dominate_the_blue_water }
+		cost = 7.2
+		ai_will_do = {
+            factor = 5
+        }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY_XP
+		}
+		
+		available_if_capitulated = yes
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				name = HRE_produce_submarines
+				bonus = 1.0
+				ahead_reduction = 1
+				uses = 1
+				category = ss_tech
+			}
+		}
+	}
+
+	focus = {
+		id = HRE_doctrine_effort_navy
+		icon = GFX_goal_generic_navy_cruiser
+		x = 1
+		y = 1
+		relative_position_id = HRE_protection_of_baltic_and_north_sea
+		prerequisite = { focus = HRE_protection_of_baltic_and_north_sea focus = HRE_produce_submarines }
+		cost = 7.2
+		ai_will_do = {
+            factor = 1000
+        }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY_XP
+		}
+		
+		available_if_capitulated = yes
+		completion_reward = {
+			navy_experience = 25
+			add_doctrine_cost_reduction = {
+				name = navy_doc_bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = naval_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = HRE_expand_shipbuilding_capacities
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 10.00
+		ai_will_do = {
+            factor = 5
+        }
+		prerequisite = { focus = HRE_flexible_navy focus = HRE_large_navy }
+		relative_position_id = HRE_flexible_navy
+		x = 1
+		y = 1
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}		
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = { 
+		id = HRE_re_creation_of_kaiserliche_armee
+		icon = GFX_focus_HRE_re_creation_of_kaiserliche_armee
+		prerequisite = { focus = HRE_army_effort }
+		relative_position_id = HRE_army_effort
+		x = 0
+		y = 1
+
+		cost = 10
+		ai_will_do = {
+            factor = 100
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_MANPOWER }
+
+		completion_reward = {
+			custom_effect_tooltip = HRE_kaiserliche_armee_tt
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			army_experience = 25 
+			add_tech_bonus = {
+				name = GER_new_infantry_tactics
+				bonus = 0.5
+				uses = 2
+				category = infantry_weapons
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			#TO DO
+			add_doctrine_cost_reduction = {
+				name = HRE_army_effort
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+			hidden_effect = {
+				division_template = {
+					name = "Kaiserliche Armee"	
+	
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						artillery = { x = 0 y = 1 }
+					}
+				}	
+				capital_scope = {
+					create_unit = {
+						division = "name = \"1.Kaiserliche Armee\" division_template = \"Kaiserliche Armee\" start_experience_factor = 0.5"  
+						owner = PREV
+					}
+					create_unit = {
+						division = "name = \"2.Kaiserliche Armee\" division_template = \"Kaiserliche Armee\" start_experience_factor = 0.5"  
+						owner = PREV
+					}
+					create_unit = {
+						division = "name = \"3.Kaiserliche Armee\" division_template = \"Kaiserliche Armee\" start_experience_factor = 0.5"  
+						owner = PREV
+					}
+				}
+
+			}
+			
+		}
+	}
+
+	focus = { 
+		id = HRE_rifle_factories
+		icon = GFX_focus_ETH_freedom_at_gunpoint
+		prerequisite = { focus = HRE_re_creation_of_kaiserliche_armee }
+		relative_position_id = HRE_re_creation_of_kaiserliche_armee
+		x = -1
+		y = 1
+
+		cost = 5.13
+		ai_will_do = {
+            factor = 50
+        }
+
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+		}
+	}
+
+	focus = { 
+		id = HRE_support_equipment_factory
+		icon = GFX_GENERIC_Grand_Battleplan
+		prerequisite = { focus = HRE_rifle_factories }
+		relative_position_id = HRE_rifle_factories
+		x = 0
+		y = 1
+
+		cost = 5.13
+		ai_will_do = {
+            factor = 50
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+		}
+	}
+
+	focus = { 
+		id = HRE_field_artillery_factories
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = HRE_support_equipment_factory }
+		relative_position_id = HRE_support_equipment_factory
+		x = 0
+		y = 1
+
+		cost = 5.13
+		ai_will_do = {
+            factor = 50
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+		}
+	}
+
+	focus = { 
+		id = HRE_truck_factories
+		icon = GFX_focus_generic_truck
+		prerequisite = { focus = HRE_re_creation_of_kaiserliche_armee }
+		relative_position_id = HRE_re_creation_of_kaiserliche_armee
+		x = -3
+		y = 1
+
+		cost = 5.13
+		ai_will_do = {
+            factor = 50
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+		}
+	}
+
+	focus = { 
+		id = HRE_mechanisierte_factories
+		icon = GFX_focus_generic_mechanized
+		prerequisite = { focus = HRE_truck_factories }
+		relative_position_id = HRE_truck_factories
+		x = 0
+		y = 1
+
+		cost = 5.13
+		ai_will_do = {
+            factor = 50
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+		}
+	}
+
+	focus = { 
+		id = HRE_tank_factories
+		icon = GFX_focus_generic_tank_production
+		prerequisite = { focus = HRE_mechanisierte_factories }
+		relative_position_id = HRE_mechanisierte_factories
+		x = 0
+		y = 1
+
+		cost = 5.13
+		ai_will_do = {
+            factor = 50
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+		}
+	}
+	
+	focus = { 
+		id = HRE_infantry_tactics
+		icon = GFX_GER_Renounce_the_Disarmament_Clauses
+		prerequisite = { focus = HRE_re_creation_of_kaiserliche_armee }
+		relative_position_id = HRE_re_creation_of_kaiserliche_armee
+		x = 1
+		y = 1
+
+		cost = 5.13
+		ai_will_do = {
+            factor = 5
+			modifier = {
+				add = 15
+				has_completed_focus = HRE_rifle_factories
+			}
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_tech_bonus = {
+                name = HRE_infantry_tactics
+                bonus = 1
+                uses = 1
+				category = cat_anti_air
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+	focus = { 
+		id = HRE_support_equipment 
+		icon = GFX_GENERIC_Military_Academy
+		prerequisite = { focus = HRE_infantry_tactics }
+		relative_position_id = HRE_infantry_tactics
+		x = 0
+		y = 1
+
+		cost = 5.13
+		ai_will_do = {
+            factor = 5
+			modifier = {
+				add = 15
+				has_completed_focus = HRE_support_equipment_factory
+			}
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = HRE_infantry_support_equipment
+				bonus = 0.5
+				uses = 2
+				category = support_tech
+			}
+		}
+	}
+	focus = { 
+		id = HRE_tank_hunter
+		icon = GFX_GENERIC_Superior_Firepower 
+		prerequisite = { focus = HRE_support_equipment  }
+		relative_position_id = HRE_support_equipment 
+		x = 0
+		y = 1
+
+		cost = 10
+		ai_will_do = {
+            factor = 5
+			modifier = {
+				add = 15
+				has_completed_focus = HRE_field_artillery_factories
+			}
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = HRE_tank_hunter
+				bonus = 0.5
+				uses = 2
+				category = cat_anti_tank
+			}
+		}
+	}
+	focus = { 
+		id = HRE_expand_the_mobilization_program
+		icon = GFX_GENERIC_Mobile_Warfare
+		prerequisite = { focus = HRE_re_creation_of_kaiserliche_armee }
+		relative_position_id = HRE_re_creation_of_kaiserliche_armee
+		x = 3
+		y = 1
+
+		cost = 5.13
+		ai_will_do = {
+            factor = 5
+			modifier = {
+				add = 15
+				has_completed_focus = HRE_truck_factories
+			}
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = HRE_expand_the_mobilization_program
+				bonus = 1.0
+				uses = 1
+				category = motorized_equipment
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = cat_mobile_warfare
+			}
+		}
+	}
+	focus = { 
+		id = HRE_mechanisierte_abteilung
+		icon = GFX_GENERIC_Mechanization
+		prerequisite = { focus = HRE_expand_the_mobilization_program }
+		relative_position_id = HRE_expand_the_mobilization_program
+		x = 0
+		y = 1
+
+		cost = 10
+		ai_will_do = {
+            factor = 5
+			modifier = {
+				add = 15
+				has_completed_focus = HRE_mechanisierte_factories
+			}
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = HRE_mechanisierte_abteilung
+				ahead_reduction = 1.5
+				bonus = 2.0
+				uses = 1
+				category = cat_mechanized_equipment
+			}
+		}
+	}
+	focus = { 
+		id = HRE_tank_expert
+		icon = GFX_GER_Schwerer_Panzer 
+		prerequisite = { focus = HRE_mechanisierte_abteilung }
+		relative_position_id = HRE_mechanisierte_abteilung
+		x = 0
+		y = 1
+
+		cost = 10
+		ai_will_do = {
+            factor = 5
+			modifier = {
+				add = 15
+				has_completed_focus = HRE_tank_factories
+			}
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = HRE_tank_expert
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+
+	focus = { 
+		id = HRE_mechanised_armies
+		icon = GFX_focus_generic_purchase_mechanized_equipment
+		prerequisite = { focus = HRE_tank_expert }
+		prerequisite = { focus = HRE_field_artillery_factories }
+		prerequisite = { focus = HRE_tank_factories }
+		prerequisite = { focus = HRE_tank_hunter }
+		relative_position_id = HRE_tank_expert
+		mutually_exclusive = { focus = HRE_inf_armies }
+		x = -4
+		y = 1
+
+		cost = 10
+		ai_will_do = {
+            factor = 50
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_MANPOWER }
+
+		completion_reward = {
+			custom_effect_tooltip = HRE_mechanised_armies_tt
+			hidden_effect = {
+				division_template = {
+					name = "Kaiserliche Armee"	
+	
+					regiments = {
+						mechanized = { x = 0 y = 0 }
+						mechanized = { x = 0 y = 1 }
+						mechanized = { x = 0 y = 2 }
+						mechanized = { x = 1 y = 0 }
+						mechanized = { x = 1 y = 1 }
+						mechanized = { x = 1 y = 2 }
+						mechanized = { x = 2 y = 0 }
+						mechanized = { x = 2 y = 1 }
+						mechanized = { x = 2 y = 2 }
+						mechanized = { x = 3 y = 0 }
+						mechanized = { x = 3 y = 1 }
+						mechanized = { x = 3 y = 2 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						artillery = { x = 0 y = 1 }
+					}
+				}	
+				capital_scope = {
+					create_unit = {
+						division = "name = \"1.Mechanized infantry\" division_template = \"Mechanized infantry\" start_experience_factor = 0.5"  
+						owner = PREV
+					}
+					create_unit = {
+						division = "name = \"2.Mechanized infantry\" division_template = \"Mechanized infantry\" start_experience_factor = 0.5"  
+						owner = PREV
+					}
+					create_unit = {
+						division = "name = \"3.Mechanized infantry\" division_template = \"Mechanized infantry\" start_experience_factor = 0.5"  
+						owner = PREV
+					}
+				}	
+
+			}
+			
+		}
+	}
+
+	focus = { 
+		id = HRE_inf_armies
+		icon = GFX_goal_generic_axis_build_infantry
+		prerequisite = { focus = HRE_tank_expert }
+		prerequisite = { focus = HRE_field_artillery_factories }
+		prerequisite = { focus = HRE_tank_factories }
+		prerequisite = { focus = HRE_tank_hunter }
+		relative_position_id = HRE_tank_expert
+		mutually_exclusive = { focus = HRE_mechanised_armies }
+		x = -2
+		y = 1
+
+		cost = 10
+		ai_will_do = {
+            factor = 50
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_MANPOWER }
+
+		completion_reward = {
+			custom_effect_tooltip = HRE_infanterie_armies_tt
+			hidden_effect = {
+				division_template = {
+					name = "Kaiserliche Armee"	
+	
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						artillery = { x = 0 y = 1 }
+					}
+				}	
+				capital_scope = {
+					create_unit = {
+						division = "name = \"4.Kaiserliche Armee\" division_template = \"Kaiserliche Armee\" start_experience_factor = 0.5"  
+						owner = PREV
+					}
+					create_unit = {
+						division = "name = \"5.Kaiserliche Armee\" division_template = \"Kaiserliche Armee\" start_experience_factor = 0.5"  
+						owner = PREV
+					}
+					create_unit = {
+						division = "name = \"6.Kaiserliche Armee\" division_template = \"Kaiserliche Armee\" start_experience_factor = 0.5"  
+						owner = PREV
+					}
+					create_unit = {
+						division = "name = \"7.Kaiserliche Armee\" division_template = \"Kaiserliche Armee\" start_experience_factor = 0.5"  
+						owner = PREV
+					}
+					create_unit = {
+						division = "name = \"8.Kaiserliche Armee\" division_template = \"Kaiserliche Armee\" start_experience_factor = 0.5"  
+						owner = PREV
+					}
+					create_unit = {
+						division = "name = \"9.Kaiserliche Armee\" division_template = \"Kaiserliche Armee\" start_experience_factor = 0.5"  
+						owner = PREV
+					}
+				}
+
+			}
+		
+		}
+	}
+	############################
+	##### INDUSTRY SECTION #####
+	############################
+
+	focus = {
+		id = HRE_learn_from_old_days
+		icon = GFX_focus_HRE_FORM
+		x = 30
+		y = 0
+
+		cost = 5.13
+		ai_will_do = {
+            factor = 100
+        }
+
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			add_political_power = 100
+			
+		}
+	}
+
+	focus = {
+		id = HRE_neue_helle_Tage
+		icon = GFX_focus_HRE_empire
+		prerequisite = { focus = HRE_learn_from_old_days }
+		relative_position_id = HRE_learn_from_old_days
+		x = 3
+		y = 1
+
+		cost = 5.13
+		ai_will_do = {
+            factor = 0
+			modifier = {
+				add = 30
+				has_completed_focus = HRE_focus_on_industrialization
+				has_completed_focus = HRE_focus_on_infrastructure
+			}
+        }
+		mutually_exclusive = { focus =  HRE_heil_dir_im_siegerkranz }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			add_war_support = 0.10
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = HRE_patriation
+
+		}
+	}
+	focus = {
+		id = HRE_internationalism_focusmore
+		icon = GFX_GENERIC_Ideology_National_Communism
+		prerequisite = { focus = HRE_neue_helle_Tage }
+		relative_position_id = HRE_neue_helle_Tage
+		x = 2
+		y = 1
+
+		cost = 7.2
+		mutually_exclusive = { focus =  HRE_support_for_democratic focus =  HRE_nationalism_focus }
+		ai_will_do = {
+            factor = 5
+			modifier = {
+				add = 45
+				GER = {
+					has_completed_focus = GER_steel_barons
+				}
+			}
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			add_autonomy_ratio = {
+				value = 0.1
+				localization = HRE_internationalism_focusmore
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					NOT = { has_government = communism }
+				}
+				set_politics = {
+					ruling_party = communism
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+
+			add_timed_idea = {
+				idea = internationalism
+				days = 920
+			}
+			add_popularity = { 
+				ideology = communism
+				popularity = 0.10
+			}
+
+		}
+	}
+	focus = {
+		id = HRE_political_correctness_more
+		icon = GFX_GENERIC_Meeting_with_the_Comintern
+		prerequisite = { focus = HRE_internationalism_focusmore }
+		relative_position_id = HRE_internationalism_focusmore
+		x = 0
+		y = 1
+
+		cost = 7.2
+		ai_will_do = {
+            factor = 1000
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			add_autonomy_ratio = {
+				value = 0.1
+				localization = HRE_political_correctness_more
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = { has_idea = neutrality_idea }
+				remove_ideas = neutrality_idea
+			}		
+			add_political_power = 100
+			add_ideas = idea_political_correctness_2
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					NOT = { has_government = communism }
+				}
+				set_politics = {
+					ruling_party = communism
+				}
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+		}
+	}
+	focus = {
+		id = HRE_political_commissars_more
+		icon = GFX_focus_SOV_organization_centralization_discipline
+		prerequisite = { focus = HRE_political_correctness_more }
+		relative_position_id = HRE_political_correctness_more
+		x = 0
+		y = 1
+
+		cost = 7.2
+		ai_will_do = {
+            factor = 1000
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			add_autonomy_ratio = {
+				value = 0.1
+				localization = HRE_political_commissars_more
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = political_commissars_focus
+			add_popularity = {
+				ideology = communism
+				popularity = 0.2
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = HRE_nationalism_focus
+		icon = GFX_focus_generic_fascist_propaganda
+		prerequisite = { focus = HRE_neue_helle_Tage }
+		relative_position_id = HRE_neue_helle_Tage
+		x = 0
+		y = 1
+
+		cost = 7.2
+		ai_will_do = {
+            factor = 1
+        }
+		mutually_exclusive = { focus =  HRE_support_for_democratic focus =  HRE_internationalism_focusmore }
+
+
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			add_autonomy_ratio = {
+				value = 0.1
+				localization = HRE_nationalism_focus
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					NOT = { has_government = fascism }
+				}
+				set_politics = {
+					ruling_party = fascism
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+			
+			add_timed_idea = {
+				idea = nationalism
+				days = 920
+			}
+			add_popularity = { 
+				ideology = fascism
+				popularity = 0.10
+			}
+
+		}
+	}
+	
+	focus = {
+		id = HRE_military_youthmore
+		icon = GFX_focus_generic_full_social_mobilization
+		prerequisite = { focus = HRE_nationalism_focus }
+		relative_position_id = HRE_nationalism_focus
+		x = 0
+		y = 1
+
+		cost = 7.2
+		ai_will_do = {
+            factor = 1000
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			add_autonomy_ratio = {
+				value = 0.1
+				localization = HRE_military_youthmore
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = military_youth_focus
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.2
+			}
+		}
+	}
+	focus = {
+		id = HRE_paramilitarism2
+		icon = GFX_focus_generic_conspiracy
+		prerequisite = { focus = HRE_military_youthmore }
+		relative_position_id = HRE_military_youthmore
+		x = 0
+		y = 1
+
+		cost = 7.2
+		ai_will_do = {
+            factor = 1000
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			add_autonomy_ratio = {
+				value = 0.1
+				localization = HRE_paramilitarism2
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = paramilitarism_focus
+		}
+	}
+	focus = {
+		id = HRE_support_for_democratic
+		icon = GFX_focus_HRE_democracy
+		prerequisite = { focus = HRE_neue_helle_Tage }
+		relative_position_id = HRE_neue_helle_Tage
+		x = -2
+		y = 1
+
+		cost = 7.2
+		ai_will_do = {
+            factor = 5
+			modifier = {
+				add = 45
+				GER = {
+					has_completed_focus = GER_oppose_hitler
+				}
+			}
+        }
+		mutually_exclusive = { focus =  HRE_nationalism_focus focus =  HRE_internationalism_focusmore }
+
+
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			add_autonomy_ratio = {
+				value = 0.1
+				localization = AST_adopt_westminster
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					NOT = { has_government = democratic }
+				}
+				set_politics = {
+					ruling_party = democratic
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+			}
+
+			add_timed_idea = { idea = democratic_idea days = 920 }
+			add_popularity = { 
+				ideology = democratic
+				popularity = 0.10
+			}
+
+		}
+	}
+	focus = {
+		id = HRE_beacon_of_liberty
+		icon = GFX_focus_generic_the_giant_wakes
+		prerequisite = { focus = HRE_support_for_democratic }
+		relative_position_id = HRE_support_for_democratic
+		x = 0
+		y = 1
+
+		cost = 7.2
+		ai_will_do = {
+            factor = 1000
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			add_autonomy_ratio = {
+				value = 0.1
+				localization = HRE_beacon_of_liberty
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = Beacon_of_Liberty 
+			if = {
+				limit = {
+					NOT = { has_government = neutrality }
+				}
+				set_politics = {
+					ruling_party = democratic
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+		}
+	}
+	focus = {
+		id = HRE_interventionism
+		icon = GFX_GER_Establish_the_Bundesrepublik
+		prerequisite = { focus = HRE_beacon_of_liberty }
+		relative_position_id = HRE_beacon_of_liberty
+		x = 0
+		y = 1
+
+		cost = 7.2
+		ai_will_do = {
+            factor = 1000
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			add_autonomy_ratio = {
+				value = 0.1
+				localization = HRE_interventionism
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = interventionism_idea
+			set_rule = { can_send_volunteers = yes }
+		}
+	}
+
+	focus = {
+		id = HRE_heil_dir_im_siegerkranz
+		icon = GFX_focus_HRE_catholic_empire
+		prerequisite = { focus = HRE_learn_from_old_days }
+		relative_position_id = HRE_learn_from_old_days
+		x = -3
+		y = 1
+
+		cost = 7.2
+		ai_will_do = {
+            factor = 0
+			modifier = {
+				add = 45
+				OR = {
+					has_completed_focus = HRE_focus_on_industrialization
+					has_completed_focus = HRE_focus_on_infrastructure
+				}
+			}
+			modifier = {
+				add = 35
+				GER = {
+					OR = {
+						has_completed_focus = GER_oppose_hitler
+						has_completed_focus = GER_oppose_hitler_ww
+					}
+				}
+			}
+        }
+		mutually_exclusive = { focus =  HRE_neue_helle_Tage }
+
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			add_autonomy_ratio = {
+				value = 0.1
+				localization = HRE_heil_dir_im_siegerkranz
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_stability = 0.10
+		}
+	}
+
+	focus = {
+		id = HRE_suppress_opposite_sides
+		icon = GFX_GER_Advocate_for_Paligenesis
+		prerequisite = { focus = HRE_heil_dir_im_siegerkranz }
+		relative_position_id = HRE_heil_dir_im_siegerkranz
+		x = -1
+		y = 1
+
+		cost = 7.2
+		ai_will_do = {
+            factor = 15
+        }
+
+		available = {
+			
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			add_political_power = 25
+			add_stability = -0.05
+			add_war_support = 0.05
+			add_popularity = { ideology = fascism popularity = -0.05 }
+
+		}
+	}
+
+	focus = {
+		id = HRE_support_the_church
+		icon = GFX_focus_generic_pope
+		prerequisite = { focus = HRE_suppress_opposite_sides }
+		prerequisite = { focus = HRE_expand_conscription }
+		relative_position_id = HRE_suppress_opposite_sides
+		x = 1
+		y = 1
+
+		cost = 7.2
+		ai_will_do = {
+            factor = 15
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			add_ideas = HRE_support_the_church_idea
+
+		}
+	}
+
+	focus = {
+		id = HRE_expand_conscription
+		icon = GFX_focus_HRE_army_effort
+		prerequisite = { focus = HRE_heil_dir_im_siegerkranz }
+		relative_position_id = HRE_heil_dir_im_siegerkranz
+		x = 1
+		y = 1
+
+		cost = 7.2
+		ai_will_do = {
+            factor = 5
+			modifier = {
+				add = 45
+				has_completed_focus = HRE_re_creation_of_kaiserliche_armee
+			}
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			add_ideas = HRE_expand_conscription_idea
+
+		}
+	}
+
+	focus = {
+		id = HRE_preussiche_tugenden
+		icon = GFX_focus_HRE_army
+		prerequisite = { focus = HRE_expand_conscription }
+		relative_position_id = HRE_expand_conscription
+		x = 1
+		y = 1
+
+		cost = 10
+		ai_will_do = {
+            factor = 5
+			modifier = {
+				add = 45
+				has_completed_focus = HRE_support_equipment 
+			}
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = HRE_expand_conscription_idea
+				add_idea = HRE_preussiche_tugenden_idea
+			}
+
+		}
+	}
+
+	focus = {
+		id = HRE_protect_the_fatherland
+		icon = GFX_focus_HRE_land
+		prerequisite = { focus = HRE_suppress_opposite_sides }
+		relative_position_id = HRE_suppress_opposite_sides
+		x = -1
+		y = 1
+
+		cost = 10
+		ai_will_do = {
+            factor = 15
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			add_ideas = HRE_protect_the_fatherland_idea
+
+		}
+	}
+
+	focus = {
+		id = HRE_scholastic_based_education 
+		#icon = GFX_focus_generic_pope
+		icon = GFX_focus_generic_catholic_dominion
+		prerequisite = { focus = HRE_protect_the_fatherland }
+		prerequisite = { focus = HRE_support_the_church }
+		relative_position_id = HRE_protect_the_fatherland
+		x = 1
+		y = 1
+
+		cost = 10
+		ai_will_do = {
+            factor = 15
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			add_research_slot = 1
+			swap_ideas = {
+				remove_idea = HRE_support_the_church_idea
+				add_idea = HRE_support_the_church_idea_more
+			}
+
+		}
+	}
+
+	focus = {
+		id = HRE_god_save_the_kaiser
+		icon = GFX_focus_HRE_wilhelm
+		prerequisite = { focus = HRE_preussiche_tugenden }
+		prerequisite = { focus = HRE_support_the_church }
+		relative_position_id = HRE_protect_the_fatherland
+		x = 3
+		y = 1
+
+		cost = 7.2
+		ai_will_do = {
+            factor = 15
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			add_stability = 0.10
+			add_war_support = 0.05
+		}
+	}
+	focus = {
+		id = HRE_Blood_and_Iron
+		icon = GFX_focus_HRE_re_creation_of_kaiserliche_armee
+		prerequisite = { focus = HRE_god_save_the_kaiser focus = HRE_interventionism focus = HRE_paramilitarism2 focus = HRE_political_commissars_more }
+		relative_position_id = HRE_god_save_the_kaiser
+		x = 2
+		y = 1
+
+		cost = 10
+		ai_will_do = {
+            factor = 500
+        }
+
+		available = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			add_ideas = HRE_blood_of_iron_idea
+		}
+	}
+
+}
+

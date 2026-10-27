@@ -1,0 +1,79 @@
+﻿
+########################################################################################################################
+							# < INFORMATION > #
+########################################################################################################################
+		# Name mod: Generic Focus Tree: Redux
+		# Author: BoznaWhere
+		# Comment language: ENG / UKR
+########################################################################################################################
+							# < CONTENT > #
+########################################################################################################################
+    # SETTINGS
+    # CREATE ALLIANCE
+########################################################################################################################
+							# < SETTINGS > #
+########################################################################################################################
+l_simp_chinese:
+# # # # # # # # # # # # # # #
+GFTR_categories_settings: "设置"
+GFTR_categories_settings_desc: "您好！非常感谢您订阅 §YGeneric Focus Tree: Redux§! 如果您喜欢我的工作，请在Steam创意工坊页面支持本模组 :) \n那里您也可以查看最新更新，向我报告问题或错误。"
+# # # # # # # # # # # # # # #
+GFTR_D_set_focus_tree_SHOW: "1. 安装国策树？"
+GFTR_D_set_focus_tree_SHOW_tt: "在这里，您可以为本国及其他国家安装或删除各种国策树。"
+GFTR_D_set_focus_tree_HIDE: "1. §R关闭分区§!"
+GFTR_D_set_gftr_a: "          1. 安装（GFT: Redux）"
+GFTR_D_set_gftr_a_tt: "当前国家将安装或更新 §YGeneric Focus Tree: Redux§!。\n~~~\n注意：如果您替换拥有原版或DLC专属国策树的国家（例如德国、法国、伊朗等），只能通过§L开始新游戏§!或§L使用控制台§!恢复其原版国策树。"
+GFTR_D_set_gftr_b: "          1. 为AI安装（GFT: Redux）"
+GFTR_D_set_gftr_b_tt: "所有AI控制的国家都将安装或更新 §YGeneric Focus Tree: Redux§!。\n~~~\n§L请小心§!，点击后所有AI国家无一例外都会获得新国策树。§G建议§!仅在游戏最开始使用，并在下方决策中先移除所有国家的国家精神与特殊机制。"
+GFTR_D_set_generic_focus: "          1. 安装原版国策树"
+GFTR_D_set_generic_focus_tt: "当前国家将安装或更新 §G原版§!基础国策树。\n~~~\n本功能加载的是您当前游戏中的原版国策树，若被其他大型模组修改，则会安装修改后的版本而非纯原版。"
+GFTR_D_deleted_focus_tree: "          1. 删除国策树"
+GFTR_D_deleted_focus_tree_tt: "当前国家的国策树将被§R删除§!。准确地说，将被替换为完全空的树（除持续型国策外无任何国策）。\n~~~\n老实说我也不知道你们要这功能干嘛§YXD§!。或许想让某个国家“完全不行动”，关闭国策树可能略微提升性能。"
+GFTR_D_test_focus_tree: "          1. 测试模组"
+GFTR_D_test_focus_tree_tt: "将安装 §YGeneric Focus Tree: Redux§!的精确副本，但所有国策仅需1天完成。\n~~~\n主要用于快速测试AI行为。如果您愿意，也可使用此功能帮助我发现AI问题。\n~~~\n在普通游戏中也可能很有趣。"
+# # # # # # # # # # # # # # #
+GFTR_D_remove_national_spirits_SHOW: "2. 移除国家精神？"
+GFTR_D_remove_national_spirits_SHOW_tt: "在这里，您可以移除本国及其他国家的各种国家精神。"
+GFTR_D_remove_national_spirits_HIDE: "2. §R关闭分区§!"
+GFTR_D_remove_gftr_national_spirits_a: "          2. 移除精神（GFT: Redux）"
+GFTR_D_remove_gftr_national_spirits_a_tt: "当前国家将移除所有由 §YGeneric Focus Tree: Redux§! 添加的国家精神。\n~~~\n技术类国家精神不会被移除。"
+GFTR_D_remove_gftr_national_spirits_b: "          2. 为AI移除精神（GFT: Redux）"
+GFTR_D_remove_gftr_national_spirits_b_tt: "所有AI控制国家将移除由 §YGeneric Focus Tree: Redux§! 添加的国家精神。\n~~~\n技术类国家精神不会被移除。\n~~~\n§R请小心§!，移除国家精神可能导致短暂卡顿。"
+GFTR_D_remove_vanilla_national_spirits_a: "          2. 移除原版精神"
+GFTR_D_remove_vanilla_national_spirits_a_tt: "当前国家将移除所有起始§G原版§!国家精神！\n~~~\n游戏没有“一键移除全部精神”的功能，因此仅移除1936年开局时预设的列表。游戏中后期使用基本无效。§G强烈建议仅在开局时使用§!。"
+GFTR_D_remove_vanilla_national_spirits_b: "          2. 为AI移除原版精神"
+GFTR_D_remove_vanilla_national_spirits_b_tt: "所有AI控制国家将移除起始§G原版§!国家精神。\n~~~\n与上条相同限制。§G强烈建议仅在开局时使用§!。\n~~~\n§R请小心§!，移除国家精神可能导致短暂卡顿。"
+# # # # # # # # # # # # # # #
+GFTR_D_remove_unique_mechanics_SHOW: "3. 移除特殊机制？"
+GFTR_D_remove_unique_mechanics_SHOW_tt: "在这里，您可以移除某些国家的特殊机制、决策与修正值，避免在替换原生国策树时产生冲突。"
+GFTR_D_remove_unique_mechanics_HIDE: "3. §R关闭分区§!"
+GFTR_D_remove_state_modifier_a: "          3. 移除州修正"
+GFTR_D_remove_state_modifier_a_tt: "当前国家将移除部分州修正。\n~~~\n§Y州修正§!仅存在于特定州并影响游戏进程，例如埃塞俄比亚的“去中心化”或土耳其的“库尔德分离主义”。\n~~~\n§G替换原生§!国策树后，这些修正将永久存在且无法移除。本决策正是为此而设。\n~~~\n受影响国家列于上方“要求条件”。§L（AI版同理）§!\n~~~\n§G强烈建议开局时使用§!，后期可能被其他修正覆盖。"
+GFTR_D_remove_state_modifier_b: "          3. 为AI移除州修正"
+GFTR_D_remove_state_modifier_b_tt: "AI控制地区的州修正将被移除。\n~~~\n详情见上条决策。当前所有者无关，修正仍会被清除。\n~~~\n§G仅在计划为所有AI国家替换原生国策树时使用§!。"
+GFTR_D_remove_special_mechanics_a: "          3. 移除特殊机制"
+GFTR_D_remove_special_mechanics_a_tt: "当前国家将移除特殊机制。\n~~~\n§Y特殊机制§!为少数国家独有的系统，仅通过特定国策管理（例如埃塞俄比亚·丹麦的“势力平衡”、苏联“偏执”、波兰“农民起义”等）。\n~~~\n§G替换原生§!国策树后，除本决策外无法移除。\n~~~\n受影响国家列于上方“要求条件”。"
+GFTR_D_remove_special_mechanics_b: "          3. 为AI移除特殊机制"
+GFTR_D_remove_special_mechanics_b_tt: "部分AI控制国家将移除特殊机制。\n~~~\n详情见上条决策。\n~~~\n§G仅在计划为所有AI国家替换原生国策树时使用§!。"
+# # # # # # # # # # # # # # #
+GFTR_D_ai_management_SHOW: "4. 配置AI行为？"
+GFTR_D_ai_management_SHOW_tt: "在这里，您可以控制AI国家的行为。"
+GFTR_D_ai_management_HIDE: "4. §R关闭分区§!"
+GFTR_D_ai_political_freedom: "          4. “政治自由”"
+GFTR_D_ai_political_freedom_tt: "所有AI国家将获得国家精神 §Y$GFTR_idea_ai_political_freedom$§!。\n~~~\n本模组默认AI会略微偏好与当前意识形态一致的政治分支，并在历史模式中完全不更换意识形态与结成非历史同盟。\n§Y政治自由§!将解除这些限制。即使在历史模式下，AI也会更自由、更随机。\n~~~\n在纯原版中用处不大，主要为兼容添加大量新国家的模组而设（典型例子：§L\"Every State Independent\"§!）。\n~~~\n如果您希望AI以同等概率选择所有政治分支或忽略历史模式，请使用此决策。"
+GFTR_D_ai_limit: "          4. 限制AI"
+GFTR_D_ai_limit_tt: "当前国家将获得国家精神 §Y$GFTR_idea_ai_limit$§!。\n~~~\n可用于“关闭”单个国家的AI以提升性能（需控制台+\"observe\"）。\n~~~\n§G提醒§!：上方还有完全删除国策树的决策，可进一步限制AI。"
+GFTR_D_ai_madness_mode: "          4. “疯狂”模式"
+GFTR_D_ai_madness_mode_tt: "所有AI国家将获得国家精神 §Y$GFTR_idea_ai_madness_mode$§!。\n~~~\n§Y“疯狂”模式§!将强制AI只走战争路线。投入所有人对所有人的混沌世界吧！§R注意§!：仅对拥有 §YGeneric Focus Tree: Redux§!的国家生效。"
+GFTR_D_remove_management_ideas: "          4. 移除技术精神"
+GFTR_D_remove_management_ideas_tt: "本模组添加的所有技术类国家精神将从所有国家移除。"
+########################################################################################################################
+# < CREATE ALLIANCE > #
+########################################################################################################################
+GFTR_categories_create_alliance: "创建联盟"
+GFTR_categories_create_alliance_desc: "最近我们变得更加强大、更加自信，甚至开始考虑组建属于自己的联盟。我们只差一步！"
+# # # # # # # # # # # # # # #
+GFTR_D_alliance_communism: "共产主义联盟"
+GFTR_D_alliance_neutrality: "君主制联盟"
+GFTR_D_alliance_fascism: "法西斯联盟"
+GFTR_D_alliance_democratic: "民主主义联盟"

@@ -1,0 +1,43 @@
+state = {
+	id = 1115
+	name = "STATE_115"
+	manpower = 5000000
+	state_category = town
+
+	history = {
+
+		owner = CHI
+		add_core_of = CHI
+		add_core_of = PRC
+		
+
+		victory_points = { 
+			7191 1 # Hangzhou
+		}
+		
+		buildings = {
+
+			infrastructure = 2
+
+			7191 = {
+				naval_base = 1
+				coastal_bunker = 1
+				bunker = 1
+			}
+		}
+
+		1938.10.25 = {		
+			JAP = {
+				set_province_controller = 4042
+				set_province_controller = 7191
+				set_province_controller = 10101
+			} 			
+		}
+	}
+
+	provinces = {
+		1171 4042 4105 4173 7191 10101
+	}
+
+	local_supplies = 0.0 
+}

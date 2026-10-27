@@ -1,0 +1,25 @@
+state=
+{
+	id=1097
+	name="STATE_1097"
+	manpower = 64000
+	
+	state_category = rural
+	
+	history =
+	{
+		owner = BEL
+		buildings = {
+			infrastructure = 2
+            # Gileppe Dam
+			3488 = { dam = 1 }
+		}
+		add_core_of = BEL
+		add_core_of = GER
+	}
+	provinces={
+		3488
+	}
+	
+	local_supplies=2.0 
+}

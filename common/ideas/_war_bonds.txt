@@ -1,0 +1,88 @@
+ideas = {
+
+	war_bonds = {
+
+		law = yes
+
+		#Force Bonds
+		war_bonds_force = {
+			available = {
+				OR = {
+					has_government = communism
+					tag = JAP
+				}
+			}
+
+			modifier = {
+				consumer_goods_factor = -0.15
+				political_power_factor = -0.05
+				factory_energy_consumption = 0.05
+			}
+
+			cost = 175
+
+			ai_will_do = {
+				base = 40
+			}
+		}
+
+		#Bonds Welcome
+		war_bonds_welcome = {
+
+			available = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+
+			cost = 175
+
+			modifier = {
+				political_power_factor = 0.05
+				consumer_goods_factor = -0.10
+			}
+
+			ai_will_do = {
+				base = 20
+			}
+		}
+
+		#No Bonds
+		war_bonds_no = {
+
+			modifier = {
+				political_power_factor = 0.15
+				stability_factor = 0.05
+				consumer_goods_factor = 0.06
+				factory_energy_consumption = -0.05
+			}
+
+			cost = 150
+
+			ai_will_do = {
+				base = 0
+			}
+		}
+
+		#fascist Bonds
+		war_bonds_fascist = {
+
+			available = {
+				has_government = fascism
+			}
+
+			modifier = {
+				political_power_factor = 0.05
+				consumer_goods_factor = -0.09
+				industrial_capacity_factory = 0.05
+			}
+
+			cost = 175
+
+			ai_will_do = {
+				base = 20
+			}
+		}
+
+	}
+}

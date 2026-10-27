@@ -1,0 +1,232 @@
+# NO LAG BR - SOOO/SPOT territory consolidation
+# Rewritten for HOI4 1.19.2 from the original SPOT startup rules.
+
+on_actions = {
+	on_startup = {
+		effect = {
+			# Wasteland always exists on the Galapagos baseline.
+			WST = { add_state_core = 649 }
+
+			# Baseline SPOT consolidation.
+			DEN = {
+				annex_country = { target = ICE transfer_troops = no }
+			}
+
+			# Consolidate low-impact countries and the Americas into WST.
+			if = {
+				limit = {
+					has_game_rule = { rule = wasteland option = yes }
+				}
+				SOV = { annex_country = { target = TAN transfer_troops = yes } }
+				FRA = {
+					annex_country = { target = LEB transfer_troops = yes }
+					annex_country = { target = SYR transfer_troops = yes }
+				}
+				ENG = {
+					annex_country = { target = LIB transfer_troops = yes }
+					annex_country = { target = KUW transfer_troops = yes }
+					annex_country = { target = PAL transfer_troops = yes }
+					annex_country = { target = JOR transfer_troops = yes }
+				}
+				BEL = { annex_country = { target = COG transfer_troops = yes } }
+				RAJ = {
+					BRM = { every_core_state = { add_core_of = RAJ } }
+					NEP = { every_core_state = { add_core_of = RAJ } }
+					BHU = { every_core_state = { add_core_of = RAJ } }
+					annex_country = { target = BRM transfer_troops = yes }
+					annex_country = { target = BHU transfer_troops = yes }
+					annex_country = { target = NEP transfer_troops = yes }
+				}
+				every_country = {
+					limit = {
+						OR = {
+							tag = BRA
+							tag = COL
+							tag = COS
+							tag = NIC
+							tag = DOM
+							tag = GUA
+							tag = ECU
+							tag = PRU
+							tag = BOL
+							tag = CHL
+							tag = PAR
+							tag = ARG
+							tag = URG
+							tag = ELS
+							tag = HAI
+							tag = CUB
+							tag = HON
+							tag = VEN
+							tag = PAN
+						}
+					}
+					every_controlled_state = {
+						transfer_state_to = WST
+						add_core_of = WST
+					}
+				}
+			}
+
+			# Optional regional consolidation rules.
+			if = {
+				limit = {
+					has_game_rule = { rule = asian_countries option = yes }
+				}
+				every_country = {
+					limit = {
+						OR = {
+							tag = RAJ
+							tag = BRM
+							tag = BHU
+							tag = SIA
+							tag = NEP
+							tag = YUN
+							tag = GXC
+							tag = SHX
+							tag = MON
+							tag = JAP
+							tag = PRC
+							tag = CHI
+							tag = TIB
+							tag = SIK
+							tag = XSM
+							tag = MAN
+							tag = MEN
+							tag = PHI
+							tag = INS
+							tag = MAL
+							tag = AST
+							tag = NZL
+							tag = KHM
+							tag = GSM
+							tag = NXM
+							tag = XIC
+							tag = SIC
+							tag = HBC
+							tag = SND
+							tag = GDC
+						}
+					}
+					every_controlled_state = {
+						transfer_state_to = WST
+						add_core_of = WST
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					has_game_rule = { rule = european_countries option = yes }
+				}
+				978 = { set_demilitarized_zone = no }
+				42 = { set_demilitarized_zone = no }
+				51 = { set_demilitarized_zone = no }
+				145 = { set_demilitarized_zone = no }
+				341 = { set_demilitarized_zone = no }
+				797 = { set_demilitarized_zone = no }
+				340 = { set_demilitarized_zone = no }
+				every_country = {
+					limit = {
+						OR = {
+							tag = GER
+							tag = TUR
+							tag = FRA
+							tag = LUX
+							tag = BEL
+							tag = HOL
+							tag = ENG
+							tag = SPR
+							tag = POR
+							tag = SWI
+							tag = SWE
+							tag = AUS
+							tag = ITA
+							tag = HUN
+							tag = SAF
+							tag = ETH
+							tag = CZE
+							tag = POL
+							tag = DEN
+							tag = NOR
+							tag = IRE
+							tag = LIT
+							tag = LAT
+							tag = EST
+							tag = SOV
+							tag = ROM
+							tag = YUG
+							tag = FIN
+							tag = BUL
+							tag = GRE
+							tag = ALB
+						}
+					}
+					every_controlled_state = {
+						transfer_state_to = WST
+						add_core_of = WST
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					has_game_rule = { rule = meast option = yes }
+				}
+				every_country = {
+					limit = {
+						OR = {
+							tag = AFG
+							tag = YEM
+							tag = OMA
+							tag = SAU
+							tag = IRQ
+							tag = PER
+						}
+					}
+					every_controlled_state = {
+						transfer_state_to = WST
+						add_core_of = WST
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					has_game_rule = { rule = north_america option = yes }
+				}
+				every_country = {
+					limit = { OR = { tag = USA tag = CAN tag = MEX } }
+					every_controlled_state = {
+						transfer_state_to = WST
+						add_core_of = WST
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					has_game_rule = { rule = unify_china option = yes }
+				}
+				TIB = { every_controlled_state = { add_core_of = CHI } }
+				CHI = {
+					annex_country = { target = GXC transfer_troops = yes }
+					annex_country = { target = GDC transfer_troops = yes }
+					annex_country = { target = SIC transfer_troops = yes }
+					annex_country = { target = XIC transfer_troops = yes }
+					annex_country = { target = SND transfer_troops = yes }
+					annex_country = { target = HBC transfer_troops = yes }
+					annex_country = { target = NXM transfer_troops = yes }
+					annex_country = { target = GSM transfer_troops = yes }
+					annex_country = { target = KHM transfer_troops = yes }
+					annex_country = { target = YUN transfer_troops = yes }
+					annex_country = { target = XSM transfer_troops = yes }
+					annex_country = { target = PRC transfer_troops = yes }
+					annex_country = { target = SHX transfer_troops = yes }
+					annex_country = { target = SIK transfer_troops = yes }
+					annex_country = { target = TIB transfer_troops = yes }
+				}
+			}
+		}
+	}
+}

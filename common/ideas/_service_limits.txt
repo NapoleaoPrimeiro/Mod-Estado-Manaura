@@ -1,0 +1,82 @@
+ideas = {
+
+	service_limit_laws = {
+		law = yes
+
+		# Limited Service
+		limited_service = {
+
+			cost = 75
+			removal_cost = -1
+			level = 1
+
+			modifier = {
+				experience_gain_army = -0.01
+				political_power_factor = 0.15
+			}
+
+			ai_will_do = {
+				base = 1
+			}
+
+			cancel_if_invalid = no
+			default = yes
+		}
+
+		# Extended Service
+		wartime_service = {
+
+			cost = 75
+			removal_cost = -1
+			level = 1
+
+			available = {
+				OR = {
+					has_war = yes
+					threat > 0.20
+				}
+			}
+
+			ai_will_do = {
+				base = 1
+			}
+
+			modifier = {
+				experience_gain_army = 0.05
+				political_power_factor = 0.05
+			}
+
+			cancel_if_invalid = no
+		}
+
+		# Veteran Cycling
+		shake_and_bake = {
+
+			cost = 75
+			removal_cost = -1
+			level = 1
+
+			available = {
+				has_war = yes
+				any_enemy_country = {
+					ic_ratio = {
+						tag = ROOT
+						ratio > 0.75
+					}
+				}
+			}
+
+			ai_will_do = {
+				base = 1
+			}
+
+			modifier = {
+				training_time_factor = -0.25
+				experience_gain_army = 0.15
+				attrition = 0.10
+			}
+
+			cancel_if_invalid = no
+		}
+	}
+}

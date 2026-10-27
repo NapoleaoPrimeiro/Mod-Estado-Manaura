@@ -1,0 +1,34 @@
+APG_new_xianfa_dm = {
+    enable = { always = yes }
+    icon = GFX_idea_haw_kingdom
+
+    political_power_factor          =               APG_new_xianfa_dm_political_power_factor 
+    stability_factor =                              APG_new_xianfa_dm_stability_factor                                   #稳定度
+    production_speed_buildings_factor =             APG_new_xianfa_dm_production_speed_buildings_factor                  #建造速度
+    industrial_capacity_factory =                   APG_new_xianfa_dm_industrial_capacity_factory                        #工厂产出
+    industrial_capacity_dockyard =                  APG_new_xianfa_dm_industrial_capacity_dockyard                       #船坞产出
+    production_factory_max_efficiency_factor =      APG_new_xianfa_dm_production_factory_max_efficiency_factor           #生产效率上限
+    production_factory_efficiency_gain_factor =     APG_new_xianfa_dm_production_factory_efficiency_gain_factor          #生产效率增长
+    production_speed_infrastructure_factor =        APG_new_xianfa_dm_production_speed_infrastructure_factor             #基础设施建造速度
+    production_speed_industrial_complex_factor =    APG_new_xianfa_dm_production_speed_industrial_complex_factor         #民用工厂建造速度
+    production_speed_arms_factory_factor =          APG_new_xianfa_dm_production_speed_arms_factory_factor               #军工建造速度
+    consumer_goods_factor=                          APG_new_xianfa_dm_consumer_goods_factor                              #消费品
+    conversion_cost_civ_to_mil_factor =             APG_new_xianfa_dm_conversion_cost_civ_to_mil_factor                  #民转军
+    local_resources_factor =                        APG_new_xianfa_dm_local_resources_factor                             #战略资源获取率战略资源获取率
+    min_export =                                    APG_new_xianfa_dm_min_export                                         #可出口资源可出口资源
+    global_building_slots_factor=                   APG_new_xianfa_dm_global_building_slots_factor                       #地区最大工厂
+    resource_trade_cost_bonus_per_factory =         APG_new_xianfa_dm_resource_trade_cost_bonus_per_factory              #交易资源
+    monthly_population =                            APG_new_xianfa_dm_monthly_population                                 #月度人力
+    democratic_acceptance           =               APG_new_xianfa_dm_democratic_acceptance                              #民主党派接受度
+    research_speed_factor           =               APG_new_xianfa_dm_research_speed_factor                              #研究速度
+    experience_loss_factor =                        APG_new_xianfa_dm_experience_loss_factor                             #有经验的士兵损失
+}
+
+THE_Great_city = { 
+	enable = { always = yes }
+
+	icon = GFX_modifiers_SWE_per_albin_bus
+	state_production_speed_buildings_factor = 0.1
+    state_resources_factor = 0.1
+	local_building_slots = 4
+}

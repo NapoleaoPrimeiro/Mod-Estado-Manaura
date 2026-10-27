@@ -1,0 +1,39 @@
+state={
+	id=1085
+	name="STATE_1085"
+	manpower = 3100000
+    resources = {
+		steel = 30
+		coal = 50
+	}
+	state_category = large_city 
+
+	history={
+        
+		victory_points = {
+			6469 10 # Essen
+		}
+
+		owner = GER
+		buildings = {
+			infrastructure = 4
+            arms_factory = 3
+            industrial_complex = 2
+		}
+		add_core_of = GER
+		add_core_of = RHI
+		add_core_of = PRE
+
+        set_demilitarized_zone = yes
+	
+		1936.3.7 = {
+			set_demilitarized_zone = no
+		}
+	}
+
+	provinces={
+		529 3512 6469 6570 9482 11346
+	}
+
+	local_supplies=1.0 
+}

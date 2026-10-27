@@ -1,0 +1,429 @@
+GER_new_order_focus_trigger = {
+	custom_trigger_tooltip = {
+		tooltip = GER_new_order_tt
+		count_triggers = {
+			amount = 15
+			AUS = {
+				OR = {
+					is_subject_of = ROOT
+					AND = {
+						is_in_faction_with = ROOT
+						has_government = ROOT
+					}
+				}
+			}
+			if = {
+				limit = {
+					GEN = {
+						exists = yes
+					}
+				}
+				GEN = {
+					OR = {
+						is_subject_of = ROOT
+						AND = {
+							is_in_faction_with = ROOT
+							has_government = ROOT
+						}
+					}
+				}
+			}
+			else = {
+				POL = {
+					OR = {
+						is_subject_of = ROOT
+						AND = {
+							is_in_faction_with = ROOT
+							has_government = ROOT
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					RKN = {
+						exists = yes
+					}
+				}
+				RKN = {
+					OR = {
+						is_subject_of = ROOT
+						AND = {
+							is_in_faction_with = ROOT
+							has_government = ROOT
+						}
+					}
+				}
+			}
+			else = {
+				HOL = {
+					OR = {
+						is_subject_of = ROOT
+						AND = {
+							is_in_faction_with = ROOT
+							has_government = ROOT
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					RKB = {
+						exists = yes
+					}
+				}
+				RKB = {
+					OR = {
+						is_subject_of = ROOT
+						AND = {
+							is_in_faction_with = ROOT
+							has_government = ROOT
+						}
+					}
+				}
+			}
+			else = {
+				BEL = {
+					OR = {
+						is_subject_of = ROOT
+						AND = {
+							is_in_faction_with = ROOT
+							has_government = ROOT
+						}
+					}
+				}
+			}
+			LUX = {
+				OR = {
+					is_subject_of = ROOT
+					AND = {
+						is_in_faction_with = ROOT
+						has_government = ROOT
+					}
+				}
+			}
+			if = {
+				limit = {
+					RKC = {
+						exists = yes
+					}
+				}
+				RKC = {
+					OR = {
+						is_subject_of = ROOT
+						AND = {
+							is_in_faction_with = ROOT
+							has_government = ROOT
+						}
+					}
+				}
+			}
+			else = {
+				ALB = {
+					OR = {
+						is_subject_of = ROOT
+						AND = {
+							is_in_faction_with = ROOT
+							has_government = ROOT
+						}
+					}
+				}
+				ROM = {
+					OR = {
+						is_subject_of = ROOT
+						AND = {
+							is_in_faction_with = ROOT
+							has_government = ROOT
+						}
+					}
+				}
+				BUL = {
+					OR = {
+						is_subject_of = ROOT
+						AND = {
+							is_in_faction_with = ROOT
+							has_government = ROOT
+						}
+					}
+				}
+				GRE = {
+					OR = {
+						is_subject_of = ROOT
+						AND = {
+							is_in_faction_with = ROOT
+							has_government = ROOT
+						}
+					}
+				}
+				HUN = {
+					OR = {
+						is_subject_of = ROOT
+						AND = {
+							is_in_faction_with = ROOT
+							has_government = ROOT
+						}
+					}
+				}
+				YUG = {
+					OR = {
+						is_subject_of = ROOT
+						AND = {
+							is_in_faction_with = ROOT
+							has_government = ROOT
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					RKH = {
+						exists = yes
+					}
+				}
+				RKH = {
+					OR = {
+						is_subject_of = ROOT
+						AND = {
+							is_in_faction_with = ROOT
+							has_government = ROOT
+						}
+					}
+				}
+			}
+			else = {
+				CZE = {
+					OR = {
+						is_subject_of = ROOT
+						AND = {
+							is_in_faction_with = ROOT
+							has_government = ROOT
+						}
+					}
+				}
+			}
+			SLO = {
+				OR = {
+					is_subject_of = ROOT
+					AND = {
+						is_in_faction_with = ROOT
+						has_government = ROOT
+					}
+				}
+			}
+			if = {
+				limit = {
+					RKI = {
+						exists = yes
+					}
+				}
+				RKI = {
+					OR = {
+						is_subject_of = ROOT
+						AND = {
+							is_in_faction_with = ROOT
+							has_government = ROOT
+						}
+					}
+				}
+			}
+			else = {
+				SPR = {
+					OR = {
+						is_subject_of = ROOT
+						AND = {
+							is_in_faction_with = ROOT
+							has_government = ROOT
+						}
+					}
+				}
+				POR = {
+					OR = {
+						is_subject_of = ROOT
+						AND = {
+							is_in_faction_with = ROOT
+							has_government = ROOT
+						}
+					}
+				}
+			}
+			SWI = {
+				OR = {
+					is_subject_of = ROOT
+					AND = {
+						is_in_faction_with = ROOT
+						has_government = ROOT
+					}
+				}
+			}
+			DEN = {
+				OR = {
+					is_subject_of = ROOT
+					AND = {
+						is_in_faction_with = ROOT
+						has_government = ROOT
+					}
+				}
+			}
+			if = {
+				limit = {
+					RKO = {
+						exists = yes
+					}
+				}
+				RKO = {
+					OR = {
+						is_subject_of = ROOT
+						AND = {
+							is_in_faction_with = ROOT
+							has_government = ROOT
+						}
+					}
+				}
+			}
+			else = {
+				EST = {
+					OR = {
+						is_subject_of = ROOT
+						AND = {
+							is_in_faction_with = ROOT
+							has_government = ROOT
+						}
+					}
+				}
+				LIT = {
+					OR = {
+						is_subject_of = ROOT
+						AND = {
+							is_in_faction_with = ROOT
+							has_government = ROOT
+						}
+					}
+				}
+				LAT = {
+					OR = {
+						is_subject_of = ROOT
+						AND = {
+							is_in_faction_with = ROOT
+							has_government = ROOT
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					country_exists = VIC
+				}
+				VIC = {
+					OR = {
+						is_subject_of = ROOT
+						AND = {
+							is_in_faction_with = ROOT
+							has_government = ROOT
+						}
+					}
+				}
+			}
+			else = {
+				FRA = {
+					OR = {
+						is_subject_of = ROOT
+						AND = {
+							is_in_faction_with = ROOT
+							has_government = ROOT
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					RGB = {
+						exists = yes
+					}
+				}
+				RGB = {
+					OR = {
+						is_subject_of = ROOT
+						AND = {
+							is_in_faction_with = ROOT
+							has_government = ROOT
+						}
+					}
+				}
+			}
+			else = {
+				ENG = {
+					OR = {
+						is_subject_of = ROOT
+						AND = {
+							is_in_faction_with = ROOT
+							has_government = ROOT
+						}
+					}
+				}
+			}
+			ITA = {
+				OR = {
+					is_subject_of = ROOT
+					AND = {
+						is_in_faction_with = ROOT
+						has_government = ROOT
+					}
+				}
+			}
+			RKM = {
+				OR = {
+					is_subject_of = ROOT
+					AND = {
+						is_in_faction_with = ROOT
+						has_government = ROOT
+					}
+				}
+			}
+			RKT = {
+				OR = {
+					is_subject_of = ROOT
+					AND = {
+						is_in_faction_with = ROOT
+						has_government = ROOT
+					}
+				}
+			}
+			RKK = {
+				OR = {
+					is_subject_of = ROOT
+					AND = {
+						is_in_faction_with = ROOT
+						has_government = ROOT
+					}
+				}
+			}
+			RKU = {
+				OR = {
+					is_subject_of = ROOT
+					AND = {
+						is_in_faction_with = ROOT
+						has_government = ROOT
+					}
+				}
+			}
+			RKL = {
+				OR = {
+					is_subject_of = ROOT
+					AND = {
+						is_in_faction_with = ROOT
+						has_government = ROOT
+					}
+				}
+			}
+			SOV = {
+				OR = {
+					is_subject_of = ROOT
+					AND = {
+						is_in_faction_with = ROOT
+						has_government = ROOT
+					}
+				}
+			}
+		}
+	}
+}

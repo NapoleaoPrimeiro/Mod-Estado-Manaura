@@ -1,0 +1,41 @@
+add_namespace = frw_war
+
+# Paris falls
+news_event = {
+	id = frw_war.1
+	title = frw_war.1.t
+	desc = frw_war.1.d
+	picture = GFX_news_event_german_soldiers
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = frw_war.1.a
+		trigger = { original_tag = FRA }
+	}
+	option = {
+		name = frw_war.1.b
+		trigger = { has_war_with = FRA NOT = { original_tag = FRA } }
+	}
+	option = {
+		name = frw_war.1.c
+		trigger = { NOT = { original_tag = FRA } NOT = { has_war_with = FRA } }
+	}
+}
+
+# Paris is free again
+news_event = {
+	id = frw_war.2
+	title = frw_war.2.t
+	desc = frw_war.2.d
+	picture = GFX_news_event_french_parade
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = frw_war.2.a
+		trigger = { original_tag = FRA }
+	}
+	option = {
+		name = frw_war.2.b
+		trigger = { NOT = { original_tag = FRA } }
+	}
+}

@@ -1,0 +1,112 @@
+﻿l_polish:
+
+ #STATE BUILDINGS
+ 
+ infrastructure: "£infrastructure_building_texticon  Infrastruktura"
+ infrastructure_plural: "£infrastructure_building_texticon  Infrastruktura"
+ GER_autobahn_tt:0 "£infrastructure_building_texticon  Maksymalny poziom §Yinfrastruktury§! w §YBrandenburgii§!, §YHanowerze§!, §YTuryngii§! i §YFrankonii§!."
+ SPA_facilitate_pyrenees_freight_transports_tt: "£infrastructure_building_texticon  Dodanie maksymalnej §Yinfrastruktury§! w §YMadrycie§!, §YGuadalajarze§!, §YWschodniej Aragonii§!, §YKatalonii§!, §YBurgos§! i §YKraju Basków§!."
+ 
+ air_base: "£air_base_building_texticon  Baza lotnicza"
+ air_base_plural: "£air_base_building_texticon  Baza powietrzna"
+ 
+ anti_air_building: "£anti_air_building_texticon  Plot."
+ anti_air_building_plural: "Plot."
+ air_defense_focus_tt:1 "£anti_air_building_texticon  Dodanie maksymalnego poziomu §Yobrony przeciwlotniczej§! w §YAnglii Wschodniej§!, §YSussex§! i §Ypołudniowo-zachodniej Anglii§!."
+ 
+ radar_station: "£radar_station_building_texticon  Stacja radarowa"
+ radar_station_plural: "£radar_station_building_texticon  Stacje radarowe"
+ 
+ #SHARED BUILDINGS
+ 
+ EFFECT_ADD_EXTRA_STATE_SHARED_BUILDING_SLOTS: "£building_slot_building_texticon  Dodaj miejsca budowlane: $COUNT|G$."
+ EFFECT_REMOVE_EXTRA_STATE_SHARED_BUILDING_SLOTS: "£building_slot_building_texticon  Usuń miejsca budowlane: $COUNT|R$."
+ UNLOCKED_SLOTS: "$NUM|Y$/$MAX|Y$ £building_slot_building_texticon  Unlocked Slots"
+ 
+ arms_factory: "£military_factory_building_texticon  Fabryka wojskowa"
+ arms_factory_plural: "£military_factory_building_texticon  Fabryki wojskowe"
+ 
+ industrial_complex: "£civilian_factory_building_texticon  Fabryka cywilna"
+ industrial_complex_plural: "£civilian_factory_building_texticon  Fabryki cywilne"
+ 
+ dockyard: "£naval_dockyard_building_texticon  Stocznia"
+ dockyard_plural: "£naval_dockyard_building_texticon  Stocznie"
+ 
+ synthetic_refinery: "£synthetic_refinery_building_texticon  Rafineria paliw syntetycznych"
+ synthetic_refinery_plural: "£synthetic_refinery_building_texticon  Rafinerie paliw syntetycznych"
+ 
+ fuel_silo: "£fuel_silo_building_texticon  Zbiornik paliwowy"
+ fuel_silo_plural: "£fuel_silo_building_texticon  Zbiorniki paliwowe"
+ 
+ rocket_site: "£rocket_site_building_texticon  Ośrodek rakietowy"
+ rocket_site_plural: "£rocket_site_building_texticon  Ośrodki rakietowe"
+ 
+ energy_infrastructure: "£reinforced_electrical_grid_building_texticon  Wzmocniona sieć elektryczna"
+ 
+ industrial_infrastructure: "£high_capacity_electrical_grid_building_texticon  Sieć elektryczna o wysokiej wydajności"
+ 
+ #PROVINCE BUILDINGS
+ 
+ supply_node: "£supply_hub_building_texticon  Punkt zaopatrzenia"
+ supply_node_plural: "£supply_hub_building_texticon  Punkty zaopatrzenia"
+ 
+ rail_way: "£railway_building_texticon  Koleje"
+ EFFECT_BUILD_RAILWAY: "£railway_building_texticon  Zbuduj linię kolejową poz. $LEVEL|Y$ na trasie $FROM|Y$ - $TO|Y$."
+ EFFECT_BUILD_RAILWAY_IN_STATE: "£railway_building_texticon  Zbuduj linię kolejową poz. $LEVEL|Y$ w: $STATE|Y$."
+ GER_expand_the_reichsautobahn_south_tt: "Add §G1§! §Y$infrastructure$§! in §Y[53.GetName]§!, §Y[52.GetName]§!, §Y[152.GetName]§!, §Y[4.GetName]§! and a level §Y1§! £railway_building_texticon  railway from §Y[53.GetName]§! to §Y[4.GetName]§!, if §Y[ROOT.GetName]§! or a German subject controls the states. Current effect:"
+ GER_expand_the_reichsautobahn_east_tt: "Add §G1§! §Y$infrastructure$§! in §Y[68.GetName]§!, §Y[63.GetName]§!, §Y[807.GetName]§!, §Y[85.GetName]§! and a level §Y1§! £railway_building_texticon  railway from §Y[63.GetName]§! to §Y[85.GetName]§!, if §Y[ROOT.GetName]§! or a German subject controls the states. Current effect:"
+ 
+ naval_base: "£naval_base_building_texticon  Baza morska"
+ naval_base_plural: "£naval_base_building_texticon  Bazy morskie"
+ 
+ cat_fortification: "£land_fort_building_texticon  Inżynieria fortyfikacji"
+ 
+ bunker: "£land_fort_building_texticon  Fortyfikacje lądowe"
+ bunker_plural: "£land_fort_building_texticon  Fortyfikacje lądowe"
+ modifier_state_bunker_max_level_terrain_limit: "Maximum $bunker$ Level"
+ 
+ coastal_bunker: "£coastal_fort_building_texticon  Fortyfikacje brzegowe"
+ coastal_bunker_plural: "£coastal_fort_building_texticon  Fortyfikacje brzegowe"
+ modifier_state_coastal_bunker_max_level_terrain_limit: "Maximum $coastal_bunker$ Level"
+ 
+ naval_supply_hub: "£naval_supply_hub_building_texticon  Morski punkt zaopatrzenia"
+ 
+ naval_headquarters: "£naval_headquarters_building_texticon  Sztab marynarki wojennej"
+ 
+ # EXPERIMENTAL FACILITIES
+ 
+ naval_facility: "£naval_facility_building_texticon  Ośrodek inżynierii morskiej"
+ naval_facility_plural: "£naval_facility_building_texticon  Ośrodki inżynierii morskiej"
+ 
+ nuclear_facility: "£nuclear_facility_building_texticon  Placówka badań jądrowych"
+ nuclear_facility_plural: "£nuclear_facility_building_texticon  Placówki badań jądrowych"
+ 
+ air_facility: "£air_facility_building_texticon  Ośrodek aerodynamiki i awioniki"
+ air_facility_plural: "£ari_facility_building_texticon  Ośrodki aerodynamiki i awioniki"
+ 
+ land_facility: "£land_facility_building_texticon  Ośrodek wojsk lądowych"
+ land_facility_plural: "£land_facility_building_texticon  Ośrodki wojsk lądowych"
+ 
+ # SPECIAL BUILDINGS
+ 
+ dam: "£dam_building_texticon  Zapora"
+ dam_plural: "£dam_building_texticon  Zapory"
+ 
+ stronghold_network: "£stronghold_network_building_texticon  Sieć twierdz"
+ stronghold_network_plural: "£stronghold_network_building_texticon  Sieci twierdz"
+ 
+ mega_gun_emplacement: "£mega_gun_building_texticon  Wieloładunkowe działo dużego kalibru"
+ mega_gun_emplacement_plural: "£mega_gu_building_texticon  Wieloładunkowe działa dużego kalibru"
+ 
+ nuclear_reactor: "£nuclear_reactor_building_texticon  Reaktor jądrowy"
+ nuclear_reactor_plural: "£nuclear_reactor_building_texticon  Reaktory jądrowe"
+ 
+ nuclear_reactor_heavy_water: "£heavy_water_nuclear_reactor_building_texticon  Reaktor jądrowy na ciężką wodę"
+ nuclear_reactor_heavy_water_plural: "£heavy_water_nuclear_reactor_building_texticon  Reaktory jądrowe na ciężką wodę"
+ 
+ commercial_nuclear_reactor: "£civilian_nuclear_reactor_building_texticon  Cywilny reaktor jądrowy"
+ commercial_nuclear_reactor_plural: "£civilian_nuclear_reactor_building_texticon  Cywilne reaktory jądrowe"
+ sp_commercial_nuclear_reactor: "£civilian_nuclear_reactor_building_texticon  Komercyjny reaktor jądrowy"
+ 
+ canal_kiel: "£canal_locks_building_texticon  Śluzy na Kanale Kilońskim"
+ canal_panama: "£canal_locks_building_texticon  Śluzy na Kanale Panamskim"

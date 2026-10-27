@@ -1,0 +1,1515 @@
+EDM_experience_conversion = {
+
+	EDM_10_dav_infantry = {
+		icon = GFX_decision_generic_trade
+		visible = { 
+			has_subdoctrine_in_track = dav_infantry_track
+			NOT = { has_completed_track = dav_infantry_track }
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 9
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 9
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_10
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -10
+			}
+			add_mastery = {
+				amount = 10
+				track = dav_infantry_track
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}	
+
+	EDM_100_dav_infantry = {
+		icon = generic_prepare_civil_war
+		visible = {
+			has_subdoctrine_in_track = dav_infantry_track
+			NOT = { has_completed_track = dav_infantry_track }
+			has_army_experience > 99
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 99
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 99
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_100
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -100
+			}
+			add_mastery = {
+				amount = 100
+				track = dav_infantry_track
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				has_army_experience > 200
+				add = 1
+			}
+		}
+	}
+
+	EDM_10_dav_archers = {
+		icon = generic_ignite_civil_war
+		visible = {
+			has_subdoctrine_in_track = dav_archers_track
+			NOT = { has_completed_track = dav_archers_track }
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 9
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 9
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_10
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -10
+			}
+			add_mastery = {
+				amount = 10
+				track = dav_archers_track
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	EDM_100_dav_archers = {
+		icon = generic_ignite_civil_war
+		visible = {
+			has_subdoctrine_in_track = dav_archers_track
+			NOT = { has_completed_track = dav_archers_track }
+			has_army_experience > 99
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 99
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 99
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_100
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -100
+			}
+			add_mastery = {
+				amount = 100
+				track = dav_archers_track
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				has_army_experience > 200
+				add = 1
+			}
+		}
+	}
+
+	EDM_10_dav_cavalry = {
+		icon = generic_tank
+		visible = {
+			has_subdoctrine_in_track = dav_cavalry_track
+			NOT = { has_completed_track = dav_cavalry_track }
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 9
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 9
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_10
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -10
+			}
+			add_mastery = {
+				amount = 10
+				track = dav_cavalry_track
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	EDM_100_dav_cavalry = {
+		icon = generic_tank
+		visible = {
+			has_subdoctrine_in_track = dav_cavalry_track
+			NOT = { has_completed_track = dav_cavalry_track }
+			has_army_experience > 99
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 99
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 99
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_100
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -100
+			}
+			add_mastery = {
+				amount = 100
+				track = dav_cavalry_track
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				has_army_experience > 200
+				add = 1
+			}
+		}
+	}
+
+	EDM_10_dav_machs = {
+		icon = generic_operation
+		visible = {
+			has_subdoctrine_in_track = dav_machs_track
+			NOT = { has_completed_track = dav_machs_track }
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 9
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 9
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_10
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -10
+			}
+			add_mastery = {
+				amount = 10
+				track = dav_machs_track
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	EDM_100_dav_machs = {
+		icon = generic_operation
+		visible = {
+			has_subdoctrine_in_track = dav_machs_track
+			NOT = { has_completed_track = dav_machs_track }
+			has_army_experience > 99
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 99
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 99
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_100
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -100
+			}
+			add_mastery = {
+				amount = 100
+				track = dav_machs_track
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				has_army_experience > 200
+				add = 1
+			}
+		}
+	}
+
+	EDM_10_hrd_infantry = {
+		icon = generic_prepare_civil_war
+		visible = { 
+			has_subdoctrine_in_track = hrd_infantry_track
+			NOT = { has_completed_track = hrd_infantry_track }
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 9
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 9
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_10
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -10
+			}
+			add_mastery = {
+				amount = 10
+				track = hrd_infantry_track
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}	
+
+	EDM_100_hrd_infantry = {
+		icon = generic_prepare_civil_war
+		visible = {
+			has_subdoctrine_in_track = hrd_infantry_track
+			NOT = { has_completed_track = hrd_infantry_track }
+			has_army_experience > 99
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 99
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 99
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_100
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -100
+			}
+			add_mastery = {
+				amount = 100
+				track = hrd_infantry_track
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				has_army_experience > 200
+				add = 1
+			}
+		}
+	}
+
+	EDM_10_hrd_archers = {
+		icon = generic_ignite_civil_war
+		visible = {
+			has_subdoctrine_in_track = hrd_archers_track
+			NOT = { has_completed_track = hrd_archers_track }
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 9
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 9
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_10
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -10
+			}
+			add_mastery = {
+				amount = 10
+				track = hrd_archers_track
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	EDM_100_hrd_archers = {
+		icon = generic_ignite_civil_war
+		visible = {
+			has_subdoctrine_in_track = hrd_archers_track
+			NOT = { has_completed_track = hrd_archers_track }
+			has_army_experience > 99
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 99
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 99
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_100
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -100
+			}
+			add_mastery = {
+				amount = 100
+				track = hrd_archers_track
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				has_army_experience > 200
+				add = 1
+			}
+		}
+	}
+
+	EDM_10_hrd_cavalry = {
+		icon = generic_tank
+		visible = {
+			has_subdoctrine_in_track = hrd_cavalry_track
+			NOT = { has_completed_track = hrd_cavalry_track }
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 9
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 9
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_10
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -10
+			}
+			add_mastery = {
+				amount = 10
+				track = hrd_cavalry_track
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	EDM_100_hrd_cavalry = {
+		icon = generic_tank
+		visible = {
+			has_subdoctrine_in_track = hrd_cavalry_track
+			NOT = { has_completed_track = hrd_cavalry_track }
+			has_army_experience > 99
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 99
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 99
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_100
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -100
+			}
+			add_mastery = {
+				amount = 100
+				track = hrd_cavalry_track
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				has_army_experience > 200
+				add = 1
+			}
+		}
+	}
+
+	EDM_10_hrd_machs = {
+		icon = generic_operation
+		visible = {
+			has_subdoctrine_in_track = hrd_machs_track
+			NOT = { has_completed_track = hrd_machs_track }
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 9
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 9
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_10
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -10
+			}
+			add_mastery = {
+				amount = 10
+				track = hrd_machs_track
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	EDM_100_hrd_machs = {
+		icon = generic_operation
+		visible = {
+			has_subdoctrine_in_track = hrd_machs_track
+			NOT = { has_completed_track = hrd_machs_track }
+			has_army_experience > 99
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 99
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 99
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_100
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -100
+			}
+			add_mastery = {
+				amount = 100
+				track = hrd_machs_track
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				has_army_experience > 200
+				add = 1
+			}
+		}
+	}
+
+	EDM_10_sws_infantry = {
+		icon = generic_prepare_civil_war
+		visible = { 
+			has_subdoctrine_in_track = sws_infantry_track
+			NOT = { has_completed_track = sws_infantry_track }
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 9
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 9
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_10
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -10
+			}
+			add_mastery = {
+				amount = 10
+				track = sws_infantry_track
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}	
+
+	EDM_100_sws_infantry = {
+		icon = generic_prepare_civil_war
+		visible = {
+			has_subdoctrine_in_track = sws_infantry_track
+			NOT = { has_completed_track = sws_infantry_track }
+			has_army_experience > 99
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 99
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 99
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_100
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -100
+			}
+			add_mastery = {
+				amount = 100
+				track = sws_infantry_track
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				has_army_experience > 200
+				add = 1
+			}
+		}
+	}
+
+	EDM_10_sws_archers = {
+		icon = generic_ignite_civil_war
+		visible = {
+			has_subdoctrine_in_track = sws_archers_track
+			NOT = { has_completed_track = sws_archers_track }
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 9
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 9
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_10
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -10
+			}
+			add_mastery = {
+				amount = 10
+				track = sws_archers_track
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	EDM_100_sws_archers = {
+		icon = generic_ignite_civil_war
+		visible = {
+			has_subdoctrine_in_track = sws_archers_track
+			NOT = { has_completed_track = sws_archers_track }
+			has_army_experience > 99
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 99
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 99
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_100
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -100
+			}
+			add_mastery = {
+				amount = 100
+				track = sws_archers_track
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				has_army_experience > 200
+				add = 1
+			}
+		}
+	}
+
+	EDM_10_sws_cavalry = {
+		icon = generic_tank
+		visible = {
+			has_subdoctrine_in_track = sws_cavalry_track
+			NOT = { has_completed_track = sws_cavalry_track }
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 9
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 9
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_10
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -10
+			}
+			add_mastery = {
+				amount = 10
+				track = sws_cavalry_track
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	EDM_100_sws_cavalry = {
+		icon = generic_tank
+		visible = {
+			has_subdoctrine_in_track = sws_cavalry_track
+			NOT = { has_completed_track = sws_cavalry_track }
+			has_army_experience > 99
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 99
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 99
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_100
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -100
+			}
+			add_mastery = {
+				amount = 100
+				track = sws_cavalry_track
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				has_army_experience > 200
+				add = 1
+			}
+		}
+	}
+
+	EDM_10_sws_machs = {
+		icon = generic_operation
+		visible = {
+			has_subdoctrine_in_track = sws_machs_track
+			NOT = { has_completed_track = sws_machs_track }
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 9
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 9
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_10
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -10
+			}
+			add_mastery = {
+				amount = 10
+				track = sws_machs_track
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	EDM_100_sws_machs = {
+		icon = generic_operation
+		visible = {
+			has_subdoctrine_in_track = sws_machs_track
+			NOT = { has_completed_track = sws_machs_track }
+			has_army_experience > 99
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 99
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 99
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_100
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -100
+			}
+			add_mastery = {
+				amount = 100
+				track = sws_machs_track
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				has_army_experience > 200
+				add = 1
+			}
+		}
+	}
+
+	EDM_10_maw_infantry = {
+		icon = generic_prepare_civil_war
+		visible = { 
+			has_subdoctrine_in_track = maw_infantry_track
+			NOT = { has_completed_track = maw_infantry_track }
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 9
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 9
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_10
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -10
+			}
+			add_mastery = {
+				amount = 10
+				track = maw_infantry_track
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}	
+
+	EDM_100_maw_infantry = {
+		icon = generic_prepare_civil_war
+		visible = {
+			has_subdoctrine_in_track = maw_infantry_track
+			NOT = { has_completed_track = maw_infantry_track }
+			has_army_experience > 99
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 99
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 99
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_100
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -100
+			}
+			add_mastery = {
+				amount = 100
+				track = maw_infantry_track
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				has_army_experience > 200
+				add = 1
+			}
+		}
+	}
+
+	EDM_10_maw_archers = {
+		icon = generic_ignite_civil_war
+		visible = {
+			has_subdoctrine_in_track = maw_archers_track
+			NOT = { has_completed_track = maw_archers_track }
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 9
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 9
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_10
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -10
+			}
+			add_mastery = {
+				amount = 10
+				track = maw_archers_track
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	EDM_100_maw_archers = {
+		icon = generic_ignite_civil_war
+		visible = {
+			has_subdoctrine_in_track = maw_archers_track
+			NOT = { has_completed_track = maw_archers_track }
+			has_army_experience > 99
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 99
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 99
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_100
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -100
+			}
+			add_mastery = {
+				amount = 100
+				track = maw_archers_track
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				has_army_experience > 200
+				add = 1
+			}
+		}
+	}
+
+	EDM_10_maw_cavalry = {
+		icon = generic_tank
+		visible = {
+			has_subdoctrine_in_track = maw_cavalry_track
+			NOT = { has_completed_track = maw_cavalry_track }
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 9
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 9
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_10
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -10
+			}
+			add_mastery = {
+				amount = 10
+				track = maw_cavalry_track
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	EDM_100_maw_cavalry = {
+		icon = generic_tank
+		visible = {
+			has_subdoctrine_in_track = maw_cavalry_track
+			NOT = { has_completed_track = maw_cavalry_track }
+			has_army_experience > 99
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 99
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 99
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_100
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -100
+			}
+			add_mastery = {
+				amount = 100
+				track = maw_cavalry_track
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				has_army_experience > 200
+				add = 1
+			}
+		}
+	}
+
+	EDM_10_maw_machs = {
+		icon = generic_operation
+		visible = {
+			has_subdoctrine_in_track = maw_machs_track
+			NOT = { has_completed_track = maw_machs_track }
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 9
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 9
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_10
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -10
+			}
+			add_mastery = {
+				amount = 10
+				track = maw_machs_track
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	EDM_100_maw_machs = {
+		icon = generic_operation
+		visible = {
+			has_subdoctrine_in_track = maw_machs_track
+			NOT = { has_completed_track = maw_machs_track }
+			has_army_experience > 99
+		}
+		available = {
+			hidden_trigger = {
+				has_army_experience > 99
+			}
+		}
+		custom_cost_trigger = {
+			has_army_experience > 99
+		}
+		custom_cost_text = decision_cost_EDM_ArmyXP_100
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -100
+			}
+			add_mastery = {
+				amount = 100
+				track = maw_machs_track
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				has_army_experience > 200
+				add = 1
+			}
+		}
+	}
+
+	EDM_10_line_of_battle = {
+		icon = generic_naval
+		visible = {
+			has_subdoctrine_in_track = line_of_battle_track
+			NOT = { has_completed_track = line_of_battle_track }
+		}
+		available = {
+			hidden_trigger = {
+				has_navy_experience > 9
+			}
+		}
+		custom_cost_trigger = {
+			has_navy_experience > 9
+		}
+		custom_cost_text = decision_cost_EDM_NavyXP_10
+		complete_effect = {
+			hidden_effect = {
+				navy_experience = -10
+			}
+			add_mastery = {
+				amount = 10
+				track = line_of_battle_track
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	EDM_100_line_of_battle = {
+		icon = generic_naval
+		visible = {
+			has_subdoctrine_in_track = line_of_battle_track
+			NOT = { has_completed_track = line_of_battle_track }
+			has_navy_experience > 99
+		}
+		available = {
+			hidden_trigger = {
+				has_navy_experience > 99
+			}
+		}
+		custom_cost_trigger = {
+			has_navy_experience > 99
+		}
+		custom_cost_text = decision_cost_EDM_NavyXP_100
+		complete_effect = {
+			hidden_effect = {
+				navy_experience = -100
+			}
+			add_mastery = {
+				amount = 100
+				track = line_of_battle_track
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				has_navy_experience > 200
+				add = 1
+			}
+		}
+	}
+
+	EDM_10_patrol_ships = {
+		icon = generic_naval
+		visible = {
+			has_subdoctrine_in_track = patrol_ships_track
+			NOT = { has_completed_track = patrol_ships_track }
+		}
+		available = {
+			hidden_trigger = {
+				has_navy_experience > 9
+			}
+		}
+		custom_cost_trigger = {
+			has_navy_experience > 9
+		}
+		custom_cost_text = decision_cost_EDM_NavyXP_10
+		complete_effect = {
+			hidden_effect = {
+				navy_experience = -10
+			}
+			add_mastery = {
+				amount = 10
+				track = patrol_ships_track
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	EDM_100_patrol_ships = {
+		icon = generic_naval
+		visible = {
+			has_subdoctrine_in_track = patrol_ships_track
+			NOT = { has_completed_track = patrol_ships_track }
+			has_navy_experience > 99
+		}
+		available = {
+			hidden_trigger = {
+				has_navy_experience > 99
+			}
+		}
+		custom_cost_trigger = {
+			has_navy_experience > 99
+		}
+		custom_cost_text = decision_cost_EDM_NavyXP_100
+		complete_effect = {
+			hidden_effect = {
+				navy_experience = -100
+			}
+			add_mastery = {
+				amount = 100
+				track = patrol_ships_track
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				has_navy_experience > 200
+				add = 1
+			}
+		}
+	}
+
+	EDM_10_naval_operations = {
+		icon = generic_naval
+		visible = {
+			has_subdoctrine_in_track = naval_operations_track
+			NOT = { has_completed_track = naval_operations_track }
+		}
+		available = {
+			hidden_trigger = {
+				has_navy_experience > 9
+			}
+		}
+		custom_cost_trigger = {
+			has_navy_experience > 9
+		}
+		custom_cost_text = decision_cost_EDM_NavyXP_10
+		complete_effect = {
+			hidden_effect = {
+				navy_experience = -10
+			}
+			add_mastery = {
+				amount = 10
+				track = naval_operations_track
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	EDM_100_naval_operations = {
+		icon = generic_naval
+		visible = {
+			has_subdoctrine_in_track = naval_operations_track
+			NOT = { has_completed_track = naval_operations_track }
+			has_navy_experience > 99
+		}
+		available = {
+			hidden_trigger = {
+				has_navy_experience > 99
+			}
+		}
+		custom_cost_trigger = {
+			has_navy_experience > 99
+		}
+		custom_cost_text = decision_cost_EDM_NavyXP_100
+		complete_effect = {
+			hidden_effect = {
+				navy_experience = -100
+			}
+			add_mastery = {
+				amount = 100
+				track = naval_operations_track
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				has_navy_experience > 200
+				add = 1
+			}
+		}
+	}
+
+	EDM_10_coastal_galleys = {
+		icon = generic_naval
+		visible = {
+			has_subdoctrine_in_track = coastal_galleys_track
+			NOT = { has_completed_track = coastal_galleys_track }
+		}
+		available = {
+			hidden_trigger = {
+				has_navy_experience > 9
+			}
+		}
+		custom_cost_trigger = {
+			has_navy_experience > 9
+		}
+		custom_cost_text = decision_cost_EDM_NavyXP_10
+		complete_effect = {
+			hidden_effect = {
+				navy_experience = -10
+			}
+			add_mastery = {
+				amount = 10
+				track = coastal_galleys_track
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	EDM_100_coastal_galleys = {
+		icon = generic_naval
+		visible = {
+			has_subdoctrine_in_track = coastal_galleys_track
+			NOT = { has_completed_track = coastal_galleys_track }
+			has_navy_experience > 99
+		}
+		available = {
+			hidden_trigger = {
+				has_navy_experience > 99
+			}
+		}
+		custom_cost_trigger = {
+			has_navy_experience > 99
+		}
+		custom_cost_text = decision_cost_EDM_NavyXP_100
+		complete_effect = {
+			hidden_effect = {
+				navy_experience = -100
+			}
+			add_mastery = {
+				amount = 100
+				track = coastal_galleys_track
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				has_navy_experience > 200
+				add = 1
+			}
+		}
+	}
+
+	EDM_10_air_supremacy = {
+		icon = generic_air
+		visible = {
+			has_subdoctrine_in_track = air_supremacy_track
+			NOT = { has_completed_track = air_supremacy_track }
+		}
+		available = {
+			hidden_trigger = {
+				has_air_experience > 9
+			}
+		}
+		custom_cost_trigger = {
+			has_air_experience > 9
+		}
+		custom_cost_text = decision_cost_EDM_AirXP_10
+		complete_effect = {
+			hidden_effect = {
+				air_experience = -10
+			}
+			add_mastery = {
+				amount = 10
+				track = air_supremacy_track
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	EDM_100_air_supremacy = {
+		icon = generic_air
+		visible = {
+			has_subdoctrine_in_track = air_supremacy_track
+			NOT = { has_completed_track = air_supremacy_track }
+			has_air_experience > 99
+		}
+		available = {
+			hidden_trigger = {
+				has_air_experience > 99
+			}
+		}
+		custom_cost_trigger = {
+			has_air_experience > 99
+		}
+		custom_cost_text = decision_cost_EDM_AirXP_100
+		complete_effect = {
+			hidden_effect = {
+				air_experience = -100
+			}
+			add_mastery = {
+				amount = 100
+				track = air_supremacy_track
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				has_air_experience > 200
+				add = 1
+			}
+		}
+	}
+
+	EDM_10_air_bombing = {
+		icon = generic_air
+		visible = {
+			has_subdoctrine_in_track = air_bombing_track
+			NOT = { has_completed_track = air_bombing_track }
+		}
+		available = {
+			hidden_trigger = {
+				has_air_experience > 9
+			}
+		}
+		custom_cost_trigger = {
+			has_air_experience > 9
+		}
+		custom_cost_text = decision_cost_EDM_AirXP_10
+		complete_effect = {
+			hidden_effect = {
+				air_experience = -10
+			}
+			add_mastery = {
+				amount = 10
+				track = air_bombing_track
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	EDM_100_air_bombing = {
+		icon = generic_air
+		visible = {
+			has_subdoctrine_in_track = air_bombing_track
+			NOT = { has_completed_track = air_bombing_track }
+			has_air_experience > 99
+		}
+		available = {
+			hidden_trigger = {
+				has_air_experience > 99
+			}
+		}
+		custom_cost_trigger = {
+			has_air_experience > 99
+		}
+		custom_cost_text = decision_cost_EDM_AirXP_100
+		complete_effect = {
+			hidden_effect = {
+				air_experience = -100
+			}
+			add_mastery = {
+				amount = 100
+				track = air_bombing_track
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				has_air_experience > 200
+				add = 1
+			}
+		}
+	}
+
+	EDM_10_air_intercept = {
+		icon = generic_air
+		visible = {
+			has_subdoctrine_in_track = air_intercept_track
+			NOT = { has_completed_track = air_intercept_track }
+		}
+		available = {
+			hidden_trigger = {
+				has_air_experience > 9
+			}
+		}
+		custom_cost_trigger = {
+			has_air_experience > 9
+		}
+		custom_cost_text = decision_cost_EDM_AirXP_10
+		complete_effect = {
+			hidden_effect = {
+				air_experience = -10
+			}
+			add_mastery = {
+				amount = 10
+				track = air_intercept_track
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	EDM_100_air_intercept = {
+		icon = generic_air
+		visible = {
+			has_subdoctrine_in_track = air_intercept_track
+			NOT = { has_completed_track = air_intercept_track }
+			has_air_experience > 99
+		}
+		available = {
+			hidden_trigger = {
+				has_air_experience > 99
+			}
+		}
+		custom_cost_trigger = {
+			has_air_experience > 99
+		}
+		custom_cost_text = decision_cost_EDM_AirXP_100
+		complete_effect = {
+			hidden_effect = {
+				air_experience = -100
+			}
+			add_mastery = {
+				amount = 100
+				track = air_intercept_track
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				has_air_experience > 200
+				add = 1
+			}
+		}
+	}
+
+	EDM_10_air_recon = {
+		icon = generic_air
+		visible = {
+			has_subdoctrine_in_track = air_recon_track
+			NOT = { has_completed_track = air_recon_track }
+		}
+		available = {
+			hidden_trigger = {
+				has_air_experience > 9
+			}
+		}
+		custom_cost_trigger = {
+			has_air_experience > 9
+		}
+		custom_cost_text = decision_cost_EDM_AirXP_10
+		complete_effect = {
+			hidden_effect = {
+				air_experience = -10
+			}
+			add_mastery = {
+				amount = 10
+				track = air_recon_track
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	EDM_100_air_recon = {
+		icon = generic_air
+		visible = {
+			has_subdoctrine_in_track = air_recon_track
+			NOT = { has_completed_track = air_recon_track }
+			has_air_experience > 99
+		}
+		available = {
+			hidden_trigger = {
+				has_air_experience > 99
+			}
+		}
+		custom_cost_trigger = {
+			has_air_experience > 99
+		}
+		custom_cost_text = decision_cost_EDM_AirXP_100
+		complete_effect = {
+			hidden_effect = {
+				air_experience = -100
+			}
+			add_mastery = {
+				amount = 100
+				track = air_recon_track
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				has_air_experience > 200
+				add = 1
+			}
+		}
+	}
+
+}

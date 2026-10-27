@@ -1,0 +1,101 @@
+on_actions = {
+	on_new_term_election = {
+		random_events = {
+			100 = ukrework_parliament.8
+			100 = ukrework_parliament.9
+		}
+	}
+	on_capitulation = {
+	    effect = {
+			IF = {
+				limit = {
+					ROOT = {
+						tag = GER
+					}
+				}
+				IF = {
+					limit = {
+						ENG = {
+							has_country_flag = ENG_election_bypassed_flag
+						}
+					}
+					ENG = {
+						clr_country_flag = ENG_election_bypassed_flag
+						country_event = ukrework_parliament.10
+					}
+				}
+				IF = {
+					limit = {
+						ENG = {
+							has_war_with = GER
+							OR = {
+								has_completed_focus = ENG_global_defense
+								has_completed_focus = ENG_home_defence
+							}
+							NOT = {
+								has_country_flag = ENG_ww2_won_flag
+							}
+						}
+					}
+					ENG = {
+						add_country_flag = ENG_ww2_won_flag
+						country_event = ukrework.66
+					}
+				}
+			}
+		}
+	}
+	on_startup = {
+		effect = {
+			ENG = {
+				country_event = ukrework_willkommen.1
+			}
+		}
+	}
+	on_war = {
+	    effect = {
+			IF = {
+				limit = {
+					THIS = {
+						tag = ENG
+					}
+					ENG = {
+						OR = {
+							has_completed_focus = ENG_global_defense
+							has_completed_focus = ENG_home_defence
+						}
+						has_war_with = GER
+						NOT = {
+							has_country_flag = ENG_ww2_focus_flag
+						}
+					}
+				}
+				ENG = {
+					set_country_flag = ENG_ww2_focus_flag
+					country_event = ukrework.65
+				}
+			}
+		}
+	}
+	on_civil_war_end = {
+	    effect = {
+			IF = {
+				limit = {
+					ROOT = {
+						tag = ENG
+					}
+					ENG = {
+						has_completed_focus = ENG_workers_revolution
+						NOT = {
+							has_country_flag = ENG_communist_civil_war_revolution_end_flag
+						}
+					}
+				}
+				ENG = {
+					set_country_flag = ENG_communist_civil_war_revolution_end_flag
+					country_event = ukrework.64
+				}
+			}
+		}
+	}
+}

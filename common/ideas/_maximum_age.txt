@@ -1,0 +1,122 @@
+ideas = {
+
+	maximum_age_laws = {
+		law = yes
+
+		age_40 = {
+
+			cost = 75
+			removal_cost = -1
+			level = 4
+
+			modifier = {
+				attrition = -0.05
+			}
+
+			ai_will_do = {
+				base = 1
+			}
+
+			cancel_if_invalid = no
+			default = yes
+		}
+		age_50 = {
+
+			cost = 75
+			removal_cost = -1
+			level = 3
+			visible = { #şuanlık bunu kullanan bir ai yok #TODO
+				NOT = {
+					has_country_flag = ai_country
+				}
+			}
+			available = {
+				OR = {
+					has_war = yes
+					has_government = fascism
+					if = {
+						limit = {
+							original_tag = FIN
+						}
+						has_country_flag = FIN_winter_war_ongoing_flag
+					}
+				}
+				NOT = {
+					has_idea = volunteer_only
+					has_idea = disarmed_nation
+				}
+			}
+
+			ai_will_do = {
+				base = 1
+			}
+
+			modifier = {
+				army_org_factor = -0.025
+				conscription_factor = 0.05
+			}
+
+			cancel_if_invalid = no
+		}
+		age_60 = {
+
+			cost = 75
+			removal_cost = -1
+			level = 2
+
+			available = {
+				has_war = yes
+				enemies_strength_ratio > 1.5
+				NOT = {
+					hidden_trigger = {
+						has_country_flag = lim_vol_dis
+					}
+					has_idea = limited_conscription
+					has_idea = volunteer_only
+					has_idea = disarmed_nation
+				}
+			}
+
+			ai_will_do = {
+				base = 1
+			}
+
+			modifier = {
+				conscription_factor = 0.1
+				army_org_factor = -0.05
+				attrition = 0.05
+				political_power_factor = -0.15
+			}
+
+			cancel_if_invalid = no
+		}
+		all_must_serve_old = {
+
+			cost = 75
+			removal_cost = -1
+			level = 1
+
+			available = {
+				has_war = yes
+				enemies_strength_ratio > 1.5
+				OR = {
+					has_idea = all_adults_serve
+					has_idea = scraping_the_barrel
+				}
+			}
+
+			ai_will_do = {
+				base = 1
+			}
+
+			modifier = {
+				conscription_factor = 0.35
+				army_org_factor = -0.1
+				attrition = 0.10
+				political_power_factor = -0.25
+			}
+
+			cancel_if_invalid = no
+		}
+	}
+}

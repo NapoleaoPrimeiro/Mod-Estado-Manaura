@@ -1,0 +1,79 @@
+﻿
+########################################################################################################################
+							# < INFORMATION > #
+########################################################################################################################
+		# Name mod: Generic Focus Tree: Redux
+		# Author: BoznaWhere
+		# Comment language: ENG / UKR
+########################################################################################################################
+							# < CONTENT > #
+########################################################################################################################
+    # SETTINGS
+    # CREATE ALLIANCE
+########################################################################################################################
+							# < SETTINGS > #
+########################################################################################################################
+l_spanish:
+# # # # # # # # # # # # # # #
+GFTR_categories_settings: "Ajustes"
+GFTR_categories_settings_desc: "¡Hola! Me alegra mucho que te hayas suscrito al mod §YGeneric Focus Tree: Redux!§! Si te gusta mi trabajo, por favor apoya el mod en la página del Workshop de Steam :) \nAllí también puedes ver los últimos cambios, informarme de problemas o errores."
+# # # # # # # # # # # # # # #
+GFTR_D_set_focus_tree_SHOW: "1. ¿Instalar árbol de enfoques?"
+GFTR_D_set_focus_tree_SHOW_tt: "Aquí podrás instalar o eliminar distintos árboles de enfoques para tu país y otros."
+GFTR_D_set_focus_tree_HIDE: "1. §RCerrar sección§!"
+GFTR_D_set_gftr_a: "          1. Instalar (GFT: Redux)"
+GFTR_D_set_gftr_a_tt: "El país actual recibirá o actualizará §YGeneric Focus Tree: Redux§!. \n~~~ \nAtención: si cambias el árbol de enfoques de países con árboles únicos vanilla o de DLC (ej.: Alemania, Francia, Irán, etc.), solo podrás restaurar sus árboles originales §Lempezando una nueva partida§! o §Lpor consola§!."
+GFTR_D_set_gftr_b: "          1. Instalar (GFT: Redux) para la IA"
+GFTR_D_set_gftr_b_tt: "§YGeneric Focus Tree: Redux§! se instalará o actualizará en ABSOLUTAMENTE TODOS los países controlados por la IA. \n~~~ \n§LTen cuidado§!, al pulsar esto TODOS los países IA recibirán el nuevo árbol sin excepción. §GSe recomienda§! usarlo solo al inicio de la partida y eliminar antes los espíritus nacionales y mecánicas especiales (decisiones de abajo)."
+GFTR_D_set_generic_focus: "          1. Instalar árbol vanilla"
+GFTR_D_set_generic_focus_tt: "El país actual recibirá o actualizará el árbol genérico §Gvanilla§!.\n~~~ \nEsta función carga el árbol vanilla actual de tu partida, que puede haber sido modificado por otros grandes mods. En ese caso instalará el árbol modificado, no el vanilla puro."
+GFTR_D_deleted_focus_tree: "          1. Eliminar árbol de enfoques"
+GFTR_D_deleted_focus_tree_tt: "El árbol de enfoques del país actual será §Reliminado§!. Más exactamente, será sustituido por un árbol completamente vacío (sin ningún enfoque salvo los «continuos»). \n~~~ \nNo sé muy bien para qué queréis esto §YXD§!, pero puede mejorar un poco el rendimiento si queréis dejar un país «inactivo»."
+GFTR_D_test_focus_tree: "          1. Probar el mod"
+GFTR_D_test_focus_tree_tt: "Se instalará una copia exacta de §YGeneric Focus Tree: Redux§!, pero todos los enfoques durarán solo 1 día. \n~~~ \nCreado principalmente para probar el comportamiento de la IA de forma rápida. Úsalo si quieres ayudarme a detectar problemas de IA. \n~~~ \nTambién puede ser divertido en partida normal."
+# # # # # # # # # # # # # # #
+GFTR_D_remove_national_spirits_SHOW: "2. ¿Eliminar espíritus nacionales?"
+GFTR_D_remove_national_spirits_SHOW_tt: "Aquí puedes eliminar varios espíritus nacionales de tu país y de otros."
+GFTR_D_remove_national_spirits_HIDE: "2. §RCerrar sección§!"
+GFTR_D_remove_gftr_national_spirits_a: "          2. Eliminar espíritus (GFT: Redux)"
+GFTR_D_remove_gftr_national_spirits_a_tt: "Se eliminarán del país actual todos los espíritus nacionales añadidos por §YGeneric Focus Tree: Redux§!. \n~~~ \nLos espíritus técnicos no se eliminarán."
+GFTR_D_remove_gftr_national_spirits_b: "          2. Eliminar espíritus (GFT: Redux) de la IA"
+GFTR_D_remove_gftr_national_spirits_b_tt: "Se eliminarán de TODOS los países IA los espíritus nacionales añadidos por §YGeneric Focus Tree: Redux§!. \n~~~ \nLos espíritus técnicos no se eliminarán. \n~~~ \n§CTen cuidado§! – puede provocar un pequeño freeze."
+GFTR_D_remove_vanilla_national_spirits_a: "          2. Eliminar espíritus vanilla"
+GFTR_D_remove_vanilla_national_spirits_a_tt: "¡Se eliminarán del país actual todos los espíritus nacionales iniciales §Gvanilla§!! \n~~~ \nNo existe una función simple «eliminar todos los espíritus», por eso solo se elimina una lista predefinida de 1936. Usarlo más tarde probablemente no tendrá efecto. §GSe recomienda§! solo al inicio de la partida."
+GFTR_D_remove_vanilla_national_spirits_b: "          2. Eliminar espíritus vanilla de la IA"
+GFTR_D_remove_vanilla_national_spirits_b_tt: "Se eliminarán de TODOS los países IA los espíritus nacionales iniciales §Gvanilla§!. \n~~~ \nMismas limitaciones que arriba. §GSe recomienda§! solo al inicio de la partida. \n~~~ \n§CTen cuidado§! – puede provocar un pequeño freeze."
+# # # # # # # # # # # # # # #
+GFTR_D_remove_unique_mechanics_SHOW: "3. ¿Eliminar mecánicas únicas?"
+GFTR_D_remove_unique_mechanics_SHOW_tt: "Aquí puedes eliminar mecánicas especiales, decisiones y modificadores que interfieren al cambiar árboles nativos."
+GFTR_D_remove_unique_mechanics_HIDE: "3. §RCerrar sección§!"
+GFTR_D_remove_state_modifier_a: "          3. Eliminar modificadores de estado"
+GFTR_D_remove_state_modifier_a_tt: "Se eliminarán ciertos modificadores de provincias del país actual. \n~~~ \n§YModificadores de estado§! son modificadores especiales que solo afectan a determinadas provincias (ej.: «Descentralización» en Etiopía o «Separatismo kurdo» en Turquía). \n~~~ \n§GAl cambiar§! el árbol §Gnativo§! de un país, estos modificadores se vuelven permanentes. Esta decisión los elimina. \n~~~ \nPaíses afectados listados en «Requisitos». §L(Válido también para IA)§! \n~~~ \n§GSe recomienda§! al inicio de la partida."
+GFTR_D_remove_state_modifier_b: "          3. Eliminar modificadores de estado de la IA"
+GFTR_D_remove_state_modifier_b_tt: "Se eliminarán los modificadores de provincias de regiones controladas por países IA. \n~~~ \nVer decisión anterior para detalles. El propietario actual no importa. \n~~~ \n§GSe recomienda§! solo si vas a cambiar los árboles nativos de toda la IA."
+GFTR_D_remove_special_mechanics_a: "          3. Eliminar mecánicas especiales"
+GFTR_D_remove_special_mechanics_a_tt: "Se eliminarán las mecánicas especiales del país actual. \n~~~ \n§YMecánicas especiales§! son sistemas únicos de ciertos países (ej.: Equilibrio de poder, Paranoia soviética, Levantamiento campesino en Polonia). \n~~~ \n§GAl cambiar§! el árbol nativo no se pueden eliminar de otra forma. \n~~~ \nPaíses afectados en «Requisitos» arriba."
+GFTR_D_remove_special_mechanics_b: "          3. Eliminar mecánicas especiales de la IA"
+GFTR_D_remove_special_mechanics_b_tt: "Se eliminarán las mecánicas especiales de algunos países controlados por IA. \n~~~ \nVer decisión anterior. \n~~~ \n§GSe recomienda§! solo si cambias los árboles nativos de toda la IA completa."
+# # # # # # # # # # # # # # #
+GFTR_D_ai_management_SHOW: "4. ¿Configurar comportamiento de la IA?"
+GFTR_D_ai_management_SHOW_tt: "Aquí puedes controlar el comportamiento de los países controlados por la IA."
+GFTR_D_ai_management_HIDE: "4. §RCerrar sección§!"
+GFTR_D_ai_political_freedom: "          4. \"Libertad política\""
+GFTR_D_ai_political_freedom_tt: "Todos los países IA recibirán el espíritu nacional §Y$GFTR_idea_ai_political_freedom$§!. \n~~~ \nPor defecto en el mod, la IA prefiere ligeramente la rama política de su ideología actual y, en modo histórico, nunca cambia ideología ni forma alianzas no históricas. \n§YLibertad política§! elimina estas restricciones – la IA será más libre y más aleatoria incluso en modo histórico. \n~~~ \nPoco útil en vanilla, pero perfecto para mods con muchos países nuevos (ej.: §L\"Every State Independent\"§!). \n~~~ \nÚtil si quieres que la IA elija ramas políticas con igual probabilidad o ignore el modo histórico."
+GFTR_D_ai_limit: "          4. Limitar IA"
+GFTR_D_ai_limit_tt: "El país actual recibirá el espíritu nacional §Y$GFTR_idea_ai_limit$§!. \n~~~ \nÚtil para «desactivar» la IA de un país y mejorar rendimiento (requiere consola + \"observe\"). \n~~~ \n§GRecordatorio§!: arriba hay decisión para eliminar todo el árbol de enfoques y limitar aún más la IA."
+GFTR_D_ai_madness_mode: "          4. Modo \"Locura\""
+GFTR_D_ai_madness_mode_tt: "Todos los países IA recibirán el espíritu nacional §Y$GFTR_idea_ai_madness_mode$§!. \n~~~ \n§YModo \"Locura\"§! obliga a la IA a elegir solo caminos bélicos. ¡Sumérgete en el caos total! §RAtención§!: solo afecta a países con §YGeneric Focus Tree: Redux§!."
+GFTR_D_remove_management_ideas: "          4. Eliminar espíritus técnicos"
+GFTR_D_remove_management_ideas_tt: "Se eliminarán de TODOS los países todos los espíritus nacionales técnicos añadidos por este mod."
+########################################################################################################################
+# < CREATE ALLIANCE > #
+########################################################################################################################
+GFTR_categories_create_alliance: "Crear alianza"
+GFTR_categories_create_alliance_desc: "Últimamente nos hemos vuelto más fuertes y seguros de nosotros mismos, hasta el punto de plantearnos formar nuestra propia alianza. ¡Estamos a un paso de lograrlo!"
+# # # # # # # # # # # # # # #
+GFTR_D_alliance_communism: "Alianza comunista"
+GFTR_D_alliance_neutrality: "Alianza monárquica"
+GFTR_D_alliance_fascism: "Alianza fascista"
+GFTR_D_alliance_democratic: "Alianza democrática"

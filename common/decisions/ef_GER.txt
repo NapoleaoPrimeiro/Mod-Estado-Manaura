@@ -1,0 +1,1430 @@
+#eo
+
+# --- AHNENERBE RESEARCH SOCIETY ---
+GER_ahnenerbe_society_category = {
+
+    GER_activate_ahnenerbe_society = {
+        icon = generic_pp_expenditure
+        cost = 50
+        fire_only_once = yes
+        days_remove = 30
+        
+        visible = {
+        has_government = fascism
+        has_country_leader = { character = GER_heinrich_himmler }
+            not = { has_country_flag = GER_ahnenerbe_society_active }
+        }
+
+        complete_effect = {
+            set_country_flag = GER_ahnenerbe_society_active
+        }
+    }
+
+    # --- TIBET EXPEDITION ---
+    GER_expedition_tibet = {
+        icon = generic_research
+        cost = 75
+        days_remove = 90
+        
+        visible = { has_country_flag = GER_ahnenerbe_society_active }
+        
+        remove_effect = {
+            random_list = {
+                10 = { 
+                    set_portraits = {
+                        character = GER_heinrich_himmler
+                        civilian = { 
+                            large = "gfx/leaders/GER/Portrait_Germany_Heinrich_Himmler_easter.dds" 
+                        }
+                    }
+                    add_ideas = GER_spirit_tibet_success 
+                    custom_effect_tooltip = GER_ahnenerbe_success_tt
+                }
+                50 = { 
+                    custom_effect_tooltip = GER_ahnenerbe_nothing_tt 
+                }
+                40 = { 
+                    add_stability = -0.05
+                    add_political_power = -50
+                    custom_effect_tooltip = GER_ahnenerbe_failure_tt 
+                }
+            }
+        }
+    }
+
+    # --- ARCTIC EXPEDITION ---
+    GER_expedition_arctic = {
+        icon = generic_construction
+        cost = 75
+        days_remove = 90
+        
+        visible = { has_country_flag = GER_ahnenerbe_society_active }
+        
+        remove_effect = {
+            random_list = {
+                10 = { 
+                    add_ideas = GER_spirit_arctic_success 
+                    custom_effect_tooltip = GER_ahnenerbe_success_tt
+                }
+                50 = { 
+                    custom_effect_tooltip = GER_ahnenerbe_nothing_tt 
+                }
+                40 = { 
+                    add_stability = -0.05
+                    add_political_power = -50
+                    custom_effect_tooltip = GER_ahnenerbe_failure_tt 
+                }
+            }
+        }
+    }
+
+    # --- MIDDLE EAST EXPEDITION ---
+    GER_expedition_middle_east = {
+        icon = generic_exploration
+        cost = 75
+        days_remove = 90
+        
+        visible = { has_country_flag = GER_ahnenerbe_society_active }
+        
+        remove_effect = {
+            random_list = {
+                10 = { 
+                    add_ideas = GER_spirit_middle_east_success 
+                    custom_effect_tooltip = GER_ahnenerbe_success_tt
+                }
+                50 = { 
+                    custom_effect_tooltip = GER_ahnenerbe_nothing_tt 
+                }
+                40 = { 
+                    add_stability = -0.05
+                    add_political_power = -50
+                    custom_effect_tooltip = GER_ahnenerbe_failure_tt 
+                }
+            }
+        }
+    }
+}
+
+
+GER_pax_habsburgica_category = {
+
+	GER_reassert_authority_over_bosnia = {
+		icon = GFX_decision_generic_nationalism
+
+		priority = 30
+
+		allowed = {
+			original_tag = GER
+		}
+
+		visible = {
+			OR = {
+		#has_completed_focus = ger2
+		has_completed_focus = GER_return_of_the_habsburg_ww
+		}
+			NOT = {
+				has_subject = BOS
+				has_full_control_of_state = 104
+				has_full_control_of_state = 804
+			}
+		}
+
+		fire_only_once = yes
+
+		available = {
+			is_subject = no
+			NOT = { has_country_flag = GER_already_sending_demand_flag }
+			104 = {
+				is_not_controlled_by_ROOT_or_subject = yes
+				any_neighbor_state = {
+					is_controlled_by_ROOT_or_subject = yes
+				}
+			}
+			804 = {
+				is_not_controlled_by_ROOT_or_subject = yes
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 104
+				state = 804
+			}
+		}
+
+		cancel_trigger = {
+			104 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+			804 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+		}
+
+		cost = 25
+		days_remove = 30
+
+		ai_will_do = {
+			base = 50
+		}
+
+		complete_effect = {
+			set_country_flag = GER_already_sending_demand_flag
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					country_exists = BOS
+					BOS = { is_subject = no }
+				}
+				BOS = { country_event = { id = germany_habsburg.17 hours = 6 random_hours = 12 } }
+			}
+			else = {
+				every_other_country = {
+				    limit = {
+				    	OR = {
+				    		any_controlled_state = {
+				    			OR = {
+								    is_core_of = BOS
+								    is_core_of = HRZ
+							    }
+				    		}
+				    		any_subject_country = {
+				    			OR = {
+								    original_tag = BOS
+								    original_tag = HRZ
+								    any_controlled_state = {
+								    	OR = {
+								    		is_core_of = BOS
+								    		is_core_of = HRZ
+								    	}
+								    }
+							    }
+				    		}
+				    	}
+				    	is_subject = no
+				    }
+				    country_event = { id = germany_habsburg.17 hours = 6 random_hours = 12 }
+			    }
+			}
+
+			custom_effect_tooltip = if_they_accept_tt
+			effect_tooltip = {
+				if = {
+					limit = {
+						country_exists = BOS
+						BOS = { is_subject = no }
+					}
+					BOS = {
+				        set_cosmetic_tag = BOS_condominium_bosnia_herzegovina
+
+					    custom_effect_tooltip = generic_skip_one_line_tt
+
+					    set_autonomy = { 
+				            target = BOS 
+				            autonomy_state = autonomy_puppet
+				        }
+			        }
+				}
+				else = {
+					custom_effect_tooltip = GER_bos_state_transfer_effect_tt
+
+					set_autonomy = { 
+				        target = BOS 
+				        autonomy_state = autonomy_puppet
+				    }
+
+					custom_effect_tooltip = generic_skip_one_line_tt
+
+					BOS = { set_cosmetic_tag = BOS_condominium_bosnia_herzegovina }
+				}
+			}
+
+			hidden_effect = {
+				104 = { set_state_flag = GER_demanding_states_flag }
+				804 = { set_state_flag = GER_demanding_states_flag }
+			}
+
+			clr_country_flag = GER_already_sending_demand_flag
+		}
+	}
+
+	GER_reclaim_the_croatian_crownland = {
+		icon = GFX_decision_generic_nationalism
+
+		priority = 40
+
+		allowed = {
+			original_tag = GER
+		}
+
+		visible = {
+			OR = {
+		#has_completed_focus = ger2
+		has_completed_focus = GER_return_of_the_habsburg_ww
+		}
+			NOT = {
+				has_subject = CRO
+			}
+		}
+
+		fire_only_once = yes
+
+		available = {
+			is_subject = no
+			NOT = { has_country_flag = GER_already_sending_demand_flag }
+			OR = {
+				AND = {
+					109 = {
+				        is_not_controlled_by_ROOT_or_subject = yes
+			        }
+			        103 = {
+			        	is_not_controlled_by_ROOT_or_subject = yes
+			        }
+					764 = {
+				        is_not_controlled_by_ROOT_or_subject = yes
+			        }
+					45 = {
+				        is_not_controlled_by_ROOT_or_subject = yes
+			        }
+				}
+				AND = {
+					102 = {
+				        is_not_controlled_by_ROOT_or_subject = yes
+			        }
+			        853 = {
+			        	is_not_controlled_by_ROOT_or_subject = yes
+			        }
+				}
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 109
+				state = 103
+				state = 102
+				state = 853
+				state = 764
+				state = 45
+			}
+		}
+
+		cancel_trigger = {
+			109 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+			103 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+			102 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+			853 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+			764 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+			45 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+		}
+
+		cost = 25
+		days_remove = 30
+
+		ai_will_do = {
+			base = 50
+		}
+
+		complete_effect = {
+			set_country_flag = GER_already_sending_demand_flag
+		}
+
+		remove_effect = {
+			every_other_country = {
+				limit = {
+					NOT = { original_tag = ITA }
+				   	OR = {
+				   		any_controlled_state = {
+				   			OR = {
+								state = 45
+								state = 764
+								is_core_of = CRO
+								is_core_of = SLV
+							}
+			    		}
+			    		any_subject_country = {
+			    			OR = {
+							    original_tag = CRO
+								original_tag = SLV
+							    any_controlled_state = {
+							    	OR = {
+										state = 45
+								        state = 764
+								        is_core_of = CRO
+								        is_core_of = SLV
+							        }
+							    }
+						    }
+			    		}
+			    	}
+			    	is_subject = no
+			    }
+			    country_event = { id = germany_habsburg.17 hours = 6 random_hours = 12 }
+		    }
+			
+			custom_effect_tooltip = if_they_accept_tt
+			effect_tooltip = {
+				if = {
+					limit = {
+						has_completed_focus = GER_brothers_in_arms
+						has_subject = AUS
+					}
+					AUS = { 
+						transfer_state = 102
+						transfer_state = 853
+					}
+				}
+				else = {
+					transfer_state = 102
+					transfer_state = 853
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				if = {
+					limit = {
+						country_exists = CRO
+						CRO = { is_subject = no }
+						has_completed_focus = GER_brothers_in_arms
+						OR = {
+							has_subject = HUN
+							has_subject = AUS
+						}
+					}
+					if = {
+				    	limit = {
+				    		has_subject = AUS
+				    	}
+				    	AUS = { transfer_state = 103 }
+
+						custom_effect_tooltip = generic_skip_one_line_tt
+				    }
+					if = {
+				    	limit = {
+				    		has_subject = HUN
+				    	}
+				    	HUN = { 
+							transfer_state = 109 
+							transfer_state = 45 
+							transfer_state = 764 
+						}
+				    }
+				}
+				else_if = {
+					limit = {
+						country_exists = CRO
+						CRO = { is_subject = no }
+						has_completed_focus = GER_the_austrian_question
+						has_subject = HUN
+					}
+					set_autonomy = { 
+				        target = CRO 
+				        autonomy_state = autonomy_puppet
+				    }
+
+					custom_effect_tooltip = generic_skip_one_line_tt
+
+					CRO = { set_cosmetic_tag = CRO_croatia_slavonia_kingdom }
+
+				    custom_effect_tooltip = generic_skip_one_line_tt
+				
+				    if = {
+				    	limit = {
+				    		has_subject = HUN
+				    	}
+				    	HUN = { 
+							transfer_state = 109 
+							transfer_state = 45 
+							transfer_state = 764 
+						}
+				    }
+				}
+				else = {
+					custom_effect_tooltip = GER_cro_state_transfer_effect_tt
+
+					set_autonomy = { 
+				        target = CRO 
+				        autonomy_state = autonomy_puppet
+				    }
+
+					custom_effect_tooltip = generic_skip_one_line_tt
+
+					CRO = { set_cosmetic_tag = CRO_croatia_slavonia_kingdom }
+				}
+			}
+
+			hidden_effect = {
+				109 = { set_state_flag = GER_demanding_states_flag }
+				103 = { set_state_flag = GER_demanding_states_flag }
+				102 = { set_state_flag = GER_demanding_states_flag }
+				853 = { set_state_flag = GER_demanding_states_flag }
+				45 = { set_state_flag = GER_demanding_states_flag }
+				764 = { set_state_flag = GER_demanding_states_flag }
+			}
+
+			clr_country_flag = GER_already_sending_demand_flag
+		}
+	}
+
+	GER_reintegrate_erdely_into_the_empire = { #Transylvania
+		icon = GFX_decision_generic_nationalism
+
+		priority = 50
+
+		allowed = {
+			original_tag = GER
+		}
+
+		visible = {
+			OR = {
+		#has_completed_focus = ger2
+		has_completed_focus = GER_return_of_the_habsburg_ww
+		}
+			NOT = {
+				has_subject = TRA
+			}
+		}
+
+		fire_only_once = yes
+
+		available = {
+			is_subject = no
+			NOT = { has_country_flag = GER_already_sending_demand_flag }
+			76 = {
+				is_not_controlled_by_ROOT_or_subject = yes
+			}
+			83 = {
+				is_not_controlled_by_ROOT_or_subject = yes
+			}
+			84 = {
+				is_not_controlled_by_ROOT_or_subject = yes
+			}
+			82 = {
+				is_not_controlled_by_ROOT_or_subject = yes
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 76
+				state = 83
+				state = 84
+				state = 82
+			}
+		}
+
+		cancel_trigger = {
+			76 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+			83 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+			84 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+			82 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+		}
+
+		cost = 25
+		days_remove = 30
+
+		ai_will_do = {
+			base = 50
+		}
+
+		complete_effect = {
+			set_country_flag = GER_already_sending_demand_flag
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					country_exists = TRA
+					TRA = { is_subject = no }
+				}
+				TRA = { country_event = { id = germany_habsburg.17 hours = 6 random_hours = 12 } }
+			}
+			else = {
+				every_other_country = {
+				    limit = {
+						NOT = { original_tag = YUG }
+				    	OR = {
+				    		any_controlled_state = {
+				    			is_core_of = TRA
+				    		}
+				    		any_subject_country = {
+				    			OR = {
+								    original_tag = TRA
+								    any_controlled_state = {
+								    	is_core_of = TRA
+								    }
+							    }
+				    		}
+				    	}
+				    	is_subject = no
+				    }
+				    country_event = { id = germany_habsburg.17 hours = 6 random_hours = 12 }
+			    }
+			}
+
+			custom_effect_tooltip = if_they_accept_tt
+			effect_tooltip = {
+				if = {
+					limit = {
+						country_exists = TRA
+						TRA = { is_subject = no }
+					}
+					if = {
+						limit = {
+							has_subject = HUN
+						}
+						HUN = {
+				    	    annex_country = {
+				    	    	target = TRA
+				    	    }
+				        }
+					}
+					else = {
+						annex_country = {
+			    		    target = TRA
+			    	    }
+					}
+				}
+				else = {
+					every_state = {
+						limit = {
+							is_core_of = TRA
+							is_not_controlled_by_ROOT_or_subject = yes
+						}
+						transfer_state_to = ROOT
+					}
+				}
+			}
+
+			hidden_effect = {
+				76 = { set_state_flag = GER_demanding_states_flag }
+				83 = { set_state_flag = GER_demanding_states_flag }
+				84 = { set_state_flag = GER_demanding_states_flag }
+				82 = { set_state_flag = GER_demanding_states_flag }
+			}
+
+			clr_country_flag = GER_already_sending_demand_flag
+		}
+	}
+
+	GER_reassert_authority_in_felvidek = { #Upper Hungary
+		icon = GFX_decision_generic_nationalism
+
+		priority = 45
+
+		allowed = {
+			original_tag = GER
+		}
+
+		visible = {
+			OR = {
+		#has_completed_focus = ger2
+		has_completed_focus = GER_return_of_the_habsburg_ww
+		}
+			HUN = { NOT = { has_country_flag = HUN_slovakia_gained_flag } } #Just in case
+			NOT = {
+				664 = {
+					CONTROLLER = {
+			            OR = {
+			            	tag = ROOT
+			            	AND = {
+								tag = HUN
+								is_subject_of = ROOT
+							}
+			            }
+		            }
+				}
+				70 = {
+					CONTROLLER = {
+			            OR = {
+			            	tag = ROOT
+			            	AND = {
+								tag = HUN
+								is_subject_of = ROOT
+							}
+			            }
+		            }
+				}
+				71 = {
+					CONTROLLER = {
+			            OR = {
+			            	tag = ROOT
+			            	AND = {
+								tag = HUN
+								is_subject_of = ROOT
+							}
+			            }
+		            }
+				}
+				73 = {
+					CONTROLLER = {
+			            OR = {
+			            	tag = ROOT
+			            	AND = {
+								tag = HUN
+								is_subject_of = ROOT
+							}
+			            }
+		            }
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		available = {
+			is_subject = no
+			NOT = { has_country_flag = GER_already_sending_demand_flag }
+			OR = {
+				has_subject = HUN
+				AND = {
+					custom_trigger_tooltip = {
+				        tooltip = formable_czech_hre_tt
+				        9 = { is_controlled_by = ROOT }
+				        69 = { is_controlled_by = ROOT }
+				        74 = { is_controlled_by = ROOT }
+				        75 = { is_controlled_by = ROOT }
+				        972 = { is_controlled_by = ROOT }
+			        }
+					664 = {
+				        is_not_controlled_by_ROOT_or_subject = yes
+			        }
+			        70 = {
+			        	is_not_controlled_by_ROOT_or_subject = yes
+			        }
+			        71 = {
+			        	is_not_controlled_by_ROOT_or_subject = yes
+			        }
+			        73 = {
+			        	is_not_controlled_by_ROOT_or_subject = yes
+			        }
+				}
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 664
+				state = 70
+				state = 71
+				state = 73
+			}
+		}
+
+		cost = 25
+		days_remove = 30
+
+		ai_will_do = {
+			base = 50
+		}
+
+		complete_effect = {
+			set_country_flag = GER_already_sending_demand_flag
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					664 = {
+				        is_not_controlled_by_ROOT_or_subject = yes
+			        }
+			        70 = {
+			        	is_not_controlled_by_ROOT_or_subject = yes
+			        }
+			        71 = {
+			        	is_not_controlled_by_ROOT_or_subject = yes
+			        }
+			        73 = {
+			        	is_not_controlled_by_ROOT_or_subject = yes
+			        }
+				}
+				every_other_country = {
+				    limit = {
+				    	OR = {
+				    		any_controlled_state = {
+				    			OR = {
+									state = 664
+									state = 70
+									state = 71
+									state = 73
+								}
+				    		}
+				    		any_subject_country = {
+				    			any_controlled_state = {
+								    OR = {
+									    state = 664
+									    state = 70
+								        state = 71
+								        state = 73
+							        }
+							    }
+				    		}
+				    	}
+				    	is_subject = no
+				    }
+				    country_event = { id = germany_habsburg.17 hours = 6 random_hours = 12 }
+			    }
+			}
+			else_if = {
+				limit = {
+					OR = {
+						664 = {
+				            is_controlled_by_ROOT_or_subject = yes
+			            }
+			            70 = {
+			            	is_controlled_by_ROOT_or_subject = yes
+			            }
+			            71 = {
+			            	is_controlled_by_ROOT_or_subject = yes
+			            }
+			            73 = {
+			            	is_controlled_by_ROOT_or_subject = yes
+			            }
+					}
+				}
+				every_state = {
+					limit = {
+						OR = {
+							state = 664
+							state = 70
+							state = 71
+							state = 73
+						}
+						is_controlled_by_ROOT_or_subject = yes
+					}
+					display_individual_scopes = yes
+					if = {
+						limit = {
+							ROOT = { has_subject = HUN }
+						}
+						transfer_state_to = HUN
+					}
+					else_if = { #Failsafe
+						limit = {
+							NOT = { is_fully_controlled_by = PREV }
+						}
+						transfer_state_to = ROOT
+					}
+				}
+			}
+
+			hidden_effect = {
+				664 = { set_state_flag = GER_demanding_states_flag }
+				70 = { set_state_flag = GER_demanding_states_flag }
+				71 = { set_state_flag = GER_demanding_states_flag }
+				73 = { set_state_flag = GER_demanding_states_flag }
+			}
+
+			clr_country_flag = GER_already_sending_demand_flag
+		}
+	}
+
+	GER_integrate_luxembourg_into_the_empire = {
+		icon = GFX_decision_generic_nationalism
+
+		priority = 50
+
+		allowed = {
+			original_tag = GER
+		}
+
+	visible = {
+			OR = {
+		#has_completed_focus = ger2
+		has_completed_focus = GER_return_of_the_habsburg_ww
+		}
+			NOT = {
+				has_subject = LUX
+				has_full_control_of_state = 8
+			}
+		}
+
+		fire_only_once = yes
+
+		available = {
+			is_subject = no
+			NOT = { has_country_flag = GER_already_sending_demand_flag }
+			has_completed_focus = GER_reclaim_the_burgundian_inheritance
+			8 = {
+				is_not_controlled_by_ROOT_or_subject = yes
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 8
+			}
+		}
+
+		cancel_trigger = {
+			8 = {
+				is_controlled_by_ROOT_or_subject = yes
+			}
+		}
+
+		cost = 10
+		days_remove = 15
+
+		ai_will_do = {
+			base = 50
+		}
+
+		complete_effect = {
+			set_country_flag = GER_already_sending_demand_flag
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					country_exists = LUX
+					LUX = { is_subject = no }
+				}
+				LUX = { country_event = { id = germany_habsburg.17 hours = 6 random_hours = 12 } }
+			}
+			else = {
+				every_other_country = {
+				    limit = {
+				    	OR = {
+				    		any_controlled_state = {
+				    			is_core_of = LUX
+				    		}
+				    		any_subject_country = {
+				    			OR = {
+								    original_tag = LUX
+								    any_controlled_state = {
+								    	is_core_of = LUX
+								    }
+							    }
+				    		}
+				    	}
+				    	is_subject = no
+				    }
+				    country_event = { id = germany_habsburg.17 hours = 6 random_hours = 12 }
+			    }
+			}
+
+			custom_effect_tooltip = if_they_accept_tt
+			effect_tooltip = {
+				if = {
+					limit = {
+						country_exists = LUX
+						LUX = { is_subject = no }
+					}
+					annex_country = {
+			    		target = LUX
+			    	}
+				}
+				else = {
+					transfer_state = 8
+				}
+			}
+
+			hidden_effect = {
+				8 = { set_state_flag = GER_demanding_states_flag }
+			}
+
+			clr_country_flag = GER_already_sending_demand_flag
+		}
+	}
+
+	GER_integrate_from_into_empire = {
+		icon = GFX_decision_generic_monarchy
+
+		priority = 75
+
+		allowed = {
+			original_tag = GER
+		}
+
+		fire_only_once = yes
+
+		targets = { AUS CZE HUN }
+
+		target_trigger = {
+			country_exists = FROM
+			FROM = {
+				is_subject_of = ROOT
+			}
+		}
+
+	visible = {
+			OR = {
+		#has_completed_focus = ger2
+		has_completed_focus = GER_return_of_the_habsburg_ww
+		}
+	}
+
+		available = {
+			is_subject = no
+			FROM = {
+				is_subject_of = ROOT
+			}
+		}
+
+		days_remove = 50
+		cost = 150
+
+		ai_will_do = {
+			base = 80
+		}
+
+		remove_effect = {
+			FROM = {
+				every_core_state = {
+					add_core_of = ROOT
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			IF = {
+			    limit = {
+			    	FROM = {
+			    		has_character = CZE_richard_tesarzhik
+			    	}
+			    }
+			    FROM = {
+			    	CZE_richard_tesarzhik = {
+			    		set_nationality = ROOT
+			    	}
+			    }
+		    }
+
+		    IF = {
+		    	limit = {
+		    		FROM = {
+		    			has_character = CZE_sergej_vojcechovsky
+		    		}
+		    	}
+		    	FROM = {
+		    		CZE_sergej_vojcechovsky = {
+		    			set_nationality = ROOT
+		    		}
+		    	}
+		    }
+
+			IF = {
+			    limit = {
+			    	FROM = {
+			    		has_character = AUS_karl_eglseer
+			    	}
+			    }
+			    FROM = {
+			    	AUS_karl_eglseer = {
+			    		set_nationality = ROOT
+			    	}
+			    }
+		    }
+
+			IF = {
+			    limit = {
+			    	has_completed_focus = GER_brothers_in_arms
+					FROM = { original_tag = AUS }
+			    }
+			    FROM = {
+			    	IF = {
+						limit = {
+							has_completed_focus = AUS_bring_generals_out_of_retirement
+						}
+						AUS_wilhelm_gebauer = {
+							set_nationality = ROOT
+						}
+					}
+					
+					AUS_ludwig_von_eimannsberger = {
+						set_nationality = ROOT
+					}
+
+					AUS_anton_kienbauer = {
+						set_nationality = ROOT
+					}
+			    }
+		    }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			annex_country = {
+			    target = FROM
+			    transfer_troops = yes
+		    }	
+		}
+	}
+
+	GER_integrate_from_into_empire_smaller = {
+		icon = GFX_decision_generic_monarchy
+
+		priority = 75
+
+		allowed = {
+			original_tag = GER
+		}
+
+		fire_only_once = yes
+
+		targets = { SLO TRA CRO MNT BOS HRZ SLV GAL }
+
+		target_trigger = {
+			country_exists = FROM
+			FROM = {
+				is_subject_of = ROOT
+			}
+		}
+
+	visible = {
+			OR = {
+		#has_completed_focus = ger2
+		has_completed_focus = GER_return_of_the_habsburg_ww
+		}
+	}
+
+		available = {
+			is_subject = no
+			FROM = {
+				is_subject_of = ROOT
+			}
+		}
+
+		days_remove = 35
+		cost = 75
+
+		ai_will_do = {
+			base = 80
+		}
+
+		remove_effect = {
+			FROM = {
+				every_core_state = {
+					add_core_of = ROOT
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			annex_country = {
+			    target = FROM
+			    transfer_troops = yes
+		    }	
+		}
+	}
+}
+
+
+GER_the_seeds_of_revolution = {
+
+	GER_integrate_commune_1 = {
+
+		name = SPR_integrate_commune
+
+		icon = generic_nationalism
+
+		allowed = {
+			original_tag = GER
+		}
+
+		available = {
+			FROM = {
+				compliance > 50
+				OR = {
+					is_island_state = yes
+					any_neighbor_state = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		state_target = yes
+
+		on_map_mode = map_only
+
+		#targets = {  }
+
+		target_array = controlled_states
+
+		target_trigger = {
+			has_completed_focus = ger_167
+			FROM = {
+				NOT = {
+					is_core_of = ROOT
+				}
+				OR = {
+					is_island_state = yes
+					any_neighbor_state = {
+						is_core_of = ROOT
+					}
+				}
+				OR = {
+					NOT = {
+						is_owned_by = ROOT
+					}
+					NOT = {
+						state = 51
+						state = 42
+						state = 56
+						state = 57
+						state = 55
+						state = 50
+						state = 59
+						state = 58
+						state = 60
+						state = 54
+						state = 52
+						state = 53
+						state = 61
+						state = 64
+						state = 65
+						state = 62
+						state = 68
+						state = 66
+						state = 67
+						state = 63
+						state = 5
+						state = 763
+					}
+				}
+				compliance > 35
+			}
+		}
+
+		cost = 50
+
+		fire_only_once = yes
+
+		days_remove = 60
+
+		modifier = {
+			political_power_gain = -1
+		}
+
+		visible = {
+			tag = GER
+			has_completed_focus = ger_167
+			always = yes
+		}
+
+		complete_effect = {
+
+		}
+
+		remove_effect = {
+			FROM = {
+				add_core_of = ROOT
+			}
+			transfer_state = FROM
+		}
+	}
+
+	GER_integrate_commune_2 = {
+
+		name = SPR_integrate_commune
+
+		icon = generic_nationalism
+
+		allowed = {
+			original_tag = GER
+		}
+
+		available = {
+			FROM = {
+				compliance > 50
+				NOT = {
+					is_island_state = yes
+					any_neighbor_state = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		state_target = yes
+
+		on_map_mode = map_only
+
+		#targets = {  }
+
+		target_array = controlled_states
+
+		target_trigger = {
+			has_completed_focus = ger_167
+			FROM = {
+				NOT = {
+					is_core_of = ROOT
+				}
+				NOT = {
+					is_island_state = yes
+					any_neighbor_state = {
+						is_core_of = ROOT
+					}
+				}
+				OR = {
+					NOT = {
+						is_owned_by = ROOT
+					}
+					NOT = {
+						state = 51
+						state = 42
+						state = 56
+						state = 57
+						state = 55
+						state = 50
+						state = 59
+						state = 58
+						state = 60
+						state = 54
+						state = 52
+						state = 53
+						state = 61
+						state = 64
+						state = 65
+						state = 62
+						state = 68
+						state = 66
+						state = 67
+						state = 63
+						state = 5
+						state = 763
+					}
+				}
+				compliance > 35
+			}
+		}
+
+		cost = 150
+
+		fire_only_once = yes
+
+		days_remove = 90
+
+		modifier = {
+			political_power_gain = -1
+		}
+
+		visible = {
+			tag = GER
+			has_completed_focus = ger_167
+			always = yes
+		}
+
+		complete_effect = {
+
+		}
+
+		remove_effect = {
+			FROM = {
+				add_core_of = ROOT
+			}
+			transfer_state = FROM
+		}
+	}
+}
+
+GER_steal_barons_category = { 
+	GER_steal_barons = {                         
+		allowed = { tag = GER }               
+		available = {               
+			NOT = {
+				OR = {
+					has_idea = GER_steel_barons_3
+					has_idea = GER_steel_barons_2
+					has_idea = GER_steel_barons_1
+				} 
+			}                     
+	    }
+		activation = {                       
+			OR = {
+				has_idea = GER_steel_barons_3
+				has_idea = GER_steel_barons_2
+				has_idea = GER_steel_barons_1
+			}              		
+		}
+		is_good = no                         
+		selectable_mission = no                
+		days_mission_timeout = 1200      
+		timeout_effect = {
+			if = {
+				limit = {
+					OR = {
+						has_idea = GER_steel_barons_1
+						has_idea = GER_steel_barons_2
+						has_idea = GER_steel_barons_3
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_completed_focus = GER_return_of_the_kaiser
+				}
+				if = {
+					limit = {
+						has_idea = GER_steel_barons_1
+					}
+					remove_ideas = GER_steel_barons_1
+					add_timed_idea = { idea = GER_steel_barons_6 days = 365 }
+				}
+				else_if = {
+					limit = {
+						has_idea = GER_steel_barons_2
+					}
+					remove_ideas = GER_steel_barons_2
+					add_timed_idea = { idea = GER_steel_barons_6 days = 365 }
+				}
+				else_if = {
+					limit = {
+		    			has_idea = GER_steel_barons_3
+					}
+					remove_ideas = GER_steel_barons_3
+					add_timed_idea = { idea = GER_steel_barons_6 days = 365 }
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_idea = GER_steel_barons_1
+					}
+					remove_ideas = GER_steel_barons_1
+					add_timed_idea = { idea = GER_steel_barons_4 days = 365 }
+				}
+				else_if = {
+					limit = {
+		    			has_idea = GER_steel_barons_2
+					}
+					remove_ideas = GER_steel_barons_2
+					add_timed_idea = { idea = GER_steel_barons_4 days = 365 }
+				}
+				else_if = {
+					limit = {
+						has_idea = GER_steel_barons_3
+					}
+					remove_ideas = GER_steel_barons_3
+					add_timed_idea = { idea = GER_steel_barons_4 days = 365 }
+				}
+			}
+		}
+		complete_effect = {                  
+		    add_political_power = 150              
+		}
+	}
+}
+#eo

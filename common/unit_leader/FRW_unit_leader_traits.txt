@@ -1,0 +1,48 @@
+leader_traits = {
+	FRW_trait_army_of_africa = {
+		type = land
+		trait_type = personality_trait
+		gain_xp = { always = no }
+		new_commander_weight = { factor = 0 }
+		logistics_skill = 1
+		modifier = {
+			attrition = -0.10
+			supply_consumption_factor = -0.05
+		}
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_ecole_de_guerre = {
+		type = land
+		trait_type = personality_trait
+		gain_xp = { always = no }
+		new_commander_weight = { factor = 0 }
+		planning_skill = 1
+		modifier = {
+			army_infantry_defence_factor = 0.05
+		}
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_armoured_pioneer = {
+		type = land
+		trait_type = personality_trait
+		gain_xp = { always = no }
+		new_commander_weight = { factor = 0 }
+		attack_skill = 1
+		modifier = {
+			army_armor_attack_factor = 0.05
+			army_armor_speed_factor = 0.05
+		}
+		ai_will_do = { factor = 1 }
+	}
+	FRW_trait_alpine_school = {
+		type = land
+		trait_type = personality_trait
+		gain_xp = { always = no }
+		new_commander_weight = { factor = 0 }
+		defense_skill = 1
+		modifier = {
+			army_morale_factor = 0.05
+		}
+		ai_will_do = { factor = 1 }
+	}
+}

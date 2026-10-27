@@ -1,0 +1,30 @@
+on_actions = {
+	on_capitulation = {
+		effect = {
+			# If the Nazi side loses the German Civil War, Argentina always receives
+			# the existing Vanilla opportunity to shelter Senor Hitler.
+			if = {
+				limit = {
+					has_dlc = "Trial of Allegiance"
+					has_global_flag = GER_civil_war_has_started
+					ROOT = {
+						original_tag = GER
+						has_government = fascism
+					}
+					ARG = {
+						exists = yes
+						NOT = { has_country_flag = NO_LAG_ARG_hitler_offer_scheduled }
+					}
+				}
+
+				ARG = {
+					set_country_flag = NO_LAG_ARG_hitler_offer_scheduled
+					country_event = {
+						id = ARG_political_events.120
+						days = 1
+					}
+				}
+			}
+		}
+	}
+}

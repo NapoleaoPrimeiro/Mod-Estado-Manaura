@@ -1,0 +1,521 @@
+characters={
+	#正木退藏
+	JAP_zhengmu_tuizang = {
+		name = JAP_zhengmu_tuizang
+		portraits={
+			civilian={
+				small="GFX_idea_generic_political_advisor_asia_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = JAP_zhengmu_tuizang
+			allowed  = {
+				original_tag  = HAW
+			}
+			available  = {
+				has_completed_focus = HAW_depend_on_jap
+			}
+			traits  = {
+				xaiweiyi_tong
+			}
+			
+			ai_will_do  = {
+				factor  = 0.000
+			}
+		}
+	}
+
+	#吉川猛夫
+	JAP_jichuan_mengfu = {
+		name = JAP_jichuan_mengfu
+		portraits={
+			civilian={
+				small="GFX_idea_JAP_generic_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = JAP_jichuan_mengfu
+			allowed  = {
+				original_tag  = HAW
+			}
+			available  = {
+				has_completed_focus = HAW_depend_on_jap
+			}
+			traits  = {
+				haijun_qingbaoguan
+			}
+			
+			ai_will_do  = {
+				factor  = 0.000
+			}
+		}
+	}
+
+	#松冈洋右--来自日本的首相
+	JAP_songgang_yangyou = {
+		name = JAP_songgang_yangyou
+		portraits={
+			civilian={
+				small="GFX_idea_generic_air_asia_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = JAP_songgang_yangyou
+			allowed  = {
+				original_tag  = HAW
+			}
+			available  = {
+				has_completed_focus = HAW_depend_on_jap
+			}
+			traits  = {
+				waixiang
+			}
+			
+			ai_will_do  = {
+				factor  = 0.000
+			}
+		}
+	}
+
+	#岩手某氏
+	JAP_yanshou_moushi = {
+		name = JAP_yanshou_moushi
+		portraits={
+			civilian={
+				small="GFX_idea_JAP_generic_land_4"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = JAP_yanshou_moushi
+			allowed  = {
+				original_tag  = HAW
+			}
+			available  = {
+				#has_completed_focus = HAW_depend_on_jap
+			}
+			traits  = {
+				riben_dashi
+			}
+			
+			ai_will_do  = {
+				factor  = 0.000
+			}
+		}
+	}
+
+	#大岛浩
+	JAP_dadao_hao = {
+		name = JAP_dadao_hao
+		portraits={
+			civilian={
+				small="GFX_idea_JAP_generic_land_5"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = JAP_dadao_hao
+			allowed  = {
+				original_tag  = HAW
+			}
+			available  = {
+				has_completed_focus = HAW_depend_on_jap
+			}
+			traits  = {
+				guoji_shiwu
+			}
+			
+			ai_will_do  = {
+				factor  = 0.000
+			}
+		}
+	}
+
+	#塞缪尔·怀尔德·金--来自美国的首相
+	USA_saimiuer_king = {
+		name = USA_saimiuer_king
+		portraits={
+			army={
+				large= GFX_Portrait_USA_Generic_navy_1
+			}
+			civilian={
+				small="GFX_idea_USA_generic_navy_2"
+			}
+		}
+
+		corps_commander={
+			traits={   expert_delegator  organizer  thorough_planner  }
+			skill=4
+			attack_skill=3
+			defense_skill=2
+			planning_skill=5
+			logistics_skill=5
+			legacy_id = 0
+		}
+
+		advisor={
+			slot = political_advisor
+			idea_token = USA_saimiuer_king
+			allowed  = {
+				original_tag  = HAW
+			}
+			available  = {
+				
+			}
+			traits  = {
+				haijun_junguan
+			}
+			
+			ai_will_do  = {
+				factor  = 0.000
+			}
+		}
+	}
+
+	#约翰·A·伯恩斯
+	USA_john_boens = {
+		name = USA_john_boens
+		portraits={
+			civilian={
+				small="GFX_idea_USA_generic_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = USA_john_boens
+			allowed  = {
+				original_tag  = HAW
+			}
+			available  = {
+				has_completed_focus = HAW_depend_on_usa
+			}
+			traits  = {
+				gexin_daibiao
+			}
+			
+			ai_will_do  = {
+				factor  = 0.000
+			}
+		}
+	}
+
+	#维克多·S·K·休斯顿
+	USA_vict_xiusid = {
+		name = USA_vict_xiusid
+		portraits={
+			civilian={
+				small="GFX_idea_USA_generic_navy_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = USA_vict_xiusid
+			allowed  = {
+				original_tag  = HAW
+			}
+			available  = {
+				has_completed_focus = HAW_depend_on_usa
+			}
+			traits  = {
+				HAW_jishu_guanliao
+			}
+			
+			ai_will_do  = {
+				factor  = 0.000
+			}
+		}
+	}
+
+	#林克·L·麦坎德利斯
+	USA_link_mike = {
+		name = USA_link_mike
+		portraits={
+			civilian={
+				small="GFX_idea_USA_generic_land_5"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = USA_link_mike
+			allowed  = {
+				original_tag  = HAW
+			}
+			available  = {
+				has_completed_focus = HAW_depend_on_usa
+			}
+			traits  = {
+				HAW_wenjian_caizheng
+			}
+			
+			ai_will_do  = {
+				factor  = 0.000
+			}
+		}
+	}
+
+	#邝友良
+	CHI_guangliang = {
+		name = CHI_guangliang
+		portraits={
+			civilian={
+				small="GFX_idea_generic_army_asia_5"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CHI_guangliang
+			allowed  = {
+				original_tag  = HAW
+			}
+			available  = {
+				#has_completed_focus = HAW_depend_on_usa
+			}
+			traits  = {
+				wenhe_lvshi
+			}
+			
+			ai_will_do  = {
+				factor  = 0.000
+			}
+		}
+	}
+
+	#沃尔特·肖特
+	USA_walt_short = {
+		name = USA_walt_short
+		portraits={
+			army = {
+				large = GFX_Portrait_USA_Generic_land_5
+			}
+			civilian={
+				small="GFX_idea_USA_leonard_t_gerow"
+			}
+		}
+		corps_commander={
+			traits={    }
+			skill=2
+			attack_skill= 2
+			defense_skill= 1
+			planning_skill= 2
+			logistics_skill= 2
+			legacy_id = 0
+		}
+		advisor={
+			slot = army_chief
+			idea_token = USA_walt_short
+			allowed = {
+				
+			}
+			available = {
+				
+			}
+			traits = {
+				army_chief_planning_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	#休·A·德拉姆
+	USA_xiu_delamu = {
+		name = USA_xiu_delamu
+		portraits={
+			army = {
+				large = GFX_Portrait_USA_Generic_land_3
+			}
+			civilian={
+				small="GFX_idea_USA_generic_land_9"
+			}
+		}
+		corps_commander={
+			traits={ career_officer infantry_officer  }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=0
+		}
+		advisor={
+			slot = high_command
+			idea_token = USA_xiu_delamu
+			ledger = army
+			allowed = {
+				
+			}
+			traits = {
+				army_commando_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	######################
+	#罗伯特·瓦格纳
+	HAW_luobote_wagena = {
+		name = HAW_luobote_wagena
+		portraits={
+			civilian={
+				small="GFX_idea_south_america_generic_5"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = HAW_luobote_wagena
+			allowed  = {
+				TAG = HAW				
+			}
+			available  = {
+				if = {
+					limit = {
+						TAG = HAW
+					}
+					has_completed_focus = HAW_us_neige_genghuan
+				}
+			}
+			traits  = {
+				USA_xinzheng_canyiyuan
+			}
+			
+			ai_will_do  = {
+				factor  = 0.000
+			}
+		}
+	}
+	#罗伯特·帕特森
+	HAW_luobote_patesen = {
+		name = HAW_luobote_patesen
+		portraits={
+			civilian={
+				small="GFX_idea_FRA_generic_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = HAW_luobote_patesen
+			allowed  = {
+				TAG = HAW				
+			}
+			available  = {
+				if = {
+					limit = {
+						TAG = HAW
+					}
+					has_completed_focus = HAW_us_neige_genghuan
+				}
+			}
+			traits  = {
+				USA_wenhe_faguan
+			}
+			
+			ai_will_do  = {
+				factor  = 0.000
+			}
+		}
+	}
+	#亚瑟·卡珀 农场主报刊出版商
+	HAW_arthur_kapo = {
+		name = HAW_arthur_kapo
+		portraits={
+			civilian={
+				small="GFX_idea_europe_generic_5"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = HAW_arthur_kapo
+			allowed  = {
+				TAG = HAW				
+			}
+			available  = {
+				if = {
+					limit = {
+						TAG = HAW
+					}
+					has_completed_focus = HAW_us_neige_genghuan
+				}
+			}
+			traits  = {
+				USA_nongchangzhu_baokan_chubanshang
+			}
+			
+			ai_will_do  = {
+				factor  = 0.000
+			}
+		}
+	}
+
+
+	#约翰·汉密尔顿 共和党全国委员会主席
+	HAW_john_hanmiertun = {
+		name = HAW_john_hanmiertun
+		portraits={
+			civilian={
+				small="GFX_idea_generic_political_advisor_south_america_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = HAW_john_hanmiertun
+			allowed  = {
+				TAG = HAW				
+			}
+			available  = {
+				if = {
+					limit = {
+						TAG = HAW
+					}
+					has_completed_focus = HAW_us_neige_genghuan
+				}
+			}
+			traits  = {
+				USA_quanguo_weiyuanhui_zhuxi
+			}
+			
+			ai_will_do  = {
+				factor  = 0.000
+			}
+		}
+	}
+	#刘易斯·道格拉斯 稳健的财政部长
+	HAW_liuyisi_daogelasi = {
+		name = HAW_liuyisi_daogelasi
+		portraits={
+			civilian={
+				small="GFX_idea_USA_generic_land_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = HAW_liuyisi_daogelasi
+			allowed  = {
+				TAG = HAW				
+			}
+			available  = {
+				if = {
+					limit = {
+						TAG = HAW
+					}
+					has_completed_focus = HAW_us_neige_genghuan
+				}
+			}
+			traits  = {
+				USA_wenjian_caizheng
+			}
+			
+			ai_will_do  = {
+				factor  = 0.000
+			}
+		}
+	}
+	
+}

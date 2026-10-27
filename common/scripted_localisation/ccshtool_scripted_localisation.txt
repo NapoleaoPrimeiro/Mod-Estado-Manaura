@@ -1,0 +1,48 @@
+defined_text = {
+	name = CCSHTOOL_OPEN_CLOSE_SCRIPTLOC
+
+	text = {
+		trigger = {
+			NOT = { has_country_flag = ccshtool_open_cflag }
+		}
+		localization_key = ccshtool_toggle_visibility_on
+	}
+	text = {
+		trigger = {
+			has_country_flag = ccshtool_open_cflag
+		}
+		localization_key = ccshtool_toggle_visibility_off
+	}
+}
+defined_text = {
+	name = CCSHTOOL_TARGET_NAME_SCRIPTLOC
+
+	text = {
+		trigger = {
+			NOT = { check_variable = { global.ccshtool_target_var = 0 } }
+		}
+		localization_key = ccshtool_target_name_locked
+	}
+	text = {
+		trigger = {
+			check_variable = { global.ccshtool_target_var = 0 }
+		}
+		localization_key = ccshtool_target_name_unlocked
+	}
+}
+defined_text = {
+	name = CCSHTOOL_RECEIVER_NAME_SCRIPTLOC
+
+	text = {
+		trigger = {
+			NOT = { check_variable = { global.ccshtool_receiver_var = 0 } }
+		}
+		localization_key = ccshtool_receiver_name_locked
+	}
+	text = {
+		trigger = {
+			check_variable = { global.ccshtool_receiver_var = 0 }
+		}
+		localization_key = ccshtool_receiver_name_unlocked
+	}
+}

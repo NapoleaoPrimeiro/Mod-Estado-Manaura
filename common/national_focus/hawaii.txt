@@ -1,0 +1,2665 @@
+focus_tree = {
+	id = HAW_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = HAW
+		}
+		
+		modifier = {
+			add = 10
+			original_tag = HAW
+		}
+	}
+
+
+	continuous_focus_position = { x = 50 y = 1600 }
+	default = no
+	shared_focus = Shared_mil_focus1
+
+	focus = {
+		id = HAW_zuihou_jihui
+		icon = GFX_focus_PHI_return_of_the_exiles
+		x = 10
+		y = 0
+		#prerequisite = { focus = USA_continue_the_new_deal }
+		#relative_position_id = USA_continue_the_new_deal
+		cost = 4
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_political_power = 75
+			add_stability = 0.05
+
+			hidden_effect = {
+				country_event = {
+					id = haw_extra.4
+					days = 7
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = HAW_wangguo_gongyehua_nuli
+		icon = GFX_focus_generic_industry_3
+		x = -6
+		y = 1
+		prerequisite = { focus = HAW_zuihou_jihui }
+		relative_position_id = HAW_zuihou_jihui
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_tech_bonus = {
+				name = HAW_wangguo_gongyehua_nuli
+				bonus = 0.75
+				uses = 2
+				category = industry
+			} 
+		}
+	}
+
+	focus = {
+		id = HAW_meiguoren_guxiang
+		icon = GFX_focus_usa_guarantee_the_american_dream
+		x = -1
+		y = 1
+		prerequisite = { focus = HAW_wangguo_gongyehua_nuli }
+		relative_position_id = HAW_wangguo_gongyehua_nuli
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		available = {
+			USA = {
+				OR = {
+					has_government = fascism
+					has_government = neutrality
+				}
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = HAW_usa_nanmin
+				}
+				modify_timed_idea = {
+					idea = HAW_usa_nanmin
+					days = 70
+				}
+			}
+			else = {
+				add_timed_idea = {
+					idea = HAW_usa_nanmin
+					days = 70
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = HAW_kuansong_yiming
+		icon = GFX_focus_GER_party_chancellor_bormann
+		x = -1
+		y = 1
+		prerequisite = { focus = HAW_meiguoren_guxiang }
+		relative_position_id = HAW_meiguoren_guxiang
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = HAW_usa_nanmin
+				}
+				modify_timed_idea = {
+					idea = HAW_usa_nanmin
+					days = 70
+				}
+			}
+			else = {
+				add_timed_idea = {
+					idea = HAW_usa_nanmin
+					days = 70
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			HAW_new_kingdom_dm_effect = yes
+			add_to_variable = { 
+				HAW_new_kingdom_dm_monthly_population = 0.2  
+				tooltip = monthly_population_tt
+			}
+		}
+	}
+
+	focus = {
+		id = HAW_fazhan_lvyouye
+		icon = GFX_focus_SWE_per_albin_bus
+		x = 1
+		y = 1
+		prerequisite = { focus = HAW_wangguo_gongyehua_nuli }
+		relative_position_id = HAW_wangguo_gongyehua_nuli
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			629 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_dynamic_modifier = { 
+					modifier = HAW_travel_place
+					scope = HAW
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			unlock_decision_tooltip = HAW_tanxiangshan_fazhan
+		}
+	}
+
+	focus = {
+		id = HAW_tanxiangshan_kuoda
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 1
+		y = 1
+		prerequisite = { focus = HAW_fazhan_lvyouye }
+		relative_position_id = HAW_fazhan_lvyouye
+		cost = 8
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			629 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = HAW_daxia_diji
+		icon = GFX_focus_JAP_a_functionalist_housing_policy
+		x = 0
+		y = 2
+		prerequisite = { focus = HAW_wangguo_gongyehua_nuli }
+		relative_position_id = HAW_wangguo_gongyehua_nuli
+		cost = 4
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			629 = { 
+				set_state_category = town
+				add_extra_state_shared_building_slots = 1			
+			}
+			random_owned_controlled_state = {
+				limit = {
+					NOT = {
+						state = 629
+					}
+				}
+				set_state_category = rural 
+				add_extra_state_shared_building_slots = 1	
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			unlock_decision_tooltip = HAW_kuozhang_zhufang
+			unlock_decision_tooltip = HAW_jiaao_danyaochang
+			unlock_decision_tooltip = HAW_steel_company
+		}
+	}
+
+	focus = {
+		id = HAW_kuoda_nongchan
+		icon = GFX_focus_PRC_rural_region_development_two
+		x = -1
+		y = 1
+		prerequisite = { focus = HAW_daxia_diji }
+		relative_position_id = HAW_daxia_diji
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			HAW_new_kingdom_dm_effect = yes
+			add_to_variable = { 
+				HAW_new_kingdom_dm_consumer_goods_factor = -0.1 
+				tooltip = consumer_goods_factor_tt
+			}
+			add_to_variable = { 
+				HAW_new_kingdom_dm_monthly_population = 0.2  
+				tooltip = monthly_population_tt
+			}
+		}
+	}
+
+	focus = {
+		id = HAW_usa_jichuang
+		icon = GFX_focus_generic_modernize_industry
+		x = 1
+		y = 1
+		prerequisite = { focus = HAW_daxia_diji }
+		relative_position_id = HAW_daxia_diji
+		cost = 8
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_offsite_building = { type = arms_factory level = 1 }
+			add_offsite_building = { type = industrial_complex level = 1 }
+			custom_effect_tooltip = generic_skip_one_line_tt			
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			unlock_decision_tooltip = HAW_chuntian_shejiju 
+			unlock_decision_tooltip = HAW_USA_tanke_jishu
+			unlock_decision_tooltip = HAW_ford_shejiju
+			unlock_decision_tooltip = HAW_lima_jiche_chang
+			
+		}
+	}
+
+	focus = {
+		id = HAW_haishang_touzi
+		icon = GFX_focus_generic_merchant_fleet
+		x = 1
+		y = 1
+		prerequisite = { 
+			focus = HAW_kuoda_nongchan 
+			focus = HAW_usa_jichuang
+		}
+		relative_position_id = HAW_kuoda_nongchan
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 2 }
+
+			hidden_effect = {
+				country_event = {
+					id = haw_extra.6
+					days = 4
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = HAW_wangguo_zhetangju
+		icon = GFX_focus_SWE_beneath_sticks_and_stone
+		x = -1
+		y = 1
+		prerequisite = { 
+			focus = HAW_kuoda_nongchan 
+			focus = HAW_usa_jichuang
+		}
+		relative_position_id = HAW_kuoda_nongchan
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			unlock_decision_tooltip = HAW_zhetang_jiaoyi
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = when_chosen_tt
+			effect_tooltip = {
+				add_offsite_building = { type = industrial_complex level = 1 }
+			}
+		}
+	}
+
+	focus = {
+		id = HAW_pat_shangmao_zhongxin
+		icon = GFX_focus_CHL_enlarge_the_textile_industries
+		x = 3
+		y = 1
+		prerequisite = { 
+			focus = HAW_kuoda_nongchan 
+			focus = HAW_usa_jichuang
+		}
+		relative_position_id = HAW_kuoda_nongchan
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 1 }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			HAW_new_kingdom_dm_effect = yes
+			add_to_variable = { 
+				HAW_new_kingdom_dm_resource_trade_cost_bonus_per_factory = 2  
+				tooltip = resource_trade_cost_bonus_per_factory_tt
+			}
+		}
+	}
+
+	focus = {
+		id = HAW_pat_yaoyan_baoshi
+		icon = GFX_focus_PHI_pearl_of_the_orient_seas
+	
+		x = 0
+		y = 1
+		prerequisite = { 
+			focus = HAW_wangguo_zhetangju
+		}
+		prerequisite = { 
+			focus = HAW_haishang_touzi
+		}
+		prerequisite = { 
+			focus = HAW_pat_shangmao_zhongxin
+		}
+		relative_position_id = HAW_haishang_touzi
+		cost = 20
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			HAW_new_kingdom_dm_effect = yes
+			add_to_variable = { 
+				HAW_new_kingdom_dm_industrial_capacity_factory = 0.1  
+				tooltip = industrial_capacity_factory_tt
+			}
+			add_to_variable = { 
+				HAW_new_kingdom_dm_production_speed_buildings_factor = 0.1  
+				tooltip = production_speed_buildings_factor_tt
+			}
+			
+		}
+	}
+
+	focus = {
+		id = HAW_chongjian_wangguo
+		icon = GFX_focus_85
+		
+		x = 0
+		y = 1
+		prerequisite = { 
+			focus = HAW_zuihou_jihui 
+		}
+		relative_position_id = HAW_zuihou_jihui
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			HAW_new_kingdom_dm_effect = yes
+			add_to_variable = { 
+				HAW_new_kingdom_dm_stability_factor = 0.1  
+				tooltip = stability_factor_tt
+			}
+			
+		}
+	}
+
+	focus = {
+		id = HAW_junzhu_lixian
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = -1
+		y = 1
+		prerequisite = { 
+			focus = HAW_chongjian_wangguo 
+		}
+		relative_position_id = HAW_chongjian_wangguo
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_political_power = 50
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			HAW_new_kingdom_dm_effect = yes
+			add_to_variable = { 
+				HAW_new_kingdom_dm_democratic_acceptance = 50 
+				#tooltip = democratic_acceptance_tt
+			}
+			add_to_variable = { 
+				HAW_new_kingdom_dm_political_power_factor = 0.1  
+				tooltip = political_power_factor_tt
+			}
+		}
+	}
+
+	focus = {
+		id = HAW_guowang_zhigao_wushang
+		icon = GFX_focus_SOV_zemsky_sobor
+		x = 1
+		y = 1
+		prerequisite = { 
+			focus = HAW_chongjian_wangguo 
+		}
+		relative_position_id = HAW_chongjian_wangguo
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_war_support = 0.1
+		}
+	}
+
+	focus = {
+		id = HAW_huifu_wangguo_xianfa
+		icon = GFX_focus_generic_improve_the_administration
+		x = -1
+		y = 1
+		prerequisite = { 
+			focus = HAW_guowang_zhigao_wushang 
+			focus = HAW_junzhu_lixian
+		}
+		relative_position_id = HAW_guowang_zhigao_wushang
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
+	focus = {
+		id = HAW_hawaii_ponoi
+		icon = GFX_focus_generic_home_defense
+		x = 0
+		y = 2
+		prerequisite = { 
+			focus = HAW_huifu_wangguo_xianfa 
+		}
+		relative_position_id = HAW_huifu_wangguo_xianfa
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			remove_ideas = HAW_cuiruo_zhengquan
+		}
+	}
+
+	focus = {
+		id = HAW_shouxiang
+		icon = GFX_focus_generic_league_of_nations
+		
+		x = -1
+		y = 1
+		prerequisite = { 
+			focus = HAW_junzhu_lixian
+		}
+		relative_position_id = HAW_junzhu_lixian
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			country_event = haw_extra.7
+		}
+	}
+
+	focus = {
+		id = HAW_paichu_shijie
+		icon = GFX_focus_GER_strengthen_the_proletarian_international
+		x = 0
+		y = 2
+		prerequisite = { 
+			focus = HAW_junzhu_lixian
+			focus = HAW_guowang_zhigao_wushang
+		}
+		relative_position_id = HAW_junzhu_lixian
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			custom_effect_tooltip = HAW_paichu_shijie_tt
+			hidden_effect = {
+				every_other_country = {
+					limit = {
+						is_major = yes
+						OR = {
+							has_government = neutrality
+							has_government = fascism	
+						}
+						NOT = { has_war_with = ROOT }
+					}
+					ROOT = {
+						add_offsite_building = { type = industrial_complex level = 1 }
+					}
+				}
+			}
+			
+		}
+	}
+
+	focus = {
+		id = HAW_wangguo_huobi
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 2
+		y = 2
+		prerequisite = { 
+			focus = HAW_junzhu_lixian
+			focus = HAW_guowang_zhigao_wushang
+		}
+		relative_position_id = HAW_junzhu_lixian
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			country_event = haw_extra.8
+		}
+	}
+
+	focus = {
+		id = HAW_kuochong_weidui
+		icon = GFX_focus_generic_limited_social_mobilization
+		x = 1
+		y = 1
+		prerequisite = { 
+			focus = HAW_guowang_zhigao_wushang
+		}
+		relative_position_id = HAW_guowang_zhigao_wushang
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = HAW_kongdom_fuxing_zizhi
+				add_idea = HAW_kongdom_fuxing_zizhi_2
+			}
+		}
+	}
+
+	focus = {
+		id = HAW_wangguo_waijiao
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 6
+		y = 1
+		prerequisite = { 
+			focus = HAW_zuihou_jihui
+		}
+		relative_position_id = HAW_zuihou_jihui
+		cost = 4
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_political_power = 50	
+		}
+	}
+
+	focus = {
+		id = HAW_depend_on_jap
+		icon = GFX_focus_chi_collaboration_with_the_japanese
+		x = -1
+		y = 1
+		prerequisite = { 
+			focus = HAW_wangguo_waijiao
+		}
+		relative_position_id = HAW_wangguo_waijiao
+
+		mutually_exclusive = {
+			focus = HAW_depend_on_usa
+		}
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = JAP_zhengmu_tuizang
+
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = JAP_jichuan_mengfu
+
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = JAP_dadao_hao
+
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			JAP_eco_influence_up = yes
+		}
+	}
+
+	focus = {
+		id = HAW_depend_on_usa
+		icon = GFX_focus_generic_befriend_usa
+		x = 1
+		y = 1
+		prerequisite = { 
+			focus = HAW_wangguo_waijiao
+		}
+		relative_position_id = HAW_wangguo_waijiao
+		mutually_exclusive = {
+			focus = HAW_depend_on_jap
+		}
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = USA_john_boens
+
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = USA_vict_xiusid
+
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = USA_link_mike
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			USA_influence_up = yes
+		}
+	}
+
+	focus = {
+		id = HAW_waiguo_zhuanjia
+		icon = GFX_focus_PHI_japanese_advisors
+		x = -2
+		y = 2
+		prerequisite = { 
+			focus = HAW_depend_on_usa
+			focus = HAW_depend_on_jap
+		}
+		relative_position_id = HAW_wangguo_waijiao
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			custom_effect_tooltip = complete_depend_jap_tt
+			effect_tooltip = {
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 3
+					category = infantry_weapons
+					category = artillery
+					category = support_tech
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = complete_depend_usa_tt
+			effect_tooltip = {
+				add_tech_bonus = {
+					bonus = 0.75
+					uses = 2
+					category = industry
+					category = electronics
+				}
+			}
+
+			hidden_effect = {
+				if = {
+					limit = {
+						has_completed_focus = HAW_depend_on_jap
+					}
+					add_tech_bonus = {
+						bonus = 0.5
+						uses = 3
+						category = infantry_weapons
+						category = artillery
+						category = support_tech
+					}
+				}
+				if = {
+					limit = {
+						has_completed_focus = HAW_depend_on_usa
+					}
+					add_tech_bonus = {
+						bonus = 0.75
+						uses = 2
+						category = industry
+						category = electronics
+					}
+				}
+			}
+		}
+	}
+
+
+	focus = {
+		id = HAW_junshi_guwen
+		icon = GFX_focus_chi_army_reform
+		x = 0
+		y = 2
+		prerequisite = { 
+			focus = HAW_depend_on_usa
+			focus = HAW_depend_on_jap
+		}
+		relative_position_id = HAW_wangguo_waijiao
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			custom_effect_tooltip = complete_depend_jap_tt
+			effect_tooltip = {
+				army_experience = 15
+				add_equipment_to_stockpile = { 
+					type = infantry_equipment
+					amount = 3000 
+					producer = JAP
+				}
+				add_equipment_to_stockpile = { 
+					type = support_equipment
+					amount = 250
+					producer = JAP
+				}
+				add_equipment_to_stockpile = { 
+					type = artillery_equipment
+					amount = 100
+					producer = JAP
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = complete_depend_usa_tt
+			effect_tooltip = {
+				army_experience = 15
+				air_experience = 15
+
+				reduce_focus_completion_cost = {
+					focus = HAW_usa_liuwang_haozhao_aiguo_renshi
+					cost = 28
+				}
+				reduce_focus_completion_cost = {
+					focus = HAW_usa_liuwang_caf_buman
+					cost = 28
+				}
+			}
+
+			hidden_effect = {
+				if = {
+					limit={
+						has_completed_focus = HAW_depend_on_jap
+					}
+					army_experience = 15
+					add_equipment_to_stockpile = { 
+						type = infantry_equipment
+						amount = 3000 
+						producer = JAP
+					}
+					add_equipment_to_stockpile = { 
+						type = support_equipment
+						amount = 250
+						producer = JAP
+					}
+					add_equipment_to_stockpile = { 
+						type = artillery_equipment
+						amount = 100
+						producer = JAP
+					}
+				}
+
+				if = {
+					limit = {
+						has_completed_focus = HAW_depend_on_usa
+					}
+					army_experience = 15
+					air_experience = 15
+
+					reduce_focus_completion_cost = {
+						focus = HAW_usa_liuwang_haozhao_aiguo_renshi
+						cost = 28
+					}
+					reduce_focus_completion_cost = {
+						focus = HAW_usa_liuwang_caf_buman
+						cost = 28
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = HAW_heban_xuexiao
+		icon = GFX_focus_NORDIC_com_capstone_research
+		x = 2
+		y = 2
+		prerequisite = { 
+			focus = HAW_depend_on_usa
+			focus = HAW_depend_on_jap
+		}
+		relative_position_id = HAW_wangguo_waijiao
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = HAW_shoujiaoyu_zizhu
+				}
+				modify_timed_idea = {
+					idea = HAW_shoujiaoyu_zizhu
+					days = 180
+				}
+			}
+			else = {
+				add_timed_idea = {
+					idea = HAW_shoujiaoyu_zizhu
+					days = 180
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = HAW_join_jap
+		icon = GFX_focus_JAP_the_eternal_kingdom
+		x = 0
+		y = 2
+		prerequisite = { 
+			focus = HAW_depend_on_jap
+		}
+		relative_position_id = HAW_depend_on_jap
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+
+		available = {
+			JAP = {
+				OR = {
+					has_government = neutrality
+					has_government = fascism
+				}
+				NOT = {
+					has_War_with = ROOT
+				}
+			}
+			is_in_faction = no
+		}
+		
+		bypass = {
+			is_in_faction_with = JAP
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			JAP = {
+				country_event = generic.2
+			}
+		}
+	}
+
+	focus = {
+		id = HAW_join_usa
+		icon = GFX_focus_PHI_appoint_macarthur
+		x = 0
+		y = 2
+		prerequisite = { 
+			focus = HAW_depend_on_usa
+		}
+		relative_position_id = HAW_depend_on_usa
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+
+		available = {
+			USA = {
+				OR = {
+					has_government = neutrality
+					has_government = fascism
+				}
+				NOT = {
+					has_War_with = ROOT
+				}
+			}
+			is_in_faction = no
+		}
+		
+		bypass = {
+			OR = {
+				is_subject_of = USA
+			}
+			is_in_faction_with = USA
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			USA = {
+				country_event = generic.2
+			}
+		}
+	}
+
+	focus = {
+		id = HAW_jap_yuanzhu
+		icon = GFX_focus_generic_military_industry
+		x = -1
+		y = 1
+		prerequisite = { 
+			focus = HAW_join_jap
+		}
+		relative_position_id = HAW_join_jap
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		available = {
+			is_in_faction_with = JAP
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_offsite_building = { type = arms_factory level = 3 }
+			
+		}
+	}
+
+	focus = {
+		id = HAW_usa_butie
+		icon = GFX_focus_generic_agricultural_subsidies
+		x = 1
+		y = 1
+		prerequisite = { 
+			focus = HAW_join_usa
+		}
+		relative_position_id = HAW_join_usa
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			is_in_faction_with = USA
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			
+			add_offsite_building = { type = industrial_complex level = 3 }
+		}
+	}
+
+	focus = {
+		id = HAW_gaodengxuefu_fenxiao
+		icon = GFX_focus_NORDIC_mon_research
+		x = -1
+		y = 1
+		prerequisite = { 
+			focus = HAW_join_jap
+			focus = HAW_join_usa
+		}
+		relative_position_id = HAW_join_usa
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = HAW_hawaii_exists
+		icon = GFX_focus_SWI_establish_pro_helvetia
+		x = 0
+		y = 1
+		prerequisite = { 
+			focus = HAW_jap_yuanzhu
+			focus = HAW_usa_butie
+		}
+		prerequisite = { 
+			focus = HAW_gaodengxuefu_fenxiao
+		}
+		relative_position_id = HAW_gaodengxuefu_fenxiao
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			HAW_new_kingdom_dm_effect = yes
+			add_to_variable = { 
+				HAW_new_kingdom_dm_research_speed_factor = 0.05  
+				tooltip = research_speed_factor_tt
+			}
+			add_to_variable = { 
+				HAW_new_kingdom_dm_global_building_slots_factor = 0.2  
+				tooltip =  global_building_slots_factor_tt
+			}
+		}
+	}
+
+	
+	focus = {
+		id = HAW_usa_liuwang_tiyi
+		icon = GFX_focus_ARG_anti_american_propaganda
+		x = 12
+		y = 1
+		#prerequisite = {focus = HAW_zuihou_jihui}
+		relative_position_id = HAW_zuihou_jihui
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+
+		available = {
+			NOT = {
+				has_completed_focus = HAW_join_usa
+			}
+			NOT = {
+				is_in_faction_with = USA
+			}
+			has_country_flag = USA_democratic_out_flag
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			USA_influence_up = yes
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = {
+					has_idea = HAW_usa_nanmin
+				}
+				modify_timed_idea = {
+					idea = HAW_usa_nanmin
+					days = 70
+				}
+			}
+			else = {
+				add_timed_idea = {
+					idea = HAW_usa_nanmin
+					days = 70
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = HAW_usa_liuwang_haozhao_aiguo_renshi
+		icon = GFX_focus_NORDIC_com_selector_army
+		x = -1
+		y = 1
+		prerequisite = {focus = HAW_usa_liuwang_tiyi}
+		relative_position_id = HAW_usa_liuwang_tiyi
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			629 = {
+				create_unit = {
+					division = "division_template = \"US Army\" start_experience_factor = 0.5 start_equipment_factor = 0.5.0"
+					owner = ROOT
+					count = 10
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = HAW_usa_liuwang_caf_buman
+		icon = GFX_focus_NORDIC_com_capstone_army
+		x = 1
+		y = 1
+		prerequisite = {focus = HAW_usa_liuwang_tiyi}
+		relative_position_id = HAW_usa_liuwang_tiyi
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			#378 379 385
+			custom_effect_tooltip =  HAW_usa_liuwang_caf_buman_tt
+		}
+	}
+
+	focus = {
+		id = HAW_war_of_us
+		icon = GFX_focus_NORDIC_mon_selector_airforce
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = HAW_usa_liuwang_haozhao_aiguo_renshi
+			#focus = HAW_usa_liuwang_caf_buman
+		}
+		prerequisite = {
+			#focus = HAW_usa_liuwang_haozhao_aiguo_renshi
+			focus = HAW_usa_liuwang_caf_buman
+		}
+		relative_position_id = HAW_usa_liuwang_haozhao_aiguo_renshi
+		cost = 4
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		available = {
+			NOT = {
+				has_completed_focus = HAW_join_usa
+			}
+			NOT = {
+				is_in_faction_with = USA
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			unlock_decision_tooltip = HAW_war_of_usa_des
+		}
+	}
+
+	focus = {
+		id = HAW_hezhong_weiyi
+		icon = GFX_focus_NORDIC_com_institution_1
+		x = 0
+		y = 1
+
+		prerequisite = {
+			focus = HAW_war_of_us
+		}
+		relative_position_id = HAW_war_of_us
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		available = {
+			USA = {
+				exists = no
+			}
+			any_state = {
+				is_core_of = USA
+				is_controlled_by = ROOT
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_country_leader_trait = STRONG_king
+
+			hidden_effect = {
+				
+			}
+		}
+	}
+
+	focus = {
+		id = HAW_us_kingdom
+		icon = GFX_focus_86
+		x = 0
+		y = 1
+
+		#prerequisite = {
+		#	focus = HAW_war_of_us
+		#}
+		relative_position_id = HAW_hawaii_ponoi
+		cost = 8
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		available = {
+			USA = {
+				exists = no
+			}
+			any_state = {
+				is_core_of = USA
+				is_controlled_by = ROOT
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_core_of = USA	
+					is_controlled_by = ROOT	
+				}
+				add_compliance = 20
+				add_resistance_target = -20
+
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = HAW_us_tuoxie
+		icon = GFX_goal_generic_dangerous_deal
+		x = -1
+		y = 1
+
+		prerequisite = {
+			focus = HAW_us_kingdom
+		}
+		relative_position_id = HAW_us_kingdom
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_political_power = 50
+			add_popularity = {
+    			ideology = democratic
+    			popularity = 0.2
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			every_state = {
+				limit = {
+					is_core_of = USA	
+					is_controlled_by = ROOT	
+				}
+				add_compliance = 10
+				add_resistance_target = -10
+
+			}
+		}
+	}
+
+	focus = {
+		id = HAW_us_neige_genghuan
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 1
+		y = 1
+
+		prerequisite = {
+			focus = HAW_us_kingdom
+		}
+		relative_position_id = HAW_us_kingdom
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = HAW_liuyisi_daogelasi
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = HAW_john_hanmiertun
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = HAW_arthur_kapo
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = HAW_luobote_patesen
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+		}
+	}
+
+	focus = {
+		id = HAW_us_quebao_qiye
+		icon = GFX_goal_generic_improve_relations
+		x = 3
+		y = 1
+
+		prerequisite = {
+			focus = HAW_us_kingdom
+		}
+		relative_position_id = HAW_us_kingdom
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			custom_effect_tooltip = HAW_us_quebao_qiye_tt
+			set_country_flag = HAW_us_tongyi_qiye_quebao_flag
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			every_military_industrial_organization = {
+				add_mio_size = 2
+			}
+		}
+	}
+
+	focus = {
+		id = HAW_us_baozhang_minquan
+		icon = GFX_goal_generic_production
+		x = -3
+		y = 1
+
+		prerequisite = {
+			focus = HAW_us_kingdom
+		}
+		relative_position_id = HAW_us_kingdom
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_stability = 0.1
+
+			every_state = {
+				limit = {
+					is_core_of = USA	
+					is_controlled_by = ROOT	
+				}
+				add_compliance = 10
+				add_resistance_target = -10
+
+			}
+		}
+	}
+
+	focus = {
+		id = HAW_us_a_king
+		icon = GFX_focus_usa_recruit_the_free_corps
+		x = 0
+		y = 2
+
+		prerequisite = {
+			focus = HAW_us_baozhang_minquan
+		}
+		prerequisite = {
+			focus = HAW_us_tuoxie
+		}
+		prerequisite = {
+			focus = HAW_us_neige_genghuan
+		}
+		prerequisite = {
+			focus = HAW_us_quebao_qiye
+		}
+		relative_position_id = HAW_us_kingdom
+		cost = 8
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_country_leader_trait = usa_king
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			every_state = {
+				limit = {
+					is_core_of = USA
+				}
+				add_core_of = ROOT
+			}
+
+			set_cosmetic_tag = USA_Kingdom_tag
+
+			#mark_focus_tree_layout_dirty = yes
+		}
+	}
+
+
+	focus = {
+		id = HAW_us_guojia_fuxing
+		icon = GFX_goal_continuous_non_factory_construct
+		x = -1
+		y = 1
+
+		prerequisite = {
+			focus = HAW_us_a_king
+		}
+		relative_position_id = HAW_us_a_king
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			HAW_new_kingdom_dm_effect = yes
+			add_to_variable = { 
+				HAW_new_kingdom_dm_production_factory_max_efficiency_factor = 0.1  
+				tooltip = production_factory_max_efficiency_factor_tt
+			}
+			add_to_variable = { 
+				HAW_new_kingdom_dm_local_resources_factor = 0.1  
+				tooltip = local_resources_factor_tt
+			}
+		}
+	}
+
+	focus = {
+		id = HAW_us_laogong_dongyuan
+		icon = GFX_goal_generic_production2
+		x = 1
+		y = 1
+
+		prerequisite = {
+			focus = HAW_us_a_king
+		}
+		relative_position_id = HAW_us_a_king
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			HAW_new_kingdom_dm_effect = yes
+			add_to_variable = { 
+				HAW_new_kingdom_dm_production_speed_industrial_complex_factor = 0.1  
+				tooltip = production_speed_industrial_complex_factor_tt
+			}
+			add_to_variable = { 
+				HAW_new_kingdom_dm_production_speed_arms_factory_factor = 0.1  
+				tooltip = production_speed_arms_factory_factor_tt
+			}
+		}
+	}
+
+	focus = {
+		id = HAW_us_usa_jueqi
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 1
+		y = 1
+
+		prerequisite = {
+			focus = HAW_us_guojia_fuxing
+			#focus = HAW_us_laogong_dongyuan
+		}
+		prerequisite = {
+			#focus = HAW_us_guojia_fuxing
+			focus = HAW_us_laogong_dongyuan
+		}
+		relative_position_id = HAW_us_guojia_fuxing
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+		
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_ideas = HAW_us_jueqi_idea
+		}
+	}
+
+	focus = {
+		id = HAW_us_guowang_tianhuang
+		icon = GFX_focus_PER_fascist_reach_out_to_japan
+		x =-2
+		y = 2
+
+		prerequisite = {
+			focus = HAW_us_baozhang_minquan
+		}
+		prerequisite = {
+			focus = HAW_us_tuoxie
+		}
+		prerequisite = {
+			focus = HAW_us_neige_genghuan
+		}
+		prerequisite = {
+			focus = HAW_us_quebao_qiye
+		}
+		relative_position_id = HAW_us_kingdom
+
+		
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			is_in_faction = no
+			NOT = {
+				has_war_with = JAP
+			}
+		}
+		
+		
+		
+		bypass = {
+			is_in_faction_with = JAP
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			JAP = {
+				country_event = generic.2
+			}
+		}
+	}
+
+	focus = {
+		id = HAW_us_kaolao_mengyou
+		icon = GFX_focus_PHI_encourage_japanese_investment
+		x =-1
+		y = 1
+
+		prerequisite = {
+			focus = HAW_us_guowang_tianhuang
+		}
+		relative_position_id = HAW_us_guowang_tianhuang
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			JAP = {
+				add_offsite_building = { type = industrial_complex level = 5 }
+			}
+		}
+	}
+
+	focus = {
+		id = HAW_us_meiri_hezuo
+		icon = GFX_focus_jap_pacific_guardian
+		x = -3
+		y = 1
+
+		prerequisite = {
+			focus = HAW_us_guowang_tianhuang
+		}
+		relative_position_id = HAW_us_guowang_tianhuang
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			HAW = {
+				add_to_tech_sharing_group = US_JAP_research
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			JAP = {
+				add_to_tech_sharing_group = US_JAP_research
+			}
+		}
+	}
+
+	focus = {
+		id = HAW_us_pat_eco
+		icon = GFX_focus_JAP_free_colonised_asian_countries
+		x = -1
+		y = 1
+
+		prerequisite = {
+			focus = HAW_us_kaolao_mengyou
+		}
+		prerequisite = {
+			focus = HAW_us_meiri_hezuo
+		}
+		relative_position_id = HAW_us_kaolao_mengyou
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			effect_tooltip = {
+				HAW = {
+					add_ideas = USA_pat_eco
+					add_offsite_building = { type = industrial_complex level = 2 }
+
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				JAP = {
+					add_ideas = USA_pat_eco
+				}
+			}
+
+			hidden_effect = {
+				HAW = {
+					add_ideas = USA_pat_eco
+					add_offsite_building = { type = industrial_complex level = 2 }
+				}
+				every_other_country = {
+					limit = {
+						is_in_faction_with = USA
+					}
+					add_ideas = USA_pat_eco
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = HAW_us_kaifang_jinkou
+		icon = GFX_focus_PHI_develop_japanese_trade_connections
+		x = -1
+		y = 1
+
+		prerequisite = {
+			focus = HAW_us_guojia_fuxing
+		}
+		prerequisite = {
+			focus = HAW_us_meiri_hezuo
+		}
+		relative_position_id = HAW_us_guojia_fuxing
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			HAW = {
+				add_offsite_building = { type = industrial_complex level = 2 }
+
+				add_ideas = HAW_USA_eco
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			JAP = {
+				add_ideas = HAW_JAP_eco
+			}
+		}
+	}
+
+	focus = {
+		id = HAW_us_goodbye_jap
+		icon = GFX_focus_attack_japan
+		x = 2
+		y = 2
+
+		prerequisite = {
+			focus = HAW_us_baozhang_minquan
+		}
+		prerequisite = {
+			focus = HAW_us_tuoxie
+		}
+		prerequisite = {
+			focus = HAW_us_neige_genghuan
+		}
+		prerequisite = {
+			focus = HAW_us_quebao_qiye
+		}
+		relative_position_id = HAW_us_kingdom
+
+		
+		cost = 4
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			if = {
+				limit = {
+					is_subject_of = JAP
+				}
+				JAP = { set_autonomy = { target = ROOT autonomy_state = autonomy_free } }
+			}
+
+			JAP_eco_influence_down = yes
+		
+		}
+	}
+
+	focus = {
+		id = HAW_us_yaoqiu_jap_gun
+		icon = GFX_goal_continuous_suppression
+		x = 1
+		y = 1
+
+		prerequisite = {
+			focus = HAW_us_goodbye_jap
+		}
+		relative_position_id = HAW_us_goodbye_jap
+
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			JAP = {
+				country_event =haw_extra.10
+			}
+		}
+	}
+
+	focus = {
+		id = HAW_chongfan_shijie
+		icon = GFX_focus_SWE_revoke_militia_law
+		x = 3
+		y = 1
+
+		prerequisite = {
+			focus = HAW_us_goodbye_jap
+		}
+		relative_position_id = HAW_us_goodbye_jap
+
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_war_support = 0.1
+		}
+	}
+
+
+	focus = {
+		id = HAW_join_yingguo
+		icon = GFX_focus_eng_the_sun_never_sets
+		x = -1
+		y = 1
+
+		prerequisite = {
+			focus = HAW_chongfan_shijie
+		}
+		relative_position_id = HAW_chongfan_shijie
+		
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			ENG = {
+				NOT = {
+					has_government = communism
+				}
+			}
+
+			is_in_faction = no
+		}
+		
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			ENG = {
+				country_event = generic.2
+			}
+		}
+	}
+
+	focus = {
+		id = HAW_chuangzao_gengduo_gangwei
+		icon = GFX_focus_PRC_bolshevik_urbanization_completed
+		x = 1
+		y = 1
+
+		prerequisite = {
+			focus = HAW_us_yaoqiu_jap_gun
+		}
+		prerequisite = {
+			focus = HAW_us_laogong_dongyuan
+		}
+		relative_position_id = HAW_us_laogong_dongyuan
+		
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			HAW_new_kingdom_dm_effect = yes
+			add_to_variable = { 
+				HAW_new_kingdom_dm_production_speed_buildings_factor = 0.1  
+				tooltip = production_speed_buildings_factor_tt
+			}
+			add_to_variable = { 
+				HAW_new_kingdom_dm_production_factory_efficiency_gain_factor = 0.1  
+				tooltip = production_factory_efficiency_gain_factor_tt
+			}
+		}
+	}
+
+
+	focus = {
+		id = HAW_usa_century
+		icon = GFX_focus_PHI_united_states_army_forces_in_the_far_east
+		x = 0
+		y = 1
+
+		prerequisite = {
+			focus = HAW_us_usa_jueqi
+		}
+		prerequisite = {
+			focus = HAW_chuangzao_gengduo_gangwei
+			focus = HAW_us_kaifang_jinkou
+		}
+		relative_position_id = HAW_us_usa_jueqi
+		
+
+		cost = 8
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = HAW_us_jueqi_idea
+				add_idea = HAW_us_jueqi_idea2
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_research_slot = 1
+		}
+	}
+
+}

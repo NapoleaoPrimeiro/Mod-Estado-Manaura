@@ -1,0 +1,46 @@
+###########################################################
+# France Rework - feedback 3 events
+###########################################################
+add_namespace = frw_fb3
+
+# Germany backed down in the Rhineland
+country_event = {
+	id = frw_fb3.1
+	title = frw_fb3.1.t
+	desc = frw_fb3.1.d
+	picture = GFX_report_event_french_british_officers
+	is_triggered_only = yes
+
+	option = {
+		name = frw_fb3.1.a
+		add_political_power = 100
+		add_timed_idea = { idea = FRW_rhine_held days = 365 }
+	}
+}
+
+# Trotsky arrives in France
+country_event = {
+	id = frw_fb3.2
+	title = frw_fb3.2.t
+	desc = frw_fb3.2.d
+	picture = GFX_report_event_communist_leader
+	is_triggered_only = yes
+
+	option = {
+		name = frw_fb3.2.a
+		custom_effect_tooltip = frw_fb3.2.a.tt
+		if = {
+			limit = { has_country_flag = FRW_backer_pivert }
+			add_stability = 0.03
+			add_popularity = { ideology = communism popularity = 0.03 }
+		}
+		if = {
+			limit = { has_country_flag = FRW_backer_thorez }
+			add_stability = -0.05
+		}
+		if = {
+			limit = { SOV = { exists = yes has_government = communism } }
+			SOV = { add_opinion_modifier = { target = ROOT modifier = FRW_trotsky_affront } }
+		}
+	}
+}

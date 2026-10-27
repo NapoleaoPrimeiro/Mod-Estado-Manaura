@@ -1,0 +1,1806 @@
+guiTypes = {
+
+	containerWindowType = {
+		name = "ccshtool_toggle_visibility_window"
+		position = { x = 1890   y = 120 }
+		size = { width = 100%%   height = 100%% }
+		Orientation = upper_left
+		moveable = no
+		clipping = no
+
+		buttonType = {
+			name = "ccshtool_toggle_visibility_button"
+			position = { x = 0   y = 0 }
+			spriteType = "GFX_generic_29x29_button"
+			shortcut = "ctrl+shift+h"
+			pdx_tooltip = ccshtool_toggle_visibility_button_tt
+		}
+
+		instantTextBoxType = {
+			name = "ccshtool_toggle_visibility_text"
+			position = { x = 0 y = 6 }
+			font = "hoi_16mbs"
+			format = center
+			text = "HT"
+			maxWidth = 29
+			maxHeight = 29
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+	}
+
+
+	containerWindowType = {
+		name = "ccshtool_target_window"
+		position = { x = 11   y = 54 }
+		size = { width = 100%%   height = 100%% }
+		Orientation = upper_left
+		moveable = no
+		clipping = no
+
+		background = {
+			name = "ccshtool_target_bg"
+			spriteType = "GFX_target_receiver_bg"
+		}
+
+		instantTextBoxType = {
+			name = "ccshtool_target_title_text"
+			position = { x = 9 y = 7 }
+			font = "hoi_16mbs"
+			format = left
+			text = "Target"
+			maxWidth = 300
+			maxHeight = 20
+			fixedsize = yes
+		}
+
+		instantTextBoxType = {
+			name = "ccshtool_target_text"
+			position = { x = 9 y = 25 }
+			font = "hoi_16mbs"
+			format = left
+			text = ccshtool_target_name
+			maxWidth = 300
+			maxHeight = 20
+			fixedsize = yes
+		}
+
+		buttonType = {
+			name = "ccshtool_target_toggle_on_button"
+			position = { x = 453   y = 5 }
+			spriteType = "GFX_toggle_on_button"
+			pdx_tooltip = ccshtool_target_toggle_on_button_tt
+		}
+
+		buttonType = {
+			name = "ccshtool_target_toggle_off_button"
+			position = { x = 453   y = 5 }
+			spriteType = "GFX_toggle_off_button"
+			pdx_tooltip = ccshtool_target_toggle_off_button_tt
+		}
+	}
+
+	containerWindowType = {
+		name = "ccshtool_receiver_window"
+		position = { x = 11   y = 98 }
+		size = { width = 100%%   height = 100%% }
+		Orientation = upper_left
+		moveable = no
+		clipping = no
+
+		background = {
+			name = "ccshtool_receiver_bg"
+			spriteType = "GFX_target_receiver_bg"
+		}
+
+		instantTextBoxType = {
+			name = "ccshtool_receiver_title_text"
+			position = { x = 9 y = 7 }
+			font = "hoi_16mbs"
+			format = left
+			text = "Receiver"
+			maxWidth = 300
+			maxHeight = 20
+			fixedsize = yes
+		}
+
+		instantTextBoxType = {
+			name = "ccshtool_receiver_text"
+			position = { x = 9 y = 25 }
+			font = "hoi_16mbs"
+			format = left
+			text = ccshtool_receiver_name
+			maxWidth = 300
+			maxHeight = 20
+			fixedsize = yes
+		}
+
+		buttonType = {
+			name = "ccshtool_receiver_toggle_on_button"
+			position = { x = 453   y = 5 }
+			spriteType = "GFX_toggle_on_button"
+			pdx_tooltip = ccshtool_receiver_toggle_on_button_tt
+		}
+
+		buttonType = {
+			name = "ccshtool_receiver_toggle_off_button"
+			position = { x = 453   y = 5 }
+			spriteType = "GFX_toggle_off_button"
+			pdx_tooltip = ccshtool_receiver_toggle_off_button_tt
+		}
+	}
+
+	containerWindowType = {
+		name = "ccshtool_state_tool_mark_unmark_window"
+		position = { x = 6   y = 6 }
+		size = { width = 100%%   height = 100%% }
+		Orientation = upper_left
+		moveable = no
+		clipping = no
+	
+		buttonType = {
+			name = "ccshtool_mark_state_button"
+			position = { x = 0   y = 0 }
+			spriteType = "GFX_generic_long_button"
+			shortcut = "ctrl+shift+m"
+			pdx_tooltip = ccshtool_mark_state_button_tt
+		}
+
+		instantTextBoxType = {
+			name = "ccshtool_mark_state_text"
+			position = { x = 6   y = 3 }
+			font = "hoi_16mbs"
+			format = center
+			text = "Mark State"
+			maxWidth = 100
+			maxHeight = 20
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+
+		buttonType = {
+			name = "ccshtool_unmark_state_button"
+			position = { x = 116   y = 0 }
+			spriteType = "GFX_generic_long_button"
+			shortcut = "ctrl+shift+u"
+			pdx_tooltip = ccshtool_unmark_state_button_tt
+		}
+
+		instantTextBoxType = {
+			name = "ccshtool_unmark_state_text"
+			position = { x = 122 y = 3 }
+			font = "hoi_16mbs"
+			format = center
+			text = "Unmark State"
+			maxWidth = 100
+			maxHeight = 20
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+
+		buttonType = {
+			name = "ccshtool_mark_all_states_button"
+			position = { x = 0   y = 24 }
+			spriteType = "GFX_generic_long_button"
+			pdx_tooltip = ccshtool_mark_all_states_button_tt
+		}
+
+		instantTextBoxType = {
+			name = "ccshtool_mark_all_text"
+			position = { x = 6 y = 27 }
+			font = "hoi_16mbs"
+			format = center
+			text = "Mark All"
+			maxWidth = 100
+			maxHeight = 20
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+
+		buttonType = {
+			name = "ccshtool_unmark_all_states_button"
+			position = { x = 116   y = 24 }
+			spriteType = "GFX_generic_long_button"
+			pdx_tooltip = ccshtool_unmark_all_states_button_tt
+		}
+
+		instantTextBoxType = {
+			name = "ccshtool_unmark_all_text"
+			position = { x = 122 y = 27 }
+			font = "hoi_16mbs"
+			format = center
+			text = "Unmark All"
+			maxWidth = 100
+			maxHeight = 20
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "ccshtool_main_window"
+		position = { x = 390   y = 110 }
+		size = { width = 500   height = 501 }
+		Orientation = upper_left
+		moveable = yes
+		clipping = yes
+
+		background = {
+			name = "ccshtool_main_bg"
+			spriteType = "GFX_main_bg"
+		}
+
+		instantTextBoxType = {
+			name = "ccshtool_main_title_text"
+			position = { x = 21 y = 19 }
+			font = "hoi_30header"
+			format = left
+			text = "Host Tool"
+			maxWidth = 300
+			maxHeight = 30
+			fixedsize = yes
+		}
+
+		buttonType = {
+			name = "ccshtool_in_use_button"
+			position = { x = 192   y = 21 }
+			spriteType = "GFX_in_use_button"
+			pdx_tooltip = ccshtool_in_use_button_tt
+		}
+
+		instantTextBoxType = {
+			name = "ccshtool_in_use_text"
+			position = { x = 192 y = 26 }
+			font = "hoi_16mbs"
+			format = center
+			text = "In Progress"
+			maxWidth = 100
+			maxHeight = 30
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+
+		buttonType = {
+			name = "ccshtool_close_button"
+			position = { x = 451   y = 20 }
+			spriteType = "GFX_close_button"
+			shortcut = "ESCAPE"
+			pdx_tooltip = ccshtool_close_button_tt
+		}
+
+		buttonType = {
+			name = "ccshtool_info_button"
+			position = { x = 421   y = 20 }
+			spriteType = "GFX_info_button"
+			pdx_tooltip = ccshtool_info_button_tt
+		}
+
+		buttonType = {
+			name = "ccshtool_switch_button"
+			position = { x = 391   y = 20 }
+			spriteType = "GFX_switch_button"
+			pdx_tooltip = ccshtool_switch_button_tt
+		}
+
+		buttonType = {
+			name = "ccshtool_add_host_button"
+			position = { x = 332   y = 18 }
+			spriteType = "GFX_add_large_button"
+			pdx_tooltip = ccshtool_add_host_button_tt
+		}
+
+		buttonType = {
+			name = "ccshtool_remove_host_button"
+			position = { x = 360   y = 18 }
+			spriteType = "GFX_sub_large_button"
+			pdx_tooltip = ccshtool_remove_host_button_tt
+		}
+
+		containerWindowType = {
+			name = "ccshtool_target_dummy_window"
+			position = { x = 11   y = 54 }
+			size = { width = 100%%   height = 100%% }
+			Orientation = upper_left
+			moveable = no
+			clipping = no
+
+			background = {
+				name = "ccshtool_target_dummy_bg"
+				spriteType = "GFX_target_receiver_bg"
+			}
+
+			instantTextBoxType = {
+				name = "ccshtool_target_dummy_title_text"
+				position = { x = 9 y = 7 }
+				font = "hoi_16mbs"
+				format = left
+				text = "Target"
+				maxWidth = 300
+				maxHeight = 20
+				fixedsize = yes
+			}
+
+			instantTextBoxType = {
+				name = "ccshtool_target_dummy_text"
+				position = { x = 9 y = 25 }
+				font = "hoi_16mbs"
+				format = left
+				text = "Click on a country."
+				maxWidth = 300
+				maxHeight = 20
+				fixedsize = yes
+			}
+
+			buttonType = {
+				name = "ccshtool_target_dummy_toggle_off_button"
+				position = { x = 453   y = 5 }
+				spriteType = "GFX_toggle_off_button"
+				pdx_tooltip = ccshtool_target_toggle_off_button_tt
+			}
+		}
+
+		containerWindowType = {
+			name = "ccshtool_receiver_dummy_window"
+			position = { x = 11   y = 98 }
+			size = { width = 100%%   height = 100%% }
+			Orientation = upper_left
+			moveable = no
+			clipping = no
+
+			background = {
+				name = "ccshtool_receiver_dummy_bg"
+				spriteType = "GFX_target_receiver_bg"
+			}
+
+			instantTextBoxType = {
+				name = "ccshtool_receiver_dummy_title_text"
+				position = { x = 9 y = 7 }
+				font = "hoi_16mbs"
+				format = left
+				text = "Receiver"
+				maxWidth = 300
+				maxHeight = 20
+				fixedsize = yes
+			}
+
+			instantTextBoxType = {
+				name = "ccshtool_receiver_dummy_text"
+				position = { x = 9 y = 25 }
+				font = "hoi_16mbs"
+				format = left
+				text = "Click on a country."
+				maxWidth = 300
+				maxHeight = 20
+				fixedsize = yes
+			}
+
+			buttonType = {
+				name = "ccshtool_receiver_dummy_toggle_off_button"
+				position = { x = 453   y = 5 }
+				spriteType = "GFX_toggle_off_button"
+				pdx_tooltip = ccshtool_receiver_toggle_off_button_tt
+			}
+		}
+
+		containerWindowType = {
+			name = "ccshtool_state_tool_window"
+			position = { x = 11   y = 143 }
+			size = { width = 100%%   height = 100%% }
+			Orientation = upper_left
+			moveable = no
+			clipping = no
+
+			background = {
+				name = "ccshtool_state_tool_bg"
+				spriteType = "GFX_state_tool_bg"
+			}
+
+			containerWindowType = {
+				name = "ccshtool_state_tool_mark_unmark_dummy_window"
+				position = { x = 6   y = 6 }
+				size = { width = 100%%   height = 100%% }
+				Orientation = upper_left
+				moveable = no
+				clipping = no
+			
+				buttonType = {
+					name = "ccshtool_mark_state_dummy_button"
+					position = { x = 0   y = 0 }
+					spriteType = "GFX_generic_long_button"
+					shortcut = "ctrl+shift+m"
+					pdx_tooltip = ccshtool_mark_state_button_tt
+				}
+
+				instantTextBoxType = {
+					name = "ccshtool_mark_state_dummy_text"
+					position = { x = 6   y = 3 }
+					font = "hoi_16mbs"
+					format = center
+					text = "Mark State"
+					maxWidth = 100
+					maxHeight = 20
+					fixedsize = yes
+					alwaystransparent = yes
+				}
+
+				buttonType = {
+					name = "ccshtool_unmark_state_dummy_button"
+					position = { x = 116   y = 0 }
+					spriteType = "GFX_generic_long_button"
+					shortcut = "ctrl+shift+u"
+					pdx_tooltip = ccshtool_unmark_state_button_tt
+				}
+
+				instantTextBoxType = {
+					name = "ccshtool_unmark_state_dummy_text"
+					position = { x = 122 y = 3 }
+					font = "hoi_16mbs"
+					format = center
+					text = "Unmark State"
+					maxWidth = 100
+					maxHeight = 20
+					fixedsize = yes
+					alwaystransparent = yes
+				}
+
+				buttonType = {
+					name = "ccshtool_mark_all_states_dummy_button"
+					position = { x = 0   y = 24 }
+					spriteType = "GFX_generic_long_button"
+					pdx_tooltip = ccshtool_mark_all_states_button_tt
+				}
+
+				instantTextBoxType = {
+					name = "ccshtool_mark_all_dummy_text"
+					position = { x = 6 y = 27 }
+					font = "hoi_16mbs"
+					format = center
+					text = "Mark All"
+					maxWidth = 100
+					maxHeight = 20
+					fixedsize = yes
+					alwaystransparent = yes
+				}
+
+				buttonType = {
+					name = "ccshtool_unmark_all_states_dummy_button"
+					position = { x = 116   y = 24 }
+					spriteType = "GFX_generic_long_button"
+					pdx_tooltip = ccshtool_unmark_all_states_button_tt
+				}
+
+				instantTextBoxType = {
+					name = "ccshtool_unmark_all_dummy_text"
+					position = { x = 122 y = 27 }
+					font = "hoi_16mbs"
+					format = center
+					text = "Unmark All"
+					maxWidth = 100
+					maxHeight = 20
+					fixedsize = yes
+					alwaystransparent = yes
+				}
+			}
+
+			buttonType = {
+				name = "ccshtool_transfer_states_button"
+				position = { x = 252   y = 5 }
+				spriteType = "GFX_state_transfer_states_button"
+				pdx_tooltip = ccshtool_transfer_states_button_tt
+			}
+
+			buttonType = {
+				name = "ccshtool_set_compliance_button"
+				position = { x = 303   y = 5 }
+				spriteType = "GFX_state_set_compliance_button"
+				pdx_tooltip = ccshtool_set_compliance_button_tt
+			}
+
+			buttonType = {
+				name = "ccshtool_core_button"
+				position = { x = 354   y = 5 }
+				spriteType = "GFX_state_core_button"
+				pdx_tooltip = ccshtool_core_button_tt
+			}
+
+			buttonType = {
+				name = "ccshtool_claim_button"
+				position = { x = 405   y = 5 }
+				spriteType = "GFX_state_claim_button"
+				pdx_tooltip = ccshtool_claim_button_tt
+			}
+		}
+
+		containerWindowType = {
+			name = "ccshtool_country_tool_window"
+			position = { x = 11   y = 198 }
+			size = { width = 100%%   height = 100%% }
+			Orientation = upper_left
+			moveable = no
+			clipping = no
+
+			background = {
+				name = "ccshtool_country_tool_bg"
+				spriteType = "GFX_country_tool_bg"
+			}
+			
+			containerWindowType = {
+				name = "ccshtool_politics_tool_window"
+				position = { x = 3   y = 3 }
+				size = { width = 100%%   height = 100%% }
+				Orientation = upper_left
+				moveable = no
+				clipping = no
+
+				containerWindowType = {
+					name = "ccshtool_democratic_window"
+					position = { x = 0   y = 0 }
+					size = { width = 100%%   height = 100%% }
+					Orientation = upper_left
+					moveable = no
+					clipping = no
+
+					background = {
+						name = "ccshtool_democratic_bg"
+						spriteType = "GFX_politics_tool_bg"
+					}
+
+					buttonType = {
+						name = "ccshtool_democratic_change_button"
+						position = { x = 5   y = -2 }
+						spriteType = "GFX_politics_change_democratic_button"
+						pdx_tooltip = ccshtool_democratic_change_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_democratic_add_1_button"
+						position = { x = 67   y = 6 }
+						spriteType = "GFX_add_1_button"
+						pdx_tooltip = ccshtool_democratic_add_1_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_democratic_add_5_button"
+						position = { x = 88   y = 6 }
+						spriteType = "GFX_add_5_button"
+						pdx_tooltip = ccshtool_democratic_add_5_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_democratic_add_10_button"
+						position = { x = 109   y = 6 }
+						spriteType = "GFX_add_10_button"
+						pdx_tooltip = ccshtool_democratic_add_10_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_democratic_sub_1_button"
+						position = { x = 67   y = 27 }
+						spriteType = "GFX_sub_1_button"
+						pdx_tooltip = ccshtool_democratic_sub_1_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_democratic_sub_5_button"
+						position = { x = 88   y = 27 }
+						spriteType = "GFX_sub_5_button"
+						pdx_tooltip = ccshtool_democratic_sub_5_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_democratic_sub_10_button"
+						position = { x = 109   y = 27 }
+						spriteType = "GFX_sub_10_button"
+						pdx_tooltip = ccshtool_democratic_sub_10_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_democratic_subideology1_button"
+						position = { x = 139   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_democratic_subideology1_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_democratic_subideology2_button"
+						position = { x = 161   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_democratic_subideology2_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_democratic_subideology3_button"
+						position = { x = 183   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_democratic_subideology3_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_democratic_subideology4_button"
+						position = { x = 205   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_democratic_subideology4_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_democratic_subideology5_button"
+						position = { x = 227   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_democratic_subideology5_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_democratic_subideology6_button"
+						position = { x = 249   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_democratic_subideology6_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_democratic_subideology7_button"
+						position = { x = 271   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_democratic_subideology7_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_democratic_subideology8_button"
+						position = { x = 293   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_democratic_subideology8_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_democratic_subideology9_button"
+						position = { x = 315   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_democratic_subideology9_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_democratic_subideology10_button"
+						position = { x = 139   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_democratic_subideology10_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_democratic_subideology11_button"
+						position = { x = 161   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_democratic_subideology11_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_democratic_subideology12_button"
+						position = { x = 183   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_democratic_subideology12_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_democratic_subideology13_button"
+						position = { x = 205   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_democratic_subideology13_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_democratic_subideology14_button"
+						position = { x = 227   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_democratic_subideology14_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_democratic_subideology15_button"
+						position = { x = 249   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_democratic_subideology15_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_democratic_subideology16_button"
+						position = { x = 271   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_democratic_subideology16_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_democratic_subideology17_button"
+						position = { x = 293   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_democratic_subideology17_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_democratic_subideology18_button"
+						position = { x = 315   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_democratic_subideology18_button_tt
+					}
+				}
+
+				containerWindowType = {
+					name = "ccshtool_communism_window"
+					position = { x = 0   y = 53 }
+					size = { width = 100%%   height = 100%% }
+					Orientation = upper_left
+					moveable = no
+					clipping = no
+
+					background = {
+						name = "ccshtool_communism_bg"
+						spriteType = "GFX_politics_tool_bg"
+					}
+
+					buttonType = {
+						name = "ccshtool_communism_change_button"
+						position = { x = 5   y = -2 }
+						spriteType = "GFX_politics_change_communism_button"
+						pdx_tooltip = ccshtool_communism_change_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_communism_add_1_button"
+						position = { x = 67   y = 6 }
+						spriteType = "GFX_add_1_button"
+						pdx_tooltip = ccshtool_communism_add_1_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_communism_add_5_button"
+						position = { x = 88   y = 6 }
+						spriteType = "GFX_add_5_button"
+						pdx_tooltip = ccshtool_communism_add_5_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_communism_add_10_button"
+						position = { x = 109   y = 6 }
+						spriteType = "GFX_add_10_button"
+						pdx_tooltip = ccshtool_communism_add_10_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_communism_sub_1_button"
+						position = { x = 67   y = 27 }
+						spriteType = "GFX_sub_1_button"
+						pdx_tooltip = ccshtool_communism_sub_1_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_communism_sub_5_button"
+						position = { x = 88   y = 27 }
+						spriteType = "GFX_sub_5_button"
+						pdx_tooltip = ccshtool_communism_sub_5_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_communism_sub_10_button"
+						position = { x = 109   y = 27 }
+						spriteType = "GFX_sub_10_button"
+						pdx_tooltip = ccshtool_communism_sub_10_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_communism_subideology1_button"
+						position = { x = 139   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_communism_subideology1_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_communism_subideology2_button"
+						position = { x = 161   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_communism_subideology2_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_communism_subideology3_button"
+						position = { x = 183   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_communism_subideology3_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_communism_subideology4_button"
+						position = { x = 205   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_communism_subideology4_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_communism_subideology5_button"
+						position = { x = 227   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_communism_subideology5_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_communism_subideology6_button"
+						position = { x = 249   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_communism_subideology6_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_communism_subideology7_button"
+						position = { x = 271   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_communism_subideology7_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_communism_subideology8_button"
+						position = { x = 293   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_communism_subideology8_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_communism_subideology9_button"
+						position = { x = 315   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_communism_subideology9_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_communism_subideology10_button"
+						position = { x = 139   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_communism_subideology10_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_communism_subideology11_button"
+						position = { x = 161   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_communism_subideology11_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_communism_subideology12_button"
+						position = { x = 183   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_communism_subideology12_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_communism_subideology13_button"
+						position = { x = 205   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_communism_subideology13_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_communism_subideology14_button"
+						position = { x = 227   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_communism_subideology14_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_communism_subideology15_button"
+						position = { x = 249   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_communism_subideology15_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_communism_subideology16_button"
+						position = { x = 271   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_communism_subideology16_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_communism_subideology17_button"
+						position = { x = 293   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_communism_subideology17_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_communism_subideology18_button"
+						position = { x = 315   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_communism_subideology18_button_tt
+					}
+				}
+
+				containerWindowType = {
+					name = "ccshtool_fascism_window"
+					position = { x = 0   y = 106 }
+					size = { width = 100%%   height = 100%% }
+					Orientation = upper_left
+					moveable = no
+					clipping = no
+
+					background = {
+						name = "ccshtool_fascism_bg"
+						spriteType = "GFX_politics_tool_bg"
+					}
+
+					buttonType = {
+						name = "ccshtool_fascism_change_button"
+						position = { x = 5   y = -2 }
+						spriteType = "GFX_politics_change_fascism_button"
+						pdx_tooltip = ccshtool_fascism_change_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_fascism_add_1_button"
+						position = { x = 67   y = 6 }
+						spriteType = "GFX_add_1_button"
+						pdx_tooltip = ccshtool_fascism_add_1_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_fascism_add_5_button"
+						position = { x = 88   y = 6 }
+						spriteType = "GFX_add_5_button"
+						pdx_tooltip = ccshtool_fascism_add_5_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_fascism_add_10_button"
+						position = { x = 109   y = 6 }
+						spriteType = "GFX_add_10_button"
+						pdx_tooltip = ccshtool_fascism_add_10_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_fascism_sub_1_button"
+						position = { x = 67   y = 27 }
+						spriteType = "GFX_sub_1_button"
+						pdx_tooltip = ccshtool_fascism_sub_1_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_fascism_sub_5_button"
+						position = { x = 88   y = 27 }
+						spriteType = "GFX_sub_5_button"
+						pdx_tooltip = ccshtool_fascism_sub_5_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_fascism_sub_10_button"
+						position = { x = 109   y = 27 }
+						spriteType = "GFX_sub_10_button"
+						pdx_tooltip = ccshtool_fascism_sub_10_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_fascism_subideology1_button"
+						position = { x = 139   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_fascism_subideology1_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_fascism_subideology2_button"
+						position = { x = 161   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_fascism_subideology2_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_fascism_subideology3_button"
+						position = { x = 183   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_fascism_subideology3_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_fascism_subideology4_button"
+						position = { x = 205   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_fascism_subideology4_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_fascism_subideology5_button"
+						position = { x = 227   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_fascism_subideology5_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_fascism_subideology6_button"
+						position = { x = 249   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_fascism_subideology6_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_fascism_subideology7_button"
+						position = { x = 271   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_fascism_subideology7_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_fascism_subideology8_button"
+						position = { x = 293   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_fascism_subideology8_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_fascism_subideology9_button"
+						position = { x = 315   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_fascism_subideology9_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_fascism_subideology10_button"
+						position = { x = 139   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_fascism_subideology10_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_fascism_subideology11_button"
+						position = { x = 161   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_fascism_subideology11_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_fascism_subideology12_button"
+						position = { x = 183   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_fascism_subideology12_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_fascism_subideology13_button"
+						position = { x = 205   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_fascism_subideology13_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_fascism_subideology14_button"
+						position = { x = 227   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_fascism_subideology14_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_fascism_subideology15_button"
+						position = { x = 249   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_fascism_subideology15_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_fascism_subideology16_button"
+						position = { x = 271   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_fascism_subideology16_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_fascism_subideology17_button"
+						position = { x = 293   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_fascism_subideology17_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_fascism_subideology18_button"
+						position = { x = 315   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_fascism_subideology18_button_tt
+					}
+				}
+
+				containerWindowType = {
+					name = "ccshtool_neutrality_window"
+					position = { x = 0   y = 159 }
+					size = { width = 100%%   height = 100%% }
+					Orientation = upper_left
+					moveable = no
+					clipping = no
+
+					background = {
+						name = "ccshtool_neutrality_bg"
+						spriteType = "GFX_politics_tool_bg"
+					}
+
+					buttonType = {
+						name = "ccshtool_neutrality_change_button"
+						position = { x = 5   y = -2 }
+						spriteType = "GFX_politics_change_neutrality_button"
+						pdx_tooltip = ccshtool_neutrality_change_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_neutrality_add_1_button"
+						position = { x = 67   y = 6 }
+						spriteType = "GFX_add_1_button"
+						pdx_tooltip = ccshtool_neutrality_add_1_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_neutrality_add_5_button"
+						position = { x = 88   y = 6 }
+						spriteType = "GFX_add_5_button"
+						pdx_tooltip = ccshtool_neutrality_add_5_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_neutrality_add_10_button"
+						position = { x = 109   y = 6 }
+						spriteType = "GFX_add_10_button"
+						pdx_tooltip = ccshtool_neutrality_add_10_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_neutrality_sub_1_button"
+						position = { x = 67   y = 27 }
+						spriteType = "GFX_sub_1_button"
+						pdx_tooltip = ccshtool_neutrality_sub_1_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_neutrality_sub_5_button"
+						position = { x = 88   y = 27 }
+						spriteType = "GFX_sub_5_button"
+						pdx_tooltip = ccshtool_neutrality_sub_5_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_neutrality_sub_10_button"
+						position = { x = 109   y = 27 }
+						spriteType = "GFX_sub_10_button"
+						pdx_tooltip = ccshtool_neutrality_sub_10_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_neutrality_subideology1_button"
+						position = { x = 139   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_neutrality_subideology1_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_neutrality_subideology2_button"
+						position = { x = 161   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_neutrality_subideology2_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_neutrality_subideology3_button"
+						position = { x = 183   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_neutrality_subideology3_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_neutrality_subideology4_button"
+						position = { x = 205   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_neutrality_subideology4_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_neutrality_subideology5_button"
+						position = { x = 227   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_neutrality_subideology5_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_neutrality_subideology6_button"
+						position = { x = 249   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_neutrality_subideology6_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_neutrality_subideology7_button"
+						position = { x = 271   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_neutrality_subideology7_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_neutrality_subideology8_button"
+						position = { x = 293   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_neutrality_subideology8_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_neutrality_subideology9_button"
+						position = { x = 315   y = 6 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_neutrality_subideology9_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_neutrality_subideology10_button"
+						position = { x = 139   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_neutrality_subideology10_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_neutrality_subideology11_button"
+						position = { x = 161   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_neutrality_subideology11_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_neutrality_subideology12_button"
+						position = { x = 183   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_neutrality_subideology12_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_neutrality_subideology13_button"
+						position = { x = 205   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_neutrality_subideology13_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_neutrality_subideology14_button"
+						position = { x = 227   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_neutrality_subideology14_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_neutrality_subideology15_button"
+						position = { x = 249   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_neutrality_subideology15_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_neutrality_subideology16_button"
+						position = { x = 271   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_neutrality_subideology16_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_neutrality_subideology17_button"
+						position = { x = 293   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_neutrality_subideology17_button_tt
+					}
+
+					buttonType = {
+						name = "ccshtool_neutrality_subideology18_button"
+						position = { x = 315   y = 28 }
+						spriteType = "GFX_generic_20x20_button"
+						pdx_tooltip = ccshtool_neutrality_subideology18_button_tt
+					}
+				}
+			}
+
+			containerWindowType = {
+				name = "ccshtool_stability_window"
+				position = { x = 343   y = 3 }
+				size = { width = 100%%   height = 100%% }
+				Orientation = upper_left
+				moveable = no
+				clipping = no
+
+				background = {
+					name = "ccshtool_stability_bg"
+					spriteType = "GFX_country_vars_stability_bg"
+				}
+
+				buttonType = {
+					name = "ccshtool_stability_sub_5_button"
+					position = { x = 10   y = 8 }
+					spriteType = "GFX_sub_5_button"
+					pdx_tooltip = ccshtool_stability_sub_5_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_stability_sub_1_button"
+					position = { x = 31   y = 8 }
+					spriteType = "GFX_sub_1_button"
+					pdx_tooltip = ccshtool_stability_sub_1_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_stability_add_1_button"
+					position = { x = 80   y = 8 }
+					spriteType = "GFX_add_1_button"
+					pdx_tooltip = ccshtool_stability_add_1_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_stability_add_5_button"
+					position = { x = 101   y = 8 }
+					spriteType = "GFX_add_5_button"
+					pdx_tooltip = ccshtool_stability_add_5_button_tt
+				}
+			}
+
+			containerWindowType = {
+				name = "ccshtool_war_support_window"
+				position = { x = 343   y = 38 }
+				size = { width = 100%%   height = 100%% }
+				Orientation = upper_left
+				moveable = no
+				clipping = no
+
+				background = {
+					name = "ccshtool_war_support_bg"
+					spriteType = "GFX_country_vars_war_support_bg"
+				}
+
+				buttonType = {
+					name = "ccshtool_war_support_sub_5_button"
+					position = { x = 10   y = 8 }
+					spriteType = "GFX_sub_5_button"
+					pdx_tooltip = ccshtool_war_support_sub_5_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_war_support_sub_1_button"
+					position = { x = 31   y = 8 }
+					spriteType = "GFX_sub_1_button"
+					pdx_tooltip = ccshtool_war_support_sub_1_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_war_support_add_1_button"
+					position = { x = 80   y = 8 }
+					spriteType = "GFX_add_1_button"
+					pdx_tooltip = ccshtool_war_support_add_1_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_war_support_add_5_button"
+					position = { x = 101   y = 8 }
+					spriteType = "GFX_add_5_button"
+					pdx_tooltip = ccshtool_war_support_add_5_button_tt
+				}
+			}
+
+			containerWindowType = {
+				name = "ccshtool_pp_window"
+				position = { x = 343   y = 73 }
+				size = { width = 100%%   height = 100%% }
+				Orientation = upper_left
+				moveable = no
+				clipping = no
+
+				background = {
+					name = "ccshtool_pp_bg"
+					spriteType = "GFX_country_vars_pp_bg"
+				}
+
+				buttonType = {
+					name = "ccshtool_pp_sub_50_button"
+					position = { x = 10   y = 8 }
+					spriteType = "GFX_sub_50_button"
+					pdx_tooltip = ccshtool_pp_sub_50_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_pp_sub_10_button"
+					position = { x = 31   y = 8 }
+					spriteType = "GFX_sub_10_button"
+					pdx_tooltip = ccshtool_pp_sub_10_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_pp_add_10_button"
+					position = { x = 80   y = 8 }
+					spriteType = "GFX_add_10_button"
+					pdx_tooltip = ccshtool_pp_add_10_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_pp_add_50_button"
+					position = { x = 101   y = 8 }
+					spriteType = "GFX_add_50_button"
+					pdx_tooltip = ccshtool_pp_add_50_button_tt
+				}
+			}
+
+			containerWindowType = {
+				name = "ccshtool_money_window"
+				position = { x = 343   y = 109 }
+				size = { width = 100%%   height = 100%% }
+				Orientation = upper_left
+				moveable = no
+				clipping = no
+
+				background = {
+					name = "ccshtool_money_bg"
+					spriteType = "GFX_country_vars_money_bg"
+				}
+
+				buttonType = {
+					name = "ccshtool_money_sub_5_button"
+					position = { x = 10   y = 8 }
+					spriteType = "GFX_sub_5_button"
+					pdx_tooltip = ccshtool_money_sub_5_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_money_sub_1_button"
+					position = { x = 31   y = 8 }
+					spriteType = "GFX_sub_1_button"
+					pdx_tooltip = ccshtool_money_sub_1_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_money_add_1_button"
+					position = { x = 80   y = 8 }
+					spriteType = "GFX_add_1_button"
+					pdx_tooltip = ccshtool_money_add_1_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_money_add_5_button"
+					position = { x = 101   y = 8 }
+					spriteType = "GFX_add_5_button"
+					pdx_tooltip = ccshtool_money_add_5_button_tt
+				}
+			}
+
+			containerWindowType = {
+				name = "ccshtool_army_xp_window"
+				position = { x = 343   y = 144 }
+				size = { width = 100%%   height = 100%% }
+				Orientation = upper_left
+				moveable = no
+				clipping = no
+
+				background = {
+					name = "ccshtool_army_xp_bg"
+					spriteType = "GFX_country_vars_army_xp_bg"
+				}
+
+				buttonType = {
+					name = "ccshtool_army_xp_sub_50_button"
+					position = { x = 10   y = 8 }
+					spriteType = "GFX_sub_50_button"
+					pdx_tooltip = ccshtool_army_xp_sub_50_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_army_xp_sub_10_button"
+					position = { x = 31   y = 8 }
+					spriteType = "GFX_sub_10_button"
+					pdx_tooltip = ccshtool_army_xp_sub_10_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_army_xp_add_10_button"
+					position = { x = 80   y = 8 }
+					spriteType = "GFX_add_10_button"
+					pdx_tooltip = ccshtool_army_xp_add_10_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_army_xp_add_50_button"
+					position = { x = 101   y = 8 }
+					spriteType = "GFX_add_50_button"
+					pdx_tooltip = ccshtool_army_xp_add_50_button_tt
+				}
+			}
+
+			containerWindowType = {
+				name = "ccshtool_navy_xp_window"
+				position = { x = 343   y = 179 }
+				size = { width = 100%%   height = 100%% }
+				Orientation = upper_left
+				moveable = no
+				clipping = no
+
+				background = {
+					name = "ccshtool_navy_xp_bg"
+					spriteType = "GFX_country_vars_navy_xp_bg"
+				}
+
+				buttonType = {
+					name = "ccshtool_navy_xp_sub_50_button"
+					position = { x = 10   y = 8 }
+					spriteType = "GFX_sub_50_button"
+					pdx_tooltip = ccshtool_navy_xp_sub_50_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_navy_xp_sub_10_button"
+					position = { x = 31   y = 8 }
+					spriteType = "GFX_sub_10_button"
+					pdx_tooltip = ccshtool_navy_xp_sub_10_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_navy_xp_add_10_button"
+					position = { x = 80   y = 8 }
+					spriteType = "GFX_add_10_button"
+					pdx_tooltip = ccshtool_navy_xp_add_10_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_navy_xp_add_50_button"
+					position = { x = 101   y = 8 }
+					spriteType = "GFX_add_50_button"
+					pdx_tooltip = ccshtool_navy_xp_add_50_button_tt
+				}
+			}
+
+			containerWindowType = {
+				name = "ccshtool_air_xp_window"
+				position = { x = 343   y = 215 }
+				size = { width = 100%%   height = 100%% }
+				Orientation = upper_left
+				moveable = no
+				clipping = no
+
+				background = {
+					name = "ccshtool_air_xp_bg"
+					spriteType = "GFX_country_vars_air_xp_bg"
+				}
+
+				buttonType = {
+					name = "ccshtool_air_xp_sub_50_button"
+					position = { x = 10   y = 8 }
+					spriteType = "GFX_sub_50_button"
+					pdx_tooltip = ccshtool_air_xp_sub_50_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_air_xp_sub_10_button"
+					position = { x = 31   y = 8 }
+					spriteType = "GFX_sub_10_button"
+					pdx_tooltip = ccshtool_air_xp_sub_10_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_air_xp_add_10_button"
+					position = { x = 80   y = 8 }
+					spriteType = "GFX_add_10_button"
+					pdx_tooltip = ccshtool_air_xp_add_10_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_air_xp_add_50_button"
+					position = { x = 101   y = 8 }
+					spriteType = "GFX_add_50_button"
+					pdx_tooltip = ccshtool_air_xp_add_50_button_tt
+				}
+			}
+
+			containerWindowType = {
+				name = "ccshtool_research_boost_window"
+				position = { x = 391   y = 250 }
+				size = { width = 100%%   height = 100%% }
+				Orientation = upper_left
+				moveable = no
+				clipping = no
+
+				background = {
+					name = "ccshtool_research_boost_bg"
+					spriteType = "GFX_country_research_boost_bg"
+				}
+
+				buttonType = {
+					name = "ccshtool_research_boost_add_10_button"
+					position = { x = 32   y = 8 }
+					spriteType = "GFX_add_10_button"
+					pdx_tooltip = ccshtool_research_boost_add_10_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_research_boost_add_50_button"
+					position = { x = 53   y = 8 }
+					spriteType = "GFX_add_50_button"
+					pdx_tooltip = ccshtool_research_boost_add_50_button_tt
+				}
+			}
+			
+			buttonType = {
+				name = "ccshtool_tag_switch_button"
+				position = { x = 6   y = 218 }
+				spriteType = "GFX_tag_switch_button"
+					pdx_tooltip = ccshtool_tag_switch_button_tt
+			}
+
+			containerWindowType = {
+				name = "ccshtool_autonomy_tool_window"
+				position = { x = 71   y = 215 }
+				size = { width = 100%%   height = 100%% }
+				Orientation = upper_left
+				moveable = no
+				clipping = no
+
+				background = {
+					name = "ccshtool_autonomy_tool_bg"
+					spriteType = "GFX_autonomy_tool_bg"
+				}
+
+				buttonType = {
+					name = "ccshtool_autonomy_add_button"
+					position = { x = 150   y = 10 }
+					spriteType = "GFX_autonomy_add_button"
+					pdx_tooltip = ccshtool_autonomy_add_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_autonomy_sub_button"
+					position = { x = 150   y = 51 }
+					spriteType = "GFX_autonomy_sub_button"
+					pdx_tooltip = ccshtool_autonomy_sub_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_autonomy_annex_button"
+					position = { x = 8   y = 8 }
+					spriteType = "GFX_autonomy_annex_button"
+					pdx_tooltip = ccshtool_autonomy_annex_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_autonomy_puppet_button"
+					position = { x = 35   y = 8 }
+					spriteType = "GFX_autonomy_puppet_button"
+					pdx_tooltip = ccshtool_autonomy_puppet_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_autonomy_reichskommissariat_button"
+					position = { x = 62   y = 8 }
+					spriteType = "GFX_autonomy_reichskommissariat_button"
+					pdx_tooltip = ccshtool_autonomy_reichskommissariat_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_autonomy_imperial_associate_button"
+					position = { x = 89   y = 8 }
+					spriteType = "GFX_autonomy_imperial_associate_button"
+					pdx_tooltip = ccshtool_autonomy_imperial_associate_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_autonomy_colony_button"
+					position = { x = 116   y = 8 }
+					spriteType = "GFX_autonomy_colony_button"
+					pdx_tooltip = ccshtool_autonomy_colony_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_autonomy_dominion_button"
+					position = { x = 8   y = 37 }
+					spriteType = "GFX_autonomy_dominion_button"
+					pdx_tooltip = ccshtool_autonomy_dominion_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_autonomy_personal_union_button"
+					position = { x = 35   y = 37 }
+					spriteType = "GFX_autonomy_personal_union_button"
+					pdx_tooltip = ccshtool_autonomy_personal_union_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_autonomy_collaboration_government_button"
+					position = { x = 62   y = 37 }
+					spriteType = "GFX_autonomy_collaboration_government_button"
+					pdx_tooltip = ccshtool_autonomy_collaboration_government_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_autonomy_protected_government_button"
+					position = { x = 89   y = 37 }
+					spriteType = "GFX_autonomy_protected_government_button"
+					pdx_tooltip = ccshtool_autonomy_protected_government_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_autonomy_free_button"
+					position = { x = 116   y = 37 }
+					spriteType = "GFX_autonomy_free_button"
+					pdx_tooltip = ccshtool_autonomy_free_button_tt
+				}
+
+				buttonType = {
+					name = "ccshtool_autonomy_filler1_button"
+					position = { x = 35   y = 8 }
+					spriteType = "GFX_autonomy_puppet_button"		# uses default autonomy_state
+				}
+
+				buttonType = {
+					name = "ccshtool_autonomy_filler2_button"
+					position = { x = 62   y = 8 }
+					spriteType = "GFX_autonomy_filler_button"
+				}
+
+				buttonType = {
+					name = "ccshtool_autonomy_filler3_button"
+					position = { x = 89   y = 8 }
+					spriteType = "GFX_autonomy_filler_button"
+				}
+
+				buttonType = {
+					name = "ccshtool_autonomy_filler4_button"
+					position = { x = 116   y = 8 }
+					spriteType = "GFX_autonomy_filler_button"
+				}
+
+				buttonType = {
+					name = "ccshtool_autonomy_filler5_button"
+					position = { x = 8   y = 37 }
+					spriteType = "GFX_autonomy_filler_button"
+				}
+
+				buttonType = {
+					name = "ccshtool_autonomy_filler6_button"
+					position = { x = 35   y = 37 }
+					spriteType = "GFX_autonomy_filler_button"
+				}
+
+				buttonType = {
+					name = "ccshtool_autonomy_filler7_button"
+					position = { x = 62   y = 37 }
+					spriteType = "GFX_autonomy_filler_button"
+				}
+
+				buttonType = {
+					name = "ccshtool_autonomy_filler8_button"
+					position = { x = 89   y = 37 }
+					spriteType = "GFX_autonomy_filler_button"
+				}
+				
+			}
+
+			buttonType = {
+				name = "ccshtool_white_peace_button"
+				position = { x = 247   y = 215 }
+				spriteType = "GFX_country_white_peace_button"
+				pdx_tooltip = ccshtool_white_peace_button_tt
+			}
+
+			buttonType = {
+				name = "ccshtool_declare_war_button"
+				position = { x = 295   y = 215 }
+				spriteType = "GFX_country_declare_war_button"
+				pdx_tooltip = ccshtool_declare_war_button_tt
+			}
+
+			buttonType = {
+				name = "ccshtool_join_faction_button"
+				position = { x = 247   y = 250 }
+				spriteType = "GFX_country_join_faction_button"
+				pdx_tooltip = ccshtool_join_faction_button_tt
+			}
+
+			buttonType = {
+				name = "ccshtool_leave_faction_button"
+				position = { x = 295   y = 250 }
+				spriteType = "GFX_country_leave_faction_button"
+				pdx_tooltip = ccshtool_leave_faction_button_tt
+			}
+
+			buttonType = {
+				name = "ccshtool_refresh_focus_button"
+				position = { x = 343   y = 250 }
+				spriteType = "GFX_country_refresh_focus_button"
+				pdx_tooltip = ccshtool_refresh_focus_button_tt
+			}
+
+		}
+
+	}
+}

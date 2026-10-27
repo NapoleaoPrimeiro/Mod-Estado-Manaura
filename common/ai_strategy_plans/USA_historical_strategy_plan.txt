@@ -1,0 +1,198 @@
+USA_historical_plan = {
+	name = "US historical plan"
+	desc = "Historical behavior for US"
+
+	allowed = {
+		original_tag = USA
+	}
+	enable = {
+		OR = {
+			AND = {
+				is_historical_focus_on = yes
+				OR = {
+					not = { has_dlc = "Man the Guns" }
+					has_game_rule = {
+						rule = USA_ai_behavior
+						option = DEFAULT
+					}
+				}
+			}
+			has_country_flag = USA_AI_DEMOCRATIC_HISTORICAL
+			has_country_flag = democratic_usa_won_civil_war
+			has_game_rule = {
+				rule = USA_ai_behavior
+				option = DEMOCRATIC_HISTORICAL
+			}
+		}
+	}
+	abort = {
+		OR = {
+			AND = {
+				has_game_rule = {
+					rule = USA_ai_behavior
+					option = DEFAULT
+				}
+				OR = {	
+					GER = {
+						OR = {
+							has_completed_focus = GER_oppose_hitler_ww
+							has_completed_focus = GER_oppose_hitler
+						}
+					}
+					ENG = {
+						not = { has_government = democratic }
+					}
+					has_war_with = CAN
+					has_war_with = MEX
+					JAP = {
+						not = {
+							OR = {
+								has_government = fascism
+								has_government = neutrality
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	ai_national_focuses = {
+		#1936
+		USA_zhunbei_37_xuanju
+		USA_gongye_fuxing_choubei
+		USA_chongqi_caizheng_ciji
+		USA_quanguo_laogong_guanxifa
+		USA_zhongbu_touzi
+		USA_minsheng_jianshe	
+
+		#以上245天
+		USA_war_department
+		USA_selective_training_act
+		# 11月选举
+		USA_continue_the_new_deal
+		USA_zuigao_fayuan_kuorong
+
+		#1937
+		USA_wpa
+		USA_agricultural_adjustment_act
+		USA_guojia_anquan_huiyi		
+		USA_fair_labour_standards_act
+		USA_neutrality_act
+		USA_focus34
+		USA_federal_housing_act		
+		
+		#大萧条结束
+		USA_office_of_scientific_research_and_development
+		
+		#1938
+		USA_louisiana_maneuvers
+		USA_tank_experiments
+		USA_main_battle_tanks
+		USA_the_giant_wakes
+		USA_two_ocean_navy_act
+		USA_air_war_plans_division
+		USA_rubber_reserve_company
+		USA_fund_the_navy
+
+		##1939
+		USA_army_of_the_united_states
+		USA_focus42
+		USA_scientist_haven
+		USA_manhattan_project
+		USA_armored_infantry	
+
+		#WW2 爆发
+		USA_focus35
+
+		#rgba(17, 153, 68, 0)
+		USA_arsenal_of_democracy
+		USA_bureau_of_aeronautics
+		USA_build_the_pentagon	
+		USA_USACE_projects
+		USA_air_support
+		USA_CAS
+		
+		#1941
+		USA_jungong_zhuanchan
+		USA_baofashi_zengzhang
+		USA_zhuran_jingji
+		USA_focus36
+		USA_lend_lease_act
+		USA_gongpin_jiuye_shijian_weiyuanhui
+		USA_qianghua_laogong_quanyi
+		USA_qiangda_gonghui
+		USA_support_rock_island
+
+		#should BE ATTACKED
+		#1942
+		USA_focus37
+		USA_military_construction
+		USA_focus39
+		USA_focus38
+		USA_focus54
+		USA_focus41
+		USA_FOCUS44
+		USA_focus40
+		USA_carrier_primacy
+
+		#1943
+		USA_strategic_bombing
+		USA_us_air_force
+		USA_focus32
+		USA_focus43
+		USA_TAC
+		USA_escort_fighters
+		USA_battleship_primacy
+		
+		#1944
+		Shared_usa_focus1
+		USA_department_of_defense
+		Shared_usa_focus2
+		Shared_usa_focus4
+		Shared_usa_focus6
+		USA_focus31
+		USA_youqibing_zhanshu
+
+		#WW2_OVER
+		USA_maixiang_fuli_guojia
+		USA_3rd_indus_revolution
+		USA_cold_war_focus
+		USA_maxieer_plan
+		USA_mac_fuck_jap
+		USA_focus70
+	}
+
+	focus_factors = {
+		USA_suspend_the_presecution = 0 # well done, not medium rare
+	}
+
+	research = {
+
+	}
+
+	ideas = {
+
+	}
+	traits = {
+		war_industrialist = 5
+		financial_expert = 10
+		silent_workhorse = 25
+	}
+
+	ai_strategy = {
+		type = support
+		id = "ENG"			
+		value = 200
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}

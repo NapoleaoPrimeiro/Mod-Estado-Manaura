@@ -1,0 +1,157 @@
+spriteTypes = {
+
+	# Deterministic winners for GFX IDs with conflicting installed definitions.
+	# Policy: newer regular DLC over older integrated DLC/base; later definition within one file.
+
+	# Australia - Thunder at Our Gates
+	SpriteType = {
+		name = "GFX_AST_CAS2_medium"
+		texturefile = "gfx/interface/technologies/AST_light_im_CAS_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_AST_fighter3_medium"
+		texturefile = "gfx/interface/technologies/AST_light_ad_fighter_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_AST_fighter1_medium"
+		texturefile = "gfx/interface/technologies/AST_light_ba_fighter_1.dds"
+	}
+
+	# British India - Graveyard of Empires
+	SpriteType = {
+		name = "GFX_RAJ_fighter1_medium"
+		texturefile = "gfx/interface/technologies/RAJ_light_ba_fighter_1.dds"
+	}
+
+	# Netherlands - Thunder at Our Gates
+	SpriteType = {
+		name = "GFX_HOL_CAS3_medium"
+		texturefile = "gfx/interface/technologies/HOL_light_ad_CAS_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_HOL_CAS2_medium"
+		texturefile = "gfx/interface/technologies/HOL_light_im_CAS_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_HOL_CAS1_medium"
+		texturefile = "gfx/interface/technologies/HOL_light_ba_CAS_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_HOL_fighter2_medium"
+		texturefile = "gfx/interface/technologies/HOL_light_im_fighter_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_HOL_early_fighter_medium"
+		texturefile = "gfx/interface/technologies/HOL_light_iw_fighter_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_HOL_heavy_fighter3_medium"
+		texturefile = "gfx/interface/technologies/HOL_medium_ad_hvy_fighter_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_HOL_heavy_fighter2_medium"
+		texturefile = "gfx/interface/technologies/HOL_medium_im_hvy_fighter_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_HOL_heavy_fighter1_medium"
+		texturefile = "gfx/interface/technologies/HOL_medium_ba_hvy_fighter_1.dds"
+	}
+
+	# People's Republic of China - No Compromise, No Surrender
+	SpriteType = {
+		name = "GFX_PRC_basic_small_cas_medium"
+		texturefile = "gfx/interface/technologies/PRC_light_ba_cas_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_PRC_iw_small_fighter_1_medium"
+		texturefile = "gfx/interface/technologies/PRC_light_iw_fighter.dds"
+	}
+
+	# China - No Compromise, No Surrender
+	SpriteType = {
+		name = "GFX_CHI_CAS3_medium"
+		texturefile = "gfx/interface/technologies/CHI_light_ad_cas_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_CHI_CAS2_medium"
+		texturefile = "gfx/interface/technologies/CHI_light_im_cas_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_CHI_CAS1_medium"
+		texturefile = "gfx/interface/technologies/CHI_light_ba_cas_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_CHI_fighter3_medium"
+		texturefile = "gfx/interface/technologies/CHI_light_ad_fighter_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_CHI_fighter2_medium"
+		texturefile = "gfx/interface/technologies/CHI_light_im_fighter_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_CHI_fighter1_medium"
+		texturefile = "gfx/interface/technologies/CHI_light_ba_fighter_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_CHI_early_fighter_medium"
+		texturefile = "gfx/interface/technologies/CHI_light_iw_fighter_1.dds"
+	}
+
+	# Philippines - later duplicate in No Compromise, No Surrender
+	SpriteType = {
+		name = "GFX_PHI_improved_medium_heavy_fighter_1_medium"
+		texturefile = "gfx/interface/technologies/PHI_medium_ad_hvy_fighter_1.dds"
+	}
+
+	# Netherlands - Thunder at Our Gates over integrated Man the Guns
+	SpriteType = {
+		name = "GFX_HOL_tactical_bomber2_medium"
+		texturefile = "gfx/interface/technologies/HOL_medium_im_tac_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_HOL_naval_bomber2_medium"
+		texturefile = "gfx/interface/technologies/HOL_light_im_nav_1.dds"
+	}
+
+	# Generic scouts - La Resistance over base game; base DDS retained through aliases
+	SpriteType = {
+		name = "GFX_scout_plane1_medium"
+		texturefile = "gfx/interface/technologies/generic_scout_plane_1_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_scout_plane2_medium"
+		texturefile = "gfx/interface/technologies/generic_scout_plane_2_2.dds"
+	}
+
+	# Netherlands strategic bombers - Thunder at Our Gates over integrated Man the Guns
+	SpriteType = {
+		name = "GFX_HOL_strategic_bomber1_medium"
+		texturefile = "gfx/interface/technologies/HOL_heavy_ba_strat_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_HOL_strategic_bomber2_medium"
+		texturefile = "gfx/interface/technologies/HOL_heavy_im_strat_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_HOL_strategic_bomber3_medium"
+		texturefile = "gfx/interface/technologies/HOL_heavy_ad_strat_1.dds"
+	}
+
+	# Deterministic transport variant 1 definitions selected during full icon distribution
+	SpriteType = {
+		name = "GFX_ENG_transport_plane_equipment_1_medium"
+		texturefile = "gfx\interface\technologies\ENG_transport_plane_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_GER_transport_plane_equipment_1_medium"
+		texturefile = "gfx\interface\technologies\GER_transport_plane_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_JAP_transport_plane_equipment_1_medium"
+		texturefile = "gfx\interface\technologies\JAP_transport_plane_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_USA_transport_plane_equipment_1_medium"
+		texturefile = "gfx\interface\technologies\USA_transport_plane_1.dds"
+	}
+}

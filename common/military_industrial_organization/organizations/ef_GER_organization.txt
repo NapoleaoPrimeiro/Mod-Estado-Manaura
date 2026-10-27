@@ -1,0 +1,426 @@
+##################### eo
+#GERMANY EXPANDED
+###  ##  #  # # #  ## 
+ #  #  # ## # # # #   
+ #  #### # ## ##   #  
+ #  #  # #  # # #   # 
+ #  #  # #  # # # ## 
+
+ ####################
+
+GER_bmw_tank_industry_organisation = {
+	include = generic_medium_tank_organization
+	icon = GFX_idea_bmw_tank_industry
+	
+	allowed = {	
+		OR = {
+			tag = GER 
+		}
+	}
+
+	research_categories = { mio_cat_tech_medium_armor_and_modules mio_cat_tech_heavy_armor_and_modules }
+
+	available = {
+		# When in a Foreign MIO, countries need to be at peace with original country
+		IF = {
+			limit = {
+				FROM = { NOT = { original_tag = GER } }
+			}
+			FROM = { NOT = { has_war_with = GER } }
+		}
+	}
+
+	initial_trait = {
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+		}
+	}
+
+	add_trait = {  
+		token = GER_mio_trait_german_engineering
+		name = GER_mio_trait_german_engineering
+		icon = GFX_generic_mio_department_icon_tank_general_technology
+		special_trait_background = yes
+
+		limit_to_equipment_type = { light_tank_chassis medium_tank_chassis heavy_tank_chassis }
+		equipment_bonus = {
+			armor_value = 0.05 
+			hard_attack = 0.05
+			reliability = 0.10 
+			maximum_speed = 0.10
+		}
+
+		available = {
+			FROM = {
+				mio:GER_bmw_tank_industry_organisation = {
+					has_mio_size > 0
+				}
+			}
+		}
+
+		position = { x=8 y=2 }  
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 1.5
+				date > 1937.1.1
+			}
+		}
+	}
+
+	add_trait = {  
+		token = GER_mio_trait_improve_production_line
+		name = GER_mio_trait_improve_production_line
+		icon = GFX_generic_mio_department_icon_tank_general_materials
+		special_trait_background = yes
+
+		all_parents = { GER_mio_trait_german_engineering }
+
+		limit_to_equipment_type = { light_tank_chassis medium_tank_chassis heavy_tank_chassis }
+		production_bonus = {
+			production_resource_need_factor = -0.1
+			production_efficiency_gain_factor = 0.1
+		}
+
+		available = {
+			FROM = {
+				mio:GER_bmw_tank_industry_organisation = {
+					has_mio_size > 2
+				}
+			}
+		}
+
+		position = { x=1 y=1 } 
+		relative_position_id = GER_mio_trait_german_engineering
+	}
+
+	add_trait = {  
+		token = GER_mio_trait_hotrolled_armors
+		name = GER_mio_trait_hotrolled_armor
+		icon = GFX_generic_mio_department_icon_tank_general_engine
+		special_trait_background = yes
+
+		all_parents = { GER_mio_trait_german_engineering }
+
+		limit_to_equipment_type = { light_tank_chassis medium_tank_chassis heavy_tank_chassis }
+		production_bonus = {
+			production_efficiency_cap_factor = 0.05
+			production_efficiency_gain_factor = 0.05
+		}
+
+		available = {
+			FROM = {
+				mio:GER_bmw_tank_industry_organisation = {
+					has_mio_size > 2
+				}
+			}
+		}
+
+		position = { x=-1 y=1 }  
+		relative_position_id = GER_mio_trait_german_engineering
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 1.5
+				date > 1937.1.1
+			}
+		}
+	}
+
+	add_trait = {
+		token = GER_mio_trait_hoesch_facilities
+		name = GER_mio_trait_hoesch_facilities
+		icon = GFX_generic_mio_trait_icon_production_capacity
+		special_trait_background = yes
+
+		position = { x=8 y=4 }
+
+		visible = {
+			FROM = { original_tag = GER }
+		}
+
+		available = {
+			FROM = {
+				NOT = { has_country_flag = GER_hoesch_facilities_trait_taken_flag }
+			}
+		}
+
+		on_complete = {
+			custom_effect_tooltip = generic_trait_will_not_be_available_in_other_organizations
+			FROM = {
+				set_country_flag = GER_hoesch_facilities_trait_taken_flag
+			}
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
+
+	override_trait = {
+		token = generic_mio_trait_improved_suspension
+		equipment_bonus = {
+			reliability = 0.05
+			maximum_speed = 0.05
+		}
+		special_trait_background = yes
+	}
+
+	override_trait = {
+		token = generic_mio_trait_armor_steel_working
+		production_bonus = {
+			production_capacity_factor = 0.05
+			production_efficiency_cap_factor = 0.05
+		}
+		special_trait_background = yes
+	}
+
+	override_trait = {
+		token = generic_mio_trait_power_traverse
+		equipment_bonus = {
+			hard_attack = 0.05
+			breakthrough = 0.05
+		}
+	}
+
+	override_trait = {
+		token = generic_mio_trait_all_round_cupola
+		equipment_bonus = {
+			soft_attack = 0.05
+			breakthrough = 0.05
+		}
+	}
+}
+
+GER_krupp_tank_organization = {
+	include = generic_mobile_tank_organization
+	icon = GFX_idea_krupp
+
+	allowed = {	
+		tag = GER 
+	}
+
+	initial_trait = {
+		organization_modifier = {
+			military_industrial_organization_funds_gain = -0.2
+		}
+		equipment_bonus = {
+			armor_value = 0
+			reliability = 0
+		}
+	}
+
+	override_trait = { 
+		token = generic_mio_quality_assurance_routines	
+		special_trait_background = yes
+
+		equipment_bonus = {
+			reliability = 0.05
+		}
+
+		position = { x=4 y=1 } 
+	}
+
+	override_trait = { 
+		token = generic_mio_streamlined_production	
+		all_parents = { GER_mio_integrate_new_technologies_into_tanks generic_mio_improved_ventilation generic_mio_enlarged_breech }
+		relative_position_id = GER_mio_integrate_new_technologies_into_tanks
+		position = { x=0 y=1 } 
+	}
+
+	add_trait = {  
+		token = GER_mio_improve_production_techniques
+		name = GER_mio_improve_production_techniques
+		icon = GFX_generic_mio_department_icon_tank_general_materials
+		special_trait_background = yes
+
+		all_parents = { generic_mio_trait_improved_boogies generic_mio_sloping_armor }
+
+		equipment_bonus = {
+			build_cost_ic = -0.1
+		}
+
+		available = {
+			FROM = {
+				custom_trigger_tooltip = {
+					tooltip = GER_mio_krupp_tt
+					always = no
+				}
+			}
+		}
+
+		position = { x=2 y=1 } 
+		relative_position_id = generic_mio_trait_improved_boogies
+	}
+
+	add_trait = {  
+		token = GER_mio_integrate_new_technologies_into_tanks
+		name = GER_mio_integrate_new_technologies_into_tanks
+		icon = GFX_generic_mio_department_icon_tank_general_production
+		special_trait_background = yes
+
+		all_parents = { GER_mio_improve_production_techniques generic_mio_quality_assurance_routines }
+		limit_to_equipment_type = { mio_cat_eq_all_medium_tank mio_cat_eq_all_heavy_tank }
+
+		available = {
+			FROM = {
+				mio:GER_krupp_tank_organization = {
+					has_mio_size > 4
+				}
+			}
+		}
+
+		equipment_bonus = {
+			armor_value = 0.05 
+			breakthrough = 0.05 
+			hard_attack = 0.05
+		}
+
+		position = { x=1 y=1 } 
+		relative_position_id = GER_mio_improve_production_techniques
+	}
+}
+
+#####################
+
+ ## #  # ### ###   ## 
+#   #  #  #  #  # #   
+ #  ####  #  ###   #  
+  # #  #  #  #      # 
+##  #  # ### #    ##  
+ 
+#####################
+
+GER_deutsche_werke_kiel_organization = {
+	include = generic_escort_ship_organization
+	icon = GFX_idea_deutsche_werke_kiel
+	
+	allowed = {	
+		tag = GER 
+	}
+	
+	available = {
+		FROM = {
+			has_completed_focus = GER_plan_z
+		}
+	}
+
+	visible = {
+	}
+}
+
+###########################
+
+###  #    ##  #  # ###  ## 
+#  # #   #  # ## # #   #   
+###  #   #### # ## ##   #  
+#    #   #  # #  # #     # 
+#    ### #  # #  # ### ##  
+
+###########################
+
+GER_bmw_air_organization = {
+	include = generic_light_aircraft_organization
+	icon = GFX_idea_bmw_air
+
+	allowed = {	
+		OR = {
+			tag = GER
+		}
+	}
+
+	available = {
+		# When in a Foreign MIO, countries need to be at peace with original country
+		IF = {
+			limit = {
+				FROM = { NOT = { original_tag = GER } }
+			}
+			FROM = { NOT = { has_war_with = GER } }
+		}
+		
+	}
+
+	visible = {
+	}
+}
+
+
+################################### 
+
+#   #  ##  ### ### ###  ### ### #   
+## ## #  #  #  #   #  #  #  #   #   
+# # # ####  #  ##  ###   #  ##  #   
+#   # #  #  #  #   #  #  #  #   #   
+#   # #  #  #  ### #  # ### ### ### 
+
+
+###################################
+
+GER_bmw_inf_organization = {
+	include = generic_motorized_mechanized_organization
+	icon = GFX_idea_bmw_inf
+	
+	allowed = {	
+		OR = {
+			tag = GER 
+		}
+	}
+	
+	available = {
+		# When in a Foreign MIO, countries need to be at peace with original country
+		IF = {
+			limit = {
+				FROM = { NOT = { original_tag = GER } }
+			}
+			FROM = { NOT = { has_war_with = GER } }
+		}
+	}
+
+	visible = {
+	}
+}
+
+GER_krupp_inf_organization = {
+	include = generic_infantry_equipment_organization
+	icon = GFX_idea_krupp
+
+	equipment_type = {
+		infantry_equipment
+	}
+
+	research_categories = { infantry_weapons }
+	
+	allowed = {	
+		tag = GER 
+	}
+
+	initial_trait = {
+		organization_modifier = {
+			military_industrial_organization_funds_gain = -0.2
+		}
+	}
+
+	override_trait = { 
+		token = generic_mio_trait_advanced_barrel_forging	
+		special_trait_background = yes
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.05
+		}
+	}
+
+	override_trait = { 
+		token = generic_mio_trait_anti_vechicle_land_mines	
+		special_trait_background = yes
+
+		equipment_bonus = {
+			defense = 0.04
+			hard_attack = 0.04
+		}
+	}
+}
+#eo

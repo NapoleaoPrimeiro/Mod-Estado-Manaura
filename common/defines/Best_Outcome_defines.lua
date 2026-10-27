@@ -1,0 +1,1 @@
+NDefines.NProject.DEFAULT_EMPTY_REWARD_WEIGHT = 0

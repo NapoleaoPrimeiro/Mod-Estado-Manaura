@@ -1,0 +1,346 @@
+@RANK_POSITIION_Y = 145 #Tüm başlıkların Y sini tek seferde düzenler
+@RANK_GRIDBOX_Y = 240 #Tüm başlıkların altında gözüken ülke bayraklarının Y sini tek seferde düzenler
+@FACTION_POSITION_Y = 170 #Faction başlığının Y sini düzenler
+
+guiTypes = {
+	containerWindowType = {
+		name = "nation_ranker"
+		position = { x = 0 y = 0}	
+		size = { width = 1285 height= 600 }
+		orientation = center
+		origo = center
+		fade_time = 100
+		moveable = yes
+		fade_type = linear
+		click_to_front = no
+		clipping = no
+		
+		background = {
+			name = "Background"		
+			quadTextureSprite ="GFX_agora_country_power_classification_bg"
+		}
+		
+		instantTextboxType = {
+			name = "title"
+			position = { x = 105 y = 5 }
+			font = "hoi_30header"
+			borderSize = {x = 0 y = 0}
+			pdx_tooltip = "title_tt"
+			text = "- Country Power Classification -"
+			maxWidth = 1280
+			maxHeight = 36
+			fixedsize = yes
+			format = centre
+		}
+
+		instantTextboxType = {
+			name = "rank_absolute_power_title"
+			position = { x = 40 y = @RANK_POSITIION_Y }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "rank_absolute_power_title_tt"
+			pdx_tooltip = "dominant_power_allowed_war_date"
+			maxWidth = 140
+			maxHeight = 80
+			#fixedsize = yes
+			format = centre
+		}		
+		gridboxtype = {
+			name = "rank_absolute_power"
+			position = { x = 75 y = @RANK_GRIDBOX_Y }
+			size = { width = 0 height = 0 }
+			slotsize = { width = 46 height = 32 }
+			max_slots_horizontal = 3
+			add_horizontal = yes
+		}
+
+
+		instantTextboxType = {
+			name = "rank_dominant_power_title"
+			position = { x = 185 y = @RANK_POSITIION_Y }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "rank_dominant_power_title_tt"
+			pdx_tooltip = "dominant_power_allowed_war_date"
+			maxWidth = 140
+			maxHeight = 80
+			#fixedsize = yes
+			format = centre
+		}		
+		gridboxtype = {
+			name = "rank_dominant_power"
+			position = { x = 220 y = @RANK_GRIDBOX_Y }
+			size = { width = 0 height = 0 }
+			slotsize = { width = 46 height = 32 }
+			max_slots_horizontal = 3
+			add_horizontal = yes
+		}
+
+	
+		instantTextboxType = {
+			name = "rank_great_power_title"
+			position = { x = 335 y = @RANK_POSITIION_Y }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 20}
+			text = "rank_great_power_title_tt"
+			pdx_tooltip = "great_power_allowed_war_date"
+			maxWidth = 140
+			maxHeight = 80
+			#fixedsize = yes
+			format = centre
+		}		
+		gridboxtype = {
+			name = "rank_great_power"
+			position = { x = 365 y = @RANK_GRIDBOX_Y }
+			size = { width = 0 height = 0 }
+			slotsize = { width = 46 height = 32 }
+			max_slots_horizontal = 3
+			add_horizontal = yes
+		}
+
+
+		instantTextboxType = {
+			name = "rank_superior_power_title"
+			position = { x = 485 y = @RANK_POSITIION_Y }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "rank_superior_power_title_tt"
+			pdx_tooltip = "superior_power_allowed_war_date"
+			maxWidth = 140
+			maxHeight = 80
+			#fixedsize = yes
+			format = centre
+		}
+		gridboxtype = {
+			name = "rank_superior_power"
+			position = { x = 510 y = @RANK_GRIDBOX_Y }
+			size = { width = 0 height = 0 }
+			slotsize = { width = 46 height = 32 }
+			max_slots_horizontal = 3
+			add_horizontal = yes
+		}
+
+
+		instantTextboxType = {
+			name = "rank_regional_power_title"
+			position = { x = 635 y = @RANK_POSITIION_Y }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "rank_regional_power_title_tt"
+			pdx_tooltip = "regional_power_allowed_war_date"
+			maxWidth = 140
+			maxHeight = 80
+			#fixedsize = yes
+			format = centre
+		}
+		gridboxtype = {
+			name = "rank_regional_power"
+			position = { x = 660 y = @RANK_GRIDBOX_Y }
+			size = { width = 0 height = 0 }
+			slotsize = { width = 46 height = 32 }
+			max_slots_horizontal = 3
+			add_horizontal = yes
+		}
+
+
+		instantTextboxType = {
+			name = "rank_emerging_power_title"
+			position = { x = 785 y = @RANK_POSITIION_Y }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "rank_emerging_power_title_tt"
+			pdx_tooltip = "emerging_power_allowed_war_date"
+			maxWidth = 140
+			maxHeight = 80
+			#fixedsize = yes
+			format = centre
+		}	
+		gridboxtype = {
+			name = "rank_emerging_power"
+			position = { x = 810 y = @RANK_GRIDBOX_Y }
+			size = { width = 0 height = 0 }
+			slotsize = { width = 46 height = 32 }
+			max_slots_horizontal = 3
+			add_horizontal = yes
+		}
+
+
+		instantTextboxType = {
+			name = "rank_lesser_power_title"
+			position = { x = 935 y = @RANK_POSITIION_Y }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "rank_lesser_power_title_tt"
+			pdx_tooltip = "lesser_power_allowed_war_date"
+			maxWidth = 140
+			maxHeight = 80
+			#fixedsize = yes
+			format = centre
+		}	
+		gridboxtype = {
+			name = "rank_lesser_power"
+			position = { x = 960 y = @RANK_GRIDBOX_Y }
+			size = { width = 0 height = 0 }
+			slotsize = { width = 46 height = 32 }
+			max_slots_horizontal = 3
+			add_horizontal = yes
+		}
+
+
+		instantTextboxType = {
+			name = "rank_weak_power_title"
+			position = { x = 1085 y = @RANK_POSITIION_Y }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 20}
+			text = "rank_weak_power_title_tt"
+			pdx_tooltip = "weak_power_allowed_war_date"
+			maxWidth = 140
+			maxHeight = 80
+			#fixedsize = yes
+			format = centre
+		}
+		gridboxtype = {
+			name = "rank_weak_power"
+			position = { x = 1110 y = @RANK_GRIDBOX_Y }
+			size = { width = 0 height = 0 }
+			slotsize = { width = 46 height = 32 }
+			max_slots_horizontal = 3
+			add_horizontal = yes
+		}
+
+
+		instantTextboxType = {
+			name = "rank_factions_title"
+			position = { x = 1250 y = @FACTION_POSITION_Y }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "ranks_faction_list"
+			maxWidth = 140
+			maxHeight = 80
+			#fixedsize = yes
+			format = centre
+		}
+		gridboxtype = {
+			name = "rank_factions"
+			position = { x = 1250 y = @RANK_GRIDBOX_Y }
+			size = { width = 0 height = 0 }
+			slotsize = { width = 46 height = 32 }
+			max_slots_horizontal = 1
+			add_horizontal = yes
+		}
+
+		buttonType = {
+			name = "close_ranker"
+			quadTextureSprite = "GFX_closebutton"
+			position = { x = 1390 y = 40 }
+			pdx_tooltip = "Ranking_Charts"
+			clicksound = click_ok
+			shortcut = "ESCAPE"
+		}
+	}
+	containerWindowType = {
+		name = "ranker_startup"
+		position = { x = -82 y = 34}
+		size = { width = 60 height = 60 }
+		orientation = UPPER_RIGHT
+		origo = UPPER_RIGHT
+		fade_time = 100
+		moveable = yes
+		fade_type = linear
+		click_to_front = no
+		clipping = no
+		#scale = 0.7
+		
+		buttonType = {
+			name = "open_ranker"
+			spriteType = "GFX_open_ranker"
+			position = { x = -210 y = 18 }
+			pdx_tooltip = "Ranking_Charts"
+			clicksound = click_ok
+			shortcut = "1"
+		}
+
+		buttonType = {
+			name = "open_rulebook"
+			spriteType = "GFX_ruleset_button"
+			position = { x = -175 y = 19 }
+			clicksound = click_ok
+			web_link = "https://docs.google.com/document/d/1HRVEtTkwpzl7pZ_Yo9hS4HT_QAmuEQWs5re3cASgstA"
+			shortcut = "2"
+		}
+	}
+	containerWindowType = {
+		name = "charters_list_entry"
+		position = { x = 0 y = 0 }
+		size = { width = 0 height = 0 }
+		
+		buttonType = {
+			name = "member_country_flag"
+			quadTextureSprite = "GFX_flag_small2"
+			position = { x = 0 y = 3 }
+			pdx_tooltip = "country_name_tooltip"
+		}
+		iconType = {
+			name = "unsc_member_flag_border"
+			quadTextureSprite = "GFX_diplo_countrylist_flag_frame"
+			position = { x = -4 y = 0 }
+			alwaystransparent = yes
+		}
+	}
+	containerWindowType = {
+		name = "charters_list_entry_factions"
+		#position = { x = -15 y = 0 }
+		position = { x = 50 y = 0 }
+		size = { width = 0 height = 0 }
+		
+		buttonType = {
+			name = "member_country_flag"
+			quadTextureSprite = "GFX_flag_small2"
+			position = { x = 0 y = 3 }
+			pdx_tooltip = "country_name_tooltip"
+		}
+		iconType = {
+			name = "unsc_member_flag_border"
+			quadTextureSprite = "GFX_diplo_countrylist_flag_frame"
+			position = { x = -4 y = 0 }
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "faction_score"
+			position = { x = 50 y = 8 }
+			font = "hoi_20b"
+			borderSize = {x = 0 y = 0}
+			text = "faction_score"
+			maxWidth = 140
+			maxHeight = 20
+			fixedsize = yes
+		}
+		
+	}
+	#containerWindowType = {
+	#	name = "faction_ranker"
+	#	position = { x = 560 y = 0 }
+	#	size = { width = 200 height = 720 }
+	#	orientation = center
+	#	origo = center
+	#	fade_time = 100
+	#	moveable = no
+	#	fade_type = linear
+	#	click_to_front = no
+	#	clipping = no
+	#	
+	#	#background = {
+	#	#	name = "SlimBack"
+	#	#	quadTextureSprite = "GFX_facs"
+	#	#}
+	#	
+	#	gridboxtype = {
+	#		name = "charters_gridbox_factions"
+	#		position = { x = 60 y = 82 }
+	#		size = { width = 0 height = 0 }
+	#		slotsize = { width = 46 height = 35 }
+	#		max_slots_horizontal = 1
+	#		add_horizontal = yes
+	#	}
+	#}
+}

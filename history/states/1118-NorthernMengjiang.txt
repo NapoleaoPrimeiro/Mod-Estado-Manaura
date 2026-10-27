@@ -1,0 +1,36 @@
+state = {
+	id = 1118
+	name = "STATE_1118"
+	manpower = 5000
+	buildings_max_level_factor = 1.000
+	state_category = wasteland
+    # impassable = yes
+
+	history = {
+
+		owner = MEN
+		add_core_of = MEN
+		add_core_of = CHI
+		add_core_of = PRC
+
+		1936.1.1 = {
+			IF = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				add_core_of = HBC
+			}
+		}
+
+		buildings = {
+			infrastructure = 1
+		}
+
+	}
+
+	provinces = {
+		1796 4222 4555 4873
+	}
+
+	local_supplies = 0.0 
+}

@@ -1,0 +1,304 @@
+is_diplomatic_action_valid_peace_proposal = {
+    always = no
+}
+
+peace_deal_available = {
+
+	if ={
+		limit = {
+			has_game_rule = {
+				rule = peace_deal_waittime
+				option = DEFAULT
+			}
+			is_debug = no
+		}
+		if = {
+			limit = {
+				is_major_conflict_t = yes
+			}	
+			war_length_with = {
+				tag = ROOT
+				months > 11
+			}
+		}	
+		else_if = {
+			limit = {
+				is_half_major_conflict_t = yes
+			}	
+			war_length_with = {
+				tag = ROOT
+				months > 5
+			}
+		}
+		else = {
+			war_length_with = {
+				tag = ROOT
+				months > 2
+			}
+		}
+	}
+	
+	if = {
+		limit = {
+			ROOT = {
+				TAG = ETH
+			}
+			THIS = {
+				TAG = ITA
+			}
+			has_global_flag = second_italo_ethiopian_war_flag
+		}
+		custom_trigger_tooltip = {
+			tooltip = ethiopia_war_reason_tt
+			always = no
+		}	
+	}
+	
+	else_if = {
+		limit = {
+			ROOT = {
+				TAG = ITA
+			}
+			THIS = {
+				TAG = ETH
+			}
+			has_global_flag = second_italo_ethiopian_war_flag
+		}
+		custom_trigger_tooltip = {
+			tooltip = ethiopia_war_reason_tt
+			always = no
+		}	
+	}
+	
+	if = {
+		limit = {
+			ROOT = {
+				TAG = SOV
+			}
+			THIS = {
+				TAG = FIN
+			}
+			has_global_flag = SOV_winter_war_flag
+		}
+		custom_trigger_tooltip = {
+			tooltip = winter_war_reason_tt
+			always = no
+		}	
+	}
+	
+	else_if = {
+		limit = {
+			ROOT = {
+				TAG = FIN
+			}
+			THIS = {
+				TAG = SOV
+			}
+			has_global_flag = SOV_winter_war_flag
+		}
+		custom_trigger_tooltip = {
+			tooltip = winter_war_reason_tt
+			always = no
+		}	
+	}
+	
+	if = {
+		limit = {
+			civilwar_target = ROOT
+		}
+		
+		custom_trigger_tooltip = {
+			tooltip = civil_war_reason_tt
+			always = no
+		}
+	}
+	
+	else_if = {
+		limit = {
+			civilwar_target = THIS
+		}
+		
+		custom_trigger_tooltip = {
+			tooltip = civil_war_reason_tt
+			always = no
+		}
+	}
+	
+	if = {
+		limit = {
+			is_subject = yes
+		}
+		
+		custom_trigger_tooltip = {
+			tooltip = subject_reason_tt
+			always = no
+		}
+	}
+	
+	else_if = {
+		limit = {
+			ROOT = {
+				is_subject = yes
+			}
+		}
+		
+		custom_trigger_tooltip = {
+			tooltip = subject_reason_2tt
+			always = no
+		}
+	}	
+}
+
+is_major_conflict_t = {
+	ROOT = {
+		is_major = yes
+	}
+	THIS = {
+		is_major = yes
+	}
+}
+
+is_half_major_conflict_t = {
+	OR = {
+		ROOT = {
+			is_major = yes
+		}
+		THIS = {
+			is_major = yes
+		}
+	}
+}
+
+is_minor_conflict_t = {
+	ROOT = {
+		is_major = no
+	}
+	THIS = {
+		is_major = no
+	}
+}	
+
+is_reachable = {
+	OR = {
+		is_neighbor_of = ROOT
+		any_allied_country = {
+			is_neighbor_of = ROOT
+		}
+	}
+	
+	ROOT = {
+		OR = {
+			is_neighbor_of = PREV
+			any_allied_country = {
+				is_neighbor_of = PREV
+			}
+		}	
+	}
+}
+
+is_reachable_continent = {
+
+	OR = {
+		any_owned_state = {
+			is_on_same_continent_as = ROOT
+		}
+		any_controlled_state = {
+			is_on_same_continent_as = ROOT
+		}
+		any_allied_country = {
+			OR = {
+				any_owned_state = {
+					is_on_same_continent_as = ROOT
+				}
+				any_controlled_state = {
+					is_on_same_continent_as = ROOT
+				}
+			}
+		}	
+	}
+	ROOT = {
+		OR = {
+			any_owned_state = {
+				is_on_same_continent_as = THIS
+			}
+			any_controlled_state = {
+				is_on_same_continent_as = THIS
+			}
+			any_allied_country = {
+				OR = {
+					any_owned_state = {
+						is_on_same_continent_as = THIS
+					}
+					any_controlled_state = {
+						is_on_same_continent_as = THIS
+					}
+				}
+			}	
+		}
+	}
+}
+
+NonCoreControlledAlliesTHIS = {
+	OR = {
+		any_allied_country = {
+			any_controlled_state = {
+				NOT = {
+					is_core_of = ROOT
+				}
+				is_owned_by = ROOT	
+			}
+		}	
+		any_controlled_state = {
+			NOT = {
+				is_core_of = ROOT
+			}
+			is_owned_by = ROOT
+		}	
+	}
+}
+
+NonCoreControlledAlliesROOT = {
+	OR = {
+		ROOT = {
+			any_allied_country = {
+				any_controlled_state = {
+					NOT = {
+						is_core_of = PREV.PREV
+					}
+					is_owned_by = PREV.PREV
+				}
+			}
+		}
+		ROOT = {
+			any_controlled_state = {
+				NOT = {
+					is_core_of = PREV.PREV
+				}
+				is_owned_by = PREV.PREV
+			}
+		}	
+	}
+}
+
+ControlledAlliesROOT = {
+	any_allied_country = {
+		any_owned_state = {
+			is_controlled_by_ROOT_or_ally = yes
+		}
+	}	
+}
+
+ControlledAlliesTHIS = {
+	ROOT = {
+		any_allied_country = {
+			any_owned_state = {
+				OR = {
+					is_controlled_by = PREV.PREV
+					controller = {
+						is_ally_with = PREV.PREV
+					}
+				}
+			}
+		}
+	}	
+}

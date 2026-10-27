@@ -1,0 +1,2316 @@
+ 		 ##################################
+#########################################################
+  ### #  # #  # ### ###       ##  ### ###   ##  #   ### 
+   #  ## # ## # #   #  #     #  #  #  #  # #  # #   #   
+   #  # ## # ## ##  ###      #     #  ###  #    #   ##  
+   #  #  # #  # #   #  #     #  #  #  #  # #  # #   #   
+  ### #  # #  # ### #  #      ##  ### #  #  ##  ### ### 
+#########################################################
+		  ##################################
+
+
+################################
+  ########## TEXTS ###########
+################################
+#GetAscendedAdvisorName
+defined_text = {
+	name = GetAscendedAdvisorName1
+	text = { #NO ONE
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 0 }	
+		}
+		localization_key = empty_key
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 1 }
+		}
+		localization_key = USA_max
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 2 }
+		}
+		localization_key = USA_engs
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 3 }
+		}
+		localization_key = USA_liening
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 4 }
+		}
+		localization_key = USA_stalin
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 5 }
+		}
+		localization_key = USA_mao
+	}
+}
+defined_text = {
+	name = GetAscendedAdvisorName2
+	text = { #NO ONE
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 0 }	
+		}
+		localization_key = empty_key
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 1 }
+		}
+		localization_key = USA_max
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 2 }
+		}
+		localization_key = USA_engs
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 3 }
+		}
+		localization_key = USA_liening
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 4 }
+		}
+		localization_key = USA_stalin
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 5 }
+		}
+		localization_key = USA_mao
+	}
+}
+defined_text = {
+	name = GetAscendedAdvisorName3
+	text = { #NO ONE
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 0 }	
+		}
+		localization_key = empty_key
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 1 }
+		}
+		localization_key = USA_max
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 2 }
+		}
+		localization_key = USA_engs
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 3 }
+		}
+		localization_key = USA_liening
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 4 }
+		}
+		localization_key = USA_stalin
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 5 }
+		}
+		localization_key = USA_mao
+	}
+}
+defined_text = {
+	name = GetAscendedAdvisorName4
+	text = { #NO ONE
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 0 }	
+		}
+		localization_key = empty_key
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 1 }
+		}
+		localization_key = USA_max
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 2 }
+		}
+		localization_key = USA_engs
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 3 }
+		}
+		localization_key = USA_liening
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 4 }
+		}
+		localization_key = USA_stalin
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 5 }
+		}
+		localization_key = USA_mao
+	}
+}
+defined_text = {
+	name = GetAscendedAdvisorName5
+	text = { #NO ONE
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 0 }	
+		}
+		localization_key = empty_key
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 1 }
+		}
+		localization_key = USA_max
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 2 }
+		}
+		localization_key = USA_engs
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 3 }
+		}
+		localization_key = USA_liening
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 4 }
+		}
+		localization_key = USA_stalin
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 5 }
+		}
+		localization_key = USA_mao
+	}
+}
+#GetAscendedAdvisor
+defined_text = {
+	name = GetAscendedAdvisor1
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 0 }
+		}
+		localization_key = empty_key
+	}
+	text = {
+		localization_key = USA_the_inner_circle_tt_ascended_advisor_1
+	}
+}
+defined_text = {
+	name = GetAscendedAdvisor2
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 0 }
+		}
+		localization_key = empty_key
+	}
+	text = {
+		localization_key = USA_the_inner_circle_tt_ascended_advisor_2
+	}
+}
+defined_text = {
+	name = GetAscendedAdvisor3
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 0 }
+		}
+		localization_key = empty_key
+	}
+	text = {
+		localization_key = USA_the_inner_circle_tt_ascended_advisor_3
+	}
+}
+defined_text = {
+	name = GetAscendedAdvisor4
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_4 = 0 }
+		}
+		localization_key = empty_key
+	}
+	text = {
+		localization_key = USA_the_inner_circle_tt_ascended_advisor_4
+	}
+}
+defined_text = {
+	name = GetAscendedAdvisor5
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_5 = 0 }
+		}
+		localization_key = empty_key
+	}
+	text = {
+		localization_key = USA_the_inner_circle_tt_ascended_advisor_5
+	}
+}
+#GetAscendedAdvisorDesc
+defined_text = {
+	name = GetAscendedAdvisorDesc1
+	text = { #NO ONE
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 0 }	
+		}
+		localization_key = empty_key
+	}
+
+	#max马克思
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 1 }
+			has_idea = USA_max_idea1
+		}
+		localization_key = idea_desc|USA_max_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 1 }
+			has_idea = USA_max_idea2
+		}
+		localization_key = idea_desc|USA_max_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 1 }
+			has_idea = USA_max_idea3
+		}
+		localization_key = idea_desc|USA_max_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 1 }
+			has_idea = USA_max_idea4
+		}
+		localization_key = idea_desc|USA_max_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 1 }
+			has_idea = USA_max_idea5
+		}
+		localization_key = idea_desc|USA_max_idea5
+	}
+
+	#engs恩格斯
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 2 }
+			has_idea = USA_engs_idea1
+		}
+		localization_key = idea_desc|USA_engs_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 2 }
+			has_idea = USA_engs_idea2
+		}
+		localization_key = idea_desc|USA_engs_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 2 }
+			has_idea = USA_engs_idea3
+		}
+		localization_key = idea_desc|USA_engs_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 2 }
+			has_idea = USA_engs_idea4
+		}
+		localization_key = idea_desc|USA_engs_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 2 }
+			has_idea = USA_engs_idea5
+		}
+		localization_key = idea_desc|USA_engs_idea5
+	}
+	
+
+	#liening列宁
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 3 }
+			has_idea = USA_liening_idea1
+		}
+		localization_key = idea_desc|USA_liening_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 3 }
+			has_idea = USA_liening_idea2
+		}
+		localization_key = idea_desc|USA_liening_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 3 }
+			has_idea = USA_liening_idea3
+		}
+		localization_key = idea_desc|USA_liening_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 3 }
+			has_idea = USA_liening_idea4
+		}
+		localization_key = idea_desc|USA_liening_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 3 }
+			has_idea = USA_liening_idea5
+		}
+		localization_key = idea_desc|USA_liening_idea5
+	}
+
+	#stalin斯大林
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 4 }
+			has_idea = USA_stalin_idea1
+		}
+		localization_key = idea_desc|USA_stalin_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 4 }
+			has_idea = USA_stalin_idea2
+		}
+		localization_key = idea_desc|USA_stalin_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 4 }
+			has_idea = USA_stalin_idea3
+		}
+		localization_key = idea_desc|USA_stalin_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 4 }
+			has_idea = USA_stalin_idea4
+		}
+		localization_key = idea_desc|USA_stalin_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 4 }
+			has_idea = USA_stalin_idea5
+		}
+		localization_key = idea_desc|USA_stalin_idea5
+	}
+
+	#mao毛泽东
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 5 }
+			has_idea = USA_mao_idea1
+		}
+		localization_key = idea_desc|USA_mao_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 5 }
+			has_idea = USA_mao_idea2
+		}
+		localization_key = idea_desc|USA_mao_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 5 }
+			has_idea = USA_mao_idea3
+		}
+		localization_key = idea_desc|USA_mao_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 5 }
+			has_idea = USA_mao_idea4
+		}
+		localization_key = idea_desc|USA_mao_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_1 = 5 }
+			has_idea = USA_mao_idea5
+		}
+		localization_key = idea_desc|USA_mao_idea5
+	}
+}
+defined_text = {
+	name = GetAscendedAdvisorDesc2
+	text = { #NO ONE
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 0 }	
+		}
+		localization_key = empty_key
+	}
+
+	#max马克思
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 1 }
+			has_idea = USA_max_idea1
+		}
+		localization_key = idea_desc|USA_max_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 1 }
+			has_idea = USA_max_idea2
+		}
+		localization_key = idea_desc|USA_max_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 1 }
+			has_idea = USA_max_idea3
+		}
+		localization_key = idea_desc|USA_max_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 1 }
+			has_idea = USA_max_idea4
+		}
+		localization_key = idea_desc|USA_max_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 1 }
+			has_idea = USA_max_idea5
+		}
+		localization_key = idea_desc|USA_max_idea5
+	}
+
+	#engs恩格斯
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 2 }
+			has_idea = USA_engs_idea1
+		}
+		localization_key = idea_desc|USA_engs_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 2 }
+			has_idea = USA_engs_idea2
+		}
+		localization_key = idea_desc|USA_engs_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 2 }
+			has_idea = USA_engs_idea3
+		}
+		localization_key = idea_desc|USA_engs_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 2 }
+			has_idea = USA_engs_idea4
+		}
+		localization_key = idea_desc|USA_engs_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 2 }
+			has_idea = USA_engs_idea5
+		}
+		localization_key = idea_desc|USA_engs_idea5
+	}
+	
+
+	#liening列宁
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 3 }
+			has_idea = USA_liening_idea1
+		}
+		localization_key = idea_desc|USA_liening_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 3 }
+			has_idea = USA_liening_idea2
+		}
+		localization_key = idea_desc|USA_liening_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 3 }
+			has_idea = USA_liening_idea3
+		}
+		localization_key = idea_desc|USA_liening_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 3 }
+			has_idea = USA_liening_idea4
+		}
+		localization_key = idea_desc|USA_liening_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 3 }
+			has_idea = USA_liening_idea5
+		}
+		localization_key = idea_desc|USA_liening_idea5
+	}
+
+	#stalin斯大林
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 4 }
+			has_idea = USA_stalin_idea1
+		}
+		localization_key = idea_desc|USA_stalin_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 4 }
+			has_idea = USA_stalin_idea2
+		}
+		localization_key = idea_desc|USA_stalin_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 4 }
+			has_idea = USA_stalin_idea3
+		}
+		localization_key = idea_desc|USA_stalin_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 4 }
+			has_idea = USA_stalin_idea4
+		}
+		localization_key = idea_desc|USA_stalin_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 4 }
+			has_idea = USA_stalin_idea5
+		}
+		localization_key = idea_desc|USA_stalin_idea5
+	}
+
+	#mao毛泽东
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 5 }
+			has_idea = USA_mao_idea1
+		}
+		localization_key = idea_desc|USA_mao_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 5 }
+			has_idea = USA_mao_idea2
+		}
+		localization_key = idea_desc|USA_mao_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 5 }
+			has_idea = USA_mao_idea3
+		}
+		localization_key = idea_desc|USA_mao_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 5 }
+			has_idea = USA_mao_idea4
+		}
+		localization_key = idea_desc|USA_mao_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_2 = 5 }
+			has_idea = USA_mao_idea5
+		}
+		localization_key = idea_desc|USA_mao_idea5
+	}
+}
+defined_text = {
+	name = GetAscendedAdvisorDesc3
+	text = { #NO ONE
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 0 }	
+		}
+		localization_key = empty_key
+	}
+
+	#max马克思
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 1 }
+			has_idea = USA_max_idea1
+		}
+		localization_key = idea_desc|USA_max_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 1 }
+			has_idea = USA_max_idea2
+		}
+		localization_key = idea_desc|USA_max_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 1 }
+			has_idea = USA_max_idea3
+		}
+		localization_key = idea_desc|USA_max_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 1 }
+			has_idea = USA_max_idea4
+		}
+		localization_key = idea_desc|USA_max_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 1 }
+			has_idea = USA_max_idea5
+		}
+		localization_key = idea_desc|USA_max_idea5
+	}
+
+	#engs恩格斯
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 2 }
+			has_idea = USA_engs_idea1
+		}
+		localization_key = idea_desc|USA_engs_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 2 }
+			has_idea = USA_engs_idea2
+		}
+		localization_key = idea_desc|USA_engs_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 2 }
+			has_idea = USA_engs_idea3
+		}
+		localization_key = idea_desc|USA_engs_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 2 }
+			has_idea = USA_engs_idea4
+		}
+		localization_key = idea_desc|USA_engs_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 2 }
+			has_idea = USA_engs_idea5
+		}
+		localization_key = idea_desc|USA_engs_idea5
+	}
+	
+
+	#liening列宁
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 3 }
+			has_idea = USA_liening_idea1
+		}
+		localization_key = idea_desc|USA_liening_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 3 }
+			has_idea = USA_liening_idea2
+		}
+		localization_key = idea_desc|USA_liening_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 3 }
+			has_idea = USA_liening_idea3
+		}
+		localization_key = idea_desc|USA_liening_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 3 }
+			has_idea = USA_liening_idea4
+		}
+		localization_key = idea_desc|USA_liening_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 3 }
+			has_idea = USA_liening_idea5
+		}
+		localization_key = idea_desc|USA_liening_idea5
+	}
+
+	#stalin斯大林
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 4 }
+			has_idea = USA_stalin_idea1
+		}
+		localization_key = idea_desc|USA_stalin_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 4 }
+			has_idea = USA_stalin_idea2
+		}
+		localization_key = idea_desc|USA_stalin_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 4 }
+			has_idea = USA_stalin_idea3
+		}
+		localization_key = idea_desc|USA_stalin_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 4 }
+			has_idea = USA_stalin_idea4
+		}
+		localization_key = idea_desc|USA_stalin_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 4 }
+			has_idea = USA_stalin_idea5
+		}
+		localization_key = idea_desc|USA_stalin_idea5
+	}
+
+	#mao毛泽东
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 5 }
+			has_idea = USA_mao_idea1
+		}
+		localization_key = idea_desc|USA_mao_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 5 }
+			has_idea = USA_mao_idea2
+		}
+		localization_key = idea_desc|USA_mao_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 5 }
+			has_idea = USA_mao_idea3
+		}
+		localization_key = idea_desc|USA_mao_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 5 }
+			has_idea = USA_mao_idea4
+		}
+		localization_key = idea_desc|USA_mao_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_3 = 5 }
+			has_idea = USA_mao_idea5
+		}
+		localization_key = idea_desc|USA_mao_idea5
+	}
+}
+defined_text = {
+	name = GetAscendedAdvisorDesc4
+	text = { #NO ONE
+		trigger = {
+			check_variable = { USA_ascended_advisor_4 = 0 }	
+		}
+		localization_key = empty_key
+	}
+
+	#max马克思
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_4 = 1 }
+			has_idea = USA_max_idea1
+		}
+		localization_key = idea_desc|USA_max_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_4 = 1 }
+			has_idea = USA_max_idea2
+		}
+		localization_key = idea_desc|USA_max_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_4 = 1 }
+			has_idea = USA_max_idea3
+		}
+		localization_key = idea_desc|USA_max_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_4 = 1 }
+			has_idea = USA_max_idea4
+		}
+		localization_key = idea_desc|USA_max_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_4 = 1 }
+			has_idea = USA_max_idea5
+		}
+		localization_key = idea_desc|USA_max_idea5
+	}
+
+	#engs恩格斯
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_4 = 2 }
+			has_idea = USA_engs_idea1
+		}
+		localization_key = idea_desc|USA_engs_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_4 = 2 }
+			has_idea = USA_engs_idea2
+		}
+		localization_key = idea_desc|USA_engs_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_4 = 2 }
+			has_idea = USA_engs_idea3
+		}
+		localization_key = idea_desc|USA_engs_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_4 = 2 }
+			has_idea = USA_engs_idea4
+		}
+		localization_key = idea_desc|USA_engs_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_4 = 2 }
+			has_idea = USA_engs_idea5
+		}
+		localization_key = idea_desc|USA_engs_idea5
+	}
+	
+
+	#liening列宁
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_4 = 3 }
+			has_idea = USA_liening_idea1
+		}
+		localization_key = idea_desc|USA_liening_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_4 = 3 }
+			has_idea = USA_liening_idea2
+		}
+		localization_key = idea_desc|USA_liening_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_4 = 3 }
+			has_idea = USA_liening_idea3
+		}
+		localization_key = idea_desc|USA_liening_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_4 = 3 }
+			has_idea = USA_liening_idea4
+		}
+		localization_key = idea_desc|USA_liening_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_4 = 3 }
+			has_idea = USA_liening_idea5
+		}
+		localization_key = idea_desc|USA_liening_idea5
+	}
+
+	#stalin斯大林
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_4 = 4 }
+			has_idea = USA_stalin_idea1
+		}
+		localization_key = idea_desc|USA_stalin_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_4 = 4 }
+			has_idea = USA_stalin_idea2
+		}
+		localization_key = idea_desc|USA_stalin_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_4 = 4 }
+			has_idea = USA_stalin_idea3
+		}
+		localization_key = idea_desc|USA_stalin_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_4 = 4 }
+			has_idea = USA_stalin_idea4
+		}
+		localization_key = idea_desc|USA_stalin_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_4 = 4 }
+			has_idea = USA_stalin_idea5
+		}
+		localization_key = idea_desc|USA_stalin_idea5
+	}
+
+	#mao毛泽东
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_4 = 5 }
+			has_idea = USA_mao_idea1
+		}
+		localization_key = idea_desc|USA_mao_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_4 = 5 }
+			has_idea = USA_mao_idea2
+		}
+		localization_key = idea_desc|USA_mao_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_4 = 5 }
+			has_idea = USA_mao_idea3
+		}
+		localization_key = idea_desc|USA_mao_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_4 = 5 }
+			has_idea = USA_mao_idea4
+		}
+		localization_key = idea_desc|USA_mao_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_4 = 5 }
+			has_idea = USA_mao_idea5
+		}
+		localization_key = idea_desc|USA_mao_idea5
+	}
+}
+defined_text = {
+	name = GetAscendedAdvisorDesc5
+	text = { #NO ONE
+		trigger = {
+			check_variable = { USA_ascended_advisor_5 = 0 }	
+		}
+		localization_key = empty_key
+	}
+
+	#max马克思
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_5 = 1 }
+			has_idea = USA_max_idea1
+		}
+		localization_key = idea_desc|USA_max_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_5 = 1 }
+			has_idea = USA_max_idea2
+		}
+		localization_key = idea_desc|USA_max_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_5 = 1 }
+			has_idea = USA_max_idea3
+		}
+		localization_key = idea_desc|USA_max_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_5 = 1 }
+			has_idea = USA_max_idea4
+		}
+		localization_key = idea_desc|USA_max_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_5 = 1 }
+			has_idea = USA_max_idea5
+		}
+		localization_key = idea_desc|USA_max_idea5
+	}
+
+	#engs恩格斯
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_5 = 2 }
+			has_idea = USA_engs_idea1
+		}
+		localization_key = idea_desc|USA_engs_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_5 = 2 }
+			has_idea = USA_engs_idea2
+		}
+		localization_key = idea_desc|USA_engs_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_5 = 2 }
+			has_idea = USA_engs_idea3
+		}
+		localization_key = idea_desc|USA_engs_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_5 = 2 }
+			has_idea = USA_engs_idea4
+		}
+		localization_key = idea_desc|USA_engs_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_5 = 2 }
+			has_idea = USA_engs_idea5
+		}
+		localization_key = idea_desc|USA_engs_idea5
+	}
+	
+
+	#liening列宁
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_5 = 3 }
+			has_idea = USA_liening_idea1
+		}
+		localization_key = idea_desc|USA_liening_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_5 = 3 }
+			has_idea = USA_liening_idea2
+		}
+		localization_key = idea_desc|USA_liening_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_5 = 3 }
+			has_idea = USA_liening_idea3
+		}
+		localization_key = idea_desc|USA_liening_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_5 = 3 }
+			has_idea = USA_liening_idea4
+		}
+		localization_key = idea_desc|USA_liening_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_5 = 3 }
+			has_idea = USA_liening_idea5
+		}
+		localization_key = idea_desc|USA_liening_idea5
+	}
+
+	#stalin斯大林
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_5 = 4 }
+			has_idea = USA_stalin_idea1
+		}
+		localization_key = idea_desc|USA_stalin_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_5 = 4 }
+			has_idea = USA_stalin_idea2
+		}
+		localization_key = idea_desc|USA_stalin_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_5 = 4 }
+			has_idea = USA_stalin_idea3
+		}
+		localization_key = idea_desc|USA_stalin_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_5 = 4 }
+			has_idea = USA_stalin_idea4
+		}
+		localization_key = idea_desc|USA_stalin_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_5 = 4 }
+			has_idea = USA_stalin_idea5
+		}
+		localization_key = idea_desc|USA_stalin_idea5
+	}
+
+	#mao毛泽东
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_5 = 5 }
+			has_idea = USA_mao_idea1
+		}
+		localization_key = idea_desc|USA_mao_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_5 = 5 }
+			has_idea = USA_mao_idea2
+		}
+		localization_key = idea_desc|USA_mao_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_5 = 5 }
+			has_idea = USA_mao_idea3
+		}
+		localization_key = idea_desc|USA_mao_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_5 = 5 }
+			has_idea = USA_mao_idea4
+		}
+		localization_key = idea_desc|USA_mao_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { USA_ascended_advisor_5 = 5 }
+			has_idea = USA_mao_idea5
+		}
+		localization_key = idea_desc|USA_mao_idea5
+	}
+}
+
+#GetUsaArmyideaDesc
+defined_text = {
+	name = GetUsaArmyideaDesc
+	text = { #NO ONE
+		trigger = {
+			NOT = {
+				has_idea = USA_tank_out
+			}
+			NOT = {
+				has_idea = USA_tank_out2
+			}
+		}
+		localization_key = empty_key
+	}
+
+	#tank out
+	text = {
+		trigger = {
+			has_idea = USA_tank_out
+		}
+		localization_key = idea_desc|USA_tank_out
+	}
+	#tank out2
+	text = {
+		trigger = {
+			has_idea = USA_tank_out2
+		}
+		localization_key = idea_desc|USA_tank_out2
+	}
+
+}
+
+#GetNATOidea
+defined_text = {
+	name = GetNATOidea1
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_1 = 0 }
+		}
+		localization_key = empty_key
+	}
+	text = {
+		localization_key = GetNATOidea_tt1
+	}
+}
+defined_text = {
+	name = GetNATOidea2
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_2 = 0 }
+		}
+		localization_key = empty_key
+	}
+	text = {
+		localization_key = GetNATOidea_tt2
+	}
+}
+defined_text = {
+	name = GetNATOidea3
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_3 = 0 }
+		}
+		localization_key = empty_key
+	}
+	text = {
+		localization_key = GetNATOidea_tt3
+	}
+}
+defined_text = {
+	name = GetNATOidea4
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_4 = 0 }
+		}
+		localization_key = empty_key
+	}
+	text = {
+		localization_key = GetNATOidea_tt4
+	}
+}
+defined_text = {
+	name = GetNATOidea5
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_5 = 0 }
+		}
+		localization_key = empty_key
+	}
+	text = {
+		localization_key = GetNATOidea_tt5
+	}
+}
+#GetNATOideaDesc
+defined_text = {
+	name = GetNATOideaDesc1
+	text = { #NO ONE
+		trigger = {
+			check_variable = { NATO_idea_slot_1 = 0 }	
+		}
+		localization_key = empty_key
+	}
+
+	#北约陆军
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_1 = 1 }
+			has_idea = NATO_army1_idea
+		}
+		localization_key = idea_desc|NATO_army1_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_1 = 1 }
+			has_idea = NATO_army2_idea
+		}
+		localization_key = idea_desc|NATO_army2_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_1 = 1 }
+			has_idea = NATO_army3_idea
+		}
+		localization_key = idea_desc|NATO_army3_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_1 = 1 }
+			has_idea = NATO_army4_idea
+		}
+		localization_key = idea_desc|NATO_army4_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_1 = 1 }
+			has_idea = NATO_army5_idea
+		}
+		localization_key = idea_desc|NATO_army5_idea
+	}
+
+	#NATOair
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_1 = 2 }
+			has_idea = NATO_air1_idea
+		}
+		localization_key = idea_desc|NATO_air1_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_1 = 2 }
+			has_idea = NATO_air2_idea
+		}
+		localization_key = idea_desc|NATO_air2_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_1 = 2 }
+			has_idea = NATO_air3_idea
+		}
+		localization_key = idea_desc|NATO_air3_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_1 = 2 }
+			has_idea = NATO_air4_idea
+		}
+		localization_key = idea_desc|NATO_air4_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_1 = 2 }
+			has_idea = NATO_air5_idea
+		}
+		localization_key = idea_desc|NATO_air5_idea
+	}
+	
+
+	#NATOnavy
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_1 = 3 }
+			has_idea = NATO_navy1_idea
+		}
+		localization_key = idea_desc|NATO_navy1_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_1 = 3 }
+			has_idea = NATO_navy2_idea
+		}
+		localization_key = idea_desc|NATO_navy2_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_1 = 3 }
+			has_idea = NATO_navy3_idea
+		}
+		localization_key = idea_desc|NATO_navy3_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_1 = 3 }
+			has_idea = NATO_navy4_idea
+		}
+		localization_key = idea_desc|NATO_navy4_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_1 = 3 }
+			has_idea = NATO_navy5_idea
+		}
+		localization_key = idea_desc|NATO_navy5_idea
+	}
+	#NATOreserach
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_1 = 4 }
+			has_idea = NATO_keyan_idea1
+		}
+		localization_key = idea_desc|NATO_keyan_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_1 = 4 }
+			has_idea = NATO_keyan_idea2
+		}
+		localization_key = idea_desc|NATO_keyan_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_1 = 4 }
+			has_idea = NATO_keyan_idea3
+		}
+		localization_key = idea_desc|NATO_keyan_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_1 = 4 }
+			has_idea = NATO_keyan_idea4
+		}
+		localization_key = idea_desc|NATO_keyan_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_1 = 4 }
+			has_idea = NATO_keyan_idea5
+		}
+		localization_key = idea_desc|NATO_keyan_idea5
+	}
+
+	#mao毛泽东
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_1 = 5 }
+			has_idea = NATO_gongye_idea1
+		}
+		localization_key = idea_desc|NATO_gongye_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_1 = 5 }
+			has_idea = NATO_gongye_idea2
+		}
+		localization_key = idea_desc|NATO_gongye_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_1 = 5 }
+			has_idea = NATO_gongye_idea3
+		}
+		localization_key = idea_desc|NATO_gongye_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_1 = 5 }
+			has_idea = NATO_gongye_idea4
+		}
+		localization_key = idea_desc|NATO_gongye_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_1 = 5 }
+			has_idea = NATO_gongye_idea5
+		}
+		localization_key = idea_desc|NATO_gongye_idea5
+	}
+}
+defined_text = {
+	name = GetNATOideaDesc2
+	text = { #NO ONE
+		trigger = {
+			check_variable = { NATO_idea_slot_2 = 0 }	
+		}
+		localization_key = empty_key
+	}
+
+	#北约陆军
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_2 = 1 }
+			has_idea = NATO_army1_idea
+		}
+		localization_key = idea_desc|NATO_army1_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_2 = 1 }
+			has_idea = NATO_army2_idea
+		}
+		localization_key = idea_desc|NATO_army2_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_2 = 1 }
+			has_idea = NATO_army3_idea
+		}
+		localization_key = idea_desc|NATO_army3_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_2 = 1 }
+			has_idea = NATO_army4_idea
+		}
+		localization_key = idea_desc|NATO_army4_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_2 = 1 }
+			has_idea = NATO_army5_idea
+		}
+		localization_key = idea_desc|NATO_army5_idea
+	}
+
+	#NATOair
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_2 = 2 }
+			has_idea = NATO_air1_idea
+		}
+		localization_key = idea_desc|NATO_air1_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_2 = 2 }
+			has_idea = NATO_air2_idea
+		}
+		localization_key = idea_desc|NATO_air2_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_2 = 2 }
+			has_idea = NATO_air3_idea
+		}
+		localization_key = idea_desc|NATO_air3_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_2 = 2 }
+			has_idea = NATO_air4_idea
+		}
+		localization_key = idea_desc|NATO_air4_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_2 = 2 }
+			has_idea = NATO_air5_idea
+		}
+		localization_key = idea_desc|NATO_air5_idea
+	}
+	
+
+	#NATOnavy
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_2 = 3 }
+			has_idea = NATO_navy1_idea
+		}
+		localization_key = idea_desc|NATO_navy1_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_2 = 3 }
+			has_idea = NATO_navy2_idea
+		}
+		localization_key = idea_desc|NATO_navy2_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_2 = 3 }
+			has_idea = NATO_navy3_idea
+		}
+		localization_key = idea_desc|NATO_navy3_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_2 = 3 }
+			has_idea = NATO_navy4_idea
+		}
+		localization_key = idea_desc|NATO_navy4_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_2 = 3 }
+			has_idea = NATO_navy5_idea
+		}
+		localization_key = idea_desc|NATO_navy5_idea
+	}
+
+	#NATOreserach
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_2 = 4 }
+			has_idea = NATO_keyan_idea1
+		}
+		localization_key = idea_desc|NATO_keyan_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_2 = 4 }
+			has_idea = NATO_keyan_idea2
+		}
+		localization_key = idea_desc|NATO_keyan_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_2 = 4 }
+			has_idea = NATO_keyan_idea3
+		}
+		localization_key = idea_desc|NATO_keyan_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_2 = 4 }
+			has_idea = NATO_keyan_idea4
+		}
+		localization_key = idea_desc|NATO_keyan_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_2 = 4 }
+			has_idea = NATO_keyan_idea5
+		}
+		localization_key = idea_desc|NATO_keyan_idea5
+	}
+
+	#mao毛泽东
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_2 = 5 }
+			has_idea = NATO_gongye_idea1
+		}
+		localization_key = idea_desc|NATO_gongye_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_2 = 5 }
+			has_idea = NATO_gongye_idea2
+		}
+		localization_key = idea_desc|NATO_gongye_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_2 = 5 }
+			has_idea = NATO_gongye_idea3
+		}
+		localization_key = idea_desc|NATO_gongye_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_2 = 5 }
+			has_idea = NATO_gongye_idea4
+		}
+		localization_key = idea_desc|NATO_gongye_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_2 = 5 }
+			has_idea = NATO_gongye_idea5
+		}
+		localization_key = idea_desc|NATO_gongye_idea5
+	}
+}
+defined_text = {
+	name = GetNATOideaDesc3
+	text = { #NO ONE
+		trigger = {
+			check_variable = { NATO_idea_slot_3 = 0 }	
+		}
+		localization_key = empty_key
+	}
+
+	#北约陆军
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_3 = 1 }
+			has_idea = NATO_army1_idea
+		}
+		localization_key = idea_desc|NATO_army1_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_3 = 1 }
+			has_idea = NATO_army2_idea
+		}
+		localization_key = idea_desc|NATO_army2_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_3 = 1 }
+			has_idea = NATO_army3_idea
+		}
+		localization_key = idea_desc|NATO_army3_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_3 = 1 }
+			has_idea = NATO_army4_idea
+		}
+		localization_key = idea_desc|NATO_army4_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_3 = 1 }
+			has_idea = NATO_army5_idea
+		}
+		localization_key = idea_desc|NATO_army5_idea
+	}
+
+	#NATOair
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_3 = 2 }
+			has_idea = NATO_air1_idea
+		}
+		localization_key = idea_desc|NATO_air1_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_3 = 2 }
+			has_idea = NATO_air2_idea
+		}
+		localization_key = idea_desc|NATO_air2_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_3 = 2 }
+			has_idea = NATO_air3_idea
+		}
+		localization_key = idea_desc|NATO_air3_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_3 = 2 }
+			has_idea = NATO_air4_idea
+		}
+		localization_key = idea_desc|NATO_air4_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_3 = 2 }
+			has_idea = NATO_air5_idea
+		}
+		localization_key = idea_desc|NATO_air5_idea
+	}
+	
+
+	#NATOnavy
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_3 = 3 }
+			has_idea = NATO_navy1_idea
+		}
+		localization_key = idea_desc|NATO_navy1_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_3 = 3 }
+			has_idea = NATO_navy2_idea
+		}
+		localization_key = idea_desc|NATO_navy2_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_3 = 3 }
+			has_idea = NATO_navy3_idea
+		}
+		localization_key = idea_desc|NATO_navy3_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_3 = 3 }
+			has_idea = NATO_navy4_idea
+		}
+		localization_key = idea_desc|NATO_navy4_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_3 = 3 }
+			has_idea = NATO_navy5_idea
+		}
+		localization_key = idea_desc|NATO_navy5_idea
+	}
+
+	#NATOreserach
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_3 = 4 }
+			has_idea = NATO_keyan_idea1
+		}
+		localization_key = idea_desc|NATO_keyan_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_3 = 4 }
+			has_idea = NATO_keyan_idea2
+		}
+		localization_key = idea_desc|NATO_keyan_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_3 = 4 }
+			has_idea = NATO_keyan_idea3
+		}
+		localization_key = idea_desc|NATO_keyan_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_3 = 4 }
+			has_idea = NATO_keyan_idea4
+		}
+		localization_key = idea_desc|NATO_keyan_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_3 = 4 }
+			has_idea = NATO_keyan_idea5
+		}
+		localization_key = idea_desc|NATO_keyan_idea5
+	}
+
+	#mao毛泽东
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_3 = 5 }
+			has_idea = NATO_gongye_idea1
+		}
+		localization_key = idea_desc|NATO_gongye_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_3 = 5 }
+			has_idea = NATO_gongye_idea2
+		}
+		localization_key = idea_desc|NATO_gongye_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_3 = 5 }
+			has_idea = NATO_gongye_idea3
+		}
+		localization_key = idea_desc|NATO_gongye_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_3 = 5 }
+			has_idea = NATO_gongye_idea4
+		}
+		localization_key = idea_desc|NATO_gongye_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_3 = 5 }
+			has_idea = NATO_gongye_idea5
+		}
+		localization_key = idea_desc|NATO_gongye_idea5
+	}
+}
+defined_text = {
+	name = GetNATOideaDesc4
+	text = { #NO ONE
+		trigger = {
+			check_variable = { NATO_idea_slot_4 = 0 }	
+		}
+		localization_key = empty_key
+	}
+
+	#北约陆军
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_4 = 1 }
+			has_idea = NATO_army1_idea
+		}
+		localization_key = idea_desc|NATO_army1_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_4 = 1 }
+			has_idea = NATO_army2_idea
+		}
+		localization_key = idea_desc|NATO_army2_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_4 = 1 }
+			has_idea = NATO_army3_idea
+		}
+		localization_key = idea_desc|NATO_army3_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_4 = 1 }
+			has_idea = NATO_army4_idea
+		}
+		localization_key = idea_desc|NATO_army4_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_4 = 1 }
+			has_idea = NATO_army5_idea
+		}
+		localization_key = idea_desc|NATO_army5_idea
+	}
+
+	#NATOair
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_4 = 2 }
+			has_idea = NATO_air1_idea
+		}
+		localization_key = idea_desc|NATO_air1_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_4 = 2 }
+			has_idea = NATO_air2_idea
+		}
+		localization_key = idea_desc|NATO_air2_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_4 = 2 }
+			has_idea = NATO_air3_idea
+		}
+		localization_key = idea_desc|NATO_air3_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_4 = 2 }
+			has_idea = NATO_air4_idea
+		}
+		localization_key = idea_desc|NATO_air4_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_4 = 2 }
+			has_idea = NATO_air5_idea
+		}
+		localization_key = idea_desc|NATO_air5_idea
+	}
+	
+
+	#NATOnavy
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_4 = 3 }
+			has_idea = NATO_navy1_idea
+		}
+		localization_key = idea_desc|NATO_navy1_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_4 = 3 }
+			has_idea = NATO_navy2_idea
+		}
+		localization_key = idea_desc|NATO_navy2_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_4 = 3 }
+			has_idea = NATO_navy3_idea
+		}
+		localization_key = idea_desc|NATO_navy3_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_4 = 3 }
+			has_idea = NATO_navy4_idea
+		}
+		localization_key = idea_desc|NATO_navy4_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_4 = 3 }
+			has_idea = NATO_navy5_idea
+		}
+		localization_key = idea_desc|NATO_navy5_idea
+	}
+
+	#NATOreserach
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_4 = 4 }
+			has_idea = NATO_keyan_idea1
+		}
+		localization_key = idea_desc|NATO_keyan_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_4 = 4 }
+			has_idea = NATO_keyan_idea2
+		}
+		localization_key = idea_desc|NATO_keyan_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_4 = 4 }
+			has_idea = NATO_keyan_idea3
+		}
+		localization_key = idea_desc|NATO_keyan_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_4 = 4 }
+			has_idea = NATO_keyan_idea4
+		}
+		localization_key = idea_desc|NATO_keyan_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_4 = 4 }
+			has_idea = NATO_keyan_idea5
+		}
+		localization_key = idea_desc|NATO_keyan_idea5
+	}
+
+	#mao毛泽东
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_4 = 5 }
+			has_idea = NATO_gongye_idea1
+		}
+		localization_key = idea_desc|NATO_gongye_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_4 = 5 }
+			has_idea = NATO_gongye_idea2
+		}
+		localization_key = idea_desc|NATO_gongye_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_4 = 5 }
+			has_idea = NATO_gongye_idea3
+		}
+		localization_key = idea_desc|NATO_gongye_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_4 = 5 }
+			has_idea = NATO_gongye_idea4
+		}
+		localization_key = idea_desc|NATO_gongye_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_4 = 5 }
+			has_idea = NATO_gongye_idea5
+		}
+		localization_key = idea_desc|NATO_gongye_idea5
+	}
+}
+defined_text = {
+	name = GetNATOideaDesc5
+	text = { #NO ONE
+		trigger = {
+			check_variable = { NATO_idea_slot_5 = 0 }	
+		}
+		localization_key = empty_key
+	}
+
+	#北约陆军
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_5 = 1 }
+			has_idea = NATO_army1_idea
+		}
+		localization_key = idea_desc|NATO_army1_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_5 = 1 }
+			has_idea = NATO_army2_idea
+		}
+		localization_key = idea_desc|NATO_army2_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_5 = 1 }
+			has_idea = NATO_army3_idea
+		}
+		localization_key = idea_desc|NATO_army3_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_5 = 1 }
+			has_idea = NATO_army4_idea
+		}
+		localization_key = idea_desc|NATO_army4_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_5 = 1 }
+			has_idea = NATO_army5_idea
+		}
+		localization_key = idea_desc|NATO_army5_idea
+	}
+
+	#NATOair
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_5 = 2 }
+			has_idea = NATO_air1_idea
+		}
+		localization_key = idea_desc|NATO_air1_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_5 = 2 }
+			has_idea = NATO_air2_idea
+		}
+		localization_key = idea_desc|NATO_air2_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_5 = 2 }
+			has_idea = NATO_air3_idea
+		}
+		localization_key = idea_desc|NATO_air3_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_5 = 2 }
+			has_idea = NATO_air4_idea
+		}
+		localization_key = idea_desc|NATO_air4_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_5 = 2 }
+			has_idea = NATO_air5_idea
+		}
+		localization_key = idea_desc|NATO_air5_idea
+	}
+	
+
+	#NATOnavy
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_5 = 3 }
+			has_idea = NATO_navy1_idea
+		}
+		localization_key = idea_desc|NATO_navy1_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_5 = 3 }
+			has_idea = NATO_navy2_idea
+		}
+		localization_key = idea_desc|NATO_navy2_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_5 = 3 }
+			has_idea = NATO_navy3_idea
+		}
+		localization_key = idea_desc|NATO_navy3_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_5 = 3 }
+			has_idea = NATO_navy4_idea
+		}
+		localization_key = idea_desc|NATO_navy4_idea
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_5 = 3 }
+			has_idea = NATO_navy5_idea
+		}
+		localization_key = idea_desc|NATO_navy5_idea
+	}
+
+	#NATOreserach
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_5 = 4 }
+			has_idea = NATO_keyan_idea1
+		}
+		localization_key = idea_desc|NATO_keyan_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_5 = 4 }
+			has_idea = NATO_keyan_idea2
+		}
+		localization_key = idea_desc|NATO_keyan_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_5 = 4 }
+			has_idea = NATO_keyan_idea3
+		}
+		localization_key = idea_desc|NATO_keyan_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_5 = 4 }
+			has_idea = NATO_keyan_idea4
+		}
+		localization_key = idea_desc|NATO_keyan_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_5 = 4 }
+			has_idea = NATO_keyan_idea5
+		}
+		localization_key = idea_desc|NATO_keyan_idea5
+	}
+
+	#mao毛泽东
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_5 = 5 }
+			has_idea = NATO_gongye_idea1
+		}
+		localization_key = idea_desc|NATO_gongye_idea1
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_5 = 5 }
+			has_idea = NATO_gongye_idea2
+		}
+		localization_key = idea_desc|NATO_gongye_idea2
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_5 = 5 }
+			has_idea = NATO_gongye_idea3
+		}
+		localization_key = idea_desc|NATO_gongye_idea3
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_5 = 5 }
+			has_idea = NATO_gongye_idea4
+		}
+		localization_key = idea_desc|NATO_gongye_idea4
+	}
+	text = {
+		trigger = {
+			check_variable = { NATO_idea_slot_5 = 5 }
+			has_idea = NATO_gongye_idea5
+		}
+		localization_key = idea_desc|NATO_gongye_idea5
+	}
+}

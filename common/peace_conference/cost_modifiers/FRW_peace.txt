@@ -1,0 +1,49 @@
+peace_action_modifiers = {
+	# France takes back her own soil
+	FRW_pc_french_soil = {
+		category = is_core
+		peace_action_type = take_states
+		enable = {
+			FROM = { original_tag = FRA }
+			FROM.FROM.FROM = { is_core_of = ROOT.FROM }
+		}
+		cost_multiplier = 0.6
+	}
+	# Lands France has laid claim to through her focuses and formables
+	FRW_pc_french_claims = {
+		category = has_claim
+		peace_action_type = take_states
+		enable = {
+			FROM = { original_tag = FRA }
+			FROM.FROM.FROM = { is_claimed_by = ROOT.FROM NOT = { is_core_of = ROOT.FROM } }
+		}
+		cost_multiplier = 0.8
+	}
+	# Republic: sister states inside the European order
+	FRW_pc_european_order = {
+		category = events_or_focuses
+		peace_action_type = { puppet liberate }
+		enable = {
+			ROOT = { original_tag = FRA has_completed_focus = FRW_council_of_europe }
+		}
+		cost_multiplier = 0.8
+	}
+	# Commune: exporting the revolution
+	FRW_pc_world_revolution = {
+		category = ideology
+		peace_action_type = force_government
+		enable = {
+			ROOT = { original_tag = FRA has_government = communism has_completed_focus = FRW_union_of_european_socialist_republics }
+		}
+		cost_multiplier = 0.7
+	}
+	# Bonapartists: the new Confederation of the Rhine
+	FRW_pc_imperial_order = {
+		category = events_or_focuses
+		peace_action_type = { take_states puppet }
+		enable = {
+			ROOT = { original_tag = FRA has_completed_focus = FRW_rhine_confederation }
+		}
+		cost_multiplier = 0.85
+	}
+}

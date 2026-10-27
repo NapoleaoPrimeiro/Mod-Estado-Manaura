@@ -1,0 +1,65 @@
+#eo
+capital = 649
+
+set_stability = 1.0
+set_research_slots = 0
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	neutrality = 100
+}
+
+add_ideas = {
+	optimization_wasteland
+	optimization_game_speed_balance
+	uninterested
+	unindustrialized
+	optimization_neutrality
+}
+
+USA = { give_guarantee = WST }
+
+create_country_leader = {
+	name = "Council"
+	picture = "GFX_portrait_Fallen_Government"
+	expire = "1965.1.1"
+	ideology = despotism
+	traits = {
+	monarchist_media_mogul
+	}
+}
+
+create_country_leader = {
+	name = "Council"
+	picture = "GFX_portrait_Fallen_Government"
+	expire = "1965.1.1"
+	ideology = fascism_ideology
+	traits = {
+		    		cabinet_crisis
+	}
+}
+
+create_country_leader = {
+	name = "Council"
+	picture = "GFX_portrait_Fallen_Government"
+	expire = "1965.1.1"
+	ideology = conservatism
+	traits = {
+		    		cabinet_crisis
+	}
+}
+
+create_country_leader = {
+	name = "Council"
+	picture = "GFX_portrait_Fallen_Government"
+	expire = "1965.1.1"
+	ideology = marxism
+	traits = {
+		    		cabinet_crisis
+	}
+}
+#eo

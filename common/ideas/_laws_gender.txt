@@ -1,0 +1,169 @@
+#####---------------------------------------------------------------------> Road to '56, Gender Laws
+#####---------------------------------------------------------------------> by GreatExperiment
+
+ideas = {
+
+	ef_laws_category_gender = {
+		law = yes
+		use_list_view = yes
+
+		# Traditional Roles
+		ef_laws_gender_traditional = {
+
+			available = {
+				NOT = {
+					has_country_flag = EF_anarchist_country
+				}
+			}
+
+			modifier = {
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+				conscription_factor = -0.05
+				female_random_operative_chance = -1
+			}
+
+			cost = 75
+
+			cancel_if_invalid = no
+
+			ai_will_do = {
+				base = 0
+			}
+
+		}
+
+		# Limited Rights
+		ef_laws_gender_limited = {
+
+			available = {
+				NOT = {
+					has_country_flag = EF_anarchist_country
+				}
+			}
+
+			modifier = {
+				industrial_capacity_factory = -0.05
+				industrial_capacity_dockyard = -0.05
+				weekly_manpower = 750 #Silly, but better for small nations who need the raw MP
+				conscription_factor = 0.05
+				female_random_operative_chance = 3
+			}
+
+			cost = 75
+
+			cancel_if_invalid = no
+
+			ai_will_do = {
+				base = 0
+			}
+		}
+
+		# Enforced Patriarchy
+		ef_laws_gender_patriarchy = {
+
+			available = {
+				NOT = {
+					has_government = communism
+					has_country_flag = EF_anarchist_country
+				}
+			}
+
+			modifier = {
+				industrial_capacity_factory = 0.075
+				industrial_capacity_dockyard = 0.075
+				production_factory_efficiency_gain_factor = 0.075
+				conscription_factor = -0.075
+				female_random_operative_chance = -2
+			}
+
+			ai_will_do = {
+				base = 6
+			}
+		}
+
+		# Total Equality
+		ef_laws_gender_equality = {
+
+			available = {
+				hidden_trigger = { #ai ın yapmasını istemem o yüzden alttakileride checklettirmeye gerek yok
+					if = {
+						limit = {
+							OR = {
+								original_tag = AST
+								original_tag = NZL
+								original_tag = SAF
+								original_tag = CAN
+							}
+						}
+						always = yes
+					}
+					else = {
+						is_ai = no
+					}
+				}
+				NOT = {
+					has_government = fascism
+				}
+				if = {
+					limit = {
+						NOT = {
+							OR = {
+								any_owned_state = {
+									is_core_of = ROOT
+									OR = {
+										is_on_continent = europe
+										is_on_continent = north_america
+										is_on_continent = south_america
+									}
+								}
+								original_tag = JAP
+								original_tag = PER #remove the veil
+								original_tag = ETH #mainly gameplay reasons
+								original_tag = SAF
+								original_tag = AST
+								original_tag = NZL
+								original_tag = ARM
+								original_tag = GEO
+								original_tag = TUR
+								original_tag = CHI
+								original_tag = GXC
+								original_tag = SHX
+							}
+						}
+					}
+					NOT = {
+						has_government = neutrality
+					}
+				}
+			}
+
+			modifier = {
+				industrial_capacity_factory = -0.10
+				industrial_capacity_dockyard = -0.10
+				weekly_manpower = 1500 #Silly, but better for small nations who need the raw MP
+				conscription_factor = 0.15
+				female_random_operative_chance = 0.5
+			}
+
+			ai_will_do = {
+				base = 0
+				modifier = {
+					date > 1938.6.15
+					tag = AST
+					tag = NZL
+					tag = SAF
+					tag = CAN
+					add = 17
+				}
+				modifier = {
+					has_government = communism
+					add = 1
+				}
+			}
+		}
+	}
+}
+
+#####---------------------------------------------------------------------> End

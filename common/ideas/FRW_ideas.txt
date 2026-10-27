@@ -1,0 +1,2196 @@
+# GENERIERT von _quelle/generate.ps1
+ideas = {
+	country = {
+		FRW_revolutionary_upheaval = {
+			picture = generic_disjointed_gov
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.10
+				political_power_gain = -0.20
+			}
+		}
+		FRW_popular_front = {
+			picture = generic_democratic_drift_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.10
+				stability_factor = 0.05
+			}
+		}
+		FRW_national_union = {
+			picture = generic_pp_unity_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.10
+				war_support_factor = 0.05
+			}
+		}
+		FRW_paid_holidays = {
+			picture = generic_goods_red_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				monthly_population = 0.05
+			}
+		}
+		FRW_republican_volunteers_spirit = {
+			picture = generic_volunteer_expedition_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				send_volunteer_size = 2
+				experience_gain_army = 0.05
+			}
+		}
+		FRW_decree_laws_spirit = {
+			picture = generic_political_support
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.10
+				war_support_factor = 0.05
+				stability_factor = -0.03
+			}
+		}
+		FRW_armee_de_metier_spirit = {
+			picture = generic_army_war_college
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				experience_gain_army = 0.10
+				army_org_factor = 0.05
+				conscription_factor = -0.10
+			}
+		}
+		FRW_presidential_republic = {
+			picture = generic_constitutional_guarantees
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.10
+				stability_factor = 0.05
+				army_attack_factor = 0.03
+			}
+		}
+		FRW_european_ideal = {
+			picture = generic_conference
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				opinion_gain_monthly_factor = 0.20
+				trade_opinion_factor = 0.20
+			}
+		}
+		FRW_edc = {
+			picture = generic_research_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.05
+				army_defence_factor = 0.05
+			}
+		}
+		FRW_benelux_customs = {
+			picture = generic_foreign_capital
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				local_resources_factor = 0.05
+				production_speed_buildings_factor = 0.03
+			}
+		}
+		FRW_republican_consensus = {
+			picture = generic_pp_unity_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = 0.05
+				political_power_gain = 0.05
+			}
+		}
+		FRW_forty_hours = {
+			picture = generic_goods_red_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.08
+				production_factory_efficiency_gain_factor = -0.05
+			}
+		}
+		FRW_forty_hours_exempt = {
+			picture = generic_goods_red_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.06
+				production_speed_arms_factory_factor = 0.05
+			}
+		}
+		FRW_jean_zay = {
+			picture = generic_research_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.05
+				monthly_population = 0.03
+			}
+		}
+		FRW_popular_front_2 = {
+			picture = generic_democratic_drift_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.10
+				stability_factor = 0.10
+				war_support_factor = 0.03
+			}
+		}
+		FRW_mandel_mobilisation = {
+			picture = generic_army_african_1
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				conscription = 0.005
+				experience_gain_army = 0.03
+			}
+		}
+		FRW_edge_of_sword = {
+			picture = generic_army_war_college
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				command_power_gain_mult = 0.10
+				army_leader_start_level = 1
+			}
+		}
+		FRW_certaine_idee_spirit = {
+			picture = generic_constitutional_guarantees
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.10
+				stability_factor = 0.08
+				war_support_factor = 0.05
+			}
+		}
+		FRW_party_discipline = {
+			picture = generic_communism_drift_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.10
+				drift_defence_factor = 0.20
+			}
+		}
+		FRW_permanent_revolution = {
+			picture = generic_syndicalism
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.05
+				conscription_factor = 0.05
+			}
+		}
+		FRW_armee_rouge = {
+			picture = generic_communist_army
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.10
+				army_defence_factor = 0.05
+			}
+		}
+		FRW_workers_councils_spirit = {
+			picture = generic_local_self_management
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.10
+				stability_factor = 0.05
+			}
+		}
+		FRW_milices_ouvrieres = {
+			picture = generic_manpower_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.15
+				army_org_factor = -0.05
+			}
+		}
+		FRW_world_revolution = {
+			picture = generic_communism_drift_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				justify_war_goal_time = -0.25
+				communism_drift = 0.05
+			}
+		}
+		FRW_fraternal_peoples = {
+			picture = generic_org_of_african_unity
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.03
+				opinion_gain_monthly_factor = 0.15
+			}
+		}
+		FRW_lutte_finale = {
+			picture = generic_morale_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.05
+				war_support_factor = 0.05
+			}
+		}
+		FRW_fils_du_peuple_spirit = {
+			picture = generic_communism_drift_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.10
+				drift_defence_factor = 0.30
+				stability_factor = 0.05
+			}
+		}
+		FRW_armee_rouge_2 = {
+			picture = generic_communist_army
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.15
+				army_defence_factor = 0.08
+				army_attack_factor = 0.03
+			}
+		}
+		FRW_commune_federation = {
+			picture = generic_local_self_management
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = 0.10
+				production_speed_buildings_factor = 0.05
+			}
+		}
+		FRW_armee_ouvriere = {
+			picture = generic_manpower_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.15
+				army_morale_factor = 0.05
+			}
+		}
+		FRW_permanent_revolution_2 = {
+			picture = generic_syndicalism
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.08
+				conscription_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+		FRW_travail_famille_patrie = {
+			picture = generic_fascism_drift_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = 0.05
+				monthly_population = 0.05
+			}
+		}
+		FRW_parti_populaire = {
+			picture = generic_fascism_rising
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.10
+				conscription_factor = 0.05
+			}
+		}
+		FRW_corporatism = {
+			picture = generic_industrial_concern_1
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				consumer_goods_factor = -0.03
+			}
+		}
+		FRW_colonial_legions_spirit = {
+			picture = generic_army_african_1
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				monthly_population = 0.05
+				experience_gain_army = 0.05
+			}
+		}
+		FRW_single_party = {
+			picture = generic_secret_police
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.10
+				drift_defence_factor = 0.30
+			}
+		}
+		FRW_jeunesse = {
+			picture = generic_women_in_the_army
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				monthly_population = 0.05
+				war_support_factor = 0.03
+			}
+		}
+		FRW_imperium = {
+			picture = generic_war_preparation
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.05
+				justify_war_goal_time = -0.20
+			}
+		}
+		FRW_new_order = {
+			picture = generic_production_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.03
+				production_factory_max_efficiency_factor = 0.03
+			}
+		}
+		FRW_corporatism_2 = {
+			picture = generic_industrial_concern_1
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = 0.10
+				consumer_goods_factor = -0.05
+				stability_factor = 0.03
+			}
+		}
+		FRW_travail_famille_patrie_2 = {
+			picture = generic_fascism_drift_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				political_power_gain = 0.10
+				monthly_population = 0.05
+				army_org_factor = 0.05
+			}
+		}
+		FRW_single_party_2 = {
+			picture = generic_secret_police
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.10
+				drift_defence_factor = 0.30
+				stability_factor = 0.05
+			}
+		}
+		FRW_parti_populaire_2 = {
+			picture = generic_fascism_rising
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.12
+				conscription_factor = 0.08
+				political_power_gain = 0.05
+				training_time_army_factor = -0.10
+			}
+		}
+		FRW_revolution_nationale = {
+			picture = generic_shield_against_communism
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				political_power_gain = 0.05
+			}
+		}
+		FRW_return_to_land = {
+			picture = generic_agrarian_society
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				monthly_population = 0.10
+				stability_factor = 0.05
+				industrial_capacity_factory = -0.05
+			}
+		}
+		FRW_fortress_france_spirit = {
+			picture = generic_wall_line
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_core_defence_factor = 0.10
+				production_speed_bunker_factor = 0.25
+			}
+		}
+		FRW_armee_dafrique = {
+			picture = generic_army_african_2
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				conscription = 0.005
+				supply_consumption_factor = -0.05
+			}
+		}
+		FRW_armed_neutrality_spirit = {
+			picture = generic_neutrality_drift_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				enemy_justify_war_goal_time = 0.50
+				defensive_war_stability_factor = 0.10
+			}
+		}
+		FRW_charte_du_travail_spirit = {
+			picture = generic_industrial_concern_1
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				consumer_goods_factor = -0.03
+			}
+		}
+		FRW_revolution_nationale_2 = {
+			picture = generic_shield_against_communism
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.12
+				political_power_gain = 0.10
+				war_support_factor = 0.05
+			}
+		}
+		FRW_armed_neutrality_2 = {
+			picture = generic_wall_line
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				enemy_justify_war_goal_time = 0.50
+				defensive_war_stability_factor = 0.15
+				army_core_defence_factor = 0.05
+			}
+		}
+		FRW_royal_legitimacy = {
+			picture = generic_king_handled
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				political_power_gain = 0.05
+			}
+		}
+		FRW_constitutional_charter = {
+			picture = generic_constitutional_guarantees
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = 0.10
+			}
+		}
+		FRW_integral_nationalism = {
+			picture = generic_fascism_drift_2
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				drift_defence_factor = 0.20
+				war_support_factor = 0.05
+			}
+		}
+		FRW_royal_army_spirit = {
+			picture = generic_army_europe_1
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_org_factor = 0.05
+				experience_gain_army = 0.05
+			}
+		}
+		FRW_crowned_republic = {
+			picture = generic_democratic_drift_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.10
+				stability_factor = 0.05
+				research_speed_factor = 0.03
+			}
+		}
+		FRW_absolute_crown_spirit = {
+			picture = generic_monarchist_uprising
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.10
+				stability_factor = 0.05
+				war_support_factor = 0.05
+			}
+		}
+		FRW_royal_legitimacy_2 = {
+			picture = generic_king_handled
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.15
+				political_power_gain = 0.10
+			}
+		}
+		FRW_bonapartist_fervor = {
+			picture = generic_morale_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.05
+			}
+		}
+		FRW_imperial_glory = {
+			picture = generic_victors_of_ww1
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.10
+				political_power_gain = 0.05
+			}
+		}
+		FRW_imperial_glory_2 = {
+			picture = generic_victors_of_ww1
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.10
+				political_power_gain = 0.10
+				stability_factor = 0.05
+			}
+		}
+		FRW_code_napoleon_spirit = {
+			picture = generic_central_management
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = 0.05
+				compliance_growth = 0.10
+			}
+		}
+		FRW_garde_imperiale = {
+			picture = generic_army_europe_2
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.05
+				army_morale_factor = 0.05
+			}
+		}
+		FRW_marshalate = {
+			picture = generic_army_chief_off_western_european_2d
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				max_planning = 0.10
+				planning_speed = 0.10
+			}
+		}
+		FRW_continental_system_spirit = {
+			picture = generic_flexible_foreign_policy
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				local_resources_factor = 0.10
+				trade_opinion_factor = -0.20
+			}
+		}
+		FRW_hundred_days = {
+			picture = generic_morale_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.05
+				army_speed_factor = 0.03
+			}
+		}
+		FRW_legion_of_honour_spirit = {
+			picture = generic_army_chief_off_western_european_2d
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				experience_gain_army = 0.08
+				army_leader_start_level = 1
+			}
+		}
+		FRW_emperor_of_the_west_spirit = {
+			picture = generic_victors_of_ww1
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.05
+				justify_war_goal_time = -0.25
+				compliance_growth = 0.10
+			}
+		}
+		FRW_reunited_nation = {
+			picture = generic_pp_unity_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				compliance_growth = 0.10
+				political_power_gain = 0.05
+			}
+		}
+		FRW_devalued_franc = {
+			picture = generic_devalue_currency
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.05
+				stability_factor = -0.02
+			}
+		}
+		FRW_sncf = {
+			picture = generic_train_tracks
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_infrastructure_factor = 0.20
+				supply_consumption_factor = -0.03
+			}
+		}
+		FRW_economie_de_guerre = {
+			picture = generic_production_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_factory_max_efficiency_factor = 0.05
+				production_speed_arms_factory_factor = 0.10
+			}
+		}
+		FRW_war_production_board_spirit = {
+			picture = generic_improved_industries
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.10
+			}
+		}
+		FRW_methodical_battle_spirit = {
+			picture = generic_artillery_regiments
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_defence_factor = 0.05
+				max_planning = 0.10
+			}
+		}
+		FRW_war_of_movement_spirit = {
+			picture = generic_acquire_tanks
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_speed_factor = 0.05
+				army_armor_attack_factor = 0.05
+			}
+		}
+		FRW_maginot_extension_spirit = {
+			picture = generic_fortify_the_borders
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_bunker_factor = 0.50
+				army_core_defence_factor = 0.05
+			}
+		}
+		FRW_troupes_coloniales = {
+			picture = generic_army_african_3
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				conscription = 0.005
+			}
+		}
+		FRW_legion_etrangere = {
+			picture = generic_army_europe_3
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				special_forces_cap = 0.15
+				army_morale_factor = 0.05
+			}
+		}
+		FRW_general_staff = {
+			picture = generic_army_war_college
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				experience_gain_army = 0.10
+			}
+		}
+		FRW_desert_corps = {
+			picture = generic_supply_lines
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				attrition = -0.10
+				supply_consumption_factor = -0.05
+			}
+		}
+		FRW_reserve_system_spirit = {
+			picture = generic_reserve_divisions
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.10
+				training_time_army_factor = -0.05
+			}
+		}
+		FRW_modern_army = {
+			picture = generic_army_europe_4
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_org_factor = 0.05
+				land_reinforce_rate = 0.02
+			}
+		}
+		FRW_mediterranean_fleet_spirit = {
+			picture = generic_sea_focused_navy
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				naval_damage_factor = 0.05
+				navy_max_range_factor = 0.10
+			}
+		}
+		FRW_fleet_in_being_spirit = {
+			picture = generic_navy_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				navy_org_factor = 0.10
+				production_speed_dockyard_factor = 0.05
+			}
+		}
+		FRW_pilot_schools_spirit = {
+			picture = generic_air_research
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				experience_gain_air = 0.10
+				air_ace_generation_chance_factor = 0.25
+			}
+		}
+		FRW_air_superiority_spirit = {
+			picture = generic_air_interception
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				air_superiority_efficiency = 0.05
+				air_mission_efficiency = 0.05
+			}
+		}
+		FRW_quai_dorsay = {
+			picture = generic_conference
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				improve_relations_maintain_cost_factor = -0.05
+				opinion_gain_monthly_factor = 0.05
+			}
+		}
+		FRW_deuxieme_bureau_spirit = {
+			picture = generic_intel_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				intel_network_gain_factor = 0.10
+				decryption_factor = 0.05
+				encryption_factor = 0.05
+			}
+		}
+		FRW_american_credit = {
+			picture = generic_foreign_capital
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				license_production_speed = 0.10
+				consumer_goods_factor = -0.02
+			}
+		}
+		FRW_arms_exports_spirit = {
+			picture = generic_license_production
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				trade_opinion_factor = 0.15
+				production_speed_arms_factory_factor = 0.03
+			}
+		}
+		FRW_diplomatic_shield_spirit = {
+			picture = generic_flexible_foreign_policy2
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				enemy_justify_war_goal_time = 0.15
+			}
+		}
+		FRW_grande_nation = {
+			picture = generic_pp_unity_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.05
+				opinion_gain_monthly_factor = 0.10
+			}
+		}
+		FRW_colonial_ministry = {
+			picture = generic_central_management
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				compliance_growth = 0.10
+				resistance_growth = -0.10
+			}
+		}
+		FRW_aof_federation_spirit = {
+			picture = generic_army_african_4
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				monthly_population = 0.05
+				compliance_growth = 0.05
+			}
+		}
+		FRW_levant_administration = {
+			picture = generic_central_management
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				compliance_growth = 0.10
+				resistance_growth = -0.10
+			}
+		}
+		FRW_eurafrique_spirit = {
+			picture = generic_economic_increase
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				local_resources_factor = 0.10
+				monthly_population = 0.05
+			}
+		}
+		FRW_imperial_preference_spirit = {
+			picture = generic_foreign_capital
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				local_resources_factor = 0.05
+				consumer_goods_factor = -0.02
+			}
+		}
+		FRW_code_famille = {
+			picture = generic_immigration
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				monthly_population = 0.10
+			}
+		}
+		FRW_rural_modernization_spirit = {
+			picture = generic_agrarian_reform
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.02
+				conscription_factor = 0.03
+			}
+		}
+		FRW_women_industry = {
+			picture = generic_women_in_the_army
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.03
+				conscription_factor = 0.03
+			}
+		}
+		FRW_union_sacree_spirit = {
+			picture = generic_pp_unity_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = 0.05
+				political_power_gain = 0.05
+			}
+		}
+		FRW_french_gold = {
+			picture = generic_foreign_capital
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.10
+				production_speed_buildings_factor = 0.05
+			}
+		}
+		FRW_colonial_debt = {
+			picture = generic_economic_crisis
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.02
+			}
+		}
+		FRW_franco_british_union_spirit = {
+			picture = generic_conference
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+				naval_doctrine_cost_factor = -0.1
+			}
+		}
+		FRW_union_francaise_formed = {
+			picture = generic_org_of_african_unity
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				monthly_population = 0.05
+				compliance_growth = 0.1
+				resistance_growth = -0.1
+				non_core_manpower = 0.05
+			}
+		}
+		FRW_european_federation = {
+			picture = generic_conference
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+				stability_factor = 0.1
+				political_power_gain = 0.1
+			}
+		}
+		FRW_grand_empire_idea = {
+			picture = generic_victors_of_ww1
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.1
+				army_org_factor = 0.05
+				experience_gain_army = 0.1
+				land_doctrine_cost_factor = -0.15
+				compliance_growth = 0.15
+			}
+		}
+		FRW_francia_idea = {
+			picture = generic_king_handled
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.1
+				political_power_gain = 0.10
+				compliance_growth = 0.15
+				army_org_factor = 0.05
+			}
+		}
+		FRW_latin_empire_idea = {
+			picture = generic_war_preparation
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				naval_damage_factor = 0.1
+				naval_speed_factor = 0.1
+				industrial_capacity_dockyard = 0.1
+				army_attack_factor = 0.05
+			}
+		}
+		FRW_eurafrican_federation_idea = {
+			picture = generic_org_of_african_unity
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				local_resources_factor = 0.15
+				monthly_population = 0.05
+				non_core_manpower = 0.05
+				resistance_growth = -0.15
+			}
+		}
+		FRW_radio_paris = {
+			picture = generic_political_support
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.03
+				drift_defence_factor = 0.15
+			}
+		}
+		FRW_concordat = {
+			picture = generic_constitutional_guarantees
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.03
+				monthly_population = 0.03
+			}
+		}
+		FRW_league_prestige = {
+			picture = generic_conference
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				opinion_gain_monthly_factor = 0.10
+				enemy_justify_war_goal_time = 0.10
+			}
+		}
+		FRW_swiss_credit = {
+			picture = generic_foreign_capital
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = 0.05
+			}
+		}
+		FRW_banque_de_france = {
+			picture = generic_central_management
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.05
+				consumer_goods_factor = -0.02
+			}
+		}
+		FRW_paris_expo_spirit = {
+			picture = generic_conference
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				trade_opinion_factor = 0.20
+				opinion_gain_monthly_factor = 0.10
+			}
+		}
+		FRW_return_to_land_2 = {
+			picture = generic_agrarian_society
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				monthly_population = 0.10
+				stability_factor = 0.05
+				industrial_capacity_factory = -0.02
+			}
+		}
+		FRW_throne_and_altar = {
+			picture = generic_king_handled
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				drift_defence_factor = 0.15
+			}
+		}
+		FRW_crowned_republic_2 = {
+			picture = generic_democratic_drift_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.10
+				stability_factor = 0.08
+				research_speed_factor = 0.05
+			}
+		}
+		FRW_absolute_crown_2 = {
+			picture = generic_monarchist_uprising
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.10
+				stability_factor = 0.05
+				command_power_gain_mult = 0.10
+			}
+		}
+		FRW_social_catholicism_spirit = {
+			picture = generic_fascism_drift_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = 0.05
+			}
+		}
+		FRW_alpine_bargain = {
+			picture = AUS_bankverein
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.10
+				production_speed_buildings_factor = 0.10
+			}
+		}
+		FRW_drapeau_noir = {
+			picture = SWE_neither_death_nor_dishonor
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_core_defence_factor = 0.15
+				army_core_attack_factor = 0.15
+				war_support_factor = 0.10
+			}
+		}
+		FRW_chasseurs_alpins_spirit = {
+			picture = generic_army_europe_1
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				modifier_army_sub_unit_mountaineers_attack_factor = 0.15
+				modifier_army_sub_unit_mountaineers_defence_factor = 0.15
+				modifier_army_sub_unit_mountaineers_max_org_factor = 0.10
+				modifier_army_sub_unit_mountaineers_speed_factor = 0.10
+			}
+		}
+		FRW_admin_reform_1 = {
+			picture = generic_central_management
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_advisor_cost_factor = -0.15
+			}
+		}
+		FRW_admin_reform_2 = {
+			picture = generic_central_management
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_advisor_cost_factor = -0.15
+				economy_cost_factor = -0.10
+				trade_laws_cost_factor = -0.10
+				mobilization_laws_cost_factor = -0.10
+			}
+		}
+		FRW_admin_reform_3 = {
+			picture = generic_central_management
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_advisor_cost_factor = -0.20
+				economy_cost_factor = -0.15
+				trade_laws_cost_factor = -0.15
+				mobilization_laws_cost_factor = -0.15
+			}
+		}
+		FRW_staff_college = {
+			picture = generic_army_war_college
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_leader_cost_factor = -0.15
+				command_power_gain_mult = 0.05
+				planning_speed = 0.05
+			}
+		}
+		FRW_logistics_bureau = {
+			picture = generic_supply_lines
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				supply_consumption_factor = -0.03
+				army_fuel_consumption_factor = -0.05
+				truck_attrition_factor = -0.10
+			}
+		}
+		FRW_standard_equipment = {
+			picture = generic_production_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_lack_of_resource_penalty_factor = -0.15
+				equipment_conversion_speed = 0.15
+			}
+		}
+		FRW_burgundy_idea = {
+			picture = generic_king_handled
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.08
+				production_factory_max_efficiency_factor = 0.05
+				local_resources_factor = 0.05
+				consumer_goods_factor = -0.03
+			}
+		}
+		FRW_western_union_idea = {
+			picture = generic_conference
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_defence_factor = 0.1
+				research_speed_factor = 0.05
+				industrial_capacity_factory = 0.05
+			}
+		}
+		FRW_eternal_kingdom_spirit = {
+			picture = HUN_hungarian_monarchy
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+				industrial_capacity_factory = 0.05
+				consumer_goods_factor = -0.05
+				stability_factor = 0.05
+			}
+		}
+		FRW_corsair_gold = {
+			picture = generic_foreign_capital
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = 0.10
+				consumer_goods_factor = -0.03
+			}
+		}
+		FRW_plundered_treasury = {
+			picture = generic_economic_crisis
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.10
+				production_speed_buildings_factor = -0.15
+				consumer_goods_factor = 0.05
+			}
+		}
+		FRW_saint_malo_shipyards = {
+			picture = generic_coastal_defense_ships
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_dockyard = 0.15
+				production_speed_dockyard_factor = 0.15
+			}
+		}
+		FRW_prize_economy = {
+			picture = generic_improved_industries
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.10
+				production_factory_max_efficiency_factor = 0.05
+				consumer_goods_factor = -0.03
+			}
+		}
+		FRW_econ_dirigiste_1 = {
+			picture = generic_central_management
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				consumer_goods_factor = 0.02
+			}
+		}
+		FRW_econ_dirigiste_2 = {
+			picture = generic_central_management
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = 0.10
+				industrial_capacity_factory = 0.03
+				consumer_goods_factor = 0.02
+			}
+		}
+		FRW_econ_dirigiste_3 = {
+			picture = generic_central_management
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = 0.15
+				industrial_capacity_factory = 0.05
+				consumer_goods_factor = 0.01
+			}
+		}
+		FRW_econ_liberal_1 = {
+			picture = generic_foreign_capital
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.05
+				political_power_gain = -0.05
+			}
+		}
+		FRW_econ_liberal_2 = {
+			picture = generic_foreign_capital
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.08
+				research_speed_factor = 0.03
+				political_power_gain = -0.05
+			}
+		}
+		FRW_econ_liberal_3 = {
+			picture = generic_foreign_capital
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.10
+				research_speed_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+			}
+		}
+		FRW_econ_rearmament_1 = {
+			picture = generic_production_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_arms_factory_factor = 0.10
+				war_support_factor = 0.03
+				stability_factor = -0.03
+			}
+		}
+		FRW_econ_rearmament_2 = {
+			picture = generic_production_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_arms_factory_factor = 0.15
+				production_factory_efficiency_gain_factor = 0.05
+				war_support_factor = 0.05
+				stability_factor = -0.03
+			}
+		}
+		FRW_econ_rearmament_3 = {
+			picture = generic_production_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_arms_factory_factor = 0.20
+				production_factory_efficiency_gain_factor = 0.10
+				war_support_factor = 0.05
+				consumer_goods_factor = -0.02
+			}
+		}
+		FRW_imperial_redoubt = {
+			picture = generic_fortify_the_borders
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_defence_factor = 0.05
+				non_core_manpower = 0.05
+			}
+		}
+		FRW_imperial_redoubt_2 = {
+			picture = generic_fortify_the_borders
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_defence_factor = 0.10
+				non_core_manpower = 0.10
+				production_speed_arms_factory_factor = 0.05
+			}
+		}
+		FRW_marshals_france = {
+			picture = generic_pp_unity_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				political_power_gain = 0.10
+				army_defence_factor = 0.05
+				consumer_goods_factor = -0.03
+			}
+		}
+		FRW_continental_empire_spirit = {
+			picture = generic_army_europe_3
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.10
+				war_support_factor = 0.10
+				army_org_factor = 0.05
+			}
+		}
+		FRW_free_france_spirit = {
+			picture = generic_army_african_2
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.10
+				non_core_manpower = 0.15
+				army_morale_factor = 0.10
+				army_attack_factor = 0.05
+				production_speed_buildings_factor = 0.10
+			}
+		}
+		FRW_brazzaville_spirit = {
+			picture = generic_org_of_african_unity
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				non_core_manpower = 0.05
+				local_resources_factor = 0.10
+			}
+		}
+		FRW_liberation_spirit = {
+			picture = generic_pp_unity_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				war_support_factor = 0.10
+				army_attack_factor = 0.10
+				army_org_factor = 0.05
+				political_power_gain = 0.05
+			}
+		}
+		FRW_european_partner = {
+			picture = generic_economic_increase
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.05
+				research_speed_factor = 0.03
+			}
+		}
+		FRW_european_market = {
+			picture = generic_economic_increase
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.05
+				trade_opinion_factor = 0.20
+			}
+		}
+		FRW_fraternal_peoples_2 = {
+			picture = generic_org_of_african_unity
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.05
+				stability_factor = 0.03
+				opinion_gain_monthly_factor = 0.15
+			}
+		}
+		FRW_fraternal_peoples_3 = {
+			picture = generic_org_of_african_unity
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.05
+				stability_factor = 0.05
+				political_power_gain = 0.10
+				opinion_gain_monthly_factor = 0.20
+			}
+		}
+		FRW_lend_lease_spirit = {
+			picture = generic_foreign_capital
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				license_production_speed = 0.20
+				production_speed_buildings_factor = 0.10
+				production_factory_max_efficiency_factor = 0.05
+			}
+		}
+		FRW_resistance_spirit = {
+			picture = generic_intel_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				resistance_growth_on_our_occupied_states = 0.25
+				intel_network_gain_factor = 0.15
+			}
+		}
+		FRW_provisional_government_spirit = {
+			picture = generic_pp_unity_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = 0.10
+				army_morale_factor = 0.05
+				army_attack_factor = 0.05
+			}
+		}
+		FRW_fight_on_spirit = {
+			picture = generic_army_europe_2
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.10
+				army_defence_factor = 0.10
+				army_morale_factor = 0.10
+			}
+		}
+		FRW_oath_of_kufra = {
+			picture = generic_army_african_1
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.05
+				special_forces_attack_factor = 0.10
+				experience_gain_army_factor = 0.10
+			}
+		}
+		FRW_latin_destiny_spirit = {
+			picture = generic_coastal_defense_ships
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				navy_max_range_factor = 0.10
+				naval_damage_factor = 0.05
+				compliance_growth = 0.05
+			}
+		}
+		FRW_legitimist_crown = {
+			picture = generic_pp_unity_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = 0.05
+			}
+		}
+		FRW_legitimist_crown_2 = {
+			picture = generic_pp_unity_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				political_power_gain = 0.10
+				monthly_population = 0.05
+			}
+		}
+		FRW_two_crowns_spirit = {
+			picture = generic_license_production
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				license_production_speed = 0.15
+				trade_opinion_factor = 0.20
+				army_defence_factor = 0.05
+			}
+		}
+		FRW_bourbon_partner = {
+			picture = generic_economic_increase
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.05
+				stability_factor = 0.05
+			}
+		}
+		FRW_grand_siecle = {
+			picture = generic_victors_of_ww1
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+				political_power_gain = 0.10
+				war_support_factor = 0.05
+			}
+		}
+		FRW_grand_siecle_2 = {
+			picture = generic_victors_of_ww1
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.08
+				production_factory_max_efficiency_factor = 0.05
+				political_power_gain = 0.10
+				war_support_factor = 0.05
+				stability_factor = 0.05
+			}
+		}
+		FRW_double_monarchy_idea = {
+			picture = generic_pp_unity_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				non_core_manpower = 0.10
+				industrial_capacity_factory = 0.05
+				compliance_growth = 0.10
+			}
+		}
+		FRW_disjointed_2 = {
+			picture = generic_disjointed_gov
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_cost = 0.4
+				stability_factor = -0.05
+				surrender_limit = -0.25
+			}
+		}
+		FRW_disjointed_3 = {
+			picture = generic_disjointed_gov
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_cost = 0.2
+				surrender_limit = -0.10
+			}
+		}
+		FRW_victors_2 = {
+			picture = generic_victors_of_ww1
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				conscription = -0.0015
+				war_support_factor = -0.03
+				land_doctrine_cost_factor = 0.25
+				land_mastery_gain_factor = -0.08
+			}
+		}
+		FRW_strike_wave = {
+			picture = FRA_factory_strikes
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.05
+				production_speed_buildings_factor = -0.10
+				industrial_capacity_factory = -0.05
+			}
+		}
+		FRW_generals_of_1918 = {
+			picture = generic_army_problems
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = -0.10
+				planning_speed = -0.20
+				army_org_factor = -0.05
+			}
+		}
+		FRW_generals_of_1918_2 = {
+			picture = generic_army_problems
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = -0.05
+				planning_speed = -0.10
+			}
+		}
+		FRW_divided_fleet = {
+			picture = generic_neglected_military
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				navy_org_factor = -0.10
+				naval_coordination = -0.10
+				experience_gain_navy_factor = -0.15
+			}
+		}
+		FRW_divided_fleet_2 = {
+			picture = generic_neglected_military
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				navy_org_factor = -0.05
+				naval_coordination = -0.05
+			}
+		}
+		FRW_obsolete_air_force = {
+			picture = generic_neglected_military
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				air_attack_factor = -0.10
+				air_agility_factor = -0.10
+				experience_gain_air_factor = -0.15
+			}
+		}
+		FRW_obsolete_air_force_2 = {
+			picture = generic_neglected_military
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				air_attack_factor = -0.05
+				air_agility_factor = -0.05
+			}
+		}
+		FRW_gold_abroad = {
+			picture = generic_production_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = 0.05
+				political_power_gain = 0.15
+			}
+		}
+		FRW_line_of_the_loire = {
+			picture = generic_fortify_the_borders
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_defence_factor = 0.10
+				army_org_regain = 0.10
+				army_attack_factor = -0.05
+			}
+		}
+		FRW_neosocialism = {
+			picture = generic_central_management
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.05
+				production_speed_buildings_factor = 0.05
+				war_support_factor = -0.05
+			}
+		}
+		FRW_planist_republic = {
+			picture = generic_economic_increase
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = 0.08
+				stability_factor = 0.05
+				war_support_factor = -0.05
+			}
+		}
+		FRW_rnp_spirit = {
+			picture = generic_fascist_workers
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.10
+				war_support_factor = 0.05
+				stability_factor = -0.05
+			}
+		}
+		FRW_rnp_spirit_2 = {
+			picture = generic_fascist_workers
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.10
+				war_support_factor = 0.08
+				stability_factor = 0.03
+			}
+		}
+		FRW_lvf_spirit = {
+			picture = generic_volunteer_expedition_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				send_volunteer_size = 2
+				experience_gain_army = 0.05
+			}
+		}
+		FRW_continental_economy = {
+			picture = generic_economic_recovery
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_factory_max_efficiency_factor = 0.05
+				research_speed_factor = 0.03
+			}
+		}
+		FRW_syndicalist_order = {
+			picture = generic_syndicalism
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+				political_power_gain = -0.10
+			}
+		}
+		FRW_syndicalist_order_2 = {
+			picture = generic_syndicalism
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.08
+				production_factory_max_efficiency_factor = 0.05
+				political_power_gain = -0.05
+			}
+		}
+		FRW_red_black_columns = {
+			picture = generic_communist_army
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.10
+				army_morale_factor = 0.10
+				army_org_factor = -0.05
+			}
+		}
+		FRW_black_flag = {
+			picture = FRW_black_flag
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				naval_damage_factor = 0.05
+				convoy_raiding_efficiency_factor = 0.15
+				experience_gain_navy_factor = 0.10
+			}
+		}
+		FRW_black_flag_2 = {
+			picture = FRW_black_flag_2
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				naval_damage_factor = 0.10
+				convoy_raiding_efficiency_factor = 0.25
+				naval_speed_factor = 0.05
+				experience_gain_navy_factor = 0.15
+			}
+		}
+		FRW_black_flag_3 = {
+			picture = FRW_black_flag_3
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				naval_damage_factor = 0.15
+				naval_defense_factor = 0.10
+				convoy_raiding_efficiency_factor = 0.35
+				naval_morale_factor = 0.15
+				experience_gain_navy_factor = 0.15
+			}
+		}
+		FRW_boarders = {
+			picture = AUS_naval_efficiency_idea
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				modifier_army_sub_unit_marine_attack_factor = 0.15
+				modifier_army_sub_unit_marine_defence_factor = 0.10
+				naval_invasion_capacity = 10
+			}
+		}
+		FRW_free_port = {
+			picture = COG_transports_et_ports
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.05
+				production_speed_dockyard_factor = 0.10
+				political_power_gain = 0.10
+			}
+		}
+		FRW_island_bases = {
+			picture = ARG_buying_the_islands
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				naval_invasion_capacity = 20
+				naval_invasion_prep_speed = 0.25
+				naval_supply_consumption_factor = -0.15
+				coastal_bunker_effectiveness_factor = 0.15
+			}
+		}
+		FRW_strong_franc = {
+			picture = generic_economic_increase
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				consumer_goods_factor = -0.02
+				stability_factor = 0.02
+			}
+		}
+		FRW_war_finance = {
+			picture = generic_production_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_arms_factory_factor = 0.05
+				consumer_goods_factor = -0.03
+				stability_factor = -0.02
+			}
+		}
+		FRW_rhine_held = {
+			picture = generic_political_support
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				war_support_factor = 0.05
+			}
+		}
+		FRW_tight_money = {
+			picture = generic_production_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = -0.05
+				consumer_goods_factor = -0.02
+			}
+		}
+		FRW_austerity = {
+			picture = generic_production_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.05
+				production_speed_buildings_factor = -0.05
+			}
+		}
+		FRW_price_riots = {
+			picture = generic_production_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.10
+				war_support_factor = -0.05
+				consumer_goods_factor = 0.03
+			}
+		}
+		FRW_new_franc = {
+			picture = generic_production_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.05
+				political_power_gain = -0.10
+			}
+		}
+		FRW_fighting_france = {
+			picture = generic_army_african_2
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				experience_gain_army_factor = 0.10
+				political_power_gain = 0.10
+				army_morale_factor = 0.05
+			}
+		}
+		FRW_exchange_controls_idea = {
+			picture = generic_production_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_factory_efficiency_gain_factor = -0.05
+				stability_factor = -0.02
+			}
+		}
+		FRW_foreign_contracts = {
+			picture = generic_production_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_arms_factory_factor = 0.05
+			}
+		}
+		FRW_gold_loan = {
+			picture = generic_production_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.05
+			}
+		}
+		FRW_printing_press = {
+			picture = generic_production_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_arms_factory_factor = 0.10
+				production_speed_industrial_complex_factor = 0.10
+			}
+		}
+		FRW_ff_chequers_spirit = {
+			picture = generic_political_support
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.10
+				war_support_factor = 0.05
+			}
+		}
+		FRW_ff_national_committee_spirit = {
+			picture = generic_pp_unity_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = 0.05
+			}
+		}
+		FRW_ff_bcra_spirit = {
+			picture = generic_intel_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				intel_network_gain_factor = 0.20
+				encryption_factor = 0.10
+			}
+		}
+		FRW_ff_cnr_spirit = {
+			picture = generic_intel_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				resistance_growth_on_our_occupied_states = 0.20
+				resistance_damage_to_garrison_on_our_occupied_states = 0.15
+			}
+		}
+		FRW_ff_bir_hakeim_spirit = {
+			picture = generic_army_african_3
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_defence_factor = 0.05
+				army_morale_factor = 0.05
+				army_org_factor = 0.05
+			}
+		}
+		FRW_ff_fafl_spirit = {
+			picture = generic_air_interception
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				air_superiority_efficiency = 0.05
+				experience_gain_air_factor = 0.10
+			}
+		}
+		FRW_ff_normandie_spirit = {
+			picture = generic_air_research
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				air_ace_generation_chance_factor = 0.25
+				air_agility_factor = 0.05
+			}
+		}
+		FRW_ff_fnfl_spirit = {
+			picture = generic_navy_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				convoy_escort_efficiency = 0.10
+				navy_submarine_detection_factor = 0.10
+			}
+		}
+		FRW_ff_securite_sociale_spirit = {
+			picture = generic_goods_red_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				consumer_goods_factor = 0.02
+			}
+		}
+		FRW_ff_reconstruction_spirit = {
+			picture = generic_production_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = 0.15
+				production_speed_infrastructure_factor = 0.25
+			}
+		}
+		FRW_ff_fourth_republic_spirit = {
+			picture = generic_democratic_drift_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				political_power_gain = 0.10
+				democratic_drift = 0.02
+			}
+		}
+		FRW_ff_eurafrican_assembly_spirit = {
+			picture = generic_org_of_african_unity
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				non_core_manpower = 0.05
+				political_power_gain = 0.05
+				local_resources_factor = 0.05
+			}
+		}
+		FRW_ff_lorraine_spirit = {
+			picture = generic_air_research
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				air_strategic_bomber_bombing_factor = 0.10
+				air_cas_efficiency = 0.05
+			}
+		}
+		FRW_ff_richelieu_spirit = {
+			picture = generic_navy_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				navy_capital_ship_attack_factor = 0.10
+				navy_capital_ship_defence_factor = 0.05
+			}
+		}
+		FRW_ff_maquis_spirit = {
+			picture = generic_intel_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				resistance_growth_on_our_occupied_states = 0.15
+				special_forces_attack_factor = 0.10
+			}
+		}
+		FRW_ff_colonial_recruitment_spirit = {
+			picture = generic_army_african_4
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				non_core_manpower = 0.10
+				training_time_army_factor = -0.05
+			}
+		}
+		FRW_ff_cfln_spirit = {
+			picture = generic_pp_unity_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.10
+				stability_factor = 0.05
+				war_support_factor = 0.05
+			}
+		}
+		FRW_ff_cef_spirit = {
+			picture = generic_army_african_2
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				breakthrough_factor = 0.10
+			}
+		}
+		FRW_ff_dragoon_spirit = {
+			picture = generic_army_europe_3
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				naval_invasion_capacity = 2
+				naval_invasion_penalty = -0.25
+			}
+		}
+		FRW_french_gold_payment = {
+			picture = generic_production_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+	}
+}

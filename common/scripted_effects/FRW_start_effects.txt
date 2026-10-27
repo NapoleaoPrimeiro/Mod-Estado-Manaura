@@ -1,0 +1,71 @@
+# France Rework - starting debuffs (applied once on game start, removed in stages by focuses)
+FRW_start_debuffs = {
+	if = {
+		limit = { NOT = { has_country_flag = FRW_start_debuffs_done } }
+		set_country_flag = FRW_start_debuffs_done
+		# additional commanders
+		recruit_character = FRW_gen_corap
+		recruit_character = FRW_gen_touchon
+		recruit_character = FRW_gen_pretelat
+		recruit_character = FRW_gen_prioux
+		recruit_character = FRW_gen_delestraint
+		recruit_character = FRW_gen_frere
+		recruit_character = FRW_gen_bethouart
+		recruit_character = FRW_gen_larminat
+		recruit_character = FRW_gen_legentilhomme
+		recruit_character = FRW_gen_catroux
+		recruit_character = FRW_gen_koenig
+		recruit_character = FRW_gen_gensoul
+		recruit_character = FRW_gen_auphan
+		recruit_character = FRW_gen_argenlieu
+		recruit_character = FRW_gen_muselier
+		# council advisors
+		recruit_character = FRW_adv_monnet
+		recruit_character = FRW_adv_dautry
+		recruit_character = FRW_adv_cot
+		recruit_character = FRW_adv_mandel
+		recruit_character = FRW_adv_marty
+		recruit_character = FRW_adv_ybarnegaray
+		recruit_character = FRW_adv_marion
+		recruit_character = FRW_adv_bichelonne
+		recruit_character = FRW_adv_sauvy
+		recruit_character = FRW_adv_perrin
+		recruit_character = FRW_adv_langevin
+		recruit_character = FRW_adv_barre
+		recruit_character = FRW_adv_fperrin
+		recruit_character = FRW_adv_moulin
+		recruit_character = FRW_adv_frenay
+		recruit_character = FRW_adv_remy
+		recruit_character = FRW_adv_alibert
+		recruit_character = FRW_adv_spinasse
+		recruit_character = FRW_adv_debroglie
+		recruit_character = FRW_adv_ponte
+		recruit_character = FRW_adv_caquot
+		recruit_character = FRW_adv_coanda
+		recruit_character = FRW_adv_leduc
+		recruit_character = FRW_adv_dastier
+		recruit_character = FRW_adv_brossolette
+		recruit_character = FRW_adv_dormoy
+		recruit_character = FRW_adv_gmonnet
+		recruit_character = FRW_adv_laugier
+		recruit_character = FRW_adv_esnault
+		recruit_character = FRW_adv_paillole
+		recruit_character = FRW_adv_colson
+		recruit_character = FRW_adv_altmayer
+		recruit_character = FRW_adv_flavigny
+		recruit_character = FRW_adv_durandviel
+		recruit_character = FRW_adv_grobert
+		recruit_character = FRW_adv_platon
+		recruit_character = FRW_adv_armengaud
+		recruit_character = FRW_adv_mendigal
+		recruit_character = FRW_adv_bouscat
+		recruit_character = FRW_joliot_curie_advisor
+		if = {
+			limit = { date < 1937.1.1 }
+			add_ideas = { FRW_strike_wave FRW_generals_of_1918 FRW_divided_fleet FRW_obsolete_air_force }
+		}
+		else = {
+			add_ideas = { FRW_generals_of_1918_2 FRW_divided_fleet_2 FRW_obsolete_air_force_2 }
+		}
+	}
+}

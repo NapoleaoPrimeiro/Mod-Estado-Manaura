@@ -1,0 +1,56 @@
+scripted_gui = {
+
+	eng_parliament_decision_ui = {
+		context_type = decision_category
+		window_name = "eng_parliament_decision_ui_window"
+		effects = {
+			lords_icon_click = {
+				set_country_flag = ENG_is_currently_focused_on_lords_flag
+				IF = {
+					limit = {
+						has_country_flag = ENG_is_currently_focused_on_commons_flag
+					}
+					clr_country_flag = ENG_is_currently_focused_on_commons_flag
+				}
+				IF = {
+					limit = {
+						has_country_flag = ENG_is_currently_focused_on_acts_flag
+					}
+					clr_country_flag = ENG_is_currently_focused_on_acts_flag
+				}
+			}
+			commons_icon_click = {
+				set_country_flag = ENG_is_currently_focused_on_commons_flag
+				IF = {
+					limit = {
+						has_country_flag = ENG_is_currently_focused_on_lords_flag
+					}
+					clr_country_flag = ENG_is_currently_focused_on_lords_flag
+				}
+				IF = {
+					limit = {
+						has_country_flag = ENG_is_currently_focused_on_acts_flag
+					}
+					clr_country_flag = ENG_is_currently_focused_on_acts_flag
+				}
+			}
+			acts_icon_click = {
+				set_country_flag = ENG_is_currently_focused_on_acts_flag
+				IF = {
+					limit = {
+						has_country_flag = ENG_is_currently_focused_on_lords_flag
+					}
+					clr_country_flag = ENG_is_currently_focused_on_lords_flag
+				}
+				IF = {
+					limit = {
+						has_country_flag = ENG_is_currently_focused_on_commons_flag
+					}
+					clr_country_flag = ENG_is_currently_focused_on_commons_flag
+				}
+			}
+		}
+	}
+	
+}
+

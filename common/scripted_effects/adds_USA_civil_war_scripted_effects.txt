@@ -1,0 +1,15 @@
+APG_new_xianfa_dm_effect = {
+	if = {
+		limit = { 
+			NOT={has_dynamic_modifier = { modifier = APG_new_xianfa_dm }}			
+		}
+		hidden_effect={add_dynamic_modifier={modifier = APG_new_xianfa_dm }}
+		custom_effect_tooltip = APG_new_xianfa_dm_modifier_tt		
+	}
+	else_if = {
+		limit = { 
+			has_dynamic_modifier = { modifier = APG_new_xianfa_dm  }
+		}
+		custom_effect_tooltip = APG_new_xianfa_dm_modifier_ttt
+	}
+}

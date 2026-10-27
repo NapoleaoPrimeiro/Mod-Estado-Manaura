@@ -1,0 +1,398 @@
+	shared_focus = {
+		id = USA_civil_war_begins
+		icon = GFX_focus_usa_recruit_the_free_corps
+		x = 0
+		y = 0
+		#prerequisite = { focus = USA_continue_the_new_deal }
+		#relative_position_id = USA_continue_the_new_deal
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+
+		}
+	}
+
+	shared_focus = {
+		id = USA_fight_fxs
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		x = 0
+		y = 1
+		prerequisite = { focus = USA_civil_war_begins }
+		relative_position_id = USA_civil_war_begins
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+
+		available = {
+			any_other_country = {
+				original_tag = USA
+				has_government = fascism
+				has_war_with = ROOT
+			}
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+
+		}
+	}
+
+	shared_focus = {
+		id = USA_dongyuan_minbing
+		icon = GFX_focus_SOV_mobilization_plan
+		x = -1
+		y = 2
+		prerequisite = { focus = USA_civil_war_begins }
+		relative_position_id = USA_civil_war_begins
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+
+		available = {
+			any_other_country = {
+				original_tag = USA
+				has_government = fascism
+				has_war_with = ROOT
+			}
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+
+		}
+	}
+
+	shared_focus = {
+		id = USA_zhanzheng_zhaiquan
+		icon = GFX_focus_CHI_planned_economy
+		x = 1
+		y = 2
+		prerequisite = { focus = USA_civil_war_begins }
+		relative_position_id = USA_civil_war_begins
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+
+		available = {
+			any_other_country = {
+				original_tag = USA
+				has_government = fascism
+				has_war_with = ROOT
+			}
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+
+		}
+	}
+
+	shared_focus = {
+		id = USA_fight_com
+		icon = GFX_goal_anti_comintern_pact
+		x = 2
+		y = 1
+		prerequisite = { focus = USA_civil_war_begins }
+		relative_position_id = USA_civil_war_begins
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+
+		available = {
+			any_other_country = {
+				original_tag = USA
+				has_government = communism
+				has_war_with = ROOT
+			}
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+
+		}
+	}	
+
+	shared_focus = {
+		id = USA_fight_democracy
+		icon = GFX_focus_ARG_anti_american_propaganda
+		x = -2
+		y = 1
+		prerequisite = { focus = USA_civil_war_begins }
+		relative_position_id = USA_civil_war_begins
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+
+		available = {
+			any_other_country = {
+				original_tag = USA
+				has_government = communism
+				has_war_with = ROOT
+			}
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+
+		}
+	}
+
+	shared_focus = {
+		id = USA_suzhan_sujue
+		icon = GFX_focus_generic_army_attack
+		x = -1
+		y = 1
+		prerequisite = { focus = USA_dongyuan_minbing }
+		prerequisite = { focus = USA_zhanzheng_zhaiquan }
+		relative_position_id = USA_dongyuan_minbing
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+
+		available = {
+			any_other_country = {
+				original_tag = USA
+				has_government = communism
+				has_war_with = ROOT
+			}
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+
+		}
+	}
+
+	shared_focus = {
+		id = USA_wenzha_wenda
+		icon = GFX_focus_PRC_develop_the_army
+		x = 3
+		y = 1
+		prerequisite = { focus = USA_dongyuan_minbing }
+		prerequisite = { focus = USA_zhanzheng_zhaiquan }
+		relative_position_id = USA_dongyuan_minbing
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+
+		available = {
+			any_other_country = {
+				original_tag = USA
+				has_government = communism
+				has_war_with = ROOT
+			}
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+
+		}
+	}
+
+	shared_focus = {
+		id = USA_zhubu_tuijin
+		icon = GFX_focus_secret_rearmament
+		x = 1
+		y = 1
+		prerequisite = { focus = USA_dongyuan_minbing }
+		prerequisite = { focus = USA_zhanzheng_zhaiquan }
+		relative_position_id = USA_dongyuan_minbing
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+
+		available = {
+			any_other_country = {
+				original_tag = USA
+				has_government = communism
+				has_war_with = ROOT
+			}
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+
+		}
+	}
+
+	shared_focus = {
+		id = USA_hezhong_weiyi
+		icon = GFX_focus_PHI_united_states_army_forces_in_the_far_east
+		x = 1
+		y = 2
+		prerequisite = { 
+			focus = USA_suzhan_sujue
+			focus = USA_zhubu_tuijin
+			focus = USA_wenzha_wenda
+		}
+
+		relative_position_id = USA_dongyuan_minbing
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		allow_branch = {
+			
+		}
+
+		available = {
+			any_state = {
+				is_core_of = USA
+				is_controlled_by = ROOT
+			}
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+
+		completion_reward = {
+
+		}
+	}

@@ -1,0 +1,261 @@
+
+########################################################################################################################
+													# < INFORMATION > #
+########################################################################################################################
+		# Name mod: Generic Focus Tree: Redux
+		# Author: BoznaWhere
+		# Comment language: ENG / UKR
+########################################################################################################################
+													# < CREATE ALLIANCE > #
+########################################################################################################################
+GFTR_categories_create_alliance = {
+# # # # # # # # # # # # # # #
+	GFTR_D_alliance_communism = {
+		icon = GFX_decision_eng_trade_unions_support
+		priority = 0
+		fire_only_once = no
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+			has_government = communism
+		}
+
+		complete_effect = {
+			###communism###
+			if = {
+				limit = {
+					OR = {
+						has_completed_focus = GFTR_F_world_revolution
+						has_completed_focus = GFTR_TEST_world_revolution
+					}
+				}
+				random_list = {
+        				20 = { create_faction = GFTR_faction_com_a_1 }
+        				20 = { create_faction = GFTR_faction_com_a_2 }
+        				20 = { create_faction = GFTR_faction_com_a_3 }
+        				20 = { create_faction = GFTR_faction_com_a_4 }
+        				20 = { create_faction = GFTR_faction_com_a_5 }
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_completed_focus = GFTR_F_communist_influence
+						has_completed_focus = GFTR_TEST_communist_influence
+					}
+				}
+				random_list = {
+        				20 = { create_faction = GFTR_faction_com_b_1 }
+        				20 = { create_faction = GFTR_faction_com_b_2 }
+        				20 = { create_faction = GFTR_faction_com_b_3 }
+        				20 = { create_faction = GFTR_faction_com_b_4 }
+        				20 = { create_faction = GFTR_faction_com_b_5 }
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_completed_focus = GFTR_F_focus_on_country
+						has_completed_focus = GFTR_TEST_focus_on_country
+					}
+				}
+				random_list = {
+        				20 = { create_faction = GFTR_faction_com_c_1 }
+        				20 = { create_faction = GFTR_faction_com_c_2 }
+        				20 = { create_faction = GFTR_faction_com_c_3 }
+        				20 = { create_faction = GFTR_faction_com_c_4 }
+        				20 = { create_faction = GFTR_faction_com_c_5 }
+				}
+			}
+		}
+	}
+# # # # # # # # # # # # # # #
+	GFTR_D_alliance_neutrality = {
+		icon = GFX_decision_eng_trade_unions_support
+		priority = 0
+		fire_only_once = no
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+			has_government = neutrality
+		}
+
+		complete_effect = {
+			###monarchism###
+			if = {
+				limit = {
+					OR = {
+						has_completed_focus = GFTR_F_colonial_policy
+						has_completed_focus = GFTR_TEST_colonial_policy
+					}
+				}
+				random_list = {
+        				20 = { create_faction = GFTR_faction_mon_a_1 }
+        				20 = { create_faction = GFTR_faction_mon_a_2 }
+        				20 = { create_faction = GFTR_faction_mon_a_3 }
+        				20 = { create_faction = GFTR_faction_mon_a_4 }
+        				20 = { create_faction = GFTR_faction_mon_a_5 }
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_completed_focus = GFTR_F_regional_state
+						has_completed_focus = GFTR_TEST_regional_state
+					}
+				}
+				random_list = {
+        				20 = { create_faction = GFTR_faction_mon_b_1 }
+        				20 = { create_faction = GFTR_faction_mon_b_2 }
+        				20 = { create_faction = GFTR_faction_mon_b_3 }
+        				20 = { create_faction = GFTR_faction_mon_b_4 }
+        				20 = { create_faction = GFTR_faction_mon_b_5 }
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_completed_focus = GFTR_F_isolationism
+						has_completed_focus = GFTR_TEST_isolationism
+					}
+				}
+				random_list = {
+        				20 = { create_faction = GFTR_faction_mon_c_1 }
+        				20 = { create_faction = GFTR_faction_mon_c_2 }
+        				20 = { create_faction = GFTR_faction_mon_c_3 }
+        				20 = { create_faction = GFTR_faction_mon_c_4 }
+        				20 = { create_faction = GFTR_faction_mon_c_5 }
+				}
+			}
+		}
+	}
+# # # # # # # # # # # # # # #
+	GFTR_D_alliance_fascism = {
+		icon = GFX_decision_eng_trade_unions_support
+		priority = 0
+		fire_only_once = no
+		ai_will_do = {
+			factor = 100
+		}
+		
+		available = {
+			has_government = fascism
+		}
+
+		complete_effect = {
+			###fascism###
+			if = {
+				limit = {
+					OR = {
+						has_completed_focus = GFTR_F_ideological_fanaticism
+						has_completed_focus = GFTR_TEST_ideological_fanaticism
+					}
+				}
+				random_list = {
+        				20 = { create_faction = GFTR_faction_fas_a_1 }
+        				20 = { create_faction = GFTR_faction_fas_a_2 }
+        				20 = { create_faction = GFTR_faction_fas_a_3 }
+        				20 = { create_faction = GFTR_faction_fas_a_4 }
+        				20 = { create_faction = GFTR_faction_fas_a_5 }
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_completed_focus = GFTR_F_revanchism
+						has_completed_focus = GFTR_TEST_revanchism
+					}
+				}
+				random_list = {
+        				20 = { create_faction = GFTR_faction_fas_b_1 }
+        				20 = { create_faction = GFTR_faction_fas_b_2 }
+        				20 = { create_faction = GFTR_faction_fas_b_3 }
+        				20 = { create_faction = GFTR_faction_fas_b_4 }
+        				20 = { create_faction = GFTR_faction_fas_b_5 }
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_completed_focus = GFTR_F_nationalism
+						has_completed_focus = GFTR_TEST_nationalism
+					}
+				}
+				random_list = {
+        				20 = { create_faction = GFTR_faction_fas_c_1 }
+        				20 = { create_faction = GFTR_faction_fas_c_2 }
+        				20 = { create_faction = GFTR_faction_fas_c_3 }
+        				20 = { create_faction = GFTR_faction_fas_c_4 }
+        				20 = { create_faction = GFTR_faction_fas_c_5 }
+				}
+			}
+		}
+	}
+# # # # # # # # # # # # # # #
+	GFTR_D_alliance_democratic = {
+		icon = GFX_decision_eng_trade_unions_support
+		priority = 0
+		fire_only_once = no
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+			has_government = democratic
+		}
+
+		complete_effect = {
+			###democracy###
+			if = {
+				limit = {
+					OR = {
+						has_completed_focus = GFTR_F_defense_of_democracy
+						has_completed_focus = GFTR_TEST_defense_of_democracy
+					}
+				}
+				random_list = {
+        				20 = { create_faction = GFTR_faction_dem_a_1 }
+        				20 = { create_faction = GFTR_faction_dem_a_2 }
+        				20 = { create_faction = GFTR_faction_dem_a_3 }
+        				20 = { create_faction = GFTR_faction_dem_a_4 }
+        				20 = { create_faction = GFTR_faction_dem_a_5 }
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_completed_focus = GFTR_F_bastion_of_civilization
+						has_completed_focus = GFTR_TEST_bastion_of_civilization
+					}
+				}
+				random_list = {
+        				20 = { create_faction = GFTR_faction_dem_b_1 }
+        				20 = { create_faction = GFTR_faction_dem_b_2 }
+        				20 = { create_faction = GFTR_faction_dem_b_3 }
+        				20 = { create_faction = GFTR_faction_dem_b_4 }
+        				20 = { create_faction = GFTR_faction_dem_b_5 }
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_completed_focus = GFTR_F_cautious_diplomacy
+						has_completed_focus = GFTR_TEST_cautious_diplomacy
+					}
+				}
+				random_list = {
+        				20 = { create_faction = GFTR_faction_dem_c_1 }
+        				20 = { create_faction = GFTR_faction_dem_c_2 }
+        				20 = { create_faction = GFTR_faction_dem_c_3 }
+        				20 = { create_faction = GFTR_faction_dem_c_4 }
+        				20 = { create_faction = GFTR_faction_dem_c_5 }
+				}
+			}
+		}
+	}
+# # # # # # # # # # # # # # #
+}

@@ -1,0 +1,21 @@
+#eo
+GER_balance_of_power_category = {
+	icon = GFX_decision_category_power_struggle
+	
+	allowed = {
+		original_tag = GER
+	}
+	
+	
+					visible = { 
+		OR = {
+		has_completed_focus = ger_4
+		has_completed_focus = GER_rhineland
+		has_completed_focus = ger_118
+		has_completed_focus = ger_119
+		has_completed_focus = GER_support_goebbels
+		has_completed_focus = GER_legacy_of_speer
+			}
+		}
+}
+#eo

@@ -1,0 +1,28 @@
+﻿#eo
+###########################
+# Welcome Events
+###########################	
+
+add_namespace = dam
+
+country_event = {
+	id = dam.1
+	title = dam.1.t
+	desc = dam.1.d
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {
+			has_idea = dam_idea
+		}
+	}
+	
+	option = {
+		name = dam.1.a
+		ai_chance = { factor = 100 }
+		add_ideas = dam_idea
+	}
+}
+#eo

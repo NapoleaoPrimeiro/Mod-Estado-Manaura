@@ -1,0 +1,233 @@
+on_actions = {
+	on_startup = {
+        effect = {
+			set_variable = { global.agency_upgrade_time_days_base = 30 }
+			
+			resize_array = { array = global.agency_upgrades value = 0 size = 21 }
+			resize_array = { array = global.agency_names value = 0 size = 21 }
+			resize_array = { array = global.agency_gfx value = 0 size = 21 }
+			resize_array = { array = global.agency_max_upgrades value = 1 size = 21 }
+			resize_array = { array = global.agency_factories value = 5 size = 21 }
+			resize_array = { array = global.agency_random_weight value = 2 size = 21 }
+		
+			set_variable = {	  global.agency_upgrades^0  = token:FFTF_agency_00_civilian_intelligence }
+			set_variable = { 		 global.agency_names^0  = token:FFTF_agency_00_civilian_intelligence_name }
+			set_variable = {		   global.agency_gfx^0  = token:FFTF_agency_00_civilian_intelligence_gfx }
+			set_variable = {  global.agency_max_upgrades^0  = 1 }
+			set_variable = {     global.agency_factories^0  = 5 }
+			set_variable = { global.agency_random_weight^0  = 3 }
+		
+			set_variable = {	  global.agency_upgrades^1  = token:FFTF_agency_01_army_intelligence }
+			set_variable = { 		 global.agency_names^1  = token:FFTF_agency_01_army_intelligence_name }
+			set_variable = {  		   global.agency_gfx^1  = token:FFTF_agency_01_army_intelligence_gfx }
+			set_variable = {  global.agency_max_upgrades^1  = 1 }
+			set_variable = {     global.agency_factories^1  = 5 }
+			set_variable = { global.agency_random_weight^1  = 4 }
+		
+			set_variable = {	  global.agency_upgrades^2  = token:FFTF_agency_02_naval_intelligence }
+			set_variable = { 		 global.agency_names^2  = token:FFTF_agency_02_naval_intelligence_name }
+			set_variable = {   		   global.agency_gfx^2  = token:FFTF_agency_02_naval_intelligence_gfx }
+			set_variable = {  global.agency_max_upgrades^2  = 1 }
+			set_variable = {     global.agency_factories^2  = 5 }
+			set_variable = { global.agency_random_weight^2  = 2 }
+		
+			set_variable = {  	  global.agency_upgrades^3  = token:FFTF_agency_03_air_force_intelligence }
+			set_variable = { 		 global.agency_names^3  = token:FFTF_agency_03_air_force_intelligence_name }
+			set_variable = {  		   global.agency_gfx^3  = token:FFTF_agency_03_air_force_intelligence_gfx }
+			set_variable = {  global.agency_max_upgrades^3  = 1 }
+			set_variable = {     global.agency_factories^3  = 5 }
+			set_variable = { global.agency_random_weight^3  = 2 }
+		
+			set_variable = {	  global.agency_upgrades^4  = token:FFTF_agency_04_passive_defence }
+			set_variable = { 		 global.agency_names^4  = token:FFTF_agency_04_passive_defence_name }
+			set_variable = {  		   global.agency_gfx^4  = token:FFTF_agency_04_passive_defence_gfx }
+			set_variable = {  global.agency_max_upgrades^4  = 4 }
+			set_variable = {     global.agency_factories^4  = 5 }
+			set_variable = { global.agency_random_weight^4  = 3 }
+		
+			set_variable = {	  global.agency_upgrades^5  = token:FFTF_agency_05_anti_partisan }
+			set_variable = { 		 global.agency_names^5  = token:FFTF_agency_05_anti_partisan_name }
+			set_variable = {  		   global.agency_gfx^5  = token:FFTF_agency_05_anti_partisan_gfx }
+			set_variable = {  global.agency_max_upgrades^5  = 2 }
+			set_variable = {     global.agency_factories^5  = 5 }
+			set_variable = { global.agency_random_weight^5  = 2 }
+		
+			set_variable = {	  global.agency_upgrades^6  = token:FFTF_agency_06_blueprint_stealing }
+			set_variable = { 		 global.agency_names^6  = token:FFTF_agency_06_blueprint_stealing_name }
+			set_variable = {  		   global.agency_gfx^6  = token:FFTF_agency_06_blueprint_stealing_gfx }
+			set_variable = {  global.agency_max_upgrades^6  = 1 }
+			set_variable = {     global.agency_factories^6  = 5 }
+			set_variable = { global.agency_random_weight^6  = 2 }
+		
+			set_variable = {	  global.agency_upgrades^7  = token:FFTF_agency_07_portable_radios }
+			set_variable = { 		 global.agency_names^7  = token:FFTF_agency_07_portable_radios_name }
+			set_variable = { 		   global.agency_gfx^7  = token:FFTF_agency_07_portable_radios_gfx }
+			set_variable = {  global.agency_max_upgrades^7  = 1 }
+			set_variable = {     global.agency_factories^7  = 8 }
+			set_variable = { global.agency_random_weight^7  = 2 }
+		
+			set_variable = {	  global.agency_upgrades^8  = token:FFTF_agency_08_invisible_ink }
+			set_variable = { 		 global.agency_names^8  = token:FFTF_agency_08_invisible_ink_name }
+			set_variable = {  		   global.agency_gfx^8  = token:FFTF_agency_08_invisible_ink_gfx }
+			set_variable = {  global.agency_max_upgrades^8  = 1 }
+			set_variable = {     global.agency_factories^8  = 5 }
+			set_variable = { global.agency_random_weight^8  = 2 }
+		
+			set_variable = {	  global.agency_upgrades^9  = token:FFTF_agency_09_plastic_explosives }
+			set_variable = { 		 global.agency_names^9  = token:FFTF_agency_09_plastic_explosives_name }
+			set_variable = {  		   global.agency_gfx^9  = token:FFTF_agency_09_plastic_explosives_gfx }
+			set_variable = {  global.agency_max_upgrades^9  = 1 }
+			set_variable = {     global.agency_factories^9  = 8 }
+			set_variable = { global.agency_random_weight^9  = 2 }
+		
+			set_variable = {	  global.agency_upgrades^10 = token:FFTF_agency_10_suicide_pills }
+			set_variable = { 		 global.agency_names^10 = token:FFTF_agency_10_suicide_pills_name }
+			set_variable = {   		   global.agency_gfx^10 = token:FFTF_agency_10_suicide_pills_gfx }
+			set_variable = {  global.agency_max_upgrades^10 = 1 }
+			set_variable = {     global.agency_factories^10 = 5 }
+			set_variable = { global.agency_random_weight^10 = 3 }
+		
+			set_variable = {	  global.agency_upgrades^11 = token:FFTF_agency_11_localised_training_centers }
+			set_variable = { 		 global.agency_names^11 = token:FFTF_agency_11_localised_training_centers_name }
+			set_variable = {   		   global.agency_gfx^11 = token:FFTF_agency_11_localised_training_centers_gfx }
+			set_variable = {  global.agency_max_upgrades^11 = 1 }
+			set_variable = {     global.agency_factories^11 = 10 }
+			set_variable = { global.agency_random_weight^11 = 2 }
+		
+			set_variable = {	  global.agency_upgrades^12 = token:FFTF_agency_12_commando_training }
+			set_variable = { 		 global.agency_names^12 = token:FFTF_agency_12_commando_training_name }
+			set_variable = {   		   global.agency_gfx^12 = token:FFTF_agency_12_commando_training_gfx }
+			set_variable = {  global.agency_max_upgrades^12 = 1 }
+			set_variable = {     global.agency_factories^12 = 5 }
+			set_variable = { global.agency_random_weight^12 = 3 }
+		
+			set_variable = {	  global.agency_upgrades^13 = token:FFTF_agency_13_interrogation_techniques }
+			set_variable = { 		 global.agency_names^13 = token:FFTF_agency_13_interrogation_techniques_name }
+			set_variable = {   		   global.agency_gfx^13 = token:FFTF_agency_13_interrogation_techniques_gfx }
+			set_variable = {  global.agency_max_upgrades^13 = 1 }
+			set_variable = {     global.agency_factories^13 = 5 }
+			set_variable = { global.agency_random_weight^13 = 3 }
+		
+			set_variable = {	  global.agency_upgrades^14 = token:FFTF_agency_14_diplomatic_training }
+			set_variable = { 		 global.agency_names^14 = token:FFTF_agency_14_diplomatic_training_name }
+			set_variable = {   		   global.agency_gfx^14 = token:FFTF_agency_14_diplomatic_training_gfx }
+			set_variable = {  global.agency_max_upgrades^14 = 1 }
+			set_variable = {     global.agency_factories^14 = 5 }
+			set_variable = { global.agency_random_weight^14 = 2 }
+		
+			set_variable = {	  global.agency_upgrades^15 = token:FFTF_agency_15_psychological_warfare }
+			set_variable = { 		 global.agency_names^15 = token:FFTF_agency_15_psychological_warfare_name }
+			set_variable = {   		   global.agency_gfx^15 = token:FFTF_agency_15_psychological_warfare_gfx }
+			set_variable = {  global.agency_max_upgrades^15 = 1 }
+			set_variable = {     global.agency_factories^15 = 8 }
+			set_variable = { global.agency_random_weight^15 = 2 }
+		
+			set_variable = {	  global.agency_upgrades^16 = token:FFTF_agency_16_form_department }
+			set_variable = { 		 global.agency_names^16 = token:FFTF_agency_16_form_department_name }
+			set_variable = {   		   global.agency_gfx^16 = token:FFTF_agency_16_form_department_gfx }
+			set_variable = {  global.agency_max_upgrades^16 = 1 }
+			set_variable = {     global.agency_factories^16 = 8 }
+			set_variable = { global.agency_random_weight^16 = 4 }
+		
+			set_variable = {	  global.agency_upgrades^17 = token:FFTF_agency_17_radio_interception_group }
+			set_variable = { 		 global.agency_names^17 = token:FFTF_agency_17_radio_interception_group_name }
+			set_variable = {   		   global.agency_gfx^17 = token:FFTF_agency_17_radio_interception_group_gfx }
+			set_variable = {  global.agency_max_upgrades^17 = 2 }
+			set_variable = {     global.agency_factories^17 = 5 }
+			set_variable = { global.agency_random_weight^17 = 4 }
+		
+			set_variable = {	  global.agency_upgrades^18 = token:FFTF_agency_18_machine_assisted_decryption }
+			set_variable = { 		 global.agency_names^18 = token:FFTF_agency_18_machine_assisted_decryption_name }
+			set_variable = {   		   global.agency_gfx^18 = token:FFTF_agency_18_machine_assisted_decryption_gfx }
+			set_variable = {  global.agency_max_upgrades^18 = 3 }
+			set_variable = {     global.agency_factories^18 = 10 }
+			set_variable = { global.agency_random_weight^18 = 4 }
+		
+			set_variable = {	  global.agency_upgrades^19 = token:FFTF_agency_19_government_cypher_school }
+			set_variable = { 		 global.agency_names^19 = token:FFTF_agency_19_government_cypher_school_name }
+			set_variable = {   		   global.agency_gfx^19 = token:FFTF_agency_19_government_cypher_school_gfx }
+			set_variable = {  global.agency_max_upgrades^19 = 2 }
+			set_variable = {	 global.agency_factories^19 = 5 }
+			set_variable = { global.agency_random_weight^19 = 2 }
+		
+			set_variable = {	  global.agency_upgrades^20 = token:FFTF_agency_20_machine_assissted_encryption }
+			set_variable = { 		 global.agency_names^20 = token:FFTF_agency_20_machine_assissted_encryption_name }
+			set_variable = {   		   global.agency_gfx^20 = token:FFTF_agency_20_machine_assissted_encryption_gfx }
+			set_variable = {  global.agency_max_upgrades^20 = 3 }
+			set_variable = {     global.agency_factories^20 = 15 }
+			set_variable = { global.agency_random_weight^20 = 2 }
+			
+			
+			resize_array = { array = global.agency_upgrade_icon_button_x value = 0 size = 21 }
+			resize_array = { array = global.agency_upgrade_icon_button_y value = 0 size = 21 }
+			
+			@x_row_1 = 0
+			@x_row_2 = 120
+			@x_row_3 = 240
+			@x_row_4 = 360
+			@x_row_5 = 480
+			
+			@y_row_1 = 0
+			@y_row_2 = 94
+			@y_row_3 = 188
+			@y_row_4 = 282
+			@y_row_5 = 376
+			
+			set_variable = { global.agency_upgrade_icon_button_x^0 = @x_row_1 }
+			set_variable = { global.agency_upgrade_icon_button_y^0 = @y_row_1 }
+			set_variable = { global.agency_upgrade_icon_button_x^1 = @x_row_2 }
+			set_variable = { global.agency_upgrade_icon_button_y^1 = @y_row_1 }
+			set_variable = { global.agency_upgrade_icon_button_x^2 = @x_row_3 }
+			set_variable = { global.agency_upgrade_icon_button_y^2 = @y_row_1 }
+			set_variable = { global.agency_upgrade_icon_button_x^3 = @x_row_4 }
+			set_variable = { global.agency_upgrade_icon_button_y^3 = @y_row_1 }
+			
+			set_variable = { global.agency_upgrade_icon_button_x^4 = @x_row_1 }
+			set_variable = { global.agency_upgrade_icon_button_y^4 = @y_row_2 }
+			set_variable = { global.agency_upgrade_icon_button_x^5 = @x_row_2 }
+			set_variable = { global.agency_upgrade_icon_button_y^5 = @y_row_2 }
+			
+			set_variable = { global.agency_upgrade_icon_button_x^6 = @x_row_1 }
+			set_variable = { global.agency_upgrade_icon_button_y^6 = @y_row_3 }
+			set_variable = { global.agency_upgrade_icon_button_x^7 = @x_row_2 }
+			set_variable = { global.agency_upgrade_icon_button_y^7 = @y_row_3 }
+			set_variable = { global.agency_upgrade_icon_button_x^8 = @x_row_3 }
+			set_variable = { global.agency_upgrade_icon_button_y^8 = @y_row_3 }
+			set_variable = { global.agency_upgrade_icon_button_x^9 = @x_row_4 }
+			set_variable = { global.agency_upgrade_icon_button_y^9 = @y_row_3 }
+			set_variable = { global.agency_upgrade_icon_button_x^10 = @x_row_5 }
+			set_variable = { global.agency_upgrade_icon_button_y^10 = @y_row_3 }
+			
+			set_variable = { global.agency_upgrade_icon_button_x^11 = @x_row_1 }
+			set_variable = { global.agency_upgrade_icon_button_y^11 = @y_row_4 }
+			set_variable = { global.agency_upgrade_icon_button_x^12 = @x_row_2 }
+			set_variable = { global.agency_upgrade_icon_button_y^12 = @y_row_4 }
+			set_variable = { global.agency_upgrade_icon_button_x^13 = @x_row_3 }
+			set_variable = { global.agency_upgrade_icon_button_y^13 = @y_row_4 }
+			set_variable = { global.agency_upgrade_icon_button_x^14 = @x_row_4 }
+			set_variable = { global.agency_upgrade_icon_button_y^14 = @y_row_4 }
+			set_variable = { global.agency_upgrade_icon_button_x^15 = @x_row_5 }
+			set_variable = { global.agency_upgrade_icon_button_y^15 = @y_row_4 }
+			
+			set_variable = { global.agency_upgrade_icon_button_x^16 = @x_row_1 }
+			set_variable = { global.agency_upgrade_icon_button_y^16 = @y_row_5 }
+			set_variable = { global.agency_upgrade_icon_button_x^17 = @x_row_2 }
+			set_variable = { global.agency_upgrade_icon_button_y^17 = @y_row_5 }
+			set_variable = { global.agency_upgrade_icon_button_x^18 = @x_row_3 }
+			set_variable = { global.agency_upgrade_icon_button_y^18 = @y_row_5 }
+			set_variable = { global.agency_upgrade_icon_button_x^19 = @x_row_4 }
+			set_variable = { global.agency_upgrade_icon_button_y^19 = @y_row_5 }
+			set_variable = { global.agency_upgrade_icon_button_x^20 = @x_row_5 }
+			set_variable = { global.agency_upgrade_icon_button_y^20 = @y_row_5 }
+		}
+    }
+	on_weekly = {
+		effect = {
+			if = {
+				limit = { FFTF_can_start_automated_agency_upgrade = yes }
+				
+				FFTF_begin_automatic_upgrade_if_possible = yes
+			}
+		}
+	}
+}

@@ -1,0 +1,3530 @@
+ideas = {
+
+	country= {
+		USA_gczy_zhichezhe_baoluan = {
+			picture = FRA_scw_intervention_republicans_focus
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+		
+			modifier = {
+				surrender_limit = -0.1
+				political_power_factor = -0.25
+			}
+			
+		}
+
+		USA_queshao_jishu_gongren = {
+			picture = generic_production_bonus
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+		
+			modifier = {
+				industrial_capacity_factory = -0.15
+			}
+			
+		}
+
+		USA_jishu_gongren_yongru = {
+			picture = generic_production_bonus
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+		
+			modifier = {
+				industrial_capacity_factory = 0.15
+			}
+			
+		}
+
+		USA_guoji_douzheng = {
+			picture = PRC_publicity_department_of_central_committee
+			
+			removal_cost = -1
+
+			cancel = {
+				has_war = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+		
+			modifier = {
+				send_volunteer_divisions_required = -0.2
+				send_volunteer_size = 2
+				send_volunteers_tension = -0.4
+			}
+		}
+
+		USA_zhanshi_tuanjie = {
+			picture = generic_pp_unity_bonus
+			
+			removal_cost = -1
+
+			cancel = {
+				has_war = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+		
+			modifier = {
+				stability_factor = 0.2
+				political_advisor_cost_factor = -0.1
+			}
+		}
+
+
+		USA_iww = {
+			name = USA_iww 
+			picture = generic_production_bonus
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+		
+			modifier = {
+				industrial_capacity_factory = 0.05
+				line_change_production_efficiency_factor = 0.1
+				production_factory_start_efficiency_factor = 0.1
+			}
+			
+		}
+
+		USA_chejian_weiyuanhui = {
+			name = USA_chejian_weiyuanhui 
+			picture = generic_production_bonus
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+		
+			modifier = {
+				industrial_capacity_factory = 0.05
+			}
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				support_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				# armor = {
+				# 	build_cost_ic = -0.1
+				# 	instant = yes
+				# }
+				# motorized = {
+				# 	build_cost_ic = -0.1
+				# 	instant = yes
+				# }
+				# mechanized = {
+				# 	build_cost_ic = -0.1
+				# 	instant = yes
+				# }
+
+			}
+		}
+
+		USA_chejian_weiyuanhui2 = {
+			name = USA_chejian_weiyuanhui 
+			picture = generic_production_bonus
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+		
+			modifier = {
+				industrial_capacity_factory = 0.05
+			}
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				support_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				armor = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				motorized = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				mechanized = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+
+			}
+		}
+
+		USA_shaoshupai_dangxuan = {
+			name = USA_shaoshupai_dangxuan
+			picture = generic_pp_unity_bonus
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+		
+			modifier = {
+				political_power_factor = -0.2
+				political_advisor_cost_factor = 0.5
+			}		
+		}
+
+		USA_neibu_geming = {
+			picture = home_of_the_revolution
+			allowed = {
+				
+			}
+			allowed_civil_war = { always = yes }
+			modifier = { 
+				drift_defence_factor = 0.5
+				consumer_goods_factor = -0.15
+				political_power_factor = 0.1			
+			}
+		}
+
+		USA_minzhu_jizhong = {
+			picture = generic_constitutional_guarantees
+			allowed = {
+				
+			}
+			allowed_civil_war = { always = yes }
+			modifier = { 
+				political_advisor_cost_factor = -0.1
+				industrial_concern_cost_factor = -0.2
+				theorist_cost_factor = -0.2
+				army_chief_cost_factor = -0.2
+				navy_chief_cost_factor = -0.2
+				air_chief_cost_factor = -0.2				
+			}
+		}
+
+		USA_laozi_xieshang_weiyuanhui = {
+			picture = generic_constitutional_guarantees
+			allowed = {
+				
+			}
+			allowed_civil_war = { always = yes }
+			modifier = { 
+				production_factory_max_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+				line_change_production_efficiency_factor = 0.05
+				production_factory_start_efficiency_factor = 0.05
+			}
+		}
+
+		US_jieji_tiaohe = {
+			name = US_jieji_tiaohe
+			picture = generic_pp_unity_bonus
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+		
+			modifier = {
+				stability_weekly = 0.01
+				war_support_weekly = 0.01
+				industrial_capacity_factory = 0.1
+				production_factory_start_efficiency_factor = 0.1
+				production_speed_buildings_factor = 0.1
+			}
+		}
+
+		US_com_xianfengdui = {
+			name = US_com_xianfengdui
+			picture = SOV_war_heroes
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				has_government=communism
+			}
+		
+			modifier = {
+				conscription_factor = 0.1
+				army_core_defence_factor = 0.05
+				communism_drift = 0.01
+			}
+		}
+
+		US_com_xianfengdui2 = {
+			name = US_com_xianfengdui
+			picture = SOV_war_heroes
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				has_government=communism
+			}
+		
+			modifier = {
+				conscription_factor = 0.2
+				army_core_defence_factor = 0.1
+				communism_drift = 0.01
+			}
+		}
+
+
+		US_arms_trade = {
+			picture = MEX_callistas
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+		
+			modifier = {
+				cic_construction_boost_factor = 0.05
+				custom_modifier_tooltip = US_arms_trade_tt
+			}			
+			on_add = {
+				every_other_country = {
+					add_ai_strategy = {
+						type = equipment_market_trade_desire
+						id = USA
+						value = 200
+					}
+				}
+			}
+			on_remove = {
+				every_other_country = {
+					add_ai_strategy = {
+						type = equipment_market_trade_desire
+						id = USA
+						value = -200
+					}
+				}
+			}
+		}
+
+
+		US_hollywood_films = {
+			picture = us_hollyhood
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+		
+
+			modifier = {
+				political_power_factor = 0.05
+				opinion_gain_monthly_factor = 0.2								
+			}			
+		}
+
+		US_USA_xidian_junxiao = {
+			picture = US_xidian_junxiao
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+		
+
+			modifier = {
+				max_command_power = 20
+				army_leader_start_level = 1
+				experience_gain_factor = 0.1
+			}			
+		}
+
+
+		HAW_usa_democratic_over = {
+			picture = FRA_scw_intervention_republicans_focus
+			
+			removal_cost = -1
+			cancel = {
+				USA = {
+					NOT = {
+						has_War_with = HAW
+					}
+				}				
+			}
+
+			modifier = {
+				stability_factor = -0.1
+				war_support_factor = -0.1
+				political_power_factor = -0.15
+				surrender_limit = -0.2
+			}			
+		}
+
+		HAW_true_usa_idea = {
+			picture = FRA_scw_intervention_nationalists_focus
+			
+			removal_cost = -1
+			cancel = {
+				USA = {
+					NOT = {
+						has_War_with = HAW
+					}
+				}
+			}
+
+			modifier = {
+				weekly_manpower = 1000
+				non_core_manpower = 0.2
+			}
+			targeted_modifier = {
+				tag = USA
+				attack_bonus_against = 0.1
+				defense_bonus_against  = 0.1
+			}
+		}
+
+		HAW_us_jueqi_idea = {
+			picture = ARG_american_allyship
+			
+			removal_cost = -1
+			cancel = {
+				
+			}
+			available = {
+				
+			}
+
+			rule = {
+				can_create_factions = yes
+			}
+
+			modifier = {
+				industrial_capacity_factory = 0.1
+			}
+		}
+
+		HAW_us_jueqi_idea2 = {
+			picture = ARG_american_allyship
+			
+			removal_cost = -1
+			cancel = {
+				
+			}
+			available = {
+				
+			}
+
+			rule = {
+				can_create_factions = yes
+			}
+
+			modifier = {
+				industrial_capacity_factory = 0.1
+				navy_max_range_factor = 0.1
+				line_change_production_efficiency_factor = 0.1
+				production_factory_start_efficiency_factor = 0.1
+				
+			}
+		}
+
+
+		HAW_USA_eco = { 
+			picture = generic_economic_increase
+			
+			removal_cost = -1
+			cancel = {
+				JAP = {
+					has_war_with = HAW
+				}
+			}
+			available = {
+				
+			}
+
+			modifier = {
+				consumer_goods_factor = -0.1
+			}			
+
+		}
+		
+		HAW_JAP_eco = { 
+			picture = generic_economic_increase
+			
+			removal_cost = -1
+			cancel = {
+				JAP = {
+					has_war_with = HAW
+				}
+			}
+			available = {
+				
+			}
+
+			modifier = {
+				#consumer_goods_factor = -0.05
+			}	
+
+			targeted_modifier = {
+				tag = HAW
+
+				trade_cost_for_target_factor = -0.25
+			}		
+
+		}
+
+
+		USA_fight_for_us = {
+			picture = generic_usa_conflict
+
+			removal_cost = -1
+
+			cancel = {
+				has_War = no
+				#has_global_flag = USA_2ND_us_civil_war_over_flag
+			}
+
+			modifier = {
+				conscription_factor  = 0.2
+				pocket_penalty = -0.1
+				custom_modifier_tooltip = PRU_no_factions_tt
+			}
+			on_add = {
+				set_rule = { can_join_factions = no }
+			}
+
+			on_remove = { 
+				set_rule = { can_join_factions = yes }
+			}
+
+		}
+
+		USA_yingfa_ganshe = {
+			picture = generic_democratic_drift_bonus
+
+			removal_cost = -1
+
+			modifier = {
+				industrial_capacity_factory = 0.1
+				production_factory_efficiency_gain_factor  = 0.1
+				surrender_limit = 0.1
+			}
+
+			targeted_modifier = {
+				tag = USA
+				attack_bonus_against = 0.1
+				defense_bonus_against  = 0.1
+			}
+		}
+
+		HAW_cuiruo_zhengquan = {
+			picture = EST_democratic_opposition
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = -0.15
+				war_support_factor = -0.15
+				surrender_limit = -0.2
+				drift_defence_factor = -0.25
+				political_power_factor = -0.1
+			}
+		}
+
+
+		HAW_faxing_xinhuobi = {
+			picture = generic_economic_increase
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = -0.1
+				consumer_goods_factor = 0.1
+			}
+
+			on_remove = {
+				add_to_variable = { 
+					HAW_new_kingdom_dm_consumer_goods_factor = -0.05 
+					tooltip = consumer_goods_factor_tt
+				}
+				add_to_variable = { 
+					HAW_new_kingdom_dm_industrial_capacity_factory = 0.05 
+					tooltip = industrial_capacity_factory_tt
+				}
+				add_to_variable = { 
+					HAW_new_kingdom_dm_production_factory_efficiency_gain_factor = 0.05 
+					tooltip = production_factory_efficiency_gain_factor_tt
+				}
+			}
+		}
+
+		HAW_shoujiaoyu_zizhu = {
+			picture = generic_research_bonus
+
+			removal_cost = -1
+
+			modifier = {
+				research_speed_factor = 0.05
+
+				custom_modifier_tooltip = HAW_shoujiaoyu_zizhu_tt
+			}
+
+			on_add = {
+				add_research_slot = 1
+			}
+
+			on_remove = {
+				add_research_slot = -1
+			}
+		}
+
+		HAW_usa_liuwangzhe_influence_1 = {
+			picture = US_INFLUENCE
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = -0.05
+				war_support_factor = 0.025
+				weekly_manpower = 100	
+			}
+
+			targeted_modifier = {
+				tag = USA
+				attack_bonus_against = 0.025
+				defense_bonus_against  = 0.025
+			}
+		}
+
+		HAW_usa_liuwangzhe_influence_2 = {
+			picture = US_INFLUENCE
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = -0.075
+				war_support_factor = 0.05
+				weekly_manpower = 150	
+			}
+
+			targeted_modifier = {
+				tag = USA
+				attack_bonus_against = 0.05
+				defense_bonus_against  = 0.05
+			}
+		}
+
+		HAW_usa_liuwangzhe_influence_3 = {
+			picture = US_INFLUENCE
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = -0.1
+				war_support_factor = 0.075
+				weekly_manpower = 200	
+			}
+
+			targeted_modifier = {
+				tag = USA
+				attack_bonus_against = 0.075
+				defense_bonus_against  = 0.075
+			}
+		}
+
+		HAW_usa_liuwangzhe_influence_4 = {
+			picture = US_INFLUENCE
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = -0.15
+				war_support_factor = 0.1
+				weekly_manpower = 250	
+			}
+
+			targeted_modifier = {
+				tag = USA
+				attack_bonus_against = 0.1
+				defense_bonus_against  = 0.1
+			}
+		}
+
+
+		HAW_jap_eco_kongzhi_1 = {
+			picture = JAP_INFLUENCE
+
+			removal_cost = -1
+
+			modifier = {
+				industrial_capacity_factory = 0.025
+				industrial_capacity_dockyard = 0.025
+				production_speed_buildings_factor =	0.025		
+			}
+
+			cancel = {
+				has_war_with = JAP
+			}
+
+			targeted_modifier = {
+				tag = JAP
+				trade_cost_for_target_factor = -0.05
+				cic_to_target_factor = 0.05
+			}
+		}
+
+		HAW_jap_eco_kongzhi_2 = {
+			picture = JAP_INFLUENCE
+
+			removal_cost = -1
+
+			modifier = {
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				production_speed_buildings_factor =	0.05		
+			}
+
+			cancel = {
+				has_war_with = JAP
+			}
+
+			targeted_modifier = {
+				tag = JAP
+				trade_cost_for_target_factor = -0.05
+				cic_to_target_factor = 0.1
+			}
+		}
+
+		HAW_jap_eco_kongzhi_3 = {
+			picture = JAP_INFLUENCE
+
+			removal_cost = -1
+
+			modifier = {
+				industrial_capacity_factory = 0.075
+				industrial_capacity_dockyard = 0.075
+				production_speed_buildings_factor =	0.075		
+			}
+
+			cancel = {
+				has_war_with = JAP
+			}
+
+			targeted_modifier = {
+				tag = JAP
+				trade_cost_for_target_factor = -0.05
+				cic_to_target_factor = 0.15
+			}
+		}
+
+		HAW_jap_eco_kongzhi_4 = {
+			picture = JAP_INFLUENCE
+
+			removal_cost = -1
+
+			modifier = {
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+				production_speed_buildings_factor =	0.1		
+			}
+
+			cancel = {
+				has_war_with = JAP
+			}
+
+			targeted_modifier = {
+				tag = JAP
+				trade_cost_for_target_factor = -0.05
+				cic_to_target_factor = 0.2
+			}
+		}
+
+
+		HAW_zhetang_chukou = {
+			picture = generic_goods_red_bonus
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		HAW_kongdom_fuxing_zizhi = {
+			picture = MEX_politicised_army_2
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.005
+				conscription_factor = 0.1
+				army_core_defence_factor = 0.05
+			}
+		}
+
+		HAW_kongdom_fuxing_zizhi_2 = {
+			picture = MEX_politicised_army_2
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.01
+				conscription_factor = 0.2
+				army_core_defence_factor = 0.1
+			}
+		}
+
+		HAW_island_kingdom = {
+			picture = PHI_island_nation
+
+			removal_cost = -1
+
+			modifier = {
+				invasion_preparation = -0.2
+				naval_invasion_penalty = -0.2
+				experience_gain_navy = 0.1
+			}
+		}
+
+		HAW_usa_nanmin = {
+			picture = BEL_traditional_family_values
+
+			removal_cost = -1
+
+			modifier = {
+				weekly_manpower = 500
+				monthly_population = 0.2
+				democratic_drift = 0.1	
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		USA_attack_idea = {
+			picture = CZE_planning_bonus
+
+			removal_cost = -1
+
+			modifier = {
+				army_core_attack_factor = 0.1
+				breakthrough_factor  = 0.1		
+				initiative_factor = 0.05		
+			}
+		}
+
+		USA_defence_idea = {
+			picture = CZE_planning_bonus
+
+			removal_cost = -1
+
+			modifier = {
+				army_core_defence_factor = 0.1
+				dig_in_speed_factor = 0.1		
+				experience_loss_factor = -0.1		
+			}
+		}
+
+		USA_ger_advisor = {
+			picture = german_advisors
+
+			removal_cost = -1
+
+			modifier = {
+				experience_gain_army_factor = 0.1
+				planning_speed = 0.1				
+			}
+		}
+
+
+		USA_guoji_zongdui = {
+			picture = generic_communist_army
+
+			removal_cost = -1
+
+			modifier = {
+				weekly_manpower = 500
+				supply_combat_penalties_on_core_factor = -0.2
+				army_core_defence_factor = 0.1
+				surrender_limit = 0.1
+			}
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+
+		USA_fas_radio = {
+			picture = generic_radio_concern
+
+			removal_cost = -1
+
+			modifier = {
+				fascism_drift = 0.1
+				political_power_factor = 0.1
+			}
+		}
+
+		USA_yingyu_quan = {
+			picture = eng_guided_by_britain
+
+			removal_cost = -1
+
+			modifier = {
+				navy_max_range_factor = 0.1
+				naval_detection = 0.1
+			}
+		}
+
+		USA_pat_eco = {
+			picture = generic_mild_economic_recovery
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = -0.05
+				production_speed_buildings_factor = 0.05
+			}
+		}
+
+		USA_com_xuanchuan = {
+			picture = generic_communism_drift_bonus
+
+			removal_cost = -1
+
+			modifier = {
+				communism_drift = 0.1
+				political_power_factor = 0.1
+			}
+		}
+
+
+		USA_home_of_free = {
+			picture = home_of_free
+
+			removal_cost = -1
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			cancel = {
+				NOT = {
+					has_government = democratic
+				}			
+			}
+			
+			rule = {
+				can_create_factions = yes
+			}
+
+			modifier = {
+				drift_defence_factor = 0.25
+				political_power_factor = 0.05
+				trade_opinion_factor = 0.2
+				ai_badass_factor = 0.03 # cares for 3% of normal threat
+				ai_desired_divisions_factor = 0.5 
+			}
+		}
+
+
+		USA_guoji_longduan = {
+			picture = ARG_political_corruption_modifier
+
+			removal_cost = -1
+
+			cancel = {
+				has_war_with = USA
+			}
+
+
+			modifier = {
+				production_speed_industrial_complex_factor = 0.075
+				production_speed_infrastructure_factor = 0.05					
+			}
+			
+			targeted_modifier = {
+				tag = USA
+				trade_cost_for_target_factor = -0.1
+				cic_to_target_factor = 0.02
+			}
+
+		}
+
+		USA_WHO = {
+			picture = WHO
+
+			removal_cost = -1
+
+			allowed = {
+				always = no
+			}
+
+
+			modifier = {
+				monthly_population = 0.2
+				experience_loss_factor = -0.1			
+			}
+		}
+
+		USA_united_nations_idea = {
+			picture = un
+
+			removal_cost = -1
+
+			allowed = {
+				always = no
+			}
+
+
+			modifier = {
+				justify_war_goal_time  = 0.2
+				generate_wargoal_tension = 0.2
+				consumer_goods_factor = 0.01		
+			}
+		}
+
+		USA_roosevelt_yichan = {
+			picture = SPR_torchbearers_of_tomorrow
+
+			removal_cost = -1
+
+			allowed = {
+				always = no
+			}
+
+
+			modifier = {
+				political_power_factor = 0.05			
+			}
+		}
+
+		USA_cold_war = {
+			picture = cold_war
+
+			removal_cost = -1
+
+			allowed = {
+				always = no
+			}
+
+
+			modifier = {
+				justify_war_goal_time  = 1
+				generate_wargoal_tension = 0.5
+				war_support_factor = -0.2				
+			}
+		}
+		USA_hot_war = {
+			picture = hot_war
+
+			removal_cost = -1
+
+			allowed = {
+				always = no
+			}
+
+
+			modifier = {
+				justify_war_goal_time = -0.25
+				generate_wargoal_tension = -0.25	
+				army_defence_against_minor_factor = 0.1
+			    army_attack_against_minor_factor = 0.1	
+			}
+		}
+		USA_no_war = {
+			picture = hejie
+
+			removal_cost = -1
+
+			allowed = {
+				always = no
+			}
+
+
+			modifier = {
+				democratic_acceptance = 100
+				communism_acceptance = 100
+			}
+		}
+		USA_jap_new_xianfa = {
+			picture = generic_constitutional_guarantees
+
+			removal_cost = -1
+
+			allowed = {
+				always = no
+			}
+
+
+			modifier = {
+				autonomy_gain = -0.1
+				democratic_drift = 0.1	
+				industrial_capacity_factory = -0.5
+				industrial_capacity_dockyard = -0.5
+				production_speed_arms_factory_factor = -1	
+
+				custom_modifier_tooltip = 	USA_jap_new_xianfa_tt					
+			}
+
+			on_add = {
+				country_lock_all_division_template = yes
+			}
+
+			on_remove = {
+				country_lock_all_division_template = no
+			}
+		}
+
+		USA_jap_new_xianfa_2 = {
+			picture = generic_constitutional_guarantees
+
+			removal_cost = -1
+
+			allowed = {
+				always = no
+			}
+
+
+			modifier = {
+				autonomy_gain = -0.1
+				democratic_drift = 0.1	
+				industrial_capacity_factory = -0.5
+				industrial_capacity_dockyard = -0.5
+				production_speed_industrial_complex_factor = 0.2
+				production_speed_arms_factory_factor = -1	
+
+				custom_modifier_tooltip = 	USA_jap_new_xianfa_tt					
+			}
+
+			targeted_modifier = {
+				tag = USA
+				trade_cost_for_target_factor = -0.5
+				cic_to_target_factor = 0.4
+			}
+
+			on_add = {
+				country_lock_all_division_template = yes
+			}
+
+			on_remove = {
+				country_lock_all_division_template = no
+			}
+		}
+
+		USA_maxier_jihua_usa = {
+			picture = generic_constitutional_guarantees
+
+			removal_cost = -1
+
+			allowed = {
+				always = no
+			}
+
+
+			modifier = {
+				consumer_goods_factor = 0.15					
+			}
+		}
+
+		USA_maxier_jihua = {
+			picture = generic_constitutional_guarantees
+
+			removal_cost = -1
+
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+				has_war_with = USA
+			}
+
+
+			modifier = {
+				consumer_goods_factor = -0.1
+				communism_drift = -0.1
+				democratic_drift = 0.1						
+			}
+		}
+
+		USA_fuli_guojia = {
+			picture = ARG_social_welfare_fund_ns
+
+			removal_cost = -1
+
+			allowed = {
+				always = no
+			}
+
+
+			modifier = {
+				consumer_goods_factor = 0.15
+				stability_factor = 0.25
+				monthly_population = 0.25			
+			}
+		}
+
+		USA_3rd_indus_revolution_idea = {
+			picture = 3rd_revolution
+
+			removal_cost = -1
+
+			allowed = {
+				always = no
+			}
+
+
+			modifier = {
+				research_speed_factor = 0.05
+				special_project_speed_factor = 0.1
+				
+			}
+
+			research_bonus = {
+				electronics = 0.1
+				nuclear = 0.1
+				industry = 0.1
+			}
+		}
+
+		USA_bokuan_chongzheng_junbei = {
+			picture = PRC_silver_dollar_promoted
+
+			removal_cost = -1
+
+			allowed = {
+				always = no
+			}
+
+
+			modifier = {
+				consumer_goods_factor = 0.15
+			}
+		}
+
+		USA_qiye_hezuo = {
+			picture = BRA_dasp
+
+			removal_cost = -1
+
+			allowed = {
+				always = no
+			}
+
+
+			modifier = {
+				industrial_capacity_factory = 0.05
+				production_speed_buildings_factor = 0.05
+				military_industrial_organization_funds_gain = 0.15
+				military_industrial_organization_research_bonus = 0.15
+			}
+		}
+
+		USA_bagong = {
+			picture = FRA_factory_strikes
+			allowed = {
+				
+			}
+			allowed_civil_war = { always = yes }
+			modifier = { 
+				production_speed_buildings_factor = -0.3
+				local_resources_factor = -0.3
+				industrial_capacity_factory = -0.3
+				industrial_capacity_dockyard = -0.3			
+			}
+		}
+
+		USA_gongren_jiji_gao = {
+			picture = generic_production_bonus
+			allowed = {
+				
+			}
+			allowed_civil_war = { always = yes }
+			modifier = { 
+				production_factory_efficiency_gain_factor = 0.2
+			}
+		}
+
+		USA_gongpin_jiuye_shijian_weiyuanhui_idea = {
+			picture = generic_constitutional_guarantees
+			allowed = {
+				
+			}
+			allowed_civil_war = { always = yes }
+			modifier = { 
+				stability_factor = -0.1
+				production_factory_max_efficiency_factor = 0.075
+				production_factory_efficiency_gain_factor = 0.075
+				line_change_production_efficiency_factor = 0.1
+				production_factory_start_efficiency_factor = 0.1
+			}
+		}
+
+		USA_jungong_jianzao = {
+			picture = ARG_rapid_militarization
+			allowed = {
+				
+			}
+			allowed_civil_war = { always = yes }
+			modifier = { 
+				production_speed_arms_factory_factor  = 0.2
+			}
+		}
+		
+		USA_jiuzhujin = {
+			picture = generic_economic_increase
+			allowed = {
+				
+			}
+			allowed_civil_war = { always = yes }
+			modifier = { 
+				consumer_goods_factor = 0.15
+			}
+		}
+
+		USA_great_depression_over = {
+			picture = generic_pp_unity_bonus
+			allowed = {
+				
+			}
+			allowed_civil_war = { always = yes }
+			modifier = { 
+				political_power_factor = 0.25	
+			}
+		}
+
+		great_depression_4 = {
+			picture = great_depression
+			allowed = {
+				
+			}
+			allowed_civil_war = { always = yes }
+			modifier = { 
+				consumer_goods_factor = 0.15
+				political_power_factor = -0.05	
+				custom_modifier_tooltip = great_depression_tt
+			}
+
+			on_add = {
+				country_event = {
+					id = usa_extra.16
+					days = 25
+				}
+			}
+
+			on_remove = {
+				if = {
+					limit = {
+						has_idea = USA_great_depression_over
+					}
+					modify_timed_idea = {
+						idea = USA_great_depression_over
+						days = 35
+					}
+				}
+				else = {
+					add_timed_idea = {
+						idea = USA_great_depression_over
+						days = 35
+					}
+				}
+			}
+		}
+
+		USA_focus_people = {
+			picture = HABSBURG_economy
+			allowed = {
+				
+			}
+			allowed_civil_war = { always = yes }
+			modifier = { 
+				consumer_goods_factor = 0.05
+				production_speed_buildings_factor = 0.05
+				production_speed_industrial_complex_factor = 0.05		
+			}
+		}
+
+		USA_focus_arm = {
+			picture = HABSBURG_economy
+			allowed = {
+				
+			}
+			allowed_civil_war = { always = yes }
+			modifier = { 
+				consumer_goods_factor = 0.1
+				industrial_capacity_factory = 0.05	
+
+			}
+		}
+
+		USA_focus_trade = {
+			picture = HABSBURG_economy
+			allowed = {
+				
+			}
+			allowed_civil_war = { always = yes }
+			modifier = { 
+				consumer_goods_factor = -0.1
+			}
+		}
+
+		USA_shengchan_jiasu = {
+			picture = generic_mild_economic_recovery
+			allowed = {
+				
+			}
+			allowed_civil_war = { always = yes }
+			modifier = { 
+				production_factory_efficiency_gain_factor = 0.2			
+			}
+		}
+
+		USA_queshao_danyao = {
+			picture = generic_army_problems
+
+			allowed = {
+				
+			}
+			allowed_civil_war = { always = yes }
+
+			modifier = { 
+				army_org_factor = -0.1
+				army_attack_factor = -0.1
+				army_defence_factor = -0.1
+				breakthrough_factor = -0.2		
+			}
+		}
+
+		USA_jingji_tingzhi = {
+			picture = generic_economic_crisis
+			allowed = {
+				
+			}
+			allowed_civil_war = { always = yes }
+			modifier = { 
+				industrial_capacity_factory = -0.1
+				industrial_capacity_dockyard = -0.1
+				production_factory_max_efficiency_factor = -0.1
+				production_factory_efficiency_gain_factor = -0.15	
+
+				custom_modifier_tooltip = 	USA_jingji_tingzhi_tt	
+			}
+		}
+		USA_jingji_tingzhi2 = {
+			picture = generic_economic_crisis
+			allowed = {
+				
+			}
+			allowed_civil_war = { always = yes }
+			modifier = { 
+				industrial_capacity_factory = -0.05
+				industrial_capacity_dockyard = -0.05
+				production_factory_max_efficiency_factor = -0.05
+				production_factory_efficiency_gain_factor = -0.075		
+
+				custom_modifier_tooltip = 	USA_jingji_tingzhi_tt
+			}
+
+			on_remove = {
+				if = {
+					limit = {
+						has_idea = USA_queshao_danyao
+					}
+					remove_ideas = USA_queshao_danyao
+				}
+				if = {
+					limit = {
+						has_idea = USA_gongren_jiji_gao
+					}
+					modify_timed_idea = {
+						idea = USA_gongren_jiji_gao
+						days = 35
+					}
+				}
+				else = {
+					add_timed_idea = {
+						idea = USA_gongren_jiji_gao
+						days = 35
+					}
+				}
+			}
+		}
+
+
+		USA_youqibing = {
+			picture = SWE_land_air_warfare
+			allowed = {
+				
+			}
+			allowed_civil_war = { always = yes }
+			modifier = { 
+				army_armor_speed_factor = 0.04
+			}
+			equipment_bonus = {
+				armor = {
+					breakthrough = 0.06
+					armor_value = -0.05
+					instant = yes
+				}
+			}
+		}
+
+		USA_tank_destroyer_focus = {
+			name = USA_tank_destroyer_focus
+			allowed = {
+
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = generic_armor
+			
+			equipment_bonus = {
+				light_tank_destroyer_chassis = {
+					build_cost_ic = -0.1 instant = yes
+					hard_attack = 0.05	
+				}
+				medium_tank_destroyer_chassis = {
+					build_cost_ic = -0.1 instant = yes
+					hard_attack = 0.05	
+				}
+				heavy_tank_destroyer_chassis = {
+					build_cost_ic = -0.1 instant = yes
+					hard_attack = 0.05	
+				}
+			}
+		}
+
+		USA_heavy_tank_focus = {			
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = generic_acquire_tanks
+			modifier = {
+
+			}		
+			equipment_bonus = {
+				heavy_tank_chassis   = {
+					build_cost_ic = -0.1
+					instant = yes
+					soft_attack = 0.05
+					hard_attack = 0.05		
+					ap_attack = 0.05			
+				}
+			}
+		}
+
+
+
+		USA_jurendejuexing2_idea= {
+
+			picture = USA_jurendejuexing
+
+			removal_cost = -1
+
+			allowed = {
+				always = no # Added via focus
+			}
+
+
+			modifier = {
+			}
+		}
+		USA_meiguoyouxian2_idea= {
+
+			picture =USA_meiguoyouxian
+
+			removal_cost = -1
+
+			allowed = {
+				always = no # Added via focus
+			}
+
+
+			modifier = {
+			}
+		}
+		USA_meishishehuizhuy2_idea= {
+
+			picture = USA_meishishehuizhuyi
+
+			removal_cost = -1
+
+			allowed = {
+				always = no # Added via focus
+			}
+
+
+			modifier = {
+			}
+		}
+
+		USA_shachenbaoyingxiang= {
+
+			picture = USA_shachenbao
+
+			removal_cost = -1
+			cancel = {
+				date>1938.1.1
+			}
+			allowed = {
+				always = no # Added via focus
+			}
+			modifier = {
+				consumer_goods_factor=0.15
+				stability_factor=-0.1
+				political_power_cost=0.1
+			}
+		}
+		USA_shachenbaoyingxiang2= {
+
+			picture = USA_shachenbao
+
+			removal_cost = -1
+			cancel = {
+				date>1938.1.1
+			}
+			allowed = {
+				always = no # Added via focus
+			}
+			modifier = {
+				consumer_goods_factor=0.2
+				stability_factor=-0.05
+			}
+		}
+		USA_shachenbaoyingxiang3= {
+
+			picture = USA_shachenbao
+			cancel = {
+				date>1938.1.1
+			}
+			removal_cost = -1
+
+			allowed = {
+				always = no # Added via focus
+			}
+			modifier = {
+				consumer_goods_factor=0.15
+				stability_factor=-0.1
+				political_power_cost=0.1
+			}
+		}
+
+		USA_dengta1= {
+
+			picture =  USA_dengta
+
+			removal_cost = -1
+
+			allowed = {
+				always = no # Added via focus
+			}
+
+
+			modifier = {
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+				production_speed_buildings_factor =0.1
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard =0.1
+			}
+		}
+		USA_dengta2= {
+
+			picture =  USA_dengta
+
+			removal_cost = -1
+
+			allowed = {
+				always = no # Added via focus
+			}
+
+
+			modifier = {
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+				production_speed_buildings_factor =0.1
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard =0.1
+				naval_speed_factor =0.1
+				navy_max_range_factor =0.1
+				naval_retreat_speed =0.1
+			}
+		}
+		USA_dengta3= {
+
+			picture =  USA_dengta
+
+			removal_cost = -1
+
+			allowed = {
+				always = no # Added via focus
+			}
+
+
+			modifier = {
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+				production_speed_buildings_factor =0.1
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard =0.1
+				naval_speed_factor =0.1
+				navy_max_range_factor =0.1
+				naval_retreat_speed =0.1
+				org_loss_when_moving =-0.1
+				conscription =0.01
+				training_time_army_factor =-0.15
+			}
+		}
+		USA_dengta4= {
+
+			picture =  USA_dengta
+
+			removal_cost = -1
+
+			allowed = {
+				always = no # Added via focus
+			}
+
+
+			modifier = {
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+				production_speed_buildings_factor =0.1
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard =0.1
+				naval_speed_factor =0.1
+				navy_max_range_factor =0.1
+				naval_retreat_speed =0.1
+				org_loss_when_moving =-0.1
+				conscription =0.01
+				training_time_army_factor =-0.15
+				resistance_target_on_our_occupied_states =0.2
+				surrender_limit =0.2
+			}
+		}
+		USA_xinzheng= {
+
+			picture =  new_deal
+
+			removal_cost = -1
+
+			allowed = {
+				always = no # Added via focus
+			}
+
+
+			modifier = {
+				political_power_gain=0.1
+				production_speed_infrastructure_factor = 0.2
+			}
+		}
+
+		USA_xinzheng2= {
+
+			picture =  new_deal
+
+			removal_cost = -1
+
+			allowed = {
+				always = no # Added via focus
+			}
+
+
+			modifier = {
+				political_power_gain=0.15
+				production_speed_infrastructure_factor = 0.2
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_buildings_factor = 0.05
+			}
+		}
+
+		USA_xinzheng3= {
+
+			picture =  new_deal
+
+			removal_cost = -1
+
+			allowed = {
+				always = no # Added via focus
+			}
+
+
+			modifier = {
+				political_power_gain=0.2
+				production_speed_infrastructure_factor = 0.2
+				production_speed_industrial_complex_factor = 0.15
+				production_speed_buildings_factor = 0.1
+				industrial_capacity_factory = 0.1
+			}
+		}
+
+		USA_xinzheng4= {
+
+			picture =  new_deal
+
+			removal_cost = -1
+
+			allowed = {
+				always = no # Added via focus
+			}
+
+
+			modifier = {
+				political_power_gain=0.2
+				global_building_slots_factor= 0.2
+				production_speed_infrastructure_factor = 0.2
+				production_speed_industrial_complex_factor = 0.15
+				production_speed_buildings_factor = 0.15
+				industrial_capacity_factory = 0.1
+				
+			}
+		}
+
+		USA_kexuejiagangwan = {
+			
+			allowed = {
+			}
+
+			allowed_civil_war = {
+			}
+
+			picture = generic_research_bonus
+			
+			removal_cost = -1
+			
+			modifier = {
+				custom_modifier_tooltip = USA_kexuejiagangwan_tt
+				research_speed_factor = 0.05
+				special_project_speed_factor = 0.05
+			}
+		}
+
+		
+		USA_kexuejiagangwan2 = {
+			
+			allowed = {
+			}
+
+			allowed_civil_war = {
+			}
+
+			picture = generic_research_bonus
+			
+			removal_cost = -1
+			
+			modifier = {
+				custom_modifier_tooltip = USA_kexuejiagangwan_tt
+				research_speed_factor = 0.1
+				special_project_speed_factor = 0.1
+			}
+		}
+		USA_kexuejiagangwan3 = {
+			
+			allowed = {
+			}
+
+			allowed_civil_war = {
+			}
+
+			picture = generic_research_bonus
+			
+			removal_cost = -1
+			
+			modifier = {
+				custom_modifier_tooltip = USA_kexuejiagangwan_tt
+				research_speed_factor = 0.1
+				special_project_speed_factor = 0.1
+				specialization_nuclear_speed_factor = 0.1
+			}
+		}
+
+		combined_bomber_offensive2 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_air_bonus
+			
+			modifier = {
+				air_strategic_bomber_bombing_factor = 0.2
+				air_range_factor = 0.1
+			}
+		}
+
+		USA_us_air_force2 = {
+			picture = usa_us_air_force
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				air_doctrine_cost_factor = -0.10
+				air_attack_factor = 0.1
+				air_ace_generation_chance_factor = 0.25
+			}
+		}
+
+
+		USA_tujidui= {
+			picture = USA_tujidui_idea
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				special_forces_cap = 0.1
+			}
+		}
+
+		USA_tujidui2= {
+			picture = USA_tujidui_idea
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				special_forces_cap = 0.1
+				invasion_preparation = -0.2
+				amphibious_invasion = 0.2
+			}
+		}
+
+
+		USA_gongren = {
+			
+			allowed = {
+			}
+
+			allowed_civil_war = {
+			}
+
+			picture = USA_gongren
+			
+			removal_cost = -1
+			
+			modifier = {
+
+				production_speed_buildings_factor = 0.05
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+			}
+		}
+		
+		USA_nongmin = {
+			
+			allowed = {
+			}
+
+			allowed_civil_war = {
+			}
+
+			picture = USA_nongmin
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_industrial_complex_factor = 0.15
+				consumer_goods_factor=-0.1
+				monthly_population =0.15
+
+			}
+		}
+
+
+		USA_diantai = { 
+
+			allowed = {
+				tag = USA
+			}
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+
+			picture = SWE_radiotjanst
+
+			modifier = {
+				political_power_gain=0.1
+				drift_defence_factor = 0.3
+				communism_drift = 0.1
+				stability_factor = 0.05
+			}
+		}
+
+
+		USA_sixiangjiefang1= {
+			
+			allowed = {
+			}
+
+			allowed_civil_war = {
+			}
+
+			picture = generic_research_bonus
+			
+			removal_cost = -1
+			
+			modifier = {
+				custom_modifier_tooltip = USA_kexuejiagangwan_tt
+				communism_drift=0.05
+				research_speed_factor = 0.1
+				special_project_speed_factor = 0.05
+			}
+		}
+
+		USA_sixiangjiefang2= {
+			
+			allowed = {
+			}
+
+			allowed_civil_war = {
+			}
+
+			picture = generic_research_bonus
+			
+			removal_cost = -1
+			
+			modifier = {
+				custom_modifier_tooltip = USA_kexuejiagangwan_tt
+				communism_drift=0.1
+				research_speed_factor = 0.15
+				special_project_speed_factor = 0.1
+			}
+		}
+
+		USA_meiguowuzi= {
+			
+			allowed = {
+			}
+
+			allowed_civil_war = {
+			}
+
+			picture =  generic_goods_red_bonus
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor=-0.15
+			}
+		}
+
+		USA_meiguowuzi2= {
+			
+			allowed = {
+			}
+
+			allowed_civil_war = {
+			}
+
+			picture =  generic_goods_red_bonus
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor=-0.15
+			}
+		}
+
+		USA_FUKUAN= {
+			
+			allowed = {
+			}
+
+			allowed_civil_war = {
+			}
+
+			picture =  generic_goods_red_bonus
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor=0.2
+			}
+		}
+		USA_duiwaitouzi= {
+			
+			allowed = {
+			}
+
+			allowed_civil_war = {
+			}
+
+			picture =  generic_goods_red_bonus
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor=0.5
+				political_power_cost=0.1
+				civilian_factory_use = 30
+			}
+		}
+
+		USA_lubiantanhua1 = { 
+
+			allowed = {
+				tag = USA
+			}
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+
+			picture = ARG_american_allyship
+
+			modifier = {
+				political_power_gain=0.25
+				war_support_weekly = 0.005
+			}
+		}
+		
+		USA_lubiantanhua2= { 
+
+			allowed = {
+				tag = USA
+			}
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+
+			picture = ARG_american_allyship
+
+			modifier = {
+				political_power_gain=0.1
+				stability_factor = 0.1
+				war_support_factor=0.1
+			}
+		}
+
+		USA_lianheweiyuanhui = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				max_command_power = 25
+				command_power_gain = 0.15
+				planning_speed = 0.1
+				max_planning = 0.15
+			}
+
+			picture = eng_chiefs_of_staff_committee
+			
+			removal_cost = -1			
+			
+		}
+
+		USA_CIA = {
+			removal_cost = -1
+
+			picture = office_of_strategic_services
+				
+			allowed = {
+				original_tag = USA
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+					
+			modifier = {
+				operative_slot = 2
+				enemy_operative_detection_chance = 0.05
+				enemy_operative_capture_chance_factor = 0.05
+				intel_network_gain_factor = 0.1
+				agency_upgrade_time =-0.1
+			}
+		}
+
+		USA_CIA2 = {
+			removal_cost = -1
+
+			picture = office_of_strategic_services
+				
+			allowed = {
+				original_tag = USA
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+					
+			modifier = {
+				operative_slot = 2
+				enemy_operative_detection_chance = 0.05
+				enemy_operative_capture_chance_factor = 0.05
+				intel_network_gain_factor = 0.1
+				agency_upgrade_time =-0.1
+				intelligence_agency_defense=0.25
+			}
+		}
+
+		USA_jungongfuheti= {			
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture =GER_wirtschaftswunder
+			modifier = {
+				consumer_goods_factor=0.05
+			}		
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.025
+					instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.025
+					instant = yes
+				}
+				support_equipment = {
+					build_cost_ic = -0.025
+					instant = yes
+				}
+				armor = {
+					build_cost_ic = -0.025
+					instant = yes
+				}
+				motorized = {
+					build_cost_ic = -0.025
+					instant = yes
+				}
+				mechanized = {
+					build_cost_ic = -0.025
+					instant = yes
+				}
+
+			}
+		}
+
+		USA_jungongfuheti2= {			
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture =GER_wirtschaftswunder
+			modifier = {
+				consumer_goods_factor=0.1
+				political_power_cost=0.1
+				production_speed_buildings_factor = -0.05
+			}		
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				support_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				armor = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				motorized = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				mechanized = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+
+			}
+		}
+
+		USA_jungongfuheti3= {			
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture =GER_wirtschaftswunder
+			modifier = {
+				consumer_goods_factor=0.15
+				political_power_cost=0.15
+				production_speed_buildings_factor = -0.1
+			}		
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic =-0.075
+					instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic =-0.075
+					instant = yes
+				}
+				support_equipment = {
+					build_cost_ic =-0.075
+					instant = yes
+				}
+				armor = {
+					build_cost_ic =-0.075
+					instant = yes
+				}
+				motorized = {
+					build_cost_ic =-0.075
+					instant = yes
+				}
+				mechanized = {
+					build_cost_ic =-0.075
+					instant = yes
+				}
+
+			}
+		}
+
+		USA_jungongfuheti4= {			
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture =GER_wirtschaftswunder
+			modifier = {
+				consumer_goods_factor=0.1
+				political_power_cost=0.1
+				production_speed_buildings_factor = -0.05
+			}		
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic =-0.1
+					instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic =-0.1
+					instant = yes
+				}
+				support_equipment = {
+					build_cost_ic =-0.1
+					instant = yes
+				}
+				armor = {
+					build_cost_ic =-0.1
+					instant = yes
+				}
+				motorized = {
+					build_cost_ic =-0.1
+					instant = yes
+				}
+				mechanized = {
+					build_cost_ic =-0.1
+					instant = yes
+				}
+
+			}
+		}
+
+		USA_jungongfuheti5= {			
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture =GER_wirtschaftswunder
+			modifier = {
+				consumer_goods_factor=0.1
+			}		
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic =-0.1
+					instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic =-0.1
+					instant = yes
+				}
+				support_equipment = {
+					build_cost_ic =-0.1
+					instant = yes
+				}
+				armor = {
+					build_cost_ic =-0.1
+					instant = yes
+				}
+				motorized = {
+					build_cost_ic =-0.1
+					instant = yes
+				}
+				mechanized = {
+					build_cost_ic =-0.1
+					instant = yes
+				}
+
+			}
+		}
+
+		USA_jungongfuheti10= {			
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture =GER_wirtschaftswunder
+			modifier = {
+				consumer_goods_factor=0.1
+				production_speed_buildings_factor = 0.1
+			}		
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				support_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				armor = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				motorized = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				mechanized = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+
+			}
+		}
+
+
+		USA_jungongfuheti6= {			
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture =GER_wirtschaftswunder
+			modifier = {
+				consumer_goods_factor=0.2
+				political_power_cost=0.2
+				production_speed_buildings_factor = -0.075
+			}		
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				support_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				armor = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				motorized = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				mechanized = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+
+			}
+		}
+
+		USA_jungongfuheti8= {			
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture =GER_wirtschaftswunder
+			modifier = {
+				consumer_goods_factor=0.35
+				political_power_cost=0.3
+				production_speed_buildings_factor = -0.1
+			}		
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+				support_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+				armor = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+				motorized = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+				mechanized = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+
+			}
+		}
+
+
+		USA_jungongfuheti7= {			
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture =GER_wirtschaftswunder
+			modifier = {
+				consumer_goods_factor=0.35
+				political_power_cost=0.3
+				production_speed_buildings_factor = -0.1
+			}		
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				support_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				armor = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				motorized = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				mechanized = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				small_plane_airframe = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				cv_small_plane_airframe = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				large_plane_airframe = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				small_plane_cas_airframe = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				medium_plane_airframe = {
+					build_cost_ic = -0.1 instant = yes
+				}
+
+			}
+		}
+
+		USA_jungongfuheti9= {			
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture =GER_wirtschaftswunder
+			modifier = {
+				consumer_goods_factor=0.5
+				political_power_cost=0.4
+				production_speed_buildings_factor = -0.15
+			}		
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+				support_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+				armor = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+				motorized = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+				mechanized = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+				small_plane_airframe = {
+					build_cost_ic = -0.15 instant = yes
+				}
+				cv_small_plane_airframe = {
+					build_cost_ic = -0.15 instant = yes
+				}
+				large_plane_airframe = {
+					build_cost_ic = -0.15 instant = yes
+				}
+				small_plane_cas_airframe = {
+					build_cost_ic = -0.15 instant = yes
+				}
+				medium_plane_airframe = {
+					build_cost_ic = -0.15 instant = yes
+				}
+
+			}
+		}
+
+		USA_jungongfuheti11= {			
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture =GER_wirtschaftswunder
+			modifier = {
+				consumer_goods_factor=0.2
+				political_power_cost=0.2
+				production_speed_buildings_factor = -0.1
+			}		
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				support_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				armor = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				motorized = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				mechanized = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				small_plane_airframe = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				cv_small_plane_airframe = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				large_plane_airframe = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				small_plane_cas_airframe = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				medium_plane_airframe = {
+					build_cost_ic = -0.1 instant = yes
+				}
+
+			}
+		}
+
+		USA_jungongfuheti12= {			
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture =GER_wirtschaftswunder
+			modifier = {
+				consumer_goods_factor=0.3
+				political_power_cost=0.2
+				production_speed_buildings_factor = -0.1
+			}		
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				support_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				armor = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				motorized = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				mechanized = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				small_plane_airframe = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				cv_small_plane_airframe = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				large_plane_airframe = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				small_plane_cas_airframe = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				medium_plane_airframe = {
+					build_cost_ic = -0.1 instant = yes
+				}
+
+			}
+		}
+		
+
+		USA_meiguozhiyuanjun= {
+			picture = generic_manpower_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			removal_cost = -1			
+
+			modifier = {
+				
+				send_volunteer_size =2
+				send_volunteers_tension = -0.5
+			}
+
+			rules = {
+				can_send_volunteers=yes
+			}
+		}
+
+		USA_beimeizimaoqu= {
+			
+			allowed = {
+			}
+
+			allowed_civil_war = {
+			}
+
+			picture =  generic_goods_red_bonus
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor=-0.1
+				industrial_capacity_factory = 0.05
+				production_speed_buildings_factor =0.05
+			}
+		}
+
+		USA_beimeijun= {
+			
+			allowed = {
+			}
+
+			allowed_civil_war = {
+			}
+
+			picture =  fra_liberte_egalite_solidarite
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_attack_factor=0.05
+				army_defence_factor=0.05
+			}
+		}
+
+		USA_meisuhezuo= {
+			
+			allowed = {
+			}
+
+			allowed_civil_war = {
+			}
+
+			picture = generic_production_bonus
+			
+			removal_cost = -1
+			
+			modifier = {
+				industrial_capacity_factory = 0.05
+				production_speed_buildings_factor =0.05
+			}
+		}
+
+		USA_chashangchiqi = {
+
+			picture = SPR_torchbearers_of_tomorrow
+			removal_cost = -1
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				weekly_manpower = 1000
+				army_attack_factor = 0.05
+				subversive_activites_upkeep = -0.25
+			}
+		}
+
+		USA_zhenlibu = { 
+
+			allowed = {
+				tag = USA
+			}
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+
+			picture = SWE_radiotjanst
+
+			modifier = {
+				stability_factor =0.05
+				war_support_factor=0.05
+			}
+		}
+		USA_zhenlibu2 = { 
+
+			allowed = {
+				tag = USA
+			}
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+
+			picture = SWE_radiotjanst
+
+			modifier = {
+				stability_factor =0.05
+				war_support_factor=0.05
+				fascism_drift=0.01				
+			}
+		}
+		USA_zhenlibu3 = { 
+
+			allowed = {
+				tag = USA
+			}
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+
+			picture = SWE_radiotjanst
+
+			modifier = {
+				stability_factor =0.05
+				war_support_factor=0.05
+				fascism_drift=0.01	
+				compliance_growth =0.15		
+				resistance_decay =0.1
+			}
+		}
+
+		USA_chezhou = { 
+
+			allowed = {
+				tag = USA
+			}
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+
+			picture = tur_sectarian_woes
+
+			modifier = {
+				stability_factor =-0.1
+				political_power_cost=0.25
+			}
+		}	
+
+		USA_economic_influence = { 
+			picture = RAJ_issue_bonds_on_the_stock_market
+			
+			removal_cost = -1
+			cancel = {
+				has_war_with = USA
+			}
+			available = {
+				
+			}
+
+			modifier = {
+			}
+			
+			allowed = {
+
+			}
+
+			allowed_civil_war = { always = yes
+
+			}
+
+			targeted_modifier = {
+				industrial_capacity_factory =0.05
+				production_speed_buildings_factor =0.05
+				custom_modifier_tooltip = USA_economic_influence_tt
+			}
+
+		}
+		USA_economic_influence2 = { 
+			picture = generic_fascism_drift_bonus
+			
+			removal_cost = -1
+
+			available = {
+				
+			}
+
+			modifier = {
+			}
+			
+			allowed = {
+
+			}
+
+			allowed_civil_war = { always = yes}
+
+			modifier = {
+				consumer_goods_factor = -0.15
+				cic_to_overlord_factor = 0.5
+				mic_to_overlord_factor = 0.5
+				extra_trade_to_overlord_factor = 0.25
+				master_ideology_drift = 0.05
+				autonomy_gain_trade_factor = -0.75
+				autonomy_manpower_share = -1
+			}
+
+		}
+
+		home_of_the_free2 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				
+			}
+			
+			removal_cost = -1
+
+			picture = generic_pp_unity_bonus
+			
+			rule = {
+				can_create_factions = yes
+			}
+			modifier = {
+				drift_defence_factor = 0.2
+				political_power_gain=0.2
+				ai_badass_factor = 0.03 # cares for 3% of normal threat
+				ai_desired_divisions_factor = 0.5 
+			}
+		}
+	}
+
+	industrial_concern = {
+		USA_zhanzheng_xuanchuan_bu = {
+
+			picture = FRA_national_mobilization_focus
+
+			allowed = {
+				original_tag = USA
+			}
+
+			available = {
+				has_completed_focus = USA_zhanzheng_xuanchuan
+			}
+
+			visible = {
+				has_completed_focus = USA_zhanzheng_xuanchuan
+			}
+
+			cost = 150
+
+			traits = { propaganda_agency }
+
+			modifier = {
+				weekly_manpower = 250
+			}
+		}
+
+		USA_jixiaoguanli1 = {
+
+			picture = CHL_patagonian_giants
+
+			allowed = {
+				original_tag = USA
+			}
+
+			available = {
+				has_completed_focus = USA_focus116
+			}
+
+			visible = {
+				NOT={has_country_flag=USA_jixiaoguanli2_flag}
+				has_completed_focus = USA_focus116
+			}
+
+			cost = 150
+
+			traits = { construction_company }
+
+			modifier = {
+			}
+		}
+		USA_jixiaoguanli2 = {
+
+			picture = CHL_patagonian_giants
+
+			allowed = {
+				original_tag = USA
+			}
+
+			available = {
+				has_country_flag=USA_jixiaoguanli2_flag
+			}
+
+			visible = {
+				NOT={has_country_flag=USA_jixiaoguanli3_flag}
+				has_country_flag=USA_jixiaoguanli2_flag
+			}
+
+			cost = 150
+
+			research_bonus = {
+				industry = 0.05
+				synth_resources = 0.05
+			}
+
+			traits = { construction_company }
+
+			modifier = {
+				production_speed_industrial_complex_factor = 0.05
+				production_speed_arms_factory_factor = 0.05
+				production_speed_dockyard_factor = 0.05
+			}
+		}
+		USA_jixiaoguanli3 = {
+
+			picture = CHL_patagonian_giants
+
+			allowed = {
+				original_tag = USA
+			}
+
+			available = {
+				has_country_flag=USA_jixiaoguanli3_flag
+			}
+
+			visible = {
+				NOT={has_country_flag=USA_jixiaoguanli4_flag}
+				has_country_flag=USA_jixiaoguanli3_flag
+			}
+
+			cost = 150
+
+			research_bonus = {
+				industry = 0.1
+				synth_resources = 0.1
+				electronics = 0.05
+			}
+			traits = { construction_company }
+
+			modifier = {
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_arms_factory_factor = 0.1
+				production_speed_dockyard_factor = 0.1
+			}
+		}
+		USA_jixiaoguanli4 = {
+
+			picture = CHL_patagonian_giants
+
+			allowed = {
+				original_tag = USA
+			}
+
+			available = {
+				has_country_flag=USA_jixiaoguanli4_flag
+			}
+
+			visible = {
+				NOT={has_country_flag=USA_jixiaoguanli5_flag}
+				has_country_flag=USA_jixiaoguanli4_flag
+			}
+
+			cost = 150
+			research_bonus = {
+				industry = 0.15
+				synth_resources = 0.15
+				electronics = 0.1
+			}
+			traits = { construction_company }
+
+			modifier = {
+				production_speed_industrial_complex_factor = 0.15
+				production_speed_arms_factory_factor = 0.15
+				production_speed_dockyard_factor = 0.15
+			}
+		}
+		USA_jixiaoguanli5 = {
+
+			picture = CHL_patagonian_giants
+
+			allowed = {
+				original_tag = USA
+			}
+
+			available = {
+				has_country_flag=USA_jixiaoguanli5_flag
+			}
+
+			visible = {
+				NOT={has_country_flag=USA_jixiaoguanli6_flag}
+				has_country_flag=USA_jixiaoguanli5_flag
+			}
+
+			cost = 150
+			research_bonus = {
+				industry = 0.15
+				synth_resources = 0.15
+				electronics = 0.15
+			}
+			traits = { construction_company }
+
+			modifier = {
+				production_speed_industrial_complex_factor = 0.15
+				production_speed_arms_factory_factor = 0.15
+				production_speed_dockyard_factor = 0.15
+			}
+		}
+		USA_jixiaoguanli6 = {
+
+			picture = CHL_patagonian_giants
+
+			allowed = {
+				original_tag = USA
+			}
+
+			available = {
+				has_country_flag=USA_jixiaoguanli6_flag
+			}
+
+			visible = {
+				NOT={has_country_flag=USA_jixiaoguanli7_flag}
+				has_country_flag=USA_jixiaoguanli6_flag
+			}
+
+			cost = 150
+			research_bonus = {
+				industry = 0.15
+				synth_resources = 0.15
+				electronics = 0.15
+			}
+			traits = { construction_company }
+
+			modifier = {
+				production_speed_industrial_complex_factor = 0.15
+				production_speed_arms_factory_factor = 0.15
+				production_speed_dockyard_factor = 0.15
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+			}
+		}
+		USA_jixiaoguanli7 = {
+
+			picture = CHL_patagonian_giants
+
+			allowed = {
+				original_tag = USA
+			}
+
+			available = {
+				has_country_flag=USA_jixiaoguanli7_flag
+			}
+
+			visible = {
+				has_country_flag=USA_jixiaoguanli7_flag
+			}
+
+			cost = 150
+			research_bonus = {
+				industry = 0.15
+				synth_resources = 0.15
+				electronics = 0.15
+			}
+			traits = { construction_company }
+
+			modifier = {
+				production_speed_industrial_complex_factor = 0.15
+				production_speed_arms_factory_factor = 0.15
+				production_speed_dockyard_factor = 0.15
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+			}
+		}
+
+		USA_gongye_fuxing_jihuashu = {
+			picture = generic_improved_industries
+
+			allowed = {
+				original_tag = USA
+			}
+
+			available = {
+				has_completed_focus = USA_gongye_fuxing_choubei
+			}
+
+			visible = {
+				has_completed_focus = USA_gongye_fuxing_choubei
+				NOT = {
+					or = {
+						has_completed_focus = USA_minsheng_jianshe
+						has_completed_focus = USA_junshi_jianshe
+					}
+				}
+			}
+
+			cost = 150
+			research_bonus = {
+				industry = 0.1
+				synth_resources = 0.05
+				electronics = 0.05
+			}
+			traits = { construction_company }
+
+			modifier = {
+
+			}
+		}
+
+		USA_gongye_fuxing_jihuashu_minsheng = {
+			picture = generic_improved_industries
+
+			allowed = {
+				original_tag = USA
+			}
+
+			available = {
+				has_completed_focus = USA_gongye_fuxing_choubei
+			}
+
+			visible = {
+				has_completed_focus = USA_gongye_fuxing_choubei
+				has_completed_focus = USA_minsheng_jianshe
+			}
+
+			cost = 150
+			research_bonus = {
+				industry = 0.1
+				synth_resources = 0.05
+				electronics = 0.05
+			}
+			traits = { construction_company }
+
+			modifier = {
+				production_speed_industrial_complex_factor = 0.1
+			}
+		}
+
+		USA_gongye_fuxing_jihuashu_junshi = {
+			picture = generic_improved_industries
+
+			allowed = {
+				original_tag = USA
+			}
+
+			available = {
+				has_completed_focus = USA_gongye_fuxing_choubei
+			}
+
+			visible = {
+				has_completed_focus = USA_gongye_fuxing_choubei
+				has_completed_focus = USA_junshi_jianshe
+			}
+
+			cost = 150
+			research_bonus = {
+				industry = 0.1
+				synth_resources = 0.05
+				electronics = 0.05
+			}
+			traits = { construction_company }
+
+			modifier = {
+				production_speed_arms_factory_factor = 0.1
+			}
+		}
+
+		Westinghouse_electric = {
+			picture = xiwu
+			
+			allowed = {
+				OR = {
+					original_tag = USA
+					TAG = PHI
+					TAG = HAW
+				}
+				
+			}
+			
+
+			
+			research_bonus = {
+				electronics = 0.1
+				nuclear = 0.1
+			}
+			
+			traits = { electronics_concern }
+			
+			modifier = {
+				coordination_bonus = 0.03
+				land_reinforce_rate = 0.05
+			}
+		}
+
+		US_steel = {
+			picture = uss
+			
+			allowed = {
+				OR = {
+					original_tag = USA
+					TAG = HAW
+				}
+			}
+			
+
+			
+			research_bonus = {
+				industry = 0.15
+			}
+			
+			traits = { Steel_corporation }
+			
+			modifier = {
+				country_resource_steel = 21
+			}
+		}
+
+		US_dupant = {
+			picture = dupont
+			
+			allowed = {
+				OR = {
+					original_tag = USA
+					TAG = PHI
+					TAG = HAW
+				}
+			}
+			
+
+			
+			research_bonus = {
+				synth_resources = 0.15
+			}
+			
+			traits = { synth_corporation }
+			
+			modifier = {
+				country_resource_rubber = 10
+
+			}
+		}
+
+		USA_raytheon = {
+			picture = raytheon
+			
+			allowed = {
+				OR = {
+					original_tag = USA
+					TAG = PHI
+					TAG = HAW
+				}
+			}
+			
+
+			
+			research_bonus = {
+				electronics = 0.15
+			}
+			
+			traits = { electronics_concern }
+			
+			modifier = {
+				production_speed_radar_station_factor = 0.25	
+				sp_naval_proximity_fuze_speed_factor = 0.25
+			}
+		}
+
+		USA_bell_system = {
+			picture = bell
+			
+			allowed = {
+				original_tag = USA
+			}
+			
+
+			
+			research_bonus = {
+				electronics = 0.05
+				naval_equipment = 0.1
+			}
+			
+			traits = { research_system }
+			
+			modifier = {
+				special_project_speed_factor = 0.1
+			}
+		}
+	}
+
+	hidden_ideas = {
+		USA_tank_out ={
+			modifier={
+				
+			}
+			equipment_bonus = {
+				armor = {
+					build_cost_ic = 0.05
+					instant = yes
+				}
+			}
+
+			research_bonus = {
+				armor = -0.1
+			}
+
+			
+		}
+
+		USA_tank_out2 ={
+			modifier={
+				
+			}
+			
+			research_bonus = {
+				armor = 0.05
+			}
+		}
+	}
+}

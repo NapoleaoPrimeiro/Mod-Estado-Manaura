@@ -1,0 +1,784 @@
+ideas = {
+
+	press_laws = {
+		law = yes
+
+		free_press_fake = {
+
+			name = free_press
+
+			picture = free_press
+
+			cost = 50
+			removal_cost = -1
+
+			available = {
+				if = {
+					limit = {
+						original_tag = SAU
+						has_completed_focus = SAU_promote_free_speech
+					}
+					OR = {
+						has_government = democratic
+						has_government = neutrality
+					}
+				}
+				else = {
+					has_government = democratic
+				}
+			}
+
+			visible = {
+				NOT = { has_idea = free_press }
+			}
+
+			modifier = {
+				custom_modifier_tooltip = 1EF_press_70_days_tt
+				custom_modifier_tooltip = EF_free_press_fake_tt
+			}
+			on_add = {
+				hidden_effect = {
+					ROOT = {
+						if = {
+							limit = {
+								NOT = {
+									has_country_flag = EF_press_changing
+								}
+							}
+							set_country_flag = EF_press_changing
+							country_event = { id = EF_events.2 days = 70 }
+						}
+						if = {
+							limit = {
+								check_variable = { ROOT.EF_press_variable = 0 }
+							}
+							set_variable = {
+								var = ROOT.EF_press_variable
+								value = 70
+							}
+						}
+					}
+				}
+			}
+			allowed_to_remove = {
+				hidden_trigger = {
+					always = no	
+				}
+			}
+
+			cancel_if_invalid = no
+		}
+
+		free_press = {
+			cost = 50
+			removal_cost = -1
+			available = {
+				if = {
+					limit = {
+						original_tag = SAU
+						has_completed_focus = SAU_promote_free_speech
+					}
+					OR = {
+						has_government = democratic
+						has_government = neutrality
+					}
+				}
+				else = {
+					has_government = democratic
+				}
+			}
+
+			visible = {
+				has_idea = free_press
+			}
+
+			modifier = {
+				stability_factor = 0.10
+				drift_defence_factor = -0.15
+				war_support_factor = -0.05
+			}
+
+			cancel_if_invalid = no
+			default = yes
+		}
+
+		censored_press_fake = {
+
+			name = censored_press
+
+			picture = censored_press
+
+			cost = 50
+			removal_cost = -1
+
+			available = {
+				OR = {
+					NOT = { has_government = democratic }
+					has_war = yes
+				}
+			}
+
+			visible = {
+				NOT = { has_idea = censored_press }
+			}
+
+			modifier = {
+				custom_modifier_tooltip = 1EF_press_70_days_tt
+				custom_modifier_tooltip = EF_censored_press_fake_tt
+			}
+			on_add = {
+				hidden_effect = {
+					ROOT = {
+						if = {
+							limit = {
+								NOT = {
+									has_country_flag = EF_press_changing
+								}
+							}
+							set_country_flag = EF_press_changing
+							country_event = { id = EF_events.2 days = 70 }
+						}
+						if = {
+							limit = {
+								check_variable = { ROOT.EF_press_variable = 0 }
+							}
+							set_variable = {
+								var = ROOT.EF_press_variable
+								value = 70
+							}
+						}
+					}
+				}
+			}
+			allowed_to_remove = {
+				hidden_trigger = {
+					always = no	
+				}
+			}
+
+			cancel_if_invalid = no
+		}
+
+		censored_press = {
+			allowed = {
+				always = no
+			}
+			cost = 50
+			removal_cost = -1
+			available = {
+				OR = {
+					NOT = { has_government = democratic }
+					has_war = yes
+				}
+			}
+
+			visible = {
+				has_idea = censored_press
+			}
+
+			modifier = {
+				political_power_factor = -0.05
+				stability_factor = 0.10
+				offensive_war_stability_factor = 0.1
+			}
+
+			cancel_if_invalid = no
+		}
+
+		resistance_press_fake = {
+
+			name = resistance_press
+
+			picture = resistance_press
+
+			cost = 50
+			removal_cost = -1
+
+			available = {
+				OR = {
+					NOT = { has_government = democratic }
+					has_war = yes
+				}
+			}
+
+			visible = {
+				NOT = { has_idea = resistance_press }
+			}
+
+			modifier = {
+				custom_modifier_tooltip = 1EF_press_70_days_tt
+				custom_modifier_tooltip = EF_resistance_press_fake_tt
+			}
+			on_add = {
+				hidden_effect = {
+					ROOT = {
+						if = {
+							limit = {
+								NOT = {
+									has_country_flag = EF_press_changing
+								}
+							}
+							set_country_flag = EF_press_changing
+							country_event = { id = EF_events.2 days = 70 }
+						}
+						if = {
+							limit = {
+								check_variable = { ROOT.EF_press_variable = 0 }
+							}
+							set_variable = {
+								var = ROOT.EF_press_variable
+								value = 70
+							}
+						}
+					}
+				}
+			}
+			ai_will_do = {
+				base = 0
+
+				modifier = {
+					add = 3
+					surrender_progress > 0.50
+				}
+				modifier = {
+					add = 20
+					has_capitulated = yes
+				}
+			}
+
+			allowed_to_remove = {
+				hidden_trigger = {
+					always = no	
+				}
+			}
+
+			cancel_if_invalid = no
+		}
+
+		resistance_press = {
+			allowed = {
+				always = no
+			}
+			cost = 50
+			removal_cost = -1
+			available = {
+				OR = {
+					NOT = { has_government = democratic }
+					has_war = yes
+				}
+			}
+
+			visible = {
+				has_idea = resistance_press
+			}
+
+			modifier = {
+				resistance_growth_on_our_occupied_states = 0.1
+				resistance_damage_to_garrison_on_our_occupied_states = 0.05
+			}
+
+			ai_will_do = {
+				base = 0
+
+				modifier = {
+					add = 3
+					surrender_progress > 0.50
+				}
+				modifier = {
+					add = 20
+					has_capitulated = yes
+				}
+			}
+
+			cancel_if_invalid = no
+		}
+
+		productive_press_fake = {
+
+			name = productive_press
+
+			picture = productive_press
+
+			cost = 50
+			removal_cost = -1
+
+			available = {
+				OR = {
+					NOT = { has_government = democratic }
+					has_war = yes
+				}
+			}
+
+			visible = {
+				NOT = { has_idea = productive_press }
+			}
+
+			modifier = {
+				custom_modifier_tooltip = 1EF_press_70_days_tt
+				custom_modifier_tooltip = EF_productive_press_fake_tt
+			}
+			on_add = {
+				hidden_effect = {
+					ROOT = {
+						if = {
+							limit = {
+								NOT = {
+									has_country_flag = EF_press_changing
+								}
+							}
+							set_country_flag = EF_press_changing
+							country_event = { id = EF_events.2 days = 70 }
+						}
+						if = {
+							limit = {
+								check_variable = { ROOT.EF_press_variable = 0 }
+							}
+							set_variable = {
+								var = ROOT.EF_press_variable
+								value = 70
+							}
+						}
+					}
+				}
+			}
+			ai_will_do = {
+				base = 72
+				modifier = {
+					add = 70
+					date < 1937.7.15
+				}
+			}
+
+			allowed_to_remove = {
+				hidden_trigger = {
+					always = no	
+				}
+			}
+
+			cancel_if_invalid = no
+		}
+
+		productive_press = {
+			allowed = {
+				always = no
+			}
+			cost = 50
+			removal_cost = -1
+			available = {
+				OR = {
+					NOT = { has_government = democratic }
+					has_war = yes
+				}
+			}
+
+			visible = {
+				has_idea = productive_press
+			}
+
+			modifier = {
+				consumer_goods_factor = 0.04
+				production_factory_efficiency_gain_factor = 0.05
+				production_speed_industrial_complex_factor = 0.05
+			}
+
+			ai_will_do = {
+				base = 0
+				modifier = {
+					date < 1938.1.1
+					add = 70
+				}
+			}
+
+			cancel_if_invalid = no
+		}
+
+		mobilization_press_fake = {
+
+			name = mobilization_press
+
+			picture = mobilization_press
+
+			cost = 50
+			removal_cost = -1
+
+			available = {
+				OR = {
+					NOT = { has_government = democratic }
+					threat > 0.5
+					has_war = yes
+				}
+			}
+
+			visible = {
+				NOT = { has_idea = mobilization_press }
+			}
+
+			modifier = {
+				custom_modifier_tooltip = 1EF_press_70_days_tt
+				custom_modifier_tooltip = EF_mobilization_press_fake_tt
+			}
+			on_add = {
+				hidden_effect = {
+					ROOT = {
+						if = {
+							limit = {
+								NOT = {
+									has_country_flag = EF_press_changing
+								}
+							}
+							set_country_flag = EF_press_changing
+							country_event = { id = EF_events.2 days = 70 }
+						}
+						if = {
+							limit = {
+								check_variable = { ROOT.EF_press_variable = 0 }
+							}
+							set_variable = {
+								var = ROOT.EF_press_variable
+								value = 70
+							}
+						}
+					}
+				}
+			}
+			ai_will_do = {
+				base = 0
+			}
+
+			allowed_to_remove = {
+				hidden_trigger = {
+					always = no	
+				}
+			}
+
+
+			cancel_if_invalid = no
+		}
+
+		mobilization_press = {
+			allowed = {
+				always = no
+			}
+			cost = 50
+			removal_cost = -1
+			available = {
+				OR = {
+					NOT = { has_government = democratic }
+					threat > 0.5
+					has_war = yes
+				}
+			}
+
+			visible = {
+				has_idea = mobilization_press
+			}
+
+			modifier = {
+				mobilization_speed = 0.15
+				weekly_manpower = 300
+			}
+
+			ai_will_do = {
+				base = 0
+			}
+
+
+			cancel_if_invalid = no
+		}
+
+		aggressive_press_fake = {
+
+			name = aggressive_press
+
+			picture = aggressive_press
+
+			cost = 50
+			removal_cost = -1
+
+			available = {
+				OR = {
+					NOT = { has_government = democratic }
+					has_war = yes
+				}
+			}
+
+			visible = {
+				NOT = { has_idea = aggressive_press }
+			}
+
+			modifier = {
+				custom_modifier_tooltip = 1EF_press_70_days_tt
+				custom_modifier_tooltip = EF_aggressive_press_fake_tt
+			}
+			on_add = {
+				hidden_effect = {
+					ROOT = {
+						if = {
+							limit = {
+								NOT = {
+									has_country_flag = EF_press_changing
+								}
+							}
+							set_country_flag = EF_press_changing
+							country_event = { id = EF_events.2 days = 70 }
+						}
+						if = {
+							limit = {
+								check_variable = { ROOT.EF_press_variable = 0 }
+							}
+							set_variable = {
+								var = ROOT.EF_press_variable
+								value = 70
+							}
+						}
+					}
+				}
+			}
+			ai_will_do = {
+				base = 0
+
+			}
+
+			allowed_to_remove = {
+				hidden_trigger = {
+					always = no	
+				}
+			}
+
+			cancel_if_invalid = no
+		}
+
+		aggressive_press = {
+
+			cost = 50
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			available = {
+				OR = {
+					NOT = { has_government = democratic }
+					has_war = yes
+				}
+			}
+
+			visible = {
+				has_idea = aggressive_press
+			}
+			modifier = {
+				justify_war_goal_time = -0.25
+				generate_wargoal_tension = -0.1
+			}
+
+			ai_will_do = {
+				base = 0
+
+			}
+
+			cancel_if_invalid = no
+		}
+
+		nationalism_press_fake = {
+
+			name = nationalism_press
+
+			picture = nationalism_press
+
+			cost = 50
+			removal_cost = -1
+
+			available = {
+				OR = {
+					NOT = { has_government = democratic }
+					has_war = yes
+				}
+			}
+
+			visible = {
+				NOT = { has_idea = nationalism_press }
+			}
+
+			modifier = {
+				custom_modifier_tooltip = 1EF_press_70_days_tt
+				custom_modifier_tooltip = EF_nationalism_press_fake_tt
+			}
+			on_add = {
+				hidden_effect = {
+					ROOT = {
+						if = {
+							limit = {
+								NOT = {
+									has_country_flag = EF_press_changing
+								}
+							}
+							set_country_flag = EF_press_changing
+							country_event = { id = EF_events.2 days = 70 }
+						}
+						if = {
+							limit = {
+								check_variable = { ROOT.EF_press_variable = 0 }
+							}
+							set_variable = {
+								var = ROOT.EF_press_variable
+								value = 70
+							}
+						}
+					}
+				}
+			}
+			ai_will_do = {
+				base = 0
+			}
+
+			allowed_to_remove = {
+				hidden_trigger = {
+					always = no	
+				}
+			}
+
+			cancel_if_invalid = no
+		}
+
+		nationalism_press = {
+
+			cost = 50
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			available = {
+				OR = {
+					NOT = { has_government = democratic }
+					has_war = yes
+				}
+			}
+
+			visible = {
+				has_idea = nationalism_press
+			}
+
+			modifier = {
+				drift_defence_factor = 0.2
+				stability_factor = -0.05
+				war_support_factor = 0.10
+			}
+
+			ai_will_do = {
+				base = 0
+			}
+
+			cancel_if_invalid = no
+		}
+
+		security_press_fake = {
+			name = security_press
+
+			picture = security_press
+
+			cost = 50
+			removal_cost = -1
+
+			available = {
+				OR = {
+					NOT = { has_government = democratic }
+					has_war = yes
+					if = {
+						limit = {
+							has_dlc = "La Resistance"
+						}
+						has_intelligence_agency = yes
+						threat > 0.5
+					}
+					else = {
+						threat > 0.5
+					}
+				}
+			}
+
+			visible = {
+				NOT = { has_idea = security_press }
+			}
+
+			modifier = {
+				custom_modifier_tooltip = 1EF_press_70_days_tt
+				custom_modifier_tooltip = EF_security_press_fake_tt
+			}
+			on_add = {
+				hidden_effect = {
+					ROOT = {
+						if = {
+							limit = {
+								NOT = {
+									has_country_flag = EF_press_changing
+								}
+							}
+							set_country_flag = EF_press_changing
+							country_event = { id = EF_events.2 days = 70 }
+						}
+						if = {
+							limit = {
+								check_variable = { ROOT.EF_press_variable = 0 }
+							}
+							set_variable = {
+								var = ROOT.EF_press_variable
+								value = 70
+							}
+						}
+					}
+				}
+			}
+			ai_will_do = {
+				base = 0
+			}
+
+			allowed_to_remove = {
+				hidden_trigger = {
+					always = no	
+				}
+			}
+
+			cancel_if_invalid = no
+		}
+
+		security_press = {
+
+			cost = 50
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			available = {
+				OR = {
+					NOT = { has_government = democratic }
+					has_war = yes
+					if = {
+						limit = {
+							has_dlc = "La Resistance"
+						}
+						has_intelligence_agency = yes
+						threat > 0.5
+					}
+					else = {
+						threat > 0.5
+					}
+				}
+			}
+
+			visible = {
+				has_idea = security_press
+			}
+
+			modifier = {
+				encryption_factor = 0.1
+				intelligence_agency_defense = 1
+				enemy_operative_capture_chance_factor = 0.05
+			}
+
+			ai_will_do = {
+				base = 0
+			}
+
+			cancel_if_invalid = no
+		}
+	}
+}

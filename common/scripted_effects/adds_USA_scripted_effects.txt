@@ -1,0 +1,1017 @@
+add_total_USA_slot = {
+	custom_effect_tooltip = add_USA_slot_tooltip
+	if = {
+		limit = {
+			check_variable = {
+				var = USA_slot_total_var
+				value = 0
+				compare = less_than_or_equals
+			}
+		}
+		set_variable = {
+			var = USA_slot_total_var
+			value = USA_slot_total_var_temp
+		}
+		set_variable = {
+			var = USA_slot_var
+			value = USA_slot_total_var_temp
+		}
+
+	}
+	else = {
+		add_to_variable = {
+			var = USA_slot_total_var
+			value = USA_slot_total_var_temp
+		}
+		add_to_variable = {
+			var = USA_slot_var
+			value = USA_slot_total_var_temp
+		}
+	}
+}
+
+add_USA_slot = {
+	hidden_effect = {
+		add_to_variable = {
+			var = USA_slot_var
+			value = 1
+		}
+	}
+}
+
+remove_USA_slot = {
+	hidden_effect = {
+		subtract_from_variable = {
+			var = USA_slot_var
+			value = 1
+		}
+	}
+}
+
+USA_hexinquan = {
+	custom_effect_tooltip = USA_hexinquan_tooltip
+	if = {
+		limit = {
+			OR={
+				check_variable = {
+				var = USA_ascended_advisor_1
+				value = 0
+				compare = more_than
+				}
+				check_variable = {
+				var = USA_ascended_advisor_2
+				value = 0
+				compare = more_than
+				}
+				check_variable = {
+				var = USA_ascended_advisor_3
+				value = 0
+				compare = more_than
+				}
+				check_variable = {
+				var = USA_ascended_advisor_4
+				value = 0
+				compare = more_than
+				}
+				check_variable = {
+				var = USA_ascended_advisor_5
+				value = 0
+				compare = more_than
+				}
+			}
+		}
+		set_variable = {
+			var = USA_ascended_advisor_1
+			value = 0
+		}
+		set_variable = {
+			var = USA_ascended_advisor_2
+			value = 0
+		}
+		set_variable = {
+			var = USA_ascended_advisor_3
+			value = 0
+		}
+		set_variable = {
+			var = USA_ascended_advisor_4
+			value = 0
+		}
+		set_variable = {
+			var = USA_ascended_advisor_5
+			value = 0
+		}
+
+	}
+	else_if={
+		set_variable = {
+			var = USA_ascended_advisor_1
+			value = 0
+		}
+		set_variable = {
+			var = USA_ascended_advisor_2
+			value = 0
+		}
+		set_variable = {
+			var = USA_ascended_advisor_3
+			value = 0
+		}
+		set_variable = {
+			var = USA_ascended_advisor_4
+			value = 0
+		}
+		set_variable = {
+			var = USA_ascended_advisor_5
+			value = 0
+		}
+	}
+	
+}
+
+USA_inner_circle_set_ascension_cd = {
+	set_country_flag = {
+		flag = USA_inner_circle_cd_flag
+		days = 100
+		value = 1
+	}
+}
+
+NATO_zhenying = {
+	if = {
+		limit = {
+			OR={
+				check_variable = {
+				var = NATO_idea_slot_1
+				value = 0
+				compare = more_than
+				}
+				check_variable = {
+				var = NATO_idea_slot_2
+				value = 0
+				compare = more_than
+				}
+				check_variable = {
+				var = NATO_idea_slot_3
+				value = 0
+				compare = more_than
+				}
+				check_variable = {
+				var = NATO_idea_slot_4
+				value = 0
+				compare = more_than
+				}
+				check_variable = {
+				var = NATO_idea_slot_5
+				value = 0
+				compare = more_than
+				}
+			}
+		}
+		set_variable = {
+			var = NATO_idea_slot_1
+			value = 0
+		}
+		set_variable = {
+			var = NATO_idea_slot_2
+			value = 0
+		}
+		set_variable = {
+			var = NATO_idea_slot_3
+			value = 0
+		}
+		set_variable = {
+			var = NATO_idea_slot_4
+			value = 0
+		}
+		set_variable = {
+			var = NATO_idea_slot_5
+			value = 0
+		}
+
+	}
+	else_if={
+		set_variable = {
+			var = NATO_idea_slot_1
+			value = 0
+		}
+		set_variable = {
+			var = NATO_idea_slot_2
+			value = 0
+		}
+		set_variable = {
+			var = NATO_idea_slot_3
+			value = 0
+		}
+		set_variable = {
+			var = NATO_idea_slot_4
+			value = 0
+		}
+		set_variable = {
+			var = NATO_idea_slot_5
+			value = 0
+		}
+	}
+	
+}
+#bop
+USA_bop_timeout_var = {
+	if = {
+		limit = {
+			OR={
+				check_variable = {
+				var = USA_bop_timeout
+				value = 15
+				compare = more_than
+				}
+				check_variable = {
+				var = USA_bop_timeout
+				value = 15
+				compare = less_than
+				}
+			}
+		}
+		set_variable = {
+			var = USA_bop_timeout
+			value = 15
+		}
+
+	}
+	else_if={
+		set_variable = {
+			var = USA_bop_timeout
+			value = 15
+		}
+	}
+	
+}
+#bop_increase
+USA_bop_inc_effect1 = {
+	add_power_balance_value = {
+		id = USA_power_balance
+		value = 0.05
+	}
+}
+USA_bop_inc_effect2 = {
+	add_power_balance_value = {
+		id = USA_power_balance
+		value = 0.1
+	}
+}
+USA_bop_inc_effect3 = {
+	add_power_balance_value = {
+		id = USA_power_balance
+		value = 0.15
+	}
+}
+USA_bop_inc_effect4= {
+	add_power_balance_value = {
+		id = USA_power_balance
+		value = 0.01
+	}
+}
+USA_bop_inc_effect5 = {
+	add_power_balance_value = {
+		id = USA_power_balance
+		value = 0.2
+	}
+}
+USA_bop_inc_effect6 = {
+	add_power_balance_value = {
+		id = USA_power_balance
+		value = 0.02
+	}
+}
+
+#bop_lower
+USA_bop_low_effect1 = {
+	add_power_balance_value = {
+		id = USA_power_balance
+		value = -0.05
+	}
+}
+USA_bop_low_effect2 = {
+	add_power_balance_value = {
+		id = USA_power_balance
+		value = -0.1
+	}
+}
+USA_bop_low_effect3 = {
+	add_power_balance_value = {
+		id = USA_power_balance
+		value = -0.15
+	}
+}
+USA_bop_low_effect4 = {
+	add_power_balance_value = {
+		id = USA_power_balance
+		value = -0.01
+	}
+}
+USA_bop_low_effect5 = {
+	add_power_balance_value = {
+		id = USA_power_balance
+		value = -0.2
+	}
+}
+
+USA_caituan_modifier = {
+	if = {
+		limit = { 
+			NOT={has_dynamic_modifier = { modifier = USA_caituanzhizhi }}			
+		}
+		hidden_effect={add_dynamic_modifier={modifier = USA_caituanzhizhi }}
+		custom_effect_tooltip = USA_caituanzhizhi_modifier_tt
+		add_to_variable = { USA_caituanzhizhi_stability_factor = 0.05 tooltip = stability_factor_tt }
+		add_to_variable = { USA_caituanzhizhi_war_support_factor = 0.05  tooltip = war_support_factor_tt}
+		
+	}
+	else_if = {
+		limit = { 
+			has_dynamic_modifier = { modifier = USA_caituanzhizhi  }
+		}
+		custom_effect_tooltip = USA_caituanzhizhi_modifier_ttt
+	}
+}
+
+USA_zhuanyi_effect = {
+	custom_effect_tooltip = USA_zhuanyi_effect_tooltip
+	if = {
+		limit = {
+			OR={
+				check_variable = {
+				var = USA_zhuanyi_index
+				value = 0
+				compare = more_than
+				}
+			}
+		}
+		set_variable = {
+			var = USA_zhuanyi_index
+			value = 0
+		}
+
+	}
+	else={
+		set_variable = {
+			var = USA_zhuanyi_index
+			value = 0
+		}
+	}
+	
+}
+
+USA_keyan_effect={
+	if={
+		limit={
+			NOT={
+				has_idea=USA_kexuejiagangwan
+				has_idea=USA_kexuejiagangwan2
+				has_idea=USA_kexuejiagangwan3
+			}
+		}
+		add_ideas = USA_kexuejiagangwan
+	}
+	else_if = {
+		limit = {
+			has_idea=USA_kexuejiagangwan
+		}
+		swap_ideas = {
+			remove_idea = USA_kexuejiagangwan
+			add_idea = USA_kexuejiagangwan2
+		}
+	}
+
+}
+
+USA_new_deal_effect = {
+	if = {
+		limit = { 
+			NOT={has_dynamic_modifier = { modifier = USA_new_deal }}			
+		}
+		hidden_effect={add_dynamic_modifier={modifier = USA_new_deal }}
+		custom_effect_tooltip = USA_new_deal_modifier_tt
+		add_to_variable = { USA_new_deal_production_speed_buildings_factor = 0.025   tooltip = production_speed_buildings_factor_tt }
+		add_to_variable = { USA_new_deal_consumer_goods_factor = 0.1   tooltip = consumer_goods_factor_tt }
+		add_to_variable = { USA_new_deal_production_speed_infrastructure_factor = 0.2  tooltip = production_speed_infrastructure_factor_tt}
+		
+	}
+	else_if = {
+		limit = { 
+			has_dynamic_modifier = { modifier = USA_new_deal  }
+		}
+		custom_effect_tooltip = USA_new_deal_modifier_ttt
+	}
+}
+
+USA_gop_dm_effect = {
+	if = {
+		limit = { 
+			NOT={has_dynamic_modifier = { modifier = USA_gop_dm }}			
+		}
+		hidden_effect={add_dynamic_modifier={modifier = USA_gop_dm }}
+		custom_effect_tooltip = USA_gop_dm_modifier_tt		
+	}
+	else_if = {
+		limit = { 
+			has_dynamic_modifier = { modifier = USA_gop_dm  }
+		}
+		custom_effect_tooltip = USA_gop_dm_modifier_ttt
+	}
+}
+
+USA_dp_dm_effect = {
+	if = {
+		limit = { 
+			NOT={has_dynamic_modifier = { modifier = USA_dp_dm }}			
+		}
+		hidden_effect={add_dynamic_modifier={modifier = USA_dp_dm }}
+		custom_effect_tooltip = USA_dp_dm_modifier_tt		
+	}
+	else_if = {
+		limit = { 
+			has_dynamic_modifier = { modifier = USA_dp_dm  }
+		}
+		custom_effect_tooltip = USA_dp_dm_modifier_ttt
+	}
+}
+
+HAW_new_kingdom_dm_effect = {
+	if = {
+		limit = { 
+			NOT={has_dynamic_modifier = { modifier = HAW_new_kingdom_dm }}			
+		}
+		hidden_effect={add_dynamic_modifier={modifier = HAW_new_kingdom_dm }}
+		custom_effect_tooltip = HAW_new_kingdom_dm_modifier_tt		
+	}
+	else_if = {
+		limit = { 
+			has_dynamic_modifier = { modifier = HAW_new_kingdom_dm  }
+		}
+		custom_effect_tooltip = HAW_new_kingdom_dm_modifier_ttt
+	}
+}
+
+USA_giant_wakes_dm_effect = {
+	if = {
+		limit = { 
+			NOT={has_dynamic_modifier = { modifier = USA_jurendejuexing }}			
+		}
+		hidden_effect={add_dynamic_modifier={modifier = USA_jurendejuexing }}
+		custom_effect_tooltip = USA_jurendejuexing_modifier_tt		
+	}
+	else_if = {
+		limit = { 
+			has_dynamic_modifier = { modifier = USA_jurendejuexing  }
+		}
+		custom_effect_tooltip = USA_jurendejuexing_modifier_ttt
+	}
+}
+
+USA_air_effect = {
+	if = {
+		limit = {
+			has_country_flag = USA_kongjun_duli_flag
+		}
+		if = {
+			limit = { 
+				has_dynamic_modifier = { modifier = USA_air }			
+			}
+			hidden_effect={remove_dynamic_modifier={modifier = USA_air }}		
+		}
+		if = {
+			limit = { 
+				NOT={has_dynamic_modifier = { modifier = USA_airforce }}			
+			}
+			hidden_effect={add_dynamic_modifier={modifier = USA_airforce }}
+			custom_effect_tooltip = USA_airforce_modifier_tt		
+		}
+		else_if = {
+			limit = { 
+				has_dynamic_modifier = { modifier = USA_airforce  }
+			}
+			custom_effect_tooltip = USA_airforce_modifier_ttt
+		}
+	}
+	else = {
+		if = {
+			limit = { 
+				NOT={has_dynamic_modifier = { modifier = USA_air }}			
+			}
+			hidden_effect={add_dynamic_modifier={modifier = USA_air }}
+			custom_effect_tooltip = USA_air_modifier_tt		
+		}
+		else_if = {
+			limit = { 
+				has_dynamic_modifier = { modifier = USA_air  }
+			}
+			custom_effect_tooltip = USA_air_modifier_ttt
+		}
+	}
+	
+}
+
+USA_army_effect = {
+	if = {
+		limit = { 
+			NOT={has_dynamic_modifier = { modifier = USA_army }}			
+		}
+		hidden_effect={add_dynamic_modifier={modifier = USA_army }}
+		custom_effect_tooltip = USA_army_modifier_tt		
+	}
+	else_if = {
+		limit = { 
+			has_dynamic_modifier = { modifier = USA_army  }
+		}
+		custom_effect_tooltip = USA_army_modifier_ttt
+	}
+}
+
+USA_shengchan_effect={
+	if={
+		limit={
+			has_idea = USA_jingji_tingzhi
+		}
+		swap_ideas = {
+			add_idea = USA_jingji_tingzhi2
+			remove_idea = USA_jingji_tingzhi
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = USA_jingji_tingzhi2
+		}
+		remove_ideas = USA_jingji_tingzhi2 
+	}
+	else = {
+		limit = {
+			NOT = {
+				has_idea = USA_jingji_tingzhi
+			}
+			NOT = {
+				has_idea = USA_jingji_tingzhi2 
+			}
+		}
+
+		if = {
+			limit = {
+				has_idea = USA_shengchan_jiasu
+			}
+			modify_timed_idea = {
+				idea = USA_shengchan_jiasu
+				days = 35
+			}
+		}
+		else = {
+			add_timed_idea = {
+				idea = USA_shengchan_jiasu
+				days = 35
+			}
+		}
+		
+	}
+
+}
+
+USA_com_xuanchuan_effect = {
+	if = {
+		limit = {
+			has_idea = USA_com_xuanchuan
+		}
+		modify_timed_idea = {
+			idea = USA_com_xuanchuan
+			days = 35
+		}
+	}
+	else = {
+		add_timed_idea = {
+			idea = USA_com_xuanchuan
+			days = 35
+		}
+	}
+}
+
+JAP_eco_influence_up = {
+	if = {
+		limit = {
+			has_idea = HAW_jap_eco_kongzhi_1
+		}
+		swap_ideas = {
+			remove_idea = HAW_jap_eco_kongzhi_1
+			add_idea = HAW_jap_eco_kongzhi_2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = HAW_jap_eco_kongzhi_2
+		}
+		swap_ideas = {
+			remove_idea = HAW_jap_eco_kongzhi_2
+			add_idea = HAW_jap_eco_kongzhi_3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = HAW_jap_eco_kongzhi_3
+		}
+		swap_ideas = {
+			remove_idea = HAW_jap_eco_kongzhi_3
+			add_idea = HAW_jap_eco_kongzhi_4
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = HAW_jap_eco_kongzhi_4
+		}
+		JAP = {
+			add_political_power = 50
+		}
+		HAW = {
+			add_political_power = -50
+		}
+	}
+	else = {
+		add_ideas = HAW_jap_eco_kongzhi_1
+	}
+}
+
+JAP_eco_influence_down = {
+	if = {
+		limit = {
+			has_idea = HAW_jap_eco_kongzhi_4
+		}
+		swap_ideas = {
+			remove_idea = HAW_jap_eco_kongzhi_4
+			add_idea = HAW_jap_eco_kongzhi_3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = HAW_jap_eco_kongzhi_3
+		}
+		swap_ideas = {
+			remove_idea = HAW_jap_eco_kongzhi_3
+			add_idea = HAW_jap_eco_kongzhi_2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = HAW_jap_eco_kongzhi_2
+		}
+		swap_ideas = {
+			remove_idea = HAW_jap_eco_kongzhi_2
+			add_idea = HAW_jap_eco_kongzhi_1
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = HAW_jap_eco_kongzhi_1
+		}
+		swap_ideas = {
+			remove_idea = HAW_jap_eco_kongzhi_1
+		}
+	}
+	else = {
+		add_stability = 0.03
+	}
+}
+
+USA_influence_up = {
+	if = {
+		limit = {
+			has_idea = HAW_usa_liuwangzhe_influence_1
+		}
+		swap_ideas = {
+			remove_idea = HAW_usa_liuwangzhe_influence_1
+			add_idea = HAW_usa_liuwangzhe_influence_2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = HAW_usa_liuwangzhe_influence_2
+		}
+		swap_ideas = {
+			remove_idea = HAW_usa_liuwangzhe_influence_2
+			add_idea = HAW_usa_liuwangzhe_influence_3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = HAW_usa_liuwangzhe_influence_3
+		}
+		swap_ideas = {
+			remove_idea = HAW_usa_liuwangzhe_influence_3
+			add_idea = HAW_usa_liuwangzhe_influence_4
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = HAW_usa_liuwangzhe_influence_4
+		}
+		HAW = {
+			add_political_power = 50
+		}
+	}
+	else = {
+		add_ideas = HAW_usa_liuwangzhe_influence_1
+	}
+}
+
+USA_eco_influence_down = {
+	if = {
+		limit = {
+			has_idea = HAW_usa_liuwangzhe_influence_4
+		}
+		swap_ideas = {
+			remove_idea = HAW_usa_liuwangzhe_influence_4
+			add_idea = HAW_usa_liuwangzhe_influence_3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = HAW_usa_liuwangzhe_influence_3
+		}
+		swap_ideas = {
+			remove_idea = HAW_usa_liuwangzhe_influence_3
+			add_idea = HAW_usa_liuwangzhe_influence_2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = HAW_usa_liuwangzhe_influence_2
+		}
+		swap_ideas = {
+			remove_idea = HAW_usa_liuwangzhe_influence_2
+			add_idea = HAW_usa_liuwangzhe_influence_1
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = HAW_usa_liuwangzhe_influence_1
+		}
+		swap_ideas = {
+			remove_idea = HAW_usa_liuwangzhe_influence_1
+		}
+	}
+	else = {
+		add_stability = 0.03
+	}
+}
+
+CAN_USA_influence_down = {
+	custom_effect_tooltip = CAN_USA_influence_down_tt
+	if = {
+		limit = {
+			has_idea = US_can_cooperate10
+		}
+		swap_ideas = {
+			remove_idea = US_can_cooperate10
+			add_idea = US_can_cooperate9
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = US_can_cooperate9
+		}
+		swap_ideas = {
+			remove_idea = US_can_cooperate9
+			add_idea = US_can_cooperate8
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = US_can_cooperate8
+		}
+		swap_ideas = {
+			remove_idea = US_can_cooperate8
+			add_idea = US_can_cooperate7
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = US_can_cooperate7
+		}
+		swap_ideas = {
+			remove_idea = US_can_cooperate7
+			add_idea = US_can_cooperate6
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = US_can_cooperate6
+		}
+		swap_ideas = {
+			remove_idea = US_can_cooperate6
+			add_idea = US_can_cooperate5
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = US_can_cooperate5
+		}
+		swap_ideas = {
+			remove_idea = US_can_cooperate5
+			add_idea = US_can_cooperate4
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = US_can_cooperate4
+		}
+		swap_ideas = {
+			remove_idea = US_can_cooperate4
+			add_idea = US_can_cooperate3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = US_can_cooperate3
+		}
+		swap_ideas = {
+			remove_idea = US_can_cooperate3
+			add_idea = US_can_cooperate2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = US_can_cooperate2
+		}
+		swap_ideas = {
+			remove_idea = US_can_cooperate2
+			add_idea = US_can_cooperate
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = US_can_cooperate
+		}
+		remove_ideas = US_can_cooperate
+	}
+	else = {
+		add_political_power = 100
+	}
+	custom_effect_tooltip = generic_skip_one_line_tt
+}
+
+CAN_USA_influence_up = {
+	custom_effect_tooltip = CAN_USA_influence_up_tt
+	if = {
+		limit = {
+			has_idea = US_can_cooperate
+		}
+		swap_ideas = {
+			remove_idea = US_can_cooperate
+			add_idea = US_can_cooperate2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = US_can_cooperate2
+		}
+		swap_ideas = {
+			remove_idea = US_can_cooperate2
+			add_idea = US_can_cooperate3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = US_can_cooperate3
+		}
+		swap_ideas = {
+			remove_idea = US_can_cooperate3
+			add_idea = US_can_cooperate4
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = US_can_cooperate4
+		}
+		swap_ideas = {
+			remove_idea = US_can_cooperate4
+			add_idea = US_can_cooperate5
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = US_can_cooperate5
+		}
+		swap_ideas = {
+			remove_idea = US_can_cooperate5
+			add_idea = US_can_cooperate6
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = US_can_cooperate6
+		}
+		swap_ideas = {
+			remove_idea = US_can_cooperate6
+			add_idea = US_can_cooperate7
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = US_can_cooperate7
+		}
+		swap_ideas = {
+			remove_idea = US_can_cooperate7
+			add_idea = US_can_cooperate8
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = US_can_cooperate8
+		}
+		swap_ideas = {
+			remove_idea = US_can_cooperate8
+			add_idea = US_can_cooperate9
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = US_can_cooperate9
+		}
+		swap_ideas = {
+			remove_idea = US_can_cooperate9
+			add_idea = US_can_cooperate10
+		}
+	}	
+	else = {
+		USA = {
+			add_political_power = 100
+		}	
+	}
+	custom_effect_tooltip = generic_skip_one_line_tt
+}
+
+USA_communism_modifier_effect = {
+	if = {
+		limit = {
+			has_completed_focus = USA_president_bailaode
+		}
+		if = {
+			limit = { 
+				NOT={has_dynamic_modifier = { modifier = USA_meishishehuizhuyi }}			
+			}
+			hidden_effect={add_dynamic_modifier={modifier = USA_meishishehuizhuyi }}
+			custom_effect_tooltip = USA_meishishehuizhuyi_modifier_tt		
+		}
+		else_if = {
+			limit = { 
+				has_dynamic_modifier = { modifier = USA_meishishehuizhuyi  }
+			}
+			custom_effect_tooltip = USA_meishishehuizhuyi_modifier_ttt
+		}
+	}
+	if = {
+		limit = {
+			has_completed_focus = USA_focus5
+		}
+		if = {
+			limit = { 
+				NOT={has_dynamic_modifier = { modifier = USA_communism_dm }}			
+			}
+			hidden_effect={add_dynamic_modifier={modifier = USA_communism_dm }}
+			custom_effect_tooltip = USA_communism_dm_modifier_tt		
+		}
+		else_if = {
+			limit = { 
+				has_dynamic_modifier = { modifier = USA_communism_dm  }
+			}
+			custom_effect_tooltip = USA_communism_dm_modifier_ttt
+		}
+	}
+	if = {
+		limit = {
+			has_completed_focus = USA_president_kannong
+		}
+		if = {
+			limit = { 
+				NOT={has_dynamic_modifier = { modifier = USA_social_worker_party }}			
+			}
+			hidden_effect={add_dynamic_modifier={modifier = USA_social_worker_party }}
+			custom_effect_tooltip = USA_social_worker_party_modifier_tt		
+		}
+		else_if = {
+			limit = { 
+				has_dynamic_modifier = { modifier = USA_social_worker_party  }
+			}
+			custom_effect_tooltip = USA_social_worker_party_modifier_ttt
+		}
+	}
+}
+
+USA_dangnei_fenqi_modifier_effect = {
+	if = {
+		limit = { 
+			NOT={has_dynamic_modifier = { modifier = USA_dangnei_fenqi }}			
+		}
+		hidden_effect={add_dynamic_modifier={modifier = USA_dangnei_fenqi }}
+		custom_effect_tooltip = USA_dangnei_fenqi_modifier_tt		
+	}
+	else_if = {
+		limit = { 
+			has_dynamic_modifier = { modifier = USA_dangnei_fenqi  }
+		}
+		custom_effect_tooltip = USA_dangnei_fenqi_modifier_ttt
+	}
+	
+}

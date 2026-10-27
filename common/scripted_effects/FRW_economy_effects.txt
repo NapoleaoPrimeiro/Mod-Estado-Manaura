@@ -1,0 +1,9 @@
+# France Rework - economic model: upgrade the chosen model spirit by one level
+FRW_econ_upgrade = {
+	if = { limit = { has_idea = FRW_econ_dirigiste_2 } swap_ideas = { remove_idea = FRW_econ_dirigiste_2 add_idea = FRW_econ_dirigiste_3 } }
+	else_if = { limit = { has_idea = FRW_econ_dirigiste_1 } swap_ideas = { remove_idea = FRW_econ_dirigiste_1 add_idea = FRW_econ_dirigiste_2 } }
+	else_if = { limit = { has_idea = FRW_econ_liberal_2 } swap_ideas = { remove_idea = FRW_econ_liberal_2 add_idea = FRW_econ_liberal_3 } }
+	else_if = { limit = { has_idea = FRW_econ_liberal_1 } swap_ideas = { remove_idea = FRW_econ_liberal_1 add_idea = FRW_econ_liberal_2 } }
+	else_if = { limit = { has_idea = FRW_econ_rearmament_2 } swap_ideas = { remove_idea = FRW_econ_rearmament_2 add_idea = FRW_econ_rearmament_3 } }
+	else_if = { limit = { has_idea = FRW_econ_rearmament_1 } swap_ideas = { remove_idea = FRW_econ_rearmament_1 add_idea = FRW_econ_rearmament_2 } }
+}

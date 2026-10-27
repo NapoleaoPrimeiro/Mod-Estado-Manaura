@@ -1,0 +1,824 @@
+###########################################################
+# France Rework - Scripted Effects
+# Anfuehrer werden per create_country_leader erzeugt,
+# Namen/Beschreibungen kommen aus der Lokalisierung.
+###########################################################
+
+# ---------- Demokratisch ----------
+FRW_leader_blum = {
+	create_country_leader = {
+		name = FRW_leader_blum
+		desc = FRW_leader_blum_desc
+		picture = GFX_FRW_portrait_blum
+		expire = "1965.1.1"
+		ideology = socialism
+		traits = { democratic_reformer }
+	}
+}
+FRW_leader_reynaud = {
+	create_country_leader = {
+		name = FRW_leader_reynaud
+		desc = FRW_leader_reynaud_desc
+		picture = GFX_FRW_portrait_reynaud
+		expire = "1965.1.1"
+		ideology = conservatism
+		traits = { rearmer }
+	}
+}
+FRW_leader_degaulle = {
+	create_country_leader = {
+		name = FRW_leader_degaulle
+		desc = FRW_leader_degaulle_desc
+		picture = GFX_FRW_portrait_degaulle
+		expire = "1975.1.1"
+		ideology = conservatism
+		traits = { nationalist_symbol }
+	}
+}
+
+# ---------- Kommunistisch ----------
+FRW_leader_thorez = {
+	create_country_leader = {
+		name = FRW_leader_thorez
+		desc = FRW_leader_thorez_desc
+		picture = GFX_FRW_portrait_thorez
+		expire = "1965.1.1"
+		ideology = stalinism
+		traits = { communist_revolutionary }
+	}
+}
+FRW_leader_pivert = {
+	create_country_leader = {
+		name = FRW_leader_pivert
+		desc = FRW_leader_pivert_desc
+		picture = GFX_FRW_portrait_pivert
+		expire = "1965.1.1"
+		ideology = marxism
+		traits = { communist_revolutionary }
+	}
+}
+
+# ---------- Faschistisch ----------
+FRW_leader_larocque = {
+	if = {
+		limit = { has_dlc = "La Resistance" }
+		create_country_leader = {
+			name = FRW_leader_larocque
+			desc = FRW_leader_larocque_desc
+			picture = GFX_FRW_portrait_larocque
+			expire = "1965.1.1"
+			ideology = fascism_ideology
+			traits = { anti_communist }
+		}
+	}
+	else = {
+		create_country_leader = {
+			name = FRW_leader_larocque
+			desc = FRW_leader_larocque_desc
+			picture = GFX_FRW_portrait_larocque_nodlc
+			expire = "1965.1.1"
+			ideology = fascism_ideology
+			traits = { anti_communist }
+		}
+	}
+}
+FRW_leader_doriot = {
+	if = {
+		limit = { has_dlc = "La Resistance" }
+		create_country_leader = {
+			name = FRW_leader_doriot
+			desc = FRW_leader_doriot_desc
+			picture = GFX_FRW_portrait_doriot
+			expire = "1965.1.1"
+			ideology = fascism_ideology
+			traits = { fascist_demagogue }
+		}
+	}
+	else = {
+		create_country_leader = {
+			name = FRW_leader_doriot
+			desc = FRW_leader_doriot_desc
+			picture = GFX_FRW_portrait_doriot_nodlc
+			expire = "1965.1.1"
+			ideology = fascism_ideology
+			traits = { fascist_demagogue }
+		}
+	}
+}
+
+# ---------- Blockfrei ----------
+FRW_leader_petain = {
+	create_country_leader = {
+		name = FRW_leader_petain
+		desc = FRW_leader_petain_desc
+		picture = GFX_FRW_portrait_petain
+		expire = "1951.7.23"
+		ideology = despotism
+		traits = { retired_officer }
+	}
+}
+FRW_leader_comtedeparis = {
+	if = {
+		limit = { has_dlc = "La Resistance" }
+		create_country_leader = {
+			name = FRW_leader_comtedeparis
+			desc = FRW_leader_comtedeparis_desc
+			picture = GFX_FRW_portrait_comtedeparis
+			expire = "1999.1.1"
+			ideology = oligarchism
+			traits = { staunch_monarchist }
+		}
+	}
+	else = {
+		create_country_leader = {
+			name = FRW_leader_comtedeparis
+			desc = FRW_leader_comtedeparis_desc
+			picture = GFX_FRW_portrait_comtedeparis_nodlc
+			expire = "1999.1.1"
+			ideology = oligarchism
+			traits = { staunch_monarchist }
+		}
+	}
+}
+FRW_leader_comtedeparis_dem = {
+	if = {
+		limit = { has_dlc = "La Resistance" }
+		create_country_leader = {
+			name = FRW_leader_comtedeparis
+			desc = FRW_leader_comtedeparis_desc
+			picture = GFX_FRW_portrait_comtedeparis
+			expire = "1999.1.1"
+			ideology = conservatism
+			traits = { staunch_monarchist }
+		}
+	}
+	else = {
+		create_country_leader = {
+			name = FRW_leader_comtedeparis
+			desc = FRW_leader_comtedeparis_desc
+			picture = GFX_FRW_portrait_comtedeparis_nodlc
+			expire = "1999.1.1"
+			ideology = conservatism
+			traits = { staunch_monarchist }
+		}
+	}
+}
+FRW_leader_napoleon = {
+	if = {
+		limit = { has_dlc = "La Resistance" }
+		create_country_leader = {
+			name = FRW_leader_napoleon
+			desc = FRW_leader_napoleon_desc
+			picture = GFX_FRW_portrait_napoleon
+			expire = "1997.1.1"
+			ideology = despotism
+			traits = { inexperienced_imperialist }
+		}
+	}
+	else = {
+		create_country_leader = {
+			name = FRW_leader_napoleon
+			desc = FRW_leader_napoleon_desc
+			picture = GFX_FRW_portrait_napoleon_nodlc
+			expire = "1997.1.1"
+			ideology = despotism
+			traits = { inexperienced_imperialist }
+		}
+	}
+}
+
+# ---------- Geheimer Ast: der Korsar (passt sich der Regierungsform an) ----------
+FRW_leader_corsair = {
+	if = {
+		limit = { has_government = democratic }
+		create_country_leader = {
+			name = FRW_leader_corsair
+			desc = FRW_leader_corsair_desc
+			picture = GFX_FRW_portrait_corsair
+			expire = "1999.1.1"
+			ideology = conservatism
+			traits = { adventurous_daredevil FRW_pirate_captain }
+		}
+	}
+	else_if = {
+		limit = { has_government = communism }
+		create_country_leader = {
+			name = FRW_leader_corsair
+			desc = FRW_leader_corsair_desc
+			picture = GFX_FRW_portrait_corsair
+			expire = "1999.1.1"
+			ideology = marxism
+			traits = { adventurous_daredevil FRW_pirate_captain }
+		}
+	}
+	else_if = {
+		limit = { has_government = fascism }
+		create_country_leader = {
+			name = FRW_leader_corsair
+			desc = FRW_leader_corsair_desc
+			picture = GFX_FRW_portrait_corsair
+			expire = "1999.1.1"
+			ideology = fascism_ideology
+			traits = { adventurous_daredevil FRW_pirate_captain }
+		}
+	}
+	else = {
+		create_country_leader = {
+			name = FRW_leader_corsair
+			desc = FRW_leader_corsair_desc
+			picture = GFX_FRW_portrait_corsair
+			expire = "1999.1.1"
+			ideology = despotism
+			traits = { adventurous_daredevil FRW_pirate_captain }
+		}
+	}
+}
+
+# ---------- Geheimer Ast: der Roi-Amiral (Ewiges Koenigreich) ----------
+FRW_leader_admiral_king = {
+	if = {
+		limit = { has_government = democratic }
+		create_country_leader = {
+			name = FRW_leader_admiral_king
+			desc = FRW_leader_admiral_king_desc
+			picture = GFX_FRW_portrait_admiral_king
+			expire = "1999.1.1"
+			ideology = conservatism
+			traits = { FRW_admiral_king }
+		}
+	}
+	else_if = {
+		limit = { has_government = communism }
+		create_country_leader = {
+			name = FRW_leader_admiral_king
+			desc = FRW_leader_admiral_king_desc
+			picture = GFX_FRW_portrait_admiral_king
+			expire = "1999.1.1"
+			ideology = marxism
+			traits = { FRW_admiral_king }
+		}
+	}
+	else_if = {
+		limit = { has_government = fascism }
+		create_country_leader = {
+			name = FRW_leader_admiral_king
+			desc = FRW_leader_admiral_king_desc
+			picture = GFX_FRW_portrait_admiral_king
+			expire = "1999.1.1"
+			ideology = fascism_ideology
+			traits = { FRW_admiral_king }
+		}
+	}
+	else = {
+		create_country_leader = {
+			name = FRW_leader_admiral_king
+			desc = FRW_leader_admiral_king_desc
+			picture = GFX_FRW_portrait_admiral_king
+			expire = "1999.1.1"
+			ideology = despotism
+			traits = { FRW_admiral_king }
+		}
+	}
+}
+
+# ---------- Formables (generiert von _quelle/../formables/build.py) ----------
+# Frankreich ist immer genau EINE gegruendete Nation; ein neues Formable ersetzt das vorherige (ausser dem Ewigen Koenigreich).
+# Kerngebiete gibt es NUR im historischen Gebiet des jeweiligen Formables (woechentlich auch auf neu eroberte Staaten dort).
+# Hat Frankreich das Kernland noch nicht, bleibt die Gruendung vorgemerkt und erfolgt automatisch, sobald es erobert ist.
+# Bei der Gruendung: Anspruch auf alle Staaten des Gebiets, die Frankreich noch nicht besitzt.
+FRW_drop_formable = {
+	if = { limit = { has_idea = FRW_union_francaise_formed } remove_ideas = FRW_union_francaise_formed }
+	if = { limit = { has_idea = FRW_european_federation } remove_ideas = FRW_european_federation }
+	if = { limit = { has_idea = FRW_western_union_idea } remove_ideas = FRW_western_union_idea }
+	if = { limit = { has_idea = FRW_latin_empire_idea } remove_ideas = FRW_latin_empire_idea }
+	if = { limit = { has_idea = FRW_eurafrican_federation_idea } remove_ideas = FRW_eurafrican_federation_idea }
+	if = { limit = { has_idea = FRW_francia_idea } remove_ideas = FRW_francia_idea }
+	if = { limit = { has_idea = FRW_burgundy_idea } remove_ideas = FRW_burgundy_idea }
+	if = { limit = { has_idea = FRW_grand_empire_idea } remove_ideas = FRW_grand_empire_idea }
+	if = { limit = { has_idea = FRW_double_monarchy_idea } remove_ideas = FRW_double_monarchy_idea }
+	if = { limit = { has_idea = FRW_franco_british_union_spirit } remove_ideas = FRW_franco_british_union_spirit }
+	if = { limit = { has_idea = FRW_drapeau_noir } remove_ideas = FRW_drapeau_noir }
+	if = { limit = { has_idea = FRW_eternal_kingdom_spirit } remove_ideas = FRW_eternal_kingdom_spirit }
+}
+FRW_clear_pending_formables = {
+	clr_country_flag = FRW_union_francaise_pending
+	clr_country_flag = FRW_european_federation_pending
+	clr_country_flag = FRW_western_union_pending
+	clr_country_flag = FRW_latin_empire_pending
+	clr_country_flag = FRW_eurafrica_pending
+	clr_country_flag = FRW_francia_pending
+	clr_country_flag = FRW_burgundy_pending
+	clr_country_flag = FRW_grand_empire_pending
+	clr_country_flag = FRW_bourbon_pending
+	clr_country_flag = FRW_fruk_pending
+	clr_country_flag = FRW_corsair_pending
+	clr_country_flag = FRW_eternal_pending
+}
+FRW_region_cores_union_francaise = {
+	every_owned_state = {
+		limit = { NOT = { is_core_of = PREV } OR = { state = 459 state = 460 state = 513 state = 514 state = 694 state = 310 state = 706 } }
+		add_core_of = PREV
+	}
+}
+FRW_region_claims_union_francaise = {
+	every_state = {
+		limit = { NOT = { is_owned_by = PREV } NOT = { is_claimed_by = PREV } OR = { state = 459 state = 460 state = 513 state = 514 state = 694 state = 310 state = 706 } }
+		add_claim_by = PREV
+	}
+}
+FRW_do_form_union_francaise = {
+	if = {
+		limit = { NOT = { has_country_flag = FRW_eternal_formed } NOT = { has_cosmetic_tag = FRW_UNION } }
+		FRW_drop_formable = yes
+		FRW_clear_pending_formables = yes
+		set_country_flag = FRW_nation_formed
+		set_cosmetic_tag = FRW_UNION
+		add_ideas = FRW_union_francaise_formed
+		FRW_region_cores_union_francaise = yes
+		FRW_region_claims_union_francaise = yes
+		news_event = { id = frw.62 hours = 6 }
+	}
+}
+FRW_form_union_francaise = {
+	if = {
+		limit = { FRW_can_form_union_francaise = yes }
+		FRW_do_form_union_francaise = yes
+	}
+	else_if = {
+		limit = { NOT = { has_country_flag = FRW_eternal_formed } NOT = { has_cosmetic_tag = FRW_UNION } }
+		set_country_flag = FRW_union_francaise_pending
+	}
+}
+FRW_region_cores_european_federation = {
+	every_owned_state = {
+		limit = { NOT = { is_core_of = PREV } OR = { is_core_of = BEL is_core_of = HOL is_core_of = LUX is_core_of = SWI is_core_of = ITA is_core_of = GER state = 42 state = 51 state = 978 } }
+		add_core_of = PREV
+	}
+}
+FRW_region_claims_european_federation = {
+	every_state = {
+		limit = { NOT = { is_owned_by = PREV } NOT = { is_claimed_by = PREV } OR = { is_core_of = BEL is_core_of = HOL is_core_of = LUX is_core_of = SWI is_core_of = ITA is_core_of = GER state = 42 state = 51 state = 978 } }
+		add_claim_by = PREV
+	}
+}
+FRW_do_form_european_federation = {
+	if = {
+		limit = { NOT = { has_country_flag = FRW_eternal_formed } NOT = { has_cosmetic_tag = FRW_EUROPE } }
+		FRW_drop_formable = yes
+		FRW_clear_pending_formables = yes
+		set_country_flag = FRW_nation_formed
+		set_cosmetic_tag = FRW_EUROPE
+		add_ideas = FRW_european_federation
+		FRW_region_cores_european_federation = yes
+		FRW_region_claims_european_federation = yes
+		news_event = { id = frw.60 hours = 6 }
+	}
+}
+FRW_form_european_federation = {
+	if = {
+		limit = { FRW_can_form_european_federation = yes }
+		FRW_do_form_european_federation = yes
+	}
+	else_if = {
+		limit = { NOT = { has_country_flag = FRW_eternal_formed } NOT = { has_cosmetic_tag = FRW_EUROPE } }
+		set_country_flag = FRW_european_federation_pending
+	}
+}
+FRW_region_cores_western_union = {
+	every_owned_state = {
+		limit = { NOT = { is_core_of = PREV } OR = { is_core_of = BEL is_core_of = HOL is_core_of = LUX } }
+		add_core_of = PREV
+	}
+}
+FRW_region_claims_western_union = {
+	every_state = {
+		limit = { NOT = { is_owned_by = PREV } NOT = { is_claimed_by = PREV } OR = { is_core_of = BEL is_core_of = HOL is_core_of = LUX } }
+		add_claim_by = PREV
+	}
+}
+FRW_do_form_western_union = {
+	if = {
+		limit = { NOT = { has_country_flag = FRW_eternal_formed } NOT = { has_cosmetic_tag = FRW_WESTUNION } }
+		FRW_drop_formable = yes
+		FRW_clear_pending_formables = yes
+		set_country_flag = FRW_nation_formed
+		set_cosmetic_tag = FRW_WESTUNION
+		add_ideas = FRW_western_union_idea
+		FRW_region_cores_western_union = yes
+		FRW_region_claims_western_union = yes
+		news_event = { id = frw.100 hours = 6 }
+	}
+}
+FRW_form_western_union = {
+	if = {
+		limit = { FRW_can_form_western_union = yes }
+		FRW_do_form_western_union = yes
+	}
+	else_if = {
+		limit = { NOT = { has_country_flag = FRW_eternal_formed } NOT = { has_cosmetic_tag = FRW_WESTUNION } }
+		set_country_flag = FRW_western_union_pending
+	}
+}
+FRW_region_cores_latin_empire = {
+	every_owned_state = {
+		limit = { NOT = { is_core_of = PREV } OR = { is_core_of = ITA is_core_of = SPR is_core_of = POR } }
+		add_core_of = PREV
+	}
+}
+FRW_region_claims_latin_empire = {
+	every_state = {
+		limit = { NOT = { is_owned_by = PREV } NOT = { is_claimed_by = PREV } OR = { is_core_of = ITA is_core_of = SPR is_core_of = POR } }
+		add_claim_by = PREV
+	}
+}
+FRW_do_form_latin_empire = {
+	if = {
+		limit = { NOT = { has_country_flag = FRW_eternal_formed } NOT = { has_cosmetic_tag = FRW_LATIN } }
+		FRW_drop_formable = yes
+		FRW_clear_pending_formables = yes
+		set_country_flag = FRW_nation_formed
+		set_cosmetic_tag = FRW_LATIN
+		add_ideas = FRW_latin_empire_idea
+		FRW_region_cores_latin_empire = yes
+		FRW_region_claims_latin_empire = yes
+		news_event = { id = frw.64 hours = 6 }
+	}
+}
+FRW_form_latin_empire = {
+	if = {
+		limit = { FRW_can_form_latin_empire = yes }
+		FRW_do_form_latin_empire = yes
+	}
+	else_if = {
+		limit = { NOT = { has_country_flag = FRW_eternal_formed } NOT = { has_cosmetic_tag = FRW_LATIN } }
+		set_country_flag = FRW_latin_empire_pending
+	}
+}
+FRW_region_cores_eurafrica = {
+	every_owned_state = {
+		limit = { NOT = { is_core_of = PREV } OR = { state = 459 state = 460 state = 513 state = 514 state = 458 state = 665 state = 461 state = 462 state = 272 state = 694 state = 310 state = 706 } }
+		add_core_of = PREV
+	}
+}
+FRW_region_claims_eurafrica = {
+	every_state = {
+		limit = { NOT = { is_owned_by = PREV } NOT = { is_claimed_by = PREV } OR = { state = 459 state = 460 state = 513 state = 514 state = 458 state = 665 state = 461 state = 462 state = 272 state = 694 state = 310 state = 706 } }
+		add_claim_by = PREV
+	}
+}
+FRW_do_form_eurafrica = {
+	if = {
+		limit = { NOT = { has_country_flag = FRW_eternal_formed } NOT = { has_cosmetic_tag = FRW_EURAFRICA } }
+		FRW_drop_formable = yes
+		FRW_clear_pending_formables = yes
+		set_country_flag = FRW_nation_formed
+		set_cosmetic_tag = FRW_EURAFRICA
+		add_ideas = FRW_eurafrican_federation_idea
+		FRW_region_cores_eurafrica = yes
+		FRW_region_claims_eurafrica = yes
+		news_event = { id = frw.65 hours = 6 }
+	}
+}
+FRW_form_eurafrica = {
+	if = {
+		limit = { FRW_can_form_eurafrica = yes }
+		FRW_do_form_eurafrica = yes
+	}
+	else_if = {
+		limit = { NOT = { has_country_flag = FRW_eternal_formed } NOT = { has_cosmetic_tag = FRW_EURAFRICA } }
+		set_country_flag = FRW_eurafrica_pending
+	}
+}
+FRW_region_cores_francia = {
+	every_owned_state = {
+		limit = { NOT = { is_core_of = PREV } OR = { is_core_of = BEL is_core_of = HOL is_core_of = LUX is_core_of = SWI state = 42 state = 51 state = 57 state = 978 state = 158 state = 159 } }
+		add_core_of = PREV
+	}
+}
+FRW_region_claims_francia = {
+	every_state = {
+		limit = { NOT = { is_owned_by = PREV } NOT = { is_claimed_by = PREV } OR = { is_core_of = BEL is_core_of = HOL is_core_of = LUX is_core_of = SWI state = 42 state = 51 state = 57 state = 978 state = 158 state = 159 } }
+		add_claim_by = PREV
+	}
+}
+FRW_do_form_francia = {
+	if = {
+		limit = { NOT = { has_country_flag = FRW_eternal_formed } NOT = { has_cosmetic_tag = FRW_FRANCIA } }
+		FRW_drop_formable = yes
+		FRW_clear_pending_formables = yes
+		set_country_flag = FRW_nation_formed
+		set_cosmetic_tag = FRW_FRANCIA
+		add_ideas = FRW_francia_idea
+		FRW_region_cores_francia = yes
+		FRW_region_claims_francia = yes
+		news_event = { id = frw.63 hours = 6 }
+	}
+}
+FRW_form_francia = {
+	if = {
+		limit = { FRW_can_form_francia = yes }
+		FRW_do_form_francia = yes
+	}
+	else_if = {
+		limit = { NOT = { has_country_flag = FRW_eternal_formed } NOT = { has_cosmetic_tag = FRW_FRANCIA } }
+		set_country_flag = FRW_francia_pending
+	}
+}
+FRW_region_cores_burgundy = {
+	every_owned_state = {
+		limit = { NOT = { is_core_of = PREV } OR = { is_core_of = BEL is_core_of = HOL is_core_of = LUX } }
+		add_core_of = PREV
+	}
+}
+FRW_region_claims_burgundy = {
+	every_state = {
+		limit = { NOT = { is_owned_by = PREV } NOT = { is_claimed_by = PREV } OR = { is_core_of = BEL is_core_of = HOL is_core_of = LUX } }
+		add_claim_by = PREV
+	}
+}
+FRW_do_form_burgundy = {
+	if = {
+		limit = { NOT = { has_country_flag = FRW_eternal_formed } NOT = { has_cosmetic_tag = FRW_BURGUNDY } }
+		FRW_drop_formable = yes
+		FRW_clear_pending_formables = yes
+		set_country_flag = FRW_nation_formed
+		set_cosmetic_tag = FRW_BURGUNDY
+		add_ideas = FRW_burgundy_idea
+		FRW_region_cores_burgundy = yes
+		FRW_region_claims_burgundy = yes
+		news_event = { id = frw.99 hours = 6 }
+	}
+}
+FRW_form_burgundy = {
+	if = {
+		limit = { FRW_can_form_burgundy = yes }
+		FRW_do_form_burgundy = yes
+	}
+	else_if = {
+		limit = { NOT = { has_country_flag = FRW_eternal_formed } NOT = { has_cosmetic_tag = FRW_BURGUNDY } }
+		set_country_flag = FRW_burgundy_pending
+	}
+}
+FRW_region_cores_grand_empire = {
+	every_owned_state = {
+		limit = { NOT = { is_core_of = PREV } OR = { is_core_of = BEL is_core_of = HOL is_core_of = LUX is_core_of = SWI state = 42 state = 51 state = 57 state = 978 state = 158 state = 159 state = 114 state = 165 } }
+		add_core_of = PREV
+	}
+}
+FRW_region_claims_grand_empire = {
+	every_state = {
+		limit = { NOT = { is_owned_by = PREV } NOT = { is_claimed_by = PREV } OR = { is_core_of = BEL is_core_of = HOL is_core_of = LUX is_core_of = SWI state = 42 state = 51 state = 57 state = 978 state = 158 state = 159 state = 114 state = 165 } }
+		add_claim_by = PREV
+	}
+}
+FRW_do_form_grand_empire = {
+	if = {
+		limit = { NOT = { has_country_flag = FRW_eternal_formed } NOT = { has_cosmetic_tag = FRW_GRANDEMPIRE } }
+		FRW_drop_formable = yes
+		FRW_clear_pending_formables = yes
+		set_country_flag = FRW_nation_formed
+		set_cosmetic_tag = FRW_GRANDEMPIRE
+		add_ideas = FRW_grand_empire_idea
+		FRW_region_cores_grand_empire = yes
+		FRW_region_claims_grand_empire = yes
+		news_event = { id = frw.61 hours = 6 }
+	}
+}
+FRW_form_grand_empire = {
+	if = {
+		limit = { FRW_can_form_grand_empire = yes }
+		FRW_do_form_grand_empire = yes
+	}
+	else_if = {
+		limit = { NOT = { has_country_flag = FRW_eternal_formed } NOT = { has_cosmetic_tag = FRW_GRANDEMPIRE } }
+		set_country_flag = FRW_grand_empire_pending
+	}
+}
+FRW_region_cores_bourbon = {
+	every_owned_state = {
+		limit = { NOT = { is_core_of = PREV } OR = { is_core_of = SPR } }
+		add_core_of = PREV
+	}
+}
+FRW_region_claims_bourbon = {
+	every_state = {
+		limit = { NOT = { is_owned_by = PREV } NOT = { is_claimed_by = PREV } OR = { is_core_of = SPR } }
+		add_claim_by = PREV
+	}
+}
+FRW_do_form_bourbon = {
+	if = {
+		limit = { NOT = { has_country_flag = FRW_eternal_formed } NOT = { has_cosmetic_tag = FRW_BOURBON } }
+		FRW_drop_formable = yes
+		FRW_clear_pending_formables = yes
+		set_country_flag = FRW_nation_formed
+		set_cosmetic_tag = FRW_BOURBON
+		add_ideas = FRW_double_monarchy_idea
+		FRW_region_cores_bourbon = yes
+		FRW_region_claims_bourbon = yes
+		news_event = { id = frw.142 hours = 6 }
+	}
+}
+FRW_form_bourbon = {
+	if = {
+		limit = { FRW_can_form_bourbon = yes }
+		FRW_do_form_bourbon = yes
+	}
+	else_if = {
+		limit = { NOT = { has_country_flag = FRW_eternal_formed } NOT = { has_cosmetic_tag = FRW_BOURBON } }
+		set_country_flag = FRW_bourbon_pending
+	}
+}
+FRW_region_cores_fruk = { }
+FRW_region_claims_fruk = { }
+FRW_do_form_fruk = {
+	if = {
+		limit = { NOT = { has_country_flag = FRW_eternal_formed } NOT = { has_cosmetic_tag = FRW_FRUK } }
+		FRW_drop_formable = yes
+		FRW_clear_pending_formables = yes
+		set_country_flag = FRW_nation_formed
+		set_cosmetic_tag = FRW_FRUK
+		add_ideas = FRW_franco_british_union_spirit
+		FRW_region_cores_fruk = yes
+		FRW_region_claims_fruk = yes
+	}
+}
+FRW_form_fruk = {
+	if = { limit = { ENG = { exists = yes NOT = { has_idea = FRW_franco_british_union_spirit } } } ENG = { add_ideas = FRW_franco_british_union_spirit } }
+	if = {
+		limit = { FRW_can_form_fruk = yes }
+		FRW_do_form_fruk = yes
+	}
+	else_if = {
+		limit = { NOT = { has_country_flag = FRW_eternal_formed } NOT = { has_cosmetic_tag = FRW_FRUK } }
+		set_country_flag = FRW_fruk_pending
+	}
+}
+FRW_region_cores_corsair = {
+	every_owned_state = {
+		limit = { NOT = { is_core_of = PREV } OR = { is_core_of = SPR is_core_of = POR } }
+		add_core_of = PREV
+	}
+}
+FRW_region_claims_corsair = {
+	every_state = {
+		limit = { NOT = { is_owned_by = PREV } NOT = { is_claimed_by = PREV } OR = { is_core_of = SPR is_core_of = POR } }
+		add_claim_by = PREV
+	}
+}
+FRW_do_form_corsair = {
+	if = {
+		limit = { NOT = { has_country_flag = FRW_eternal_formed } NOT = { has_cosmetic_tag = FRW_CORSAIR } }
+		FRW_drop_formable = yes
+		FRW_clear_pending_formables = yes
+		set_country_flag = FRW_nation_formed
+		set_cosmetic_tag = FRW_CORSAIR
+		add_ideas = FRW_drapeau_noir
+		FRW_region_cores_corsair = yes
+		FRW_region_claims_corsair = yes
+		news_event = { id = frw.95 hours = 6 }
+	}
+}
+FRW_form_corsair = {
+	if = {
+		limit = { FRW_can_form_corsair = yes }
+		FRW_do_form_corsair = yes
+	}
+	else_if = {
+		limit = { NOT = { has_country_flag = FRW_eternal_formed } NOT = { has_cosmetic_tag = FRW_CORSAIR } }
+		set_country_flag = FRW_corsair_pending
+	}
+}
+FRW_region_cores_eternal = {
+	every_owned_state = {
+		limit = { NOT = { is_core_of = PREV } OR = { is_core_of = SPR is_core_of = POR is_core_of = SCO state = 120 state = 136 state = 933 } }
+		add_core_of = PREV
+	}
+}
+FRW_region_claims_eternal = {
+	every_state = {
+		limit = { NOT = { is_owned_by = PREV } NOT = { is_claimed_by = PREV } OR = { is_core_of = SPR is_core_of = POR is_core_of = SCO state = 120 state = 136 state = 933 } }
+		add_claim_by = PREV
+	}
+}
+FRW_do_form_eternal = {
+	if = {
+		limit = { NOT = { has_cosmetic_tag = FRW_ETERNAL } }
+		FRW_drop_formable = yes
+		FRW_clear_pending_formables = yes
+		set_country_flag = FRW_nation_formed
+		set_country_flag = FRW_eternal_formed
+		set_cosmetic_tag = FRW_ETERNAL
+		add_ideas = FRW_eternal_kingdom_spirit
+		FRW_region_cores_eternal = yes
+		FRW_region_claims_eternal = yes
+	}
+}
+FRW_form_eternal = {
+	if = {
+		limit = { FRW_can_form_eternal = yes }
+		FRW_do_form_eternal = yes
+	}
+	else_if = {
+		limit = { NOT = { has_country_flag = FRW_eternal_formed } NOT = { has_cosmetic_tag = FRW_ETERNAL } }
+		set_country_flag = FRW_eternal_pending
+	}
+}
+FRW_cores_on_owned = {
+	every_owned_state = {
+		limit = { NOT = { is_core_of = PREV } }
+		add_core_of = PREV
+	}
+}
+
+# ---------- Geheimer Ast: Leerlauf-Timer ----------
+# Wird bei JEDEM Fokus-Start und -Abschluss aufgerufen (vom Generator eingefuegt).
+# Setzt den Timer zurueck, solange der geheime Ast noch nicht freigeschaltet ist.
+FRW_idle_reset = {
+	if = {
+		limit = { has_country_flag = FRW_chambers_adjourned NOT = { has_country_flag = FRW_secret_alpine } }
+		clr_country_flag = FRW_idle_timer
+		set_country_flag = FRW_idle_timer
+	}
+}
+
+###########################################################
+# Kolonialkauf: wird im Scope des VERKAEUFERS ausgefuehrt,
+# FROM = Frankreich. Flags auf Frankreich markieren das Angebot.
+###########################################################
+FRW_execute_colonial_purchase = {
+	if = { limit = { FROM = { has_country_flag = FRW_buy_290 } 290 = { OR = { is_owned_by = ROOT owner = { is_subject_of = ROOT } } } } FROM = { transfer_state = 290 clr_country_flag = FRW_buy_290 } }
+	# Ifni (783) und Rio de Oro (699) werden zusammen verkauft - Flag erst nach beiden loeschen
+	if = { limit = { FROM = { has_country_flag = FRW_buy_783 } 783 = { OR = { is_owned_by = ROOT owner = { is_subject_of = ROOT } } } } FROM = { transfer_state = 783 } }
+	if = { limit = { FROM = { has_country_flag = FRW_buy_783 } 699 = { OR = { is_owned_by = ROOT owner = { is_subject_of = ROOT } } } } FROM = { transfer_state = 699 } }
+	if = { limit = { FROM = { has_country_flag = FRW_buy_783 } OR = { 783 = { OR = { is_owned_by = ROOT owner = { is_subject_of = ROOT } } } 699 = { OR = { is_owned_by = ROOT owner = { is_subject_of = ROOT } } } } } FROM = { clr_country_flag = FRW_buy_783 } }
+	if = { limit = { FROM = { has_country_flag = FRW_buy_297 } 297 = { OR = { is_owned_by = ROOT owner = { is_subject_of = ROOT } } } } FROM = { transfer_state = 297 clr_country_flag = FRW_buy_297 } }
+	if = { limit = { FROM = { has_country_flag = FRW_buy_296 } 296 = { OR = { is_owned_by = ROOT owner = { is_subject_of = ROOT } } } } FROM = { transfer_state = 296 clr_country_flag = FRW_buy_296 } }
+	if = { limit = { FROM = { has_country_flag = FRW_buy_701 } 701 = { OR = { is_owned_by = ROOT owner = { is_subject_of = ROOT } } } } FROM = { transfer_state = 701 clr_country_flag = FRW_buy_701 } }
+	if = { limit = { FROM = { has_country_flag = FRW_buy_700 } 700 = { OR = { is_owned_by = ROOT owner = { is_subject_of = ROOT } } } } FROM = { transfer_state = 700 clr_country_flag = FRW_buy_700 } }
+	if = { limit = { FROM = { has_country_flag = FRW_buy_295 } 295 = { OR = { is_owned_by = ROOT owner = { is_subject_of = ROOT } } } } FROM = { transfer_state = 295 clr_country_flag = FRW_buy_295 } }
+	if = { limit = { FROM = { has_country_flag = FRW_buy_661 } 661 = { OR = { is_owned_by = ROOT owner = { is_subject_of = ROOT } } } } FROM = { transfer_state = 661 clr_country_flag = FRW_buy_661 } }
+}
+
+# Bei Ablehnung: nur die Angebote fuer Staaten dieses Verkaeufers loeschen
+FRW_clear_purchase_flags = {
+	if = { limit = { 290 = { OR = { is_owned_by = ROOT owner = { is_subject_of = ROOT } } } } FROM = { clr_country_flag = FRW_buy_290 } }
+	if = { limit = { 783 = { OR = { is_owned_by = ROOT owner = { is_subject_of = ROOT } } } } FROM = { clr_country_flag = FRW_buy_783 } }
+	if = { limit = { 699 = { OR = { is_owned_by = ROOT owner = { is_subject_of = ROOT } } } } FROM = { clr_country_flag = FRW_buy_783 } }
+	if = { limit = { 297 = { OR = { is_owned_by = ROOT owner = { is_subject_of = ROOT } } } } FROM = { clr_country_flag = FRW_buy_297 } }
+	if = { limit = { 296 = { OR = { is_owned_by = ROOT owner = { is_subject_of = ROOT } } } } FROM = { clr_country_flag = FRW_buy_296 } }
+	if = { limit = { 701 = { OR = { is_owned_by = ROOT owner = { is_subject_of = ROOT } } } } FROM = { clr_country_flag = FRW_buy_701 } }
+	if = { limit = { 700 = { OR = { is_owned_by = ROOT owner = { is_subject_of = ROOT } } } } FROM = { clr_country_flag = FRW_buy_700 } }
+	if = { limit = { 295 = { OR = { is_owned_by = ROOT owner = { is_subject_of = ROOT } } } } FROM = { clr_country_flag = FRW_buy_295 } }
+	if = { limit = { 661 = { OR = { is_owned_by = ROOT owner = { is_subject_of = ROOT } } } } FROM = { clr_country_flag = FRW_buy_661 } }
+}
+
+###########################################################
+# Territorial demands (Anschluss-style).
+# Flags FRW_demand_<state> on France mark the demanded states.
+###########################################################
+
+# Scope: target country, FROM = France
+FRW_transfer_demanded_states = {
+	if = { limit = { FROM = { has_country_flag = FRW_demand_34 } 34 = { is_owned_by = ROOT } } FROM = { transfer_state = 34 clr_country_flag = FRW_demand_34 } }
+	if = { limit = { FROM = { has_country_flag = FRW_demand_980 } 980 = { OR = { is_owned_by = ROOT owner = { is_subject_of = ROOT } } } } FROM = { transfer_state = 980 clr_country_flag = FRW_demand_980 } }
+	if = { limit = { FROM = { has_country_flag = FRW_demand_845 } 845 = { OR = { is_owned_by = ROOT owner = { is_subject_of = ROOT } } } } FROM = { transfer_state = 845 clr_country_flag = FRW_demand_845 } }
+	if = { limit = { FROM = { has_country_flag = FRW_demand_847 } 847 = { OR = { is_owned_by = ROOT owner = { is_subject_of = ROOT } } } } FROM = { transfer_state = 847 clr_country_flag = FRW_demand_847 } }
+	if = { limit = { FROM = { has_country_flag = FRW_demand_158 } 158 = { OR = { is_owned_by = ROOT owner = { is_subject_of = ROOT } } } } FROM = { transfer_state = 158 clr_country_flag = FRW_demand_158 } }
+	if = { limit = { FROM = { has_country_flag = FRW_demand_114 } 114 = { OR = { is_owned_by = ROOT owner = { is_subject_of = ROOT } } } } FROM = { transfer_state = 114 clr_country_flag = FRW_demand_114 } }
+	if = { limit = { FROM = { has_country_flag = FRW_demand_51 } 51 = { is_owned_by = ROOT } } FROM = { transfer_state = 51 clr_country_flag = FRW_demand_51 } }
+	if = { limit = { FROM = { has_country_flag = FRW_demand_42 } 42 = { is_owned_by = ROOT } } FROM = { transfer_state = 42 clr_country_flag = FRW_demand_42 } }
+	if = { limit = { FROM = { has_country_flag = FRW_demand_165 } 165 = { OR = { is_owned_by = ROOT owner = { is_subject_of = ROOT } } } } FROM = { transfer_state = 165 clr_country_flag = FRW_demand_165 } }
+	if = { limit = { FROM = { has_country_flag = FRW_demand_661 } 661 = { OR = { is_owned_by = ROOT owner = { is_subject_of = ROOT } } } } FROM = { transfer_state = 661 clr_country_flag = FRW_demand_661 } }
+	if = { limit = { FROM = { has_country_flag = FRW_demand_290 } 290 = { OR = { is_owned_by = ROOT owner = { is_subject_of = ROOT } } } } FROM = { transfer_state = 290 clr_country_flag = FRW_demand_290 } }
+}
+
+# Scope: France, FROM = refusing country
+FRW_demand_refused_wargoals = {
+	if = { limit = { has_country_flag = FRW_demand_34 34 = { is_owned_by = FROM } } create_wargoal = { type = take_state_focus target = FROM generator = { 34 } } clr_country_flag = FRW_demand_34 }
+	if = { limit = { has_country_flag = FRW_demand_980 980 = { is_owned_by = FROM } } create_wargoal = { type = take_state_focus target = FROM generator = { 980 } } clr_country_flag = FRW_demand_980 }
+	if = { limit = { has_country_flag = FRW_demand_845 845 = { is_owned_by = FROM } } create_wargoal = { type = take_state_focus target = FROM generator = { 845 } } clr_country_flag = FRW_demand_845 }
+	if = { limit = { has_country_flag = FRW_demand_847 847 = { is_owned_by = FROM } } create_wargoal = { type = take_state_focus target = FROM generator = { 847 } } clr_country_flag = FRW_demand_847 }
+	if = { limit = { has_country_flag = FRW_demand_158 158 = { is_owned_by = FROM } } create_wargoal = { type = take_state_focus target = FROM generator = { 158 } } clr_country_flag = FRW_demand_158 }
+	if = { limit = { has_country_flag = FRW_demand_114 114 = { is_owned_by = FROM } } create_wargoal = { type = take_state_focus target = FROM generator = { 114 } } clr_country_flag = FRW_demand_114 }
+	if = { limit = { has_country_flag = FRW_demand_51 51 = { is_owned_by = FROM } } create_wargoal = { type = take_state_focus target = FROM generator = { 51 } } clr_country_flag = FRW_demand_51 }
+	if = { limit = { has_country_flag = FRW_demand_42 42 = { is_owned_by = FROM } } create_wargoal = { type = take_state_focus target = FROM generator = { 42 } } clr_country_flag = FRW_demand_42 }
+	if = { limit = { has_country_flag = FRW_demand_165 165 = { is_owned_by = FROM } } create_wargoal = { type = take_state_focus target = FROM generator = { 165 } } clr_country_flag = FRW_demand_165 }
+	if = { limit = { has_country_flag = FRW_demand_290 290 = { is_owned_by = FROM } } create_wargoal = { type = take_state_focus target = FROM generator = { 290 } } clr_country_flag = FRW_demand_290 }
+	if = { limit = { has_country_flag = FRW_demand_661 661 = { is_owned_by = FROM } } create_wargoal = { type = take_state_focus target = FROM generator = { 661 } } clr_country_flag = FRW_demand_661 }
+}
+
+# Scope: France, FROM = refusing country
+FRW_clear_demand_flags = {
+	if = { limit = { 34 = { is_owned_by = FROM } } clr_country_flag = FRW_demand_34 }
+	if = { limit = { 980 = { is_owned_by = FROM } } clr_country_flag = FRW_demand_980 }
+	if = { limit = { 845 = { is_owned_by = FROM } } clr_country_flag = FRW_demand_845 }
+	if = { limit = { 847 = { is_owned_by = FROM } } clr_country_flag = FRW_demand_847 }
+	if = { limit = { 158 = { is_owned_by = FROM } } clr_country_flag = FRW_demand_158 }
+	if = { limit = { 114 = { is_owned_by = FROM } } clr_country_flag = FRW_demand_114 }
+	if = { limit = { 51 = { is_owned_by = FROM } } clr_country_flag = FRW_demand_51 }
+	if = { limit = { 42 = { is_owned_by = FROM } } clr_country_flag = FRW_demand_42 }
+	if = { limit = { 165 = { is_owned_by = FROM } } clr_country_flag = FRW_demand_165 }
+	if = { limit = { 290 = { is_owned_by = FROM } } clr_country_flag = FRW_demand_290 }
+	if = { limit = { 661 = { is_owned_by = FROM } } clr_country_flag = FRW_demand_661 }
+}

@@ -1,0 +1,357 @@
+scripted_gui = {
+
+	admin_claim_gui = {
+		context_type = player_context
+		window_name = "admin_claim_window"
+		parent_window_token = top_bar
+		visible = {
+			is_ai = no
+			NOT = { has_global_flag = admin_claimed }
+			NOT = { any_country = { has_country_flag = admin_owner } }
+			NOT = { has_game_rule = { rule = host_admin_menu_rule option = DISABLED } }
+		}
+		effects = {
+			admin_claim_button_control_click = {
+				if = {
+					limit = { NOT = { has_global_flag = admin_claimed } }
+					set_global_flag = admin_claimed
+					set_country_flag = admin_owner
+					set_country_flag = admin_menu_open
+					admin_rebuild_player_list = yes
+				}
+			}
+		}
+	}
+
+	admin_toggle_gui = {
+		context_type = player_context
+		window_name = "admin_toggle_window"
+		visible = {
+			has_country_flag = admin_owner
+			NOT = { has_game_rule = { rule = host_admin_menu_rule option = DISABLED } }
+		}
+		effects = {
+			admin_toggle_button_click = {
+				if = {
+					limit = { has_country_flag = admin_menu_open }
+					clr_country_flag = admin_menu_open
+				}
+				else = {
+					set_country_flag = admin_menu_open
+					admin_rebuild_player_list = yes
+				}
+			}
+		}
+	}
+
+	admin_main_gui = {
+		context_type = player_context
+		window_name = "admin_main_window"
+		visible = {
+			has_country_flag = admin_owner
+			has_country_flag = admin_menu_open
+			NOT = { has_game_rule = { rule = host_admin_menu_rule option = DISABLED } }
+		}
+		dynamic_lists = {
+			admin_player_grid = {
+				array = global.admin_players
+				entry_container = "admin_player_entry"
+				value = v
+				index = i
+			}
+			admin_country_grid = {
+				array = global.admin_countries
+				entry_container = "admin_country_entry"
+				value = v
+				index = i
+			}
+		}
+		effects = {
+			admin_close_button_click = { clr_country_flag = admin_menu_open }
+			admin_sel_me_click = { admin_clear_selection = yes set_country_flag = admin_sel admin_count_selected = yes }
+			admin_sel_all_click = { every_country = { limit = { is_ai = no } set_country_flag = admin_sel } admin_count_selected = yes }
+			admin_sel_none_click = { admin_clear_selection = yes admin_count_selected = yes }
+			admin_refresh_click = { admin_rebuild_player_list = yes }
+			admin_pl_on_click = { var:v = { clr_country_flag = admin_sel } admin_count_selected = yes }
+			admin_pl_off_click = { var:v = { set_country_flag = admin_sel } admin_count_selected = yes }
+			admin_alloff_click = { admin_disable_all = yes }
+			admin_tab_boosts_click = { set_variable = { global.admin_tab = 0 } admin_build_country_page = yes }
+			admin_tab_actions_click = { set_variable = { global.admin_tab = 1 } admin_build_country_page = yes }
+			admin_tab_politics_click = { set_variable = { global.admin_tab = 2 } admin_build_country_page = yes }
+			admin_tab_diplo_click = { set_variable = { global.admin_tab = 3 } admin_build_country_page = yes }
+			admin_on_research_click = { admin_enable_research = yes }
+			admin_off_research_click = { admin_disable_research = yes }
+			admin_on_construction_click = { admin_enable_construction = yes }
+			admin_off_construction_click = { admin_disable_construction = yes }
+			admin_on_production_click = { admin_enable_production = yes }
+			admin_off_production_click = { admin_disable_production = yes }
+			admin_on_training_click = { admin_enable_training = yes }
+			admin_off_training_click = { admin_disable_training = yes }
+			admin_on_combat_click = { admin_enable_combat = yes }
+			admin_off_combat_click = { admin_disable_combat = yes }
+			admin_on_logistics_click = { admin_enable_logistics = yes }
+			admin_off_logistics_click = { admin_disable_logistics = yes }
+			admin_on_wargoal_click = { admin_enable_wargoal = yes }
+			admin_off_wargoal_click = { admin_disable_wargoal = yes }
+			admin_on_economy_click = { admin_enable_economy = yes }
+			admin_off_economy_click = { admin_disable_economy = yes }
+			admin_on_focus_click = { admin_enable_focus = yes }
+			admin_off_focus_click = { admin_disable_focus = yes }
+			admin_on_diplomacy_click = { admin_enable_diplomacy = yes }
+			admin_off_diplomacy_click = { admin_disable_diplomacy = yes }
+			admin_act_pp_click = { admin_act_pp = yes }
+			admin_act_manpower_click = { admin_act_manpower = yes }
+			admin_act_cp_click = { admin_act_cp = yes }
+			admin_act_xp_click = { admin_act_xp = yes }
+			admin_act_stab_click = { admin_act_stab = yes }
+			admin_act_factories_click = { admin_act_factories = yes }
+			admin_act_slot_click = { admin_act_slot = yes }
+			admin_act_fuel_click = { admin_act_fuel = yes }
+			admin_act_equip_click = { admin_act_equip = yes }
+			admin_act_nukes_click = { admin_act_nukes = yes }
+			admin_act_peace_click = { admin_act_peace = yes }
+			admin_pol_pop_democratic_click = { admin_pol_pop_democratic = yes }
+			admin_pol_gov_democratic_click = { admin_pol_gov_democratic = yes }
+			admin_pol_drift_on_democratic_click = { admin_pol_drift_on_democratic = yes }
+			admin_pol_drift_off_democratic_click = { admin_pol_drift_off_democratic = yes }
+			admin_pol_pop_communism_click = { admin_pol_pop_communism = yes }
+			admin_pol_gov_communism_click = { admin_pol_gov_communism = yes }
+			admin_pol_drift_on_communism_click = { admin_pol_drift_on_communism = yes }
+			admin_pol_drift_off_communism_click = { admin_pol_drift_off_communism = yes }
+			admin_pol_pop_fascism_click = { admin_pol_pop_fascism = yes }
+			admin_pol_gov_fascism_click = { admin_pol_gov_fascism = yes }
+			admin_pol_drift_on_fascism_click = { admin_pol_drift_on_fascism = yes }
+			admin_pol_drift_off_fascism_click = { admin_pol_drift_off_fascism = yes }
+			admin_pol_pop_neutrality_click = { admin_pol_pop_neutrality = yes }
+			admin_pol_gov_neutrality_click = { admin_pol_gov_neutrality = yes }
+			admin_pol_drift_on_neutrality_click = { admin_pol_drift_on_neutrality = yes }
+			admin_pol_drift_off_neutrality_click = { admin_pol_drift_off_neutrality = yes }
+			admin_dip_war_click = { admin_dip_war = yes }
+			admin_dip_peace_click = { admin_dip_peace = yes }
+			admin_dip_faction_click = { admin_dip_faction = yes }
+			admin_dip_access_click = { admin_dip_access = yes }
+			admin_dip_guarantee_click = { admin_dip_guarantee = yes }
+			admin_dip_nap_click = { admin_dip_nap = yes }
+			admin_dip_opinion_click = { admin_dip_opinion = yes }
+			admin_dip_puppet_click = { admin_dip_puppet = yes }
+			admin_dip_annex_click = { admin_dip_annex = yes }
+			admin_page_prev_click = { admin_page_prev = yes }
+			admin_page_next_click = { admin_page_next = yes }
+			admin_cl_pick_click = { var:v = { admin_set_partner = yes } }
+		}
+		triggers = {
+			admin_pl_on_visible = { var:v = { has_country_flag = admin_sel } }
+			admin_pl_off_visible = { NOT = { var:v = { has_country_flag = admin_sel } } }
+			admin_tabmark_boosts_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_tabmark_actions_visible = { check_variable = { global.admin_tab = 1 } }
+			admin_tabmark_politics_visible = { check_variable = { global.admin_tab = 2 } }
+			admin_tabmark_diplo_visible = { check_variable = { global.admin_tab = 3 } }
+			admin_on_research_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_off_research_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_st_research_on_visible = { var:v = { has_country_flag = admin_b_research } }
+			admin_st_research_off_visible = { NOT = { var:v = { has_country_flag = admin_b_research } } }
+			admin_lbl_research_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_cnt_research_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_on_research_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_off_research_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_on_construction_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_off_construction_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_st_construction_on_visible = { var:v = { has_country_flag = admin_b_construction } }
+			admin_st_construction_off_visible = { NOT = { var:v = { has_country_flag = admin_b_construction } } }
+			admin_lbl_construction_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_cnt_construction_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_on_construction_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_off_construction_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_on_production_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_off_production_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_st_production_on_visible = { var:v = { has_country_flag = admin_b_production } }
+			admin_st_production_off_visible = { NOT = { var:v = { has_country_flag = admin_b_production } } }
+			admin_lbl_production_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_cnt_production_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_on_production_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_off_production_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_on_training_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_off_training_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_st_training_on_visible = { var:v = { has_country_flag = admin_b_training } }
+			admin_st_training_off_visible = { NOT = { var:v = { has_country_flag = admin_b_training } } }
+			admin_lbl_training_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_cnt_training_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_on_training_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_off_training_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_on_combat_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_off_combat_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_st_combat_on_visible = { var:v = { has_country_flag = admin_b_combat } }
+			admin_st_combat_off_visible = { NOT = { var:v = { has_country_flag = admin_b_combat } } }
+			admin_lbl_combat_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_cnt_combat_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_on_combat_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_off_combat_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_on_logistics_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_off_logistics_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_st_logistics_on_visible = { var:v = { has_country_flag = admin_b_logistics } }
+			admin_st_logistics_off_visible = { NOT = { var:v = { has_country_flag = admin_b_logistics } } }
+			admin_lbl_logistics_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_cnt_logistics_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_on_logistics_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_off_logistics_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_on_wargoal_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_off_wargoal_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_st_wargoal_on_visible = { var:v = { has_country_flag = admin_b_wargoal } }
+			admin_st_wargoal_off_visible = { NOT = { var:v = { has_country_flag = admin_b_wargoal } } }
+			admin_lbl_wargoal_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_cnt_wargoal_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_on_wargoal_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_off_wargoal_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_on_economy_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_off_economy_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_st_economy_on_visible = { var:v = { has_country_flag = admin_b_economy } }
+			admin_st_economy_off_visible = { NOT = { var:v = { has_country_flag = admin_b_economy } } }
+			admin_lbl_economy_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_cnt_economy_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_on_economy_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_off_economy_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_on_focus_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_off_focus_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_st_focus_on_visible = { var:v = { has_country_flag = admin_b_focus } }
+			admin_st_focus_off_visible = { NOT = { var:v = { has_country_flag = admin_b_focus } } }
+			admin_lbl_focus_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_cnt_focus_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_on_focus_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_off_focus_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_on_diplomacy_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_off_diplomacy_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_st_diplomacy_on_visible = { var:v = { has_country_flag = admin_b_diplomacy } }
+			admin_st_diplomacy_off_visible = { NOT = { var:v = { has_country_flag = admin_b_diplomacy } } }
+			admin_lbl_diplomacy_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_cnt_diplomacy_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_on_diplomacy_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_off_diplomacy_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_alloff_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_legend_visible = { check_variable = { global.admin_tab = 0 } }
+			admin_alloff_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_act_pp_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_act_pp_visible = { check_variable = { global.admin_tab = 1 } }
+			admin_act_manpower_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_act_manpower_visible = { check_variable = { global.admin_tab = 1 } }
+			admin_act_cp_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_act_cp_visible = { check_variable = { global.admin_tab = 1 } }
+			admin_act_xp_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_act_xp_visible = { check_variable = { global.admin_tab = 1 } }
+			admin_act_stab_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_act_stab_visible = { check_variable = { global.admin_tab = 1 } }
+			admin_act_factories_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_act_factories_visible = { check_variable = { global.admin_tab = 1 } }
+			admin_act_slot_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_act_slot_visible = { check_variable = { global.admin_tab = 1 } }
+			admin_act_fuel_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_act_fuel_visible = { check_variable = { global.admin_tab = 1 } }
+			admin_act_equip_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_act_equip_visible = { check_variable = { global.admin_tab = 1 } }
+			admin_act_nukes_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_act_nukes_visible = { check_variable = { global.admin_tab = 1 } }
+			admin_act_peace_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_act_peace_visible = { check_variable = { global.admin_tab = 1 } }
+			admin_pol_header_visible = { check_variable = { global.admin_tab = 2 } }
+			admin_pol_pop_democratic_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_pol_pop_democratic_visible = { check_variable = { global.admin_tab = 2 } }
+			admin_pol_gov_democratic_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_pol_gov_democratic_visible = { check_variable = { global.admin_tab = 2 } }
+			admin_pol_drift_on_democratic_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_pol_drift_on_democratic_visible = { check_variable = { global.admin_tab = 2 } }
+			admin_pol_drift_off_democratic_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_pol_drift_off_democratic_visible = { check_variable = { global.admin_tab = 2 } }
+			admin_pol_lbl_democratic_visible = { check_variable = { global.admin_tab = 2 } }
+			admin_pol_cnt_democratic_visible = { check_variable = { global.admin_tab = 2 } }
+			admin_pol_pop_communism_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_pol_pop_communism_visible = { check_variable = { global.admin_tab = 2 } }
+			admin_pol_gov_communism_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_pol_gov_communism_visible = { check_variable = { global.admin_tab = 2 } }
+			admin_pol_drift_on_communism_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_pol_drift_on_communism_visible = { check_variable = { global.admin_tab = 2 } }
+			admin_pol_drift_off_communism_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_pol_drift_off_communism_visible = { check_variable = { global.admin_tab = 2 } }
+			admin_pol_lbl_communism_visible = { check_variable = { global.admin_tab = 2 } }
+			admin_pol_cnt_communism_visible = { check_variable = { global.admin_tab = 2 } }
+			admin_pol_pop_fascism_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_pol_pop_fascism_visible = { check_variable = { global.admin_tab = 2 } }
+			admin_pol_gov_fascism_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_pol_gov_fascism_visible = { check_variable = { global.admin_tab = 2 } }
+			admin_pol_drift_on_fascism_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_pol_drift_on_fascism_visible = { check_variable = { global.admin_tab = 2 } }
+			admin_pol_drift_off_fascism_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_pol_drift_off_fascism_visible = { check_variable = { global.admin_tab = 2 } }
+			admin_pol_lbl_fascism_visible = { check_variable = { global.admin_tab = 2 } }
+			admin_pol_cnt_fascism_visible = { check_variable = { global.admin_tab = 2 } }
+			admin_pol_pop_neutrality_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_pol_pop_neutrality_visible = { check_variable = { global.admin_tab = 2 } }
+			admin_pol_gov_neutrality_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_pol_gov_neutrality_visible = { check_variable = { global.admin_tab = 2 } }
+			admin_pol_drift_on_neutrality_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_pol_drift_on_neutrality_visible = { check_variable = { global.admin_tab = 2 } }
+			admin_pol_drift_off_neutrality_click_enabled = { check_variable = { global.admin_sel_count > 0 } }
+			admin_pol_drift_off_neutrality_visible = { check_variable = { global.admin_tab = 2 } }
+			admin_pol_lbl_neutrality_visible = { check_variable = { global.admin_tab = 2 } }
+			admin_pol_cnt_neutrality_visible = { check_variable = { global.admin_tab = 2 } }
+			admin_dip_war_click_enabled = { check_variable = { global.admin_sel_count > 0 } any_country = { has_country_flag = admin_is_partner } }
+			admin_dip_war_visible = { check_variable = { global.admin_tab = 3 } }
+			admin_dip_peace_click_enabled = { check_variable = { global.admin_sel_count > 0 } any_country = { has_country_flag = admin_is_partner } }
+			admin_dip_peace_visible = { check_variable = { global.admin_tab = 3 } }
+			admin_dip_faction_click_enabled = { check_variable = { global.admin_sel_count > 0 } any_country = { has_country_flag = admin_is_partner } }
+			admin_dip_faction_visible = { check_variable = { global.admin_tab = 3 } }
+			admin_dip_access_click_enabled = { check_variable = { global.admin_sel_count > 0 } any_country = { has_country_flag = admin_is_partner } }
+			admin_dip_access_visible = { check_variable = { global.admin_tab = 3 } }
+			admin_dip_guarantee_click_enabled = { check_variable = { global.admin_sel_count > 0 } any_country = { has_country_flag = admin_is_partner } }
+			admin_dip_guarantee_visible = { check_variable = { global.admin_tab = 3 } }
+			admin_dip_nap_click_enabled = { check_variable = { global.admin_sel_count > 0 } any_country = { has_country_flag = admin_is_partner } }
+			admin_dip_nap_visible = { check_variable = { global.admin_tab = 3 } }
+			admin_dip_opinion_click_enabled = { check_variable = { global.admin_sel_count > 0 } any_country = { has_country_flag = admin_is_partner } }
+			admin_dip_opinion_visible = { check_variable = { global.admin_tab = 3 } }
+			admin_dip_puppet_click_enabled = { check_variable = { global.admin_sel_count > 0 } any_country = { has_country_flag = admin_is_partner } }
+			admin_dip_puppet_visible = { check_variable = { global.admin_tab = 3 } }
+			admin_dip_annex_click_enabled = { check_variable = { global.admin_sel_count > 0 } any_country = { has_country_flag = admin_is_partner } }
+			admin_dip_annex_visible = { check_variable = { global.admin_tab = 3 } }
+			admin_cl_pick_visible = { NOT = { var:v = { has_country_flag = admin_is_partner } } }
+			admin_cl_picked_visible = { var:v = { has_country_flag = admin_is_partner } }
+			admin_page_prev_click_enabled = { check_variable = { global.admin_page > 0 } }
+			admin_page_next_click_enabled = { check_variable = { global.admin_has_next = 1 } }
+			admin_partner_text_visible = { check_variable = { global.admin_tab = 3 } }
+			admin_dip_help_visible = { check_variable = { global.admin_tab = 3 } }
+			admin_country_header_visible = { check_variable = { global.admin_tab = 3 } }
+			admin_page_prev_visible = { check_variable = { global.admin_tab = 3 } }
+			admin_page_next_visible = { check_variable = { global.admin_tab = 3 } }
+			admin_page_text_visible = { check_variable = { global.admin_tab = 3 } }
+			admin_country_grid_visible = { check_variable = { global.admin_tab = 3 } }
+		}
+	}
+
+	admin_diplo_gui = {
+		context_type = diplomacy_target_context
+		window_name = "admin_diplo_window"
+		visible = {
+			OR = {
+				has_country_flag = admin_owner
+				FROM = { has_country_flag = admin_owner }
+			}
+			NOT = { has_game_rule = { rule = host_admin_menu_rule option = DISABLED } }
+		}
+		effects = {
+			admin_dpanel_pick_click = {
+				if = {
+					limit = { NOT = { has_country_flag = admin_owner } }
+					admin_set_partner = yes
+				}
+				else_if = {
+					limit = { FROM = { NOT = { has_country_flag = admin_owner } } }
+					FROM = { admin_set_partner = yes }
+				}
+				else = { admin_set_partner = yes }
+				every_country = {
+					limit = { has_country_flag = admin_owner }
+					set_country_flag = admin_menu_open
+					set_variable = { global.admin_tab = 3 }
+				}
+				admin_rebuild_player_list = yes
+			}
+		}
+	}
+}

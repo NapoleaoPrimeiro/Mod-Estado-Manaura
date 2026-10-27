@@ -1,0 +1,231 @@
+# NO LAG BR - safe Greek route to the Roman Empire.
+# Requirements and awarded cores mirror Vanilla 1.19.2's form_roman_empire.
+# Italy-specific ruler, portrait, balance-of-power and scripted effects are
+# intentionally excluded.
+
+NO_LAG_GRE_roman_restoration_category = {
+	NO_LAG_GRE_restore_roman_empire = {
+		icon = generic_form_nation
+		cost = 0
+		fire_only_once = yes
+
+		allowed = {
+			original_tag = GRE
+		}
+
+		visible = {
+			original_tag = GRE
+			has_country_flag = GRE_byz_unified_flag
+			has_completed_focus = NO_LAG_GRE_avenge_justinian
+			NOT = { has_global_flag = form_roman_empire_flag }
+		}
+
+		available = {
+			is_subject = no
+
+			custom_trigger_tooltip = {
+				tooltip = form_country_albania_required_states_tt
+				controls_state = 44
+				controls_state = 934
+				controls_state = 805
+			}
+
+			custom_trigger_tooltip = {
+				tooltip = form_country_mare_nostrum_required_states_tt
+				controls_state = 163
+				controls_state = 853
+				controls_state = 103
+				controls_state = 104
+				controls_state = 804
+				controls_state = 105
+			}
+
+			custom_trigger_tooltip = {
+				tooltip = form_country_mare_nostrum_greece_required_states_tt
+				controls_state = 185
+				controls_state = 731
+				controls_state = 47
+				controls_state = 186
+				controls_state = 184
+				controls_state = 187
+				controls_state = 182
+				controls_state = 164
+			}
+
+			custom_trigger_tooltip = {
+				tooltip = form_country_mare_nostrum_turkey_required_states_tt
+				controls_state = 341
+				controls_state = 797
+				controls_state = 340
+				controls_state = 339
+				controls_state = 342
+				controls_state = 345
+				controls_state = 344
+				if = {
+					limit = {
+						799 = { is_controlled_by = TUR }
+					}
+					controls_state = 799
+				}
+			}
+
+			custom_trigger_tooltip = {
+				tooltip = form_spqr_italy_required_states_tt
+				controls_state = 158
+				controls_state = 162
+				controls_state = 114
+				controls_state = 2
+				controls_state = 117
+				controls_state = 156
+				controls_state = 115
+				controls_state = 849
+				controls_state = 157
+				controls_state = 161
+				controls_state = 160
+				controls_state = 736
+				controls_state = 852
+				controls_state = 39
+				controls_state = 850
+				controls_state = 849
+				controls_state = 852
+				controls_state = 159
+			}
+
+			custom_trigger_tooltip = {
+				tooltip = form_spqr_coastal_spain_required_states_tt
+				controls_state = 165
+				controls_state = 177
+				controls_state = 167
+				controls_state = 168
+				controls_state = 173
+			}
+
+			custom_trigger_tooltip = {
+				tooltip = form_spqr_coastal_france_required_states_tt
+				controls_state = 1
+				controls_state = 735
+				controls_state = 851
+				controls_state = 21
+				controls_state = 22
+				controls_state = 31
+			}
+
+			custom_trigger_tooltip = {
+				tooltip = form_mare_nostrum_coastal_uk_required_states_tt
+				controls_state = 118
+				controls_state = 116
+				controls_state = 183
+			}
+
+			custom_trigger_tooltip = {
+				tooltip = form_country_mare_nostrum_north_africa_required_states_tt
+				controls_state = 290
+				controls_state = 461
+				controls_state = 459
+				controls_state = 460
+				controls_state = 458
+				controls_state = 665
+				controls_state = 448
+				controls_state = 449
+				controls_state = 450
+				controls_state = 451
+				controls_state = 661
+				controls_state = 662
+				controls_state = 663
+			}
+
+			custom_trigger_tooltip = {
+				tooltip = form_country_mare_nostrum_middle_east_required_states_tt
+				controls_state = 452
+				controls_state = 447
+				controls_state = 907
+				controls_state = 446
+				controls_state = 453
+				controls_state = 454
+				controls_state = 553
+				controls_state = 677
+				if = {
+					limit = {
+						799 = { NOT = { is_controlled_by = TUR } }
+					}
+					controls_state = 799
+				}
+			}
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = SPQR_UNIFIED
+			custom_effect_tooltip = form_spqr_core_mare_nostrum_states_tt
+
+			hidden_effect = {
+				1 = { add_core_of = ROOT }
+				735 = { add_core_of = ROOT }
+				851 = { add_core_of = ROOT }
+				21 = { add_core_of = ROOT }
+				22 = { add_core_of = ROOT }
+				31 = { add_core_of = ROOT }
+				165 = { add_core_of = ROOT }
+				177 = { add_core_of = ROOT }
+				167 = { add_core_of = ROOT }
+				168 = { add_core_of = ROOT }
+				173 = { add_core_of = ROOT }
+				118 = { add_core_of = ROOT }
+				290 = { add_core_of = ROOT }
+				461 = { add_core_of = ROOT }
+				459 = { add_core_of = ROOT }
+				460 = { add_core_of = ROOT }
+				116 = { add_core_of = ROOT }
+				458 = { add_core_of = ROOT }
+				665 = { add_core_of = ROOT }
+				448 = { add_core_of = ROOT }
+				661 = { add_core_of = ROOT }
+				273 = { add_core_of = ROOT }
+				662 = { add_core_of = ROOT }
+				449 = { add_core_of = ROOT }
+				450 = { add_core_of = ROOT }
+				663 = { add_core_of = ROOT }
+				451 = { add_core_of = ROOT }
+				452 = { add_core_of = ROOT }
+				447 = { add_core_of = ROOT }
+				907 = { add_core_of = ROOT }
+				446 = { add_core_of = ROOT }
+				453 = { add_core_of = ROOT }
+				454 = { add_core_of = ROOT }
+				553 = { add_core_of = ROOT }
+				183 = { add_core_of = ROOT }
+				677 = { add_core_of = ROOT }
+				799 = { add_core_of = ROOT }
+				344 = { add_core_of = ROOT }
+				345 = { add_core_of = ROOT }
+				342 = { add_core_of = ROOT }
+				164 = { add_core_of = ROOT }
+				182 = { add_core_of = ROOT }
+				339 = { add_core_of = ROOT }
+				187 = { add_core_of = ROOT }
+				340 = { add_core_of = ROOT }
+				797 = { add_core_of = ROOT }
+				341 = { add_core_of = ROOT }
+				184 = { add_core_of = ROOT }
+				731 = { add_core_of = ROOT }
+				47 = { add_core_of = ROOT }
+				186 = { add_core_of = ROOT }
+				185 = { add_core_of = ROOT }
+				805 = { add_core_of = ROOT }
+				44 = { add_core_of = ROOT }
+				934 = { add_core_of = ROOT }
+				105 = { add_core_of = ROOT }
+				103 = { add_core_of = ROOT }
+				163 = { add_core_of = ROOT }
+				804 = { add_core_of = ROOT }
+				104 = { add_core_of = ROOT }
+				853 = { add_core_of = ROOT }
+
+				set_global_flag = form_roman_empire_flag
+			}
+
+			add_stability = 0.1
+		}
+
+		ai_will_do = { factor = 0 }
+	}
+}

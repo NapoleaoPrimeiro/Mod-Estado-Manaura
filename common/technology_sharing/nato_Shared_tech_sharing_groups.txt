@@ -1,0 +1,50 @@
+technology_sharing_group = {
+
+	id = NATO_research
+	name = NATO_research_name
+	desc = NATO_research_desc
+	picture = GFX_technology_sharing_default
+    
+	research_sharing_per_country_bonus = 0.15	#在技术共享时，改变每个国家的研究速度加成。	
+
+    available = {
+       has_idea=NATO_chengyuanguo
+	   is_in_faction_with=USA
+    }
+
+}
+
+technology_sharing_group = {
+
+	id = USA_research
+	name = USA_research_name
+	desc = USA_research_desc
+	picture = GFX_technology_sharing_default
+    
+	research_sharing_per_country_bonus = 0.2	#在技术共享时，改变每个国家的研究速度加成。	
+
+    available = {
+		is_major = yes
+	   	is_in_faction_with=USA
+    }
+
+}
+
+technology_sharing_group = {
+
+	id = US_JAP_research
+	name = US_JAP_research_name
+	desc = US_JAP_research_desc
+	picture = GFX_technology_sharing_default
+    
+	research_sharing_per_country_bonus = 0.5	#在技术共享时，改变每个国家的研究速度加成。	
+
+    available = {
+		JAP = {
+			NOT = {
+				has_War_with = HAW
+			}
+		}
+    }
+
+}

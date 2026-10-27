@@ -1,0 +1,42 @@
+#namespace = safon_china
+#
+# Fire once, only if not already merged
+#country_event = {
+#    id = safon_china.1
+#    title = safon_china.1.t
+#   desc = safon_china.1.d  
+#    picture = GFX_report_event_generic_asia
+#
+#   is_triggered_only = yes
+#  hidden = yes
+#
+ #   immediate = {
+  #      if = {
+   #         limit = { has_global_flag = safon_china_merged }
+    #    }
+     #   else = {
+      #      # PRC is player-controlled → PRC annexes CHI and the warlords
+       #     if = {
+        #        CHI = {	
+         #           CHI = { annex_country = { target = PREV } }
+          #          if = { limit = { exists = CHU } CHI = { annex_country = { target = CHU } } }
+           #         if = { limit = { exists = YUN } CHI = { annex_country = { target = YUN } } }
+            #        if = { limit = { exists = GXC } CHI = { annex_country = { target = GXC } } }
+             #       if = { limit = { exists = SHX } CHI = { annex_country = { target = SHX } } }
+              #  }
+            #}
+            #else = {
+             #   # Otherwise, CHI annexes PRC and the warlords
+			#	limit = { any_country = { tag = PRC is_ai = no } }
+           #     PRC = {
+          #          PRC = { annex_country = { target = PREV } }
+         #           if = { limit = { exists = CHU } PRC = { annex_country = { target = CHU } } }
+        #            if = { limit = { exists = YUN } PRC = { annex_country = { target = YUN } } }
+       #             if = { limit = { exists = GXC } PRC = { annex_country = { target = GXC } } }
+      #              if = { limit = { exists = SHX } PRC = { annex_country = { target = SHX } } }
+     #           }
+    #        }
+   #         set_global_flag = safon_china_merged
+  #      }
+ #   }
+#}

@@ -1,0 +1,69 @@
+# Conquest Integration
+# on_annex: ROOT = the annexer (winner), FROM = the country that got annexed.
+on_actions = {
+	on_annex = {
+		effect = {
+			if = {
+				limit = {
+					# human always; AI only if the pre-game rule enables it
+					ROOT = {
+						OR = {
+							is_ai = no
+							has_game_rule = { rule = ci_ai_integration option = CI_AI_ON }
+						}
+					}
+					FROM = {
+						OR = {
+							any_character = {
+								OR = { is_advisor = yes is_unit_leader = yes }
+							}
+							any_scientist = { always = yes }
+						}
+					}
+				}
+				FROM = { save_event_target_as = ci_conquered_country }
+				# days = 0 so it resolves the same tick, while the conquered
+				# country still owns its characters.
+				# ponytail: if generals fail to transfer, annexation disperses them
+				# before the player clicks -> move the set_nationality calls here.
+				ROOT = { country_event = { id = conquest_integration.1 days = 0 } }
+			}
+		}
+	}
+
+	# on_capitulation: ROOT = the country that capitulated, FROM = the winner.
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					# human always; AI only if the pre-game rule enables it
+					FROM = {
+						OR = {
+							is_ai = no
+							has_game_rule = { rule = ci_ai_integration option = CI_AI_ON }
+						}
+					}
+					has_navy_size = { size > 0 }           # ROOT (loser) actually has a fleet
+				}
+				save_event_target_as = ci_capitulated_navy_country   # ROOT = capitulated
+				FROM = { country_event = { id = conquest_integration.5 days = 0 } }
+			}
+
+			# Production licenses: fires whether or not they had a fleet (Czechoslovakia
+			# had no navy but plenty of tank designs). Rule OFF disables it entirely.
+			if = {
+				limit = {
+					FROM = {
+						OR = {
+							is_ai = no
+							has_game_rule = { rule = ci_ai_integration option = CI_AI_ON }
+						}
+					}
+					NOT = { has_game_rule = { rule = ci_license_cost option = CI_LIC_OFF } }
+				}
+				save_event_target_as = ci_defeated_licensor   # ROOT = capitulated (design originator)
+				FROM = { country_event = { id = conquest_integration.6 days = 0 } }
+			}
+		}
+	}
+}

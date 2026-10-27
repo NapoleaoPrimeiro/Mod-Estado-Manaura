@@ -1,0 +1,4492 @@
+﻿###########################
+# UK Rework Events
+###########################
+
+add_namespace = ukrework
+add_namespace = ukrework_parliament
+add_namespace = ukrework_willkommen
+add_namespace = ukrework_utility
+
+# UK Election after no confidence
+country_event = {
+	id = ukrework.1
+	title = ukrework.1.t
+	desc = ukrework.1.desc
+	picture = GFX_report_event_election_vote
+	
+	is_triggered_only = yes
+	
+	option = { # Labor wins
+		name = ukrework.1.a
+		ai_chance = { factor = 10 }
+		retire_country_leader = yes
+		custom_effect_tooltip = generic_skip_one_line_tt
+		set_party_name = {
+			ideology = democratic
+			long_name = ENG_labor_party
+			name = ENG_labor_party
+		}
+		ENG_clement_attlee = {
+			promote_character = yes
+		}
+	}
+}
+
+# Fate of the Isles
+country_event = {
+	id = ukrework.2
+	title = ukrework.2.t
+	desc = ukrework.2.desc
+	picture = GFX_report_event_eng_edward_and_wallis
+	
+	is_triggered_only = yes
+	
+	option = { # It would be better to set up a new government there
+		name = ukrework.2.a
+		ai_chance = { factor = 90 }
+		custom_effect_tooltip = ENG_release_uk_tt
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_political_power = 150
+		add_stability = 0.05
+		hidden_effect = {
+			create_dynamic_country = {
+				original_tag = ENG
+				add_political_power = 100
+				transfer_state = 122
+			}
+			random_country = {
+				limit = {
+					original_tag = ENG
+					NOT = {
+						tag = ROOT
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+						OR = {
+							region = 1
+							region = 2
+							region = 3
+							region = 4
+							region = 16
+						}
+					}
+					transfer_state_to = PREV
+				}
+				set_capital = {state = 126}
+				ROOT = {
+					set_autonomy = {
+						target = PREV
+						autonomous_state = autonomy_integrated_puppet
+						end_wars = no
+						end_civil_wars = no
+					}
+				}
+				set_cosmetic_tag = ENG_SUBJECT_OF_HRE
+				create_country_leader = {
+					name = "George VI"
+					picture = GFX_portrait_George_VI
+					expire = "1965.1.1"
+					ideology = despotism
+					traits = {
+						popular_figurehead stammer
+					}
+				}
+				set_politics = {
+					ruling_party = neutrality
+    				elections_allowed = no
+				}
+				every_state = {
+					limit = {
+						is_core_of = ROOT
+						NOT = {
+							is_controlled_by = PREV
+						}
+					}
+					PREV = {
+						remove_state_core = PREV
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = PREV
+					}
+					ROOT = {
+						remove_state_core = PREV
+					}
+				}
+			}
+		}
+	}
+
+	option = { # We'll keep it
+		name = ukrework.2.b
+		ai_chance = { factor = 10 }
+		add_stability = -.2
+	}
+}
+
+# March on London
+country_event = {
+	id = ukrework.3
+	title = ukrework.3.t
+	desc = ukrework.3.desc
+	picture = GFX_report_event_eng_blackshirt_march
+	
+	is_triggered_only = yes
+	
+	option = { # The reds shall rule our land no more!
+		name = ukrework.3.a
+		ai_chance = { factor = 10 }
+		126 = {
+			set_demilitarized_zone = yes
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_stability = -0.1
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.05
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		country_event = {
+			id = ukrework.4
+			days = 7
+		}
+	}
+}
+
+# Commies organize the Red Guard to crush rebels
+country_event = {
+	id = ukrework.4
+	title = ukrework.4.t
+	desc = ukrework.4.desc
+	picture = GFX_report_event_SOV_cossack_cavalry
+	
+	is_triggered_only = yes
+	
+	option = { # If those bastards want their fight then let them have it!
+		name = ukrework.4.a
+		ai_chance = { factor = 10 }
+		add_stability = -0.05
+		add_political_power = 100
+		custom_effect_tooltip = generic_skip_one_line_tt
+		set_country_flag = ENG_baf_countercoup_decisions_flag
+		custom_effect_tooltip = ENG_gather_support_for_counterrevolution_tt
+	}
+}
+
+# Coup launched
+country_event = {
+	id = ukrework.5
+	title = ukrework.5.t
+	desc = ukrework.5.desc
+	picture = GFX_report_event_SWE_summer_government
+	
+	is_triggered_only = yes
+	
+	option = { # Good job, boys
+		name = ukrework.5.a
+		ai_chance = { factor = 10 }
+		dismantle_faction = yes
+		every_state = {
+			limit = {
+				is_demilitarized_zone = yes
+				is_controlled_by = ROOT
+			}
+			set_demilitarized_zone = no
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		set_party_name = {
+			ideology = neutrality
+			long_name = ENG_military_government_party_long
+			name = ENG_military_government_party
+		}
+		set_politics = {
+			ruling_party = neutrality
+    		elections_allowed = no
+		}
+		hidden_effect = { set_cosmetic_tag = ENG_MILITARY_GOVERNMENT }
+		custom_effect_tooltip = generic_skip_one_line_tt
+		retire_country_leader = yes
+		add_country_leader_role = {
+			character = ENG_bernard_montgomery
+			promote_leader = yes
+			country_leader = {
+				ideology = oligarchism
+				expire = "1965.1.1.1"
+				traits = { great_war_hero }
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		remove_ideas = ENG_the_war_to_end_all_wars
+		hidden_effect = { country_event = { id = ukrework.6 days = 3 } }
+		hidden_effect = { country_event = { id = ukrework.11 days = 14 } } 
+		set_country_flag = ENG_communists_overthrown_by_military_flag
+	}
+}
+
+# Socialist resistance
+country_event = {
+	id = ukrework.6
+	title = ukrework.6.t
+	desc = ukrework.6.desc
+	picture = GFX_report_event_communist_leader
+	
+	is_triggered_only = yes
+	
+	option = { # Dammit
+		name = ukrework.6.a
+		ai_chance = { factor = 10 }
+		add_ideas = ENG_socialist_opposition_idea
+		hidden_effect = {
+			random_list = {
+				10 = {
+					country_event = {
+						id = ukrework.7
+						days = 28
+					}
+				}
+				10 = {
+					country_event = {
+						id = ukrework.8
+						days = 28
+					}
+				}
+				10 = {
+					country_event = {
+						id = ukrework.9
+						days = 28
+					}
+				}
+			}
+		}
+	}
+}
+
+# General strike
+country_event = {
+	id = ukrework.7
+	title = ukrework.7.t
+	desc = ukrework.7.desc
+	picture = GFX_report_event_generic_strike
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_idea = ENG_socialist_opposition_idea
+	}
+	
+	option = { # They just can't help themselves
+		name = ukrework.7.a
+		ai_chance = { factor = 10 }
+		add_timed_idea = {
+			idea = ENG_socialists_call_for_strikes_idea
+			days = 28
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_stability = -0.03
+		hidden_effect = {
+			random_list = {
+				10 = {
+					country_event = {
+						id = ukrework.8
+						days = 28
+					}
+				}
+				10 = {
+					country_event = {
+						id = ukrework.9
+						days = 28
+					}
+				}
+			}
+		}
+	}
+}
+
+# Factory bombings
+country_event = {
+	id = ukrework.8
+	title = ukrework.8.t
+	desc = ukrework.8.desc
+	picture = GFX_report_event_FIN_helsinki_bombed
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_idea = ENG_socialist_opposition_idea
+	}
+	
+	option = { # This is terrorism!
+		name = ukrework.8.a
+		ai_chance = { factor = 10 }
+		random_owned_controlled_state = {
+			limit = {
+				industrial_complex > 0
+				is_in_home_area = yes
+			}
+			damage_building = {
+				type = industrial_complex
+				damage = 0.7
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				industrial_complex > 0
+				is_in_home_area = yes
+			}
+			damage_building = {
+				type = industrial_complex
+				damage = 0.7
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_stability = -0.03
+		hidden_effect = {
+			random_list = {
+				10 = {
+					country_event = {
+						id = ukrework.7
+						days = 28
+					}
+				}
+				10 = {
+					country_event = {
+						id = ukrework.9
+						days = 28
+					}
+				}
+			}
+		}
+	}
+}
+
+# Communist rally
+country_event = {
+	id = ukrework.9
+	title = ukrework.9.t
+	desc = ukrework.9.desc
+	picture = GFX_report_event_communists_cheer
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_idea = ENG_socialist_opposition_idea
+	}
+	
+	option = { # Nobody will listen to those idiots
+		name = ukrework.9.a
+		random_list = {
+			10 = {
+				add_popularity = {
+					ideology = communism
+					popularity = 0.025
+				}
+			}
+			10 = {
+				add_popularity = {
+					ideology = communism
+					popularity = 0.05
+				}
+			}
+			10 = {
+				add_popularity = {
+					ideology = communism
+					popularity = 0.075
+				}
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_stability = -0.02
+		hidden_effect = {
+			random_list = {
+				10 = {
+					country_event = {
+						id = ukrework.7
+						days = 28
+					}
+				}
+				10 = {
+					country_event = {
+						id = ukrework.8
+						days = 28
+					}
+				}
+			}
+		}
+	}
+}
+
+# A plea for democracy
+country_event = {
+	id = ukrework.10
+	title = ukrework.10.t
+	desc = ukrework.10.desc
+	picture = GFX_report_event_gre_cabinet_meeting
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # What a joke
+		name = ukrework.10.a
+		add_political_power = 50
+		add_stability = -0.05
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = ENG_mc_oppose_democracy_tt
+		set_country_flag = ENG_has_declined_democracy_flag
+	}
+	option = { # No, no, he's got a point.
+		name = ukrework.10.b
+		add_political_power = -50
+		add_stability = 0.05
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.1
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = ENG_mc_support_democracy_tt
+		set_country_flag = ENG_has_promised_democracy_flag
+	}
+}
+
+# Uncertain future
+country_event = {
+	id = ukrework.11
+	title = ukrework.11.t
+	desc = ukrework.11.desc
+	picture = GFX_report_event_generic_rally2
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Tell them to wait a damn minute!
+		name = ukrework.11.a
+		add_political_power = -25
+		add_ideas = ENG_uncertain_future_idea
+	}
+}
+
+# Reopen National Elections
+country_event = {
+	id = ukrework.12
+	title = ukrework.12.t
+	desc = ukrework.12.desc
+	picture = GFX_report_event_election_vote
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Labour
+		name = ukrework.12.a
+		retire_country_leader = yes
+		custom_effect_tooltip = generic_skip_one_line_tt
+		set_party_name = {
+			ideology = democratic
+			long_name = ENG_labor_party
+			name = ENG_labor_party
+		}
+		ENG_clement_attlee = {
+			promote_character = yes
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		country_event = {
+			id = ukrework.13
+			days = 2
+		}
+	}
+	option = { # Conservative
+		name = ukrework.12.b
+		IF = {
+			limit = {
+				ENG_winston_churchill = {
+					is_country_leader = yes
+				}
+			}
+			add_political_power = 5
+		}
+		ELSE = {
+			retire_country_leader = yes
+			custom_effect_tooltip = generic_skip_one_line_tt
+			ENG_winston_churchill = {
+				promote_character = yes
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		country_event = {
+			id = ukrework.13
+			days = 2
+		}
+	}
+	option = { # Liberal
+		name = ukrework.12.c
+		retire_country_leader = yes
+		custom_effect_tooltip = generic_skip_one_line_tt
+		set_party_name = {
+			ideology = democratic
+			long_name = ENG_liberal_party
+			name = ENG_liberal_party
+		}
+		create_country_leader = {
+			name = "Archibald Sinclair"
+			picture = GFX_Portrait_ENG_archibald_sinclair
+			expire = "1965.1.1"
+			ideology = liberalism
+			traits = {
+				SWI_militaristic_democrat headstrong
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		country_event = {
+			id = ukrework.13
+			days = 2
+		}
+	}
+}
+
+# Banner of the Republic
+country_event = {
+	id = ukrework.13
+	title = ukrework.13.t
+	desc = ukrework.13.desc
+	picture = GFX_report_event_SWI_cantons_flags_soldiers
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # The Union Jack suits us just fine
+		name = ukrework.13.a
+		add_political_power = 25
+	}
+	option = { # We should fly the republican colors!
+		name = ukrework.13.b
+		set_cosmetic_tag = ENG_REPUBLIC
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_political_power = 50
+		add_stability = -0.01
+	}
+	option = { # We should return to the days for the Commonwealth
+		name = ukrework.13.c
+		set_cosmetic_tag = ENG_COMMONWEALTH
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_political_power = 75
+		add_stability = -0.02
+	}
+}
+
+# A New Royal House
+country_event = {
+	id = ukrework.14
+	title = ukrework.14.t
+	desc = ukrework.14.desc
+	picture = GFX_report_event_royal_visit
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # The Jacobitist Haus Wittelsbach
+		name = ukrework.14.a
+		trigger = {
+			BAY = {
+				exists = no
+			}
+		}
+		set_party_name = {
+			ideology = neutrality
+			name = ENG_wittelsbach_haus
+			long_name = ENG_wittelsbach_haus
+		}
+		every_possible_country = {
+			limit = { has_character = BAY_rupprecht_of_bavaria }
+			random_character = {
+				limit = { is_character = BAY_rupprecht_of_bavaria }
+				set_nationality = ENG
+			}
+		}
+		promote_character = {
+			character = BAY_rupprecht_of_bavaria
+			ideology = despotism
+		}
+		add_country_leader_trait = ENG_legitimate_monarch
+	}
+	option = { # The House of Orange-Nassau
+		name = ukrework.14.b
+		trigger = {
+			NOT = {
+				has_country_flag = ENG_orange_nassau_declined_flag
+			}
+			OR = {
+				HOL = {
+					exists = no
+				}
+				AND = {
+					HOL = {
+						NOT = {
+							has_completed_focus = HOL_oranje_boven
+						}
+					}
+					OR = {
+						HOL = {
+							has_completed_focus = HOL_legacy_of_the_de_zeven_provincien_mutiny
+						}
+						NOT = {
+							has_war_with = HOL
+						}
+					}
+				}
+			}
+		}
+		IF = {
+			limit = {
+				HOL = {
+					NOT = {
+						has_completed_focus = HOL_legacy_of_the_de_zeven_provincien_mutiny
+					}
+					exists = yes
+				}
+			}
+			HOL = {
+				country_event = {
+					id = ukrework.15
+					days = 1
+				}
+			}
+		}
+		ELSE = {
+			set_party_name = {
+				ideology = neutrality
+				name = ENG_orange_nassau_house_haus
+				long_name = ENG_orange_nassau_house_haus
+			}
+			every_possible_country = {
+				limit = { has_character = HOL_wilhelmina }
+				random_character = {
+					limit = { is_character = HOL_wilhelmina }
+					set_nationality = ENG
+				}
+			}
+			HOL_wilhelmina = {
+				add_country_leader_role = {
+					country_leader = {
+						expire = "1965.1.1"
+						ideology = despotism
+						traits = {
+							popular_figurehead
+						}
+					}
+					promote_leader = yes
+				}
+			}
+		}
+	}
+	option = { # The House of Hohenzollern
+		name = ukrework.14.c
+		trigger = {
+			NOT = {
+				has_country_flag = ENG_hohenzollern_declined_flag
+			}
+			IF = {
+				limit = {
+					GER = {
+						OR = {
+							has_completed_focus = GER_monarchist_sentiment
+							has_completed_focus = GER_oppose_hitler
+						}
+					}
+				}
+				NOT = {
+					has_war_with = GER
+				}
+			}
+		}
+		IF = {
+			limit = {
+				GER = {
+					OR = {
+						has_completed_focus = GER_monarchist_sentiment
+						has_completed_focus = GER_oppose_hitler
+					}
+					exists = yes
+				}
+			}
+			GER = {
+				country_event = {
+					id = ukrework.18
+					days = 1
+				}
+			}
+		}
+		ELSE = {
+			set_party_name = {
+				ideology = neutrality
+				name = ENG_hohenzollern_haus
+				long_name = ENG_hohenzollern_haus
+			}
+			every_possible_country = {
+				limit = { has_character = GER_wilhelm_iii }
+				random_character = {
+					limit = { is_character = GER_wilhelm_iii }
+					set_nationality = ENG
+				}
+			}
+			GER_wilhelm_iii = {
+				add_country_leader_role = {
+					country_leader = {
+						expire = "1965.1.1"
+						ideology = despotism
+						traits = {
+							popular_figurehead2
+						}
+					}
+					promote_leader = yes
+				}
+			}
+		}
+	}
+}
+
+# Netherlands - Can they have our queen?
+country_event = {
+	id = ukrework.15
+	title = ukrework.15.t
+	desc = ukrework.15.desc
+	picture = GFX_report_event_carol_meeting
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # This can allow for a close ally
+		name = ukrework.15.a
+		ai_chance = {
+			base = 90
+			modifier = {
+				factor = 3
+				strength_ratio = {
+					tag = FROM
+					ratio < 0.5
+				}
+			}
+			modifier = {
+				factor = 0.5
+				is_major = yes
+			}
+		}
+		FROM = {
+			country_event = {
+				id = ukrework.16
+				days = 1
+			}
+		}
+	}
+	option = { # We have no interest in this
+		name = ukrework.15.b
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 15
+				strength_ratio = {
+					tag = FROM
+					ratio > 1.5
+				}
+			}
+		}
+		FROM = {
+			country_event = {
+				id = ukrework.17
+				days = 1
+			}
+		}
+	}
+}
+
+# Netherlands Accepts
+country_event = {
+	id = ukrework.16
+	title = ukrework.16.t
+	desc = ukrework.16.desc
+	picture = GFX_report_event_generic_handshake
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Wonderful
+		name = ukrework.16.a
+		every_possible_country = {
+			limit = { has_character = HOL_wilhelmina }
+			random_character = {
+				limit = { is_character = HOL_wilhelmina }
+				set_nationality = ENG
+			}
+		}
+		HOL_wilhelmina = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "1965.1.1"
+					ideology = despotism
+					traits = {
+						popular_figurehead
+					}
+				}
+				promote_leader = yes
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		set_party_name = {
+			ideology = neutrality
+			long_name = ENG_orange_nassau_house_haus
+			name = ENG_orange_nassau_house_haus
+		}
+	}
+}
+
+# Netherlands Declines
+country_event = {
+	id = ukrework.17
+	title = ukrework.17.t
+	desc = ukrework.17.desc
+	picture = GFX_report_event_hol_cabinet_gerbrandy
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Very well then, we will have to keep looking
+		name = ukrework.17.a
+		add_political_power = -25
+		add_stability = -0.01
+		set_country_flag = ENG_orange_nassau_declined_flag
+		custom_effect_tooltip = generic_skip_one_line_tt
+		country_event = {
+			id = ukrework.14
+			days = 1
+		}
+	}
+}
+
+# Germany - Can they have Victoria?
+country_event = {
+	id = ukrework.18
+	title = ukrework.18.t
+	desc = ukrework.18.desc
+	picture = GFX_report_event_carol_meeting
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # It's great to have friends.
+		name = ukrework.18.a
+		ai_chance = {
+			base = 90
+			modifier = {
+				factor = 3
+				has_opinion = {
+				    target = GER
+				    value > 50
+				}
+			}
+			modifier = {
+				factor = 0.5
+				is_major = yes
+			}
+		}
+		FROM = {
+			country_event = {
+				id = ukrework.19
+				days = 1
+			}
+		}
+	}
+	option = { # No.
+		name = ukrework.18.b
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 5
+				has_opinion = {
+				    target = GER
+				    value < 50
+				}
+			}
+		}
+		FROM = {
+			country_event = {
+				id = ukrework.20
+				days = 1
+			}
+		}
+	}
+}
+
+# Germany Accepts
+country_event = {
+	id = ukrework.19
+	title = ukrework.19.t
+	desc = ukrework.19.desc
+	picture = GFX_report_event_generic_handshake
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Wonderful
+		name = ukrework.19.a
+		every_possible_country = {
+			limit = { has_character = GER_victoria }
+			random_character = {
+				limit = { is_character = GER_victoria }
+				set_nationality = ENG
+			}
+		}
+		GER_victoria = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "1965.1.1"
+					ideology = despotism
+					traits = {
+						popular_figurehead2
+					}
+				}
+				promote_leader = yes
+			}
+		}
+		set_character_name = {
+			character = GER_victoria
+			name = "Victoria II"
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		set_party_name = {
+			ideology = neutrality
+			long_name = ENG_hohenzollern_haus
+			name = ENG_hohenzollern_haus
+		}
+	}
+}
+
+# Germany Declines
+country_event = {
+	id = ukrework.20
+	title = ukrework.20.t
+	desc = ukrework.20.desc
+	picture = GFX_report_event_hol_cabinet_gerbrandy
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Very well then, we will have to keep looking
+		name = ukrework.20.a
+		add_political_power = -25
+		add_stability = -0.01
+		set_country_flag = ENG_hohenzollern_declined_flag
+		custom_effect_tooltip = generic_skip_one_line_tt
+		country_event = {
+			id = ukrework.14
+			days = 1
+		}
+	}
+}
+
+# Ireland - What do the people vote for?
+country_event = {
+	id = ukrework.21
+	title = ukrework.21.t
+	desc = ukrework.21.desc
+	picture = GFX_report_event_eng_voting
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Let us rejoin, now that they are also a Republic
+		name = ukrework.21.a
+		ai_chance = {
+			base = 70
+			modifier = {
+				has_opinion = {
+    				target = FROM
+    				value > 50
+				}
+				factor = 1.5
+			}
+		}
+		FROM = {
+			country_event = {
+				id = ukrework.22
+				days = 1
+			}
+		}
+	}
+	option = { # This is a silly idea.
+		name = ukrework.21.b
+		ai_chance = {
+			base = 20
+			modifier = {
+				has_opinion = {
+    				target = FROM
+    				value < 50
+				}
+				factor = 2
+			}
+		}
+		FROM = {
+			country_event = {
+				id = ukrework.23
+				days = 1
+			}
+		}
+	}
+}
+
+# Ireland says yes
+country_event = {
+	id = ukrework.22
+	title = ukrework.22.t
+	desc = ukrework.22.desc
+	picture = GFX_report_event_eng_gb_reunified
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Cool
+		name = ukrework.22.a
+		every_state = {
+			limit = {
+				is_core_of = IRE
+			}
+			add_core_of = ROOT
+		}
+		annex_country = {
+			target = IRE
+			transfer_troops = yes
+		}
+	}
+}
+
+# Ireland says no
+country_event = {
+	id = ukrework.23
+	title = ukrework.23.t
+	desc = ukrework.23.desc
+	picture = GFX_report_event_tur_politician_march
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # It is against the people's wishes, but a war isn't in our interest
+		name = ukrework.23.a
+		ai_chance = {
+			base = 50
+		}
+		add_political_power = -50
+	}
+	option = { # Rejection of democracy cannot be tolerated
+		name = ukrework.23.b
+		ai_chance = {
+			base = 90
+		}
+		every_state = {
+			limit = {
+				is_core_of = IRE
+			}
+			add_claim_by = ROOT
+		}
+		create_wargoal = {
+			target = IRE
+			type = annex_everything
+		
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		unlock_decision_tooltip = UK_reintegrate_ireland
+		set_country_flag = ENG_integrate_ireland_allowed
+	}
+}
+
+# The Union Jack Waves Forever
+country_event = {
+	id = ukrework.24
+	title = ukrework.24.t
+	desc = ukrework.24.desc
+	picture = GFX_report_event_eng_government_building_union_jack
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Rule Britannia, Britannia rule the waves
+		name = ukrework.24.a
+		add_stability = 0.05
+		add_war_support = 0.05
+		custom_effect_tooltip = generic_skip_one_line_tt
+		set_cosmetic_tag = ENG_EMPIRE
+	}
+}
+
+# The Dutch Flag Flies over London
+country_event = {
+	id = ukrework.25
+	title = ukrework.25.t
+	desc = ukrework.25.desc
+	picture = GFX_report_event_eng_oranje_boven
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Orange Above
+		name = ukrework.25.a
+		add_stability = -0.05
+		add_political_power = 100
+		custom_effect_tooltip = generic_skip_one_line_tt
+		set_cosmetic_tag = ENG_UK_NETHERLANDS
+		hidden_effect = {
+			complete_national_focus = ENG_orange_pennant
+		}
+	}
+}
+
+# The German Imperial Flag Flies over London
+country_event = {
+	id = ukrework.26
+	title = ukrework.26.t
+	desc = ukrework.26.desc
+	picture = GFX_report_event_eng_kaiserreich_flag
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # God with Us
+		name = ukrework.26.a
+		add_stability = -0.05
+		add_political_power = 100
+		custom_effect_tooltip = generic_skip_one_line_tt
+		set_cosmetic_tag = ENG_KAISERREICH
+		hidden_effect = {
+			complete_national_focus = ENG_reichs_flag
+		}
+	}
+}
+
+# The Bavarian Flag Flies over London
+country_event = {
+	id = ukrework.27
+	title = ukrework.27.t
+	desc = ukrework.27.desc
+	picture = GFX_report_event_eng_bavaria_flag
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Steadfast in Loyalty
+		name = ukrework.27.a
+		add_stability = -0.05
+		add_political_power = 100
+		custom_effect_tooltip = generic_skip_one_line_tt
+		set_cosmetic_tag = ENG_BAVARIAN
+		hidden_effect = {
+			complete_national_focus = ENG_lozenge_flag
+		}
+	}
+}
+
+# Arctic Security
+country_event = {
+	id = ukrework.28
+	title = ukrework.28.t
+	desc = ukrework.28.desc
+	picture = GFX_report_event_FIN_kallio_president
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # It's best to cooperate with them
+		name = ukrework.28.a
+		ai_chance = {
+			base = 80
+			modifier = {
+				factor = 3
+				strength_ratio = {
+					tag = FROM
+					ratio < 0.5
+				}
+			}
+			modifier = {
+				factor = 0.5
+				is_major = yes
+			}
+		}
+		FROM = {
+			country_event = {
+				id = ukrework.29
+				days = 1
+			}
+		}
+	}
+	option = { # We won't fall for their trickery!
+		name = ukrework.28.b
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 15
+				strength_ratio = {
+					tag = FROM
+					ratio > 1.5
+				}
+			}
+		}
+		FROM = {
+			country_event = {
+				id = ukrework.30
+				days = 1
+			}
+		}
+	}
+}
+
+# Arctic Security - Acceptance
+country_event = {
+	id = ukrework.29
+	title = ukrework.29.t
+	desc = ukrework.29.desc
+	picture = GFX_report_event_FIN_three_country_cairn_flag_raising
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Good choice
+		name = ukrework.29.a
+		ai_chance = {
+			base = 80
+			modifier = {
+				factor = 3
+				strength_ratio = {
+					tag = FROM
+					ratio < 0.5
+				}
+			}
+			modifier = {
+				factor = 0.5
+				is_major = yes
+			}
+		}
+		FROM = {
+			IF = {
+				limit = {
+					controls_state = 101
+					NOT = {
+						tag = GRN
+					}
+				}
+				GRN = {
+					transfer_state = 101
+					ROOT = {
+						set_autonomy = {
+							target = PREV
+							autonomous_state = autonomy_puppet
+							end_wars = yes
+							end_civil_wars = yes
+						}
+					}
+				}
+			}
+			IF = {
+				limit = {
+					OR = {
+						has_subject = GRN
+						tag = GRN
+					}
+				}
+				GRN = {
+					ROOT = {
+						set_autonomy = {
+							target = PREV
+							autonomous_state = autonomy_puppet
+							end_wars = yes
+							end_civil_wars = yes
+						}
+					}
+				}
+			}
+		}
+		FROM = {
+			IF = {
+				limit = {
+					controls_state = 100
+					NOT = {
+						tag = ICE
+					}
+				}
+				ICE = {
+					transfer_state = 100
+					ROOT = {
+						set_autonomy = {
+							target = PREV
+							autonomous_state = autonomy_puppet
+							end_wars = yes
+							end_civil_wars = yes
+						}
+					}
+				}
+			}
+			IF = {
+				limit = {
+					OR = {
+						has_subject = ICE
+						tag = ICE
+					}
+				}
+				ICE = {
+					ROOT = {
+						set_autonomy = {
+							target = PREV
+							autonomous_state = autonomy_puppet
+							end_wars = yes
+							end_civil_wars = yes
+						}
+					}
+				}
+			}
+		}
+		FROM = {
+			IF = {
+				limit = {
+					controls_state = 337
+				}
+				ROOT = {
+					add_state_core = 337
+					transfer_state = 337
+				}
+			}
+		}
+	}
+}
+
+# Arctic Security - Denial
+country_event = {
+	id = ukrework.30
+	title = ukrework.30.t
+	desc = ukrework.30.desc
+	picture = GFX_report_event_FIN_svinhufvud_speech
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # No wasn't a choice
+		name = ukrework.30.a
+		ai_chance = {
+			base = 80
+		}
+		create_wargoal = {
+			target = FROM
+			type = topple_government
+		}
+	}
+	option = { # Well that's too bad
+		name = ukrework.30.b
+		ai_chance = {
+			base = 10
+		}
+		add_war_support = -0.025
+	}
+}
+
+# GB Wants to us to federalize
+country_event = {
+	id = ukrework.31
+	title = ukrework.31.t
+	desc = ukrework.31.desc
+	picture = GFX_report_event_degaulle_churchill
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Good idea
+		name = ukrework.31.a
+		ai_chance = {
+			base = 90
+			modifier = {
+				factor = 3
+				strength_ratio = {
+					tag = FROM
+					ratio < 0.5
+				}
+			}
+			modifier = {
+				factor = 0.5
+				is_major = yes
+			}
+		}
+		FROM = {
+			country_event = {
+				id = ukrework.32
+				days = 1
+			}
+		}
+	}
+	option = { # No!
+		name = ukrework.31.b
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 15
+				strength_ratio = {
+					tag = FROM
+					ratio > 1.5
+				}
+			}
+		}
+		FROM = {
+			country_event = {
+				id = ukrework.33
+				days = 1
+			}
+		}
+	}
+}
+
+# Federalization - Accepted
+country_event = {
+	id = ukrework.32
+	title = ukrework.32.t
+	desc = ukrework.32.desc
+	picture = GFX_report_event_SWI_cantons_flags_soldiers
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # A united Europe awaits!
+		name = ukrework.32.a
+		ai_chance = {
+			base = 80
+		}
+		IF = {
+			limit = {
+				FROM = {
+					is_major = yes
+				}
+			}
+			set_autonomy = {
+				target = FROM
+				autonomous_state = autonomy_dominion
+				end_wars = no
+				end_civil_wars = no
+			}
+		}
+		else = {
+			set_autonomy = {
+				target = FROM
+				autonomous_state = autonomy_puppet
+				end_wars = no
+				end_civil_wars = no
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		FROM = {
+			add_ideas = ENG_integration_idea
+		}
+	}
+}
+
+# Federalization - Rejected
+country_event = {
+	id = ukrework.33
+	title = ukrework.33.t
+	desc = ukrework.33.desc
+	picture = GFX_report_event_FIN_svinhufvud_speech
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Unity above all!
+		name = ukrework.33.a
+		ai_chance = {
+			base = 80
+		}
+		remove_from_faction = PREV
+		custom_effect_tooltip = generic_skip_one_line_tt
+		create_wargoal = {
+			target = PREV
+			type = annex_everything
+		}
+		every_state = {
+			limit = {
+				is_core_of = PREV
+			}
+			add_claim_by = ROOT
+		}
+	}
+	option = { # It's their freedom to choose
+		name = ukrework.33.b
+		ai_chance = {
+			base = 20
+		}
+		add_political_power = -25
+		add_stability = -0.05
+	}
+}
+
+# EU Brexit Rebellion
+country_event = {
+	id = ukrework.34
+	title = ukrework.34.t
+	desc = ukrework.34.desc
+	picture = GFX_report_event_eng_gb_reunified
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Fine, let them leave.
+		name = ukrework.34.a
+		ai_chance = {
+			base = 80
+		}
+		custom_effect_tooltip = ENG_release_uk_eu_tt
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_political_power = 50
+		add_stability = 0.05
+		set_capital = {state = 6}
+		hidden_effect = {
+			create_dynamic_country = {
+				original_tag = ENG
+				add_political_power = 100
+				transfer_state = 122
+			}
+			random_country = {
+				limit = {
+					original_tag = ENG
+					NOT = {
+						tag = ROOT
+					}
+				}
+				set_party_name = {
+					ideology = democratic
+					long_name = ENG_brexit_party
+					name = ENG_brexit_party
+				}
+				every_state = {
+					limit = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+						OR = {
+							region = 1
+							region = 2
+							region = 3
+							region = 4
+							region = 16
+						}
+					}
+					transfer_state_to = PREV
+				}
+				every_possible_country = {
+					limit = { has_character = ENG_winston_churchill }
+					random_character = {
+						limit = { is_character = ENG_winston_churchill }
+						set_nationality = PREV.PREV
+					}
+				}
+				promote_character = {
+					character = ENG_winston_churchill
+					ideology = conservatism
+				}
+				set_capital = {state = 126}
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.95
+				}
+				country_event = {
+					id = generic.5
+					days = 1
+				}
+				set_politics = {
+					ruling_party = democratic
+    				elections_allowed = yes
+				}
+				set_cosmetic_tag = ENG_SUBJECT_OF_HRE
+				every_state = {
+					limit = {
+						is_core_of = ROOT
+						NOT = {
+							is_controlled_by = PREV
+						}
+					}
+					PREV = {
+						remove_state_core = PREV
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = PREV
+					}
+					ROOT = {
+						remove_state_core = PREV
+					}
+				}
+			}
+		}
+	}
+	option = { # They can leave, but they will still be under our influence
+		name = ukrework.34.b
+		ai_chance = {
+			base = 80
+		}
+		custom_effect_tooltip = ENG_release_uk_eu_puppet_tt
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_political_power = -100
+		add_stability = -0.05
+		set_capital = {state = 6}
+		hidden_effect = {
+			create_dynamic_country = {
+				original_tag = ENG
+				add_political_power = 100
+				transfer_state = 122
+			}
+			random_country = {
+				limit = {
+					original_tag = ENG
+					NOT = {
+						tag = ROOT
+					}
+				}
+				set_party_name = {
+					ideology = democratic
+					long_name = ENG_brexit_party
+					name = ENG_brexit_party
+				}
+				every_state = {
+					limit = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+						OR = {
+							region = 1
+							region = 2
+							region = 3
+							region = 4
+							region = 16
+						}
+					}
+					transfer_state_to = PREV
+				}
+				every_possible_country = {
+					limit = { has_character = ENG_winston_churchill }
+					random_character = {
+						limit = { is_character = ENG_winston_churchill }
+						set_nationality = PREV.PREV
+					}
+				}
+				promote_character = {
+					character = ENG_winston_churchill
+					ideology = conservatism
+				}
+				set_capital = {state = 126}
+				ROOT = {
+					set_autonomy = {
+						target = PREV
+						autonomous_state = autonomy_puppet
+						end_wars = no
+						end_civil_wars = no
+					}
+				}
+				set_politics = {
+					ruling_party = democratic
+    				elections_allowed = yes
+				}
+				set_cosmetic_tag = ENG_SUBJECT_OF_HRE
+				every_state = {
+					limit = {
+						is_core_of = ROOT
+						NOT = {
+							is_controlled_by = PREV
+						}
+					}
+					PREV = {
+						remove_state_core = PREV
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = PREV
+					}
+					ROOT = {
+						remove_state_core = PREV
+					}
+				}
+			}
+		}
+	}
+	option = { # We'll fight a war if we must!
+		name = ukrework.34.c
+		ai_chance = {
+			base = 20
+		}
+		custom_effect_tooltip = ENG_uk_breaks_away_tt
+		hidden_effect = {
+			dismantle_faction = YES
+			set_capital = {state = 6}
+			start_civil_war = {
+			    ideology = neutrality
+			    size = 0.3
+			    keep_all_characters = yes
+				capital = 126
+			    PREV = {
+			    }
+				every_possible_country = {
+					limit = { has_character = ENG_winston_churchill }
+					random_character = {
+						limit = { is_character = ENG_winston_churchill }
+						set_nationality = PREV.PREV
+					}
+				}
+				states = all
+    			states_filter = {
+    			    is_core_of = ROOT
+					is_controlled_by = ROOT
+					OR = {
+						region = 1
+						region = 2
+						region = 3
+						region = 4
+						region = 16
+					}
+    			}
+				set_cosmetic_tag = ENG_BREXIT
+				add_country_leader_role = {
+				    character = ENG_winston_churchill
+				    promote_leader = yes
+				    country_leader = {
+				        ideology = moderatism
+				        expire = "1965.1.1.1"
+						traits = { british_bulldog }
+				    }
+				}
+			}
+			random_country = {
+				limit = {
+					has_government = neutrality
+					has_cosmetic_tag = ENG_BREXIT
+				}
+				every_state = {
+					limit = {
+						controller = {
+							has_cosmetic_tag = EUR_UNIFIED
+						}
+					}
+					remove_core_of = PREV
+				}
+				load_focus_tree = generic_focus
+				set_party_name = {
+					ideology = neutrality
+					long_name = ENG_brexit_party
+					name = ENG_brexit_party
+				}
+			}
+		}
+	}
+	option = { # Free Britannia!
+		name = ukrework.34.d
+		ai_chance = {
+			base = 20
+		}
+		custom_effect_tooltip = ENG_uk_breaks_away_but_ur_the_rebellion_tt
+		hidden_effect = {
+			dismantle_faction = YES
+			every_country = {
+				limit = {
+					is_subject_of = ROOT
+				}
+				IF = {
+					limit = {
+						has_autonomy_state = autonomy_dominion
+					}
+					set_country_flag = ENG_is_subject_of_eu_cw_d_flag
+				}
+				IF = {
+					limit = {
+						has_autonomy_state = autonomy_colony
+					}
+					set_country_flag = ENG_is_subject_of_eu_cw_c_flag
+				}
+				IF = {
+					limit = {
+						has_autonomy_state = autonomy_puppet
+					}
+					set_country_flag = ENG_is_subject_of_eu_cw_p_flag
+				}
+				IF = {
+					limit = {
+						has_autonomy_state = autonomy_integrated_puppet
+					}
+					set_country_flag = ENG_is_subject_of_eu_cw_ip_flag
+				}
+			}
+			set_politics = {
+				ruling_party = neutrality
+    			elections_allowed = yes
+			}
+			start_civil_war = {
+			    ideology = democratic
+			    size = 0.55
+			    keep_all_characters = yes
+				capital = 6
+			    PREV = {
+			    }
+				set_cosmetic_tag = EUR_UNIFIED
+				states = all
+    			states_filter = {
+					is_controlled_by = ROOT
+					NOT = {
+						OR = {
+							region = 1
+							region = 2
+							region = 3
+							region = 4
+							region = 16
+						}
+					}
+    			}
+				load_focus_tree = {
+					tree = british_focus
+					copy_completed_from = ENG
+				}
+				set_party_name = {
+					ideology = democratic
+					long_name = ENG_liberal_party
+					name = ENG_liberal_party
+				}
+				create_country_leader = {
+					name = "Archibald Sinclair"
+					picture = GFX_Portrait_ENG_archibald_sinclair
+					expire = "1965.1.1"
+					ideology = liberalism
+					traits = {
+						SWI_militaristic_democrat headstrong
+					}
+				}
+			}
+			set_cosmetic_tag = ENG_BREXIT
+			add_country_leader_role = {
+			    character = ENG_winston_churchill
+			    promote_leader = yes
+			    country_leader = {
+			        ideology = moderatism
+			        expire = "1965.1.1.1"
+					traits = { british_bulldog }
+			    }
+			}
+			set_party_name = {
+				ideology = neutrality
+				long_name = ENG_brexit_party
+				name = ENG_brexit_party
+			}
+			every_state = {
+				limit = {
+					controller = {
+						has_cosmetic_tag = EUR_UNIFIED
+					}
+				}
+				remove_core_of = ROOT
+			}
+			load_focus_tree = generic_focus
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.95
+			}
+			every_country = {
+				limit = {
+					OR = {
+						has_country_flag = ENG_is_subject_of_eu_cw_d_flag
+						has_country_flag = ENG_is_subject_of_eu_cw_c_flag
+						has_country_flag = ENG_is_subject_of_eu_cw_p_flag
+						has_country_flag = ENG_is_subject_of_eu_cw_ip_flag
+					}
+				}
+				IF = {
+					limit = {
+						has_country_flag = ENG_is_subject_of_eu_cw_d_flag
+					}
+					random_country = {
+						limit = {
+							original_tag = ENG
+							has_cosmetic_tag = EUR_UNIFIED
+						}
+						set_autonomy = {
+							target = PREV
+							autonomous_state = autonomy_dominion
+							end_wars = no
+							end_civil_wars = no
+						}
+					}
+				}
+				IF = {
+					limit = {
+						has_country_flag = ENG_is_subject_of_eu_cw_c_flag
+					}
+					random_country = {
+						limit = {
+							original_tag = ENG
+							has_cosmetic_tag = EUR_UNIFIED
+						}
+						set_autonomy = {
+							target = PREV
+							autonomous_state = autonomy_colony
+							end_wars = no
+							end_civil_wars = no
+						}
+					}
+				}
+				IF = {
+					limit = {
+						has_country_flag = ENG_is_subject_of_eu_cw_p_flag
+					}
+					random_country = {
+						limit = {
+							original_tag = ENG
+							has_cosmetic_tag = EUR_UNIFIED
+						}
+						set_autonomy = {
+							target = PREV
+							autonomous_state = autonomy_puppet
+							end_wars = no
+							end_civil_wars = no
+						}
+					}
+				}
+				IF = {
+					limit = {
+						has_country_flag = ENG_is_subject_of_eu_cw_ip_flag
+					}
+					random_country = {
+						limit = {
+							original_tag = ENG
+							has_cosmetic_tag = EUR_UNIFIED
+						}
+						set_autonomy = {
+							target = PREV
+							autonomous_state = autonomy_integrated_puppet
+							end_wars = no
+							end_civil_wars = no
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# Talks for reunion
+country_event = {
+	id = ukrework.35
+	title = ukrework.35.t
+	desc = ukrework.35.desc
+	picture = GFX_report_event_imperial_conference
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # We shall rejoin our brothers!
+		name = ukrework.35.a
+		trigger = {
+			is_major = no
+		}
+		ai_chance = {
+			base = 120
+			modifier = {
+				factor = 2
+				strength_ratio = {
+					tag = FROM
+					ratio < 0.5
+				}
+			}
+			modifier = {
+				factor = 0.5
+				is_major = yes
+			}
+		}
+		FROM = {
+			country_event = {
+				id = ukrework.36
+				days = 1
+			}
+		}
+	}
+	option = { # Sure, but slowly
+		name = ukrework.35.b
+		ai_chance = {
+			base = 90
+			modifier = {
+				factor = 3
+				strength_ratio = {
+					tag = FROM
+					ratio < 0.5
+				}
+			}
+			modifier = {
+				factor = 0.5
+				is_major = yes
+			}
+		}
+		FROM = {
+			country_event = {
+				id = ukrework.37
+				days = 1
+			}
+		}
+	}
+	option = { # This wasn't part of the deal!
+		name = ukrework.35.c
+		trigger = {
+			is_subject = no
+		}
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 7
+				strength_ratio = {
+					tag = FROM
+					ratio > 1.5
+				}
+			}
+		}
+		FROM = {
+			country_event = {
+				id = ukrework.38
+				days = 1
+			}
+		}
+	}
+}
+
+# Union accepted - Full
+country_event = {
+	id = ukrework.36
+	title = ukrework.36.t
+	desc = ukrework.36.desc
+	picture = GFX_report_event_canada_treaty
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # They made a good choice
+		name = ukrework.36.a
+		ai_chance = {
+			base = 80
+		}
+		annex_country = {
+			target = FROM
+			transfer_troops = yes
+		}
+	}
+}
+
+# Union accepted - Limited
+country_event = {
+	id = ukrework.37
+	title = ukrework.37.t
+	desc = ukrework.37.desc
+	picture = GFX_report_event_canada_treaty
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # It is only a matter of time
+		name = ukrework.37.a
+		ai_chance = {
+			base = 80
+		}
+		set_autonomy = {
+			target = FROM
+			autonomous_state = autonomy_puppet
+			end_wars = no
+			end_civil_wars = no
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		FROM = {
+			add_ideas = ENG_integration_idea
+		}
+	}
+}
+
+# Federalization - Rejected
+country_event = {
+	id = ukrework.38
+	title = ukrework.38.t
+	desc = ukrework.38.desc
+	picture = GFX_report_event_FIN_svinhufvud_speech
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # They can only be one!
+		name = ukrework.38.a
+		ai_chance = {
+			base = 80
+		}
+		create_wargoal = {
+			target = FROM
+			type = annex_everything
+		}
+		every_state = {
+			limit = {
+				is_core_of = PREV
+			}
+			add_claim_by = ROOT
+		}
+	}
+}
+
+# Habsburg Royal Marriage
+country_event = {
+	id = ukrework.39
+	title = ukrework.39.t
+	desc = ukrework.39.desc
+	picture = GFX_report_event_carol_party
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Cool
+		name = ukrework.39.a
+		ai_chance = {
+			base = 80
+		}
+		country_event = {
+			id = ukrework.40
+			days = 1
+		}
+	}
+}
+
+# Fate of Switzerland
+country_event = {
+	id = ukrework.40
+	title = ukrework.40.t
+	desc = ukrework.40.desc
+	picture = GFX_report_event_SWI_president_talking_flag
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # They shall be ours!
+		name = ukrework.40.a
+		ai_chance = {
+			base = 10
+		}
+		trigger = {
+			SWI = {
+				NOT = {
+					is_subject_of = ROOT
+				} 
+			}
+		}
+		set_country_flag = ENG_wants_to_integrate_switzerland_flag
+		unlock_decision_category_tooltip = UK_integrate_schweiz_decisions
+		custom_effect_tooltip = ENG_integrate_swiss_states_warning_tt
+	}
+	option = { # A puppet is more preferable.
+		name = ukrework.40.b
+		ai_chance = {
+			base = 80
+		}
+		trigger = {
+			SWI = {
+				OR = {
+					exists = no
+					is_subject_of = ROOT
+				}
+			}
+		}
+		IF = {
+			limit = {
+				SWI = {
+					exists = no
+				}
+			}
+			release_autonomy = {
+			    target = SWI
+			    autonomy_state = autonomy_integrated_puppet
+			    freedom_level = 0.5
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+		}
+		add_stability = 0.05
+		add_political_power = 50
+	}
+}
+
+# Papal Blessing
+country_event = {
+	id = ukrework.41
+	title = ukrework.41.t
+	desc = ukrework.41.desc
+	picture = GFX_report_event_eng_pope
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Nice
+		name = ukrework.41.a
+		ai_chance = {
+			base = 10
+		}
+		add_country_leader_trait = blessed_monarch_trait
+		add_timed_idea = {
+			idea = ENG_anglican_church_outraged
+			days = 180
+		}
+	}
+}
+
+# Germany questions - Federal or not?
+country_event = {
+	id = ukrework.42
+	title = ukrework.42.t
+	desc = ukrework.42.desc
+	picture = GFX_report_event_german_reichstag_gathering
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Federal
+		name = ukrework.42.a
+		ai_chance = {
+			base = 10
+		}
+		add_ideas = ENG_kingdoms_rights_idea
+		country_event = {
+			id = ukrework.43
+			days = 1
+		}
+	}
+	option = { # More unitary
+		name = ukrework.42.b
+		ai_chance = {
+			base = 10
+		}
+		add_ideas = ENG_big_govt_idea
+		country_event = {
+			id = ukrework.43
+			days = 1
+		}
+	}
+}
+
+# Germany questions - Capital?
+country_event = {
+	id = ukrework.43
+	title = ukrework.43.t
+	desc = ukrework.43.desc
+	picture = GFX_report_event_eng_government_building_union_jack
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Stay with London
+		name = ukrework.43.a
+		ai_chance = {
+			base = 10
+		}
+		country_event = {
+			id = ukrework.44
+			days = 1
+		}
+	}
+	option = { # Berlin
+		name = ukrework.43.b
+		ai_chance = {
+			base = 10
+		}
+		set_capital = {state = 64}
+		country_event = {
+			id = ukrework.44
+			days = 1
+		}
+	}
+	option = { # Frankfurt would be a good compromise
+		name = ukrework.43.c
+		ai_chance = {
+			base = 10
+		}
+		set_capital = {state = 55}
+		country_event = {
+			id = ukrework.44
+			days = 1
+		}
+	}
+}
+
+# Germany questions - democracy?
+country_event = {
+	id = ukrework.44
+	title = ukrework.44.t
+	desc = ukrework.44.desc
+	picture = GFX_report_event_ITA_democratic_parlament
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Prussian democracy will be just fine
+		name = ukrework.44.a
+		ai_chance = {
+			base = 10
+		}
+		add_ideas = ENG_constitutionalism_german_idea
+	}
+	option = { # Prussian absolutism would be better
+		name = ukrework.44.b
+		ai_chance = {
+			base = 10
+		}
+		add_ideas = ENG_absolutism_german_idea
+	}
+	option = { # A full democracy is more preferable
+		name = ukrework.44.c
+		ai_chance = {
+			base = 10
+		}
+		set_country_flag = ENG_GER_return_to_democratic_ideals_flag
+		add_stability = -0.1
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.15
+		}
+		mark_focus_tree_layout_dirty = yes
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_timed_idea = {
+			idea = ENG_return_to_democracy_idea
+			days = 365
+		}
+	}
+}
+
+# Democratic German leaders - SLP
+country_event = {
+	id = ukrework.45
+	title = ukrework.45.t
+	desc = ukrework.45.desc
+	picture = GFX_report_event_imperial_conference
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Clement Attlee - BRITISH
+		name = ukrework.45.a
+		ai_chance = {
+			base = 10
+		}
+		#ENG_clement_attlee = { # Use if becomes leader!
+		#	promote_character = yes
+		#}
+		set_country_flag = ENG_attlee_SLP_leader_flag
+	}
+	option = { # Hans Vogel - GERMAN
+		name = ukrework.45.b
+		ai_chance = {
+			base = 10
+		}
+		#every_possible_country = { # Use if becomes leader!
+		#	limit = { has_character = GER_hans_vogel }
+		#	random_character = {
+		#		limit = { is_character = GER_hans_vogel }
+		#		set_nationality = ENG
+		#	}
+		#}
+		#GER_hans_vogel = {
+		#	add_country_leader_role = {
+		#		country_leader = {
+		#			expire = "1965.1.1"
+		#			ideology = socialism
+		#			traits = {
+		#				GER_staunch_social_democrat
+		#			}
+		#		}
+		#		promote_leader = yes
+		#	}
+		#}
+	}
+}
+
+# Democratic German leaders - NCP
+country_event = {
+	id = ukrework.46
+	title = ukrework.46.t
+	desc = ukrework.46.desc
+	picture = GFX_report_event_SOV_negotiations_japan_rodzaevsky
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Winston Churchill - BRITISH
+		name = ukrework.46.a
+		ai_chance = {
+			base = 10
+		}
+		#ENG_winston_churchill = { # Use if becomes leader!
+		#	promote_character = yes
+		#}
+		set_country_flag = ENG_churchill_NCP_leader_flag
+	}
+	option = { # Konrad Adenauer - GERMAN
+		name = ukrework.46.b
+		ai_chance = {
+			base = 10
+		}
+		#every_possible_country = { # Use if becomes leader!
+		#	limit = { has_character = GER_konrad_adenauer }
+		#	random_character = {
+		#		limit = { is_character = GER_konrad_adenauer }
+		#		set_nationality = ENG
+		#	}
+		#}
+		#GER_konrad_adenauer = {
+		#	promote_leader = yes
+		#}
+	}
+}
+
+# German-British Election
+country_event = {
+	id = ukrework.47
+	title = ukrework.47.t
+	desc = ukrework.47.desc
+	picture = GFX_report_event_election_vote
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # National Conservatives
+		name = ukrework.47.a
+		ai_chance = {
+			base = 10
+		}
+		IF = {
+			limit = {
+				has_country_flag = ENG_churchill_NCP_leader_flag
+			}
+			ENG_winston_churchill = {
+				promote_character = yes
+			}
+		}
+		else = {
+			every_possible_country = {
+				limit = { has_character = GER_konrad_adenauer }
+				random_character = {
+					limit = { is_character = GER_konrad_adenauer }
+					set_nationality = ENG
+				}
+			}
+			GER_konrad_adenauer = {
+				promote_character = yes
+			}
+		}
+		set_party_name = { ideology = democratic long_name = ENG_german_british_ncp_party_long name = ENG_german_british_ncp_party }
+	}
+	option = { # Social Labour
+		name = ukrework.47.b
+		ai_chance = {
+			base = 10
+		}
+		IF = {
+			limit = {
+				has_country_flag = ENG_attlee_SLP_leader_flag
+			}
+			ENG_clement_attlee = {
+				promote_character = yes
+			}
+		}
+		else = {
+			every_possible_country = {
+				limit = { has_character = GER_hans_vogel }
+				random_character = {
+					limit = { is_character = GER_hans_vogel }
+					set_nationality = ENG
+				}
+			}
+			GER_hans_vogel = {
+				add_country_leader_role = {
+					country_leader = {
+						expire = "1965.1.1"
+						ideology = socialism
+						traits = {
+							GER_staunch_social_democrat
+						}
+					}
+					promote_leader = yes
+				}
+			}
+		}
+		set_party_name = { ideology = democratic long_name = ENG_german_british_slp_party_long name = ENG_german_british_slp_party }
+	}
+}
+
+# The new American capital
+country_event = {
+	id = ukrework.48
+	title = ukrework.48.t
+	desc = ukrework.48.desc
+	picture = GFX_report_event_usa_election_generic
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Cincinnati
+		name = ukrework.48.a
+		ai_chance = {
+			base = 10
+		}
+		set_victory_points = {
+			province = 4601
+			value = 30
+		}
+		set_victory_points = {
+			province = 3957
+			value = 20
+		}
+		USA = {
+			set_capital = {state = 261}
+		}
+		hidden_effect = {
+			country_event = {
+				id = ukrework.49
+				days = 14
+			}
+		}
+	}
+	option = { # Philadelphia
+		name = ukrework.48.b
+		ai_chance = {
+			base = 10
+		}
+		set_victory_points = {
+			province = 6845
+			value = 30
+		}
+		set_victory_points = {
+			province = 3957
+			value = 20
+		}
+		USA = {
+			set_capital = {state = 360}
+		}
+		hidden_effect = {
+			country_event = {
+				id = ukrework.49
+				days = 14
+			}
+		}
+	}
+	option = { # Bismarck
+		name = ukrework.48.c
+		ai_chance = {
+			base = 10
+		}
+		set_victory_points = {
+			province = 1836
+			value = 30
+		}
+		set_victory_points = {
+			province = 3957
+			value = 20
+		}
+		USA = {
+			set_capital = {state = 389}
+		}
+		hidden_effect = {
+			country_event = {
+				id = ukrework.49
+				days = 14
+			}
+		}
+	}
+	option = { # Washington
+		name = ukrework.48.d
+		ai_chance = {
+			base = 10
+		}
+		USA = {
+			add_stability = 0.01
+		}
+		hidden_effect = {
+			country_event = {
+				id = ukrework.49
+				days = 14
+			}
+		}
+	}
+}
+
+# German-Americans want democracy
+country_event = {
+	id = ukrework.49
+	title = ukrework.49.t
+	desc = ukrework.49.desc
+	picture = GFX_report_event_usa_macarthur_speech
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # It's a sacred institution
+		name = ukrework.49.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = 50
+		custom_effect_tooltip = generic_skip_one_line_tt
+		USA = {
+			set_party_name = {
+				ideology = democratic
+				long_name = USA_german_democratic_party_long
+				name = USA_german_democratic_party
+			}
+			hidden_effect = {
+				USA_dwight_d_eisenhower = {
+					add_country_leader_role = {
+						country_leader = {
+							expire = "1965.1.1"
+							ideology = conservatism
+							traits = {
+								popular_figurehead2
+							}
+						}
+						promote_leader = yes
+					}
+				}
+			}
+			set_politics = {
+				ruling_party = democratic
+    			elections_allowed = yes
+				last_election = "1932.11.8"
+    			election_frequency = 48
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.15
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_stability = 0.05
+			add_autonomy_score = {
+			    value = 500
+			}
+		}
+	}
+	option = { # We can allow for some minor reforms
+		name = ukrework.49.b
+		add_political_power = -150
+		USA = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+			set_politics = {
+				ruling_party = neutrality
+    			elections_allowed = yes
+				last_election = "1932.11.8"
+    			election_frequency = 48
+			}
+			add_autonomy_score = {
+			    value = 500
+			}
+		}
+	}
+	option = { # Who do they think they are?
+		name = ukrework.49.c
+		add_political_power = -100
+		USA = {
+			add_stability = -0.1
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+		}
+	}
+}
+
+# Pirate Radios
+country_event = {
+	id = ukrework.50
+	title = ukrework.50.t
+	desc = ukrework.50.desc
+	picture = GFX_report_event_FIN_svinhufvud_speech
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_war = no
+	}
+	
+	option = { # Not worth the fight
+		name = ukrework.50.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = 25
+		add_stability = -0.01
+		hidden_effect = {
+			IF = {
+				limit = {
+					has_completed_focus = ENG_the_kings_party
+					has_government = neutrality
+				}
+				country_event = {
+					id = ukrework.51
+					days = 14
+				}
+			}
+		}
+	}
+	option = { # Shut them down
+		name = ukrework.50.b
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = -50
+		add_manpower = -100
+		add_stability = 0.01
+	}
+}
+
+# Roy Bates' Radio denounces the King
+country_event = {
+	id = ukrework.51
+	title = ukrework.51.t
+	desc = ukrework.51.desc
+	picture = GFX_report_event_FIN_svinhufvud_speech
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # That bastard
+		name = ukrework.51.a
+		ai_chance = {
+			base = 10
+		}
+		add_stability = -0.025
+		add_popularity = {
+			ideology = neutrality
+			popularity = -0.05
+		}
+		hidden_effect = {
+			IF = {
+				limit = {
+					has_completed_focus = ENG_the_kings_party
+					has_government = neutrality
+				}
+				country_event = {
+					id = ukrework.52
+					days = 7
+				}
+			}
+		}
+	}
+	option = { # Arrest him!
+		name = ukrework.51.b
+		ai_chance = {
+			base = 10
+		}
+		add_stability = -0.1
+		add_popularity = {
+			ideology = neutrality
+			popularity = -0.05
+		}
+		add_political_power = -50
+	}
+}
+
+# The Principality of Sealand
+country_event = {
+	id = ukrework.52
+	title = ukrework.52.t
+	desc = ukrework.52.desc
+	picture = GFX_report_event_eng_sealand
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Uh oh
+		name = ukrework.52.a
+		ai_chance = {
+			base = 10
+		}
+		set_victory_points = {
+			province = 221
+			value = 1
+		}
+		add_stability = -0.05
+		hidden_effect = {
+			country_event = {
+				id = ukrework.53
+				days = 7
+			}
+		}
+	}
+}
+
+# The Principality of Sealand takes over UK
+country_event = {
+	id = ukrework.53
+	title = ukrework.53.t
+	desc = ukrework.53.desc
+	picture = GFX_report_event_eng_paddy_roy_bates
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Uh oh
+		name = ukrework.53.a
+		ai_chance = {
+			base = 10
+		}
+		set_victory_points = {
+			province = 221
+			value = 30
+		}
+		set_capital = { state = 125 }
+		custom_effect_tooltip = generic_skip_one_line_tt
+		set_party_name = {
+			ideology = neutrality
+			long_name = ENG_bates_dynasty
+			name = ENG_bates_dynasty
+		}
+		create_country_leader = {
+			name = "Paddy Roy Bates"
+			picture = GFX_Portrait_ENG_paddy_roy_bates
+			expire = "1965.1.1"
+			ideology = despotism
+			traits = {
+				ENG_successful_micronationalist ENG_radio_operator
+			}
+		}
+		set_cosmetic_tag = ENG_SEALAND
+		set_country_flag = ENG_sealand_formed_flag
+		mark_focus_tree_layout_dirty = yes
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_stability = -0.15
+	}
+}
+
+# Fate of the Kingdoms
+country_event = {
+	id = ukrework.54
+	title = ukrework.54.t
+	desc = ukrework.54.desc
+	picture = GFX_report_event_eng_gb_reunified
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # We're really only one kingdom
+		name = ukrework.54.a
+		ai_chance = {
+			base = 10
+		}
+		add_stability = -0.1
+		add_political_power = 150
+		set_cosmetic_tag = ENG_KINGDOM_GB
+	}
+	option = { # A devolved government would make sense
+		name = ukrework.54.b
+		ai_chance = {
+			base = 10
+		}
+		add_ideas = ENG_devolution
+	}
+	option = { # Loyal family members
+		name = ukrework.54.c
+		ai_chance = {
+			base = 10
+		}
+		add_ideas = ENG_one_crown_many_monarchs
+	}
+	option = { # Their own royals
+		name = ukrework.54.d
+		ai_chance = {
+			base = 10
+		}
+		add_ideas = ENG_many_crowns_one_nation
+	}
+}
+
+# Monarchy returns
+country_event = {
+	id = ukrework.55
+	title = ukrework.55.t
+	desc = ukrework.55.desc
+	picture = GFX_report_event_eng_royal_family
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # A glorious day!
+		name = ukrework.55.a
+		ai_chance = {
+			base = 10
+		}
+		add_ideas = george_vi
+		add_war_support = 0.05
+	}
+}
+
+# Monarchy returns - Canada
+country_event = {
+	id = ukrework.56
+	title = ukrework.56.t
+	desc = ukrework.56.desc
+	picture = GFX_report_event_eng_royal_family
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Farewell
+		name = ukrework.56.a
+		ai_chance = {
+			base = 10
+		}
+		add_war_support = -0.05
+		add_stability = 0.05
+		custom_effect_tooltip = generic_skip_one_line_tt
+		remove_ideas = ENG_exiled_royal_family
+		IF = {
+			limit = {
+				has_cosmetic_tag = CAN_MONARCHIST
+			}
+			drop_cosmetic_tag = yes
+		}
+	}
+}
+
+# Communist civil war
+country_event = {
+	id = ukrework.57
+	title = ukrework.57.t
+	desc = ukrework.57.desc
+	picture = GFX_report_event_ITA_italian_civil_war
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Down with the bourgeoisie!
+		name = ukrework.57.a
+		ai_chance = {
+			base = 10
+		}
+		hidden_effect = {
+			remove_ideas = UK_worst_strike_ever_idea
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = SCO
+						is_core_of = WLS
+						is_core_of = IRE
+						state = 132
+						state = 130
+						state = 128
+						state = 931
+						state = 131
+					}
+					is_controlled_by = ROOT
+				}
+				set_state_flag = ENG_keep_as_part_of_commies_flag
+			}
+			set_capital = {
+			  	state = 132
+			  	remember_old_capital = yes
+			}
+			start_civil_war = {
+			    ruling_party = communism
+			    ideology = democratic
+			    size = 0.6
+				states = all
+			    states_filter = {
+			        NOT = {
+						has_state_flag = ENG_keep_as_part_of_commies_flag
+					}
+			    }
+			    keep_all_characters = yes
+				create_country_leader = {
+					name = ENG_parliament_german
+					picture = GFX_portrait_eng_fallen_government
+					expire = "1965.1.1"
+					ideology = conservatism
+				}
+				teleport_armies = {
+				    limit = {
+				        tag = PREV
+				    }
+				    to_state_array = owned_controlled_states
+				}
+			}
+			division_template = {
+				name = "Workers Militia"
+				priority = 1
+				template_counter = 69
+				is_locked = yes
+				regiments = {
+					militia = { x = 0 y = 0 }
+					militia = { x = 0 y = 1 }
+					militia = { x = 0 y = 2 }
+				}
+			}
+			every_owned_state = {
+				limit = {
+					is_on_continent = europe
+				}
+				create_unit = {
+					division = "division_template = \"Workers Militia\" start_experience_factor = 0 start_equipment_factor = 1"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "division_template = \"Workers Militia\" start_experience_factor = 0 start_equipment_factor = 1"
+					owner = ROOT
+				}
+			}
+		}
+	}
+}
+
+# Dominons assume colonial responsibilities
+country_event = {
+	id = ukrework.58
+	title = ukrework.58.t
+	desc = ukrework.58.desc
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Uh oh.
+		name = ukrework.58.a
+		ai_chance = {
+			base = 10
+		}
+		custom_effect_tooltip = ENG_dominions_assume_colonies_2_tt
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_subject_of = ROOT
+				}
+				country_event = {
+					id = ukrework.59
+					days = 1
+				}
+			}
+		}
+		country_event = {
+			id = ukrework.61
+			days = 7
+		}
+	}
+}
+
+# Dominons assume colonial responsibilities - event for dominions
+country_event = {
+	id = ukrework.59
+	title = ukrework.59.t
+	desc = ukrework.59.desc
+	picture = GFX_report_event_african_soldiers
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Is Westminster falling apart?
+		name = ukrework.59.a
+		ai_chance = {
+			base = 10
+		}
+		add_stability = -0.05
+		add_political_power = 50
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = ENG_dominions_assume_colonies_tt
+		hidden_effect = {
+			IF = {
+				limit = {
+					tag = SAF
+				}
+				every_state = {
+					limit = {
+						OR = {
+							is_on_continent = africa
+							state = 453
+						}
+						is_controlled_by = ENG
+					}
+					transfer_state_to = ROOT
+				}
+			}
+			IF = {
+				limit = {
+					tag = AST
+				}
+				every_state = {
+					limit = {
+						OR = {
+							is_on_continent = australia
+							is_on_continent = asia
+						}
+						is_controlled_by = ENG
+					}
+					transfer_state_to = ROOT
+				}
+				every_country = {
+					limit = {
+						is_subject_of = ENG
+						capital_scope = {
+							OR = {
+								is_on_continent = australia
+								is_on_continent = asia
+							}
+						}
+						NOT = {
+							OR = {
+								tag = CAN
+								tag = AST
+								tag = NZL
+								tag = RAJ
+								tag = SAF
+							}
+						}
+					}
+					ROOT = {
+						set_autonomy = {
+						    target = PREV
+						    autonomous_state = autonomy_colony
+						    end_wars = no
+						    end_civil_wars = no
+						}
+					}
+				}
+			}
+			IF = {
+				limit = {
+					tag = RAJ
+				}
+				every_state = {
+					limit = {
+						is_on_continent = middle_east
+						NOT = {
+							OR = {
+								state = 446
+								state = 453
+							}
+						}
+						is_controlled_by = ENG
+					}
+					transfer_state_to = ROOT
+				}
+			}
+			IF = {
+				limit = {
+					tag = CAN
+				}
+				every_state = {
+					limit = {
+						OR = {
+							is_on_continent = north_america
+							is_on_continent = south_america
+							state = 446
+						}
+						NOT = {
+							state = 696
+						}
+						is_controlled_by = ENG
+					}
+					transfer_state_to = ROOT
+				}
+				every_country = {
+					limit = {
+						is_subject_of = ENG
+						capital_scope = {
+							OR = {
+								is_on_continent = north_america
+								is_on_continent = south_america
+								is_on_continent = middle_east
+							}
+						}
+						NOT = {
+							OR = {
+								tag = CAN
+								tag = AST
+								tag = NZL
+								tag = RAJ
+								tag = SAF
+							}
+						}
+					}
+					ROOT = {
+						set_autonomy = {
+						    target = PREV
+						    autonomous_state = autonomy_colony
+						    end_wars = no
+						    end_civil_wars = no
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# The worst strike ever
+country_event = {
+	id = ukrework.60
+	title = ukrework.60.t
+	desc = ukrework.60.desc
+	picture = GFX_report_event_generic_strike
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Uh oh.
+		name = ukrework.60.a
+		ai_chance = {
+			base = 10
+		}
+		add_ideas = UK_worst_strike_ever_idea
+		custom_effect_tooltip = generic_skip_one_line_tt
+		country_event = {
+			id = ukrework.58
+			days = 14
+		}
+	}
+}
+
+# Dominions break free, allies dissolve
+country_event = {
+	id = ukrework.61
+	title = ukrework.61.t
+	desc = ukrework.61.desc
+	picture = GFX_report_event_SWI_cantons_flags_soldiers
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Uh oh.
+		name = ukrework.61.a
+		ai_chance = {
+			base = 10
+		}
+		dismantle_faction = yes
+		hidden_effect = {
+			CAN = {
+				set_autonomy = {
+				    target = RAJ
+				    autonomous_state = autonomy_colony
+				    end_wars = no
+				    end_civil_wars = no
+				}
+				set_cosmetic_tag = PREV
+			}
+			RAJ = {
+				set_politics = {
+				    ruling_party = neutrality
+				    elections_allowed = no
+				}
+				set_popularities = {
+					democratic = 30
+					neutrality = 55
+					fascism = 5
+					communism = 10
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				is_subject_of = ROOT
+			}
+			ROOT = {
+				set_autonomy = {
+				    target = PREV
+				    autonomous_state = autonomy_free
+				    end_wars = no
+				    end_civil_wars = no
+				}
+			}
+			country_event = {
+				id = ukrework.62
+				days = 1
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		country_event = {
+			id = ukrework.57
+			days = 7
+		}
+	}
+}
+
+# Dominions break free, allies dissolve - dominions
+country_event = {
+	id = ukrework.62
+	title = ukrework.62.t
+	desc = ukrework.62.desc
+	picture = GFX_report_event_SWI_cantons_flags_soldiers
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # This is a great thing - or is it?
+		name = ukrework.61.a
+		ai_chance = {
+			base = 10
+		}
+		add_stability = 0.05
+		add_war_support = 0.05
+		IF = {
+			limit = {
+				tag = CAN
+			}
+			country_event = {
+				id = ukrework.63
+				days = 7
+			}
+		}
+	}
+}
+
+# Form the Commonwealth of Nations?
+country_event = {
+	id = ukrework.63
+	title = ukrework.63.t
+	desc = ukrework.63.desc
+	picture = GFX_report_event_canada_patriation
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Sure
+		name = ukrework.63.a
+		ai_chance = {
+			base = 100
+		}
+		add_war_support = 0.05
+		custom_effect_tooltip = generic_skip_one_line_tt
+		set_rule = {
+			can_create_factions = yes
+		}
+		create_faction = "Commonwealth of Nations"
+		custom_effect_tooltip = generic_skip_one_line_tt
+		every_country = {
+			limit = {
+				OR = {
+					tag = SAF
+					tag = AST
+					tag = NZL
+				}
+			}
+			country_event = {
+				id = generic.5
+				days = 1
+			}
+		}
+	}
+	option = { # Nope
+		name = ukrework.63.b
+		ai_chance = {
+			base = 0
+		}
+		add_war_support = -0.05
+	}
+}
+
+# Civil war ends
+country_event = {
+	id = ukrework.64
+	title = ukrework.64.t
+	desc = ukrework.64.desc
+	picture = GFX_report_event_canadian_soldiers
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Let the revolution begin!
+		name = ukrework.64.a
+		ai_chance = {
+			base = 100
+		}
+		set_stability = 0.7
+		add_political_power = 100
+		custom_effect_tooltip = generic_skip_one_line_tt
+		delete_units = {
+		    division_template = "Workers Militia"
+		    disband = yes
+		}
+		hidden_effect = {
+			set_popularities = {
+				democratic = 20
+				communism = 65
+				fascism = 7.5
+				neutrality = 7.5
+			}
+		}
+	}
+}
+
+# WW2 starts
+country_event = {
+	id = ukrework.65
+	title = ukrework.65.t
+	desc = ukrework.65.desc
+	picture = GFX_report_event_ENG_middle_eastern_conflict_2
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Appeasement has failed.
+		name = ukrework.65.a
+		trigger = {
+			has_defensive_war_with = GER
+		}
+		ai_chance = {
+			base = 100
+		}
+		unlock_national_focus = ENG_second_great_war
+	}
+	option = { # We had to stop the war machine.
+		name = ukrework.65.b
+		trigger = {
+			has_offensive_war_with = GER
+		}
+		ai_chance = {
+			base = 100
+		}
+		unlock_national_focus = ENG_second_great_war
+	}
+}
+
+# WW2 ends
+country_event = {
+	id = ukrework.66
+	title = ukrework.66.t
+	desc = ukrework.66.desc
+	picture = GFX_report_event_gre_megali_conference_signing
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Let's be sure to not have another.
+		name = ukrework.66.a
+		ai_chance = {
+			base = 100
+		}
+		unlock_national_focus = ENG_end_of_ww2
+	}
+}
+
+# Ireland - Do we accept British proposal for alliance?
+country_event = {
+	id = ukrework.67
+	title = ukrework.67.t
+	desc = ukrework.67.desc
+	picture = GFX_report_event_generic_croatia_handshake
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # This is a steal, absolutely!
+		name = ukrework.67.a
+		ai_chance = {
+			base = 90
+			modifier = {
+				has_opinion = {
+    				target = FROM
+    				value > 50
+				}
+				factor = 1.5
+			}
+		}
+		transfer_state = 119
+		FROM = {
+			add_to_faction = ROOT
+			country_event = {
+				id = ukrework.68
+				days = 1
+			}
+		}
+	}
+	option = { # No way!
+		name = ukrework.67.b
+		ai_chance = {
+			base = 20
+			modifier = {
+				has_opinion = {
+    				target = FROM
+    				value < 50
+				}
+				factor = 2
+			}
+		}
+		FROM = {
+			country_event = {
+				id = ukrework.69
+				days = 1
+			}
+		}
+	}
+}
+
+# Ireland says yes
+country_event = {
+	id = ukrework.68
+	title = ukrework.68.t
+	desc = ukrework.68.desc
+	picture = GFX_report_event_generic_handshake
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Let's hope it was worth it...
+		name = ukrework.68.a
+		ai_chance = {
+			base = 10
+		}
+		effect_tooltip = {
+			add_to_faction = FROM
+			FROM = {
+				transfer_state = 119
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		remove_state_core = 119
+		set_cosmetic_tag = ENG_UK_GB
+	}
+}
+
+# Ireland says no
+country_event = {
+	id = ukrework.69
+	title = ukrework.68.t
+	desc = ukrework.68.desc
+	picture = GFX_report_event_FIN_risto_ryti_speech
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Aw man
+		name = ukrework.68.a
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+# Fate of Ireland
+country_event = {
+	id = ukrework.70
+	title = ukrework.70.t
+	desc = ukrework.70.desc
+	picture = GFX_report_event_gre_cabinet_meeting
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # We must restore its dominion status
+		name = ukrework.70.a
+		ai_chance = {
+			base = 10
+		}
+		add_stability = 0.05
+		create_wargoal = {
+			target = IRE
+			type = puppet_wargoal_focus
+		}
+	}
+	option = { # We must bring it back into the empire
+		name = ukrework.70.b
+		ai_chance = {
+			base = 10
+		}
+		add_stability = -0.1
+		create_wargoal = {
+			target = IRE
+			type = annex_everything
+		}
+		set_country_flag = ENG_integrate_ireland_allowed
+		custom_effect_tooltip = generic_skip_one_line_tt
+		unlock_decision_tooltip = UK_reintegrate_ireland
+	}
+}
+
+# British beg for alliance
+country_event = {
+	id = ukrework.71
+	title = ukrework.71.t
+	desc = ukrework.71.desc
+	picture = GFX_report_event_eng_fdr_and_churchill
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # We can help them
+		name = ukrework.71.a
+		ai_chance = {
+			base = 90
+			modifier = {
+				has_opinion = {
+    				target = FROM
+    				value > 50
+				}
+				factor = 1.5
+			}
+		}
+		FROM = {
+			add_to_faction = ROOT
+			country_event = {
+				id = ukrework.72
+				days = 1
+			}
+		}
+	}
+	option = { # We should focus on the issues at home
+		name = ukrework.71.b
+		ai_chance = {
+			base = 20
+			modifier = {
+				has_opinion = {
+    				target = FROM
+    				value < 50
+				}
+				factor = 2
+			}
+		}
+		FROM = {
+			country_event = {
+				id = ukrework.73
+				days = 1
+			}
+		}
+	}
+}
+
+# USA says yes
+country_event = {
+	id = ukrework.72
+	title = ukrework.72.t
+	desc = ukrework.72.desc
+	picture = GFX_report_event_eng_fdr_and_churchill
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Fantastic!
+		name = ukrework.72.a
+		ai_chance = {
+			base = 10
+		}
+		effect_tooltip = {
+			add_to_faction = FROM
+		}
+	}
+}
+
+# USA says no
+country_event = {
+	id = ukrework.73
+	title = ukrework.73.t
+	desc = ukrework.73.desc
+	picture = GFX_report_event_eng_fdr_sad
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Aw man
+		name = ukrework.73.a
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+# Future of the BUF
+country_event = {
+	id = ukrework.74
+	title = ukrework.74.t
+	desc = ukrework.74.desc
+	picture = GFX_report_event_eng_mosley_speech
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Focusing on internal policies would be better
+		name = ukrework.74.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = 100
+		add_stability = 0.05
+		add_war_support = -0.05
+	}
+	option = { # The expansion of the state would be more important
+		name = ukrework.74.b
+		ai_chance = {
+			base = 10
+		}
+		add_war_support = 0.1
+		add_political_power = -25
+		custom_effect_tooltip = generic_skip_one_line_tt
+		ENG_mosley_pacifism_level_down = yes
+	}
+}
+
+# Literally 1984???
+country_event = {
+	id = ukrework.75
+	title = ukrework.75.t
+	desc = ukrework.75.desc
+	picture = GFX_report_event_eng_good_blackshirt_march
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Hell no
+		name = ukrework.75.a
+		ai_chance = {
+			base = 10
+		}
+		add_stability = 0.1
+	}
+	option = { # Is that a reference?
+		name = ukrework.75.b
+		ai_chance = {
+			base = 10
+		}
+		set_country_flag = ENG_1984_reference_flag
+		mark_focus_tree_layout_dirty = yes
+	}
+}
+
+# Formation of Oceania
+country_event = {
+	id = ukrework.76
+	title = ukrework.76.t
+	desc = ukrework.76.desc
+	picture = GFX_report_event_eng_mosley_speech
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Submit to the Party
+		name = ukrework.76.a
+		ai_chance = {
+			base = 10
+		}
+		add_stability = -0.2
+		custom_effect_tooltip = generic_skip_one_line_tt
+		create_country_leader = {
+			name = "Big Brother"
+			picture = GFX_Portrait_ENG_big_brother
+			expire = "1965.1.1"
+			ideology = nazism
+			traits = {
+				ENG_big_brother
+			}
+		}
+		set_party_name = {
+		    ideology = fascism
+		    long_name = ENG_the_party
+		    name = ENG_the_party
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		set_cosmetic_tag = ENG_OCEANIA
+		custom_effect_tooltip = generic_skip_one_line_tt
+		every_state = {
+			limit = {
+				OR = {
+					is_on_continent = north_america
+					is_on_continent = south_america
+					is_on_continent = australia
+				}
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
+			add_core_of = ROOT
+		}
+	}
+}
+
+# The London Conference
+country_event = {
+	id = ukrework.77
+	title = ukrework.77.t
+	desc = ukrework.77.desc
+	picture = GFX_report_event_gre_megali_conference_signing
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # More land for us!
+		name = ukrework.77.a
+		ai_chance = {
+			base = 10
+		}
+		add_war_support = 0.05
+		custom_effect_tooltip = generic_skip_one_line_tt
+		every_state = {
+			limit = {
+				is_on_continent = africa
+				owner = {
+					NOT = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			add_claim_by = ROOT
+		}
+		every_other_country = {
+			limit = {
+				any_controlled_state = {
+					is_on_continent = africa
+				}
+				NOT = {
+					OR = {
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+				}
+			}
+			ROOT = {
+				create_wargoal = {
+					target = PREV
+					type = annex_everything
+				}
+			}
+		}
+	}
+}
+
+# Meeting with the Green Shirts
+country_event = {
+	id = ukrework.78
+	title = ukrework.78.t
+	desc = ukrework.78.desc
+	picture = GFX_report_event_gre_megali_conference_signing
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Lock up them loony bastards
+		name = ukrework.78.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = 100
+		add_stability = 0.05
+		add_war_support = 0.05
+	}
+
+	option = { # Collaborate with them
+		name = ukrework.78.b
+		ai_chance = {
+			base = 10
+		}
+		add_ideas = ENG_green_shirts_idea
+	}
+}
+
+# Parliament Decisions
+country_event = {
+	id = ukrework_parliament.1
+	title = ukrework_parliament.1.t
+	desc = ukrework_parliament.1.desc
+	picture = GFX_report_event_generic_parliament
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Let's focus on Commons
+		name = ukrework_parliament.1.a
+		set_country_flag = ENG_is_currently_focused_on_commons_flag
+		hidden_effect = {
+			ENG_parliament_load_events_effect = yes
+		}
+	}
+	option = { # Let's focus on Lords
+		name = ukrework_parliament.1.b
+		set_country_flag = ENG_is_currently_focused_on_lords_flag
+		hidden_effect = {
+			ENG_parliament_load_events_effect = yes
+		}
+	}
+	option = { # Let's focus on Acts
+		name = ukrework_parliament.1.c
+		set_country_flag = ENG_is_currently_focused_on_acts_flag
+		hidden_effect = {
+			ENG_parliament_load_events_effect = yes
+		}
+	}
+}
+
+# Commons member antagonizes government
+country_event = {
+	id = ukrework_parliament.2
+	title = ukrework_parliament.2.t
+	desc = ukrework_parliament.2.desc
+	picture = GFX_report_event_FDR_speech
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Dammit
+		name = ukrework_parliament.2.a
+		set_variable = {
+			var = ENG_support_to_add_min_var
+			value = 2
+		}
+		set_variable = {
+			var = ENG_support_to_add_max_var
+			value = 3
+		}
+		custom_effect_tooltip = {
+			localization_key = ENG_remove_support_to_house_of_commons_tt
+			MAXIMUM = 3
+		}
+		ENG_remove_support_to_house_of_commons_effect = yes
+		ENG_check_if_support_is_valid_parliament_effect = yes
+		hidden_effect = {
+			ENG_parliament_load_events_effect = yes
+		}
+	}
+}
+
+# Commons member leaves party
+country_event = {
+	id = ukrework_parliament.3
+	title = ukrework_parliament.3.t
+	desc = ukrework_parliament.3.desc
+	picture = GFX_report_event_german_politician_speech
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # They will not be missed
+		name = ukrework_parliament.3.a
+		set_variable = {
+			var = ENG_support_to_add_min_var
+			value = 1
+		}
+		set_variable = {
+			var = ENG_support_to_add_max_var
+			value = 2
+		}
+		custom_effect_tooltip = {
+			localization_key = ENG_remove_support_to_house_of_commons_tt
+			MAXIMUM = 2
+		}
+		ENG_remove_support_to_house_of_commons_effect = yes
+		ENG_check_if_support_is_valid_parliament_effect = yes
+		hidden_effect = {
+			ENG_parliament_load_events_effect = yes
+		}
+	}
+}
+
+# Commons member of opposition announces support for government initiative
+country_event = {
+	id = ukrework_parliament.4
+	title = ukrework_parliament.4.t
+	desc = ukrework_parliament.4.desc
+	picture = GFX_report_event_germany_politician_handshake
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Let's hope this momentum carries
+		name = ukrework_parliament.4.a
+		set_variable = {
+			var = ENG_support_to_add_min_var
+			value = 3
+		}
+		set_variable = {
+			var = ENG_support_to_add_max_var
+			value = 4
+		}
+		custom_effect_tooltip = {
+			localization_key = ENG_add_support_to_house_of_commons_tt
+			MAXIMUM = 4
+		}
+		ENG_add_support_to_house_of_commons_effect = yes
+		ENG_check_if_support_is_valid_parliament_effect = yes
+		hidden_effect = {
+			ENG_parliament_load_events_effect = yes
+		}
+	}
+}
+
+# Lords member dies
+country_event = {
+	id = ukrework_parliament.5
+	title = ukrework_parliament.5.t
+	desc = ukrework_parliament.5.desc
+	picture = GFX_report_event_generic_funeral
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Goodbye, old friend. Your vote will be missed.
+		name = ukrework_parliament.5.a
+		set_variable = {
+			var = ENG_support_to_add_min_var
+			value = 1
+		}
+		set_variable = {
+			var = ENG_support_to_add_max_var
+			value = 2
+		}
+		custom_effect_tooltip = {
+			localization_key = ENG_remove_support_to_house_of_lords_tt
+			MAXIMUM = 2
+		}
+		ENG_remove_support_to_house_of_lords_effect = yes
+		ENG_check_if_support_is_valid_parliament_effect = yes
+		hidden_effect = {
+			ENG_parliament_load_events_effect = yes
+		}
+	}
+}
+
+# Scandal in House of Lords
+country_event = {
+	id = ukrework_parliament.6
+	title = ukrework_parliament.6.t
+	desc = ukrework_parliament.6.desc
+	picture = GFX_report_event_carol_party
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Thankfully I wasn't caught
+		name = ukrework_parliament.6.a
+		set_variable = {
+			var = ENG_support_to_add_min_var
+			value = 3
+		}
+		set_variable = {
+			var = ENG_support_to_add_max_var
+			value = 5
+		}
+		custom_effect_tooltip = {
+			localization_key = ENG_remove_support_to_house_of_lords_tt
+			MAXIMUM = 5
+		}
+		ENG_remove_support_to_house_of_lords_effect = yes
+		ENG_check_if_support_is_valid_parliament_effect = yes
+		hidden_effect = {
+			ENG_parliament_load_events_effect = yes
+		}
+	}
+}
+
+# Lords member supports government initiative
+country_event = {
+	id = ukrework_parliament.7
+	title = ukrework_parliament.7.t
+	desc = ukrework_parliament.7.desc
+	picture = GFX_report_event_FIN_svinhufvud_speech
+	
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	option = { # Very good
+		name = ukrework_parliament.7.a
+		set_variable = {
+			var = ENG_support_to_add_min_var
+			value = 2
+		}
+		set_variable = {
+			var = ENG_support_to_add_max_var
+			value = 4
+		}
+		custom_effect_tooltip = {
+			localization_key = ENG_add_support_to_house_of_lords_tt
+			MAXIMUM = 4
+		}
+		ENG_add_support_to_house_of_lords_effect = yes
+		ENG_check_if_support_is_valid_parliament_effect = yes
+		hidden_effect = {
+			ENG_parliament_load_events_effect = yes
+		}
+	}
+}
+
+# Election
+country_event = {
+	id = ukrework_parliament.8
+	title = ukrework_parliament.8.t
+	desc = ukrework_parliament.8.desc
+	picture = GFX_report_event_eng_voting
+	
+	is_triggered_only = yes
+
+	trigger = {
+		tag = ENG
+		NOT = {
+			has_war_with = GER
+		}
+		OR = {
+			NOT = {
+				has_war_with = GER
+			}
+			GER = {
+				has_capitulated = yes
+			}
+		}
+		has_government = democratic
+		OR = {
+			NOT = {
+				has_completed_focus = ENG_a_change_in_course
+			}
+			has_completed_focus = ENG_reopen_national_elections
+		}
+	}
+	
+	option = { # Labour
+		name = ukrework_parliament.8.a
+		IF = {
+			limit = {
+				ENG_clement_attlee = {
+					is_country_leader = yes
+				}
+			}
+			add_political_power = 5
+		}
+		ELSE = {
+			retire_country_leader = yes
+			custom_effect_tooltip = generic_skip_one_line_tt
+			ENG_clement_attlee = {
+				promote_character = yes
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			set_party_name = {
+				ideology = democratic
+				long_name = ENG_labor_party
+				name = ENG_labor_party
+			}
+		}
+	}
+	option = { # Conservative
+		name = ukrework_parliament.8.b
+		IF = {
+			limit = {
+				OR = {
+					has_country_leader = {
+						character = ENG_stanley_baldwin
+					}
+					has_country_leader = {
+						character = ENG_neville_chamberlain
+					}
+					has_country_leader = {
+						name = "Lord Edward Halifax"
+					}
+					ENG_winston_churchill = {
+						is_country_leader = yes
+					}
+				}
+			}
+			add_political_power = 5
+		}
+		ELSE = {
+			retire_country_leader = yes
+			custom_effect_tooltip = generic_skip_one_line_tt
+			ENG_winston_churchill = {
+				promote_character = yes
+			}
+			IF = {
+				limit = {
+					NOT = {
+						OR = {
+							has_country_leader = {
+								character = ENG_stanley_baldwin
+							}
+							has_country_leader = {
+								character = ENG_neville_chamberlain
+							}
+							has_country_leader = {
+								name = "Lord Edward Halifax"
+							}
+						}
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				set_party_name = {
+					ideology = democratic
+					long_name = ENG_democratic_party
+					name = ENG_democratic_party
+				}
+			}
+		}
+	}
+	option = { # Liberal
+		name = ukrework_parliament.8.c
+		IF = {
+			limit = {
+				has_country_leader = {
+					name = "Archibald Sinclair"
+				}
+			}
+			add_political_power = 5
+		}
+		ELSE = {
+			retire_country_leader = yes
+			custom_effect_tooltip = generic_skip_one_line_tt
+			set_party_name = {
+				ideology = democratic
+				long_name = ENG_liberal_party
+				name = ENG_liberal_party
+			}
+			create_country_leader = {
+				name = "Archibald Sinclair"
+				picture = GFX_Portrait_ENG_archibald_sinclair
+				expire = "1965.1.1"
+				ideology = liberalism
+				traits = {
+					SWI_militaristic_democrat headstrong
+				}
+			}
+		}
+	}
+}
+
+# Election not held in light of war
+country_event = {
+	id = ukrework_parliament.9
+	title = ukrework_parliament.9.t
+	desc = ukrework_parliament.9.desc
+	picture = GFX_report_event_ENG_middle_eastern_conflict_2
+	
+	is_triggered_only = yes
+
+	trigger = {
+		tag = ENG
+		has_war_with = GER
+		NOT = {
+			GER = {
+				has_capitulated = yes
+			}
+		}
+		has_government = democratic
+		OR = {
+			NOT = {
+				has_completed_focus = ENG_a_change_in_course
+			}
+			has_completed_focus = ENG_reopen_national_elections
+		}
+	}
+	
+	option = { # OK
+		name = ukrework_parliament.9.a
+		set_country_flag = ENG_election_bypassed_flag
+		add_stability = -0.025
+	}
+}
+
+# Election will start soon, post-war
+country_event = {
+	id = ukrework_parliament.10
+	title = ukrework_parliament.10.t
+	desc = ukrework_parliament.10.desc
+	picture = GFX_report_event_DEN_celebration
+	
+	is_triggered_only = yes
+
+	trigger = {
+		tag = ENG
+		OR = {
+			NOT = {
+				has_completed_focus = ENG_a_change_in_course
+			}
+			has_completed_focus = ENG_reopen_national_elections
+		}
+	}
+	
+	option = { # OK
+		name = ukrework_parliament.10.a
+		add_stability = 0.025
+		hidden_effect = {
+			country_event = {
+				id = ukrework_parliament.8
+				days = 56
+			}
+		}
+	}
+}
+
+# Welcome Event
+country_event = {
+	id = ukrework_willkommen.1
+	title = ukrework_willkommen.1.t
+	desc = ukrework_willkommen.1.desc
+	picture = GFX_report_event_eng_government_building_union_jack
+	
+	is_triggered_only = yes
+	
+	option = { # I want to figure them out myself
+		name = ukrework_willkommen.1.a
+		ai_chance = { factor = 10 }
+	}
+	option = { # Allow me to see the list
+		name = ukrework_willkommen.1.b
+		ai_chance = { factor = 10 }
+		set_country_flag = ENG_wants_to_spoil_secret_paths_flag
+		unlock_decision_category_tooltip = UK_get_path_guide
+	}
+}
+
+# Secret Paths
+country_event = {
+	id = ukrework_utility.1
+	title = ukrework_utility.1.t
+	desc = ukrework_utility.1.desc
+	picture = GFX_report_event_second_vienna_award_pact
+	
+	is_triggered_only = yes
+	
+	option = { # Wow, thanks!
+		name = ukrework_utility.1.a
+		ai_chance = { factor = 10 }
+	}
+}

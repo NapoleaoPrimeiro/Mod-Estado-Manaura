@@ -1,0 +1,543 @@
+leader_traits = {
+	USA_bujuan_zuzhizhe = {
+		sprite = 10
+		political_power_factor = 0.05
+		stability_factor = 0.1
+	}
+	USA_laogong_zuzhizhe = {
+		sprite = 13
+		industrial_capacity_factory = 0.1
+	}
+	USA_tiewan_quanmou = {
+		sprite = 10
+		operative_slot = 1
+		enemy_operative_detection_chance = 0.01		
+		stability_factor = 0.02
+		war_support_factor = 0.03
+	}
+	USA_zongshuji = {
+		sprite = 10
+		party_popularity_stability_factor = 0.2
+	}
+	USA_xuanchuan_dashi = {
+		sprite = 10
+		war_support_factor= 0.1
+		political_power_gain = 0.01
+		mobilization_laws_cost_factor = -0.2
+	}
+	USA_jijin_xuezhe = {
+		sprite = 10
+		research_speed_factor = 0.08
+	}
+	USA_deli_zhushou = {
+		sprite = 10
+		communism_drift = 0.01
+		political_power_factor = 0.15
+	}
+
+
+	USA_minzhu_doushi = {
+		sprite = 10
+		resistance_decay = 0.05
+		drift_defence_factor = 0.1
+	}
+
+
+	USA_chairman = {
+		political_power_factor = 0.05
+		political_advisor_cost_factor = -0.2
+	}
+
+	USA_tuoluociji_zhichizhe = {
+		sprite = 13
+		production_factory_max_efficiency_factor = 0.05
+		production_factory_efficiency_gain_factor = 0.05
+	}
+
+	usa_king = {
+		army_core_attack_factor = 0.1
+		army_core_defence_factor = 0.1
+		political_power_factor = 0.1
+	}
+
+	STRONG_king = {
+		war_support_factor = 0.1
+		compliance_growth = 0.05
+		subversive_activites_upkeep = -0.1		
+	}
+
+	hawaii_king = {
+		stability_factor = 0.1		
+	}
+
+	xaiweiyi_tong = {
+		random = no
+		sprite = 13
+
+		#communism_drift = 0.1
+		subversive_activites_upkeep = -0.25
+		war_support_factor = 0.05
+
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	haijun_qingbaoguan = {
+		random = no
+		sprite = 13
+
+		enemy_operative_capture_chance_factor = 0.05
+		operative_slot = 1
+		resistance_decay = 0.1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	waixiang = {
+		random = no
+		sprite = 13
+
+		political_power_factor = 0.1
+		stability_factor = 0.05
+
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	riben_dashi = {
+		random = no
+		sprite = 13
+
+		production_speed_industrial_complex_factor = 0.1
+		production_speed_buildings_factor = 0.05
+
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	guoji_shiwu = {
+		random = no
+		sprite = 13
+
+		war_support_factor = 0.05
+		production_speed_arms_factory_factor = 0.1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+
+
+	haijun_junguan = {
+		random = no
+		sprite = 13
+
+		theorist_cost_factor = -0.25
+		army_chief_cost_factor = -0.25
+		navy_chief_cost_factor = -0.25
+		air_chief_cost_factor = -0.25
+
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	gexin_daibiao = {
+		random = no
+		sprite = 13
+
+		research_speed_factor = 0.05
+		trade_laws_cost_factor  = -0.2
+		economy_cost_factor = -0.2	
+
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	wenhe_lvshi = {
+		random = no
+		sprite = 13
+
+		stability_factor = 0.15
+
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	HAW_jishu_guanliao = {
+		random = no
+		sprite = 10
+
+		production_speed_arms_factory_factor = 0.05
+		production_factory_efficiency_gain_factor = 0.05
+		production_factory_max_efficiency_factor = 0.05
+		industrial_concern_cost_factor = -0.25
+
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	HAW_wenjian_caizheng = {
+		random = no
+		sprite = 10
+
+		consumer_goods_factor = -0.05
+		production_speed_buildings_factor = 0.05
+		production_speed_industrial_complex_factor = 0.05
+		economy_cost_factor = 0.2
+	}
+
+
+	communist_jihui_zhuyizhe = {
+		random = no
+		sprite = 13
+
+		#communism_drift = 0.1
+		political_power_factor = 0.05
+		democratic_acceptance = 25
+
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+
+	USA_xinzheng_canyiyuan = {
+		random = no
+		sprite = 13
+
+		local_building_slots_factor = 0.05
+		party_popularity_stability_factor = 0.25
+
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	jishu_guanliao = {
+		random = no
+		sprite = 10
+
+		production_speed_arms_factory_factor = 0.05
+		production_factory_efficiency_gain_factor = 0.05
+		production_factory_max_efficiency_factor = 0.05
+		industrial_concern_cost_factor = -0.25
+
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	jianzhipai_yuanlao = {
+		random = no
+		sprite = 10
+
+		production_speed_arms_factory_factor = 0.05
+		factory_energy_consumption = -0.05
+		industrial_capacity_factory = 0.05
+		industrial_capacity_dockyard = 0.05
+
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	father_of_un = {
+		random = no
+		sprite = 13
+
+		trade_opinion_factor = 0.25
+		trade_laws_cost_factor  = -0.25
+		resource_trade_cost_bonus_per_factory = 2
+
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+
+	gonghedang_xinzhengpai = {
+		random = no
+		sprite = 13
+
+		opinion_gain_monthly_factor = 0.2
+		monthly_population = 0.1
+		compliance_growth = 0.05
+
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	USA_wenhe_faguan = {
+		random = no
+		sprite = 10
+
+		mobilization_laws_cost_factor = -0.25
+		mobilization_speed = 0.1
+		economy_cost_factor = -0.25
+
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	USA_nongchangzhu_baokan_chubanshang ={
+		random = no
+		sprite = 10
+
+		political_power_gain = 0.1
+		consumer_goods_factor = 0.05
+		production_speed_infrastructure_factor = 0.1
+		production_speed_industrial_complex_factor = 0.05
+
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	USA_quanguo_weiyuanhui_zhuxi ={
+		random = no
+		sprite = 13
+
+		stability_factor = 0.1
+		political_power_factor = 0.05
+		political_power_cost = -0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	USA_qiangying_ganshepai = {
+		random = no
+		sprite = 10
+
+		war_support_factor = 0.03
+		production_speed_arms_factory_factor = 0.1
+		conversion_cost_civ_to_mil_factor = -0.2
+	}
+
+
+	USA_wenjian_caizheng = {
+		random = no
+		sprite = 10
+
+		consumer_goods_factor = -0.05
+		production_speed_buildings_factor = 0.05
+		production_speed_industrial_complex_factor = 0.05
+		economy_cost_factor = 0.2
+	}
+
+	USA_broadway_trait = {
+		random = no
+		stability_factor = 0.05
+		political_power_factor  = 0.1
+		war_support_factor = 0.03
+
+	}
+
+	USA_daquanzaiwo= {
+		random = no
+		political_power_factor = 0.05
+		economy_cost_factor = -0.1
+		political_advisor_cost_factor = -0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	USA_gcgjdaibiao= {
+		random = no
+
+		sprite = 12
+
+		consumer_goods_factor=-0.05
+		production_speed_buildings_factor =0.1
+		experience_gain_army_unit_factor =0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	USA_zuigaotongshuai= {
+		random = no
+		war_support_factor=0.05
+		command_power_gain = 0.5
+		max_command_power = 25
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	USA_caizhengguanjia={
+		random = no
+		sprite = 10
+
+		consumer_goods_factor=-0.1
+		production_speed_buildings_factor=0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	USA_zhengzhidegaigejia={
+		random = no
+		sprite = 13
+
+		political_power_gain=0.1
+		democratic_drift=0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	USA_xianzhengbaoshoupai={
+		random = no
+		sprite = 13
+
+		political_power_factor=0.15
+		consumer_goods_factor=-0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	USA_xinzhengshejishi={
+		random = no
+		sprite = 13
+		
+		political_power_gain=0.1
+		production_speed_infrastructure_factor =0.1
+		custom_modifier_tooltip =USA_xinzhengshejishi_tt
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	USA_shehuibaozhangzhimu={
+		random = no
+		sprite = 13
+
+		stability_factor=0.1
+		production_speed_industrial_complex_factor =0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	USA_xinzhengtuixinzhe={
+		random = no
+		sprite = 13
+
+		political_power_gain=0.1
+		production_speed_infrastructure_factor =0.1
+		global_building_slots_factor =0.15
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	USA_gonghuizuzhizhe={
+		random = no
+		sprite = 13
+
+		communism_drift=0.1
+		production_speed_buildings_factor =0.05
+		industrial_capacity_factory =0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	USA_maxism={
+		random = no
+		sprite = 13
+
+		communism_drift=0.1
+		research_speed_factor  =0.05
+		production_factory_max_efficiency_factor =0.05
+		production_factory_efficiency_gain_factor =0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	USA_tejishangjiang={
+		random = no
+		sprite = 12
+
+		army_chief_cost_factor =-0.2
+		experience_gain_army_factor =0.15
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	Steel_corporation = {
+		random = no
+		local_resources_factor = 0.1
+		production_speed_industrial_complex_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	synth_corporation = {
+		random = no
+		local_resources_factor = 0.1
+		production_speed_synthetic_refinery_factor = 0.15
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	research_system = {
+		random = no
+		research_speed_factor = 0.08
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}

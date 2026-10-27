@@ -1,0 +1,55 @@
+################# eo
+#### GERMANY #### eo
+################# eo
+
+GER_ahnenerbe_society_category = {
+	#icon = GFX_decision_cat_generic_austria_hungary_icon
+	#picture = GFX_decision_cat_generic_austria_hungary
+
+	#priority = 50
+
+	allowed = {
+		original_tag = GER
+	}
+
+	visible = {
+	
+	}
+}
+GER_the_seeds_of_revolution = {
+
+	icon = spr_the_seeds_of_revolution
+	
+	allowed = {
+		original_tag = GER
+		#has_dlc = "La Resistance"
+		always = yes
+	}
+}
+GER_pax_habsburgica_category = {
+	icon = GFX_decision_cat_generic_austria_hungary_icon
+	picture = GFX_decision_cat_generic_austria_hungary
+
+	priority = 50
+
+	allowed = {
+		original_tag = GER
+	}
+
+	visible = {
+			OR = {
+		#has_completed_focus = ger2
+		has_completed_focus = GER_return_of_the_habsburg_ww
+		}
+	}
+}
+
+GER_steal_barons_category = {
+	icon = ger_mefo_bills
+
+	allowed = {
+		original_tag = GER
+	}
+	priority = 104
+}
+#eo

@@ -1,0 +1,59 @@
+# =========================================================================
+# Reasonable Guarantees - events
+# =========================================================================
+# Delayed guarantee delivery. The decision (rg_offer_guarantee) commits the
+# guarantor immediately (PP, cooldown, cap slot) but the guarantee itself
+# arrives after a random "cabinet deliberation" of 0-24 days.
+#
+# Fired AT THE TARGET by the decision, so inside this event:
+#   ROOT = the threatened country     FROM = the guarantor
+# Each in-flight guarantee carries its own ROOT/FROM pair, so several majors
+# deliberating at once cannot collide. If ROOT ceases to exist before the
+# event fires (annexed), the engine drops it silently.
+# =========================================================================
+
+add_namespace = rg_guarantee
+
+country_event = {
+	id = rg_guarantee.1
+	hidden = yes
+	is_triggered_only = yes
+
+	option = {
+		# Settle the in-flight marker first - this runs on success AND fizzle.
+		# (Clamp guards the save-load edge: on_startup zeroes rg_pending, but
+		# queued events persist in saves and would otherwise drive it negative.)
+		FROM = {
+			subtract_from_variable = { rg_pending_guarantees = 1 }
+			clamp_variable = { var = rg_pending_guarantees min = 0 max = 10 }
+		}
+
+		# Re-check validity at delivery time - the world may have moved on
+		# during deliberation (target invaded, joined a faction, ...). If the
+		# guarantee fizzles here, the guarantor's slot is freed again by the
+		# monthly recount in rg_on_actions.txt.
+		if = {
+			limit = {
+				ROOT = {
+					has_war = no
+					is_in_faction = no
+					is_subject = no
+					NOT = { is_guaranteed_by = FROM }
+					NOT = { has_war_with = FROM }
+				}
+				FROM = { has_war = no }
+			}
+			FROM = {
+				give_guarantee = PREV
+				# Ledger of guarantees THE MOD issued (PREV = the guaranteed
+				# country here). The monthly review in rg_on_actions.txt may
+				# revoke these once the threat behind them is gone - vanilla
+				# starting guarantees are not in the ledger and stay untouched.
+				if = {
+					limit = { NOT = { is_in_array = { array = rg_issued_guarantees value = PREV } } }
+					add_to_array = { array = rg_issued_guarantees value = PREV }
+				}
+			}
+		}
+	}
+}

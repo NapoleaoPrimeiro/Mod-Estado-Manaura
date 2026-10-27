@@ -1,0 +1,7294 @@
+USA_rework_test = {
+	USA_com_congress_test = { 
+		priority = 50
+
+		icon = GFX_decision_generic_electricity
+
+		ai_will_do = {
+			base = -1		
+		}
+
+		allowed = {
+			original_tag = USA
+		}
+
+		available = {
+								
+		}
+
+		visible = {
+		
+		}
+		#days_remove = 15
+
+		cost = 0
+
+		complete_effect = {
+			set_country_flag = USA_com_congress_test_FLAG
+		}
+	}
+
+	USA_zijin_test = { 
+		priority = 50
+
+		icon = GFX_decision_generic_electricity
+
+		ai_will_do = {
+			base = -1		
+		}
+
+		allowed = {
+			original_tag = USA
+		}
+
+		available = {
+								
+		}
+
+		visible = {
+		
+		}
+		#days_remove = 15
+
+		cost = 0
+
+		complete_effect = {
+			set_country_flag = USA_zijin_test_FLAG
+		}
+	}
+
+	USA_AI_test = { 
+		priority = 50
+
+		icon = GFX_decision_generic_electricity
+
+		ai_will_do = {
+			base = -1		
+		}
+
+		allowed = {
+			original_tag = USA
+		}
+
+		available = {
+								
+		}
+
+		visible = {
+		
+		}
+		#days_remove = 15
+
+		cost = 0
+
+		complete_effect = {
+			set_country_flag = USA_AI_test_FLAG
+		}
+	}
+
+	USA_war_pro_test = { 
+		priority = 50
+
+		icon = GFX_decision_generic_electricity
+
+		ai_will_do = {
+			base = -1		
+		}
+
+		allowed = {
+			original_tag = USA
+		}
+
+		available = {
+								
+		}
+
+		visible = {
+		
+		}
+		#days_remove = 15
+
+		cost = 0
+
+		complete_effect = {
+			set_country_flag = USA_war_pro_test_FLAG
+		}
+	}
+
+	USA_civil_war_fenlie = { 
+		priority = 99
+
+		icon = GFX_decision_generic_electricity
+
+		ai_will_do = {
+			base = -1
+			
+			
+		}
+
+		allowed = {
+			original_tag = USA
+		}
+
+		available = {
+			is_debug = yes				
+		}
+
+		visible = {
+			is_debug = yes	
+		}
+		days_remove = 0
+
+		cost = 0
+
+		modifier = {
+			
+		}
+
+		complete_effect = {
+			country_event = usa_civil_war.3
+
+
+			add_threat = -30
+
+						
+		}
+
+		remove_effect ={
+
+		}
+	}
+
+	USA_civil_war_begin = { 
+		priority = 99
+
+		icon = GFX_decision_generic_electricity
+
+		ai_will_do = {
+			base = -1
+			
+			
+		}
+
+		allowed = {
+			original_tag = USA
+		}
+
+		available = {
+			has_global_flag = USA_2ND_us_civil_war_BEGUN_flag			
+		}
+
+		visible = {
+			is_debug = yes	
+		}
+		days_remove = 0
+
+		cost = 0
+
+		modifier = {
+			
+		}
+
+		complete_effect = {
+			UFE = {
+				USA = {
+					declare_war_on = {
+						target = PREV 
+						type = civil_war
+					}
+				}
+
+				CFA = {
+					declare_war_on = {
+						target = PREV 
+						type = civil_war
+					}
+				}
+			}
+
+			CFA = {
+				USA = {
+					declare_war_on = {
+						target = PREV 
+						type = civil_war
+					}
+				}
+
+				UFE = {
+					declare_war_on = {
+						target = PREV 
+						type = civil_war
+					}
+				}
+			}
+
+			USA = {
+				CFA = {
+					declare_war_on = {
+						target = PREV 
+						type = civil_war
+					}
+				}
+
+				UFE = {
+					declare_war_on = {
+						target = PREV 
+						type = civil_war
+					}
+				}
+			}
+
+
+			add_threat = -30
+
+						
+		}
+
+		remove_effect ={
+
+		}
+	}
+}
+
+USA_congress = {
+	USA_guihuayongdi = { 
+		priority = 50
+
+		icon = GFX_decision_generic_electricity
+
+		ai_will_do = {
+			base = -1
+			
+			
+		}
+
+		allowed = {
+			original_tag = USA
+		}
+
+		available = {
+			any_owned_state = {
+				is_core_of = ROOT 
+				industrial_complex > 3	
+			}					
+		}
+
+		visible = {
+			has_completed_focus = USA_gongye_fuxing_choubei
+			any_owned_state = {
+				is_core_of = ROOT 
+				industrial_complex > 3	
+			}
+		}
+		days_remove = 15
+
+		cost = 10
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		remove_effect = {
+			random_owned_controlled_state = {
+				limit = {
+					industrial_complex > 1
+					is_core_of = ROOT
+				}
+				remove_building = {
+					type = industrial_complex
+					level = 2
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					industrial_complex > 1
+					is_core_of = ROOT
+				}
+				remove_building = {
+					type = industrial_complex
+					level = 2
+				}
+			}
+			add_offsite_building = { type = industrial_complex level = 4 }
+			
+		}
+	}
+
+	eco_touzi = { 
+		priority = 99
+
+		icon = GFX_decision_gre_paying_ifc_debt
+
+		ai_will_do = {
+			base = 99						
+		}
+
+		allowed = {
+			
+		}
+
+		available = {
+								
+		}
+
+		visible = {
+			has_completed_focus = USA_guli_touzi
+		}
+		days_remove = 30
+		days_re_enable = 335
+
+		fire_only_once = no
+
+		cost = 50
+
+		modifier = {
+			consumer_goods_factor = 0.2
+		}
+
+		complete_effect = {
+			country_event = usa.506
+		}
+
+		remove_effect = {
+						
+		}
+	}
+
+	Corporate_with_them = { 
+		priority = 99
+
+		icon = GFX_decision_generic_operation
+
+		ai_will_do = {
+			base = 0.1
+			modifier = {
+				factor = 20
+				threat > 60
+			}
+			modifier = {
+				factor = 40
+				has_war = yes
+			}
+		}
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_country_flag = USA_release_the_monster_flag			
+			has_war = yes		
+		}
+
+		visible = {
+			or = {
+				is_debug = yes
+				has_country_flag = USA_release_the_monster_flag
+			}
+			
+		}
+		days_remove = 35
+		#days_re_enable = 335
+
+		fire_only_once = yes
+
+		cost = 25
+
+		modifier = {
+			consumer_goods_factor = 0.2
+		}
+
+		remove_effect = {
+			complete_national_focus = {
+				focus = USA_focus46
+				use_side_message = yes
+			}			
+		}
+	}
+
+	call_back_hawaii = { 
+		priority = 99
+
+		icon = GFX_decision_eng_puppet_usa
+
+		ai_will_do = {
+			base = 99						
+		}
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_civil_war = no
+			has_completed_focus = USA_focus77					
+		}
+
+		visible = {
+			HAW = {
+				exists = yes
+				NOT = {
+					is_subject_of = USA
+				}
+			}
+		}
+
+		#days_remove = 30
+		#days_re_enable = 335
+
+		fire_only_once = yes
+
+		cost = 50
+
+		
+
+		complete_effect = {
+			HAW = {
+				country_event = {
+					id = haw_extra.16
+					days = 3
+				}
+			}
+		}
+
+		remove_effect = {
+						
+		}
+	}
+
+}
+
+USA_nongyegaige= {
+     USA_kuoda388= {
+          icon = jap_the_unthinkable_option
+		allowed = {
+			original_tag =USA
+		}
+
+		available = {
+			tag =USA
+
+		}
+
+		cost = 100
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 200
+		}
+
+		visible = {
+			tag =USA
+		}
+		days_remove = 100
+		remove_effect = {
+			388= { 
+					add_manpower = 896234
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+					add_dynamic_modifier = { modifier = USA_nongyequ}
+				}
+        }
+        }
+	USA_kuoda381= {
+                icon = jap_the_unthinkable_option
+
+		allowed = {
+			original_tag =USA
+		}
+
+		available = {
+			tag =USA
+
+		}
+
+		cost = 100
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 200
+		}
+
+		visible = {
+			tag =USA
+		}
+		days_remove = 100
+		remove_effect = {
+				381= { 
+					add_manpower = 945341
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+					add_dynamic_modifier = { modifier = USA_nongyequ}
+				}
+        }
+        }
+	USA_kuoda389= {
+                icon = jap_the_unthinkable_option
+
+		allowed = {
+			original_tag =USA
+		}
+
+		available = {
+			tag =USA
+
+		}
+
+		cost = 100
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 200
+		}
+
+		visible = {
+			tag =USA
+		}
+		days_remove = 100
+		remove_effect = {
+				389= { #hubei
+					add_manpower = 573891
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+					add_dynamic_modifier = { modifier = USA_nongyequ}
+				}
+				390= {
+					add_manpower = 567231
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+					add_dynamic_modifier = { modifier = USA_nongyequ}
+				}
+        }
+        }
+	USA_kuoda384= {
+                icon =jap_the_unthinkable_option
+
+		allowed = {
+			original_tag =USA
+		}
+
+		available = {
+			tag =USA
+
+		}
+
+		cost = 100
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 200
+		}
+
+		visible = {
+			tag =USA
+		}
+		days_remove = 100
+		remove_effect = {
+				384= { 
+					add_manpower = 682038
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+					add_dynamic_modifier = { modifier = USA_nongyequ}
+				}
+        }
+        }
+}
+
+USA_guoyouhua= {
+     USA_futeguoyouhua= {
+        icon = jap_the_unthinkable_option
+		allowed = {
+			original_tag =USA
+		}
+
+		available = {
+			tag =USA
+
+		}
+
+		cost = 100
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 200
+		}
+
+		visible = {
+			tag =USA
+		}
+		days_remove = 100
+		remove_effect = {
+			
+			custom_effect_tooltip = USA_guoyouhua_tt
+
+			add_to_variable={   USA_guoyouhua_industrial_capacity_factory   =0.02}
+			add_to_variable={    USA_guoyouhua_consumer_goods_factor    =0.01}
+			add_stability=-0.01
+			IF = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:USA_ford_motor_company_organization= {
+					add_mio_funds = 2000
+				}
+
+			}
+        }
+        }
+	USA_keleguoyouhua= {
+                icon = jap_the_unthinkable_option
+
+		allowed = {
+			original_tag =USA
+		}
+
+		available = {
+			tag =USA
+
+		}
+
+		cost = 100
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 200
+		}
+
+		visible = {
+			tag =USA
+		}
+		days_remove = 100
+		remove_effect = {
+			custom_effect_tooltip = USA_guoyouhua_tt
+			add_to_variable={   USA_guoyouhua_industrial_capacity_factory   =0.02}
+			add_to_variable={    USA_guoyouhua_consumer_goods_factor    =0.01}
+			add_to_variable={    USA_guoyouhua_supply_consumption_factor   =-0.02}
+			add_stability=-0.01
+        }
+        }
+	USA_tongyongguoyouhua= {
+                icon = jap_the_unthinkable_option
+
+		allowed = {
+			original_tag =USA
+		}
+
+		available = {
+			tag =USA
+
+		}
+
+		cost = 100
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 200
+		}
+
+		visible = {
+			tag =USA
+		}
+		days_remove = 100
+		remove_effect = {
+			custom_effect_tooltip = USA_guoyouhua_tt
+			add_to_variable={   USA_guoyouhua_production_speed_buildings_factor    =0.03}
+			add_to_variable={   USA_guoyouhua_industrial_capacity_factory   =0.03}
+			add_to_variable={    USA_guoyouhua_consumer_goods_factor    =0.03}
+			add_stability=-0.01
+        }
+        }
+	USA_boyinguoyouhua= {
+                icon =jap_the_unthinkable_option
+
+		allowed = {
+			original_tag =USA
+		}
+
+		available = {
+			tag =USA
+
+		}
+
+		cost = 100
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 200
+		}
+
+		visible = {
+			tag =USA
+		}
+		days_remove = 100
+		remove_effect = {
+			custom_effect_tooltip = USA_guoyouhua_tt
+			add_to_variable={   USA_guoyouhua_industrial_capacity_factory   =0.03}
+			add_to_variable={    USA_guoyouhua_consumer_goods_factor    =0.01}
+			
+			IF = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+				mio:USA_boeing_organization= {
+					add_mio_funds = 3000
+				}
+				
+			}
+			add_stability=-0.01
+        }
+        }
+}
+
+USA_zhongzhiyuanfa= {
+     USA_tigaogongzuoshichang= {
+        icon = jap_the_unthinkable_option
+		allowed = {
+			original_tag =USA
+		}
+
+		available = {
+			tag =USA
+
+		}
+
+		cost = 15
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 200
+		}
+
+		visible = {
+			tag =USA
+		}
+		days_remove = 10
+		remove_effect = {
+			add_stability=-0.03
+			custom_effect_tooltip = USA_guominjingji5
+			add_to_variable={USA_guominjingji_industrial_capacity_factory  =0.1}
+			add_to_variable={USA_guominjingji_monthly_population =-0.1}
+        }
+        }
+
+     USA_jiangdihuoshibiaozhun= {
+        icon = jap_the_unthinkable_option
+		allowed = {
+			original_tag =USA
+		}
+
+		available = {
+			tag =USA
+
+		}
+
+		cost = 15
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 200
+		}
+
+		visible = {
+			tag =USA
+		}
+		days_remove = 10
+		remove_effect = {
+			add_stability=-0.03
+			custom_effect_tooltip = USA_guominjingji6
+			add_to_variable={USA_guominjingji_consumer_goods_factor =-0.15}
+			add_to_variable={USA_guominjingji_monthly_population =-0.1}
+        }
+        }
+
+	USA_paimaiheirenfangwu= {
+        icon = jap_the_unthinkable_option
+		allowed = {
+			original_tag =USA
+		}
+
+		available = {
+			tag =USA
+
+		}
+
+		cost = 15
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 200
+		}
+
+		visible = {
+			tag =USA
+		}
+		days_remove = 10
+		remove_effect = {
+			add_stability=-0.03
+			custom_effect_tooltip = USA_guominjingji7
+			add_to_variable={USA_guominjingji_global_building_slots_factor =0.2}
+        }
+        }
+
+	USA_heirenxianzuling= {
+        icon = jap_the_unthinkable_option
+		allowed = {
+			original_tag =USA
+		}
+
+		available = {
+			tag =USA
+
+		}
+
+		cost = 15
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 200
+		}
+
+		visible = {
+			tag =USA
+		}
+		days_remove = 10
+		remove_effect = {
+			add_stability=-0.03
+			custom_effect_tooltip = USA_guominjingji8
+			add_to_variable={ USA_guominjingji_stability_factor =0.05}
+        }
+        }
+}
+
+USA_gonggonggongcheng={
+	USA_gonglu = { 
+		priority = 50
+
+		icon = GFX_decision_generic_train
+
+		ai_will_do = {
+			base = 1
+		}
+
+		allowed = {
+			original_tag = USA
+		}
+
+		available = {
+			has_completed_focus = USA_wpa
+			any_owned_state = {
+					is_core_of = ROOT 
+					infrastructure < 4	
+			}			
+		}
+
+		visible = {
+			any_owned_state = {
+					is_core_of = ROOT 
+					infrastructure < 4	
+			}	
+		}
+
+		
+
+		days_remove = 60
+
+		cost = 50
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		remove_effect = {
+			random_owned_state = {
+				limit = { 
+					is_core_of = ROOT 
+					infrastructure < 4	
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				random_neighbor_state = {
+					limit = { 
+						is_core_of = ROOT 	
+						is_owned_by = ROOT
+						infrastructure < 4		
+					}
+					add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+					}	
+				}
+			}
+		}
+	}
+	
+	USA_dianqihua = { 
+		priority = 50
+
+		icon = GFX_decision_generic_electricity
+
+		ai_will_do = {
+			base = -99
+		}
+
+		allowed = {
+			original_tag = USA
+		}
+
+		available = {
+			any_controlled_state = {
+				
+				is_core_of = ROOT
+				free_building_slots = {
+					building = industrial_complex
+					size > 1
+					include_locked = yes
+				}				
+			}			
+		}
+
+		visible = {
+			has_completed_focus = USA_wpa
+			any_controlled_state = {
+				is_core_of = ROOT
+				free_building_slots = {
+					building = industrial_complex
+					size > 1
+					include_locked = yes
+				}				
+			}			
+		}
+
+		
+
+		days_remove = 30
+
+		cost = 10
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		remove_effect = {
+			random_owned_state = {
+				limit = { 
+					is_core_of = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}		
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+		}
+	}
+
+	USA_guojiagongyuan = { 
+		priority = 50
+
+		icon =GFX_decision_SOV_place_hq
+
+		ai_will_do = {
+			base = 25
+		}
+
+		allowed = {
+			original_tag = USA
+		}
+
+		available = {
+			has_completed_focus = USA_wpa
+		}
+
+		visible = {
+			AND={
+				has_completed_focus=USA_wpa
+				OR={
+					378={NOT = {has_state_flag = USA_guojiagongyuan_target	}	}
+					380={NOT = {has_state_flag = USA_guojiagongyuan_target	}	}
+					382={NOT = {has_state_flag = USA_guojiagongyuan_target	}	}
+					375={NOT = {has_state_flag = USA_guojiagongyuan_target	}	}
+					366={NOT = {has_state_flag = USA_guojiagongyuan_target	}	}
+					376={NOT = {has_state_flag = USA_guojiagongyuan_target	}	}
+					368={NOT = {has_state_flag = USA_guojiagongyuan_target	}	}
+					363={NOT = {has_state_flag = USA_guojiagongyuan_target	}	}
+				}
+			}
+		}
+
+
+		days_remove = 120
+
+		cost = 50
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		remove_effect = {
+			random_owned_state = {
+				limit = { 
+					OR={
+						state=378
+						state=380
+						state=382
+						state=375
+						state=366
+						state=376
+						state=368
+						state=363
+					}
+					is_core_of = ROOT 
+					NOT = {has_state_flag = USA_guojiagongyuan_target	}	
+				}
+				add_dynamic_modifier = { modifier = USA_park}
+				set_state_flag = USA_guojiagongyuan_target
+			}
+
+		}
+	}
+
+	USA_zhenxingnongye= { 
+		priority = 50
+
+		icon =GFX_decision_generic_consumer_goods
+
+		ai_will_do = {
+			base = 50
+		}
+
+		allowed = {
+			original_tag = USA
+		}
+
+		available = {
+			has_completed_focus=USA_agricultural_adjustment_act
+		}
+
+		visible = {
+			AND={
+				has_completed_focus=USA_agricultural_adjustment_act
+				OR={
+					381={NOT = {has_state_flag = USA_zhenxingnongye_target	}	}
+					388={NOT = {has_state_flag = USA_zhenxingnongye_target	}	}
+					384={NOT = {has_state_flag = USA_zhenxingnongye_target	}	}
+					389={NOT = {has_state_flag = USA_zhenxingnongye_target	}	}
+					390={NOT = {has_state_flag = USA_zhenxingnongye_target	}	}
+				}
+			}
+			
+			
+		}
+
+
+		days_remove = 60
+
+		cost = 50
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		remove_effect = {
+			if={
+
+				limit = { 
+					388={
+					is_core_of = ROOT 
+					NOT = {has_state_flag = USA_zhenxingnongye_target	}	
+						}
+					}
+				388={
+				add_dynamic_modifier = { modifier = USA_nongyequ}
+				set_state_flag = USA_zhenxingnongye_target
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+				}
+			}
+			else_if={
+				limit = { 
+					381={
+					is_core_of = ROOT 
+					NOT = {has_state_flag = USA_zhenxingnongye_target	}	
+						}
+					}
+				381={
+				add_dynamic_modifier = { modifier = USA_nongyequ}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+				set_state_flag = USA_zhenxingnongye_target
+				}
+			}
+			else_if={
+				limit = { 
+					384={
+					is_core_of = ROOT 
+					NOT = {has_state_flag = USA_zhenxingnongye_target	}	
+						}
+					}
+				384={
+				add_dynamic_modifier = { modifier = USA_nongyequ}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+				set_state_flag = USA_zhenxingnongye_target
+				}
+			}
+			else_if={
+				limit = { 
+					389={
+					is_core_of = ROOT 
+					NOT = {has_state_flag = USA_zhenxingnongye_target	}	
+						}
+					}
+				389={
+				add_dynamic_modifier = { modifier = USA_nongyequ}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+				set_state_flag = USA_zhenxingnongye_target
+				}
+			}
+			else_if={
+				limit = { 
+					390={
+					is_core_of = ROOT 
+					NOT = {has_state_flag = USA_zhenxingnongye_target	}	
+						}
+					}
+				390={
+				add_dynamic_modifier = { modifier = USA_nongyequ}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+				set_state_flag = USA_zhenxingnongye_target
+				}
+			}
+
+		}
+	}
+
+	USA_zhenxinggongye= { 
+		priority = 50
+
+		icon =GFX_RAJ_decision_investment_mils_icon
+
+		ai_will_do = {
+			base = 50
+		}
+
+		allowed = {
+			original_tag = USA
+		}
+
+		available = {
+			has_completed_focus=USA_fair_labour_standards_act
+		}
+
+		visible = {
+			AND={
+				has_completed_focus=USA_fair_labour_standards_act
+				OR={
+					393={NOT = {has_state_flag = USA_zhenxinggongye_target	}	}
+					394={NOT = {has_state_flag = USA_zhenxinggongye_target	}	}
+					395={NOT = {has_state_flag = USA_zhenxinggongye_target	}	}
+					396={NOT = {has_state_flag = USA_zhenxinggongye_target	}	}
+					261={NOT = {has_state_flag = USA_zhenxinggongye_target	}	}
+				}
+			}
+			
+			
+		}
+
+
+		days_remove = 60
+
+		cost = 50
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		remove_effect = {
+			if={
+
+				limit = { 
+					393={
+					is_core_of = ROOT 
+					NOT = {has_state_flag = USA_zhenxinggongye_target	}	
+						}
+					}
+				393={
+				add_dynamic_modifier = { modifier = USA_gongyequ}
+				set_state_flag = USA_zhenxinggongye_target
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_resource = {
+					type = steel
+					amount = 25
+				}
+				}
+			}
+			else_if={
+				limit = { 
+					394={
+					is_core_of = ROOT 
+					NOT = {has_state_flag = USA_zhenxinggongye_target	}	
+						}
+					}
+				394={
+				add_dynamic_modifier = { modifier = USA_gongyequ}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_resource = {
+					type = chromium
+					amount = 16
+				}
+				set_state_flag = USA_zhenxinggongye_target
+				}
+			}
+			else_if={
+				limit = { 
+					395={
+					is_core_of = ROOT 
+					NOT = {has_state_flag = USA_zhenxinggongye_target	}	
+						}
+					}
+				395={
+				add_dynamic_modifier = { modifier = USA_gongyequ}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = USA_zhenxinggongye_target
+				}
+			}
+			else_if={
+				limit = { 
+					396={
+					is_core_of = ROOT 
+					NOT = {has_state_flag = USA_zhenxinggongye_target	}	
+						}
+					}
+				396={
+				add_dynamic_modifier = { modifier = USA_gongyequ}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = USA_zhenxinggongye_target
+				}
+			}
+			else_if={
+				limit = { 
+				261={
+					is_core_of = ROOT 
+					NOT = {has_state_flag = USA_zhenxinggongye_target	}	
+						}
+					}
+				261={
+				add_dynamic_modifier = { modifier = USA_gongyequ}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				
+				set_state_flag = USA_zhenxinggongye_target
+				}
+			}
+
+		}
+	}
+
+}
+
+USA_zhanzhengxuanchuan = {
+	#42
+	USA_shishihouxingdongle= {
+		icon = GFX_decision_eng_trade_unions_support
+		priority = 99
+		allowed = {
+		}
+		visible = {
+			has_completed_focus=USA_focus42
+		}
+		available = {
+			has_USA_slot = yes
+		}
+		ai_will_do = {
+			base = 5
+		}
+		cost =25
+		days_remove = 60
+		days_re_enable = 180
+		fire_only_once = no
+		modifier = {
+			political_power_cost=0.1
+			research_speed_factor=0.07
+		}
+		complete_effect = {
+			remove_USA_slot = yes
+		}
+		remove_effect = {
+			add_USA_slot = yes
+		}
+	}
+	#39
+	USA_shimingzhaohuan= {
+		icon = GFX_decision_generic_military
+		priority = 90
+		allowed = {
+		}
+		visible = {
+			has_completed_focus=USA_focus39
+		}
+		available = {
+			has_USA_slot = yes
+		}
+		ai_will_do = {
+			base = 5
+		}
+		cost = 25
+		days_remove = 60
+		days_re_enable = 120
+		fire_only_once = no
+		modifier = {
+			weekly_manpower=1000
+			mobilization_speed = 0.15
+		}
+		complete_effect = {
+			remove_USA_slot = yes
+		}
+		remove_effect = {
+			add_USA_slot = yes
+		}
+	}
+	#41
+	USA_nvxinglaogong= {
+		icon = GFX_decision_generic_wreckers
+		priority = 94
+		allowed = {
+		}
+		visible = {
+			has_completed_focus=USA_focus41
+		}
+		available = {
+			has_USA_slot = yes
+			has_war=yes
+		}
+		ai_will_do = {
+			base = 5
+		}
+		cost = 50
+		days_remove = 60
+		days_re_enable = 120
+		fire_only_once = no
+		modifier = {
+			production_factory_max_efficiency_factor = 0.1
+			production_factory_efficiency_gain_factor = 0.1
+		}
+		complete_effect = {
+			remove_USA_slot = yes
+		}
+		remove_effect = {
+			add_USA_slot = yes
+		}
+	}
+	#40
+	USA_jieyisuoshi= {
+		icon = GFX_decision_generic_consumer_goods
+		priority = 98
+		allowed = {
+		}
+		visible = {
+			has_completed_focus=USA_focus40
+		}
+		available = {
+			has_USA_slot = yes
+			has_war=yes
+		}
+		ai_will_do = {
+			base = 5
+		}
+		cost = 50
+		days_remove = 100
+		days_re_enable = 200
+		fire_only_once = no
+		modifier = {
+			political_power_cost=0.1
+			consumer_goods_factor=-0.15
+		}
+		complete_effect = {
+			remove_USA_slot = yes
+		}
+		remove_effect = {
+			add_USA_slot = yes
+		}
+	}
+	
+	#juexing
+	USA_bochigulizhuyi= {
+		icon = GFX_decision_generic_speech
+		priority = 100
+		allowed = {
+		}
+		visible = {
+			OR={
+				is_debug=yes
+				has_completed_focus= USA_the_giant_wakes
+			}
+
+		}
+		available = {
+			has_USA_slot = yes
+		}
+		ai_will_do = {
+			base = 5
+		}
+		cost = 10
+		days_remove = 60
+		days_re_enable = 180
+		fire_only_once = no
+		
+		modifier = {
+			war_support_weekly=0.01
+			political_power_gain=0.2
+		}
+		complete_effect = {
+			remove_USA_slot = yes
+		}
+		remove_effect = {
+			add_USA_slot = yes
+		}
+	}
+	USA_haijunri= {
+		icon = GFX_decision_SWE_set_navy_budget
+		priority = 89
+		allowed = {
+		}
+		visible = {
+			OR={
+				is_debug=yes
+				has_completed_focus= USA_the_giant_wakes
+			}
+		}
+		available = {
+			has_USA_slot = yes
+		}
+		ai_will_do = {
+			base = 5
+		}
+		cost = 0
+		days_remove = 5
+		days_re_enable = 360
+		fire_only_once = no
+		modifier = {
+			industrial_capacity_dockyard =0.25
+			experience_gain_navy_factor = 0.25
+		}
+		complete_effect = {
+			remove_USA_slot = yes
+		}
+		remove_effect = {
+			navy_experience=25
+			add_USA_slot = yes
+		}
+	}
+	USA_kongjunri= {
+		icon = GFX_decision_SWE_set_air_budget
+		priority = 69
+		allowed = {
+		}
+		visible = {
+			OR={
+				is_debug=yes
+				has_completed_focus= USA_the_giant_wakes
+			}
+		}
+		available = {
+			has_USA_slot = yes
+		}
+		ai_will_do = {
+			base = 5
+		}
+		cost = 0
+		days_remove = 5
+		days_re_enable = 360
+		fire_only_once = no
+		modifier = {
+			industrial_capacity_factory =0.25
+			experience_gain_air_factor = 0.25
+		}
+		complete_effect = {
+			remove_USA_slot = yes
+		}
+		remove_effect = {
+			air_experience=25
+			add_USA_slot = yes
+		}
+	}
+	#37
+	USA_zhujianweili= {
+		icon = GFX_decision_ger_military_buildup
+		priority = 95
+		allowed = {
+		}
+		visible = {
+			has_completed_focus= USA_focus37
+		}
+		available = {
+			has_USA_slot = yes
+			has_war=yes
+		}
+		ai_will_do = {
+			base = 5
+		}
+		cost = 25
+		days_remove = 90
+		days_re_enable = 180
+		fire_only_once = no
+		
+		modifier = {
+			political_power_cost=0.1
+			industrial_capacity_factory = 0.1
+			industrial_capacity_dockyard = 0.1
+		}
+		complete_effect = {
+			remove_USA_slot = yes
+		}
+		remove_effect = {
+			add_USA_slot = yes
+		}
+	}
+	#44
+	USA_lujun= {
+		icon = GFX_decision_SWE_set_army_budget
+		priority = 79
+		allowed = {
+		}
+		visible = {
+			has_completed_focus= USA_focus44
+		}
+		available = {
+			has_USA_slot = yes
+			has_war=yes
+		}
+		ai_will_do = {
+			base = 5
+		}
+		cost = 10
+		days_remove = 30
+		days_re_enable = 150
+		fire_only_once = no
+		
+		modifier = {
+			political_power_cost=0.1
+			army_attack_factor=0.05
+			army_defence_factor=0.05
+			breakthrough_factor=0.05
+		}
+		complete_effect = {
+			remove_USA_slot = yes
+		}
+		remove_effect = {
+			add_USA_slot = yes
+		}
+	}
+	#43
+
+	#56
+	USA_fanfaxisi= {
+		icon = GFX_decision_category_NOR_fascist_deploy_prep
+		priority = 50
+		allowed = {
+		}
+		visible = {
+			has_completed_focus= USA_focus56
+		}
+		available = {
+			has_USA_slot = yes
+			is_in_faction=yes
+		}
+		ai_will_do = {
+			base = 5
+		}
+		cost = 100
+		days_remove = 25
+		days_re_enable = 300
+		fire_only_once = no
+		
+		modifier = {
+			political_power_cost=0.2
+			consumer_goods_factor=0.2
+		}
+		complete_effect = {
+			remove_USA_slot = yes
+		}
+		remove_effect = {
+			add_USA_slot = yes
+			custom_effect_tooltip=USA_fanfaxisi_tt
+
+
+			every_other_country = {
+				limit = {
+					is_in_faction_with=USA
+					NOT={has_War_with=USA}
+					OR={has_War_with=JAP	has_War_with=GER	has_War_with=ITA}
+				}
+				add_timed_idea={idea=USA_meiguowuzi	days=100}
+				add_equipment_to_stockpile  = { type = infantry_equipment amount = 3000 producer = usa }
+			}
+			
+			
+
+
+			
+		}
+	}
+	#57
+	USA_fuchou= {
+		icon = GFX_decision_SWE_set_navy_budget
+		priority = 82
+		allowed = {
+		}
+		visible = {
+			has_completed_focus= USA_focus57
+		}
+		available = {
+			has_USA_slot = yes
+			has_War_with=JAP
+		}
+		ai_will_do = {
+			base = 5
+		}
+		cost = 100
+		days_remove = 60
+		days_re_enable = 120
+		fire_only_once = no
+		
+		modifier = {
+			political_power_cost=0.1
+			navy_max_range_factor = 0.1
+			navy_carrier_air_attack_factor = 0.1
+			navy_carrier_air_targetting_factor = 0.1
+			sortie_efficiency = 0.1
+		}
+		complete_effect = {
+			remove_USA_slot = yes
+		}
+		remove_effect = {
+			add_USA_slot = yes
+
+		}
+	}
+
+	USA_jap= {
+		icon =GFX_decision_generic_tank
+		priority = 73
+		allowed = {
+		}
+		visible = {
+			has_completed_focus= USA_focus57
+		}
+		available = {
+			has_USA_slot = yes
+			has_War_with=JAP
+		}
+		ai_will_do = {
+			base = 5
+		}
+		cost = 25
+		days_remove = 60
+		days_re_enable = 300
+		fire_only_once = no
+		
+		modifier = {
+			political_power_cost=0.1
+		}
+		targeted_modifier = {
+			tag = JAP
+			attack_bonus_against = 0.1
+			defense_bonus_against = 0.1
+		}
+		complete_effect = {
+			remove_USA_slot = yes
+		}
+		remove_effect = {
+			add_USA_slot = yes
+
+		}
+	}
+
+	USA_chi= {
+		icon =GFX_decision_category_NOR_fascist_deploy_prep
+		priority = 52
+		allowed = {
+		}
+		visible = {
+			has_completed_focus= USA_focus57
+		}
+		available = {
+			has_USA_slot = yes
+			CHI={has_War_with=JAP}
+		}
+		ai_will_do = {
+			base = 5
+		}
+		cost = 25
+		days_remove = 15
+		days_re_enable = 300
+		fire_only_once = no
+		
+		modifier = {
+			political_power_cost=0.2
+			consumer_goods_factor=0.2
+		}
+		complete_effect = {
+			remove_USA_slot = yes
+		}
+		remove_effect = {
+			add_USA_slot = yes
+
+			if = {
+				limit = {
+					CHI = {
+						has_war_with=JAP
+						NOT={has_War_with=USA}
+					}
+				}
+				CHI={
+					add_timed_idea={idea=USA_meiguowuzi	days=200}
+
+					add_equipment_to_stockpile  = { type = infantry_equipment amount = 5000 producer = usa }
+					add_equipment_to_stockpile  = { type = artillery_equipment amount = 200 producer = usa }
+					add_equipment_to_stockpile  = { type = support_equipment amount = 100 producer = usa }
+				}
+
+			}
+
+		}
+	}
+	#58
+	USA_ger= {
+		icon =GFX_decision_generic_tank
+		priority = 74
+		allowed = {
+		}
+		visible = {
+			has_completed_focus= USA_focus58
+		}
+		available = {
+			has_USA_slot = yes
+			has_War_with=GER
+		}
+		ai_will_do = {
+			base = 5
+		}
+		cost = 25
+		days_remove = 60
+		days_re_enable = 300
+		fire_only_once = no
+		
+		modifier = {
+			political_power_cost=0.1
+		}
+		targeted_modifier = {
+			tag = GER
+			attack_bonus_against = 0.1
+			defense_bonus_against = 0.1
+		}
+		complete_effect = {
+			remove_USA_slot = yes
+		}
+		remove_effect = {
+			add_USA_slot = yes
+
+		}
+	}
+
+	USA_sov= {
+		icon =GFX_decision_category_NOR_fascist_deploy_prep
+		priority = 53
+		allowed = {
+		}
+		visible = {
+			has_completed_focus= USA_focus58
+		}
+		available = {
+			has_USA_slot = yes
+			SOV={has_War_with=GER}
+		}
+		ai_will_do = {
+			base = 5
+		}
+		cost = 25
+		days_remove = 15
+		days_re_enable = 300
+		fire_only_once = no
+		
+		modifier = {
+			political_power_cost=0.2
+			consumer_goods_factor=0.2
+		}
+		complete_effect = {
+			remove_USA_slot = yes
+		}
+		remove_effect = {
+			add_USA_slot = yes
+
+			if = {
+				limit = {
+					SOV = {
+						has_war_with=JAP
+						NOT={has_War_with=USA}
+					}
+				}
+				SOV={
+					add_timed_idea={idea=USA_meiguowuzi	days=200}
+
+					add_equipment_to_stockpile  = { type = infantry_equipment amount = 3000 producer = usa }
+				add_equipment_to_stockpile  = { type = artillery_equipment amount = 200 producer = usa }
+				add_equipment_to_stockpile  = { type = support_equipment amount = 100 producer = usa }
+				add_equipment_to_stockpile  = { type = medium_tank_chassis amount = 300 producer = usa }
+				}
+
+			}
+
+		}
+	}
+	#USACE
+	USA_buji= {
+		icon = GFX_decision_generic_trucks
+		priority = 75
+		allowed = {
+		}
+		visible = {
+			has_completed_focus= USA_USACE_projects
+		}
+		available = {
+			has_USA_slot = yes
+			has_war=yes
+		}
+		ai_will_do = {
+			base = 5
+		}
+		cost = 50
+		days_remove = 60
+		days_re_enable = 180
+		fire_only_once = no
+		
+		modifier = {
+			political_power_cost=0.1
+			army_morale_factor = 0.05
+			supply_consumption_factor = -0.1
+			attrition = -0.1
+		}
+		complete_effect = {
+			remove_USA_slot = yes
+		}
+		remove_effect = {
+			add_USA_slot = yes
+
+		}
+	}
+	USA_tongxun= {
+		icon = GFX_decision_generic_motorized
+		priority = 76
+		allowed = {
+		}
+		visible = {
+			has_completed_focus= USA_USACE_projects
+		}
+		available = {
+			has_USA_slot = yes
+			has_war=yes
+		}
+		ai_will_do = {
+			base = 5
+		}
+		cost = 50
+		days_remove = 60
+		days_re_enable = 180
+		fire_only_once = no
+		
+		modifier = {
+			political_power_cost=0.1
+			recon_factor = 0.05
+			land_reinforce_rate = 0.05
+		}
+		complete_effect = {
+			remove_USA_slot = yes
+		}
+		remove_effect = {
+			add_USA_slot = yes
+
+		}
+	}
+	#USA_us_air_force
+	USA_kongjun= {
+		icon = GFX_decision_SWE_set_air_budget
+		priority = 65
+		allowed = {
+		}
+		visible = {
+			has_completed_focus= USA_us_air_force
+		}
+		available = {
+			has_USA_slot = yes
+			has_war=yes
+		}
+		ai_will_do = {
+			base = 5
+		}
+		cost = 50
+		days_remove = 60
+		days_re_enable = 180
+		fire_only_once = no
+		
+		modifier = {
+			political_power_cost=0.1
+			air_attack_factor = 0.1
+			air_ace_generation_chance_factor = 0.2
+			air_mission_efficiency = 0.1
+		}
+		complete_effect = {
+			remove_USA_slot = yes
+		}
+		remove_effect = {
+			add_USA_slot = yes
+
+		}
+	}
+	#USA_bureau_of_ships
+	USA_haijun= {
+		icon = GFX_decision_SWE_set_navy_budget
+		priority = 87
+		allowed = {
+		}
+		visible = {
+			has_completed_focus=USA_bureau_of_ships
+		}
+		available = {
+			has_USA_slot = yes
+			has_war=yes
+		}
+		ai_will_do = {
+			base = 5
+		}
+		cost = 50
+		days_remove = 60
+		days_re_enable = 180
+		fire_only_once = no
+		
+		modifier = {
+			political_power_cost=0.1
+			navy_screen_attack_factor = 0.05
+			navy_screen_defence_factor = 0.05
+			navy_capital_ship_attack_factor = 0.05
+			navy_capital_ship_defence_factor = 0.05
+		}
+		complete_effect = {
+			remove_USA_slot = yes
+		}
+		remove_effect = {
+			add_USA_slot = yes
+
+		}
+	}
+	#USA_advanced_basing
+	USA_chuji= {
+		icon = GFX_decision_SWE_set_navy_budget
+		priority = 86
+		allowed = {
+		}
+		visible = {
+			has_completed_focus=USA_advanced_basing
+		}
+		available = {
+			has_USA_slot = yes
+			has_war=yes
+		}
+		ai_will_do = {
+			base = 5
+		}
+		cost = 50
+		days_remove = 60
+		days_re_enable = 180
+		fire_only_once = no
+		
+		modifier = {
+			political_power_cost=0.2
+			naval_speed_factor = 0.15
+			navy_max_range_factor = 0.1
+			spotting_chance = 0.1
+		}
+		complete_effect = {
+			remove_USA_slot = yes
+		}
+		remove_effect = {
+			add_USA_slot = yes
+
+		}
+	}
+
+
+}
+
+USA_renmindahui={
+	USA_zhizheng_weiji = {
+
+		priority = 1000
+
+		icon = GFX_decision_generic_political_address #GFX_decision_generic_political_discourse
+
+		available = {
+			hidden_trigger = { always = no }
+		}
+
+		days_mission_timeout = 200
+
+		fire_only_once = yes
+
+		activation = {
+			always = no
+		}
+
+		visible = {
+			original_tag = USA
+			has_government = communism
+			OR = {
+				has_completed_focus = USA_president_bailaode
+				has_completed_focus = USA_president_kannong
+				has_completed_focus = USA_focus5
+			}
+		}
+
+		cancel_trigger = {
+			if = {
+				limit = {
+					has_country_flag = USA_bailaode_leader_flag
+				}
+				OR = {
+					has_idea = USA_willam_foster
+					has_idea = USA_youjin_dannisi
+					has_idea = USA_yilishabai_fulin
+				}
+
+				if = {
+					limit = {
+						has_country_flag = USA_tuopai_hezuo_flag
+					}
+					OR = {
+						has_idea = USA_zhanmusi_kannong
+						has_idea = USA_yuesefu_hanseng
+						has_idea = USA_zhanmusi_bonamu
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = USA_fusite_leader_flag
+				}
+				OR = {
+					has_idea = USA_chaersi_lusengbao
+					has_idea = USA_luobote_maina
+				}
+
+				if = {
+					limit = {
+						has_country_flag = USA_tuopai_hezuo_flag
+					}
+					OR = {
+						has_idea = USA_zhanmusi_kannong
+						has_idea = USA_yuesefu_hanseng
+						has_idea = USA_zhanmusi_bonamu
+					}
+				}
+			}
+		}
+
+		cancel_if_not_visible = yes
+
+		is_good = no
+
+		timeout_effect = {
+			if = {
+				limit = {
+					has_country_flag = USA_bailaode_leader_flag
+					NOT = {
+						has_idea = USA_willam_foster
+						has_idea = USA_youjin_dannisi
+						has_idea = USA_yilishabai_fulin
+					}
+				}
+				country_event = usa_communism.18 
+
+				if = {
+					limit = {
+						has_country_flag = USA_tuopai_hezuo_flag
+						Not = {
+							has_idea = USA_zhanmusi_kannong
+							has_idea = USA_yuesefu_hanseng
+							has_idea = USA_zhanmusi_bonamu
+						}
+					}
+					country_event = usa_communism.19
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = USA_fusite_leader_flag
+					NOT = {
+						has_idea = USA_chaersi_lusengbao
+						has_idea = USA_luobote_maina
+					}
+				}
+				country_event = usa_communism.20
+
+				if = {
+					limit = {
+						has_country_flag = USA_tuopai_hezuo_flag
+						Not = {
+							has_idea = USA_zhanmusi_kannong
+							has_idea = USA_yuesefu_hanseng
+							has_idea = USA_zhanmusi_bonamu
+						}
+					}
+					country_event = usa_communism.19
+				}
+			}
+
+
+		}
+
+	}
+
+	USA_support_communism = {
+		visible = {
+			always = no
+		}
+	}
+	USA_support_communism_FROM = {
+        icon = jap_the_unthinkable_option
+
+		allowed = {
+			original_tag = USA
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_completed_focus = USA_zhiyuan_geming
+		}
+
+		cost = 50
+
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 200
+		}
+
+		days_re_enable = 360
+
+		target_trigger = {
+			FROM = {
+				has_government = communism
+				has_war = yes
+				NOT = {
+					has_war_with = ROOT
+				}
+			}
+		}
+
+		complete_effect = {
+			FROM = {
+				country_event = {
+					id = usa_communism.16 
+					days = 3
+				}
+			}
+
+			effect_tooltip = {
+				custom_effect_tooltip = if_they_accept_tt
+				ROOT = { ## Add to us
+					add_equipment_to_stockpile = { 
+							type = infantry_equipment_0
+							amount = 2000
+							producer = USA
+						}
+					add_equipment_to_stockpile = { 
+						type = support_equipment
+						amount = 100
+						producer = USA
+					}
+					add_equipment_to_stockpile = { 
+						type = artillery_equipment
+						amount = 75
+						producer = USA
+					}
+				}
+			}
+
+		}
+		
+	}
+
+	USA_huiyi= {
+        icon = jap_the_unthinkable_option		
+		available = {
+			OR={
+				has_completed_focus=USA_focus60
+				is_debug=yes
+			}
+		}
+		visible={
+			OR={
+				has_completed_focus=USA_focus60
+				is_debug=yes
+			}
+		}
+		cost = 10
+		fire_only_once = no
+		ai_will_do = {
+			factor = 200
+		}		
+		days_remove = 10
+		days_re_enable=100
+		modifier={
+			political_power_gain = 0.2
+		}
+		remove_effect = {
+			add_political_power = 50
+        }
+    }
+
+	USA_bokuan= {
+        icon = GFX_decision_generic_research
+		available = {
+			OR={
+				has_completed_focus=USA_focus60
+				is_debug=yes
+			}
+		}
+		visible={
+			OR={
+				has_completed_focus=USA_focus60
+				is_debug=yes
+			}
+		}
+		cost = 10
+		fire_only_once = no
+		ai_will_do = {
+			factor = 200
+		}		
+		days_remove = 90
+		days_re_enable=120
+		modifier={
+			research_speed_factor=0.1
+			consumer_goods_factor=0.1
+		}
+		remove_effect = {
+
+        }
+    }
+
+	USA_bokuan2= {
+        icon = GFX_decision_generic_factory
+		available = {
+			OR={
+				has_completed_focus=USA_focus60
+				is_debug=yes
+			}
+		}
+		visible={
+			OR={
+				has_completed_focus=USA_focus60
+				is_debug=yes
+			}
+		}
+		cost = 10
+		fire_only_once = no
+		ai_will_do = {
+			factor = 200
+		}		
+		days_remove = 60
+		days_re_enable=120
+		modifier={
+			production_speed_buildings_factor =0.1
+			consumer_goods_factor=0.1
+		}
+		remove_effect = {
+
+        }
+    }
+
+	#62
+	USA_gonglu2 = { 
+		priority = 50
+
+		icon = GFX_decision_generic_train
+
+		ai_will_do = {
+			base = 1
+		}
+
+		allowed = {
+			original_tag = USA
+		}
+
+		available = {
+			has_completed_focus = USA_focus62
+			any_owned_state = {
+					is_core_of = ROOT 
+					infrastructure < 4	
+			}			
+		}
+
+		visible = {
+			has_completed_focus = USA_focus62
+			any_owned_state = {
+					is_core_of = ROOT 
+					infrastructure < 4	
+			}	
+		}		
+
+		
+
+		days_remove = 60
+
+		cost = 50
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		remove_effect = {
+			random_owned_state = {
+				limit = { 
+					is_core_of = ROOT 
+					NOT = {
+						has_state_flag = USA_gonglu_target
+						infrastructure >4
+					}	
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = USA_gonglu_target
+				random_neighbor_state = {
+					limit = { 
+						is_core_of = ROOT 	
+						is_owned_by = ROOT
+						NOT = {
+							has_state_flag =USA_gonglu_target
+						}	
+					}
+					add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+					}	
+					set_state_flag = USA_gonglu_target
+				}
+			}
+		}
+	}
+	
+	USA_dianqihua2 = { 
+		priority = 50
+
+		icon = GFX_decision_generic_electricity
+
+		ai_will_do = {
+			base = 1
+		}
+
+		allowed = {
+			original_tag = USA
+		}
+
+		available = {
+			any_controlled_state = {
+				is_core_of = ROOT
+				free_building_slots = {
+					building = industrial_complex
+					size > 1
+					include_locked = yes
+				}				
+			}
+		}
+
+		visible = {
+
+			has_completed_focus = USA_focsu62
+			any_controlled_state = {
+				is_core_of = ROOT
+				free_building_slots = {
+					building = industrial_complex
+					size > 1
+					include_locked = yes
+				}				
+			}
+			
+		}
+
+		
+
+		days_remove = 30
+
+		cost = 10
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		remove_effect = {
+			random_owned_state = {
+				limit = { 
+					is_core_of = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}		
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+		}
+	}
+
+	USA_guihuayongdi2= { 
+		priority = 50
+
+		icon = GFX_decision_generic_electricity
+
+		ai_will_do = {
+			base = 1
+		}
+
+		allowed = {
+			original_tag = USA
+		}
+
+		available = {
+			any_owned_state = {
+				is_core_of = ROOT 
+				industrial_complex > 3	
+			}			
+		}
+
+		visible = {
+			has_completed_focus=USA_focus62
+			any_owned_state = {
+				is_core_of = ROOT 
+				industrial_complex > 3	
+			}
+		}
+		days_remove = 15
+
+		cost = 15
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		remove_effect = {
+			random_owned_controlled_state = {
+				limit = {
+					industrial_complex > 1
+					is_core_of = ROOT
+				}
+				remove_building = {
+					type = industrial_complex
+					level = 2
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					industrial_complex > 1
+					is_core_of = ROOT
+				}
+				remove_building = {
+					type = industrial_complex
+					level = 2
+				}
+			}
+			add_offsite_building = { type = industrial_complex level = 4 }
+			
+		}
+	}
+}
+
+USA_civil_war_communism = {
+	USA_civil_war_starts = {
+
+		priority = 1000
+
+		icon = GFX_decision_generic_intelligence_operation
+
+		available = {
+			hidden_trigger = { always = no }
+		}
+
+		days_mission_timeout = 200
+
+		fire_only_once = yes
+
+		activation = {
+			always = no
+		}
+
+		visible = {
+			has_country_flag = mtg_usa_civil_war_fascists_2
+		}
+
+		cancel_trigger = {
+			always = no
+		}
+
+		cancel_if_not_visible = yes
+
+		is_good = no
+
+		timeout_effect = {
+			country_event = mtg_usa_civil_war_fascists.20
+		}
+	}
+
+	USA_dixia_gongfang = {
+
+		priority = 1000
+
+		icon = GFX_decision_generic_merge_plant_materiel
+
+		available = {
+
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			has_completed_focus = USA_focus27
+			NOT = {
+				has_country_flag = USA_civil_war_OVER_flag
+			}
+		}
+
+		ai_will_do = {
+			base = 100
+		}
+
+		cost = 25
+
+		complete_effect = {
+			set_country_flag = USA_dixia_gongfang_flag
+
+			USA_shengchan_effect = yes
+
+			custom_effect_tooltip = when_civil_war_starts
+			#custom_effect_tooltip = USA_jiaoyu_gongren_tt
+			effect_tooltip = {
+				add_offsite_building = { type = arms_factory 	level = 2 }
+			}
+		}
+	}
+
+	USA_jiaoyu_gongren = {
+
+		priority = 1000
+
+		ai_will_do = {
+			base = 100
+		}
+
+		icon = GFX_decision_generic_speech
+
+		available = {
+
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			has_completed_focus = USA_reach_out_to_the_ware_group
+			NOT = {
+				has_country_flag = USA_civil_war_OVER_flag
+			}
+		}
+
+		cost = 25
+
+		complete_effect = {
+			set_country_flag = USA_jiaoyu_gongren_over_flag
+			#custom_effect_tooltip = when_civil_war_starts
+			custom_effect_tooltip = USA_jiaoyu_gongren_tt
+			effect_tooltip = {
+				USA = {
+					add_timed_idea = {
+						idea = USA_jishu_gongren_yongru
+						days = 90
+					}
+				}
+				CSA = {
+					add_timed_idea = {
+						idea = USA_queshao_jishu_gongren
+						days = 90
+					}
+				}
+			}
+		}
+	}
+
+	USA_jundui_aiguo_yanjiang = {
+
+		priority = 1000
+
+		ai_will_do = {
+			base = 100
+		}
+
+		icon = GFX_decision_generic_military
+
+		available = {
+
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			has_completed_focus = USA_desegregate_the_armed_forces
+			NOT = {
+				has_country_flag = USA_civil_war_OVER_flag
+			}
+		}
+
+		cost = 25
+
+		complete_effect = {
+			set_country_flag = USA_jundui_aiguo_yanjiang_flag
+			#custom_effect_tooltip = when_civil_war_starts
+			custom_effect_tooltip = USA_jundui_aiguo_yanjiang_tt
+		}
+	}
+
+	USA_nanfang_com_xuanchuan = {
+
+		priority = 1000
+
+		ai_will_do = {
+			base = 100
+		}
+
+		icon = GFX_decision_generic_political_rally
+
+		available = {
+
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			has_completed_focus = USA_democratic_socialism
+			NOT = {
+				has_country_flag = USA_civil_war_OVER_flag
+			}
+		}
+
+		cost = 25
+
+		complete_effect = {
+			set_country_flag = USA_nanfang_com_xuanchuan_flag
+			custom_effect_tooltip = when_civil_war_starts
+			#custom_effect_tooltip = USA_nanfang_com_xuanchuan_tt
+			effect_tooltip = {
+				CSA = {
+					add_timed_idea = {
+						idea = USA_gczy_zhichezhe_baoluan
+						days = 90
+					}
+				}
+			}
+		}
+	}
+}
+
+USA_inner={
+	USA_decision_max2= {     
+		activation = {                         
+			has_completed_focus = USA_max1
+		}                                    
+		available = {                           
+			always=no
+		}
+		fire_only_once = yes
+		visible = {
+			is_debug=yes
+		}
+		is_good = yes                        
+	
+		days_mission_timeout = 140
+		hidden_effect = {
+				deactivate_shine_on_focus =USA_max2
+		} 
+		timeout_effect = {                      
+			complete_national_focus = {
+				focus = USA_max2
+				use_side_message = yes
+			}
+
+		}
+		
+	}
+	USA_decision_max3 = {     
+		activation = {                         
+			has_completed_focus = USA_max2
+		}                                    
+		available = {                           
+			always=no
+		}
+		fire_only_once = yes
+		visible = {
+			is_debug=yes
+			has_completed_focus=USA_max2
+		}
+		is_good = yes                        
+	
+		days_mission_timeout = 140
+		hidden_effect = {
+				deactivate_shine_on_focus = USA_max3
+		} 
+		timeout_effect = {                      
+			   complete_national_focus = {
+				focus = USA_max3
+				use_side_message = yes
+			}
+		}		
+	}
+
+	USA_decision_engs2= {     
+		activation = {                         
+			has_completed_focus = USA_engs1
+		}                                    
+		available = {                           
+			always=no
+		}
+		fire_only_once = yes
+		visible = {
+			is_debug=yes
+		}
+		is_good = yes                        
+	
+		days_mission_timeout = 140
+		hidden_effect = {
+				deactivate_shine_on_focus =USA_engs2
+		} 
+		timeout_effect = {                      
+			complete_national_focus = {
+				focus = USA_engs2
+				use_side_message = yes
+			}
+
+		}
+		
+	}
+	USA_decision_engs3 = {     
+		activation = {                         
+			has_completed_focus = USA_engs2
+		}                                    
+		available = {                           
+			always=no
+		}
+		fire_only_once = yes
+		visible = {
+			is_debug=yes
+			has_completed_focus=USA_engs2
+		}
+		is_good = yes                        
+	
+		days_mission_timeout = 140
+		hidden_effect = {
+				deactivate_shine_on_focus = USA_engs3
+		} 
+		timeout_effect = {                      
+			   complete_national_focus = {
+				focus = USA_engs3
+				use_side_message = yes
+			}
+		}		
+	}
+	USA_decision_diyiguoji = {     
+		activation = {                         
+			has_completed_focus = USA_engs3
+			has_completed_focus = USA_max3
+		}                                    
+		available = {                           
+			always=no
+		}
+		fire_only_once = yes
+		visible = {
+			is_debug=yes
+			has_completed_focus = USA_engs3
+			has_completed_focus = USA_max3
+		}
+		is_good = yes                        
+	
+		days_mission_timeout = 140
+		hidden_effect = {
+				deactivate_shine_on_focus = USA_diyiguoji
+		} 
+		timeout_effect = {                      
+			   complete_national_focus = {
+				focus = USA_diyiguoji
+				use_side_message = yes
+			}
+		}		
+	}
+
+	USA_decision_liening2= {     
+		activation = {                         
+			has_completed_focus = USA_liening1
+		}                                    
+		available = {                           
+			always=no
+		}
+		fire_only_once = yes
+		visible = {
+			is_debug=yes
+		}
+		is_good = yes                        
+	
+		days_mission_timeout = 140
+		hidden_effect = {
+				deactivate_shine_on_focus =USA_liening2
+		} 
+		timeout_effect = {                      
+			complete_national_focus = {
+				focus = USA_liening2
+				use_side_message = yes
+			}
+
+		}
+		
+	}
+	USA_decision_liening3 = {     
+		activation = {                         
+			has_completed_focus = USA_liening2
+		}                                    
+		available = {                           
+			always=no
+		}
+		fire_only_once = yes
+		visible = {
+			is_debug=yes
+			has_completed_focus=USA_liening2
+		}
+		is_good = yes                        
+	
+		days_mission_timeout = 140
+		hidden_effect = {
+				deactivate_shine_on_focus = USA_liening3
+		} 
+		timeout_effect = {                      
+			   complete_national_focus = {
+				focus = USA_liening3
+				use_side_message = yes
+			}
+		}		
+	}
+
+	USA_decision_stalin2= {     
+		activation = {                         
+			has_completed_focus = USA_stalin1
+		}                                    
+		available = {                           
+			always=no
+		}
+		fire_only_once = yes
+		visible = {
+			is_debug=yes
+		}
+		is_good = yes                        
+	
+		days_mission_timeout = 140
+		hidden_effect = {
+				deactivate_shine_on_focus =USA_stalin2
+		} 
+		timeout_effect = {                      
+			complete_national_focus = {
+				focus = USA_stalin2
+				use_side_message = yes
+			}
+
+		}
+		
+	}
+	USA_decision_stalin3 = {     
+		activation = {                         
+			has_completed_focus = USA_stalin2
+		}                                    
+		available = {                           
+			always=no
+		}
+		fire_only_once = yes
+		visible = {
+			is_debug=yes
+			has_completed_focus=USA_stalin2
+		}
+		is_good = yes                        
+	
+		days_mission_timeout = 140
+		hidden_effect = {
+				deactivate_shine_on_focus = USA_stalin3
+		} 
+		timeout_effect = {                      
+			   complete_national_focus = {
+				focus = USA_stalin3
+				use_side_message = yes
+			}
+		}		
+	}
+
+	USA_decision_wuchanjieji = {     
+		activation = {                         
+			has_completed_focus = USA_liening3
+			has_completed_focus = USA_stalin3
+		}                                    
+		available = {                           
+			always=no
+		}
+		fire_only_once = yes
+		visible = {
+			is_debug=yes
+			has_completed_focus = USA_liening3
+			has_completed_focus = USA_stalin3
+		}
+		is_good = yes                        
+	
+		days_mission_timeout = 140
+		hidden_effect = {
+				deactivate_shine_on_focus = USA_wuchanjiejizhuanzheng
+		} 
+		timeout_effect = {                      
+			   complete_national_focus = {
+				focus = USA_wuchanjiejizhuanzheng
+				use_side_message = yes
+			}
+		}		
+	}
+
+	USA_decision_mao2= {     
+		activation = {                         
+			has_completed_focus = USA_mao1
+		}                                    
+		available = {                           
+			always=no
+		}
+		fire_only_once = yes
+		visible = {
+			is_debug=yes
+		}
+		is_good = yes                        
+	
+		days_mission_timeout = 140
+		hidden_effect = {
+				deactivate_shine_on_focus =USA_mao2
+		} 
+		timeout_effect = {                      
+			complete_national_focus = {
+				focus = USA_mao2
+				use_side_message = yes
+			}
+
+		}
+		
+	}
+	USA_decision_mao3 = {     
+		activation = {                         
+			has_completed_focus = USA_mao2
+		}                                    
+		available = {                           
+			always=no
+		}
+		fire_only_once = yes
+		visible = {
+			is_debug=yes
+			has_completed_focus=USA_mao2
+		}
+		is_good = yes                        
+	
+		days_mission_timeout = 140
+		hidden_effect = {
+				deactivate_shine_on_focus = USA_mao3
+		} 
+		timeout_effect = {                      
+			   complete_national_focus = {
+				focus = USA_mao3
+				use_side_message = yes
+			}
+		}		
+	}
+	USA_decision_mao4 = {     
+		activation = {                         
+			has_completed_focus = USA_mao3
+		}                                    
+		available = {                           
+			always=no
+		}
+		fire_only_once = yes
+		visible = {
+			is_debug=yes
+			has_completed_focus=USA_mao3
+		}
+		is_good = yes                        
+	
+		days_mission_timeout = 140
+		hidden_effect = {
+				deactivate_shine_on_focus = USA_mao4
+		} 
+		timeout_effect = {                      
+			   complete_national_focus = {
+				focus = USA_mao4
+				use_side_message = yes
+			}
+		}		
+	}
+	USA_decision_wutuobang = {     
+		activation = {                         
+			has_completed_focus = USA_diyiguoji
+			has_completed_focus = USA_wuchanjiejizhuanzheng
+			has_completed_focus = USA_mao4
+		}                                    
+		available = {                           
+			always=no
+		}
+		fire_only_once = yes
+		visible = {
+			is_debug=yes
+			has_completed_focus = USA_diyiguoji
+			has_completed_focus = USA_wuchanjiejizhuanzheng
+			has_completed_focus = USA_mao4
+		}
+		is_good = yes                        
+	
+		days_mission_timeout = 140
+		hidden_effect = {
+				deactivate_shine_on_focus = USA_inner16
+		} 
+		timeout_effect = {                      
+			   complete_national_focus = {
+				focus = USA_inner16
+				use_side_message = yes
+			}
+		}		
+	}
+}
+
+USA_balance_of_power_category= {
+	USA_dop_debug_inc={
+		icon = GFX_decision_eng_trade_unions_support
+			priority =100
+		fire_only_once = no
+		cost=0
+		visible = {
+			is_debug=yes
+			}
+		complete_effect={
+		USA_bop_inc_effect3=yes
+		}
+	}
+	USA_dop_debug_low={
+		icon = GFX_decision_eng_trade_unions_support
+		priority = 100
+		fire_only_once = no
+		cost=0
+		visible = {
+			is_debug=yes
+		}
+		complete_effect={
+		USA_bop_low_effect3=yes
+		}
+	}
+
+	
+	USA_bop_gonggongshiyekonggufa = {
+		priority = 80
+		icon = GFX_decision_eng_blackshirt_speech
+
+		visible = {
+			OR={
+				has_completed_focus=USA_focus71
+			is_debug=yes
+			}
+			
+		}
+
+		available = {
+		}
+
+		cost =10
+		fire_only_once=yes
+		complete_effect = {		
+				country_event=usa.841
+		}
+
+		ai_will_do = { #Never
+			base = -1
+		}
+	}
+
+
+	USA_bop_tanpan = {
+		priority = 80
+		icon = GFX_decision_eng_trade_unions_support
+
+		visible = {
+			OR={
+				has_completed_focus=USA_focus71
+			is_debug=yes
+			}
+			
+		}
+
+		available = {
+			NOT={
+				has_completed_focus=USA_focus78
+			}
+		}
+
+		cost =50
+		fire_only_once=yes
+		complete_effect = {			
+			if={
+				limit={
+					has_country_flag=USA_stand_with_president_flag
+				}
+				USA_bop_low_effect2=yes
+			}
+			else={
+				USA_bop_low_effect1=yes
+			}
+		}
+
+		ai_will_do = { #Never
+			base = 10
+		}
+	}
+	USA_bop_jinzhixuanzhuanmen = {
+		priority = 80
+		icon = GFX_decision_eng_trade_unions_support
+
+		visible = {
+			NOT={
+				has_completed_focus=USA_focus78
+			}
+			OR={
+				has_completed_focus=USA_focus71
+			    is_debug=yes
+			}
+			
+		}
+
+		available = {
+			NOT={
+				has_completed_focus=USA_focus78
+			}
+		}
+
+		cost =25
+		fire_only_once=yes
+		complete_effect = {
+			if={
+				limit={
+					has_country_flag=USA_stand_with_president_flag
+				}
+				USA_bop_low_effect3=yes
+			}
+			else={
+				USA_bop_low_effect2=yes
+			}
+			add_days_mission_timeout = {
+				mission = USA_bop_caituanxingdong
+				days = 20
+			}
+		}
+
+		ai_will_do = { #Never
+			base = 10
+		}
+	}
+	USA_bop_diaochaqiye = {
+		priority = 80
+		icon = GFX_decision_eng_trade_unions_support
+
+		visible = {
+			NOT={
+				has_completed_focus=USA_focus78
+			}
+			OR={
+				has_completed_focus=USA_focus71
+			    is_debug=yes
+			}
+			
+		}
+
+		available = {
+			NOT={
+				has_completed_focus=USA_focus78
+			}
+		}
+		days_remove=70
+		days_re_enable=180
+		cost =25
+		fire_only_once=no
+		modifier = {
+			power_balance_weekly = -0.01
+			political_power_cost=0.1
+		}
+		complete_effect = {
+			if={
+				limit={
+					has_country_flag=USA_stand_with_president_flag
+				}
+				USA_bop_low_effect1=yes
+			}
+			else={
+				USA_bop_low_effect1=yes
+			}
+		}
+
+		ai_will_do = { #Never
+			base = 10
+		}
+	}
+	USA_bop_shouquanmimijingcha = {
+		priority = 80
+		icon = GFX_decision_eng_trade_unions_support
+
+		visible = {
+			NOT={
+				has_completed_focus=USA_focus78
+			}
+			OR={
+				has_completed_focus=USA_focus71
+			    is_debug=yes
+			}
+			
+		}
+
+		available = {
+			NOT={
+				has_completed_focus=USA_focus78
+			}
+		}
+		days_re_enable=25
+		cost =25
+		fire_only_once=no
+		complete_effect = {
+			if={
+				limit={
+					NOT={has_country_flag=USA_event831_flag}
+				}
+				country_event=usa.831
+				set_country_flag=USA_event831_flag
+			}
+			else_if={
+				limit={
+					NOT={has_country_flag=USA_event832_flag}
+				}
+				country_event=usa.832
+				set_country_flag=USA_event832_flag
+			}
+			else_if={
+				limit={
+					NOT={has_country_flag=USA_event833_flag}
+				}
+				country_event=usa.833				
+				set_country_flag=USA_event833_flag
+			}
+			else_if={
+				limit={
+					NOT={has_country_flag=USA_event834_flag}
+				}
+				country_event=usa.834
+				set_country_flag=USA_event834_flag
+			}
+			else={
+				USA_bop_low_effect2=yes
+			}
+		}
+
+		ai_will_do = { #Never
+			base = 10
+		}
+	}	
+	USA_bop_daibushouhuiguanyuan= {
+		priority = 70
+		icon = GFX_decision_category_usa_congress
+
+		visible = {
+			NOT={
+				has_completed_focus=USA_focus78
+			}
+			OR={
+				has_completed_focus=USA_focus71
+			    is_debug=yes
+			}
+			
+		}
+
+		available = {
+			NOT={
+				has_completed_focus=USA_focus78
+			}
+		}
+		days_re_enable=30
+		cost =25
+		fire_only_once=no
+		complete_effect = {
+			if={
+				limit={
+					has_country_flag=USA_stand_with_president_flag
+				}
+				USA_bop_low_effect1=yes
+			}
+			else={
+				USA_bop_low_effect1=yes
+			}
+			add_days_mission_timeout = {
+				mission = USA_bop_caituanxingdong
+				days = 15
+			}
+		}
+
+		ai_will_do = { #Never
+			base = 10
+		}
+	}
+
+	USA_bop_caituanxingdong={
+	    priority = 99
+		icon = GFX_decision_category_generic_economy
+		activation = {                         
+			has_completed_focus = USA_focus71
+		}                                    
+		available = {                           
+			always=no
+			
+		}
+		fire_only_once = yes
+		visible = {
+			NOT={
+				OR={
+					has_completed_focus=USA_focus77
+					has_completed_focus=USA_focus78
+				}				
+			}
+		}
+		is_good = yes                        
+	
+		days_mission_timeout = 15
+		hidden_effect = {
+			political_power_cost=0.1
+		} 
+		timeout_effect = {   
+			if={
+				limit={
+					NOT={
+						OR={
+							has_completed_focus=USA_focus77
+							has_completed_focus=USA_focus78
+						}				
+					}
+				}
+				activate_mission = USA_bop_caituanxingdong 
+			}  			
+			if={
+				limit={
+					has_country_flag=USA_fangren_caituan_flag
+				}
+				USA_bop_inc_effect6=yes
+			}    
+			else={
+				USA_bop_inc_effect4 =yes
+			}            		
+		}
+	}
+	USA_bop_fangreng= {
+		priority =70
+		icon = GFX_decision_category_generic_economy
+
+		visible = {
+			OR={
+				has_completed_focus=USA_focus71
+			is_debug=yes
+			}
+			NOT={
+				has_completed_focus=USA_focus77
+			}
+			
+		}
+
+		available = {
+			NOT={
+				has_completed_focus=USA_focus77
+			}
+		}
+
+		cost =50
+		fire_only_once=yes
+		complete_effect = {
+			if={
+				limit={
+					has_country_flag=USA_stand_with_caituan_flag
+				}
+				USA_bop_inc_effect2=yes
+			}
+			else={
+				USA_bop_inc_effect1=yes
+			}
+			set_country_flag=USA_fangren_caituan_flag
+			
+		}
+
+		ai_will_do = { #Never
+			base = 0
+		}
+	}
+	USA_bop_liyongmeiti= {
+		priority =70
+		icon = GFX_decision_category_generic_economy
+
+		visible = {
+			OR={
+			has_completed_focus=USA_focus71
+			is_debug=yes
+			}
+			NOT={
+				has_completed_focus=USA_focus77
+			}
+			
+		}
+
+		available = {
+			NOT={
+				has_completed_focus=USA_focus77
+			}
+		}
+
+		days_remove=70
+		days_re_enable=180
+		cost =25
+		fire_only_once=no
+		modifier = {
+			power_balance_weekly = 0.02
+			consumer_goods_factor = 0.05
+		}
+		complete_effect = {
+			if={
+				limit={
+					has_country_flag=USA_stand_with_caituan_flag
+				}
+				USA_bop_inc_effect2=yes
+			}
+			else={
+				USA_bop_inc_effect1=yes
+			}
+		}
+
+		ai_will_do = { #Never
+			base = 0
+		}
+	}
+	USA_bop_moheizongtong= {
+		priority =70
+		icon = GFX_decision_category_generic_economy
+
+		visible = {
+			OR={
+			has_completed_focus=USA_focus71
+			is_debug=yes
+			}
+			NOT={
+				has_completed_focus=USA_focus77
+			}
+			
+		}
+
+		available = {
+			NOT={
+				has_completed_focus=USA_focus77
+			}
+		}
+		cost =30
+		days_re_enable=30
+		fire_only_once=no
+		complete_effect = {
+			if={
+				limit={
+					NOT={has_country_flag=USA_event822_flag}
+				}
+				country_event=usa.822
+				set_country_flag=USA_event822_flag
+			}
+			else_if={
+				limit={
+					NOT={has_country_flag=USA_event823_flag}
+				}
+				country_event=usa.823
+				set_country_flag=USA_event823_flag
+			}
+			else_if={
+				limit={
+					NOT={has_country_flag=USA_event824_flag}
+				}
+				country_event=usa.824				
+				set_country_flag=USA_event824_flag
+			}
+			else_if={
+				limit={
+					NOT={has_country_flag=USA_event825_flag}
+				}
+				country_event=usa.825
+				set_country_flag=USA_event825_flag
+			}
+			else_if={
+				limit={
+					NOT={has_country_flag=USA_event826_flag}
+				}
+				country_event=usa.826
+				set_country_flag=USA_event826_flag
+			}
+			else={
+				USA_bop_inc_effect2=yes
+			}
+		}
+
+		ai_will_do = { #Never
+			base = 0
+		}
+	}
+	USA_bop_kuodadingdan= {
+		priority = 70
+		icon = GFX_decision_category_generic_economy
+
+		visible = {
+			OR={
+			has_completed_focus=USA_focus71
+			is_debug=yes
+			}
+			NOT={
+				has_completed_focus=USA_focus77
+			}
+			
+		}
+
+		available = {
+			NOT={
+				has_completed_focus=USA_focus77
+			}
+		}
+		days_re_enable=100
+		days_remove=15
+		cost =25
+		fire_only_once=no
+		complete_effect = {
+			if={
+				limit={
+					has_country_flag=USA_stand_with_caituan_flag
+				}
+				USA_bop_inc_effect2=yes
+			}
+			else={
+				USA_bop_inc_effect1=yes
+			}
+			
+		}
+
+		ai_will_do = { #Never
+			base = 0
+		}
+	}
+}
+
+USA_liudongzijin_decision={
+	USA_zijin_debug_inc={
+		icon = GFX_decision_eng_trade_unions_support
+		priority =100
+		fire_only_once = no
+		cost=0
+		visible = {
+			is_debug=yes
+			}
+		complete_effect={
+			add_to_variable={zijin=500}
+		}
+	}
+	USA_junhuomaoyi={
+	    priority = 99
+		icon = GFX_decision_category_generic_economy                                  
+		available = {    
+			OR={
+				is_debug = yes
+				AND={
+					has_equipment = { infantry_equipment > 29999 }
+					has_equipment = { support_equipment > 2999}
+					has_equipment = { artillery_equipment > 2999}
+				}
+			}                       			
+		}
+		fire_only_once = no
+		visible = {
+			OR={
+				is_debug=yes
+				has_completed_focus=USA_focus128
+			}			
+		}
+		is_good = yes                        
+
+		days_remove = 10
+		days_re_enable=90
+		complete_effect={
+			
+		}	
+		remove_effect={
+			every_other_country={
+				limit={
+					OR={
+						AND={
+							USA={has_completed_focus=USA_focus109}
+							OR={
+								AND={
+									TAG=FRA
+
+								}
+								AND={
+									TAG=ENG
+
+								}	
+								AND={
+									TAG=GER
+
+								}	
+								AND={
+									TAG=ITA
+
+								}
+								AND={
+									TAG=SOV
+
+								}					
+							}
+							NOT={has_War_with=USA}
+						}
+						AND={
+							USA={has_completed_focus=USA_focus110}
+							OR={
+								AND={
+									TAG=JAP
+
+								}
+								AND={
+									TAG=CHI
+
+								}	
+								AND={
+									TAG=AST
+
+								}		
+										
+							}
+							
+							NOT={has_War_with=USA}
+						}
+						AND={
+							USA={has_completed_focus=USA_focus108}
+							OR={
+								AND={
+									TAG=CAN
+
+								}
+								AND={
+									TAG=MEX
+
+								}						
+							}
+							NOT={has_War_with=USA}
+						}
+					}
+				}
+				country_event=usa.701
+			}
+		}	
+	}
+	USA_touziwaiguo={
+	    priority = 99
+		icon = GFX_decision_category_generic_economy                                  
+		available = {    
+			OR={
+				is_debug=yes
+				has_completed_focus=USA_focus102
+			}                       			
+		}
+		fire_only_once = no
+		visible = {
+			OR={
+				is_debug=yes
+				has_completed_focus=USA_focus102
+			}			
+		}
+		is_good = yes                        
+
+		days_remove = 10
+		days_re_enable=180
+		complete_effect={
+			
+		}
+		remove_effect={
+			every_other_country={
+				limit={
+					OR={
+						AND={
+							USA={has_completed_focus=USA_focus109}
+							OR={
+								AND={
+									TAG=FRA
+
+								}
+								AND={
+									TAG=ENG
+
+								}	
+								AND={
+									TAG=GER
+
+								}	
+								AND={
+									TAG=ITA
+
+								}
+								AND={
+									TAG=SOV
+
+								}					
+							}
+							NOT={has_War_with=USA}
+						}
+						AND={
+							USA={has_completed_focus=USA_focus110}
+							OR={
+								AND={
+									TAG=JAP
+
+								}
+								AND={
+									TAG=CHI
+
+								}	
+								AND={
+									TAG=AST
+
+								}		
+										
+							}
+							NOT={has_War_with=USA}
+						}
+						AND={
+							USA={has_completed_focus=USA_focus108}
+							OR={
+								AND={
+									TAG=CAN
+
+								}
+								AND={
+									TAG=MEX
+
+								}						
+							}
+							NOT={has_War_with=USA}
+						}
+					}
+				}
+				country_event=usa.711
+			}
+		}		
+	}
+	USA_touziminyong={
+	    priority = 99
+		icon = GFX_RAJ_decision_investment_civs_icon                                
+		available = {                           
+			check_variable={  zijin>24 }
+		}
+		fire_only_once = no
+		visible = {
+			OR={
+				is_debug=yes
+				has_completed_focus=USA_focus105
+			}			
+		}
+		is_good = yes                        
+
+		days_remove = 25
+		complete_effect={
+			add_to_variable={zijin=-25}
+		}
+		remove_effect = {                     
+			random_owned_state = {
+				limit = { 
+					is_core_of = ROOT 
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	USA_touzijunyong={
+	    priority = 99
+		icon = GFX_RAJ_decision_investment_mils_icon                                
+		available = {                           
+			check_variable={  zijin>24 }
+		}
+		fire_only_once = no
+		visible = {
+			OR={
+				is_debug=yes
+				has_completed_focus=USA_focus105
+			}			
+		}
+		is_good = yes                        
+
+		days_remove = 25
+		complete_effect={
+			add_to_variable={zijin=-25}
+		}
+		remove_effect = {                     
+			random_owned_state = {
+				limit = { 
+					is_core_of = ROOT 
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	USA_touzijijian={
+	    priority = 99
+		icon = GFX_RAJ_decision_investment_infra_icon                               
+		available = {                           
+			check_variable={  zijin>24 }
+		}
+		fire_only_once = no
+		visible = {
+			OR={
+				is_debug=yes
+				has_completed_focus=USA_focus105
+			}			
+		}
+		is_good = yes                        
+
+		days_remove = 15
+		complete_effect={
+			add_to_variable={zijin=-25}
+		}
+		remove_effect = {                     
+			random_owned_state = {
+				limit = { 
+					is_core_of = ROOT 
+					infrastructure<4
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = { 
+					is_core_of = ROOT 
+					infrastructure<4
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	USA_zhaomuanbaodui={
+	    priority = 99
+		icon = GFX_decision_generic_reorganize_irregulars                             
+		available = {                           
+			check_variable={  zijin>24 }
+		}
+		fire_only_once = no
+		visible = {
+			OR={
+				is_debug=yes
+				has_completed_focus=USA_focus118
+			}			
+		}
+		is_good = yes                        
+
+		days_remove = 60
+		complete_effect={
+			add_to_variable={zijin=-50}
+		}
+		remove_effect = {   
+			custom_effect_tooltip=USA_zhaomuanbaodui_tt   
+			hidden_effect={
+				random_owned_controlled_state = {
+					limit={
+						is_core_of=ROOT
+					}
+					create_unit = {
+						division = "division_template = \"Corporate-Security-Force\" start_experience_factor = 0.3 start_equipment_factor = 1.0"
+						owner = ROOT
+						count = 6
+					}
+			}
+			if={
+				limit={has_war=yes}
+				random_owned_controlled_state = {
+					limit={
+						is_core_of=ROOT
+					}
+					create_unit = {
+						division = "division_template = \"Corporate-Security-Force\" start_experience_factor = 0.3 start_equipment_factor = 1.0"
+						owner = ROOT
+						count = 6
+					}
+				}
+			}
+		}                
+			
+		}
+	}
+	USA_qiangzhixiaofei={
+	    priority = 100
+		icon = GFX_decision_category_generic_economy                                  
+		available = {                           
+		}
+		fire_only_once = no
+		visible = {
+			OR={
+				is_debug=yes
+				has_completed_focus=USA_focus106
+			}			
+		}
+		is_good = yes                        
+
+		days_remove = 30
+		complete_effect={
+			
+		}
+		remove_effect = {   
+			add_stability=-0.05
+			custom_effect_tooltip=USA_inc_zijin30_tt              
+			add_to_variable={zijin=30}
+		}
+	}
+	USA_qiyeshengji1={
+	    priority = 99
+		icon = GFX_decision_generic_merge_plant_materiel                                  
+		available = {                           
+		}
+		fire_only_once = yes
+		visible = {
+			OR={
+				is_debug=yes
+				has_completed_focus=USA_focus116
+			}			
+		}
+		is_good = yes                        
+
+		days_remove = 60
+		complete_effect={
+			add_to_variable={zijin=-50}
+		}
+		remove_effect = {   
+			custom_effect_tooltip=generic_skip_one_line_tt
+			custom_effect_tooltip=USA_shengjiqiye_tt 
+			hidden_effect={
+				if = {
+					limit = {
+						has_idea = USA_jixiaoguanli1
+					}
+					swap_ideas = {
+						remove_idea = USA_jixiaoguanli1
+						add_idea = USA_jixiaoguanli2
+					}
+					set_country_flag=USA_jixiaoguanli2_flag
+				}
+				else = {
+					set_country_flag=USA_jixiaoguanli2_flag
+				}
+			}
+			
+			
+		}
+	}
+	USA_qiyeshengji2={
+	    priority = 99
+		icon = GFX_decision_generic_merge_plant_materiel                                  
+		available = {                           
+		}
+		fire_only_once = yes
+		visible = {
+			OR={
+				is_debug=yes
+				has_country_flag=USA_jixiaoguanli2_flag
+			}			
+		}
+		is_good = yes                        
+
+		days_remove =  60
+		complete_effect={
+			add_to_variable={zijin=-50}
+		}
+		remove_effect = {   
+			custom_effect_tooltip=generic_skip_one_line_tt
+			custom_effect_tooltip=USA_shengjiqiye_tt 
+			hidden_effect={
+				if = {
+					limit = {
+						has_idea = USA_jixiaoguanli2
+					}
+					swap_ideas = {
+						remove_idea = USA_jixiaoguanli2
+						add_idea = USA_jixiaoguanli3
+					}
+					set_country_flag=USA_jixiaoguanli3_flag
+				}
+				else = {
+					set_country_flag=USA_jixiaoguanli3_flag
+				}
+			}
+			
+			
+		}
+	}
+	USA_qiyeshengji3={
+	    priority = 99
+		icon = GFX_decision_generic_merge_plant_materiel                                  
+		available = {                           
+		}
+		fire_only_once = yes
+		visible = {
+			OR={
+				is_debug=yes
+				has_country_flag=USA_jixiaoguanli3_flag
+			}			
+		}
+		is_good = yes                        
+
+		days_remove = 1
+		complete_effect={
+			add_to_variable={zijin=-50}
+		}
+		remove_effect = {   
+			custom_effect_tooltip=generic_skip_one_line_tt
+			custom_effect_tooltip=USA_shengjiqiye_tt 
+			hidden_effect={
+				if = {
+					limit = {
+						has_idea = USA_jixiaoguanli3
+					}
+					swap_ideas = {
+						remove_idea = USA_jixiaoguanli3
+						add_idea = USA_jixiaoguanli4
+					}
+					set_country_flag=USA_jixiaoguanli4_flag
+				}
+				else = {
+					set_country_flag=USA_jixiaoguanli4_flag
+				}
+			}
+			
+			
+		}
+	}
+	USA_qiyeshengji4={
+	    priority = 99
+		icon = GFX_decision_generic_merge_plant_materiel                                  
+		available = {                           
+		}
+		fire_only_once = yes
+		visible = {
+			OR={
+				is_debug=yes
+				has_country_flag=USA_jixiaoguanli4_flag
+			}			
+		}
+		is_good = yes                        
+
+		days_remove = 60
+		complete_effect={
+			add_to_variable={zijin=-50}
+		}
+		remove_effect = {   
+			custom_effect_tooltip=generic_skip_one_line_tt
+			custom_effect_tooltip=USA_shengjiqiye_tt 
+			hidden_effect={
+				if = {
+					limit = {
+						has_idea = USA_jixiaoguanli4
+					}
+					swap_ideas = {
+						remove_idea = USA_jixiaoguanli4
+						add_idea = USA_jixiaoguanli5
+					}
+					set_country_flag=USA_jixiaoguanli5_flag
+				}
+				else = {
+					set_country_flag=USA_jixiaoguanli5_flag
+				}
+			}
+			
+			
+		}
+	}
+	USA_qiyeshengji5={
+	    priority = 99
+		icon = GFX_decision_generic_merge_plant_materiel                                  
+		available = {                           
+		}
+		fire_only_once = yes
+		visible = {
+			OR={
+				is_debug=yes
+				has_country_flag=USA_jixiaoguanli5_flag
+			}			
+		}
+		is_good = yes                        
+
+		days_remove = 60
+		complete_effect={
+			add_to_variable={zijin=-50}
+		}
+		remove_effect = {   
+			custom_effect_tooltip=generic_skip_one_line_tt
+			custom_effect_tooltip=USA_shengjiqiye_tt 
+			hidden_effect={
+				if = {
+					limit = {
+						has_idea = USA_jixiaoguanli5
+					}
+					swap_ideas = {
+						remove_idea = USA_jixiaoguanli5
+						add_idea = USA_jixiaoguanli6
+					}
+					set_country_flag=USA_jixiaoguanli6_flag
+				}
+				else = {
+					set_country_flag=USA_jixiaoguanli6_flag
+				}
+			}
+			
+			
+		}
+	}
+	USA_qiyeshengji6={
+	    priority = 99
+		icon = GFX_decision_generic_merge_plant_materiel                                  
+		available = {                           
+		}
+		fire_only_once = yes
+		visible = {
+			OR={
+				is_debug=yes
+				has_country_flag=USA_jixiaoguanli6_flag
+			}			
+		}
+		is_good = yes                        
+
+		days_remove = 60
+		complete_effect={
+			add_to_variable={zijin=-50}
+		}
+		remove_effect = {   
+			custom_effect_tooltip=generic_skip_one_line_tt
+			custom_effect_tooltip=USA_shengjiqiye_tt 
+			hidden_effect={
+				if = {
+					limit = {
+						has_idea = USA_jixiaoguanli6
+					}
+					swap_ideas = {
+						remove_idea = USA_jixiaoguanli6
+						add_idea = USA_jixiaoguanli7
+					}
+					set_country_flag=USA_jixiaoguanli7_flag
+				}
+				else = {
+					set_country_flag=USA_jixiaoguanli7_flag
+				}
+			}
+			
+			
+		}
+	}
+}
+
+USA_ai={
+	USA_civil_war = {
+		priority = 50
+
+		icon = GFX_decision_generic_electricity
+
+		ai_will_do = {
+			base = 999		
+		}
+
+		allowed = {
+			original_tag = USA
+		}
+
+		available = {
+			OR = {
+				has_government = neutrality 
+				has_government = fascism
+				has_government = democratic
+			}
+			any_other_country = {
+				has_government = communism
+				original_tag = USA
+				has_war = yes
+				surrender_progress > 0.7
+			}		
+		}
+
+		visible = {
+			OR={
+				is_debug = yes
+				is_ai=yes
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			random_other_country = {
+				limit = {
+					has_government = communism
+					original_tag = USA
+				}
+				USA = {
+					annex_country = {
+						target = PREV
+						transfer_troops = no
+					}
+				}
+			}			
+		}
+	}
+	USA_seek_for_land_under_the_sunshine= { 
+		priority = 50
+
+		icon = GFX_decision_generic_electricity
+
+		ai_will_do = {
+			base = 999		
+		}
+
+		allowed = {
+			original_tag = USA
+		}
+
+		available = {
+			any_owned_state = {
+				is_core_of = ROOT 
+				industrial_complex > 3	
+			}			
+		}
+
+		visible = {
+			OR={
+				is_debug = yes
+				is_ai=yes
+			}
+		}
+		days_remove = 30
+
+		cost = 0
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		remove_effect = {
+			random_owned_controlled_state = {
+				limit = {
+					industrial_complex > 3
+					is_core_of = ROOT
+				}
+				remove_building = {
+					type = industrial_complex
+					level = 4
+				}
+			}
+			add_offsite_building = { type = industrial_complex level = 4 }
+			
+		}
+	}
+	USA_trade_with_CUB = {
+		allowed = {
+			TAG=USA
+    		#OR={
+			#	is_debug=yes
+			#	is_ai=yes
+			#}
+		}
+		ai_will_do = {
+			base = 999
+		}
+		available = {			
+			OR={
+				is_debug=yes
+				AND={
+					is_ai=yes
+					has_war=yes
+				}
+				
+			}
+		}
+		visible = {
+			tag=USA
+			OR={
+				is_debug=yes
+				is_ai=yes
+			}
+		}
+		fire_only_once=yes
+		complete_effect = {
+			393={
+				add_resource = {
+					type = chromium
+					amount = 40
+				}
+			}
+			315 = {
+				add_resource = {
+					type = chromium
+					amount = -40
+				}
+				add_extra_state_shared_building_slots=5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+			USA={
+				random_owned_controlled_state = {
+					limit = {
+						industrial_complex > 2
+						is_core_of = ROOT
+					}
+					remove_building = {
+						type = industrial_complex
+						level = 3
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						industrial_complex > 1
+						is_core_of = ROOT
+					}
+					remove_building = {
+						type = industrial_complex
+						level = 2
+					}
+				}
+			}
+			
+		}
+	}
+	USA_trade_with_INS = {
+		allowed = {
+			TAG=USA
+    		#OR={
+			#	is_debug=yes
+			#	is_ai=yes
+			#}
+		}
+		ai_will_do = {
+			base = 999
+		}
+		available = {			
+			OR={
+				is_debug=yes
+				AND={
+					is_ai=yes
+					has_completed_focus=USA_the_giant_wakes
+					INS={
+						exists=yes
+					}
+				}
+				
+			}
+		}
+		visible = {
+			tag=USA
+			OR={
+				is_debug=yes
+				is_ai=yes
+			}
+		}
+		fire_only_once=yes
+		complete_effect = {
+			363={
+				add_resource = {
+					type =rubber
+					amount = 40
+				}
+			}
+			672 = {
+				add_resource = {
+					type =rubber
+					amount = -40
+				}
+				add_extra_state_shared_building_slots=5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+			USA={
+				random_owned_controlled_state = {
+					limit = {
+						industrial_complex > 2
+						is_core_of = ROOT
+					}
+					remove_building = {
+						type = industrial_complex
+						level = 3
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						industrial_complex > 1
+						is_core_of = ROOT
+					}
+					remove_building = {
+						type = industrial_complex
+						level = 2
+					}
+				}
+			}
+			
+		}
+	}
+	USA_trade_with_ENG = {
+		allowed = {
+			TAG=USA
+    		#OR={
+			#	is_debug=yes
+			#	is_ai=yes
+			#}
+		}
+		ai_will_do = {
+			base = 999
+		}
+		available = {			
+			OR={
+				is_debug=yes
+				AND={
+					is_ai=yes
+					ENG={
+						exists=yes
+						has_war=yes
+					}
+				}
+				
+			}
+		}
+		visible = {
+			tag=USA
+			OR={
+				is_debug=yes
+				is_ai=yes
+			}
+		}
+		fire_only_once=yes
+		complete_effect = {
+			361={
+				add_resource = {
+					type =steel
+					amount = 40
+				}
+			}
+			130 = {
+				add_resource = {
+					type =steel
+					amount = -40
+				}
+				add_extra_state_shared_building_slots=5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+			USA={
+				random_owned_controlled_state = {
+					limit = {
+						industrial_complex > 2
+						is_core_of = ROOT
+					}
+					remove_building = {
+						type = industrial_complex
+						level = 3
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						industrial_complex > 1
+						is_core_of = ROOT
+					}
+					remove_building = {
+						type = industrial_complex
+						level = 2
+					}
+				}
+			}
+			
+		}
+	}
+	USA_what_about_focus_43 = {
+		allowed = {
+			TAG=USA
+    		#OR={
+			#	is_debug=yes
+			#	is_ai=yes
+			#}
+		}
+		ai_will_do = {
+			base = 999
+		}
+		available = {			
+			OR={
+				is_debug=yes
+				AND={
+					is_ai=yes
+					is_in_faction_with=ENG
+				}
+				
+			}
+		}
+		visible = {
+			tag=USA
+			OR={
+				is_debug=yes
+				is_ai=yes
+			}
+		}
+		fire_only_once=yes
+		days_remove = 70
+		modifier = {
+			political_power_cost=1
+		}
+		remove_effect= {                      
+			complete_national_focus = {
+				focus = USA_focus43
+				use_side_message = yes
+			}
+
+		}
+	}
+
+	USA_what_about_focus_47 = {
+		allowed = {
+			TAG=USA
+    		#OR={
+			#	is_debug=yes
+			#	is_ai=yes
+			#}
+		}
+		ai_will_do = {
+			base = 999
+		}
+		available = {			
+			OR={
+				is_debug=yes
+				AND={
+					is_ai=yes
+					has_completed_focus=USA_focus46
+				}
+				
+			}
+		}
+		visible = {
+			tag=USA
+			OR={
+				is_debug=yes
+				is_ai=yes
+			}
+		}
+		fire_only_once=yes
+		days_remove = 35
+		modifier = {
+			political_power_cost=1
+		}
+		remove_effect= {                      
+			complete_national_focus = {
+				focus = USA_focus47
+				use_side_message = yes
+			}
+
+		}
+	}
+	USA_medium_flame_tank_production = {
+		allowed = {
+			TAG=USA
+    		#OR={
+			#	is_debug=yes
+			#	is_ai=yes
+			#}
+		}
+		ai_will_do = {
+			base = 999
+		}
+		available = {
+			has_tech = basic_medium_tank_chassis
+			is_special_project_completed = sp:sp_land_flamethrower_tank
+			OR={
+				is_debug=yes
+				is_ai=yes
+			}
+		}
+		visible = {
+			tag=USA
+			OR={
+				is_debug=yes
+				is_ai=yes
+			}
+		}
+		fire_only_once=yes
+		complete_effect = {
+			create_equipment_variant = {
+				type = medium_tank_flame_chassis_1
+				parent_version = 0
+				design_team = mio:USA_chrysler_organization
+				modules = {
+					main_armament_slot = flamethrower
+					turret_type_slot = tank_medium_two_man_tank_turret
+					suspension_type_slot = tank_christie_suspension
+					armor_type_slot = tank_riveted_armor
+					engine_type_slot = tank_gasoline_engine
+					special_type_slot_1 = secondary_turret_hmg
+					special_type_slot_2 = easy_maintenance
+					special_type_slot_3 = empty
+					special_type_slot_4 = empty
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 0
+					tank_nsb_armor_upgrade = 0
+				}
+			}
+		}
+	}
+	USA_medium_tank_production = {
+		allowed = {
+			TAG=USA
+    		#OR={
+			#	is_debug=yes
+			#	is_ai=yes
+			#}
+		}
+		ai_will_do = {
+			base = 999
+		}
+		available = {	
+			NOT={
+				has_tech=improved_medium_tank_chassis
+			}		
+			OR={
+				is_debug=yes
+				AND={
+					is_ai=yes
+					has_tech = basic_medium_tank_chassis
+					has_tech = antitank1
+				}				
+			}
+		}
+		visible = {
+			tag=USA
+			OR={
+				is_debug=yes
+				is_ai=yes
+			}
+		}
+		fire_only_once=yes
+		complete_effect = {
+			create_equipment_variant = {
+				type = medium_tank_chassis_1
+				parent_version = 0
+				design_team = mio:USA_chrysler_organization
+				modules = {
+					armor_type_slot=tank_riveted_armor
+					engine_type_slot=tank_diesel_engine
+					main_armament_slot=tank_medium_cannon
+					special_type_slot_1=secondary_turret_hmg
+					special_type_slot_2=secondary_turret_hmg
+					special_type_slot_3=empty
+					special_type_slot_4=tank_radio_1
+					suspension_type_slot=tank_bogie_suspension
+					turret_type_slot=tank_medium_three_man_tank_turret
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 0
+					tank_nsb_armor_upgrade = 4
+				}
+			}
+		}
+	}
+	USA_medium_tank_production2 = {
+		allowed = {
+			TAG=USA
+    		#OR={
+			#	is_debug=yes
+			#	is_ai=yes
+			#}
+		}
+		ai_will_do = {
+			base = 999
+		}
+		available = {			
+			NOT={
+				has_tech=improved_medium_tank_chassis
+			}
+			OR={
+				is_debug=yes
+				AND={
+					is_ai=yes
+					has_tech = basic_medium_tank_chassis
+					has_tech = tech_maintenance_company2
+					has_tech = artillery1
+				}
+			}
+		}
+		visible = {
+			tag=USA
+			OR={
+				is_debug=yes
+				is_ai=yes
+			}
+		}
+		fire_only_once=yes
+		complete_effect = {
+			create_equipment_variant = {
+				type = medium_tank_chassis_1
+				parent_version = 0
+				design_team = mio:USA_chrysler_organization
+				modules = {
+					armor_type_slot=tank_riveted_armor
+					engine_type_slot=tank_diesel_engine
+					main_armament_slot=tank_medium_howitzer
+					special_type_slot_1=secondary_turret_hmg
+					special_type_slot_2=secondary_turret_hmg
+					special_type_slot_3=easy_maintenance
+					special_type_slot_4=tank_radio_1
+					suspension_type_slot=tank_bogie_suspension
+					turret_type_slot=tank_medium_three_man_tank_turret
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 3
+					tank_nsb_armor_upgrade = 8
+				}
+			}
+		}
+	}
+	USA_medium_tank_production3 = {
+		allowed = {
+			TAG=USA
+    		#OR={
+			#	is_debug=yes
+			#	is_ai=yes
+			#}
+		}
+		ai_will_do = {
+			base = 999
+		}
+		available = {						
+			OR={
+				AND={
+					is_ai=yes
+					has_tech = improved_medium_tank_chassis
+					has_tech = tech_maintenance_company2
+					has_tech = antitank3
+				}
+				is_debug=yes
+			}
+		}
+		visible = {
+			tag=USA
+			OR={
+				is_debug=yes
+				is_ai=yes
+			}
+		}
+		fire_only_once=yes
+		complete_effect = {
+			create_equipment_variant = {
+				type = medium_tank_chassis_2
+				parent_version = 0
+				design_team = mio:USA_chrysler_organization
+				modules = {
+					armor_type_slot=tank_riveted_armor
+					engine_type_slot=tank_diesel_engine
+					main_armament_slot=tank_medium_cannon_2
+					special_type_slot_1=secondary_turret_hmg
+					special_type_slot_2=secondary_turret_small_cannon
+					special_type_slot_3=easy_maintenance
+					special_type_slot_4=tank_radio_1
+					suspension_type_slot=tank_bogie_suspension
+					turret_type_slot=tank_medium_three_man_tank_turret
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 3
+					tank_nsb_armor_upgrade = 8
+				}
+			}
+		}
+	}
+	USA_marine_army_40 = {
+		icon = GFX_decision_category_ger_military_buildup
+		ai_will_do = {
+			factor = 999
+		}
+		allowed = {
+			TAG=USA
+    		#OR={
+			#	is_debug=yes
+			#	is_ai=yes
+			#}
+		}
+		fire_only_once = yes
+		available = {
+			OR={
+				is_debug=yes
+				
+				AND={
+					date > 1940.1.1
+					is_ai=yes
+				}
+			}		
+		}
+		visible = {
+			OR={
+				is_debug=yes
+				is_ai=yes
+			}
+		}
+		complete_effect = {
+			division_template = {
+				division_names_group = USA_MAR_01
+				name = "Marine Brigade"
+				regiments = {
+					marine = { x = 0 y = 0 }
+					marine = { x = 0 y = 1 }
+					marine = { x = 0 y = 2 }
+					marine = { x = 0 y = 3 }
+
+					marine = { x = 1 y = 0 }
+					marine = { x = 1 y = 1 }
+					marine = { x = 1 y = 2 }
+					marine = { x = 1 y = 3 }
+
+					medium_armor = { x = 2 y = 0 }
+					medium_armor = { x = 2 y = 1 }
+					medium_armor = { x = 2 y = 2 }
+					medium_armor = { x = 2 y = 3 }
+
+					medium_armor = { x = 3 y = 0 }
+					medium_armor = { x = 3 y = 1 }
+					medium_armor = { x = 3 y = 2 }
+					medium_armor = { x = 3 y = 3 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					artillery = { x = 0 y = 1 }
+					field_hospital = { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					medium_flame_tank = { x = 0 y = 4 }
+				}
+			}
+		}
+	}
+	USA_marine_army_42 = { 
+		icon = GFX_decision_category_ger_military_buildup
+		ai_will_do = {
+			factor = 999
+		}
+		allowed = {
+			TAG=USA
+    		#OR={
+			#	is_debug=yes
+			#	is_ai=yes
+			#}
+		}
+		fire_only_once = yes
+		available = {
+			OR={
+				is_debug=yes
+				
+				AND={
+					date > 1942.1.1
+					is_ai=yes
+				}
+			}		
+		}
+		visible = {
+			OR={
+				is_debug=yes
+				is_ai=yes
+			}
+		}
+		complete_effect = {
+			division_template = {
+				division_names_group = USA_MAR_01
+				name = "Marine Brigade"
+				regiments = {
+					amphibious_mechanized = { x = 0 y = 0 }
+					amphibious_mechanized = { x = 0 y = 1 }
+					amphibious_mechanized = { x = 0 y = 2 }
+					amphibious_mechanized = { x = 0 y = 3 }
+
+					amphibious_mechanized = { x = 1 y = 0 }
+					amphibious_mechanized = { x = 1 y = 1 }
+					amphibious_mechanized = { x = 1 y = 2 }
+					amphibious_mechanized = { x = 1 y = 3 }
+
+					medium_armor = { x = 2 y = 0 }
+					medium_armor = { x = 2 y = 1 }
+					medium_armor = { x = 2 y = 2 }
+					medium_armor = { x = 2 y = 3 }
+
+					medium_armor = { x = 3 y = 0 }
+					medium_armor = { x = 3 y = 1 }
+					medium_armor = { x = 3 y = 2 }
+					medium_armor = { x = 3 y = 3 }
+
+					medium_tank_destroyer_brigade = { x = 4  y = 0 }
+					medium_tank_destroyer_brigade = { x = 4  y = 1 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					artillery = { x = 0 y = 1 }
+					field_hospital = { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					medium_flame_tank = { x = 0 y = 4 }
+				}
+			}
+		}
+	}
+	USA_inf_army_40 = {
+		icon = GFX_decision_category_ger_military_buildup
+		ai_will_do = {
+			factor = 999
+		}
+		allowed = {
+			TAG=USA
+    		#OR={
+			#	is_debug=yes
+			#	is_ai=yes
+			#}
+		}
+		fire_only_once = yes
+		available = {
+			OR={
+				is_debug=yes
+				
+				AND={
+					date > 1940.1.1
+					is_ai=yes
+				}
+			}		
+		}
+		visible = {
+			OR={
+				is_debug=yes
+				is_ai=yes
+			}
+		}
+		complete_effect = {
+			division_template = {
+				priority = 100
+				is_locked = no
+				division_names_group = USA_INF_01
+				name = "US inf"
+				regiments = {
+					Infantry = { x = 0 y = 0 }
+					Infantry = { x = 0 y = 1 }
+					Infantry = { x = 0 y = 2 }
+					Infantry = { x = 0 y = 3 }
+
+					Infantry = { x = 1 y = 0 }
+					Infantry = { x = 1 y = 1 }
+					Infantry = { x = 1 y = 2 }
+					Infantry = { x = 1 y = 3 }
+
+					Infantry = { x = 2 y = 0 }
+					Infantry = { x = 2 y = 1 }
+					Infantry = { x = 2 y = 2 }
+					Infantry = { x = 2 y = 3 }
+
+					artillery_brigade = { x = 3 y = 0 }
+					artillery_brigade = { x = 3 y = 1 }
+
+
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					artillery = { x = 0 y = 1 }
+					field_hospital = { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					recon = { x = 0 y = 4 }
+				}
+			}
+		}
+	}
+	USA_inf_army_42 = {
+		icon = GFX_decision_category_ger_military_buildup
+		ai_will_do = {
+			factor = 999
+		}
+		allowed = {
+			TAG=USA
+    		#OR={
+			#	is_debug=yes
+			#	is_ai=yes
+			#}
+		}
+		fire_only_once = yes
+		available = {
+			OR={
+				is_debug=yes
+				
+				AND={
+					date > 1941.11.1
+					is_ai=yes
+				}
+			}		
+		}
+		visible = {
+			OR={
+				is_debug=yes
+				is_ai=yes
+			}
+		}
+		complete_effect = {
+			division_template = {
+				priority = 100
+				is_locked = no
+				division_names_group = USA_INF_01
+				name = "US inf"
+				regiments = {
+					Infantry = { x = 0 y = 0 }
+					Infantry = { x = 0 y = 1 }
+					Infantry = { x = 0 y = 2 }
+					Infantry = { x = 0 y = 3 }
+					Infantry = { x = 0 y = 4 }
+
+					Infantry = { x = 1 y = 0 }
+					Infantry = { x = 1 y = 1 }
+					Infantry = { x = 1 y = 2 }
+					Infantry = { x = 1 y = 3 }
+
+					Infantry = { x = 2 y = 0 }
+					Infantry = { x = 2 y = 1 }
+					Infantry = { x = 2 y = 2 }
+					Infantry = { x = 2 y = 3 }
+
+					artillery_brigade = { x = 3 y = 0 }
+					artillery_brigade = { x = 3 y = 1 }
+					artillery_brigade = { x = 3 y = 2 }
+					anti_air_brigade = { x = 3 y = 3 }
+					anti_tank_brigade = { x = 3 y = 4 }
+
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					artillery = { x = 0 y = 1 }
+					field_hospital = { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					recon = { x = 0 y = 4 }
+				}
+			}
+		}
+	}
+	USA_armor_army_40 = {
+		icon = GFX_decision_category_ger_military_buildup
+		ai_will_do = {
+			factor = 999
+		}
+		allowed = {
+			TAG=USA
+    		#OR={
+			#	is_debug=yes
+			#	is_ai=yes
+			#}
+		}
+		fire_only_once = yes
+		available = {
+			OR={
+				is_debug=yes
+				
+				AND={
+					date > 1940.1.1
+					is_ai=yes
+				}
+			}		
+		}
+		visible = {
+			OR={
+				is_debug=yes
+				is_ai=yes
+			}
+		}
+		complete_effect = {
+			division_template = {
+				priority = 100
+				is_locked = no
+				division_names_group = USA_ARM_01
+				name = "US armor"
+				regiments = {
+					Infantry = { x = 0 y = 0 }
+					Infantry = { x = 0 y = 1 }
+					Infantry = { x = 0 y = 2 }
+					Infantry = { x = 0 y = 3 }
+
+					Infantry = { x = 1 y = 0 }
+					Infantry = { x = 1 y = 1 }
+					Infantry = { x = 1 y = 2 }
+					Infantry = { x = 1 y = 3 }
+
+					medium_armor = { x = 2 y = 0 }
+					medium_armor = { x = 2 y = 1 }
+					medium_armor = { x = 2 y = 2 }
+					medium_armor = { x = 2 y = 3 }
+
+					medium_armor = { x = 3 y = 0 }
+					medium_armor = { x = 3 y = 1 }
+					medium_armor = { x = 3 y = 2 }
+					medium_armor = { x = 3 y = 3 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					artillery = { x = 0 y = 1 }
+					field_hospital = { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					medium_flame_tank = { x = 0 y = 4 }
+				}
+			}
+		}
+	}
+	USA_armor_army_41 = {
+		icon = GFX_decision_category_ger_military_buildup
+		ai_will_do = {
+			factor = 999
+		}
+		allowed = {
+			TAG=USA
+    		#OR={
+			#	is_debug=yes
+			#	is_ai=yes
+			#}
+		}
+		fire_only_once = yes
+		available = {
+			OR={
+				is_debug=yes
+				
+				AND={
+					date > 1941.6.1
+					is_ai=yes
+				}
+			}		
+		}
+		visible = {
+			OR={
+				is_debug=yes
+				is_ai=yes
+			}
+		}
+		complete_effect = {
+			division_template = {
+				priority = 100
+				is_locked = no
+				division_names_group = USA_ARM_01
+				name = "US armor-mechanized"
+				regiments = {
+					mechanized = { x = 0 y = 0 }
+					mechanized = { x = 0 y = 1 }
+					mechanized = { x = 0 y = 2 }
+					mechanized = { x = 0 y = 3 }
+
+					mechanized = { x = 1 y = 0 }
+					mechanized = { x = 1 y = 1 }
+					mechanized = { x = 1 y = 2 }
+					mechanized = { x = 1 y = 3 }
+
+					medium_armor = { x = 2 y = 0 }
+					medium_armor = { x = 2 y = 1 }
+					medium_armor = { x = 2 y = 2 }
+					medium_armor = { x = 2 y = 3 }
+
+					medium_armor = { x = 3 y = 0 }
+					medium_armor = { x = 3 y = 1 }
+					medium_armor = { x = 3 y = 2 }
+					medium_armor = { x = 3 y = 3 }
+				}
+				support = {
+					armored_engineer = { x = 0 y = 0 }
+					light_tank_recon = { x = 0 y = 1 }
+					helicopter_field_hospital = { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					medium_flame_tank = { x = 0 y = 4 }
+				}
+			}
+		}
+	}
+	USA_armor_army_43 = {
+		icon = GFX_decision_category_ger_military_buildup
+		ai_will_do = {
+			factor = 999
+		}
+		allowed = {
+			TAG=USA
+    		#OR={
+			#	is_debug=yes
+			#	is_ai=yes
+			#}
+		}
+		fire_only_once = yes
+		available = {
+			OR={
+				is_debug=yes
+				
+				AND={
+					date > 1943.1.1
+					is_ai=yes
+				}
+			}		
+		}
+		visible = {
+			OR={
+				is_debug=yes
+				is_ai=yes
+			}
+		}
+		complete_effect = {
+			division_template = {
+				priority = 100
+				is_locked = no
+				division_names_group = USA_ARM_01
+				name = "US armor-mechanized"
+				regiments = {
+					mechanized = { x = 0 y = 0 }
+					mechanized = { x = 0 y = 1 }
+					mechanized = { x = 0 y = 2 }
+					mechanized = { x = 0 y = 3 }
+					mechanized = { x = 0 y = 4 }
+
+					mechanized = { x = 1 y = 0 }
+					mechanized = { x = 1 y = 1 }
+					mechanized = { x = 1 y = 2 }
+					mechanized = { x = 1 y = 3 }
+					mechanized = { x = 1 y = 4 }
+
+					medium_armor = { x = 2 y = 0 }
+					medium_armor = { x = 2 y = 1 }
+					medium_armor = { x = 2 y = 2 }
+					medium_armor = { x = 2 y = 3 }
+
+					medium_armor = { x = 3 y = 0 }
+					medium_armor = { x = 3 y = 1 }
+					medium_armor = { x = 3 y = 2 }
+					medium_armor = { x = 3 y = 3 }
+
+					medium_tank_destroyer_brigade = { x = 4 y = 0 }
+					medium_tank_destroyer_brigade = { x = 4 y = 1 }
+				}
+				support = {
+					armored_engineer = { x = 0 y = 0 }
+					light_tank_recon = { x = 0 y = 1 }
+					helicopter_field_hospital = { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					medium_flame_tank = { x = 0 y = 4 }
+				}
+			}
+		}
+	}
+}
+
+economy_decisions = {
+	JAP_eco_influence_haw = { 
+		priority = 99
+
+		icon = GFX_decision_gre_paying_ifc_debt
+
+		ai_will_do = {
+			base = 99						
+		}
+
+		allowed = {
+			TAG = JAP
+		}
+
+		available = {
+			HAW = {
+				OR = {
+					NOT = {
+						has_completed_focus = HAW_us_goodbye_jap
+					}
+				}
+			}					
+		}
+
+		visible = {
+			HAW = {
+				exists = yes
+				NOT = {
+					is_subject_of = USA
+				}
+				NOT = {
+					is_in_faction_with = USA
+				}
+			}
+		}
+		days_remove = 30
+		days_re_enable = 540
+
+		fire_only_once = no
+
+		cost = 50
+
+		modifier = {
+			
+		}
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			HAW = {
+				country_event = haw_extra.6
+
+				#JAP_eco_influence_up = yes
+			}			
+		}
+	}
+
+	JAP_eco_invasion_haw = { 
+		priority = 99
+
+		icon = GFX_decision_gre_paying_ifc_debt
+
+		ai_will_do = {
+			base = 99						
+		}
+
+		allowed = {
+			TAG = JAP
+		}
+
+		available = {
+			HAW = {
+				NOT = {
+					has_completed_focus = HAW_us_goodbye_jap
+				}
+				has_idea = HAW_jap_eco_kongzhi_4
+			}					
+		}
+
+		visible = {
+			HAW = {
+				exists = yes				
+			}
+		}
+		days_remove = 100
+		days_re_enable = 540
+
+		fire_only_once = no
+
+		cost = 50
+
+		modifier = {
+			
+		}
+
+		complete_effect = {
+			add_offsite_building = { type = industrial_complex level = 4 }
+
+			HAW = {
+				add_offsite_building = { type = industrial_complex level = -4 }
+				
+				country_event = haw_extra.14
+			}
+		}
+
+		remove_effect = {
+			add_offsite_building = { type = industrial_complex level = -4 }
+
+			HAW = {
+				add_offsite_building = { type = industrial_complex level = 4 }
+				JAP_eco_influence_down = yes
+			}			
+		}
+	}
+
+	JAP_weapon_influence_haw = { 
+		priority = 99
+
+		icon = GFX_decision_gre_paying_ifc_debt
+
+		ai_will_do = {
+			base = 99						
+		}
+
+		allowed = {
+			TAG = JAP
+		}
+
+		available = {
+			HAW = {
+				OR = {
+					NOT = {
+						has_completed_focus = HAW_us_goodbye_jap
+					}
+				}
+			}					
+		}
+
+		visible = {
+			HAW = {
+				exists = yes
+				NOT = {
+					is_subject_of = USA
+				}
+				NOT = {
+					is_in_faction_with = USA
+				}
+			}
+		}
+		days_remove = 30
+		days_re_enable = 540
+
+		fire_only_once = no
+
+		cost = 25
+
+		modifier = {
+			
+		}
+
+		complete_effect = {
+			HAW = {
+				country_event = haw_extra.13
+			}
+		}	
+	}
+
+	JAP_research_influence_haw = { 
+		priority = 99
+
+		icon = GFX_decision_gre_paying_ifc_debt
+
+		ai_will_do = {
+			base = 99						
+		}
+
+		allowed = {
+			TAG = JAP
+		}
+
+		available = {
+			HAW = {
+				OR = {
+					NOT = {
+						has_completed_focus = HAW_us_goodbye_jap
+					}
+				}
+			}					
+		}
+
+		visible = {
+			HAW = {
+				exists = yes
+				NOT = {
+					is_subject_of = USA
+				}
+				NOT = {
+					is_in_faction_with = USA
+				}
+			}
+		}
+		days_remove = 30
+		days_re_enable = 540
+
+		fire_only_once = no
+
+		cost = 25
+
+		modifier = {
+			
+		}
+
+		complete_effect = {
+			HAW = {
+				country_event = haw_extra.15
+			}
+		}	
+	}
+}
+
+HAW_wangguo_shiwu = {
+	#减少对日本的经济依赖
+	HAW_anti_jap_operations = { 
+		priority = 99
+
+		icon = GFX_decision_JAP_civic_faction
+
+		ai_will_do = {
+			base = 1
+		}
+
+		allowed = {
+			always = no
+		}
+
+		available = {		
+				
+		}
+
+		visible = {
+			
+			hidden_trigger = {
+				OR = {
+					has_idea = HAW_jap_eco_kongzhi_1
+					has_idea = HAW_jap_eco_kongzhi_2
+					has_idea = HAW_jap_eco_kongzhi_3
+					has_idea = HAW_jap_eco_kongzhi_4
+				}
+			}			
+		}
+
+		
+		days_remove = 90
+
+		cost = 75
+
+		modifier = {
+			political_power_cost = 0.1
+		}
+
+		fire_only_once = no
+
+		days_re_enable = 120
+
+		remove_effect = {
+			random_list = {
+				45 = {
+					#JAP_eco_influence_down = yes
+				}
+				45 = {
+					
+				}
+				10 = {
+					#JAP_eco_influence_up = yes
+				}
+			}
+		}
+	}
+	#消除美国流亡者的影响
+	HAW_anti_usa_operations = { 
+		priority = 99
+
+		icon = GFX_decision_SWI_dismiss_council
+
+		ai_will_do = {
+			base = 1
+		}
+
+		allowed = {
+			always = no
+		}
+
+		available = {		
+				
+		}
+
+		visible = {
+			hidden_trigger = {
+				OR = {
+					has_idea = HAW_usa_liuwangzhe_influence_1
+					has_idea = HAW_usa_liuwangzhe_influence_2
+					has_idea = HAW_usa_liuwangzhe_influence_3
+					has_idea = HAW_usa_liuwangzhe_influence_4
+				}
+			}			
+		}
+
+		
+		days_remove = 90
+
+		cost = 75
+
+		modifier = {
+			political_power_cost = 0.1
+		}
+
+		fire_only_once = no
+
+		days_re_enable = 120
+
+		remove_effect = {
+			random_list = {
+				45 = {
+					#USA_influence_down = yes
+				}
+				45 = {
+					
+				}
+				10 = {
+					#USA_influence_up = yes
+				}
+			}
+		}
+	}
+	#重返美利坚
+	HAW_war_of_usa_des = { 
+		priority = 97
+
+		icon = GFX_decision_CHL_carabineros
+
+		ai_will_do = {
+			base = 1
+		}
+
+		allowed = {
+			
+		}
+
+		available = {		
+				
+		}
+
+		visible = {
+			has_completed_focus = HAW_war_of_us		
+		}
+
+		
+		days_remove = 30
+
+		cost = 25
+
+		modifier = {
+			
+		}
+
+		fire_only_once = yes
+
+		#days_re_enable = 120
+
+		remove_effect = {
+			HAW = {
+				declare_war_on = {
+					target = USA
+				}
+
+				add_timed_idea = {
+					idea = HAW_true_usa_idea
+					days = 360
+				}
+			}
+
+			USA = {
+				add_timed_idea = {
+					idea = HAW_usa_democratic_over 
+					days = 360
+				}
+			}
+
+			hidden_effect = {
+				every_state = {
+					limit = {
+						OR = {
+							state = 378
+							state = 379
+							state = 385
+						}
+					}
+					transfer_state_to = HAW
+				}
+
+				every_state = {
+					limit = {
+						OR = {
+							state = 378
+							state = 379
+							state = 385
+						}
+					}
+					create_unit = {
+						division = "division_template = \"US Army\" start_experience_factor = 0.5 start_equipment_factor = 0.5.0"
+						owner = ROOT
+						count = 5
+					}
+				}
+			}
+			
+		}
+	}
+
+	#檀香山发展
+	HAW_tanxiangshan_fazhan = { 
+		priority = 50
+
+		icon = GFX_decision_generic_construction
+
+		ai_will_do = {
+			base = 1
+		}
+
+		allowed = {
+			
+		}
+
+		available = {		
+			has_completed_focus = HAW_fazhan_lvyouye		
+		}
+
+		visible = {
+			has_completed_focus = HAW_wangguo_gongyehua_nuli			
+		}
+
+		
+		days_remove = 70
+
+		cost = 25
+
+		modifier = {
+			consumer_goods_factor = 0.2
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			add_stability = -0.1
+		}
+
+		remove_effect = {
+
+			629 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}			
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			reduce_focus_completion_cost = {
+				focus =  HAW_tanxiangshan_kuoda
+				cost = 21
+			}
+		}
+	}
+	#扩张夏威夷住房，需要夏威夷城市化
+	HAW_kuozhang_zhufang = { 
+		priority = 50
+
+		icon = GFX_decision_generic_factory
+
+		ai_will_do = {
+			base = 1
+		}
+
+		allowed = {
+			
+		}
+
+		available = {		
+			#has_country_flag = HUN_mali_chengshihua_over_flag		
+			has_completed_focus = HAW_daxia_diji
+		}
+
+		visible = {
+			has_completed_focus = HAW_wangguo_gongyehua_nuli			
+		}
+
+		
+		days_remove = 35
+
+		cost = 25
+
+		modifier = {
+			consumer_goods_factor = 0.2
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			629 = {
+				add_manpower = 14586
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}				
+			}
+
+			random_owned_controlled_state = {
+				add_manpower = 7592
+				add_extra_state_shared_building_slots = 2				
+			}
+
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			reduce_focus_completion_cost = {
+				focus = HAW_pat_yaoyan_baoshi
+				cost = 35
+			}
+
+		}
+	}
+	#钢铁厂
+	HAW_steel_company = { 
+		priority = 50
+
+		icon = GFX_decision_steel
+
+		ai_will_do = {
+			base = 1
+		}
+
+		allowed = {
+			
+		}
+
+		available = {		
+			has_completed_focus = HAW_daxia_diji		
+		}
+
+		visible = {
+			has_completed_focus = HAW_wangguo_gongyehua_nuli			
+		}
+
+		
+		days_remove = 70
+
+		cost = 25
+
+		modifier = {
+			consumer_goods_factor = 0.2
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			add_stability = -0.1
+		}
+
+		remove_effect = {
+
+			629 = {
+				add_extra_state_shared_building_slots = 1
+				add_resource = {
+					type = steel
+					amount = 10
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}			
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			reduce_focus_completion_cost = {
+				focus =  HAW_pat_yaoyan_baoshi
+				cost = 21
+			}
+		}
+	}
+	#建造弹药厂，需要夏威夷城市化
+	HAW_jiaao_danyaochang = { 
+		priority = 50
+
+		icon = GFX_decision_generic_industry
+
+		ai_will_do = {
+			base = 1
+		}
+
+		allowed = {
+			
+		}
+
+		available = {		
+			has_completed_focus = HAW_daxia_diji	
+		}
+
+		visible = {
+			has_completed_focus = HAW_wangguo_gongyehua_nuli	
+		}
+
+		
+		days_remove = 70
+
+		cost = 25
+
+		modifier = {
+			consumer_goods_factor = 0.2
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+
+			629 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}			
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+			reduce_focus_completion_cost = {
+				focus = HAW_pat_yaoyan_baoshi
+				cost = 35
+			}
+
+
+		}
+	}
+	#春田设计局，需要美国机床
+	HAW_chuntian_shejiju = { 
+		priority = 50
+
+		icon = GFX_decision_generic_merge_plant_materiel
+
+		ai_will_do = {
+			base = 1
+		}
+
+		allowed = {
+			
+		}
+
+		available = {		
+			has_completed_focus = HAW_usa_jichuang
+		}
+
+		visible = {
+			has_completed_focus = HAW_wangguo_gongyehua_nuli			
+		}
+
+		
+		days_remove = 70
+
+		cost = 25
+
+		modifier = {
+			consumer_goods_factor = 0.2
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+
+			629 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}			
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				name = HAW_chuntian_shejiju
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt				
+
+			set_country_flag = HAW_chuntian_shejiju_over_flag
+
+
+		}
+	}
+	#克莱斯顿设计局，需要美国机床
+	HAW_USA_tanke_jishu = { 
+		priority = 50
+
+		icon = GFX_decision_generic_merge_plant_tank
+
+		ai_will_do = {
+			base = 1
+		}
+
+		allowed = {
+			
+		}
+
+		available = {		
+			has_completed_focus = HAW_usa_jichuang
+		}
+
+		visible = {
+			has_completed_focus = HAW_wangguo_gongyehua_nuli			
+		}
+
+		
+		days_remove = 70
+
+		cost = 25
+
+		modifier = {
+			consumer_goods_factor = 0.2
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+
+			629 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}			
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 2
+				category = armor
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt				
+
+			set_country_flag = HAW_USA_tanke_jishu_over_flag
+
+
+		}
+	}
+	#福特机械厂，需要美国机床
+	HAW_ford_shejiju = { 
+		priority = 50
+
+		icon = GFX_decision_generic_wreckers
+
+		ai_will_do = {
+			base = 1
+		}
+
+		allowed = {
+			
+		}
+
+		available = {		
+			has_completed_focus = HAW_usa_jichuang
+			#has_country_flag = HUN_mali_chengshihua_over_flag		
+		}
+
+		visible = {
+			has_completed_focus = HAW_wangguo_gongyehua_nuli		
+		}
+
+		
+		days_remove = 70
+
+		cost = 25
+
+		modifier = {
+			consumer_goods_factor = 0.1
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+
+			629 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = motorized_equipment 
+			}
+
+			set_country_flag = HAW_ford_shejiju_over_flag	
+
+
+		}
+	}
+	#利马机车厂，需要美国机床
+	HAW_lima_jiche_chang = { 
+		priority = 50
+
+		icon = GFX_decision_generic_merge_plant_aircraft
+
+		ai_will_do = {
+			base = 1
+		}
+
+		allowed = {
+			
+		}
+
+		available = {		
+			has_completed_focus = HAW_usa_jichuang
+		}
+
+		visible = {
+			has_completed_focus = HAW_wangguo_gongyehua_nuli		
+		}
+
+		
+		days_remove = 70
+
+		cost = 25
+
+		modifier = {
+			consumer_goods_factor = 0.2
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+
+			629 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt			
+
+			set_country_flag = HAW_lima_jiche_chang_over_flag	
+
+
+		}
+	}
+	
+}
+
+HAW_zhetang_ju = {
+	HAW_zhetang_jiaoyi  = {
+		visible = {
+			always = no
+		}
+	}
+
+	HAW_zhetang_jiaoyi_FROM  = {
+        icon = jap_the_unthinkable_option
+
+		allowed = {
+			original_tag = HAW
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_completed_focus = HAW_wangguo_zhetangju
+
+			NOT = {
+				has_country_flag = HAW_recently_touzi_flag
+			}
+		}
+
+		cost = 50
+
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 200
+		}
+
+		days_re_enable = 245
+
+		target_trigger = {
+			FROM = {
+				is_major = yes
+				exists = yes
+				NOT = {
+					has_war_with = ROOT
+				}
+			}
+		}
+
+		complete_effect = {
+			FROM = {
+				country_event = {
+					id = haw_extra.1
+					days = 3
+				}
+			}
+
+			effect_tooltip = {
+				custom_effect_tooltip = if_they_accept_tt
+				HAW = {
+					add_offsite_building = { type = industrial_complex level = 1 }
+				}
+			}
+
+			set_country_flag = HAW_recently_touzi_flag
+		}
+		
+	}
+}
+
+US_bond_can = {
+	#钨矿投资 472 465 864
+	#西北地区
+	CAN_tungsten_472 = {
+		priority = 90
+
+		icon = GFX_decision_tungsten
+
+		ai_will_do = {
+			base = 1
+		}
+
+		allowed = {
+			
+		}
+
+		available = {
+			Not = {
+				has_country_flag = USA_bonding_flag
+			}
+		}
+
+		visible = {
+			OR = {
+				CAN = {
+					NOT = {
+						has_War_with = USA
+					}
+				}
+				472 = {
+					is_controlled_by = USA
+				}
+			}	
+		}
+
+		
+		days_remove = 90
+
+		cost = 10
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			set_country_flag = USA_bonding_flag
+		}
+
+		remove_effect = {
+			CAN = {
+				CAN_USA_influence_up = yes
+			}
+			472 = {
+				add_extra_state_shared_building_slots = 1
+				add_resource = {
+					type = tungsten
+					amount = 9
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			clr_country_flag = USA_bonding_flag
+		}
+	}
+	#新布伦瑞克
+	CAN_tungsten_465 = {
+		priority = 90
+
+		icon = GFX_decision_tungsten
+
+		ai_will_do = {
+			base = 1
+		}
+
+		allowed = {
+			
+		}
+
+		available = {
+			Not = {
+				has_country_flag = USA_bonding_flag
+			}
+		}
+
+		visible = {
+			OR = {
+				CAN = {
+					NOT = {
+						has_War_with = USA
+					}
+				}
+				465 = {
+					is_controlled_by = USA
+				}
+			}	
+		}
+
+		
+		days_remove = 90
+
+		cost = 10
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			set_country_flag = USA_bonding_flag
+		}
+
+		remove_effect = {
+			CAN = {
+				CAN_USA_influence_up = yes
+			}
+			465 = {
+				add_extra_state_shared_building_slots = 1
+				add_resource = {
+					type = tungsten
+					amount = 7
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			clr_country_flag = USA_bonding_flag
+		}
+	}
+	#育空地区
+	CAN_tungsten_864 = {
+		priority = 90
+
+		icon = GFX_decision_tungsten
+
+		ai_will_do = {
+			base = 1
+		}
+
+		allowed = {
+			
+		}
+
+		available = {
+			Not = {
+				has_country_flag = USA_bonding_flag
+			}
+		}
+
+		visible = {
+			OR = {
+				CAN = {
+					NOT = {
+						has_War_with = USA
+					}
+				}
+				864 = {
+					is_controlled_by = USA
+				}
+			}	
+		}
+
+		
+		days_remove = 90
+
+		cost = 10
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			set_country_flag = USA_bonding_flag
+		}
+
+		remove_effect = {
+			CAN = {
+				CAN_USA_influence_up = yes
+			}
+			864 = {
+				add_extra_state_shared_building_slots = 1
+				add_resource = {
+					type = tungsten
+					amount = 7
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			clr_country_flag = USA_bonding_flag
+		}
+	}
+
+	#铬矿投资 466 866
+	#北魁北克
+	CAN_chromium_466 = {
+		priority = 90
+
+		icon = GFX_decision_chromium
+
+		ai_will_do = {
+			base = 1
+		}
+
+		allowed = {
+			
+		}
+
+		available = {
+			Not = {
+				has_country_flag = USA_bonding_flag
+			}
+		}
+
+		visible = {
+			OR = {
+				CAN = {
+					NOT = {
+						has_War_with = USA
+					}
+				}
+				466 = {
+					is_controlled_by = USA
+				}
+			}	
+		}
+
+		
+		days_remove = 90
+
+		cost = 10
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			set_country_flag = USA_bonding_flag
+		}
+
+		remove_effect = {
+			CAN = {
+				CAN_USA_influence_up = yes
+			}
+			466 = {
+				add_extra_state_shared_building_slots = 1
+				add_resource = {
+					type = chromium
+					amount = 10
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			clr_country_flag = USA_bonding_flag
+		}
+	}
+	#安大略
+	CAN_chromium_866 = {
+		priority = 90
+
+		icon = GFX_decision_chromium
+
+		ai_will_do = {
+			base = 1
+		}
+
+		allowed = {
+			
+		}
+
+		available = {
+			Not = {
+				has_country_flag = USA_bonding_flag
+			}
+		}
+
+		visible = {
+			OR = {
+				CAN = {
+					NOT = {
+						has_War_with = USA
+					}
+				}
+				866 = {
+					is_controlled_by = USA
+				}
+			}	
+		}
+
+		
+		days_remove = 90
+
+		cost = 10
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			set_country_flag = USA_bonding_flag
+		}
+
+		remove_effect = {
+			CAN = {
+				CAN_USA_influence_up = yes
+			}
+			866 = {
+				add_extra_state_shared_building_slots = 1
+				add_resource = {
+					type = chromium
+					amount = 6
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			clr_country_flag = USA_bonding_flag
+		}
+	}
+
+	#铝矿投资 466 473
+	#北魁北克
+	CAN_aluminium_466 = {
+		priority = 90
+
+		icon = GFX_decision_aluminium
+
+		ai_will_do = {
+			base = 1
+		}
+
+		allowed = {
+			
+		}
+
+		available = {
+			Not = {
+				has_country_flag = USA_bonding_flag
+			}
+		}
+
+		visible = {
+			OR = {
+				CAN = {
+					NOT = {
+						has_War_with = USA
+					}
+				}
+				466 = {
+					is_controlled_by = USA
+				}
+			}	
+		}
+
+		
+		days_remove = 90
+
+		cost = 10
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			set_country_flag = USA_bonding_flag
+		}
+
+		remove_effect = {
+			CAN = {
+				CAN_USA_influence_up = yes
+			}
+			466 = {
+				add_extra_state_shared_building_slots = 1
+				add_resource = {
+					type = aluminium
+					amount = 15
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			clr_country_flag = USA_bonding_flag
+		}
+	}
+	#新不列颠尼亚
+	CAN_aluminium_473 = {
+		priority = 90
+
+		icon = GFX_decision_aluminium
+
+		ai_will_do = {
+			base = 1
+		}
+
+		allowed = {
+			
+		}
+
+		available = {
+			Not = {
+				has_country_flag = USA_bonding_flag
+			}
+		}
+
+		visible = {
+			OR = {
+				CAN = {
+					NOT = {
+						has_War_with = USA
+					}
+				}
+				473 = {
+					is_controlled_by = USA
+				}
+			}	
+		}
+
+		
+		days_remove = 90
+
+		cost = 10
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			set_country_flag = USA_bonding_flag
+		}
+
+		remove_effect = {
+			CAN = {
+				CAN_USA_influence_up = yes
+			}
+			473 = {
+				add_extra_state_shared_building_slots = 1
+				add_resource = {
+					type = aluminium
+					amount = 8
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			clr_country_flag = USA_bonding_flag
+		}
+	}
+
+	#钢铁厂投资 466 866
+	#北魁北克
+	CAN_steel_466 = {
+		priority = 90
+
+		icon = GFX_decision_steel
+
+		ai_will_do = {
+			base = 1
+		}
+
+		allowed = {
+			
+		}
+
+		available = {
+			Not = {
+				has_country_flag = USA_bonding_flag
+			}
+		}
+
+		visible = {
+			OR = {
+				CAN = {
+					NOT = {
+						has_War_with = USA
+					}
+				}
+				466 = {
+					is_controlled_by = USA
+				}
+			}	
+		}
+
+		
+		days_remove = 90
+
+		cost = 10
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			set_country_flag = USA_bonding_flag
+		}
+
+		remove_effect = {
+			CAN = {
+				CAN_USA_influence_up = yes
+			}
+			466 = {
+				add_extra_state_shared_building_slots = 1
+				add_resource = {
+					type = steel
+					amount = 16
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			clr_country_flag = USA_bonding_flag
+		}
+	}
+	#安大略
+	CAN_steel_866 = {
+		priority = 90
+
+		icon = GFX_decision_steel
+
+		ai_will_do = {
+			base = 1
+		}
+
+		allowed = {
+			
+		}
+
+		available = {
+			Not = {
+				has_country_flag = USA_bonding_flag
+			}
+		}
+
+		visible = {
+			OR = {
+				CAN = {
+					NOT = {
+						has_War_with = USA
+					}
+				}
+				866 = {
+					is_controlled_by = USA
+				}
+			}	
+		}
+
+		
+		days_remove = 90
+
+		cost = 10
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			set_country_flag = USA_bonding_flag
+		}
+
+		remove_effect = {
+			CAN = {
+				CAN_USA_influence_up = yes
+			}
+			866 = {
+				add_extra_state_shared_building_slots = 1
+				add_resource = {
+					type = steel
+					amount = 12
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			clr_country_flag = USA_bonding_flag
+		}
+	}
+
+	#其他矿产投资
+	#国际镍业公司
+	CAN_national_nie_company = {
+		priority = 90
+
+		icon = GFX_decision_generic_industry
+
+		ai_will_do = {
+			base = 1
+		}
+
+		allowed = {
+			
+		}
+
+		available = {
+			Not = {
+				has_country_flag = USA_bonding_flag
+			}
+		}
+
+		visible = {
+			OR = {
+				CAN = {
+					NOT = {
+						has_War_with = USA
+					}
+				}
+				any_state = {
+					is_core_of = USA
+					is_controlled_by = USA
+				}
+			}	
+		}
+
+		
+		days_remove = 60
+
+		cost = 25
+
+		modifier = {
+			#civilian_factory_use = 5
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			set_country_flag = USA_bonding_flag
+		}
+
+		remove_effect = {
+			CAN = {
+				CAN_USA_influence_up = yes
+			}
+			CAN = {
+				random_state = {
+					limit = { 
+						is_core_of = CAN
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+
+			clr_country_flag = USA_bonding_flag
+		}
+	}
+	#穹顶矿业有限公司
+	CAN_sky_company = {
+		priority = 90
+
+		icon = GFX_decision_generic_factory
+
+		ai_will_do = {
+			base = 1
+		}
+
+		allowed = {
+			
+		}
+
+		available = {
+			Not = {
+				has_country_flag = USA_bonding_flag
+			}
+		}
+
+		visible = {
+			OR = {
+				CAN = {
+					NOT = {
+						has_War_with = USA
+					}
+				}
+				any_state = {
+					is_core_of = USA
+					is_controlled_by = USA
+				}
+			}	
+		}
+
+		
+		days_remove = 60
+
+		cost = 25
+
+		modifier = {
+			#civilian_factory_use = 5
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			set_country_flag = USA_bonding_flag
+		}
+
+		remove_effect = {
+			CAN = {
+				CAN_USA_influence_up = yes
+			}
+			CAN = {
+				random_state = {
+					limit = { 
+						is_core_of = CAN
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+
+			clr_country_flag = USA_bonding_flag
+		}
+	}
+	#西部燃料公司
+	CAN_western_coal_company = {
+		priority = 90
+
+		icon = GFX_decision_coal
+
+		ai_will_do = {
+			base = 1
+		}
+
+		allowed = {
+			
+		}
+
+		available = {
+			Not = {
+				has_country_flag = USA_bonding_flag
+			}
+		}
+
+		visible = {
+			OR = {
+				CAN = {
+					NOT = {
+						has_War_with = USA
+					}
+				}
+				any_state = {
+					is_core_of = USA
+					is_controlled_by = USA
+				}
+			}	
+		}
+
+		
+		days_remove = 60
+
+		cost = 25
+
+		modifier = {
+			#civilian_factory_use = 5
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			set_country_flag = USA_bonding_flag
+		}
+
+		remove_effect = {
+			CAN = {
+				CAN_USA_influence_up = yes
+			}
+			CAN = {
+				random_state = {
+					limit = { 
+						is_core_of = CAN
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+
+			clr_country_flag = USA_bonding_flag
+		}
+	}
+}
+

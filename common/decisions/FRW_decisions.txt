@@ -1,0 +1,4107 @@
+###########################################################
+# France Rework - Entscheidungen (generiert von gen_decisions.ps1)
+###########################################################
+
+FRW_colonial_purchases_cat = {
+	FRW_buy_spanish_morocco = {
+		icon = generic_colonial_administration
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_colonial_purchases
+			290 = { NOT = { is_owned_by = ROOT } }
+		}
+		available = {
+			custom_trigger_tooltip = { tooltip = FRW_no_pending_offer_tt NOT = { has_country_flag = FRW_buy_290 } NOT = { has_country_flag = FRW_buy_783 } NOT = { has_country_flag = FRW_buy_297 } }
+			290 = { OR = { is_owned_by = SPR owner = { is_subject_of = SPR } } }
+			SPR = { exists = yes is_subject = no }
+			NOT = { has_war_with = SPR }
+		}
+		cost = 150
+		days_re_enable = 180
+		complete_effect = {
+			set_country_flag = FRW_buy_290
+			SPR = { country_event = { id = frw.50 days = 1 } }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	FRW_buy_ifni_rio_de_oro = {
+		icon = generic_colonial_administration
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_colonial_purchases
+			783 = { NOT = { is_owned_by = ROOT } }
+		}
+		available = {
+			custom_trigger_tooltip = { tooltip = FRW_no_pending_offer_tt NOT = { has_country_flag = FRW_buy_290 } NOT = { has_country_flag = FRW_buy_783 } NOT = { has_country_flag = FRW_buy_297 } }
+			783 = { OR = { is_owned_by = SPR owner = { is_subject_of = SPR } } } 699 = { OR = { is_owned_by = SPR owner = { is_subject_of = SPR } } }
+			SPR = { exists = yes is_subject = no }
+			NOT = { has_war_with = SPR }
+		}
+		cost = 75
+		days_re_enable = 180
+		complete_effect = {
+			set_country_flag = FRW_buy_783
+			SPR = { country_event = { id = frw.50 days = 1 } }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	FRW_buy_spanish_guinea = {
+		icon = generic_colonial_administration
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_colonial_purchases
+			297 = { NOT = { is_owned_by = ROOT } }
+		}
+		available = {
+			custom_trigger_tooltip = { tooltip = FRW_no_pending_offer_tt NOT = { has_country_flag = FRW_buy_290 } NOT = { has_country_flag = FRW_buy_783 } NOT = { has_country_flag = FRW_buy_297 } }
+			297 = { OR = { is_owned_by = SPR owner = { is_subject_of = SPR } } }
+			SPR = { exists = yes is_subject = no }
+			NOT = { has_war_with = SPR }
+		}
+		cost = 50
+		days_re_enable = 180
+		complete_effect = {
+			set_country_flag = FRW_buy_297
+			SPR = { country_event = { id = frw.50 days = 1 } }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	FRW_buy_portuguese_guinea = {
+		icon = generic_colonial_administration
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_colonial_purchases
+			296 = { NOT = { is_owned_by = ROOT } }
+		}
+		available = {
+			custom_trigger_tooltip = { tooltip = FRW_no_pending_offer_tt NOT = { has_country_flag = FRW_buy_296 } }
+			296 = { OR = { is_owned_by = POR owner = { is_subject_of = POR } } }
+			POR = { exists = yes is_subject = no }
+			NOT = { has_war_with = POR }
+		}
+		cost = 75
+		days_re_enable = 180
+		complete_effect = {
+			set_country_flag = FRW_buy_296
+			POR = { country_event = { id = frw.50 days = 1 } }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	FRW_buy_gambia = {
+		icon = generic_colonial_administration
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_colonial_purchases
+			701 = { NOT = { is_owned_by = ROOT } }
+		}
+		available = {
+			custom_trigger_tooltip = { tooltip = FRW_no_pending_offer_tt NOT = { has_country_flag = FRW_buy_701 } NOT = { has_country_flag = FRW_buy_700 } }
+			701 = { OR = { is_owned_by = ENG owner = { is_subject_of = ENG } } }
+			ENG = { exists = yes is_subject = no }
+			NOT = { has_war_with = ENG }
+		}
+		cost = 50
+		days_re_enable = 180
+		complete_effect = {
+			set_country_flag = FRW_buy_701
+			ENG = { country_event = { id = frw.50 days = 1 } }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	FRW_buy_sierra_leone = {
+		icon = generic_colonial_administration
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_colonial_purchases
+			700 = { NOT = { is_owned_by = ROOT } }
+		}
+		available = {
+			custom_trigger_tooltip = { tooltip = FRW_no_pending_offer_tt NOT = { has_country_flag = FRW_buy_701 } NOT = { has_country_flag = FRW_buy_700 } }
+			700 = { OR = { is_owned_by = ENG owner = { is_subject_of = ENG } } }
+			ENG = { exists = yes is_subject = no }
+			NOT = { has_war_with = ENG }
+		}
+		cost = 100
+		days_re_enable = 180
+		complete_effect = {
+			set_country_flag = FRW_buy_700
+			ENG = { country_event = { id = frw.50 days = 1 } }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	FRW_buy_belgian_congo = {
+		icon = generic_colonial_administration
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_colonial_purchases
+			295 = { NOT = { is_owned_by = ROOT } }
+		}
+		available = {
+			custom_trigger_tooltip = { tooltip = FRW_no_pending_offer_tt NOT = { has_country_flag = FRW_buy_295 } }
+			295 = { OR = { is_owned_by = BEL owner = { is_subject_of = BEL } } }
+			BEL = { exists = yes is_subject = no }
+			NOT = { has_war_with = BEL }
+		}
+		cost = 150
+		days_re_enable = 180
+		complete_effect = {
+			set_country_flag = FRW_buy_295
+			BEL = { country_event = { id = frw.50 days = 1 } }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	FRW_buy_fezzan = {
+		icon = generic_colonial_administration
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_colonial_purchases
+			661 = { NOT = { is_owned_by = ROOT } }
+		}
+		available = {
+			custom_trigger_tooltip = { tooltip = FRW_no_pending_offer_tt NOT = { has_country_flag = FRW_buy_661 } }
+			661 = { OR = { is_owned_by = ITA owner = { is_subject_of = ITA } } }
+			ITA = { exists = yes is_subject = no }
+			NOT = { has_war_with = ITA }
+		}
+		cost = 100
+		days_re_enable = 180
+		complete_effect = {
+			set_country_flag = FRW_buy_661
+			ITA = { country_event = { id = frw.50 days = 1 } }
+		}
+		ai_will_do = { factor = 1 }
+	}
+}
+
+FRW_political_cat = {
+	# ---------- FRW feedback 3 ----------
+	FRW_dec_invite_trotsky = {
+		icon = generic_political_discourse
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_proclaim_the_commune
+			NOT = { has_country_flag = FRW_trotsky_in_france }
+			date < 1940.8.20
+		}
+		available = { has_government = communism }
+		cost = 75
+		complete_effect = {
+			set_country_flag = FRW_trotsky_in_france
+			custom_effect_tooltip = FRW_dec_invite_trotsky_tt
+			hidden_effect = { country_event = { id = frw_fb3.2 days = 7 } }
+		}
+		ai_will_do = { factor = 1 modifier = { factor = 3 has_country_flag = FRW_backer_pivert } modifier = { factor = 0 has_country_flag = FRW_backer_thorez } }
+	}
+	# ---------- /FRW feedback 3 ----------
+	# ---------- FRW feedback 2 ----------
+	FRW_dec_renew_federal_offer = {
+		icon = generic_political_discourse
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_european_federation_focus
+			any_country = { FRW_federation_candidate = yes }
+		}
+		available = { has_stability > 0.40 }
+		cost = 50
+		days_re_enable = 180
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_renew_federal_offer_tt
+			hidden_effect = { every_country = { limit = { FRW_federation_candidate = yes } country_event = { id = frw.121 days = 1 } } }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	# ---------- /FRW feedback 2 ----------
+	FRW_dec_backer_blum = {
+		icon = FRW_backer_blum
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_end_disjointed_government
+			NOT = { has_completed_focus = FRW_front_populaire }
+			NOT = { OR = { has_country_flag = FRW_backer_blum has_country_flag = FRW_backer_reynaud has_country_flag = FRW_backer_deat has_country_flag = FRW_backer_pending_dem } }
+		}
+		available = {
+			if = {
+				limit = { is_ai = no }
+				democratic > 0.45
+				has_stability > 0.30
+			}
+		}
+		cost = 50
+		days_remove = 45
+		complete_effect = { set_country_flag = FRW_backer_pending_dem }
+		remove_effect = {
+			clr_country_flag = FRW_backer_pending_dem
+			set_country_flag = FRW_backer_blum
+			add_popularity = { ideology = democratic popularity = 0.03 }
+		}
+		ai_will_do = { factor = 100 modifier = { factor = 10 has_game_rule = { rule = FRW_france_ai_behavior option = HISTORICAL } } }
+	}
+	FRW_dec_backer_reynaud = {
+		icon = FRW_backer_reynaud
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_end_disjointed_government
+			NOT = { has_completed_focus = FRW_union_nationale }
+			NOT = { OR = { has_country_flag = FRW_backer_blum has_country_flag = FRW_backer_reynaud has_country_flag = FRW_backer_deat has_country_flag = FRW_backer_pending_dem } }
+		}
+		available = {
+			if = {
+				limit = { is_ai = no }
+				democratic > 0.45
+				has_stability > 0.30
+			}
+		}
+		cost = 50
+		days_remove = 45
+		complete_effect = { set_country_flag = FRW_backer_pending_dem }
+		remove_effect = {
+			clr_country_flag = FRW_backer_pending_dem
+			set_country_flag = FRW_backer_reynaud
+			add_popularity = { ideology = democratic popularity = 0.03 }
+		}
+		ai_will_do = { factor = 100 }
+	}
+	FRW_dec_backer_thorez = {
+		icon = FRW_backer_thorez
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_proclaim_the_commune
+			NOT = { has_completed_focus = FRW_thorez_party_line }
+			NOT = { OR = { has_country_flag = FRW_backer_thorez has_country_flag = FRW_backer_pivert has_country_flag = FRW_backer_besnard has_country_flag = FRW_backer_pending_com } }
+		}
+		available = {
+			if = {
+				limit = { is_ai = no }
+				communism > 0.35
+				has_stability > 0.30
+			}
+		}
+		cost = 50
+		days_remove = 45
+		complete_effect = { set_country_flag = FRW_backer_pending_com }
+		remove_effect = {
+			clr_country_flag = FRW_backer_pending_com
+			set_country_flag = FRW_backer_thorez
+			add_popularity = { ideology = communism popularity = 0.03 }
+		}
+		ai_will_do = { factor = 100 }
+	}
+	FRW_dec_backer_pivert = {
+		icon = FRW_backer_pivert
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_proclaim_the_commune
+			NOT = { has_completed_focus = FRW_pivert_revolution }
+			NOT = { OR = { has_country_flag = FRW_backer_thorez has_country_flag = FRW_backer_pivert has_country_flag = FRW_backer_besnard has_country_flag = FRW_backer_pending_com } }
+		}
+		available = {
+			if = {
+				limit = { is_ai = no }
+				communism > 0.35
+				has_stability > 0.30
+			}
+		}
+		cost = 50
+		days_remove = 45
+		complete_effect = { set_country_flag = FRW_backer_pending_com }
+		remove_effect = {
+			clr_country_flag = FRW_backer_pending_com
+			set_country_flag = FRW_backer_pivert
+			add_popularity = { ideology = communism popularity = 0.03 }
+		}
+		ai_will_do = { factor = 100 }
+	}
+	FRW_dec_backer_larocque = {
+		icon = FRW_backer_larocque
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_national_revolution
+			NOT = { has_completed_focus = FRW_la_rocque_psf }
+			NOT = { OR = { has_country_flag = FRW_backer_larocque has_country_flag = FRW_backer_doriot has_country_flag = FRW_backer_pending_fasc } }
+		}
+		available = {
+			if = {
+				limit = { is_ai = no }
+				fascism > 0.35
+				has_stability > 0.30
+			}
+		}
+		cost = 50
+		days_remove = 45
+		complete_effect = { set_country_flag = FRW_backer_pending_fasc }
+		remove_effect = {
+			clr_country_flag = FRW_backer_pending_fasc
+			set_country_flag = FRW_backer_larocque
+			add_popularity = { ideology = fascism popularity = 0.03 }
+		}
+		ai_will_do = { factor = 100 }
+	}
+	FRW_dec_backer_doriot = {
+		icon = FRW_backer_doriot
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_national_revolution
+			NOT = { has_completed_focus = FRW_doriot_ppf }
+			NOT = { OR = { has_country_flag = FRW_backer_larocque has_country_flag = FRW_backer_doriot has_country_flag = FRW_backer_pending_fasc } }
+		}
+		available = {
+			if = {
+				limit = { is_ai = no }
+				fascism > 0.35
+				has_stability > 0.30
+			}
+		}
+		cost = 50
+		days_remove = 45
+		complete_effect = { set_country_flag = FRW_backer_pending_fasc }
+		remove_effect = {
+			clr_country_flag = FRW_backer_pending_fasc
+			set_country_flag = FRW_backer_doriot
+			add_popularity = { ideology = fascism popularity = 0.03 }
+		}
+		ai_will_do = { factor = 100 }
+	}
+	FRW_dec_backer_petain = {
+		icon = FRW_backer_petain
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_suspend_the_chambers
+			NOT = { has_completed_focus = FRW_etat_francais }
+			NOT = { OR = { has_country_flag = FRW_backer_petain has_country_flag = FRW_backer_orleans has_country_flag = FRW_backer_bonaparte has_country_flag = FRW_backer_legit has_country_flag = FRW_backer_captain has_country_flag = FRW_backer_pending_na } }
+		}
+		available = {
+			if = {
+				limit = { is_ai = no }
+				neutrality > 0.35
+				has_stability > 0.30
+			}
+		}
+		cost = 50
+		days_remove = 45
+		complete_effect = { set_country_flag = FRW_backer_pending_na }
+		remove_effect = {
+			clr_country_flag = FRW_backer_pending_na
+			set_country_flag = FRW_backer_petain
+			add_popularity = { ideology = neutrality popularity = 0.03 }
+		}
+		ai_will_do = { factor = 100 }
+	}
+	FRW_dec_backer_orleans = {
+		icon = FRW_backer_orleans
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_suspend_the_chambers
+			NOT = { has_completed_focus = FRW_orleanist_restoration }
+			NOT = { OR = { has_country_flag = FRW_backer_petain has_country_flag = FRW_backer_orleans has_country_flag = FRW_backer_bonaparte has_country_flag = FRW_backer_legit has_country_flag = FRW_backer_captain has_country_flag = FRW_backer_pending_na } }
+		}
+		available = {
+			if = {
+				limit = { is_ai = no }
+				neutrality > 0.35
+				has_stability > 0.30
+			}
+		}
+		cost = 50
+		days_remove = 45
+		complete_effect = { set_country_flag = FRW_backer_pending_na }
+		remove_effect = {
+			clr_country_flag = FRW_backer_pending_na
+			set_country_flag = FRW_backer_orleans
+			add_popularity = { ideology = neutrality popularity = 0.03 }
+		}
+		ai_will_do = { factor = 100 }
+	}
+	FRW_dec_backer_bonaparte = {
+		icon = FRW_backer_bonaparte
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_suspend_the_chambers
+			NOT = { has_completed_focus = FRW_bonapartist_appeal }
+			NOT = { OR = { has_country_flag = FRW_backer_petain has_country_flag = FRW_backer_orleans has_country_flag = FRW_backer_bonaparte has_country_flag = FRW_backer_legit has_country_flag = FRW_backer_captain has_country_flag = FRW_backer_pending_na } }
+		}
+		available = {
+			if = {
+				limit = { is_ai = no }
+				neutrality > 0.35
+				has_stability > 0.30
+			}
+		}
+		cost = 50
+		days_remove = 45
+		complete_effect = { set_country_flag = FRW_backer_pending_na }
+		remove_effect = {
+			clr_country_flag = FRW_backer_pending_na
+			set_country_flag = FRW_backer_bonaparte
+			add_popularity = { ideology = neutrality popularity = 0.03 }
+		}
+		ai_will_do = { factor = 100 }
+	}
+	FRW_dec_backer_legit = {
+		icon = FRW_backer_legit
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_suspend_the_chambers
+			NOT = { has_completed_focus = FRW_legitimate_heir }
+			NOT = { OR = { has_country_flag = FRW_backer_petain has_country_flag = FRW_backer_orleans has_country_flag = FRW_backer_bonaparte has_country_flag = FRW_backer_legit has_country_flag = FRW_backer_captain has_country_flag = FRW_backer_pending_na } }
+		}
+		available = {
+			if = {
+				limit = { is_ai = no }
+				neutrality > 0.35
+				has_stability > 0.30
+			}
+		}
+		cost = 50
+		days_remove = 45
+		complete_effect = { set_country_flag = FRW_backer_pending_na }
+		remove_effect = {
+			clr_country_flag = FRW_backer_pending_na
+			set_country_flag = FRW_backer_legit
+			add_popularity = { ideology = neutrality popularity = 0.03 }
+		}
+		ai_will_do = { factor = 100 }
+	}
+	FRW_dec_backer_captain = {
+		icon = FRW_backer_captain
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { has_game_rule = { rule = FRW_secret_paths option = DISABLED } }
+			has_country_flag = FRW_captain_letter
+			NOT = { has_completed_focus = FRW_secret_captain }
+			NOT = { OR = { has_country_flag = FRW_backer_petain has_country_flag = FRW_backer_orleans has_country_flag = FRW_backer_bonaparte has_country_flag = FRW_backer_legit has_country_flag = FRW_backer_captain has_country_flag = FRW_backer_pending_na } }
+		}
+		available = {
+			neutrality > 0.35
+			has_stability > 0.30
+		}
+		cost = 50
+		days_remove = 45
+		complete_effect = { set_country_flag = FRW_backer_pending_na }
+		remove_effect = {
+			clr_country_flag = FRW_backer_pending_na
+			set_country_flag = FRW_backer_captain
+			add_popularity = { ideology = neutrality popularity = 0.03 }
+			mark_focus_tree_layout_dirty = yes
+		}
+		ai_will_do = { factor = 0 }
+	}
+	# ---- FRW secret ideology paths ----
+	FRW_dec_hear_the_neos = {
+		icon = generic_political_rally
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { has_game_rule = { rule = FRW_secret_paths option = DISABLED } }
+			has_completed_focus = FRW_end_disjointed_government
+			NOT = { has_country_flag = FRW_deat_letter }
+			NOT = { OR = { has_country_flag = FRW_backer_blum has_country_flag = FRW_backer_reynaud has_country_flag = FRW_backer_deat has_country_flag = FRW_backer_pending_dem } }
+			NOT = { has_completed_focus = FRW_front_populaire }
+			NOT = { has_completed_focus = FRW_union_nationale }
+		}
+		cost = 15
+		days_remove = 30
+		remove_effect = {
+			hidden_effect = {
+				add_to_variable = { FRW_neos_count = 1 }
+				if = {
+					limit = {
+						check_variable = { var = FRW_neos_count value = 2 compare = greater_than_or_equals }
+						NOT = { OR = { has_country_flag = FRW_backer_blum has_country_flag = FRW_backer_reynaud has_country_flag = FRW_backer_pending_dem } }
+					}
+					set_country_flag = FRW_deat_letter
+					country_event = { id = frw_sp.2 }
+				}
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_backer_deat = {
+		icon = FRW_backer_deat
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { has_game_rule = { rule = FRW_secret_paths option = DISABLED } }
+			has_country_flag = FRW_deat_letter
+			NOT = { has_completed_focus = FRW_deat_neosocialism }
+			NOT = { OR = { has_country_flag = FRW_backer_blum has_country_flag = FRW_backer_reynaud has_country_flag = FRW_backer_deat has_country_flag = FRW_backer_pending_dem } }
+		}
+		available = {
+			democratic > 0.45
+			has_stability > 0.30
+		}
+		cost = 50
+		days_remove = 45
+		complete_effect = { set_country_flag = FRW_backer_pending_dem }
+		remove_effect = {
+			clr_country_flag = FRW_backer_pending_dem
+			set_country_flag = FRW_backer_deat
+			add_popularity = { ideology = democratic popularity = 0.03 }
+			mark_focus_tree_layout_dirty = yes
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_occupy_factories = {
+		icon = generic_factory
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { has_game_rule = { rule = FRW_secret_paths option = DISABLED } }
+			has_completed_focus = FRW_cgt_general_strike
+			NOT = { has_completed_focus = FRW_truce_unity_of_action }
+			NOT = { has_country_flag = FRW_cgt_letter }
+			NOT = { OR = { has_country_flag = FRW_backer_thorez has_country_flag = FRW_backer_pivert has_country_flag = FRW_backer_besnard has_country_flag = FRW_backer_pending_com } }
+			NOT = { has_completed_focus = FRW_thorez_party_line }
+			NOT = { has_completed_focus = FRW_pivert_revolution }
+		}
+		cost = 0
+		days_remove = 30
+		complete_effect = { add_stability = -0.02 }
+		remove_effect = {
+			add_popularity = { ideology = communism popularity = 0.02 }
+			hidden_effect = {
+				add_to_variable = { FRW_occupy_count = 1 }
+				if = {
+					limit = {
+						check_variable = { var = FRW_occupy_count value = 3 compare = greater_than_or_equals }
+						NOT = { OR = { has_country_flag = FRW_backer_thorez has_country_flag = FRW_backer_pivert has_country_flag = FRW_backer_pending_com } }
+					}
+					set_country_flag = FRW_cgt_letter
+					country_event = { id = frw_sp.1 }
+				}
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_backer_besnard = {
+		icon = FRW_backer_besnard
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { has_game_rule = { rule = FRW_secret_paths option = DISABLED } }
+			has_country_flag = FRW_cgt_letter
+			NOT = { has_completed_focus = FRW_cgt_unions_take_power }
+			NOT = { OR = { has_country_flag = FRW_backer_thorez has_country_flag = FRW_backer_pivert has_country_flag = FRW_backer_besnard has_country_flag = FRW_backer_pending_com } }
+		}
+		available = {
+			communism > 0.35
+			has_stability > 0.30
+		}
+		cost = 50
+		days_remove = 45
+		complete_effect = { set_country_flag = FRW_backer_pending_com }
+		remove_effect = {
+			clr_country_flag = FRW_backer_pending_com
+			set_country_flag = FRW_backer_besnard
+			add_popularity = { ideology = communism popularity = 0.03 }
+			mark_focus_tree_layout_dirty = yes
+		}
+		ai_will_do = { factor = 0 }
+	}
+	# ---- /FRW secret ideology paths ----
+	FRW_dec_consolidate_government = {
+		icon = generic_political_discourse
+		allowed = { original_tag = FRA }
+		visible = { has_idea = FRW_disjointed_2 }
+		available = {
+			date > 1937.1.1
+			custom_trigger_tooltip = { tooltip = FRW_gov_reform_wait_tt has_country_flag = { flag = FRW_gov_reform days > 180 } }
+			has_stability > 0.40
+		}
+		cost = 75
+		complete_effect = {
+			swap_ideas = { remove_idea = FRW_disjointed_2 add_idea = FRW_disjointed_3 }
+			clr_country_flag = FRW_gov_reform
+			set_country_flag = FRW_gov_reform
+		}
+		ai_will_do = { factor = 1 }
+	}
+	FRW_dec_stable_government = {
+		icon = generic_political_discourse
+		allowed = { original_tag = FRA }
+		visible = { has_idea = FRW_disjointed_3 }
+		available = {
+			date > 1938.1.1
+			custom_trigger_tooltip = { tooltip = FRW_gov_reform_wait_tt has_country_flag = { flag = FRW_gov_reform days > 180 } }
+			has_stability > 0.50
+		}
+		cost = 100
+		complete_effect = {
+			remove_ideas = FRW_disjointed_3
+			add_stability = 0.05
+			clr_country_flag = FRW_gov_reform
+		}
+		ai_will_do = { factor = 1 }
+	}
+	FRW_dec_national_rally = {
+		icon = generic_political_discourse
+		allowed = { original_tag = FRA }
+		available = { has_stability < 0.9 }
+		cost = 50
+		days_re_enable = 180
+		complete_effect = { add_stability = 0.05 }
+		ai_will_do = { factor = 1 modifier = { factor = 0 has_stability > 0.6 } }
+	}
+	FRW_dec_war_propaganda = {
+		icon = generic_nationalism
+		allowed = { original_tag = FRA }
+		available = { has_war_support < 0.9 }
+		cost = 50
+		days_re_enable = 180
+		complete_effect = { add_war_support = 0.05 }
+		ai_will_do = { factor = 1 modifier = { factor = 0 has_war_support > 0.6 } }
+	}
+	FRW_dec_colonial_recruitment = {
+		icon = generic_army_support
+		allowed = { original_tag = FRA }
+		visible = { has_completed_focus = FRW_ministry_of_colonies }
+		cost = 25
+		days_re_enable = 365
+		complete_effect = { add_manpower = 15000 }
+		ai_will_do = { factor = 1 }
+	}
+	FRW_dec_wait = {
+		icon = FRW_wait
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { has_game_rule = { rule = FRW_secret_paths option = DISABLED } }
+			has_completed_focus = FRW_suspend_the_chambers
+			NOT = { has_country_flag = FRW_captain_letter }
+			NOT = { OR = { has_country_flag = FRW_backer_petain has_country_flag = FRW_backer_orleans has_country_flag = FRW_backer_bonaparte has_country_flag = FRW_backer_legit has_country_flag = FRW_backer_captain has_country_flag = FRW_backer_pending_na } }
+			NOT = { has_completed_focus = FRW_etat_francais }
+			NOT = { has_completed_focus = FRW_orleanist_restoration }
+			NOT = { has_completed_focus = FRW_bonapartist_appeal }
+			NOT = { has_completed_focus = FRW_legitimate_heir }
+		}
+		cost = 0
+		days_remove = 30
+		remove_effect = {
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_variable = FRW_wait_target } }
+					random_list = {
+						34 = { set_variable = { FRW_wait_target = 2 } }
+						33 = { set_variable = { FRW_wait_target = 3 } }
+						33 = { set_variable = { FRW_wait_target = 4 } }
+					}
+				}
+				add_to_variable = { FRW_wait_count = 1 }
+				if = {
+					limit = {
+						check_variable = { var = FRW_wait_count value = FRW_wait_target compare = greater_than_or_equals }
+						NOT = { OR = { has_country_flag = FRW_backer_petain has_country_flag = FRW_backer_orleans has_country_flag = FRW_backer_bonaparte has_country_flag = FRW_backer_legit has_country_flag = FRW_backer_captain has_country_flag = FRW_backer_pending_na } }
+					}
+					set_country_flag = FRW_captain_letter
+					country_event = { id = frw.84 }
+				}
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+}
+
+FRW_colonial_integration_cat = {
+	FRW_integrate_maghreb = {
+		icon = generic_colonial_administration
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_ministry_of_colonies
+			any_owned_state = { NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } OR = { state = 458 state = 459 state = 460 state = 461 state = 462 state = 513 state = 514 state = 515 state = 665 state = 786 } }
+		}
+		cost = 50
+		days_re_enable = 30
+		complete_effect = {
+			custom_effect_tooltip = FRW_colonial_administration_tt
+			every_owned_state = {
+				limit = { NOT = { is_core_of = ROOT } OR = { state = 459 state = 460 state = 513 state = 514 } }
+				add_core_of = ROOT
+			}
+			hidden_effect = {
+				every_owned_state = {
+					limit = { NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } OR = { state = 458 state = 459 state = 460 state = 461 state = 462 state = 513 state = 514 state = 515 state = 665 state = 786 } }
+					set_state_flag = FRW_colony_administered add_dynamic_modifier = { modifier = FRW_colonial_administration }
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	FRW_integrate_aof = {
+		icon = generic_colonial_administration
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_ministry_of_colonies
+			any_owned_state = { NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } OR = { state = 272 state = 556 state = 557 state = 776 state = 777 state = 778 state = 779 state = 780 state = 781 state = 782 state = 898 state = 899 } }
+		}
+		cost = 50
+		days_re_enable = 30
+		complete_effect = {
+			custom_effect_tooltip = FRW_colonial_administration_tt
+			hidden_effect = {
+				every_owned_state = {
+					limit = { NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } OR = { state = 272 state = 556 state = 557 state = 776 state = 777 state = 778 state = 779 state = 780 state = 781 state = 782 state = 898 state = 899 } }
+					set_state_flag = FRW_colony_administered add_dynamic_modifier = { modifier = FRW_colonial_administration }
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	FRW_integrate_aef = {
+		icon = generic_colonial_administration
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_ministry_of_colonies
+			any_owned_state = { NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } OR = { state = 539 state = 660 state = 772 state = 773 state = 774 state = 775 } }
+		}
+		cost = 35
+		days_re_enable = 30
+		complete_effect = {
+			custom_effect_tooltip = FRW_colonial_administration_tt
+			hidden_effect = {
+				every_owned_state = {
+					limit = { NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } OR = { state = 539 state = 660 state = 772 state = 773 state = 774 state = 775 } }
+					set_state_flag = FRW_colony_administered add_dynamic_modifier = { modifier = FRW_colonial_administration }
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	FRW_integrate_indian_ocean = {
+		icon = generic_colonial_administration
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_ministry_of_colonies
+			any_owned_state = { NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } OR = { state = 268 state = 543 state = 706 state = 708 } }
+		}
+		cost = 25
+		days_re_enable = 30
+		complete_effect = {
+			custom_effect_tooltip = FRW_colonial_administration_tt
+			hidden_effect = {
+				every_owned_state = {
+					limit = { NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } OR = { state = 268 state = 543 state = 706 state = 708 } }
+					set_state_flag = FRW_colony_administered add_dynamic_modifier = { modifier = FRW_colonial_administration }
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	FRW_integrate_spanish = {
+		icon = generic_colonial_administration
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_colonial_purchases
+			any_owned_state = { NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } OR = { state = 178 state = 290 state = 297 state = 699 state = 783 } }
+		}
+		cost = 35
+		days_re_enable = 30
+		complete_effect = {
+			custom_effect_tooltip = FRW_colonial_administration_tt
+			hidden_effect = {
+				every_owned_state = {
+					limit = { NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } OR = { state = 178 state = 290 state = 297 state = 699 state = 783 } }
+					set_state_flag = FRW_colony_administered add_dynamic_modifier = { modifier = FRW_colonial_administration }
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	FRW_integrate_portuguese = {
+		icon = generic_colonial_administration
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_colonial_purchases
+			any_owned_state = { NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } OR = { state = 296 state = 540 state = 697 state = 698 state = 702 state = 705 state = 796 state = 892 state = 896 state = 897 } }
+		}
+		cost = 50
+		days_re_enable = 30
+		complete_effect = {
+			custom_effect_tooltip = FRW_colonial_administration_tt
+			hidden_effect = {
+				every_owned_state = {
+					limit = { NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } OR = { state = 296 state = 540 state = 697 state = 698 state = 702 state = 705 state = 796 state = 892 state = 896 state = 897 } }
+					set_state_flag = FRW_colony_administered add_dynamic_modifier = { modifier = FRW_colonial_administration }
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	FRW_integrate_congo = {
+		icon = generic_colonial_administration
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_colonial_purchases
+			any_owned_state = { NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } OR = { state = 295 state = 538 state = 718 state = 768 state = 769 state = 888 state = 889 state = 890 } }
+		}
+		cost = 50
+		days_re_enable = 30
+		complete_effect = {
+			custom_effect_tooltip = FRW_colonial_administration_tt
+			hidden_effect = {
+				every_owned_state = {
+					limit = { NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } OR = { state = 295 state = 538 state = 718 state = 768 state = 769 state = 888 state = 889 state = 890 } }
+					set_state_flag = FRW_colony_administered add_dynamic_modifier = { modifier = FRW_colonial_administration }
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	FRW_integrate_libya = {
+		icon = generic_colonial_administration
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_colonial_purchases
+			any_owned_state = { NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } OR = { state = 448 state = 449 state = 450 state = 451 state = 661 state = 662 state = 663 } }
+		}
+		cost = 50
+		days_re_enable = 30
+		complete_effect = {
+			custom_effect_tooltip = FRW_colonial_administration_tt
+			hidden_effect = {
+				every_owned_state = {
+					limit = { NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } OR = { state = 448 state = 449 state = 450 state = 451 state = 661 state = 662 state = 663 } }
+					set_state_flag = FRW_colony_administered add_dynamic_modifier = { modifier = FRW_colonial_administration }
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	FRW_integrate_british_west = {
+		icon = generic_colonial_administration
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_colonial_purchases
+			any_owned_state = { NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } OR = { state = 274 state = 558 state = 700 state = 701 state = 900 state = 901 state = 902 } }
+		}
+		cost = 35
+		days_re_enable = 30
+		complete_effect = {
+			custom_effect_tooltip = FRW_colonial_administration_tt
+			hidden_effect = {
+				every_owned_state = {
+					limit = { NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } OR = { state = 274 state = 558 state = 700 state = 701 state = 900 state = 901 state = 902 } }
+					set_state_flag = FRW_colony_administered add_dynamic_modifier = { modifier = FRW_colonial_administration }
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	FRW_integrate_african_territories = {
+		icon = generic_colonial_administration
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_algerian_departments
+			OR = {
+				any_owned_state = { is_on_continent = africa NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } }
+				any_owned_state = { NOT = { is_core_of = ROOT } OR = { state = 694 state = 310 state = 706 state = 459 state = 460 state = 513 state = 514 } }
+			}
+		}
+		cost = 75
+		days_re_enable = 60
+		complete_effect = {
+			every_owned_state = {
+				limit = { NOT = { is_core_of = ROOT } OR = { state = 694 state = 310 state = 706 state = 459 state = 460 state = 513 state = 514 } }
+				add_core_of = ROOT
+			}
+			custom_effect_tooltip = FRW_colonial_administration_all_tt
+			hidden_effect = {
+				every_owned_state = {
+					limit = { is_on_continent = africa NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } }
+					set_state_flag = FRW_colony_administered add_dynamic_modifier = { modifier = FRW_colonial_administration }
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+}
+
+FRW_plunder_cat = {
+	FRW_seize_the_treasury = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = { has_completed_focus = FRW_letters_of_marque }
+		target_array = global.countries
+		target_trigger = {
+			FROM = {
+				exists = yes
+				NOT = { tag = ROOT }
+				NOT = { has_country_flag = FRW_plundered }
+				OR = {
+					is_subject_of = ROOT
+					AND = { has_capitulated = yes has_war_with = ROOT }
+				}
+			}
+		}
+		cost = 10
+		complete_effect = {
+			FROM = {
+				set_country_flag = { flag = FRW_plundered days = 365 value = 1 }
+				add_timed_idea = { idea = FRW_plundered_treasury days = 365 }
+			}
+			add_political_power = 75
+			if = { limit = { has_idea = FRW_corsair_gold } remove_ideas = FRW_corsair_gold }
+			add_timed_idea = { idea = FRW_corsair_gold days = 180 }
+			random_owned_controlled_state = {
+				limit = { is_core_of = ROOT }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+}
+
+FRW_decolonisation_cat = {
+	FRW_free_north_africa = {
+		icon = generic_civil_support
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_proclaim_the_commune
+			has_government = communism
+			OR = { AND = { MOR = { exists = no } any_owned_state = { is_core_of = MOR } } AND = { TUN = { exists = no } any_owned_state = { is_core_of = TUN } } AND = { ALG = { exists = no } any_owned_state = { is_core_of = ALG } } }
+		}
+		cost = 25
+		complete_effect = {
+			if = { limit = { MOR = { exists = no } any_owned_state = { is_core_of = MOR } } release_puppet = MOR MOR = { set_politics = { ruling_party = communism elections_allowed = no } } }
+			if = { limit = { TUN = { exists = no } any_owned_state = { is_core_of = TUN } } release_puppet = TUN TUN = { set_politics = { ruling_party = communism elections_allowed = no } } }
+			if = { limit = { ALG = { exists = no } any_owned_state = { is_core_of = ALG } } release_puppet = ALG ALG = { set_politics = { ruling_party = communism elections_allowed = no } } }
+			add_political_power = 50
+			FRW_decol_upgrade = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	FRW_free_west_africa = {
+		icon = generic_civil_support
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_proclaim_the_commune
+			has_government = communism
+			OR = { AND = { SEN = { exists = no } any_owned_state = { is_core_of = SEN } } AND = { MRT = { exists = no } any_owned_state = { is_core_of = MRT } } AND = { MLI = { exists = no } any_owned_state = { is_core_of = MLI } } AND = { GNA = { exists = no } any_owned_state = { is_core_of = GNA } } AND = { IVO = { exists = no } any_owned_state = { is_core_of = IVO } } AND = { VOL = { exists = no } any_owned_state = { is_core_of = VOL } } AND = { DAH = { exists = no } any_owned_state = { is_core_of = DAH } } AND = { TOG = { exists = no } any_owned_state = { is_core_of = TOG } } AND = { NGR = { exists = no } any_owned_state = { is_core_of = NGR } } }
+		}
+		cost = 25
+		complete_effect = {
+			if = { limit = { SEN = { exists = no } any_owned_state = { is_core_of = SEN } } release_puppet = SEN SEN = { set_politics = { ruling_party = communism elections_allowed = no } } }
+			if = { limit = { MRT = { exists = no } any_owned_state = { is_core_of = MRT } } release_puppet = MRT MRT = { set_politics = { ruling_party = communism elections_allowed = no } } }
+			if = { limit = { MLI = { exists = no } any_owned_state = { is_core_of = MLI } } release_puppet = MLI MLI = { set_politics = { ruling_party = communism elections_allowed = no } } }
+			if = { limit = { GNA = { exists = no } any_owned_state = { is_core_of = GNA } } release_puppet = GNA GNA = { set_politics = { ruling_party = communism elections_allowed = no } } }
+			if = { limit = { IVO = { exists = no } any_owned_state = { is_core_of = IVO } } release_puppet = IVO IVO = { set_politics = { ruling_party = communism elections_allowed = no } } }
+			if = { limit = { VOL = { exists = no } any_owned_state = { is_core_of = VOL } } release_puppet = VOL VOL = { set_politics = { ruling_party = communism elections_allowed = no } } }
+			if = { limit = { DAH = { exists = no } any_owned_state = { is_core_of = DAH } } release_puppet = DAH DAH = { set_politics = { ruling_party = communism elections_allowed = no } } }
+			if = { limit = { TOG = { exists = no } any_owned_state = { is_core_of = TOG } } release_puppet = TOG TOG = { set_politics = { ruling_party = communism elections_allowed = no } } }
+			if = { limit = { NGR = { exists = no } any_owned_state = { is_core_of = NGR } } release_puppet = NGR NGR = { set_politics = { ruling_party = communism elections_allowed = no } } }
+			add_political_power = 50
+			FRW_decol_upgrade = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	FRW_free_equatorial_africa = {
+		icon = generic_civil_support
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_proclaim_the_commune
+			has_government = communism
+			OR = { AND = { CHA = { exists = no } any_owned_state = { is_core_of = CHA } } AND = { CMR = { exists = no } any_owned_state = { is_core_of = CMR } } AND = { GAB = { exists = no } any_owned_state = { is_core_of = GAB } } AND = { RCG = { exists = no } any_owned_state = { is_core_of = RCG } } AND = { CAR = { exists = no } any_owned_state = { is_core_of = CAR } } }
+		}
+		cost = 25
+		complete_effect = {
+			if = { limit = { CHA = { exists = no } any_owned_state = { is_core_of = CHA } } release_puppet = CHA CHA = { set_politics = { ruling_party = communism elections_allowed = no } } }
+			if = { limit = { CMR = { exists = no } any_owned_state = { is_core_of = CMR } } release_puppet = CMR CMR = { set_politics = { ruling_party = communism elections_allowed = no } } }
+			if = { limit = { GAB = { exists = no } any_owned_state = { is_core_of = GAB } } release_puppet = GAB GAB = { set_politics = { ruling_party = communism elections_allowed = no } } }
+			if = { limit = { RCG = { exists = no } any_owned_state = { is_core_of = RCG } } release_puppet = RCG RCG = { set_politics = { ruling_party = communism elections_allowed = no } } }
+			if = { limit = { CAR = { exists = no } any_owned_state = { is_core_of = CAR } } release_puppet = CAR CAR = { set_politics = { ruling_party = communism elections_allowed = no } } }
+			add_political_power = 50
+			FRW_decol_upgrade = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	FRW_free_indian_ocean = {
+		icon = generic_civil_support
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_proclaim_the_commune
+			has_government = communism
+			OR = { AND = { MAD = { exists = no } any_owned_state = { is_core_of = MAD } } AND = { DJI = { exists = no } any_owned_state = { is_core_of = DJI } } }
+		}
+		cost = 25
+		complete_effect = {
+			if = { limit = { MAD = { exists = no } any_owned_state = { is_core_of = MAD } } release_puppet = MAD MAD = { set_politics = { ruling_party = communism elections_allowed = no } } }
+			if = { limit = { DJI = { exists = no } any_owned_state = { is_core_of = DJI } } release_puppet = DJI DJI = { set_politics = { ruling_party = communism elections_allowed = no } } }
+			add_political_power = 50
+			FRW_decol_upgrade = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	FRW_free_indochina = {
+		icon = generic_civil_support
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_proclaim_the_commune
+			has_government = communism
+			OR = { AND = { VIN = { exists = no } any_owned_state = { is_core_of = VIN } } AND = { CAM = { exists = no } any_owned_state = { is_core_of = CAM } } AND = { LAO = { exists = no } any_owned_state = { is_core_of = LAO } } }
+		}
+		cost = 25
+		complete_effect = {
+			if = { limit = { VIN = { exists = no } any_owned_state = { is_core_of = VIN } } release_puppet = VIN VIN = { set_politics = { ruling_party = communism elections_allowed = no } } }
+			if = { limit = { CAM = { exists = no } any_owned_state = { is_core_of = CAM } } release_puppet = CAM CAM = { set_politics = { ruling_party = communism elections_allowed = no } } }
+			if = { limit = { LAO = { exists = no } any_owned_state = { is_core_of = LAO } } release_puppet = LAO LAO = { set_politics = { ruling_party = communism elections_allowed = no } } }
+			add_political_power = 50
+			FRW_decol_upgrade = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	FRW_free_caribbean = {
+		icon = generic_civil_support
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_proclaim_the_commune
+			has_government = communism
+			OR = { AND = { GDL = { exists = no } any_owned_state = { is_core_of = GDL } } AND = { CAY = { exists = no } any_owned_state = { is_core_of = CAY } } }
+		}
+		cost = 25
+		complete_effect = {
+			if = { limit = { GDL = { exists = no } any_owned_state = { is_core_of = GDL } } release_puppet = GDL GDL = { set_politics = { ruling_party = communism elections_allowed = no } } }
+			if = { limit = { CAY = { exists = no } any_owned_state = { is_core_of = CAY } } release_puppet = CAY CAY = { set_politics = { ruling_party = communism elections_allowed = no } } }
+			add_political_power = 25
+			FRW_decol_upgrade = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	FRW_free_levant = {
+		icon = generic_civil_support
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_proclaim_the_commune
+			has_government = communism
+			OR = { AND = { LEB = { exists = no } any_owned_state = { is_core_of = LEB } } AND = { SYR = { exists = no } any_owned_state = { is_core_of = SYR } } }
+		}
+		cost = 25
+		complete_effect = {
+			if = { limit = { LEB = { exists = no } any_owned_state = { is_core_of = LEB } } release_puppet = LEB LEB = { set_politics = { ruling_party = communism elections_allowed = no } } }
+			if = { limit = { SYR = { exists = no } any_owned_state = { is_core_of = SYR } } release_puppet = SYR SYR = { set_politics = { ruling_party = communism elections_allowed = no } } }
+			add_political_power = 50
+			FRW_decol_upgrade = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+}
+
+FRW_liberation_cat = {
+	FRW_liberation_metropole = {
+		icon = generic_political_discourse
+		allowed = { original_tag = FRA }
+		visible = { has_completed_focus = FRW_continue_the_fight }
+		available = {
+			controls_state = 16
+			controls_state = 29
+			controls_state = 28
+			controls_state = 19
+			controls_state = 21
+			any_country = { has_war_with = ROOT any_owned_state = { is_core_of = ROOT is_controlled_by = ROOT } }
+		}
+		cost = 25
+		days_re_enable = 90
+		complete_effect = { country_event = { id = frw.130 } }
+		ai_will_do = { factor = 1 }
+	}
+	FRW_liberation_africa = {
+		icon = generic_political_discourse
+		allowed = { original_tag = FRA }
+		visible = { has_completed_focus = FRW_rally_the_colonies }
+		available = {
+			controls_state = 458
+			controls_state = 459
+			controls_state = 460
+			controls_state = 461
+			controls_state = 462
+			any_country = { has_war_with = ROOT any_owned_state = { is_core_of = ROOT is_controlled_by = ROOT } }
+		}
+		cost = 25
+		days_re_enable = 90
+		complete_effect = { country_event = { id = frw.130 } }
+		ai_will_do = { factor = 1 }
+	}
+}
+
+
+
+
+FRW_econ_reforms_cat = {
+	FRW_dec_er_dirigisme_slots_1 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_dirigisme NOT = { has_country_flag = FRW_er_slots_1 }
+		}
+		
+		cost = 50
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_dirigisme_slots_1_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_slots_1
+				add_to_variable = { FRW_er_slots = 0.04 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_dirigisme_slots_2 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_dirigisme NOT = { has_country_flag = FRW_er_slots_2 } has_country_flag = FRW_er_slots_1
+		}
+		available = { custom_trigger_tooltip = { tooltip = FRW_er_wait_tt has_country_flag = { flag = FRW_er_slots_1 days > 150 } } }
+		cost = 75
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_dirigisme_slots_2_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_slots_2
+				add_to_variable = { FRW_er_slots = 0.04 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_dirigisme_slots_3 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_dirigisme NOT = { has_country_flag = FRW_er_slots_3 } has_country_flag = FRW_er_slots_2
+		}
+		available = { custom_trigger_tooltip = { tooltip = FRW_er_wait_tt has_country_flag = { flag = FRW_er_slots_2 days > 150 } } }
+		cost = 100
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_dirigisme_slots_3_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_slots_3
+				add_to_variable = { FRW_er_slots = 0.04 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_dirigisme_build_1 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_dirigisme NOT = { has_country_flag = FRW_er_build_1 }
+		}
+		
+		cost = 40
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_dirigisme_build_1_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_build_1
+				add_to_variable = { FRW_er_build = 0.05 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_dirigisme_build_2 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_dirigisme NOT = { has_country_flag = FRW_er_build_2 } has_country_flag = FRW_er_build_1
+		}
+		available = { custom_trigger_tooltip = { tooltip = FRW_er_wait_tt has_country_flag = { flag = FRW_er_build_1 days > 150 } } }
+		cost = 60
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_dirigisme_build_2_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_build_2
+				add_to_variable = { FRW_er_build = 0.05 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_dirigisme_build_3 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_dirigisme NOT = { has_country_flag = FRW_er_build_3 } has_country_flag = FRW_er_build_2
+		}
+		available = { custom_trigger_tooltip = { tooltip = FRW_er_wait_tt has_country_flag = { flag = FRW_er_build_2 days > 150 } } }
+		cost = 80
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_dirigisme_build_3_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_build_3
+				add_to_variable = { FRW_er_build = 0.05 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_dirigisme_res_1 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_dirigisme NOT = { has_country_flag = FRW_er_res_1 }
+		}
+		
+		cost = 50
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_dirigisme_res_1_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_res_1
+				add_to_variable = { FRW_er_res = 0.05 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_dirigisme_res_2 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_dirigisme NOT = { has_country_flag = FRW_er_res_2 } has_country_flag = FRW_er_res_1
+		}
+		available = { custom_trigger_tooltip = { tooltip = FRW_er_wait_tt has_country_flag = { flag = FRW_er_res_1 days > 150 } } }
+		cost = 75
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_dirigisme_res_2_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_res_2
+				add_to_variable = { FRW_er_res = 0.05 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_dirigisme_res_3 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_dirigisme NOT = { has_country_flag = FRW_er_res_3 } has_country_flag = FRW_er_res_2
+		}
+		available = { custom_trigger_tooltip = { tooltip = FRW_er_wait_tt has_country_flag = { flag = FRW_er_res_2 days > 150 } } }
+		cost = 100
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_dirigisme_res_3_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_res_3
+				add_to_variable = { FRW_er_res = 0.05 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_dirigisme_ind_1 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_dirigisme NOT = { has_country_flag = FRW_er_ind_1 }
+		}
+		
+		cost = 50
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_dirigisme_ind_1_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_ind_1
+				add_to_variable = { FRW_er_eff = 0.02 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_dirigisme_ind_2 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_dirigisme NOT = { has_country_flag = FRW_er_ind_2 } has_country_flag = FRW_er_ind_1
+		}
+		available = { custom_trigger_tooltip = { tooltip = FRW_er_wait_tt has_country_flag = { flag = FRW_er_ind_1 days > 150 } } }
+		cost = 75
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_dirigisme_ind_2_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_ind_2
+				add_to_variable = { FRW_er_eff = 0.02 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_dirigisme_ind_3 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_dirigisme NOT = { has_country_flag = FRW_er_ind_3 } has_country_flag = FRW_er_ind_2
+		}
+		available = { custom_trigger_tooltip = { tooltip = FRW_er_wait_tt has_country_flag = { flag = FRW_er_ind_2 days > 150 } } }
+		cost = 100
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_dirigisme_ind_3_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_ind_3
+				add_to_variable = { FRW_er_eff = 0.02 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_liberal_slots_1 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_liberal NOT = { has_country_flag = FRW_er_slots_1 }
+		}
+		
+		cost = 40
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_liberal_slots_1_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_slots_1
+				add_to_variable = { FRW_er_slots = 0.06 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_liberal_slots_2 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_liberal NOT = { has_country_flag = FRW_er_slots_2 } has_country_flag = FRW_er_slots_1
+		}
+		available = { custom_trigger_tooltip = { tooltip = FRW_er_wait_tt has_country_flag = { flag = FRW_er_slots_1 days > 150 } } }
+		cost = 60
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_liberal_slots_2_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_slots_2
+				add_to_variable = { FRW_er_slots = 0.06 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_liberal_slots_3 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_liberal NOT = { has_country_flag = FRW_er_slots_3 } has_country_flag = FRW_er_slots_2
+		}
+		available = { custom_trigger_tooltip = { tooltip = FRW_er_wait_tt has_country_flag = { flag = FRW_er_slots_2 days > 150 } } }
+		cost = 80
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_liberal_slots_3_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_slots_3
+				add_to_variable = { FRW_er_slots = 0.06 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_liberal_build_1 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_liberal NOT = { has_country_flag = FRW_er_build_1 }
+		}
+		
+		cost = 50
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_liberal_build_1_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_build_1
+				add_to_variable = { FRW_er_build = 0.04 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_liberal_build_2 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_liberal NOT = { has_country_flag = FRW_er_build_2 } has_country_flag = FRW_er_build_1
+		}
+		available = { custom_trigger_tooltip = { tooltip = FRW_er_wait_tt has_country_flag = { flag = FRW_er_build_1 days > 150 } } }
+		cost = 75
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_liberal_build_2_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_build_2
+				add_to_variable = { FRW_er_build = 0.04 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_liberal_build_3 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_liberal NOT = { has_country_flag = FRW_er_build_3 } has_country_flag = FRW_er_build_2
+		}
+		available = { custom_trigger_tooltip = { tooltip = FRW_er_wait_tt has_country_flag = { flag = FRW_er_build_2 days > 150 } } }
+		cost = 100
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_liberal_build_3_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_build_3
+				add_to_variable = { FRW_er_build = 0.04 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_liberal_res_1 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_liberal NOT = { has_country_flag = FRW_er_res_1 }
+		}
+		
+		cost = 50
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_liberal_res_1_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_res_1
+				add_to_variable = { FRW_er_res = 0.04 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_liberal_res_2 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_liberal NOT = { has_country_flag = FRW_er_res_2 } has_country_flag = FRW_er_res_1
+		}
+		available = { custom_trigger_tooltip = { tooltip = FRW_er_wait_tt has_country_flag = { flag = FRW_er_res_1 days > 150 } } }
+		cost = 75
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_liberal_res_2_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_res_2
+				add_to_variable = { FRW_er_res = 0.04 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_liberal_res_3 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_liberal NOT = { has_country_flag = FRW_er_res_3 } has_country_flag = FRW_er_res_2
+		}
+		available = { custom_trigger_tooltip = { tooltip = FRW_er_wait_tt has_country_flag = { flag = FRW_er_res_2 days > 150 } } }
+		cost = 100
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_liberal_res_3_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_res_3
+				add_to_variable = { FRW_er_res = 0.04 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_liberal_ind_1 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_liberal NOT = { has_country_flag = FRW_er_ind_1 }
+		}
+		
+		cost = 50
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_liberal_ind_1_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_ind_1
+				add_to_variable = { FRW_er_cg = -0.02 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_liberal_ind_2 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_liberal NOT = { has_country_flag = FRW_er_ind_2 } has_country_flag = FRW_er_ind_1
+		}
+		available = { custom_trigger_tooltip = { tooltip = FRW_er_wait_tt has_country_flag = { flag = FRW_er_ind_1 days > 150 } } }
+		cost = 75
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_liberal_ind_2_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_ind_2
+				add_to_variable = { FRW_er_cg = -0.02 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_liberal_ind_3 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_liberal NOT = { has_country_flag = FRW_er_ind_3 } has_country_flag = FRW_er_ind_2
+		}
+		available = { custom_trigger_tooltip = { tooltip = FRW_er_wait_tt has_country_flag = { flag = FRW_er_ind_2 days > 150 } } }
+		cost = 100
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_liberal_ind_3_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_ind_3
+				add_to_variable = { FRW_er_cg = -0.02 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_rearmament_slots_1 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_rearmament NOT = { has_country_flag = FRW_er_slots_1 }
+		}
+		
+		cost = 50
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_rearmament_slots_1_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_slots_1
+				add_to_variable = { FRW_er_slots = 0.04 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_rearmament_slots_2 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_rearmament NOT = { has_country_flag = FRW_er_slots_2 } has_country_flag = FRW_er_slots_1
+		}
+		available = { custom_trigger_tooltip = { tooltip = FRW_er_wait_tt has_country_flag = { flag = FRW_er_slots_1 days > 150 } } }
+		cost = 75
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_rearmament_slots_2_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_slots_2
+				add_to_variable = { FRW_er_slots = 0.04 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_rearmament_slots_3 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_rearmament NOT = { has_country_flag = FRW_er_slots_3 } has_country_flag = FRW_er_slots_2
+		}
+		available = { custom_trigger_tooltip = { tooltip = FRW_er_wait_tt has_country_flag = { flag = FRW_er_slots_2 days > 150 } } }
+		cost = 100
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_rearmament_slots_3_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_slots_3
+				add_to_variable = { FRW_er_slots = 0.04 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_rearmament_build_1 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_rearmament NOT = { has_country_flag = FRW_er_build_1 }
+		}
+		
+		cost = 50
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_rearmament_build_1_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_build_1
+				add_to_variable = { FRW_er_build = 0.03 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_rearmament_build_2 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_rearmament NOT = { has_country_flag = FRW_er_build_2 } has_country_flag = FRW_er_build_1
+		}
+		available = { custom_trigger_tooltip = { tooltip = FRW_er_wait_tt has_country_flag = { flag = FRW_er_build_1 days > 150 } } }
+		cost = 75
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_rearmament_build_2_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_build_2
+				add_to_variable = { FRW_er_build = 0.03 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_rearmament_build_3 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_rearmament NOT = { has_country_flag = FRW_er_build_3 } has_country_flag = FRW_er_build_2
+		}
+		available = { custom_trigger_tooltip = { tooltip = FRW_er_wait_tt has_country_flag = { flag = FRW_er_build_2 days > 150 } } }
+		cost = 100
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_rearmament_build_3_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_build_3
+				add_to_variable = { FRW_er_build = 0.03 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_rearmament_res_1 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_rearmament NOT = { has_country_flag = FRW_er_res_1 }
+		}
+		
+		cost = 50
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_rearmament_res_1_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_res_1
+				add_to_variable = { FRW_er_res = 0.05 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_rearmament_res_2 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_rearmament NOT = { has_country_flag = FRW_er_res_2 } has_country_flag = FRW_er_res_1
+		}
+		available = { custom_trigger_tooltip = { tooltip = FRW_er_wait_tt has_country_flag = { flag = FRW_er_res_1 days > 150 } } }
+		cost = 75
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_rearmament_res_2_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_res_2
+				add_to_variable = { FRW_er_res = 0.05 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_rearmament_res_3 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_rearmament NOT = { has_country_flag = FRW_er_res_3 } has_country_flag = FRW_er_res_2
+		}
+		available = { custom_trigger_tooltip = { tooltip = FRW_er_wait_tt has_country_flag = { flag = FRW_er_res_2 days > 150 } } }
+		cost = 100
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_rearmament_res_3_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_res_3
+				add_to_variable = { FRW_er_res = 0.05 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_rearmament_ind_1 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_rearmament NOT = { has_country_flag = FRW_er_ind_1 }
+		}
+		
+		cost = 40
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_rearmament_ind_1_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_ind_1
+				add_to_variable = { FRW_er_arms = 0.06 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_rearmament_ind_2 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_rearmament NOT = { has_country_flag = FRW_er_ind_2 } has_country_flag = FRW_er_ind_1
+		}
+		available = { custom_trigger_tooltip = { tooltip = FRW_er_wait_tt has_country_flag = { flag = FRW_er_ind_1 days > 150 } } }
+		cost = 60
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_rearmament_ind_2_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_ind_2
+				add_to_variable = { FRW_er_arms = 0.06 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_er_rearmament_ind_3 = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = {
+			has_completed_focus = FRW_econ_rearmament NOT = { has_country_flag = FRW_er_ind_3 } has_country_flag = FRW_er_ind_2
+		}
+		available = { custom_trigger_tooltip = { tooltip = FRW_er_wait_tt has_country_flag = { flag = FRW_er_ind_2 days > 150 } } }
+		cost = 80
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_er_rearmament_ind_3_tt
+			hidden_effect = {
+				set_country_flag = FRW_er_ind_3
+				add_to_variable = { FRW_er_arms = 0.06 }
+				if = { limit = { NOT = { has_dynamic_modifier = { modifier = FRW_econ_reforms } } } add_dynamic_modifier = { modifier = FRW_econ_reforms } }
+			}
+		}
+		ai_will_do = { factor = 5 }
+	}
+}
+
+FRW_council_cat = {
+	FRW_dec_dismiss_monnet = {
+		icon = FRW_adv_monnet
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_monnet_appointed
+			any_character = { is_character = FRW_adv_monnet is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_monnet
+				clr_country_flag = FRW_adv_monnet_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_dautry = {
+		icon = FRW_adv_dautry
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_dautry_appointed
+			any_character = { is_character = FRW_adv_dautry is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_dautry
+				clr_country_flag = FRW_adv_dautry_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_cot = {
+		icon = FRW_adv_cot
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_cot_appointed
+			any_character = { is_character = FRW_adv_cot is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_cot
+				clr_country_flag = FRW_adv_cot_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_mandel = {
+		icon = FRW_adv_mandel
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_mandel_appointed
+			any_character = { is_character = FRW_adv_mandel is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_mandel
+				clr_country_flag = FRW_adv_mandel_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_marty = {
+		icon = FRW_adv_marty
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_marty_appointed
+			any_character = { is_character = FRW_adv_marty is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_marty
+				clr_country_flag = FRW_adv_marty_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_ybarnegaray = {
+		icon = FRW_adv_ybarnegaray
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_ybarnegaray_appointed
+			any_character = { is_character = FRW_adv_ybarnegaray is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_ybarnegaray
+				clr_country_flag = FRW_adv_ybarnegaray_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_marion = {
+		icon = FRW_adv_marion
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_marion_appointed
+			any_character = { is_character = FRW_adv_marion is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_marion
+				clr_country_flag = FRW_adv_marion_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_bichelonne = {
+		icon = FRW_adv_bichelonne
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_bichelonne_appointed
+			any_character = { is_character = FRW_adv_bichelonne is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_bichelonne
+				clr_country_flag = FRW_adv_bichelonne_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_sauvy = {
+		icon = FRW_adv_sauvy
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_sauvy_appointed
+			any_character = { is_character = FRW_adv_sauvy is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_sauvy
+				clr_country_flag = FRW_adv_sauvy_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_perrin = {
+		icon = FRW_adv_perrin
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_perrin_appointed
+			any_character = { is_character = FRW_adv_perrin is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_perrin
+				clr_country_flag = FRW_adv_perrin_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_langevin = {
+		icon = FRW_adv_langevin
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_langevin_appointed
+			any_character = { is_character = FRW_adv_langevin is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_langevin
+				clr_country_flag = FRW_adv_langevin_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_barre = {
+		icon = FRW_adv_barre
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_barre_appointed
+			any_character = { is_character = FRW_adv_barre is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_barre
+				clr_country_flag = FRW_adv_barre_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_fperrin = {
+		icon = FRW_adv_fperrin
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_fperrin_appointed
+			any_character = { is_character = FRW_adv_fperrin is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_fperrin
+				clr_country_flag = FRW_adv_fperrin_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_moulin = {
+		icon = FRW_adv_moulin
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_moulin_appointed
+			any_character = { is_character = FRW_adv_moulin is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_moulin
+				clr_country_flag = FRW_adv_moulin_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_frenay = {
+		icon = FRW_adv_frenay
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_frenay_appointed
+			any_character = { is_character = FRW_adv_frenay is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_frenay
+				clr_country_flag = FRW_adv_frenay_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_remy = {
+		icon = FRW_adv_remy
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_remy_appointed
+			any_character = { is_character = FRW_adv_remy is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_remy
+				clr_country_flag = FRW_adv_remy_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_alibert = {
+		icon = FRW_adv_alibert
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_alibert_appointed
+			any_character = { is_character = FRW_adv_alibert is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_alibert
+				clr_country_flag = FRW_adv_alibert_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_spinasse = {
+		icon = FRW_adv_spinasse
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_spinasse_appointed
+			any_character = { is_character = FRW_adv_spinasse is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_spinasse
+				clr_country_flag = FRW_adv_spinasse_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_debroglie = {
+		icon = FRW_adv_debroglie
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_debroglie_appointed
+			any_character = { is_character = FRW_adv_debroglie is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_debroglie
+				clr_country_flag = FRW_adv_debroglie_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_ponte = {
+		icon = FRW_adv_ponte
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_ponte_appointed
+			any_character = { is_character = FRW_adv_ponte is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_ponte
+				clr_country_flag = FRW_adv_ponte_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_caquot = {
+		icon = FRW_adv_caquot
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_caquot_appointed
+			any_character = { is_character = FRW_adv_caquot is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_caquot
+				clr_country_flag = FRW_adv_caquot_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_coanda = {
+		icon = FRW_adv_coanda
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_coanda_appointed
+			any_character = { is_character = FRW_adv_coanda is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_coanda
+				clr_country_flag = FRW_adv_coanda_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_leduc = {
+		icon = FRW_adv_leduc
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_leduc_appointed
+			any_character = { is_character = FRW_adv_leduc is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_leduc
+				clr_country_flag = FRW_adv_leduc_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_dastier = {
+		icon = FRW_adv_dastier
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_dastier_appointed
+			any_character = { is_character = FRW_adv_dastier is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_dastier
+				clr_country_flag = FRW_adv_dastier_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_brossolette = {
+		icon = FRW_adv_brossolette
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_brossolette_appointed
+			any_character = { is_character = FRW_adv_brossolette is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_brossolette
+				clr_country_flag = FRW_adv_brossolette_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_dormoy = {
+		icon = FRW_adv_dormoy
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_dormoy_appointed
+			any_character = { is_character = FRW_adv_dormoy is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_dormoy
+				clr_country_flag = FRW_adv_dormoy_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_gmonnet = {
+		icon = FRW_adv_gmonnet
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_gmonnet_appointed
+			any_character = { is_character = FRW_adv_gmonnet is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_gmonnet
+				clr_country_flag = FRW_adv_gmonnet_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_laugier = {
+		icon = FRW_adv_laugier
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_laugier_appointed
+			any_character = { is_character = FRW_adv_laugier is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_laugier
+				clr_country_flag = FRW_adv_laugier_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_esnault = {
+		icon = FRW_adv_esnault
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_esnault_appointed
+			any_character = { is_character = FRW_adv_esnault is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_esnault
+				clr_country_flag = FRW_adv_esnault_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_paillole = {
+		icon = FRW_adv_paillole
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_paillole_appointed
+			any_character = { is_character = FRW_adv_paillole is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_paillole
+				clr_country_flag = FRW_adv_paillole_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_colson = {
+		icon = FRW_adv_colson
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_colson_appointed
+			any_character = { is_character = FRW_adv_colson is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_colson
+				clr_country_flag = FRW_adv_colson_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_altmayer = {
+		icon = FRW_adv_altmayer
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_altmayer_appointed
+			any_character = { is_character = FRW_adv_altmayer is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_altmayer
+				clr_country_flag = FRW_adv_altmayer_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_flavigny = {
+		icon = FRW_adv_flavigny
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_flavigny_appointed
+			any_character = { is_character = FRW_adv_flavigny is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_flavigny
+				clr_country_flag = FRW_adv_flavigny_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_durandviel = {
+		icon = FRW_adv_durandviel
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_durandviel_appointed
+			any_character = { is_character = FRW_adv_durandviel is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_durandviel
+				clr_country_flag = FRW_adv_durandviel_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_grobert = {
+		icon = FRW_adv_grobert
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_grobert_appointed
+			any_character = { is_character = FRW_adv_grobert is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_grobert
+				clr_country_flag = FRW_adv_grobert_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_platon = {
+		icon = FRW_adv_platon
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_platon_appointed
+			any_character = { is_character = FRW_adv_platon is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_platon
+				clr_country_flag = FRW_adv_platon_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_armengaud = {
+		icon = FRW_adv_armengaud
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_armengaud_appointed
+			any_character = { is_character = FRW_adv_armengaud is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_armengaud
+				clr_country_flag = FRW_adv_armengaud_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_mendigal = {
+		icon = FRW_adv_mendigal
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_mendigal_appointed
+			any_character = { is_character = FRW_adv_mendigal is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_mendigal
+				clr_country_flag = FRW_adv_mendigal_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_dismiss_bouscat = {
+		icon = FRW_adv_bouscat
+		allowed = { original_tag = FRA }
+		visible = {
+			NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } }
+			has_country_flag = FRW_adv_bouscat_appointed
+			any_character = { is_character = FRW_adv_bouscat is_hired_as_advisor = yes }
+		}
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_dismiss_tt
+			hidden_effect = {
+				deactivate_advisor = FRW_adv_bouscat
+				clr_country_flag = FRW_adv_bouscat_appointed
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_council_open_politics = {
+		icon = FRW_dept_politics
+		allowed = { original_tag = FRA }
+		visible = { NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } } has_completed_focus = FRW_qol_state_reform }
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_council_open_tt
+			hidden_effect = { set_country_flag = FRW_council_tab_politics }
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_council_open_economy = {
+		icon = FRW_dept_economy
+		allowed = { original_tag = FRA }
+		visible = { NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } } has_completed_focus = FRW_qol_cabinet }
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_council_open_tt
+			hidden_effect = { set_country_flag = FRW_council_tab_economy }
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_council_open_research = {
+		icon = FRW_dept_research
+		allowed = { original_tag = FRA }
+		visible = { NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } } has_completed_focus = FRW_qol_research_council }
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_council_open_tt
+			hidden_effect = { set_country_flag = FRW_council_tab_research }
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_council_open_projects = {
+		icon = FRW_dept_projects
+		allowed = { original_tag = FRA }
+		visible = { NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } } has_completed_focus = FRW_qol_special_projects }
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_council_open_tt
+			hidden_effect = { set_country_flag = FRW_council_tab_projects }
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_council_open_resistance = {
+		icon = FRW_dept_resistance
+		allowed = { original_tag = FRA }
+		visible = { NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } } has_completed_focus = FRW_qol_deuxieme_bureau }
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_council_open_tt
+			hidden_effect = { set_country_flag = FRW_council_tab_resistance }
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_council_open_army = {
+		icon = FRW_dept_army
+		allowed = { original_tag = FRA }
+		visible = { NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } } has_completed_focus = FRW_qol_staff_college }
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_council_open_tt
+			hidden_effect = { set_country_flag = FRW_council_tab_army }
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_council_open_navy = {
+		icon = FRW_dept_navy
+		allowed = { original_tag = FRA }
+		visible = { NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } } has_completed_focus = FRW_darlan_programme }
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_council_open_tt
+			hidden_effect = { set_country_flag = FRW_council_tab_navy }
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_council_open_air = {
+		icon = FRW_dept_air
+		allowed = { original_tag = FRA }
+		visible = { NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } } has_completed_focus = FRW_plan_v }
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_council_open_tt
+			hidden_effect = { set_country_flag = FRW_council_tab_air }
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_council_back = {
+		icon = FRW_back
+		allowed = { original_tag = FRA }
+		visible = { NOT = { NOT = { OR = { has_country_flag = FRW_council_tab_politics has_country_flag = FRW_council_tab_economy has_country_flag = FRW_council_tab_research has_country_flag = FRW_council_tab_projects has_country_flag = FRW_council_tab_resistance has_country_flag = FRW_council_tab_army has_country_flag = FRW_council_tab_navy has_country_flag = FRW_council_tab_air } } } }
+		cost = 0
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_council_back_tt
+			hidden_effect = { clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air }
+		}
+		ai_will_do = { factor = 0 }
+	}
+	FRW_dec_appoint_mandel = {
+		icon = FRW_adv_mandel
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_politics is_ai = yes }
+			has_completed_focus = FRW_qol_state_reform
+			NOT = { has_country_flag = FRW_adv_mandel_appointed }
+			has_government = democratic
+		}
+		cost = 125
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_mandel_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_mandel_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_mandel } } recruit_character = FRW_adv_mandel }
+				activate_advisor = FRW_adv_mandel
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_marty = {
+		icon = FRW_adv_marty
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_politics is_ai = yes }
+			has_completed_focus = FRW_qol_state_reform
+			NOT = { has_country_flag = FRW_adv_marty_appointed }
+			has_government = communism
+		}
+		cost = 125
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_marty_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_marty_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_marty } } recruit_character = FRW_adv_marty }
+				activate_advisor = FRW_adv_marty
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_ybarnegaray = {
+		icon = FRW_adv_ybarnegaray
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_politics is_ai = yes }
+			has_completed_focus = FRW_qol_state_reform
+			NOT = { has_country_flag = FRW_adv_ybarnegaray_appointed }
+			has_government = fascism
+		}
+		cost = 125
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_ybarnegaray_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_ybarnegaray_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_ybarnegaray } } recruit_character = FRW_adv_ybarnegaray }
+				activate_advisor = FRW_adv_ybarnegaray
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_marion = {
+		icon = FRW_adv_marion
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_politics is_ai = yes }
+			has_completed_focus = FRW_qol_state_reform
+			NOT = { has_country_flag = FRW_adv_marion_appointed }
+			has_government = fascism
+		}
+		cost = 125
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_marion_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_marion_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_marion } } recruit_character = FRW_adv_marion }
+				activate_advisor = FRW_adv_marion
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_alibert = {
+		icon = FRW_adv_alibert
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_politics is_ai = yes }
+			has_completed_focus = FRW_qol_state_reform
+			NOT = { has_country_flag = FRW_adv_alibert_appointed }
+			has_government = neutrality
+		}
+		cost = 125
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_alibert_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_alibert_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_alibert } } recruit_character = FRW_adv_alibert }
+				activate_advisor = FRW_adv_alibert
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_dormoy = {
+		icon = FRW_adv_dormoy
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_politics is_ai = yes }
+			has_completed_focus = FRW_qol_state_reform
+			NOT = { has_country_flag = FRW_adv_dormoy_appointed }
+			OR = { has_government = democratic has_government = communism }
+		}
+		cost = 125
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_dormoy_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_dormoy_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_dormoy } } recruit_character = FRW_adv_dormoy }
+				activate_advisor = FRW_adv_dormoy
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_monnet = {
+		icon = FRW_adv_monnet
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_economy is_ai = yes }
+			has_completed_focus = FRW_qol_cabinet
+			NOT = { has_country_flag = FRW_adv_monnet_appointed }
+			NOT = { has_government = fascism }
+		}
+		cost = 150
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_monnet_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_monnet_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_monnet } } recruit_character = FRW_adv_monnet }
+				activate_advisor = FRW_adv_monnet
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_dautry = {
+		icon = FRW_adv_dautry
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_economy is_ai = yes }
+			has_completed_focus = FRW_qol_cabinet
+			NOT = { has_country_flag = FRW_adv_dautry_appointed }
+			always = yes
+		}
+		cost = 150
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_dautry_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_dautry_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_dautry } } recruit_character = FRW_adv_dautry }
+				activate_advisor = FRW_adv_dautry
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_bichelonne = {
+		icon = FRW_adv_bichelonne
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_economy is_ai = yes }
+			has_completed_focus = FRW_qol_cabinet
+			NOT = { has_country_flag = FRW_adv_bichelonne_appointed }
+			has_government = neutrality
+		}
+		cost = 150
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_bichelonne_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_bichelonne_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_bichelonne } } recruit_character = FRW_adv_bichelonne }
+				activate_advisor = FRW_adv_bichelonne
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_sauvy = {
+		icon = FRW_adv_sauvy
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_economy is_ai = yes }
+			has_completed_focus = FRW_qol_cabinet
+			NOT = { has_country_flag = FRW_adv_sauvy_appointed }
+			always = yes
+		}
+		cost = 100
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_sauvy_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_sauvy_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_sauvy } } recruit_character = FRW_adv_sauvy }
+				activate_advisor = FRW_adv_sauvy
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_spinasse = {
+		icon = FRW_adv_spinasse
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_economy is_ai = yes }
+			has_completed_focus = FRW_qol_cabinet
+			NOT = { has_country_flag = FRW_adv_spinasse_appointed }
+			OR = { has_government = democratic has_government = communism }
+		}
+		cost = 150
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_spinasse_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_spinasse_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_spinasse } } recruit_character = FRW_adv_spinasse }
+				activate_advisor = FRW_adv_spinasse
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_gmonnet = {
+		icon = FRW_adv_gmonnet
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_economy is_ai = yes }
+			has_completed_focus = FRW_qol_cabinet
+			NOT = { has_country_flag = FRW_adv_gmonnet_appointed }
+			OR = { has_government = democratic has_government = communism }
+		}
+		cost = 100
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_gmonnet_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_gmonnet_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_gmonnet } } recruit_character = FRW_adv_gmonnet }
+				activate_advisor = FRW_adv_gmonnet
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_cot = {
+		icon = FRW_adv_cot
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_research is_ai = yes }
+			has_completed_focus = FRW_qol_research_council
+			NOT = { has_country_flag = FRW_adv_cot_appointed }
+			always = yes
+		}
+		cost = 125
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_cot_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_cot_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_cot } } recruit_character = FRW_adv_cot }
+				activate_advisor = FRW_adv_cot
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_perrin = {
+		icon = FRW_adv_perrin
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_research is_ai = yes }
+			has_completed_focus = FRW_qol_research_council
+			NOT = { has_country_flag = FRW_adv_perrin_appointed }
+			NOT = { has_government = fascism }
+		}
+		cost = 150
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_perrin_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_perrin_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_perrin } } recruit_character = FRW_adv_perrin }
+				activate_advisor = FRW_adv_perrin
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_langevin = {
+		icon = FRW_adv_langevin
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_research is_ai = yes }
+			has_completed_focus = FRW_qol_research_council
+			NOT = { has_country_flag = FRW_adv_langevin_appointed }
+			NOT = { has_government = fascism }
+		}
+		cost = 125
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_langevin_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_langevin_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_langevin } } recruit_character = FRW_adv_langevin }
+				activate_advisor = FRW_adv_langevin
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_debroglie = {
+		icon = FRW_adv_debroglie
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_research is_ai = yes }
+			has_completed_focus = FRW_qol_research_council
+			NOT = { has_country_flag = FRW_adv_debroglie_appointed }
+			always = yes
+		}
+		cost = 150
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_debroglie_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_debroglie_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_debroglie } } recruit_character = FRW_adv_debroglie }
+				activate_advisor = FRW_adv_debroglie
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_ponte = {
+		icon = FRW_adv_ponte
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_research is_ai = yes }
+			has_completed_focus = FRW_qol_research_council
+			NOT = { has_country_flag = FRW_adv_ponte_appointed }
+			always = yes
+		}
+		cost = 125
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_ponte_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_ponte_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_ponte } } recruit_character = FRW_adv_ponte }
+				activate_advisor = FRW_adv_ponte
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_laugier = {
+		icon = FRW_adv_laugier
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_research is_ai = yes }
+			has_completed_focus = FRW_qol_research_council
+			NOT = { has_country_flag = FRW_adv_laugier_appointed }
+			NOT = { has_government = fascism }
+		}
+		cost = 125
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_laugier_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_laugier_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_laugier } } recruit_character = FRW_adv_laugier }
+				activate_advisor = FRW_adv_laugier
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_barre = {
+		icon = FRW_adv_barre
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_projects is_ai = yes }
+			has_completed_focus = FRW_qol_special_projects
+			NOT = { has_country_flag = FRW_adv_barre_appointed }
+			always = yes
+		}
+		cost = 125
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_barre_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_barre_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_barre } } recruit_character = FRW_adv_barre }
+				activate_advisor = FRW_adv_barre
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_fperrin = {
+		icon = FRW_adv_fperrin
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_projects is_ai = yes }
+			has_completed_focus = FRW_qol_special_projects
+			NOT = { has_country_flag = FRW_adv_fperrin_appointed }
+			always = yes
+		}
+		cost = 150
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_fperrin_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_fperrin_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_fperrin } } recruit_character = FRW_adv_fperrin }
+				activate_advisor = FRW_adv_fperrin
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_caquot = {
+		icon = FRW_adv_caquot
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_projects is_ai = yes }
+			has_completed_focus = FRW_qol_special_projects
+			NOT = { has_country_flag = FRW_adv_caquot_appointed }
+			always = yes
+		}
+		cost = 125
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_caquot_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_caquot_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_caquot } } recruit_character = FRW_adv_caquot }
+				activate_advisor = FRW_adv_caquot
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_coanda = {
+		icon = FRW_adv_coanda
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_projects is_ai = yes }
+			has_completed_focus = FRW_qol_special_projects
+			NOT = { has_country_flag = FRW_adv_coanda_appointed }
+			always = yes
+		}
+		cost = 100
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_coanda_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_coanda_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_coanda } } recruit_character = FRW_adv_coanda }
+				activate_advisor = FRW_adv_coanda
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_leduc = {
+		icon = FRW_adv_leduc
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_projects is_ai = yes }
+			has_completed_focus = FRW_qol_special_projects
+			NOT = { has_country_flag = FRW_adv_leduc_appointed }
+			always = yes
+		}
+		cost = 125
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_leduc_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_leduc_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_leduc } } recruit_character = FRW_adv_leduc }
+				activate_advisor = FRW_adv_leduc
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_esnault = {
+		icon = FRW_adv_esnault
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_projects is_ai = yes }
+			has_completed_focus = FRW_qol_special_projects
+			NOT = { has_country_flag = FRW_adv_esnault_appointed }
+			always = yes
+		}
+		cost = 125
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_esnault_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_esnault_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_esnault } } recruit_character = FRW_adv_esnault }
+				activate_advisor = FRW_adv_esnault
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_moulin = {
+		icon = FRW_adv_moulin
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_resistance is_ai = yes }
+			has_completed_focus = FRW_qol_deuxieme_bureau
+			NOT = { has_country_flag = FRW_adv_moulin_appointed }
+			OR = { has_war = yes date > 1939.1.1 }
+		}
+		cost = 125
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_moulin_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_moulin_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_moulin } } recruit_character = FRW_adv_moulin }
+				activate_advisor = FRW_adv_moulin
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_frenay = {
+		icon = FRW_adv_frenay
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_resistance is_ai = yes }
+			has_completed_focus = FRW_qol_deuxieme_bureau
+			NOT = { has_country_flag = FRW_adv_frenay_appointed }
+			OR = { has_war = yes date > 1939.1.1 }
+		}
+		cost = 125
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_frenay_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_frenay_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_frenay } } recruit_character = FRW_adv_frenay }
+				activate_advisor = FRW_adv_frenay
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_remy = {
+		icon = FRW_adv_remy
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_resistance is_ai = yes }
+			has_completed_focus = FRW_qol_deuxieme_bureau
+			NOT = { has_country_flag = FRW_adv_remy_appointed }
+			OR = { has_war = yes date > 1939.1.1 }
+		}
+		cost = 125
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_remy_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_remy_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_remy } } recruit_character = FRW_adv_remy }
+				activate_advisor = FRW_adv_remy
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_dastier = {
+		icon = FRW_adv_dastier
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_resistance is_ai = yes }
+			has_completed_focus = FRW_qol_deuxieme_bureau
+			NOT = { has_country_flag = FRW_adv_dastier_appointed }
+			OR = { has_war = yes date > 1939.1.1 }
+		}
+		cost = 125
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_dastier_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_dastier_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_dastier } } recruit_character = FRW_adv_dastier }
+				activate_advisor = FRW_adv_dastier
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_brossolette = {
+		icon = FRW_adv_brossolette
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_resistance is_ai = yes }
+			has_completed_focus = FRW_qol_deuxieme_bureau
+			NOT = { has_country_flag = FRW_adv_brossolette_appointed }
+			OR = { has_war = yes date > 1939.1.1 }
+		}
+		cost = 125
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_brossolette_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_brossolette_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_brossolette } } recruit_character = FRW_adv_brossolette }
+				activate_advisor = FRW_adv_brossolette
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_paillole = {
+		icon = FRW_adv_paillole
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_resistance is_ai = yes }
+			has_completed_focus = FRW_qol_deuxieme_bureau
+			NOT = { has_country_flag = FRW_adv_paillole_appointed }
+			always = yes
+		}
+		cost = 125
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_paillole_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_paillole_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_paillole } } recruit_character = FRW_adv_paillole }
+				activate_advisor = FRW_adv_paillole
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_colson = {
+		icon = FRW_adv_colson
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_army is_ai = yes }
+			has_completed_focus = FRW_qol_staff_college
+			NOT = { has_country_flag = FRW_adv_colson_appointed }
+			always = yes
+		}
+		cost = 125
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_colson_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_colson_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_colson } } recruit_character = FRW_adv_colson }
+				activate_advisor = FRW_adv_colson
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_altmayer = {
+		icon = FRW_adv_altmayer
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_army is_ai = yes }
+			has_completed_focus = FRW_qol_staff_college
+			NOT = { has_country_flag = FRW_adv_altmayer_appointed }
+			always = yes
+		}
+		cost = 125
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_altmayer_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_altmayer_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_altmayer } } recruit_character = FRW_adv_altmayer }
+				activate_advisor = FRW_adv_altmayer
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_flavigny = {
+		icon = FRW_adv_flavigny
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_army is_ai = yes }
+			has_completed_focus = FRW_qol_staff_college
+			NOT = { has_country_flag = FRW_adv_flavigny_appointed }
+			always = yes
+		}
+		cost = 150
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_flavigny_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_flavigny_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_flavigny } } recruit_character = FRW_adv_flavigny }
+				activate_advisor = FRW_adv_flavigny
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_durandviel = {
+		icon = FRW_adv_durandviel
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_navy is_ai = yes }
+			has_completed_focus = FRW_darlan_programme
+			NOT = { has_country_flag = FRW_adv_durandviel_appointed }
+			always = yes
+		}
+		cost = 125
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_durandviel_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_durandviel_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_durandviel } } recruit_character = FRW_adv_durandviel }
+				activate_advisor = FRW_adv_durandviel
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_grobert = {
+		icon = FRW_adv_grobert
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_navy is_ai = yes }
+			has_completed_focus = FRW_darlan_programme
+			NOT = { has_country_flag = FRW_adv_grobert_appointed }
+			always = yes
+		}
+		cost = 125
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_grobert_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_grobert_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_grobert } } recruit_character = FRW_adv_grobert }
+				activate_advisor = FRW_adv_grobert
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_platon = {
+		icon = FRW_adv_platon
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_navy is_ai = yes }
+			has_completed_focus = FRW_darlan_programme
+			NOT = { has_country_flag = FRW_adv_platon_appointed }
+			always = yes
+		}
+		cost = 100
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_platon_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_platon_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_platon } } recruit_character = FRW_adv_platon }
+				activate_advisor = FRW_adv_platon
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_armengaud = {
+		icon = FRW_adv_armengaud
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_air is_ai = yes }
+			has_completed_focus = FRW_plan_v
+			NOT = { has_country_flag = FRW_adv_armengaud_appointed }
+			always = yes
+		}
+		cost = 125
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_armengaud_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_armengaud_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_armengaud } } recruit_character = FRW_adv_armengaud }
+				activate_advisor = FRW_adv_armengaud
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_mendigal = {
+		icon = FRW_adv_mendigal
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_air is_ai = yes }
+			has_completed_focus = FRW_plan_v
+			NOT = { has_country_flag = FRW_adv_mendigal_appointed }
+			always = yes
+		}
+		cost = 125
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_mendigal_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_mendigal_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_mendigal } } recruit_character = FRW_adv_mendigal }
+				activate_advisor = FRW_adv_mendigal
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_appoint_bouscat = {
+		icon = FRW_adv_bouscat
+		allowed = { original_tag = FRA }
+		visible = {
+			OR = { has_country_flag = FRW_council_tab_air is_ai = yes }
+			has_completed_focus = FRW_plan_v
+			NOT = { has_country_flag = FRW_adv_bouscat_appointed }
+			always = yes
+		}
+		cost = 100
+		complete_effect = {
+			custom_effect_tooltip = FRW_adv_bouscat_effects_tt
+			hidden_effect = {
+				set_country_flag = FRW_adv_bouscat_appointed
+				if = { limit = { NOT = { has_character = FRW_adv_bouscat } } recruit_character = FRW_adv_bouscat }
+				activate_advisor = FRW_adv_bouscat
+				clr_country_flag = FRW_council_tab_politics clr_country_flag = FRW_council_tab_economy clr_country_flag = FRW_council_tab_research clr_country_flag = FRW_council_tab_projects clr_country_flag = FRW_council_tab_resistance clr_country_flag = FRW_council_tab_army clr_country_flag = FRW_council_tab_navy clr_country_flag = FRW_council_tab_air
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+}
+
+FRW_frontier_cat = {
+	FRW_dec_fort_meuse = {
+		icon = generic_fortification
+		allowed = { original_tag = FRA }
+		fire_only_once = yes
+		available = { 18 = { is_controlled_by = ROOT } }
+		cost = 60
+		days_remove = 60
+		complete_effect = { set_country_flag = FRW_fort_meuse_done }
+		remove_effect = {
+			18 = { add_building_construction = { type = bunker level = 2 province = { all_provinces = yes limit_to_border = yes } instant_build = yes } }
+		}
+		ai_will_do = { factor = 2 modifier = { factor = 3 has_war = yes } }
+	}
+	FRW_dec_fort_nord = {
+		icon = generic_fortification
+		allowed = { original_tag = FRA }
+		fire_only_once = yes
+		available = { 29 = { is_controlled_by = ROOT } }
+		cost = 60
+		days_remove = 60
+		complete_effect = { set_country_flag = FRW_fort_nord_done }
+		remove_effect = {
+			29 = { add_building_construction = { type = bunker level = 2 province = { all_provinces = yes limit_to_border = yes } instant_build = yes } }
+		}
+		ai_will_do = { factor = 2 modifier = { factor = 3 has_war = yes } }
+	}
+	FRW_dec_fort_alps = {
+		icon = generic_mountain_fortification
+		allowed = { original_tag = FRA }
+		fire_only_once = yes
+		available = { 32 = { is_controlled_by = ROOT } }
+		cost = 50
+		days_remove = 60
+		complete_effect = { set_country_flag = FRW_fort_alps_done }
+		remove_effect = {
+			32 = { add_building_construction = { type = bunker level = 2 province = { all_provinces = yes limit_to_border = yes } instant_build = yes } }
+			if = { limit = { 735 = { is_controlled_by = ROOT } } 735 = { add_building_construction = { type = bunker level = 1 province = { all_provinces = yes limit_to_border = yes } instant_build = yes } } }
+		}
+		ai_will_do = { factor = 2 modifier = { factor = 3 has_war = yes } }
+	}
+	FRW_dec_fort_pyrenees = {
+		icon = generic_mountain_fortification
+		allowed = { original_tag = FRA }
+		fire_only_once = yes
+		available = { 22 = { is_controlled_by = ROOT } }
+		cost = 35
+		days_remove = 45
+		complete_effect = { set_country_flag = FRW_fort_pyrenees_done }
+		remove_effect = {
+			22 = { add_building_construction = { type = bunker level = 1 province = { all_provinces = yes limit_to_border = yes } instant_build = yes } }
+			if = { limit = { 31 = { is_controlled_by = ROOT } } 31 = { add_building_construction = { type = bunker level = 1 province = { all_provinces = yes limit_to_border = yes } instant_build = yes } } }
+		}
+		ai_will_do = { factor = 2 modifier = { factor = 3 has_war = yes } }
+	}
+	FRW_dec_fort_mareth = {
+		icon = generic_fortification
+		allowed = { original_tag = FRA }
+		fire_only_once = yes
+		available = { 458 = { is_controlled_by = ROOT } }
+		cost = 45
+		days_remove = 60
+		complete_effect = { set_country_flag = FRW_fort_mareth_done }
+		remove_effect = {
+			458 = { add_building_construction = { type = bunker level = 2 province = { all_provinces = yes limit_to_border = yes } instant_build = yes } }
+		}
+		ai_will_do = { factor = 2 modifier = { factor = 3 has_war = yes } }
+	}
+	FRW_dec_fort_coast = {
+		icon = generic_coastal_fortification
+		allowed = { original_tag = FRA }
+		fire_only_once = yes
+		available = { 14 = { is_controlled_by = ROOT } 21 = { is_controlled_by = ROOT } }
+		cost = 45
+		days_remove = 45
+		complete_effect = { set_country_flag = FRW_fort_coast_done }
+		remove_effect = {
+			14 = { add_building_construction = { type = coastal_bunker level = 2 province = { all_provinces = yes limit_to_naval_base = yes } instant_build = yes } }
+			21 = { add_building_construction = { type = coastal_bunker level = 2 province = { all_provinces = yes limit_to_naval_base = yes } instant_build = yes } }
+			14 = { add_building_construction = { type = anti_air_building level = 1 instant_build = yes } }
+			21 = { add_building_construction = { type = anti_air_building level = 1 instant_build = yes } }
+		}
+		ai_will_do = { factor = 2 modifier = { factor = 3 has_war = yes } }
+	}
+	FRW_dec_fort_paris_aa = {
+		icon = generic_air
+		allowed = { original_tag = FRA }
+		fire_only_once = yes
+		available = { 16 = { is_controlled_by = ROOT } }
+		cost = 40
+		days_remove = 45
+		complete_effect = { set_country_flag = FRW_fort_paris_aa_done }
+		remove_effect = {
+			16 = { add_building_construction = { type = anti_air_building level = 2 instant_build = yes } }
+			16 = { add_building_construction = { type = radar_station level = 1 instant_build = yes } }
+		}
+		ai_will_do = { factor = 2 modifier = { factor = 3 has_war = yes } }
+	}
+	FRW_dec_fort_corsica = {
+		icon = generic_coastal_fortification
+		allowed = { original_tag = FRA }
+		fire_only_once = yes
+		available = { 1 = { is_controlled_by = ROOT } }
+		cost = 25
+		days_remove = 30
+		complete_effect = { set_country_flag = FRW_fort_corsica_done }
+		remove_effect = {
+			1 = { add_building_construction = { type = coastal_bunker level = 1 province = { all_provinces = yes limit_to_coastal = yes } instant_build = yes } }
+		}
+		ai_will_do = { factor = 2 modifier = { factor = 3 has_war = yes } }
+	}
+}
+
+FRW_patrie_cat = {
+	FRW_dec_war_taxis = {
+		icon = generic_trucks
+		allowed = { original_tag = FRA }
+		fire_only_once = yes
+		
+		cost = 25
+		complete_effect = {
+			set_country_flag = FRW_war_taxis_done
+			add_equipment_to_stockpile = { type = motorized_equipment amount = 400 }
+			add_stability = -0.02
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_war_reserves = {
+		icon = generic_army_support
+		allowed = { original_tag = FRA }
+		fire_only_once = yes
+		
+		cost = 50
+		complete_effect = {
+			set_country_flag = FRW_war_reserves_done
+			add_manpower = 75000
+			add_war_support = 0.03
+			add_stability = -0.04
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_war_arsenals = {
+		icon = generic_military
+		allowed = { original_tag = FRA }
+		fire_only_once = yes
+		
+		cost = 25
+		complete_effect = {
+			set_country_flag = FRW_war_arsenals_done
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 6000 }
+			add_equipment_to_stockpile = { type = artillery_equipment amount = 250 }
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_war_gold = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		fire_only_once = yes
+		available = { 272 = { is_controlled_by = ROOT } }
+		cost = 25
+		complete_effect = {
+			set_country_flag = FRW_war_gold_done
+			add_timed_idea = { idea = FRW_gold_abroad days = 365 }
+			custom_effect_tooltip = FRW_gold_safe_tt
+		}
+		ai_will_do = { factor = 5 }
+	}
+	FRW_dec_war_loire = {
+		icon = generic_fortification
+		allowed = { original_tag = FRA }
+		fire_only_once = yes
+		
+		cost = 50
+		complete_effect = {
+			set_country_flag = FRW_war_loire_done
+			add_timed_idea = { idea = FRW_line_of_the_loire days = 120 }
+		}
+		ai_will_do = { factor = 5 }
+	}
+}
+
+FRW_franc_cat = {
+	FRW_dec_franc_rates = {
+		icon = generic_industry
+		allowed = { original_tag = FRA }
+		visible = { tag = FRA has_capitulated = no }
+		available = { check_variable = { FRW_inflation > 10 } }
+		cost = 20
+		days_re_enable = 150
+		complete_effect = {
+			custom_effect_tooltip = FRW_inf_tt_m8 hidden_effect = { add_to_variable = { FRW_inflation = -8 } FRW_inflation_update = yes }
+			add_timed_idea = { idea = FRW_tight_money days = 120 }
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = { add = 30 check_variable = { FRW_inflation > 45 } }
+			modifier = { add = 15 check_variable = { FRW_inflation > 30 } }
+		}
+	}
+	FRW_dec_franc_bonds = {
+		icon = generic_fundraising
+		allowed = { original_tag = FRA }
+		visible = { tag = FRA has_capitulated = no }
+		available = { check_variable = { FRW_inflation > 5 } has_war_support > 0.3 }
+		cost = 15
+		days_re_enable = 120
+		complete_effect = {
+			custom_effect_tooltip = FRW_inf_tt_m5 hidden_effect = { add_to_variable = { FRW_inflation = -5 } FRW_inflation_update = yes }
+			add_war_support = 0.02
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = { add = 30 check_variable = { FRW_inflation > 45 } }
+			modifier = { add = 15 check_variable = { FRW_inflation > 30 } }
+		}
+	}
+	FRW_dec_franc_controls = {
+		icon = generic_police_action
+		allowed = { original_tag = FRA }
+		visible = { tag = FRA has_capitulated = no }
+		available = { check_variable = { FRW_inflation > 20 } OR = { has_war = yes has_completed_focus = FRW_econ_dirigisme } }
+		cost = 35
+		days_re_enable = 270
+		complete_effect = {
+			custom_effect_tooltip = FRW_inf_tt_m15 hidden_effect = { add_to_variable = { FRW_inflation = -15 } FRW_inflation_update = yes }
+			add_stability = -0.04
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = { add = 50 check_variable = { FRW_inflation > 45 } }
+			modifier = { add = 25 check_variable = { FRW_inflation > 30 } }
+		}
+	}
+	FRW_dec_franc_gold = {
+		icon = generic_construction
+		allowed = { original_tag = FRA }
+		visible = { tag = FRA has_capitulated = no }
+		available = { check_variable = { FRW_inflation > 10 } check_variable = { FRW_gold > 299 } }
+		cost = 25
+		days_re_enable = 180
+		complete_effect = {
+			custom_effect_tooltip = FRW_inf_tt_m12 hidden_effect = { add_to_variable = { FRW_inflation = -12 } FRW_inflation_update = yes }
+			custom_effect_tooltip = FRW_gold_m300_tt hidden_effect = { add_to_variable = { FRW_gold = -300 } FRW_inflation_update = yes }
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = { add = 20 check_variable = { FRW_inflation > 45 } }
+			modifier = { add = 10 check_variable = { FRW_inflation > 30 } }
+		}
+	}
+	FRW_dec_franc_reserves = {
+		icon = generic_fundraising
+		allowed = { original_tag = FRA }
+		visible = { tag = FRA has_capitulated = no }
+		available = { check_variable = { FRW_inflation < 30 } check_variable = { FRW_gold < 2000 } has_war = no }
+		cost = 30
+		days_re_enable = 240
+		complete_effect = {
+			custom_effect_tooltip = FRW_gold_p200_tt hidden_effect = { add_to_variable = { FRW_gold = 200 } FRW_inflation_update = yes }
+			custom_effect_tooltip = FRW_inf_tt_p4 hidden_effect = { add_to_variable = { FRW_inflation = 4 } FRW_inflation_update = yes }
+		}
+		ai_will_do = { factor = 0 modifier = { add = 5 check_variable = { FRW_gold < 1000 } check_variable = { FRW_inflation < 20 } } }
+	}
+	FRW_dec_franc_exchange = {
+		icon = generic_police_action
+		allowed = { original_tag = FRA }
+		visible = { tag = FRA has_capitulated = no }
+		available = { OR = { has_completed_focus = FRW_econ_dirigisme has_government = communism has_idea = FRW_popular_front has_war = yes } }
+		cost = 25
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = FRW_exchange_controls
+			add_ideas = FRW_exchange_controls_idea
+			custom_effect_tooltip = FRW_exchange_controls_tt
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = { add = 30 check_variable = { FRW_inflation > 45 } }
+			modifier = { add = 15 check_variable = { FRW_inflation > 30 } }
+		}
+	}
+	FRW_dec_franc_contracts = {
+		icon = generic_air
+		allowed = { original_tag = FRA }
+		visible = { tag = FRA has_capitulated = no }
+		available = { check_variable = { FRW_gold > 299 } date > 1938.1.1 USA = { exists = yes NOT = { has_war_with = ROOT } } }
+		cost = 25
+		days_re_enable = 365
+		days_remove = 365
+		remove_effect = { add_offsite_building = { type = arms_factory level = -3 } }
+		complete_effect = {
+			custom_effect_tooltip = FRW_gold_m300_tt hidden_effect = { add_to_variable = { FRW_gold = -300 } FRW_inflation_update = yes }
+			add_offsite_building = { type = arms_factory level = 3 }
+			add_timed_idea = { idea = FRW_foreign_contracts days = 365 }
+			custom_effect_tooltip = FRW_contracts_tt
+		}
+		ai_will_do = { factor = 0 modifier = { add = 10 has_war = yes check_variable = { FRW_gold > 999 } } }
+	}
+	FRW_dec_franc_austerity = {
+		icon = generic_political_discourse
+		allowed = { original_tag = FRA }
+		visible = { tag = FRA has_capitulated = no }
+		available = { check_variable = { FRW_inflation > 15 } has_war = no }
+		cost = 20
+		days_re_enable = 300
+		complete_effect = {
+			custom_effect_tooltip = FRW_inf_tt_m12 hidden_effect = { add_to_variable = { FRW_inflation = -12 } FRW_inflation_update = yes }
+			add_timed_idea = { idea = FRW_austerity days = 180 }
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = { add = 25 check_variable = { FRW_inflation > 45 } }
+			modifier = { add = 12 check_variable = { FRW_inflation > 30 } }
+		}
+	}
+	FRW_dec_franc_cfa = {
+		icon = generic_colonial_administration
+		allowed = { original_tag = FRA }
+		visible = { tag = FRA has_capitulated = no }
+		available = { controls_state = 459 controls_state = 272 controls_state = 772 }
+		cost = 40
+		fire_only_once = yes
+		complete_effect = {
+			custom_effect_tooltip = FRW_inf_tt_m5 hidden_effect = { add_to_variable = { FRW_inflation = -5 } FRW_inflation_update = yes }
+			set_country_flag = FRW_cfa_zone
+			custom_effect_tooltip = FRW_cfa_drift_tt
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = { add = 30 check_variable = { FRW_inflation > 45 } }
+			modifier = { add = 15 check_variable = { FRW_inflation > 30 } }
+		}
+	}
+	FRW_dec_franc_print = {
+		icon = generic_factory
+		allowed = { original_tag = FRA }
+		visible = { tag = FRA has_capitulated = no }
+		available = { check_variable = { FRW_inflation < 80 } }
+		cost = 0
+		days_re_enable = 240
+		complete_effect = {
+			custom_effect_tooltip = FRW_inf_tt_p15 hidden_effect = { add_to_variable = { FRW_inflation = 15 } FRW_inflation_update = yes }
+			add_timed_idea = { idea = FRW_printing_press days = 180 }
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = { add = 0 check_variable = { FRW_inflation > 45 } }
+			modifier = { add = 0 check_variable = { FRW_inflation > 30 } }
+		}
+	}
+	FRW_dec_franc_tripartite = {
+		icon = generic_political_discourse
+		allowed = { original_tag = FRA }
+		visible = { tag = FRA has_capitulated = no }
+		available = { has_completed_focus = FRW_devalue_the_franc NOT = { has_war_with = ENG } NOT = { has_war_with = USA } ENG = { exists = yes } USA = { exists = yes } }
+		cost = 30
+		fire_only_once = yes
+		complete_effect = {
+			custom_effect_tooltip = FRW_inf_tt_m10 hidden_effect = { add_to_variable = { FRW_inflation = -10 } FRW_inflation_update = yes }
+			set_country_flag = FRW_tripartite_done
+			custom_effect_tooltip = FRW_tripartite_drift_tt
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = { add = 40 check_variable = { FRW_inflation > 45 } }
+			modifier = { add = 20 check_variable = { FRW_inflation > 30 } }
+		}
+	}
+}
+
+FRW_ralliement_cat = {
+	FRW_dec_rally_eq = {
+		icon = generic_colonial_administration
+		allowed = { original_tag = FRA }
+		visible = { tag = FRA FRW_vichy_holds_eq = yes NOT = { has_country_flag = FRW_ff_rallied_eq } }
+		available = { has_completed_focus = FRW_appeal_of_18_june NOT = { has_country_flag = FRW_ff_busy_eq } }
+		cost = 10
+		days_remove = 21
+		days_re_enable = 60
+		complete_effect = { set_country_flag = FRW_ff_busy_eq custom_effect_tooltip = FRW_dec_rally_tt }
+		remove_effect = { FRW_ff_rally_eq = yes }
+		ai_will_do = { factor = 5 modifier = { factor = 2 check_variable = { FRW_ffc_eq > 40 } } }
+	}
+	FRW_dec_exped_eq = {
+		icon = generic_army_support
+		allowed = { original_tag = FRA }
+		visible = { tag = FRA FRW_vichy_holds_eq = yes NOT = { has_country_flag = FRW_ff_rallied_eq } has_completed_focus = FRW_free_french_forces }
+		available = {
+			NOT = { has_country_flag = FRW_ff_busy_eq }
+			has_army_size = { size > 5 }
+			has_manpower > 15000
+			custom_trigger_tooltip = { tooltip = FRW_exped_eq_tt has_equipment = { infantry_equipment > 1499 } }
+		}
+		cost = 40
+		days_remove = 45
+		days_re_enable = 120
+		complete_effect = {
+			set_country_flag = FRW_ff_busy_eq
+			add_manpower = -15000
+			add_equipment_to_stockpile = { type = infantry_equipment amount = -1500 }
+			custom_effect_tooltip = FRW_dec_exped_tt
+		}
+		remove_effect = { FRW_ff_exped_eq = yes }
+		ai_will_do = { factor = 2 modifier = { factor = 2 check_variable = { FRW_ffe_eq > 60 } } }
+	}
+	FRW_dec_rally_aof = {
+		icon = generic_colonial_administration
+		allowed = { original_tag = FRA }
+		visible = { tag = FRA FRW_vichy_holds_aof = yes NOT = { has_country_flag = FRW_ff_rallied_aof } }
+		available = { has_completed_focus = FRW_rally_the_colonies NOT = { has_country_flag = FRW_ff_busy_aof } }
+		cost = 25
+		days_remove = 21
+		days_re_enable = 60
+		complete_effect = { set_country_flag = FRW_ff_busy_aof custom_effect_tooltip = FRW_dec_rally_tt }
+		remove_effect = { FRW_ff_rally_aof = yes }
+		ai_will_do = { factor = 5 modifier = { factor = 2 check_variable = { FRW_ffc_aof > 40 } } }
+	}
+	FRW_dec_exped_aof = {
+		icon = generic_army_support
+		allowed = { original_tag = FRA }
+		visible = { tag = FRA FRW_vichy_holds_aof = yes NOT = { has_country_flag = FRW_ff_rallied_aof } has_completed_focus = FRW_free_french_forces }
+		available = {
+			NOT = { has_country_flag = FRW_ff_busy_aof }
+			has_army_size = { size > 5 }
+			has_manpower > 15000
+			custom_trigger_tooltip = { tooltip = FRW_exped_eq_tt has_equipment = { infantry_equipment > 1499 } }
+		}
+		cost = 40
+		days_remove = 45
+		days_re_enable = 120
+		complete_effect = {
+			set_country_flag = FRW_ff_busy_aof
+			add_manpower = -15000
+			add_equipment_to_stockpile = { type = infantry_equipment amount = -1500 }
+			custom_effect_tooltip = FRW_dec_exped_tt
+		}
+		remove_effect = { FRW_ff_exped_aof = yes }
+		ai_will_do = { factor = 2 modifier = { factor = 2 check_variable = { FRW_ffe_aof > 60 } } }
+	}
+	FRW_dec_rally_afn = {
+		icon = generic_colonial_administration
+		allowed = { original_tag = FRA }
+		visible = { tag = FRA FRW_vichy_holds_afn = yes NOT = { has_country_flag = FRW_ff_rallied_afn } }
+		available = { has_completed_focus = FRW_rally_the_colonies NOT = { has_country_flag = FRW_ff_busy_afn } }
+		cost = 25
+		days_remove = 21
+		days_re_enable = 60
+		complete_effect = { set_country_flag = FRW_ff_busy_afn custom_effect_tooltip = FRW_dec_rally_tt }
+		remove_effect = { FRW_ff_rally_afn = yes }
+		ai_will_do = { factor = 5 modifier = { factor = 2 check_variable = { FRW_ffc_afn > 40 } } }
+	}
+	FRW_dec_exped_afn = {
+		icon = generic_army_support
+		allowed = { original_tag = FRA }
+		visible = { tag = FRA FRW_vichy_holds_afn = yes NOT = { has_country_flag = FRW_ff_rallied_afn } has_completed_focus = FRW_free_french_forces }
+		available = {
+			NOT = { has_country_flag = FRW_ff_busy_afn }
+			has_army_size = { size > 5 }
+			has_manpower > 15000
+			custom_trigger_tooltip = { tooltip = FRW_exped_eq_tt has_equipment = { infantry_equipment > 1499 } }
+		}
+		cost = 40
+		days_remove = 45
+		days_re_enable = 120
+		complete_effect = {
+			set_country_flag = FRW_ff_busy_afn
+			add_manpower = -15000
+			add_equipment_to_stockpile = { type = infantry_equipment amount = -1500 }
+			custom_effect_tooltip = FRW_dec_exped_tt
+		}
+		remove_effect = { FRW_ff_exped_afn = yes }
+		ai_will_do = { factor = 2 modifier = { factor = 2 check_variable = { FRW_ffe_afn > 60 } } }
+	}
+	FRW_dec_rally_lev = {
+		icon = generic_colonial_administration
+		allowed = { original_tag = FRA }
+		visible = { tag = FRA FRW_vichy_holds_lev = yes NOT = { has_country_flag = FRW_ff_rallied_lev } }
+		available = { has_completed_focus = FRW_rally_the_colonies NOT = { has_country_flag = FRW_ff_busy_lev } }
+		cost = 25
+		days_remove = 21
+		days_re_enable = 60
+		complete_effect = { set_country_flag = FRW_ff_busy_lev custom_effect_tooltip = FRW_dec_rally_tt }
+		remove_effect = { FRW_ff_rally_lev = yes }
+		ai_will_do = { factor = 5 modifier = { factor = 2 check_variable = { FRW_ffc_lev > 40 } } }
+	}
+	FRW_dec_exped_lev = {
+		icon = generic_army_support
+		allowed = { original_tag = FRA }
+		visible = { tag = FRA FRW_vichy_holds_lev = yes NOT = { has_country_flag = FRW_ff_rallied_lev } has_completed_focus = FRW_free_french_forces }
+		available = {
+			NOT = { has_country_flag = FRW_ff_busy_lev }
+			has_army_size = { size > 5 }
+			has_manpower > 15000
+			custom_trigger_tooltip = { tooltip = FRW_exped_eq_tt has_equipment = { infantry_equipment > 1499 } }
+		}
+		cost = 40
+		days_remove = 45
+		days_re_enable = 120
+		complete_effect = {
+			set_country_flag = FRW_ff_busy_lev
+			add_manpower = -15000
+			add_equipment_to_stockpile = { type = infantry_equipment amount = -1500 }
+			custom_effect_tooltip = FRW_dec_exped_tt
+		}
+		remove_effect = { FRW_ff_exped_lev = yes }
+		ai_will_do = { factor = 2 modifier = { factor = 2 check_variable = { FRW_ffe_lev > 60 } } }
+	}
+	FRW_dec_rally_mad = {
+		icon = generic_colonial_administration
+		allowed = { original_tag = FRA }
+		visible = { tag = FRA FRW_vichy_holds_mad = yes NOT = { has_country_flag = FRW_ff_rallied_mad } }
+		available = { has_completed_focus = FRW_rally_the_colonies NOT = { has_country_flag = FRW_ff_busy_mad } }
+		cost = 25
+		days_remove = 21
+		days_re_enable = 60
+		complete_effect = { set_country_flag = FRW_ff_busy_mad custom_effect_tooltip = FRW_dec_rally_tt }
+		remove_effect = { FRW_ff_rally_mad = yes }
+		ai_will_do = { factor = 5 modifier = { factor = 2 check_variable = { FRW_ffc_mad > 40 } } }
+	}
+	FRW_dec_exped_mad = {
+		icon = generic_army_support
+		allowed = { original_tag = FRA }
+		visible = { tag = FRA FRW_vichy_holds_mad = yes NOT = { has_country_flag = FRW_ff_rallied_mad } has_completed_focus = FRW_free_french_forces }
+		available = {
+			NOT = { has_country_flag = FRW_ff_busy_mad }
+			has_army_size = { size > 5 }
+			has_manpower > 15000
+			custom_trigger_tooltip = { tooltip = FRW_exped_eq_tt has_equipment = { infantry_equipment > 1499 } }
+		}
+		cost = 40
+		days_remove = 45
+		days_re_enable = 120
+		complete_effect = {
+			set_country_flag = FRW_ff_busy_mad
+			add_manpower = -15000
+			add_equipment_to_stockpile = { type = infantry_equipment amount = -1500 }
+			custom_effect_tooltip = FRW_dec_exped_tt
+		}
+		remove_effect = { FRW_ff_exped_mad = yes }
+		ai_will_do = { factor = 2 modifier = { factor = 2 check_variable = { FRW_ffe_mad > 60 } } }
+	}
+	FRW_dec_rally_dji = {
+		icon = generic_colonial_administration
+		allowed = { original_tag = FRA }
+		visible = { tag = FRA FRW_vichy_holds_dji = yes NOT = { has_country_flag = FRW_ff_rallied_dji } }
+		available = { has_completed_focus = FRW_rally_the_colonies NOT = { has_country_flag = FRW_ff_busy_dji } }
+		cost = 25
+		days_remove = 21
+		days_re_enable = 60
+		complete_effect = { set_country_flag = FRW_ff_busy_dji custom_effect_tooltip = FRW_dec_rally_tt }
+		remove_effect = { FRW_ff_rally_dji = yes }
+		ai_will_do = { factor = 5 modifier = { factor = 2 check_variable = { FRW_ffc_dji > 40 } } }
+	}
+	FRW_dec_exped_dji = {
+		icon = generic_army_support
+		allowed = { original_tag = FRA }
+		visible = { tag = FRA FRW_vichy_holds_dji = yes NOT = { has_country_flag = FRW_ff_rallied_dji } has_completed_focus = FRW_free_french_forces }
+		available = {
+			NOT = { has_country_flag = FRW_ff_busy_dji }
+			has_army_size = { size > 5 }
+			has_manpower > 15000
+			custom_trigger_tooltip = { tooltip = FRW_exped_eq_tt has_equipment = { infantry_equipment > 1499 } }
+		}
+		cost = 40
+		days_remove = 45
+		days_re_enable = 120
+		complete_effect = {
+			set_country_flag = FRW_ff_busy_dji
+			add_manpower = -15000
+			add_equipment_to_stockpile = { type = infantry_equipment amount = -1500 }
+			custom_effect_tooltip = FRW_dec_exped_tt
+		}
+		remove_effect = { FRW_ff_exped_dji = yes }
+		ai_will_do = { factor = 2 modifier = { factor = 2 check_variable = { FRW_ffe_dji > 60 } } }
+	}
+	FRW_dec_rally_ind = {
+		icon = generic_colonial_administration
+		allowed = { original_tag = FRA }
+		visible = { tag = FRA FRW_vichy_holds_ind = yes NOT = { has_country_flag = FRW_ff_rallied_ind } }
+		available = { has_completed_focus = FRW_rally_the_colonies NOT = { has_country_flag = FRW_ff_busy_ind } }
+		cost = 25
+		days_remove = 21
+		days_re_enable = 60
+		complete_effect = { set_country_flag = FRW_ff_busy_ind custom_effect_tooltip = FRW_dec_rally_tt }
+		remove_effect = { FRW_ff_rally_ind = yes }
+		ai_will_do = { factor = 5 modifier = { factor = 2 check_variable = { FRW_ffc_ind > 40 } } }
+	}
+	FRW_dec_exped_ind = {
+		icon = generic_army_support
+		allowed = { original_tag = FRA }
+		visible = { tag = FRA FRW_vichy_holds_ind = yes NOT = { has_country_flag = FRW_ff_rallied_ind } has_completed_focus = FRW_free_french_forces }
+		available = {
+			NOT = { has_country_flag = FRW_ff_busy_ind }
+			has_army_size = { size > 5 }
+			has_manpower > 15000
+			custom_trigger_tooltip = { tooltip = FRW_exped_eq_tt has_equipment = { infantry_equipment > 1499 } }
+		}
+		cost = 40
+		days_remove = 45
+		days_re_enable = 120
+		complete_effect = {
+			set_country_flag = FRW_ff_busy_ind
+			add_manpower = -15000
+			add_equipment_to_stockpile = { type = infantry_equipment amount = -1500 }
+			custom_effect_tooltip = FRW_dec_exped_tt
+		}
+		remove_effect = { FRW_ff_exped_ind = yes }
+		ai_will_do = { factor = 2 modifier = { factor = 2 check_variable = { FRW_ffe_ind > 60 } } }
+	}
+	FRW_dec_ff_agents = {
+		icon = generic_intelligence_operation
+		allowed = { original_tag = FRA }
+		visible = { tag = FRA has_completed_focus = FRW_appeal_of_18_june }
+		available = { any_core_state = { is_on_continent = europe controller = { has_war_with = ROOT } } }
+		cost = 25
+		days_re_enable = 90
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_ff_agents_tt
+			hidden_effect = { every_core_state = { limit = { is_on_continent = europe controller = { has_war_with = ROOT } } add_resistance = 5 } }
+			custom_effect_tooltip = FRW_ffp_tt_p2 hidden_effect = { add_to_variable = { FRW_ff_prestige = 2 } FRW_ff_update = yes }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	FRW_dec_ff_sabotage = {
+		icon = generic_wreckers
+		allowed = { original_tag = FRA }
+		visible = { tag = FRA has_completed_focus = FRW_the_resistance }
+		available = { any_core_state = { is_on_continent = europe controller = { has_war_with = ROOT } } }
+		cost = 35
+		days_re_enable = 120
+		complete_effect = {
+			custom_effect_tooltip = FRW_dec_ff_sabotage_tt
+			hidden_effect = {
+				every_core_state = {
+					limit = { is_on_continent = europe controller = { has_war_with = ROOT } }
+					add_resistance = 10
+					damage_building = { type = infrastructure damage = 1 }
+				}
+			}
+			custom_effect_tooltip = FRW_ffp_tt_p3 hidden_effect = { add_to_variable = { FRW_ff_prestige = 3 } FRW_ff_update = yes }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	FRW_dec_ff_gold = {
+		icon = generic_construction
+		allowed = { original_tag = FRA }
+		visible = { tag = FRA has_completed_focus = FRW_appeal_of_18_june has_capitulated = yes }
+		available = { check_variable = { FRW_gold > 399 } }
+		cost = 0
+		days_re_enable = 90
+		complete_effect = {
+			custom_effect_tooltip = FRW_gold_m400_tt
+			hidden_effect = { add_to_variable = { FRW_gold = -400 } }
+			add_offsite_building = { type = arms_factory level = 1 }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 1000 }
+		}
+		ai_will_do = { factor = 3 }
+	}
+}
+
+FRW_return_cat = {
+	FRW_dec_return_request = {
+		icon = generic_political_discourse
+		allowed = { original_tag = FRA }
+		target_trigger = { FROM = { FRW_ally_holds_french_africa = yes } }
+		target_root_trigger = { tag = FRA }
+		visible = { FROM = { FRW_ally_holds_french_africa = yes } }
+		available = { NOT = { has_country_flag = FRW_return_pending } }
+		cost = 25
+		days_re_enable = 90
+		complete_effect = {
+			set_country_flag = { flag = FRW_return_pending days = 30 }
+			custom_effect_tooltip = FRW_dec_return_request_tt
+			FROM = { country_event = { id = frw_ret.1 hours = 6 } }
+		}
+		ai_will_do = { factor = 3 }
+	}
+	FRW_dec_return_buy_pp = {
+		icon = generic_fundraising
+		allowed = { original_tag = FRA }
+		target_trigger = { FROM = { FRW_ally_holds_french_africa = yes } }
+		target_root_trigger = { tag = FRA }
+		visible = { FROM = { FRW_ally_holds_french_africa = yes } }
+		available = { NOT = { has_country_flag = FRW_return_pending } }
+		cost = 100
+		days_re_enable = 60
+		complete_effect = {
+			set_country_flag = { flag = FRW_return_pending days = 30 }
+			custom_effect_tooltip = FRW_dec_return_buy_tt
+			FROM = { country_event = { id = frw_ret.2 hours = 6 } }
+		}
+		ai_will_do = { factor = 1 }
+	}
+	FRW_dec_return_buy_gold = {
+		icon = generic_construction
+		allowed = { original_tag = FRA }
+		target_trigger = { FROM = { FRW_ally_holds_french_africa = yes } }
+		target_root_trigger = { tag = FRA }
+		visible = { FROM = { FRW_ally_holds_french_africa = yes } has_variable = FRW_gold }
+		available = { NOT = { has_country_flag = FRW_return_pending } check_variable = { FRW_gold > 299 } }
+		cost = 0
+		days_re_enable = 60
+		complete_effect = {
+			set_country_flag = { flag = FRW_return_pending days = 30 }
+			custom_effect_tooltip = FRW_dec_return_gold_tt
+			hidden_effect = { add_to_variable = { FRW_gold = -300 } }
+			FROM = { country_event = { id = frw_ret.3 hours = 6 } }
+		}
+		ai_will_do = { factor = 2 }
+	}
+}
+

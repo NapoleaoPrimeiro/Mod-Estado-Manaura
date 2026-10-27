@@ -1,0 +1,1207 @@
+# NO LAG BR - vanilla-based flavor branches for Germany, the Soviet Union and the United Kingdom.
+# The three parent trees remain snapshots of the current vanilla 1.19.2 files.
+
+############################
+# GERMANY - INCOMPLETE VICTORY / ENDSIEG
+############################
+
+shared_focus = {
+	id = NO_LAG_GER_incomplete_victory
+	icon = GFX_focus_ger_break_anglo_french_colonial_hegemony
+	prerequisite = { focus = GER_danzig_or_war }
+	x = 12
+	y = 1
+	relative_position_id = GER_danzig_or_war
+	cost = 5
+
+	available = {
+		has_government = fascism
+		has_war = yes
+		date > 1940.1.1
+	}
+
+	search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
+
+	ai_will_do = { factor = 1 }
+
+	completion_reward = {
+		add_political_power = -50
+		add_stability = -0.05
+		add_war_support = 0.05
+		add_ideas = NO_LAG_GER_incomplete_victory_spirit
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_GER_guide_italy
+	icon = GFX_focus_ger_assassinate_mussolini
+	prerequisite = { focus = NO_LAG_GER_incomplete_victory }
+	x = -5
+	y = 1
+	relative_position_id = NO_LAG_GER_incomplete_victory
+	cost = 5
+
+	available = {
+		ITA = {
+			exists = yes
+			is_ai = yes
+			is_subject = no
+			is_in_faction_with = ROOT
+		}
+	}
+
+	bypass = {
+		OR = {
+			ITA = { exists = no }
+			ITA = { is_subject_of = ROOT }
+		}
+	}
+
+	search_filters = { FOCUS_FILTER_ANNEXATION }
+	ai_will_do = { factor = 0.5 }
+
+	completion_reward = {
+		add_political_power = -50
+		add_stability = -0.02
+		puppet = {
+			target = ITA
+			end_wars = no
+			end_civil_wars = no
+		}
+		add_named_threat = { threat = 2 name = NO_LAG_GER_guide_italy }
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_GER_secure_hungary
+	icon = GFX_goal_generic_position_armies
+	prerequisite = { focus = NO_LAG_GER_incomplete_victory }
+	x = -3
+	y = 1
+	relative_position_id = NO_LAG_GER_incomplete_victory
+	cost = 5
+
+	available = {
+		HUN = {
+			exists = yes
+			is_ai = yes
+			is_subject = no
+			is_in_faction_with = ROOT
+		}
+	}
+
+	bypass = {
+		OR = {
+			HUN = { exists = no }
+			HUN = { is_subject_of = ROOT }
+		}
+	}
+
+	search_filters = { FOCUS_FILTER_ANNEXATION }
+	ai_will_do = { factor = 0.5 }
+
+	completion_reward = {
+		add_political_power = -50
+		add_stability = -0.02
+		puppet = {
+			target = HUN
+			end_wars = no
+			end_civil_wars = no
+		}
+		add_named_threat = { threat = 1 name = NO_LAG_GER_secure_hungary }
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_GER_secure_romania
+	icon = GFX_goal_generic_position_armies
+	prerequisite = { focus = NO_LAG_GER_incomplete_victory }
+	x = -1
+	y = 1
+	relative_position_id = NO_LAG_GER_incomplete_victory
+	cost = 5
+
+	available = {
+		ROM = {
+			exists = yes
+			is_ai = yes
+			is_subject = no
+			is_in_faction_with = ROOT
+		}
+	}
+
+	bypass = {
+		OR = {
+			ROM = { exists = no }
+			ROM = { is_subject_of = ROOT }
+		}
+	}
+
+	search_filters = { FOCUS_FILTER_ANNEXATION }
+	ai_will_do = { factor = 0.5 }
+
+	completion_reward = {
+		add_political_power = -50
+		add_stability = -0.02
+		puppet = {
+			target = ROM
+			end_wars = no
+			end_civil_wars = no
+		}
+		add_named_threat = { threat = 1 name = NO_LAG_GER_secure_romania }
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_GER_endsieg
+	icon = GFX_focus_GER_propaganda_master
+	prerequisite = { focus = NO_LAG_GER_incomplete_victory }
+	x = 3
+	y = 1
+	relative_position_id = NO_LAG_GER_incomplete_victory
+	cost = 5
+
+	available = {
+		has_war = yes
+		surrender_progress > 0.15
+		controls_province = 6521
+		any_enemy_country = { is_major = yes }
+	}
+
+	search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT }
+	ai_will_do = { factor = 3 }
+
+	completion_reward = {
+		add_political_power = -100
+		add_stability = -0.05
+		add_war_support = 0.05
+		add_manpower = 100000
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 3000
+		}
+		swap_ideas = {
+			remove_idea = NO_LAG_GER_incomplete_victory_spirit
+			add_idea = NO_LAG_GER_endsieg_spirit
+		}
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_GER_volkssturm
+	icon = GFX_focus_generic_total_war
+	prerequisite = { focus = NO_LAG_GER_endsieg }
+	x = -1
+	y = 1
+	relative_position_id = NO_LAG_GER_endsieg
+	cost = 5
+
+	available = { has_war = yes }
+	search_filters = { FOCUS_FILTER_MANPOWER }
+	ai_will_do = { factor = 2 }
+
+	completion_reward = {
+		add_political_power = -50
+		add_stability = -0.03
+		add_manpower = 100000
+		add_ideas = NO_LAG_GER_volkssturm_spirit
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_GER_fortress_reich
+	icon = GFX_goal_fortify_the_westwall
+	prerequisite = { focus = NO_LAG_GER_endsieg }
+	x = 1
+	y = 1
+	relative_position_id = NO_LAG_GER_endsieg
+	cost = 5
+
+	available = { has_war = yes }
+	search_filters = { FOCUS_FILTER_STABILITY }
+	ai_will_do = { factor = 2 }
+
+	completion_reward = {
+		army_experience = 10
+		add_timed_idea = {
+			idea = NO_LAG_GER_fortress_reich_spirit
+			days = 730
+		}
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_GER_last_offensive
+	icon = GFX_goal_generic_major_war
+	prerequisite = { focus = NO_LAG_GER_volkssturm }
+	prerequisite = { focus = NO_LAG_GER_fortress_reich }
+	x = 0
+	y = 2
+	relative_position_id = NO_LAG_GER_endsieg
+	cost = 5
+
+	available = { has_war = yes }
+	search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT }
+	ai_will_do = { factor = 2 }
+
+	completion_reward = {
+		add_political_power = -100
+		add_stability = -0.05
+		add_timed_idea = {
+			idea = NO_LAG_GER_last_offensive_spirit
+			days = 180
+		}
+	}
+}
+
+############################
+# SOVIET UNION - WARTIME EMERGENCY AND BORDER SECURITY
+############################
+
+shared_focus = {
+	id = NO_LAG_SOV_great_patriotic_war
+	icon = GFX_SOV_strengthen_the_mobilization_plan_ccp_2d_sov_compatibility
+	prerequisite = { focus = SOV_impregnable_forts }
+	x = -2
+	y = 4
+	relative_position_id = SOV_impregnable_forts
+	cost = 5
+
+	available = {
+		has_war = yes
+		any_enemy_country = { is_major = yes }
+	}
+
+	search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT }
+	ai_will_do = { factor = 2 }
+
+	completion_reward = {
+		add_war_support = 0.05
+		add_manpower = 100000
+		add_ideas = NO_LAG_SOV_patriotic_mobilization_spirit
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_SOV_study_our_losses
+	icon = GFX_SOV_lessons_of_war_ccp_2d_sov_compatibility
+	prerequisite = { focus = NO_LAG_SOV_great_patriotic_war }
+	x = -3
+	y = 1
+	relative_position_id = NO_LAG_SOV_great_patriotic_war
+	cost = 5
+
+	available = {
+		OR = {
+			casualties > 500000
+			surrender_progress > 0.15
+		}
+	}
+
+	search_filters = { FOCUS_FILTER_ARMY_XP }
+	ai_will_do = { factor = 2 }
+
+	completion_reward = {
+		army_experience = 15
+		add_ideas = NO_LAG_SOV_lessons_from_losses_spirit
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_SOV_coordinate_wartime_industry
+	icon = GFX_SOV_move_industry_to_the_urals_ccp_2d_sov_compatibility
+	prerequisite = { focus = NO_LAG_SOV_great_patriotic_war }
+	x = -1
+	y = 1
+	relative_position_id = NO_LAG_SOV_great_patriotic_war
+	cost = 5
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	ai_will_do = { factor = 1.5 }
+
+	completion_reward = {
+		add_ideas = NO_LAG_SOV_wartime_industry_spirit
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_SOV_open_great_war_stockpiles
+	icon = GFX_focus_ETH_freedom_at_gunpoint
+	prerequisite = { focus = NO_LAG_SOV_great_patriotic_war }
+	x = 1
+	y = 1
+	relative_position_id = NO_LAG_SOV_great_patriotic_war
+	cost = 5
+
+	search_filters = { FOCUS_FILTER_MANPOWER }
+	ai_will_do = { factor = 1.5 }
+
+	completion_reward = {
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 2500
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 250
+		}
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_SOV_our_blood_our_soil
+	icon = GFX_focus_SOV_socialism_in_one_country
+	prerequisite = { focus = NO_LAG_SOV_open_great_war_stockpiles }
+	x = 0
+	y = 1
+	relative_position_id = NO_LAG_SOV_open_great_war_stockpiles
+	cost = 5
+
+	available = {
+		OR = {
+			casualties > 1500000
+			surrender_progress > 0.25
+		}
+	}
+
+	search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT }
+	ai_will_do = { factor = 2 }
+
+	completion_reward = {
+		add_manpower = 100000
+		add_ideas = NO_LAG_SOV_our_blood_our_soil_spirit
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_SOV_bind_mongolia
+	icon = GFX_focus_generic_attack_mongolia
+	prerequisite = { focus = NO_LAG_SOV_great_patriotic_war }
+	x = 3
+	y = 1
+	relative_position_id = NO_LAG_SOV_great_patriotic_war
+	cost = 5
+
+	available = {
+		has_government = communism
+		MON = {
+			exists = yes
+			is_ai = yes
+			is_subject = no
+			NOT = { has_war_with = ROOT }
+		}
+	}
+
+	bypass = {
+		OR = {
+			MON = { exists = no }
+			MON = { is_subject_of = ROOT }
+		}
+	}
+	search_filters = { FOCUS_FILTER_ANNEXATION }
+	ai_will_do = { factor = 0.5 }
+
+	completion_reward = {
+		if = {
+			limit = { MON = { is_in_faction_with = ROOT } }
+			puppet = {
+				target = MON
+				end_wars = no
+				end_civil_wars = no
+			}
+		}
+		else = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = MON
+				expire = 365
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_SOV_secure_iran
+	icon = GFX_focus_PER_proclaim_greater_iran
+	prerequisite = { focus = NO_LAG_SOV_great_patriotic_war }
+	x = 5
+	y = 1
+	relative_position_id = NO_LAG_SOV_great_patriotic_war
+	cost = 5
+
+	available = {
+		has_government = communism
+		PER = {
+			exists = yes
+			is_ai = yes
+			is_subject = no
+			NOT = { has_war_with = ROOT }
+		}
+	}
+
+	bypass = {
+		OR = {
+			PER = { exists = no }
+			PER = { is_subject_of = ROOT }
+		}
+	}
+	search_filters = { FOCUS_FILTER_ANNEXATION }
+	ai_will_do = { factor = 0.35 }
+
+	completion_reward = {
+		if = {
+			limit = { PER = { is_in_faction_with = ROOT } }
+			puppet = {
+				target = PER
+				end_wars = no
+				end_civil_wars = no
+			}
+		}
+		else = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = PER
+				expire = 365
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_SOV_secure_afghanistan
+	icon = GFX_focus_AFG_state_atheism
+	prerequisite = { focus = NO_LAG_SOV_great_patriotic_war }
+	x = 7
+	y = 1
+	relative_position_id = NO_LAG_SOV_great_patriotic_war
+	cost = 5
+
+	available = {
+		has_government = communism
+		AFG = {
+			exists = yes
+			is_ai = yes
+			is_subject = no
+			NOT = { has_war_with = ROOT }
+		}
+	}
+
+	bypass = {
+		OR = {
+			AFG = { exists = no }
+			AFG = { is_subject_of = ROOT }
+		}
+	}
+	search_filters = { FOCUS_FILTER_ANNEXATION }
+	ai_will_do = { factor = 0.35 }
+
+	completion_reward = {
+		if = {
+			limit = { AFG = { is_in_faction_with = ROOT } }
+			puppet = {
+				target = AFG
+				end_wars = no
+				end_civil_wars = no
+			}
+		}
+		else = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = AFG
+				expire = 365
+			}
+		}
+	}
+}
+
+############################
+# RUSSIA - DEMOCRATIC FEDERATION
+# Clean vanilla-based branch inspired by the democratic federation concept in AS KAR.
+############################
+
+shared_focus = {
+	id = NO_LAG_SOV_russian_federation
+	icon = GFX_SOV_bringing_breakaways_back_to_the_fold_ccp_2d_sov_compatibility
+	prerequisite = { focus = SOV_reconvene_the_zemsky_sobor }
+	mutually_exclusive = { focus = SOV_dismantle_the_zemsky_sobor }
+	mutually_exclusive = { focus = SOV_romanov_reconstruction }
+	x = -13
+	y = 0
+	relative_position_id = SOV_romanov_reconstruction
+	cost = 5
+	available_if_capitulated = no
+
+	available = {
+		has_civil_war = no
+		is_subject = no
+	}
+
+	search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+	ai_will_do = { factor = 0.5 }
+
+	completion_reward = {
+		if = {
+			limit = { has_idea = SOV_romanov_spirit_idea }
+			remove_ideas = SOV_romanov_spirit_idea
+		}
+		if = {
+			limit = { has_idea = SOV_uncertain_counter_revolution_idea }
+			remove_ideas = SOV_uncertain_counter_revolution_idea
+		}
+		add_political_power = 75
+		add_stability = -0.05
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.35
+		}
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		set_rule = {
+			can_join_factions = yes
+			can_create_factions = yes
+		}
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_SOV_federal_constitution
+	icon = GFX_goal_support_democracy
+	prerequisite = { focus = NO_LAG_SOV_russian_federation }
+	x = -2
+	y = 1
+	relative_position_id = NO_LAG_SOV_russian_federation
+	cost = 5
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+	ai_will_do = { factor = 1 }
+
+	completion_reward = {
+		add_political_power = 100
+		add_stability = 0.10
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.10
+		}
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_SOV_open_the_economy
+	icon = GFX_goal_generic_trade
+	prerequisite = { focus = NO_LAG_SOV_russian_federation }
+	x = 2
+	y = 1
+	relative_position_id = NO_LAG_SOV_russian_federation
+	cost = 5
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+	ai_will_do = { factor = 1 }
+
+	completion_reward = {
+		add_offsite_building = { type = industrial_complex level = 2 }
+		add_tech_bonus = {
+			name = NO_LAG_SOV_open_the_economy
+			bonus = 0.5
+			uses = 2
+			category = industry
+			category = construction_tech
+		}
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_SOV_reorganize_security_service
+	icon = GFX_focus_generic_secret_service_agency
+	prerequisite = { focus = NO_LAG_SOV_federal_constitution }
+	x = 0
+	y = 1
+	relative_position_id = NO_LAG_SOV_federal_constitution
+	cost = 5
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
+	ai_will_do = { factor = 1 }
+
+	completion_reward = {
+		add_political_power = 50
+		add_tech_bonus = {
+			name = NO_LAG_SOV_reorganize_security_service
+			bonus = 1.0
+			uses = 1
+			category = encryption_tech
+			category = decryption_tech
+		}
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_SOV_federal_breadbasket
+	icon = GFX_focus_SOV_breadbasket_of_the_union
+	prerequisite = { focus = NO_LAG_SOV_open_the_economy }
+	x = 0
+	y = 1
+	relative_position_id = NO_LAG_SOV_open_the_economy
+	cost = 5
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
+	ai_will_do = { factor = 1 }
+
+	completion_reward = {
+		add_offsite_building = { type = industrial_complex level = 1 }
+		add_stability = 0.05
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_SOV_league_of_free_republics
+	icon = GFX_focus_generic_diplomatic_treaty
+	prerequisite = { focus = NO_LAG_SOV_reorganize_security_service }
+	x = 0
+	y = 1
+	relative_position_id = NO_LAG_SOV_reorganize_security_service
+	cost = 5
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_POLITICAL }
+	ai_will_do = { factor = 0.75 }
+
+	completion_reward = {
+		add_political_power = 75
+		if = {
+			limit = { is_in_faction = no }
+			create_faction = NO_LAG_SOV_federation_faction
+		}
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_SOV_mobilize_the_federation
+	icon = GFX_focus_generic_manpower
+	prerequisite = { focus = NO_LAG_SOV_federal_breadbasket }
+	x = 0
+	y = 1
+	relative_position_id = NO_LAG_SOV_federal_breadbasket
+	cost = 5
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT }
+	ai_will_do = { factor = 1 }
+
+	completion_reward = {
+		add_manpower = 100000
+		army_experience = 15
+		add_war_support = 0.05
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_SOV_federation_secured
+	icon = GFX_goal_generic_scientific_exchange
+	prerequisite = { focus = NO_LAG_SOV_league_of_free_republics }
+	prerequisite = { focus = NO_LAG_SOV_mobilize_the_federation }
+	x = 0
+	y = 4
+	relative_position_id = NO_LAG_SOV_russian_federation
+	cost = 5
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_STABILITY }
+	ai_will_do = { factor = 1 }
+
+	completion_reward = {
+		add_research_slot = 1
+		add_stability = 0.05
+	}
+}
+
+############################
+# UNITED KINGDOM - HOME DEFENCE AND IMPERIAL CONTINUITY
+############################
+
+shared_focus = {
+	id = NO_LAG_ENG_for_king_and_country
+	icon = GFX_focus_eng_the_sun_never_sets
+	x = -4
+	y = 7
+	relative_position_id = uk_asia_focus
+	cost = 5
+	available_if_capitulated = yes
+
+	available = {
+		has_government = democratic
+		custom_trigger_tooltip = {
+			tooltip = NO_LAG_ENG_at_war_with_two_majors_tt
+			any_collection_element = {
+				collection = game:all_countries
+				is_major = yes
+				has_war_with = ROOT
+				count = 2
+			}
+		}
+	}
+
+	search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	ai_will_do = { factor = 2 }
+
+	completion_reward = {
+		add_war_support = 0.05
+		add_manpower = 50000
+		add_ideas = NO_LAG_ENG_home_defence_spirit_1
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_ENG_open_1914_stockpiles
+	icon = GFX_focus_ETH_freedom_at_gunpoint
+	prerequisite = { focus = NO_LAG_ENG_for_king_and_country }
+	x = -1
+	y = 1
+	relative_position_id = NO_LAG_ENG_for_king_and_country
+	cost = 5
+	available_if_capitulated = yes
+
+	available = {
+		has_government = democratic
+		custom_trigger_tooltip = {
+			tooltip = NO_LAG_ENG_at_war_with_two_majors_tt
+			any_collection_element = {
+				collection = game:all_countries
+				is_major = yes
+				has_war_with = ROOT
+				count = 2
+			}
+		}
+		controls_province = 6103
+	}
+
+	search_filters = { FOCUS_FILTER_MANPOWER }
+	ai_will_do = { factor = 1.5 }
+
+	completion_reward = {
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 2500
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 250
+		}
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_ENG_all_subjects_to_arms
+	icon = GFX_focus_generic_commonwealth_build_infantry
+	prerequisite = { focus = NO_LAG_ENG_for_king_and_country }
+	x = 1
+	y = 1
+	relative_position_id = NO_LAG_ENG_for_king_and_country
+	cost = 5
+	available_if_capitulated = yes
+
+	available = {
+		has_government = democratic
+		custom_trigger_tooltip = {
+			tooltip = NO_LAG_ENG_at_war_with_two_majors_tt
+			any_collection_element = {
+				collection = game:all_countries
+				is_major = yes
+				has_war_with = ROOT
+				count = 2
+			}
+		}
+		controls_province = 6103
+	}
+
+	search_filters = { FOCUS_FILTER_MANPOWER }
+	ai_will_do = { factor = 1.5 }
+
+	completion_reward = {
+		add_manpower = 75000
+		swap_ideas = {
+			remove_idea = NO_LAG_ENG_home_defence_spirit_1
+			add_idea = NO_LAG_ENG_home_defence_spirit_2
+		}
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_ENG_last_defence_of_freedom
+	icon = GFX_focus_generic_home_defense
+	prerequisite = { focus = NO_LAG_ENG_open_1914_stockpiles }
+	prerequisite = { focus = NO_LAG_ENG_all_subjects_to_arms }
+	x = 0
+	y = 2
+	relative_position_id = NO_LAG_ENG_for_king_and_country
+	cost = 5
+	available_if_capitulated = yes
+
+	available = {
+		has_government = democratic
+		custom_trigger_tooltip = {
+			tooltip = NO_LAG_ENG_at_war_with_two_majors_tt
+			any_collection_element = {
+				collection = game:all_countries
+				is_major = yes
+				has_war_with = ROOT
+				count = 2
+			}
+		}
+		controls_province = 6103
+	}
+
+	search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_STABILITY }
+	ai_will_do = { factor = 3 }
+
+	completion_reward = {
+		add_stability = -0.05
+		add_manpower = 50000
+		swap_ideas = {
+			remove_idea = NO_LAG_ENG_home_defence_spirit_2
+			add_idea = NO_LAG_ENG_home_defence_spirit_3
+		}
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_ENG_continue_to_the_end
+	icon = GFX_focus_eng_motion_of_no_confidence
+	prerequisite = { focus = NO_LAG_ENG_last_defence_of_freedom }
+	x = -1
+	y = 1
+	relative_position_id = NO_LAG_ENG_last_defence_of_freedom
+	cost = 5
+	available_if_capitulated = yes
+
+	available = {
+		has_government = democratic
+		custom_trigger_tooltip = {
+			tooltip = NO_LAG_ENG_at_war_with_two_majors_tt
+			any_collection_element = {
+				collection = game:all_countries
+				is_major = yes
+				has_war_with = ROOT
+				count = 2
+			}
+		}
+	}
+
+	search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
+	ai_will_do = { factor = 2 }
+
+	completion_reward = {
+		add_offsite_building = { type = industrial_complex level = 1 }
+		add_offsite_building = { type = arms_factory level = 1 }
+		add_ideas = NO_LAG_ENG_imperial_continuity_spirit
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_ENG_emergency_imperial_administration
+	icon = GFX_focus_eng_the_sun_never_sets
+	prerequisite = { focus = NO_LAG_ENG_continue_to_the_end }
+	x = 0
+	y = 1
+	relative_position_id = NO_LAG_ENG_continue_to_the_end
+	cost = 10
+	available_if_capitulated = yes
+
+	available = {
+		has_government = democratic
+		custom_trigger_tooltip = {
+			tooltip = NO_LAG_ENG_at_war_with_two_majors_tt
+			any_collection_element = {
+				collection = game:all_countries
+				is_major = yes
+				has_war_with = ROOT
+				count = 2
+			}
+		}
+		NOT = { controls_state = 126 }
+		NOT = { controls_state = 132 }
+		NOT = { controls_state = 121 }
+		NOT = { controls_state = 127 }
+		CAN = {
+			exists = yes
+			is_ai = yes
+			is_subject_of = ROOT
+			NOT = { has_war_with = ROOT }
+		}
+	}
+
+	search_filters = { FOCUS_FILTER_ANNEXATION }
+	ai_will_do = { factor = 0.5 }
+
+	completion_reward = {
+		add_political_power = 25
+		add_war_support = 0.03
+		add_offsite_building = { type = industrial_complex level = 1 }
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_ENG_transfer_war_industry_to_canada
+	icon = GFX_focus_CAN_rifle_association
+	prerequisite = { focus = NO_LAG_ENG_emergency_imperial_administration }
+	x = -1
+	y = 1
+	relative_position_id = NO_LAG_ENG_emergency_imperial_administration
+	cost = 5
+	available_if_capitulated = yes
+
+	available = {
+		has_government = democratic
+		custom_trigger_tooltip = {
+			tooltip = NO_LAG_ENG_at_war_with_two_majors_tt
+			any_collection_element = {
+				collection = game:all_countries
+				is_major = yes
+				has_war_with = ROOT
+				count = 2
+			}
+		}
+		CAN = {
+			exists = yes
+			is_ai = yes
+			is_subject_of = ROOT
+			NOT = { has_war_with = ROOT }
+		}
+	}
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	ai_will_do = { factor = 1.5 }
+
+	completion_reward = {
+		276 = {
+			if = {
+				limit = { is_owned_by = CAN }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_ENG_ottawa_war_cabinet
+	icon = GFX_focus_generic_government_in_exile
+	prerequisite = { focus = NO_LAG_ENG_emergency_imperial_administration }
+	x = 1
+	y = 1
+	relative_position_id = NO_LAG_ENG_emergency_imperial_administration
+	cost = 5
+	available_if_capitulated = yes
+
+	available = {
+		has_government = democratic
+		custom_trigger_tooltip = {
+			tooltip = NO_LAG_ENG_at_war_with_two_majors_tt
+			any_collection_element = {
+				collection = game:all_countries
+				is_major = yes
+				has_war_with = ROOT
+				count = 2
+			}
+		}
+		CAN = {
+			exists = yes
+			is_ai = yes
+			is_subject_of = ROOT
+			NOT = { has_war_with = ROOT }
+		}
+	}
+
+	search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
+	ai_will_do = { factor = 1.5 }
+
+	completion_reward = {
+		add_political_power = 50
+		add_stability = 0.05
+		276 = {
+			if = {
+				limit = { is_owned_by = CAN }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_ENG_canadian_redoubt
+	icon = GFX_focus_generic_home_defense
+	prerequisite = { focus = NO_LAG_ENG_transfer_war_industry_to_canada }
+	prerequisite = { focus = NO_LAG_ENG_ottawa_war_cabinet }
+	x = 0
+	y = 2
+	relative_position_id = NO_LAG_ENG_emergency_imperial_administration
+	cost = 5
+	available_if_capitulated = yes
+
+	available = {
+		has_government = democratic
+		custom_trigger_tooltip = {
+			tooltip = NO_LAG_ENG_at_war_with_two_majors_tt
+			any_collection_element = {
+				collection = game:all_countries
+				is_major = yes
+				has_war_with = ROOT
+				count = 2
+			}
+		}
+		CAN = {
+			exists = yes
+			is_ai = yes
+			is_subject_of = ROOT
+			NOT = { has_war_with = ROOT }
+		}
+	}
+
+	search_filters = { FOCUS_FILTER_MANPOWER }
+	ai_will_do = { factor = 2 }
+
+	completion_reward = {
+		add_manpower = 50000
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 2500
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 250
+		}
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_ENG_empire_beyond_the_seas
+	icon = GFX_focus_eng_imperial_federation
+	prerequisite = { focus = NO_LAG_ENG_canadian_redoubt }
+	x = 0
+	y = 1
+	relative_position_id = NO_LAG_ENG_canadian_redoubt
+	cost = 10
+	available_if_capitulated = yes
+
+	available = {
+		has_government = democratic
+		custom_trigger_tooltip = {
+			tooltip = NO_LAG_ENG_at_war_with_two_majors_tt
+			any_collection_element = {
+				collection = game:all_countries
+				is_major = yes
+				has_war_with = ROOT
+				count = 2
+			}
+		}
+		NOT = { controls_state = 126 }
+		NOT = { controls_state = 132 }
+		NOT = { controls_state = 121 }
+		NOT = { controls_state = 127 }
+		CAN = {
+			exists = yes
+			is_ai = yes
+			is_subject_of = ROOT
+			NOT = { has_war_with = ROOT }
+		}
+	}
+
+	search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_STABILITY }
+	ai_will_do = { factor = 2 }
+
+	completion_reward = {
+		add_political_power = -100
+		add_stability = -0.05
+		custom_effect_tooltip = NO_LAG_ENG_canadian_exile_annexation_tt
+		custom_effect_tooltip = NO_LAG_ENG_canadian_industry_boost_tt
+
+		hidden_effect = {
+			CAN = {
+				every_core_state = {
+					add_core_of = ENG
+				}
+			}
+			annex_country = {
+				target = CAN
+				transfer_troops = yes
+			}
+			470 = {
+				if = {
+					limit = { is_owned_by = ROOT }
+					add_extra_state_shared_building_slots = 8
+					add_building_construction = {
+						type = arms_factory
+						level = 8
+						instant_build = yes
+					}
+				}
+			}
+			866 = {
+				if = {
+					limit = { is_owned_by = ROOT }
+					add_extra_state_shared_building_slots = 8
+					add_building_construction = {
+						type = arms_factory
+						level = 8
+						instant_build = yes
+					}
+				}
+			}
+			469 = {
+				if = {
+					limit = { is_owned_by = ROOT }
+					add_extra_state_shared_building_slots = 16
+					add_building_construction = {
+						type = arms_factory
+						level = 8
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 8
+						instant_build = yes
+					}
+				}
+			}
+			276 = {
+				add_victory_points = {
+					province = 3778
+					value = 5
+				}
+				add_victory_points = {
+					province = 3775
+					value = 10
+				}
+			}
+			468 = {
+				add_victory_points = {
+					province = 4345
+					value = 5
+				}
+			}
+			473 = {
+				add_victory_points = {
+					province = 1408
+					value = 5
+				}
+			}
+			set_capital = {
+				state = 276
+				remember_old_capital = yes
+			}
+		}
+	}
+}

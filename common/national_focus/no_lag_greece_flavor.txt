@@ -1,0 +1,68 @@
+# NO LAG BR - lightweight Byzantine and Roman additions for the current
+# vanilla Greece focus tree. The parent tree remains a Vanilla 1.19.2 snapshot.
+
+shared_focus = {
+	id = NO_LAG_GRE_byzantine_prosperity
+	icon = GFX_focus_generic_mediterranean_sea_focus
+	prerequisite = { focus = GRE_byzantine_themata }
+
+	allow_branch = {
+		has_completed_focus = GRE_reviving_the_double_headed_eagle
+	}
+
+	available = {
+		has_country_flag = GRE_byz_unified_flag
+		controls_state = 797
+	}
+
+	x = 2
+	y = 1
+	relative_position_id = GRE_byzantine_themata
+	cost = 10
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	ai_will_do = { factor = 0 }
+
+	completion_reward = {
+		add_political_power = 25
+		add_ideas = NO_LAG_GRE_byzantine_prosperity_spirit
+		797 = {
+			add_resource = {
+				type = steel
+				amount = 24
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = NO_LAG_GRE_avenge_justinian
+	icon = GFX_focus_ITA_mare_nostrum
+	prerequisite = { focus = GRE_byzantine_themata }
+
+	allow_branch = {
+		has_completed_focus = GRE_reviving_the_double_headed_eagle
+	}
+
+	available = {
+		is_subject = no
+		has_country_flag = GRE_byz_unified_flag
+		controls_state = 2
+		NOT = { has_global_flag = form_roman_empire_flag }
+	}
+
+	x = 0
+	y = 1
+	relative_position_id = GRE_byzantine_themata
+	cost = 5
+
+	search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
+	ai_will_do = { factor = 0 }
+
+	completion_reward = {
+		add_political_power = 50
+		add_stability = 0.1
+		add_war_support = 0.1
+		custom_effect_tooltip = NO_LAG_GRE_avenge_justinian_tt
+	}
+}

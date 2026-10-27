@@ -1,0 +1,563 @@
+##reload posteffectvolumes
+#PostEffectVolumes.Enabled
+#PostEffectVolumes.Draw
+
+posteffect_values = {
+	name = standard	
+	
+	#lut = "gfx/world/colorcorrection_neutral.tga"
+	lut = "gfx/world/colorcorrection.tga"
+	
+	
+	#hdr_min_adjustment
+	#hdr_max_adjustment
+	BLOOM_WIDTH = 1.5
+	BLOOM_SCALE = 0.9
+	BRIGHT_THRESHOLD = 0.9
+	tonemap_middlegrey = 0.55
+}
+
+
+posteffect_values = {
+	name = default
+	inherit = standard
+	
+	#lut = "gfx/world/colorcorrection.tga"
+	#lut = "gfx/world/colorcorrection_neutral.tga"
+	lut = "gfx/world/colorcorrection_standard.tga"
+	
+	#BLOOM_WIDTH = 1.5
+	#BLOOM_SCALE = 0.9
+	#BRIGHT_THRESHOLD = 0.9
+	#tonemap_middlegrey = 0.55
+}
+
+posteffect_values = {
+	name = default_night
+	inherit = standard
+	
+	#lut = "gfx/world/colorcorrection.tga"
+	#lut = "gfx/world/colorcorrection_neutral.tga"
+
+	
+	#BLOOM_WIDTH = 1.5
+	#BLOOM_SCALE = 0.9
+	#BRIGHT_THRESHOLD = 0.9
+	#tonemap_middlegrey = 0.3
+	
+	
+	#lut = "gfx/world/colorcorrection_neutral.tga"
+	lut = "gfx/world/colorcorrection_farrange_night.tga"
+	#lut = "gfx/world/colorcorrection_midrange.tga"
+	#lut = "gfx/world/colorcorrection_standard.tga"
+	
+	#BLOOM_WIDTH = 2.0
+	#BLOOM_SCALE = 0.5
+	#BRIGHT_THRESHOLD = 0.1
+	#hdr_min_adjustment = 1.0
+	#hdr_max_adjustment = 0.8
+	#tonemap_middlegrey = 0.65
+}
+
+posteffect_values = {
+	name = mid_distance
+	inherit = standard
+	
+	#lut = "gfx/world/colorcorrection_neutral.tga"	
+	lut = "gfx/world/colorcorrection_midrange.tga"
+	
+	#tonemap_middlegrey = 0.65
+		
+}
+
+posteffect_values = {
+	name = mid_distance_night
+	inherit = standard
+	
+	#lut = "gfx/world/colorcorrection_neutral.tga"	
+	#lut = "gfx/world/colorcorrection_midrange.tga"
+	
+	#lut = "gfx/world/colorcorrection_neutral.tga"
+	lut = "gfx/world/colorcorrection_farrange_night.tga"
+	#lut = "gfx/world/colorcorrection_midrange.tga"
+	
+	#BLOOM_WIDTH = 2.0
+	#BLOOM_SCALE = 0.5
+	#BRIGHT_THRESHOLD = 0.1
+	#hdr_min_adjustment = 1.0
+	#hdr_max_adjustment = 0.8
+	#tonemap_middlegrey = 0.65
+		
+}
+
+
+posteffect_values = {
+	name = max_distance
+	inherit = standard
+	
+	#lut = "gfx/world/colorcorrection_neutral.tga"
+	lut = "gfx/world/colorcorrection_farrange.tga"
+	#lut = "gfx/world/colorcorrection_midrange.tga"
+	
+	#BLOOM_WIDTH = 2.0
+	#BLOOM_SCALE = 0.5
+	#BRIGHT_THRESHOLD = 0.1
+	#tonemap_middlegrey = 0.65
+	
+	#MIN_HDR_ADJUSTMENT = 0.5,     --0.18 0.7  how it adapts to dark areas, smaller value -> more nightvision
+	#MAX_HDR_ADJUSTMENT = 1.0,      --0.8 0.8  opposite of the above, how it adapts to bright areas, really high value will reduce chance to be "blinded"
+	
+}
+
+posteffect_values = {
+	name = max_distance_night
+	inherit = standard
+	
+	#lut = "gfx/world/colorcorrection_neutral.tga"
+	lut = "gfx/world/colorcorrection_farrange_night.tga"
+	#lut = "gfx/world/colorcorrection_midrange.tga"
+	
+	#BLOOM_WIDTH = 2.0
+	#BLOOM_SCALE = 0.5
+	#BRIGHT_THRESHOLD = 0.1
+	hdr_min_adjustment = 1.0
+	hdr_max_adjustment = 0.8
+	tonemap_middlegrey = 0.65
+}
+
+posteffect_values = {
+	name = green
+	inherit = standard
+	
+	#lut = "gfx/world/colorcorrection_neutral.tga"
+	lut = "gfx/world/colorcorrection_green.tga"
+	tonemap_middlegrey = 0.3
+
+}
+
+posteffect_values = {
+	name = green_night
+	inherit = standard
+	
+	#lut = "gfx/world/colorcorrection_neutral.tga"
+	#lut = "gfx/world/colorcorrection_green_night2.tga" #screenshots
+	#lut = "gfx/world/colorcorrection_green_night.tga"
+	lut = "gfx/world/colorcorrection_green_night3.tga"
+	tonemap_middlegrey = 0.7
+	BLOOM_WIDTH = 20
+	BLOOM_SCALE = 1.5
+	BRIGHT_THRESHOLD = 0.8
+	
+	hdr_min_adjustment = 0.8
+	hdr_max_adjustment = 0.6
+	
+	#MIN_HDR_ADJUSTMENT = 0.5,     --0.18 0.7  how it adapts to dark areas, smaller value -> more nightvision
+	#MAX_HDR_ADJUSTMENT = 1.0,      --0.8 0.8  opposite of the above, how it adapts to bright areas, really high value will reduce chance to be "blinded"
+	
+}
+
+posteffect_values = {
+	name = green_night_asia
+	inherit = standard
+	
+	#lut = "gfx/world/colorcorrection_neutral.tga"
+	#lut = "gfx/world/colorcorrection_green_night2.tga" #screenshots
+	#lut = "gfx/world/colorcorrection_green_night.tga"
+	lut = "gfx/world/colorcorrection_green_night3.tga"
+	tonemap_middlegrey = 0.45 # EIM 0.45
+	BLOOM_WIDTH = 20 # EIM 3
+	BLOOM_SCALE = 1.5
+	BRIGHT_THRESHOLD = 0.8 # EIM 0.9
+	
+	hdr_min_adjustment = 0.8 # EIM 0.38
+	
+	hdr_max_adjustment = 0.6 # EIM // 0.3
+	
+	#MIN_HDR_ADJUSTMENT = 0.5,     --0.18 0.7  how it adapts to dark areas, smaller value -> more nightvision
+	#MAX_HDR_ADJUSTMENT = 1.0,      --0.8 0.8  opposite of the above, how it adapts to bright areas, really high value will reduce chance to be "blinded"
+	
+}
+
+posteffect_values = {
+	name = winter_values_day
+	inherit = standard
+	
+	#lut = "gfx/world/colorcorrection_neutral.tga"
+	lut = "gfx/world/colorcorrection_winter.tga"
+	
+	tonemap_middlegrey = 0.8
+	#hdr_min_adjustment = 1.0
+	#hdr_max_adjustment = 0.3
+	
+	
+}
+
+posteffect_values = {
+	name = winter_values_asia_day
+	inherit = standard
+	
+	#lut = "gfx/world/colorcorrection_neutral.tga"
+	#lut = "gfx/world/colorcorrection_winter.tga"
+	lut = "gfx/world/colorcorrection_winter_asia.tga"
+	
+	tonemap_middlegrey = 0.8 # EIM 0.1
+	
+	hdr_min_adjustment = 1.0
+	hdr_max_adjustment = 0.3
+	
+	#MIN_HDR_ADJUSTMENT = 0.5,     --0.18 0.7  how it adapts to dark areas, smaller value -> more nightvision
+	#MAX_HDR_ADJUSTMENT = 1.0,      --0.8 0.8  opposite of the above, how it adapts to bright areas, really high value will reduce chance to be "blinded"
+		
+}
+
+
+posteffect_values = {
+	name = winter_values_night
+	inherit = standard
+
+	#lut = "gfx/world/colorcorrection_neutral.tga"
+	lut = "gfx/world/colorcorrection_winter.tga"
+	
+	#BLOOM_WIDTH = 2.5
+	#BLOOM_SCALE = 5.5
+	#BRIGHT_THRESHOLD = 0.7
+	tonemap_middlegrey = 0.8
+			
+}
+
+posteffect_values = {
+	name = blue_water
+	inherit = standard
+	
+	#lut = "gfx/world/colorcorrection_neutral.tga"
+	lut = "gfx/world/colorcorrection_water.tga"
+	
+	#BLOOM_WIDTH = 1.5
+	#BLOOM_SCALE = 0.9
+	#BRIGHT_THRESHOLD = 0.9
+	tonemap_middlegrey = 0.5
+
+}
+
+posteffect_values = {
+	name = blue_water_night
+	inherit = standard
+	
+	#lut = "gfx/world/colorcorrection_neutral.tga"
+	lut = "gfx/world/colorcorrection_water_night.tga"
+	
+	#BLOOM_WIDTH = 1.5
+	#BLOOM_SCALE = 0.9
+	#BRIGHT_THRESHOLD = 0.9
+	tonemap_middlegrey = 0.4
+
+}
+
+posteffect_values = {
+	name = africa_values
+	inherit = standard
+	
+	#lut = "gfx/world/colorcorrection_neutral.tga"
+	lut = "gfx/world/colorcorrection_southafrica.tga"
+	
+	#BLOOM_WIDTH = 1.5
+	#BLOOM_SCALE = 0.0
+	#BRIGHT_THRESHOLD = 1.0
+	#tonemap_middlegrey = 0.50
+	#hdr_min_adjustment = 1.0
+	#hdr_max_adjustment = 0.5
+		
+}
+
+posteffect_values = {
+	name = africa_values_night
+	inherit = standard
+	
+	#lut = "gfx/world/colorcorrection_neutral.tga"
+	lut = "gfx/world/colorcorrection_southafrica_night.tga"
+			
+}
+
+posteffect_values = {
+	name = southafrica	
+	
+	#lut = "gfx/world/colorcorrection_neutral.tga"
+	#lut = "gfx/world/colorcorrection_southafrica.tga"
+	lut = "gfx/world/colorcorrection_green_night.tga"
+}
+
+posteffect_values = {
+	name = asia_values
+	inherit = standard
+	
+	#lut = "gfx/world/colorcorrection_neutral.tga"
+	lut = "gfx/world/colorcorrection_asia.tga"
+	#lut = "gfx/world/colorcorrection_yellow.tga"
+
+	tonemap_middlegrey = 0.65
+		
+}
+
+posteffect_values = {
+	name = japan_values
+	inherit = standard
+	
+	#lut = "gfx/world/colorcorrection_neutral.tga"
+	lut = "gfx/world/colorcorrection_japan.tga"
+	#lut = "gfx/world/colorcorrection_yellow.tga"
+
+	#tonemap_middlegrey = 0.65
+		
+}
+
+
+
+
+posteffect_values = {
+	name = medither	
+	
+	#lut = "gfx/world/colorcorrection_neutral.tga"
+	lut = "gfx/world/colorcorrection_medi.tga"
+	
+}
+
+posteffect_values = {
+	name = medither_night
+	inherit = standard
+	
+	#lut = "gfx/world/colorcorrection_neutral.tga"
+	lut = "gfx/world/colorcorrection_green_night.tga"
+	tonemap_middlegrey = 0.75	
+	BLOOM_WIDTH = 1.0
+	BLOOM_SCALE = 1.5
+	BRIGHT_THRESHOLD = 0.7
+}
+
+################################# 
+
+############ VOLUMES ############ 
+############ HEIGHTS ############ 
+
+#################################
+
+posteffect_volumes = {
+
+	posteffect_height_volume = {
+		name = "Base Highest"
+		
+		posteffect_values_day = max_distance
+		posteffect_values_night = max_distance_night
+		
+		height = 1600
+		fade_distance = 200
+	}
+	
+	posteffect_height_volume = {
+		name = "Base Medium"
+		
+		posteffect_values_day = mid_distance
+		posteffect_values_night = mid_distance_night
+		
+		height = 900
+		fade_distance = 200
+	}
+	
+	posteffect_height_volume = {
+		name = "Base"
+		
+		posteffect_values_day = default
+		posteffect_values_night = default_night
+		
+		height = 0
+		fade_distance = 0
+	}
+	
+################################# 
+
+############ VOLUMES ############ 
+
+#################################
+	
+	
+################################# 
+
+############ VOLUMES ############ 
+############ SOUTH ARMERICA ############ 
+
+#################################
+	posteffect_volume = {
+		name = Brazil
+		
+		posteffect_values_day = green
+		posteffect_values_night = green_night
+		posteffect_values_day_winter = winter_values_day
+		posteffect_values_night_winter = winter_values_night
+    
+		position = { 1900.0 300.0 800.0 }
+		size = { 500.0 800.0 400.0 }
+		fade_distance = 75.0
+	}
+
+	posteffect_volume = {
+		name = Brazil_south_east
+		
+		posteffect_values_day = green
+		posteffect_values_night = green_night
+		posteffect_values_day_winter = winter_values_day
+		posteffect_values_night_winter = winter_values_night
+    
+		position = { 1985.0 300.0 475.0 }
+		size = { 300.0 800.0 250.0 }
+		fade_distance = 75.0
+	}	
+		
+	
+	posteffect_volume = {
+		name = Brazil_south
+		
+		posteffect_values_day = africa_values
+		posteffect_values_night = africa_values_night
+		posteffect_values_day_winter = winter_values_day
+		posteffect_values_night_winter = winter_values_night
+    
+		position = { 1735.0 25.0 250.0 }
+		size = { 175.0 400.0 700.0 }
+		fade_distance = 95.0
+	}
+	
+	posteffect_volume = {
+		name = Brazil_west
+		
+		posteffect_values_day = africa_values
+		posteffect_values_night = africa_values_night
+		posteffect_values_day_winter = winter_values_day
+		posteffect_values_night_winter = winter_values_night
+    
+		position = { 1555.0 80.0 780.0 }
+		size = { 60.0 200.0 80.0 }
+		fade_distance = 35.0
+	}
+
+################################# 
+
+############ VOLUMES ############ 
+############ ASIA	 ############ 
+
+#################################		
+
+
+		
+	posteffect_volume = {
+		name = Asia
+		
+		posteffect_values_day = green # EIM asia_values
+		posteffect_values_night = green_night # EIM added
+		posteffect_values_day_winter = winter_values # EIM winter_values_day
+		posteffect_values_night = standard # EIM green_night_asia
+    
+		position = { 4505.0 290.0 1400.0 }
+		size = { 900.0 800.0 800.0 }
+		fade_distance = 100.0 # EIM 50
+	}
+	
+	posteffect_volume = {
+		name = south_Asia
+		
+		posteffect_values_day = green
+		posteffect_values_night = green_night
+		posteffect_values_day_winter = winter_values # EIM winter_values_day
+		posteffect_values_night_winter = blue
+    
+		position = { 4010.0 100.0 900.0 }
+		size = { 200.0 800.0 200.0 }
+		fade_distance = 100.0
+	}
+	
+		posteffect_volume = {
+		name = japan
+		
+		posteffect_values_day = green # EIM japan_values
+		posteffect_values_night = green_night
+		posteffect_values_day_winter = winter_values
+		posteffect_values_night_winter = winter_values_night
+    
+		position = { 4750.0 200.0 700.0 }
+		size = { 1100.0 800.0 600.0 }
+		fade_distance = 100.0 # EIM 150 , 50 looks okay
+	}
+	
+	
+	posteffect_volume = {
+		name = australia
+		
+		posteffect_values_day = green
+		posteffect_values_night = green_night # EIM standard
+		posteffect_values_day_winter = winter_values
+		posteffect_values_night_winter = winter_values_night
+    
+		position = { 4850.0 10.0 280.0 }
+		size = { 400.0 600.0 150.0 }
+		fade_distance = 100.0 # EIM 50.0
+	}
+	
+################################# 
+
+############ VOLUMES ############ 
+############ USA	 ############ 
+
+#################################	
+
+
+	posteffect_volume = {
+		name = america_green
+		
+		posteffect_values_day = green
+		posteffect_values_night = green_night
+		posteffect_values_day_winter = winter_values # EIM winter_values_day
+		posteffect_values_night_winter = winter_values_night
+    
+		position = { 1470.0 300.0 1650.0 }
+		size = { 600.0 800.0 550.0 }
+		fade_distance = 100.0 # EIM 55
+	}
+	
+	
+	posteffect_volume = {
+		name = america_south
+		
+		posteffect_values_day = green
+		posteffect_values_night = green_night
+		posteffect_values_day_winter = winter_values_day
+		posteffect_values_night_winter = winter_values_night
+    
+		position = { 1470.0 300.0 1200.0 }
+		size = { 600.0 800.0 350.0 }
+		fade_distance = 75.0
+	}
+	
+	posteffect_volume = { # EIM LOOKS VERY UGLY AT posteffect_values_night = standard , and fade_distance = 50.0
+		name = america_yellow
+		
+		posteffect_values_day = green # EIM africa_values
+		posteffect_values_night = standard # EIM africa_values_night
+		posteffect_values_day_winter = winter_values_day
+		posteffect_values_night_winter = winter_values_night
+    
+		position = { 1040.0 75.0 1475.0 }
+		size = { 260.0 500.0 290.0 }
+		fade_distance = 150.0 # EIM 120
+	}
+	
+	posteffect_volume = {
+		name = america_cold
+		
+		posteffect_values_day = green
+		posteffect_values_night = green_night
+		posteffect_values_day_winter = winter_values_day
+		posteffect_values_night_winter = winter_values_night
+    
+		position = { 900.0 300.0 1795.0 }
+		size = { 260.0 800.0 350.0 }
+		fade_distance = 80.0
+	}
+}

@@ -1,0 +1,112 @@
+ENG_check_if_support_is_valid_parliament_effect = {
+	IF = {
+		limit = {
+			check_variable = {
+				ENG_parliament_commons_support_amount_var > 100
+			}
+		}
+		set_variable = {
+    		var = ENG_parliament_commons_support_amount_var
+    		value = 100
+		}
+	}
+	IF = {
+		limit = {
+			check_variable = {
+				ENG_parliament_lords_support_amount_var > 100
+			}
+		}
+		set_variable = {
+    		var = ENG_parliament_lords_support_amount_var
+    		value = 100
+		}
+	}
+}
+ENG_add_support_to_house_of_lords_effect = {
+	set_variable_to_random = {
+    	var = ENG_support_to_add_var
+		min = ENG_support_to_add_min_var
+    	max = ENG_support_to_add_max_var
+    	integer = no
+	}
+	add_to_variable = {
+    	var = ENG_parliament_lords_support_amount_var
+    	value = ENG_support_to_add_var
+	}
+}
+ENG_add_support_to_house_of_commons_effect = {
+	set_variable_to_random = {
+    	var = ENG_support_to_add_var
+		min = ENG_support_to_add_min_var
+    	max = ENG_support_to_add_max_var
+    	integer = no
+	}
+	add_to_variable = {
+    	var = ENG_parliament_commons_support_amount_var
+    	value = ENG_support_to_add_var
+	}
+}
+ENG_remove_support_to_house_of_commons_effect = {
+	set_variable_to_random = {
+    	var = ENG_support_to_add_var
+		min = ENG_support_to_add_min_var
+    	max = ENG_support_to_add_max_var
+    	integer = no
+	}
+	subtract_from_variable = {
+    	var = ENG_parliament_commons_support_amount_var
+    	value = ENG_support_to_add_var
+	}
+}
+ENG_remove_support_to_house_of_lords_effect = {
+	set_variable_to_random = {
+    	var = ENG_support_to_add_var
+		min = ENG_support_to_add_min_var
+    	max = ENG_support_to_add_max_var
+    	integer = no
+	}
+	subtract_from_variable = {
+    	var = ENG_parliament_lords_support_amount_var
+    	value = ENG_support_to_add_var
+	}
+}
+ENG_parliament_load_events_effect = {
+	random_list = {
+		10 = {
+			country_event = {
+				id = ukrework_parliament.2
+				days = 42
+			}
+		}
+		10 = {
+			country_event = {
+				id = ukrework_parliament.3
+				days = 42
+			}
+		}
+		10 = {
+			country_event = {
+				id = ukrework_parliament.4
+				days = 42
+			}
+		}
+		10 = {
+			country_event = {
+				id = ukrework_parliament.5
+				days = 42
+			}
+		}
+		10 = {
+			country_event = {
+				id = ukrework_parliament.6
+				days = 42
+			}
+		}
+		10 = {
+			country_event = {
+				id = ukrework_parliament.7
+				days = 42
+			}
+		}
+	}
+}

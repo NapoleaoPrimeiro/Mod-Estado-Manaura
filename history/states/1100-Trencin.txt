@@ -1,0 +1,30 @@
+state=
+{
+	id=1100
+	name="STATE_1100"
+	manpower = 265000
+	
+	state_category = rural
+	
+	history =
+	{
+		owner = CZE
+		buildings = {
+			infrastructure = 2
+		}
+		add_core_of = CZE
+        add_core_of = SLO
+
+		set_demilitarized_zone = no
+
+		1939.3.23 = {
+			owner = SLO
+			set_demilitarized_zone = yes
+		}
+	}
+	provinces={
+		3484 9539
+	}
+	
+	local_supplies=0.0 
+}

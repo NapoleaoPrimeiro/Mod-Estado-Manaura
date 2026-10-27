@@ -1,0 +1,37 @@
+# France Rework - formables: pending formation and regional cores, checked weekly
+on_actions = {
+	on_weekly_FRA = {
+		effect = {
+			if = { limit = { NOT = { has_country_flag = FRW_exile_open } OR = { has_capitulated = yes 16 = { NOT = { is_controlled_by = ROOT } } } } set_country_flag = FRW_exile_open mark_focus_tree_layout_dirty = yes }
+			if = { limit = { has_country_flag = FRW_union_francaise_pending FRW_can_form_union_francaise = yes } FRW_do_form_union_francaise = yes }
+			if = { limit = { has_country_flag = FRW_european_federation_pending FRW_can_form_european_federation = yes } FRW_do_form_european_federation = yes }
+			if = { limit = { has_country_flag = FRW_western_union_pending FRW_can_form_western_union = yes } FRW_do_form_western_union = yes }
+			if = { limit = { has_country_flag = FRW_latin_empire_pending FRW_can_form_latin_empire = yes } FRW_do_form_latin_empire = yes }
+			if = { limit = { has_country_flag = FRW_eurafrica_pending FRW_can_form_eurafrica = yes } FRW_do_form_eurafrica = yes }
+			if = { limit = { has_country_flag = FRW_francia_pending FRW_can_form_francia = yes } FRW_do_form_francia = yes }
+			if = { limit = { has_country_flag = FRW_burgundy_pending FRW_can_form_burgundy = yes } FRW_do_form_burgundy = yes }
+			if = { limit = { has_country_flag = FRW_grand_empire_pending FRW_can_form_grand_empire = yes } FRW_do_form_grand_empire = yes }
+			if = { limit = { has_country_flag = FRW_bourbon_pending FRW_can_form_bourbon = yes } FRW_do_form_bourbon = yes }
+			if = { limit = { has_country_flag = FRW_fruk_pending FRW_can_form_fruk = yes } FRW_do_form_fruk = yes }
+			if = { limit = { has_country_flag = FRW_corsair_pending FRW_can_form_corsair = yes } FRW_do_form_corsair = yes }
+			if = { limit = { has_country_flag = FRW_eternal_pending FRW_can_form_eternal = yes } FRW_do_form_eternal = yes }
+			if = { limit = { has_cosmetic_tag = FRW_UNION } FRW_region_cores_union_francaise = yes }
+			if = { limit = { has_cosmetic_tag = FRW_EUROPE } FRW_region_cores_european_federation = yes }
+			if = { limit = { has_cosmetic_tag = FRW_WESTUNION } FRW_region_cores_western_union = yes }
+			if = { limit = { has_cosmetic_tag = FRW_LATIN } FRW_region_cores_latin_empire = yes }
+			if = { limit = { has_cosmetic_tag = FRW_EURAFRICA } FRW_region_cores_eurafrica = yes }
+			if = { limit = { has_cosmetic_tag = FRW_FRANCIA } FRW_region_cores_francia = yes }
+			if = { limit = { has_cosmetic_tag = FRW_BURGUNDY } FRW_region_cores_burgundy = yes }
+			if = { limit = { has_cosmetic_tag = FRW_GRANDEMPIRE } FRW_region_cores_grand_empire = yes }
+			if = { limit = { has_cosmetic_tag = FRW_BOURBON } FRW_region_cores_bourbon = yes }
+			if = { limit = { has_cosmetic_tag = FRW_FRUK } FRW_region_cores_fruk = yes }
+			if = { limit = { has_cosmetic_tag = FRW_CORSAIR } FRW_region_cores_corsair = yes }
+			if = { limit = { has_cosmetic_tag = FRW_ETERNAL } FRW_region_cores_eternal = yes }
+		}
+	}
+	on_startup = {
+		effect = {
+			FRA = { FRW_start_debuffs = yes }
+		}
+	}
+}

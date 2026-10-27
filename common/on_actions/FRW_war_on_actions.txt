@@ -1,0 +1,47 @@
+on_actions = {
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					FROM.FROM = { state = 16 }
+					FROM = { original_tag = FRA }
+					ROOT = { has_war_with = FROM }
+					NOT = { has_global_flag = FRW_paris_fallen }
+				}
+				set_global_flag = FRW_paris_fallen
+				news_event = { id = frw_war.1 hours = 6 }
+			}
+			else_if = {
+				limit = {
+					FROM.FROM = { state = 16 }
+					ROOT = { original_tag = FRA }
+					has_global_flag = FRW_paris_fallen
+					NOT = { has_global_flag = FRW_paris_liberated }
+				}
+				set_global_flag = FRW_paris_liberated
+				news_event = { id = frw_war.2 hours = 6 }
+			}
+		}
+	}
+	on_monthly = {
+		effect = {
+			if = {
+				limit = { original_tag = FRA }
+				if = {
+					limit = { has_country_flag = FRW_ts_european }
+					every_country = {
+						limit = { is_in_faction_with = ROOT NOT = { is_in_tech_sharing_group = FRW_european_research } }
+						add_to_tech_sharing_group = FRW_european_research
+					}
+				}
+				if = {
+					limit = { has_country_flag = FRW_ts_latin }
+					every_country = {
+						limit = { is_in_faction_with = ROOT NOT = { is_in_tech_sharing_group = FRW_latin_research } }
+						add_to_tech_sharing_group = FRW_latin_research
+					}
+				}
+			}
+		}
+	}
+}

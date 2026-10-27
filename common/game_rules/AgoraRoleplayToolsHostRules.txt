@@ -1,0 +1,33 @@
+#AI_calculation = {
+#	name = "Choose Rank System"
+#	group = "Country Power Classification Options"
+#	icon = "GFX_decision_eng_trade_unions_support"
+  #  default = {
+#		name = Calculate Players Only
+	#	text = "Calculate Players Only"
+#		desc = "In the Country Power Classification, only countries with players are calculated and ranked."
+#	}
+ #   option = {
+#		name = Calculate AI and Players
+#		text = "Calculate AI and Players"
+#		desc = "The Country Power Classification is calculated and ranked in AI's along with the players."
+#	}
+#}
+AI_calculation = {
+    name = "Choose Rank System"
+    group = "Country Power Classification Options"
+    icon = "GFX_decision_eng_trade_unions_support"
+
+    option = {
+        name = "calculate_players_only"
+        text = "Calculate Players Only"
+        desc = "In the Country Power Classification, only countries with players are calculated and ranked."
+        default = yes
+    }
+
+    option = {
+        name = "calculate_ai_and_players"
+        text = "Calculate AI and Players"
+        desc = "The Country Power Classification is calculated and ranked in AI's along with the players."
+    }
+}

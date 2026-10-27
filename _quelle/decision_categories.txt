@@ -1,0 +1,106 @@
+###########################################################
+# France Rework - Entscheidungskategorien
+###########################################################
+FRW_political_cat = {
+	icon = generic_political_actions
+	picture = GFX_decision_cat_picture_1936_election
+	allowed = { original_tag = FRA }
+	visible = { has_completed_focus = FRW_crisis_of_the_republic }
+	priority = 10
+}
+
+FRW_colonial_purchases_cat = {
+	icon = generic_trade
+	picture = GFX_decision_cat_picture_generic_unified_latin_africa
+	allowed = { original_tag = FRA }
+	visible = { has_completed_focus = FRW_colonial_purchases }
+	priority = 9
+}
+
+FRW_colonial_integration_cat = {
+	icon = eng_imperial_conference
+	picture = GFX_decision_cat_picture_generic_unified_latin_africa
+	allowed = { original_tag = FRA }
+	visible = { has_completed_focus = FRW_ministry_of_colonies }
+	priority = 8
+}
+
+FRW_plunder_cat = {
+	icon = generic_trade
+	picture = GFX_decision_cat_picture_generic_unified_latin_africa
+	allowed = { original_tag = FRA }
+	visible = { has_completed_focus = FRW_letters_of_marque }
+	priority = 7
+}
+
+FRW_decolonisation_cat = {
+	icon = generic_political_actions
+	picture = GFX_decision_cat_picture_generic_unified_latin_africa
+	allowed = { original_tag = FRA }
+	visible = { has_completed_focus = FRW_proclaim_the_commune has_government = communism }
+	priority = 8
+}
+
+FRW_liberation_cat = {
+	icon = generic_political_actions
+	picture = GFX_decision_cat_picture_generic_unified_latin_africa
+	allowed = { original_tag = FRA }
+	visible = { OR = { has_completed_focus = FRW_continue_the_fight has_completed_focus = FRW_rally_the_colonies } }
+	priority = 11
+}
+
+FRW_econ_reforms_cat = {
+	icon = generic_industry
+	picture = GFX_decision_cat_picture_JAP_workers_celebrating
+	allowed = { original_tag = FRA }
+	visible = { OR = { has_completed_focus = FRW_econ_dirigisme has_completed_focus = FRW_econ_liberal has_completed_focus = FRW_econ_rearmament } }
+	priority = 9
+}
+
+FRW_council_cat = {
+	icon = generic_political_actions
+	picture = GFX_decision_cat_picture_1936_election
+	allowed = { original_tag = FRA }
+	visible = { OR = { has_completed_focus = FRW_qol_state_reform has_completed_focus = FRW_qol_cabinet has_completed_focus = FRW_qol_research_council has_completed_focus = FRW_qol_special_projects has_completed_focus = FRW_qol_deuxieme_bureau has_completed_focus = FRW_qol_staff_college has_completed_focus = FRW_darlan_programme has_completed_focus = FRW_plan_v } }
+	priority = 10
+}
+
+FRW_frontier_cat = {
+	icon = generic_fortification
+	picture = GFX_decision_cat_picture_CZE_border_fortification
+	allowed = { original_tag = FRA }
+	visible = { OR = { has_completed_focus = FRW_maginot_extension has_completed_focus = FRW_qol_staff_college } }
+	priority = 7
+}
+
+FRW_patrie_cat = {
+	icon = military_operation
+	picture = GFX_decision_cat_picture_FIN_national_defense
+	allowed = { original_tag = FRA }
+	visible = { has_war = yes custom_trigger_tooltip = { tooltip = FRW_invaded_tt any_core_state = { is_on_continent = europe NOT = { is_controlled_by = ROOT } controller = { has_war_with = ROOT } } } }
+	priority = 12
+}
+
+FRW_franc_cat = {
+	icon = generic_industry
+	picture = GFX_decision_cat_picture_seize_gold_reserves
+	allowed = { original_tag = FRA }
+	visible = { tag = FRA has_capitulated = no has_variable = FRW_inflation }
+	priority = 8
+}
+
+FRW_ralliement_cat = {
+	icon = generic_political_actions
+	picture = GFX_decision_cat_picture_generic_unified_latin_africa
+	allowed = { original_tag = FRA }
+	visible = { tag = FRA has_completed_focus = FRW_appeal_of_18_june }
+	priority = 13
+}
+
+FRW_return_cat = {
+	icon = generic_political_actions
+	picture = GFX_decision_cat_picture_generic_unified_latin_africa
+	allowed = { original_tag = FRA }
+	visible = { tag = FRA any_country = { FRW_ally_holds_french_africa = yes } }
+	priority = 12
+}

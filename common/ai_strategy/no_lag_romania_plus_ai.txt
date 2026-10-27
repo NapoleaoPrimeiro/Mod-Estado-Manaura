@@ -1,0 +1,126 @@
+# Lightweight Romania Plus AI adjustments rebased for HOI4 1.19.2.
+# The original 85-civilian-factory and force-build-500-armies strategies are
+# intentionally omitted because this project prioritizes multiplayer performance.
+
+NO_LAG_ROM_default_production = {
+	allowed = { original_tag = ROM }
+	enable = { is_major = no }
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = infantry
+		value = 50
+	}
+}
+
+NO_LAG_ROM_garrison_allied_borders = {
+	allowed = { original_tag = ROM }
+	enable = {
+		is_in_faction_with = ENG
+		has_war_with = GER
+		NOT = { has_war_with = HUN }
+		NOT = { has_war_with = BUL }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = { type = garrison value = 200 }
+}
+
+NO_LAG_ROM_delay_axis_entry_until_focus = {
+	allowed = { original_tag = ROM }
+	enable = {
+		is_historical_focus_on = yes
+		country_exists = GER
+	}
+	abort = {
+		OR = {
+			NOT = { country_exists = GER }
+			has_completed_focus = ROM_join_axis
+		}
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "GER"
+		value = -200
+	}
+}
+
+NO_LAG_ROM_conserve_market_industry = {
+	allowed = { original_tag = ROM }
+	enable = {
+		date < 1940.1.1
+		has_war = no
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_market_spend_factories
+		value = -75
+	}
+	ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = infantry_equipment
+		value = -30000
+	}
+	ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = artillery_equipment
+		value = -2000
+	}
+	ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = anti_air_equipment
+		value = -2000
+	}
+	ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = anti_tank_equipment
+		value = -2000
+	}
+	ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = motorized_equipment
+		value = -2000
+	}
+	ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = mechanized_equipment
+		value = -2000
+	}
+}
+
+NO_LAG_ROM_avoid_northern_transylvania_factories = {
+	allowed = { original_tag = ROM }
+	enable = { date < 1942.1.1 }
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 76
+		value = -45
+	}
+}
+
+NO_LAG_ROM_avoid_bessarabian_factories = {
+	allowed = { original_tag = ROM }
+	enable = { date < 1942.1.1 }
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 80
+		value = -45
+	}
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 78
+		value = -45
+	}
+	ai_strategy = {
+		type = factory_build_score_factor
+		target = 766
+		value = -45
+	}
+}

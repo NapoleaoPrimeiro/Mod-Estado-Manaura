@@ -1,0 +1,74 @@
+# War Trials survival rate - how many integrated advisors/generals make it through.
+# Default (first/default option) = 25%, matching the original behaviour.
+ci_war_trials_survival = {
+	name = "RULE_CI_WAR_TRIALS"
+	group = "RULE_GROUP_CI"
+	icon = GFX_wargoals
+
+	default = {
+		name = CI_WT_25
+		text = "RULE_CI_WT_25"
+		desc = "RULE_CI_WT_25_DESC"
+	}
+	option = {
+		name = CI_WT_10
+		text = "RULE_CI_WT_10"
+		desc = "RULE_CI_WT_10_DESC"
+	}
+	option = {
+		name = CI_WT_50
+		text = "RULE_CI_WT_50"
+		desc = "RULE_CI_WT_50_DESC"
+	}
+	option = {
+		name = CI_WT_75
+		text = "RULE_CI_WT_75"
+		desc = "RULE_CI_WT_75_DESC"
+	}
+}
+
+# Who gets the integration events. Default = player only (original behaviour).
+ci_ai_integration = {
+	name = "RULE_CI_AI"
+	group = "RULE_GROUP_CI"
+	icon = GFX_wargoals
+
+	default = {
+		name = CI_AI_OFF
+		text = "RULE_CI_AI_OFF"
+		desc = "RULE_CI_AI_OFF_DESC"
+	}
+	option = {
+		name = CI_AI_ON
+		text = "RULE_CI_AI_ON"
+		desc = "RULE_CI_AI_ON_DESC"
+	}
+}
+
+# Production penalty on licenses seized from defeated nations. Default = free.
+ci_license_cost = {
+	name = "RULE_CI_LICENSE"
+	group = "RULE_GROUP_CI"
+	icon = GFX_wargoals
+
+	default = {
+		name = CI_LIC_FREE
+		text = "RULE_CI_LIC_FREE"
+		desc = "RULE_CI_LIC_FREE_DESC"
+	}
+	option = {
+		name = CI_LIC_HALF
+		text = "RULE_CI_LIC_HALF"
+		desc = "RULE_CI_LIC_HALF_DESC"
+	}
+	option = {
+		name = CI_LIC_FULL
+		text = "RULE_CI_LIC_FULL"
+		desc = "RULE_CI_LIC_FULL_DESC"
+	}
+	option = {
+		name = CI_LIC_OFF
+		text = "RULE_CI_LIC_OFF"
+		desc = "RULE_CI_LIC_OFF_DESC"
+	}
+}

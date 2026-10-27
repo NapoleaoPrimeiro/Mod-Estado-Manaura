@@ -1,0 +1,30 @@
+on_actions = {
+
+	on_startup = {
+		effect = {
+			every_possible_country = { add_ideas = PNSD_hidden }
+		}
+	}
+
+	on_weekly = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_idea = PNSD_hidden }
+				}
+				add_ideas = PNSD_hidden
+			}
+		}
+	}
+
+	on_puppet = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_idea = PNSD_hidden }
+				}
+				add_ideas = PNSD_hidden
+			}
+		}
+	}
+}

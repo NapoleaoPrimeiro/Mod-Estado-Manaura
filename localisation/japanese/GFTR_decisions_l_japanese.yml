@@ -1,0 +1,79 @@
+﻿
+########################################################################################################################
+							# < INFORMATION > #
+########################################################################################################################
+		# Name mod: Generic Focus Tree: Redux
+		# Author: BoznaWhere
+		# Comment language: ENG / UKR
+########################################################################################################################
+							# < CONTENT > #
+########################################################################################################################
+    # SETTINGS
+    # CREATE ALLIANCE
+########################################################################################################################
+							# < SETTINGS > #
+########################################################################################################################
+l_japanese:
+# # # # # # # # # # # # # # #
+GFTR_categories_settings: "設定"
+GFTR_categories_settings_desc: "こんにちは！§YGeneric Focus Tree: Redux§!を購読していただき大変嬉しく思います！私の作業を気に入っていただけたら、SteamワークショップのページでMODをサポートしていただけると嬉しいです :) \nそこで最新の変更を確認したり、MODの問題やバグを報告することもできます。"
+# # # # # # # # # # # # # # #
+GFTR_D_set_focus_tree_SHOW: "1. フォーカスツリーを設置しますか？"
+GFTR_D_set_focus_tree_SHOW_tt: "ここでは自国や他国にさまざまなフォーカスツリーを設置・削除できます。"
+GFTR_D_set_focus_tree_HIDE: "1. §Rセクションを閉じる§!"
+GFTR_D_set_gftr_a: "          1. 設置 (GFT: Redux)"
+GFTR_D_set_gftr_a_tt: "現在の国に§YGeneric Focus Tree: Redux§!が設置または更新されます。\n~~~\n注意：バニラやDLCで独自のフォーカスツリーを持つ国（例：ドイツ、フランス、イランなど）のツリーを変更した場合、元のツリーに戻すには§L新規ゲーム開始§!または§Lコンソール§!のみです。"
+GFTR_D_set_gftr_b: "          1. AI用に設置 (GFT: Redux)"
+GFTR_D_set_gftr_b_tt: "AIが制御するすべての国に§YGeneric Focus Tree: Redux§!が設置または更新されます。\n~~~\n§L注意§!：これを実行するとAI国家すべてが新しいツリーを受け取ります。§Gゲーム開始直後にのみ使用§!し、下記の決定で国家精神・特殊メカニクスを削除することをおすすめします。"
+GFTR_D_set_generic_focus: "          1. バニラツリーを設置"
+GFTR_D_set_generic_focus_tt: "現在の国に§Gバニラ§!の基本フォーカスツリーが設置または更新されます。\n~~~\nこの機能は現在ゲーム内にあるバニラツリーを読み込みます。他の大規模MODで変更されている場合、変更されたツリーが設置されます。"
+GFTR_D_deleted_focus_tree: "          1. フォーカスツリーを削除"
+GFTR_D_deleted_focus_tree_tt: "現在の国のフォーカスツリーが§R削除§!されます。正確には完全に空のツリー（「継続型」フォーカス以外なし）に置き換わります。\n~~~\n正直これが必要な場面がわかりません§YXD§!。国を「非アクティブ」にしたいならツリーを無効化でき、パフォーマンスが少し向上するかもしれません。"
+GFTR_D_test_focus_tree: "          1. MODをテスト"
+GFTR_D_test_focus_tree_tt: "§YGeneric Focus Tree: Redux§!の正確なコピーが設置されますが、すべてのフォーカスが1日で完了します。\n~~~\n主にAI挙動のテスト用です。AIの問題発見にご協力いただければ幸いです。\n~~~\n普通のプレイでも楽しめるかもしれません。"
+# # # # # # # # # # # # # # #
+GFTR_D_remove_national_spirits_SHOW: "2. 国家精神を削除しますか？"
+GFTR_D_remove_national_spirits_SHOW_tt: "ここでは自国や他国のさまざまな国家精神を削除できます。"
+GFTR_D_remove_national_spirits_HIDE: "2. §Rセクションを閉じる§!"
+GFTR_D_remove_gftr_national_spirits_a: "          2. 精神を削除 (GFT: Redux)"
+GFTR_D_remove_gftr_national_spirits_a_tt: "現在の国から§YGeneric Focus Tree: Redux§!が追加したすべての国家精神が削除されます。\n~~~\n技術系国家精神は削除されません。"
+GFTR_D_remove_gftr_national_spirits_b: "          2. AIの精神を削除 (GFT: Redux)"
+GFTR_D_remove_gftr_national_spirits_b_tt: "AI制御のすべての国から§YGeneric Focus Tree: Redux§!が追加した国家精神が削除されます。\n~~~\n技術系国家精神は削除されません。\n~~~\n§R注意§!：一時的なフリーズが発生する場合があります。"
+GFTR_D_remove_vanilla_national_spirits_a: "          2. バニラ精神を削除"
+GFTR_D_remove_vanilla_national_spirits_a_tt: "現在の国からすべての開始時§Gバニラ§!国家精神が削除されます！\n~~~\n「すべての精神を削除」機能がないため、1936年スタート時に存在する事前定義リストのみ削除されます。ゲーム中盤以降では効果が薄い可能性が高いです。§Gゲーム開始直後のみ推奨§!。"
+GFTR_D_remove_vanilla_national_spirits_b: "          2. AIのバニラ精神を削除"
+GFTR_D_remove_vanilla_national_spirits_b_tt: "AI制御のすべての国から開始時§Gバニラ§!国家精神が削除されます。\n~~~\n上記と同じ制限があります。§Gゲーム開始直後のみ推奨§!。\n~~~\n§R注意§!：一時的なフリーズが発生する場合があります。"
+# # # # # # # # # # # # # # #
+GFTR_D_remove_unique_mechanics_SHOW: "3. 独自メカニクスを削除しますか？"
+GFTR_D_remove_unique_mechanics_SHOW_tt: "ここでは一部の国が持つ特殊メカニクス・決定・修飾子を削除できます。ネイティブツリーを交換する際に邪魔になるものを除去します。"
+GFTR_D_remove_unique_mechanics_HIDE: "3. §Rセクションを閉じる§!"
+GFTR_D_remove_state_modifier_a: "          3. 州修飾子を削除"
+GFTR_D_remove_state_modifier_a_tt: "現在の国から一部の州修飾子が削除されます。\n~~~\n§Y州修飾子§!は特定の州のみに適用される特殊修飾子です（例：エチオピアの「非中央集権化」、トルコの「クルド分離主義」など）。\n~~~\n§Gネイティブ§!ツリーを置き換えるとこれらが永久化します。この決定で除去できます。\n~~~\n対象国は上部の「条件」に記載。§L(AI版にも適用)§!\n~~~\n§Gゲーム開始時のみ推奨§!。"
+GFTR_D_remove_state_modifier_b: "          3. AIの州修飾子を削除"
+GFTR_D_remove_state_modifier_b_tt: "AI制御国の地域から州修飾子が削除されます。\n~~~\n詳細は上記の決定を参照。現在所有者は関係ありません。\n~~~\n§GすべてのAI国でネイティブツリーを置き換える場合のみ推奨§!。"
+GFTR_D_remove_special_mechanics_a: "          3. 特殊メカニクスを削除"
+GFTR_D_remove_special_mechanics_a_tt: "現在の国から特殊メカニクスが削除されます。\n~~~\n§Y特殊メカニクス§!は一部の国だけが持つ、特定のフォーカスでのみ操作可能なシステムです（例：エチオピア・デンマークの「勢力均衡」、ソ連の「パラノイア」、ポーランドの「農民反乱」など）。\n~~~\n§Gネイティブ§!ツリーを置き換えると他に除去手段がありません。\n~~~\n対象国は上部の「条件」に記載。"
+GFTR_D_remove_special_mechanics_b: "          3. AIの特殊メカニクスを削除"
+GFTR_D_remove_special_mechanics_b_tt: "AI制御の一部の国から特殊メカニクスが削除されます。\n~~~\n詳細は上記の決定を参照。\n~~~\n§GすべてのAI国でネイティブツリーを置き換える場合のみ推奨§!。"
+# # # # # # # # # # # # # # #
+GFTR_D_ai_management_SHOW: "4. AI挙動を設定しますか？"
+GFTR_D_ai_management_SHOW_tt: "ここではAI制御国の挙動を管理できます。"
+GFTR_D_ai_management_HIDE: "4. §Rセクションを閉じる§!"
+GFTR_D_ai_political_freedom: "          4. 「政治的自由」"
+GFTR_D_ai_political_freedom_tt: "AI制御の全国家に国家精神§Y$GFTR_idea_ai_political_freedom$§!が付与されます。\n~~~\nデフォルトではAIは自イデオロギーに合った政治ブランチをやや優先し、歴史モードではイデオロギー変更や非歴史的同盟を一切行いません。\n§Y政治的自由§!はこの制限を解除します。歴史モードでもAIはより自由でランダムになります。\n~~~\nバニラではあまり役立ちませんが、多くの新国家を追加するMODとの互換性のために作られました（例：§L\"Every State Independent\"§!）。\n~~~\nAIにすべての政治ブランチを同確率で選ばせたい場合や歴史モードを無視させたい場合に使用してください。"
+GFTR_D_ai_limit: "          4. AIを制限"
+GFTR_D_ai_limit_tt: "現在の国に国家精神§Y$GFTR_idea_ai_limit$§!が付与されます。\n~~~\n特定の国のAIをほぼ「停止」させパフォーマンス向上に役立ちます（コンソール＋\"observe\"が必要）。\n~~~\n§G注意§!：上記でフォーカスツリー完全削除の決定もあり、さらに強く制限できます。"
+GFTR_D_ai_madness_mode: "          4. 「狂気」モード"
+GFTR_D_ai_madness_mode_tt: "AI制御の全国家に国家精神§Y$GFTR_idea_ai_madness_mode$§!が付与されます。\n~~~\n§Y「狂気」モード§!はAIに戦争関連の道のみを選ばせます。すべてがすべてと戦うカオスな世界へ！§R注意§!：§YGeneric Focus Tree: Redux§!を持つ国のみに適用されます。"
+GFTR_D_remove_management_ideas: "          4. 技術精神を削除"
+GFTR_D_remove_management_ideas_tt: "このMODが追加したすべての技術系国家精神がすべての国から削除されます。"
+########################################################################################################################
+# < CREATE ALLIANCE > #
+########################################################################################################################
+GFTR_categories_create_alliance: "同盟作成"
+GFTR_categories_create_alliance_desc: "最近我々はより強く自信に満ちてきており、自前の同盟を結成することを真剣に考え始めている。あと一歩だ！"
+# # # # # # # # # # # # # # #
+GFTR_D_alliance_communism: "共産主義同盟"
+GFTR_D_alliance_neutrality: "君主制同盟"
+GFTR_D_alliance_fascism: "ファシズム同盟"
+GFTR_D_alliance_democratic: "民主主義同盟"
