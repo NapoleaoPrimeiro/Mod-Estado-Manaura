@@ -1,0 +1,70 @@
+add_namespace = EF_events
+
+# Press laws (common/ideas/_press.txt): choosing a press law adds a placeholder "_fake" law and fires this
+# event 70 days later. It swaps the placeholder for the real law and clears the flag so the law can be changed again.
+country_event = {
+	id = EF_events.2
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { has_idea = free_press_fake }
+			swap_ideas = {
+				remove_idea = free_press_fake
+				add_idea = free_press
+			}
+		}
+		else_if = {
+			limit = { has_idea = censored_press_fake }
+			swap_ideas = {
+				remove_idea = censored_press_fake
+				add_idea = censored_press
+			}
+		}
+		else_if = {
+			limit = { has_idea = resistance_press_fake }
+			swap_ideas = {
+				remove_idea = resistance_press_fake
+				add_idea = resistance_press
+			}
+		}
+		else_if = {
+			limit = { has_idea = productive_press_fake }
+			swap_ideas = {
+				remove_idea = productive_press_fake
+				add_idea = productive_press
+			}
+		}
+		else_if = {
+			limit = { has_idea = mobilization_press_fake }
+			swap_ideas = {
+				remove_idea = mobilization_press_fake
+				add_idea = mobilization_press
+			}
+		}
+		else_if = {
+			limit = { has_idea = aggressive_press_fake }
+			swap_ideas = {
+				remove_idea = aggressive_press_fake
+				add_idea = aggressive_press
+			}
+		}
+		else_if = {
+			limit = { has_idea = nationalism_press_fake }
+			swap_ideas = {
+				remove_idea = nationalism_press_fake
+				add_idea = nationalism_press
+			}
+		}
+		else_if = {
+			limit = { has_idea = security_press_fake }
+			swap_ideas = {
+				remove_idea = security_press_fake
+				add_idea = security_press
+			}
+		}
+		clr_country_flag = EF_press_changing
+		set_variable = { var = EF_press_variable value = 0 }
+	}
+}
