@@ -1,0 +1,37 @@
+add_namespace = nsb_news
+
+# Manaura: the Soviet focus tree (common/national_focus/soviet.txt) shows these news events as completion rewards,
+# but their script was not in the mod (nsb_news.103 is the only one that exists). Hidden placeholders, so the calls
+# are valid and no error is logged. The news itself does not show. If the original NSB news file is found, delete this one.
+#   nsb_news.200 - news from the focus completed in soviet.txt (line 8652)
+#   nsb_news.401 - news from the focus completed in soviet.txt (line 17124)
+#   nsb_news.403 - news from the focus completed in soviet.txt (line 18661, fires after 35 days)
+#   nsb_news.406 - news from the focus completed in soviet.txt (line 18050)
+
+news_event = {
+	id = nsb_news.200
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+news_event = {
+	id = nsb_news.401
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+news_event = {
+	id = nsb_news.403
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+news_event = {
+	id = nsb_news.406
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
