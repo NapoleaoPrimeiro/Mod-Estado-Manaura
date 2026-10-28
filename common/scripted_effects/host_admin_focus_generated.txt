@@ -9046,7 +9046,7 @@ admin_focus_tick = {
 		else_if = { limit = { NOT = { has_completed_focus = SOV_coup_detat } focus_progress = { focus = SOV_coup_detat progress > 0 } } complete_national_focus = SOV_coup_detat }
 		else_if = { limit = { NOT = { has_completed_focus = SOV_right_purges } focus_progress = { focus = SOV_right_purges progress > 0 } } complete_national_focus = SOV_right_purges }
 		else_if = { limit = { NOT = { has_completed_focus = SOV_the_power_of_the_peasantry } focus_progress = { focus = SOV_the_power_of_the_peasantry progress > 0 } } complete_national_focus = SOV_the_power_of_the_peasantry }
-		else_if = { limit = { NOT = { has_completed_focus = SOV_curtailment_of_the_collective_farms } focus_progress = { focus = SOV_curtailment_of_the_collective_farms progress > 0 } } complete_national_focus = SOV_curtailment_of_the_collective_farms }
+		else_if = { limit = { #NOT = { has_completed_focus = SOV_curtailment_of_the_collective_farms } focus_progress = { focus = SOV_curtailment_of_the_collective_farms progress > 0 } } complete_national_focus = SOV_curtailment_of_the_collective_farms }
 		else_if = { limit = { NOT = { has_completed_focus = SOV_administrative_reforms } focus_progress = { focus = SOV_administrative_reforms progress > 0 } } complete_national_focus = SOV_administrative_reforms }
 		else_if = { limit = { NOT = { has_completed_focus = SOV_a_new_theory_of_revolution } focus_progress = { focus = SOV_a_new_theory_of_revolution progress > 0 } } complete_national_focus = SOV_a_new_theory_of_revolution }
 		else_if = { limit = { NOT = { has_completed_focus = SOV_back_to_the_nep } focus_progress = { focus = SOV_back_to_the_nep progress > 0 } } complete_national_focus = SOV_back_to_the_nep }
