@@ -1116,32 +1116,7 @@ GER_autarky_achieved_effects = {
 	}
 }
 
-GER_modify_industrial_modifier = {
-	if = {
-		limit = { 
-			has_dynamic_modifier = { modifier = GER_mefo_bills_modifier }
-		}
-		custom_effect_tooltip = GER_modify_mefo_bills_modifier_tt
-	}
-	else_if = {
-		limit = { 
-			has_dynamic_modifier = { modifier = GER_economy_of_conquest_modifier }
-		}
-		custom_effect_tooltip = GER_modify_economy_of_conquest_modifier_tt
-	}
-	else_if = {
-		limit = {
-			has_dynamic_modifier = { modifier = GER_recovering_economy_modifier }
-		}
-		custom_effect_tooltip = GER_modify_recovering_economy_modifier_tt
-	}
-	else_if = {
-		limit = {
-			has_dynamic_modifier = { modifier = GER_wirtschaftswunder_modifier }
-		}
-		custom_effect_tooltip = GER_modify_wirtschaftswunder_modifier_tt
-	}
-}
+# GER_modify_industrial_modifier: removed here - it is defined in zz_eif_GER_inner_circle_effects.txt (two definitions made its tooltip appear twice)
 
 GER_modify_wirtschaftswunder_modifier = {
 	if = {
@@ -1162,62 +1137,11 @@ GER_modify_wirtschaftswunder_modifier = {
 	}
 }
 
-GER_modify_army_modifier = {
-	if = {
-		limit = { 
-			has_dynamic_modifier = { modifier = GER_army_modifier }
-		}
-		custom_effect_tooltip = GER_modify_army_modifier_tt
-	}
-	else_if = {
-		limit = { 
-			has_dynamic_modifier = { modifier = GER_army_communist_modifier }
-		}
-		custom_effect_tooltip = GER_modify_army_communist_modifier_tt
-	}
-}
+# GER_modify_army_modifier: removed here - it is defined in zz_eif_GER_inner_circle_effects.txt (two definitions made its tooltip appear twice)
 
-GER_modify_navy_modifier = {
-	if = {
-		limit = { 
-			has_dynamic_modifier = { modifier = GER_navy_fascist_modifier }
-		}
-		custom_effect_tooltip = GER_modify_navy_fascist_modifier_tt
-	}
-	else_if = {
-		limit = { 
-			has_dynamic_modifier = { modifier = GER_navy_democratic_modifier }
-		}
-		custom_effect_tooltip = GER_modify_navy_democratic_modifier_tt
-	}
-	else_if = {
-		limit = {
-			has_dynamic_modifier = { modifier = GER_navy_imperial_modifier }
-		}
-		custom_effect_tooltip = GER_modify_navy_imperial_modifier_tt
-	}
-	else_if = {
-		limit = {
-			has_dynamic_modifier = { modifier = GER_navy_communist_modifier }
-		}
-		custom_effect_tooltip = GER_modify_navy_communist_modifier_tt
-	}
-}
+# GER_modify_navy_modifier: removed here - it is defined in zz_eif_GER_inner_circle_effects.txt (two definitions made its tooltip appear twice)
 
-GER_modify_airforce_modifier = {
-	if = {
-		limit = { 
-			has_dynamic_modifier = { modifier = GER_airforce_modifier }
-		}
-		custom_effect_tooltip = GER_modify_airforce_modifier_tt
-	}
-	else_if = {
-		limit = { 
-			has_dynamic_modifier = { modifier = GER_airforce_communist_modifier }
-		}
-		custom_effect_tooltip = GER_modify_airforce_communist_modifier_tt
-	}
-}
+# GER_modify_airforce_modifier: removed here - it is defined in zz_eif_GER_inner_circle_effects.txt (two definitions made its tooltip appear twice)
 
 GER_pay_back_mefo_bills = { #TODO_Danne see if this can be simplified!
 	if = {
@@ -1770,50 +1694,11 @@ GER_worsen_rosenbergs_trait_effect = {
 	}
 }
 
-GER_add_or_modify_wunderwaffen = {
-	if = {
-		limit = {
-			NOT = { has_dynamic_modifier = { modifier = GER_wunderwaffen_modifier }}
-		}
-		custom_effect_tooltip = GER_add_wunderwaffen_modifier_tt
-		hidden_effect = {
-			add_dynamic_modifier = { modifier = GER_wunderwaffen_modifier } 
-		}
-	}
-	else = {
-		custom_effect_tooltip = GER_modify_wunderwaffen_modifier_tt
-	}
-}
+# GER_add_or_modify_wunderwaffen: removed here - it is defined in zz_eif_GER_inner_circle_effects.txt (two definitions made its tooltip appear twice)
 
-GER_add_or_modify_wehrwirtschaft = {
-	if = {
-		limit = {
-			NOT = { has_dynamic_modifier = { modifier = GER_wehrwirtschaft_modifier }}
-		}
-		custom_effect_tooltip = GER_add_wehrwirtschaft_modifier_tt
-		hidden_effect = {
-			add_dynamic_modifier = { modifier = GER_wehrwirtschaft_modifier } 
-		}
-	}
-	else = {
-		custom_effect_tooltip = GER_modify_wehrwirtschaft_modifier_tt
-	}
-}
+# GER_add_or_modify_wehrwirtschaft: removed here - it is defined in zz_eif_GER_inner_circle_effects.txt (two definitions made its tooltip appear twice)
 
-GER_add_or_modify_military_intelligence_service = {
-	if = {
-		limit = {
-			NOT = { has_dynamic_modifier = { modifier = GER_military_intelligence_service_modifier } }
-		}
-		custom_effect_tooltip = GER_add_military_intelligence_service_modifier_tt
-		hidden_effect = {
-			add_dynamic_modifier = { modifier = GER_military_intelligence_service_modifier } 
-		}
-	}
-	else = {
-		custom_effect_tooltip = GER_modify_military_intelligence_service_modifier_tt
-	}
-}
+# GER_add_or_modify_military_intelligence_service: removed here - it is defined in zz_eif_GER_inner_circle_effects.txt (two definitions made its tooltip appear twice)
 
 GER_add_or_modify_politburo = {
 	if = {

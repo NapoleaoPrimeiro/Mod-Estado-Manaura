@@ -1,0 +1,46 @@
+add_namespace = treaty_org
+
+# Manaura: the NATO content (common/decisions/NATO.txt, the NATO focuses and event usa.999) calls these
+# events, but the mod they came from was never fully copied: no script and no texts exist for them.
+# Hidden placeholders, so the calls are valid and nothing shows up as an invalid event.
+# If the real treaty_org events are ever added, delete this file.
+#   treaty_org.1 - invitation to faction members to join the Brussels Treaty or leave (decision NATO_brussels_treaty)
+#   treaty_org.2 - news: Brussels Treaty signed (decision NATO_brussels_treaty)
+#   treaty_org.3 - news: NATO founded (focus USA_focus70 / decision NATO_suggest_nato)
+#   treaty_org.4 - news: NATO founded without the USA (decision NATO_suggest_nato)
+#   treaty_org.5 - notice to NATO's leader that a country declined the invitation (event usa.999)
+
+country_event = {
+	id = treaty_org.1
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+news_event = {
+	id = treaty_org.2
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+news_event = {
+	id = treaty_org.3
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+news_event = {
+	id = treaty_org.4
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = treaty_org.5
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}

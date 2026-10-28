@@ -247,13 +247,7 @@ focus_tree = {
 
 		available = {
 			has_government = democratic
-			# was "always = no" (locked forever). Green only after the 1936 election, and only if Roosevelt is the one in office.
-			# Landon in office -> stays red and USA_reestablish_the_gold_standard opens instead.
-			custom_trigger_tooltip = {
-				tooltip = USA_roosevelt_won_1936_election_tt
-				date > 1936.11.9
-				has_country_leader = { ruling_only = yes character = USA_franklin_delano_roosevelt }
-			}
+			always = no
 		}
 		
 		bypass = {
