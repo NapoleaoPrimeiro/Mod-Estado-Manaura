@@ -66,17 +66,17 @@ focus_tree = {
 
 		}
 
-		bypass = {
-			custom_trigger_tooltip =  {
-				tooltip = infrastructure_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = infrastructure
-						size < 2
-					}
-				}
-			}
-		}
+		#bypass = {
+		#	custom_trigger_tooltip =  {
+		#		tooltip = infrastructure_effort_tt
+		#		all_owned_state = {
+		#			free_building_slots = {
+		#				building = infrastructure
+		#				size < 2
+		#			}
+		#		}
+		#	}
+		#}
 		
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 
@@ -469,7 +469,7 @@ focus_tree = {
 		cost = 10
 
 		available = {
-			SOV_third_five_year_plan_available = yes
+			#SOV_third_five_year_plan_available = yes
 			custom_trigger_tooltip = {
 				tooltip = SOV_fyp_controlled_factories_tier_2_tt
 				NOT = { num_of_controlled_factories < SOV_fyp_factory_requirement_tier_2 }
@@ -533,7 +533,7 @@ focus_tree = {
 		mutually_exclusive = { focus = SOV_shift_to_armaments_production }
 
 		available = {
-			SOV_third_five_year_plan_available = yes
+			#SOV_third_five_year_plan_available = yes
 			custom_trigger_tooltip = {
 				tooltip = SOV_fyp_controlled_factories_tier_3_tt
 				NOT = { num_of_controlled_factories < SOV_fyp_factory_requirement_tier_3 }
@@ -595,7 +595,7 @@ focus_tree = {
 		cost = 10
 
 		available = {
-			SOV_third_five_year_plan_available = yes
+			#SOV_third_five_year_plan_available = yes
 			custom_trigger_tooltip = {
 				tooltip = SOV_fyp_controlled_factories_tier_4_tt
 				NOT = { num_of_controlled_factories < SOV_fyp_factory_requirement_tier_4 }
@@ -631,7 +631,7 @@ focus_tree = {
 		cost = 5
 
 		available = {
-			SOV_third_five_year_plan_available = yes
+			#SOV_third_five_year_plan_available = yes
 			NOT = { has_completed_focus = SOV_curtailment_of_the_collective_farms }
 		}
 		
@@ -731,7 +731,7 @@ focus_tree = {
 		mutually_exclusive = { focus = SOV_reorganize_the_pc_of_heavy_industry}
 
 		available = {
-			SOV_third_five_year_plan_available = yes
+			#SOV_third_five_year_plan_available = yes
 			custom_trigger_tooltip = {
 				tooltip = SOV_fyp_controlled_factories_tier_3_tt
 				NOT = { num_of_controlled_factories < SOV_fyp_factory_requirement_tier_3 }
@@ -784,7 +784,7 @@ focus_tree = {
 		cost = 10
 
 		available = {
-			SOV_third_five_year_plan_available = yes
+			#SOV_third_five_year_plan_available = yes
 			custom_trigger_tooltip = {
 				tooltip = SOV_fyp_controlled_factories_tier_4_tt
 				NOT = { num_of_controlled_factories < SOV_fyp_factory_requirement_tier_4 }
@@ -831,7 +831,7 @@ focus_tree = {
 					include_locked = yes
 				}
 			}
-			SOV_third_five_year_plan_available = yes
+			#SOV_third_five_year_plan_available = yes
 			NOT = { has_completed_focus = SOV_curtailment_of_the_collective_farms }
 		}
 		
@@ -922,7 +922,7 @@ focus_tree = {
 		cost = 5
 
 		available = {
-			SOV_third_five_year_plan_available = yes
+			#SOV_third_five_year_plan_available = yes
 			NOT = { has_completed_focus = SOV_curtailment_of_the_collective_farms }
 			has_full_control_of_state = 219 #MOSCOW
 			OR = {
@@ -995,7 +995,7 @@ focus_tree = {
 		cost = 5
 
 		available = {
-			SOV_third_five_year_plan_available = yes
+			#SOV_third_five_year_plan_available = yes
 			NOT = { has_completed_focus = SOV_curtailment_of_the_collective_farms }
 		}
 		

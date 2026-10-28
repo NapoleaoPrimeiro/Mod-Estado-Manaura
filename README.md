@@ -2,4 +2,4 @@
 
 Mod dos Gores
 
-samuca é viado
+Vo deixar pra tu arrumar os evento do usa //Zeus
