@@ -1,0 +1,118 @@
+# Recalculate in the selected state's scope when the tooltip is requested.
+# Uses the shared price helper; no persistent state is written by the tooltip.
+defined_text = {
+    name = GetCBCoringCurrentCost
+    text = {
+        trigger = {
+            cb_calculate_state_prices = yes
+            always = yes
+        }
+        localization_key = CB_CURRENT_COST_VALUE
+    }
+}
+defined_text = {
+    name = GetCBUnityCurrentCost
+    text = {
+        trigger = { cb_calculate_state_prices = yes }
+        localization_key = CB_UNITY_COST_VALUE
+    }
+}
+# Conditional reasons are blank when the corresponding restriction does not apply.
+defined_text = {
+    name = GetCBCoringRestriction
+    text = {
+        trigger = { compliance < 25 }
+        localization_key = CB_CORING_REQUIRES_COMPLIANCE
+    }
+    text = { localization_key = CB_NO_RESTRICTION }
+}
+defined_text = {
+    name = GetCBUnityRestriction
+    text = {
+        trigger = { has_dynamic_modifier = cb_promoted_unity }
+        localization_key = CB_UNITY_ALREADY_ACTIVE
+    }
+    text = { localization_key = CB_NO_RESTRICTION }
+}
+defined_text = {
+    name = GetCBIndependenceRestriction
+    text = {
+        trigger = { has_dynamic_modifier = cb_undermined_independence }
+        localization_key = CB_INDEPENDENCE_ALREADY_ACTIVE
+    }
+    text = { localization_key = CB_NO_RESTRICTION }
+}
+defined_text = {
+    name = GetCBArmCurrentCost
+    text = {
+        trigger = { cb_calculate_state_prices = yes }
+        localization_key = CB_ARM_COST_VALUE
+    }
+}
+defined_text = {
+    name = GetCBArmRestriction
+    text = {
+        trigger = { has_dynamic_modifier = cb_armed_collaborators }
+        localization_key = CB_ARM_ALREADY_ACTIVE
+    }
+    text = { localization_key = CB_NO_RESTRICTION }
+}
+# These buttons are visible only for the selected state's controller.
+defined_text = {
+    name = GetCBCoringFundsRestriction
+    text = {
+        trigger = {
+            cb_calculate_state_prices = yes
+            NOT = { controller = { check_variable = { var = political_power value = cb_cost compare = greater_than_or_equals } } }
+        }
+        localization_key = CB_NOT_ENOUGH_PP
+    }
+    text = { localization_key = CB_NO_RESTRICTION }
+}
+
+# These buttons are visible only for the selected state's controller.
+defined_text = {
+    name = GetCBUnityFundsRestriction
+    text = {
+        trigger = {
+            cb_calculate_state_prices = yes
+            NOT = { controller = { check_variable = { var = political_power value = cb_unity_cost compare = greater_than_or_equals } } }
+        }
+        localization_key = CB_NOT_ENOUGH_PP
+    }
+    text = { localization_key = CB_NO_RESTRICTION }
+}
+
+# These buttons are visible only for the selected state's controller.
+defined_text = {
+    name = GetCBIndependenceFundsRestriction
+    text = {
+        trigger = {
+            cb_calculate_state_prices = yes
+            NOT = { controller = { check_variable = { var = command_power value = cb_unity_cost compare = greater_than_or_equals } } }
+        }
+        localization_key = CB_NOT_ENOUGH_CP
+    }
+    text = { localization_key = CB_NO_RESTRICTION }
+}
+
+# These buttons are visible only for the selected state's controller.
+defined_text = {
+    name = GetCBArmFundsRestriction
+    text = {
+        trigger = {
+            cb_calculate_state_prices = yes
+            NOT = { controller = { has_equipment = { infantry_equipment > cb_arm_threshold } } }
+        }
+        localization_key = CB_NOT_ENOUGH_INFANTRY
+    }
+    text = { localization_key = CB_NO_RESTRICTION }
+}
+defined_text = {
+    name = GetCBFullComplianceBonus
+    text = {
+        trigger = { compliance > 99 }
+        localization_key = CB_FULL_COMPLIANCE_BONUS
+    }
+    text = { localization_key = CB_NO_RESTRICTION }
+}

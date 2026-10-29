@@ -1,0 +1,12 @@
+spriteTypes = {
+    # Original background is 347x79. Preserve its header and bottom border,
+    # stretching only the middle vertically for 8 pixels of extra padding.
+    corneredTileSpriteType = {
+        name = "GFX_cb_expanded_actions_background"
+        textureFile = "gfx/interface/unitcontrol/battleplantools_areadef_conf_bg.dds"
+        size = { x=347 y=87 }
+        borderSize = { x=16 y=30 }
+        tilingCenter = no
+        effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+    }
+}

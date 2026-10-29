@@ -1,0 +1,21 @@
+on_actions = {
+    # ROOT = new controller; FROM = old controller; FROM.FROM = state.
+    on_state_control_changed = {
+        effect = {
+            FROM.FROM = {
+                if = {
+                    limit = { has_dynamic_modifier = cb_armed_collaborators }
+                    remove_dynamic_modifier = { modifier = cb_armed_collaborators }
+                }
+                if = {
+                    limit = { has_dynamic_modifier = cb_undermined_independence }
+                    remove_dynamic_modifier = { modifier = cb_undermined_independence }
+                }
+                if = {
+                    limit = { has_dynamic_modifier = cb_promoted_unity }
+                    remove_dynamic_modifier = { modifier = cb_promoted_unity }
+                }
+            }
+        }
+    }
+}

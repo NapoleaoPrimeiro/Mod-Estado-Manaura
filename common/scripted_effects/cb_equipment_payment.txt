@@ -1,0 +1,56 @@
+# Called in the paying country (ROOT); cb_arm_cost must be positive.
+# send_equipment selects one aggregate quantity across models and producers.
+# XCC is a dedicated landless recipient, never a playable recipient.
+cb_pay_infantry_equipment = {
+    set_temp_variable = { cb_arm_payment_success = 0 }
+    if = {
+        limit = {
+            NOT = { tag = XCC }
+            has_equipment = { infantry_equipment > cb_arm_threshold }
+            XCC = {
+                check_variable = { num_owned_states = 0 }
+                check_variable = { num_controlled_states = 0 }
+                NOT = { has_equipment = { infantry_equipment > 0 } }
+            }
+        }
+        set_temp_variable = { cb_stock_before = num_equipment@infantry_equipment }
+        send_equipment = {
+            target = XCC
+            equipment = infantry_equipment
+            amount = cb_arm_cost
+            old_prioritised = yes
+        }
+        set_temp_variable = { cb_stock_paid = cb_stock_before }
+        subtract_from_temp_variable = { cb_stock_paid = num_equipment@infantry_equipment }
+        XCC = {
+            set_temp_variable = { cb_stock_received = num_equipment@infantry_equipment }
+        }
+        if = {
+            limit = {
+                check_variable = { var = cb_stock_paid value = cb_arm_cost compare = equals }
+                check_variable = { var = cb_stock_received value = cb_arm_cost compare = equals }
+            }
+            # Only the isolated recipient is cleared, never the payer.
+            XCC = { set_equipment_fraction = 0 }
+            set_temp_variable = { cb_arm_payment_success = 1 }
+        }
+        else = {
+            # Fail closed: return everything received and grant no state bonus.
+            XCC = {
+                if = {
+                    limit = { check_variable = { cb_stock_received > 0 } }
+                    send_equipment = {
+                        target = ROOT
+                        equipment = infantry_equipment
+                        amount = cb_stock_received
+                        old_prioritised = yes
+                    }
+                }
+            }
+            log = "CCE: Infantry equipment payment verification failed; transferred equipment was returned."
+        }
+    }
+    else = {
+        log = "CCE: Infantry equipment payment blocked; insufficient stock or internal recipient unavailable."
+    }
+}

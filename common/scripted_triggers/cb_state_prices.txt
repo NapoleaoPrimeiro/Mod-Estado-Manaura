@@ -1,0 +1,94 @@
+# Shared trigger/localisation calculator: selected state scope.
+# Keep arithmetic identical to the effect-context helper.
+cb_calculate_state_prices = {
+    # Keep the original population brackets, including their exact boundaries.
+    if = {
+        limit = { state_population > 10000000 }
+        set_temp_variable = { cb_cost = 250 }
+    }
+    else_if = {
+        limit = { state_population > 5000000 }
+        set_temp_variable = { cb_cost = 150 }
+    }
+    else_if = {
+        limit = { state_population > 1000000 }
+        set_temp_variable = { cb_cost = 100 }
+    }
+    else_if = {
+        limit = { state_population > 500000 }
+        set_temp_variable = { cb_cost = 75 }
+    }
+    else_if = {
+        limit = { state_population > 250000 }
+        set_temp_variable = { cb_cost = 50 }
+    }
+    else_if = {
+        limit = { state_population > 100000 }
+        set_temp_variable = { cb_cost = 25 }
+    }
+    else_if = {
+        limit = { state_population > 50000 }
+        set_temp_variable = { cb_cost = 15 }
+    }
+    else = { set_temp_variable = { cb_cost = 10 } }
+    # 5 PP per completed building level that occupies a shared factory slot.
+    # Building types taken from the installed game's shares_slots = yes definitions.
+    # building_level includes damaged levels; queued construction and empty slots do not count.
+    set_temp_variable = { cb_slot_buildings = 0 }
+    add_to_temp_variable = { cb_slot_buildings = building_level@arms_factory }
+    add_to_temp_variable = { cb_slot_buildings = building_level@industrial_complex }
+    add_to_temp_variable = { cb_slot_buildings = building_level@stronghold_network }
+    add_to_temp_variable = { cb_slot_buildings = building_level@dockyard }
+    add_to_temp_variable = { cb_slot_buildings = building_level@synthetic_refinery }
+    add_to_temp_variable = { cb_slot_buildings = building_level@fuel_silo }
+    add_to_temp_variable = { cb_slot_buildings = building_level@mega_gun_emplacement }
+    add_to_temp_variable = { cb_slot_buildings = building_level@rocket_site }
+    add_to_temp_variable = { cb_slot_buildings = building_level@nuclear_reactor }
+    add_to_temp_variable = { cb_slot_buildings = building_level@nuclear_reactor_heavy_water }
+    add_to_temp_variable = { cb_slot_buildings = building_level@commercial_nuclear_reactor }
+    add_to_temp_variable = { cb_slot_buildings = building_level@energy_infrastructure }
+    add_to_temp_variable = { cb_slot_buildings = building_level@industrial_infrastructure }
+    multiply_temp_variable = { cb_slot_buildings = 5 }
+    add_to_temp_variable = { cb_cost = cb_slot_buildings }
+    
+    # Round the step count, then correct upward rounding against the original compliance.
+    # This implements floor without relying on modulo's handling of fractional inputs.
+    set_temp_variable = { cb_compliance = compliance }
+    clamp_temp_variable = { var = cb_compliance min = 0 max = 100 }
+    set_temp_variable = { cb_steps = cb_compliance }
+    divide_temp_variable = { cb_steps = 10 }
+    round_temp_variable = cb_steps
+    set_temp_variable = { cb_step_threshold = cb_steps }
+    multiply_temp_variable = { cb_step_threshold = 10 }
+    if = {
+        limit = { check_variable = { cb_step_threshold > cb_compliance } }
+        subtract_from_temp_variable = { cb_steps = 1 }
+    }
+    # Keep the percentage arithmetic integer-valued until the final division.
+    multiply_temp_variable = { cb_steps = 5 }
+    set_temp_variable = { cb_multiplier = 100 }
+    subtract_from_temp_variable = { cb_multiplier = cb_steps }
+    multiply_temp_variable = { cb_cost = cb_multiplier }
+    divide_temp_variable = { cb_cost = 100 }
+    # Round one tenth of the regular price (before the coring-only bonus) to cents.
+    set_temp_variable = { cb_unity_cost = cb_cost }
+    multiply_temp_variable = { cb_unity_cost = 10 }
+    round_temp_variable = cb_unity_cost
+    divide_temp_variable = { cb_unity_cost = 100 }
+    # Infantry equipment costs ten times the regular price, before the coring-only bonus.
+    set_temp_variable = { cb_arm_cost = cb_cost }
+    multiply_temp_variable = { cb_arm_cost = 10 }
+    round_temp_variable = cb_arm_cost
+    set_temp_variable = { cb_arm_threshold = cb_arm_cost }
+    subtract_from_temp_variable = { cb_arm_threshold = 1 }
+    # Special coring-only bonus. Other action prices have already been calculated.
+    if = {
+        limit = { compliance > 99 }
+        multiply_temp_variable = { cb_cost = 0.5 }
+        # Match the two-decimal price displayed in the tooltip.
+        multiply_temp_variable = { cb_cost = 100 }
+        round_temp_variable = cb_cost
+        divide_temp_variable = { cb_cost = 100 }
+    }
+    always = yes
+}

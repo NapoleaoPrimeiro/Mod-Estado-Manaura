@@ -1,0 +1,130 @@
+# State-context coring and unity buttons. Prices use temporary arithmetic.
+# Cost = (population price + 5 * shared-slot building levels) * (1 - 0.05 * floor(clamp(compliance, 0, 100) / 10)).
+# Shared helpers return both coring and unity prices for each independent UI evaluation.
+scripted_gui = {
+    coring_button_powers1 = {
+        ai_enabled = { always = no }
+        context_type = selected_state_context
+        window_name = "coring_button_powers1_container"
+
+        visible = {
+            is_controlled_by = ROOT
+            NOT = { is_core_of = ROOT }
+        }
+
+        effects = {
+            create_core1_click = {
+                cb_calculate_state_prices = yes
+                # Recheck on click and debit before coring clears occupation data.
+                if = {
+                    limit = {
+                        is_controlled_by = ROOT
+                        NOT = { is_core_of = ROOT }
+                        NOT = { compliance < 25 }
+                        check_variable = { var = ROOT.political_power value = cb_cost compare = greater_than_or_equals }
+                    }
+                    multiply_temp_variable = { cb_cost = -1 }
+                    ROOT = { add_political_power = cb_cost }
+                    add_core_of = ROOT
+                }
+            }
+
+            promote_unity_click = {
+                cb_calculate_state_prices = yes
+                if = {
+                    limit = {
+                        is_controlled_by = ROOT
+                        NOT = { is_core_of = ROOT }
+                        NOT = { has_dynamic_modifier = cb_promoted_unity }
+                        check_variable = { var = ROOT.political_power value = cb_unity_cost compare = greater_than_or_equals }
+                    }
+                    multiply_temp_variable = { cb_unity_cost = -1 }
+                    ROOT = { add_political_power = cb_unity_cost }
+                    add_dynamic_modifier = { modifier = cb_promoted_unity }
+                }
+            }
+
+            undermine_independence_click = {
+                cb_calculate_state_prices = yes
+                if = {
+                    limit = {
+                        is_controlled_by = ROOT
+                        NOT = { is_core_of = ROOT }
+                        NOT = { has_dynamic_modifier = cb_undermined_independence }
+                        check_variable = { var = ROOT.command_power value = cb_unity_cost compare = greater_than_or_equals }
+                    }
+                    multiply_temp_variable = { cb_unity_cost = -1 }
+                    ROOT = { add_command_power = cb_unity_cost }
+                    add_dynamic_modifier = { modifier = cb_undermined_independence }
+                }
+            }
+
+            arm_collaborators_click = {
+                cb_calculate_state_prices = yes
+                if = {
+                    limit = {
+                        is_controlled_by = ROOT
+                        NOT = { is_core_of = ROOT }
+                        NOT = { has_dynamic_modifier = cb_armed_collaborators }
+                        ROOT = { has_equipment = { infantry_equipment > cb_arm_threshold } }
+                    }
+                    ROOT = { cb_pay_infantry_equipment = yes }
+                    if = {
+                        limit = { check_variable = { cb_arm_payment_success = 1 } }
+                        add_dynamic_modifier = { modifier = cb_armed_collaborators }
+                    }
+                }
+            }
+        }
+
+        triggers = {
+            arm_collaborators_click_enabled = {
+                cb_calculate_state_prices = yes
+                is_controlled_by = ROOT
+                NOT = { is_core_of = ROOT }
+                NOT = { has_dynamic_modifier = cb_armed_collaborators }
+                ROOT = { has_equipment = { infantry_equipment > cb_arm_threshold } }
+            }
+            undermine_independence_click_enabled = {
+                cb_calculate_state_prices = yes
+                is_controlled_by = ROOT
+                NOT = { is_core_of = ROOT }
+                NOT = { has_dynamic_modifier = cb_undermined_independence }
+                check_variable = { var = ROOT.command_power value = cb_unity_cost compare = greater_than_or_equals }
+            }
+            promote_unity_click_enabled = {
+                cb_calculate_state_prices = yes
+                is_controlled_by = ROOT
+                NOT = { is_core_of = ROOT }
+                NOT = { has_dynamic_modifier = cb_promoted_unity }
+                check_variable = { var = ROOT.political_power value = cb_unity_cost compare = greater_than_or_equals }
+            }
+            create_core1_click_enabled = {
+                NOT = { compliance < 25 }
+                cb_calculate_state_prices = yes
+                check_variable = { var = ROOT.political_power value = cb_cost compare = greater_than_or_equals }
+            }
+        }
+
+        # Affordability needs a state context, so test it per AI target.
+        ai_check = {
+            check_variable = { ai_random > 0.65 }
+        }
+        ai_test_scopes = test_self_controlled_states
+        ai_check_scope = {
+            NOT = { compliance < 25 }
+            is_controlled_by = ROOT
+            NOT = { is_core_of = ROOT }
+            cb_calculate_state_prices = yes
+            check_variable = { var = ROOT.political_power value = cb_cost compare = greater_than_or_equals }
+        }
+        ai_weights = {
+            arm_collaborators_click = { ai_will_do = { factor = 0 } }
+            promote_unity_click = { ai_will_do = { factor = 0 } }
+            undermine_independence_click = { ai_will_do = { factor = 0 } }
+            create_core1_click = {
+                ai_will_do = { factor = 0 }
+            }
+        }
+    }
+}
