@@ -11938,10 +11938,10 @@ SOV_great_patriotic_war = {
 
 		ai_hint_pp_cost = 15
 		custom_cost_trigger = {
-			command_power > 49
+			command_power > 24
 			has_political_power > 14
 		}
-		custom_cost_text = decision_cost_CP_50_pp_15
+		custom_cost_text = decision_cost_CP_25_pp_15
 
 		days_remove = 90
 
@@ -11951,7 +11951,7 @@ SOV_great_patriotic_war = {
 
 		complete_effect = {
 			hidden_effect = {
-				add_command_power = -50
+				add_command_power = -25
 				add_political_power = -15
 			}
 		}
@@ -11986,10 +11986,10 @@ SOV_great_patriotic_war = {
 
 		ai_hint_pp_cost = 50
 		custom_cost_trigger = {
-			command_power > 49
+			command_power > 24
 			has_political_power > 49
 		}
-		custom_cost_text = decision_cost_CP_50_pp_50
+		custom_cost_text = decision_cost_CP_25_pp_50
 
 		fire_only_once = yes
 		visible = {
@@ -12009,7 +12009,7 @@ SOV_great_patriotic_war = {
 
 		complete_effect = {
 			hidden_effect = {
-				add_command_power = -50
+				add_command_power = -25
 				add_political_power = -50
 			}
 			set_country_flag = SOV_order_227_flag

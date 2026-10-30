@@ -2827,7 +2827,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TUR_reclaim_macedonia
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 10
 		}
@@ -2909,7 +2909,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_reclaim_macedonia
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 10
 		}
@@ -3334,7 +3334,36 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = TUR_unlock_camelry_effect_tt
-			hidden_effect = { set_technology = { camelry = 1 } } 
+			hidden_effect = { 
+				set_technology = { 
+					camelry = 1 
+					popup = no 
+				} 
+			} 
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			division_template = {
+				name = "Camel Corps" 	
+
+				division_names_group = TUR_CAV_01
+
+				regiments = {
+					camelry = { x = 0 y = 0 } 
+					camelry = { x = 0 y = 1 } 
+					camelry = { x = 0 y = 2 } 
+					camelry = { x = 1 y = 0 } 
+					camelry = { x = 1 y = 1 }
+					camelry = { x = 1 y = 2 }
+				}
+			}
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "division_template = \"Camel Corps\" start_experience_factor = 0.05 start_equipment_factor = 1"
+					owner = TUR 
+					count = 3 
+				}
+			}
 		}
 	}
 
