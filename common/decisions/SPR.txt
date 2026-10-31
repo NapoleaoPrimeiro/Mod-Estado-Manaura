@@ -17368,7 +17368,7 @@ SPR_the_seeds_of_revolution = {
 		days_remove = 50
 
 		modifier = {
-			political_power_gain = -0.25
+			political_power_gain = -0.5
 		}
 
 		ai_will_do = {
@@ -17535,17 +17535,17 @@ SPR_the_seeds_of_revolution = {
 			}
 		}
 
-		cost = 150
+		cost = 75
 
 		fire_only_once = yes
 
-		days_remove = 90
+		days_remove = 60
 
 		modifier = {
 			
 		}
 
-			target_root_trigger = {
+		target_root_trigger = {
 			tag = SPC
 			has_completed_focus = SPR_plant_the_seeds_of_revolution
 		}

@@ -2827,7 +2827,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TUR_reclaim_macedonia
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 10
 		}
@@ -2909,7 +2909,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_reclaim_macedonia
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			base = 10
 		}
@@ -3334,7 +3334,36 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = TUR_unlock_camelry_effect_tt
-			hidden_effect = { set_technology = { camelry = 1 } } 
+			hidden_effect = { 
+				set_technology = { 
+					camelry = 1 
+					popup = no 
+				} 
+			} 
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			division_template = {
+				name = "Camel Corps" 	
+
+				division_names_group = TUR_CAV_01
+
+				regiments = {
+					camelry = { x = 0 y = 0 } 
+					camelry = { x = 0 y = 1 } 
+					camelry = { x = 0 y = 2 } 
+					camelry = { x = 1 y = 0 } 
+					camelry = { x = 1 y = 1 }
+					camelry = { x = 1 y = 2 }
+				}
+			}
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "division_template = \"Camel Corps\" start_experience_factor = 0.05 start_equipment_factor = 1"
+					owner = TUR 
+					count = 3 
+				}
+			}
 		}
 	}
 
@@ -3592,6 +3621,86 @@ focus_tree = {
 				}
 				add_offsite_building = { type = arms_factory level = 3 }
 			}
+		}
+	}
+
+
+	focus = {
+		id = TUR_third_expedition_to_aceh
+		icon = GFX_focus_INS_dominion_of_atjeh
+		prerequisite = { focus = TUR_the_damascus_diktat }
+		x = 0 
+		y = 1
+		relative_position_id = TUR_the_damascus_diktat
+		cost = 10
+		ai_will_do = {
+			base = 10
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+
+			navy_experience = 50  
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes 
+					free_building_slots = {
+						building = dockyard
+						size > 2
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+
+			IF = {
+				limit = {
+					ATJ = {
+						exists = yes 
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = ATJ 
+					expire = 0 
+				}	
+			}
+			ELSE_IF = {
+				limit = {
+					ATJ = {
+						exists = no  
+					}
+					1050 = {
+						NOT = {
+							is_owned_by = ROOT 
+						}
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				1050 = {
+					OWNER = {
+						ROOT = {
+							create_wargoal = {
+								type = liberate_wargoal
+								target = PREV
+								generator = { 1050 } 
+								expire = 0 
+							}	
+						}
+					}
+				}	
+			}
+			
 		}
 	}
 

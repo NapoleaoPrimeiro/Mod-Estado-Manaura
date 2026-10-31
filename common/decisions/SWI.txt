@@ -713,6 +713,7 @@ SWI_federal_council_decisions_category = {
 		target_trigger = {
 			FROM = {
 				exists = yes 
+				has_rule = can_join_factions
 				is_in_faction = no
 				NOT = { has_country_flag = SWI_entente_request_sent }
 				has_war = no #countries at war don't get invited
@@ -5332,14 +5333,42 @@ SWI_absolute_neutrality_decisions_category = {
 			NOT = {
 				any_other_country = {
 					has_government = fascism 
-					has_country_flag = SWI_gold_trading_partner
+					OR = {
+						has_country_flag = SWI_gold_trading_partner
+						has_country_flag = SWI_waiting_for_answer_timeout #offer already pending
+					}
+				}
+			}
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SWI_already_has_gold_partner_tt
+				NOT = {
+					any_other_country = {
+						has_government = fascism
+						has_country_flag = SWI_gold_trading_partner
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = SWI_gold_offer_still_pending_tt
+				NOT = {
+					any_other_country = {
+						has_government = fascism
+						has_country_flag = SWI_waiting_for_answer_timeout
+					}
 				}
 			}
 		}
 
 		cost = 50 
 		complete_effect = {
-			FROM = { country_event = { id = BBA_switzerland_trade.8 hours = 4 } }
+			FROM = {
+				#a second offer to another fascist nation is blocked while this one is pending
+				set_country_flag = { flag = SWI_waiting_for_answer_timeout days = 14 value = 1 } #in sync with EVENT_TIMEOUT_DEFAULT = 13
+				country_event = { id = BBA_switzerland_trade.8 hours = 4 }
+			}
 			effect_tooltip = {
 				custom_effect_tooltip = if_they_accept_tt
 				SWI_increase_gold_trade = yes 
@@ -5364,7 +5393,6 @@ SWI_absolute_neutrality_decisions_category = {
 
 		allowed = { original_tag = SWI }
 
-		
 		visible = {
 			original_tag = SWI
 			has_completed_focus = SWI_allied_gold
@@ -5385,16 +5413,44 @@ SWI_absolute_neutrality_decisions_category = {
 			NOT = {
 				any_other_country = {
 					has_government = democratic 
-					has_country_flag = SWI_gold_trading_partner
+					OR = {
+						has_country_flag = SWI_gold_trading_partner
+						has_country_flag = SWI_waiting_for_answer_timeout # offer already pending
+					}
 				}
 			}
 
 
 		}
 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SWI_already_has_gold_partner_tt
+				NOT = {
+					any_other_country = {
+						has_government = democratic
+						has_country_flag = SWI_gold_trading_partner
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = SWI_gold_offer_still_pending_tt
+				NOT = {
+					any_other_country = {
+						has_government = democratic
+						has_country_flag = SWI_waiting_for_answer_timeout
+					}
+				}
+			}
+		}
+
 		cost = 50 
 		complete_effect = {
-			FROM = { country_event = { id = BBA_switzerland_trade.8 hours = 4 } }
+			FROM = {
+				#a second offer to another democratic nation is blocked while this one is pending
+				set_country_flag = { flag = SWI_waiting_for_answer_timeout days = 14 value = 1 } #in sync with EVENT_TIMEOUT_DEFAULT
+				country_event = { id = BBA_switzerland_trade.8 hours = 4 }
+			}
 			effect_tooltip = {
 				custom_effect_tooltip = if_they_accept_tt
 				SWI_increase_gold_trade = yes 
@@ -5421,10 +5477,13 @@ SWI_absolute_neutrality_decisions_category = {
 		}
 		target_trigger = {
 			FROM = {											
+				NOT = { has_war_with = ROOT }
 				has_dynamic_modifier = { modifier = SWI_gold_trade_with_switzerland }
 				check_variable = { SWI_country_gold_trading_level < SWI.SWI_max_country_gold_trading_level }
 			}
 		}
+
+		days_re_enable = 90 # Prevent event spam, whether the target accepts, refuses or ignores
 
 		cost = 50 
 

@@ -6188,3 +6188,112 @@ country_event = {
 		hidden_effect = { BUL = { country_event = generic.5 } }
 	}
 }
+country_event = {
+	id = bftb_turkey.144
+	title = bftb_turkey.144.t
+	desc = bftb_turkey.144.desc
+	picture = GFX_report_event_tur_military_affair
+
+	is_triggered_only = yes
+	
+	option = {
+		name = denmark_occupation_event.2.a	#intentional
+		ai_chance = {
+			base = 2
+			modifier = {
+				factor = 3
+				has_government = FROM
+			}
+			modifier = {
+				add = 2
+				has_opinion = {
+					target = FROM
+					value > 50
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = communism
+					has_government = democratic
+				}
+				FROM = {
+					has_government = fascism
+				}
+			}
+			modifier = {
+				factor = 0
+				has_government = fascism
+				FROM = {
+					has_government = communism
+				}
+			}
+			modifier = {
+				factor = 0.3
+				original_tag = ENG
+				GER = {
+					has_guaranteed = FROM
+					NOT = {
+						has_government = ROOT
+					}
+				}
+			}
+			modifier = {
+				factor = 0.3
+				original_tag = GER
+				ENG = {
+					has_guaranteed = FROM
+					NOT = {
+						has_government = ROOT
+					}
+				}
+			}
+		}
+		give_guarantee = FROM
+		FROM = {
+			country_event = {
+				id = bftb_turkey.145
+				hours = 5
+			}
+		}
+	}
+	option = {
+		name = germany.200.b	#intentional
+		ai_chance = {
+			base = 2
+		}
+		FROM = {
+			country_event = {
+				id = bftb_turkey.146
+				hours = 5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = bftb_turkey.145
+	title = bftb_turkey.145.t
+	desc = bftb_turkey.145.desc
+	picture = GFX_report_event_generic_sign_treaty3
+
+	is_triggered_only = yes
+
+	option = {
+		name = bftb_turkey.145.a
+	}
+}
+
+country_event = {
+	id = bftb_turkey.146
+	title = bftb_turkey.146.t
+	desc = bftb_turkey.146.desc
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+
+	option = {
+		name = worrying
+	}
+}
+

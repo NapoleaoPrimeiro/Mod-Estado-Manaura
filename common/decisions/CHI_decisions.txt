@@ -12394,3 +12394,570 @@ PRC_infiltration_sea_cat = {
 		}
 	}
 }
+
+CHI_move_mios_cat = {
+	CHI_relocate_mio_shanghai_arsenal = {
+		icon = generic_merge_plant_tank
+
+		visible = {
+			NOT = {
+				has_country_flag = CHI_relocated_shanghai_arsenal
+			}
+		}
+
+		available = {
+			controls_state = CHI.mio_locations^7 # 613 Shanghai
+		}
+
+		### Losing the state mid-move aborts the relocation, no refund.
+		cancel_trigger = {
+			NOT = {
+				controls_state = CHI.mio_locations^7 # 613 Shanghai
+			}
+		}
+
+		on_map_mode = decision_view_only
+		highlight_states = {
+			highlight_state_targets = {
+				state = 613 # Shanghai
+			}
+		}
+
+		fire_only_once = no
+		cost = 50
+		days_remove = 35
+
+		remove_effect = {
+			custom_effect_tooltip = CHI_relocate_mio_tt
+			hidden_effect = {
+				set_country_flag = CHI_relocated_shanghai_arsenal
+			}
+		}
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 5
+				has_war_with = JAP
+			}
+		}
+	}
+
+	CHI_relocate_mio_kiangnan_shipyard = {
+		icon = generic_merge_plant_ship
+
+		visible = {
+			NOT = {
+				has_country_flag = CHI_relocated_kiangnan_shipyard
+			}
+		}
+
+		available = {
+			controls_state = CHI.mio_locations^7 # 613 Shanghai
+		}
+
+		### Losing the state mid-move aborts the relocation, no refund.
+		cancel_trigger = {
+			NOT = {
+				controls_state = CHI.mio_locations^7 # 613 Shanghai
+			}
+		}
+
+		on_map_mode = decision_view_only
+		highlight_states = {
+			highlight_state_targets = {
+				state = 613 # Shanghai
+			}
+		}
+
+		fire_only_once = no
+		cost = 50
+		days_remove = 35
+
+		remove_effect = {
+			custom_effect_tooltip = CHI_relocate_mio_tt
+			hidden_effect = {
+				set_country_flag = CHI_relocated_kiangnan_shipyard
+			}
+		}
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 5
+				has_war_with = JAP
+			}
+		}
+	}
+
+	CHI_relocate_mio_dagu_shipyard = {
+		icon = generic_merge_plant_ship
+
+		visible = {
+			NOT = {
+				has_country_flag = CHI_relocated_dagu_shipyard
+			}
+		}
+
+		available = {
+			controls_state = CHI.mio_locations^1 # 608 Beijing
+		}
+
+		### Losing the state mid-move aborts the relocation, no refund.
+		cancel_trigger = {
+			NOT = {
+				controls_state = CHI.mio_locations^1 # 608 Beijing
+			}
+		}
+
+		on_map_mode = decision_view_only
+		highlight_states = {
+			highlight_state_targets = {
+				state = 608 # Beijing
+			}
+		}
+
+		fire_only_once = no
+		cost = 50
+		days_remove = 35
+
+		remove_effect = {
+			custom_effect_tooltip = CHI_relocate_mio_tt
+			hidden_effect = {
+				set_country_flag = CHI_relocated_dagu_shipyard
+			}
+		}
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 5
+				has_war_with = JAP
+			}
+		}
+	}
+
+	CHI_relocate_mio_camco = {
+		icon = generic_merge_plant_aircraft
+
+		visible = {
+			NOT = {
+				has_country_flag = CHI_relocated_camco
+			}
+		}
+
+		available = {
+			controls_state = CHI.mio_locations^8 # 596 Zhejiang
+		}
+
+		### Losing the state mid-move aborts the relocation, no refund.
+		cancel_trigger = {
+			NOT = {
+				controls_state = CHI.mio_locations^8 # 596 Zhejiang
+			}
+		}
+
+		on_map_mode = decision_view_only
+		highlight_states = {
+			highlight_state_targets = {
+				state = 596 # Zhejiang
+			}
+		}
+
+		fire_only_once = no
+		cost = 50
+		days_remove = 35
+
+		remove_effect = {
+			custom_effect_tooltip = CHI_relocate_mio_tt
+			hidden_effect = {
+				set_country_flag = CHI_relocated_camco
+			}
+		}
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 5
+				has_war_with = JAP
+			}
+		}
+	}
+
+	CHI_relocate_mio_sinaw = {
+		icon = generic_merge_plant_aircraft
+
+		visible = {
+			NOT = {
+				has_country_flag = CHI_relocated_sinaw
+			}
+		}
+
+		available = {
+			controls_state = CHI.mio_locations^9 # 600 Jiangxi
+		}
+
+		### Losing the state mid-move aborts the relocation, no refund.
+		cancel_trigger = {
+			NOT = {
+				controls_state = CHI.mio_locations^9 # 600 Jiangxi
+			}
+		}
+
+		on_map_mode = decision_view_only
+		highlight_states = {
+			highlight_state_targets = {
+				state = 600 # Jiangxi
+			}
+		}
+
+		fire_only_once = no
+		cost = 50
+		days_remove = 35
+
+		remove_effect = {
+			custom_effect_tooltip = CHI_relocate_mio_tt
+			hidden_effect = {
+				set_country_flag = CHI_relocated_sinaw
+			}
+		}
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 5
+				has_war_with = JAP
+			}
+		}
+	}
+
+	CHI_relocate_mio_mukden_arsenal = {
+		icon = generic_merge_plant_materiel
+
+		visible = {
+			NOT = {
+				has_country_flag = CHI_relocated_mukden_arsenal
+			}
+		}
+
+		available = {
+			controls_state = CHI.mio_locations^5 # 716 Liaoning
+		}
+
+		### Losing the state mid-move aborts the relocation, no refund.
+		cancel_trigger = {
+			NOT = {
+				controls_state = CHI.mio_locations^5 # 716 Liaoning
+			}
+		}
+
+		on_map_mode = decision_view_only
+		highlight_states = {
+			highlight_state_targets = {
+				state = 716 # Liaoning
+			}
+		}
+
+		fire_only_once = no
+		cost = 50
+		days_remove = 35
+
+		remove_effect = {
+			custom_effect_tooltip = CHI_relocate_mio_tt
+			hidden_effect = {
+				set_country_flag = CHI_relocated_mukden_arsenal
+			}
+		}
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 5
+				has_war_with = JAP
+			}
+		}
+	}
+
+	CHI_relocate_mio_taiyuan_arsenal = {
+		icon = generic_merge_plant_materiel
+
+		visible = {
+			NOT = {
+				has_country_flag = CHI_relocated_taiyuan_arsenal
+			}
+		}
+
+		available = {
+			controls_state = CHI.mio_locations^2 # 615 Shanxi
+		}
+
+		### Losing the state mid-move aborts the relocation, no refund.
+		cancel_trigger = {
+			NOT = {
+				controls_state = CHI.mio_locations^2 # 615 Shanxi
+			}
+		}
+
+		on_map_mode = decision_view_only
+		highlight_states = {
+			highlight_state_targets = {
+				state = 615 # Shanxi
+			}
+		}
+
+		fire_only_once = no
+		cost = 50
+		days_remove = 35
+
+		remove_effect = {
+			custom_effect_tooltip = CHI_relocate_mio_tt
+			hidden_effect = {
+				set_country_flag = CHI_relocated_taiyuan_arsenal
+			}
+		}
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 5
+				has_war_with = JAP
+			}
+		}
+	}
+
+	CHI_relocate_mio_liaoning_arsenal = {
+		icon = generic_motorized
+
+		visible = {
+			NOT = {
+				has_country_flag = CHI_relocated_liaoning_arsenal
+			}
+		}
+
+		available = {
+			controls_state = CHI.mio_locations^3 # 715 Liaobei
+		}
+
+		### Losing the state mid-move aborts the relocation, no refund.
+		cancel_trigger = {
+			NOT = {
+				controls_state = CHI.mio_locations^3 # 715 Liaobei
+			}
+		}
+
+		on_map_mode = decision_view_only
+		highlight_states = {
+			highlight_state_targets = {
+				state = 715 # Liaobei
+			}
+		}
+
+		fire_only_once = no
+		cost = 50
+		days_remove = 35
+
+		remove_effect = {
+			custom_effect_tooltip = CHI_relocate_mio_tt
+			hidden_effect = {
+				set_country_flag = CHI_relocated_liaoning_arsenal
+			}
+		}
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 5
+				has_war_with = JAP
+			}
+		}
+	}
+
+	CHI_relocate_mio_hanyan_arsenal = {
+		icon = generic_merge_plant_materiel
+
+		visible = {
+			NOT = {
+				has_country_flag = CHI_relocated_hanyan_arsenal
+			}
+		}
+
+		available = {
+			controls_state = CHI.mio_locations^4 # 1036 Wuhan
+		}
+
+		### Losing the state mid-move aborts the relocation, no refund.
+		cancel_trigger = {
+			NOT = {
+				controls_state = CHI.mio_locations^4 # 1036 Wuhan
+			}
+		}
+
+		on_map_mode = decision_view_only
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1036 # Wuhan
+			}
+		}
+
+		fire_only_once = no
+		cost = 50
+		days_remove = 35
+
+		remove_effect = {
+			custom_effect_tooltip = CHI_relocate_mio_tt
+			hidden_effect = {
+				set_country_flag = CHI_relocated_hanyan_arsenal
+			}
+		}
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 5
+				has_war_with = JAP
+			}
+		}
+	}
+
+	CHI_relocate_mio_china_automobile_corporation = {
+		icon = generic_trucks
+
+		visible = {
+			NOT = {
+				has_country_flag = CHI_relocated_china_automobile_corporation
+			}
+		}
+
+		available = {
+			controls_state = CHI.mio_locations^7 # 613 Shanghai
+		}
+
+		### Losing the state mid-move aborts the relocation, no refund.
+		cancel_trigger = {
+			NOT = {
+				controls_state = CHI.mio_locations^7 # 613 Shanghai
+			}
+		}
+
+		on_map_mode = decision_view_only
+		highlight_states = {
+			highlight_state_targets = {
+				state = 613 # Shanghai
+			}
+		}
+
+		fire_only_once = no
+		cost = 50
+		days_remove = 35
+
+		remove_effect = {
+			custom_effect_tooltip = CHI_relocate_mio_tt
+			hidden_effect = {
+				set_country_flag = CHI_relocated_china_automobile_corporation
+			}
+		}
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 5
+				has_war_with = JAP
+			}
+		}
+	}
+
+	CHI_relocate_mio_jinling_arsenal = {
+		icon = generic_merge_plant_materiel
+
+		visible = {
+			NOT = {
+				has_country_flag = CHI_relocated_jinling_arsenal
+			}
+		}
+
+		available = {
+			controls_state = CHI.mio_locations^6 # 1035 Nanjing
+		}
+
+		### Losing the state mid-move aborts the relocation, no refund.
+		cancel_trigger = {
+			NOT = {
+				controls_state = CHI.mio_locations^6 # 1035 Nanjing
+			}
+		}
+
+		on_map_mode = decision_view_only
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1035 # Nanjing
+			}
+		}
+
+		fire_only_once = no
+		cost = 50
+		days_remove = 35
+
+		remove_effect = {
+			custom_effect_tooltip = CHI_relocate_mio_tt
+			hidden_effect = {
+				set_country_flag = CHI_relocated_jinling_arsenal
+			}
+		}
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 5
+				has_war_with = JAP
+			}
+		}
+	}
+
+	CHI_relocate_mio_beining_railway_tangshan = {
+		icon = generic_train
+
+		visible = {
+			NOT = {
+				has_country_flag = CHI_relocated_beining_railway_tangshan
+			}
+		}
+
+		available = {
+			controls_state = 609 # 609 East Hebei
+		}
+
+		### Losing the state mid-move aborts the relocation, no refund.
+		cancel_trigger = {
+			NOT = {
+				controls_state = 609 # 609 East Hebei
+			}
+		}
+
+		on_map_mode = decision_view_only
+		highlight_states = {
+			highlight_state_targets = {
+				state = 609 # East Hebei
+			}
+		}
+
+		fire_only_once = no
+		cost = 50
+		days_remove = 35
+
+		remove_effect = {
+			custom_effect_tooltip = CHI_relocate_mio_tt
+			hidden_effect = {
+				set_country_flag = CHI_relocated_beining_railway_tangshan
+			}
+		}
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 5
+				has_war_with = JAP
+			}
+		}
+	}
+}
+
