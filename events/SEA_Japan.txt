@@ -400,6 +400,98 @@ country_event = {
 
 
 
+# Enemy landing on Taiwan (naval invasion or paradrop) raises the Takasago Volunteers
+# Triggered from JAP_takasago_volunteers_landing_check in JAP_scripted_effects.txt
+country_event = {
+	id = SEA_japan.2
+	title = SEA_japan.2.t
+	desc = SEA_japan.2.desc
+	picture = GFX_report_event_japanese_soldiers_01
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			division_template = {
+				name = "Takasago Giyutai"		# Takasago Volunteers - indigenous Taiwanese volunteers raised on the island
+				is_locked = yes
+				template_counter = 109
+				role = infantry # front line defence, not garrison duty
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+				}
+				priority = 0
+			}
+
+			# create_unit only places on provinces friendly to the owner, so the enemy beachhead is skipped automatically
+			524 = { # Taiwan
+				create_unit = {
+					division = "name = \"1. Takasago Giyutai\" division_template = \"Takasago Giyutai\" start_experience_factor = 0.3 start_equipment_factor = 0.5"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"2. Takasago Giyutai\" division_template = \"Takasago Giyutai\" start_experience_factor = 0.3 start_equipment_factor = 0.5"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"3. Takasago Giyutai\" division_template = \"Takasago Giyutai\" start_experience_factor = 0.3 start_equipment_factor = 0.5"
+					owner = ROOT
+				}
+			}
+		}
+	}
+
+	option = {
+		name = SEA_japan.2.a
+		custom_effect_tooltip = JAP_takasago_volunteers_raised_tt
+	}
+}
+
+
+# First non-Japanese enemy landing on the Home Islands, naval or airborne, initiates Ketsu-Go
+# Triggered from JAP_home_islands_landing_check in JAP_scripted_effects.txt
+country_event = {
+	id = SEA_japan.3
+	title = SEA_japan.3.t
+	desc = SEA_japan.3.desc
+	picture = GFX_report_event_japanese_soldiers_02
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = SEA_japan.3.a
+
+		add_command_power = 50
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		# Requisitioned civilian lorries, the ones the prefectures were told to hand over
+		add_equipment_to_stockpile = {
+			type = motorized_equipment_1
+			amount = 250
+			producer = ROOT
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		add_ideas = JAP_ketsugo_field_expedients
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		JAP_small_army_faction_gain = yes
+	}
+}
+
+
 # Japan demands our Submission - event for MEN
 country_event = {
 	id = SEA_japan_foreign_policy.1
@@ -15032,6 +15124,161 @@ country_event = {
 		761 = {
 			add_core_of = MON
 		}
+
+	}
+}
+
+country_event = {
+	id = SEA_japan_air_accidents_events.03
+	title = SEA_japan_air_accidents_events.03.t
+	desc = SEA_japan_air_accidents_events.03.desc
+	picture = GFX_report_event_fighters
+	
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = SEA_japan_air_accidents_events.03.a
+
+		custom_effect_tooltip = JAP_yamamoto_removed_from_high_command_tt
+
+		### Display only - mirrors the consequences applied in SEA_japan_air_accidents_events.01, keep the values in sync.
+		effect_tooltip = {
+			JAP = {
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+}
+
+country_event = {
+	id = SEA_japan_air_accidents_events.04
+	title = SEA_japan_air_accidents_events.04.t
+	desc = SEA_japan_air_accidents_events.04.desc
+	picture = GFX_report_event_fighters
+	
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = SEA_japan_air_accidents_events.04.a
+
+		custom_effect_tooltip = JAP_yamamoto_survives_tt
+
+		### Display only - mirrors the outcome applied in SEA_japan_air_accidents_events.02, keep the values in sync.
+		effect_tooltip = {
+			JAP = {
+				if = {
+					limit = {
+						has_character = JAP_isoroku_yamamoto
+					}
+					JAP_isoroku_yamamoto = {
+						add_coordination = 1
+						add_maneuver = 1
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { 
+	id = SEA_japan_popup_events.51
+	title = SEA_japan_popup_events.51.t
+	desc = SEA_japan_popup_events.51.desc
+	picture = GFX_report_event_battle_of_midway
+
+	is_triggered_only = yes
+
+	fire_only_once = yes 
+
+	option = {
+		name = SEA_japan_popup_events.51.a
+
+		add_war_support = 0.05 
+		navy_experience = 25 
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+		
+		random_unit_leader = {
+			limit = {
+				has_character_flag = was_the_japanese_admiral_in_midway
+			}
+			add_skill_level = 1
+			add_attack = 1
+			add_coordination = 1
+			add_maneuver = 1
+		}	
+
+	}
+}
+
+country_event = { 
+	id = SEA_japan_popup_events.52
+	title = SEA_japan_popup_events.52.t
+	desc = SEA_japan_popup_events.52.desc
+	picture = GFX_report_event_battle_of_midway
+
+	is_triggered_only = yes
+
+	fire_only_once = yes 
+
+	option = {
+		name = SEA_japan_popup_events.52.a
+
+		add_war_support = 0.05 
+		navy_experience = 25 
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+		
+		random_unit_leader = {
+			limit = {
+				has_character_flag = was_the_american_admiral_in_midway
+			}
+			add_skill_level = 1
+			add_attack = 1
+			add_coordination = 1
+			add_maneuver = 1
+		}
+
+	}
+}
+
+country_event = { 
+	id = SEA_japan_popup_events.53
+	title = SEA_japan_popup_events.53.t
+	desc = SEA_japan_popup_events.53.desc
+	picture = GFX_report_event_JAP_loss_at_midway
+
+	is_triggered_only = yes
+
+	fire_only_once = yes 
+
+	option = {
+		name = SEA_japan_popup_events.53.a
+		
+		add_war_support = -0.1 
+
+	}
+}
+
+country_event = { 
+	id = SEA_japan_popup_events.54
+	title = SEA_japan_popup_events.54.t
+	desc = SEA_japan_popup_events.54.desc
+	picture = GFX_report_event_USA_loss_at_midway
+
+	is_triggered_only = yes
+
+	fire_only_once = yes 
+
+	option = {
+		name = SEA_japan_popup_events.54.a
+		
+		add_war_support = -0.1 
 
 	}
 }

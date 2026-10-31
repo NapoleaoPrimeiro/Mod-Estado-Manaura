@@ -10790,6 +10790,26 @@ focus_tree = {
 			is_subject = no
 			has_government = fascism
 			has_war = yes
+			OR = {
+				AND = {
+					NOT = {
+						any_allied_country = {
+							is_major = yes 
+							has_capitulated = no 
+						}
+					}
+					608 = {
+						is_controlled_by_ROOT_or_ally = no  
+					}
+					1035 = {
+						is_controlled_by_ROOT_or_ally = no  
+					}
+					592 = {
+						is_controlled_by_ROOT_or_ally = no  
+					}
+				}
+				has_global_flag = JAP_nuke_1
+			}
 		}
 
 		bypass = {

@@ -1942,105 +1942,15 @@ JAP_pacific_guardian = {
 
 		visible = {
 			has_completed_focus = JAP_pacific_guardian
+			INS = {
+				is_puppet = yes
+			}
 		}
 
 		available = {
-			HOL = {
-				#has_capitulated = yes
-				NOT =  { has_war_with = ROOT}
-			}
-			"INS" = {
-				is_puppet_of = HOL
-			}
-		}
-
-		fire_only_once = yes
-
-
-		modifier = {
-
-		}
-
-		days_remove = 0
-		days_re_enable = 0
-
-		cost = 50
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		complete_effect = {
-			HOL = { 
-				country_event = { 
-					id = wtt_japan.1 
-					hours = 6
-				} 
-			}
-		}
-	}
-
-	JAP_guardian_of_MAL = {
-
-		icon = jap_pacific_guardian
-
-		visible = {
-			has_completed_focus = JAP_pacific_guardian
-		}
-
-		available = {
-			ENG = {
-				#has_capitulated = yes
-				NOT =  { has_war_with = ROOT}
-			}
-			MAL = {
-				is_puppet_of = ENG
-			}
-		}
-
-		fire_only_once = yes
-
-
-		modifier = {
-
-		}
-
-		days_remove = 0
-		days_re_enable = 0
-
-		cost = 50
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		complete_effect = {
-			ENG = { 
-				country_event = { 
-					id = wtt_japan.1 
-					hours = 6
-				} 
-			}
-		}
-	}
-
-	JAP_guardian_of_indochina = {
-
-		icon = jap_pacific_guardian
-
-		visible = {
-			has_completed_focus = JAP_pacific_guardian
-		}
-
-		available = {
-			FRA = {
-				#has_capitulated = yes
-				NOT =  { has_war_with = ROOT}
-				OR = {
-					has_full_control_of_state = 670
-					has_full_control_of_state = 671
-					has_full_control_of_state = 286
-					has_full_control_of_state = 741
+			INS = {
+				OVERLORD = {
+					NOT = { has_war_with = ROOT }
 				}
 			}
 		}
@@ -2062,11 +1972,113 @@ JAP_pacific_guardian = {
 		}
 
 		complete_effect = {
-			FRA = { 
-				country_event = { 
-					id = wtt_japan.1 
-					hours = 3
-				} 
+			INS = {
+				OVERLORD = {
+					country_event = {
+						id = wtt_japan.1
+						hours = 6
+					}
+				}
+			}
+		}
+	}
+
+	JAP_guardian_of_MAL = {
+
+		icon = jap_pacific_guardian
+
+		visible = {
+			has_completed_focus = JAP_pacific_guardian
+			MAL = {
+				is_puppet = yes
+			}
+		}
+
+		available = {
+			MAL = {
+				OVERLORD = {
+					NOT = { has_war_with = ROOT }
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+
+		modifier = {
+
+		}
+
+		days_remove = 0
+		days_re_enable = 0
+
+		cost = 50
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		complete_effect = {
+			MAL = {
+				OVERLORD = {
+					country_event = {
+						id = wtt_japan.1
+						hours = 6
+					}
+				}
+			}
+		}
+	}
+
+	JAP_guardian_of_indochina = {
+
+		icon = jap_pacific_guardian
+
+		visible = {
+			has_completed_focus = JAP_pacific_guardian
+		}
+
+		available = {
+			670 = {
+				controller = {
+					NOT = { tag = JAP }
+					NOT = { has_war_with = ROOT }
+					has_full_control_of_state = 670
+					has_full_control_of_state = 671
+					has_full_control_of_state = 286
+					has_full_control_of_state = 741
+					has_full_control_of_state = 1066
+					has_full_control_of_state = 1067
+					has_full_control_of_state = 1068
+					has_full_control_of_state = 1069
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+
+		modifier = {
+
+		}
+
+		days_remove = 0
+		days_re_enable = 0
+
+		cost = 50
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		complete_effect = {
+			670 = {
+				controller = {
+					country_event = {
+						id = wtt_japan.1
+						hours = 3
+					}
+				}
 			}
 		}
 	}
@@ -8794,6 +8806,123 @@ JAP_imperial_influence_decision_cat = {
 			effect_tooltip = {
 				JAP_small_government_faction_loss = yes
 				
+			}
+		}
+	}
+
+	### AI MIRRORS OF THE INLAY DISAPPROVAL STAMP ###
+
+	# The AI cannot click the inlay stamp, so these give it the same 75 PP lever while the demand is live.
+	JAP_ai_curtail_the_army_faction_decision = {
+
+		priority = 1
+
+		icon = GFX_decision_JAP_civic_faction
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		visible = {
+			is_ai = yes
+			has_active_mission = JAP_government_faction_demands_limited_army_influence
+		}
+
+		available = {
+			JAP_army_faction_is_not_subdued = yes
+			NOT = {
+				has_country_flag = JAP_interfered_in_imperial_influence_flag
+			}
+		}
+
+		cost = 75
+
+		ai_will_do = {
+			base = 100
+		}
+
+		complete_effect = {
+			JAP_big_army_faction_loss = yes
+			set_country_flag = {
+				flag = JAP_interfered_in_imperial_influence_flag
+				value = 1
+				days = 180
+			}
+		}
+	}
+
+	JAP_ai_curtail_the_navy_faction_decision = {
+
+		priority = 1
+
+		icon = GFX_decision_JAP_civic_faction
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		visible = {
+			is_ai = yes
+			has_active_mission = JAP_government_faction_demands_limited_navy_influence
+		}
+
+		available = {
+			JAP_naval_faction_is_not_subdued = yes
+			NOT = {
+				has_country_flag = JAP_interfered_in_imperial_influence_flag
+			}
+		}
+
+		cost = 75
+
+		ai_will_do = {
+			base = 100
+		}
+
+		complete_effect = {
+			JAP_big_naval_faction_loss = yes
+			set_country_flag = {
+				flag = JAP_interfered_in_imperial_influence_flag
+				value = 1
+				days = 180
+			}
+		}
+	}
+
+	JAP_ai_curtail_the_zaibatsu_faction_decision = {
+
+		priority = 1
+
+		icon = GFX_decision_JAP_civic_faction
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		visible = {
+			is_ai = yes
+			has_active_mission = JAP_government_faction_demands_limited_zaibatsu_influence
+		}
+
+		available = {
+			JAP_zaibatsu_faction_is_not_subdued = yes
+			NOT = {
+				has_country_flag = JAP_interfered_in_imperial_influence_flag
+			}
+		}
+
+		cost = 75
+
+		ai_will_do = {
+			base = 100
+		}
+
+		complete_effect = {
+			JAP_big_zaibatsu_faction_loss = yes
+			set_country_flag = {
+				flag = JAP_interfered_in_imperial_influence_flag
+				value = 1
+				days = 180
 			}
 		}
 	}

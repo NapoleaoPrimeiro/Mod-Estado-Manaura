@@ -371,6 +371,13 @@ form_macedonian_empire_category = {
 	}
 }
 
+reform_the_samanid_empire_category = {
+
+	icon = generic_formable_nations
+
+	picture = GFX_decision_cat_generic_persian_empire 
+}
+
 form_turkestan_category = {
 
 	icon = generic_formable_nations
@@ -470,7 +477,13 @@ greater_italy_category = {
 	picture = GFX_decision_cat_picture_greater_italy
 	
 	allowed = {
-		
+		original_tag = ITA # Italy
+	}
+	visible = {
+		NOT = {
+			has_global_flag = greater_italy_flag
+			has_completed_focus = ITA_mare_nostrum_bba	#Mutually exclusive
+		}
 	}
 }
 
