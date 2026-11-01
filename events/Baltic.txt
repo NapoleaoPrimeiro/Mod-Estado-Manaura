@@ -398,10 +398,6 @@ country_event = {
 			}
 		}
 		GER = {
-			effect_tooltip = {
-				transfer_state = 188
-				add_state_core = 188
-			}
 			country_event = { days = 1 id = germany.22 }
 		}
 		hidden_effect = {
@@ -471,7 +467,7 @@ country_event = {
 				create_wargoal = {
 				type = take_state_focus
 				target = ROOT
-				generator = { 188 }
+				generator = { 188 1173 }
 				}
 				country_event = { days = 1 id = germany.23 }
 			}

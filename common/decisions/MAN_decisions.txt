@@ -36,7 +36,7 @@ MAN_banditry_category = {
 
 		highlight_states = {
 		highlight_state_targets = {
-					state = 714
+					state = 714 state = 1423 state = 1424 state = 1426 state = 1430 state = 1431 state = 1451
 				} 
 }
 
@@ -118,7 +118,7 @@ MAN_banditry_category = {
 
 		highlight_states = {
  highlight_state_targets = {
-			state = 714
+			state = 714 state = 1423 state = 1424 state = 1426 state = 1430 state = 1431 state = 1451
 		} 
 }
 		visible = {
@@ -210,7 +210,7 @@ MAN_banditry_category = {
 
 		highlight_states = {
  highlight_state_targets = {
-			state = 714
+			state = 714 state = 1423 state = 1424 state = 1426 state = 1430 state = 1431 state = 1451
 		} 
 }
 
@@ -267,7 +267,7 @@ MAN_banditry_category = {
 
 		highlight_states = {
  highlight_state_targets = {
-			state = 717
+			state = 717 state = 1417 state = 1419
 		} 
 }
 
@@ -352,7 +352,7 @@ MAN_banditry_category = {
 
 		highlight_states = {
  highlight_state_targets = {
-			state = 717
+			state = 717 state = 1417 state = 1419
 		} 
 }
 
@@ -442,7 +442,7 @@ MAN_banditry_category = {
 
 		highlight_states = {
  highlight_state_targets = {
-			state = 717
+			state = 717 state = 1417 state = 1419
 		} 
 }
 
@@ -499,7 +499,7 @@ MAN_banditry_category = {
 
 		highlight_states = {
  			highlight_state_targets = {
-				state = 610
+				state = 610 state = 1444 state = 1446 state = 1449 state = 1450
 			} 
 		}
 
@@ -580,7 +580,7 @@ MAN_banditry_category = {
 
 		highlight_states = {
  highlight_state_targets = {
-			state = 610
+			state = 610 state = 1444 state = 1446 state = 1449 state = 1450
 		} 
 }
 
@@ -674,7 +674,7 @@ MAN_banditry_category = {
 
 		highlight_states = {
  highlight_state_targets = {
-			state = 610
+			state = 610 state = 1444 state = 1446 state = 1449 state = 1450
 		} 
 }
 
@@ -793,7 +793,7 @@ MAN_banditry_category = {
 			}
 			random_owned_controlled_state = {
 				limit = { ROOT = { has_full_control_of_state = PREV } }
-				prioritize = { 714 }
+				prioritize = { 714 1423 1424 1426 1430 1431 1451 }
 				create_unit = {
 					division = "name = \"1. Northern Redemption Army\" division_template = \"Redemption Army\" start_experience_factor = 0.5" 
 					owner = MAN
@@ -867,7 +867,7 @@ MAN_banditry_category = {
 			}
 			random_owned_controlled_state = {
 				limit = { ROOT = { has_full_control_of_state = PREV } }
-				prioritize = { 610 }
+				prioritize = { 610 1444 1446 1449 1450 }
 				create_unit = {
 					division = "name = \"1. Western Redemption Army\" division_template = \"Redemption Army\" start_experience_factor = 0.5" 
 					owner = MAN
@@ -941,7 +941,7 @@ MAN_banditry_category = {
 			}
 			random_owned_controlled_state = {
 				limit = { ROOT = { has_full_control_of_state = PREV } }
-				prioritize = { 717 }
+				prioritize = { 717 1417 1419 }
 				create_unit = {
 					division = "name = \"1. Eastern Redemption Army\" division_template = \"Redemption Army\" start_experience_factor = 0.5" 
 					owner = MAN
@@ -1014,7 +1014,7 @@ MAN_banditry_category = {
 			}
 			random_owned_controlled_state = {
 				limit = { ROOT = { has_full_control_of_state = PREV } }
-				prioritize = { 328 }
+				prioritize = { 328 1416 1422 1434 1435 1437 1439 1454 }
 				create_unit = {
 					division = "name = \"1. Manchu Redemption Army\" division_template = \"Redemption Army\" start_experience_factor = 0.5" 
 					owner = MAN
@@ -1103,7 +1103,7 @@ MAN_banditry_category = {
 			}
 			random_owned_controlled_state = {
 				limit = { ROOT = { has_full_control_of_state = PREV } }
-				prioritize = { 714 }
+				prioritize = { 714 1423 1424 1426 1430 1431 1451 }
 				create_unit = {
 					division = "name = \"1. Heilungkiang National Salvation Army\" division_template = \"Rebel Forces\" start_experience_factor = 0.5" 
 					owner = MAN
@@ -1170,7 +1170,7 @@ MAN_banditry_category = {
 			}
 			random_owned_controlled_state = {
 				limit = { ROOT = { has_full_control_of_state = PREV } }
-				prioritize = { 610 }
+				prioritize = { 610 1444 1446 1449 1450 }
 				create_unit = {
 					division = "name = \"1. Jehol Counter-Japanese National Salvation Army\" division_template = \"Rebel Forces\" start_experience_factor = 0.5" 
 					owner = MAN
@@ -1237,7 +1237,7 @@ MAN_banditry_category = {
 			}
 			random_owned_controlled_state = {
 				limit = { ROOT = { has_full_control_of_state = PREV } }
-				prioritize = { 717 }
+				prioritize = { 717 1417 1419 }
 				create_unit = {
 					division = "name = \"1. Sungkiang National Liberation Army\" division_template = \"Rebel Forces\" start_experience_factor = 0.5" 
 					owner = MAN
@@ -1298,7 +1298,7 @@ MAN_banditry_category = {
 			}
 			random_owned_controlled_state = {
 				limit = { ROOT = { has_full_control_of_state = PREV } }
-				prioritize = { 328 }
+				prioritize = { 328 1416 1422 1434 1435 1437 1439 1454 }
 				create_unit = {
 					division = "name = \"1. Kirin Self-Defense Army\" division_template = \"Rebel Forces\" start_experience_factor = 0.5" 
 					owner = MAN
@@ -1401,7 +1401,7 @@ MAN_war_preparations = {
 			set_country_flag = MAN_manchu_banner_raised
 			random_owned_controlled_state = {
 				limit = { ROOT = { has_full_control_of_state = PREV } }
-				prioritize = { 328 }
+				prioritize = { 328 1416 1422 1434 1435 1437 1439 1454 }
 				create_unit = {
 					division = "name = \"Yellow Banner \" division_template = \"Manchu Banner\" start_experience_factor = 0.5" 
 					owner = MAN
@@ -1827,7 +1827,7 @@ prospect_for_resources = {
 
 		highlight_states = {
  			highlight_state_targets = {
-				state = 328
+				state = 328 state = 1416 state = 1422 state = 1434 state = 1435 state = 1437 state = 1439 state = 1454
 			} 
 		}
 
@@ -1836,7 +1836,7 @@ prospect_for_resources = {
 				has_completed_focus = MAN_develop_aluminum_sources
 				has_completed_focus = MAN_tsr_develop_aluminum_sources
 			}
-			controls_state = 328
+			controls_state = 328 controls_state = 1416 controls_state = 1422 controls_state = 1434 controls_state = 1435 controls_state = 1437 controls_state = 1439 controls_state = 1454
 			328 = {
 				NOT = {
 					has_state_flag = kirin_aluminium_developed
@@ -1877,7 +1877,7 @@ prospect_for_resources = {
 
 		highlight_states = {
  			highlight_state_targets = {
-				state = 716
+				state = 716 state = 1448 state = 1452 state = 1453
 			} 
 		}
 
@@ -1891,7 +1891,7 @@ prospect_for_resources = {
 				has_completed_focus = MAN_expand_showa_steel_works
 				has_completed_focus = MAN_tsr_expand_showa_steel_works
 			}
-			controls_state = 716
+			controls_state = 716 controls_state = 1448 controls_state = 1452 controls_state = 1453
 			716 = {
 				NOT = {
 					has_state_flag = liaotung_steel_developed
@@ -1933,7 +1933,7 @@ prospect_for_resources = {
 
 		highlight_states = {
 			highlight_state_targets = {
-				state = 328
+				state = 328 state = 1416 state = 1422 state = 1434 state = 1435 state = 1437 state = 1439 state = 1454
 			} 
 		}
 
@@ -1946,7 +1946,7 @@ prospect_for_resources = {
 			OR = {
 				has_completed_focus = MAN_tsr_expand_showa_steel_works
 			}
-			controls_state = 328
+			controls_state = 328 controls_state = 1416 controls_state = 1422 controls_state = 1434 controls_state = 1435 controls_state = 1437 controls_state = 1439 controls_state = 1454
 			328 = {
 				NOT = {
 					has_state_flag = erdaojiang_steel_developed
@@ -2032,10 +2032,16 @@ MAN_coring_decisions = {
 		        	is_fully_controlled_by = ROOT
 		        	OR = {
 		        		state = 408
-		        		state = 409
-		        		state = 657
-		        		state = 560
-		        		state = 561
+						state = 409
+						state = 657
+						state = 560
+						state = 561 state = 1337
+						state = 1332
+						state = 1333
+						state = 1334
+						state = 1335
+						state = 1336
+						state = 1338
 		        	}
 		        }
 		    }
@@ -2127,11 +2133,26 @@ MAN_coring_decisions = {
 		        	is_fully_controlled_by = ROOT
 		        	OR = {
 		        		state = 330
-		        		state = 817
-		        		state = 818
-		        		state = 819
-		        		state = 820
-		        		state = 329
+						state = 817
+						state = 818
+						state = 819 state = 1442
+						state = 820
+						state = 329
+						state = 1457
+						state = 1460
+						state = 1461
+						state = 1462
+						state = 1463
+						state = 1464
+						state = 1465
+						state = 1466
+						state = 1467
+						state = 1468
+						state = 1469
+						state = 1470
+						state = 1471
+						state = 1472
+						state = 1473
 		        	}
 		        }
 		    }
@@ -2319,11 +2340,26 @@ MAN_coring_decisions = {
 	        	is_fully_controlled_by = ROOT
 	        	OR = {
 	        		state = 330
-	        		state = 817
-	        		state = 818
-	        		state = 819
-	        		state = 820
-	        		state = 329
+					state = 817
+					state = 818
+					state = 819 state = 1442
+					state = 820
+					state = 329
+					state = 1457
+					state = 1460
+					state = 1461
+					state = 1462
+					state = 1463
+					state = 1464
+					state = 1465
+					state = 1466
+					state = 1467
+					state = 1468
+					state = 1469
+					state = 1470
+					state = 1471
+					state = 1472
+					state = 1473
 	        		state = 322
 	        		state = 757
 	        		state = 758
@@ -2609,11 +2645,23 @@ MAN_march_on_beijing_decisions = {
 			610 = {
 				is_controlled_by = MAN
 			}
+			1444 = { # KSRE (de 610)
+				is_controlled_by = MAN
+			}
+			1446 = { # KSRE (de 610)
+				is_controlled_by = MAN
+			}
+			1449 = { # KSRE (de 610)
+				is_controlled_by = MAN
+			}
+			1450 = { # KSRE (de 610)
+				is_controlled_by = MAN
+			}
 		}
 
 		highlight_states = {
 	 		highlight_state_targets = {
-				state = 610
+				state = 610 state = 1444 state = 1446 state = 1449 state = 1450
 				state = 1039
 			} 
 		}
@@ -2681,7 +2729,7 @@ MAN_march_on_beijing_decisions = {
 
 		highlight_states = {
 			highlight_state_targets = {
-				state = 610
+				state = 610 state = 1444 state = 1446 state = 1449 state = 1450
 				state = 1039
 			}
 		}
@@ -2730,6 +2778,12 @@ MAN_march_on_beijing_decisions = {
 			609 = {
 				is_controlled_by = MAN
 			}
+			1487 = { # KSRE (de 609)
+				is_controlled_by = MAN
+			}
+			1488 = { # KSRE (de 609)
+				is_controlled_by = MAN
+			}
 		}
 
 		visible = {
@@ -2738,8 +2792,8 @@ MAN_march_on_beijing_decisions = {
 
 		highlight_states = {
 	 		highlight_state_targets = {
-				state = 609
-				state = 608
+				state = 609 state = 1487 state = 1488
+				state = 608 state = 1489 state = 1490 state = 1491 state = 1492
 			} 
 		}
 		
@@ -2806,8 +2860,8 @@ MAN_march_on_beijing_decisions = {
 
 		highlight_states = {
 			highlight_state_targets = {
-				state = 609
-				state = 608
+				state = 609 state = 1487 state = 1488
+				state = 608 state = 1489 state = 1490 state = 1491 state = 1492
 			}
 		}
 
@@ -2817,12 +2871,24 @@ MAN_march_on_beijing_decisions = {
 			608 = {	
 				is_fully_controlled_by = ROOT
 			}
+			1489 = {	 # KSRE (de 608)
+				is_fully_controlled_by = ROOT
+			}
+			1490 = {	 # KSRE (de 608)
+				is_fully_controlled_by = ROOT
+			}
+			1491 = {	 # KSRE (de 608)
+				is_fully_controlled_by = ROOT
+			}
+			1492 = {	 # KSRE (de 608)
+				is_fully_controlled_by = ROOT
+			}
 		}
 
 		cancel_effect = {
 			effect_tooltip = {
 				country_event = { id = tsr_manchukuo_border_war.3 }
-				transfer_state = 608
+				transfer_state = 608 transfer_state = 1489 transfer_state = 1490 transfer_state = 1491 transfer_state = 1492
 			}
 		}
 
@@ -2855,6 +2921,18 @@ MAN_march_on_beijing_decisions = {
 			608 = {
 				is_controlled_by = MAN
 			}
+			1489 = { # KSRE (de 608)
+				is_controlled_by = MAN
+			}
+			1490 = { # KSRE (de 608)
+				is_controlled_by = MAN
+			}
+			1491 = { # KSRE (de 608)
+				is_controlled_by = MAN
+			}
+			1492 = { # KSRE (de 608)
+				is_controlled_by = MAN
+			}
 		}
 
 		visible = {
@@ -2863,7 +2941,7 @@ MAN_march_on_beijing_decisions = {
 
 		highlight_states = {
 	 		highlight_state_targets = {
-				state = 608
+				state = 608 state = 1489 state = 1490 state = 1491 state = 1492
 				state = 614
 			} 
 		}
@@ -2931,7 +3009,7 @@ MAN_march_on_beijing_decisions = {
 
 		highlight_states = {
 			highlight_state_targets = {
-				state = 608
+				state = 608 state = 1489 state = 1490 state = 1491 state = 1492
 				state = 614
 			}
 		}

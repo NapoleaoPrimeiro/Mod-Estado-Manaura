@@ -1,36 +1,244 @@
 USA_congress = {
-	USA_com_need_support = {
-		icon = generic_political_discourse
-		available = {
-			
-		}
+	USA_DEBUG_1 = {
+		icon = generic_political_rally
 		visible = {
-			has_completed_focus = USA_suspend_the_presecution
+			always = no
 		}
-		cost = 50
-
+		available = {
+			always = yes
+		}
+		cost = 0
 		ai_will_do = {
-			factor = 1
 		}
-		modifier = {
-			political_power_gain = -0.1
-			communism_drift = 0.05
-		}
-		days_remove = 20
 		remove_effect = {
-			USA_congress_medium_support = yes
+			GER = { transfer_state = 362 transfer_state = 1697 transfer_state = 1698 transfer_state = 1699 } # Virginia
+			GER = { transfer_state = 363 transfer_state = 1693 } # NC
+			GER = { transfer_state = 364 transfer_state = 1692 } # SC
+			GER = { transfer_state = 365 } # Georgia
+			GER = { transfer_state = 366 transfer_state = 1690 transfer_state = 1691 } # Florida
+			GER = { transfer_state = 367 transfer_state = 1689 transfer_state = 1754 } # Alabama
+			GER = { transfer_state = 370 transfer_state = 1755 } # Mississippi
+			GER = { transfer_state = 371 transfer_state = 1346 transfer_state = 1347 transfer_state = 1348 transfer_state = 1349 } # Louisiana
+			GER = { transfer_state = 374 transfer_state = 1176 transfer_state = 1676 } # Oklahoma
+			GER = { transfer_state = 375 transfer_state = 1150 transfer_state = 1350 transfer_state = 1351 transfer_state = 1666 transfer_state = 1667 transfer_state = 1668 transfer_state = 1669 transfer_state = 1670 transfer_state = 1671 transfer_state = 1672 } # Texas
+			GER = { transfer_state = 372 transfer_state = 1680 } # Arkansas
+			GER = { transfer_state = 368 transfer_state = 1688 } # Tennessee
+			GER = { transfer_state = 373 transfer_state = 1678 transfer_state = 1679 } # Missouri
+			GER = { transfer_state = 369 transfer_state = 1687 } # Kentucky
+			GER = { transfer_state = 376 transfer_state = 1151 transfer_state = 1153 transfer_state = 1352 transfer_state = 1353 transfer_state = 1567 transfer_state = 1657 transfer_state = 1658 transfer_state = 1659 transfer_state = 1660 transfer_state = 1661 transfer_state = 1662 transfer_state = 1663 transfer_state = 1665 } # New Mexico
+			GER = { transfer_state = 383 transfer_state = 1177 transfer_state = 1675 } # Kansas
+			GER = { transfer_state = 378 transfer_state = 1167 transfer_state = 1562 transfer_state = 1563 transfer_state = 1622 transfer_state = 1623 transfer_state = 1624 transfer_state = 1625 transfer_state = 1655 transfer_state = 1753 } # California
+			GER = { transfer_state = 385 transfer_state = 1160 transfer_state = 1561 transfer_state = 1616 transfer_state = 1617 transfer_state = 1618 transfer_state = 1619 transfer_state = 1621 transfer_state = 1636 } # Oregon
+			GER = { transfer_state = 379 transfer_state = 1159 transfer_state = 1566 transfer_state = 1626 transfer_state = 1627 transfer_state = 1673 transfer_state = 1674 transfer_state = 1752 } # Nevada
+			GER = { transfer_state = 388 transfer_state = 1158 transfer_state = 1359 transfer_state = 1360 transfer_state = 1361 } # Montana
+			GER = { transfer_state = 389 transfer_state = 1365 transfer_state = 1366 } # North Dakota
 		}
 	}
+	USA_DEBUG_1b = {
+		icon = generic_political_rally
+		visible = {
+			always = no
+		}
+		available = {
+			always = yes
+		}
+		cost = 0
+		ai_will_do = {
+		}
+		remove_effect = {
+			USA = { transfer_state = 362 transfer_state = 1697 transfer_state = 1698 transfer_state = 1699 } # Virginia
+			USA = { transfer_state = 363 transfer_state = 1693 } # NC
+			USA = { transfer_state = 364 transfer_state = 1692 } # SC
+			USA = { transfer_state = 365 } # Georgia
+			USA = { transfer_state = 366 transfer_state = 1690 transfer_state = 1691 } # Florida
+			USA = { transfer_state = 367 transfer_state = 1689 transfer_state = 1754 } # Alabama
+			USA = { transfer_state = 370 transfer_state = 1755 } # Mississippi
+			USA = { transfer_state = 371 transfer_state = 1346 transfer_state = 1347 transfer_state = 1348 transfer_state = 1349 } # Louisiana
+			USA = { transfer_state = 374 transfer_state = 1176 transfer_state = 1676 } # Oklahoma
+			USA = { transfer_state = 375 transfer_state = 1150 transfer_state = 1350 transfer_state = 1351 transfer_state = 1666 transfer_state = 1667 transfer_state = 1668 transfer_state = 1669 transfer_state = 1670 transfer_state = 1671 transfer_state = 1672 } # Texas
+			USA = { transfer_state = 372 transfer_state = 1680 } # Arkansas
+			USA = { transfer_state = 368 transfer_state = 1688 } # Tennessee
+			USA = { transfer_state = 373 transfer_state = 1678 transfer_state = 1679 } # Missouri
+			USA = { transfer_state = 369 transfer_state = 1687 } # Kentucky
+			USA = { transfer_state = 376 transfer_state = 1151 transfer_state = 1153 transfer_state = 1352 transfer_state = 1353 transfer_state = 1567 transfer_state = 1657 transfer_state = 1658 transfer_state = 1659 transfer_state = 1660 transfer_state = 1661 transfer_state = 1662 transfer_state = 1663 transfer_state = 1665 } # New Mexico
+			USA = { transfer_state = 383 transfer_state = 1177 transfer_state = 1675 } # Kansas
+			USA = { transfer_state = 378 transfer_state = 1167 transfer_state = 1562 transfer_state = 1563 transfer_state = 1622 transfer_state = 1623 transfer_state = 1624 transfer_state = 1625 transfer_state = 1655 transfer_state = 1753 } # California
+			USA = { transfer_state = 385 transfer_state = 1160 transfer_state = 1561 transfer_state = 1616 transfer_state = 1617 transfer_state = 1618 transfer_state = 1619 transfer_state = 1621 transfer_state = 1636 } # Oregon
+			USA = { transfer_state = 379 transfer_state = 1159 transfer_state = 1566 transfer_state = 1626 transfer_state = 1627 transfer_state = 1673 transfer_state = 1674 transfer_state = 1752 } # Nevada
+			USA = { transfer_state = 388 transfer_state = 1158 transfer_state = 1359 transfer_state = 1360 transfer_state = 1361 } # Montana
+			USA = { transfer_state = 389 transfer_state = 1365 transfer_state = 1366 } # North Dakota
+		}
+	}
+	USA_DEBUG_2 = {
+		icon = generic_political_rally
+		visible = {
+			always = no
+		}
+		available = {
+			always = yes
+		}
+		cost = 0
+		ai_will_do = {
+		}
+		remove_effect = {
+			GER = { transfer_state = 362 transfer_state = 1697 transfer_state = 1698 transfer_state = 1699 } # Virginia
+			GER = { transfer_state = 363 transfer_state = 1693 } # NC
+			GER = { transfer_state = 364 transfer_state = 1692 } # SC
+			GER = { transfer_state = 365 } # Georgia
+			GER = { transfer_state = 366 transfer_state = 1690 transfer_state = 1691 } # Florida
+			GER = { transfer_state = 367 transfer_state = 1689 transfer_state = 1754 } # Alabama
+			GER = { transfer_state = 370 transfer_state = 1755 } # Mississippi
+			GER = { transfer_state = 371 transfer_state = 1346 transfer_state = 1347 transfer_state = 1348 transfer_state = 1349 } # Louisiana
+			GER = { transfer_state = 374 transfer_state = 1176 transfer_state = 1676 } # Oklahoma
+			GER = { transfer_state = 375 transfer_state = 1150 transfer_state = 1350 transfer_state = 1351 transfer_state = 1666 transfer_state = 1667 transfer_state = 1668 transfer_state = 1669 transfer_state = 1670 transfer_state = 1671 transfer_state = 1672 } # Texas
+			GER = { transfer_state = 372 transfer_state = 1680 } # Arkansas
+			GER = { transfer_state = 368 transfer_state = 1688 } # Tennessee
+			#GER = { transfer_state = 373 } # Missouri
+			GER = { transfer_state = 369 transfer_state = 1687 } # Kentucky
+			#GER = { transfer_state = 376 } # New Mexico
+			#GER = { transfer_state = 383 } # Kansas
+			GER = { transfer_state = 378 transfer_state = 1167 transfer_state = 1562 transfer_state = 1563 transfer_state = 1622 transfer_state = 1623 transfer_state = 1624 transfer_state = 1625 transfer_state = 1655 transfer_state = 1753 } # California
+			#GER = { transfer_state = 385 } # Oregon
+			#GER = { transfer_state = 379 } # Nevada
+			#GER = { transfer_state = 388 } # Montana
+			#GER = { transfer_state = 389 } # North Dakota
+		}
+	}
+	USA_DEBUG_2b = {
+		icon = generic_political_rally
+		visible = {
+			always = no
+		}
+		available = {
+			always = yes
+		}
+		cost = 0
+		ai_will_do = {
+		}
+		remove_effect = {
+			USA = { transfer_state = 362 transfer_state = 1697 transfer_state = 1698 transfer_state = 1699 } # Virginia
+			USA = { transfer_state = 363 transfer_state = 1693 } # NC
+			USA = { transfer_state = 364 transfer_state = 1692 } # SC
+			USA = { transfer_state = 365 } # Georgia
+			USA = { transfer_state = 366 transfer_state = 1690 transfer_state = 1691 } # Florida
+			USA = { transfer_state = 367 transfer_state = 1689 transfer_state = 1754 } # Alabama
+			USA = { transfer_state = 370 transfer_state = 1755 } # Mississippi
+			USA = { transfer_state = 371 transfer_state = 1346 transfer_state = 1347 transfer_state = 1348 transfer_state = 1349 } # Louisiana
+			USA = { transfer_state = 374 transfer_state = 1176 transfer_state = 1676 } # Oklahoma
+			USA = { transfer_state = 375 transfer_state = 1150 transfer_state = 1350 transfer_state = 1351 transfer_state = 1666 transfer_state = 1667 transfer_state = 1668 transfer_state = 1669 transfer_state = 1670 transfer_state = 1671 transfer_state = 1672 } # Texas
+			USA = { transfer_state = 372 transfer_state = 1680 } # Arkansas
+			USA = { transfer_state = 368 transfer_state = 1688 } # Tennessee
+			USA = { transfer_state = 369 transfer_state = 1687 } # Kentucky
+			USA = { transfer_state = 378 transfer_state = 1167 transfer_state = 1562 transfer_state = 1563 transfer_state = 1622 transfer_state = 1623 transfer_state = 1624 transfer_state = 1625 transfer_state = 1655 transfer_state = 1753 } # California
+		}
+	}
+	USA_DEBUG_3 = {
+		icon = generic_political_rally
+		visible = {
+			always = no
+		}
+		available = {
+			always = yes
+		}
+		cost = 0
+		ai_will_do = {
+		}
+		remove_effect = {
+			GER = { transfer_state = 362 transfer_state = 1697 transfer_state = 1698 transfer_state = 1699 } # Virginia
+			GER = { transfer_state = 363 transfer_state = 1693 } # NC
+			GER = { transfer_state = 364 transfer_state = 1692 } # SC
+			GER = { transfer_state = 365 } # Georgia
+			GER = { transfer_state = 366 transfer_state = 1690 transfer_state = 1691 } # Florida
+			GER = { transfer_state = 367 transfer_state = 1689 transfer_state = 1754 } # Alabama
+			GER = { transfer_state = 370 transfer_state = 1755 } # Mississippi
+			GER = { transfer_state = 371 transfer_state = 1346 transfer_state = 1347 transfer_state = 1348 transfer_state = 1349 } # Louisiana
+			#GER = { transfer_state = 374 } # Oklahoma
+			GER = { transfer_state = 375 transfer_state = 1150 transfer_state = 1350 transfer_state = 1351 transfer_state = 1666 transfer_state = 1667 transfer_state = 1668 transfer_state = 1669 transfer_state = 1670 transfer_state = 1671 transfer_state = 1672 } # Texas
+			#GER = { transfer_state = 372 } # Arkansas
+			GER = { transfer_state = 368 transfer_state = 1688 } # Tennessee
+			#GER = { transfer_state = 373 } # Missouri
+			GER = { transfer_state = 369 transfer_state = 1687 } # Kentucky
+			#GER = { transfer_state = 376 } # New Mexico
+			#GER = { transfer_state = 383 } # Kansas
+			#GER = { transfer_state = 378 } # California
+			#GER = { transfer_state = 385 } # Oregon
+			#GER = { transfer_state = 379 } # Nevada
+			#GER = { transfer_state = 388 } # Montana
+			#GER = { transfer_state = 389 } # North Dakota
+		}
+	}
+	USA_DEBUG_3b = {
+		icon = generic_political_rally
+		visible = {
+			always = no
+		}
+		available = {
+			always = yes
+		}
+		cost = 0
+		ai_will_do = {
+		}
+		remove_effect = {
+			USA = { transfer_state = 362 transfer_state = 1697 transfer_state = 1698 transfer_state = 1699 } # Virginia
+			USA = { transfer_state = 363 transfer_state = 1693 } # NC
+			USA = { transfer_state = 364 transfer_state = 1692 } # SC
+			USA = { transfer_state = 365 } # Georgia
+			USA = { transfer_state = 366 transfer_state = 1690 transfer_state = 1691 } # Florida
+			USA = { transfer_state = 367 transfer_state = 1689 transfer_state = 1754 } # Alabama
+			USA = { transfer_state = 370 transfer_state = 1755 } # Mississippi
+			USA = { transfer_state = 371 transfer_state = 1346 transfer_state = 1347 transfer_state = 1348 transfer_state = 1349 } # Louisiana
+			USA = { transfer_state = 375 transfer_state = 1150 transfer_state = 1350 transfer_state = 1351 transfer_state = 1666 transfer_state = 1667 transfer_state = 1668 transfer_state = 1669 transfer_state = 1670 transfer_state = 1671 transfer_state = 1672 } # Texas
+			USA = { transfer_state = 368 transfer_state = 1688 } # Tennessee
+			USA = { transfer_state = 369 transfer_state = 1687 } # Kentucky
+		}
+	}
+	USA_RR_debug_decision_2 = {
+		icon = GFX_decision_gre_paying_ifc_debt
 
+		ai_will_do = {
+			base = 1
+		}
+	
+		allowed = {  
+			original_tag = USA 
+		}
+
+		available = {
+		}
+		visible = {
+			always = no
+		}
+
+		#target_trigger = {
+		#	FROM = { original_tag = LIB }
+		#}
+
+		#fire_only_once = yes
+		days_remove = 1
+
+		remove_effect = {
+			GER = {
+				add_to_faction = USA
+				add_to_faction = HUN
+				add_to_faction = ITA
+				add_to_faction = ROM
+			}
+		}
+	}
 	USA_small_lobby_effort = {
-		icon = generic_political_discourse
+		icon = GFX_decision_new_usa_congress_1
 		available = {
 			OR = {
 				check_variable = { senators_support < senators_total }
 				check_variable = { representatives_support < representatives_total }
 			}
+			if = {
+				limit = { has_completed_focus = USA_southern_crisis }
+				not = { has_decision = USA_antagonize_congress has_decision = USA_stage_a_protest has_decision = USA_gridlock_debate }
+			}
 			not = {
 				has_decision = USA_medium_lobby_effort
+				has_decision = USA_significant_lobby_effort
 			}
 			OR = {
 				political_power_daily > 0.3
@@ -62,14 +270,19 @@ USA_congress = {
 		}
 	}
 	USA_medium_lobby_effort = {
-		icon = generic_political_discourse
+		icon = GFX_decision_new_usa_congress_2
 		available = {
 			OR = {
 				check_variable = { senators_support < senators_total }
 				check_variable = { representatives_support < representatives_total }
 			}
+			if = {
+				limit = { has_completed_focus = USA_southern_crisis }
+				not = { has_decision = USA_antagonize_congress has_decision = USA_stage_a_protest has_decision = USA_gridlock_debate }
+			}
 			not = {
 				has_decision = USA_small_lobby_effort
+				has_decision = USA_significant_lobby_effort
 			}
 			OR = {
 				political_power_daily > 0.75
@@ -98,6 +311,209 @@ USA_congress = {
 		}
 		remove_effect = {
 			USA_congress_medium_support = yes
+		}
+	}
+	USA_significant_lobby_effort = {
+		icon = GFX_decision_new_usa_congress_3
+		available = {
+			OR = {
+				check_variable = { senators_support < senators_total }
+				check_variable = { representatives_support < representatives_total }
+			}
+			if = {
+				limit = { has_completed_focus = USA_southern_crisis }
+				not = { has_decision = USA_antagonize_congress has_decision = USA_stage_a_protest has_decision = USA_gridlock_debate }
+			}
+			not = {
+				has_decision = USA_small_lobby_effort
+				has_decision = USA_medium_lobby_effort
+			}
+			OR = {
+				political_power_daily > 1
+				has_political_power > 50
+			}
+		}
+		cost = 0
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				congress_medium_support_trigger = yes
+				factor = 0.5
+			}
+			modifier = {
+				congress_low_support_trigger = yes
+				factor = 0.5
+			}
+			modifier = {
+				congress_high_support_trigger = yes
+				factor = 0
+			}
+		}
+		days_remove = 65
+		modifier = {
+			political_power_gain = -1.25
+		}
+		remove_effect = {
+			USA_congress_large_support = yes
+		}
+	}
+	USA_stage_a_protest = {
+		icon = generic_political_rally
+		visible = {
+			has_completed_focus = USA_southern_crisis
+		}
+		available = {
+			#has_completed_focus = USA_southern_crisis
+			OR = {
+				check_variable = { senators_support > 0 }
+				check_variable = { representatives_support > 0 }
+			}
+			not = {
+				has_decision = USA_gridlock_debate
+				has_decision = USA_antagonize_congress
+			}
+			not = {
+				has_decision = USA_small_lobby_effort
+				has_decision = USA_medium_lobby_effort
+				has_decision = USA_significant_lobby_effort
+			}
+			OR = {
+				political_power_daily > 0.10
+				has_political_power > 10
+			}
+		}
+		cost = 0
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				congress_medium_support_trigger = yes
+				factor = 0.6
+			}
+			modifier = {
+				congress_low_support_trigger = yes
+				factor = 0.3
+			}
+			modifier = {
+				congress_high_support_trigger = yes
+				factor = 1
+			}
+		}
+		modifier = {
+			political_power_gain = -0.10
+		}
+		days_remove = 10
+		remove_effect = {
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.01
+			}
+			USA_congress_small_opposition = yes
+		}
+	}
+	USA_gridlock_debate = {
+		icon = generic_political_address
+		visible = {
+			has_completed_focus = USA_southern_crisis
+		}
+		available = {
+			#has_completed_focus = USA_southern_crisis
+			OR = {
+				check_variable = { senators_support > 0 }
+				check_variable = { representatives_support > 0 }
+			}
+			not = {
+				has_decision = USA_stage_a_protest
+				has_decision = USA_antagonize_congress
+			}
+			not = {
+				has_decision = USA_small_lobby_effort
+				has_decision = USA_medium_lobby_effort
+				has_decision = USA_significant_lobby_effort
+			}
+			OR = {
+				political_power_daily > 0.15
+				has_political_power > 10
+			}
+		}
+		cost = 0
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				congress_medium_support_trigger = yes
+				factor = 0.6
+			}
+			modifier = {
+				congress_low_support_trigger = yes
+				factor = 0.3
+			}
+			modifier = {
+				congress_high_support_trigger = yes
+				factor = 1
+			}
+		}
+		modifier = {
+			political_power_gain = -0.15
+		}
+		days_remove = 20
+		remove_effect = {
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.025
+			}
+			USA_congress_medium_opposition = yes
+		}
+	}
+	USA_antagonize_congress = {
+		icon = generic_speech
+		visible = {
+			has_completed_focus = USA_southern_crisis
+		}
+		available = {
+			#has_completed_focus = USA_southern_crisis
+			OR = {
+				check_variable = { senators_support > 0 }
+				check_variable = { representatives_support > 0 }
+			}
+			not = {
+				has_decision = USA_stage_a_protest
+				has_decision = USA_gridlock_debate
+			}
+			not = {
+				has_decision = USA_small_lobby_effort
+				has_decision = USA_medium_lobby_effort
+				has_decision = USA_significant_lobby_effort
+			}
+			OR = {
+				political_power_daily > 0.2
+				has_political_power > 10
+			}
+		}
+		cost = 0
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				congress_medium_support_trigger = yes
+				factor = 0.6
+			}
+			modifier = {
+				congress_low_support_trigger = yes
+				factor = 0.3
+			}
+			modifier = {
+				congress_high_support_trigger = yes
+				factor = 1
+			}
+		}
+		modifier = {
+			political_power_gain = -0.2
+		}
+		days_remove = 30
+		remove_effect = {
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.04
+			}
+			USA_congress_large_opposition = yes
 		}
 	}
 	USA_special_measures = {
@@ -177,7 +593,7 @@ USA_congress = {
 				check_variable = { representatives_support < representatives_total }
 			}
 		}
-		visible = { has_completed_focus = USA_agricultural_adjustment_act }
+		visible = { OR = { has_completed_focus = USA_agricultural_adjustment_act has_completed_focus = USA_new_agricultural_adjustment_act has_completed_focus = USA_union_defense_act } }
 		cost = 0
 		ai_will_do = {
 			factor = 1
@@ -201,7 +617,7 @@ USA_congress = {
 				check_variable = { representatives_support < representatives_total }
 			}
 		}
-		visible = { has_completed_focus = USA_income_tax_reform }
+		visible = { OR = { has_completed_focus = USA_income_tax_reform has_completed_focus = USA_new_income_tax_reform has_completed_focus = USA_military_pensions } }
 		cost = 0
 		ai_will_do = {
 			factor = 1
@@ -214,6 +630,41 @@ USA_congress = {
 		modifier = { consumer_goods_factor = 0.05 }
 		remove_effect = {
 			USA_congress_small_support = yes
+		}
+	}
+	USA_institute_favorable_local_regulations = {
+		icon = ger_mefo_bills
+		available = {
+			has_government = democratic
+			OR = {
+				check_variable = { senators_support < senators_total }
+				check_variable = { representatives_support < representatives_total }
+			}
+		}
+		visible = { OR = {
+			has_completed_focus = USA_accelerated_recovery
+			has_completed_focus = USA_timely_intervention
+			has_completed_focus = USA_new_agricultural_adjustment_act
+		} }
+		cost = 0
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				congress_low_support_trigger = yes
+				factor = 0
+			}
+		}
+		days_re_enable = 30
+		#days_remove = 90
+		#modifier = { consumer_goods_factor = 0.05 }
+		remove_effect = {
+			USA_congress_small_support = yes
+			#skip_line_tt = yes
+			USA_modify_eco = yes
+			add_to_variable = {
+				USA_eco_dy_consumer_goods_factor = 0.015
+				tooltip = consumer_goods_factor_tt
+			}
 		}
 	}
 	USA_amend_the_budget = {
@@ -254,6 +705,27 @@ USA_congress = {
 			}
 		}
 		modifier = { research_speed_factor = 0.08 }
+		remove_effect = {
+			USA_congress_medium_opposition = yes
+		}
+	}
+	USA_factory_bonuses = {
+		icon = ger_mefo_bills
+		available = {
+			congress_medium_support_trigger = yes
+		}
+		visible = {has_government = democratic }
+		cost = 25
+		days_remove = 90
+		days_re_enable = 275
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				congress_low_support_trigger = yes
+				factor = 0
+			}
+		}
+		modifier = { industrial_capacity_factory = 0.05 industrial_capacity_dockyard = 0.05 production_factory_efficiency_gain_factor = 0.05 }
 		remove_effect = {
 			USA_congress_medium_opposition = yes
 		}
@@ -469,86 +941,101 @@ USA_congress = {
 			463 = {
 				not = { is_core_of = ROOT }
 			}
+			1568 = { # KSRE (de 463)
+				not = { is_core_of = ROOT }
+			}
+			1569 = { # KSRE (de 463)
+				not = { is_core_of = ROOT }
+			}
+			1570 = { # KSRE (de 463)
+				not = { is_core_of = ROOT }
+			}
+			1571 = { # KSRE (de 463)
+				not = { is_core_of = ROOT }
+			}
+			1572 = { # KSRE (de 463)
+				not = { is_core_of = ROOT }
+			}
+			1573 = { # KSRE (de 463)
+				not = { is_core_of = ROOT }
+			}
+			1574 = { # KSRE (de 463)
+				not = { is_core_of = ROOT }
+			}
+			1575 = { # KSRE (de 463)
+				not = { is_core_of = ROOT }
+			}
+			1576 = { # KSRE (de 463)
+				not = { is_core_of = ROOT }
+			}
+			1577 = { # KSRE (de 463)
+				not = { is_core_of = ROOT }
+			}
+			1578 = { # KSRE (de 463)
+				not = { is_core_of = ROOT }
+			}
+			1579 = { # KSRE (de 463)
+				not = { is_core_of = ROOT }
+			}
+			1580 = { # KSRE (de 463)
+				not = { is_core_of = ROOT }
+			}
+			1581 = { # KSRE (de 463)
+				not = { is_core_of = ROOT }
+			}
 			political_power_daily > 0.1
 		}
 		visible = {
-			463 = {
-				is_fully_controlled_by = USA
+			OR = {
+				463 = { is_fully_controlled_by = USA }
+				1568 = { is_fully_controlled_by = USA }
+				1569 = { is_fully_controlled_by = USA }
+				1570 = { is_fully_controlled_by = USA }
+				1571 = { is_fully_controlled_by = USA }
+				1572 = { is_fully_controlled_by = USA }
+				1573 = { is_fully_controlled_by = USA }
+				1574 = { is_fully_controlled_by = USA }
+				1575 = { is_fully_controlled_by = USA }
+				1576 = { is_fully_controlled_by = USA }
+				1577 = { is_fully_controlled_by = USA }
+				1578 = { is_fully_controlled_by = USA }
+				1579 = { is_fully_controlled_by = USA }
+				1580 = { is_fully_controlled_by = USA }
+				1581 = { is_fully_controlled_by = USA }
 			}
 		}
 		ai_will_do = {
-			factor = 100			
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
 		}
 		fire_only_once = yes
-		days_remove = 120
+		days_remove = 240
 		cost = 25
 		modifier = {
 			political_power_gain = -0.1
 		}
-		complete_effect = {
-			if = {
-				limit = {
-					NOT = {
-						has_country_flag = USA_49_STAR_FLAG
-					}
-				}
-				set_country_flag = USA_49_STAR_FLAG
-				set_cosmetic_tag = USA_49_democratic
-			}
-			else = {
-				set_country_flag = USA_50_STAR_FLAG
-				set_cosmetic_tag = USA_50_democratic
-			}
-		}
 		remove_effect = {
 			USA_congress_add_state = yes
 			add_state_core = 463
+			add_state_core = 1568
+			add_state_core = 1569
+			add_state_core = 1570
+			add_state_core = 1571
+			add_state_core = 1572
+			add_state_core = 1573
+			add_state_core = 1574
+			add_state_core = 1575
+			add_state_core = 1576
+			add_state_core = 1577
+			add_state_core = 1578
+			add_state_core = 1579
+			add_state_core = 1580
+			add_state_core = 1581
 			add_state_core = 650
-			#USA_calc_stars = yes
-		}
-	}
-	USA_invest_in_alaska = {
-		icon = infiltrate_state
-		available = {
-			463 = {
-				is_core_of = ROOT
-			}
-		}
-		visible = {
-			463 = {
-				is_fully_controlled_by = USA
-				is_core_of = ROOT
-			}
-		}
-		ai_will_do = {
-			factor = 100			
-		}
-		fire_only_once = yes
-		days_remove = 60
-		cost = 25
-		modifier = {
-			civilian_factory_use = 5
-		}
-		remove_effect = {
-			463 = {
-				add_manpower = 24624
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-				
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-				add_resource = {
-					type = chromium
-					amount = 24
-				}
-			}
+			USA_calc_stars = yes
 		}
 	}
 	USA_statehood_for_hawaii = {
@@ -561,89 +1048,6 @@ USA_congress = {
 		}
 		visible = {
 			629 = {
-				is_fully_controlled_by = USA
-			}
-		}
-		ai_will_do = {
-			factor = 100
-		}
-		fire_only_once = yes
-		days_remove = 120
-		cost = 25
-		modifier = {
-			political_power_gain = -0.1
-		}
-		complete_effect = {
-			if = {
-				limit = {
-					NOT = {
-						has_country_flag = USA_49_STAR_FLAG
-					}
-				}
-				set_country_flag = USA_49_STAR_FLAG
-				set_cosmetic_tag = USA_49_democratic
-			}
-			else = {
-				set_country_flag = USA_50_STAR_FLAG
-				set_cosmetic_tag = USA_50_democratic
-			}
-		}
-		remove_effect = {
-			USA_congress_add_state = yes
-			add_state_core = 629
-			#USA_calc_stars = yes
-		}
-	}
-	USA_invest_in_hawaii = {
-		icon = infiltrate_state
-		available = {
-			629 = {
-				is_core_of = ROOT
-			}
-		}
-		visible = {
-			629 = {
-				is_fully_controlled_by = USA
-				is_core_of = ROOT
-			}
-		}
-		ai_will_do = {
-			factor = 100			
-		}
-		fire_only_once = yes
-		days_remove = 60
-		cost = 25
-		modifier = {
-			civilian_factory_use = 5
-		}
-		remove_effect = {
-			629 = {
-				add_manpower = 19635
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-				
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-	USA_statehood_for_puerto_rico = {
-		icon = infiltrate_state
-		available = {
-			686 = {
-				not = { is_core_of = ROOT }
-			}
-			political_power_daily > 0.1
-		}
-		visible = {
-			686 = {
 				is_fully_controlled_by = USA
 			}
 		}
@@ -662,7 +1066,45 @@ USA_congress = {
 		}
 		remove_effect = {
 			USA_congress_add_state = yes
-			add_state_core = 686
+			add_state_core = 629
+			USA_calc_stars = yes
+		}
+	}
+	USA_statehood_for_puerto_rico = {
+		icon = infiltrate_state
+		available = {
+			686 = {
+				not = { is_core_of = ROOT }
+			}
+			1380 = { # KSRE (de 686)
+				not = { is_core_of = ROOT }
+			}
+			political_power_daily > 0.1
+		}
+		visible = {
+			686 = {
+				is_fully_controlled_by = USA
+			}
+			1380 = { # KSRE (de 686)
+				is_fully_controlled_by = USA
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		fire_only_once = yes
+		days_remove = 240
+		cost = 25
+		modifier = {
+			political_power_gain = -0.1
+		}
+		remove_effect = {
+			USA_congress_add_state = yes
+			add_state_core = 686 add_state_core = 1380
 			USA_calc_stars = yes
 		}
 	}
@@ -715,7 +1157,11 @@ USA_congress = {
 
 		}
 		visible = {
-			has_completed_focus = USA_union_representation_act
+			OR = {
+				has_completed_focus = USA_representation_reform
+				has_completed_focus = USA_property_reform
+			}
+			#has_completed_focus = USA_union_representation_act
 		}
 		days_re_enable = 180
 		cost = 50

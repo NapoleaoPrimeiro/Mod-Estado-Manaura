@@ -474,10 +474,21 @@ SWI_bba_lar = { #Trigger for having BBA and LaR, mostly for espionage stuff.
 SWI_is_regular_switzerland = { #Check for the states belonging to Vanilla Switzerland flavor
 	OR = {
 		state = 845
+		state = 1514
 		state = 3
 		state = 847
+		state = 1506
 		state = 846
 		state = 151 	
+		state = 1507
+		state = 1508
+		state = 1509
+		state = 1510
+		state = 1511
+		state = 1512
+		state = 1513
+		state = 1515
+		state = 1516
 	}
 }
 
@@ -531,19 +542,31 @@ SWI_can_form_alpine = {
 		amount > 7 
 		controls_state = 21 #Bouche-du-Rhone - FRA
 		controls_state = 851 #Var - FRA 
-		controls_state = 735 #Savoy - FRA 
+		controls_state = 735 controls_state = 1301 controls_state = 1302 controls_state = 1303 controls_state = 1304 controls_state = 1305 controls_state = 1306 #Savoy - FRA 
 		controls_state = 32 #Alpes - FRA 
-		controls_state = 158 #Piemonte - ITA
+		controls_state = 158 controls_state = 1308 #Piemonte - ITA
 		controls_state = 159 #Lombardia - ITA 
 		controls_state = 850 #Trentino - ITA 
 		controls_state = 39 #Alto Adige - ITA
 		controls_state = 847 #Western Swiss Alps - SWi
+		controls_state = 1506
 		controls_state = 151 #Eastern Swiss Alps - SWI 
+		controls_state = 1507
+		controls_state = 1508
+		controls_state = 1509
+		controls_state = 1510
+		controls_state = 1511
+		controls_state = 1512
+		controls_state = 1513
+		controls_state = 1515
+		controls_state = 1516
 		controls_state = 846 #Ticino - SWI
 		controls_state = 848 #Vorarlberg - AUS
 		controls_state = 153 #Tyrol - AUS 
 		controls_state = 152 #Upper Austria - AUS 
-		controls_state = 4 #Lower Austria 
+		controls_state = 976
+		controls_state = 1390
+		controls_state = 4 controls_state = 1553 #Lower Austria 
 	}
 }
 

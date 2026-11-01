@@ -2203,37 +2203,161 @@ AUS_subjugating_the_lands_of_old_category = {
 					is_in_faction_with = ROOT 
 					has_war_with = ROOT 
 				}
-
+				
+				#KSRE: Vanilla intends this decision only for Bosnia, Dalmatia and Vojvodina while having Slovenia and Zagreb as prerequisites (reason unknown, no code trace found; plus this is why players probably almost never see it). KSRE will allow it without state prerequisites and will cover all initial Yugoslavian states that make up the historical AH territory. This will still allow the player to subjugate Yugo AND/OR annex relevant territory. Only edit this to fill in state gaps in Yugo AH territory.
+				#KSRE: This decision also has weird syntax: it only works when ONE country holds all the states in question (a bunch of spaghetti code probably intended just for Yugoslavia, even though the code structure contradicts this). Don't change the new OR = {} structure.
 				OR = {
-					controls_state = 764
-					any_subject_country = {
-						controls_state = 764
+					OR = {
+						controls_state = 102 controls_state = 1410 controls_state = 1704
+						any_subject_country = {
+							controls_state = 102 controls_state = 1410 controls_state = 1704
+						}
+					}
+					OR = {
+						controls_state = 1704
+						any_subject_country = {
+							controls_state = 1704
+						}
+					}
+					OR = {
+						controls_state = 1410
+						any_subject_country = {
+							controls_state = 1410
+						}
+					}
+					OR = {
+						controls_state = 109 controls_state = 1706 controls_state = 1707
+						any_subject_country = {
+							controls_state = 109 controls_state = 1706 controls_state = 1707
+						}
+					}
+					OR = {
+						controls_state = 853
+						any_subject_country = {
+							controls_state = 853
+						}
+					}
+					OR = {
+						controls_state = 1388
+						any_subject_country = {
+							controls_state = 1388
+						}
+					}
+					OR = {
+						controls_state = 1718
+						any_subject_country = {
+							controls_state = 1718
+						}
+					}
+					OR = {
+						controls_state = 1314
+						any_subject_country = {
+							controls_state = 1314
+						}
+					}
+					OR = {
+						controls_state = 1339
+						any_subject_country = {
+							controls_state = 1339
+						}
+					}
+					OR = {
+						controls_state = 103 controls_state = 1296 controls_state = 1325 controls_state = 1339 controls_state = 1388 controls_state = 1718
+						any_subject_country = {
+							controls_state = 103 controls_state = 1296 controls_state = 1325 controls_state = 1339 controls_state = 1388 controls_state = 1718
+						}
+					}
+					OR = {
+						controls_state = 1717
+						any_subject_country = {
+							controls_state = 1717
+						}
+					}
+					OR = {
+						controls_state = 1296
+						any_subject_country = {
+							controls_state = 1296
+						}
+					}
+					OR = {
+						controls_state = 1716
+						any_subject_country = {
+							controls_state = 1716
+						}
+					}
+					OR = {
+						controls_state = 1705
+						any_subject_country = {
+							controls_state = 1705
+						}
+					}
+					OR = {
+						controls_state = 1477
+						any_subject_country = {
+							controls_state = 1477
+						}
+					}
+					OR = {
+						controls_state = 1478
+						any_subject_country = {
+							controls_state = 1478
+						}
+					}
+					OR = {
+						controls_state = 764 controls_state = 1478
+						any_subject_country = {
+							controls_state = 764 controls_state = 1478
+						}
+					}
+					OR = {
+						controls_state = 45 controls_state = 1477 controls_state = 1705
+						any_subject_country = {
+							controls_state = 45 controls_state = 1477 controls_state = 1705
+						}
+					}
+					OR = {
+						controls_state = 1707
+						any_subject_country = {
+							controls_state = 1707
+						}
+					}
+					OR = {
+						controls_state = 1706
+						any_subject_country = {
+							controls_state = 1706
+						}
+					}
+					OR = {
+						controls_state = 1711
+						any_subject_country = {
+							controls_state = 1711
+						}
+					}
+					OR = {
+						controls_state = 1712
+						any_subject_country = {
+							controls_state = 1712
+						}
+					}
+					OR = {
+						controls_state = 1713
+						any_subject_country = {
+							controls_state = 1713
+						}
+					}
+					OR = {
+						controls_state = 104 controls_state = 1711 controls_state = 1712 controls_state = 1713
+						any_subject_country = {
+							controls_state = 104 controls_state = 1711 controls_state = 1712 controls_state = 1713
+						}
+					}
+					OR = {
+						controls_state = 804 controls_state = 1717
+						any_subject_country = {
+							controls_state = 804 controls_state = 1717
+						}
 					}
 				}
-				OR = {
-					controls_state = 104
-					any_subject_country = {
-						controls_state = 104
-					}
-				}
-				OR = {
-					controls_state = 103
-					any_subject_country = {
-						controls_state = 103
-					}
-				}
-				OR = {
-					controls_state = 804
-					any_subject_country = {
-						controls_state = 804
-					}
-				}
-				OR = {
-					controls_state = 45
-					any_subject_country = {
-						controls_state = 45
-					}
-				}	
 			}
 		}
 
@@ -2247,10 +2371,7 @@ AUS_subjugating_the_lands_of_old_category = {
 					has_completed_focus = AUS_reclaiming_yugoslavian_territories
 					has_completed_focus = AUS_subjugate_lands_of_old
 				}
-
-				controls_state = 102
-				controls_state = 109
-				controls_state = 853
+				#KSRE: Don't return the territorial prerequisites, they don't make sense.
 			}
 		}
 
@@ -2281,9 +2402,27 @@ AUS_subjugating_the_lands_of_old_category = {
 			ROOT = {
 				controls_state = 764
 				controls_state = 104
-				controls_state = 103 
+				controls_state = 103 controls_state = 1325 
 				controls_state = 804
 				controls_state = 45
+				controls_state = 102
+				controls_state = 1704
+				controls_state = 1410
+				controls_state = 1388
+				controls_state = 1718
+				controls_state = 1314
+				controls_state = 1339
+				controls_state = 1717
+				controls_state = 1296
+				controls_state = 1716
+				controls_state = 1705
+				controls_state = 1477
+				controls_state = 1478
+				controls_state = 1707
+				controls_state = 1706
+				controls_state = 1711
+				controls_state = 1712
+				controls_state = 1713
 			}
 		}
 
@@ -2575,6 +2714,22 @@ AUS_subjugating_the_lands_of_old_category = {
 			}
 
 			104 = {
+				transfer_state_to = FROM
+			}
+			
+			1711 = {
+				transfer_state_to = FROM
+			}
+			
+			1712 = {
+				transfer_state_to = FROM
+			}
+			
+			1713 = {
+				transfer_state_to = FROM
+			}
+			
+			1717 = {
 				transfer_state_to = FROM
 			}
 		}
@@ -3208,6 +3363,9 @@ AUS_reintegrating_the_empire_category = {
 					state = 736 #Litorale
 					state = 852 #Istria
 					state = 163 #Zara
+					state = 1708
+					state = 1168
+					state = 1169
 				}
 				
 				is_fully_controlled_by = ROOT
@@ -3281,6 +3439,17 @@ AUS_reintegrating_the_empire_category = {
 					state = 847 #Western Swiss Alps
 					state = 3 #Swiss Plateau
 					state = 845 #Jura Mountains
+					state = 1506
+					state = 1514
+					state = 1507
+					state = 1508
+					state = 1509
+					state = 1510
+					state = 1511
+					state = 1512
+					state = 1513
+					state = 1515
+					state = 1516
 				}
 
 				is_fully_controlled_by = ROOT

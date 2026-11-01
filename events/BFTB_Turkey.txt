@@ -194,7 +194,9 @@ country_event = {
 		add_political_power = 120
 		341 = { set_demilitarized_zone = no } 
 		797 = { set_demilitarized_zone = no } 
+		1223 = { set_demilitarized_zone = no } 
 		340 = { set_demilitarized_zone = no }
+		1266 = { set_demilitarized_zone = no }
 		news_event = { id = bftb_news.201 hours = 6 }
 	}
 }
@@ -212,7 +214,9 @@ country_event = {
 		hidden_effect = {
 			341 = { set_demilitarized_zone = no } 
 			797 = { set_demilitarized_zone = no } 
+			1223 = { set_demilitarized_zone = no } 
 			340 = { set_demilitarized_zone = no }
+			1266 = { set_demilitarized_zone = no }
 		}
 	}
 }
@@ -365,7 +369,9 @@ country_event = {
 		add_stability = 0.15
 		341 = { set_demilitarized_zone = no } 
 		797 = { set_demilitarized_zone = no } 
+		1223 = { set_demilitarized_zone = no } 
 		340 = { set_demilitarized_zone = no }
+		1266 = { set_demilitarized_zone = no }
 		hidden_effect = {
 			news_event = { id = bftb_news.201 hours = 6 }
 		}
@@ -388,9 +394,18 @@ country_event = {
 		}
 		hidden_effect = {
 			341 = { set_demilitarized_zone = no } 
+			1286 = { set_demilitarized_zone = no } 
 			797 = { set_demilitarized_zone = no } 
+			1223 = { set_demilitarized_zone = no } 
 			340 = { set_demilitarized_zone = no }
+			1266 = { set_demilitarized_zone = no }
 			354 = {
+				damage_building = {
+					type = infrastructure
+					damage = 0.1
+				}
+			}
+			1286 = {
 				damage_building = {
 					type = infrastructure
 					damage = 0.1
@@ -913,7 +928,7 @@ country_event = {
 				ideology = neutrality
 				size = 0.05
 				capital = 797
-				states = { 797 341 }
+				states = { 797 1223 341 1266 }
 				keep_unit_leaders = { 
 					901 
 				}
@@ -941,7 +956,7 @@ country_event = {
 				ideology = neutrality
 				size = 0.15
 				capital = 797
-				states = { 797 341 339 354 }
+				states = { 797 1223 341 1266 339 354 1286 }
 				keep_unit_leaders = { 
 					901 
 				}
@@ -969,7 +984,7 @@ country_event = {
 				ideology = neutrality
 				size = 0.35
 				capital = 797
-				states = { 797 341 339 354 340 342 }
+				states = { 797 1223 1266 341 339 354 1286 340 342 }
 				keep_unit_leaders = { 
 					901 
 				}
@@ -997,7 +1012,7 @@ country_event = {
 				ideology = neutrality
 				size = 0.55
 				capital = 797
-				states = { 797 341 339 354 340 342 343 346 }
+				states = { 797 1223 1266 341 339 354 1286 340 342 343 346 }
 				keep_unit_leaders = { 
 					901 
 				}
@@ -1025,7 +1040,7 @@ country_event = {
 				ideology = neutrality
 				size = 0.75
 				capital = 49
-				states = { 797 341 339 354 340 342 343 346 347 49 }
+				states = { 797 1223 1266 341 339 354 1286 340 342 343 346 347 49 }
 				keep_unit_leaders = { 
 					901 
 				}
@@ -1879,7 +1894,7 @@ country_event = {
 			add_resource = {
 				type = steel
 				amount = 14
-				state = 354
+				state = 1286
 			}
 			231 = {
 				add_building_construction = {
@@ -1927,9 +1942,9 @@ country_event = {
 		add_resource = {
 			type = steel
 			amount = 14
-			state = 354
+			state = 1286
 		}
-		354 = {
+		1286 = {
 			add_building_construction = {
 				type = infrastructure
 				level = 2
@@ -2098,13 +2113,13 @@ country_event = {
 		effect_tooltip = {
 			IF = {
 				limit = { 455 = { is_owned_by = ROOT } }
-				TUR = { transfer_state = 455 }
+				TUR = { transfer_state = 455 transfer_state = 1780 transfer_state = 1781 }
 			}
 			else_if = {
 				limit = {
 					has_subject = JOR
 					JOR = {
-						owns_state = 455
+						owns_state = 455 owns_state = 1780 owns_state = 1781
 					}
 				}
 				TUR = {
@@ -2132,14 +2147,22 @@ country_event = {
 				}
 			}
 			IF = {
+				limit = { 1780 = { is_owned_by = ROOT } }
+				TUR = { transfer_state = 1780 }
+			}
+			IF = {
+				limit = { 1781 = { is_owned_by = ROOT } }
+				TUR = { transfer_state = 1781 }
+			}
+			IF = {
 				limit = { 454 = { is_owned_by = ROOT } }
-				TUR = { transfer_state = 454 }
+				TUR = { transfer_state = 454 transfer_state = 1133 transfer_state = 1134 transfer_state = 1135 transfer_state = 1137 transfer_state = 1138 transfer_state = 1139 transfer_state = 1140 }
 			}
 			else_if = {
 				limit = {
 					has_subject = PAL
 					PAL = {
-						owns_state = 454
+						owns_state = 454 owns_state = 1133 owns_state = 1134 owns_state = 1135 owns_state = 1137 owns_state = 1138 owns_state = 1139 owns_state = 1140
 					}
 				}
 				TUR = {
@@ -2165,6 +2188,34 @@ country_event = {
 						}
 					}
 				}
+			}
+			IF = {
+				limit = { 1133 = { is_owned_by = ROOT } }
+				TUR = { transfer_state = 1133 }
+			}
+			IF = {
+				limit = { 1134 = { is_owned_by = ROOT } }
+				TUR = { transfer_state = 1134 }
+			}
+			IF = {
+				limit = { 1135 = { is_owned_by = ROOT } }
+				TUR = { transfer_state = 1135 }
+			}
+			IF = {
+				limit = { 1137 = { is_owned_by = ROOT } }
+				TUR = { transfer_state = 1137 }
+			}
+			IF = {
+				limit = { 1138 = { is_owned_by = ROOT } }
+				TUR = { transfer_state = 1138 }
+			}
+			IF = {
+				limit = { 1139 = { is_owned_by = ROOT } }
+				TUR = { transfer_state = 1139 }
+			}
+			IF = {
+				limit = { 1140 = { is_owned_by = ROOT } }
+				TUR = { transfer_state = 1140 }
 			}
 			IF = {
 				limit = { 453 = { is_owned_by = ROOT } }
@@ -2209,8 +2260,10 @@ country_event = {
 		IF = {
 			limit = {
 				455 = { is_owned_by = FROM }
+				1780 = { is_owned_by = FROM } # KSRE (de 455)
+				1781 = { is_owned_by = FROM } # KSRE (de 455)
 			}
-			transfer_state = 455
+			transfer_state = 455 transfer_state = 1780 transfer_state = 1781
 		}
 		else_if = {
 			limit = {
@@ -2218,7 +2271,7 @@ country_event = {
 					has_subject = JOR
 				}
 				JOR = {
-					owns_state = 455
+					owns_state = 455 owns_state = 1780 owns_state = 1781
 				}
 			}
 			if = {
@@ -2250,9 +2303,28 @@ country_event = {
 		}
 		IF = {
 			limit = {
-				454 = { is_owned_by = FROM }
+				1780 = { is_owned_by = FROM }
 			}
-			transfer_state = 454
+			transfer_state = 1780
+		}
+		IF = {
+			limit = {
+				1781 = { is_owned_by = FROM }
+			}
+			transfer_state = 1781
+		}
+		IF = {
+			limit = {
+				454 = { is_owned_by = FROM }
+				1133 = { is_owned_by = FROM } # KSRE (de 454)
+				1134 = { is_owned_by = FROM } # KSRE (de 454)
+				1135 = { is_owned_by = FROM } # KSRE (de 454)
+				1137 = { is_owned_by = FROM } # KSRE (de 454)
+				1138 = { is_owned_by = FROM } # KSRE (de 454)
+				1139 = { is_owned_by = FROM } # KSRE (de 454)
+				1140 = { is_owned_by = FROM } # KSRE (de 454)
+			}
+			transfer_state = 454 transfer_state = 1133 transfer_state = 1134 transfer_state = 1135 transfer_state = 1137 transfer_state = 1138 transfer_state = 1139 transfer_state = 1140
 		}
 		else_if = {
 			limit = {
@@ -2260,7 +2332,7 @@ country_event = {
 					has_subject = PAL
 				}
 				PAL = {
-					owns_state = 454
+					owns_state = 454 owns_state = 1133 owns_state = 1134 owns_state = 1135 owns_state = 1137 owns_state = 1138 owns_state = 1139 owns_state = 1140
 				}
 			}
 			if = {
@@ -2292,6 +2364,48 @@ country_event = {
 		}
 		IF = {
 			limit = {
+				1133 = { is_owned_by = FROM }
+			}
+			transfer_state = 1133
+		}
+		IF = {
+			limit = {
+				1134 = { is_owned_by = FROM }
+			}
+			transfer_state = 1134
+		}
+		IF = {
+			limit = {
+				1135 = { is_owned_by = FROM }
+			}
+			transfer_state = 1135
+		}
+		IF = {
+			limit = {
+				1137 = { is_owned_by = FROM }
+			}
+			transfer_state = 1137
+		}
+		IF = {
+			limit = {
+				1138 = { is_owned_by = FROM }
+			}
+			transfer_state = 1138
+		}
+		IF = {
+			limit = {
+				1139 = { is_owned_by = FROM }
+			}
+			transfer_state = 1139
+		}
+		IF = {
+			limit = {
+				1140 = { is_owned_by = FROM }
+			}
+			transfer_state = 1140
+		}
+		IF = {
+			limit = {
 				453 = { is_owned_by = FROM }
 			}
 			transfer_state = 453
@@ -2317,7 +2431,16 @@ country_event = {
 	option = {
 		name = bftb_turkey.46.b #then we escalate!
 		add_state_claim = 455
+		add_state_claim = 1780
+		add_state_claim = 1781
 		add_state_claim = 454
+		add_state_claim = 1133
+		add_state_claim = 1134
+		add_state_claim = 1135
+		add_state_claim = 1137
+		add_state_claim = 1138
+		add_state_claim = 1139
+		add_state_claim = 1140
 		add_state_claim = 453
 		add_stability = -0.15
 	}
@@ -2934,6 +3057,7 @@ country_event = {
 			add_state_claim = 182
 			add_state_claim = 186
 			add_state_claim = 185
+			add_state_claim = 1319
 		}
 		hidden_effect = {
 			182 = { set_state_flag = TUR_ally_greece_state_flag } #NHMMAP
@@ -2941,7 +3065,9 @@ country_event = {
 			185 = { set_state_flag = TUR_ally_greece_state_flag }
 			47 = { set_state_flag = TUR_turkey_greece_state_flag }
 			731 = { set_state_flag = TUR_turkey_greece_state_flag }
+			1607 = { set_state_flag = TUR_turkey_greece_state_flag }
 			184 = { set_state_flag = TUR_turkey_greece_state_flag }
+			1181 = { set_state_flag = TUR_turkey_greece_state_flag }
 			187 = { set_state_flag = TUR_turkey_greece_state_flag }
 			TUR = { country_event = { id = bftb_turkey.131 hours = 8 } }
 		}
@@ -2970,7 +3096,9 @@ country_event = {
 		ROOT = { 
 			add_state_claim = 47
 			add_state_claim = 731
+			add_state_claim = 1607
 			add_state_claim = 184
+			add_state_claim = 1181
 			add_state_claim = 187
 		}
 		if = {
@@ -3042,13 +3170,17 @@ country_event = {
 			ideology = fascism
 			size = 0.45
 			capital = 676
-			states = { 676 }
+			states = { 676 1279 1280 1281 1282 }
 			keep_political_leader = yes
 		}
 		hidden_effect = {
 			TUR = { country_event = { id = bftb_turkey.68 hours = 1 } } 
 			IRQ = { set_country_flag = TUR_iraqi_government_flag }
 			ENG = { remove_resource_rights = 676 }
+			ENG = { remove_resource_rights = 1279 }
+			ENG = { remove_resource_rights = 1280 }
+			ENG = { remove_resource_rights = 1281 }
+			ENG = { remove_resource_rights = 1282 }
 			random_other_country = { 
            		limit = { 
            		    original_tag = IRQ 
@@ -3068,8 +3200,20 @@ country_event = {
 		}
 		set_politics = { ruling_party = fascism }
 		ENG = { 
+			remove_resource_rights = 675
 			remove_resource_rights = 676
 			remove_resource_rights = 291
+			remove_resource_rights = 1010
+			remove_resource_rights = 1276
+			remove_resource_rights = 1277
+			remove_resource_rights = 1011
+			remove_resource_rights = 1279
+			remove_resource_rights = 1280
+			remove_resource_rights = 1281
+			remove_resource_rights = 1282
+			remove_resource_rights = 1283
+			remove_resource_rights = 1284
+			remove_resource_rights = 1285
 		}
 		add_stability = -0.1
 		effect_tooltip = {
@@ -3477,6 +3621,50 @@ country_event = {
 		give_resource_rights = {
 			receiver = ENG
 			state = 291
+		}
+		give_resource_rights = {
+			receiver = ENG
+			state = 1010
+		}
+		give_resource_rights = {
+			receiver = ENG
+			state = 1276
+		}
+		give_resource_rights = {
+			receiver = ENG
+			state = 1277
+		}
+		give_resource_rights = {
+			receiver = ENG
+			state = 1011
+		}
+		give_resource_rights = {
+			receiver = ENG
+			state = 1279 
+		}
+		give_resource_rights = {
+			receiver = ENG
+			state = 1280
+		}
+		give_resource_rights = {
+			receiver = ENG
+			state = 1281
+		}
+		give_resource_rights = {
+			receiver = ENG
+			state = 1282 
+		}
+		give_resource_rights = {
+			receiver = ENG
+			state = 1283
+		}
+		give_resource_rights = {
+			receiver = ENG
+			state = 1284
+		}
+		give_resource_rights = {
+			receiver = ENG
+			state = 1285
 		}
 	}
 }
@@ -4313,18 +4501,18 @@ country_event = {
 
 		if = {
 			limit = {
-				ROOT = { controls_state = 554 }
+				ROOT = { controls_state = 554 controls_state = 1136 }
 			}
-			TUR = { transfer_state = 554 }
+			TUR = { transfer_state = 554 transfer_state = 1136 }
 		}
 		else_if = {
 			limit = {
 				any_country = {
 					is_subject_of = ROOT
-					controls_state = 554
+					controls_state = 554 controls_state = 1136
 				}
 			}
-			TUR = { transfer_state = 554 }
+			TUR = { transfer_state = 554 transfer_state = 1136 }
 		}
 
 		if = {
@@ -4345,34 +4533,39 @@ country_event = {
 
 		if = {
 			limit = {
-				ROOT = { controls_state = 680 }
+				ROOT = { controls_state = 680 controls_state = 1330 controls_state = 1779 }
 			}
-			TUR = { transfer_state = 680 }
+			TUR = { transfer_state = 680 transfer_state = 1330 transfer_state = 1779 }
 		}
-		else_if = {
+		if = {
 			limit = {
 				any_country = {
 					is_subject_of = ROOT
-					controls_state = 680
+					controls_state = 680 controls_state = 1330 controls_state = 1779
 				}
 			}
-			TUR = { transfer_state = 680 }
+			TUR = { transfer_state = 1330 }
 		}
-
 		if = {
 			limit = {
 				ROOT = { controls_state = 799 }
 			}
 			TUR = { transfer_state = 799 }
 		}
-		else_if = {
+		if = {
 			limit = {
 				any_country = {
 					is_subject_of = ROOT
 					controls_state = 799
 				}
 			}
-			TUR = { transfer_state = 799 }
+			TUR = { transfer_state = 1779 }
+		}
+		if = {
+			limit = {
+				ROOT = { controls_state = 1136 }
+			}
+			TUR = { transfer_state = 1136 }
 		}
 
 	}
@@ -4398,6 +4591,9 @@ country_event = {
 		add_state_claim = 554
 		add_state_claim = 553
 		add_state_claim = 680
+		add_state_claim = 1330
+		add_state_claim = 1779
+		add_state_claim = 1136
 		if = {
 			limit = {
 				ROOT = { NOT = { controls_state = 799 } }
@@ -4438,6 +4634,12 @@ country_event = {
 				transfer_state = 554
 			}
 		}
+		if ={ # KSRE (de 554)
+			limit = { controls_state = 1136 }
+			SYR = {
+				transfer_state = 1136
+			}
+		}
 		if ={
 			limit = { controls_state = 553 }
 			SYR = {
@@ -4449,6 +4651,36 @@ country_event = {
 			limit = { controls_state = 680 }
 			SYR = {
 				transfer_state = 680
+			}
+		}
+		if ={ # KSRE (de 680)
+			limit = { controls_state = 1330 }
+			SYR = {
+				transfer_state = 1330
+			}
+		}
+		if ={ # KSRE (de 680)
+			limit = { controls_state = 1779 }
+			SYR = {
+				transfer_state = 1779
+			}
+		}
+		if ={
+			limit = { controls_state = 1330 }
+			SYR = {
+				transfer_state = 1330
+			}
+		}
+		if ={
+			limit = { controls_state = 1779 }
+			SYR = {
+				transfer_state = 1779
+			}
+		}
+		if ={
+			limit = { controls_state = 1136 }
+			SYR = {
+				transfer_state = 1136
 			}
 		}
 		if = {
@@ -6188,112 +6420,3 @@ country_event = {
 		hidden_effect = { BUL = { country_event = generic.5 } }
 	}
 }
-country_event = {
-	id = bftb_turkey.144
-	title = bftb_turkey.144.t
-	desc = bftb_turkey.144.desc
-	picture = GFX_report_event_tur_military_affair
-
-	is_triggered_only = yes
-	
-	option = {
-		name = denmark_occupation_event.2.a	#intentional
-		ai_chance = {
-			base = 2
-			modifier = {
-				factor = 3
-				has_government = FROM
-			}
-			modifier = {
-				add = 2
-				has_opinion = {
-					target = FROM
-					value > 50
-				}
-			}
-			modifier = {
-				factor = 0
-				OR = {
-					has_government = communism
-					has_government = democratic
-				}
-				FROM = {
-					has_government = fascism
-				}
-			}
-			modifier = {
-				factor = 0
-				has_government = fascism
-				FROM = {
-					has_government = communism
-				}
-			}
-			modifier = {
-				factor = 0.3
-				original_tag = ENG
-				GER = {
-					has_guaranteed = FROM
-					NOT = {
-						has_government = ROOT
-					}
-				}
-			}
-			modifier = {
-				factor = 0.3
-				original_tag = GER
-				ENG = {
-					has_guaranteed = FROM
-					NOT = {
-						has_government = ROOT
-					}
-				}
-			}
-		}
-		give_guarantee = FROM
-		FROM = {
-			country_event = {
-				id = bftb_turkey.145
-				hours = 5
-			}
-		}
-	}
-	option = {
-		name = germany.200.b	#intentional
-		ai_chance = {
-			base = 2
-		}
-		FROM = {
-			country_event = {
-				id = bftb_turkey.146
-				hours = 5
-			}
-		}
-	}
-}
-
-country_event = {
-	id = bftb_turkey.145
-	title = bftb_turkey.145.t
-	desc = bftb_turkey.145.desc
-	picture = GFX_report_event_generic_sign_treaty3
-
-	is_triggered_only = yes
-
-	option = {
-		name = bftb_turkey.145.a
-	}
-}
-
-country_event = {
-	id = bftb_turkey.146
-	title = bftb_turkey.146.t
-	desc = bftb_turkey.146.desc
-	picture = GFX_report_event_generic_sign_treaty1
-
-	is_triggered_only = yes
-
-	option = {
-		name = worrying
-	}
-}
-

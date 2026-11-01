@@ -175,31 +175,6 @@ country_event = {
 					}
 					transfer_state = 741
 				}
-				if = {
-					limit = { 1017 = { is_fully_controlled_by = ROOT }
-					}
-					transfer_state = 1017
-				}
-				if = {
-					limit = { 1066 = { is_fully_controlled_by = ROOT }
-					}
-					transfer_state = 1066
-				}
-				if = {
-					limit = { 1067 = { is_fully_controlled_by = ROOT }
-					}
-					transfer_state = 1067
-				}
-				if = {
-					limit = { 1068 = { is_fully_controlled_by = ROOT }
-					}
-					transfer_state = 1068
-				}
-				if = {
-					limit = { 1069 = { is_fully_controlled_by = ROOT }
-					}
-					transfer_state = 1069
-				}
 			}
 			hidden_effect = {
 				news_event = { id = wtt_news.25 hours = 6 }
@@ -613,6 +588,38 @@ country_event = {
 				transfer_state = 610
 			}
 		}
+		if = { # KSRE (de 610)
+			limit = {
+				controls_state = 1444
+			}
+			FROM = {
+				transfer_state = 1444
+			}
+		}
+		if = { # KSRE (de 610)
+			limit = {
+				controls_state = 1446
+			}
+			FROM = {
+				transfer_state = 1446
+			}
+		}
+		if = { # KSRE (de 610)
+			limit = {
+				controls_state = 1449
+			}
+			FROM = {
+				transfer_state = 1449
+			}
+		}
+		if = { # KSRE (de 610)
+			limit = {
+				controls_state = 1450
+			}
+			FROM = {
+				transfer_state = 1450
+			}
+		}
 		if = {
 			limit = {
 				controls_state = 609
@@ -621,12 +628,68 @@ country_event = {
 				transfer_state = 609
 			}
 		}
+		if = { # KSRE (de 609)
+			limit = {
+				controls_state = 1487
+			}
+			FROM = {
+				transfer_state = 1487
+			}
+		}
+		if = { # KSRE (de 609)
+			limit = {
+				controls_state = 1488
+			}
+			FROM = {
+				transfer_state = 1488
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1487
+			}
+			FROM = {
+				transfer_state = 1487
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1488
+			}
+			FROM = {
+				transfer_state = 1488
+			}
+		}
 		if = {
 			limit = {
 				controls_state = 716
 			}
 			FROM = {
 				transfer_state = 716
+			}
+		}
+		if = { # KSRE (de 716)
+			limit = {
+				controls_state = 1448
+			}
+			FROM = {
+				transfer_state = 1448
+			}
+		}
+		if = { # KSRE (de 716)
+			limit = {
+				controls_state = 1452
+			}
+			FROM = {
+				transfer_state = 1452
+			}
+		}
+		if = { # KSRE (de 716)
+			limit = {
+				controls_state = 1453
+			}
+			FROM = {
+				transfer_state = 1453
 			}
 		}
 		if = {
@@ -645,12 +708,84 @@ country_event = {
 				transfer_state = 328
 			}
 		}
+		if = { # KSRE (de 328)
+			limit = {
+				controls_state = 1416
+			}
+			FROM = {
+				transfer_state = 1416
+			}
+		}
+		if = { # KSRE (de 328)
+			limit = {
+				controls_state = 1422
+			}
+			FROM = {
+				transfer_state = 1422
+			}
+		}
+		if = { # KSRE (de 328)
+			limit = {
+				controls_state = 1434
+			}
+			FROM = {
+				transfer_state = 1434
+			}
+		}
+		if = { # KSRE (de 328)
+			limit = {
+				controls_state = 1435
+			}
+			FROM = {
+				transfer_state = 1435
+			}
+		}
+		if = { # KSRE (de 328)
+			limit = {
+				controls_state = 1437
+			}
+			FROM = {
+				transfer_state = 1437
+			}
+		}
+		if = { # KSRE (de 328)
+			limit = {
+				controls_state = 1439
+			}
+			FROM = {
+				transfer_state = 1439
+			}
+		}
+		if = { # KSRE (de 328)
+			limit = {
+				controls_state = 1454
+			}
+			FROM = {
+				transfer_state = 1454
+			}
+		}
 		if = {
 			limit = {
 				controls_state = 717
 			}
 			FROM = {
 				transfer_state = 717
+			}
+		}
+		if = { # KSRE (de 717)
+			limit = {
+				controls_state = 1417
+			}
+			FROM = {
+				transfer_state = 1417
+			}
+		}
+		if = { # KSRE (de 717)
+			limit = {
+				controls_state = 1419
+			}
+			FROM = {
+				transfer_state = 1419
 			}
 		}
 		if = {
@@ -661,12 +796,84 @@ country_event = {
 				transfer_state = 714
 			}
 		}
+		if = { # KSRE (de 714)
+			limit = {
+				controls_state = 1423
+			}
+			FROM = {
+				transfer_state = 1423
+			}
+		}
+		if = { # KSRE (de 714)
+			limit = {
+				controls_state = 1424
+			}
+			FROM = {
+				transfer_state = 1424
+			}
+		}
+		if = { # KSRE (de 714)
+			limit = {
+				controls_state = 1426
+			}
+			FROM = {
+				transfer_state = 1426
+			}
+		}
+		if = { # KSRE (de 714)
+			limit = {
+				controls_state = 1430
+			}
+			FROM = {
+				transfer_state = 1430
+			}
+		}
+		if = { # KSRE (de 714)
+			limit = {
+				controls_state = 1431
+			}
+			FROM = {
+				transfer_state = 1431
+			}
+		}
+		if = { # KSRE (de 714)
+			limit = {
+				controls_state = 1451
+			}
+			FROM = {
+				transfer_state = 1451
+			}
+		}
 		if = {
 			limit = {
 				controls_state = 715
 			}
 			FROM = {
 				transfer_state = 715
+			}
+		}
+		if = { # KSRE (de 715)
+			limit = {
+				controls_state = 1440
+			}
+			FROM = {
+				transfer_state = 1440
+			}
+		}
+		if = { # KSRE (de 715)
+			limit = {
+				controls_state = 1443
+			}
+			FROM = {
+				transfer_state = 1443
+			}
+		}
+		if = { # KSRE (de 715)
+			limit = {
+				controls_state = 1445
+			}
+			FROM = {
+				transfer_state = 1445
 			}
 		}
 		if = {
@@ -677,6 +884,22 @@ country_event = {
 				transfer_state = 761
 			}
 		}
+		if = { # KSRE (de 761)
+			limit = {
+				controls_state = 1432
+			}
+			FROM = {
+				transfer_state = 1432
+			}
+		}
+		if = { # KSRE (de 761)
+			limit = {
+				controls_state = 1433
+			}
+			FROM = {
+				transfer_state = 1433
+			}
+		}
 		if = {
 			limit = {
 				controls_state = 611
@@ -685,12 +908,316 @@ country_event = {
 				transfer_state = 611
 			}
 		}
+		if = { # KSRE (de 611)
+			limit = {
+				controls_state = 1476
+			}
+			FROM = {
+				transfer_state = 1476
+			}
+		}
 		if = {
 			limit = {
 				controls_state = 612
 			}
 			FROM = {
 				transfer_state = 612
+			}
+		}
+		if = { # KSRE (de 612)
+			limit = {
+				controls_state = 1474
+			}
+			FROM = {
+				transfer_state = 1474
+			}
+		}
+		if = { # KSRE (de 612)
+			limit = {
+				controls_state = 1475
+			}
+			FROM = {
+				transfer_state = 1475
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1441
+			}
+			FROM = {
+				transfer_state = 1441
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1455
+			}
+			FROM = {
+				transfer_state = 1455
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1456
+			}
+			FROM = {
+				transfer_state = 1456
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1458
+			}
+			FROM = {
+				transfer_state = 1458
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1459
+			}
+			FROM = {
+				transfer_state = 1459
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1474
+			}
+			FROM = {
+				transfer_state = 1474
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1475
+			}
+			FROM = {
+				transfer_state = 1475
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1476
+			}
+			FROM = {
+				transfer_state = 1476
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1416
+			}
+			FROM = {
+				transfer_state = 1416
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1417
+			}
+			FROM = {
+				transfer_state = 1417
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1419
+			}
+			FROM = {
+				transfer_state = 1419
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1422
+			}
+			FROM = {
+				transfer_state = 1422
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1423
+			}
+			FROM = {
+				transfer_state = 1423
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1424
+			}
+			FROM = {
+				transfer_state = 1424
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1426
+			}
+			FROM = {
+				transfer_state = 1426
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1430
+			}
+			FROM = {
+				transfer_state = 1430
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1431
+			}
+			FROM = {
+				transfer_state = 1431
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1432
+			}
+			FROM = {
+				transfer_state = 1432
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1433
+			}
+			FROM = {
+				transfer_state = 1433
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1434
+			}
+			FROM = {
+				transfer_state = 1434
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1435
+			}
+			FROM = {
+				transfer_state = 1435
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1437
+			}
+			FROM = {
+				transfer_state = 1437
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1439
+			}
+			FROM = {
+				transfer_state = 1439
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1440
+			}
+			FROM = {
+				transfer_state = 1440
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1443
+			}
+			FROM = {
+				transfer_state = 1443
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1444
+			}
+			FROM = {
+				transfer_state = 1444
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1445
+			}
+			FROM = {
+				transfer_state = 1445
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1446
+			}
+			FROM = {
+				transfer_state = 1446
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1448
+			}
+			FROM = {
+				transfer_state = 1448
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1449
+			}
+			FROM = {
+				transfer_state = 1449
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1450
+			}
+			FROM = {
+				transfer_state = 1450
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1451
+			}
+			FROM = {
+				transfer_state = 1451
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1452
+			}
+			FROM = {
+				transfer_state = 1452
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1453
+			}
+			FROM = {
+				transfer_state = 1453
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 1454
+			}
+			FROM = {
+				transfer_state = 1454
 			}
 		}
 	}
@@ -1484,7 +2011,7 @@ country_event = {
 			delete_unit_template_and_units = { division_template = "Soviet Volunteers" }
 			transfer_state = 529
 			transfer_state = 530
-			transfer_state = 528
+			transfer_state = 528 transfer_state = 1331
 			transfer_state = 282
 			transfer_state = 533
 			transfer_state = 536
@@ -1546,7 +2073,7 @@ country_event = {
 		effect_tooltip = {
 			transfer_state = 529
 			transfer_state = 530
-			transfer_state = 528
+			transfer_state = 528 transfer_state = 1331
 			transfer_state = 282
 			transfer_state = 533
 			transfer_state = 536
@@ -1610,12 +2137,41 @@ country_event = {
 		name = excellent
 		effect_tooltip = {
 			transfer_state = 609
+			transfer_state = 1487
+			transfer_state = 1488
 			transfer_state = 610
 			transfer_state = 716
 			transfer_state = 715
 			transfer_state = 328
 			transfer_state = 717
 			transfer_state = 714
+			transfer_state = 1416
+			transfer_state = 1417
+			transfer_state = 1419
+			transfer_state = 1422
+			transfer_state = 1423
+			transfer_state = 1424
+			transfer_state = 1426
+			transfer_state = 1430
+			transfer_state = 1431
+			transfer_state = 1432
+			transfer_state = 1433
+			transfer_state = 1434
+			transfer_state = 1435
+			transfer_state = 1437
+			transfer_state = 1439
+			transfer_state = 1440
+			transfer_state = 1443
+			transfer_state = 1444
+			transfer_state = 1445
+			transfer_state = 1446
+			transfer_state = 1448
+			transfer_state = 1449
+			transfer_state = 1450
+			transfer_state = 1451
+			transfer_state = 1452
+			transfer_state = 1453
+			transfer_state = 1454
 		}
 	}
 }
@@ -1643,12 +2199,27 @@ country_event = {
 				limit = {
 					NOT = {
 						MAN = {
-							controls_state = 525
 							controls_state = 527
-							controls_state = 1029
-							controls_state = 1031
-							controls_state = 1030
 							controls_state = 1028
+							controls_state = 1320
+							controls_state = 1321
+							controls_state = 1322
+							controls_state = 1323
+							controls_state = 1324
+							controls_state = 1326
+							controls_state = 1327
+							controls_state = 1328
+							controls_state = 1329
+							controls_state = 525
+							controls_state = 1029
+							controls_state = 1030
+							controls_state = 1031
+							controls_state = 1311
+							controls_state = 1313
+							controls_state = 1315
+							controls_state = 1316
+							controls_state = 1317
+							controls_state = 1318
 						}
 					}
 				}
@@ -1804,30 +2375,75 @@ country_event = {
 			limit = {
 				NOT = {
 					MAN = {
-						controls_state = 525
 						controls_state = 527
-						controls_state = 1029
-						controls_state = 1031
-						controls_state = 1030
 						controls_state = 1028
+						controls_state = 1320
+						controls_state = 1321
+						controls_state = 1322
+						controls_state = 1323
+						controls_state = 1324
+						controls_state = 1326
+						controls_state = 1327
+						controls_state = 1328
+						controls_state = 1329
+						controls_state = 525
+						controls_state = 1029
+						controls_state = 1030
+						controls_state = 1031
+						controls_state = 1311
+						controls_state = 1313
+						controls_state = 1315
+						controls_state = 1316
+						controls_state = 1317
+						controls_state = 1318
 					}
 				}
 				JAP = {
-					owns_state = 525
 					owns_state = 527
-					owns_state = 1029
-					owns_state = 1031
-					owns_state = 1030
 					owns_state = 1028
+					owns_state = 1320
+					owns_state = 1321
+					owns_state = 1322
+					owns_state = 1323
+					owns_state = 1324
+					owns_state = 1326
+					owns_state = 1327
+					owns_state = 1328
+					owns_state = 1329
+					owns_state = 525
+					owns_state = 1029
+					owns_state = 1030
+					owns_state = 1031
+					owns_state = 1311
+					owns_state = 1313
+					owns_state = 1315
+					owns_state = 1316
+					owns_state = 1317
+					owns_state = 1318
 				}
 			}
 			KOR = {
-				transfer_state = 525
 				transfer_state = 527
-				transfer_state = 1029
-				transfer_state = 1031
-				transfer_state = 1030
 				transfer_state = 1028
+				transfer_state = 1320
+				transfer_state = 1321
+				transfer_state = 1322
+				transfer_state = 1323
+				transfer_state = 1324
+				transfer_state = 1326
+				transfer_state = 1327
+				transfer_state = 1328
+				transfer_state = 1329
+				transfer_state = 525
+				transfer_state = 1029
+				transfer_state = 1030
+				transfer_state = 1031
+				transfer_state = 1311
+				transfer_state = 1313
+				transfer_state = 1315
+				transfer_state = 1316
+				transfer_state = 1317
+				transfer_state = 1318
 			}
 		}
 		else_if = {
@@ -1837,12 +2453,27 @@ country_event = {
 					is_subject_of = JAP
 				}
 				MAN = {
-					controls_state = 525
 					controls_state = 527
-					controls_state = 1029
-					controls_state = 1031
-					controls_state = 1030
 					controls_state = 1028
+					controls_state = 1320
+					controls_state = 1321
+					controls_state = 1322
+					controls_state = 1323
+					controls_state = 1324
+					controls_state = 1326
+					controls_state = 1327
+					controls_state = 1328
+					controls_state = 1329
+					controls_state = 525
+					controls_state = 1029
+					controls_state = 1030
+					controls_state = 1031
+					controls_state = 1311
+					controls_state = 1313
+					controls_state = 1315
+					controls_state = 1316
+					controls_state = 1317
+					controls_state = 1318
 				}
 			}
 			JAP = {
@@ -2307,31 +2938,76 @@ country_event = {
 					NOT = {
 						any_country = {
 							is_literally_china = yes
-							controls_state = 525
 							controls_state = 527
-							controls_state = 1029
-							controls_state = 1031
-							controls_state = 1030
 							controls_state = 1028
+							controls_state = 1320
+							controls_state = 1321
+							controls_state = 1322
+							controls_state = 1323
+							controls_state = 1324
+							controls_state = 1326
+							controls_state = 1327
+							controls_state = 1328
+							controls_state = 1329
+							controls_state = 525
+							controls_state = 1029
+							controls_state = 1030
+							controls_state = 1031
+							controls_state = 1311
+							controls_state = 1313
+							controls_state = 1315
+							controls_state = 1316
+							controls_state = 1317
+							controls_state = 1318
 						}
 					}
 					JAP = {
-						owns_state = 525
 						owns_state = 527
-						owns_state = 1029
-						owns_state = 1031
-						owns_state = 1030
 						owns_state = 1028
+						owns_state = 1320
+						owns_state = 1321
+						owns_state = 1322
+						owns_state = 1323
+						owns_state = 1324
+						owns_state = 1326
+						owns_state = 1327
+						owns_state = 1328
+						owns_state = 1329
+						owns_state = 525
+						owns_state = 1029
+						owns_state = 1030
+						owns_state = 1031
+						owns_state = 1311
+						owns_state = 1313
+						owns_state = 1315
+						owns_state = 1316
+						owns_state = 1317
+						owns_state = 1318
 					}
 				}
 				FROM = { release = KOR }
 				KOR = {
-					transfer_state = 525
 					transfer_state = 527
-					transfer_state = 1029
-					transfer_state = 1031
-					transfer_state = 1030
 					transfer_state = 1028
+					transfer_state = 1320
+					transfer_state = 1321
+					transfer_state = 1322
+					transfer_state = 1323
+					transfer_state = 1324
+					transfer_state = 1326
+					transfer_state = 1327
+					transfer_state = 1328
+					transfer_state = 1329
+					transfer_state = 525
+					transfer_state = 1029
+					transfer_state = 1030
+					transfer_state = 1031
+					transfer_state = 1311
+					transfer_state = 1313
+					transfer_state = 1315
+					transfer_state = 1316
+					transfer_state = 1317
+					transfer_state = 1318
 				}
 				MAN = {
 					puppet = KOR
@@ -2375,12 +3051,27 @@ country_event = {
 							}
 						}
 						NOT = {
-							state = 525
 							state = 527
-							state = 1029
-							state = 1031
-							state = 1030
 							state = 1028
+							state = 1320
+							state = 1321
+							state = 1322
+							state = 1323
+							state = 1324
+							state = 1326
+							state = 1327
+							state = 1328
+							state = 1329
+							state = 525
+							state = 1029
+							state = 1030
+							state = 1031
+							state = 1311
+							state = 1313
+							state = 1315
+							state = 1316
+							state = 1317
+							state = 1318
 						}
 					}
 					every_country = {
@@ -2428,31 +3119,76 @@ country_event = {
 				NOT = {
 					any_country = {
 						is_literally_china = yes
-						controls_state = 525
 						controls_state = 527
-						controls_state = 1029
-						controls_state = 1031
-						controls_state = 1030
 						controls_state = 1028
+						controls_state = 1320
+						controls_state = 1321
+						controls_state = 1322
+						controls_state = 1323
+						controls_state = 1324
+						controls_state = 1326
+						controls_state = 1327
+						controls_state = 1328
+						controls_state = 1329
+						controls_state = 525
+						controls_state = 1029
+						controls_state = 1030
+						controls_state = 1031
+						controls_state = 1311
+						controls_state = 1313
+						controls_state = 1315
+						controls_state = 1316
+						controls_state = 1317
+						controls_state = 1318
 					}
 				}
 				JAP = {
-					owns_state = 525
 					owns_state = 527
-					owns_state = 1029
-					owns_state = 1031
-					owns_state = 1030
 					owns_state = 1028
+					owns_state = 1320
+					owns_state = 1321
+					owns_state = 1322
+					owns_state = 1323
+					owns_state = 1324
+					owns_state = 1326
+					owns_state = 1327
+					owns_state = 1328
+					owns_state = 1329
+					owns_state = 525
+					owns_state = 1029
+					owns_state = 1030
+					owns_state = 1031
+					owns_state = 1311
+					owns_state = 1313
+					owns_state = 1315
+					owns_state = 1316
+					owns_state = 1317
+					owns_state = 1318
 				}
 			}
 			FROM = { release = KOR }
 			KOR = {
-				transfer_state = 525
 				transfer_state = 527
-				transfer_state = 1029
-				transfer_state = 1031
-				transfer_state = 1030
 				transfer_state = 1028
+				transfer_state = 1320
+				transfer_state = 1321
+				transfer_state = 1322
+				transfer_state = 1323
+				transfer_state = 1324
+				transfer_state = 1326
+				transfer_state = 1327
+				transfer_state = 1328
+				transfer_state = 1329
+				transfer_state = 525
+				transfer_state = 1029
+				transfer_state = 1030
+				transfer_state = 1031
+				transfer_state = 1311
+				transfer_state = 1313
+				transfer_state = 1315
+				transfer_state = 1316
+				transfer_state = 1317
+				transfer_state = 1318
 			}
 			MAN = {
 				puppet = KOR

@@ -23,14 +23,14 @@ country_event = {
 
 				set_global_flag = GER_civil_war_has_started
 
-				set_capital = { state = 55 }
+				set_capital = { state = 1254 }
 
 				start_civil_war = {
 					ruling_party = neutrality
 					ideology = fascism
 					size = 0.5
 					navy_ratio = 0.1
-					capital = 64
+					capital = 1269
 					states = all
 					keep_all_characters = yes
 					states_filter = {
@@ -40,14 +40,36 @@ country_event = {
 					    	state = 52
 					    	state = 53
 					    	state = 54
-					    	state = 60
+					    	state = 60 state = 1270
 					    	state = 65
 					    	state = 66
 					    	state = 67
 					    	state = 68
+					    	state = 1429
 					    	state = 62
 					    	state = 63
 					    	state = 5
+							state = 1538
+							state = 1539
+							state = 1540
+							state = 1541
+							state = 1542
+							state = 1543
+							state = 1544
+							state = 1546
+							state = 1548
+							state = 1549
+							state = 1550
+							state = 1557
+							state = 1558
+							state = 1701
+							state = 1427
+							state = 1428
+							state = 1702
+							state = 1772
+							state = 1268
+							state = 1269
+							state = 1288
 					    }
 					    is_controlled_by = ROOT
 					}
@@ -196,8 +218,8 @@ country_event = {
 			    		random_state = {
 			    			limit = {
 			    				OR = {
-			    					state = 64
-			    					state = 65
+			    					state = 64 state = 1268 state = 1269 state = 1542 state = 1544
+			    					state = 65 state = 1543
 			    				}
 			    			}
 			    			create_unit = {
@@ -215,14 +237,14 @@ country_event = {
 
 				set_global_flag = GER_civil_war_has_started
 
-				set_capital = { state = 55 }
+				set_capital = { state = 1254 }
 
 				start_civil_war = {
 					ruling_party = neutrality
 					ideology = fascism
 					size = 0.5
 					navy_ratio = 0.8
-					capital = 64
+					capital = 1269
 					states = all
 					keep_all_characters = yes
 					states_filter = {
@@ -232,14 +254,36 @@ country_event = {
 					    	state = 52
 					    	state = 53
 					    	state = 54
-					    	state = 60
+					    	state = 60 state = 1270
 					    	state = 65
 					    	state = 66
 					    	state = 67
 					    	state = 68
+					    	state = 1429
 					    	state = 62
 					    	state = 63
 					    	state = 5
+							state = 1538
+							state = 1539
+							state = 1540
+							state = 1541
+							state = 1542
+							state = 1543
+							state = 1544
+							state = 1546
+							state = 1548
+							state = 1549
+							state = 1550
+							state = 1557
+							state = 1558
+							state = 1701
+							state = 1427
+							state = 1428
+							state = 1702
+							state = 1772
+							state = 1268
+							state = 1269
+							state = 1288
 					    }
 					    is_controlled_by = ROOT
 					}
@@ -396,8 +440,8 @@ country_event = {
 			    		random_state = {
 			    			limit = {
 			    				OR = {
-			    					state = 64
-			    					state = 65
+			    					state = 64 state = 1268 state = 1269 state = 1542 state = 1544
+			    					state = 65 state = 1543
 			    				}
 			    			}
 			    			create_unit = {
@@ -1047,10 +1091,13 @@ country_event = {
 		}
 		effect_tooltip = {
 			GER = { transfer_state = 85 }
-			GER = { transfer_state = 807 }
-			GER = { transfer_state = 86 }
+			GER = { transfer_state = 807 transfer_state = 1554 }
+			GER = { transfer_state = 86 transfer_state = 1389 }
 			GER = { transfer_state = 762 }
-			GER = { transfer_state = 807 }
+			GER = { transfer_state = 807 transfer_state = 1554 }
+			GER = { transfer_state = 1554 }
+			GER = { transfer_state = 1447 }
+			GER = { transfer_state = 1389 }
 			GER = { add_ideas = anti_soviet_pact }
 			GER = { give_guarantee = ROOT }
 			add_ideas = anti_soviet_pact
@@ -1107,13 +1154,16 @@ country_event = {
 		transfer_state = 86
 		transfer_state = 762
 		transfer_state = 807
+		transfer_state = 1554
+		transfer_state = 1447
+		transfer_state = 1389
 		add_state_core = 85
 		add_state_core = 86
 		add_state_core = 762
 		add_state_core = 807
-		86 = { set_state_name = "Posen" }
-		set_province_name = { id = 6558 name = "Posen" }
-		762 = { set_state_name = "Kattowitz" }
+		add_state_core = 1554
+		add_state_core = 1447
+		add_state_core = 1389
 		add_ideas = anti_soviet_pact
 		give_guarantee = POL
 
@@ -1190,6 +1240,10 @@ country_event = {
 		add_state_claim = 85
 		add_state_claim = 86
 		add_state_claim = 762
+		add_state_claim = 807
+		add_state_claim = 1554
+		add_state_claim = 1447
+		add_state_claim = 1389
 	}
 
 	# Give it up
@@ -1456,10 +1510,59 @@ country_event = {
 		add_state_claim = 96
 		add_state_claim = 95
 		add_state_claim = 94
+		add_state_claim = 1815
 		add_state_claim = 93
 		add_state_claim = 91
 		add_state_claim = 89
 		add_state_claim = 78
+		add_state_claim = 784
+		add_state_claim = 808
+		add_state_claim = 809
+		add_state_claim = 810
+		add_state_claim = 811
+		add_state_claim = 812
+		add_state_claim = 813
+		add_state_claim = 814
+		add_state_claim = 815
+		add_state_claim = 1531
+		add_state_claim = 1532
+		add_state_claim = 1533
+		add_state_claim = 1814
+		add_state_claim = 1534
+		add_state_claim = 1535
+		add_state_claim = 1484
+		add_state_claim = 1818
+		add_state_claim = 1559
+		add_state_claim = 1771
+		add_state_claim = 1788
+		add_state_claim = 1789
+		add_state_claim = 1790
+		add_state_claim = 1791
+		add_state_claim = 1792
+		add_state_claim = 1795
+		add_state_claim = 1796
+		add_state_claim = 1797
+		add_state_claim = 1798
+		add_state_claim = 1799
+		add_state_claim = 1800
+		add_state_claim = 1801
+		add_state_claim = 1092
+		add_state_claim = 1173
+		add_state_claim = 1236
+		add_state_claim = 1237
+		add_state_claim = 1238
+		add_state_claim = 1239
+		add_state_claim = 1240
+		add_state_claim = 1243
+		add_state_claim = 1244
+		add_state_claim = 1816
+		add_state_claim = 1246
+		add_state_claim = 1247
+		add_state_claim = 1248
+		add_state_claim = 1817
+		add_state_claim = 1610
+		add_state_claim = 1291
+		add_state_claim = 1400
 		hidden_effect = { news_event = { id = wtt_news.10 hours = 6 } }
 	}
 
@@ -2212,7 +2315,7 @@ country_event = {
 			declare_war_on = {
 				target = GER
 				type = take_state_focus
-				generator = { 42 51 } 
+				generator = { 42 51 1414 1551 1253 } 
 			}
 			country_event = wtt_germany.37
 			if = {
@@ -2308,7 +2411,7 @@ country_event = {
 			declare_war_on = {
 				target = GER
 				type = take_state_focus
-				generator = { 42 51 } 
+				generator = { 42 51 1414 1551 1253 } 
 			}
 			country_event = wtt_germany.37
 			if = {
@@ -3323,6 +3426,18 @@ country_event = {
 				add_core_of = GER
 			}
 		}
+		1553 = {
+			if = {
+				limit = { is_owned_by = AUS }
+				add_core_of = GER
+			}
+		}
+		1390 = {
+			if = {
+				limit = { is_owned_by = AUS }
+				add_core_of = GER
+			}
+		}
 		AUS = {
 			every_unit_leader = {
 				set_nationality = GER
@@ -3343,8 +3458,8 @@ country_event = {
 	trigger = {
 		tag = POL
 		has_full_control_of_state = 85
-		has_full_control_of_state = 86
-		has_full_control_of_state = 807
+		has_full_control_of_state = 86 has_full_control_of_state = 1389
+		has_full_control_of_state = 807 has_full_control_of_state = 1554
 		owns_state = 85
 		owns_state = 86
 		owns_state = 807
@@ -3399,12 +3514,20 @@ country_event = {
 		transfer_state = 85
 		transfer_state = 86
 		transfer_state = 807
+		transfer_state = 762
+		transfer_state = 1554
+		transfer_state = 1447
+		transfer_state = 1389
 		add_state_core = 85
 		add_state_core = 86
 		add_state_core = 807
 		85 = { add_claim_by = SOV }
 		86 = { add_claim_by = SOV }
 		807 = { add_claim_by = SOV }
+		762 = { add_claim_by = SOV }
+		1554 = { add_claim_by = SOV }
+		1447 = { add_claim_by = SOV }
+		1389 = { add_claim_by = SOV }
 		POL = { country_event = { id = wtt_germany.59 } }
 	}
 
@@ -3943,22 +4066,16 @@ country_event = {
 			CZE = { ROOT_inherit_current_scope_wars_effect = yes }
 			annex_country = { target = HUN transfer_troops = yes }
 			annex_country = { target = CZE transfer_troops = yes }
-			154 = { add_core_of = ROOT }
-			155 = { add_core_of = ROOT }
-			43 = { add_core_of = ROOT }
-			69 = { add_core_of = ROOT }
-			9 = { add_core_of = ROOT }
-			75 = { add_core_of = ROOT }
-			74 = { add_core_of = ROOT }
-			72 = { add_core_of = ROOT }
-			70 = { add_core_of = ROOT }
-			664 = { add_core_of = ROOT }
-			71 = { add_core_of = ROOT }
-			73 = { add_core_of = ROOT }
-			972 = { add_core_of = ROOT }
-			974 = { add_core_of = ROOT }
-			973 = { add_core_of = ROOT }
 			GER = { add_to_faction = AUS }
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = HUN
+						is_core_of = CZE
+					}
+				}
+				add_core_of = AUS
+			}
 		}
 		if = {
 			limit = {
@@ -3968,23 +4085,16 @@ country_event = {
 			CZE = { ROOT_inherit_current_scope_wars_effect = yes }
 			annex_country = { target = AUS transfer_troops = yes }
 			annex_country = { target = CZE transfer_troops = yes }
-			152 = { add_core_of = ROOT }
-			153 = { add_core_of = ROOT }
-			848 = { add_core_of = ROOT } #Vorarlberg 
-			4 = { add_core_of = ROOT }
-			975 = { add_core_of = ROOT }
-			976 = { add_core_of = ROOT }
-			69 = { add_core_of = ROOT }
-			9 = { add_core_of = ROOT }
-			75 = { add_core_of = ROOT }
-			74 = { add_core_of = ROOT }
-			72 = { add_core_of = ROOT }
-			70 = { add_core_of = ROOT }
-			664 = { add_core_of = ROOT }
-			71 = { add_core_of = ROOT }
-			73 = { add_core_of = ROOT }
-			972 = { add_core_of = ROOT }
 			GER = { add_to_faction = HUN }
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = AUS
+						is_core_of = CZE
+					}
+				}
+				add_core_of = HUN
+			}
 		}
 		if = {
 			limit = {
@@ -3994,19 +4104,16 @@ country_event = {
 			AUS = { ROOT_inherit_current_scope_wars_effect = yes }
 			annex_country = { target = HUN transfer_troops = yes }
 			annex_country = { target = AUS transfer_troops = yes }
-			152 = { add_core_of = ROOT }
-			153 = { add_core_of = ROOT }
-			848 = { add_core_of = ROOT } #Vorarlberg 
-			4 = { add_core_of = ROOT }
-			975 = { add_core_of = ROOT }
-			976 = { add_core_of = ROOT }
-			154 = { add_core_of = ROOT }
-			155 = { add_core_of = ROOT }
-			43 = { add_core_of = ROOT }
-			973 = { add_core_of = ROOT }
-			974 = { add_core_of = ROOT }
-			972 = { add_core_of = ROOT }
 			GER = { add_to_faction = CZE }
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = AUS
+						is_core_of = HUN
+					}
+				}
+				add_core_of = CZE
+			}
 		}
 		set_cosmetic_tag = HUN_EMPIRE
 		GER = {

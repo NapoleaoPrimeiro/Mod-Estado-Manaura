@@ -1,0 +1,119 @@
+ksr_form_new_england_cat = {
+	
+	ksr_form_new_england = {
+
+		icon = generic_form_nation
+		
+		cost = 100
+
+		allowed = {
+			OR = {
+				original_tag = MES
+				original_tag = VTS
+				original_tag = NHS
+				original_tag = MAS
+				original_tag = RIS
+				original_tag = CTS
+			}
+		}
+		
+		on_map_mode = decision_view_only
+		highlight_states = {
+			highlight_states_trigger = {
+				is_in_array = {
+					array = NEG.ksr_states_array
+					value = THIS
+				}
+			}
+		}
+
+		available = {
+			is_subject = no
+			custom_trigger_tooltip = {
+				tooltip = ksr_form_new_england_prq1
+				all_of_scopes = {
+					array = NEG.ksr_states_array
+					is_owned_by = ROOT
+					is_fully_controlled_by = ROOT
+				}
+			}
+		}
+
+		visible = {
+			OR = {
+				original_tag = MES
+				original_tag = VTS
+				original_tag = NHS
+				original_tag = MAS
+				original_tag = RIS
+				original_tag = CTS
+			}
+			NOT = { has_global_flag = ksr_form_new_england_flag }
+			NEG = { exists = no }
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = NEG_new_england
+			custom_effect_tooltip = ksr_form_new_england_eff1
+			for_each_scope_loop = {
+				array = NEG.ksr_states_array
+				if = {
+					limit = {
+						is_core_of = NEG
+					}
+					remove_core_of = NEG
+				}
+				if = {
+					limit = {
+						NOT = { is_core_of = ROOT }
+					}
+					add_core_of = ROOT
+				}
+			}
+			hidden_effect = {
+				news_event = { id = ksr_news.5 hours = 6 }
+				set_global_flag = ksr_form_new_england_flag
+			}
+		}
+
+		ai_will_do = {
+			factor = 200
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+	}
+	
+	ksr_form_new_england_capital_boston = {
+	
+		allowed = {
+			
+		}
+		
+		cost = 10
+		
+		visible = {
+			1743 = {
+				is_owned_by = ROOT
+				is_fully_controlled_by = ROOT
+				is_capital = no
+			}
+			has_global_flag = ksr_form_new_england_flag
+		}
+		
+		complete_effect = {
+			custom_effect_tooltip = ksr_form_new_england_capital_boston_eff1
+			hidden_effect = {
+				set_capital = {
+					state = 1743
+					remember_old_capital = no
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+	}
+}

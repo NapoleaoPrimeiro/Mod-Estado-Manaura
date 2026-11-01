@@ -690,6 +690,7 @@ country_event = {
 		}
 		trigger = {
 			101 = { is_owned_by = ROOT }
+			1758 = { is_owned_by = ROOT } # KSRE (de 101)
 			337 = { is_owned_by = ROOT }
 		}
 		FROM = {
@@ -701,6 +702,10 @@ country_event = {
 		}
 		effect_tooltip = {
 			101 = { 
+				transfer_state_to = FROM 
+				add_core_of = FROM
+			}
+			1758 = {  # KSRE (de 101)
 				transfer_state_to = FROM 
 				add_core_of = FROM
 			}
@@ -739,8 +744,10 @@ country_event = {
 			IF = {
 				limit = {
 					101 = { is_owned_by = ROOT  }
+					1758 = { is_owned_by = ROOT  } # KSRE (de 101)
 				}
 				101 = { add_claim_by = FROM }
+				1758 = { add_claim_by = FROM } # KSRE (de 101)
 			}
 			IF = {
 				limit = {
@@ -752,7 +759,7 @@ country_event = {
 				create_wargoal = {
 					type = take_claimed_state
 					target = ROOT
-					generator = { 101 337 } # optional 
+					generator = { 101 337 1758 } # optional 
 				}
 			}
 		}
@@ -770,6 +777,7 @@ country_event = {
 		trigger = {
 			OR = {
 				101 = { is_owned_by = ROOT }
+				1758 = { is_owned_by = ROOT } # KSRE (de 101)
 				337 = { is_owned_by = ROOT }
 			}
 		}
@@ -784,8 +792,13 @@ country_event = {
 			IF = {
 				limit = {
 					101 = { is_owned_by = ROOT }
+					1758 = { is_owned_by = ROOT } # KSRE (de 101)
 				}
 				101 = { 
+					transfer_state_to = FROM
+					add_core_of = FROM
+				}
+				1758 = {  # KSRE (de 101)
 					transfer_state_to = FROM
 					add_core_of = FROM
 				}
@@ -845,6 +858,10 @@ country_event = {
 			transfer_state_to = ROOT 
 			add_core_of = ROOT
 		}
+		1758 = {  # KSRE (de 101)
+			transfer_state_to = ROOT 
+			add_core_of = ROOT
+		}
 		337 = { 
 			transfer_state_to = ROOT 
 			add_core_of = ROOT
@@ -884,8 +901,10 @@ country_event = {
 		IF = {
 			limit = {
 				101 = { is_owned_by = FROM }
+				1758 = { is_owned_by = FROM } # KSRE (de 101)
 			}
 			101 = { add_claim_by = ROOT }
+			1758 = { add_claim_by = ROOT } # KSRE (de 101)
 		}
 		IF = {
 			limit = {
@@ -897,7 +916,7 @@ country_event = {
 			create_wargoal = {
 				type = take_claimed_state
 				target = FROM
-				generator = { 101 337 } # optional 
+				generator = { 101 337 1758 } # optional 
 			}
 		}
 	}
@@ -923,8 +942,13 @@ country_event = {
 		IF = {
 			limit = {
 				101 = { is_owned_by = FROM }
+				1758 = { is_owned_by = FROM } # KSRE (de 101)
 			}
 			101 = { 
+				transfer_state_to = ROOT 
+				add_core_of = ROOT
+			}
+			1758 = {  # KSRE (de 101)
 				transfer_state_to = ROOT 
 				add_core_of = ROOT
 			}
@@ -1173,9 +1197,12 @@ country_event = {
 		}
 
 		ROOT = {
-			transfer_state = 101
+			transfer_state = 101 transfer_state = 1758
 		}
 		101 = {
+			add_core_of = ROOT
+		}
+		1758 = { # KSRE (de 101)
 			add_core_of = ROOT
 		}
 
@@ -1184,8 +1211,14 @@ country_event = {
 				101 = {
 					is_core_of = FROM
 				}
+				1758 = { # KSRE (de 101)
+					is_core_of = FROM
+				}
 			}
 			101 = {
+				remove_core_of = FROM
+			}
+			1758 = { # KSRE (de 101)
 				remove_core_of = FROM
 			}
 		}
@@ -1214,7 +1247,7 @@ country_event = {
 		create_wargoal = {
 			target = FROM
 			type = take_state_focus
-			generator = { 101 }
+			generator = { 101 1758 }
 		}
 
     	add_war_support = 0.05

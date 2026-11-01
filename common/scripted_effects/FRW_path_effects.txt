@@ -19,7 +19,7 @@ FRW_liberation_peace = {
 		clr_country_flag = FRW_peace_target
 		ROOT = { white_peace = PREV }
 	}
-	if = { limit = { owns_state = 16 controls_state = 16 } set_capital = { state = 16 } }
+	if = { limit = { owns_state = 16 owns_state = 1517 owns_state = 1518 owns_state = 1519 owns_state = 1520 controls_state = 16 } set_capital = { state = 16 } }
 }
 FRW_gov_reform_start = {
 	if = {

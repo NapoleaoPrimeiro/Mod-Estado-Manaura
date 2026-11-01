@@ -158,10 +158,11 @@ focus_tree = {
 		cost = 5
 		available = {
 			OR = {
-				controls_state = 2
+				controls_state = 2 controls_state = 1404
 				controls_state = 117
 				controls_state = 162
 				controls_state = 158
+				controls_state = 1308
 			}
 		}
 
@@ -199,6 +200,16 @@ focus_tree = {
 				}
 			}
 			158 = { #PIEDMONT
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			1308 = { #GENOVA
 				if = {
 					limit = { is_controlled_by = ROOT }
 					add_building_construction = {
@@ -2742,7 +2753,7 @@ focus_tree = {
 		relative_position_id = ITA_italian_highways_bba
 		cost = 10
 		available = {
-			has_full_control_of_state = 2
+			has_full_control_of_state = 2 has_full_control_of_state = 1404
 		}
 
 		search_filters = {FOCUS_FILTER_INDUSTRY}
@@ -2775,7 +2786,7 @@ focus_tree = {
 		relative_position_id = ITA_italian_highways_bba
 		cost = 10
 		available = {
-			has_full_control_of_state = 2
+			has_full_control_of_state = 2 has_full_control_of_state = 1404
 		}
 
 		search_filters = {FOCUS_FILTER_INDUSTRY}
@@ -2848,7 +2859,7 @@ focus_tree = {
 							include_locked = yes
 						}
 					}
-					prioritize = { 157 849 117 } #ABRUZZO as main fallback
+					prioritize = { 157 1406 1407 849 117 1405 } #ABRUZZO as main fallback
 					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
 						type = synthetic_refinery
@@ -2877,8 +2888,8 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					has_full_control_of_state = 158
-					158 = {
+					has_full_control_of_state = 1308
+					1308 = {
 						free_building_slots = {
 							building = industrial_complex
 							size > 0
@@ -2886,7 +2897,7 @@ focus_tree = {
 						}
 					}
 				}
-				158 = { #PIEDMONT (Torino, Genoa)
+				1308 = { #GENOVA
 					add_extra_state_shared_building_slots = 3
 					add_building_construction = {
 						type = industrial_complex
@@ -2905,7 +2916,7 @@ focus_tree = {
 							include_locked = yes
 						}
 					}
-					prioritize = { 736 852 } #LITORALE as main fallback
+					prioritize = { 736 852 1169 1708 } #LITORALE as main fallback
 					add_extra_state_shared_building_slots = 3
 					add_building_construction = {
 						type = industrial_complex
@@ -2957,8 +2968,8 @@ focus_tree = {
 
 			if = {
 				limit = {
-					has_full_control_of_state = 161
-					161 = {
+					has_full_control_of_state = 1409
+					1409 = {
 						free_building_slots = {
 							building = industrial_complex
 							size > 0
@@ -2966,7 +2977,7 @@ focus_tree = {
 						}
 					}
 				}
-				161 = { #EMILIA ROMAGNA (Bologna)
+				1409 = { 
 					add_extra_state_shared_building_slots = 3
 					add_building_construction = {
 						type = industrial_complex
@@ -2997,7 +3008,7 @@ focus_tree = {
 
 			if = {
 				limit = {
-					has_full_control_of_state = 160
+					has_full_control_of_state = 160 has_full_control_of_state = 1168
 					160 = {
 						free_building_slots = {
 							building = dockyard
@@ -3025,7 +3036,7 @@ focus_tree = {
 							include_locked = yes
 						}
 					}
-					prioritize = { 852 736 } #ISTRIA as main fallback
+					prioritize = { 852 736 1169 1708 } #ISTRIA as main fallback
 					add_extra_state_shared_building_slots = 3
 					add_building_construction = {
 						type = dockyard
@@ -3103,7 +3114,7 @@ focus_tree = {
 							include_locked = yes
 						}
 					}
-					prioritize = { 156 2 162 } #CALABRIA as main fallback
+					prioritize = { 156 2 162 1404 } #CALABRIA as main fallback
 					if = {
 						limit = {
 							infrastructure < 5
@@ -3280,8 +3291,9 @@ focus_tree = {
 		relative_position_id = ITA_italian_highways_bba
 		cost = 10
 		available = {
-			controls_state = 2
-			controls_state = 161
+			controls_state = 2 controls_state = 1404
+			controls_state = 161 controls_state = 1408
+			controls_state = 1409
 			controls_state = 162
 			controls_state = 117
 		}
@@ -3321,12 +3333,12 @@ focus_tree = {
 
 			#Roma - Bologna
 			build_railway = {
-				path = { 11751 6862 9750 9879 9907 1616 6985 6606 }
+				path = { 9904 11751 6862 9750 9879 11889 9907 6985 13881 6606 }
 			}
 
 			#Roma - Napoli
 			build_railway = {
-				path = { 9904 11846 923 9826 819 }
+				path = { 9904 14594 11846 13870 923 9826 819 }
 			}
 		}
 	}
@@ -3398,7 +3410,7 @@ focus_tree = {
 							include_locked = yes
 						}
 					}
-					prioritize = { 161 850 } #EMILIA ROMAGNA as main fallback
+					prioritize = { 161 1409 850 1408 } #EMILIA ROMAGNA as main fallback
 					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = industrial_complex
@@ -3474,7 +3486,7 @@ focus_tree = {
 							include_locked = yes
 						}
 					}
-					prioritize = { 736 852 } #LITORALE as main fallback
+					prioritize = { 736 852 1169 1708 } #LITORALE as main fallback
 					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = arms_factory
@@ -3531,7 +3543,7 @@ focus_tree = {
 							include_locked = yes
 						}
 					}
-					prioritize = { 160 852 736 } #VENETO as main fallback
+					prioritize = { 160 1168 852 1169 736 1708 } #VENETO as main fallback
 					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
 						type = arms_factory
@@ -3642,7 +3654,7 @@ focus_tree = {
 							include_locked = yes
 						}
 					}
-					prioritize = { 158 160 852 736 39 } #PIEMONTE as main fallback
+					prioritize = { 158 1308 160 1168 852 1169 736 39 1708 } #PIEMONTE as main fallback
 					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = arms_factory
@@ -3970,12 +3982,13 @@ focus_tree = {
 		available = {
 			OR = {
 				has_full_control_of_state = 158 #PIEDMONT
+				has_full_control_of_state = 1308 #GENOVA
 				has_full_control_of_state = 159 #LOMBARDY
 				has_full_control_of_state = 850 #TRENTINO
 				has_full_control_of_state = 39 #ALTO ADIGE
-				has_full_control_of_state = 160 #VENETO
-				has_full_control_of_state = 736 #LITORALE
-				has_full_control_of_state = 852 #FIUME
+				has_full_control_of_state = 1168
+				has_full_control_of_state = 736 has_full_control_of_state = 1708 #LITORALE
+				has_full_control_of_state = 1169
 			}
 		}
 
@@ -3987,6 +4000,7 @@ focus_tree = {
 			if = { #PIEDMONT
 				limit = {
 					158 = { is_fully_controlled_by = ROOT }
+					1308 = { is_fully_controlled_by = ROOT } # KSRE (de 158)
 				}
 				158 = {
 					add_building_construction = {
@@ -4070,11 +4084,11 @@ focus_tree = {
 					}
 				}
 			}
-			if = { #VENETO
+			if = {
 				limit = {
-					160 = { is_fully_controlled_by = ROOT }
+					1168 = { is_fully_controlled_by = ROOT }
 				}
-				160 = {
+				1168 = {
 					add_building_construction = {
 						type = bunker
 						level = 2
@@ -4090,6 +4104,7 @@ focus_tree = {
 			if = { #LITORALE
 				limit = {
 					736 = { is_fully_controlled_by = ROOT }
+					1708 = { is_fully_controlled_by = ROOT } # KSRE (de 736)
 				}
 				736 = {
 					add_building_construction = {
@@ -4104,14 +4119,14 @@ focus_tree = {
 			}
 			if = { #ISTRIA
 				limit = {
-					852 = { is_fully_controlled_by = ROOT }
+					1169 = { is_fully_controlled_by = ROOT }
 				}
-				852 = {
+				1169 = {
 					add_building_construction = {
 						type = bunker
 						level = 2
 						province = {
-							id = 11564
+							id = 13990
 						}
 						instant_build = yes
 					}
@@ -4541,7 +4556,7 @@ focus_tree = {
 					is_core_of = ROOT
 					is_fully_controlled_by = ROOT
 				}
-				prioritize = { 2 162 117 158 }
+				prioritize = { 2 162 117 158 1308 1404 }
 				custom_effect_tooltip = ITA_fanti_dell_aria_spawn_divs_tt
 				hidden_effect = {
 					create_unit = {
@@ -4763,8 +4778,8 @@ focus_tree = {
 
 			if = {
 				limit = {
-					has_full_control_of_state = 158
-					158 = {
+					has_full_control_of_state = 1308
+					1308 = {
 						free_building_slots = {
 							building = arms_factory
 							size > 1
@@ -4772,7 +4787,7 @@ focus_tree = {
 						}
 					}
 				}
-				158 = { #PIEDMONT (Genova)
+				1308 = { #PIEDMONT (Genova)
 					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = arms_factory
@@ -4791,7 +4806,7 @@ focus_tree = {
 							include_locked = yes
 						}
 					}
-					prioritize = { 162 161 157 } #TOSCANA as main fallback
+					prioritize = { 162 161 1409 157 1406 1407 1408 1405 } #TOSCANA as main fallback
 					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = arms_factory
@@ -4967,7 +4982,7 @@ focus_tree = {
 		relative_position_id = ITA_air_innovations_bba
 		cost = 10
 		available = {
-			has_full_control_of_state = 2
+			has_full_control_of_state = 2 has_full_control_of_state = 1404
 		}
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
@@ -5012,7 +5027,7 @@ focus_tree = {
 							include_locked = yes
 						}
 					}
-					prioritize = { 157 849 117 } #ABRUZZO as main fallback
+					prioritize = { 157 1406 1407 849 117 1405 } #ABRUZZO as main fallback
 					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
 						type = arms_factory
@@ -5094,7 +5109,7 @@ focus_tree = {
 		relative_position_id = ITA_citta_dell_aria
 		cost = 10
 		available = {
-			has_full_control_of_state = 161
+			has_full_control_of_state = 161 has_full_control_of_state = 1408 has_full_control_of_state = 1409
 		}
 
 		search_filters = {FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY}
@@ -5132,7 +5147,7 @@ focus_tree = {
 							include_locked = yes
 						}
 					}
-					prioritize = { 162 157 } #TOSCANA as main fallback
+					prioritize = { 162 157 1406 1407 1405 } #TOSCANA as main fallback
 					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
 						type = arms_factory
@@ -5797,11 +5812,11 @@ focus_tree = {
 		available = {
 			OR = {
 				has_full_control_of_state = 162
-				has_full_control_of_state = 736
+				has_full_control_of_state = 1708
 				has_full_control_of_state = 114
 				has_full_control_of_state = 117
 				has_full_control_of_state = 849
-				has_full_control_of_state = 852
+				has_full_control_of_state = 1169
 			}
 		}
 
@@ -5838,7 +5853,7 @@ focus_tree = {
 							include_locked = yes
 						}
 					}
-					prioritize = { 157 161 2 } #ABRUZZO as main fallback
+					prioritize = { 157 1406 1407 161 1409 2 1405 1408 1404 } #ABRUZZO as main fallback
 					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
 						type = dockyard
@@ -5850,7 +5865,7 @@ focus_tree = {
 
 			if = {
 				limit = {
-					736 = {
+					1708 = {
 						is_fully_controlled_by = ROOT
 						free_building_slots = {
 							building = dockyard
@@ -5859,7 +5874,7 @@ focus_tree = {
 						}
 					}
 				}
-				736 = { #LITORALE (Trieste)
+				1708 = { #TRIESTE
 					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
 						type = dockyard
@@ -5878,7 +5893,7 @@ focus_tree = {
 							include_locked = yes
 						}
 					}
-					prioritize = { 852 160 161 } #ISTRIA as main fallback
+					prioritize = { 852 1169 160 1168 161 1409 1408 } #ISTRIA as main fallback
 					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
 						type = dockyard
@@ -5921,12 +5936,12 @@ focus_tree = {
 				}
 			}
 
-			852 = { #ISTRIA (Fiume)
+			1169 = { #FIUME
 				add_building_construction = {
 					type = naval_base
 					level = 2
 					instant_build = yes
-					province = 11564
+					province = 13990
 				}
 			}
 		}
@@ -5980,7 +5995,7 @@ focus_tree = {
 							include_locked = yes
 						}
 					}
-					prioritize = { 157 161 160 } #ABRUZZO as main fallback
+					prioritize = { 157 1406 1407 161 1409 160 1168 1405 1408 } #ABRUZZO as main fallback
 					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
 						type = dockyard
@@ -6333,7 +6348,7 @@ focus_tree = {
 							include_locked = yes
 						}
 					}
-					prioritize = { 852 736 } #ISTRIA as main fallback
+					prioritize = { 852 1169 736 1708 } #ISTRIA as main fallback
 					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
 						type = fuel_silo
@@ -6373,7 +6388,7 @@ focus_tree = {
 							include_locked = yes
 						}
 					}
-					prioritize = { 157 162 } #ABRUZZO as main fallback
+					prioritize = { 157 1406 1407 162 1405 } #ABRUZZO as main fallback
 					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
 						type = fuel_silo
@@ -6460,7 +6475,7 @@ focus_tree = {
 					is_core_of = ROOT
 					is_fully_controlled_by = ROOT
 				}
-				prioritize = { 2 162 117 158 }
+				prioritize = { 2 162 117 158 1308 1404 }
 				create_unit = {
 					division = "division_template = \"Marines\" start_experience_factor = 0.4 start_equipment_factor = 1.0"
 					owner = ROOT
@@ -6897,7 +6912,7 @@ focus_tree = {
 					is_fully_controlled_by = ROOT
 					is_coastal = yes
 				}
-				prioritize = { 736 160 } #TRIESTE / VENETO
+				prioritize = { 736 160 1708 1168 } #TRIESTE / VENETO
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
@@ -6955,7 +6970,7 @@ focus_tree = {
 					is_fully_controlled_by = ROOT
 					is_coastal = yes
 				}
-				prioritize = { 158 } #PIEDMONT (Built by Caproni, potentially in Milano, so Genova due to proximity)
+				prioritize = { 1308 } #PIEDMONT (Built by Caproni, potentially in Milano, so Genova due to proximity)
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
@@ -7124,7 +7139,7 @@ focus_tree = {
 					is_fully_controlled_by = ROOT
 					is_coastal = yes
 				}
-				prioritize = { 162 158 } ##TUSCANY (Livorno) / PIEDMONT (Genova) (First ones built in Genova, others in Livorno, but Genova already receives a bunch of buildings)
+				prioritize = { 162 1308 } ##TUSCANY (Livorno) / GENOVA (First ones built in Genova, others in Livorno, but Genova already receives a bunch of buildings)
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
@@ -7399,7 +7414,7 @@ focus_tree = {
 					is_fully_controlled_by = ROOT
 					is_coastal = yes
 				}
-				prioritize = { 736 158 } ##LITORALE (Trieste) / PIEDMONT (Genova)
+				prioritize = { 736 1308 1708 } ##LITORALE (Trieste) / PIEDMONT (Genova)
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
@@ -7525,7 +7540,7 @@ focus_tree = {
 					is_fully_controlled_by = ROOT
 					is_coastal = yes
 				}
-				prioritize = { 158 } #PIEDMONT (Genoa)
+				prioritize = { 1308 } #GENOVA
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
@@ -7661,7 +7676,7 @@ focus_tree = {
 					is_fully_controlled_by = ROOT
 					is_coastal = yes
 				}
-				prioritize = { 158 } #PIEDMONT (Genoa)
+				prioritize = { 1308 } #GENOVA
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
@@ -8022,7 +8037,7 @@ focus_tree = {
 			#ROME
 			if = {
 				limit = {
-					has_full_control_of_state = 2
+					has_full_control_of_state = 2 has_full_control_of_state = 1404
 				}
 				2 = {
 					add_extra_state_shared_building_slots = 1
@@ -9666,7 +9681,7 @@ focus_tree = {
 					is_core_of = ROOT
 					is_fully_controlled_by = ROOT
 				}
-				prioritize = { 2 }
+				prioritize = { 2 1404 }
 				custom_effect_tooltip = ITA_strengthen_the_blackshirts_spawn_divs_tt
 				hidden_effect = {
 					create_unit = {
@@ -9746,10 +9761,21 @@ focus_tree = {
 			458 = { is_claimed_by = ROOT }
 			665 = { is_claimed_by = ROOT }
 			103 = { is_claimed_by = ROOT }
+			1296 = { is_claimed_by = ROOT }
 			105 = { is_claimed_by = ROOT }
 			44 = { is_claimed_by = ROOT }
 			805 = { is_claimed_by = ROOT }
 			934 = { is_claimed_by = ROOT }
+			1716 = { is_claimed_by = ROOT }
+			1717 = { is_claimed_by = ROOT }
+			1718 = { is_claimed_by = ROOT }
+			1388 = { is_claimed_by = ROOT }
+			1314 = { is_claimed_by = ROOT }
+			1325 = { is_claimed_by = ROOT }
+			1339 = { is_claimed_by = ROOT }
+			1260 = { is_claimed_by = ROOT }
+			1776 = { is_claimed_by = ROOT }
+			853 = { is_claimed_by = ROOT }
 		}
 
 		available = {
@@ -9830,6 +9856,11 @@ focus_tree = {
 			if = {
 				limit = {
 					103 = { NOT = { is_claimed_by = ROOT } }
+					1296 = { NOT = { is_claimed_by = ROOT } } # KSRE (de 103)
+					1325 = { NOT = { is_claimed_by = ROOT } } # KSRE (de 103)
+					1339 = { NOT = { is_claimed_by = ROOT } } # KSRE (de 103)
+					1388 = { NOT = { is_claimed_by = ROOT } } # KSRE (de 103)
+					1718 = { NOT = { is_claimed_by = ROOT } } # KSRE (de 103)
 				}
 				add_state_claim = 103 #DALMATIA
 				if = {
@@ -9847,21 +9878,62 @@ focus_tree = {
 						limit = {
 							103 = {
 								controller = {
-									controls_state = 105
+									controls_state = 105 controls_state = 1260 controls_state = 1716
 								}
 							}
 						}
 						create_wargoal = {
 							type = take_state_focus
 							target = 103.controller
-							generator = { 103 105 }
+							generator = { 103 105 1296 1325 1339 1388 1718 1260 1716 }
 						}
 					}
 					else = { #Each Yugoslavian states have different controllers
 						create_wargoal = {
 							type = take_state_focus
 							target = 103.controller
-							generator = { 103 }
+							generator = { 103 1296 1325 1339 1388 1718 }
+						}
+					}
+					
+				}
+			}
+			if = {
+				limit = {
+					1296 = { NOT = { is_claimed_by = ROOT } }
+				}
+				add_state_claim = 1296 #DALMATIA
+				if = {
+					limit = {
+						1296 = {
+							controller = {
+								NOT = { controls_state = 103 controls_state = 1296 controls_state = 1325 controls_state = 1339 controls_state = 1388 controls_state = 1718 } #Otherwise already received the wargoal above
+								NOT = { has_war_with = ROOT }
+								NOT = { is_in_faction_with = ROOT }
+								NOT = { has_non_aggression_pact_with = ROOT }
+								NOT = { is_guaranteed_by = ROOT }
+							}
+						}
+					}
+					if = { #Same controller for both Yugoslavian states
+						limit = {
+							1296 = {
+								controller = {
+									controls_state = 105 controls_state = 1260 controls_state = 1716
+								}
+							}
+						}
+						create_wargoal = {
+							type = take_state_focus
+							target = 1296.controller
+							generator = { 1296 105 1260 1716 }
+						}
+					}
+					else = { #Each Yugoslavian states have different controllers
+						create_wargoal = {
+							type = take_state_focus
+							target = 1296.controller
+							generator = { 1296 }
 						}
 					}
 					
@@ -9870,13 +9942,15 @@ focus_tree = {
 			if = {
 				limit = {
 					105 = { NOT = { is_claimed_by = ROOT } }
+					1260 = { NOT = { is_claimed_by = ROOT } } # KSRE (de 105)
+					1716 = { NOT = { is_claimed_by = ROOT } } # KSRE (de 105)
 				}
 				add_state_claim = 105 #MONTENEGRO
 				if = {
 					limit = {
 						105 = {
 							controller = {
-								NOT = { controls_state = 103 } #Otherwise already received the wargoal above
+								NOT = { controls_state = 1296 } #Otherwise already received the wargoal above
 								NOT = { has_war_with = ROOT }
 								NOT = { is_in_faction_with = ROOT }
 								NOT = { has_non_aggression_pact_with = ROOT }
@@ -9887,9 +9961,70 @@ focus_tree = {
 					create_wargoal = {
 						type = take_state_focus
 						target = 105.controller
-						generator = { 105 }
+						generator = { 105 1260 1716 }
 					}
 				}
+			}
+			
+			if = {
+				limit = {
+					1716 = { NOT = { is_claimed_by = ROOT } }
+				}
+				add_state_claim = 1716 #Kotor
+			}
+			if = {
+				limit = {
+					1717 = { NOT = { is_claimed_by = ROOT } }
+				}
+				add_state_claim = 1717 #Neum
+			}
+			if = {
+				limit = {
+					1718 = { NOT = { is_claimed_by = ROOT } }
+				}
+				add_state_claim = 1718 #Lika-Krbava
+			}
+			if = {
+				limit = {
+					1388 = { NOT = { is_claimed_by = ROOT } }
+				}
+				add_state_claim = 1388 #Bakar
+			}
+			if = {
+				limit = {
+					1314 = { NOT = { is_claimed_by = ROOT } }
+				}
+				add_state_claim = 1314 #Sibenik
+			}
+			if = {
+				limit = {
+					1325 = { NOT = { is_claimed_by = ROOT } }
+				}
+				add_state_claim = 1325 #Korcula Mljet
+			}
+			if = {
+				limit = {
+					1339 = { NOT = { is_claimed_by = ROOT } }
+				}
+				add_state_claim = 1339 #Split
+			}
+			if = {
+				limit = {
+					1260 = { NOT = { is_claimed_by = ROOT } }
+				}
+				add_state_claim = 1260 #Ulcinj
+			}
+			if = {
+				limit = {
+					1776 = { NOT = { is_claimed_by = ROOT } }
+				}
+				add_state_claim = 1776 #Rožaje
+			}
+			if = {
+				limit = {
+					853 = { NOT = { is_claimed_by = ROOT } }
+				}
+				add_state_claim = 853 #Ljubljana
 			}
 
 			#CLAIMS IN ALBANIA
@@ -12308,7 +12443,7 @@ focus_tree = {
 							include_locked = yes
 						}
 					}
-					prioritize = { 157 849 115 } #ABRUZZO as main fallback
+					prioritize = { 157 1406 1407 849 115 1405 } #ABRUZZO as main fallback
 					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
 						type = arms_factory
@@ -12338,8 +12473,29 @@ focus_tree = {
 					161 = { 
 						is_fully_controlled_by = ROOT
 					}
+					1408 = {  # KSRE (de 161)
+						is_fully_controlled_by = ROOT
+					}
+					1409 = {  # KSRE (de 161)
+						is_fully_controlled_by = ROOT
+					}
 				}
 				161 = { #EMILIA ROMAGNA
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					1409 = { 
+						is_fully_controlled_by = ROOT
+					}
+				}
+				1409 = {
 					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
 						type = arms_factory
@@ -13930,10 +14086,6 @@ focus_tree = {
 		relative_position_id = ITA_mare_nostrum_bba
 		cost = 5
 		available = {
-			any_controlled_state = {
-				resistance > 0
-				is_fully_controlled_by = ROOT
-			}
 		}
 
 		search_filters = {}
@@ -13960,7 +14112,7 @@ focus_tree = {
 		relative_position_id = ITA_the_italian_legions
 		cost = 10
 		available = {
-			has_full_control_of_state = 2
+			has_full_control_of_state = 2 has_full_control_of_state = 1404
 		}
 
 		search_filters = {FOCUS_FILTER_INDUSTRY}
@@ -14022,7 +14174,7 @@ focus_tree = {
 		relative_position_id = ITA_all_roads_lead_to_rome
 		cost = 10
 		available = {
-			has_full_control_of_state = 2
+			has_full_control_of_state = 2 has_full_control_of_state = 1404
 			if = {
 				limit = {
 					has_dlc = "By Blood Alone"
@@ -14147,31 +14299,12 @@ focus_tree = {
 				limit = {
 					has_dlc = "No Step Back"
 				}
-				if = {
-					limit = {
-						NOT = {
-							has_idea = ITA_hidden_super_heavy_tank_ns
-						}
-					}
-					custom_effect_tooltip = ITA_modern_musculus_military_industry_dm_tt
-					hidden_effect = {
-						add_ideas = ITA_hidden_super_heavy_tank_ns
-					}
+				custom_effect_tooltip = ITA_modern_musculus_military_industry_dm_tt
+				hidden_effect = {
+					add_ideas = ITA_hidden_super_heavy_tank_ns
 				}
-
-				if = {
-					limit = {
-						has_tech = super_heavy_tank_chassis
-					}
-					#SH template
-					ITA_add_modern_musculus_sh_tank_template_and_production = yes
-				}
-				else = {
-					custom_effect_tooltip = ITA_focus_sh_tank_template_tt
-					effect_tooltip = {
-						ITA_add_modern_musculus_sh_tank_template_and_production = yes
-					}
-				}
+				
+				ITA_add_modern_musculus_sh_tank_template_and_production = yes
 			}
 			else = {
 				add_tech_bonus = {
@@ -14711,16 +14844,10 @@ focus_tree = {
 				limit = {
 					has_dlc = "No Step Back"
 				}
-				if = {
-					limit = {
-						NOT = {
-							has_idea = ITA_hidden_super_heavy_tank_ns
-						}
-					}
-					custom_effect_tooltip = ITA_modern_musculus_military_industry_dm_tt
-					hidden_effect = {
-						add_ideas = ITA_hidden_super_heavy_tank_ns
-					}
+				
+				custom_effect_tooltip = ITA_modern_musculus_military_industry_dm_tt
+				hidden_effect = {
+					add_ideas = ITA_hidden_super_heavy_tank_ns
 				}
 
 				if = {
@@ -14764,10 +14891,10 @@ focus_tree = {
 		available = {
 			OR = {
 				AND = {
-					owns_state = 454
-					has_full_control_of_state = 454
+					owns_state = 1135
+					has_full_control_of_state = 1135
 				}
-				454 = {
+				1135 = {
 					is_fully_controlled_by = owner
 					owner = {
 						NOT = {
@@ -14783,8 +14910,8 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					NOT = { owns_state = 454 }
-					454 = {
+					NOT = { owns_state = 1135 }
+					1135 = {
 						is_fully_controlled_by = owner
 						owner = {
 							NOT = {
@@ -14793,16 +14920,16 @@ focus_tree = {
 						}
 					}
 				}
-				454 = {
+				1135 = {
 					owner = {
 						country_event = { id = BBA_italy_interaction_events.666 hours = 6 random_hours = 2 }
 					}
 				}
 				custom_effect_tooltip = if_they_accept_tt
 				effect_tooltip = {
-					transfer_state = 454 #PALESTINE
+					transfer_state = 1135 #Jerusalem
 					add_war_support = 0.03
-					454 = {
+					1135 = {
 						set_state_category = town
 						add_extra_state_shared_building_slots = 2
 						add_building_construction = {
@@ -14832,11 +14959,11 @@ focus_tree = {
 			}
 			else_if = {
 				limit = {
-					owns_state = 454
-					has_full_control_of_state = 454
+					owns_state = 1135
+					has_full_control_of_state = 1135
 				}
 				add_war_support = 0.03
-				454 = {
+				1135 = {
 					set_state_category = town
 					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
@@ -15009,16 +15136,30 @@ focus_tree = {
 			add_state_claim = 102 #NORTH SLOVENIA
 			add_state_claim = 853 #LJUBLJANA
 			add_state_claim = 103 #DALMATIA
+			add_state_claim = 1296 #DUBROVNIK
 			add_state_claim = 105 #MONTENEGRO
-			add_state_claim = 1105 # CUSTOM STATE - SPLIT
-			add_state_claim = 1082 # CUSTOM STATE - KOTOR
+			add_state_claim = 1716
+			add_state_claim = 1717
+			add_state_claim = 1718
+			add_state_claim = 1388
+			add_state_claim = 1314
+			add_state_claim = 1325
+			add_state_claim = 1339
+			add_state_claim = 1260
 
 			if = {
 				limit = {
 					country_exists = CRO
 					OR = {
 						103 = { is_fully_controlled_by = CRO }
+						1325 = { is_fully_controlled_by = CRO } # KSRE (de 103)
+						1339 = { is_fully_controlled_by = CRO } # KSRE (de 103)
+						1388 = { is_fully_controlled_by = CRO } # KSRE (de 103)
+						1718 = { is_fully_controlled_by = CRO } # KSRE (de 103)
+						1296 = { is_fully_controlled_by = CRO }
 						105 = { is_fully_controlled_by = CRO }
+						1260 = { is_fully_controlled_by = CRO } # KSRE (de 105)
+						1716 = { is_fully_controlled_by = CRO } # KSRE (de 105)
 					}
 				}
 				activate_targeted_decision = { target = CRO decision = ITA_send_ultimatum_to_country_balkan }
@@ -15028,7 +15169,14 @@ focus_tree = {
 					country_exists = MNT
 					OR = {
 						103 = { is_fully_controlled_by = MNT }
+						1325 = { is_fully_controlled_by = MNT } # KSRE (de 103)
+						1339 = { is_fully_controlled_by = MNT } # KSRE (de 103)
+						1388 = { is_fully_controlled_by = MNT } # KSRE (de 103)
+						1718 = { is_fully_controlled_by = MNT } # KSRE (de 103)
+						1296 = { is_fully_controlled_by = MNT }
 						105 = { is_fully_controlled_by = MNT }
+						1260 = { is_fully_controlled_by = MNT } # KSRE (de 105)
+						1716 = { is_fully_controlled_by = MNT } # KSRE (de 105)
 					}
 				}
 				activate_targeted_decision = { target = MNT decision = ITA_send_ultimatum_to_country_balkan }
@@ -15038,7 +15186,14 @@ focus_tree = {
 					country_exists = YUG
 					OR = {
 						103 = { is_fully_controlled_by = YUG }
+						1325 = { is_fully_controlled_by = YUG } # KSRE (de 103)
+						1339 = { is_fully_controlled_by = YUG } # KSRE (de 103)
+						1388 = { is_fully_controlled_by = YUG } # KSRE (de 103)
+						1718 = { is_fully_controlled_by = YUG } # KSRE (de 103)
+						1296 = { is_fully_controlled_by = YUG }
 						105 = { is_fully_controlled_by = YUG }
+						1260 = { is_fully_controlled_by = YUG } # KSRE (de 105)
+						1716 = { is_fully_controlled_by = YUG } # KSRE (de 105)
 					}
 				}
 				activate_targeted_decision = { target = YUG decision = ITA_send_ultimatum_to_country_balkan }
@@ -15256,16 +15411,20 @@ focus_tree = {
 
 		completion_reward = {
 			add_state_claim = 802 #KOSOVO
-			add_state_claim = 970 #DEBAR
-			add_state_claim = 185 #EPIRUS
-			add_state_claim = 105 #MONTENEGRO
+			add_state_claim = 970
+			add_state_claim = 1412
+			add_state_claim = 1260
+			add_state_claim = 1776
+			add_state_claim = 1777
 
 			hidden_effect = { #Representing the Albanian Irredentism recognized by ITA.
 				ALB = {
 					add_state_claim = 802 #KOSOVO
-					add_state_claim = 970 #DEBAR
-					add_state_claim = 185 #EPIRUS
-					add_state_claim = 105 #MONTENEGRO
+					add_state_claim = 970
+					add_state_claim = 1412
+					add_state_claim = 1260
+					add_state_claim = 1776
+					add_state_claim = 1777
 				}
 			}
 
@@ -15992,9 +16151,14 @@ focus_tree = {
 		available = {
 			is_puppet = no
 			is_in_faction_with = GER
-			GER = { 
-				controls_state = 16 				
-				GER = { is_faction_leader = yes }
+			16 = {
+				CONTROLLER = {
+					OR = {
+						tag = GER
+						is_subject_of = GER
+					}
+					GER = { is_faction_leader = yes }
+				}
 			}
 			custom_trigger_tooltip = {
 			 tooltip = ITA_claims_on_france_tt
@@ -16005,6 +16169,22 @@ focus_tree = {
 					controls_state = 735
 					owns_state = 1
 					controls_state = 1
+					owns_state = 32
+					controls_state = 32
+					owns_state = 851
+					controls_state = 851
+					owns_state = 1301
+					controls_state = 1301
+					owns_state = 1302
+					controls_state = 1302
+					owns_state = 1303
+					controls_state = 1303
+					owns_state = 1304
+					controls_state = 1304
+					owns_state = 1305
+					controls_state = 1305
+					owns_state = 1306
+					controls_state = 1306
 				}
 			}
 		}
@@ -16017,7 +16197,7 @@ focus_tree = {
 					any_other_country = {
 						original_tag = FRA
 						has_government = fascism
-						owns_state = 735
+						owns_state = 735 owns_state = 1301 owns_state = 1302 owns_state = 1303 owns_state = 1304 owns_state = 1305 owns_state = 1306
 					}
 				}
 				set_global_flag = ITA_claims_on_france_735
@@ -16031,6 +16211,96 @@ focus_tree = {
 					}
 				}
 				set_global_flag = ITA_claims_on_france_1
+			}
+			if = {
+				limit = { 
+					any_other_country = {
+						original_tag = FRA
+						has_government = fascism
+						owns_state = 32
+					}
+				}
+				set_global_flag = ITA_claims_on_france_32
+			}
+			if = {
+				limit = { 
+					any_other_country = {
+						original_tag = FRA
+						has_government = fascism
+						owns_state = 851
+					}
+				}
+				set_global_flag = ITA_claims_on_france_851
+			}
+			if = {
+				limit = { 
+					any_other_country = {
+						original_tag = FRA
+						has_government = fascism
+						owns_state = 1301
+					}
+				}
+				set_global_flag = ITA_claims_on_france_1301
+			}
+			if = {
+				limit = { 
+					any_other_country = {
+						original_tag = FRA
+						has_government = fascism
+						owns_state = 1302
+					}
+				}
+				set_global_flag = ITA_claims_on_france_1302
+			}
+			if = {
+				limit = { 
+					any_other_country = {
+						original_tag = FRA
+						has_government = fascism
+						owns_state = 1303
+					}
+				}
+				set_global_flag = ITA_claims_on_france_1303
+			}
+			if = {
+				limit = { 
+					any_other_country = {
+						original_tag = FRA
+						has_government = fascism
+						owns_state = 1304
+					}
+				}
+				set_global_flag = ITA_claims_on_france_1304
+			}
+			if = {
+				limit = { 
+					any_other_country = {
+						original_tag = FRA
+						has_government = fascism
+						owns_state = 1305
+					}
+				}
+				set_global_flag = ITA_claims_on_france_1305
+			}
+			if = {
+				limit = { 
+					any_other_country = {
+						original_tag = FRA
+						has_government = fascism
+						owns_state = 1306
+					}
+				}
+				set_global_flag = ITA_claims_on_france_1306
+			}
+			if = {
+				limit = { 
+					any_other_country = {
+						original_tag = FRA
+						has_government = fascism
+						owns_state = 21
+					}
+				}
+				set_global_flag = ITA_claims_on_france_21
 			}
 
 			GER = { country_event = germany.104 }
@@ -16061,7 +16331,7 @@ focus_tree = {
 			OR = {
 				owns_state = 44
 				44 = { owner = { is_subject_of = ROOT } }
-				owns_state = 102
+				owns_state = 102 owns_state = 1410 owns_state = 1704
 				102 = { owner = { is_subject_of = ROOT } }
 				owns_state = 853
 				853 = { owner = { is_subject_of = ROOT } }
@@ -16227,26 +16497,119 @@ focus_tree = {
 					103 = {
 						NOT = { is_claimed_by = ROOT }
 					}
+					1296 = { # KSRE (de 103)
+						NOT = { is_claimed_by = ROOT }
+					}
+					1325 = { # KSRE (de 103)
+						NOT = { is_claimed_by = ROOT }
+					}
+					1339 = { # KSRE (de 103)
+						NOT = { is_claimed_by = ROOT }
+					}
+					1388 = { # KSRE (de 103)
+						NOT = { is_claimed_by = ROOT }
+					}
+					1718 = { # KSRE (de 103)
+						NOT = { is_claimed_by = ROOT }
+					}
 				}
 				add_state_claim = 103 #DALMATIA
+			}
+			if = {
+				limit = {
+					1296 = {
+						NOT = { is_claimed_by = ROOT }
+					}
+				}
+				add_state_claim = 1296 #DUBROVNIK
 			}
 			if = {
 				limit = {
 					105 = {
 						NOT = { is_claimed_by = ROOT }
 					}
+					1260 = { # KSRE (de 105)
+						NOT = { is_claimed_by = ROOT }
+					}
+					1716 = { # KSRE (de 105)
+						NOT = { is_claimed_by = ROOT }
+					}
 				}
 				add_state_claim = 105 #MONTENEGRO
 			}
-			add_state_claim = 268 #DJIBUTI/FRENCH SOMALILAND
+			if = {
+				limit = {
+					1716 = { NOT = { is_claimed_by = ROOT } }
+				}
+				add_state_claim = 1716 #Kotor
+			}
+			if = {
+				limit = {
+					1717 = { NOT = { is_claimed_by = ROOT } }
+				}
+				add_state_claim = 1717 #Neum
+			}
+			if = {
+				limit = {
+					1718 = { NOT = { is_claimed_by = ROOT } }
+				}
+				add_state_claim = 1718 #Lika-Krbava
+			}
+			if = {
+				limit = {
+					1388 = { NOT = { is_claimed_by = ROOT } }
+				}
+				add_state_claim = 1388 #Bakar
+			}
+			if = {
+				limit = {
+					1314 = { NOT = { is_claimed_by = ROOT } }
+				}
+				add_state_claim = 1314 #Sibenik
+			}
+			if = {
+				limit = {
+					1325 = { NOT = { is_claimed_by = ROOT } }
+				}
+				add_state_claim = 1325 #Korcula Mljet
+			}
+			if = {
+				limit = {
+					1339 = { NOT = { is_claimed_by = ROOT } }
+				}
+				add_state_claim = 1339 #Split
+			}
+			if = {
+				limit = {
+					1260 = { NOT = { is_claimed_by = ROOT } }
+				}
+				add_state_claim = 1260 #Ulcinj
+			}
+			if = {
+				limit = {
+					1776 = { NOT = { is_claimed_by = ROOT } }
+				}
+				add_state_claim = 1776 #Rožaje
+			}
+			if = {
+				limit = {
+					853 = { NOT = { is_claimed_by = ROOT } }
+				}
+				add_state_claim = 853 #Ljubljana
+			}
+			add_state_claim = 268 #DJIBUTI
 			add_state_claim = 269 #BRITISH SOMALILAND
 			add_state_claim = 735 #SAVOY
-			add_state_claim = 851 #VAR
-			#add_state_claim = 185 #CORFU
+			add_state_claim = 1301
+			add_state_claim = 1302
+			add_state_claim = 1303
+			add_state_claim = 1304
+			add_state_claim = 1305
+			add_state_claim = 856 #VAR
+			add_state_claim = 185 #CORFU
 			add_state_claim = 1 #CORSICA
 			add_state_claim = 116 #MALTA
 			add_state_claim = 846 #TICINO
-			add_state_claim = 853 #LJUBLJANA
 
 			if = {
 				limit = {
@@ -16342,7 +16705,7 @@ focus_tree = {
 			create_wargoal = {
 				type = take_state_focus
 				target = FRA
-				generator = { 735 851 1 268 }
+				generator = { 735 1301 1302 1303 1304 1305 1257 1 268 1306 }
 			}
 		}
 	}
@@ -16371,7 +16734,28 @@ focus_tree = {
 			158 = {
 				is_controlled_by = ITA
 			}
+			1308 = { # KSRE (de 158)
+				is_controlled_by = ITA
+			}
 			735 = {
+				is_controlled_by = ITA
+			}
+			1301 = { # KSRE (de 735)
+				is_controlled_by = ITA
+			}
+			1302 = { # KSRE (de 735)
+				is_controlled_by = ITA
+			}
+			1303 = { # KSRE (de 735)
+				is_controlled_by = ITA
+			}
+			1304 = { # KSRE (de 735)
+				is_controlled_by = ITA
+			}
+			1305 = { # KSRE (de 735)
+				is_controlled_by = ITA
+			}
+			1306 = { # KSRE (de 735)
 				is_controlled_by = ITA
 			}
 		}
@@ -17604,7 +17988,7 @@ focus_tree = {
 					limit = {
 						is_fully_controlled_by = ROOT
 					}
-					prioritize = { 2 158 159 117 160 }
+					prioritize = { 2 158 1308 159 117 160 1168 1404 }
 					#Add 3 Infantry divs and 1 Divisione Celere
 					custom_effect_tooltip = ITA_the_kings_finest_spawn_divs_tt
 					hidden_effect = {
@@ -17855,7 +18239,7 @@ focus_tree = {
 				}
 				if = { # LITORALE
 					limit = { 736 = { is_controlled_by = ROOT } }
-					GER = { transfer_state = 736 }
+					GER = { transfer_state = 736 transfer_state = 1708 }
 				}
 				if = { # TRENTINO
 					limit = { 850 = { is_controlled_by = ROOT } }
@@ -17863,20 +18247,20 @@ focus_tree = {
 				}
 				if = { # ISTRIA
 					limit = { 852 = { is_controlled_by = ROOT } }
-					GER = { transfer_state = 852 }
+					GER = { transfer_state = 852 transfer_state = 1169 }
 				}
 				if = { # LJUBLJANA
 					limit = { 853 = { is_controlled_by = ROOT } }
 					GER = { transfer_state = 853 }
 				}
 				if = { # CUSTOM STATE NORTH VENETO
-					limit = { 1090 = { is_controlled_by = ROOT } }
-					GER = { transfer_state = 1090 }
+					limit = { 1168 = { is_controlled_by = ROOT } }
+					GER = { transfer_state = 1168 }
 				}
 				# VICHY FRANCE TERRITORIES Losses
 				if = { # SAVOY
 					limit = { 735 = { is_controlled_by = ROOT } }
-					GER = { transfer_state = 735 }
+					GER = { transfer_state = 735 transfer_state = 1301 transfer_state = 1302 transfer_state = 1303 transfer_state = 1304 transfer_state = 1305 transfer_state = 1306 }
 				}
 				if = { # ALPES
 					limit = { 32 = { is_controlled_by = ROOT } }
@@ -17908,6 +18292,8 @@ focus_tree = {
 					limit = {
 						country_exists = MNT
 						105 = { is_controlled_by = MNT }
+						1260 = { is_controlled_by = MNT } # KSRE (de 105)
+						1716 = { is_controlled_by = MNT } # KSRE (de 105)
 						is_in_faction_with = MNT
 					}
 					GER = {
@@ -17918,21 +18304,23 @@ focus_tree = {
 					}
 				}
 				if = { # CUSTOM STATE KOTOR
-					limit = { 1082 = { is_controlled_by = ROOT } }
-					GER = { transfer_state = 1082 }
+					limit = { 1716 = { is_controlled_by = ROOT } }
+					GER = { transfer_state = 1716 }
 				}
 				if = { # CUSTOM STATE SPLIT
 					limit = {
-						1105 = { is_controlled_by = ROOT } 
+						1339 = { is_controlled_by = ROOT } 
 						is_in_faction_with = CRO
 					}
-					CRO = { transfer_state = 1105 }
+					CRO = { transfer_state = 1339 }
 				}
 				if = { # MONTENEGRO
 					limit = {
 						105 = { is_controlled_by = ROOT }
+						1260 = { is_controlled_by = ROOT } # KSRE (de 105)
+						1716 = { is_controlled_by = ROOT } # KSRE (de 105)
 					}
-					GER = { transfer_state = 105 }
+					GER = { transfer_state = 105 transfer_state = 1260 transfer_state = 1716 }
 				}
 				if = { # CENTRAL ALBANIA
 					limit = {
@@ -17949,14 +18337,17 @@ focus_tree = {
 				if = { # KOSOVO
 					limit = {
 						802 = { is_controlled_by = ROOT }
+						1715 = { is_controlled_by = ROOT } # KSRE (de 802)
+						1776 = { is_controlled_by = ROOT } # KSRE (de 802)
 					}
-					GER = { transfer_state = 802 }
+					GER = { transfer_state = 802 transfer_state = 1715 transfer_state = 1776 }
 				}
 				if = { # DEBAR
 					limit = {
 						970 = { is_controlled_by = ROOT }
+						1412 = { is_controlled_by = ROOT } # KSRE (de 970)
 					}
-					GER = { transfer_state = 970 }
+					GER = { transfer_state = 970 transfer_state = 1412 }
 				}
 				if = { # NORTHERN EPIRUS
 					limit = {
@@ -17967,8 +18358,9 @@ focus_tree = {
 				if = { # EPIRUS
 					limit = {
 						185 = { is_controlled_by = ROOT }
+						1319 = { is_controlled_by = ROOT } # KSRE (de 185)
 					}
-					GER = { transfer_state = 185 }
+					GER = { transfer_state = 185 transfer_state = 1319 }
 				}
 			}
 		}
@@ -18153,7 +18545,7 @@ focus_tree = {
 						is_core_of = ROOT
 						is_fully_controlled_by = ROOT
 					}
-					prioritize = { 2 158 159 117 160 }
+					prioritize = { 2 158 1308 159 117 160 1168 1404 }
 					custom_effect_tooltip = ITA_integrate_polizia_dell_africa_italiana_spawn_units_italy_tt
 					hidden_effect = {
 						create_unit = {

@@ -20,8 +20,6 @@ ideas = {
 				conscription_factor = -0.5
 				join_faction_tension = 0.20
 				local_resources_factor = -0.2
-
-				custom_modifier_tooltip = great_depression_tt
 			}
 		}
 		great_depression_2 = {
@@ -43,8 +41,6 @@ ideas = {
 				conscription_factor = -0.4
 				join_faction_tension = 0.20
 				local_resources_factor = -0.15
-
-				custom_modifier_tooltip = great_depression_tt
 			}
 		}
 		great_depression_3 = {
@@ -66,8 +62,6 @@ ideas = {
 				conscription_factor = -0.2
 				join_faction_tension = 0.20
 				local_resources_factor = -0.1
-
-				custom_modifier_tooltip = great_depression_tt
 			}
 		}
 		USA_limited_intervention = {
@@ -92,7 +86,7 @@ ideas = {
 			}
 		}
 		USA_neutrality_act = {
-			picture = us_bill_of_balance
+			picture = generic_production_bonus
 			
 			allowed = {
 				always = no
@@ -113,7 +107,7 @@ ideas = {
 		}
 		USA_neutrality_act_aat = {
 			name = USA_neutrality_act
-			picture = us_bill_of_balance
+			picture = generic_production_bonus
 			
 			allowed = {
 				always = no
@@ -388,6 +382,7 @@ ideas = {
 
 			available = {
 				101 = {	is_controlled_by = ROOT }
+				1758 = {	is_controlled_by = ROOT } # KSRE (de 101)
 				DEN = {
 					OR = {
 						has_war = yes
@@ -415,8 +410,14 @@ ideas = {
 						101 = {
 							is_owned_and_controlled_by = ROOT
 						}
+						1758 = { # KSRE (de 101)
+							is_owned_and_controlled_by = ROOT
+						}
 					}
 					101 = {
+						transfer_state_to = DEN
+					}
+					1758 = { # KSRE (de 101)
 						transfer_state_to = DEN
 					}
 					DEN = { country_event = { id = AAT_USA_events.07 days = 1 } }
@@ -807,7 +808,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = generic_navy_bonus
+			picture = generic_navy_submarines
 			
 			equipment_bonus = {
 
@@ -1076,6 +1077,8 @@ ideas = {
 			equipment_bonus = {
 				large_plane_airframe = {
 					build_cost_ic = -0.1 instant = yes
+					fuel_consumption_factor = -0.15
+					air_range = 0.10
 				}
 			}
 		}
@@ -1106,7 +1109,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				
+				always = yes
 			}
 			
 			removal_cost = -1
@@ -1121,6 +1124,7 @@ ideas = {
 				drift_defence_factor = 0.2
 				ai_badass_factor = 0.03 # cares for 3% of normal threat
 				ai_desired_divisions_factor = 0.5 
+				democratic_drift = 0.01
 			}
 		}
 
@@ -1314,26 +1318,6 @@ ideas = {
 				conscription_factor = 0.25
 			}			
 		}
-
-		ABDA_maintain_strategic_flexibility_spirit = {
-
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			removal_cost = -1
-
-			picture = generic_sea_focused_navy
-
-			modifier = {
-				industrial_capacity_dockyard = 0.10
-				navy_max_range_factor = 0.10
-			}
-		}
 	
 	}
 
@@ -1428,11 +1412,11 @@ ideas = {
 					limit = {
 						original_tag = USA
 					}
-					has_completed_focus = USA_main_battle_tanks
+					has_completed_focus = USA_force_modernization
 				}
 				else = {
 					USA = {
-						has_completed_focus = USA_main_battle_tanks
+						has_completed_focus = USA_force_modernization
 					}
 				}
 			}
@@ -1464,7 +1448,7 @@ ideas = {
 				original_tag = USA
 			}
 			available = {
-				has_completed_focus = USA_tank_destroyer_doctrine
+				has_completed_focus = USA_advanced_tank_designs
 			}
 
 			
@@ -1943,6 +1927,7 @@ ideas = {
 			traits = { refinery_concern }
 			
 			modifier = {
+				fuel_gain_factor = 0.15
 			}
 		}
 		
@@ -1962,6 +1947,7 @@ ideas = {
 			traits = { electronics_concern }
 			
 			modifier = {
+				decryption_power_factor = 0.10
 			}
 		}
 		USA_general_motors = {
@@ -1971,7 +1957,12 @@ ideas = {
 				original_tag = USA
 			}
 			available = {
-				has_completed_focus = USA_wartime_industry
+				OR = {
+					has_completed_focus = USA_industrial_expansion
+					has_completed_focus = USA_engines_of_industry
+					has_completed_focus = USA_the_eagle_lifts_its_wings
+				}
+				
 			}
 			
 

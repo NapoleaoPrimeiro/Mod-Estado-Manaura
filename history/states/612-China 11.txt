@@ -1,21 +1,17 @@
-state = {
-	id = 612
-	name = "STATE_612"
-	manpower = 661000
-	buildings_max_level_factor = 1.000
-	state_category = rural
+state={
+	id=612
+	name="STATE_612"
 
 	resources = {
 		coal = 3 # The coal of the Chahar–Suiyuan mines.
 	}
 
-	history = {
-
-		owner = MEN
-		add_core_of = MEN
+	history={
+		owner = JAP
+		
 		add_core_of = CHI
 		add_core_of = PRC
-
+		
 		1936.1.1 = {
 			IF = {
 				limit = {
@@ -24,25 +20,29 @@ state = {
 				add_core_of = HBC
 			}
 		}
-
+		
 		buildings = {
 			infrastructure = 1
-			arms_factory = 1
-		}
 
+		}
+		
+		1936.5.12 = {
+			owner = MEN
+			controller = MEN
+			add_core_of = MEN
+		}
+		
 		victory_points = {
-			10372 1 # Xilinhot
+			12348 1 #Xilin Gol
 		}
-
-		victory_points = {
-			12448 1 # Erenhot
-		}
-
 	}
 
-	provinces = {
-		1551 1608 1811 1871 7578 7648 10363 10372 12348 12448 12554 
+	provinces={
+		1608 4222 4555 7648 10372 12348
 	}
+	manpower=283000
+	buildings_max_level_factor=1.000
+	state_category=rural
 
-	local_supplies = 0.0 
+	local_supplies=0.0 
 }

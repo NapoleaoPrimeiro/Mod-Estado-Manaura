@@ -2686,7 +2686,7 @@ country_event = {
 		if = {
 			limit = {
 				NOT = { original_tag = PUE }
-				owns_state = 686
+				owns_state = 686 owns_state = 1380
 				has_full_control_of_state = 686
 			}
 			release = PUE
@@ -2856,7 +2856,7 @@ country_event = {
 		if = {
 			limit = {
 				NOT = { original_tag = GDL }
-				owns_state = 694
+				owns_state = 694 owns_state = 1374 owns_state = 1375
 				has_full_control_of_state = 694
 			}
 			release = GDL
@@ -2873,8 +2873,20 @@ country_event = {
 		if = {
 			limit = {
 				NOT = { original_tag = CAY }
-				owns_state = 310
-				has_full_control_of_state = 310
+				OR = {
+					AND = {
+						owns_state = 310 owns_state = 1393 owns_state = 1394
+						has_full_control_of_state = 310
+					}
+					AND = {
+						owns_state = 1394
+						has_full_control_of_state = 1394
+					}
+					AND = {
+						owns_state = 1393
+						has_full_control_of_state = 1393
+					}
+				}
 			}
 			release = CAY
 		}
@@ -2892,9 +2904,9 @@ country_event = {
 				NOT = { original_tag = SYR }
 				owns_state = 677
 				has_full_control_of_state = 677
-				owns_state = 680
+				owns_state = 680 owns_state = 1330 owns_state = 1779
 				has_full_control_of_state = 680
-				owns_state = 554
+				owns_state = 554 owns_state = 1136
 				has_full_control_of_state = 554
 			}
 			release = SYR
@@ -3025,6 +3037,12 @@ country_event = {
 				NOT = { original_tag = RCG }
 				owns_state = 772
 				has_full_control_of_state = 772
+				owns_state = 1766
+				has_full_control_of_state = 1766
+				owns_state = 1767
+				has_full_control_of_state = 1767
+				owns_state = 1768
+				has_full_control_of_state = 1768
 			}
 			release = RCG
 		}
@@ -3042,6 +3060,8 @@ country_event = {
 				NOT = { original_tag = GAB }
 				owns_state = 539
 				has_full_control_of_state = 539
+				owns_state = 1769
+				has_full_control_of_state = 1769
 			}
 			release = GAB
 		}
@@ -3059,6 +3079,10 @@ country_event = {
 				NOT = { original_tag = CMR }
 				owns_state = 773
 				has_full_control_of_state = 773
+				owns_state = 1770
+				has_full_control_of_state = 1770
+				owns_state = 1760
+				has_full_control_of_state = 1760
 			}
 			release = CMR
 		}
@@ -3076,6 +3100,10 @@ country_event = {
 				NOT = { original_tag = CAR }
 				owns_state = 660
 				has_full_control_of_state = 660
+				owns_state = 1764
+				has_full_control_of_state = 1764
+				owns_state = 1765
+				has_full_control_of_state = 1765
 			}
 			release = CAR
 		}
@@ -3093,6 +3121,8 @@ country_event = {
 				NOT = { original_tag = CHA }
 				owns_state = 774
 				has_full_control_of_state = 774
+				owns_state = 1763
+				has_full_control_of_state = 1763
 				owns_state = 775
 				has_full_control_of_state = 775
 			}
@@ -3112,6 +3142,8 @@ country_event = {
 				NOT = { original_tag = NGR }
 				owns_state = 515
 				has_full_control_of_state = 515
+				owns_state = 1759
+				has_full_control_of_state = 1759
 				owns_state = 781
 				has_full_control_of_state = 781
 			}
@@ -3233,8 +3265,20 @@ country_event = {
 		if = {
 			limit = {
 				NOT = { original_tag = CAY }
-				owns_state = 310
-				has_full_control_of_state = 310
+				OR = {
+					AND = {
+						owns_state = 310 owns_state = 1393 owns_state = 1394
+						has_full_control_of_state = 310
+					}
+					AND = {
+						owns_state = 1394
+						has_full_control_of_state = 1394
+					}
+					AND = {
+						owns_state = 1393
+						has_full_control_of_state = 1393
+					}
+				}
 			}
 			release = CAY
 		}
@@ -3395,10 +3439,10 @@ country_event = {
 		if = {
 			limit = {
 				NOT = { original_tag = INS }
-				owns_state = 721
+				owns_state = 721 owns_state = 1341
 				has_full_control_of_state = 721
 			}
-			INS = { transfer_state = 721 }
+			INS = { transfer_state = 721 transfer_state = 1341 }
 		}
 		if = {
 			limit = {
@@ -3469,6 +3513,10 @@ country_event = {
 				has_full_control_of_state = 663
 				owns_state = 273
 				has_full_control_of_state = 273
+				owns_state = 1756
+				has_full_control_of_state = 1756
+				owns_state = 1757
+				has_full_control_of_state = 1757
 			}
 			release = LBA
 		}
@@ -3535,9 +3583,9 @@ country_event = {
 		if = {
 			limit = {
 				NOT = { original_tag = KOR }
-				owns_state = 527
+				owns_state = 527 owns_state = 1318 owns_state = 1322 owns_state = 1328 owns_state = 1329
 				has_full_control_of_state = 527
-				owns_state = 525
+				owns_state = 525 owns_state = 1316 owns_state = 1317
 				has_full_control_of_state = 525
 			}
 			release = KOR
@@ -3571,11 +3619,39 @@ country_event = {
 		}
 		if = {
 			limit = {
+				EHE = {
+					is_subject_of = ROOT
+				}
+			}
+			set_autonomy = { target = EHE autonomy_state = autonomy_free }
+			EHE = { 
+				leave_faction = yes 
+				drop_cosmetic_tag = yes
+			}
+		}
+		if = {
+			limit = {
 				NOT = { original_tag = event_target:WTT_current_china_leader }
-				owns_state = 609
+				owns_state = 609 owns_state = 1487 owns_state = 1488
 				has_full_control_of_state = 609
 			}
-			event_target:WTT_current_china_leader = { transfer_state = 609 }
+			event_target:WTT_current_china_leader = { transfer_state = 609 transfer_state = 1487 transfer_state = 1488 }
+		}
+		if = {
+			limit = {
+				NOT = { original_tag = event_target:WTT_current_china_leader }
+				owns_state = 1487
+				has_full_control_of_state = 1487
+			}
+			event_target:WTT_current_china_leader = { transfer_state = 1487 }
+		}
+		if = {
+			limit = {
+				NOT = { original_tag = event_target:WTT_current_china_leader }
+				owns_state = 1488
+				has_full_control_of_state = 1488
+			}
+			event_target:WTT_current_china_leader = { transfer_state = 1488 }
 		}
 		if = {
 			limit = {

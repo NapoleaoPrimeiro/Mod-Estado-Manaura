@@ -1,43 +1,39 @@
-state = {
-	id = 74
-	name = "STATE_74"
-	manpower = 820000
-	
+state=
+{
+	id=74
+	name="STATE_74"
+	manpower = 762142
+
 	resources = {
 		coal = 12 # initial distribution / 60 total
 	}
-
+	
 	state_category = rural
 	
+	
 	history = {
-		
 		owner = CZE
-		add_core_of = CZE
-		add_core_of = SIL
-
 		buildings = {
 			infrastructure = 4
 			arms_factory = 1
 		}
-
 		victory_points = {
-			3583 5 # Ostrava
+			3414 3 #Opava/Troppau
 		}
-
 		victory_points = {
-			3414 2 # Opava
+			6485 2 #Šumperk/Mährisch Schönberg
 		}
+		add_core_of = CZE
+		add_core_of = MRV
 
 		1938.9.30 = {
 			owner = GER
 			controller = GER
-			add_core_of = GER
 		}
 	}
-
-	provinces = {
+	provinces= {
 		421 3414 3583 6485
  	}
 
-	local_supplies = 2.0 
+	local_supplies=2.0 
 }

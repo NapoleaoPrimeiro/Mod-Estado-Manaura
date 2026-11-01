@@ -1,0 +1,378 @@
+formable_nations_mod_category = {
+	formable_nations_grossgermanisches_reich = {
+		priority = 999
+		icon = formable_nations_grossgermanisches_reich
+		allowed = { original_tag = GER }
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_global_flag = ai_formables_disabled
+			}
+		}
+
+		cost = 0  days_re_enable = 0
+
+		visible = {
+			has_government = fascism
+			NOT = { has_cosmetic_tag = GER_greater_german_reich }
+			NOT = { has_global_flag = hide_formable_nations }
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				# Alemanha
+				state = 5 state = 1288 state = 1427 state = 1428 state = 1557 state = 1701 state = 1702 state = 1772 state = 42 state = 1414 state = 1551 state = 50 state = 1547 state = 51 state = 1253 state = 52 state = 1549 state = 1550 state = 53 state = 1548 state = 54 state = 1546 state = 55 state = 1254 state = 56 state = 57 state = 1413 state = 58 state = 59 state = 1545 state = 60 state = 1270 state = 61 state = 62 state = 63 state = 1538 state = 1539 state = 64 state = 1268 state = 1269 state = 1542 state = 1544 state = 65 state = 1543 state = 66 state = 1540 state = 1541 state = 1558 state = 67 state = 68 state = 1429 state = 763 state = 1249 state = 909 state = 1728 state = 978 state = 1251
+				# Austria
+				state = 4 state = 1553 state = 152 state = 153 state = 848 state = 975 state = 976 state = 1390
+				# Sudetos
+				state = 69 state = 1556 state = 74 state = 972 state = 1608
+				# Boemia-Moravia
+				state = 9 state = 1555 state = 75 state = 1727
+				# Memel
+				state = 188 state = 1172
+				# Danzig e Prussia Ocidental
+				state = 85 state = 807 state = 1554
+				# Wartheland
+				state = 86 state = 1389 state = 87 state = 1481 state = 1252
+				# Alta Silesia Oriental e Tesinsko
+				state = 762 state = 72 state = 1425 state = 1145 state = 1144 state = 1143 state = 1142
+				# Zichenau e Soldau
+				state = 98 state = 1447 state = 1482 state = 1141
+				# Distrito de Bialystok
+				state = 97 state = 1239 state = 1240 state = 1245 state = 1241 state = 1242
+				# Governo-Geral
+				state = 10 state = 1256 state = 88 state = 89 state = 92 state = 1530 state = 1529 state = 1528 state = 1265 state = 1483 state = 90
+				# Galicia Oriental e Druskieniki
+				state = 91 state = 1531 state = 1775 state = 1532 state = 1399 state = 1238 state = 1400
+				# Kranjska
+				state = 102
+				# Alsacia-Lorena
+				state = 28
+				# Luxemburgo
+				state = 8
+				# Eupen-Malmedy
+				state = 1250
+			}
+		}
+
+		available = {
+			has_government = fascism
+			custom_trigger_tooltip = {
+				tooltip = highlighted_state_tooltip
+				OR = {
+					AND = {
+						# Alemanha
+						5 = { controls_or_subject_of = yes }
+						1288 = { controls_or_subject_of = yes }
+						1427 = { controls_or_subject_of = yes }
+						1428 = { controls_or_subject_of = yes }
+						1557 = { controls_or_subject_of = yes }
+						1701 = { controls_or_subject_of = yes }
+						1702 = { controls_or_subject_of = yes }
+						1772 = { controls_or_subject_of = yes }
+						42 = { controls_or_subject_of = yes }
+						1414 = { controls_or_subject_of = yes }
+						1551 = { controls_or_subject_of = yes }
+						50 = { controls_or_subject_of = yes }
+						1547 = { controls_or_subject_of = yes }
+						51 = { controls_or_subject_of = yes }
+						1253 = { controls_or_subject_of = yes }
+						52 = { controls_or_subject_of = yes }
+						1549 = { controls_or_subject_of = yes }
+						1550 = { controls_or_subject_of = yes }
+						53 = { controls_or_subject_of = yes }
+						1548 = { controls_or_subject_of = yes }
+						54 = { controls_or_subject_of = yes }
+						1546 = { controls_or_subject_of = yes }
+						55 = { controls_or_subject_of = yes }
+						1254 = { controls_or_subject_of = yes }
+						56 = { controls_or_subject_of = yes }
+						57 = { controls_or_subject_of = yes }
+						1413 = { controls_or_subject_of = yes }
+						58 = { controls_or_subject_of = yes }
+						59 = { controls_or_subject_of = yes }
+						1545 = { controls_or_subject_of = yes }
+						60 = { controls_or_subject_of = yes }
+						1270 = { controls_or_subject_of = yes }
+						61 = { controls_or_subject_of = yes }
+						62 = { controls_or_subject_of = yes }
+						63 = { controls_or_subject_of = yes }
+						1538 = { controls_or_subject_of = yes }
+						1539 = { controls_or_subject_of = yes }
+						64 = { controls_or_subject_of = yes }
+						1268 = { controls_or_subject_of = yes }
+						1269 = { controls_or_subject_of = yes }
+						1542 = { controls_or_subject_of = yes }
+						1544 = { controls_or_subject_of = yes }
+						65 = { controls_or_subject_of = yes }
+						1543 = { controls_or_subject_of = yes }
+						66 = { controls_or_subject_of = yes }
+						1540 = { controls_or_subject_of = yes }
+						1541 = { controls_or_subject_of = yes }
+						1558 = { controls_or_subject_of = yes }
+						67 = { controls_or_subject_of = yes }
+						68 = { controls_or_subject_of = yes }
+						1429 = { controls_or_subject_of = yes }
+						763 = { controls_or_subject_of = yes }
+						1249 = { controls_or_subject_of = yes }
+						909 = { controls_or_subject_of = yes }
+						1728 = { controls_or_subject_of = yes }
+						978 = { controls_or_subject_of = yes }
+						1251 = { controls_or_subject_of = yes }
+						# Austria
+						4 = { controls_or_subject_of = yes }
+						1553 = { controls_or_subject_of = yes }
+						152 = { controls_or_subject_of = yes }
+						153 = { controls_or_subject_of = yes }
+						848 = { controls_or_subject_of = yes }
+						975 = { controls_or_subject_of = yes }
+						976 = { controls_or_subject_of = yes }
+						1390 = { controls_or_subject_of = yes }
+						# Sudetos
+						69 = { controls_or_subject_of = yes }
+						1556 = { controls_or_subject_of = yes }
+						74 = { controls_or_subject_of = yes }
+						972 = { controls_or_subject_of = yes }
+						1608 = { controls_or_subject_of = yes }
+						# Boemia-Moravia
+						9 = { controls_or_subject_of = yes }
+						1555 = { controls_or_subject_of = yes }
+						75 = { controls_or_subject_of = yes }
+						1727 = { controls_or_subject_of = yes }
+						# Memel
+						188 = { controls_or_subject_of = yes }
+						1172 = { controls_or_subject_of = yes }
+						# Danzig e Prussia Ocidental
+						85 = { controls_or_subject_of = yes }
+						807 = { controls_or_subject_of = yes }
+						1554 = { controls_or_subject_of = yes }
+						# Wartheland
+						86 = { controls_or_subject_of = yes }
+						1389 = { controls_or_subject_of = yes }
+						87 = { controls_or_subject_of = yes }
+						1481 = { controls_or_subject_of = yes }
+						1252 = { controls_or_subject_of = yes }
+						# Alta Silesia Oriental e Tesinsko
+						762 = { controls_or_subject_of = yes }
+						72 = { controls_or_subject_of = yes }
+						1425 = { controls_or_subject_of = yes }
+						1145 = { controls_or_subject_of = yes }
+						1144 = { controls_or_subject_of = yes }
+						1143 = { controls_or_subject_of = yes }
+						1142 = { controls_or_subject_of = yes }
+						# Zichenau e Soldau
+						98 = { controls_or_subject_of = yes }
+						1447 = { controls_or_subject_of = yes }
+						1482 = { controls_or_subject_of = yes }
+						1141 = { controls_or_subject_of = yes }
+						# Distrito de Bialystok
+						97 = { controls_or_subject_of = yes }
+						1239 = { controls_or_subject_of = yes }
+						1240 = { controls_or_subject_of = yes }
+						1245 = { controls_or_subject_of = yes }
+						1241 = { controls_or_subject_of = yes }
+						1242 = { controls_or_subject_of = yes }
+						# Governo-Geral
+						10 = { controls_or_subject_of = yes }
+						1256 = { controls_or_subject_of = yes }
+						88 = { controls_or_subject_of = yes }
+						89 = { controls_or_subject_of = yes }
+						92 = { controls_or_subject_of = yes }
+						1530 = { controls_or_subject_of = yes }
+						1529 = { controls_or_subject_of = yes }
+						1528 = { controls_or_subject_of = yes }
+						1265 = { controls_or_subject_of = yes }
+						1483 = { controls_or_subject_of = yes }
+						90 = { controls_or_subject_of = yes }
+						# Galicia Oriental e Druskieniki
+						91 = { controls_or_subject_of = yes }
+						1531 = { controls_or_subject_of = yes }
+						1775 = { controls_or_subject_of = yes }
+						1532 = { controls_or_subject_of = yes }
+						1399 = { controls_or_subject_of = yes }
+						1238 = { controls_or_subject_of = yes }
+						1400 = { controls_or_subject_of = yes }
+						# Kranjska
+						102 = { controls_or_subject_of = yes }
+						# Alsacia-Lorena
+						28 = { controls_or_subject_of = yes }
+						# Luxemburgo
+						8 = { controls_or_subject_of = yes }
+						# Eupen-Malmedy
+						1250 = { controls_or_subject_of = yes }
+					}
+					AND = {
+						has_global_flag = debug_mode
+						is_ai = no
+					}
+				}
+			}
+			custom_trigger_tooltip = { tooltip = not_already_existing_tt NOT = { any_country = { has_cosmetic_tag = GER_greater_german_reich } } }
+			custom_trigger_tooltip = {
+				tooltip = is_puppet_tooltip
+				OR = {
+					is_subject = no
+					has_global_flag = puppets_allowed
+				}
+			}
+		}
+
+		complete_effect = {
+			capital_scope = { set_state_flag = formable_nations_old_capital }
+			set_cosmetic_tag = GER_greater_german_reich
+			add_stability = 0.10
+			add_war_support = 0.05
+			set_capital = { state = 1269 }
+			# Berlim vira Germania
+			1269 = { set_state_name = STATE_1269_GERMANIA }
+			set_province_name = { id = 13637 name = VICTORY_POINTS_13637_GERMANIA }
+			custom_effect_tooltip = core_land
+			hidden_effect = {
+				sound_effect = formable_complete
+				set_country_flag = unform_available
+				set_global_flag = form_greater_german_reich_flag
+				# Alemanha
+				5 = { add_core_of = ROOT }
+				1288 = { add_core_of = ROOT }
+				1427 = { add_core_of = ROOT }
+				1428 = { add_core_of = ROOT }
+				1557 = { add_core_of = ROOT }
+				1701 = { add_core_of = ROOT }
+				1702 = { add_core_of = ROOT }
+				1772 = { add_core_of = ROOT }
+				42 = { add_core_of = ROOT }
+				1414 = { add_core_of = ROOT }
+				1551 = { add_core_of = ROOT }
+				50 = { add_core_of = ROOT }
+				1547 = { add_core_of = ROOT }
+				51 = { add_core_of = ROOT }
+				1253 = { add_core_of = ROOT }
+				52 = { add_core_of = ROOT }
+				1549 = { add_core_of = ROOT }
+				1550 = { add_core_of = ROOT }
+				53 = { add_core_of = ROOT }
+				1548 = { add_core_of = ROOT }
+				54 = { add_core_of = ROOT }
+				1546 = { add_core_of = ROOT }
+				55 = { add_core_of = ROOT }
+				1254 = { add_core_of = ROOT }
+				56 = { add_core_of = ROOT }
+				57 = { add_core_of = ROOT }
+				1413 = { add_core_of = ROOT }
+				58 = { add_core_of = ROOT }
+				59 = { add_core_of = ROOT }
+				1545 = { add_core_of = ROOT }
+				60 = { add_core_of = ROOT }
+				1270 = { add_core_of = ROOT }
+				61 = { add_core_of = ROOT }
+				62 = { add_core_of = ROOT }
+				63 = { add_core_of = ROOT }
+				1538 = { add_core_of = ROOT }
+				1539 = { add_core_of = ROOT }
+				64 = { add_core_of = ROOT }
+				1268 = { add_core_of = ROOT }
+				1269 = { add_core_of = ROOT }
+				1542 = { add_core_of = ROOT }
+				1544 = { add_core_of = ROOT }
+				65 = { add_core_of = ROOT }
+				1543 = { add_core_of = ROOT }
+				66 = { add_core_of = ROOT }
+				1540 = { add_core_of = ROOT }
+				1541 = { add_core_of = ROOT }
+				1558 = { add_core_of = ROOT }
+				67 = { add_core_of = ROOT }
+				68 = { add_core_of = ROOT }
+				1429 = { add_core_of = ROOT }
+				763 = { add_core_of = ROOT }
+				1249 = { add_core_of = ROOT }
+				909 = { add_core_of = ROOT }
+				1728 = { add_core_of = ROOT }
+				978 = { add_core_of = ROOT }
+				1251 = { add_core_of = ROOT }
+				# Austria
+				4 = { add_core_of = ROOT }
+				1553 = { add_core_of = ROOT }
+				152 = { add_core_of = ROOT }
+				153 = { add_core_of = ROOT }
+				848 = { add_core_of = ROOT }
+				975 = { add_core_of = ROOT }
+				976 = { add_core_of = ROOT }
+				1390 = { add_core_of = ROOT }
+				# Sudetos
+				69 = { add_core_of = ROOT }
+				1556 = { add_core_of = ROOT }
+				74 = { add_core_of = ROOT }
+				972 = { add_core_of = ROOT }
+				1608 = { add_core_of = ROOT }
+				# Boemia-Moravia
+				9 = { add_core_of = ROOT }
+				1555 = { add_core_of = ROOT }
+				75 = { add_core_of = ROOT }
+				1727 = { add_core_of = ROOT }
+				# Memel
+				188 = { add_core_of = ROOT }
+				1172 = { add_core_of = ROOT }
+				# Danzig e Prussia Ocidental
+				85 = { add_core_of = ROOT }
+				807 = { add_core_of = ROOT }
+				1554 = { add_core_of = ROOT }
+				# Wartheland
+				86 = { add_core_of = ROOT }
+				1389 = { add_core_of = ROOT }
+				87 = { add_core_of = ROOT }
+				1481 = { add_core_of = ROOT }
+				1252 = { add_core_of = ROOT }
+				# Alta Silesia Oriental e Tesinsko
+				762 = { add_core_of = ROOT }
+				72 = { add_core_of = ROOT }
+				1425 = { add_core_of = ROOT }
+				1145 = { add_core_of = ROOT }
+				1144 = { add_core_of = ROOT }
+				1143 = { add_core_of = ROOT }
+				1142 = { add_core_of = ROOT }
+				# Zichenau e Soldau
+				98 = { add_core_of = ROOT }
+				1447 = { add_core_of = ROOT }
+				1482 = { add_core_of = ROOT }
+				1141 = { add_core_of = ROOT }
+				# Distrito de Bialystok
+				97 = { add_core_of = ROOT }
+				1239 = { add_core_of = ROOT }
+				1240 = { add_core_of = ROOT }
+				1245 = { add_core_of = ROOT }
+				1241 = { add_core_of = ROOT }
+				1242 = { add_core_of = ROOT }
+				# Governo-Geral
+				10 = { add_core_of = ROOT }
+				1256 = { add_core_of = ROOT }
+				88 = { add_core_of = ROOT }
+				89 = { add_core_of = ROOT }
+				92 = { add_core_of = ROOT }
+				1530 = { add_core_of = ROOT }
+				1529 = { add_core_of = ROOT }
+				1528 = { add_core_of = ROOT }
+				1265 = { add_core_of = ROOT }
+				1483 = { add_core_of = ROOT }
+				90 = { add_core_of = ROOT }
+				# Galicia Oriental e Druskieniki
+				91 = { add_core_of = ROOT }
+				1531 = { add_core_of = ROOT }
+				1775 = { add_core_of = ROOT }
+				1532 = { add_core_of = ROOT }
+				1399 = { add_core_of = ROOT }
+				1238 = { add_core_of = ROOT }
+				1400 = { add_core_of = ROOT }
+				# Kranjska
+				102 = { add_core_of = ROOT }
+				# Alsacia-Lorena
+				28 = { add_core_of = ROOT }
+				# Luxemburgo
+				8 = { add_core_of = ROOT }
+				# Eupen-Malmedy
+				1250 = { add_core_of = ROOT }
+			}
+		}
+	}
+}

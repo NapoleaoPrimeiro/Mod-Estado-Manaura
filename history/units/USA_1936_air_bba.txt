@@ -19,7 +19,7 @@ air_wings = {
 	}
 
 	### 2 USAAF Wing -- Norfolk
-	362 = { 
+	1698 = { 
 		# 1st Pursuit Group 
 		# 8th Pursuit Group 
 		small_plane_airframe_0 =  {
@@ -90,16 +90,16 @@ air_wings = {
 	}
 
 	### Philippines Composite Group -- Manilla
-#	327 = { 
-#		# 4th Composite Group 
-#		fighter_equipment_0 =  {
-#			owner = "USA" 
-#			amount = 36
-#		}
-#	}
+ #	327 = { 
+ #		# 4th Composite Group 
+ #		fighter_equipment_0 =  {
+ #			owner = "USA" 
+ #			amount = 36
+ #		}
+ #	}
 
 	### USN Atlantic Naval Patrol Division -- Norfolk
-	362 = { 
+	1698 = { 
 		# Naval Patrol Wing 3 
 		medium_plane_airframe_0 =  {
 			owner = "USA" 
@@ -141,55 +141,18 @@ air_wings = {
 #########################
 ## STARTING PRODUCTION ##
 #########################
-instant_effect = {
-	add_equipment_production = {
-		equipment = {
-			type = small_plane_airframe_1
-			creator = "USA" 
-			version_name = "P-35A"
-		}
-		requested_factories = 1
-		progress = 0.15
-		efficiency = 50
-		industrial_manufacturer = mio:USA_north_american_aviation_organization
-	}
-
-	add_equipment_production = {
-		equipment = {
-			type = cv_small_plane_airframe_1
-			creator = "USA" 
-			version_name = "F3F"
-		}
-		requested_factories = 1
-		progress = 0.15
-		efficiency = 50
-		industrial_manufacturer = mio:USA_grumman_organization
-	}
-
-	add_equipment_production = {
-		equipment = {
-			type = cv_small_plane_cas_airframe_0
-			creator = "USA" 
-			version_name = "SBU Corsair"
-		}
-		requested_factories = 1
-		progress = 0.15
-		efficiency = 50
-		industrial_manufacturer = mio:USA_grumman_organization
-	}
-
-	add_equipment_production = {
-		equipment = {
-			type = cv_small_plane_naval_bomber_airframe_0
-			creator = "USA" 
-			version_name = "BM-2"
-		}
-		requested_factories = 1
-		progress = 0.15
-		efficiency = 50
-		industrial_manufacturer = mio:USA_grumman_organization
-	}
-}
-
-
-#####################
+#instant_effect = {
+#	add_equipment_production = {
+#		equipment = {
+#			type = small_plane_airframe_1
+#			creator = "USA" 
+#			version_name = "P-35A"
+#		}
+#		requested_factories = 1
+#		progress = 0.15
+#		efficiency = 50
+#		industrial_manufacturer = mio:USA_north_american_aviation_organization
+#	}
+#
+#}
+######################

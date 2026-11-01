@@ -54,13 +54,6 @@ set_stability = 0.75
 set_war_support = 0
 add_command_power = 20
 
-add_dynamic_modifier = {modifier= USA_army}
-
-	add_to_variable = {USA_conscription_factor = -0.3}
-	add_to_variable = {USA_army_attack_factor = -0.10 }
-	add_to_variable = {USA_army_defence_factor = -0.10 }
-
-
 set_variable = { var = senators_support value = 48 }
 set_variable = { var = senators_total value = 96 }
 set_variable = { var = representatives_support value = 218 }
@@ -85,8 +78,6 @@ set_technology = {
 	tech_engineers = 1
 	gw_artillery = 1
 	interwar_antiair = 1
-	superior_firepower = 1
-	base_strike = 1
 	motorised_infantry = 1
 	fuel_silos = 1
 	fuel_refining = 1
@@ -94,6 +85,9 @@ set_technology = {
 	basic_train = 1
 	engine_tech_1 = 1
 }
+
+set_grand_doctrine = superior_firepower
+set_grand_doctrine = new_base_strike
 
 add_breakthrough_progress = {
 	specialization = specialization_land
@@ -162,7 +156,7 @@ if = {
 		basic_ship_hull_carrier = 1
 		basic_battery = 1
 		basic_light_battery = 1
-		basic_medium_battery = 1
+		#basic_medium_battery = 1
 		basic_heavy_battery = 1
 		basic_torpedo = 1
 		sonar = 1
@@ -170,7 +164,7 @@ if = {
 		basic_cruiser_armor_scheme = 1
 		basic_heavy_armor_scheme = 1
 		mtg_transport = 1
-		improved_airplane_launcher = 1
+		#improved_airplane_launcher = 1
 		basic_dp_light_battery = 1
 	}
 	add_ideas = MTG_naval_treaty_adherent
@@ -224,6 +218,7 @@ if = {
 		isolation
 		volunteer_only
 		great_depression_3
+		new_deal
 	}
 	remove_ideas = {
 		great_depression
@@ -232,24 +227,34 @@ if = {
 	#focuses
 	unlock_national_focus = USA_continue_the_new_deal
 	unlock_national_focus = USA_wpa
-	complete_national_focus = USA_agricultural_adjustment_act
 	complete_national_focus = USA_war_department
 	complete_national_focus = USA_air_war_plans_division
 	complete_national_focus = USA_war_plans_division
-	complete_national_focus = USA_selective_training_act
-	complete_national_focus = USA_office_of_scientific_research_and_development
-	complete_national_focus = USA_fair_labour_standards_act
-	complete_national_focus = USA_neutrality_act
-	complete_national_focus = USA_focus34
-	complete_national_focus = USA_intervention_in_asia
+	complete_national_focus = USA_agricultural_adjustment_act
+	unlock_national_focus = USA_neutrality_act
+	#Dont want neutrality act event to fire
+	if = {
+		limit = {
+			has_dlc = "Arms Against Tyranny"
+		}
+		add_ideas = USA_neutrality_act_aat
+		hidden_effect = {
+			add_relation_rule_override = {
+				can_access_market = no
+				trigger = trade_partner_not_at_war
+				usage_desc = trade_partner_not_at_war_tt
+			}
+		}
+		else = {
+			add_ideas = USA_neutrality_act
+		}
+	}
+	complete_national_focus = USA_intervention_in_asia	
 	complete_national_focus = USA_war_plan_orange
-	complete_national_focus = USA_focus36
-	complete_national_focus = USA_arsenal_of_democracy
-	complete_national_focus = USA_intervention_in_europe
+	complete_national_focus = USA_intervention_in_europe		
 	complete_national_focus = USA_war_plan_black
-	complete_national_focus = USA_federal_housing_act
-	complete_national_focus = USA_strategic_bombing	
-	complete_national_focus = USA_air_support
+	complete_national_focus = USA_strategic_bombing
+ 	complete_national_focus = USA_fair_labour_standards_act
 
 	set_global_flag = earhart_disappeared
 	oob = "USA_1939"
@@ -322,13 +327,9 @@ if = {
 
 		#doctrines
 		#Air
-		air_superiority = 1
-		infrastructure_destruction = 1
-		naval_strike_tactics = 1
-
-		sup_delay = 1
-		submarine_operations_bs = 1
-		carrier_primacy = 1
+		#air_superiority = 1
+		#infrastructure_destruction = 1
+		#naval_strike_tactics = 1
 
 		#electronics
 		electronic_mechanical_engineering = 1
@@ -378,7 +379,25 @@ if = {
 	}
 }
 
+set_grand_doctrine = superior_firepower
+set_grand_doctrine = new_base_strike
+set_grand_doctrine = new_strategic_destruction
 
+set_sub_doctrine = assault_infantry
+add_mastery = {
+    amount = 25
+    sub_doctrine = assault_infantry
+}
+set_sub_doctrine = line_of_battle
+add_mastery = {
+    amount = 25
+    sub_doctrine = line_of_battle
+}
+set_sub_doctrine = air_subdoctrine_escort_fighter
+add_mastery = {
+    amount = 25
+    sub_doctrine = air_subdoctrine_escort_fighter
+}
 
 
 set_convoys = 700
@@ -391,26 +410,26 @@ set_politics = {
 	elections_allowed = yes
 }
 set_popularities = {
-	democratic = 99
+	democratic = 97
 	communism = 1
+	fascism = 1
+	neutrality = 1
 }
 
 add_ideas = {
 	undisturbed_isolation
-	great_depression
+	#great_depression
 	disarmed_nation
-	free_trade
-	USA_home_of_free
-	USA_jingji_tingzhi
-	US_USA_xidian_junxiao	
-	USA_tank_out
+	#free_trade
+	limited_exports
+	home_of_the_free
 }
 
 
 # DIPLOMACY
 set_autonomy = {
 	target = PHI
-	autonomous_state =  autonomy_puppet
+	autonomous_state =  autonomy_colony
 }
 
 1939.1.1 = {
@@ -422,50 +441,6 @@ set_autonomy = {
 	}
 }
 
-##共产主义顾问团
-recruit_character = USA_luobote_maina
-recruit_character = USA_yuesefu_hanseng
-recruit_character = USA_youjin_dannisi
-recruit_character = USA_zhanmusi_bonamu
-recruit_character = USA_jieyi_luofisitong
-recruit_character = USA_yilishabai_fulin
-recruit_character = USA_chaersi_lusengbao
-
-
-recruit_character = USA_zhanmusi_kannong
-recruit_character = USA_luobote_wagena 
-recruit_character = USA_luobote_patesen
-recruit_character = USA_arthur_kapo
-recruit_character = USA_john_hanmiertun
-recruit_character = USA_liuyisi_daogelasi
-recruit_character = USA_Frank_Knox
-recruit_character = USA_broadway
-recruit_character = USA_GCGJ
-recruit_character = USA_yuesefu_panxing
-recruit_character = USA_yagebu_defusi
-recruit_character = USA_maxiu_B_liqiwei
-recruit_character = USA_woerdun_halisi_woke
-recruit_character = USA_huolande_shimisi
-recruit_character = USA_andongni_maikaolifu
-recruit_character = USA_yuehanni_daerkuisite
-recruit_character = USA_malin_kelaige
-recruit_character = USA_tuomasi_handy
-recruit_character = USA_qiaozhi_kenni
-recruit_character = USA_yuesefu_maikenani
-recruit_character = USA_weilian_laixi
-recruit_character = USA_qiaonasi_enggelamu
-recruit_character = USA_make_miqieer
-recruit_character = USA_chaersi_luokewude
-
-
-recruit_character = USA_aiyinsitan
-recruit_character = USA_huohuade_stark
-recruit_character = USA_anna_luochebao
-recruit_character = USA_willam_foster
-recruit_character = USA_steve_luokingsi
-recruit_character = USA_hali_huopujinsi
-recruit_character = USA_fulangxisi_bojinsi
-recruit_character = USA_supreme_soviet
 recruit_character = USA_earl_browder
 recruit_character = USA_william_dudley_pelley
 recruit_character = USA_franklin_delano_roosevelt
@@ -479,7 +454,6 @@ recruit_character = USA_douglas_macarthur
 recruit_character = USA_walter_krueger
 recruit_character = USA_lloyd_fredendall
 recruit_character = USA_leslie_mcnair
-recruit_character = USA_jonathan_wainwright
 recruit_character = USA_russell_hartle
 recruit_character = USA_leonard_gerow
 recruit_character = USA_edward_brooks
@@ -538,8 +512,26 @@ recruit_character = USA_william_francis_gibbs
 recruit_character = USA_andrew_mckee
 recruit_character = USA_john_walter_christie
 recruit_character = USA_vannevar_bush
+# New
+	recruit_character = USA_william_friedman
+	recruit_character = USA_ralph_van_deman
+	recruit_character = USA_harry_hopkins
+	recruit_character = USA_henry_kaiser
+	recruit_character = USA_henry_cabot_lodge_jr
+	recruit_character = USA_willis_lee
 
+	recruit_character = USA_fritz_kuhn
+	recruit_character = USA_gerald_lk_smith
+	recruit_character = USA_lawrence_dennis
+	recruit_character = USA_smedley_butler
+	recruit_character = USA_robert_e_wood
+	recruit_character = USA_john_aubitz
+#
 
+if = {
+	limit = { not = { has_dlc = "No Compromise, No Surrender" } }
+	recruit_character = USA_jonathan_wainwright
+}
 
 if = {
 	limit = { has_dlc = "La Resistance" }
@@ -656,7 +648,6 @@ if = {
 	create_equipment_variant = {
 		name = "P-6" #export models only
 		type = small_plane_airframe_0
-		design_team = mio:USA_north_american_aviation_organization
 		modules = {
 			fixed_main_weapon_slot = light_mg_2x
 			engine_type_slot = engine_1_1x
@@ -667,7 +658,6 @@ if = {
 	create_equipment_variant = {
 		name = "P-26A" # Boeing P-26 Peashooter
 		type = small_plane_airframe_0
-		design_team = mio:USA_north_american_aviation_organization
 		modules = {
 			fixed_main_weapon_slot = light_mg_2x
 			engine_type_slot = engine_1_1x
@@ -679,7 +669,6 @@ if = {
 	create_equipment_variant = {
 		name = "O2U" #
 		type = small_plane_cas_airframe_0
-		design_team = mio:USA_douglas_aircraft_company_organization 
 		modules = {
 			fixed_main_weapon_slot = bomb_locks
 			fixed_auxiliary_weapon_slot_1 = light_mg_2x
@@ -690,7 +679,6 @@ if = {
 	create_equipment_variant = {
 		name = "SBU Corsair" #
 		type = cv_small_plane_cas_airframe_0
-		design_team = mio:USA_douglas_aircraft_company_organization 
 		modules = {
 			fixed_main_weapon_slot = bomb_locks
 			engine_type_slot = engine_1_1x
@@ -701,7 +689,6 @@ if = {
 	create_equipment_variant = {
 		name = "BM-2" #
 		type = cv_small_plane_naval_bomber_airframe_0
-		design_team = mio:USA_grumman_organization
 		modules = {
 			fixed_main_weapon_slot = torpedo_mounting
 			engine_type_slot = engine_1_1x
@@ -712,7 +699,6 @@ if = {
 	create_equipment_variant = {
 		name = "A-12" #
 		type = small_plane_cas_airframe_0
-		design_team = mio:USA_douglas_aircraft_company_organization
 		modules = {
 			fixed_main_weapon_slot = bomb_locks
 			fixed_auxiliary_weapon_slot_1 = light_mg_4x
@@ -725,7 +711,6 @@ if = {
 	create_equipment_variant = {
 		name = "A-17" #
 		type = small_plane_cas_airframe_1
-		design_team = mio:USA_douglas_aircraft_company_organization
 		modules = {
 			fixed_main_weapon_slot = small_bomb_bay
 			fixed_auxiliary_weapon_slot_1 = light_mg_4x
@@ -737,7 +722,6 @@ if = {
 	create_equipment_variant = {
 		name = "P-35A" #
 		type = small_plane_airframe_1
-		design_team = mio:USA_north_american_aviation_organization
 		modules = {
 			fixed_main_weapon_slot = light_mg_2x
 			fixed_auxiliary_weapon_slot_1 = heavy_mg_2x
@@ -749,7 +733,6 @@ if = {
 	create_equipment_variant = {
 		name = "P-36A" #
 		type = small_plane_airframe_1
-		design_team = mio:USA_north_american_aviation_organization
 		modules = {
 			fixed_main_weapon_slot = light_mg_4x
 			fixed_auxiliary_weapon_slot_1 = light_mg_2x
@@ -761,7 +744,6 @@ if = {
 	create_equipment_variant = {
 		name = "B-6A" #also covers other Keystone bombers
 		type = medium_plane_airframe_0
-		design_team = mio:USA_lockheed_organization
 		modules = {
 			fixed_main_weapon_slot = medium_bomb_bay
 			engine_type_slot = engine_1_2x
@@ -773,7 +755,6 @@ if = {
 	create_equipment_variant = {
 		name = "B-10" #
 		type = medium_plane_airframe_1
-		design_team = mio:USA_lockheed_organization
 		modules = {
 			fixed_main_weapon_slot = medium_bomb_bay
 			engine_type_slot = engine_1_2x
@@ -784,7 +765,6 @@ if = {
 	create_equipment_variant = {
 		name = "B-18" #
 		type = medium_plane_airframe_1
-		design_team = mio:USA_lockheed_organization
 		modules = {
 			fixed_main_weapon_slot = medium_bomb_bay
 			engine_type_slot = engine_2_2x
@@ -795,7 +775,6 @@ if = {
 	create_equipment_variant = {
 		name = "P2Y" #
 		type = medium_plane_airframe_0
-		design_team = mio:USA_lockheed_organization
 		modules = {
 			fixed_main_weapon_slot = medium_bomb_bay
 			fixed_auxiliary_weapon_slot_1 = bomb_locks
@@ -815,7 +794,6 @@ if = {
 	create_equipment_variant = {
 		name = "PBY" #
 		type = medium_plane_airframe_1
-		design_team = mio:USA_lockheed_organization
 		modules = {
 			fixed_main_weapon_slot = medium_bomb_bay
 			fixed_auxiliary_weapon_slot_1 = torpedo_mounting
@@ -834,7 +812,6 @@ if = {
 	create_equipment_variant = {
 		name = "F4B" #also covers F2F
 		type = cv_small_plane_airframe_0
-		design_team = mio:USA_grumman_organization
 		modules = {
 			fixed_main_weapon_slot = light_mg_2x
 			engine_type_slot = engine_1_1x
@@ -845,11 +822,9 @@ if = {
 	}
 	create_equipment_variant = {
 		name = "F3F" #
-		type = cv_small_plane_airframe_1
-		design_team = mio:USA_grumman_organization
+		type = cv_small_plane_airframe_0
 		modules = {
-			fixed_main_weapon_slot = light_mg_4x
-			fixed_auxiliary_weapon_slot_1 = light_mg_2x
+			fixed_main_weapon_slot = light_mg_2x
 			engine_type_slot = engine_2_1x
 			special_type_slot_1 = empty
 		}
@@ -928,7 +903,6 @@ if = {
 	create_equipment_variant = {
 		name = "Porpoise Class"				# represents Porpoise, Shark, and Perch classes
 		type = ship_hull_submarine_2
-		design_team = mio:USA_electric_boat_company_organization
 		name_group = USA_SS_HISTORICAL
 		parent_version = 0
 		modules = {
@@ -958,7 +932,6 @@ if = {
 	create_equipment_variant = {
 		name = "Farragut Class"				# represents Farragut, Porter, Mahan classes
 		type = ship_hull_light_1
-		design_team = mio:USA_norfolk_naval_yard_organization
 		name_group = USA_DD_HISTORICAL
 		parent_version = 0
 		modules = {
@@ -1069,7 +1042,6 @@ if = {
 	create_equipment_variant = {
 		name = "New Orleans Class"
 		type = ship_hull_cruiser_2
-		design_team = mio:USA_brooklyn_naval_yard_organization
 		name_group = USA_CA_HISTORICAL
 		parent_version = 0
 		modules = {
@@ -1089,7 +1061,6 @@ if = {
 		create_equipment_variant = {
 			name = "Wichita Class"
 			type = ship_hull_cruiser_2
-			design_team = mio:USA_brooklyn_naval_yard_organization
 			name_group = USA_CA_HISTORICAL
 			parent_version = 0
 			modules = {
@@ -1115,7 +1086,6 @@ if = {
 	create_equipment_variant = {
 		name = "New York Class"					# represents Wyoming (Arkansas) and New York classes
 		type = ship_hull_heavy_1
-		design_team = mio:USA_newport_news_shipbuilding_organization
 		name_group = USA_BB_HISTORICAL
 		parent_version = 0
 		modules = {
@@ -1179,7 +1149,7 @@ if = {
 		}
 		obsolete = yes
 	}
-	create_equipment_variant = {
+		create_equipment_variant = {
 		name = "Tennessee Class"				
 		type = ship_hull_heavy_1
 		name_group = USA_BB_HISTORICAL
@@ -1292,7 +1262,6 @@ if = {
 	create_equipment_variant = {
 		name = "Yorktown Class"
 		type = ship_hull_carrier_1
-		design_team = mio:USA_newport_news_shipbuilding_organization
 		name_group = USA_CV_HISTORICAL
 		parent_version = 0
 		modules = {
@@ -1307,31 +1276,6 @@ if = {
 	}
 }
 
-##########Design Team#############
-create_equipment_variant = {
-	type = infantry_equipment_1
-	design_team = mio:USA_springfield_armory_organization
-	show_position = no
-	mark_older_equipment_obsolete = yes
-}
-create_equipment_variant = {
-	type = support_equipment_1
-	design_team = mio:USA_jiaerwen_organization
-	show_position = no
-	mark_older_equipment_obsolete = yes
-}
-create_equipment_variant = {
-	type = artillery_equipment_1
-	design_team = mio:USA_rock_island_arsenal_organization
-	show_position = no
-	mark_older_equipment_obsolete = yes
-}
-create_equipment_variant = {
-	type = motorized_equipment_1
-	design_team = mio:USA_ford_motor_company_organization
-	show_position = no
-	mark_older_equipment_obsolete = yes
-}
 
 # 1939 Start #
 1939.1.1 = {
@@ -1571,3 +1515,379 @@ create_equipment_variant = {
 		}
 	}
 }
+
+# No Map Changes necessary
+add_offsite_building = {
+	type = industrial_complex
+	level = 34
+}
+add_offsite_building = {
+	type = dockyard
+	level = 2
+}
+add_offsite_building = {
+	type = arms_factory
+	level = 4
+}
+
+#THE ECONOMY NATIONAL SPIRIT VARS
+ set_variable = { USA_eco_dy_political_power_cost = 1.00 }
+ set_variable = { USA_eco_dy_research_speed_factor = 0 }
+ set_variable = { USA_eco_dy_political_power_gain = 0 }
+ set_variable = { USA_eco_dy_political_power_factor = 0 }
+ set_variable = { USA_eco_dy_consumer_goods_factor = 0.6 }
+ set_variable = { USA_eco_dy_conscription_factor = -0.50 }
+ set_variable = { USA_eco_dy_join_faction_tension = 0.20 }
+ set_variable = { USA_eco_dy_local_resources_factor = -0.20 }
+ set_variable = { USA_eco_dy_industrial_capacity_dockyard = 0 }
+ set_variable = { USA_eco_dy_industrial_capacity_factory = 0 }
+ set_variable = { USA_eco_dy_stability_factor = 0 }
+ set_variable = { USA_eco_dy_war_support_factor = -0.05 } # was 0
+ 
+ set_variable = { USA_eco_dy_production_speed_buildings_factor = 0 }
+ set_variable = { USA_eco_dy_production_factory_max_efficiency_factor = 0 }
+ set_variable = { USA_eco_dy_production_factory_efficiency_gain_factor = 0 }
+ set_variable = { USA_eco_dy_global_building_slots_factor = 0 }
+ set_variable = { USA_eco_dy_production_lack_of_resource_penalty_factor = 0 }
+ set_variable = { USA_eco_dy_production_factory_start_efficiency_factor = 0 }
+ set_variable = { USA_eco_dy_production_speed_arms_factory_factor = 0 }
+ set_variable = { USA_eco_dy_production_speed_dockyard_factor = 0 }
+ set_variable = { USA_eco_dy_production_speed_industrial_complex_factor = 0 }
+ set_variable = { USA_eco_dy_production_speed_synthetic_refinery_factor = 0 }
+ set_variable = { USA_eco_dy_production_speed_facility_factor = 0 }
+
+ set_variable = { USA_eco_dy_resource_trade_cost_bonus_per_factory = 0 }
+ set_variable = { USA_eco_dy_trade_laws_cost_factor = 0 }
+ set_variable = { USA_eco_dy_economy_cost_factor = 0 }
+
+ set_variable = { USA_eco_dy_cic_construction_boost = 0 }
+ set_variable = { USA_eco_dy_cic_construction_boost_factor = 0 }
+
+
+#THE GOVERNMENT NATIONAL SPIRIT VARS
+ set_variable = { USA_gov_dy_political_power_cost = 0 }
+ set_variable = { USA_gov_dy_research_speed_factor = 0 }
+ set_variable = { USA_gov_dy_political_power_gain = 0 }
+ set_variable = { USA_gov_dy_political_power_factor = 0 }
+ set_variable = { USA_gov_dy_consumer_goods_factor = 0 }
+ set_variable = { USA_gov_dy_conscription_factor = 0 }
+ set_variable = { USA_gov_dy_join_faction_tension = 0 }
+ set_variable = { USA_gov_dy_local_resources_factor = 0 }
+ set_variable = { USA_gov_dy_stability_factor = 0 }
+ set_variable = { USA_gov_dy_war_support_factor = 0 }
+ set_variable = { USA_gov_dy_production_speed_buildings_factor = 0 }
+ set_variable = { USA_gov_dy_justify_war_goal_time = 0 }
+ set_variable = { USA_gov_dy_trade_opinion_factor = 0 }
+ set_variable = { USA_gov_dy_surrender_limit = 0 }
+ set_variable = { USA_gov_dy_min_export = 0 }
+ set_variable = { USA_gov_dy_defensive_war_stability_factor = 0 }
+ set_variable = { USA_gov_dy_offensive_war_stability_factor = 0 }
+ set_variable = { USA_gov_dy_improve_relations_maintain_cost_factor = 0 }
+ set_variable = { USA_gov_dy_party_popularity_stability_factor = 0 }
+ set_variable = { USA_gov_dy_weekly_casualties_war_support = 0 }
+ set_variable = { USA_gov_dy_weekly_convoys_war_support = 0 }
+ set_variable = { USA_gov_dy_weekly_bombing_war_support = 0 }
+ set_variable = { USA_gov_dy_drift_defence_factor = 0 }
+ set_variable = { USA_gov_dy_justify_war_goal_when_in_major_war_time = 0 }
+ set_variable = { USA_gov_dy_opinion_gain_monthly_factor = 0 }
+ set_variable = { USA_gov_dy_annex_cost_factor = 0 }
+ set_variable = { USA_gov_dy_puppet_cost_factor = 0 }
+ set_variable = { USA_gov_dy_master_ideology_drift = 0 }
+ set_variable = { USA_gov_dy_factory_energy_consumption = 0 }
+ set_variable = { USA_gov_dy_civil_war_involvement_tension = 0 }
+ set_variable = { USA_gov_dy_faction_trade_opinion_factor = 0 }
+ set_variable = { USA_gov_dy_enemy_declare_war_tension = 0 }
+ set_variable = { USA_gov_dy_enemy_justify_war_goal_time = 0 }
+ set_variable = { USA_gov_dy_subjects_autonomy_gain = 0 }
+ set_variable = { USA_gov_dy_autonomy_manpower_share = 0 }
+ set_variable = { USA_gov_dy_lend_lease_tension = 0 }
+ set_variable = { USA_gov_dy_compliance_gain = 0 }
+ set_variable = { USA_gov_dy_compliance_growth = 0 }
+ set_variable = { USA_gov_dy_resistance_damage_to_garrison = 0 }
+ set_variable = { USA_gov_dy_resistance_decay = 0 }
+ set_variable = { USA_gov_dy_resistance_garrison_penetration_chance = 0 }
+ set_variable = { USA_gov_dy_resistance_growth = 0 }
+ set_variable = { USA_gov_dy_resistance_target = 0 }
+ set_variable = { USA_gov_dy_industry_free_repair_factor = 0 }
+ set_variable = { USA_gov_dy_industry_repair_factor = 0 }
+ set_variable = { USA_gov_dy_command_power_gain = 0 }
+ set_variable = { USA_gov_dy_command_power_gain_mult = 0 }
+ set_variable = { USA_gov_dy_stability_weekly_factor = 0 }
+ set_variable = { USA_gov_dy_communism_drift = 0 }
+ set_variable = { USA_gov_dy_communism_drift_from_guarantees = 0 }
+ set_variable = { USA_gov_dy_communism_acceptance = 0 }
+ set_variable = { USA_gov_dy_monthly_population = 0 }
+
+#THE SPY AGENCY NATIONAL SPIRIT VARS
+ set_variable = { USA_dy_agy_political_power_cost = 0 }
+ set_variable = { USA_dy_agy_research_speed_factor = 0 }
+ set_variable = { USA_dy_agy_political_power_gain = 0 }
+ set_variable = { USA_dy_agy_political_power_factor = 0 }
+ set_variable = { USA_dy_agy_consumer_goods_factor = 0 }
+ set_variable = { USA_dy_agy_conscription_factor = 0 }
+ set_variable = { USA_dy_agy_join_faction_tension = 0 }
+ set_variable = { USA_dy_agy_stability_factor = 0 }
+ set_variable = { USA_dy_agy_war_support_factor = 0 }
+ set_variable = { USA_dy_agy_justify_war_goal_time = 0 }
+ set_variable = { USA_dy_agy_trade_opinion_factor = 0 }
+ set_variable = { USA_dy_agy_political_advisor_cost_factor = 0 }
+ set_variable = { USA_dy_agy_drift_defence_factor = 0 } # 0.05
+ set_variable = { USA_dy_agy_compliance_growth_on_our_occupied_states = 0 }
+ set_variable = { USA_dy_agy_resistance_activity = 0 }
+ set_variable = { USA_dy_agy_resistance_target_on_our_occupied_states = 0 }
+ set_variable = { USA_dy_agy_resistance_target = 0 }
+ set_variable = { USA_dy_agy_agency_upgrade_time = 0 }
+ #set_variable = { USA_dy_agy_decryption = 0 }
+ #set_variable = { USA_dy_agy_encryption = 0 }
+ set_variable = { USA_dy_agy_civilian_intel_factor = 0 }
+ set_variable = { USA_dy_agy_airforce_intel_factor = 0 }
+ set_variable = { USA_dy_agy_army_intel_factor = 0 }
+ set_variable = { USA_dy_agy_navy_intel_factor = 0 }
+ set_variable = { USA_dy_agy_civilian_intel_to_others = 0 }
+ set_variable = { USA_dy_agy_airforce_intel_to_others = 0 } # -5.0
+ set_variable = { USA_dy_agy_army_intel_to_others = 0 }
+ set_variable = { USA_dy_agy_navy_intel_to_others = 0 }
+ set_variable = { USA_dy_agy_foreign_subversive_activites = 0 }
+ set_variable = { USA_dy_agy_intel_network_gain_factor = 0 }
+ set_variable = { USA_dy_agy_boost_ideology_mission_factor = 0 }
+ set_variable = { USA_dy_agy_boost_resistance_factor = 0 }
+ set_variable = { USA_dy_agy_propaganda_mission_factor = 0 } # 0.05 # 0.10
+ set_variable = { USA_dy_agy_intelligence_agency_defense = 0 }
+ set_variable = { USA_dy_agy_enemy_operative_recruitment_chance = 0 }
+ set_variable = { USA_dy_agy_operative_slot = 0 } # 1
+
+ set_variable = { USA_dy_agy_commando_trait_chance_factor = 0 }
+ #set_variable = { USA_dy_agy_decryption_power_factor = 0 }
+ set_variable = { USA_dy_agy_intel_from_combat_factor = 0 }
+ set_variable = { USA_dy_agy_intel_from_operatives_factor = 0 }
+ set_variable = { USA_dy_agy_root_out_resistance_effectiveness_factor = 0 }
+ set_variable = { USA_dy_agy_own_operative_capture_chance_factor = 0 }
+ set_variable = { USA_dy_agy_own_operative_detection_chance_factor = 0 }
+ set_variable = { USA_dy_agy_enemy_operative_capture_chance_factor = 0 }
+ set_variable = { USA_dy_agy_enemy_operative_detection_chance_factor = 0 }
+ set_variable = { USA_dy_agy_enemy_operative_intel_extraction_rate = 0 }
+ set_variable = { USA_dy_agy_new_operative_slot_bonus = 0 }
+ set_variable = { USA_dy_agy_control_trade_mission_factor = 0 }
+ set_variable = { USA_dy_agy_diplomatic_pressure_mission_factor = 0 }
+
+ set_variable = { USA_dy_agy_crypto_strength = 0 }
+ set_variable = { USA_dy_agy_decryption_power = 0 }
+ set_variable = { USA_dy_agy_decryption_power_factor = 0 }
+ set_variable = { USA_dy_agy_operation_coup_government_outcome = 0 }
+
+#THE MILITARY INDUSTRIAL COMPLEX SPIRIT VARS
+ set_variable = { USA_dy_agy_political_power_cost = 0 }
+ set_variable = { USA_dy_mic_research_speed_factor = 0 }
+ set_variable = { USA_dy_mic_consumer_goods_factor = 0 }
+ set_variable = { USA_dy_mic_justify_war_goal_time = 0 }
+ set_variable = { USA_dy_mic_trade_opinion_factor = 0 }
+ set_variable = { USA_dy_mic_local_resources_factor = 0 }
+ set_variable = { USA_dy_mic_industrial_capacity_dockyard = 0 }
+ set_variable = { USA_dy_mic_industrial_capacity_factory = 0 }
+ set_variable = { USA_dy_mic_production_speed_buildings_factor = 0 }
+ set_variable = { USA_dy_mic_production_factory_max_efficiency_factor = 0 }
+ set_variable = { USA_dy_mic_production_factory_efficiency_gain_factor = 0 }
+ set_variable = { USA_dy_mic_global_building_slots_factor = 0 }
+ set_variable = { USA_dy_mic_production_speed_facility_factor = 0 }
+ set_variable = { USA_dy_mic_production_speed_arms_factory_factor = 0 }
+ set_variable = { USA_dy_mic_production_speed_dockyard_factor = 0 }
+ set_variable = { USA_dy_mic_production_factory_start_efficiency_factor = 0 }
+ set_variable = { USA_dy_mic_military_industrial_organization_research_bonus = 0 } # was 0.02
+ set_variable = { USA_dy_mic_military_industrial_organization_design_team_assign_cost = 0.15 }
+ set_variable = { USA_dy_mic_military_industrial_organization_funds_gain = -0.10 }
+ set_variable = { USA_dy_mic_refit_speed = 0 }
+ set_variable = { USA_dy_mic_equipment_conversion_speed = -0.15 }
+ set_variable = { USA_dy_mic_civilian_factory_use = 0 }
+ set_variable = { USA_dy_mic_special_project_speed_factor = 0 }
+
+#THE ARMY SPIRIT VARS
+ set_variable = { USA_dy_arm_research_speed_factor = 0 }
+ set_variable = { USA_dy_arm_grant_medal_cost_factor = 0.25 }
+ set_variable = { USA_dy_arm_acclimatization_cold_climate_gain_factor = 0 }
+ set_variable = { USA_dy_arm_acclimatization_hot_climate_gain_factor = 0 }
+ set_variable = { USA_dy_arm_air_superiority_bonus_in_combat = 0 }
+ set_variable = { USA_dy_arm_army_attack_factor = 0 }
+ set_variable = { USA_dy_arm_army_core_attack_factor = 0 }
+ set_variable = { USA_dy_arm_army_attack_against_minor_factor = 0 }
+ set_variable = { USA_dy_arm_army_attack_speed_factor = 0 }
+ set_variable = { USA_dy_arm_army_defence_factor = 0 }
+ set_variable = { USA_dy_arm_army_core_defence_factor = 0 }
+ set_variable = { USA_dy_arm_army_speed_factor = 0 } # -0.05
+ set_variable = { USA_dy_arm_army_strength_factor = 0 }
+ set_variable = { USA_dy_arm_army_armor_attack_factor = -0.10 }
+ set_variable = { USA_dy_arm_army_artillery_attack_factor = 0 }
+ set_variable = { USA_dy_arm_special_forces_attack_factor = 0 }
+ set_variable = { USA_dy_arm_army_morale_factor = 0 }
+ set_variable = { USA_dy_arm_army_org_factor = 0 }
+ set_variable = { USA_dy_arm_army_org_regain = 0 }
+ set_variable = { USA_dy_arm_breakthrough_factor = -0.05 }
+ set_variable = { USA_dy_arm_coordination_bonus = 0 }
+ set_variable = { USA_dy_arm_dig_in_speed_factor = 0.00 }
+ set_variable = { USA_dy_arm_experience_gain_army_unit_factor = 0 }
+ set_variable = { USA_dy_arm_experience_loss_factor = 0 } # 0.05
+ set_variable = { USA_dy_arm_initiative_factor = 0 }
+ set_variable = { USA_dy_arm_land_night_attack = 0 }
+ set_variable = { USA_dy_arm_max_planning_factor = 0 } # 0.05
+ set_variable = { USA_dy_arm_pocket_penalty = 0 }
+ set_variable = { USA_dy_arm_recon_factor = 0 }
+ set_variable = { USA_dy_arm_special_forces_cap = 0 }
+ set_variable = { USA_dy_arm_org_loss_when_moving = 0 }
+ set_variable = { USA_dy_arm_planning_speed = 0 } # -0.10
+ set_variable = { USA_dy_arm_experience_gain_army = 0 }
+ set_variable = { USA_dy_arm_experience_gain_army_factor = -0.10 }
+ set_variable = { USA_dy_arm_land_doctrine_cost_factor = 0.10 }
+ set_variable = { USA_dy_arm_supply_combat_penalties_on_core_factor = 0 }
+ set_variable = { USA_dy_arm_supply_consumption_factor = 0 } # -0.05
+ set_variable = { USA_dy_arm_no_supply_grace = 0 }
+ set_variable = { USA_dy_arm_attrition = 0 }
+ set_variable = { USA_dy_arm_training_time_factor = 0.20 }
+ set_variable = { USA_dy_arm_special_forces_no_supply_grace = 0 }
+ set_variable = { USA_dy_arm_special_forces_training_time_factor = 0 }
+ #set_variable = { USA_dy_arm_supply_factor = 0 }
+ set_variable = { USA_dy_arm_defensive_war_stability_factor = 0 }
+ set_variable = { USA_dy_arm_offensive_war_stability_factor = 0 }
+ set_variable = {USA_dy_arm_modifier_army_sub_unit_militia_attack_factor = 0 }
+ set_variable = {USA_dy_arm_modifier_army_sub_unit_militia_defence_factor = 0 }
+ set_variable = {USA_dy_arm_modifier_army_sub_unit_militia_max_org_factor = 0 }
+ set_variable = {USA_dy_arm_modifier_army_sub_unit_militia_speed_factor = 0 }
+
+#THE NAVY SPIRIT VARS
+ set_variable = { USA_dy_nav_research_speed_factor = 0 }
+ set_variable = { USA_dy_nav_experience_gain_navy = 0 }
+ set_variable = { USA_dy_nav_experience_gain_navy_factor = -0.10 }
+ set_variable = { USA_dy_nav_naval_doctrine_cost_factor = 0.10 }
+ set_variable = { USA_dy_nav_naval_invasion_penalty = 0 }
+ set_variable = { USA_dy_nav_naval_invasion_capacity = 0 }
+ set_variable = { USA_dy_nav_convoy_escort_efficiency = 0 }
+ set_variable = { USA_dy_nav_convoy_raiding_efficiency_factor = 0 }
+ set_variable = { USA_dy_nav_critical_receive_chance = -0.05 } # -0.20
+ set_variable = { USA_dy_nav_experience_gain_navy_unit_factor = 0 }
+ set_variable = { USA_dy_nav_naval_accidents_chance = 0 }
+ set_variable = { USA_dy_nav_navy_anti_air_attack_factor = 0 }
+ set_variable = { USA_dy_nav_naval_coordination = 0 }
+ set_variable = { USA_dy_nav_naval_critical_effect_factor = 0 }
+ set_variable = { USA_dy_nav_naval_critical_score_chance_factor = 0 }
+ set_variable = { USA_dy_nav_naval_damage_factor = 0 }
+ set_variable = { USA_dy_nav_naval_defense_factor = 0 }
+ set_variable = { USA_dy_nav_naval_has_potf_in_combat_attack = 0 }
+ set_variable = { USA_dy_nav_naval_has_potf_in_combat_defense = 0 }
+ set_variable = { USA_dy_nav_naval_hit_chance = 0 }
+ set_variable = { USA_dy_nav_naval_morale_factor = 0 }
+ set_variable = { USA_dy_nav_naval_speed_factor = 0 } # -0.05
+ set_variable = { USA_dy_nav_navy_org_factor = 0 } # 0.05
+ set_variable = { USA_dy_nav_navy_max_range_factor = 0 } # 0.10
+ set_variable = { USA_dy_nav_naval_torpedo_screen_penetration_factor = 0 }
+ set_variable = { USA_dy_nav_naval_torpedo_enemy_critical_chance_factor = 0 }
+ set_variable = { USA_dy_nav_naval_heavy_gun_hit_chance_factor = 0 }
+ set_variable = { USA_dy_nav_navy_weather_penalty = 0 } #-0.05
+ set_variable = { USA_dy_nav_night_spotting_chance = 0 }
+ set_variable = { USA_dy_nav_positioning = 0 }
+ set_variable = { USA_dy_nav_repair_speed_factor = 0 }
+ set_variable = { USA_dy_nav_strike_force_movement_org_loss = 0 } # -0.10
+ set_variable = { USA_dy_nav_sub_retreat_speed = 0 }
+ set_variable = { USA_dy_nav_submarine_attack = 0 }
+ set_variable = { USA_dy_nav_navy_carrier_air_targetting_factor = 0 }
+ set_variable = { USA_dy_nav_sortie_efficiency = -0.10 }
+ set_variable = { USA_dy_nav_naval_torpedo_reveal_chance_factor = 0 }
+ set_variable = { USA_dy_nav_navy_submarine_attack_factor = 0 }
+
+#THE AIR SPIRIT VARS
+ set_variable = { USA_dy_air_research_speed_factor = 0 }
+ set_variable = { USA_dy_air_experience_gain_air = 0 }
+ set_variable = { USA_dy_air_experience_gain_air_factor = -0.15 }
+ set_variable = { USA_dy_air_air_doctrine_cost_factor = 0.20 }
+ set_variable = { USA_dy_air_air_accidents_factor = 0.10 }
+ set_variable = { USA_dy_air_ace_effectiveness_factor = 0 }
+ set_variable = { USA_dy_air_air_ace_generation_chance_factor = 0.05 }
+ set_variable = { USA_dy_air_air_agility_factor = -0.10 }
+ set_variable = { USA_dy_air_air_attack_factor = 0 }
+ set_variable = { USA_dy_air_air_defence_factor = 0 }
+ set_variable = { USA_dy_air_naval_strike_targetting_factor = 0 }
+ set_variable = { USA_dy_air_air_close_air_support_org_damage_factor = 0 }
+ set_variable = { USA_dy_air_air_bombing_targetting = 0 }
+ set_variable = { USA_dy_air_air_cas_efficiency = 0 }
+ set_variable = { USA_dy_air_air_cas_present_factor = 0 }
+ set_variable = { USA_dy_air_air_mission_efficiency = 0 }
+ set_variable = { USA_dy_air_air_maximum_speed_factor = 0 }
+ set_variable = { USA_dy_air_air_home_defence_factor = 0 }
+ set_variable = { USA_dy_air_air_mission_xp_gain_factor = 0 }
+ set_variable = { USA_dy_air_air_night_penalty = 0 }
+ set_variable = { USA_dy_air_air_strategic_bomber_bombing_factor = -0.05 }
+ set_variable = { USA_dy_air_air_range_factor = 0 }
+ set_variable = { USA_dy_air_air_power_projection_factor = -0.05 }
+ set_variable = { USA_dy_air_air_strategic_bomber_night_penalty = 0 }
+ set_variable = { USA_dy_air_air_superiority_efficiency = 0 }
+ set_variable = { USA_dy_air_air_weather_penalty = 0 }
+ set_variable = { USA_dy_air_air_wing_xp_loss_when_killed_factor = 0 } #-0.05
+ set_variable = { USA_dy_air_ground_attack_factor = 0 }
+ set_variable = { USA_dy_air_strategic_bomb_visibility = 0 }
+
+# FREE Variables
+ set_variable = { USA_FREE_civ_points 	= -6 } # They all start at (-1), able to be improved with a single small boost
+ set_variable = { USA_FREE_mil_points 	= -6 } # 9-23: They all start at (-1) --> (-6) from (-3)
+ set_variable = { USA_FREE_arm_points 	= -6 }
+ set_variable = { USA_FREE_nav_points 	= -6 }
+ set_variable = { USA_FREE_air_points 	= -6 }
+ set_variable = { USA_FREE_sci_points 	= -6 }
+ set_variable = { FREE_points_A 	= 5 }
+ set_variable = { FREE_points_AA 	= 10 }
+ set_variable = { FREE_points_AAA	= 15 }
+ set_variable = { FREE_points_V 	= -1 }
+ set_variable = { FREE_points_VV 	= -2 }
+ set_variable = { FREE_points_VVV 	= -3 }
+ set_variable = { FREE_points_VVVV 	= -6 }
+ set_variable = { FREE_expert_guidance_P	= 5 } # The points given to positive sectors by Expert Guidance
+ set_variable = { FREE_expert_guidance_S	= 1 } # The points given to negative sectors by Expert Guidance
+ set_variable = { FREE_recovery_funds_P		= 1 } # The points given to positive sectors by Recovery Funds
+ set_variable = { FREE_recovery_funds_S		= 2 } # The points given to negative sectors by Recovery Funds
+
+# Goldstar Variables
+ set_variable = { global.USA_goldstar_dy_research_speed_factor = 0 }
+ set_variable = { global.USA_goldstar_dy_acclimatization_cold_climate_gain_factor = 0 }
+ set_variable = { global.USA_goldstar_dy_acclimatization_hot_climate_gain_factor = 0 }
+ set_variable = { global.USA_goldstar_dy_air_superiority_bonus_in_combat = 0 }
+ set_variable = { global.USA_goldstar_dy_political_power_factor = 0 }
+ set_variable = { global.USA_goldstar_dy_conscription_factor = 0 }
+ set_variable = { global.USA_goldstar_dy_stability_factor = 0 }
+ set_variable = { global.USA_goldstar_dy_war_support_factor = 0 }
+ set_variable = { global.USA_goldstar_dy_production_factory_max_efficiency_factor = 0 }
+ set_variable = { global.USA_goldstar_dy_production_factory_efficiency_gain_factor = 0 }
+ set_variable = { global.USA_goldstar_dy_grant_medal_cost_factor = 0 }
+ set_variable = { global.USA_goldstar_dy_army_core_attack_factor = 0 }
+ set_variable = { global.USA_goldstar_dy_army_core_defence_factor = 0 }
+ set_variable = { global.USA_goldstar_dy_coordination_bonus = 0 }
+ set_variable = { global.USA_goldstar_dy_max_planning_factor = 0 }
+ set_variable = { global.USA_goldstar_dy_special_forces_cap = 0 }
+
+add_dynamic_modifier = {
+	modifier = USA_economy_dynamic_modifier_great_depression
+}
+add_dynamic_modifier = {
+	modifier = USA_arm_dynamic_modifier
+}
+add_dynamic_modifier = {
+	modifier = USA_nav_dynamic_modifier
+}
+add_dynamic_modifier = {
+	modifier = USA_air_dynamic_modifier
+}
+add_dynamic_modifier = {
+	modifier = USA_mic_dynamic_modifier
+}
+#add_dynamic_modifier = {
+#	modifier = USA_FREE_dynamic_modifier
+#}
+#add_dynamic_modifier = {
+#	modifier = USA_agency_dynamic_modifier
+#}
+#add_dynamic_modifier = {
+#	modifier = USA_government_dynamic_modifier
+#}
+
+#add_ideas = {
+#	usa_free_civilian_industry_si_0
+#	usa_free_military_industry_si_0
+#}
+
+########## DEBUG ##########
+#add_ideas = usa_debug_testing_idea

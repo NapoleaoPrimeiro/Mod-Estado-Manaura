@@ -277,7 +277,7 @@ country_event = {
 			limit = {
 				XIC = {
 					exists = yes
-					owns_state = 608
+					owns_state = 608 owns_state = 1489 owns_state = 1490 owns_state = 1491 owns_state = 1492
 					NOT = {
 						is_ally_with = ROOT
 						has_war_with = ROOT
@@ -391,9 +391,21 @@ country_event = {
 				608 = {
 					is_controlled_by = FROM
 				}
+				1489 = { # KSRE (de 608)
+					is_controlled_by = FROM
+				}
+				1490 = { # KSRE (de 608)
+					is_controlled_by = FROM
+				}
+				1491 = { # KSRE (de 608)
+					is_controlled_by = FROM
+				}
+				1492 = { # KSRE (de 608)
+					is_controlled_by = FROM
+				}
 			}
 			JAP = {
-				transfer_state = 608
+				transfer_state = 608 transfer_state = 1489 transfer_state = 1490 transfer_state = 1491 transfer_state = 1492
 			}
 		}
 		ELSE_IF = {
@@ -419,6 +431,61 @@ country_event = {
 		}
 		ELSE = {
 			608 = { add_claim_by = ROOT }
+			1489 = { add_claim_by = ROOT } # KSRE (de 608)
+			1490 = { add_claim_by = ROOT } # KSRE (de 608)
+			1491 = { add_claim_by = ROOT } # KSRE (de 608)
+			1492 = { add_claim_by = ROOT } # KSRE (de 608)
+		}
+		
+		IF = {
+			limit = {
+				1489 = {
+					is_controlled_by = FROM
+				}
+			}
+			JAP = {
+				transfer_state = 1489
+			}
+		}
+		ELSE_IF = {
+			limit = {
+				1489 = {
+					OWNER = {
+						is_literally_china = yes
+						NOT = { 
+							original_tag = FROM 
+							original_tag = ROOT 
+							has_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+						}
+					}
+				}
+			}
+			1489 = { 
+				if = {
+					limit = {
+						OWNER = {
+							owns_state = 608 owns_state = 1489 owns_state = 1490 owns_state = 1491 owns_state = 1492
+						}
+					}
+
+					hidden_effect = { #to hide duplicate events in tooltip
+						OWNER = {
+							set_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+							country_event = { id = SEA_china.28 days = 2 }
+						}
+					}
+				}
+				else = {
+					OWNER = {
+						set_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+						country_event = { id = SEA_china.28 days = 2 }
+					}
+				}
+
+			}
+		}
+		ELSE = {
+			1489 = { add_claim_by = ROOT }
 		}
 
 		IF = {
@@ -448,7 +515,7 @@ country_event = {
 				if = {
 					limit = {
 						OWNER = {
-							owns_state = 608
+							owns_state = 608 owns_state = 1489 owns_state = 1490 owns_state = 1491 owns_state = 1492
 						}
 					}
 
@@ -470,6 +537,210 @@ country_event = {
 		}
 		ELSE = {
 			614 = { add_claim_by = ROOT }
+		}
+		
+		IF = {
+			limit = {
+				1490 = {
+					is_controlled_by = FROM
+				}
+			}
+			JAP = {
+				transfer_state = 1490
+			}
+		}
+		ELSE_IF = {
+			limit = {
+				1490 = {
+					OWNER = {
+						is_literally_china = yes
+						NOT = { 
+							original_tag = FROM 
+							original_tag = ROOT 
+							has_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+						}
+					}
+				}
+			}
+			1490 = { 
+				if = {
+					limit = {
+						OWNER = {
+							owns_state = 608 owns_state = 1489 owns_state = 1490 owns_state = 1491 owns_state = 1492
+						}
+					}
+
+					hidden_effect = { #to hide duplicate events in tooltip
+						OWNER = {
+							set_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+							country_event = { id = SEA_china.28 days = 2 }
+						}
+					}
+				}
+				else = {
+					OWNER = {
+						set_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+						country_event = { id = SEA_china.28 days = 2 }
+					}
+				}
+
+			}
+		}
+		ELSE = {
+			1490 = { add_claim_by = ROOT }
+		}
+		
+		IF = {
+			limit = {
+				1491 = {
+					is_controlled_by = FROM
+				}
+			}
+			JAP = {
+				transfer_state = 1491
+			}
+		}
+		ELSE_IF = {
+			limit = {
+				1491 = {
+					OWNER = {
+						is_literally_china = yes
+						NOT = { 
+							original_tag = FROM 
+							original_tag = ROOT 
+							has_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+						}
+					}
+				}
+			}
+			1491 = { 
+				if = {
+					limit = {
+						OWNER = {
+							owns_state = 608 owns_state = 1489 owns_state = 1490 owns_state = 1491 owns_state = 1492
+						}
+					}
+
+					hidden_effect = { #to hide duplicate events in tooltip
+						OWNER = {
+							set_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+							country_event = { id = SEA_china.28 days = 2 }
+						}
+					}
+				}
+				else = {
+					OWNER = {
+						set_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+						country_event = { id = SEA_china.28 days = 2 }
+					}
+				}
+
+			}
+		}
+		ELSE = {
+			1491 = { add_claim_by = ROOT }
+		}
+		
+		IF = {
+			limit = {
+				1492 = {
+					is_controlled_by = FROM
+				}
+			}
+			JAP = {
+				transfer_state = 1492
+			}
+		}
+		ELSE_IF = {
+			limit = {
+				1492 = {
+					OWNER = {
+						is_literally_china = yes
+						NOT = { 
+							original_tag = FROM 
+							original_tag = ROOT 
+							has_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+						}
+					}
+				}
+			}
+			1492 = { 
+				if = {
+					limit = {
+						OWNER = {
+							owns_state = 608 owns_state = 1489 owns_state = 1490 owns_state = 1491 owns_state = 1492
+						}
+					}
+
+					hidden_effect = { #to hide duplicate events in tooltip
+						OWNER = {
+							set_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+							country_event = { id = SEA_china.28 days = 2 }
+						}
+					}
+				}
+				else = {
+					OWNER = {
+						set_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+						country_event = { id = SEA_china.28 days = 2 }
+					}
+				}
+
+			}
+		}
+		ELSE = {
+			1492 = { add_claim_by = ROOT }
+		}
+		
+		IF = {
+			limit = {
+				1493 = {
+					is_controlled_by = FROM
+				}
+			}
+			JAP = {
+				transfer_state = 1493
+			}
+		}
+		ELSE_IF = {
+			limit = {
+				1493 = {
+					OWNER = {
+						is_literally_china = yes
+						NOT = { 
+							original_tag = FROM 
+							original_tag = ROOT 
+							has_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+						}
+					}
+				}
+			}
+			1493 = { 
+				if = {
+					limit = {
+						OWNER = {
+							owns_state = 608 owns_state = 1489 owns_state = 1490 owns_state = 1491 owns_state = 1492
+						}
+					}
+
+					hidden_effect = { #to hide duplicate events in tooltip
+						OWNER = {
+							set_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+							country_event = { id = SEA_china.28 days = 2 }
+						}
+					}
+				}
+				else = {
+					OWNER = {
+						set_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+						country_event = { id = SEA_china.28 days = 2 }
+					}
+				}
+
+			}
+		}
+		ELSE = {
+			1493 = { add_claim_by = ROOT }
 		}
 
 		IF = {
@@ -512,7 +783,7 @@ country_event = {
 			if = {
 				limit = {
 					OWNER = {
-						owns_state = 608
+						owns_state = 608 owns_state = 1489 owns_state = 1490 owns_state = 1491 owns_state = 1492
 					}
 				}
 
@@ -538,9 +809,27 @@ country_event = {
 				597 = {
 					is_controlled_by = FROM
 				}
+				1497 = { # KSRE (de 597)
+					is_controlled_by = FROM
+				}
+				1498 = { # KSRE (de 597)
+					is_controlled_by = FROM
+				}
+				1499 = { # KSRE (de 597)
+					is_controlled_by = FROM
+				}
+				1503 = { # KSRE (de 597)
+					is_controlled_by = FROM
+				}
+				1504 = { # KSRE (de 597)
+					is_controlled_by = FROM
+				}
+				1505 = { # KSRE (de 597)
+					is_controlled_by = FROM
+				}
 			}
 			JAP = {
-				transfer_state = 597
+				transfer_state = 597 transfer_state = 1497 transfer_state = 1498 transfer_state = 1499 transfer_state = 1503 transfer_state = 1504 transfer_state = 1505
 			}
 		}
 		ELSE_IF = {
@@ -565,6 +854,114 @@ country_event = {
 		}
 		ELSE = {
 			597 = { add_claim_by = ROOT }
+			1497 = { add_claim_by = ROOT } # KSRE (de 597)
+			1498 = { add_claim_by = ROOT } # KSRE (de 597)
+			1499 = { add_claim_by = ROOT } # KSRE (de 597)
+			1503 = { add_claim_by = ROOT } # KSRE (de 597)
+			1504 = { add_claim_by = ROOT } # KSRE (de 597)
+			1505 = { add_claim_by = ROOT } # KSRE (de 597)
+		}
+		
+		IF = {
+			limit = {
+				1503 = {
+					is_controlled_by = FROM
+				}
+			}
+			JAP = {
+				transfer_state = 1503
+			}
+		}
+		ELSE_IF = {
+			limit = {
+				1503 = {
+					OWNER = {
+						is_literally_china = yes
+						NOT = { 
+							original_tag = FROM 
+							original_tag = ROOT 
+							has_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+						}
+					}
+				}
+			}
+			1503 = { 
+				OWNER = {
+					set_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+					country_event = { id = SEA_china.28 days = 2 }
+				}
+			}
+		}
+		ELSE = {
+			1503 = { add_claim_by = ROOT }
+		}
+		
+		IF = {
+			limit = {
+				1504 = {
+					is_controlled_by = FROM
+				}
+			}
+			JAP = {
+				transfer_state = 1504
+			}
+		}
+		ELSE_IF = {
+			limit = {
+				1504 = {
+					OWNER = {
+						is_literally_china = yes
+						NOT = { 
+							original_tag = FROM 
+							original_tag = ROOT 
+							has_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+						}
+					}
+				}
+			}
+			1504 = { 
+				OWNER = {
+					set_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+					country_event = { id = SEA_china.28 days = 2 }
+				}
+			}
+		}
+		ELSE = {
+			1504 = { add_claim_by = ROOT }
+		}
+		
+		IF = {
+			limit = {
+				1505 = {
+					is_controlled_by = FROM
+				}
+			}
+			JAP = {
+				transfer_state = 1505
+			}
+		}
+		ELSE_IF = {
+			limit = {
+				1505 = {
+					OWNER = {
+						is_literally_china = yes
+						NOT = { 
+							original_tag = FROM 
+							original_tag = ROOT 
+							has_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+						}
+					}
+				}
+			}
+			1505 = { 
+				OWNER = {
+					set_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+					country_event = { id = SEA_china.28 days = 2 }
+				}
+			}
+		}
+		ELSE = {
+			1505 = { add_claim_by = ROOT }
 		}
 
 		IF = {
@@ -572,9 +969,24 @@ country_event = {
 				1038 = {
 					is_controlled_by = FROM
 				}
+				1494 = { # KSRE (de 1038)
+					is_controlled_by = FROM
+				}
+				1495 = { # KSRE (de 1038)
+					is_controlled_by = FROM
+				}
+				1496 = { # KSRE (de 1038)
+					is_controlled_by = FROM
+				}
+				1501 = { # KSRE (de 1038)
+					is_controlled_by = FROM
+				}
+				1502 = { # KSRE (de 1038)
+					is_controlled_by = FROM
+				}
 			}
 			JAP = {
-				transfer_state = 1038
+				transfer_state = 1038 transfer_state = 1494 transfer_state = 1495 transfer_state = 1496 transfer_state = 1501 transfer_state = 1502
 			}
 		}
 		ELSE_IF = {
@@ -594,7 +1006,7 @@ country_event = {
 				limit = {
 					1038 = {
 						OWNER = {
-							owns_state = 597
+							owns_state = 597 owns_state = 1497 owns_state = 1498 owns_state = 1499 owns_state = 1503 owns_state = 1504 owns_state = 1505
 						}
 					}
 				}
@@ -620,6 +1032,451 @@ country_event = {
 		}
 		ELSE = {
 			1038 = { add_claim_by = ROOT }
+			1494 = { add_claim_by = ROOT } # KSRE (de 1038)
+			1495 = { add_claim_by = ROOT } # KSRE (de 1038)
+			1496 = { add_claim_by = ROOT } # KSRE (de 1038)
+			1501 = { add_claim_by = ROOT } # KSRE (de 1038)
+			1502 = { add_claim_by = ROOT } # KSRE (de 1038)
+		}
+		
+		IF = {
+			limit = {
+				1494 = {
+					is_controlled_by = FROM
+				}
+			}
+			JAP = {
+				transfer_state = 1494
+			}
+		}
+		ELSE_IF = {
+			limit = {
+				1494 = {
+					OWNER = {
+						is_literally_china = yes
+						NOT = { 
+							original_tag = FROM 
+							original_tag = ROOT 
+							has_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+						}
+					}
+				}
+			}
+			if = {	
+				limit = {
+					1494 = {
+						OWNER = {
+							owns_state = 597 owns_state = 1497 owns_state = 1498 owns_state = 1499 owns_state = 1503 owns_state = 1504 owns_state = 1505
+						}
+					}
+				}
+
+				hidden_effect = {
+					1494 = { 
+						OWNER = {
+							set_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+							country_event = { id = SEA_china.28 days = 2 }
+						}
+					}
+				}
+			}
+			else = {
+				1494 = { 
+					OWNER = {
+						set_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+						country_event = { id = SEA_china.28 days = 2 }
+					}
+				}
+			}
+
+		}
+		ELSE = {
+			1494 = { add_claim_by = ROOT }
+		}
+		
+		IF = {
+			limit = {
+				1495 = {
+					is_controlled_by = FROM
+				}
+			}
+			JAP = {
+				transfer_state = 1495
+			}
+		}
+		ELSE_IF = {
+			limit = {
+				1495 = {
+					OWNER = {
+						is_literally_china = yes
+						NOT = { 
+							original_tag = FROM 
+							original_tag = ROOT 
+							has_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+						}
+					}
+				}
+			}
+			if = {	
+				limit = {
+					1495 = {
+						OWNER = {
+							owns_state = 597 owns_state = 1497 owns_state = 1498 owns_state = 1499 owns_state = 1503 owns_state = 1504 owns_state = 1505
+						}
+					}
+				}
+
+				hidden_effect = {
+					1495 = { 
+						OWNER = {
+							set_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+							country_event = { id = SEA_china.28 days = 2 }
+						}
+					}
+				}
+			}
+			else = {
+				1495 = { 
+					OWNER = {
+						set_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+						country_event = { id = SEA_china.28 days = 2 }
+					}
+				}
+			}
+
+		}
+		ELSE = {
+			1495 = { add_claim_by = ROOT }
+		}
+		
+		IF = {
+			limit = {
+				1496 = {
+					is_controlled_by = FROM
+				}
+			}
+			JAP = {
+				transfer_state = 1496
+			}
+		}
+		ELSE_IF = {
+			limit = {
+				1496 = {
+					OWNER = {
+						is_literally_china = yes
+						NOT = { 
+							original_tag = FROM 
+							original_tag = ROOT 
+							has_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+						}
+					}
+				}
+			}
+			if = {	
+				limit = {
+					1496 = {
+						OWNER = {
+							owns_state = 597 owns_state = 1497 owns_state = 1498 owns_state = 1499 owns_state = 1503 owns_state = 1504 owns_state = 1505
+						}
+					}
+				}
+
+				hidden_effect = {
+					1496 = { 
+						OWNER = {
+							set_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+							country_event = { id = SEA_china.28 days = 2 }
+						}
+					}
+				}
+			}
+			else = {
+				1496 = { 
+					OWNER = {
+						set_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+						country_event = { id = SEA_china.28 days = 2 }
+					}
+				}
+			}
+
+		}
+		ELSE = {
+			1496 = { add_claim_by = ROOT }
+		}
+		
+		IF = {
+			limit = {
+				1497 = {
+					is_controlled_by = FROM
+				}
+			}
+			JAP = {
+				transfer_state = 1497
+			}
+		}
+		ELSE_IF = {
+			limit = {
+				1497 = {
+					OWNER = {
+						is_literally_china = yes
+						NOT = { 
+							original_tag = FROM 
+							original_tag = ROOT 
+							has_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+						}
+					}
+				}
+			}
+			if = {	
+				limit = {
+					1497 = {
+						OWNER = {
+							owns_state = 597 owns_state = 1497 owns_state = 1498 owns_state = 1499 owns_state = 1503 owns_state = 1504 owns_state = 1505
+						}
+					}
+				}
+
+				hidden_effect = {
+					1497 = { 
+						OWNER = {
+							set_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+							country_event = { id = SEA_china.28 days = 2 }
+						}
+					}
+				}
+			}
+			else = {
+				1497 = { 
+					OWNER = {
+						set_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+						country_event = { id = SEA_china.28 days = 2 }
+					}
+				}
+			}
+
+		}
+		ELSE = {
+			1497 = { add_claim_by = ROOT }
+		}
+		
+		IF = {
+			limit = {
+				1498 = {
+					is_controlled_by = FROM
+				}
+			}
+			JAP = {
+				transfer_state = 1498
+			}
+		}
+		ELSE_IF = {
+			limit = {
+				1498 = {
+					OWNER = {
+						is_literally_china = yes
+						NOT = { 
+							original_tag = FROM 
+							original_tag = ROOT 
+							has_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+						}
+					}
+				}
+			}
+			if = {	
+				limit = {
+					1498 = {
+						OWNER = {
+							owns_state = 597 owns_state = 1497 owns_state = 1498 owns_state = 1499 owns_state = 1503 owns_state = 1504 owns_state = 1505
+						}
+					}
+				}
+
+				hidden_effect = {
+					1498 = { 
+						OWNER = {
+							set_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+							country_event = { id = SEA_china.28 days = 2 }
+						}
+					}
+				}
+			}
+			else = {
+				1498 = { 
+					OWNER = {
+						set_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+						country_event = { id = SEA_china.28 days = 2 }
+					}
+				}
+			}
+
+		}
+		ELSE = {
+			1498 = { add_claim_by = ROOT }
+		}
+		
+		IF = {
+			limit = {
+				1499 = {
+					is_controlled_by = FROM
+				}
+			}
+			JAP = {
+				transfer_state = 1499
+			}
+		}
+		ELSE_IF = {
+			limit = {
+				1499 = {
+					OWNER = {
+						is_literally_china = yes
+						NOT = { 
+							original_tag = FROM 
+							original_tag = ROOT 
+							has_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+						}
+					}
+				}
+			}
+			if = {	
+				limit = {
+					1499 = {
+						OWNER = {
+							owns_state = 597 owns_state = 1497 owns_state = 1498 owns_state = 1499 owns_state = 1503 owns_state = 1504 owns_state = 1505
+						}
+					}
+				}
+
+				hidden_effect = {
+					1499 = { 
+						OWNER = {
+							set_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+							country_event = { id = SEA_china.28 days = 2 }
+						}
+					}
+				}
+			}
+			else = {
+				1499 = { 
+					OWNER = {
+						set_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+						country_event = { id = SEA_china.28 days = 2 }
+					}
+				}
+			}
+
+		}
+		ELSE = {
+			1499 = { add_claim_by = ROOT }
+		}
+		
+		IF = {
+			limit = {
+				1501 = {
+					is_controlled_by = FROM
+				}
+			}
+			JAP = {
+				transfer_state = 1501
+			}
+		}
+		ELSE_IF = {
+			limit = {
+				1501 = {
+					OWNER = {
+						is_literally_china = yes
+						NOT = { 
+							original_tag = FROM 
+							original_tag = ROOT 
+							has_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+						}
+					}
+				}
+			}
+			if = {	
+				limit = {
+					1501 = {
+						OWNER = {
+							owns_state = 597 owns_state = 1497 owns_state = 1498 owns_state = 1499 owns_state = 1503 owns_state = 1504 owns_state = 1505
+						}
+					}
+				}
+
+				hidden_effect = {
+					1501 = { 
+						OWNER = {
+							set_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+							country_event = { id = SEA_china.28 days = 2 }
+						}
+					}
+				}
+			}
+			else = {
+				1501 = { 
+					OWNER = {
+						set_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+						country_event = { id = SEA_china.28 days = 2 }
+					}
+				}
+			}
+
+		}
+		ELSE = {
+			1501 = { add_claim_by = ROOT }
+		}
+		
+		IF = {
+			limit = {
+				1502 = {
+					is_controlled_by = FROM
+				}
+			}
+			JAP = {
+				transfer_state = 1502
+			}
+		}
+		ELSE_IF = {
+			limit = {
+				1502 = {
+					OWNER = {
+						is_literally_china = yes
+						NOT = { 
+							original_tag = FROM 
+							original_tag = ROOT 
+							has_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+						}
+					}
+				}
+			}
+			if = {	
+				limit = {
+					1502 = {
+						OWNER = {
+							owns_state = 597 owns_state = 1497 owns_state = 1498 owns_state = 1499 owns_state = 1503 owns_state = 1504 owns_state = 1505
+						}
+					}
+				}
+
+				hidden_effect = {
+					1502 = { 
+						OWNER = {
+							set_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+							country_event = { id = SEA_china.28 days = 2 }
+						}
+					}
+				}
+			}
+			else = {
+				1502 = { 
+					OWNER = {
+						set_country_flag = JAP_already_sent_demand_for_northern_chinese_concessions
+						country_event = { id = SEA_china.28 days = 2 }
+					}
+				}
+			}
+
+		}
+		ELSE = {
+			1502 = { add_claim_by = ROOT }
 		}
 
 		#SHANDONG

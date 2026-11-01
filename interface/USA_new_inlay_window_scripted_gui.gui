@@ -1,0 +1,230 @@
+guiTypes = {
+
+	containerWindowType = { # star and econ window
+		name = "new_usa_star_and_econ_ui_window"
+		orientation = lower_left
+		position = { x = 0 y = 0 }
+		size = { width = 600 height = 550 }
+		clipping = no
+
+		#BACKGROUND
+		background = {
+			name = "background"
+			quadTextureSprite="GFX_ecostar_background"
+			alwaystransparent = no
+		}
+
+		containerWindowType = {
+			name = "CG_text_box"
+			orientation = UPPER_LEFT
+			position = { x = 0 y = 0 }
+			size = { width = 200 height = 161 }
+			clipping = no
+
+			#PORTRAIT
+			iconType = {
+				name ="CG_text_box_element"
+				spriteType = "GFX_ecostar_CG_textbox" 
+				orientation = upper_left
+				position = { x=0	 y=0 }
+				alwaystransparent = yes
+			}
+
+			
+		}
+		containerWindowType = {
+			name = "Star_text_box"
+			orientation = UPPER_LEFT
+			position = { x = 0 y = 0 }
+			size = { width = 200 height = 161 }
+			clipping = no
+
+			#PORTRAIT
+			iconType = {
+				name ="Star_text_box_element"
+				spriteType = "GFX_ecostar_Star_textbox" 
+				orientation = upper_left
+				position = { x=0	 y=0 }
+				alwaystransparent = yes
+			}
+
+			
+		}
+
+		containerWindowType = {
+			name = "star_container"
+			orientation = UPPER_LEFT
+			position = { x = 0 y = 0 }
+			size = { width = 200 height = 161 }
+			clipping = no
+
+			#PORTRAIT
+			iconType = {
+				name ="star_element"
+				spriteType = "GFX_ecostar_star_0" 
+				orientation = upper_left
+				position = { x=0	 y=0 }
+				alwaystransparent = yes
+			}
+
+			
+		}
+
+		containerWindowType = {
+			name = "dot_ring_container"
+			orientation = UPPER_LEFT
+			position = { x = 0 y = 0 }
+			size = { width = 200 height = 161 }
+			clipping = no
+
+			#PORTRAIT
+			iconType = {
+				name ="dot_ring_element"
+				spriteType = "GFX_ecostar_frame_ring_0" 
+				orientation = upper_left
+				position = { x=0	 y=0 }
+				alwaystransparent = yes
+			}
+
+			
+		}
+
+		instantTextBoxType = {
+			name ="consumer_goods_text_element"
+			orientation = CENTER
+			position = { x = -234 y = 135 }
+			font = "hoi_36header"
+			context_aware_text = "[USAGetCGLevelText]"
+			#context_aware_text = "0"
+			format = center
+			maxWidth = 500
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name ="star_text_element"
+			orientation = CENTER
+			position = { x = -234 y = 215 }
+			font = "hoi_36header"
+			context_aware_text = "[USAGetRecoveryLevelText]"
+			#context_aware_text = "0"
+			format = center
+			maxWidth = 500
+			alwaystransparent = yes
+		}
+
+		#buttonType = {
+		#	name = "usa_nc_test_set_button"
+		#	position = { x = 1500 y = 0 }
+		#	quadTextureSprite = "GFX_button_148x34"
+		#	buttonText = "set ring"
+		#	buttonFont = "Main_14_black"
+		#	clicksound = click_default
+		#}
+		#buttonType = {
+		#	name = "usa_nc_test_decrement_button"
+		#	position = { x = 0 y = 0 }
+		#	quadTextureSprite = "GFX_button_148x34"
+		#	buttonText = "-1"
+		#	buttonFont = "Main_14_black"
+		#	clicksound = click_default
+		#}
+		#buttonType = {
+		#	name = "usa_nc_test_increment_button"
+		#	position = { x = -150 y = 0 }
+		#	quadTextureSprite = "GFX_button_148x34"
+		#	buttonText = "+1"
+		#	buttonFont = "Main_14_black"
+		#	clicksound = click_default
+		#}
+
+		#buttonType = {
+		#	name = "usa_nc_test_star_set_button"
+		#	position = { x = 150 y = 50 }
+		#	quadTextureSprite = "GFX_button_148x34"
+		#	buttonText = "set star"
+		#	buttonFont = "Main_14_black"
+		#	clicksound = click_default
+		#}
+		#buttonType = {
+		#	name = "usa_nc_test_star_empty_button"
+		#	position = { x = 0 y = 50 }
+		#	quadTextureSprite = "GFX_button_148x34"
+		#	buttonText = "-1"
+		#	buttonFont = "Main_14_black"
+		#	clicksound = click_default
+		#}
+		#buttonType = {
+		#	name = "usa_nc_test_star_fill_button"
+		#	position = { x = -150 y = 50 }
+		#	quadTextureSprite = "GFX_button_148x34"
+		#	buttonText = "+1"
+		#	buttonFont = "Main_14_black"
+		#	clicksound = click_default
+		#}
+		
+	}
+	containerWindowType = { # conservatice resist bar
+		name = "new_usa_conserve_resist_bar_ui_window"
+		orientation = CENTER_DOWN
+		position = { x = 0 y = 0 }
+		size = { width = 600 height = 550 }
+		clipping = no
+
+		#BACKGROUND
+		#background = {
+		#	name = "CRB_background"
+		#	quadTextureSprite="GFX_overlay_bar_0"
+		#	alwaystransparent = no
+		#}
+
+		containerWindowType = {
+			name = "CRB_overlay"
+			orientation = CENTER_DOWN
+			position = { x = 0 y = 0 }
+			size = { width = 414 height = 81 }
+			clipping = no
+
+			#PORTRAIT
+			iconType = {
+				name ="CRB_background_element"
+				spriteType = "GFX_overlay_bar_0" 
+				orientation = CENTER_DOWN
+				position = { x=0	 y=0 }
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "CRB_textbox"
+			orientation = CENTER_DOWN
+			position = { x = 83 y = -32 }
+			size = { width = 300 height = 59 }
+			clipping = no
+
+			#PORTRAIT
+			iconType = {
+				name ="CRB_textbox_element"
+				spriteType = "GFX_overlay_bar_textbox" 
+				orientation = CENTER_DOWN
+				position = { x=0	 y=0 }
+				alwaystransparent = yes
+			}
+		}
+
+		instantTextBoxType = {
+			name ="conservative_resistance_text_element"
+			orientation = LOWER_LEFT
+			position = { x = 464 y = 41 }
+			font = "hoi_30header"
+			context_aware_text = "[USAGetResistanceText]"
+			#text = usa_inlay_window_CRB_tt_1
+			
+			#context_aware_text = "0"
+			format = center
+			maxWidth = 500
+			alwaystransparent = yes
+		}
+
+	}
+}

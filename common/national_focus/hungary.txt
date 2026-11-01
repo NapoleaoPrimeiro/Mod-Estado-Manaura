@@ -253,6 +253,10 @@ focus_tree = {
 					owns_state = 848
 					owns_state = 153
 					owns_state = 152
+					owns_state = 975
+					owns_state = 976
+					owns_state = 1553
+					owns_state = 1390
 				}
 				has_global_flag = GER_reformed_austro_hungarian_empire
 			}
@@ -309,14 +313,14 @@ focus_tree = {
 		completion_reward = {
 			random_country = {
 				limit = {
-					owns_state = 4
+					owns_state = 4 owns_state = 1553
 				}
 				HUN = {
 					create_wargoal = {
 						type = take_state_focus
 						target = PREV
 						expire = 0
-						generator = { 4 152 153 848 }
+						generator = { 4 152 153 848 975 976 1553 1390 }
 					}
 				}
 			}
@@ -324,6 +328,10 @@ focus_tree = {
 			add_state_claim = 153
 			add_state_claim = 848
 			add_state_claim = 4
+			add_state_claim = 975
+			add_state_claim = 976
+			add_state_claim = 1553
+			add_state_claim = 1390
 		}
 	}
 
@@ -346,6 +354,10 @@ focus_tree = {
 			controls_state = 153
 			controls_state = 848
 			controls_state = 4
+			controls_state = 975
+			controls_state = 976
+			controls_state = 1553
+			controls_state = 1390
 			is_subject = no
 		}
 
@@ -367,18 +379,30 @@ focus_tree = {
 			4 = { add_core_of = ROOT }
 			975 = { add_core_of = ROOT }
 			976 = { add_core_of = ROOT }
+			1553 = { add_core_of = ROOT }
+			1390 = { add_core_of = ROOT }
 			69 = { add_core_of = ROOT }
 			9 = { add_core_of = ROOT }
 			75 = { add_core_of = ROOT }
 			74 = { add_core_of = ROOT }
+			1727 = { add_core_of = ROOT }
 			72 = { add_core_of = ROOT }
+			1555 = { add_core_of = ROOT }
+			1556 = { add_core_of = ROOT }
 			70 = { add_core_of = ROOT }
 			664 = { add_core_of = ROOT }
 			71 = { add_core_of = ROOT }
 			73 = { add_core_of = ROOT }
-			972 = { add_core_of = ROOT }
+			1560 = { add_core_of = ROOT }
+			1146 = { add_core_of = ROOT }
+			1147 = { add_core_of = ROOT }
+			1148 = { add_core_of = ROOT }
+			1149 = { add_core_of = ROOT }
+			1294 = { add_core_of = ROOT }
 			hidden_effect = {
 				news_event = { id = news.295 }
+				country_event = { id = ksr.12 days = 2 } 
+				country_event = { id = ksr.16 days = 7 }
 			}
 			set_global_flag = form_austria_hungary_flag
 			
@@ -454,6 +478,12 @@ focus_tree = {
 			controls_state = 83
 			controls_state = 84
 			controls_state = 82
+			controls_state = 1722
+			controls_state = 1309
+			controls_state = 1310
+			controls_state = 1387
+			controls_state = 1479
+			controls_state = 1480
 		}
 
 		cancel_if_invalid = yes
@@ -466,6 +496,12 @@ focus_tree = {
 			add_state_claim = 83
 			add_state_claim = 84
 			add_state_claim = 82
+			add_state_claim = 1722
+			add_state_claim = 1309
+			add_state_claim = 1310
+			add_state_claim = 1387
+			add_state_claim = 1479
+			add_state_claim = 1480
 			if = {
 				limit = {
 					NOT = {
@@ -478,6 +514,12 @@ focus_tree = {
 							owns_state = 83
 							owns_state = 84
 							owns_state = 82
+							owns_state = 1722
+							owns_state = 1309
+							owns_state = 1310
+							owns_state = 1387
+							owns_state = 1479
+							owns_state = 1480
 						}
 					}
 				}
@@ -523,6 +565,24 @@ focus_tree = {
 			controls_state = 163
 			controls_state = 764
 			controls_state = 804
+			controls_state = 1704
+			controls_state = 1705
+			controls_state = 1706
+			controls_state = 1707
+			controls_state = 1711
+			controls_state = 1712
+			controls_state = 1713
+			controls_state = 1716
+			controls_state = 1717
+			controls_state = 1718
+			controls_state = 1314
+			controls_state = 1325
+			controls_state = 1339
+			controls_state = 1296
+			controls_state = 1388
+			controls_state = 1410
+			controls_state = 1477
+			controls_state = 1478
 		}
 
 		cancel_if_invalid = yes
@@ -538,12 +598,35 @@ focus_tree = {
 			add_state_claim = 104
 			add_state_claim = 163
 			add_state_claim = 804
+			add_state_claim = 1706
+			add_state_claim = 1707
+			add_state_claim = 1711
+			add_state_claim = 1712
+			add_state_claim = 1713
+			add_state_claim = 1716
+			add_state_claim = 1717
+			add_state_claim = 1718
+			add_state_claim = 1314
+			add_state_claim = 1325
+			add_state_claim = 1339
+			add_state_claim = 1296
+			add_state_claim = 1388
 			add_state_core = 764
 			add_state_core = 45
+			add_state_core = 1704
+			add_state_core = 1705
+			add_state_core = 1410
+			add_state_core = 1477
+			add_state_core = 1478
 			if = {
 				limit = {
 					OR = {
 						103 = { is_controlled_by = YUG }
+						1296 = { is_controlled_by = YUG } # KSRE (de 103)
+						1325 = { is_controlled_by = YUG } # KSRE (de 103)
+						1339 = { is_controlled_by = YUG } # KSRE (de 103)
+						1388 = { is_controlled_by = YUG } # KSRE (de 103)
+						1718 = { is_controlled_by = YUG } # KSRE (de 103)
 						103 = { controller = { is_subject_of = YUG } }
 						103 = { controller = { is_in_faction_with = YUG } }
 					}
@@ -583,6 +666,9 @@ focus_tree = {
 			controls_state = 160
 			controls_state = 39
 			controls_state = 850
+			controls_state = 1708
+			controls_state = 1168
+			controls_state = 1169
 		}
 
 		cancel_if_invalid = yes
@@ -596,9 +682,13 @@ focus_tree = {
 			add_state_claim = 160
 			add_state_claim = 39
 			add_state_claim = 850
+			add_state_claim = 1708
+			add_state_claim = 1168
+			add_state_claim = 1169
 			if = {
 				limit = {
 					160 = { is_controlled_by = ITA }
+					1168 = { is_controlled_by = ITA } # KSRE (de 160)
 				}
 				add_ai_strategy = {
 					type = conquer
@@ -631,9 +721,21 @@ focus_tree = {
 		}
 
 		bypass = {
-			controls_state = 88
+			controls_state = 88 controls_state = 1144
 			controls_state = 89
 			controls_state = 91
+			controls_state = 1528
+			controls_state = 1265
+			controls_state = 1775
+			controls_state = 1529
+			controls_state = 1531
+			controls_state = 1532
+			controls_state = 1145
+			controls_state = 1425
+			controls_state = 1385
+			controls_state = 1386
+			controls_state = 1399
+			controls_state = 1483
 		}
 
 		cancel_if_invalid = yes
@@ -645,6 +747,18 @@ focus_tree = {
 			add_state_claim = 88
 			add_state_claim = 89
 			add_state_claim = 91
+			add_state_claim = 1528
+			add_state_claim = 1265
+			add_state_claim = 1775
+			add_state_claim = 1529
+			add_state_claim = 1531
+			add_state_claim = 1532
+			add_state_claim = 1145
+			add_state_claim = 1425
+			add_state_claim = 1385
+			add_state_claim = 1386
+			add_state_claim = 1399
+			add_state_claim = 1483
 			if = {
 				limit = {
 					89 = {
@@ -688,6 +802,7 @@ focus_tree = {
 
 		bypass = {
 			controls_state = 80
+			controls_state = 1267
 		}
 
 		cancel_if_invalid = yes
@@ -697,6 +812,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			add_state_claim = 80
+			add_state_claim = 1267
 		}
 	}
 	focus = {
@@ -717,14 +833,14 @@ focus_tree = {
 		available = {
 			is_subject = no
 			NOT = {
-				controls_state = 455
-				controls_state = 454
-				controls_state = 66 
+				controls_state = 455 controls_state = 1780 controls_state = 1781
+				controls_state = 454 controls_state = 1133 controls_state = 1134 controls_state = 1135 controls_state = 1137 controls_state = 1138 controls_state = 1139 controls_state = 1140
+				controls_state = 66 controls_state = 1540 controls_state = 1541 controls_state = 1558 
 				controls_state = 67 
 				controls_state = 162
-				controls_state = 17 
+				controls_state = 17 controls_state = 1257 
 				controls_state = 159
-				controls_state = 161
+				controls_state = 161 controls_state = 1408 controls_state = 1409
 				controls_state = 762
 			}
 		}
@@ -1922,6 +2038,12 @@ focus_tree = {
 			976 = {
 				NOT = { is_owned_by = AUS }
 			}
+			1553 = {
+				NOT = { is_owned_by = AUS }
+			}
+			1390 = {
+				NOT = { is_owned_by = AUS }
+			}
 		}
 
 		cancel_if_invalid = yes
@@ -2081,7 +2203,7 @@ focus_tree = {
 		}
 
 		available = {
-			ROOT = { has_full_control_of_state = 43 }
+			ROOT = { has_full_control_of_state = 43 has_full_control_of_state = 1235 }
 		}
 
 		bypass = {
@@ -2228,7 +2350,20 @@ focus_tree = {
 			add_state_core = 664
 			add_state_core = 45
 			add_state_core = 764
-			add_state_claim = 82
+			add_state_core = 82
+			add_state_core = 1560
+			add_state_core = 1704
+			add_state_core = 1705
+			add_state_core = 1722
+			add_state_core = 1294
+			add_state_core = 1309
+			add_state_core = 1310
+			add_state_core = 1387
+			add_state_core = 1410
+			add_state_core = 1477
+			add_state_core = 1478
+			add_state_core = 1479
+			add_state_core = 1480
 		}
 	}
 
@@ -2252,6 +2387,12 @@ focus_tree = {
 				controls_state = 76
 				controls_state = 83
 				controls_state = 84
+				controls_state = 1722
+				controls_state = 1309
+				controls_state = 1310
+				controls_state = 1387
+				controls_state = 1479
+				controls_state = 1480
 			}
 			is_puppet = no
 			NOT = {
@@ -2277,6 +2418,12 @@ focus_tree = {
 						controls_state = 76
 						controls_state = 83
 						controls_state = 84
+						controls_state = 1722
+						controls_state = 1309
+						controls_state = 1310
+						controls_state = 1387
+						controls_state = 1479
+						controls_state = 1480
 					}
 				}
 			}
@@ -2318,14 +2465,20 @@ focus_tree = {
 				limit = { 
 					country_exists = CZE 
 					664 = { is_owned_by = CZE }
+					1560 = { is_owned_by = CZE } # KSRE (de 664)
 					73 = { is_owned_by = CZE }
+					1294 = { is_owned_by = CZE } # KSRE (de 73)
 				}
 				strength_ratio = { tag = CZE ratio > 0.75 }
 			}
 			if = {
 				limit = { 
 					country_exists = SLO 
-					664 = { is_owned_by = SLO }
+					OR = {
+						664 = { is_owned_by = SLO }
+						1560 = { is_owned_by = SLO }
+						1294 = { is_owned_by = SLO }
+					}
 				}
 				strength_ratio = { tag = SLO ratio > 0.75 }
 			}
@@ -2337,14 +2490,32 @@ focus_tree = {
 		bypass = {
 			OR = {
 				owns_state = 664
-				664 = {
-					OWNER = {
-						has_war_with = ROOT
+				owns_state = 1560
+				owns_state = 1294
+				AND = {
+					664 = {
+						OWNER = {
+							has_war_with = ROOT
+						}
+					}
+					1560 = {
+						OWNER = {
+							has_war_with = ROOT
+						}
+					}
+					1294 = {
+						OWNER = {
+							has_war_with = ROOT
+						}
 					}
 				}
 				AND = {
-					NOT = { CZE = { owns_state = 664 } }
-					NOT = { SLO = { owns_state = 664 } }
+					NOT = { CZE = { owns_state = 664 owns_state = 1560 } }
+					NOT = { SLO = { owns_state = 664 owns_state = 1560 } }
+					NOT = { CZE = { owns_state = 1560 } }
+					NOT = { SLO = { owns_state = 1560 } }
+					NOT = { CZE = { owns_state = 1294 } }
+					NOT = { SLO = { owns_state = 1294 } }
 				}
 			}
 		}
@@ -2361,7 +2532,7 @@ focus_tree = {
 				limit = {
 					CZE = {
 						exists = yes 
-						owns_state = 664
+						owns_state = 664 owns_state = 1560
 					}
 				}
 				if = {
@@ -2372,7 +2543,7 @@ focus_tree = {
 						type = take_state_focus
 						target = CZE
 						expire = 0
-						generator = { 664 }
+						generator = { 664 1560 1294 }
 					}
 					else = {
 						CZE = { country_event = DOD_hungary.80 }
@@ -2381,20 +2552,24 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					664 = { is_owned_by = POL } #exchanged Danzig for Slovakia
+					OR = {
+						664 = { is_owned_by = POL } #exchanged Danzig for Slovakia
+						1560 = { is_owned_by = POL } 
+						1294 = { is_owned_by = POL } 
+					}
 				}
 				create_wargoal = {
 					type = take_state_focus
 					target = POL
 					expire = 0
-					generator = { 664 }
+					generator = { 664 1560 1294 }
 				}
 			}
 			if = {
 				limit = {
 					SLO = { 
 						exists = yes 
-						owns_state = 664
+						owns_state = 664 owns_state = 1560
 					}
 				}
 				SLO = { country_event = DOD_hungary.80 }
@@ -2424,19 +2599,22 @@ focus_tree = {
 		}
 
 		bypass = {
-			OR = {
-				YUG = {
-					exists = no
-				}
-				owns_state = 45
-				45 = {
-					OWNER = {
-						is_in_faction_with = ROOT
+			NOT = {
+				any_state = {
+					OR = {
+						state = 45
+						state = 764
+						state = 1704
+						state = 1705
+						state = 1410
+						state = 1477
+						state = 1478
 					}
-				}
-				45 = {
 					OWNER = {
-						has_war_with = ROOT
+						OR = {
+							is_ally_with = ROOT
+							has_war_with = ROOT
+						}
 					}
 				}
 			}
@@ -2450,44 +2628,20 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			custom_effect_tooltip = HUN_demands_tt
-			if = {
+			every_country = {
 				limit = {
 					OR = {
-						has_war_with = YUG
-						45 = {
-							NOT = {
-								is_owned_by = YUG
-								owner = { is_subject_of = YUG }
-							}
-						}
+						owns_state = 45
+						owns_state = 764
+						owns_state = 1704
+						owns_state = 1705
+						owns_state = 1410
+						owns_state = 1477
+						owns_state = 1478
 					}
-				}
-				45 = { add_core_of = HUN }
-				else = {
-					if = {
-						limit = {
-							YUG = { 
-								is_subject = yes 
-								owns_state = 45
-							}
-						}
-						create_wargoal = {
-							type = take_state_focus
-							target = YUG
-							expire = 0
-							generator = { 45 }
-						}
-						else = {
-							if = {
-								limit = {
-									OR = {
-										45 = { is_owned_by = YUG }
-										45 = { owner = { is_subject_of = YUG } }
-									}
-								}
-								YUG = { country_event = DOD_hungary.90 }
-							}
-						}
+					NOT = {
+						is_ally_with = ROOT
+						has_war_with = ROOT
 					}
 				}
 			}
@@ -2518,9 +2672,9 @@ focus_tree = {
 					NOT = { is_puppet_of = HUN }
 				}
 				any_other_country = {
-					owns_state = 70
-					owns_state = 71
-					owns_state = 72
+					owns_state = 70 owns_state = 1146 owns_state = 1147
+					owns_state = 71 owns_state = 1148 owns_state = 1149
+					owns_state = 72 owns_state = 1727
 					NOT = {
 						has_war_with = HUN
 					}
@@ -2540,9 +2694,9 @@ focus_tree = {
 					is_subject_of = HUN
 				}
 				AND = {
-					owns_state = 70
-					owns_state = 71
-					owns_state = 72
+					owns_state = 70 owns_state = 1146 owns_state = 1147
+					owns_state = 71 owns_state = 1148 owns_state = 1149
+					owns_state = 72 owns_state = 1727
 				}
 			}
 		}
@@ -2567,9 +2721,9 @@ focus_tree = {
 					SLO = { exists = no } 
 					any_other_country = {
 						NOT = {
-							owns_state = 70
-							owns_state = 71
-							owns_state = 72
+							owns_state = 70 owns_state = 1146 owns_state = 1147
+							owns_state = 71 owns_state = 1148 owns_state = 1149
+							owns_state = 72 owns_state = 1727
 						}
 					}
 				}
@@ -2627,11 +2781,13 @@ focus_tree = {
 			OR = {
 				owns_state = 664
 				owns_state = 73
-				owns_state = 76
-				owns_state = 84
-				owns_state = 83
-				owns_state = 82
-				owns_state = 45
+				owns_state = 76 owns_state = 1309 owns_state = 1310 owns_state = 1722
+				owns_state = 84 owns_state = 1387
+				owns_state = 83 owns_state = 1480
+				owns_state = 82 owns_state = 1479
+				owns_state = 45 owns_state = 1477 owns_state = 1705
+				owns_state = 1560
+				owns_state = 1294
 			}
 			NOT = { has_global_flag = GER_reformed_austro_hungarian_empire }
 		}
@@ -3306,8 +3462,8 @@ focus_tree = {
 				NOT = { is_in_faction_with = SOV }
 				NOT = { has_war_with = SOV }
 				OR = {
-					owns_state = 76
-					owns_state = 78
+					owns_state = 76 owns_state = 1309 owns_state = 1310 owns_state = 1722
+					owns_state = 78 owns_state = 1291
 				}
 			}
 			NOT = { has_war_with = SOV }
@@ -3470,7 +3626,7 @@ focus_tree = {
 
 		completion_reward = {
 			random_owned_controlled_state = {
-				prioritize = { 155 }
+				prioritize = { 155 1384 1703 }
 				limit = {
 					free_building_slots = {
 						building = infrastructure
@@ -3485,7 +3641,7 @@ focus_tree = {
 				set_state_flag = HUN_reintegrate_the_railroads_Inf
 			}
 			random_owned_controlled_state = {
-				prioritize = { 43 }
+				prioritize = { 43 1235 }
 				limit = {
 					free_building_slots = {
 						building = infrastructure
@@ -3500,7 +3656,7 @@ focus_tree = {
 				set_state_flag = HUN_reintegrate_the_railroads_Inf_2
 			}
 			random_owned_controlled_state = {
-				prioritize = { 664 }
+				prioritize = { 664 1560 }
 				limit = {
 					free_building_slots = {
 						building = infrastructure
@@ -3851,7 +4007,7 @@ focus_tree = {
 
 		completion_reward = {
 			random_owned_controlled_state = {
-				prioritize = { 43 }
+				prioritize = { 43 1235 }
 				limit = {
 					ROOT = { has_full_control_of_state = PREV } 
 					free_building_slots = {
@@ -3890,7 +4046,7 @@ focus_tree = {
 		}
 
 		available = {
-			ROOT = { has_full_control_of_state = 43 }
+			ROOT = { has_full_control_of_state = 43 has_full_control_of_state = 1235 }
 		}
 
 		bypass = {
@@ -5541,7 +5697,7 @@ focus_tree = {
 					}
 				}	
 				random_owned_controlled_state = {
-					prioritize = { 43 }
+					prioritize = { 43 1235 }
 					limit = { ROOT = { has_full_control_of_state = PREV } }
 					create_unit = {
 						division = "name = \"1. Light Division\" division_template = \"Light Division\" start_experience_factor = 1.0" 
@@ -5903,7 +6059,7 @@ focus_tree = {
 		completion_reward = {
 			navy_experience = 50
 			random_owned_controlled_state = {
-				prioritize = { 103 }
+				prioritize = { 103 1296 1325 1339 1388 1718 }
 				limit = {
 					is_coastal = yes
 					free_building_slots = {

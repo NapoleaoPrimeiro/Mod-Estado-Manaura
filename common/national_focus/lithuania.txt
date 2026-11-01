@@ -303,7 +303,7 @@ focus_tree = {
 					type = take_state_focus
 					target = POL
 					expire = 0
-					generator = { 784 }
+					generator = { 784 1238 1248 1816 }
 				}
 			}
 		}
@@ -474,6 +474,9 @@ focus_tree = {
 		available = {
 			POL = { exists = yes }
 			784 = {	is_owned_and_controlled_by = POL } #Vilnius
+			1238 = {	is_owned_and_controlled_by = POL } # KSRE (de 784)
+			1248 = {	is_owned_and_controlled_by = POL } # KSRE (de 784)
+			1816 = {	is_owned_and_controlled_by = POL } # KSRE (de 784)
 			NOT = { has_completed_focus = LIT_soviet_mutual_assistance }
 		}
 
@@ -484,7 +487,7 @@ focus_tree = {
 					ROOT = { is_guaranteed_by = POL }
 					POL = { is_guaranteed_by = ROOT }
 				}
-				owns_state = 784 #Vilnius
+				owns_state = 784 owns_state = 1238 owns_state = 1248 owns_state = 1816 #Vilnius
 			}
 		}
 
@@ -726,10 +729,12 @@ focus_tree = {
 
 		available = {
 			owns_state = 188
+			owns_state = 1172
 		}
 
 		bypass = {
 			NOT = { owns_state = 188 }
+			NOT = { owns_state = 1172 }
 		}
 
 		cancel_if_invalid = yes
@@ -750,6 +755,17 @@ focus_tree = {
 					instant_build = yes
 					province = {
 						all_provinces = yes
+					}
+				}
+			}
+			1172 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
 					}
 				}
 			}
@@ -1388,7 +1404,7 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					owns_state = 784
+					owns_state = 784 owns_state = 1238 owns_state = 1248 owns_state = 1816
 				}
 				784 = {
 					add_building_construction = {
@@ -1681,129 +1697,88 @@ focus_tree = {
 			hidden_effect = {
 				set_cosmetic_tag = GREATER_LIT
 			}
-			#Belarus States
-			96 = {
-				add_claim_by = ROOT
-				set_state_flag = greater_lithuania_flag
-			}
-			95 = {
-				add_claim_by = ROOT
-				set_state_flag = greater_lithuania_flag
-			}
-			94 = {
-				add_claim_by = ROOT
-				set_state_flag = greater_lithuania_flag
-			}
-			207 = {
-				add_claim_by = ROOT
-				set_state_flag = greater_lithuania_flag
-			}
-			206 = {
-				add_claim_by = ROOT
-				set_state_flag = greater_lithuania_flag
-			}
-			204 = {
-				add_claim_by = ROOT
-				set_state_flag = greater_lithuania_flag
-			}
-			241 = {
-				add_claim_by = ROOT
-				set_state_flag = greater_lithuania_flag
-			}
-			#Ukraine states
-			93 = {
-				add_claim_by = ROOT
-				set_state_flag = greater_lithuania_flag
-			}
-			199 = {
-				add_claim_by = ROOT
-				set_state_flag = greater_lithuania_flag
-			}
-			201 = {
-				add_claim_by = ROOT
-				set_state_flag = greater_lithuania_flag
-			}
-			198 = {
-				add_claim_by = ROOT
-				set_state_flag = greater_lithuania_flag
-			}
-			202 = {
-				add_claim_by = ROOT
-				set_state_flag = greater_lithuania_flag
-			}
-			203 = {
-				add_claim_by = ROOT
-				set_state_flag = greater_lithuania_flag
-			}
-			259 = {
-				add_claim_by = ROOT
-				set_state_flag = greater_lithuania_flag
-			}
-			193 = {
-				add_claim_by = ROOT
-				set_state_flag = greater_lithuania_flag
-			}
-			225 = {
-				add_claim_by = ROOT
-				set_state_flag = greater_lithuania_flag
-			}
-			221 = {
-				add_claim_by = ROOT
-				set_state_flag = greater_lithuania_flag
-			}
-			226 = {
-				add_claim_by = ROOT
-				set_state_flag = greater_lithuania_flag
-			}
-			197 = {
-				add_claim_by = ROOT
-				set_state_flag = greater_lithuania_flag
-			}
-			192 = {
-				add_claim_by = ROOT
-				set_state_flag = greater_lithuania_flag
-			}
-			#Russian states
-			242 = {
-				add_claim_by = ROOT
-				set_state_flag = greater_lithuania_flag
-			}
-			243 = {
-				add_claim_by = ROOT
-				set_state_flag = greater_lithuania_flag
-			}
-			224 = {
-				add_claim_by = ROOT
-				set_state_flag = greater_lithuania_flag
-			}
-			205 = {
-				add_claim_by = ROOT
-				set_state_flag = greater_lithuania_flag
-			}
-			223 = {
-				add_claim_by = ROOT
-				set_state_flag = greater_lithuania_flag
-			}
-			222 = {
-				add_claim_by = ROOT
-				set_state_flag = greater_lithuania_flag
-			}
-			220 = {
-				add_claim_by = ROOT
-				set_state_flag = greater_lithuania_flag
-			}
-			240 = {
-				add_claim_by = ROOT
-				set_state_flag = greater_lithuania_flag
-			}
-			194 = {
-				add_claim_by = ROOT
-				set_state_flag = greater_lithuania_flag
-			}
-			834 = {
-				add_claim_by = ROOT
-				set_state_flag = greater_lithuania_flag
-			}
+			784 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			97 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1241 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1242 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1238 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1247 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1248 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1817 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1239 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1243 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1244 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1816 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1173 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			96 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1240 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1246 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			95 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1610 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1535 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1484 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1818 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			94 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1815 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1534 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1533 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1814 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			93 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			206 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1264 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1263 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			204 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1094 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1611 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			194 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1084 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			241 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			207 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1793 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1085 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			199 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			201 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1101 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			198 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1262 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			834 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1421 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1500 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1261 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			192 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1420 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			197 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1606 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			203 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1102 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			202 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			226 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1612 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1103 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			193 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1100 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1537 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			259 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1536 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			221 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1099 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			240 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1805 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			225 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1819 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1812 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1082 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			220 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1083 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			224 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1111 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1112 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			243 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1774 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			242 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1773 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			1104 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
+			210 = { add_claim_by = ROOT set_state_flag = greater_lithuania_flag }
 		}
 	}
 
@@ -1891,11 +1866,25 @@ focus_tree = {
 						state = 808
 						state = 810
 						state = 190
+						state = 1559
+						state = 1771
+						state = 1788
+						state = 1789
+						state = 1790
+						state = 1791
+						state = 1792
 						state = 811
 						state = 812
 						state = 813
 						state = 13
 						state = 191
+						state = 1795
+						state = 1796
+						state = 1797
+						state = 1798
+						state = 1799
+						state = 1800
+						state = 1801
 					}
 				}
 				add_core_of = ROOT
@@ -1931,13 +1920,13 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			763 = { add_core_of = ROOT }
-			763 = {
+			1249 = { add_core_of = ROOT }
+			1249 = {
 				owner = {
 					ROOT = {
 						create_wargoal = {
 							type = take_state_focus
-							generator = { 763 }
+							generator = { 1249 }
 							target = PREV
 						}
 					}
@@ -1961,13 +1950,136 @@ focus_tree = {
 		}
 
 		available = {
-			784 = {
-				NOT = {
-					owner = {
-						OR = {
-							tag = ROOT
-							is_subject_of = ROOT
-							is_in_faction_with = ROOT
+			OR = {
+				784 = {
+					NOT = {
+						owner = {
+							OR = {
+								tag = ROOT
+								is_subject_of = ROOT
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				1238 = {
+					NOT = {
+						owner = {
+							OR = {
+								tag = ROOT
+								is_subject_of = ROOT
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				1247 = {
+					NOT = {
+						owner = {
+							OR = {
+								tag = ROOT
+								is_subject_of = ROOT
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				1248 = {
+					NOT = {
+						owner = {
+							OR = {
+								tag = ROOT
+								is_subject_of = ROOT
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				1817 = {
+					NOT = {
+						owner = {
+							OR = {
+								tag = ROOT
+								is_subject_of = ROOT
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				1241 = {
+					NOT = {
+						owner = {
+							OR = {
+								tag = ROOT
+								is_subject_of = ROOT
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				1242 = {
+					NOT = {
+						owner = {
+							OR = {
+								tag = ROOT
+								is_subject_of = ROOT
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				1239 = {
+					NOT = {
+						owner = {
+							OR = {
+								tag = ROOT
+								is_subject_of = ROOT
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				1243 = {
+					NOT = {
+						owner = {
+							OR = {
+								tag = ROOT
+								is_subject_of = ROOT
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				1244 = {
+					NOT = {
+						owner = {
+							OR = {
+								tag = ROOT
+								is_subject_of = ROOT
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				1816 = {
+					NOT = {
+						owner = {
+							OR = {
+								tag = ROOT
+								is_subject_of = ROOT
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				1173 = {
+					NOT = {
+						owner = {
+							OR = {
+								tag = ROOT
+								is_subject_of = ROOT
+								is_in_faction_with = ROOT
+							}
 						}
 					}
 				}
@@ -1976,12 +2088,113 @@ focus_tree = {
 		}
 
 		bypass = {
-			784 = {
-				owner = {
-					OR = {
-						tag = ROOT
-						is_subject_of = ROOT
-						is_in_faction_with = ROOT
+			AND = {
+				784 = {
+					owner = {
+						OR = {
+							tag = ROOT
+							is_subject_of = ROOT
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+				1238 = {
+					owner = {
+						OR = {
+							tag = ROOT
+							is_subject_of = ROOT
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+				1247 = {
+					owner = {
+						OR = {
+							tag = ROOT
+							is_subject_of = ROOT
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+				1248 = {
+					owner = {
+						OR = {
+							tag = ROOT
+							is_subject_of = ROOT
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+				1817 = {
+					owner = {
+						OR = {
+							tag = ROOT
+							is_subject_of = ROOT
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+				1241 = {
+					owner = {
+						OR = {
+							tag = ROOT
+							is_subject_of = ROOT
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+				1242 = {
+					owner = {
+						OR = {
+							tag = ROOT
+							is_subject_of = ROOT
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+				1239 = {
+					owner = {
+						OR = {
+							tag = ROOT
+							is_subject_of = ROOT
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+				1243 = {
+					owner = {
+						OR = {
+							tag = ROOT
+							is_subject_of = ROOT
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+				1244 = {
+					owner = {
+						OR = {
+							tag = ROOT
+							is_subject_of = ROOT
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+				1816 = {
+					owner = {
+						OR = {
+							tag = ROOT
+							is_subject_of = ROOT
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+				1173 = {
+					owner = {
+						OR = {
+							tag = ROOT
+							is_subject_of = ROOT
+							is_in_faction_with = ROOT
+						}
 					}
 				}
 			}
@@ -1993,26 +2206,53 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			if = {
-				limit = { 784 = { owner = { is_subject = no } } }
-				784 = {
-					owner = {
-						country_event = {
-							id = LIT_events.5
-							days = 5
-						}
+			
+			every_country = {
+				limit = {
+					OR = {
+						owns_state = 784
+						owns_state = 1238
+						owns_state = 1247
+						owns_state = 1248
+						owns_state = 1817
+						owns_state = 1241
+						owns_state = 1242
+						owns_state = 1239
+						owns_state = 1243
+						owns_state = 1244
+						owns_state = 1816
+						owns_state = 1173
 					}
+					is_subject = no
+				}
+				country_event = {
+					id = LIT_events.5
+					days = 5
 				}
 			}
-			else = {
-				784 = {
-					owner = {
-						OVERLORD = {
-							country_event = {
-								id = LIT_events.5
-								days = 5
-							}
-						}
+
+			every_country = {
+				limit = {
+					OR = {
+						owns_state = 784
+						owns_state = 1238
+						owns_state = 1247
+						owns_state = 1248
+						owns_state = 1817
+						owns_state = 1241
+						owns_state = 1242
+						owns_state = 1239
+						owns_state = 1243
+						owns_state = 1244
+						owns_state = 1816
+						owns_state = 1173
+					}
+					is_subject = yes
+				}
+				OVERLORD = {
+					country_event = {
+						id = LIT_events.5
+						days = 5
 					}
 				}
 			}
@@ -2308,11 +2548,32 @@ focus_tree = {
 						every_state = {
 							limit = {
 								OR = {
-									state = 97
+									state = 97 state = 1245
 									state = 96
 									state = 95
 									state = 94
+									state = 1815
 									state = 93
+									state = 1238
+									state = 1247
+									state = 1248
+									state = 1817
+									state = 1241
+									state = 1242
+									state = 1239
+									state = 1243
+									state = 1244
+									state = 1816
+									state = 1240
+									state = 1246
+									state = 1610
+									state = 1535
+									state = 1484
+									state = 1818
+									state = 1534
+									state = 1533
+									state = 1814
+									state = 1173
 									state = 784
 								}
 								is_controlled_by = POL
@@ -2329,27 +2590,42 @@ focus_tree = {
 			every_controlled_state = {
 				limit = {
 					OR = {
-						state = 97
-						state = 96
-						state = 95
+						state = 97 state = 1245
+						state = 96 state = 1817
+						state = 95 state = 1247
 						state = 94
+						state = 1815
 						state = 93
+						state = 1241
+						state = 1242
+						state = 1239
+						state = 1243
+						state = 1244
+						state = 1816
+						state = 1240
+						state = 1246
+						state = 1610
+						state = 1535
+						state = 1484
+						state = 1818
+						state = 1534
+						state = 1533
+						state = 1814
+						state = 1173
 					}
 				}
 				add_core_of = ROOT
 			}
-			5 = {
-				add_core_of = POL
-			}
+			1557 = { add_core_of = POL }
+			1701 = { add_core_of = POL }
+			1427 = { add_core_of = POL }
+			1428 = { add_core_of = POL }
 			hidden_effect = {
-				if = {
-					limit = {
-						784 = { NOT = { is_core_of = ROOT } }
-					}
-					784 = { 
-						add_core_of = ROOT
-					} 
-				}
+				if = { limit = { 784 = { NOT = { is_core_of = ROOT } } } 784 = { add_core_of = ROOT } }
+				if = { limit = { 1238 = { NOT = { is_core_of = ROOT } } } 1238 = { add_core_of = ROOT } }
+				if = { limit = { 1247 = { NOT = { is_core_of = ROOT } } } 1247 = { add_core_of = ROOT } }
+				if = { limit = { 1248 = { NOT = { is_core_of = ROOT } } } 1248 = { add_core_of = ROOT } }
+				if = { limit = { 1817 = { NOT = { is_core_of = ROOT } } } 1817 = { add_core_of = ROOT } }
 				if = {
 					limit = { 
 						POL = { 
@@ -2397,12 +2673,33 @@ focus_tree = {
 						every_controlled_state = {
 							limit = {
 								OR = {
-									state = 97
+									state = 97 state = 1245
 									state = 96
 									state = 95
 									state = 94
+									state = 1815
 									state = 93
 									state = 784
+									state = 1238
+									state = 1247
+									state = 1248
+									state = 1817
+									state = 1241
+									state = 1242
+									state = 1239
+									state = 1243
+									state = 1244
+									state = 1816
+									state = 1240
+									state = 1246
+									state = 1610
+									state = 1535
+									state = 1484
+									state = 1818
+									state = 1534
+									state = 1533
+									state = 1814
+									state = 1173
 								}
 							}
 							ROOT = { transfer_state = PREV }
@@ -2432,59 +2729,43 @@ focus_tree = {
 		available = {
 			242 = {
 				is_controlled_by = ROOT
-				OR = {
-					compliance > 80
-					is_core_of = ROOT
-				}
+				compliance > 80
+			}
+			1773 = {
+				is_controlled_by = ROOT
+				compliance > 80
 			}
 			243 = {
 				is_controlled_by = ROOT
-				OR = {
-					compliance > 80
-					is_core_of = ROOT
-				}
+				compliance > 80
+			}
+			1774 = {
+				is_controlled_by = ROOT
+				compliance > 80
 			}
 			224 = {
 				is_controlled_by = ROOT
-				OR = {
-					compliance > 80
-					is_core_of = ROOT
-				}
+				compliance > 80
 			}
 			205 = {
 				is_controlled_by = ROOT
-				OR = {
-					compliance > 80
-					is_core_of = ROOT
-				}
+				compliance > 80
 			}
 			223 = {
 				is_controlled_by = ROOT
-				OR = {
-					compliance > 80
-					is_core_of = ROOT
-				}
+				compliance > 80
 			}
 			222 = {
 				is_controlled_by = ROOT
-				OR = {
-					compliance > 80
-					is_core_of = ROOT
-				}
+				compliance > 80
 			}
 			220 = {
 				is_controlled_by = ROOT
-				OR = {
-					compliance > 80
-					is_core_of = ROOT
-				}
+				compliance > 80
 			}
 			240 = {
 				is_controlled_by = ROOT
-				OR = {
-					compliance > 80
-					is_core_of = ROOT
-				}
+				compliance > 80
 			}
 		}
 
@@ -3094,7 +3375,7 @@ focus_tree = {
 					is_core_of = ROOT
 					OR = {
 						NOT = { is_core_of = POL }
-						state = 784
+						state = 784 state = 1238 state = 1248 state = 1816
 					}
 				}
 				add_extra_state_shared_building_slots = 2
@@ -4002,7 +4283,7 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				limit = { ROOT = { has_full_control_of_state = PREV } }
-				prioritize = { 784 } #Vilnius
+				prioritize = { 784 1238 1248 1816 } #Vilnius
 				create_unit = {
 					division = "name = \"Royal Guards Division\" division_template = \"Royal Guards Division\" start_experience_factor = 1.0" 
 					owner = LIT
@@ -4345,7 +4626,7 @@ focus_tree = {
 				activate_decision = form_commonwealth
 			}
 			effect_tooltip = {
-				set_cosmetic_tag = PLC_UNIFIED
+				set_cosmetic_tag = LPC_UNIFIED
 			}
 			custom_effect_tooltip = form_country_lithuania_coring_states_tt
 			custom_effect_tooltip = form_country_poland_coring_states_tt
@@ -4438,15 +4719,15 @@ focus_tree = {
 		completion_reward = {
 			build_railway = {
 				#level = 3
-				path = { 11342 11226 9246 9374 530 6376 9483 }
+				path = { 11342 11498 9438 530 6376 }
 			}
 			build_railway = {
 				#level = 3
-				path = { 11357 400 3254 11312 }
+				path = { 11301 11357 400 3254 11312 }
 			}
 			build_railway = {
 				#level = 3
-				path = { 6296 9357 9438 9374 }
+				path = { 6296 13744 9357 9438 }
 			}
 		}
 	}
@@ -4574,18 +4855,16 @@ focus_tree = {
 		}
 		
 		available = {
-			94 = {
-				controls_or_subject_of = yes
-			}
-			93 = {
-				controls_or_subject_of = yes
-			}
-			201 = {
-				controls_or_subject_of = yes
-			}
-			202 = {
-				controls_or_subject_of = yes
-			}
+			1535 = { controls_or_subject_of = yes }
+			1484 = { controls_or_subject_of = yes }
+			1818 = { controls_or_subject_of = yes }
+			94 = { controls_or_subject_of = yes }
+			1815 = { controls_or_subject_of = yes }
+			1534 = { controls_or_subject_of = yes }
+			93 = { controls_or_subject_of = yes }
+			201 = { controls_or_subject_of = yes }
+			1101 = { controls_or_subject_of = yes }
+			202 = { controls_or_subject_of = yes }
 		}
 
 		available_if_capitulated = yes
@@ -4594,7 +4873,7 @@ focus_tree = {
 		completion_reward = {
 			build_railway = {
 				#level = 2
-				path = { 3392 11528 6415 560 11503 6435 11543 3470 6593 441 3543 525 }
+				path = { 3392 11528 6415 560 11503 6435 11543 3470 6593 441 3543 14493 525 }
 			}
 		}
 	}
@@ -4614,7 +4893,7 @@ focus_tree = {
 		}
 		
 		available = {
-			137 = { controls_or_subject_of = yes }
+			1086 = { controls_or_subject_of = yes }
 			custom_trigger_tooltip = {
 				tooltip = control_all_ukrainian_states_tt
 				all_state = {
@@ -4632,11 +4911,11 @@ focus_tree = {
 		completion_reward = {
 			build_railway = {
 				#level = 2
-				path = { 525 504 9456 11438 458 3452 6451 11561 11715 737 568 3722 705 3686 }
+				path = { 525 14493 504 9465 11438 458 3452 6451 11561 14516 574 3755 14496 737 568 3722 6724 705 3686 }
 			}
 			build_railway = {
 				#level = 2
-				path = { 11670 3738 11703 11546 11683 3755 737 568 3722 705 3686 }
+				path = { 11670 3738 11703 11546 11683 14496 737 568 3722 6724 705 3686 }
 			}
 		}
 	}
@@ -4664,9 +4943,14 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					NOT = { has_cosmetic_tag = PLC_UNIFIED }
+					NOT = { 
+						has_cosmetic_tag = LPC_UNIFIED
+						has_cosmetic_tag = LPC_UNIFIED_flag2
+						has_cosmetic_tag = LPC_UNIFIED_flag3
+						has_cosmetic_tag = LPC_UNIFIED_flag4
+					}
 				}
-				set_cosmetic_tag = LIVONIA
+				set_cosmetic_tag = LIT_grand_duchy
 			}
 			# Estonia
 			custom_effect_tooltip = form_country_estonia_coring_states_tt
@@ -4676,15 +4960,29 @@ focus_tree = {
 				811 = { add_core_of = ROOT }
 				812 = { add_core_of = ROOT }
 				813 = { add_core_of = ROOT }
+				1795 = { add_core_of = ROOT }
+				1796 = { add_core_of = ROOT }
+				1797 = { add_core_of = ROOT }
+				1798 = { add_core_of = ROOT }
+				1799 = { add_core_of = ROOT }
+				1800 = { add_core_of = ROOT }
+				1801 = { add_core_of = ROOT }
 			}
 			# Latvia
 			custom_effect_tooltip = form_country_latvia_coring_states_tt
 			hidden_effect = {
 				12 = { add_core_of = ROOT }
 				190 = { add_core_of = ROOT }
+				1559 = { add_core_of = ROOT }
+				1771 = { add_core_of = ROOT }
 				808 = { add_core_of = ROOT }
 				809 = { add_core_of = ROOT }
 				810 = { add_core_of = ROOT }
+				1788 = { add_core_of = ROOT }
+				1789 = { add_core_of = ROOT }
+				1790 = { add_core_of = ROOT }
+				1791 = { add_core_of = ROOT }
+				1792 = { add_core_of = ROOT }
 			}
 			if = {
 				limit = {
@@ -4736,19 +5034,31 @@ focus_tree = {
 		
 		bypass = {
 			5 = { is_core_of = LIT }
+			1288 = { is_core_of = LIT }
+			1557 = { is_core_of = LIT }
+			1701 = { is_core_of = LIT }
+			1427 = { is_core_of = LIT }
+			1428 = { is_core_of = LIT }
+			1702 = { is_core_of = LIT }
+			1772 = { is_core_of = LIT }
 			763 = { is_core_of = LIT }
+			1249 = { is_core_of = LIT }
 		}
 
 		available_if_capitulated = yes
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			5 = {
-				add_core_of = LIT
-			}
-			763 = {
-				add_core_of = LIT
-			}
+			5 = { add_core_of = LIT }
+			1288 = { add_core_of = LIT }
+			1557 = { add_core_of = LIT }
+			1701 = { add_core_of = LIT }
+			1427 = { add_core_of = LIT }
+			1428 = { add_core_of = LIT }
+			1702 = { add_core_of = LIT }
+			1772 = { add_core_of = LIT }
+			763 = { add_core_of = LIT }
+			1249 = { add_core_of = LIT }
 		}
 	}
 	
@@ -4778,7 +5088,7 @@ focus_tree = {
 			create_wargoal = {
 				type = take_state_focus
 				target = SOV
-				generator = { 96 95 94 207 206 204 241 93 199 201 198 202 203 259 193 225 221 226 197 192 242 243 224 205 223 222 220 240 194 834 }
+				generator = { 96 95 94 1815 207 206 204 241 93 199 201 198 202 203 259 193 225 1819 1812 221 226 1612 197 1606 192 1420 242 1773 243 1774 224 205 223 222 220 240 194 1173 1244 1817 1239 1240 1243 1246 1247 1484 1534 1535 1610 1814 1818 1264 1793 1263 1611 1084 1085 1533 1262 1101 1102 1537 1103 1100 1099 1536 1104 1083 1108 1112 1109 1111 1082 1805 1813 1094 }
 			}
 		}
 	}
@@ -4800,9 +5110,10 @@ focus_tree = {
 		}
 		
 		available = {
-			controls_state = 96
-			controls_state = 95
+			controls_state = 96 controls_state = 1173 controls_state = 1244 controls_state = 1817
+			controls_state = 95 controls_state = 1239 controls_state = 1240 controls_state = 1243 controls_state = 1246 controls_state = 1247
 			controls_state = 94
+			controls_state = 1815
 			controls_state = 207
 			controls_state = 206
 			controls_state = 204
@@ -4816,12 +5127,19 @@ focus_tree = {
 			controls_state = 259
 			controls_state = 193
 			controls_state = 225
+			controls_state = 1819
+			controls_state = 1812
 			controls_state = 221
 			controls_state = 226
+			controls_state = 1612
 			controls_state = 197
+			controls_state = 1606
 			controls_state = 192
+			controls_state = 1420
 			controls_state = 242
+			controls_state = 1773
 			controls_state = 243
+			controls_state = 1774
 			controls_state = 224
 			controls_state = 205
 			controls_state = 223
@@ -4835,8 +5153,69 @@ focus_tree = {
 			controls_state = 67
 			controls_state = 66
 			controls_state = 68
+			controls_state = 1429
 			controls_state = 63
+			
+			#KSRE
+			controls_state = 1538
+			controls_state = 1539
+			controls_state = 1540
+			controls_state = 1541
+			controls_state = 1558
+			controls_state = 1249
+			controls_state = 1557
+			controls_state = 1701
+			controls_state = 1427
+			controls_state = 1428
+			controls_state = 1702
+			controls_state = 1772
+			controls_state = 1533
+			controls_state = 1814
+			controls_state = 1534
+			controls_state = 1535
+			controls_state = 1484
+			controls_state = 1818
+			controls_state = 1610
+			controls_state = 1793
+			controls_state = 1264
+			controls_state = 1263
+			controls_state = 210 controls_state = 1110 controls_state = 1804
+			controls_state = 1094
+			controls_state = 1611
+			controls_state = 1084
+			controls_state = 1083
+			controls_state = 1085
+			controls_state = 1104
+			controls_state = 1112
+			controls_state = 1109
+			controls_state = 1111
+			controls_state = 1082
+			controls_state = 1805
+			controls_state = 1099
+			controls_state = 1536
+			controls_state = 1103
+			controls_state = 1100
+			controls_state = 1537
+			controls_state = 1101
+			controls_state = 1102
+			controls_state = 1262
 			controls_state = 834
+			controls_state = 1421
+			controls_state = 1500
+			controls_state = 1261
+			controls_state = 1087
+			controls_state = 1086
+			controls_state = 1088
+			controls_state = 196
+			controls_state = 200
+			controls_state = 1089
+			controls_state = 227
+			controls_state = 1090
+			controls_state = 228 controls_state = 1095
+			controls_state = 1091
+			controls_state = 1813
+			controls_state = 1108
+			controls_state = 1288
 		}
 
 		available_if_capitulated = yes
@@ -4849,9 +5228,10 @@ focus_tree = {
 						is_core_of = LIT
 						is_core_of = KSH
 						is_core_of = UKR
-						state = 96
-						state = 95
+						state = 96 state = 1173 state = 1244 state = 1817
+						state = 95 state = 1239 state = 1240 state = 1243 state = 1246 state = 1247
 						state = 94
+						state = 1815
 						state = 207
 						state = 206
 						state = 204
@@ -4865,12 +5245,19 @@ focus_tree = {
 						state = 259
 						state = 193
 						state = 225
+						state = 1819
+						state = 1812
 						state = 221
 						state = 226
+						state = 1612
 						state = 197
+						state = 1606
 						state = 192
+						state = 1420
 						state = 242
+						state = 1773
 						state = 243
+						state = 1774
 						state = 224
 						state = 205
 						state = 223
@@ -4884,8 +5271,69 @@ focus_tree = {
 						state = 67
 						state = 66
 						state = 68
+						state = 1429
 						state = 63
+						
+						#KSRE
+						state = 1538
+						state = 1539
+						state = 1540
+						state = 1541
+						state = 1558
+						state = 1249
+						state = 1557
+						state = 1701
+						state = 1427
+						state = 1428
+						state = 1702
+						state = 1772
+						state = 1533
+						state = 1814
+						state = 1534
+						state = 1535
+						state = 1484
+						state = 1818
+						state = 1610
+						state = 1793
+						state = 1264
+						state = 1263
+						state = 210 state = 1110 state = 1804
+						state = 1094
+						state = 1611
+						state = 1084
+						state = 1083
+						state = 1085
+						state = 1104
+						state = 1112
+						state = 1109
+						state = 1111
+						state = 1082
+						state = 1805
+						state = 1099
+						state = 1536
+						state = 1103
+						state = 1100
+						state = 1537
+						state = 1101
+						state = 1102
+						state = 1262
 						state = 834
+						state = 1421
+						state = 1500
+						state = 1261
+						state = 1087
+						state = 1086
+						state = 1088
+						state = 196
+						state = 200
+						state = 1089
+						state = 227
+						state = 1090
+						state = 228 state = 1095
+						state = 1091
+						state = 1813
+						state = 1108
+						state = 1288
 					}
 				}
 				add_core_of = ROOT

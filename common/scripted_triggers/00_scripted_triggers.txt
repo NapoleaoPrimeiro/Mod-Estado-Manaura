@@ -319,16 +319,42 @@ is_not_controlled_by_ROOT_or_ally = {
 is_csa_state = {
 	OR = {
 		state = 366
+		state = 1690
+		state = 1691
 		state = 365
 		state = 367
+		state = 1689
+		state = 1754
 		state = 370
+		state = 1755
 		state = 362
+		state = 1697
+		state = 1698
+		state = 1699
 		state = 363
+		state = 1693
 		state = 364
+		state = 1692
 		state = 371
+		state = 1346
+		state = 1347
+		state = 1348
+		state = 1349
 		state = 375
+		state = 1666
+		state = 1667
+		state = 1668
+		state = 1669
+		state = 1670
+		state = 1671
+		state = 1672
+		state = 1350
+		state = 1351
 		state = 368
+		state = 1688
 		state = 372
+		state = 1680
+		state = 1150
 	}
 }
 
@@ -804,12 +830,16 @@ state_is_in_the_mediterranean_sea = {
 			state = 165
 			state = 177
 			state = 31
+			state = 1381
 			state = 22
 			state = 21
 			state = 851
-			state = 735
+			state = 911
+			state = 1301
+			state = 1305
+			state = 771
 			state = 162
-			state = 2
+			state = 2 state = 1404
 			state = 117
 			state = 156
 			state = 115
@@ -817,13 +847,18 @@ state_is_in_the_mediterranean_sea = {
 			state = 114
 			state = 116
 			state = 849
-			state = 157
-			state = 158
-			state = 161
+			state = 157 state = 1405
+			state = 1406
+			state = 1407
+			state = 1308
+			state = 1409
 			state = 160
+			state = 1168
 			state = 736
 			state = 852
+			state = 1169
 			state = 103
+			state = 1296
 			state = 163
 			state = 105
 			state = 44
@@ -832,12 +867,13 @@ state_is_in_the_mediterranean_sea = {
 			state = 186
 			state = 47
 			state = 731
-			state = 184
+			state = 1607
+			state = 184 state = 1181
 			state = 187
 			state = 182
 			state = 164
-			state = 341
 			state = 797
+			state = 1223
 			state = 340
 			state = 339
 			state = 342
@@ -847,7 +883,7 @@ state_is_in_the_mediterranean_sea = {
 			state = 677
 			state = 553
 			state = 183
-			state = 454
+			state = 454 state = 1134 state = 1135 state = 1138 state = 1140
 			state = 453
 			state = 446
 			state = 907
@@ -864,6 +900,22 @@ state_is_in_the_mediterranean_sea = {
 			state = 461
 			state = 290
 			state = 934
+			# KSRE
+			state = 1266
+			state = 1708
+			state = 1716
+			state = 1717
+			state = 1718
+			state = 1388
+			state = 1319
+			state = 1314
+			state = 1325
+			state = 1339
+			state = 1260
+			state = 1131
+			state = 1133
+			state = 1137
+			state = 1139
 		}
 	}
 }
@@ -874,26 +926,30 @@ state_is_in_the_baltic_sea = { # Checks if the state borders the Baltic Sea
 		state = 911 # Fyn
 		state = 912 # Sonderjylland
 		state = 909
+		state = 1728
 		state = 58
 		state = 61
 		state = 62
 		state = 63
-		state = 807
+		state = 807 state = 1554
 		state = 85
-		state = 5
-		state = 763
+		state = 5 state = 1288 state = 1557 state = 1702 state = 1772
+		state = 763 state = 1249
 		state = 188
-		state = 189
+		state = 189 state = 1172 state = 1237
 		state = 190
-		state = 809
+		state = 1559
+		state = 1771
+		state = 809 state = 1788
 		state = 808
 		state = 12
 		state = 13
 		state = 811 
 		state = 812
 		state = 813
-		state = 208
+		state = 1290
 		state = 195
+		state = 1289
 		state = 146
 		state = 928
 		state = 111
@@ -910,6 +966,19 @@ state_is_in_the_baltic_sea = { # Checks if the state borders the Baltic Sea
 		state = 139 # Smaland
 		state = 138 # Skane
 		state = 124 # Gotland
+		
+		# KSRE
+		state = 1539
+		state = 1538
+		state = 1701
+		state = 1427
+		state = 1428
+		state = 1787
+		state = 1791
+		state = 1797
+		state = 1801
+		state = 1800
+		state = 1799
 	}
 }
 
@@ -1016,21 +1085,38 @@ is_alpine_state = {
 		OR = {
 			state = 21 #Bouche-du-Rhone - FRA
 			state = 851 #Var - FRA 
-			state = 735 #Savoy - FRA 
+			state = 735 state = 1301 state = 1305 #Savoy - FRA 
+			state = 1302
+			state = 1303
+			state = 1304
+			state = 1306
+			state = 130
 			state = 32 #Alpes - FRA 
 			state = 158 #Piemonte - ITA
+			state = 1308
 			state = 159 #Lombardia - ITA 
 			state = 850 #Trentino - ITA 
 			state = 39 #Alto Adige - ITA
 			state = 847 #Western Swiss Alps - SWI
+			state = 1506
 			state = 151 #Eastern Swiss Alps - SWI 
+			state = 1509
+			state = 1510
+			state = 1511
+			state = 1512
+			state = 1513
+			state = 1515
+			state = 1516
 			state = 846 #Ticino - SWI
 			state = 848 #Vorarlberg - AUS
 			state = 153 #Tyrol - AUS 
 			state = 152 #Upper Austria - AUS 
-			state = 4 #Lower Austria 
-			state = 975 #Burgenland
-			state = 976 #Steiermark-Kömten 
+			state = 976
+			state = 1390
+			state = 4 state = 1553 #Lower Austria 
+			
+			# KSRE
+			state = 1128
 		}
 	}
 }
@@ -1146,6 +1232,7 @@ is_unlikely_country_tag = {
 		tag = WUR
 		tag = THU
 		tag = HES
+		tag = WPH
 		tag = RHI
 		tag = RNG 
 		tag = PSR 
@@ -1330,6 +1417,7 @@ is_danish_belt_state = { # Checks if state should be considered to be around the
 		state = 912 # Sonderjylland 
 		state = 37 # Sjaelland 
 		state = 909 # Schleswig 
+		state = 1728
 		state = 58 # Holstein 
 		state = 61 # Mecklenburg
 		state = 62 # Vorpommern   
@@ -1339,6 +1427,7 @@ is_danish_belt_state = { # Checks if state should be considered to be around the
 is_scandinavian_northern_sea_state = {
 	OR = {
 		state = 909 # Schleswig 
+		state = 1728
 		state = 58 # Holstein 
 		state = 912 # Sonderjylland		
 		state = 99 # Norrejylland

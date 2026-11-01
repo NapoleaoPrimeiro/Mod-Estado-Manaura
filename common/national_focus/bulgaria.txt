@@ -78,7 +78,7 @@ focus_tree = {
 			every_owned_state = {
 				limit = {
 					has_state_flag = BUL_initial_bulgarian_state_flag
-					NOT = { state = 48 }
+					NOT = { state = 48 state = 1719 }
 				}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -264,6 +264,9 @@ focus_tree = {
 			if = {
 				limit = {
 					212 = {
+						is_owned_by = BUL
+					}
+					1720 = { # KSRE (de 212)
 						is_owned_by = BUL
 					}
 				} 
@@ -481,7 +484,7 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					controls_state = 212
+					controls_state = 212 controls_state = 1720
 				}
 				build_railway = { 
 					path = { 949 3908 3937 6923 }
@@ -489,7 +492,7 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					controls_state = 212
+					controls_state = 212 controls_state = 1720
 					controls_state = 211
 				}
 				build_railway = { 
@@ -498,8 +501,8 @@ focus_tree = {
 			}
 			if = {
 				limit = { 
-					has_full_control_of_state = 803 
-					has_full_control_of_state = 106
+					has_full_control_of_state = 803 has_full_control_of_state = 1299 has_full_control_of_state = 1300 has_full_control_of_state = 1411 
+					has_full_control_of_state = 106 has_full_control_of_state = 1298 has_full_control_of_state = 1307
 				}
 				build_railway = {
 					level = 2
@@ -521,7 +524,7 @@ focus_tree = {
 		cost = 5
 
 		available = {
-			controls_state = 48
+			controls_state = 48 controls_state = 1719
 		}
 		
 		search_filters = {FOCUS_FILTER_INDUSTRY}
@@ -550,7 +553,7 @@ focus_tree = {
 		cost = 5
 
 		available = {
-			controls_state = 48
+			controls_state = 48 controls_state = 1719
 		}
 		
 		search_filters = {FOCUS_FILTER_INDUSTRY}
@@ -575,7 +578,7 @@ focus_tree = {
 		cost = 10
 
 		available = {
-			controls_state = 48
+			controls_state = 48 controls_state = 1719
 		}
 		
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
@@ -615,8 +618,8 @@ focus_tree = {
 		available = {
 			has_tech = excavation2
 			OR = {
-				controls_state = 48
-				controls_state = 212
+				controls_state = 48 controls_state = 1719
+				controls_state = 212 controls_state = 1720
 			}
 		}
 		
@@ -646,7 +649,7 @@ focus_tree = {
 
 		available = {
 			has_tech = excavation3
-			controls_state = 48
+			controls_state = 48 controls_state = 1719
 		}
 		
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
@@ -761,6 +764,7 @@ focus_tree = {
 			if = {
 				limit = {
 					48 = { is_owned_by = BUL }
+					1719 = { is_owned_by = BUL } # KSRE (de 48)
 				}
 				48 = {
 					add_building_construction = {
@@ -772,9 +776,9 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					212 = { is_owned_by = BUL }
+					1720 = { is_owned_by = BUL }
 				}
-				212 = {
+				1720 = {
 					add_building_construction = {
 						type = air_base 
 						level = 2
@@ -882,6 +886,9 @@ focus_tree = {
 
 		available = {
 			48 = {
+				is_owned_by = BUL
+			}
+			1719 = { # KSRE (de 48)
 				is_owned_by = BUL
 			}
 		}
@@ -1020,6 +1027,9 @@ focus_tree = {
 			212 = {
 				is_owned_by = BUL
 			}
+			1720 = { # KSRE (de 212)
+				is_owned_by = BUL
+			}
 		}
 		
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
@@ -1071,6 +1081,9 @@ focus_tree = {
 			212 = {
 				is_owned_by = BUL
 			}
+			1720 = { # KSRE (de 212)
+				is_owned_by = BUL
+			}
 		}
 		
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
@@ -1120,6 +1133,9 @@ focus_tree = {
 
 		available = {
 			212 = {
+				is_owned_by = BUL
+			}
+			1720 = { # KSRE (de 212)
 				is_owned_by = BUL
 			}
 		}
@@ -1315,6 +1331,8 @@ focus_tree = {
 			controls_state = 212
 			controls_state = 211
 			controls_state = 801
+			controls_state = 1719
+			controls_state = 1720
 		}
 		
 		search_filters = {FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY}
@@ -1446,6 +1464,9 @@ focus_tree = {
 
 		available = {
 			48 = {
+				is_owned_by = BUL
+			}
+			1719 = { # KSRE (de 48)
 				is_owned_by = BUL
 			}
 		}
@@ -1780,6 +1801,8 @@ focus_tree = {
 					BUL = {
 						has_full_control_of_state = 341 #EDIRNE
 						has_full_control_of_state = 797 #ISTANBUL
+						has_full_control_of_state = 1223 #EAST ISTANBUL
+						has_full_control_of_state = 1266 #CORLU
 					}
 				}
 				AND = {
@@ -1788,12 +1811,16 @@ focus_tree = {
 						is_in_faction_with = ROOT
 						has_full_control_of_state = 341 #EDIRNE
 						has_full_control_of_state = 797 #ISTANBUL
+						has_full_control_of_state = 1223 #EAST ISTANBUL
+						has_full_control_of_state = 1266 #CORLU
 					}
 				}
 				any_country = {
 					is_subject_of = ROOT
 					has_full_control_of_state = 341 #EDIRNE
 					has_full_control_of_state = 797 #ISTANBUL
+					has_full_control_of_state = 1223 #EAST ISTANBUL
+					has_full_control_of_state = 1266 #CORLU
 				}
 			}
 		}
@@ -1855,7 +1882,9 @@ focus_tree = {
 					instant_build = yes
 					province = 11842
 				}
-				#Fortifications in Edirne's Naval Base
+			}
+			1266 = {
+				#Fortifications in Corlu's Naval Base
 				add_building_construction = {
 					type = bunker
 					level = 2
@@ -1882,6 +1911,8 @@ focus_tree = {
 						}			
 						has_full_control_of_state = 341 #EDIRNE
 						has_full_control_of_state = 797 #ISTANBUL
+						has_full_control_of_state = 1223 #EAST ISTANBUL
+						has_full_control_of_state = 1266 #CORLU
 					}
 				}
 				random_country = {
@@ -1892,6 +1923,8 @@ focus_tree = {
 						}	
 						has_full_control_of_state = 341 #EDIRNE
 						has_full_control_of_state = 797 #ISTANBUL
+						has_full_control_of_state = 1223 #EAST ISTANBUL
+						has_full_control_of_state = 1266 #CORLU
 					}
 					add_timed_idea = {
 						idea = BUL_supremacy_on_the_bosporus
@@ -2837,7 +2870,7 @@ focus_tree = {
 						ideology = neutrality
 						size = BUL_communist_cw_opposition
 						capital = 48
-						states = { 212 }
+						states = { 212 1720 }
 						keep_unit_leaders_trigger = {
 							NOT = {	has_trait = trait_BUL_tsar_loyalist }
 						}
@@ -5085,7 +5118,7 @@ focus_tree = {
 						ideology = neutrality
 						size = BUL_democratic_cw_opposition
 						capital = 48
-						states = { 212 }
+						states = { 212 1720 }
 						keep_unit_leaders_trigger = {
 							NOT = {	has_trait = trait_BUL_tsar_loyalist }
 						}
@@ -8199,7 +8232,7 @@ focus_tree = {
 						ideology = neutrality
 						size = BUL_fascist_cw_opposition
 						capital = 48
-						states = { 212 }
+						states = { 212 1720 }
 						keep_unit_leaders_trigger = {
 							NOT = {	has_trait = trait_BUL_tsar_loyalist }
 						}
@@ -9148,19 +9181,59 @@ focus_tree = {
 			custom_effect_tooltip = BUL_bulgarian_administration_of_the_balkans_cores_tt
 			if = {
 				limit = {
-					has_full_control_of_state = 106
+					has_full_control_of_state = 106 has_full_control_of_state = 1298 has_full_control_of_state = 1307
 					106 = { NOT = { is_core_of = ROOT } }
 				}
 				106 = { set_state_flag = BUL_bulgarian_reintegration_campaign_flag }
-				add_state_core = 106
+				add_state_core = 106 add_state_core = 1298 add_state_core = 1307
 			}
 			if = {
 				limit = {
-					has_full_control_of_state = 803
+					has_full_control_of_state = 1307
+					1307 = { NOT = { is_core_of = ROOT } }
+				}
+				1307 = { set_state_flag = BUL_bulgarian_reintegration_campaign_flag }
+				add_state_core = 1307
+			}
+			if = {
+				limit = {
+					has_full_control_of_state = 1298
+					1298 = { NOT = { is_core_of = ROOT } }
+				}
+				1298 = { set_state_flag = BUL_bulgarian_reintegration_campaign_flag }
+				add_state_core = 1298
+			}
+			if = {
+				limit = {
+					has_full_control_of_state = 803 has_full_control_of_state = 1299 has_full_control_of_state = 1300 has_full_control_of_state = 1411
 					803 = { NOT = { is_core_of = ROOT } }
 				}
 				803 = { set_state_flag = BUL_bulgarian_reintegration_campaign_flag }
-				add_state_core = 803
+				add_state_core = 803 add_state_core = 1299 add_state_core = 1300 add_state_core = 1411
+			}
+			if = {
+				limit = {
+					has_full_control_of_state = 1411
+					1411 = { NOT = { is_core_of = ROOT } }
+				}
+				1411 = { set_state_flag = BUL_bulgarian_reintegration_campaign_flag }
+				add_state_core = 1411
+			}
+			if = {
+				limit = {
+					has_full_control_of_state = 1299
+					1299 = { NOT = { is_core_of = ROOT } }
+				}
+				1299 = { set_state_flag = BUL_bulgarian_reintegration_campaign_flag }
+				add_state_core = 1299
+			}
+			if = {
+				limit = {
+					has_full_control_of_state = 1300
+					1300 = { NOT = { is_core_of = ROOT } }
+				}
+				1300 = { set_state_flag = BUL_bulgarian_reintegration_campaign_flag }
+				add_state_core = 1300
 			}
 			if = {
 				limit = {
@@ -9169,14 +9242,6 @@ focus_tree = {
 				}
 				77 = { set_state_flag = BUL_bulgarian_reintegration_campaign_flag }
 				add_state_core = 77
-			}
-			if = {
-				limit = {
-					has_full_control_of_state = 971
-					971 = { NOT = { is_core_of = ROOT } }
-				}
-				971 = { set_state_flag = BUL_bulgarian_reintegration_campaign_flag }
-				add_state_core = 971
 			}
 			custom_effect_tooltip = BUL_historical_states_tt
 
@@ -9466,7 +9531,7 @@ focus_tree = {
 				can_create_factions = yes
 			}
 			random_owned_state = {
-				prioritize = { 48 212 }
+				prioritize = { 48 212 1719 1720 }
 				limit = {
 					free_building_slots = {
 						building = arms_factory

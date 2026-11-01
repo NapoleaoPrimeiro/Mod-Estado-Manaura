@@ -2120,14 +2120,30 @@ shared_focus = {
 				817 = { is_owned_and_controlled_by = MON }
 				818 = { is_owned_and_controlled_by = MON }
 				819 = { is_owned_and_controlled_by = MON }
+				1442 = { is_owned_and_controlled_by = MON } # KSRE (de 819)
 				820 = { is_owned_and_controlled_by = MON }
+				1457 = { is_owned_and_controlled_by = MON }
+				1460 = { is_owned_and_controlled_by = MON }
+				1461 = { is_owned_and_controlled_by = MON }
+				1462 = { is_owned_and_controlled_by = MON }
+				1463 = { is_owned_and_controlled_by = MON }
+				1464 = { is_owned_and_controlled_by = MON }
+				1465 = { is_owned_and_controlled_by = MON }
+				1466 = { is_owned_and_controlled_by = MON }
+				1467 = { is_owned_and_controlled_by = MON }
+				1468 = { is_owned_and_controlled_by = MON }
+				1469 = { is_owned_and_controlled_by = MON }
+				1470 = { is_owned_and_controlled_by = MON }
+				1471 = { is_owned_and_controlled_by = MON }
+				1472 = { is_owned_and_controlled_by = MON }
+				1473 = { is_owned_and_controlled_by = MON }
 			}
 			ROOT = {
 				create_wargoal = {
 					type = take_state_focus
 					target = MON
 					expire = 0
-					generator = { 330 817 818 819 820 }
+					generator = { 330 817 818 819 820 1457 1460 1461 1462 1463 1464 1465 1466 1467 1468 1469 1470 1471 1472 1473 1442 }
 				}
 			}
 		}
@@ -2275,7 +2291,13 @@ shared_focus = {
 			limit = {
 				OR = {
 					527 = { is_owned_and_controlled_by = ROOT }
+					1318 = { is_owned_and_controlled_by = ROOT } # KSRE (de 527)
+					1322 = { is_owned_and_controlled_by = ROOT } # KSRE (de 527)
+					1328 = { is_owned_and_controlled_by = ROOT } # KSRE (de 527)
+					1329 = { is_owned_and_controlled_by = ROOT } # KSRE (de 527)
 					525 = { is_owned_and_controlled_by = ROOT }
+					1316 = { is_owned_and_controlled_by = ROOT } # KSRE (de 525)
+					1317 = { is_owned_and_controlled_by = ROOT } # KSRE (de 525)
 				}
 			}
 			activate_mission_tooltip = CHI_release_korea
@@ -2288,7 +2310,7 @@ shared_focus = {
 							type = take_state_focus
 							target = PREV
 							expire = 0
-							generator = { 527 }
+							generator = { 527 1318 1322 1328 1329 }
 						}
 					}
 				}
@@ -2296,7 +2318,7 @@ shared_focus = {
 			#Don't give wargoal on same country twice
 			if = {
 				limit = {
-					NOT = { 525 = { CONTROLLER = { controls_state = 527 } } }
+					NOT = { 525 = { CONTROLLER = { controls_state = 527 controls_state = 1318 controls_state = 1322 controls_state = 1328 controls_state = 1329 } } }
 				}
 				525 = {
 					CONTROLLER = {
@@ -2305,7 +2327,7 @@ shared_focus = {
 								type = take_state_focus
 								target = PREV
 								expire = 0
-								generator = { 525 }
+								generator = { 525 1316 1317 }
 							}
 						}
 					}
@@ -2585,7 +2607,7 @@ shared_focus = {
 						type = take_state_focus
 						target = PREV
 						expire = 0
-						generator = { 527 }
+						generator = { 527 1318 1322 1328 1329 }
 					}
 				}
 			}
@@ -2597,7 +2619,7 @@ shared_focus = {
 					525 = {
 						CONTROLLER = {
 							OR = {
-								controls_state = 527
+								controls_state = 527 controls_state = 1318 controls_state = 1322 controls_state = 1328 controls_state = 1329
 								tag = ROOT								
 							}
 						}
@@ -2611,7 +2633,7 @@ shared_focus = {
 							type = take_state_focus
 							target = PREV
 							expire = 0
-							generator = { 525 }
+							generator = { 525 1316 1317 }
 						}
 					}
 				}

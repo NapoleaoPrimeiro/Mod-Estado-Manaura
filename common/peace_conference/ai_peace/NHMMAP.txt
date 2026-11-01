@@ -209,7 +209,7 @@ peace_ai_desires = {
 					is_core_of = UKR
 					is_core_of = MOL
 					is_core_of = BLR
-					state = 784 #wilno
+					state = 784 state = 1238 state = 1248 state = 1816 #wilno
 				}
             }
             ROOT = { 
@@ -245,7 +245,7 @@ peace_ai_desires = {
 					is_core_of = UKR
 					is_core_of = BLR
 					is_core_of = MOL
-					state = 784 #wilno
+					state = 784 state = 1238 state = 1248 state = 1816 #wilno
 				}
             }
             ROOT = { 
@@ -267,14 +267,14 @@ peace_ai_desires = {
             }
             FROM.FROM.FROM = {
 				OR = {
-					state = 328
-					state = 610
-					state = 714
-					state = 715
-					state = 716
-					state = 717
+					state = 328 state = 1416 state = 1422 state = 1434 state = 1435 state = 1437 state = 1439 state = 1454
+					state = 610 state = 1444 state = 1446 state = 1449 state = 1450
+					state = 714 state = 1423 state = 1424 state = 1426 state = 1430 state = 1431 state = 1451
+					state = 715 state = 1440 state = 1443 state = 1445
+					state = 716 state = 1448 state = 1452 state = 1453
+					state = 717 state = 1417 state = 1419
 					state = 745
-					state = 761
+					state = 761 state = 1432 state = 1433
 				}
 				
             }
@@ -307,14 +307,14 @@ peace_ai_desires = {
             }
             FROM.FROM.FROM = {
 				OR = {
-					state = 328
-					state = 610
-					state = 714
-					state = 715
-					state = 716
-					state = 717
+					state = 328 state = 1416 state = 1422 state = 1434 state = 1435 state = 1437 state = 1439 state = 1454
+					state = 610 state = 1444 state = 1446 state = 1449 state = 1450
+					state = 714 state = 1423 state = 1424 state = 1426 state = 1430 state = 1431 state = 1451
+					state = 715 state = 1440 state = 1443 state = 1445
+					state = 716 state = 1448 state = 1452 state = 1453
+					state = 717 state = 1417 state = 1419
 					state = 745
-					state = 761
+					state = 761 state = 1432 state = 1433
 				}
 				
             }
@@ -499,7 +499,7 @@ peace_ai_desires = {
 		peace_action_type = take_states
         enable = {
             FROM.FROM = {
-				owns_state = 539
+				owns_state = 539 owns_state = 1769
             }
             FROM.FROM.FROM = {
 				state = 539

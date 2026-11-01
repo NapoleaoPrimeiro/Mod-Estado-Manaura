@@ -1298,7 +1298,9 @@ country_event = {
 		
 		85 = {transfer_state_to = GER }
 			86 = {transfer_state_to = GER }
+			1389 = {transfer_state_to = GER } # KSRE (de 86)
 			807 = {transfer_state_to = GER }	
+			1554 = {transfer_state_to = GER }	 # KSRE (de 807)
 		hidden_effect = {
 			
 		}
@@ -2227,8 +2229,8 @@ country_event = {
 	
 		
 		GER = {transfer_state = 85
-		transfer_state = 807
-		transfer_state = 86
+		transfer_state = 807 transfer_state = 1554
+		transfer_state = 86 transfer_state = 1389
 		add_to_faction = POL
 		}
 			

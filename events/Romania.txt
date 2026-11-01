@@ -74,7 +74,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state
 					target = ROOT
-					generator = { 78 }
+					generator = { 78 1291 1092 80 766 }
 				}
 			}
 		}
@@ -121,11 +121,13 @@ country_event = {
 			}
 		}
 		HUN = {
-			country_event = { 
-				days = 1 
-				id = hungary.4 
+			country_event = { days = 1 id = hungary.4 }
+			effect_tooltip = { 
+				add_state_claim = 76
+				add_state_claim = 1309
+				add_state_claim = 1310
+				add_state_claim = 1722 
 			}
-			effect_tooltip = { add_state_claim = 76 }
 		}
 		GER = {
 			country_event = { days = 1 id = germany.21 }
@@ -133,7 +135,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state
 					target = ROM
-					generator = { 76 }
+					generator = { 76 1309 1310 1722 }
 				}
 			}
 		}
@@ -180,9 +182,14 @@ country_event = {
 			country_event = { days = 1 id = hungary.5 }
 			effect_tooltip = {
 				add_state_claim = 76
+				add_state_claim = 1309
+				add_state_claim = 1310
+				add_state_claim = 1722
 				add_state_claim = 83
+				add_state_claim = 1479
+				add_state_claim = 1480
 				add_state_claim = 84
-				add_state_claim = 82
+				add_state_claim = 1387
 			}
 		}
 		GER = {
@@ -191,7 +198,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state
 					target = ROM
-					generator = { 76 }
+					generator = { 76 1309 1310 1722 83 1479 1480 84 1387 }
 				}
 			}
 		}

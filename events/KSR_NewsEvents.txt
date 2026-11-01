@@ -1,0 +1,155 @@
+﻿add_namespace = ksr_news
+
+# Formation of Grand Duchy of Lithuania
+news_event = {
+	id = ksr_news.1
+	title = ksr_news.1.t
+	desc = ksr_news.1.desc
+	picture = GFX_news_event_generic_parliament
+
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = ksr_news.1.a
+		trigger = {
+			OR = {
+				original_tag = SMG
+				original_tag = LIT
+			}
+			NOT = { has_war_with = FROM }
+		}
+	}
+	option = {
+		name = ksr_news.1.b
+		trigger = {
+			NOT = { original_tag = SMG }
+			NOT = { original_tag = LIT }
+			NOT = { has_war_with = FROM }
+		}
+	}
+	option = {
+		name = ksr_news.1.c
+		trigger = {
+			has_war_with = FROM
+		}
+	}
+}
+
+# Vilnius returns
+news_event = {
+	id = ksr_news.2
+
+	title = ksr_news.2.t
+	desc = ksr_news.2.desc
+	picture = GFX_news_event_vilnius_retaken
+	
+	is_triggered_only = yes
+	
+	major = yes
+	
+	option = {
+		name = ksr_news.2.a
+		trigger = { TAG = LIT }
+	}
+	option = {
+		name = ksr_news.2.b
+		trigger = { TAG = POL }
+	}
+	option = {
+		name = ksr_news.2.c
+		trigger = { NOT = { tag = LIT tag = POL } }
+	}
+}
+
+
+# Republic of Korea declares independence
+news_event = {
+	id = ksr_news.3
+	
+	title = ksr_news.3.t
+	desc = ksr_news.3.desc
+	picture = GFX_news_event_south_korea_independence
+	
+	is_triggered_only = yes
+	
+	major = yes
+	
+	option = {
+		name = ksr_news.3.a
+		trigger = { has_government = democratic }
+	}
+	option = {
+		name = ksr_news.3.b
+		trigger = { NOT = { has_government = democratic } }
+	}
+}
+
+
+
+# Republic of Korea declares independence
+news_event = {
+	id = ksr_news.4
+	
+	title = ksr_news.4.t
+	desc = ksr_news.4.desc
+	picture = GFX_news_event_north_korea_independence
+	
+	is_triggered_only = yes
+	
+	major = yes
+	
+	option = {
+		name = ksr_news.4.a
+		trigger = { has_government = communism }
+	}
+	option = {
+		name = ksr_news.4.b
+		trigger = { NOT = { has_government = communism } }
+	}
+}
+
+
+
+# Formation of New England
+news_event = {
+	id = ksr_news.5
+	title = ksr_news.5.t
+	desc = ksr_news.5.desc
+	picture = GFX_news_event_generic_parliament
+
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = ksr_news.5.a
+		trigger = {
+			OR = {
+				original_tag = MES
+				original_tag = VTS
+				original_tag = NHS
+				original_tag = MAS
+				original_tag = CTS
+				original_tag = RIS
+			}
+			NOT = { has_war_with = FROM }
+		}
+	}
+	option = {
+		name = ksr_news.5.b
+		trigger = {
+			NOT = { original_tag = MES }
+			NOT = { original_tag = VTS }
+			NOT = { original_tag = NHS }
+			NOT = { original_tag = MAS }
+			NOT = { original_tag = CTS }
+			NOT = { original_tag = RIS }
+		}
+	}
+	option = {
+		name = ksr_news.5.c
+		trigger = {
+			has_war_with = FROM
+		}
+	}
+}

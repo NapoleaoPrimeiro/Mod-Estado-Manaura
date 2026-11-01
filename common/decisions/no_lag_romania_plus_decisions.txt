@@ -22,11 +22,11 @@ NO_LAG_ROM_bessarabian_war = {
 				has_war_with = ROOT
 			}
 			controls_state = 192 # Odessa
-			controls_state = 834 # Balta-Tiraspol
-			controls_state = 198 # Vinnytsia
+			controls_state = 834 controls_state = 1261 controls_state = 1420 controls_state = 1421 controls_state = 1500 # Balta-Tiraspol
+			controls_state = 198 controls_state = 1262 # Vinnytsia
 			OR = {
-				controls_state = 202 # Western Kyiv
-				controls_state = 226 # Nikopol / Dnipropetrovsk area
+				controls_state = 202 controls_state = 1101 controls_state = 1102 controls_state = 1537 # Western Kyiv
+				controls_state = 226 controls_state = 1536 controls_state = 1612 # Nikopol / Dnipropetrovsk area
 			}
 		}
 
@@ -66,14 +66,14 @@ NO_LAG_ROM_bessarabian_war = {
 			}
 
 			# Romania must have lost all three Bessarabian border states...
-			NOT = { controls_state = 766 } # Southern Bessarabia
-			NOT = { controls_state = 78 }  # Bessarabia
+			NOT = { controls_state = 766 controls_state = 1092 } # Southern Bessarabia
+			NOT = { controls_state = 78 controls_state = 1291 }  # Bessarabia
 			NOT = { controls_state = 80 }  # Bukovina
 
 			# ...and at least one additional Romanian core on that front.
 			OR = {
-				NOT = { controls_state = 79 }  # Moldova
-				NOT = { controls_state = 971 } # Northern Dobruja
+				NOT = { controls_state = 79 controls_state = 1267 }  # Moldova
+				NOT = { controls_state = 971 controls_state = 1295 } # Northern Dobruja
 			}
 		}
 

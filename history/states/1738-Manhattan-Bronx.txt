@@ -1,0 +1,37 @@
+state={
+	id=1738
+	name="STATE_1738"
+	manpower=3207890
+	
+	state_category = developed_rural
+
+	history={
+		owner = USA
+		buildings = {
+			infrastructure = 4 #was: 8
+			industrial_complex = 1
+			dockyard = 2
+			3878 = {
+				naval_base = 6
+				landmark_statue_of_liberty = {
+					level = 1
+					allowed = {
+						has_dlc = "Gotterdammerung"
+					}
+				}
+			}
+		}
+		victory_points = {
+			3878 50 #New York City
+		}
+		add_core_of = USA
+		add_core_of = NYS
+	}
+
+	provinces={
+		3878
+	}
+	buildings_max_level_factor=1.000
+
+	local_supplies=0.0 
+}

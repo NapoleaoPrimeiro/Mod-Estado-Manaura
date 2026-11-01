@@ -413,11 +413,11 @@ MEX_category_military_issues = {
 			NOT = {
 				is_in_faction_with = USA
 			}
-			controls_state = 304
+			controls_state = 1216
 			OR = {
-				owns_state = 304
+				owns_state = 1216
 				"PAN" = {
-					owns_state = 304
+					owns_state = 1216
 					has_war_with = MEX
 				}
 			}
@@ -433,7 +433,7 @@ MEX_category_military_issues = {
 		complete_effect = {
 			if = {
 				limit = {
-					304 = {
+					1216 = {
 						is_owned_by = "PAN"
 						is_controlled_by = ROOT
 					}
@@ -450,8 +450,8 @@ MEX_category_military_issues = {
 			start_border_war = {
 				change_state_after_war = no
 				attacker = {
-					state = 304
-					num_provinces = 2
+					state = 1216
+					num_provinces = 1
 					on_win = mexico.40
 					on_lose = mexico.42
 					#on_cancel = 
@@ -788,7 +788,13 @@ MEX_category_territorial_integration = {
 			has_completed_focus = MEX_focus_unify_centroamerica
 			OR = {
 				NOT = {
-					313 = { is_core_of = ROOT }
+					OR = {
+						313 = { is_core_of = ROOT }
+						1342 = { is_core_of = ROOT }
+						1343 = { is_core_of = ROOT }
+						1344 = { is_core_of = ROOT }
+						1345 = { is_core_of = ROOT }
+					}
 				}
 				GUA = {
 					is_subject_of = ROOT
@@ -798,7 +804,13 @@ MEX_category_territorial_integration = {
 		
 		available = {
 			OR = {
-				controls_state = 313
+				OR = {
+					controls_state = 313
+					controls_state = 1342
+					controls_state = 1343
+					controls_state = 1344
+					controls_state = 1345
+				}
 				GUA = {
 					is_subject_of = ROOT
 				}
@@ -815,10 +827,21 @@ MEX_category_territorial_integration = {
 		remove_effect = {
 			annex_country = { target = GUA }
 
-			add_state_core = 313
-
-			hidden_effect = {
-				remove_state_claim = 313
+			every_state = {
+				limit = {
+					OR = {
+						state = 313
+						state = 1342
+						state = 1343
+						state = 1344
+						state = 1345
+					}
+					NOT = { is_core_of = ROOT }
+				}
+				add_core_of = ROOT
+				hidden_effect = {
+					ROOT = { remove_state_claim = PREV }
+				}
 			}
 		}
 		
@@ -889,20 +912,28 @@ MEX_category_territorial_integration = {
 		visible = {
 			has_completed_focus = MEX_focus_unify_centroamerica
 			OR = {
-				NOT = {
-					314 = { is_core_of = ROOT }
-				}
-				ELS = {
-					is_subject_of = ROOT
-				}
+				NOT = { 314 = { is_core_of = ROOT } }
+				NOT = { 1369 = { is_core_of = ROOT } }
 			}
 		}
 		
 		available = {
 			OR = {
-				controls_state = 314
-				ELS = {
-					is_subject_of = ROOT
+				314 = {
+					OWNER = {
+						OR = {
+							tag = ROOT
+							is_subject_of = ROOT
+						}
+					}
+				}
+				1369 = {
+					OWNER = {
+						OR = {
+							tag = ROOT
+							is_subject_of = ROOT
+						}
+					}
 				}
 			}
 			has_completed_focus = MEX_focus_integrate_the_south
@@ -915,12 +946,46 @@ MEX_category_territorial_integration = {
 		cancel_if_not_visible = yes
 		
 		remove_effect = {
-			annex_country = { target = ELS }
-
-			add_state_core = 314
-
-			hidden_effect = {
-				remove_state_claim = 314
+			if = {
+				limit = {
+					314 = {
+						OR = {
+							is_controlled_by = ROOT
+							OWNER = {
+								tag = ELS
+								is_subject_of = ROOT
+							}
+						}
+					}
+				}
+				add_state_core = 314 add_state_core = 1369
+				hidden_effect = { remove_state_claim = 314 }
+			}
+			if = {
+				limit = {
+					1369 = {
+						OR = {
+							is_controlled_by = ROOT
+							OWNER = {
+								tag = ELS
+								is_subject_of = ROOT
+							}
+						}
+					}
+				}
+				add_state_core = 1369
+				hidden_effect = { remove_state_claim = 1369 }
+			}
+			if = {
+				limit = {
+					ELS = {
+						is_subject_of = ROOT
+					}
+				}
+				annex_country = {
+					target = ELS
+					transfer_troops = yes
+				}
 			}
 		}
 		
@@ -1044,6 +1109,8 @@ MEX_category_territorial_integration = {
 			OR = {
 				NOT = {
 					304 = { is_core_of = ROOT }
+					1215 = { is_core_of = ROOT }
+					1216 = { is_core_of = ROOT }
 				}
 				"PAN" = {
 					is_subject_of = ROOT
@@ -1054,6 +1121,8 @@ MEX_category_territorial_integration = {
 		available = {
 			OR = {
 				controls_state = 304
+				controls_state = 1215
+				controls_state = 1216
 				"PAN" = {
 					is_subject_of = ROOT
 				}
@@ -1071,9 +1140,13 @@ MEX_category_territorial_integration = {
 			annex_country = { target = "PAN" }
 			
 			add_state_core = 304
+			add_state_core = 1215
+			add_state_core = 1216
 
 			hidden_effect = {
 				remove_state_claim = 304
+				remove_state_claim = 1215
+				remove_state_claim = 1216
 			}
 		}
 		
@@ -1130,20 +1203,28 @@ MEX_category_territorial_integration = {
 		visible = {
 			has_completed_focus = MEX_focus_unify_centroamerica
 			OR = {
-				NOT = {
-					311 = { is_core_of = ROOT }
-				}
-				BLZ = {
-					is_subject_of = ROOT
-				}
+				NOT = { 311 = { is_core_of = ROOT } }
+				NOT = { 1368 = { is_core_of = ROOT } }
 			}
 		}
 		
 		available = {
 			OR = {
-				controls_state = 311
-				BLZ = {
-					is_subject_of = ROOT
+				311 = {
+					OWNER = {
+						OR = {
+							tag = ROOT
+							is_subject_of = ROOT
+						}
+					}
+				}
+				1368 = {
+					OWNER = {
+						OR = {
+							tag = ROOT
+							is_subject_of = ROOT
+						}
+					}
 				}
 			}
 			has_completed_focus = MEX_focus_integrate_the_south
@@ -1156,16 +1237,46 @@ MEX_category_territorial_integration = {
 		cancel_if_not_visible = yes
 
 		remove_effect = {
-			annex_country = { target = BLZ }
-			
-			add_state_core = 311
-
-			311 = {
-				set_state_name = "Belice"
+			if = {
+				limit = {
+					311 = {
+						OR = {
+							is_controlled_by = ROOT
+							OWNER = {
+								tag = BLZ
+								is_subject_of = ROOT
+							}
+						}
+					}
+				}
+				add_state_core = 311 add_state_core = 1368
+				hidden_effect = { remove_state_claim = 311 }
 			}
-
-			hidden_effect = {
-				remove_state_claim = 311
+			if = {
+				limit = {
+					1368 = {
+						OR = {
+							is_controlled_by = ROOT
+							OWNER = {
+								tag = BLZ
+								is_subject_of = ROOT
+							}
+						}
+					}
+				}
+				add_state_core = 1368
+				hidden_effect = { remove_state_claim = 1368 }
+			}
+			if = {
+				limit = {
+					BLZ = {
+						is_subject_of = ROOT
+					}
+				}
+				annex_country = {
+					target = BLZ
+					transfer_troops = yes
+				}
 			}
 		}
 		

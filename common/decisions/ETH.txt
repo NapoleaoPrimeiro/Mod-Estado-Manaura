@@ -3877,24 +3877,28 @@ ETH_italo-ethiopian_empire_decisions = {
 		visible = {
 			original_tag = ETH 
 			293 = {is_controlled_by = ETH}
+			1785 = {is_controlled_by = ETH} # KSRE (de 293)
 			NOT = { has_cosmetic_tag = jimma}
 			NOT = { has_cosmetic_tag = gojjam}
 		}
 		available = {
 			ETH = {
-				has_full_control_of_state = 293
+				has_full_control_of_state = 293 has_full_control_of_state = 1785
 			}	
 		}
 		cancel_trigger = {
 			NOT = {
 				ETH = {
-					has_full_control_of_state = 293
+					has_full_control_of_state = 293 has_full_control_of_state = 1785
 				}
 			}
 		}
 		days_remove = 30
 		remove_effect = {
 			293 = {
+				add_core_of = ETH
+			}			
+			1785 = { # KSRE (de 293)
 				add_core_of = ETH
 			}			
 		}	

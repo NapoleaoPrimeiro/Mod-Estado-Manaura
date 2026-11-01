@@ -1328,18 +1328,35 @@ SOV_scorched_earth_german_front_baltics = {
 		id = SOV
 		states = {
 			814
+			1236 # KSRE (de 814)
 			11
 			189
+			1172 # KSRE (de 189)
+			1237 # KSRE (de 189)
+			1787 # KSRE (de 189)
 			815
 			190
+			1559 # KSRE (de 190)
+			1771 # KSRE (de 190)
 			809
+			1788 # KSRE (de 809)
 			810
+			1789 # KSRE (de 810)
+			1790 # KSRE (de 810)
+			1792 # KSRE (de 810)
 			808
 			811
+			1801 # KSRE (de 811)
 			13
+			1797 # KSRE (de 13)
 			812
 			813
+			1799 # KSRE (de 813)
+			1800 # KSRE (de 813)
 			191
+			1795 # KSRE (de 191)
+			1796 # KSRE (de 191)
+			1798 # KSRE (de 191)
 		}
 	}
 }
@@ -1369,6 +1386,7 @@ SOV_scorched_earth_german_front_Poland = {
 			94 = { CONTROLLER = { has_war_with = SOV } }
 			93 = { CONTROLLER = { has_war_with = SOV } }
 			91 = { CONTROLLER = { has_war_with = SOV } }
+			1400 = { CONTROLLER = { has_war_with = SOV } }
 			89 = { CONTROLLER = { has_war_with = SOV } }
 
 		}
@@ -1387,12 +1405,34 @@ SOV_scorched_earth_german_front_Poland = {
 		id = SOV
 		states = {
 			784
+			1238 # KSRE (de 784)
+			1248 # KSRE (de 784)
+			1816 # KSRE (de 784)
 			96
+			1173 # KSRE (de 96)
+			1244 # KSRE (de 96)
+			1817 # KSRE (de 96)
 			95
+			1239 # KSRE (de 95)
+			1240 # KSRE (de 95)
+			1243 # KSRE (de 95)
+			1246 # KSRE (de 95)
+			1247 # KSRE (de 95)
 			94
+			1484 # KSRE (de 94)
+			1534 # KSRE (de 94)
+			1535 # KSRE (de 94)
+			1610 # KSRE (de 94)
+			1814 # KSRE (de 94)
+			1815 # KSRE (de 94)
+			1818 # KSRE (de 94)
 			93
+			1533 # KSRE (de 93)
 			91
+			1531 # KSRE (de 91)
+			1400
 			89
+			1532 # KSRE (de 89)
 		}
 	}
 }
@@ -1440,10 +1480,17 @@ SOV_scorched_earth_german_front_north = {
 		id = SOV
 		states = {
 			208
+			1290 # KSRE (de 208)
 			209
+			1093 # KSRE (de 209)
+			1794 # KSRE (de 209)
 			210
+			1110 # KSRE (de 210)
+			1804 # KSRE (de 210)
 			195
+			1289 # KSRE (de 195)
 			263
+			1803 # KSRE (de 263)
 			246
 		}
 	}
@@ -1478,7 +1525,9 @@ SOV_scorched_earth_german_front_center = {
 			193 = { CONTROLLER = { has_war_with = SOV } }
 			241 = { CONTROLLER = { has_war_with = SOV } }
 			242 = { CONTROLLER = { has_war_with = SOV } }
+			1773 = { CONTROLLER = { has_war_with = SOV } }
 			243 = { CONTROLLER = { has_war_with = SOV } }
+			1774 = { CONTROLLER = { has_war_with = SOV } }
 			224 = { CONTROLLER = { has_war_with = SOV } }
 		}
 	}
@@ -1496,17 +1545,33 @@ SOV_scorched_earth_german_front_center = {
 		id = SOV
 		states = {
 			207
+			1264 # KSRE (de 207)
+			1793 # KSRE (de 207)
 			206
+			1263 # KSRE (de 206)
 			204
+			1611 # KSRE (de 204)
 			194
+			1094 # KSRE (de 194)
 			201
 			199
 			202
+			1101 # KSRE (de 202)
+			1102 # KSRE (de 202)
+			1537 # KSRE (de 202)
 			193
+			1100 # KSRE (de 193)
 			241
+			1084 # KSRE (de 241)
+			1085 # KSRE (de 241)
 			242
+			1104 # KSRE (de 242)
+			1773
 			243
+			1774
 			224
+			1083 # KSRE (de 224)
+			1108 # KSRE (de 224)
 		}
 	}
 }
@@ -1533,6 +1598,7 @@ SOV_scorched_earth_german_front_moscow = {
 			219 = { CONTROLLER = { has_war_with = SOV } }
 			246 = { CONTROLLER = { has_war_with = SOV } }
 			242 = { CONTROLLER = { has_war_with = SOV } }
+			1773 = { CONTROLLER = { has_war_with = SOV } }
 			205 = { CONTROLLER = { has_war_with = SOV } }
 			223 = { CONTROLLER = { has_war_with = SOV } }
 
@@ -1545,11 +1611,12 @@ SOV_scorched_earth_german_front_moscow = {
 			strength_ratio = { tag = GER ratio > 1.5 }
 			date > 1944.1.1
 		}
-		controls_state = 220
-		controls_state = 224
+		controls_state = 220 controls_state = 1082
+		controls_state = 224 controls_state = 1083 controls_state = 1108
 		controls_state = 243
-		controls_state = 207
-		controls_state = 210
+		controls_state = 1774
+		controls_state = 207 controls_state = 1264 controls_state = 1793
+		controls_state = 210 controls_state = 1110 controls_state = 1804
 	}
 
 	ai_strategy = {
@@ -1557,10 +1624,20 @@ SOV_scorched_earth_german_front_moscow = {
 		id = SOV
 		states = {
 			219
+			1105 # KSRE (de 219)
+			1106 # KSRE (de 219)
+			1107 # KSRE (de 219)
+			1113 # KSRE (de 219)
+			1114 # KSRE (de 219)
+			1115 # KSRE (de 219)
 			246
 			242
+			1104 # KSRE (de 242)
+			1773
 			205
+			1112 # KSRE (de 205)
 			223
+			1109 # KSRE (de 223)
 		}
 	}
 }
@@ -1599,9 +1676,9 @@ SOV_scorched_earth_german_front_stalingrad = {
 			strength_ratio = { tag = GER ratio > 1.5 }
 			date > 1944.1.1
 		}
-		controls_state = 218
-		controls_state = 228
-		controls_state = 260
+		controls_state = 218 controls_state = 1096 controls_state = 1807
+		controls_state = 228 controls_state = 1091 controls_state = 1095
+		controls_state = 260 controls_state = 1809 controls_state = 1810
 		controls_state = 239
 	}
 
@@ -1612,6 +1689,7 @@ SOV_scorched_earth_german_front_stalingrad = {
 			217
 			265
 			245
+			1808 # KSRE (de 245)
 			238
 			829
 		}
@@ -2016,8 +2094,14 @@ SOV_unit_buffer_for_asian_threat = {
 			566
 			567
 			561
+			1337 # KSRE (de 561)
 			657
 			408
+			1332 # KSRE (de 408)
+			1333 # KSRE (de 408)
+			1334 # KSRE (de 408)
+			1335 # KSRE (de 408)
+			1336 # KSRE (de 408)
 			409
 		}
 
@@ -2357,10 +2441,17 @@ SOV_defense_in_depth = {
 		# states to put garrison orders (if no state is friendly, strat is invalid)
 		states = {
 			219 #Moscow
+			1105 # KSRE (de 219)
+			1106 # KSRE (de 219)
+			1107 # KSRE (de 219)
+			1113 # KSRE (de 219)
+			1114 # KSRE (de 219)
+			1115 # KSRE (de 219)
 			254 #Ryazan
 			253 #Ivanovo
 			248 #Yaroslavl
 			223 #Tula
+			1109 # KSRE (de 223)
 		}
 
 		area = defend_moscow_zone #Hold in reserve until the line encroaches
@@ -2393,7 +2484,7 @@ SOV_ultimatum_ROM = {
 			NOT = { has_country_flag = SOV_added_claimed_bessarabia } #Added via focus Claim Bessarabia
 		}
 		OR = {
-			NOT = { owns_state = 78 } #Bessarabia
+			NOT = { owns_state = 78 owns_state = 1291 } #Bessarabia
 			78 = {
 				owner = { NOT = { is_in_faction_with = ROOT } }
 			}
@@ -2405,7 +2496,7 @@ SOV_ultimatum_ROM = {
 			}
 		}
 		OR = {
-			NOT = { owns_state = 766 } #Southern Bessarabia
+			NOT = { owns_state = 766 owns_state = 1092 } #Southern Bessarabia
 			766 = {
 				owner = { NOT = { is_in_faction_with = ROOT } }
 			}
@@ -2419,7 +2510,7 @@ SOV_ultimatum_ROM = {
 			date > 1941.12.31 #If it's late then it's fine
 			AND = {
 				OR = {
-					owns_state = 78 #Bessarabia
+					owns_state = 78 owns_state = 1291 #Bessarabia
 					78 = {
 						owner = { is_in_faction_with = ROOT }
 					}
@@ -2431,7 +2522,7 @@ SOV_ultimatum_ROM = {
 					}
 				}
 				OR = {
-					owns_state = 766 #Southern Bessarabia
+					owns_state = 766 owns_state = 1092 #Southern Bessarabia
 					766 = {
 						owner = { is_in_faction_with = ROOT }
 					}
@@ -2570,6 +2661,7 @@ SOV_defend_leningrad_if_at_war_with_fin = {
 		ratio = 0.1
 		states = {
 			195
+			1289 # KSRE (de 195)
 		}
 		subtract_fronts_from_need = yes
 	}
@@ -2584,7 +2676,7 @@ SOV_defend_leningrad_if_at_war_with_fin = {
 		type = front_control
 		state_trigger = {
 			OR = {
-				state = 195
+				state = 195 state = 1289
 				state = 146
 				state = 928
 				state = 111
@@ -2803,11 +2895,11 @@ SOV_aifc_linear_defence = {
 	enable = {
 		# We have split Poland up 
 		OR = {
-			owns_state = 96
-			owns_state = 95
-			owns_state = 94
-			owns_state = 93
-			owns_state = 92
+			owns_state = 96 owns_state = 1173 owns_state = 1244 owns_state = 1817
+			owns_state = 95 owns_state = 1239 owns_state = 1240 owns_state = 1243 owns_state = 1246 owns_state = 1247
+			owns_state = 94 owns_state = 1484 owns_state = 1534 owns_state = 1535 owns_state = 1610 owns_state = 1814 owns_state = 1815 owns_state = 1818
+			owns_state = 93 owns_state = 1533
+			owns_state = 92 owns_state = 1400 owns_state = 1530
 		}
 	}
 	abort = {

@@ -234,7 +234,6 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER }
 		completion_reward = {
-			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = LAT_janis_balodis
 			swap_ideas = {
 				remove_idea = LAT_saeima_idea
@@ -2478,28 +2477,70 @@ focus_tree = {
 					811 = { add_core_of = ROOT }
 					812 = { add_core_of = ROOT }
 					813 = { add_core_of = ROOT }
+					1795 = { add_core_of = ROOT }
+					1796 = { add_core_of = ROOT }
+					1797 = { add_core_of = ROOT }
+					1798 = { add_core_of = ROOT }
+					1799 = { add_core_of = ROOT }
+					1800 = { add_core_of = ROOT }
+					1801 = { add_core_of = ROOT }
 					# Lithuania
 					11 = { add_core_of = ROOT }
 					189 = { add_core_of = ROOT }
 					188 = { add_core_of = ROOT }
 					784 = { add_core_of = ROOT }
+					1238 = { add_core_of = ROOT } # KSRE (de 784)
+					1248 = { add_core_of = ROOT } # KSRE (de 784)
+					1816 = { add_core_of = ROOT } # KSRE (de 784)
 					814 = { add_core_of = ROOT }
 					815 = { add_core_of = ROOT }
+					1236 = { add_core_of = ROOT }
+					1237 = { add_core_of = ROOT }
+					1787 = { add_core_of = ROOT }
+					1172 = { add_core_of = ROOT }
 				}
 			#Custom Tooltips to avoid listing every core in Estonia and Lithuania. 
 			custom_effect_tooltip = form_country_estonia_coring_states_tt
 			custom_effect_tooltip = form_country_lithuania_coring_states_tt
 			#Poland cores since we can't summarise them as adding all polish states as cores. 
 			784 = { add_core_of = ROOT }
+			1238 = { add_core_of = ROOT } # KSRE (de 784)
+			1816 = { add_core_of = ROOT } # KSRE (de 784)
+			1247 = { add_core_of = ROOT }
+			1248 = { add_core_of = ROOT }
+			1817 = { add_core_of = ROOT }
 			96 = { add_core_of = ROOT }
+			1173 = { add_core_of = ROOT } # KSRE (de 96)
+			1244 = { add_core_of = ROOT } # KSRE (de 96)
 			95 = { add_core_of = ROOT }
+			1239 = { add_core_of = ROOT } # KSRE (de 95)
+			1240 = { add_core_of = ROOT } # KSRE (de 95)
+			1243 = { add_core_of = ROOT } # KSRE (de 95)
+			1246 = { add_core_of = ROOT } # KSRE (de 95)
 			94 = { add_core_of = ROOT }
+			1484 = { add_core_of = ROOT } # KSRE (de 94)
+			1534 = { add_core_of = ROOT } # KSRE (de 94)
+			1535 = { add_core_of = ROOT } # KSRE (de 94)
+			1610 = { add_core_of = ROOT } # KSRE (de 94)
+			1814 = { add_core_of = ROOT } # KSRE (de 94)
+			1815 = { add_core_of = ROOT } # KSRE (de 94)
+			1818 = { add_core_of = ROOT } # KSRE (de 94)
 			97 = { add_core_of = ROOT }
+			1241 = { add_core_of = ROOT } # KSRE (de 97)
+			1242 = { add_core_of = ROOT } # KSRE (de 97)
+			1245 = { add_core_of = ROOT } # KSRE (de 97)
 			206 = { add_core_of = ROOT }
+			1263 = { add_core_of = ROOT } # KSRE (de 206)
 			207 = { add_core_of = ROOT }
+			1264 = { add_core_of = ROOT } # KSRE (de 207)
+			1793 = { add_core_of = ROOT } # KSRE (de 207)
 			204 = { add_core_of = ROOT }
+			1611 = { add_core_of = ROOT } # KSRE (de 204)
 			194 = { add_core_of = ROOT }
+			1094 = { add_core_of = ROOT } # KSRE (de 194)
 			241 = { add_core_of = ROOT }
+			1084 = { add_core_of = ROOT } # KSRE (de 241)
+			1085 = { add_core_of = ROOT } # KSRE (de 241)
 
 			if = { #Annexes any fascist Baltic states
 				limit = {
@@ -2533,18 +2574,31 @@ focus_tree = {
 							controls_state = 815
 							controls_state = 189
 							controls_state = 188
+							controls_state = 1236
+							controls_state = 1237
+							controls_state = 1787
+							controls_state = 1172
 							#Estonia States
 							controls_state = 811
 							controls_state = 812
 							controls_state = 13
 							controls_state = 813
 							controls_state = 191
+							controls_state = 1795
+							controls_state = 1796
+							controls_state = 1797
+							controls_state = 1798
+							controls_state = 1799
+							controls_state = 1800
+							controls_state = 1801
 							#Belarus States
-							controls_state = 784
-							controls_state = 97
-							controls_state = 96
-							controls_state = 95
-							controls_state = 94
+							controls_state = 784 controls_state = 1238 controls_state = 1248 controls_state = 1816
+							controls_state = 97 controls_state = 1241 controls_state = 1242 controls_state = 1245
+							controls_state = 96 controls_state = 1173 controls_state = 1244 controls_state = 1817
+							controls_state = 95 controls_state = 1239 controls_state = 1240 controls_state = 1243 controls_state = 1247
+							controls_state = 1246
+							controls_state = 1610
+							
 						}
 					}
 				}
@@ -2563,6 +2617,16 @@ focus_tree = {
 					set_state_controller = 96
 					set_state_controller = 95
 					set_state_controller = 94
+					set_state_controller = 1815
+					set_state_controller = 1247
+					set_state_controller = 1248
+					set_state_controller = 1817
+					set_state_controller = 1243
+					set_state_controller = 1244
+					set_state_controller = 1816
+					set_state_controller = 1246
+					set_state_controller = 1610
+					set_state_controller = 1173
 				}
 			}
 
@@ -2678,36 +2742,61 @@ focus_tree = {
 				811 = { add_core_of = ROOT }
 				812 = { add_core_of = ROOT }
 				813 = { add_core_of = ROOT }
+				1795 = { add_core_of = ROOT }
+				1796 = { add_core_of = ROOT }
+				1797 = { add_core_of = ROOT }
+				1798 = { add_core_of = ROOT }
+				1799 = { add_core_of = ROOT }
+				1800 = { add_core_of = ROOT }
+				1801 = { add_core_of = ROOT }
 				# Lithuania
 				11 = { add_core_of = ROOT }
 				189 = { add_core_of = ROOT }
 				188 = { add_core_of = ROOT }
 				784 = { add_core_of = ROOT }
+				1238 = { add_core_of = ROOT } # KSRE (de 784)
+				1248 = { add_core_of = ROOT } # KSRE (de 784)
+				1816 = { add_core_of = ROOT } # KSRE (de 784)
 				814 = { add_core_of = ROOT }
 				815 = { add_core_of = ROOT }
+				1236 = { add_core_of = ROOT }
+				1237 = { add_core_of = ROOT }
+				1787 = { add_core_of = ROOT }
+				1172 = { add_core_of = ROOT }
 	
 			}			
 		custom_effect_tooltip = form_country_estonia_coring_states_tt
 		custom_effect_tooltip = form_country_lithuania_coring_states_tt
 				#Poland
 			784 = { add_core_of = ROOT }
+			1238 = { add_core_of = ROOT } # KSRE (de 784)
 			96 = { add_core_of = ROOT }
 			95 = { add_core_of = ROOT }
-			94 = { add_core_of = ROOT }
+			1239 = { add_core_of = ROOT } # KSRE (de 95)
+			1240 = { add_core_of = ROOT } # KSRE (de 95)
+			1247 = { add_core_of = ROOT }
+			1248 = { add_core_of = ROOT }
+			1817 = { add_core_of = ROOT }
+			1243 = { add_core_of = ROOT }
+			1244 = { add_core_of = ROOT }
+			1816 = { add_core_of = ROOT }
+			1246 = { add_core_of = ROOT }
+			1610 = { add_core_of = ROOT }
+			1173 = { add_core_of = ROOT }
 
 			set_cosmetic_tag = BAL_UNIFIED
 			every_state = {
 				limit = {
 					is_controlled_by_ROOT_or_ally = yes
 					OR = {
-						state = 13
-						state = 191
-						state = 811
+						state = 13 state = 1797
+						state = 191 state = 1795 state = 1796 state = 1798
+						state = 811 state = 1801
 						state = 812
-						state = 813
+						state = 813 state = 1799 state = 1800
 						state = 11
-						state = 189
-						state = 814
+						state = 189 state = 1172 state = 1237 state = 1787
+						state = 814 state = 1236
 						state = 815
 					}
 				}

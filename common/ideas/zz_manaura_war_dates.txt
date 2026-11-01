@@ -1,0 +1,15 @@
+ideas = {
+	country = {
+		# Manaura: trava de justificar guerra ate a data do rank
+		manaura_justify_lock = {
+			picture = generic_neutrality_drift_bonus
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+
+			modifier = {
+				generate_wargoal_tension = 10
+			}
+		}
+	}
+}

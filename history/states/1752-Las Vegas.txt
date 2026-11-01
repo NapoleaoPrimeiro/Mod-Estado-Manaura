@@ -1,0 +1,36 @@
+state = {
+	id = 1752
+	name = "STATE_1752"
+	manpower = 12760
+	
+	state_category = pastoral
+	
+	resources = {
+		steel = 6
+		tungsten = 4
+		aluminium = 2
+	}
+
+	history = {
+
+		owner = USA
+
+		buildings = {
+			infrastructure = 2
+			# Hoover Dam
+			4799 = { dam_mountain = 1 }
+		}
+
+		victory_points = {
+			4799 1 #Las Vegas
+		}
+		add_core_of = USA
+		add_core_of = NVS
+	}
+
+	provinces = {
+		4799 15534 15535
+	}
+
+	local_supplies = 0.0 
+}

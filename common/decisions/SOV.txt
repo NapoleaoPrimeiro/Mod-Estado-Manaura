@@ -2098,7 +2098,7 @@ SOV_propaganda_campaigns = {
 		available = {
 			SOV_propaganda_poster_slot_available = yes
 
-			controls_state = 219 #Moscow
+			controls_state = 219 controls_state = 1105 controls_state = 1106 controls_state = 1107 controls_state = 1113 controls_state = 1114 controls_state = 1115 #Moscow
 			219 = {
 				any_neighbor_state = {
 					controller = {
@@ -8645,7 +8645,7 @@ SOV_merge_designers_dec_cat = {
 		}
 
 		available = {
-			has_full_control_of_state = 195 #LENINGRAD
+			has_full_control_of_state = 195 has_full_control_of_state = 1289 #LENINGRAD
 			num_of_civilian_factories_available_for_projects > 0
 			SOV_has_active_tank_designer_any = yes
 			NOT = { has_country_flag = SOV_merge_tank_decision_ongoing_flag }
@@ -8659,7 +8659,7 @@ SOV_merge_designers_dec_cat = {
 		cancel_trigger = {
 			OR = {
 				SOV_has_active_tank_designer_any = no
-				NOT = { has_full_control_of_state = 195 } #LENINGRAD
+				NOT = { has_full_control_of_state = 195 has_full_control_of_state = 1289 } #LENINGRAD
 			}
 		}
 
@@ -8824,7 +8824,7 @@ SOV_merge_designers_dec_cat = {
 		}
 
 		available = {
-			has_full_control_of_state = 195 #LENINGRAD
+			has_full_control_of_state = 195 has_full_control_of_state = 1289 #LENINGRAD
 			num_of_civilian_factories_available_for_projects > 0
 			SOV_has_active_ship_designer_any_baltic = yes
 			NOT = { has_country_flag = SOV_merge_ship_decision_ongoing_flag }
@@ -8840,7 +8840,7 @@ SOV_merge_designers_dec_cat = {
 		cancel_trigger = {
 			OR = {
 				SOV_has_active_ship_designer_any_baltic = no
-				NOT = { has_full_control_of_state = 195 } #LENINGRAD
+				NOT = { has_full_control_of_state = 195 has_full_control_of_state = 1289 } #LENINGRAD
 			}
 		}
 
@@ -8885,7 +8885,7 @@ SOV_merge_designers_dec_cat = {
 		}
 
 		available = {
-			has_full_control_of_state = 195 #LENINGRAD
+			has_full_control_of_state = 195 has_full_control_of_state = 1289 #LENINGRAD
 			has_completed_focus = SOV_surface_warfare
 			num_of_civilian_factories_available_for_projects > 0
 			SOV_has_active_ship_designer_any_baltic = yes
@@ -8902,7 +8902,7 @@ SOV_merge_designers_dec_cat = {
 		cancel_trigger = {
 			OR = {
 				SOV_has_active_ship_designer_any_baltic = no
-				NOT = { has_full_control_of_state = 195 } #LENINGRAD
+				NOT = { has_full_control_of_state = 195 has_full_control_of_state = 1289 } #LENINGRAD
 			}
 		}
 
@@ -8946,7 +8946,7 @@ SOV_merge_designers_dec_cat = {
 		}
 
 		available = {
-			has_full_control_of_state = 195 #LENINGRAD
+			has_full_control_of_state = 195 has_full_control_of_state = 1289 #LENINGRAD
 			has_completed_focus = SOV_submarine_warfare
 			num_of_civilian_factories_available_for_projects > 0
 			SOV_has_active_ship_designer_any_baltic = yes
@@ -8963,7 +8963,7 @@ SOV_merge_designers_dec_cat = {
 		cancel_trigger = {
 			OR = {
 				SOV_has_active_ship_designer_any_baltic = no
-				NOT = { has_full_control_of_state = 195 } #LENINGRAD
+				NOT = { has_full_control_of_state = 195 has_full_control_of_state = 1289 } #LENINGRAD
 			}
 		}
 
@@ -9007,7 +9007,7 @@ SOV_merge_designers_dec_cat = {
 		}
 
 		available = {
-			has_full_control_of_state = 195 #LENINGRAD
+			has_full_control_of_state = 195 has_full_control_of_state = 1289 #LENINGRAD
 			num_of_civilian_factories_available_for_projects > 0
 			SOV_has_active_ship_designer_any_baltic = yes
 			NOT = { has_country_flag = SOV_merge_ship_decision_ongoing_flag }
@@ -9022,7 +9022,7 @@ SOV_merge_designers_dec_cat = {
 		cancel_trigger = {
 			OR = {
 				SOV_has_active_ship_designer_any_baltic = no
-				NOT = { has_full_control_of_state = 195 } #LENINGRAD
+				NOT = { has_full_control_of_state = 195 has_full_control_of_state = 1289 } #LENINGRAD
 			}
 		}
 
@@ -9066,7 +9066,7 @@ SOV_merge_designers_dec_cat = {
 		}
 
 		available = {
-			has_full_control_of_state = 197 #MYKOLAIV
+			has_full_control_of_state = 1606 #KHERSON
 			num_of_civilian_factories_available_for_projects > 0
 			SOV_has_active_ship_designer_any_black_sea = yes
 			NOT = { has_country_flag = SOV_merge_ship_decision_ongoing_flag }
@@ -9082,7 +9082,7 @@ SOV_merge_designers_dec_cat = {
 		cancel_trigger = {
 			OR = {
 				SOV_has_active_ship_designer_any_black_sea = no
-				NOT = { has_full_control_of_state = 197 } #MYKOLAIV
+				NOT = { has_full_control_of_state = 1606 } #KHERSON
 			}
 		}
 
@@ -9127,7 +9127,7 @@ SOV_merge_designers_dec_cat = {
 		}
 
 		available = {
-			has_full_control_of_state = 202 #KIEV
+			has_full_control_of_state = 202 has_full_control_of_state = 1101 has_full_control_of_state = 1102 has_full_control_of_state = 1537 #KIEV
 			has_completed_focus = SOV_surface_warfare
 			num_of_civilian_factories_available_for_projects > 0
 			SOV_has_active_ship_designer_any_black_sea = yes
@@ -9144,7 +9144,7 @@ SOV_merge_designers_dec_cat = {
 		cancel_trigger = {
 			OR = {
 				SOV_has_active_ship_designer_any_black_sea = no
-				NOT = { has_full_control_of_state = 202 } #KIEV
+				NOT = { has_full_control_of_state = 202 has_full_control_of_state = 1101 has_full_control_of_state = 1102 has_full_control_of_state = 1537 } #KIEV
 			}
 		}
 
@@ -9188,7 +9188,7 @@ SOV_merge_designers_dec_cat = {
 		}
 
 		available = {
-			has_full_control_of_state = 227 #STALINO
+			has_full_control_of_state = 227 has_full_control_of_state = 1089 has_full_control_of_state = 1090 #STALINO
 			has_completed_focus = SOV_submarine_warfare
 			num_of_civilian_factories_available_for_projects > 0
 			SOV_has_active_ship_designer_any_black_sea = yes
@@ -9205,7 +9205,7 @@ SOV_merge_designers_dec_cat = {
 		cancel_trigger = {
 			OR = {
 				SOV_has_active_ship_designer_any_black_sea = no
-				NOT = { has_full_control_of_state = 227 } #STALINO
+				NOT = { has_full_control_of_state = 227 has_full_control_of_state = 1089 has_full_control_of_state = 1090 } #STALINO
 			}
 		}
 
@@ -9249,7 +9249,7 @@ SOV_merge_designers_dec_cat = {
 		}
 
 		available = {
-			has_full_control_of_state = 227 #STALINO
+			has_full_control_of_state = 227 has_full_control_of_state = 1089 has_full_control_of_state = 1090 #STALINO
 			num_of_civilian_factories_available_for_projects > 0
 			SOV_has_active_ship_designer_any_black_sea = yes
 			NOT = { has_country_flag = SOV_merge_ship_decision_ongoing_flag }
@@ -9264,7 +9264,7 @@ SOV_merge_designers_dec_cat = {
 		cancel_trigger = {
 			OR = {
 				SOV_has_active_ship_designer_any_black_sea = no
-				NOT = { has_full_control_of_state = 227 } #STALINO
+				NOT = { has_full_control_of_state = 227 has_full_control_of_state = 1089 has_full_control_of_state = 1090 } #STALINO
 			}
 		}
 
@@ -9370,7 +9370,7 @@ SOV_merge_designers_dec_cat = {
 		}
 
 		available = {
-			has_full_control_of_state = 219 #MOSCOW
+			has_full_control_of_state = 219 has_full_control_of_state = 1105 has_full_control_of_state = 1106 has_full_control_of_state = 1107 has_full_control_of_state = 1113 has_full_control_of_state = 1114 has_full_control_of_state = 1115 #MOSCOW
 			num_of_civilian_factories_available_for_projects > 0
 			SOV_has_active_aircraft_designer_any = yes
 			NOT = { has_country_flag = SOV_merge_aircraft_decision_ongoing_flag }
@@ -9384,7 +9384,7 @@ SOV_merge_designers_dec_cat = {
 		cancel_trigger = {
 			OR = {
 				SOV_has_active_aircraft_designer_any = no
-				NOT = { has_full_control_of_state = 219 } #MOSCOW
+				NOT = { has_full_control_of_state = 219 has_full_control_of_state = 1105 has_full_control_of_state = 1106 has_full_control_of_state = 1107 has_full_control_of_state = 1113 has_full_control_of_state = 1114 has_full_control_of_state = 1115 } #MOSCOW
 			}
 		}
 
@@ -9496,7 +9496,7 @@ SOV_merge_designers_dec_cat = {
 		}
 
 		available = {
-			has_full_control_of_state = 398 #PERM
+			has_full_control_of_state = 398 has_full_control_of_state = 1523 #PERM
 			num_of_civilian_factories_available_for_projects > 0
 			SOV_has_active_materiel_designer_grabin = yes
 			NOT = { has_country_flag = SOV_merge_materiel_decision_ongoing_flag }
@@ -9512,7 +9512,7 @@ SOV_merge_designers_dec_cat = {
 		cancel_trigger = {
 			OR = {
 				SOV_has_active_materiel_designer_grabin = no
-				NOT = { has_full_control_of_state = 398 } #PERM
+				NOT = { has_full_control_of_state = 398 has_full_control_of_state = 1523 } #PERM
 			}
 		}
 
@@ -9676,7 +9676,7 @@ SOV_merge_designers_dec_cat = {
 		}
 
 		available = {
-			has_full_control_of_state = 227 #STALINO
+			has_full_control_of_state = 227 has_full_control_of_state = 1089 has_full_control_of_state = 1090 #STALINO
 			num_of_civilian_factories_available_for_projects > 0
 			SOV_has_active_materiel_designer_any = yes
 			NOT = { has_country_flag = SOV_merge_materiel_decision_ongoing_flag }
@@ -9690,7 +9690,7 @@ SOV_merge_designers_dec_cat = {
 		cancel_trigger = {
 			OR = {
 				SOV_has_active_materiel_designer_any = no
-				NOT = { has_full_control_of_state = 227 } #STALINO
+				NOT = { has_full_control_of_state = 227 has_full_control_of_state = 1089 has_full_control_of_state = 1090 } #STALINO
 			}
 		}
 
@@ -9734,7 +9734,7 @@ SOV_merge_designers_dec_cat = {
 		}
 
 		available = {
-			has_full_control_of_state = 582 #MAGNITOGORSK
+			has_full_control_of_state = 582 has_full_control_of_state = 1524 #MAGNITOGORSK
 			num_of_civilian_factories_available_for_projects > 0
 			SOV_has_active_materiel_designer_any = yes
 			NOT = { has_country_flag = SOV_merge_materiel_decision_ongoing_flag }
@@ -9748,7 +9748,7 @@ SOV_merge_designers_dec_cat = {
 		cancel_trigger = {
 			OR = {
 				SOV_has_active_materiel_designer_any = no
-				NOT = { has_full_control_of_state = 582 } #MAGNITOGORSK
+				NOT = { has_full_control_of_state = 582 has_full_control_of_state = 1524 } #MAGNITOGORSK
 			}
 		}
 
@@ -11198,7 +11198,7 @@ SOV_industry_relocation = {
 
 		highlight_states = {
 			highlight_state_targets = {
-				state = 195
+				state = 195 state = 1289
 			}
 		}
 
@@ -11207,14 +11207,14 @@ SOV_industry_relocation = {
 		}
 
 		available = {
-			has_full_control_of_state = 195
+			has_full_control_of_state = 195 has_full_control_of_state = 1289
 			has_full_control_of_state = 569
 			has_equipment = { train_equipment > 19 } #20 trains per factory
 		}
 
 		visible = {
 			has_completed_focus = SOV_move_industry_to_the_urals
-			controls_state = 195
+			controls_state = 195 controls_state = 1289
 			controls_state = 569
 			195 = { has_state_flag = leningrad_aluminium_developed }
 			has_civil_war = no
@@ -11237,6 +11237,10 @@ SOV_industry_relocation = {
 					AND = {
 						owns_state = 208
 						NOT = { controls_state = 208 }
+					}
+					AND = {
+						owns_state = 1290
+						NOT = { controls_state = 1290 }
 					}
 					AND = {
 						owns_state = 209
@@ -11714,7 +11718,7 @@ SOV_great_patriotic_war = {
 						state = 219 #MOSCOW
 						state = 195 #LENINGRAD
 						state = 217 #STALINGRAD
-						state = 137 #SEVASTOPOL
+						state = 1086 #SEVASTOPOL
 						state = 206 #MINSK
 						state = 202 #KIEV
 					}
@@ -11938,10 +11942,10 @@ SOV_great_patriotic_war = {
 
 		ai_hint_pp_cost = 15
 		custom_cost_trigger = {
-			command_power > 24
+			command_power > 49
 			has_political_power > 14
 		}
-		custom_cost_text = decision_cost_CP_25_pp_15
+		custom_cost_text = decision_cost_CP_50_pp_15
 
 		days_remove = 90
 
@@ -11951,7 +11955,7 @@ SOV_great_patriotic_war = {
 
 		complete_effect = {
 			hidden_effect = {
-				add_command_power = -25
+				add_command_power = -50
 				add_political_power = -15
 			}
 		}
@@ -11986,10 +11990,10 @@ SOV_great_patriotic_war = {
 
 		ai_hint_pp_cost = 50
 		custom_cost_trigger = {
-			command_power > 24
+			command_power > 49
 			has_political_power > 49
 		}
-		custom_cost_text = decision_cost_CP_25_pp_50
+		custom_cost_text = decision_cost_CP_50_pp_50
 
 		fire_only_once = yes
 		visible = {
@@ -12009,7 +12013,7 @@ SOV_great_patriotic_war = {
 
 		complete_effect = {
 			hidden_effect = {
-				add_command_power = -25
+				add_command_power = -50
 				add_political_power = -50
 			}
 			set_country_flag = SOV_order_227_flag
@@ -12304,8 +12308,7 @@ SOV_great_patriotic_war = {
 
 		highlight_states = {
 			highlight_state_targets = {
-				state = 208 #LUGA
-				state = 244 #VOLKHOV
+				state = 1289
 			}
 		}
 
@@ -12319,7 +12322,7 @@ SOV_great_patriotic_war = {
 			NOT = { has_country_flag = SOV_military_offensive_in_progress_flag }
 			command_power > 49
 			OR = {
-				controls_state = 263 #NOVGOROD
+				controls_state = 263 controls_state = 1803 #NOVGOROD
 				controls_state = 264 #TIKHVIN
 			}
 		}
@@ -12327,10 +12330,7 @@ SOV_great_patriotic_war = {
 		visible = {
 			has_war = yes
 			has_country_flag = SOV_order_227_flag
-			244 = {
-				controller = { has_war_with = ROOT }
-			}
-			208 = {
+			1289 = {
 				controller = { has_war_with = ROOT }
 			}
 			195 = { is_controlled_by = ROOT }
@@ -12365,10 +12365,7 @@ SOV_great_patriotic_war = {
 				195 = {
 					ROOT = { add_to_array = { SOV_military_offensive_states = PREV } }
 				}
-				208 = {
-					ROOT = { add_to_array = { SOV_military_offensive_states = PREV } }
-				}
-				244 = {
+				1289 = {
 					ROOT = { add_to_array = { SOV_military_offensive_states = PREV } }
 				}
 				SOV_set_military_offensive_effect = yes
@@ -12395,8 +12392,16 @@ SOV_great_patriotic_war = {
 		available = {
 			any_controlled_state = {
 				is_core_of = GER
-				NOT = { state = 763 }
-				NOT = { state = 5 }
+				NOT = { state = 763 state = 1249 }
+				NOT = { state = 1249 }
+				NOT = { state = 5 state = 1288 state = 1427 state = 1428 state = 1557 state = 1701 state = 1702 state = 1772 }
+				NOT = { state = 1288 }
+				NOT = { state = 1557 }
+				NOT = { state = 1701 }
+				NOT = { state = 1427 }
+				NOT = { state = 1428 }
+				NOT = { state = 1702 }
+				NOT = { state = 1772 }
 				NOT = { state = 85 }
 			}
 			any_other_country = {
@@ -12506,7 +12511,7 @@ SOV_great_patriotic_war = {
 
 		#Fail trigger
 		available = {
-			NOT = { controls_state = 195 }
+			NOT = { controls_state = 195 controls_state = 1289 }
 		}
 
 		days_mission_timeout = 180
@@ -12560,7 +12565,7 @@ SOV_great_patriotic_war = {
 
 		#Fail trigger
 		available = {
-			NOT = { controls_state = 219 }
+			NOT = { controls_state = 219 controls_state = 1105 controls_state = 1106 controls_state = 1107 controls_state = 1113 controls_state = 1114 controls_state = 1115 }
 		}
 
 		days_mission_timeout = 180
@@ -12674,21 +12679,38 @@ SOV_great_patriotic_war = {
 				#LIT
 				controls_state = 188
 				controls_state = 814
-				controls_state = 189
+				controls_state = 189 controls_state = 1172
 				controls_state = 11
 				controls_state = 815
+				controls_state = 1236
+				controls_state = 1237
+				controls_state = 1787
 				#LAT
 				controls_state = 190
+				controls_state = 1559
+				controls_state = 1771
 				controls_state = 12
 				controls_state = 809
 				controls_state = 810
 				controls_state = 808
+				controls_state = 1788
+				controls_state = 1789
+				controls_state = 1790
+				controls_state = 1791
+				controls_state = 1792
 				#EST
 				controls_state = 191
 				controls_state = 13
 				controls_state = 811
 				controls_state = 812
 				controls_state = 813
+				controls_state = 1795
+				controls_state = 1796
+				controls_state = 1797
+				controls_state = 1798
+				controls_state = 1799
+				controls_state = 1800
+				controls_state = 1801
 			}
 
 		}
@@ -12704,21 +12726,38 @@ SOV_great_patriotic_war = {
 						#LIT
 						state = 188
 						state = 814
-						state = 189
+						state = 189 state = 1172
 						state = 11
 						state = 815
+						state = 1236
+						state = 1237
+						state = 1787
 						#LAT
 						state = 190
+						state = 1559
+						state = 1771
 						state = 12
 						state = 809
 						state = 810
 						state = 808
+						state = 1788
+						state = 1789
+						state = 1790
+						state = 1791
+						state = 1792
 						#EST
 						state = 191
 						state = 13
 						state = 811
 						state = 812
 						state = 813
+						state = 1795
+						state = 1796
+						state = 1797
+						state = 1798
+						state = 1799
+						state = 1800
+						state = 1801
 					}
 				}
 				damage_building = {
@@ -12859,12 +12898,24 @@ SOV_great_patriotic_war = {
 				controls_state = 231
 				controls_state = 232
 				controls_state = 233
-				controls_state = 234
-				controls_state = 235
+				controls_state = 234 controls_state = 1097 controls_state = 1098
+				controls_state = 235 controls_state = 1806
 				controls_state = 821
 				controls_state = 826
 				controls_state = 827
 				controls_state = 828
+				controls_state = 1786
+				controls_state = 1118
+				controls_state = 1119
+				controls_state = 1120
+				controls_state = 1811
+				controls_state = 1121
+				controls_state = 1122
+				controls_state = 1123
+				controls_state = 1124
+				controls_state = 1125
+				controls_state = 1126
+				controls_state = 1127
 			}
 
 		}
@@ -12882,12 +12933,24 @@ SOV_great_patriotic_war = {
 						state = 231
 						state = 232
 						state = 233
-						state = 234
-						state = 235
+						state = 234 state = 1097 state = 1098
+						state = 235 state = 1806
 						state = 821
 						state = 826
 						state = 827
 						state = 828
+						state = 1786
+						state = 1118
+						state = 1119
+						state = 1120
+						state = 1811
+						state = 1121
+						state = 1122
+						state = 1123
+						state = 1124
+						state = 1125
+						state = 1126
+						state = 1127
 					}
 				}
 				damage_building = {
@@ -12925,9 +12988,9 @@ SOV_great_patriotic_war = {
 			has_country_flag = SOV_scorched_earth
 			NOT = { has_country_flag = SOV_order_227_flag }
 			OR = {
-				controls_state = 245
+				controls_state = 245 controls_state = 1808
 				controls_state = 217
-				controls_state = 218
+				controls_state = 218 controls_state = 1096 controls_state = 1807
 				controls_state = 238
 				controls_state = 237
 				controls_state = 236
@@ -12944,9 +13007,9 @@ SOV_great_patriotic_war = {
 			every_controlled_state = {
 				limit = {
 					OR ={
-						state = 245
+						state = 245 state = 1808
 						state = 217
-						state = 218
+						state = 218 state = 1096 state = 1807
 						state = 238
 						state = 237
 						state = 236
@@ -12989,14 +13052,22 @@ SOV_great_patriotic_war = {
 			has_country_flag = SOV_scorched_earth
 			NOT = { has_country_flag = SOV_order_227_flag }
 			OR = {
-				controls_state = 220
-				controls_state = 222
-				controls_state = 224
+				controls_state = 220 controls_state = 1082
+				controls_state = 222 controls_state = 1111
+				controls_state = 224 controls_state = 1083 controls_state = 1108
 				controls_state = 243
-				controls_state = 205
-				controls_state = 242
+				controls_state = 1774
+				controls_state = 205 controls_state = 1112
+				controls_state = 242 controls_state = 1104
+				controls_state = 1773
 				controls_state = 246
 				controls_state = 219
+				controls_state = 1105
+				controls_state = 1106
+				controls_state = 1107
+				controls_state = 1113
+				controls_state = 1114
+				controls_state = 1115
 			}
 		}
 
@@ -13008,14 +13079,22 @@ SOV_great_patriotic_war = {
 			every_state = {
 				limit = {
 					OR = {
-						state = 220
-						state = 222
-						state = 224
+						state = 220 state = 1082
+						state = 222 state = 1111
+						state = 224 state = 1083 state = 1108
 						state = 243
-						state = 205
-						state = 242
+						state = 1774
+						state = 205 state = 1112
+						state = 242 state = 1104
+						state = 1773
 						state = 246
 						state = 219
+						state = 1105
+						state = 1106
+						state = 1107
+						state = 1113
+						state = 1114
+						state = 1115
 					}
 					is_controlled_by = SOV
 				}
@@ -14295,6 +14374,11 @@ SOV_soviet_civil_war_dec_cat = {
 		available = {
 			JAP = { exists = yes }
 			408 = { CONTROLLER = { original_tag = SOV } }
+			1332 = { CONTROLLER = { original_tag = SOV } }
+			1333 = { CONTROLLER = { original_tag = SOV } }
+			1334 = { CONTROLLER = { original_tag = SOV } }
+			1335 = { CONTROLLER = { original_tag = SOV } }
+			1336 = { CONTROLLER = { original_tag = SOV } }
 			custom_trigger_tooltip = {
 				tooltip = SOV_not_has_conflict_with_japan
 				NOT = { JAP = { has_decision = JAP_test_the_soviets } }
@@ -16432,7 +16516,7 @@ SOV_soviet_civil_war_dec_cat = {
 					region = 150
 					region = 264
 					region = 265
-					state = 215
+					state = 215 state = 1116 state = 1117 state = 1170 state = 1171 state = 1174 state = 1175
 					state = 216
 				}
 				SOV_is_unaligned_state = yes
@@ -17573,20 +17657,70 @@ political_actions = {
 			OR = {
 				AND = {
 					owns_state = 610
+					owns_state = 1444
+					owns_state = 1446
+					owns_state = 1448
+					owns_state = 1449
+					owns_state = 1450
 					owns_state = 716
+					owns_state = 1452
+					owns_state = 1453
+					owns_state = 1454
 					owns_state = 328
+					owns_state = 1434
+					owns_state = 1435
+					owns_state = 1437
+					owns_state = 1439
+					owns_state = 1440
 					owns_state = 715
+					owns_state = 1443
+					owns_state = 1445
 					owns_state = 714
+					owns_state = 1423
+					owns_state = 1424
+					owns_state = 1426
+					owns_state = 1451
+					owns_state = 1430
+					owns_state = 1431
 					owns_state = 717
+					owns_state = 1416
+					owns_state = 1417
+					owns_state = 1419
+					owns_state = 1422
 				}
 				AND = {
 					MAN = { is_puppet_of = SOV }
 					owns_state = 610
+					owns_state = 1444
+					owns_state = 1446
+					owns_state = 1448
+					owns_state = 1449
+					owns_state = 1450
 					owns_state = 716
+					owns_state = 1452
+					owns_state = 1453
+					owns_state = 1454
 					owns_state = 328
+					owns_state = 1434
+					owns_state = 1435
+					owns_state = 1437
+					owns_state = 1439
+					owns_state = 1440
 					owns_state = 715
+					owns_state = 1443
+					owns_state = 1445
 					owns_state = 714
+					owns_state = 1423
+					owns_state = 1424
+					owns_state = 1426
+					owns_state = 1451
+					owns_state = 1430
+					owns_state = 1431
 					owns_state = 717
+					owns_state = 1416
+					owns_state = 1417
+					owns_state = 1419
+					owns_state = 1422
 				}
 			}
 		}
@@ -17600,12 +17734,39 @@ political_actions = {
 		complete_effect = {
 			PRC = {
 				transfer_state = 609
+				transfer_state = 1487
+				transfer_state = 1488
 				transfer_state = 610
+				transfer_state = 1444
+				transfer_state = 1446
+				transfer_state = 1448
+				transfer_state = 1449
+				transfer_state = 1450
 				transfer_state = 716
+				transfer_state = 1452
+				transfer_state = 1453
+				transfer_state = 1454
 				transfer_state = 715
+				transfer_state = 1443
+				transfer_state = 1445
 				transfer_state = 328
+				transfer_state = 1434
+				transfer_state = 1435
+				transfer_state = 1437
+				transfer_state = 1439
+				transfer_state = 1440
 				transfer_state = 717
+				transfer_state = 1416
+				transfer_state = 1417
+				transfer_state = 1419
+				transfer_state = 1422
 				transfer_state = 714
+				transfer_state = 1423
+				transfer_state = 1424
+				transfer_state = 1426
+				transfer_state = 1451
+				transfer_state = 1430
+				transfer_state = 1431
 				country_event = { id = wtt_japan.125 }
 			}
 		}
@@ -17638,10 +17799,22 @@ political_actions = {
 				add = 150
 					#Has somewhat won against CHI and JAP
 				count_triggers = {
-					amount = 10
+					amount = 25
 					595 = { is_controlled_by = FROM }
 					596 = { is_controlled_by = FROM }
+					1038 = { is_controlled_by = FROM }
+					1494 = { is_controlled_by = FROM }
+					1495 = { is_controlled_by = FROM }
+					1496 = { is_controlled_by = FROM }
+					1497 = { is_controlled_by = FROM }
 					597 = { is_controlled_by = FROM }
+					1499 = { is_controlled_by = FROM }
+					1498 = { is_controlled_by = FROM }
+					1501 = { is_controlled_by = FROM }
+					1502 = { is_controlled_by = FROM }
+					1503 = { is_controlled_by = FROM }
+					1504 = { is_controlled_by = FROM }
+					1505 = { is_controlled_by = FROM }
 					598 = { is_controlled_by = FROM }
 					600 = { is_controlled_by = FROM }
 					601 = { is_controlled_by = FROM }
@@ -17651,8 +17824,13 @@ political_actions = {
 					606 = { is_controlled_by = FROM }
 					607 = { is_controlled_by = FROM }
 					608 = { is_controlled_by = FROM }
+					1489 = { is_controlled_by = FROM }
 					613 = { is_controlled_by = FROM }
 					614 = { is_controlled_by = FROM }
+					1490 = { is_controlled_by = FROM }
+					1491 = { is_controlled_by = FROM }
+					1492 = { is_controlled_by = FROM }
+					1493 = { is_controlled_by = FROM }
 					620 = { is_controlled_by = FROM }
 				}
 			}
@@ -17731,7 +17909,19 @@ political_actions = {
 				#Has won against CHI and JAP
 				595 = { is_controlled_by = FROM }
 				596 = { is_controlled_by = FROM }
+				1038 = { is_controlled_by = FROM }
+				1494 = { is_controlled_by = FROM }
+				1495 = { is_controlled_by = FROM }
+				1496 = { is_controlled_by = FROM }
+				1497 = { is_controlled_by = FROM }
 				597 = { is_controlled_by = FROM }
+				1499 = { is_controlled_by = FROM }
+				1498 = { is_controlled_by = FROM }
+				1501 = { is_controlled_by = FROM }
+				1502 = { is_controlled_by = FROM }
+				1503 = { is_controlled_by = FROM }
+				1504 = { is_controlled_by = FROM }
+				1505 = { is_controlled_by = FROM }
 				598 = { is_controlled_by = FROM }
 				600 = { is_controlled_by = FROM }
 				601 = { is_controlled_by = FROM }
@@ -17741,8 +17931,13 @@ political_actions = {
 				606 = { is_controlled_by = FROM }
 				607 = { is_controlled_by = FROM }
 				608 = { is_controlled_by = FROM }
+				1489 = { is_controlled_by = FROM }
 				613 = { is_controlled_by = FROM }
 				614 = { is_controlled_by = FROM }
+				1490 = { is_controlled_by = FROM }
+				1491 = { is_controlled_by = FROM }
+				1492 = { is_controlled_by = FROM }
+				1493 = { is_controlled_by = FROM }
 				620 = { is_controlled_by = FROM }
 			}
 			modifier = {
@@ -17784,6 +17979,7 @@ political_actions = {
 
 		available = {
 			NOT = { army_manpower_in_state = { state = 354 amount < 9600 } }
+			NOT = { army_manpower_in_state = { state = 1286 amount < 9600 } }
 			NOT = { army_manpower_in_state = { state = 353 amount < 9600 } }
 			NOT = { army_manpower_in_state = { state = 352 amount < 9600 } }
 			NOT = { army_manpower_in_state = { state = 349 amount < 9600 } }
@@ -17857,15 +18053,21 @@ SOV_panslavic_nationalism = {
 
 		available = {
 			has_full_control_of_state = 9
-			has_full_control_of_state = 69
+			has_full_control_of_state = 1555
+			has_full_control_of_state = 1556
 			has_full_control_of_state = 972
-			has_full_control_of_state = 70
-			has_full_control_of_state = 71
+			has_full_control_of_state = 1608
+			has_full_control_of_state = 69
+			has_full_control_of_state = 70 has_full_control_of_state = 1146 has_full_control_of_state = 1147
+			has_full_control_of_state = 71 has_full_control_of_state = 1148 has_full_control_of_state = 1149
 			has_full_control_of_state = 72
 			has_full_control_of_state = 73
+			has_full_control_of_state = 1294
 			has_full_control_of_state = 74
+			has_full_control_of_state = 1727
 			has_full_control_of_state = 75
 			has_full_control_of_state = 664
+			has_full_control_of_state = 1560
 		}
 
 		visible = {
@@ -17881,15 +18083,21 @@ SOV_panslavic_nationalism = {
 
 		remove_effect = {
 			add_state_core = 9
-			add_state_core = 69
+			add_state_core = 1555
+			add_state_core = 1556
 			add_state_core = 972
-			add_state_core = 70
-			add_state_core = 71
+			add_state_core = 1608
+			add_state_core = 69
+			add_state_core = 70 add_state_core = 1146 add_state_core = 1147
+			add_state_core = 71 add_state_core = 1148 add_state_core = 1149
 			add_state_core = 72
 			add_state_core = 73
+			add_state_core = 1294
 			add_state_core = 74
+			add_state_core = 1727
 			add_state_core = 75
 			add_state_core = 664
+			add_state_core = 1560
 			set_country_flag = SOV_integrated_czechoslovakia_flag
 		}
 
@@ -17906,6 +18114,8 @@ SOV_panslavic_nationalism = {
 			has_full_control_of_state = 211
 			has_full_control_of_state = 212
 			has_full_control_of_state = 801
+			has_full_control_of_state = 1719
+			has_full_control_of_state = 1720
 		}
 
 		visible = {
@@ -17924,6 +18134,8 @@ SOV_panslavic_nationalism = {
 			add_state_core = 211
 			add_state_core = 212
 			add_state_core = 801
+			add_state_core = 1719
+			add_state_core = 1720
 			set_country_flag = SOV_integrated_bulgaria_flag
 		}
 
@@ -17939,21 +18151,55 @@ SOV_panslavic_nationalism = {
 			has_full_control_of_state = 97
 			has_full_control_of_state = 85
 			has_full_control_of_state = 762
-			has_full_control_of_state = 90
-			has_full_control_of_state = 88
+			has_full_control_of_state = 90 has_full_control_of_state = 1143
+			has_full_control_of_state = 88 has_full_control_of_state = 1144 has_full_control_of_state = 1145 has_full_control_of_state = 1425
 			has_full_control_of_state = 92
 			has_full_control_of_state = 91
-			has_full_control_of_state = 95
+			has_full_control_of_state = 1400
+			has_full_control_of_state = 95 has_full_control_of_state = 1247
 			has_full_control_of_state = 94
+			has_full_control_of_state = 1815
 			has_full_control_of_state = 86
-			has_full_control_of_state = 98
+			has_full_control_of_state = 98 has_full_control_of_state = 1141
 			has_full_control_of_state = 89
 			has_full_control_of_state = 10
-			has_full_control_of_state = 96
-			has_full_control_of_state = 784
+			has_full_control_of_state = 96 has_full_control_of_state = 1244 has_full_control_of_state = 1817
+			has_full_control_of_state = 784 has_full_control_of_state = 1238 has_full_control_of_state = 1248 has_full_control_of_state = 1816
 			has_full_control_of_state = 93
-			has_full_control_of_state = 87
-			has_full_control_of_state = 807
+			has_full_control_of_state = 87 has_full_control_of_state = 1142
+			has_full_control_of_state = 1243
+			has_full_control_of_state = 1239
+			has_full_control_of_state = 1246
+			has_full_control_of_state = 1240
+			has_full_control_of_state = 1610
+			has_full_control_of_state = 1535
+			has_full_control_of_state = 1484
+			has_full_control_of_state = 1818
+			has_full_control_of_state = 1534
+			has_full_control_of_state = 1533
+			has_full_control_of_state = 1814
+			has_full_control_of_state = 1531
+			has_full_control_of_state = 1532
+			has_full_control_of_state = 1399
+			has_full_control_of_state = 1241
+			has_full_control_of_state = 1242
+			has_full_control_of_state = 1245
+			has_full_control_of_state = 1554
+			has_full_control_of_state = 1447
+			has_full_control_of_state = 1389
+			has_full_control_of_state = 1481
+			has_full_control_of_state = 1252
+			has_full_control_of_state = 1482
+			has_full_control_of_state = 1256
+			has_full_control_of_state = 1483
+			has_full_control_of_state = 1528
+			has_full_control_of_state = 1265
+			has_full_control_of_state = 1775
+			has_full_control_of_state = 1529
+			has_full_control_of_state = 1385
+			has_full_control_of_state = 1386
+			has_full_control_of_state = 1530
+			has_full_control_of_state = 1173
 		}
 
 		visible = {
@@ -17971,21 +18217,54 @@ SOV_panslavic_nationalism = {
 			add_state_core = 97
 			add_state_core = 85
 			add_state_core = 762
-			add_state_core = 90
-			add_state_core = 88
+			add_state_core = 90 add_state_core = 1143
+			add_state_core = 88 add_state_core = 1144 add_state_core = 1145 add_state_core = 1425
 			add_state_core = 92
 			add_state_core = 91
-			add_state_core = 95
+			add_state_core = 1400
+			add_state_core = 95 add_state_core = 1247
 			add_state_core = 94
+			add_state_core = 1815
 			add_state_core = 86
-			add_state_core = 98
+			add_state_core = 98 add_state_core = 1141
 			add_state_core = 89
 			add_state_core = 10
-			add_state_core = 96
-			add_state_core = 784
+			add_state_core = 96 add_state_core = 1244 add_state_core = 1817
 			add_state_core = 93
-			add_state_core = 87
-			add_state_core = 807
+			add_state_core = 87 add_state_core = 1142
+			add_state_core = 1243
+			add_state_core = 1239
+			add_state_core = 1246
+			add_state_core = 1240
+			add_state_core = 1610
+			add_state_core = 1535
+			add_state_core = 1484
+			add_state_core = 1818
+			add_state_core = 1534
+			add_state_core = 1533
+			add_state_core = 1814
+			add_state_core = 1531
+			add_state_core = 1532
+			add_state_core = 1399
+			add_state_core = 1241
+			add_state_core = 1242
+			add_state_core = 1245
+			add_state_core = 1554
+			add_state_core = 1447
+			add_state_core = 1389
+			add_state_core = 1481
+			add_state_core = 1252
+			add_state_core = 1482
+			add_state_core = 1256
+			add_state_core = 1483
+			add_state_core = 1528
+			add_state_core = 1265
+			add_state_core = 1775
+			add_state_core = 1529
+			add_state_core = 1385
+			add_state_core = 1386
+			add_state_core = 1530
+			add_state_core = 1173
 			set_country_flag = SOV_integrated_poland_flag
 		}
 
@@ -18001,21 +18280,52 @@ SOV_panslavic_nationalism = {
 			has_full_control_of_state = 104
 			has_full_control_of_state = 109
 			has_full_control_of_state = 103
+			has_full_control_of_state = 1296
 			has_full_control_of_state = 804
 			has_full_control_of_state = 802
 			has_full_control_of_state = 106
-			has_full_control_of_state = 970
+			has_full_control_of_state = 1412
+			has_full_control_of_state = 1307
+			has_full_control_of_state = 1298
 			has_full_control_of_state = 105
 			has_full_control_of_state = 108
 			has_full_control_of_state = 107
 			has_full_control_of_state = 102
 			has_full_control_of_state = 853
 			has_full_control_of_state = 803
+			has_full_control_of_state = 1411
+			has_full_control_of_state = 1299
+			has_full_control_of_state = 1300
 			has_full_control_of_state = 45
+			has_full_control_of_state = 1477
 			has_full_control_of_state = 764
-			has_full_control_of_state = 736
-			has_full_control_of_state = 852
+			has_full_control_of_state = 1478
+			has_full_control_of_state = 736 has_full_control_of_state = 1708
+			has_full_control_of_state = 852 has_full_control_of_state = 1169
 			has_full_control_of_state = 163
+			has_full_control_of_state = 1704
+			has_full_control_of_state = 1410
+			has_full_control_of_state = 1705
+			has_full_control_of_state = 1706
+			has_full_control_of_state = 1707
+			has_full_control_of_state = 1709
+			has_full_control_of_state = 1710
+			has_full_control_of_state = 1711
+			has_full_control_of_state = 1712
+			has_full_control_of_state = 1713
+			has_full_control_of_state = 1714
+			has_full_control_of_state = 1715
+			has_full_control_of_state = 1716
+			has_full_control_of_state = 1717
+			has_full_control_of_state = 1718
+			has_full_control_of_state = 1388
+			has_full_control_of_state = 1721
+			has_full_control_of_state = 1314
+			has_full_control_of_state = 1325
+			has_full_control_of_state = 1339
+			has_full_control_of_state = 1260
+			has_full_control_of_state = 1776
+			has_full_control_of_state = 1777
 		}
 
 		visible = {
@@ -18033,21 +18343,52 @@ SOV_panslavic_nationalism = {
 			add_state_core = 104
 			add_state_core = 109
 			add_state_core = 103
+			add_state_core = 1296
 			add_state_core = 804
 			add_state_core = 802
 			add_state_core = 106
-			add_state_core = 970
+			add_state_core = 1412
+			add_state_core = 1307
+			add_state_core = 1298
 			add_state_core = 105
 			add_state_core = 108
 			add_state_core = 107
 			add_state_core = 102
 			add_state_core = 853
 			add_state_core = 803
+			add_state_core = 1411
+			add_state_core = 1299
+			add_state_core = 1300
 			add_state_core = 45
+			add_state_core = 1477
 			add_state_core = 764
-			add_state_core = 736
-			add_state_core = 852
+			add_state_core = 1478
+			add_state_core = 736 add_state_core = 1708
+			add_state_core = 852 add_state_core = 1169
 			add_state_core = 163
+			add_state_core = 1704
+			add_state_core = 1410
+			add_state_core = 1705
+			add_state_core = 1706
+			add_state_core = 1707
+			add_state_core = 1709
+			add_state_core = 1710
+			add_state_core = 1711
+			add_state_core = 1712
+			add_state_core = 1713
+			add_state_core = 1714
+			add_state_core = 1715
+			add_state_core = 1716
+			add_state_core = 1717
+			add_state_core = 1718
+			add_state_core = 1388
+			add_state_core = 1721
+			add_state_core = 1314
+			add_state_core = 1325
+			add_state_core = 1339
+			add_state_core = 1260
+			add_state_core = 1776
+			add_state_core = 1777
 			set_country_flag = SOV_integrated_yugoslavia_flag
 		}
 
@@ -18065,51 +18406,124 @@ SOV_panslavic_nationalism = {
 			has_country_flag = SOV_integrated_poland_flag
 			has_country_flag = SOV_integrated_yugoslavia_flag
 			has_full_control_of_state = 9
-			has_full_control_of_state = 69
+			has_full_control_of_state = 1555
+			has_full_control_of_state = 1556
 			has_full_control_of_state = 972
-			has_full_control_of_state = 70
-			has_full_control_of_state = 71
+			has_full_control_of_state = 1608
+			has_full_control_of_state = 69
+			has_full_control_of_state = 70 has_full_control_of_state = 1146 has_full_control_of_state = 1147
+			has_full_control_of_state = 71 has_full_control_of_state = 1148 has_full_control_of_state = 1149
 			has_full_control_of_state = 72
 			has_full_control_of_state = 73
+			has_full_control_of_state = 1294
 			has_full_control_of_state = 74
+			has_full_control_of_state = 1727
 			has_full_control_of_state = 75
 			has_full_control_of_state = 664
+			has_full_control_of_state = 1560
 			has_full_control_of_state = 48
 			has_full_control_of_state = 211
 			has_full_control_of_state = 212
 			has_full_control_of_state = 801
+			has_full_control_of_state = 1719
+			has_full_control_of_state = 1720
 			has_full_control_of_state = 97
 			has_full_control_of_state = 85
 			has_full_control_of_state = 762
-			has_full_control_of_state = 90
-			has_full_control_of_state = 88
+			has_full_control_of_state = 90 has_full_control_of_state = 1143
+			has_full_control_of_state = 88 has_full_control_of_state = 1144 has_full_control_of_state = 1145 has_full_control_of_state = 1425
 			has_full_control_of_state = 92
 			has_full_control_of_state = 91
-			has_full_control_of_state = 95
+			has_full_control_of_state = 1400
+			has_full_control_of_state = 95 has_full_control_of_state = 1247
 			has_full_control_of_state = 94
+			has_full_control_of_state = 1815
 			has_full_control_of_state = 86
-			has_full_control_of_state = 98
+			has_full_control_of_state = 98 has_full_control_of_state = 1141
 			has_full_control_of_state = 89
 			has_full_control_of_state = 10
-			has_full_control_of_state = 96
-			has_full_control_of_state = 784
+			has_full_control_of_state = 96 has_full_control_of_state = 1173 has_full_control_of_state = 1244 has_full_control_of_state = 1817
+			has_full_control_of_state = 784 has_full_control_of_state = 1238 has_full_control_of_state = 1248 has_full_control_of_state = 1816
 			has_full_control_of_state = 93
-			has_full_control_of_state = 87
+			has_full_control_of_state = 87 has_full_control_of_state = 1142
+			has_full_control_of_state = 1243
+			has_full_control_of_state = 1239
+			has_full_control_of_state = 1246
+			has_full_control_of_state = 1240
+			has_full_control_of_state = 1610
+			has_full_control_of_state = 1535
+			has_full_control_of_state = 1484
+			has_full_control_of_state = 1818
+			has_full_control_of_state = 1534
+			has_full_control_of_state = 1533
+			has_full_control_of_state = 1814
+			has_full_control_of_state = 1531
+			has_full_control_of_state = 1532
+			has_full_control_of_state = 1399
+			has_full_control_of_state = 1241
+			has_full_control_of_state = 1242
+			has_full_control_of_state = 1245
+			has_full_control_of_state = 1554
+			has_full_control_of_state = 1447
+			has_full_control_of_state = 1389
+			has_full_control_of_state = 1481
+			has_full_control_of_state = 1252
+			has_full_control_of_state = 1482
+			has_full_control_of_state = 1256
+			has_full_control_of_state = 1483
+			has_full_control_of_state = 1528
+			has_full_control_of_state = 1265
+			has_full_control_of_state = 1775
+			has_full_control_of_state = 1529
+			has_full_control_of_state = 1385
+			has_full_control_of_state = 1386
+			has_full_control_of_state = 1530
 			has_full_control_of_state = 104
 			has_full_control_of_state = 109
 			has_full_control_of_state = 103
+			has_full_control_of_state = 1296
 			has_full_control_of_state = 804
 			has_full_control_of_state = 802
 			has_full_control_of_state = 106
-			has_full_control_of_state = 970
+			has_full_control_of_state = 1412
+			has_full_control_of_state = 1307
+			has_full_control_of_state = 1298
 			has_full_control_of_state = 105
 			has_full_control_of_state = 108
 			has_full_control_of_state = 107
 			has_full_control_of_state = 102
 			has_full_control_of_state = 853
 			has_full_control_of_state = 803
+			has_full_control_of_state = 1411
+			has_full_control_of_state = 1299
+			has_full_control_of_state = 1300
 			has_full_control_of_state = 45
+			has_full_control_of_state = 1477
 			has_full_control_of_state = 764
+			has_full_control_of_state = 1478
+			has_full_control_of_state = 1704
+			has_full_control_of_state = 1410
+			has_full_control_of_state = 1705
+			has_full_control_of_state = 1706
+			has_full_control_of_state = 1707
+			has_full_control_of_state = 1709
+			has_full_control_of_state = 1710
+			has_full_control_of_state = 1711
+			has_full_control_of_state = 1712
+			has_full_control_of_state = 1713
+			has_full_control_of_state = 1714
+			has_full_control_of_state = 1715
+			has_full_control_of_state = 1716
+			has_full_control_of_state = 1717
+			has_full_control_of_state = 1718
+			has_full_control_of_state = 1388
+			has_full_control_of_state = 1721
+			has_full_control_of_state = 1314
+			has_full_control_of_state = 1325
+			has_full_control_of_state = 1339
+			has_full_control_of_state = 1260
+			has_full_control_of_state = 1776
+			has_full_control_of_state = 1777
 		}
 
 		visible = {
@@ -18150,7 +18564,7 @@ SOV_polish_territory = {
 					any_country_with_core = {
 						not = { tag = POL }
 					}
-					state = 97
+					state = 97 state = 1241 state = 1242 state = 1245
 				}
 				is_fully_controlled_by = ROOT
 			}
@@ -18196,11 +18610,11 @@ SOV_polish_territory = {
 								is_core_of = POL
 								OR = {
 									# Białystok
-									state = 97
+									state = 97 state = 1241 state = 1242 state = 1245
 									# Uncontested Polish Cores
 									NOT = {
-										state = 91 # CUSTOM ADDITION LWOW
-										state = 1091 # CUSTOM ADDITION GRODNO
+										state = 91 state = 1531 # CUSTOM ADDITION LWOW
+										state = 1239 # CUSTOM ADDITION GRODNO
 										any_country_with_core = {
 											NOT = { tag = POL }
 										}
@@ -18226,11 +18640,11 @@ SOV_polish_territory = {
 								is_core_of = POL
 								OR = {
 									# Białystok
-									state = 97
+									state = 97 state = 1241 state = 1242 state = 1245
 									# Uncontested Polish Cores
 									NOT = {
-										state = 91 # CUSTOM ADDITION LWOW
-										state = 1091 # CUSTOM ADDITION GRODNO
+										state = 91 state = 1531 # CUSTOM ADDITION LWOW
+										state = 1239 # CUSTOM ADDITION GRODNO
 										any_country_with_core = {
 											NOT = { tag = POL }
 										}

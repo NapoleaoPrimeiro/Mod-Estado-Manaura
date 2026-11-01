@@ -319,4 +319,15 @@ spriteTypes = {
         texturefile = "gfx/interface/unsafe_savegame_icon.dds"
     }
 
+	# Manaura: sprites da tela de selecao da versao atual do jogo
+	spriteType = {
+		name = "GFX_country_filter_entry"
+		textureFile = "gfx/interface/country_filter_entry.dds"
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unplayed_content_notification"
+		texturefile = "gfx/interface/unplayed_content_notification.dds"
+	}
 }

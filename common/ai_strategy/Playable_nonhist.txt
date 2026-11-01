@@ -2784,14 +2784,21 @@ FRA_invasion_buffer = { #anytime france is at war with england, they actually ga
 		type = put_unit_buffers
 		states = {
 			15
+			1403 # KSRE (de 15)
 			19
 			14
 			23
 			29
 			6
 			35
+			1255 # KSRE (de 35)
+			1293 # KSRE (de 35)
+			1297 # KSRE (de 35)
+			1376 # KSRE (de 35)
 			7
+			1292 # KSRE (de 7)
 			36
+			1552 # KSRE (de 36)
 		}
 		ratio = 0.20
 		area = normandy_landing_zone
@@ -2902,15 +2909,27 @@ FRA_GER_is_bigger_threat_protect_mainland = {
 		states = {
 			29
 			785
+			1401 # KSRE (de 785)
 			15
+			1403 # KSRE (de 15)
 			18
+			1258 # KSRE (de 18)
+			1259 # KSRE (de 18)
+			1402 # KSRE (de 18)
 			17
+			1257 # KSRE (de 17)
 			14
 			30
 			23
 			19
 			21
 			735
+			1301 # KSRE (de 735)
+			1302 # KSRE (de 735)
+			1303 # KSRE (de 735)
+			1304 # KSRE (de 735)
+			1305 # KSRE (de 735)
+			1306 # KSRE (de 735)
 			851
 		}
 		ratio = 0.1
@@ -3042,7 +3061,7 @@ allied_countries_liberate_denmark = { #countries at war with germany will libera
 			has_government = fascism
 		}
 		OR = {
-			ROOT = { controls_state = 909 }
+			ROOT = { controls_state = 909 controls_state = 1728 }
 			ROOT = { controls_state = 138 }
 		}
 	}
@@ -4720,13 +4739,13 @@ PRC_united_front_not_needed_anymore = {
 				exists = no
 				is_subject = yes
 				AND = {
-					NOT = { owns_state = 609 }
+					NOT = { owns_state = 609 owns_state = 1487 owns_state = 1488 }
 					NOT = { owns_state = 745 }
 					MAN = {
-						NOT = { owns_state = 610 }
-						NOT = { owns_state = 716 }
-						NOT = { owns_state = 328 }
-						NOT = { owns_state = 715 }
+						NOT = { owns_state = 610 owns_state = 1444 owns_state = 1446 owns_state = 1449 owns_state = 1450 }
+						NOT = { owns_state = 716 owns_state = 1448 owns_state = 1452 owns_state = 1453 }
+						NOT = { owns_state = 328 owns_state = 1416 owns_state = 1422 owns_state = 1434 owns_state = 1435 owns_state = 1437 owns_state = 1439 owns_state = 1454 }
+						NOT = { owns_state = 715 owns_state = 1440 owns_state = 1443 owns_state = 1445 }
 					}
 				}
 				

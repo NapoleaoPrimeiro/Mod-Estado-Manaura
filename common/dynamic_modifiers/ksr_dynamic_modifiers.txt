@@ -1,0 +1,15 @@
+###### KSR STATIC MODIFIERS #####
+
+KSR_attritious_desert_state_dynamic_modifier = { #STATE MODIFIER
+	icon = GFX_MODIFIER_ATTRITION
+	enable = { always = yes }
+	attacker_modifier = yes
+
+	army_org_factor = ksr_ads_army_org_factor
+	local_org_regain = ksr_ads_local_org_regain
+	org_loss_when_moving = ksr_ads_org_loss_when_moving
+	supply_factor = ksr_ads_supply_factor
+	truck_attrition_factor = ksr_ads_truck_attrition_factor
+	army_speed_factor = ksr_ads_army_speed_factor
+	attrition = ksr_ads_attrition
+}

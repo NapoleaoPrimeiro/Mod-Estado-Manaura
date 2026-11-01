@@ -810,7 +810,7 @@ ITA_missiolini_occupy_dalmatia_success_effect = {
 				limit = {
 					is_core_of = YUG
 					is_fully_controlled_by = ROOT
-					NOT = { state = 103 } #Dalmatia goes first above
+					NOT = { state = 103 state = 1296 state = 1325 state = 1339 state = 1388 state = 1718 } #Dalmatia goes first above
 					has_resistance = yes
 				}
 				add_compliance = 5
@@ -889,7 +889,7 @@ ITA_missiolini_occupy_dalmatia_success_effect = {
 				limit = {
 					is_core_of = YUG
 					is_fully_controlled_by = ROOT
-					NOT = { state = 103 } #Dalmatia goes first above
+					NOT = { state = 103 state = 1296 state = 1325 state = 1339 state = 1388 state = 1718 } #Dalmatia goes first above
 					has_resistance = yes
 				}
 				add_compliance = 5
@@ -1969,7 +1969,7 @@ ITA_cw_manage_states_split_effect = {
 			set_state_flag = ITA_cw_state_split
 			if = {
 				limit = {
-					state = 158 #PIEMONTE
+					state = 1308 #GENOVA
 				}
 				ROOT = { set_variable = { ITA_cw_rds_capital = PREV } }
 			}
@@ -1989,7 +1989,7 @@ ITA_cw_manage_states_split_effect = {
 			set_state_flag = ITA_cw_state_split
 			if = {
 				limit = {
-					state = 736 #LITORALE (Trieste)
+					state = 1708 #TRIESTE
 				}
 				ROOT = { set_variable = { ITA_cw_rds_capital = PREV } }
 			}
@@ -2927,8 +2927,11 @@ ITA_start_anti_fascist_civil_war = { #The one triggered via focus
 					state = 850 #TRENTINO
 					state = 39 #ALTO ADIGE
 					state = 160 #VENETO
+					state = 1168 #FRIULI
 					state = 736 #LITORALE
 					state = 852 #ISTRIA
+					state = 1169 #FIUME
+					state = 1708 #TRIESTE
 				}
 				is_controlled_by = ROOT
 			}
@@ -2942,7 +2945,7 @@ ITA_start_anti_fascist_civil_war = { #The one triggered via focus
 		every_owned_state = {
 			limit = {
 				OR = {
-					state = 2 #LAZIO
+					state = 2 state = 1404 #LAZIO
 					state = 849 #PUGLIA
 					state = 117 #CAMPANIA
 					state = 156 #CALABRIA
@@ -2957,8 +2960,10 @@ ITA_start_anti_fascist_civil_war = { #The one triggered via focus
 		every_owned_state = {
 			limit = {
 				OR = {
-					state = 2 #LAZIO
-					state = 157 #ABRUZZO
+					state = 2 state = 1404 #LAZIO
+					state = 157 state = 1405 #ABRUZZO
+					state = 1406
+					state = 1407
 					state = 114 #SARDEGNA
 					state = 162 #TOSCANA
 				}
@@ -3122,6 +3127,7 @@ ITA_anti_fascist_civil_war_deal_with_fascist_side = {
 						NOT = {
 							state = 114 # SARDEGNA
 							state = 852 # ISTRIA
+							state = 1169 # FIUME
 							#state = 39 # ALTO ADIGE
 							state = 850 # TRENTINO
 						}
@@ -3192,6 +3198,7 @@ ITA_anti_fascist_civil_war_deal_with_fascist_side = {
 						NOT = {
 							state = 114 # SARDEGNA
 							state = 852 # ISTRIA
+							state = 1169 # FIUME
 							state = 39 # ALTO ADIGE
 							state = 850 # TRENTINO
 						}

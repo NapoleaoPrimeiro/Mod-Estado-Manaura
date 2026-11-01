@@ -933,6 +933,7 @@ NOR_democratic_preparation_decisions_category = {
 			FROM = {
 				is_core_of = NOR
 				NOT = {	state = 914	} # Not Jan Mayen 
+				NOT = {	state = 1724 } # Not Svalbard
 				OR = {
 					NOT = { has_variable = NOR_state_preparation }
 					check_variable = { NOR_state_preparation < 3 }
@@ -1544,6 +1545,7 @@ NOR_historical_deploy_prep_decisions_category = {
 		target_trigger = {
 			FROM = {
 				NOT = {	state = 914	} # Not Jan Mayen 
+				NOT = {	state = 1724 } # Not Svalbard
 				is_core_of = ROOT 
 				any_neighbor_state = { state = NOR.NOR_mobile_government_hq }
 				has_variable = NOR_state_preparation
@@ -1758,6 +1760,7 @@ NOR_allied_democratic_preparation_decisions_category = {
 			FROM = {
 				is_core_of = NOR
 				NOT = {	state = 914	} # Not Jan Mayen 
+				NOT = {	state = 1724 } # Not Svalbard
 				OR = {
 					NOT = { has_variable = NOR_state_preparation }
 					check_variable = { NOR_state_preparation < 3 }
@@ -2624,6 +2627,7 @@ NOR_fascist_preparation_decisions_category = {
 			FROM = {
 				is_core_of = NOR
 				NOT = {	state = 914	} # Not Jan Mayen 
+				NOT = {	state = 1724 } # Not Svalbard
 				OR = {
 					check_variable = { NOR_state_preparation < 3 }
 					has_state_flag = NOR_preparing_state
@@ -2904,6 +2908,7 @@ NOR_fascist_deploy_prep_decisions_category = {
 			FROM = {
 				is_core_of = ROOT 
 				NOT = {	state = 914	} # Not Jan Mayen 
+				NOT = {	state = 1724 } # Not Svalbard
 				OR = {
 					has_variable = NOR_state_preparation
 					has_state_flag = NOR_deploying_prep_in_state 
@@ -3103,6 +3108,7 @@ NOR_communist_preparation_decisions_category = {
 			FROM = {
 				is_core_of = NOR
 				NOT = {	state = 914	} # Not Jan Mayen 
+				NOT = {	state = 1724 } # Not Svalbard
 				NOT = { state = 110 } # Not Oslofjord 
 				OR = {
 					check_variable = { NOR_state_preparation < 3 }
@@ -3236,6 +3242,7 @@ NOR_monarchist_preparation_decisions_category = {
 			FROM = {
 				is_core_of = NOR
 				NOT = {	state = 914	} # Not Jan Mayen 
+				NOT = {	state = 1724 } # Not Svalbard
 				OR = {
 					check_variable = { NOR_state_preparation < 3 }
 					has_state_flag = NOR_preparing_state

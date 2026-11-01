@@ -763,6 +763,7 @@ focus_tree = {
 						state = 977
 						state = 34
 						state = 980
+						state = 1250
 					}
 				}
 				add_dynamic_modifier = {
@@ -3213,6 +3214,9 @@ focus_tree = {
 			980 = {
 				is_owned_and_controlled_by = BEL
 			}
+			1250 = { # KSRE (de 980)
+				is_owned_and_controlled_by = BEL
+			}
 		}
 	
 		completion_reward = {
@@ -3220,7 +3224,7 @@ focus_tree = {
 				limit = {
 					is_core_of = BEL
 					is_fully_controlled_by = BEL
-					NOT = { state = 980 }
+					NOT = { state = 980 state = 1250 }
 					free_building_slots = {
 						building = industrial_complex
 						size > 1
@@ -3238,7 +3242,7 @@ focus_tree = {
 				limit = {
 					is_core_of = BEL
 					is_fully_controlled_by = BEL
-					NOT = { state = 980 }
+					NOT = { state = 980 state = 1250 }
 					free_building_slots = {
 						building = arms_factory
 						size > 1
@@ -3944,7 +3948,13 @@ focus = {
 			hidden_effect = {
 				7 = { add_core_of = ROOT }
 				35 = { add_core_of = ROOT }
+				1376 = { add_core_of = ROOT } # KSRE (de 35)
 				36 = { add_core_of = ROOT }
+				1552 = { add_core_of = ROOT }
+				1255 = { add_core_of = ROOT }
+				1292 = { add_core_of = ROOT }
+				1293 = { add_core_of = ROOT }
+				1297 = { add_core_of = ROOT }
 			}
 			custom_effect_tooltip = BEL_dietsland_tt
 
@@ -4183,11 +4193,18 @@ focus = {
 			add_state_claim = 28
 			add_state_claim = 17
 			add_state_claim = 27
+			add_state_claim = 1521
+			add_state_claim = 1257
+			add_state_claim = 1258
+			add_state_claim = 1259
+			add_state_claim = 1401
+			add_state_claim = 1402
+			add_state_claim = 1403
 			create_wargoal = {
 				type = take_claimed_state
 				target = FRA
 				expire = 0
-				generator = { 29 785 18 28 17 27 }
+				generator = { 29 785 18 28 17 27 1521 1257 1258 1259 1401 1402 1403 }
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -4230,6 +4247,27 @@ focus = {
 					is_owned_or_subject_trigger	= yes
 				}
 				27 = {
+					is_owned_or_subject_trigger	= yes
+				}
+				1521 = {
+					is_owned_or_subject_trigger	= yes
+				}
+				1257 = {
+					is_owned_or_subject_trigger	= yes
+				}
+				1258 = {
+					is_owned_or_subject_trigger	= yes
+				}
+				1259 = {
+					is_owned_or_subject_trigger	= yes
+				}
+				1401 = {
+					is_owned_or_subject_trigger	= yes
+				}
+				1402 = {
+					is_owned_or_subject_trigger	= yes
+				}
+				1403 = {
 					is_owned_or_subject_trigger	= yes
 				}
 			}
@@ -4664,13 +4702,15 @@ focus = {
 					}
 
 					OR = {
-						980 = {
+						1250 = {
 							free_building_slots = {
 								building = bunker
 								size > 2
 								province = 3488
 							}
-
+						}
+					
+						980 = {
 							free_building_slots = {
 								building = bunker
 								size > 2
@@ -4734,13 +4774,15 @@ focus = {
 						NOT = { controls_province = 6560 }
 					}
 					AND = {
-						980 = {
+						1250 = {
 							free_building_slots = {
 								building = bunker
 								size < 3
 								province = 3488
 							}
-
+						}
+					
+						980 = {
 							free_building_slots = {
 								building = bunker
 								size < 3
@@ -4828,13 +4870,23 @@ focus = {
 			custom_effect_tooltip = BEL_belgian_maginot_tt
 
 			hidden_effect = {
-				980 = {
+				1250 = {
 					add_building_construction = {
 						type = bunker
 						level = 3
 						instant_build = yes
 						province = {
 							id = 3488
+						}
+					}
+				}
+			
+				980 = {
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = {
 							id = 6537
 						}
 					}
@@ -5830,11 +5882,19 @@ focus = {
 			add_state_claim = 891
 			add_state_claim = 892
 			add_state_claim = 772
+			add_state_claim = 1766
+			add_state_claim = 1767
+			add_state_claim = 1768
 			add_state_claim = 539
+			add_state_claim = 1769
 			add_state_claim = 297
 			add_state_claim = 773
+			add_state_claim = 1770
 			add_state_claim = 660
+			add_state_claim = 1764
+			add_state_claim = 1765
 			add_state_claim = 774
+			add_state_claim = 1763
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -5858,11 +5918,19 @@ focus = {
 							controls_state = 891
 							controls_state = 892
 							controls_state = 772
+							controls_state = 1766
+							controls_state = 1767
+							controls_state = 1768
 							controls_state = 539
+							controls_state = 1769
 							controls_state = 297
 							controls_state = 773
+							controls_state = 1770
 							controls_state = 660
+							controls_state = 1764
+							controls_state = 1765
 							controls_state = 774
+							controls_state = 1763
 						}
 						NOT = {
 							BEL = {
@@ -6745,6 +6813,7 @@ focus = {
 						state = 977
 						state = 34
 						state = 980
+						state = 1250
 					}
 				}
 				add_dynamic_modifier = {
@@ -6760,6 +6829,7 @@ focus = {
 						controls_state = 977
 						controls_state = 34
 						controls_state = 980
+						controls_state = 1250
 					}
 				}
 				country_event = {

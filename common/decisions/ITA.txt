@@ -1325,6 +1325,94 @@ ITA_missiolinis = {
 					}
 				}
 			}
+			1296 = { #DUBROVNIK
+				OR = {
+					is_fully_controlled_by = ROOT
+					controller = {
+						is_subject_of = ROOT
+						hidden_trigger = { #To prevent unnecessary overcrowding
+							has_full_control_of_state = PREV
+						}
+					}
+				}
+			}
+			1718 = { #LIKA KRBAVA
+				OR = {
+					is_fully_controlled_by = ROOT
+					controller = {
+						is_subject_of = ROOT
+						hidden_trigger = { #To prevent unnecessary overcrowding
+							has_full_control_of_state = PREV
+						}
+					}
+				}
+			}
+			1388 = { #BAKAR
+				OR = {
+					is_fully_controlled_by = ROOT
+					controller = {
+						is_subject_of = ROOT
+						hidden_trigger = { #To prevent unnecessary overcrowding
+							has_full_control_of_state = PREV
+						}
+					}
+				}
+			}
+			1716 = { #KOTOR
+				OR = {
+					is_fully_controlled_by = ROOT
+					controller = {
+						is_subject_of = ROOT
+						hidden_trigger = { #To prevent unnecessary overcrowding
+							has_full_control_of_state = PREV
+						}
+					}
+				}
+			}
+			1717 = { #NEUM
+				OR = {
+					is_fully_controlled_by = ROOT
+					controller = {
+						is_subject_of = ROOT
+						hidden_trigger = { #To prevent unnecessary overcrowding
+							has_full_control_of_state = PREV
+						}
+					}
+				}
+			}
+			1314 = { #SIBENIK
+				OR = {
+					is_fully_controlled_by = ROOT
+					controller = {
+						is_subject_of = ROOT
+						hidden_trigger = { #To prevent unnecessary overcrowding
+							has_full_control_of_state = PREV
+						}
+					}
+				}
+			}
+			1325 = { #KORCULA MLJET
+				OR = {
+					is_fully_controlled_by = ROOT
+					controller = {
+						is_subject_of = ROOT
+						hidden_trigger = { #To prevent unnecessary overcrowding
+							has_full_control_of_state = PREV
+						}
+					}
+				}
+			}
+			1339 = { #SPLIT
+				OR = {
+					is_fully_controlled_by = ROOT
+					controller = {
+						is_subject_of = ROOT
+						hidden_trigger = { #To prevent unnecessary overcrowding
+							has_full_control_of_state = PREV
+						}
+					}
+				}
+			}
 		}
 
 		activation = {
@@ -1395,6 +1483,17 @@ ITA_missiolinis = {
 				}
 			}
 			186 = { #PELOPONNESE
+				OR = {
+					is_fully_controlled_by = ROOT
+					controller = {
+						is_subject_of = ROOT
+						hidden_trigger = { #To prevent unnecessary overcrowding
+							has_full_control_of_state = PREV
+						}
+					}
+				}
+			}
+			1319 = { #CORLU
 				OR = {
 					is_fully_controlled_by = ROOT
 					controller = {
@@ -6201,25 +6300,67 @@ ITA_diplomacy_balkan_decision_category = {
 						802 = {
 							is_controlled_by = ITA
 						}
+						1715 = { # KSRE (de 802)
+							is_controlled_by = ITA
+						}
+						1776 = { # KSRE (de 802)
+							is_controlled_by = ITA
+						}
 					}
-					transfer_state = 802
+					transfer_state = 802 transfer_state = 1715 transfer_state = 1776
 				}
 				IF = {
 					limit = {
 						970 = {
 							is_controlled_by = ITA
 						}
+						1412 = { # KSRE (de 970)
+							is_controlled_by = ITA
+						}
 					}
-					transfer_state = 970
+					transfer_state = 970 transfer_state = 1412
+				}
+				IF = {
+					limit = {
+						1260 = {
+							is_controlled_by = ITA
+						}
+					}
+					transfer_state = 1260
+				}
+				IF = {
+					limit = {
+						1776 = {
+							is_controlled_by = ITA
+						}
+					}
+					transfer_state = 1776
+				}
+				IF = {
+					limit = {
+						1777 = {
+							is_controlled_by = ITA
+						}
+					}
+					transfer_state = 1777
+				}
+				IF = {
+					limit = {
+						1412 = {
+							is_controlled_by = ITA
+						}
+					}
+					transfer_state = 1412
 				}
 				add_ideas = ITA_ALB_italian_settlers
 			}
-			802 = {
-				add_core_of = ALB
-			}
-			970 = {
-				add_core_of = ALB
-			}
+			802 = { add_core_of = ALB }
+			1715 = { add_core_of = ALB } # KSRE (de 802)
+			970 = { add_core_of = ALB }
+			1260 = { add_core_of = ALB }
+			1776 = { add_core_of = ALB }
+			1777 = { add_core_of = ALB }
+			1412 = { add_core_of = ALB }
 			IF = {
 				limit = {
 					has_dlc = "Together for Victory"
@@ -6302,6 +6443,12 @@ ITA_diplomacy_balkan_decision_category = {
 			105 = {
 				is_controlled_by = ITA
 			}
+			1260 = { # KSRE (de 105)
+				is_controlled_by = ITA
+			}
+			1716 = { # KSRE (de 105)
+				is_controlled_by = ITA
+			}
 		}
 
 		visible = {
@@ -6314,6 +6461,12 @@ ITA_diplomacy_balkan_decision_category = {
 			105 = {
 				is_controlled_by = ITA
 			}
+			1260 = { # KSRE (de 105)
+				is_controlled_by = ITA
+			}
+			1716 = { # KSRE (de 105)
+				is_controlled_by = ITA
+			}
 			NOT = {
 				has_country_flag = ITA_established_montenegro
 			}
@@ -6323,7 +6476,13 @@ ITA_diplomacy_balkan_decision_category = {
 
 		complete_effect = {
 			MNT = {
-				transfer_state = 105
+				transfer_state = 105 transfer_state = 1260 transfer_state = 1716
+			}
+			if = {
+				limit = {
+					1710 = { is_controlled_by = ROOT }
+				}
+				MNT = { transfer_state = 1710 }
 			}
 			IF = {
 				limit = {
@@ -6417,6 +6576,48 @@ ITA_diplomacy_balkan_decision_category = {
 					is_controlled_by = YUG
 				}
 			}
+			1715 = { # KSRE (de 802)
+				OR = {
+					is_controlled_by = ALB
+					is_controlled_by = ITA
+					is_controlled_by = YUG
+				}
+			}
+			970 = {
+				OR = {
+					is_controlled_by = ALB
+					is_controlled_by = ITA
+					is_controlled_by = YUG
+				}
+			}
+			1412 = {
+				OR = {
+					is_controlled_by = ALB
+					is_controlled_by = ITA
+					is_controlled_by = YUG
+				}
+			}
+			1260 = {
+				OR = {
+					is_controlled_by = ALB
+					is_controlled_by = ITA
+					is_controlled_by = YUG
+				}
+			}
+			1776 = {
+				OR = {
+					is_controlled_by = ALB
+					is_controlled_by = ITA
+					is_controlled_by = YUG
+				}
+			}
+			1777 = {
+				OR = {
+					is_controlled_by = ALB
+					is_controlled_by = ITA
+					is_controlled_by = YUG
+				}
+			}
 			YUG = {
 				exists = yes
 				OR = {
@@ -6483,16 +6684,32 @@ ITA_diplomacy_balkan_decision_category = {
 				}
 				OR = {
 					controls_state = 852
+					controls_state = 1169
 					controls_state = 103
+					controls_state = 1296
 					controls_state = 163
-					controls_state = 1105 # CUSTOM STATE SPLIT
+					controls_state = 1716
+					controls_state = 1717
+					controls_state = 1718
+					controls_state = 1388
+					controls_state = 1314
+					controls_state = 1325
+					controls_state = 1339
 					any_subject_country = {
 						is_ai = yes
 						OR = {
 							controls_state = 852
+							controls_state = 1169
 							controls_state = 103
+							controls_state = 1296
 							controls_state = 163
-							controls_state = 1105 # CUSTOM STATE SPLIT
+							controls_state = 1716
+							controls_state = 1717
+							controls_state = 1718
+							controls_state = 1388
+							controls_state = 1314
+							controls_state = 1325
+							controls_state = 1339
 						}
 					}
 				}
@@ -6549,7 +6766,7 @@ ITA_diplomacy_balkan_decision_category = {
 				any_subject_country = {
 					controls_state = 44
 				}
-				103 = {
+				1296 = {
 					is_controlled_by = ITA
 				}
 			}
@@ -6557,17 +6774,23 @@ ITA_diplomacy_balkan_decision_category = {
 				105 = {
 					is_controlled_by = ITA
 				}
+				1260 = { # KSRE (de 105)
+					is_controlled_by = ITA
+				}
+				1716 = { # KSRE (de 105)
+					is_controlled_by = ITA
+				}
 				any_subject_country = {
 					original_tag = MNT
-					controls_state = 105
+					controls_state = 105 controls_state = 1260 controls_state = 1716
 				}
 				any_country = {
 					is_subject_of = ITA
-					controls_state = 105
+					controls_state = 105 controls_state = 1260 controls_state = 1716
 				}
 			}
 			any_country = {
-				controls_state = 105
+				controls_state = 105 controls_state = 1260 controls_state = 1716
 				NOT = {
 					has_war_with = ROOT
 				}
@@ -6590,7 +6813,7 @@ ITA_diplomacy_balkan_decision_category = {
 						controls_state = 44
 					}
 				}
-				103 = {
+				1296 = {
 					is_controlled_by = ITA
 				}
 			}
@@ -6603,7 +6826,7 @@ ITA_diplomacy_balkan_decision_category = {
 
 		complete_effect = {
 			random_country = {
-				limit = { controls_state = 105 }
+				limit = { controls_state = 105 controls_state = 1260 controls_state = 1716 }
 				country_event = {
 				    id = BBA_italy_interaction_events.11
 				    days = 2
@@ -6637,6 +6860,22 @@ ITA_diplomacy_balkan_decision_category = {
 		available = {
 			is_subject = no
 			45 = {
+				NOT = {
+					OR = {
+						is_owned_by = HUN
+						is_controlled_by = HUN
+					}
+				}
+			}
+			1477 = { # KSRE (de 45)
+				NOT = {
+					OR = {
+						is_owned_by = HUN
+						is_controlled_by = HUN
+					}
+				}
+			}
+			1705 = { # KSRE (de 45)
 				NOT = {
 					OR = {
 						is_owned_by = HUN
@@ -6945,7 +7184,6 @@ ITA_vallo_alpino_del_littorio_dec_cat = {
 			158 = { #PIEDMONT
 				any_province_building_level = {
 					province = {
-						id = 11891
 						id = 11721
 						id = 9738
 						id = 6780
@@ -6955,10 +7193,20 @@ ITA_vallo_alpino_del_littorio_dec_cat = {
 					level < 10
 				}
 			}
+			1308 = { #GENOVA
+				any_province_building_level = {
+					province = {
+						id = 11891
+					}
+					building = bunker
+					level < 10
+				}
+			}
 		}
 
 		available = {
 			has_full_control_of_state = 158 #PIEDMONT
+			has_full_control_of_state = 1308 #GENOVA
 			NOT = { has_country_flag = ITA_vallo_alpino_project_ongoing_flag }
 		}
 
@@ -6976,7 +7224,7 @@ ITA_vallo_alpino_del_littorio_dec_cat = {
 		}
 
 		cancel_trigger = {
-			NOT = { has_full_control_of_state = 158 }
+			NOT = { has_full_control_of_state = 158 has_full_control_of_state = 1308 }
 		}
 
 		cancel_effect = {
@@ -7002,11 +7250,20 @@ ITA_vallo_alpino_del_littorio_dec_cat = {
 						type = bunker
 						level = 2
 						province = {
-							id = 11891
 							id = 11721
 							id = 9738
 							id = 6780
 							id = 611
+						}
+						instant_build = yes
+					}
+				}
+				1308 = { #GENOVA
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = {
+							id = 11891
 						}
 						instant_build = yes
 					}
@@ -7051,7 +7308,7 @@ ITA_vallo_alpino_del_littorio_dec_cat = {
 		}
 
 		available = {
-			has_full_control_of_state = 158 #PIEDMONT
+			has_full_control_of_state = 158 has_full_control_of_state = 1308 #PIEDMONT
 			has_full_control_of_state = 159 #LOMBARDY
 			NOT = { has_country_flag = ITA_vallo_alpino_project_ongoing_flag }
 		}
@@ -7071,7 +7328,7 @@ ITA_vallo_alpino_del_littorio_dec_cat = {
 
 		cancel_trigger = {
 			OR = {
-				NOT = { has_full_control_of_state = 158 } #PIEDMONT
+				NOT = { has_full_control_of_state = 158 has_full_control_of_state = 1308 } #PIEDMONT
 				NOT = { has_full_control_of_state = 159 } #LOMBARDY
 			}
 		}
@@ -7238,7 +7495,7 @@ ITA_vallo_alpino_del_littorio_dec_cat = {
 
 		visible = {
 			OR = {
-				160 = { #VENETO
+				1168 = { #Friuli
 					any_province_building_level = {
 						province = {
 							id = 3657
@@ -7268,13 +7525,23 @@ ITA_vallo_alpino_del_littorio_dec_cat = {
 						level < 10
 					}
 				}
+				1169 = { #Fiume
+					any_province_building_level = {
+						province = {
+							id = 13990
+						}
+						building = bunker
+						level < 10
+					}
+				}
 			}
 		}
 
 		available = {
-			has_full_control_of_state = 160 #VENETO
-			has_full_control_of_state = 736 #LITORALE
+			has_full_control_of_state = 160 has_full_control_of_state = 1168 #VENETO
+			has_full_control_of_state = 736 has_full_control_of_state = 1708 #LITORALE
 			has_full_control_of_state = 852 #ISTRIA
+			has_full_control_of_state = 1169 #FIUME
 			NOT = { has_country_flag = ITA_vallo_alpino_project_ongoing_flag }
 		}
 
@@ -7293,9 +7560,10 @@ ITA_vallo_alpino_del_littorio_dec_cat = {
 
 		cancel_trigger = {
 			OR = {
-				NOT = { has_full_control_of_state = 160 } #TRENTINO
-				NOT = { has_full_control_of_state = 736 } #ALTO ADIGE
-				NOT = { has_full_control_of_state = 852 } #ISTRIA
+				NOT = { has_full_control_of_state = 160 has_full_control_of_state = 1168 } #TRENTINO
+				NOT = { has_full_control_of_state = 736 has_full_control_of_state = 1708 } #ALTO ADIGE
+				NOT = { has_full_control_of_state = 852 has_full_control_of_state = 1169 } #ISTRIA
+				NOT = { has_full_control_of_state = 1169 } #FIUME
 			}
 		}
 
@@ -7317,7 +7585,7 @@ ITA_vallo_alpino_del_littorio_dec_cat = {
 
 			custom_effect_tooltip = ITA_vallo_alpino_orientale_tt
 			hidden_effect = {
-				160 = { #VENETO
+				1168 = { #FRIULI
 					add_building_construction = {
 						type = bunker
 						level = 2
@@ -7346,6 +7614,16 @@ ITA_vallo_alpino_del_littorio_dec_cat = {
 						province = {
 							id = 11735
 							id = 11564
+						}
+						instant_build = yes
+					}
+				}
+				1169 = { #FIUME
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = {
+							id = 13990
 						}
 						instant_build = yes
 					}

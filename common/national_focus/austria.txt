@@ -1228,7 +1228,7 @@ focus_tree = {
 					ruling_party = communism
 					ideology = neutrality
 					size = AUS_total_anti_com_size
-					states = { 152 153 848 976 } #Oberösterreich, Tirol, Voralberg and Steirmark-Kärnten
+					states = { 152 153 848 976 1390 } #Oberösterreich, Tirol, Voralberg and Steirmark-Kärnten
 				}
 
 				IF = {
@@ -2675,7 +2675,7 @@ focus_tree = {
 							create_wargoal = {
 								type = take_core_state
 								target = PREV
-								generator = { 88 } 
+								generator = { 88 1144 1145 1265 1385 1386 1399 1425 1483 1528 1529 1775 } 
 							}
 						}
 					}
@@ -2687,7 +2687,7 @@ focus_tree = {
 							create_wargoal = {
 								type = take_core_state
 								target = PREV
-								generator = { 89 } 
+								generator = { 89 1532 } 
 							}
 						}
 					}
@@ -2699,7 +2699,7 @@ focus_tree = {
 							create_wargoal = {
 								type = take_core_state
 								target = PREV
-								generator = { 91 } 
+								generator = { 91 1531 } 
 							}
 						}
 					}
@@ -3387,7 +3387,7 @@ focus_tree = {
 					is_fully_controlled_by = ROOT
 				}
 
-				prioritize = { 4 152 976 975 } #Niederösterreich, Oberösterreich, Steirmark-Kärntern, Burgenland
+				prioritize = { 4 152 976 975 1553 1390 } #Niederösterreich, Oberösterreich, Steirmark-Kärntern, Burgenland
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -7179,12 +7179,12 @@ focus_tree = {
 		available = {
 			OR = {
 				NOT = {
-					controls_state = 66 #niederschlesien
+					controls_state = 66 controls_state = 1540 controls_state = 1541 controls_state = 1558 #niederschlesien
 					controls_state = 67 #Oberschlesien
 				}
 				AND = {
 					any_country = {
-						controls_state = 66 #niederschlesien
+						controls_state = 66 controls_state = 1540 controls_state = 1541 controls_state = 1558 #niederschlesien
 						controls_state = 67 #Oberschlesien
 						NOT = {
 							has_war_with = ROOT
@@ -7196,7 +7196,7 @@ focus_tree = {
 		}
 		
 		bypass = {
-			controls_state = 66 #niederschlesien
+			controls_state = 66 controls_state = 1540 controls_state = 1541 controls_state = 1558 #niederschlesien
 			controls_state = 67 #Oberschlesien
 		}
 
@@ -7207,7 +7207,7 @@ focus_tree = {
 			IF = {
 				limit = { #one country controls both
 					any_country = {
-						controls_state = 66 #niederschlesien
+						controls_state = 66 controls_state = 1540 controls_state = 1541 controls_state = 1558 #niederschlesien
 						controls_state = 67 #Oberschlesien
 						NOT = { original_tag = AUS}
 					}
@@ -7228,6 +7228,15 @@ focus_tree = {
 					66 = { #Niederschlesien
 						transfer_state_to = ROOT
 					}
+					1540 = { # KSRE (de 66)
+						transfer_state_to = ROOT
+					}
+					1541 = { # KSRE (de 66)
+						transfer_state_to = ROOT
+					}
+					1558 = { # KSRE (de 66)
+						transfer_state_to = ROOT
+					}
 					
 					67 = { #Oberschlesien
 						transfer_state_to = ROOT
@@ -7239,7 +7248,7 @@ focus_tree = {
 				limit = {
 					any_country = {
 						OR = {
-							controls_state = 66 #niederschlesien
+							controls_state = 66 controls_state = 1540 controls_state = 1541 controls_state = 1558 #niederschlesien
 							controls_state = 67 #Oberschlesien
 						}
 						NOT = { original_tag = AUS}
@@ -7248,7 +7257,7 @@ focus_tree = {
 				every_country = {
 					limit = {
 						OR = {
-							controls_state = 66 #niederschlesien
+							controls_state = 66 controls_state = 1540 controls_state = 1541 controls_state = 1558 #niederschlesien
 							controls_state = 67 #Oberschlesien
 						}
 						NOT = { original_tag = AUS}
@@ -7263,6 +7272,15 @@ focus_tree = {
 					effect_tooltip = {
 						
 						66 = { #Niederschlesien
+							transfer_state_to = ROOT
+						}
+						1540 = { # KSRE (de 66)
+							transfer_state_to = ROOT
+						}
+						1541 = { # KSRE (de 66)
+							transfer_state_to = ROOT
+						}
+						1558 = { # KSRE (de 66)
 							transfer_state_to = ROOT
 						}
 						
@@ -7378,7 +7396,7 @@ focus_tree = {
 			SWI = {
 				exists = yes
 				is_subject = no
-				controls_state = 3 #Swiss Plateau
+				controls_state = 3 controls_state = 1508 controls_state = 1515 #Swiss Plateau
 			}
 		}
 		
@@ -7391,16 +7409,49 @@ focus_tree = {
 					151 = {
 						is_fully_controlled_by = ROOT
 					}
+					1509 = { # KSRE (de 151)
+						is_fully_controlled_by = ROOT
+					}
+					1510 = { # KSRE (de 151)
+						is_fully_controlled_by = ROOT
+					}
+					1511 = { # KSRE (de 151)
+						is_fully_controlled_by = ROOT
+					}
+					1512 = { # KSRE (de 151)
+						is_fully_controlled_by = ROOT
+					}
+					1513 = { # KSRE (de 151)
+						is_fully_controlled_by = ROOT
+					}
+					1516 = { # KSRE (de 151)
+						is_fully_controlled_by = ROOT
+					}
 					846 = {
 						is_fully_controlled_by = ROOT
 					}
 					3 = {
 						is_fully_controlled_by = ROOT
 					}
+					1508 = { # KSRE (de 3)
+						is_fully_controlled_by = ROOT
+					}
+					1515 = { # KSRE (de 3)
+						is_fully_controlled_by = ROOT
+					}
 					847 = {
 						is_fully_controlled_by = ROOT
 					}
+					1506 = { # KSRE (de 847)
+						is_fully_controlled_by = ROOT
+					}
 					845 = {
+						is_fully_controlled_by = ROOT
+					}
+					1507 = { # KSRE (de 845)
+						is_fully_controlled_by = ROOT
+					}
+					1514 = { # KSRE (de 845)
 						is_fully_controlled_by = ROOT
 					}
 				}
@@ -7434,7 +7485,7 @@ focus_tree = {
 				create_wargoal = {
 					type = annex_everything
 					target = SWI
-					generator = { 3 }  
+					generator = { 3 1508 1515 }  
 				}
 			}
 		}	
@@ -7695,10 +7746,10 @@ focus_tree = {
 		}
 		
 		bypass = {
-			controls_state = 160
+			controls_state = 160 controls_state = 1168
 			controls_state = 159
-			controls_state = 736
-			controls_state = 852
+			controls_state = 736 controls_state = 1708
+			controls_state = 852 controls_state = 1169
 			controls_state = 163
 		}
 
@@ -7710,13 +7761,22 @@ focus_tree = {
 			160 = { #Veneto
 				add_claim_by = ROOT
 			}
+			1168 = { # KSRE (de 160)
+				add_claim_by = ROOT
+			}
 			159 = { #Lombardia
 				add_claim_by = ROOT
 			}
 			736 = { #Litorale
 				add_claim_by = ROOT
 			}
+			1708 = { # KSRE (de 736)
+				add_claim_by = ROOT
+			}
 			852 = { #Istria
+				add_claim_by = ROOT
+			}
+			1169 = { # KSRE (de 852)
 				add_claim_by = ROOT
 			}
 			163 = { #Zara
@@ -8057,7 +8117,7 @@ focus_tree = {
 							is_fully_controlled_by = ROOT
 							any_country = {
 								is_in_faction_with = ROOT
-								controls_state = 69
+								controls_state = 69 controls_state = 1556
 							}
 							OWNER = {
 								has_war_with = ROOT
@@ -8070,7 +8130,7 @@ focus_tree = {
 							is_fully_controlled_by = ROOT
 							any_country = {
 								is_in_faction_with = ROOT
-								controls_state = 972
+								controls_state = 972 controls_state = 1608
 							}
 							OWNER = {
 								has_war_with = ROOT
@@ -8083,7 +8143,7 @@ focus_tree = {
 							is_fully_controlled_by = ROOT
 							any_country = {
 								is_in_faction_with = ROOT
-								controls_state = 9
+								controls_state = 9 controls_state = 1555
 							}
 							OWNER = {
 								has_war_with = ROOT
@@ -8122,7 +8182,7 @@ focus_tree = {
 							is_fully_controlled_by = ROOT
 							any_country = {
 								is_in_faction_with = ROOT
-								controls_state = 72
+								controls_state = 72 controls_state = 1727
 							}
 							OWNER = {
 								has_war_with = ROOT
@@ -8235,7 +8295,7 @@ focus_tree = {
 					is_fully_controlled_by = ROOT
 					any_country = {
 						is_in_faction_with = ROOT
-						controls_state = 102
+						controls_state = 102 controls_state = 1410 controls_state = 1704
 					}
 					OWNER = {
 						has_war_with = ROOT
@@ -8248,7 +8308,7 @@ focus_tree = {
 					is_fully_controlled_by = ROOT
 					any_country = {
 						is_in_faction_with = ROOT
-						controls_state = 103
+						controls_state = 103 controls_state = 1296 controls_state = 1325 controls_state = 1339 controls_state = 1388 controls_state = 1718
 					}
 					OWNER = {
 						has_war_with = ROOT
@@ -8277,8 +8337,8 @@ focus_tree = {
 			IF = {
 				limit = {
 					YUG = {
-						controls_state = 102 #North Slovenia
-						controls_state = 109 #Croatia
+						controls_state = 102 controls_state = 1410 controls_state = 1704 #North Slovenia
+						controls_state = 109 controls_state = 1706 controls_state = 1707 #Croatia
 						controls_state = 853 #Lubljana
 					}
 				}
@@ -8330,6 +8390,16 @@ focus_tree = {
 								is_fully_controlled_by = ROOT
 							}
 						}
+						1706 = { # KSRE (de 109)
+							NOT = {
+								is_fully_controlled_by = ROOT
+							}
+						}
+						1707 = { # KSRE (de 109)
+							NOT = {
+								is_fully_controlled_by = ROOT
+							}
+						}
 					}
 					109 = { #Croatia
 						controller = {
@@ -8355,6 +8425,16 @@ focus_tree = {
 				IF = {
 					limit = {
 						102 = { #North Slovenia
+							NOT = {
+								is_fully_controlled_by = ROOT
+							}
+						}
+						1410 = { # KSRE (de 102)
+							NOT = {
+								is_fully_controlled_by = ROOT
+							}
+						}
+						1704 = { # KSRE (de 102)
 							NOT = {
 								is_fully_controlled_by = ROOT
 							}
@@ -8519,8 +8599,21 @@ focus_tree = {
 				has_idea = AUS_treaty_of_saint_germain_en_laye
 				has_war_with = POL
 				88 = { is_fully_controlled_by = ROOT }
+				1144 = { is_fully_controlled_by = ROOT } # KSRE (de 88)
+				1145 = { is_fully_controlled_by = ROOT } # KSRE (de 88)
+				1265 = { is_fully_controlled_by = ROOT } # KSRE (de 88)
+				1385 = { is_fully_controlled_by = ROOT } # KSRE (de 88)
+				1386 = { is_fully_controlled_by = ROOT } # KSRE (de 88)
+				1399 = { is_fully_controlled_by = ROOT } # KSRE (de 88)
+				1425 = { is_fully_controlled_by = ROOT } # KSRE (de 88)
+				1483 = { is_fully_controlled_by = ROOT } # KSRE (de 88)
+				1528 = { is_fully_controlled_by = ROOT } # KSRE (de 88)
+				1529 = { is_fully_controlled_by = ROOT } # KSRE (de 88)
+				1775 = { is_fully_controlled_by = ROOT } # KSRE (de 88)
 				89 = { is_fully_controlled_by = ROOT }
+				1532 = { is_fully_controlled_by = ROOT } # KSRE (de 89)
 				91 = { is_fully_controlled_by = ROOT }
+				1531 = { is_fully_controlled_by = ROOT } # KSRE (de 91)
 			}
 			is_subject = no
 			POL = {
@@ -8538,7 +8631,7 @@ focus_tree = {
 							is_fully_controlled_by = ROOT
 							any_country = {
 								is_in_faction_with = ROOT
-								controls_state = 88
+								controls_state = 88 controls_state = 1144 controls_state = 1145 controls_state = 1265 controls_state = 1385 controls_state = 1386 controls_state = 1399 controls_state = 1425 controls_state = 1483 controls_state = 1528 controls_state = 1529 controls_state = 1775
 							}
 							OWNER = {
 								has_war_with = ROOT
@@ -8551,7 +8644,7 @@ focus_tree = {
 							is_fully_controlled_by = ROOT
 							any_country = {
 								is_in_faction_with = ROOT
-								controls_state = 89
+								controls_state = 89 controls_state = 1532
 							}
 							OWNER = {
 								has_war_with = ROOT
@@ -8564,7 +8657,7 @@ focus_tree = {
 							is_fully_controlled_by = ROOT
 							any_country = {
 								is_in_faction_with = ROOT
-								controls_state = 91
+								controls_state = 91 controls_state = 1531
 							}
 							OWNER = {
 								has_war_with = ROOT
@@ -8702,7 +8795,7 @@ focus_tree = {
 							is_fully_controlled_by = ROOT
 							any_country = {
 								is_in_faction_with = ROOT
-								controls_state = 76
+								controls_state = 76 controls_state = 1309 controls_state = 1310 controls_state = 1722
 							}
 							OWNER = {
 								has_war_with = ROOT
@@ -8715,7 +8808,7 @@ focus_tree = {
 							is_fully_controlled_by = ROOT
 							any_country = {
 								is_in_faction_with = ROOT
-								controls_state = 83
+								controls_state = 83 controls_state = 1480
 							}
 							OWNER = {
 								has_war_with = ROOT
@@ -8728,7 +8821,7 @@ focus_tree = {
 							is_fully_controlled_by = ROOT
 							any_country = {
 								is_in_faction_with = ROOT
-								controls_state = 84
+								controls_state = 84 controls_state = 1387
 							}
 							OWNER = {
 								has_war_with = ROOT
@@ -8741,7 +8834,7 @@ focus_tree = {
 							is_fully_controlled_by = ROOT
 							any_country = {
 								is_in_faction_with = ROOT
-								controls_state = 82
+								controls_state = 82 controls_state = 1479
 							}
 							OWNER = {
 								has_war_with = ROOT
@@ -8780,11 +8873,11 @@ focus_tree = {
 			IF = {
 				limit = {
 					ROM = {
-						controls_state = 76
+						controls_state = 76 controls_state = 1309 controls_state = 1310 controls_state = 1722
 						controls_state = 80
-						controls_state = 82
-						controls_state = 83
-						controls_state = 84
+						controls_state = 82 controls_state = 1479
+						controls_state = 83 controls_state = 1480
+						controls_state = 84 controls_state = 1387
 					}
 				}
 
@@ -8802,6 +8895,21 @@ focus_tree = {
 				IF = {
 					limit = {
 						76 = { 
+							NOT = {
+								is_fully_controlled_by = ROOT
+							}
+						}
+						1309 = {  # KSRE (de 76)
+							NOT = {
+								is_fully_controlled_by = ROOT
+							}
+						}
+						1310 = {  # KSRE (de 76)
+							NOT = {
+								is_fully_controlled_by = ROOT
+							}
+						}
+						1722 = {  # KSRE (de 76)
 							NOT = {
 								is_fully_controlled_by = ROOT
 							}
@@ -8868,6 +8976,11 @@ focus_tree = {
 								is_fully_controlled_by = ROOT
 							}
 						}
+						1479 = {  # KSRE (de 82)
+							NOT = {
+								is_fully_controlled_by = ROOT
+							}
+						}
 					}
 				
 					82 = { 
@@ -8899,6 +9012,11 @@ focus_tree = {
 								is_fully_controlled_by = ROOT
 							}
 						}
+						1480 = {  # KSRE (de 83)
+							NOT = {
+								is_fully_controlled_by = ROOT
+							}
+						}
 					}
 				
 					83 = { 
@@ -8926,6 +9044,11 @@ focus_tree = {
 				IF = {
 					limit = {
 						84 = { 
+							NOT = {
+								is_fully_controlled_by = ROOT
+							}
+						}
+						1387 = {  # KSRE (de 84)
 							NOT = {
 								is_fully_controlled_by = ROOT
 							}
@@ -8986,10 +9109,19 @@ focus_tree = {
 				69 = {
 					is_core_of = ROOT
 				}
+				1556 = { # KSRE (de 69)
+					is_core_of = ROOT
+				}
 				972 = {
 					is_core_of = ROOT
 				}
+				1608 = { # KSRE (de 972)
+					is_core_of = ROOT
+				}
 				9 = {
+					is_core_of = ROOT
+				}
+				1555 = { # KSRE (de 9)
 					is_core_of = ROOT
 				}
 				75 = {
@@ -9001,6 +9133,9 @@ focus_tree = {
 				72 = {
 					is_core_of = ROOT
 				}
+				1727 = { # KSRE (de 72)
+					is_core_of = ROOT
+				}
 			}
 		
 		}
@@ -9009,10 +9144,19 @@ focus_tree = {
 			69 = {
 				is_core_of = ROOT
 			}
+			1556 = { # KSRE (de 69)
+				is_core_of = ROOT
+			}
 			972 = {
 				is_core_of = ROOT
 			}
+			1608 = { # KSRE (de 972)
+				is_core_of = ROOT
+			}
 			9 = {
+				is_core_of = ROOT
+			}
+			1555 = { # KSRE (de 9)
 				is_core_of = ROOT
 			}
 			75 = {
@@ -9024,13 +9168,31 @@ focus_tree = {
 			72 = {
 				is_core_of = ROOT
 			}
+			1727 = { # KSRE (de 72)
+				is_core_of = ROOT
+			}
 			155 = {
+				is_core_of = ROOT
+			}
+			1384 = { # KSRE (de 155)
+				is_core_of = ROOT
+			}
+			1703 = { # KSRE (de 155)
 				is_core_of = ROOT
 			}
 			43 = {
 				is_core_of = ROOT
 			}
+			1235 = { # KSRE (de 43)
+				is_core_of = ROOT
+			}
 			154 = {
+				is_core_of = ROOT
+			}
+			1278 = { # KSRE (de 154)
+				is_core_of = ROOT
+			}
+			1700 = { # KSRE (de 154)
 				is_core_of = ROOT
 			}
 			973 = {
@@ -9052,8 +9214,13 @@ focus_tree = {
 							is_core_of = ROOT
 						}
 					}
+					1556 = { # KSRE (de 69)
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
 				}
-				add_state_core = 69 #Sudetenland
+				add_state_core = 69 add_state_core = 1556 #Sudetenland
 			}
 
 			IF = {
@@ -9063,8 +9230,13 @@ focus_tree = {
 							is_core_of = ROOT
 						}
 					}
+					1608 = { # KSRE (de 972)
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
 				}
-				add_state_core = 972 #South Sudetenland
+				add_state_core = 972 add_state_core = 1608 #South Sudetenland
 			}
 
 			IF = {
@@ -9074,8 +9246,13 @@ focus_tree = {
 							is_core_of = ROOT
 						}
 					}
+					1555 = { # KSRE (de 9)
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
 				}
-				add_state_core = 9 #Bohemia
+				add_state_core = 9 add_state_core = 1555 #Bohemia
 			}
 
 			IF = {
@@ -9107,8 +9284,13 @@ focus_tree = {
 							is_core_of = ROOT
 						}
 					}
+					1727 = { # KSRE (de 72)
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
 				}
-				add_state_core = 72 #Zaolzie
+				add_state_core = 72 add_state_core = 1727 #Zaolzie
 			}
 		}
 	}
@@ -9134,10 +9316,25 @@ focus_tree = {
 				155 = {
 					is_core_of = ROOT
 				}
+				1384 = { # KSRE (de 155)
+					is_core_of = ROOT
+				}
+				1703 = { # KSRE (de 155)
+					is_core_of = ROOT
+				}
 				43 = {
 					is_core_of = ROOT
 				}
+				1235 = { # KSRE (de 43)
+					is_core_of = ROOT
+				}
 				154 = {
+					is_core_of = ROOT
+				}
+				1278 = { # KSRE (de 154)
+					is_core_of = ROOT
+				}
+				1700 = { # KSRE (de 154)
 					is_core_of = ROOT
 				}
 				973 = {
@@ -9154,10 +9351,25 @@ focus_tree = {
 			155 = {
 				is_core_of = ROOT
 			}
+			1384 = { # KSRE (de 155)
+				is_core_of = ROOT
+			}
+			1703 = { # KSRE (de 155)
+				is_core_of = ROOT
+			}
 			43 = {
 				is_core_of = ROOT
 			}
+			1235 = { # KSRE (de 43)
+				is_core_of = ROOT
+			}
 			154 = {
+				is_core_of = ROOT
+			}
+			1278 = { # KSRE (de 154)
+				is_core_of = ROOT
+			}
+			1700 = { # KSRE (de 154)
 				is_core_of = ROOT
 			}
 			973 = {
@@ -9169,10 +9381,19 @@ focus_tree = {
 			69 = {
 				is_core_of = ROOT
 			}
+			1556 = { # KSRE (de 69)
+				is_core_of = ROOT
+			}
 			972 = {
 				is_core_of = ROOT
 			}
+			1608 = { # KSRE (de 972)
+				is_core_of = ROOT
+			}
 			9 = {
+				is_core_of = ROOT
+			}
+			1555 = { # KSRE (de 9)
 				is_core_of = ROOT
 			}
 			75 = {
@@ -9182,6 +9403,9 @@ focus_tree = {
 				is_core_of = ROOT
 			}
 			72 = {
+				is_core_of = ROOT
+			}
+			1727 = { # KSRE (de 72)
 				is_core_of = ROOT
 			}
 		}
@@ -9209,8 +9433,18 @@ focus_tree = {
 							is_core_of = ROOT
 						}
 					}
+					1384 = { # KSRE (de 155)
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+					1703 = { # KSRE (de 155)
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
 				}
-				add_state_core = 155 #North transdanubia
+				add_state_core = 155 add_state_core = 1384 add_state_core = 1703 #North transdanubia
 			}
 
 			IF = {
@@ -9220,8 +9454,13 @@ focus_tree = {
 							is_core_of = ROOT
 						}
 					}
+					1235 = { # KSRE (de 43)
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
 				}
-				add_state_core = 43 #Northern Hungary
+				add_state_core = 43 add_state_core = 1235 #Northern Hungary
 			}
 
 			IF = {
@@ -9231,8 +9470,18 @@ focus_tree = {
 							is_core_of = ROOT
 						}
 					}
+					1278 = { # KSRE (de 154)
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+					1700 = { # KSRE (de 154)
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
 				}
-				add_state_core = 154 #Alföld 
+				add_state_core = 154 add_state_core = 1278 add_state_core = 1700 #Alföld 
 			}
 
 			IF = {
@@ -9276,31 +9525,31 @@ focus_tree = {
 
 		available = { 
 
-			controls_state = 155 #Transdanubia
-			controls_state = 154 #Alföld
-			controls_state = 43 #Northern Hungary
+			controls_state = 155 controls_state = 1384 controls_state = 1703 #Transdanubia
+			controls_state = 154 controls_state = 1278 controls_state = 1700 #Alföld
+			controls_state = 43 controls_state = 1235 #Northern Hungary
 			controls_state = 973 #Bacs-Bodrog
 			controls_state = 974 #South Transdanubia
 
-			controls_state = 69 #Sudetenland
-			controls_state = 972 #south Sudetenland
-			controls_state = 9 #Bohemia
+			controls_state = 69 controls_state = 1556 #Sudetenland
+			controls_state = 972 controls_state = 1608 #south Sudetenland
+			controls_state = 9 controls_state = 1555 #Bohemia
 			controls_state = 75 #Moravia
 			controls_state = 74 #EasternSudetenland
-			controls_state = 72 #Zaolzie
+			controls_state = 72 controls_state = 1727 #Zaolzie
 
-			controls_state = 102 #North Slovenia
-			controls_state = 103 #Dalmatia
+			controls_state = 102 controls_state = 1410 controls_state = 1704 #North Slovenia
+			controls_state = 103 controls_state = 1296 controls_state = 1325 controls_state = 1339 controls_state = 1388 controls_state = 1718 #Dalmatia
 			controls_state = 853 #Lubljana 
 
-			controls_state = 88 #Krakow
-			controls_state = 89 #Stanislawow
-			controls_state = 91 #Lwow
+			controls_state = 88 controls_state = 1144 controls_state = 1145 controls_state = 1265 controls_state = 1385 controls_state = 1386 controls_state = 1399 controls_state = 1425 controls_state = 1483 controls_state = 1528 controls_state = 1529 controls_state = 1775 #Krakow
+			controls_state = 89 controls_state = 1532 #Stanislawow
+			controls_state = 91 controls_state = 1531 #Lwow
 
-			controls_state = 76 #North Transylvania
-			controls_state = 83 #Crisana
-			controls_state = 84 #Transylvania
-			controls_state = 82 #Banat
+			controls_state = 76 controls_state = 1309 controls_state = 1310 controls_state = 1722 #North Transylvania
+			controls_state = 83 controls_state = 1480 #Crisana
+			controls_state = 84 controls_state = 1387 #Transylvania
+			controls_state = 82 controls_state = 1479 #Banat
 			controls_state = 80 #Bucovina
 
 		}
@@ -11055,6 +11304,48 @@ focus_tree = {
 			463 = {
 				is_owned_by = ROOT
 			}
+			1568 = { # KSRE (de 463)
+				is_owned_by = ROOT
+			}
+			1569 = { # KSRE (de 463)
+				is_owned_by = ROOT
+			}
+			1570 = { # KSRE (de 463)
+				is_owned_by = ROOT
+			}
+			1571 = { # KSRE (de 463)
+				is_owned_by = ROOT
+			}
+			1572 = { # KSRE (de 463)
+				is_owned_by = ROOT
+			}
+			1573 = { # KSRE (de 463)
+				is_owned_by = ROOT
+			}
+			1574 = { # KSRE (de 463)
+				is_owned_by = ROOT
+			}
+			1575 = { # KSRE (de 463)
+				is_owned_by = ROOT
+			}
+			1576 = { # KSRE (de 463)
+				is_owned_by = ROOT
+			}
+			1577 = { # KSRE (de 463)
+				is_owned_by = ROOT
+			}
+			1578 = { # KSRE (de 463)
+				is_owned_by = ROOT
+			}
+			1579 = { # KSRE (de 463)
+				is_owned_by = ROOT
+			}
+			1580 = { # KSRE (de 463)
+				is_owned_by = ROOT
+			}
+			1581 = { # KSRE (de 463)
+				is_owned_by = ROOT
+			}
 		}
 
 		available_if_capitulated = no
@@ -11080,6 +11371,48 @@ focus_tree = {
 				}
 
 				463 = {
+					transfer_state_to = ROOT
+				}
+				1568 = { # KSRE (de 463)
+					transfer_state_to = ROOT
+				}
+				1569 = { # KSRE (de 463)
+					transfer_state_to = ROOT
+				}
+				1570 = { # KSRE (de 463)
+					transfer_state_to = ROOT
+				}
+				1571 = { # KSRE (de 463)
+					transfer_state_to = ROOT
+				}
+				1572 = { # KSRE (de 463)
+					transfer_state_to = ROOT
+				}
+				1573 = { # KSRE (de 463)
+					transfer_state_to = ROOT
+				}
+				1574 = { # KSRE (de 463)
+					transfer_state_to = ROOT
+				}
+				1575 = { # KSRE (de 463)
+					transfer_state_to = ROOT
+				}
+				1576 = { # KSRE (de 463)
+					transfer_state_to = ROOT
+				}
+				1577 = { # KSRE (de 463)
+					transfer_state_to = ROOT
+				}
+				1578 = { # KSRE (de 463)
+					transfer_state_to = ROOT
+				}
+				1579 = { # KSRE (de 463)
+					transfer_state_to = ROOT
+				}
+				1580 = { # KSRE (de 463)
+					transfer_state_to = ROOT
+				}
+				1581 = { # KSRE (de 463)
 					transfer_state_to = ROOT
 				}
 			}
@@ -11283,12 +11616,20 @@ focus_tree = {
 			976 = {
 				is_owned_and_controlled_by = ROOT
 			}
+			1390 = { # KSRE (de 976)
+				is_owned_and_controlled_by = ROOT
+			}
 			has_tech = excavation1
 		}
 		
 		bypass = {
 			
 			976 = {
+				NOT = {
+					is_owned_and_controlled_by = ROOT
+				}
+			}
+			1390 = { # KSRE (de 976)
 				NOT = {
 					is_owned_and_controlled_by = ROOT
 				}
@@ -11427,10 +11768,18 @@ focus_tree = {
 			4 = {
 				is_owned_and_controlled_by = ROOT
 			}
+			1553 = { # KSRE (de 4)
+				is_owned_and_controlled_by = ROOT
+			}
 		}
 		
 		bypass = {
 			4 = {
+				NOT = {
+					is_owned_and_controlled_by = ROOT
+				}
+			}
+			1553 = { # KSRE (de 4)
 				NOT = {
 					is_owned_and_controlled_by = ROOT
 				}
@@ -11505,10 +11854,18 @@ focus_tree = {
 			4 = {
 				is_owned_and_controlled_by = ROOT
 			}
+			1553 = { # KSRE (de 4)
+				is_owned_and_controlled_by = ROOT
+			}
 		}
 		
 		bypass = {
 			4 = {
+				NOT = {
+					is_owned_and_controlled_by = ROOT
+				}
+			}
+			1553 = { # KSRE (de 4)
 				NOT = {
 					is_owned_and_controlled_by = ROOT
 				}
@@ -11592,6 +11949,9 @@ focus_tree = {
 				is_owned_and_controlled_by = ROOT
 			}
 			4 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			1553 = { # KSRE (de 4)
 				is_owned_and_controlled_by = ROOT
 			}
 			
@@ -11691,6 +12051,9 @@ focus_tree = {
 				4 = {
 					is_owned_and_controlled_by = ROOT
 				}
+				1553 = { # KSRE (de 4)
+					is_owned_and_controlled_by = ROOT
+				}
 			}
 		}
 		
@@ -11782,6 +12145,9 @@ focus_tree = {
 					is_owned_and_controlled_by = ROOT
 				}
 				976 = {
+					is_owned_and_controlled_by = ROOT
+				}
+				1390 = { # KSRE (de 976)
 					is_owned_and_controlled_by = ROOT
 				}
 			}
@@ -12280,7 +12646,7 @@ focus_tree = {
 					is_core_of = ROOT
 				}
 
-				prioritize = { 4 152 976 975 } #Niederösterreich, Oberösterreich, Steirmark-Kärntern, Burgenland
+				prioritize = { 4 152 976 975 1553 1390 } #Niederösterreich, Oberösterreich, Steirmark-Kärntern, Burgenland
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
@@ -12326,7 +12692,7 @@ focus_tree = {
 				limit = {
 					is_core_of = ROOT
 				}
-				prioritize = { 4 152 976 975 } #Niederösterreich, Oberösterreich, Steirmark-Kärntern, Burgenland
+				prioritize = { 4 152 976 975 1553 1390 } #Niederösterreich, Oberösterreich, Steirmark-Kärntern, Burgenland
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -12375,7 +12741,7 @@ focus_tree = {
 				limit = {
 					is_core_of = ROOT
 				}
-				prioritize = { 4 152 976 975 } #Niederösterreich, Oberösterreich, Steirmark-Kärntern, Burgenland
+				prioritize = { 4 152 976 975 1553 1390 } #Niederösterreich, Oberösterreich, Steirmark-Kärntern, Burgenland
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -12556,7 +12922,7 @@ focus_tree = {
 					is_core_of = ROOT
 				}
 				
-				prioritize = { 4 } #niederösterreich
+				prioritize = { 4 1553 } #niederösterreich
 
 				add_extra_state_shared_building_slots = 1
 
@@ -13311,7 +13677,7 @@ focus_tree = {
 					is_core_of = ROOT
 				}
 				
-				prioritize = { 4 } #niederösterreich
+				prioritize = { 4 1553 } #niederösterreich
 
 				add_building_construction = {
 					type = anti_air_building
@@ -13429,7 +13795,7 @@ focus_tree = {
 
 			random_owned_controlled_state = {
 				
-				prioritize = { 4 } 
+				prioritize = { 4 1553 } 
 
 				add_extra_state_shared_building_slots = 1
 
@@ -13442,7 +13808,7 @@ focus_tree = {
 
 			random_owned_controlled_state = {
 				
-				prioritize = { 976 } 
+				prioritize = { 976 1390 } 
 
 				add_extra_state_shared_building_slots = 1
 
@@ -13562,7 +13928,7 @@ focus_tree = {
 					is_fully_controlled_by = ROOT
 				}
 
-				prioritize = { 4 152 976 975 } #Niederösterreich, Oberösterreich, Steirmark-Kärntern, Burgenland
+				prioritize = { 4 152 976 975 1553 1390 } #Niederösterreich, Oberösterreich, Steirmark-Kärntern, Burgenland
 
 				add_extra_state_shared_building_slots = 2
 
@@ -14291,6 +14657,9 @@ focus_tree = {
 				4 = {
 					is_fully_controlled_by = ROOT
 				}
+				1553 = { # KSRE (de 4)
+					is_fully_controlled_by = ROOT
+				}
 			}
 
 			custom_trigger_tooltip = {
@@ -14341,6 +14710,9 @@ focus_tree = {
 
 					NOT = {
 						4 = {
+							is_fully_controlled_by = ROOT
+						}
+						1553 = { # KSRE (de 4)
 							is_fully_controlled_by = ROOT
 						}
 					}
@@ -14904,7 +15276,7 @@ focus_tree = {
 					is_fully_controlled_by = ROOT
 				}
 
-				prioritize = { 4 152 976 975 } #Niederösterreich, Oberösterreich, Steirmark-Kärntern, Burgenland
+				prioritize = { 4 152 976 975 1553 1390 } #Niederösterreich, Oberösterreich, Steirmark-Kärntern, Burgenland
 				add_extra_state_shared_building_slots = 1
 
 				add_building_construction = {
@@ -14919,7 +15291,7 @@ focus_tree = {
 					is_fully_controlled_by = ROOT
 				}
 
-				prioritize = { 4 152 976 975 } #Niederösterreich, Oberösterreich, Steirmark-Kärntern, Burgenland
+				prioritize = { 4 152 976 975 1553 1390 } #Niederösterreich, Oberösterreich, Steirmark-Kärntern, Burgenland
 				add_extra_state_shared_building_slots = 1
 
 				add_building_construction = {

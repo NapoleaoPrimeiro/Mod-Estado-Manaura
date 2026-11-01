@@ -1,0 +1,30 @@
+on_actions = {
+	# Manaura: fabricas extras da URSS, so no inicio de 1936 (+5 civis, +5 militares)
+	on_startup = {
+		effect = {
+			if = {
+				limit = { date < 1936.1.2 }
+				219 = { # Moscou
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
+					add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+				}
+				195 = { # Leningrado
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+					add_building_construction = { type = arms_factory level = 2 instant_build = yes }
+				}
+				653 = { # Sverdlovsk
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+					add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+				}
+				572 = { # Chelyabinsk
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+					add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+				}
+			}
+		}
+	}
+}

@@ -738,6 +738,9 @@ focus_tree = {
 							state = 966
 							state = 967
 							state = 968
+							state = 1271
+							state = 1272
+							state = 1273
 						}
 					}
 				}
@@ -1281,6 +1284,9 @@ focus_tree = {
 						state = 966
 						state = 967
 						state = 968
+						state = 1271
+						state = 1272
+						state = 1273
 					}
 				}
 				add_extra_state_shared_building_slots = 2
@@ -1333,6 +1339,9 @@ focus_tree = {
 						state = 966
 						state = 967
 						state = 968
+						state = 1271
+						state = 1272
+						state = 1273
 					}
 				}
 				add_extra_state_shared_building_slots = 2
@@ -1385,6 +1394,9 @@ focus_tree = {
 						state = 966
 						state = 967
 						state = 968
+						state = 1271
+						state = 1272
+						state = 1273
 					}
 				}
 				add_extra_state_shared_building_slots = 1
@@ -1511,6 +1523,14 @@ focus_tree = {
 			IF = {
 				limit = {
 					495 = { is_owned_and_controlled_by = ROOT }
+					1221 = { is_owned_and_controlled_by = ROOT } # KSRE (de 495)
+					1222 = { is_owned_and_controlled_by = ROOT } # KSRE (de 495)
+					1224 = { is_owned_and_controlled_by = ROOT } # KSRE (de 495)
+					1273 = { is_owned_and_controlled_by = ROOT } # KSRE (de 495)
+					1274 = { is_owned_and_controlled_by = ROOT } # KSRE (de 495)
+					1275 = { is_owned_and_controlled_by = ROOT } # KSRE (de 495)
+					1391 = { is_owned_and_controlled_by = ROOT } # KSRE (de 495)
+					1392 = { is_owned_and_controlled_by = ROOT } # KSRE (de 495)
 				}
 				495 = {
 					add_building_construction = {
@@ -1594,7 +1614,7 @@ focus_tree = {
 				limit = {
 					OR = {
 						state = 497
-						state = 495						
+						state = 495 state = 1221 state = 1222 state = 1224 state = 1273 state = 1274 state = 1275 state = 1391 state = 1392						
 					}	
 				}
 				add_extra_state_shared_building_slots = 1
@@ -2134,6 +2154,9 @@ focus_tree = {
 							state = 966
 							state = 967
 							state = 968
+							state = 1271
+							state = 1272
+							state = 1273
 						}
 					}
 				}
@@ -2163,6 +2186,9 @@ focus_tree = {
 							state = 966
 							state = 967
 							state = 968
+							state = 1271
+							state = 1272
+							state = 1273
 						}
 					}
 				}
@@ -3255,6 +3281,9 @@ focus_tree = {
 							state = 966
 							state = 967
 							state = 968
+							state = 1271
+							state = 1272
+							state = 1273
 						}
 					}
 				}
@@ -3645,8 +3674,30 @@ focus_tree = {
 								}
 							}
 						}
+						1370 = { # KSRE (de 691)
+							NOT = {
+								OR = {
+									is_owned_by = ROOT
+									is_owned_by = GER
+								}
+							}
+						}
 					}
 					691 = { add_claim_by = ROOT }
+					1370 = { add_claim_by = ROOT } # KSRE (de 691)
+				}
+				IF = {
+					limit = {
+						1370 = {
+							NOT = {
+								OR = {
+									is_owned_by = ROOT
+									is_owned_by = GER
+								}
+							}
+						}
+					}
+					1370 = { add_claim_by = ROOT }
 				}
 				IF = {
 					limit = {
@@ -3658,8 +3709,74 @@ focus_tree = {
 								}
 							}
 						}
+						1371 = { # KSRE (de 692)
+							NOT = {
+								OR = {
+									is_owned_by = ROOT
+									is_owned_by = GER
+								}
+							}
+						}
+						1372 = { # KSRE (de 692)
+							NOT = {
+								OR = {
+									is_owned_by = ROOT
+									is_owned_by = GER
+								}
+							}
+						}
+						1373 = { # KSRE (de 692)
+							NOT = {
+								OR = {
+									is_owned_by = ROOT
+									is_owned_by = GER
+								}
+							}
+						}
 					}
 					692 = { add_claim_by = ROOT }
+					1371 = { add_claim_by = ROOT } # KSRE (de 692)
+					1372 = { add_claim_by = ROOT } # KSRE (de 692)
+					1373 = { add_claim_by = ROOT } # KSRE (de 692)
+				}
+				IF = {
+					limit = {
+						1373 = {
+							NOT = {
+								OR = {
+									is_owned_by = ROOT
+									is_owned_by = GER
+								}
+							}
+						}
+					}
+					1373 = { add_claim_by = ROOT }
+				}
+				IF = {
+					limit = {
+						1372 = {
+							NOT = {
+								OR = {
+									is_owned_by = ROOT
+									is_owned_by = GER
+								}
+							}
+						}
+					}
+					1372 = { add_claim_by = ROOT }
+				}
+				IF = {
+					limit = {
+						1371 = {
+							NOT = {
+								OR = {
+									is_owned_by = ROOT
+									is_owned_by = GER
+								}
+							}
+						}
+					}
+					1371 = { add_claim_by = ROOT }
 				}
 				IF = {
 					limit = {
@@ -3671,8 +3788,65 @@ focus_tree = {
 								}
 							}
 						}
+						1374 = { # KSRE (de 694)
+							NOT = {
+								OR = {
+									is_owned_by = ROOT
+									is_owned_by = GER
+								}
+							}
+						}
+						1375 = { # KSRE (de 694)
+							NOT = {
+								OR = {
+									is_owned_by = ROOT
+									is_owned_by = GER
+								}
+							}
+						}
 					}
 					694 = { add_claim_by = ROOT }
+					1374 = { add_claim_by = ROOT } # KSRE (de 694)
+					1375 = { add_claim_by = ROOT } # KSRE (de 694)
+				}
+				IF = {
+					limit = {
+						1374 = {
+							NOT = {
+								OR = {
+									is_owned_by = ROOT
+									is_owned_by = GER
+								}
+							}
+						}
+					}
+					1374 = { add_claim_by = ROOT }
+				}
+				IF = {
+					limit = {
+						1375 = {
+							NOT = {
+								OR = {
+									is_owned_by = ROOT
+									is_owned_by = GER
+								}
+							}
+						}
+					}
+					1375 = { add_claim_by = ROOT }
+				}
+				IF = {
+					limit = {
+						1376 = {
+							NOT = {
+								OR = {
+									is_owned_by = ROOT
+									is_owned_by = GER
+								}
+							}
+						}
+					}
+					1376 = { add_claim_by = ROOT }
 				}
 				IF = {
 					limit = {
@@ -3684,8 +3858,74 @@ focus_tree = {
 								}
 							}
 						}
+						1377 = { # KSRE (de 308)
+							NOT = {
+								OR = {
+									is_owned_by = ROOT
+									is_owned_by = GER
+								}
+							}
+						}
+						1378 = { # KSRE (de 308)
+							NOT = {
+								OR = {
+									is_owned_by = ROOT
+									is_owned_by = GER
+								}
+							}
+						}
+						1379 = { # KSRE (de 308)
+							NOT = {
+								OR = {
+									is_owned_by = ROOT
+									is_owned_by = GER
+								}
+							}
+						}
 					}
 					308 = { add_claim_by = ROOT }
+					1377 = { add_claim_by = ROOT } # KSRE (de 308)
+					1378 = { add_claim_by = ROOT } # KSRE (de 308)
+					1379 = { add_claim_by = ROOT } # KSRE (de 308)
+				}
+				IF = {
+					limit = {
+						1379 = {
+							NOT = {
+								OR = {
+									is_owned_by = ROOT
+									is_owned_by = GER
+								}
+							}
+						}
+					}
+					1379 = { add_claim_by = ROOT }
+				}
+				IF = {
+					limit = {
+						1378 = {
+							NOT = {
+								OR = {
+									is_owned_by = ROOT
+									is_owned_by = GER
+								}
+							}
+						}
+					}
+					1378 = { add_claim_by = ROOT }
+				}
+				IF = {
+					limit = {
+						1377 = {
+							NOT = {
+								OR = {
+									is_owned_by = ROOT
+									is_owned_by = GER
+								}
+							}
+						}
+					}
+					1377 = { add_claim_by = ROOT }
 				}
 				IF = {
 					limit = {
@@ -3819,6 +4059,9 @@ focus_tree = {
 							state = 966
 							state = 967
 							state = 968
+							state = 1271
+							state = 1272
+							state = 1273
 						}
 					}
 				}
@@ -4077,6 +4320,9 @@ focus_tree = {
 							state = 966
 							state = 967
 							state = 968
+							state = 1271
+							state = 1272
+							state = 1273
 						}
 					}
 				}
@@ -4145,6 +4391,9 @@ focus_tree = {
 								state = 966
 								state = 967
 								state = 968
+								state = 1271
+								state = 1272
+								state = 1273
 							}
 						}
 					}
@@ -4175,6 +4424,9 @@ focus_tree = {
 								state = 966
 								state = 967
 								state = 968
+								state = 1271
+								state = 1272
+								state = 1273
 							}
 						}
 					}
@@ -5716,7 +5968,7 @@ focus_tree = {
 						ruling_party = communism #the part the player controls
 						ideology = democratic #the opposing part
 						size = BRA_total_anti_com_size # Opposing strength, variable combines all other parties' popularity 
-						states = { 500 501 496 943 505 280 504 944 503 502} #Dem's controlled states, Southern Brazil, Massive
+						states = { 500 501 496 943 505 280 1383 1382 504 944 503 502} #Dem's controlled states, Southern Brazil, Massive
 						IF = {
 							limit = {  PREV = { has_completed_focus = BRA_radio_nacional } }
 							add_ideas = BRA_radio_nacional_idea
@@ -6037,6 +6289,9 @@ focus_tree = {
 							state = 966
 							state = 967
 							state = 968
+							state = 1271
+							state = 1272
+							state = 1273
 						}	
 					}
 				}
@@ -6063,6 +6318,9 @@ focus_tree = {
 							state = 966
 							state = 967
 							state = 968
+							state = 1271
+							state = 1272
+							state = 1273
 						}	
 					}
 				}
@@ -6379,6 +6637,9 @@ focus_tree = {
 							state = 966
 							state = 967
 							state = 968
+							state = 1271
+							state = 1272
+							state = 1273
 						}
 					}
 				}
@@ -7105,6 +7366,9 @@ focus_tree = {
 							state = 966
 							state = 967
 							state = 968
+							state = 1271
+							state = 1272
+							state = 1273
 						}
 					}
 				}
@@ -7123,17 +7387,18 @@ focus_tree = {
 						size > 1
 						include_locked = yes
 					}
-					NOT = {
-						OR = {
-							state = 961
-							state = 962
-							state = 963
-							state = 964
-							state = 965
-							state = 966
-							state = 967
-							state = 968
-						}
+					OR = {
+						state = 961
+						state = 962
+						state = 963
+						state = 964
+						state = 965
+						state = 966
+						state = 967
+						state = 968
+						state = 1271
+						state = 1272
+						state = 1273
 					}
 				}
 				add_extra_state_shared_building_slots = 1
@@ -7832,6 +8097,9 @@ focus_tree = {
 							state = 966
 							state = 967
 							state = 968
+							state = 1271
+							state = 1272
+							state = 1273
 						}
 					}
 				}
@@ -7879,6 +8147,9 @@ focus_tree = {
 							state = 966
 							state = 967
 							state = 968
+							state = 1271
+							state = 1272
+							state = 1273
 						}
 						OR = {
 							state = 961
@@ -7889,6 +8160,9 @@ focus_tree = {
 							state = 966
 							state = 967
 							state = 968
+							state = 1271
+							state = 1272
+							state = 1273
 						}
 					}
 				}
@@ -8019,6 +8293,9 @@ focus_tree = {
 							state = 966
 							state = 967
 							state = 968
+							state = 1271
+							state = 1272
+							state = 1273
 						}
 					}
 				}

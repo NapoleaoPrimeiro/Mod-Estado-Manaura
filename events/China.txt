@@ -101,27 +101,123 @@ country_event = {
 			effect_tooltip = {
 				IF = {
 					limit = {
-						ROOT = { controls_state = 608 }
+						ROOT = { controls_state = 608 controls_state = 1489 controls_state = 1490 controls_state = 1491 controls_state = 1492 }
 					}
-					transfer_state = 608
+					transfer_state = 608 transfer_state = 1489 transfer_state = 1490 transfer_state = 1491 transfer_state = 1492
 				}
 				IF = {
 					limit = {
-						ROOT = { controls_state = 597 }
+						ROOT = { controls_state = 1489 }
 					}
-					transfer_state = 597
+					transfer_state = 1489
 				}
 				IF = {
 					limit = {
-						ROOT = { controls_state = 1038 }
+						ROOT = { controls_state = 597 controls_state = 1497 controls_state = 1498 controls_state = 1499 controls_state = 1503 controls_state = 1504 controls_state = 1505 }
 					}
-					transfer_state = 1038
+					transfer_state = 597 transfer_state = 1497 transfer_state = 1498 transfer_state = 1499 transfer_state = 1503 transfer_state = 1504 transfer_state = 1505
+				}
+				IF = {
+					limit = {
+						ROOT = { controls_state = 1503 }
+					}
+					transfer_state = 1503
+				}
+				IF = {
+					limit = {
+						ROOT = { controls_state = 1504 }
+					}
+					transfer_state = 1504
+				}
+				IF = {
+					limit = {
+						ROOT = { controls_state = 1505 }
+					}
+					transfer_state = 1505
+				}
+				IF = {
+					limit = {
+						ROOT = { controls_state = 1038 controls_state = 1494 controls_state = 1495 controls_state = 1496 controls_state = 1501 controls_state = 1502 }
+					}
+					transfer_state = 1038 transfer_state = 1494 transfer_state = 1495 transfer_state = 1496 transfer_state = 1501 transfer_state = 1502
+				}
+				IF = {
+					limit = {
+						ROOT = { controls_state = 1494 }
+					}
+					transfer_state = 1494
+				}
+				IF = {
+					limit = {
+						ROOT = { controls_state = 1495 }
+					}
+					transfer_state = 1495
+				}
+				IF = {
+					limit = {
+						ROOT = { controls_state = 1496 }
+					}
+					transfer_state = 1496
+				}
+				IF = {
+					limit = {
+						ROOT = { controls_state = 1497 }
+					}
+					transfer_state = 1497
+				}
+				IF = {
+					limit = {
+						ROOT = { controls_state = 1498 }
+					}
+					transfer_state = 1498
+				}
+				IF = {
+					limit = {
+						ROOT = { controls_state = 1499 }
+					}
+					transfer_state = 1499
+				}
+				IF = {
+					limit = {
+						ROOT = { controls_state = 1501 }
+					}
+					transfer_state = 1501
+				}
+				IF = {
+					limit = {
+						ROOT = { controls_state = 1502 }
+					}
+					transfer_state = 1502
 				}
 				IF = {
 					limit = {
 						ROOT = { controls_state = 614 }
 					}
 					transfer_state = 614
+				}
+				IF = {
+					limit = {
+						ROOT = { controls_state = 1490 }
+					}
+					transfer_state = 1490
+				}
+				IF = {
+					limit = {
+						ROOT = { controls_state = 1491 }
+					}
+					transfer_state = 1491
+				}
+				IF = {
+					limit = {
+						ROOT = { controls_state = 1492 }
+					}
+					transfer_state = 1492
+				}
+				IF = {
+					limit = {
+						ROOT = { controls_state = 1493 }
+					}
+					transfer_state = 1493
 				}
 				IF = {
 					limit = {
@@ -1342,8 +1438,8 @@ country_event = {
 						region = 143
 						region = 155
 					}
-					NOT = { state = 525 }
-					NOT = { state = 527 }				
+					NOT = { state = 525 state = 1316 state = 1317 }
+					NOT = { state = 527 state = 1318 state = 1322 state = 1328 state = 1329 }				
 				}
 				ROOT = { transfer_state = PREV }
 			}			
@@ -1515,7 +1611,7 @@ country_event = {
 			country_exists = CHI
 		}
 		OR = {
-			owns_state = 608 #Beijing
+			owns_state = 608 owns_state = 1489 owns_state = 1490 owns_state = 1491 owns_state = 1492 #Beijing
 			owns_state = 1035 #Nanjing
 		}
 	}
@@ -1535,7 +1631,7 @@ country_event = {
 			}
 		}
 		trigger = {
-			owns_state = 608
+			owns_state = 608 owns_state = 1489 owns_state = 1490 owns_state = 1491 owns_state = 1492
 		}
 		set_capital = {
 			state = 608

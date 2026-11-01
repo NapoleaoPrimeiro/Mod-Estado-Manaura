@@ -1069,8 +1069,13 @@ focus_tree = {
 		}
 		bypass = {
 			controls_state = 7
-			controls_state = 35
+			controls_state = 1292
+			controls_state = 35 controls_state = 1376
+			controls_state = 1297
+			controls_state = 1293
 			controls_state = 36
+			controls_state = 1255
+			controls_state = 1552
 		}
 		prerequisite = { focus = HOL_colonial_shipbuilding }
 		prerequisite = { focus = HOL_the_east_indies_war_machine }
@@ -1135,8 +1140,13 @@ focus_tree = {
 		id = HOL_liberation
 		available = {
 			has_full_control_of_state = 7
-			has_full_control_of_state = 35
+			has_full_control_of_state = 1292
+			has_full_control_of_state = 35 has_full_control_of_state = 1376
+			has_full_control_of_state = 1297
+			has_full_control_of_state = 1293
 			has_full_control_of_state = 36
+			has_full_control_of_state = 1255
+			has_full_control_of_state = 1552
 		}
 		prerequisite = { focus = HOL_prepare_for_our_return }
 		icon = GFX_focus_hol_liberation
@@ -1197,12 +1207,12 @@ focus_tree = {
 	focus = {
 		id = HOL_continue_the_public_works
 		available = {
-			has_full_control_of_state = 7
+			has_full_control_of_state = 7 has_full_control_of_state = 1292
 		}
 		bypass = {
-			NOT = { controls_state = 7 }
-			NOT = { controls_state = 35 }
-			NOT = { controls_state = 36 }
+			NOT = { controls_state = 7 controls_state = 1292 }
+			NOT = { controls_state = 35 controls_state = 1255 controls_state = 1293 controls_state = 1297 controls_state = 1376 }
+			NOT = { controls_state = 36 controls_state = 1552 }
 		}
 		prerequisite = { focus = HOL_abandon_the_gold_standard }
 		icon = GFX_goal_generic_construction
@@ -1247,12 +1257,12 @@ focus_tree = {
 	focus = {
 		id = HOL_finish_the_noordoostpolder
 		available = {
-			has_full_control_of_state = 36
+			has_full_control_of_state = 36 has_full_control_of_state = 1552
 		}
 		bypass = {
-			NOT = { controls_state = 7 }
-			NOT = { controls_state = 35 }
-			NOT = { controls_state = 36 }
+			NOT = { controls_state = 7 controls_state = 1292 }
+			NOT = { controls_state = 35 controls_state = 1255 controls_state = 1293 controls_state = 1297 controls_state = 1376 }
+			NOT = { controls_state = 36 controls_state = 1552 }
 		}
 		prerequisite = { focus = HOL_continue_the_public_works }
 		icon = GFX_goal_generic_construction2
@@ -1279,13 +1289,13 @@ focus_tree = {
 	focus = {
 		id = HOL_the_maastunnel
 		available = {
-			has_full_control_of_state = 7
-			has_full_control_of_state = 35
+			has_full_control_of_state = 7 has_full_control_of_state = 1292
+			has_full_control_of_state = 35 has_full_control_of_state = 1255 has_full_control_of_state = 1293 has_full_control_of_state = 1297 has_full_control_of_state = 1376
 		}
 		bypass = {
-			NOT = { controls_state = 7 }
-			NOT = { controls_state = 35 }
-			NOT = { controls_state = 36 }
+			NOT = { controls_state = 7 controls_state = 1292 }
+			NOT = { controls_state = 35 controls_state = 1255 controls_state = 1293 controls_state = 1297 controls_state = 1376 }
+			NOT = { controls_state = 36 controls_state = 1552 }
 		}
 		prerequisite = { focus = HOL_continue_the_public_works }
 		icon = GFX_goal_generic_construct_infrastructure
@@ -1318,12 +1328,12 @@ focus_tree = {
 	focus = {
 		id = HOL_expand_the_artillerieinrichtingen
 		available = {
-			has_full_control_of_state = 7
+			has_full_control_of_state = 7 has_full_control_of_state = 1292
 		}
 		bypass = {
-			NOT = { controls_state = 7 }
-			NOT = { controls_state = 35 }
-			NOT = { controls_state = 36 }
+			NOT = { controls_state = 7 controls_state = 1292 }
+			NOT = { controls_state = 35 controls_state = 1255 controls_state = 1293 controls_state = 1297 controls_state = 1376 }
+			NOT = { controls_state = 36 controls_state = 1552 }
 		}
 		prerequisite = { focus = HOL_finish_the_noordoostpolder }
 		prerequisite = { focus = HOL_the_maastunnel }
@@ -1429,8 +1439,15 @@ focus_tree = {
  	focus = {
 		id = HOL_the_zuiderzee_works
 		available = {
-			has_full_control_of_state = 7
-			has_full_control_of_state = 36
+			has_full_control_of_state = 7 has_full_control_of_state = 1292
+			has_full_control_of_state = 36 has_full_control_of_state = 1552
+			INS = {
+				exists = yes
+				is_subject_of = HOL
+				has_full_control_of_state = 1058
+				has_full_control_of_state = 1051
+				has_full_control_of_state = 335
+			}
 		}
 		prerequisite = { focus = HOL_expand_the_artillerieinrichtingen }
 		mutually_exclusive = { focus = HOL_curtail_colonial_autonomy }
@@ -1474,7 +1491,7 @@ focus_tree = {
 	focus = {
 		id = HOL_develop_the_randstad
 		available = {
-			has_full_control_of_state = 7
+			has_full_control_of_state = 7 has_full_control_of_state = 1292
 		}
 		prerequisite = { focus = HOL_the_zuiderzee_works }
 		mutually_exclusive = { focus = HOL_develop_the_zandstad }
@@ -1537,7 +1554,7 @@ focus_tree = {
 	focus = {
 		id = HOL_expand_the_ijmuiden_steel_mill
 		available = {
-			has_full_control_of_state = 7
+			has_full_control_of_state = 7 has_full_control_of_state = 1292
 		}
 		prerequisite = { focus = HOL_develop_the_randstad }
 		icon = GFX_focus_generic_steel
@@ -1578,7 +1595,7 @@ focus_tree = {
 	focus = {
 		id = HOL_fokker
 		available = {
-			has_full_control_of_state = 7
+			has_full_control_of_state = 7 has_full_control_of_state = 1292
 		}
 		prerequisite = { focus = HOL_expand_the_ijmuiden_steel_mill }
 		icon = GFX_focus_hol_fokker
@@ -1656,8 +1673,8 @@ focus_tree = {
 	focus = {
 		id = HOL_develop_the_zandstad
 		available = {
-			has_full_control_of_state = 35
-			has_full_control_of_state = 36
+			has_full_control_of_state = 35 has_full_control_of_state = 1255 has_full_control_of_state = 1293 has_full_control_of_state = 1297 has_full_control_of_state = 1376
+			has_full_control_of_state = 36 has_full_control_of_state = 1552
 		}
 		prerequisite = { focus = HOL_the_zuiderzee_works }
 		mutually_exclusive = { focus = HOL_develop_the_randstad }
@@ -1720,7 +1737,7 @@ focus_tree = {
 	focus = {
 		id = HOL_friesland_agricultural_impetus
 		available = {
-			has_full_control_of_state = 36
+			has_full_control_of_state = 36 has_full_control_of_state = 1552
 		}
 		prerequisite = { focus = HOL_develop_the_zandstad }
 		icon = GFX_goal_generic_consumer_goods
@@ -1758,7 +1775,7 @@ focus_tree = {
 	focus = {
 		id = HOL_daf
 		available = {
-			has_full_control_of_state = 35
+			has_full_control_of_state = 35 has_full_control_of_state = 1255 has_full_control_of_state = 1293 has_full_control_of_state = 1297 has_full_control_of_state = 1376
 		}
 		prerequisite = { focus = HOL_friesland_agricultural_impetus }
 		icon = GFX_focus_hol_daf
@@ -1830,8 +1847,12 @@ focus_tree = {
 		id = HOL_continental_shipbuilding
 		available = {
 			has_full_control_of_state = 7
-			has_full_control_of_state = 35
+			has_full_control_of_state = 1292
+			has_full_control_of_state = 35 has_full_control_of_state = 1255 has_full_control_of_state = 1376
+			has_full_control_of_state = 1297
+			has_full_control_of_state = 1293
 			has_full_control_of_state = 36
+			has_full_control_of_state = 1552
 		}
 		prerequisite = { focus = HOL_fokker focus = HOL_daf }
 		icon = GFX_goal_generic_construct_naval_dockyard
@@ -1862,10 +1883,48 @@ focus_tree = {
 					}
 				}
 			}
+			1292 = {
+				if = {
+					limit = {
+						1292 = {
+							free_building_slots = {
+								building = dockyard
+								size > 1
+								include_locked = yes
+							}
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
 			35 = {
 				if = {
 					limit = {
 						35 = {
+							free_building_slots = {
+								building = dockyard
+								size > 1
+								include_locked = yes
+							}
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			1297 = {
+				if = {
+					limit = {
+						1297 = {
 							free_building_slots = {
 								building = dockyard
 								size > 1
@@ -2027,7 +2086,8 @@ focus_tree = {
 		available = {
 			threat > 0.1
 			has_full_control_of_state = 7
-			has_full_control_of_state = 36
+			has_full_control_of_state = 1292
+			has_full_control_of_state = 36 has_full_control_of_state = 1552
 		}
 		bypass = {
 			OR = {
@@ -2067,6 +2127,8 @@ focus_tree = {
 					province = 3314
 					instant_build = yes
 				}
+			}
+			1292 = {
 				add_building_construction = {
 					type = coastal_bunker
 					level = 1
@@ -2105,7 +2167,8 @@ focus_tree = {
 		available = {
 			threat > 0.15
 			has_full_control_of_state = 7
-			has_full_control_of_state = 36
+			has_full_control_of_state = 1292
+			has_full_control_of_state = 36 has_full_control_of_state = 1552
 		}
 		prerequisite = { focus = HOL_protect_against_britain }
 		icon = GFX_focus_generic_coastal_fort
@@ -2130,6 +2193,8 @@ focus_tree = {
 					province = 3314
 					instant_build = yes
 				}
+			}
+			1292 = {
 				add_building_construction = {
 					type = coastal_bunker
 					level = 1
@@ -2165,8 +2230,9 @@ focus_tree = {
 		available = {
 			threat > 0.2
 			has_full_control_of_state = 7
-			has_full_control_of_state = 35
-			has_full_control_of_state = 36
+			has_full_control_of_state = 1292
+			has_full_control_of_state = 1293
+			has_full_control_of_state = 36 has_full_control_of_state = 1552
 		}
 		prerequisite = { focus = HOL_further_reinforce_the_ports }
 		icon = GFX_goal_generic_construct_military
@@ -2180,21 +2246,9 @@ focus_tree = {
 		completion_reward = {
 			7 = {
 				add_building_construction = {
-					type = bunker
-					level = 2
-					province = 9498
-					instant_build = yes
-				}
-				add_building_construction = {
 					type = coastal_bunker
 					level = 1
 					province = 3314
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					level = 1
-					province = 9498
 					instant_build = yes
 				}
 				add_building_construction = {
@@ -2203,7 +2257,21 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			35 = {
+			1292 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 9498
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 1
+					province = 9498
+					instant_build = yes
+				}
+			}
+			1293 = {
 				add_building_construction = {
 					type = bunker
 					level = 3
@@ -2226,9 +2294,9 @@ focus_tree = {
 		id = HOL_germany_is_the_greater_threat
 		available = {
 			threat > 0.1
-			has_full_control_of_state = 7
-			has_full_control_of_state = 35
-			has_full_control_of_state = 36
+			has_full_control_of_state = 7 has_full_control_of_state = 1292
+			has_full_control_of_state = 35 has_full_control_of_state = 1255 has_full_control_of_state = 1293 has_full_control_of_state = 1297 has_full_control_of_state = 1376
+			has_full_control_of_state = 36 has_full_control_of_state = 1552
 		}
 		bypass = {
 			OR = {
@@ -2275,13 +2343,15 @@ focus_tree = {
 				add_building_construction = {
 					type = bunker
 					level = 1
-					province = 11456
+					province = 6500
 					instant_build = yes
 				}
+			}	
+			1293 = {
 				add_building_construction = {
 					type = bunker
 					level = 1
-					province = 6500
+					province = 11456
 					instant_build = yes
 				}
 			}	
@@ -2296,7 +2366,9 @@ focus_tree = {
 		available = {
 			threat > 0.15
 			has_full_control_of_state = 7
-			has_full_control_of_state = 35
+			has_full_control_of_state = 1292
+			has_full_control_of_state = 35 has_full_control_of_state = 1255 has_full_control_of_state = 1297 has_full_control_of_state = 1376
+			has_full_control_of_state = 1293
 		}
 		prerequisite = { focus = HOL_germany_is_the_greater_threat }
 		icon = GFX_goal_generic_fortify_city
@@ -2317,12 +2389,6 @@ focus_tree = {
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
-					province = 9498
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = bunker
 					level = 1
 					province = 391
 					instant_build = yes
@@ -2333,19 +2399,29 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			1292 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 9498
+					instant_build = yes
+				}
+			}
 			35 = {	
+				add_building_construction = {
+					type = anti_air_building
+					level = 1
+					instant_build = yes
+				}
+			}
+			1293 = {	
 				add_building_construction = {
 					type = bunker
 					level = 2
 					province = 11456
 					instant_build = yes
 				}
-				add_building_construction = {
-					type = anti_air_building
-					level = 1
-					instant_build = yes
-				}
-			}	
+			}			
 		}
 	}
 
@@ -2353,7 +2429,7 @@ focus_tree = {
 		id = HOL_modernize_the_grebbeline
 		available = {
 			threat > 0.2
-			has_full_control_of_state = 36
+			has_full_control_of_state = 36 has_full_control_of_state = 1552
 		}
 		prerequisite = { focus = HOL_fortress_holland }
 		icon = GFX_goal_generic_construct_military
@@ -2759,9 +2835,14 @@ focus_tree = {
 		id = HOL_protect_the_mainland
 		bypass = {
 			OR = {
-				NOT = { controls_state = 7 }
-				NOT = { controls_state = 35 }
-				NOT = { controls_state = 36 }
+				NOT = { controls_state = 7 controls_state = 1292 }
+				NOT = { controls_state = 1292 }
+				NOT = { controls_state = 35 controls_state = 1255 controls_state = 1293 controls_state = 1297 controls_state = 1376 }
+				NOT = { controls_state = 1297 }
+				NOT = { controls_state = 1293 }
+				NOT = { controls_state = 36 controls_state = 1552 }
+				NOT = { controls_state = 1255 }
+				NOT = { controls_state = 1552 }
 			}
 			NOT = {
 				focus_progress = {
@@ -2887,7 +2968,7 @@ focus_tree = {
 	focus = {
 		id = HOL_strategic_bombing_defense
 		available = {
-			has_full_control_of_state = 7
+			has_full_control_of_state = 7 has_full_control_of_state = 1292
 		}
 		prerequisite = { focus = HOL_modernize_the_air_fleet }
 		icon = GFX_focus_generic_air_defense
@@ -3075,8 +3156,11 @@ focus_tree = {
 		available = {
 			OR = {
 				has_full_control_of_state = 7
-				has_full_control_of_state = 35
-				has_full_control_of_state = 36
+				has_full_control_of_state = 1292
+				has_full_control_of_state = 35 has_full_control_of_state = 1255 has_full_control_of_state = 1376
+				has_full_control_of_state = 1297
+				has_full_control_of_state = 1293
+				has_full_control_of_state = 36 has_full_control_of_state = 1552
 			}
 		}
 		icon = GFX_goal_generic_construct_naval_dockyard
@@ -3103,7 +3187,7 @@ focus_tree = {
 			navy_experience = 25
 			random_owned_controlled_state = {
 				limit = {
-					NOT = { state = 7 }
+					NOT = { state = 7 state = 1292 }
 					free_building_slots = {
 						building = dockyard
 						size > 2
@@ -3126,7 +3210,7 @@ focus_tree = {
 		id = HOL_expand_the_amsterdam_petroleum_harbor
 		prerequisite = { focus = HOL_prepare_naval_expansion }
 		available = {
-			has_full_control_of_state = 7
+			has_full_control_of_state = 7 has_full_control_of_state = 1292
 			7 = {
 				free_building_slots = {
 					building = fuel_silo
@@ -4254,8 +4338,8 @@ focus_tree = {
 	focus = {
 		id = HOL_assume_the_naval_burden
 		available = {
-			has_full_control_of_state = 7
-			has_full_control_of_state = 36
+			has_full_control_of_state = 7 has_full_control_of_state = 1292
+			has_full_control_of_state = 36 has_full_control_of_state = 1552
 		}
 		prerequisite = { focus = HOL_placate_the_japanese }
 		mutually_exclusive = { focus = HOL_beginnings_of_a_dutch_blitzkrieg }
@@ -4293,6 +4377,25 @@ focus_tree = {
 				if = {
 					limit = {
 						36 = {
+							free_building_slots = {
+								building = dockyard
+								size > 1
+								include_locked = yes
+							}
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			1297 = {
+				if = {
+					limit = {
+						1297 = {
 							free_building_slots = {
 								building = dockyard
 								size > 1
@@ -4496,6 +4599,7 @@ focus_tree = {
 			has_full_control_of_state = 34
 			has_full_control_of_state = 977
 			has_full_control_of_state = 980
+			has_full_control_of_state = 1250
 			has_full_control_of_state = 8
 		}
 
@@ -4533,6 +4637,7 @@ focus_tree = {
 			34 = { add_claim_by = ROOT }
 			977 = { add_claim_by = ROOT }
 			980 = { add_claim_by = ROOT }
+			1250 = { add_claim_by = ROOT }
 			8 = { add_claim_by = ROOT }
 
 		}
@@ -4547,10 +4652,21 @@ focus_tree = {
 		}
 		bypass = {
 			has_full_control_of_state = 694
+			has_full_control_of_state = 1374
+			has_full_control_of_state = 1375
 			has_full_control_of_state = 308
+			has_full_control_of_state = 1379
+			has_full_control_of_state = 1378
+			has_full_control_of_state = 1377
 			has_full_control_of_state = 691
+			has_full_control_of_state = 1370
 			has_full_control_of_state = 687
+			has_full_control_of_state = 1214
+			has_full_control_of_state = 1217
+			has_full_control_of_state = 1233
 			has_full_control_of_state = 310
+			has_full_control_of_state = 1394
+			has_full_control_of_state = 1393
 			has_full_control_of_state = 274
 			has_full_control_of_state = 681
 			has_full_control_of_state = 275
@@ -4572,10 +4688,21 @@ focus_tree = {
 		completion_reward = {
 
 			add_state_claim = 694
+			add_state_claim = 1374
+			add_state_claim = 1375
 			add_state_claim = 308
+			add_state_claim = 1379
+			add_state_claim = 1378
+			add_state_claim = 1377
 			add_state_claim = 691
+			add_state_claim = 1370
 			add_state_claim = 687
+			add_state_claim = 1214
+			add_state_claim = 1217
+			add_state_claim = 1233
 			add_state_claim = 310
+			add_state_claim = 1394
+			add_state_claim = 1393
 			add_state_claim = 274
 			add_state_claim = 681
 			add_state_claim = 275
@@ -4586,14 +4713,14 @@ focus_tree = {
 
 			create_wargoal = {
 			    type = take_state_focus
-			    generator = { 694 310 }
+			    generator = { 694 1374 1375 310 1393 1394 }
 			    expire = 0
 			    target = FRA
 			}
 
 			create_wargoal = {
 			    type = take_state_focus
-			    generator = { 308 691 687 274 422 }
+			    generator = { 308 1379 1378 1377 691 1370 687 274 422 1214 1217 1233 }
 			    expire = 0
 			    target = ENG
 			}
@@ -4615,9 +4742,32 @@ focus_tree = {
 		}
 		bypass = {
 			has_full_control_of_state = 357
+			has_full_control_of_state = 1741
+			has_full_control_of_state = 1742
+			has_full_control_of_state = 1743
+			has_full_control_of_state = 1744
+			has_full_control_of_state = 1745
+			has_full_control_of_state = 1746
+			has_full_control_of_state = 1438
+			has_full_control_of_state = 1436
+			has_full_control_of_state = 1747
+			has_full_control_of_state = 1748
+			has_full_control_of_state = 1749
+			has_full_control_of_state = 1750
 			has_full_control_of_state = 358
+			has_full_control_of_state = 1737
+			has_full_control_of_state = 1738
+			has_full_control_of_state = 1739
+			has_full_control_of_state = 1740
+			has_full_control_of_state = 1418
 			has_full_control_of_state = 359
+			has_full_control_of_state = 1734
 			has_full_control_of_state = 361
+			has_full_control_of_state = 1729
+			has_full_control_of_state = 1730
+			has_full_control_of_state = 1731
+			has_full_control_of_state = 1732
+			has_full_control_of_state = 1733
 		}
 
 		prerequisite = { focus = HOL_taking_back_our_old_colonies }
@@ -4641,15 +4791,38 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			add_state_claim = 357
+			add_state_claim = 1741
+			add_state_claim = 1742
+			add_state_claim = 1743
+			add_state_claim = 1744
+			add_state_claim = 1745
+			add_state_claim = 1746
+			add_state_claim = 1438
+			add_state_claim = 1436
+			add_state_claim = 1747
+			add_state_claim = 1748
+			add_state_claim = 1749
+			add_state_claim = 1750
 			add_state_claim = 358
+			add_state_claim = 1737
+			add_state_claim = 1738
+			add_state_claim = 1739
+			add_state_claim = 1740
+			add_state_claim = 1418
 			add_state_claim = 359
+			add_state_claim = 1734
 			add_state_claim = 361
+			add_state_claim = 1729
+			add_state_claim = 1730
+			add_state_claim = 1731
+			add_state_claim = 1732
+			add_state_claim = 1733
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			create_wargoal = {
 			    type = take_state_focus
-			    generator = { 357 358 359 361 }
+			    generator = { 357 1741 1742 1743 1744 1745 1746 1438 1436 1747 1748 1749 1750 358 1737 1738 1739 1740 1418 359 1734 361 1729 1730 1731 1732 1733 }
 			    target = USA
 			    expire = 0
 			}
@@ -5410,6 +5583,7 @@ focus_tree = {
 			has_full_control_of_state = 34
 			has_full_control_of_state = 977
 			has_full_control_of_state = 980
+			has_full_control_of_state = 1250
 			has_full_control_of_state = 8
 		}
 		prerequisite = { focus = HOL_bastion_of_true_communism focus = HOL_join_the_western_alliance focus = HOL_affirm_loyalty_to_moscow }
@@ -5874,7 +6048,7 @@ focus_tree = {
 			has_full_control_of_state = 6
 			has_full_control_of_state = 34
 			has_full_control_of_state = 977
-			has_full_control_of_state = 980
+			has_full_control_of_state = 980 has_full_control_of_state = 1250
 			has_full_control_of_state = 8
 		}
 		cancel_if_invalid = yes
@@ -5975,11 +6149,7 @@ focus_tree = {
 						}
 					}
 					GER = {
-						OR = {
-							has_completed_focus = GER_revive_the_kaiserreich 
-							has_completed_focus = GER_revive_the_kaiserreich_ww
-						}
-						
+						has_completed_focus = GER_revive_the_kaiserreich 
 						is_faction_leader = yes
 					}
 				}
@@ -6007,10 +6177,7 @@ focus_tree = {
 					is_in_faction = yes
 					NOT = { has_war_with = GER }
 					GER = {
-						OR = {
-							has_completed_focus = GER_revive_the_kaiserreich 
-							has_completed_focus = GER_revive_the_kaiserreich_ww
-						}
+						has_completed_focus = GER_revive_the_kaiserreich
 					}
 				}
 				leave_faction = yes
@@ -6024,10 +6191,7 @@ focus_tree = {
 					is_in_faction = no
 					NOT = { has_war_with = GER }
 					GER = {
-						OR = {
-							has_completed_focus = GER_revive_the_kaiserreich 
-							has_completed_focus = GER_revive_the_kaiserreich_ww
-						}
+						has_completed_focus = GER_revive_the_kaiserreich
 					}
 				}
 				GER = { country_event = { id = generic.2 } }

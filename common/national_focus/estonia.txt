@@ -2422,7 +2422,7 @@ focus_tree = {
 					OR = {
 						state = 148
 						state = 722
-						state = 213
+						state = 213 state = 1714
 						state = 925
 						state = 924
 						state = 144
@@ -2505,6 +2505,12 @@ focus_tree = {
 						state = 216
 						state = 215
 						state = 146
+						state = 1116
+						state = 1117
+						state = 1170
+						state = 1171
+						state = 1174
+						state = 1175
 					}
 					NOT = {
 						OR = {
@@ -2525,12 +2531,18 @@ focus_tree = {
 						owns_state = 216
 						owns_state = 215
 						owns_state = 146
+						owns_state = 1116
+						owns_state = 1117
+						owns_state = 1170
+						owns_state = 1171
+						owns_state = 1174
+						owns_state = 1175
 					}
 				}
 				ROOT = {
 					create_wargoal = {
 						type = take_claimed_state
-						#generator = { 213 215 216 }
+						#generator = { 213 215 216 1116 1117 1170 1171 1174 1175 1714 }
 						target = PREV
 					}
 				}
@@ -2586,6 +2598,30 @@ focus_tree = {
 					is_core_or_compliance_60 = yes
 				}
 			}
+			1116 = {
+				controls_or_subject_of = yes
+				is_core_or_compliance_60 = yes
+			}
+			1117 = {
+				controls_or_subject_of = yes
+				is_core_or_compliance_60 = yes
+			}
+			1170 = {
+				controls_or_subject_of = yes
+				is_core_or_compliance_60 = yes
+			}
+			1171 = {
+				controls_or_subject_of = yes
+				is_core_or_compliance_60 = yes
+			}
+			1174 = {
+				controls_or_subject_of = yes
+				is_core_or_compliance_60 = yes
+			}
+			1175 = {
+				controls_or_subject_of = yes
+				is_core_or_compliance_60 = yes
+			}
 		}
 
 		bypass = {
@@ -2620,7 +2656,7 @@ focus_tree = {
 				limit = {
 					213 = { owner = { is_subject_of = ROOT } }
 				}
-				transfer_state = 213
+				transfer_state = 213 transfer_state = 1714
 			}
 			if = {
 				limit = {
@@ -2644,7 +2680,7 @@ focus_tree = {
 				limit = {
 					215 = { owner = { is_subject_of = ROOT } }
 				}
-				transfer_state = 215
+				transfer_state = 215 transfer_state = 1116 transfer_state = 1117 transfer_state = 1170 transfer_state = 1171 transfer_state = 1174 transfer_state = 1175
 			}
 			if = {
 				limit = {
@@ -2698,7 +2734,13 @@ focus_tree = {
 				limit = {
 					398 = { owner = { is_subject_of = ROOT } }
 				}
-				transfer_state = 398
+				transfer_state = 398 transfer_state = 1523
+			}
+			if = {
+				limit = {
+					1523 = { owner = { is_subject_of = ROOT } }
+				}
+				transfer_state = 1523
 			}
 			if = {
 				limit = {
@@ -2716,79 +2758,49 @@ focus_tree = {
 				limit = {
 					208 = { owner = { is_subject_of = ROOT } }
 				}
-				transfer_state = 208
+				transfer_state = 208 transfer_state = 1290
 			}
 			if = {
 				limit = {
-					918 = { owner = { is_subject_of = ROOT } }
+					1290 = { owner = { is_subject_of = ROOT } }
 				}
-				transfer_state = 918
+				transfer_state = 1290
 			}
 			if = {
 				limit = {
-					923 = { owner = { is_subject_of = ROOT } }
+					1116 = { owner = { is_subject_of = ROOT } }
 				}
-				transfer_state = 923
+				transfer_state = 1116
 			}
 			if = {
 				limit = {
-					924 = { owner = { is_subject_of = ROOT } }
+					1117 = { owner = { is_subject_of = ROOT } }
 				}
-				transfer_state = 924
+				transfer_state = 1117
 			}
 			if = {
 				limit = {
-					925 = { owner = { is_subject_of = ROOT } }
+					1170 = { owner = { is_subject_of = ROOT } }
 				}
-				transfer_state = 925
+				transfer_state = 1170
 			}
 			if = {
 				limit = {
-					917 = { owner = { is_subject_of = ROOT } }
+					1171 = { owner = { is_subject_of = ROOT } }
 				}
-				transfer_state = 917
+				transfer_state = 1171
 			}
 			if = {
 				limit = {
-					879 = { owner = { is_subject_of = ROOT } }
+					1174 = { owner = { is_subject_of = ROOT } }
 				}
-				transfer_state = 879
+				transfer_state = 1174
 			}
 			if = {
 				limit = {
-					880 = { owner = { is_subject_of = ROOT } }
+					1175 = { owner = { is_subject_of = ROOT } }
 				}
-				transfer_state = 880
-			}
-			if = {
-				limit = {
-					825 = { owner = { is_subject_of = ROOT } }
-				}
-				transfer_state = 825
-			}
-			if = {
-				limit = {
-					824 = { owner = { is_subject_of = ROOT } }
-				}
-				transfer_state = 824
-			}
-			if = {
-				limit = {
-					577 = { owner = { is_subject_of = ROOT } }
-				}
-				transfer_state = 577
-			}
-			if = {
-				limit = {
-					399 = { owner = { is_subject_of = ROOT } }
-				}
-				transfer_state = 399
-			}
-			if = {
-				limit = {
-					833 = { owner = { is_subject_of = ROOT } }
-				}
-				transfer_state = 833
+				transfer_state = 1175
 			}
 			143 = {
 				add_core_of = ROOT
@@ -2800,6 +2812,9 @@ focus_tree = {
 				add_core_of = ROOT
 			}
 			213 = {
+				add_core_of = ROOT
+			}
+			1714 = {
 				add_core_of = ROOT
 			}
 			215 = {
@@ -2835,6 +2850,9 @@ focus_tree = {
 			398 = {
 				add_core_of = ROOT
 			}
+			1523 = {
+				add_core_of = ROOT
+			}
 			400 = {
 				add_core_of = ROOT
 			}
@@ -2844,40 +2862,25 @@ focus_tree = {
 			208 = {
 				add_core_of = ROOT
 			}
-			918 = {
+			1290 = {
 				add_core_of = ROOT
 			}
-			923 = {
+			1116 = {
 				add_core_of = ROOT
 			}
-			924 = {
+			1117 = {
 				add_core_of = ROOT
 			}
-			925 = {
+			1170 = {
 				add_core_of = ROOT
 			}
-			917 = {
+			1171 = {
 				add_core_of = ROOT
 			}
-			879 = {
+			1174 = {
 				add_core_of = ROOT
 			}
-			880 = {
-				add_core_of = ROOT
-			}
-			825 = {
-				add_core_of = ROOT
-			}
-			824 = {
-				add_core_of = ROOT
-			}
-			577 = {
-				add_core_of = ROOT
-			}
-			399 = {
-				add_core_of = ROOT
-			}
-			833 = {
+			1175 = {
 				add_core_of = ROOT
 			}
 		}
@@ -2951,11 +2954,11 @@ focus_tree = {
 		}
 
 		available = {
-			owns_state = 13
+			owns_state = 13 owns_state = 1797
 		}
 
 		bypass = {
-			NOT = { owns_state = 13 }
+			NOT = { owns_state = 13 owns_state = 1797 }
 		}
 
 		cancel_if_invalid = yes
@@ -2991,10 +2994,12 @@ focus_tree = {
 
 		available = {
 			owns_state = 811 
+			owns_state = 1801
 		}
 
 		bypass = {
-			NOT = { owns_state = 811 }
+			NOT = { owns_state = 811 owns_state = 1801 }
+			NOT = { owns_state = 1801 }
 		}
 
 		cancel_if_invalid = yes
@@ -3004,6 +3009,8 @@ focus_tree = {
 		completion_reward = {
 			811 = {
 				add_building_construction = { type = bunker province = 185 level = 4 instant_build = yes }
+			}
+			1801 = {
 				add_building_construction = { type = bunker province = 6201 level = 3 instant_build = yes }
 			}
 			set_victory_points = {
@@ -3044,7 +3051,7 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			191 = {
+			1798 = {
 				add_building_construction = {
 					type = bunker
 					level = 2
