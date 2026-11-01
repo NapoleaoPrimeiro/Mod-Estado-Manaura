@@ -24,7 +24,7 @@ country_event = {
 				gives_military_access_to = GER
 			}
 		}
-		HUN = { owns_state = 76 }
+		HUN = { owns_state = 76 owns_state = 1309 owns_state = 1310 owns_state = 1722 }
 		GER = {
 			OR = {
 				AND = { is_in_faction_with = ITA is_in_faction_with = HUN }
@@ -141,10 +141,10 @@ country_event = {
 			limit = {
 				has_completed_focus = YUG_dissolve_serbia
 			}
-			start_civil_war = { ideology = democratic size = 0.6 capital = 107 states = { 108 803 } }
+			start_civil_war = { ideology = democratic size = 0.6 capital = 107 states = { 108 803 1709 1710 1721 1777 1299 1300 1411 } }
 		}
 		else = {
-			start_civil_war = { ideology = democratic size = 0.6 capital = 107 states = { 108 803 802 106 105 } }
+			start_civil_war = { ideology = democratic size = 0.6 capital = 107 states = { 108 803 802 106 105 1709 1710 1721 1777 1299 1300 1411 1715 1776 1298 1307 1260 1716 } }
 		}
 		random_country = {
 			limit = {
@@ -263,7 +263,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state_focus
 					target = YUG
-					generator = { 102 853 }
+					generator = { 102 853 1410 1704 }
 				}
 			}
 		}
@@ -286,7 +286,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state_focus
 					target = YUG
-					generator = { 102 853 }
+					generator = { 102 853 1410 1704 }
 				}
 			}
 		}
@@ -340,7 +340,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state_focus
 					target = YUG
-					generator = { 102 853 }
+					generator = { 102 853 1410 1704 }
 				}
 			}
 		}
@@ -364,7 +364,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state_focus
 					target = YUG
-					generator = { 102 853 }
+					generator = { 102 853 1410 1704 }
 				}
 			}
 		}
@@ -510,11 +510,23 @@ country_event = {
 			YUG = { 
 				OR = { 
 					owns_state = 103
-					owns_state = 104
+					owns_state = 1296
 					owns_state = 109
+					owns_state = 1706
+					owns_state = 1707
+					owns_state = 1718
+					owns_state = 1388
+					owns_state = 1716
+					owns_state = 1717
+					owns_state = 1314
+					owns_state = 1325
+					owns_state = 1339
+					owns_state = 104
 					owns_state = 804
-					owns_state = 1082 # CUSTOM STATE KOTOR
-					owns_state = 1105 # CUSTOM STATE SPLIT
+					owns_state = 1711
+					owns_state = 1712
+					owns_state = 1713
+					owns_state = 1717
 				} 
 			} 
 		}
@@ -525,20 +537,76 @@ country_event = {
 			
 			CRO = {
 				if = {
-					limit = { YUG = { owns_state = 103 } }
-					transfer_state = 103
+					limit = { YUG = { owns_state = 103 owns_state = 1296 owns_state = 1325 owns_state = 1339 owns_state = 1388 owns_state = 1718 } }
+					transfer_state = 103 transfer_state = 1296 transfer_state = 1325 transfer_state = 1339 transfer_state = 1388 transfer_state = 1718
 				}
 				if = {
-					limit = { YUG = { owns_state = 104 } }
-					transfer_state = 104
+					limit = { YUG = { owns_state = 1296 } }
+					transfer_state = 1296
 				}
 				if = {
-					limit = { YUG = { owns_state = 109 } }
-					transfer_state = 109
-				}	
+					limit = { YUG = { owns_state = 109 owns_state = 1706 owns_state = 1707 } }
+					transfer_state = 109 transfer_state = 1706 transfer_state = 1707
+				}
 				if = {
-					limit = { YUG = { owns_state = 804 } }
-					transfer_state = 804
+					limit = { YUG = { owns_state = 1706 } }
+					transfer_state = 1706
+				}
+				if = {
+					limit = { YUG = { owns_state = 1707 } }
+					transfer_state = 1707
+				}
+				if = {
+					limit = { YUG = { owns_state = 1716 } }
+					transfer_state = 1716
+				}
+				if = {
+					limit = { YUG = { owns_state = 1717 } }
+					transfer_state = 1717
+				}
+				if = {
+					limit = { YUG = { owns_state = 1718 } }
+					transfer_state = 1718
+				}
+				if = {
+					limit = { YUG = { owns_state = 1388 } }
+					transfer_state = 1388
+				}
+				if = {
+					limit = { YUG = { owns_state = 1314 } }
+					transfer_state = 1314
+				}
+				if = {
+					limit = { YUG = { owns_state = 1325 } }
+					transfer_state = 1325
+				}
+				if = {
+					limit = { YUG = { owns_state = 1339 } }
+					transfer_state = 1339
+				}
+				if = {
+					limit = { YUG = { owns_state = 104 owns_state = 1711 owns_state = 1712 owns_state = 1713 } }
+					transfer_state = 104 transfer_state = 1711 transfer_state = 1712 transfer_state = 1713
+				}
+				if = {
+					limit = { YUG = { owns_state = 804 owns_state = 1717 } }
+					transfer_state = 804 transfer_state = 1717
+				}
+				if = {
+					limit = { YUG = { owns_state = 1711 } }
+					transfer_state = 1711
+				}
+				if = {
+					limit = { YUG = { owns_state = 1712 } }
+					transfer_state = 1712
+				}
+				if = {
+					limit = { YUG = { owns_state = 1713 } }
+					transfer_state = 1713
+				}
+				if = {
+					limit = { YUG = { owns_state = 1717 } }
+					transfer_state = 1717
 				}
 			}
 			puppet = CRO
@@ -546,12 +614,12 @@ country_event = {
 
 			ITA = {
 				if = {
-					limit = { YUG = { owns_state = 1082 } } # CUSTOM STATE KOTOR
-					transfer_state = 1082
+					limit = { YUG = { owns_state = 1716 } } # CUSTOM STATE KOTOR
+					transfer_state = 1716
 				}
 				if = {
-					limit = { YUG = { owns_state = 1105 } } # CUSTOM STATE SPLIT
-					transfer_state = 1105
+					limit = { YUG = { owns_state = 1339 } } # CUSTOM STATE SPLIT
+					transfer_state = 1339
 				}
 			}
 
@@ -621,31 +689,87 @@ country_event = {
 			
 			CRO = {
 				if = {
-					limit = { YUG = { owns_state = 103 } }
-					transfer_state = 103
+					limit = { YUG = { owns_state = 103 owns_state = 1296 owns_state = 1325 owns_state = 1339 owns_state = 1388 owns_state = 1718 } }
+					transfer_state = 103 transfer_state = 1296 transfer_state = 1325 transfer_state = 1339 transfer_state = 1388 transfer_state = 1718
 				}
 				if = {
-					limit = { YUG = { owns_state = 104 } }
-					transfer_state = 104
+					limit = { YUG = { owns_state = 1296 } }
+					transfer_state = 1296
 				}
 				if = {
-					limit = { YUG = { owns_state = 109 } }
-					transfer_state = 109
+					limit = { YUG = { owns_state = 109 owns_state = 1706 owns_state = 1707 } }
+					transfer_state = 109 transfer_state = 1706 transfer_state = 1707
 				}
 				if = {
-					limit = { YUG = { owns_state = 804 } }
-					transfer_state = 804
+					limit = { YUG = { owns_state = 1706 } }
+					transfer_state = 1706
+				}
+				if = {
+					limit = { YUG = { owns_state = 1707 } }
+					transfer_state = 1707
+				}
+				if = {
+					limit = { YUG = { owns_state = 1716 } }
+					transfer_state = 1716
+				}
+				if = {
+					limit = { YUG = { owns_state = 1717 } }
+					transfer_state = 1717
+				}
+				if = {
+					limit = { YUG = { owns_state = 1718 } }
+					transfer_state = 1718
+				}
+				if = {
+					limit = { YUG = { owns_state = 1388 } }
+					transfer_state = 1388
+				}
+				if = {
+					limit = { YUG = { owns_state = 1314 } }
+					transfer_state = 1314
+				}
+				if = {
+					limit = { YUG = { owns_state = 1325 } }
+					transfer_state = 1325
+				}
+				if = {
+					limit = { YUG = { owns_state = 1339 } }
+					transfer_state = 1339
+				}
+				if = {
+					limit = { YUG = { owns_state = 104 owns_state = 1711 owns_state = 1712 owns_state = 1713 } }
+					transfer_state = 104 transfer_state = 1711 transfer_state = 1712 transfer_state = 1713
+				}
+				if = {
+					limit = { YUG = { owns_state = 804 owns_state = 1717 } }
+					transfer_state = 804 transfer_state = 1717
+				}
+				if = {
+					limit = { YUG = { owns_state = 1711 } }
+					transfer_state = 1711
+				}
+				if = {
+					limit = { YUG = { owns_state = 1712 } }
+					transfer_state = 1712
+				}
+				if = {
+					limit = { YUG = { owns_state = 1713 } }
+					transfer_state = 1713
+				}
+				if = {
+					limit = { YUG = { owns_state = 1717 } }
+					transfer_state = 1717
 				}				
 			}
 			puppet = CRO
 			ITA = {
 				if = {
-					limit = { YUG = { owns_state = 1082 } } # CUSTOM STATE KOTOR
-					transfer_state = 1082
+					limit = { YUG = { owns_state = 1716 } } # CUSTOM STATE KOTOR
+					transfer_state = 1716
 				}
 				if = {
-					limit = { YUG = { owns_state = 1105 } } # CUSTOM STATE SPLIT
-					transfer_state = 1105
+					limit = { YUG = { owns_state = 1339 } } # CUSTOM STATE SPLIT
+					transfer_state = 1339
 				}
 			}
 			

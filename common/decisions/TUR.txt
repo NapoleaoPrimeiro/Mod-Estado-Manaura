@@ -1272,7 +1272,14 @@ TUR_industrial_projects_category = {
 					include_locked = yes
 				}
 			}
-			797 = { 
+			797 = {
+				free_building_slots = {
+					building = arms_factory
+					size > 1
+					include_locked = yes
+				}
+			}
+			1223 = {
 				free_building_slots = {
 					building = arms_factory
 					size > 1
@@ -1317,6 +1324,14 @@ TUR_industrial_projects_category = {
 				}
 			}
 			797 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			1223 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
@@ -2606,6 +2621,86 @@ economy_decisions = {
 
 	
 
+	# KSRE / jogo base: TUR_discuss_investment_possibilities_with_FROM
+	TUR_discuss_investment_possibilities_with_FROM = {
+
+		icon = generic_construction
+
+		allowed = { 
+			original_tag = TUR
+		}
+
+		available = {
+			has_capitulated = no
+			is_puppet = no
+			FROM = {	
+				NOT = {
+					has_war_with = ROOT
+					#STOP PP SINK: These two checks below are so that Turkey cannot take the decision multiple times while FROM has not yet started investment (resulting in wasting PP for nothing)
+					has_country_flag = TUR_investment_in_turkey_pending_flag
+					has_idea = TUR_investment_financing_spirit
+				}
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				is_major = yes
+				OR = {
+					capital_scope = { is_on_continent = europe }
+					tag = USA
+				}
+				NOT = { has_country_flag = ROOT_rejecting_turkish_overtures }
+			}
+		}
+
+		days_remove = 45
+
+		cost = 75
+
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_country_flag = TUR_investment_pursued
+			}
+			modifier = {
+				factor = 5
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 10
+				has_completed_focus = TUR_peace_at_home
+			}
+			modifier = {
+				factor = 30
+				has_completed_focus = TUR_reconfigure_our_foreign_policy
+			}
+		}
+
+		visible = {
+			has_completed_focus = TUR_utilize_foreign_capital	
+			NOT = {
+				has_country_flag = TUR_investment_pursued
+			}
+			FROM = {
+				NOT = { has_country_flag = ROOT_rejecting_turkish_overtures }
+			}
+		}
+
+		complete_effect = {
+			set_country_flag = TUR_investment_pursued
+		}
+
+		remove_effect = {
+			FROM = { country_event = { id = bftb_turkey.126 } }
+			custom_effect_tooltip = TUR_investment_opinion_tt
+			clr_country_flag = TUR_investment_pursued
+		}
+	}
+
 }
 
 TUR_kurdish_state_management_category = { 
@@ -2626,6 +2721,7 @@ TUR_kurdish_state_management_category = {
 				352 = { is_core_of = TUR }
 				353 = { is_core_of = TUR }
 				800 = { is_core_of = TUR }
+				1287 = { is_core_of = TUR }
 			}
 		}
 
@@ -2660,12 +2756,14 @@ TUR_kurdish_state_management_category = {
 						352 = { is_core_of = TUR }
 						353 = { is_core_of = TUR }
 						800 = { is_core_of = TUR }
+						1287 = { is_core_of = TUR }
 					}
 					AND = {
 						350 = { has_dynamic_modifier = { modifier = separatist_fatigue } }
 						352 = { has_dynamic_modifier = { modifier = separatist_fatigue } }
 						353 = { has_dynamic_modifier = { modifier = separatist_fatigue } }
 						800 = { has_dynamic_modifier = { modifier = separatist_fatigue } }
+						1287 = { has_dynamic_modifier = { modifier = separatist_fatigue } }
 					}
 				}
 			}
@@ -3071,7 +3169,7 @@ TUR_kurdish_state_management_category = {
 
 		available = {
 			NOT = { has_country_flag = TUR_acted_against_kurd_rebels_recently_flag }
-			has_full_control_of_state = 800
+			has_full_control_of_state = 800 has_full_control_of_state = 1287
 		}
 
 		highlight_states = {
@@ -3089,7 +3187,7 @@ TUR_kurdish_state_management_category = {
 		visible = {
 			AND = { 
 				NOT = { 800 = { is_core_of = TUR } }
-				has_full_control_of_state = 800
+				has_full_control_of_state = 800 has_full_control_of_state = 1287
 			}
 			NOT = {
 				AND = { 
@@ -3199,6 +3297,177 @@ TUR_kurdish_state_management_category = {
 					effect_tooltip = {
 						add_stability = -0.05
 						800 = { 
+							add_compliance = -5
+							add_resistance = 10
+						}
+					}
+					hidden_effect = {
+						set_country_flag = {
+							flag = TUR_failed_against_kurd_rebels_flag
+							value = 1
+						}
+						if = {
+							limit = {
+								NOT = { has_country_flag = TUR_failed_against_kurd_rebels_flag }
+							}
+							set_country_flag = {
+								flag = TUR_failed_against_kurd_rebels_flag
+								value = 1
+							}
+						}
+						else_if = {
+							limit = {
+								has_country_flag = TUR_failed_against_kurd_rebels_flag
+							}
+							modify_country_flag = {
+								flag = TUR_failed_against_kurd_rebels_flag
+								value = 1
+							}
+						}
+					}
+				}
+			}
+			set_country_flag = {
+				flag = TUR_acted_against_kurd_rebels_recently_flag
+				value = 1
+				days = 30
+			}
+		}
+	}
+	TUR_counter_the_rebels_in_kagizman = {
+
+		icon = faction_tur_kurdish
+
+		available = {
+			NOT = { has_country_flag = TUR_acted_against_kurd_rebels_recently_flag }
+			has_full_control_of_state = 1287
+		}
+
+		highlight_states = {
+			highlight_states_trigger = { state = 1287 }
+		}
+
+		on_map_mode = map_only
+
+		custom_cost_trigger = {
+			command_power > 14.9
+		}
+		
+		custom_cost_text = TUR_decision_cost_kurd_rebels
+
+		visible = {
+			AND = { 
+				NOT = { 1287 = { is_core_of = TUR } }
+				has_full_control_of_state = 1287
+			}
+			NOT = {
+				AND = { 
+					OR = {
+						has_completed_focus = TUR_permit_regional_elections
+						has_completed_focus = TUR_a_common_destiny_for_all_of_turkey
+					}
+					1287 = {
+						AND = {
+							compliance > 70
+							resistance < 30
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 10
+				has_political_power > 250
+			}
+			modifier = {
+				has_manpower < 50000
+				has_war = yes
+				has_political_power < 200
+				factor = 0 # don't waste pp if you need to up your conscription laws!
+			}
+			modifier = {
+				factor = 10
+				1287 = { resistance > 50 }
+			}
+			modifier = {
+				factor = 0.25
+				has_stability < 0.25 #let's not risk it
+				1287 = { compliance < 25 }
+			}
+		}
+
+		complete_effect = {
+			add_command_power = -15
+			1287 = { save_global_event_target_as = TUR_kurdish_state_event_target }
+			random_list = {
+				55 = {
+					modifier = {
+						factor = 0.25
+						1287 = { resistance > 30 }
+					}
+					modifier = {
+						add = 5
+						has_country_flag = {
+							flag = TUR_failed_against_kurd_rebels_flag
+							value = 1
+						}
+					}
+					modifier = {
+						add = 10
+						has_country_flag = {
+							flag = TUR_failed_against_kurd_rebels_flag
+							value = 2
+						}
+					}
+					modifier = {
+						add = 15
+						has_country_flag = {
+							flag = TUR_failed_against_kurd_rebels_flag
+							value = 3
+						}
+					}
+					modifier = {
+						add = 25
+						has_country_flag = {
+							flag = TUR_failed_against_kurd_rebels_flag
+							value = 4
+						}
+					}
+					modifier = {
+						add = 100
+						has_country_flag = {
+							flag = TUR_failed_against_kurd_rebels_flag
+							value > 4
+						}
+					}
+					country_event = { id = bftb_turkey.110 days = 1 }
+					TUR_placate_kurdish_state_effect = yes
+					effect_tooltip = {
+						1287 = { 
+							add_compliance = 10
+							add_resistance = -15
+						}
+					}
+					hidden_effect = { 
+						if = {
+							limit = {
+								has_country_flag = TUR_failed_against_kurd_rebels_flag
+							}
+							clr_country_flag = TUR_failed_against_kurd_rebels_flag
+						}
+					}
+				}
+				45 = {
+					modifier = {
+						factor = 1.2
+						1287 = { compliance > 25 }
+					}
+					country_event = { id = bftb_turkey.111 days = 1 }
+					effect_tooltip = {
+						add_stability = -0.05
+						1287 = { 
 							add_compliance = -5
 							add_resistance = 10
 						}
@@ -3442,6 +3711,7 @@ TUR_kurdish_state_management_category = {
 					353 = { resistance > 50 }
 					352 = { resistance > 50 }
 					800 = { resistance > 50 }
+					1287 = { resistance > 50 }
 				}
 				factor = 2
 			}
@@ -3463,6 +3733,10 @@ TUR_kurdish_state_management_category = {
 						is_core_of = TUR
 					}
 					800 = { 
+						is_core_of = KUR
+						is_core_of = TUR
+					}
+					1287 = { 
 						is_core_of = KUR
 						is_core_of = TUR
 					}
@@ -3757,6 +4031,12 @@ TUR_kurdish_state_management_category = {
 					is_owned_by = TUR
 				}
 			}
+			1287 = { # KSRE (de 800)
+				AND = {
+					NOT = { is_core_of = TUR } 
+					is_owned_by = TUR
+				}
+			}
 		}
 
 		complete_effect = {
@@ -3777,6 +4057,77 @@ TUR_kurdish_state_management_category = {
 			}
 			else = { 
 				800 = { save_event_target_as = TUR_kurdish_state_event_target }
+				event_target:TUR_kurdish_state_event_target = { TUR_integrate_kurdish_state_effect = yes }
+			}
+		}
+	}
+	
+	TUR_integrate_kagizman = {
+
+		icon = faction_tur_kurdish
+
+		available = {
+			1287 = {
+				AND = {
+					compliance > 70
+					resistance < 30
+				}
+			}
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 1287
+			}
+		}
+
+		on_map_mode = map_only
+
+		cost = 200
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 10
+				has_political_power > 350
+			}
+			modifier = {
+				has_manpower < 50000
+				has_war = yes
+				has_political_power > 200
+				factor = 25
+			}
+		}
+		visible = {
+			OR = {
+				has_completed_focus = TUR_permit_regional_elections
+				has_completed_focus = TUR_a_common_destiny_for_all_of_turkey
+			}
+			1287 = {
+				AND = {
+					NOT = { is_core_of = TUR } 
+					is_owned_by = TUR
+				}
+			}
+		}
+
+		complete_effect = {
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							AND = {
+								is_core_of = KUR
+								NOT = { is_core_of = TUR }
+								compliance > 70
+								resistance < 30
+							}
+						}
+					}
+				}
+				custom_effect_tooltip = TUR_no_current_integration_targets_available_tt
+			}
+			else = { 
+				1287 = { save_event_target_as = TUR_kurdish_state_event_target }
 				event_target:TUR_kurdish_state_event_target = { TUR_integrate_kurdish_state_effect = yes }
 			}
 		}
@@ -6148,6 +6499,10 @@ category_faction_debug_decisions = {
 						is_core_of = TUR
 					}
 					800 = { 
+						is_core_of = KUR
+						is_core_of = TUR
+					}
+					1287 = { 
 						is_core_of = KUR
 						is_core_of = TUR
 					}

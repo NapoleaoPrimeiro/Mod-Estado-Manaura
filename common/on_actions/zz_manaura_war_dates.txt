@@ -1,0 +1,15 @@
+on_actions = {
+	# Manaura: coloca/tira a trava de justificar guerra conforme rank e data
+	on_startup = {
+		effect = {
+			every_country = {
+				manaura_update_justify_lock = yes
+			}
+		}
+	}
+	on_monthly = {
+		effect = {
+			manaura_update_justify_lock = yes
+		}
+	}
+}

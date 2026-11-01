@@ -746,7 +746,7 @@ focus = {
 					AUS = {
 						has_civil_war = no
 						OR = {
-							owns_state = 4
+							owns_state = 4 owns_state = 1553
 							owns_state = 152
 							owns_state = 153
 						}
@@ -764,7 +764,7 @@ focus = {
 						original_tag = AUS
 						has_civil_war = yes
 						OR = {
-							owns_state = 4
+							owns_state = 4 owns_state = 1553
 							owns_state = 152
 							owns_state = 153
 						}
@@ -813,7 +813,7 @@ focus = {
 						}
 					}
 				}
-				add_state_core = 4
+				add_state_core = 4 add_state_core = 1553
 			}
 			if = {
 				limit = {
@@ -1860,7 +1860,7 @@ remove_ideas = mark
 					AUS = {
 						has_civil_war = no
 						OR = {
-							owns_state = 4
+							owns_state = 4 owns_state = 1553
 							owns_state = 152
 							owns_state = 153
 						}
@@ -1878,7 +1878,7 @@ remove_ideas = mark
 						original_tag = AUS
 						has_civil_war = yes
 						OR = {
-							owns_state = 4
+							owns_state = 4 owns_state = 1553
 							owns_state = 152
 							owns_state = 153
 						}
@@ -1927,7 +1927,7 @@ remove_ideas = mark
 						}
 					}
 				}
-				add_state_core = 4
+				add_state_core = 4 add_state_core = 1553
 			}
 			if = {
 				limit = {
@@ -2735,6 +2735,7 @@ remove_ideas = mark
 			if = {
 				limit = {
 					59 = { is_fully_controlled_by = ROOT }
+					1545 = { is_fully_controlled_by = ROOT } # KSRE (de 59)
 				}
 				59 = { #Hannover
 					add_resource = {
@@ -2750,7 +2751,7 @@ remove_ideas = mark
 					limit = {
 						is_fully_controlled_by = ROOT
 						NOT = {
-							state = 59
+							state = 59 state = 1545
 						}
 						OR = {
 							has_resources_amount = {
@@ -3290,20 +3291,20 @@ remove_ideas = mark
 			add_state_core = 848
             add_state_core = 153
 		    add_state_core = 152
-		    add_state_core = 4 
-		    add_state_core = 69
+		    add_state_core = 4 add_state_core = 1553 
+		    add_state_core = 69 add_state_core = 1556
 		    add_state_core = 74
-		    add_state_core = 807
+		    add_state_core = 807 add_state_core = 1554
 		    add_state_core = 85
-		    add_state_core = 86
+		    add_state_core = 86 add_state_core = 1389
 		    add_state_core = 762
 		    add_state_core = 188
 		    add_state_core = 99
 			add_state_core = 912
-			add_state_core = 909
-		    add_state_core = 36
-		    add_state_core = 7
-		    add_state_core = 35
+			add_state_core = 909 add_state_core = 1728
+		    add_state_core = 36 add_state_core = 1552
+		    add_state_core = 7 add_state_core = 1292
+		    add_state_core = 35 add_state_core = 1255 add_state_core = 1293 add_state_core = 1297 add_state_core = 1376
 		    add_state_core = 6
 		    add_state_core = 8
 		    add_state_core = 28
@@ -4918,9 +4919,9 @@ focus = {
 		relative_position_id = ger_121
 		available = {
 			is_subject = no
-			controls_state = 52
-			controls_state = 53
-			controls_state = 54
+			controls_state = 52 controls_state = 1549 controls_state = 1550
+			controls_state = 53 controls_state = 1548
+			controls_state = 54 controls_state = 1546
 		}
 		cancel_if_invalid = yes
 		x = -6
@@ -4962,9 +4963,9 @@ focus = {
 		relative_position_id = ger_136
 		available = {
 			is_subject = no
-			controls_state = 10
-			controls_state = 92
-			controls_state = 88
+			controls_state = 10 controls_state = 1256
+			controls_state = 92 controls_state = 1400 controls_state = 1530
+			controls_state = 88 controls_state = 1144 controls_state = 1145 controls_state = 1265 controls_state = 1385 controls_state = 1386 controls_state = 1399 controls_state = 1425 controls_state = 1483 controls_state = 1528 controls_state = 1529 controls_state = 1775
 		}
 		cancel_if_invalid = yes
 		x = 1
@@ -5961,7 +5962,7 @@ focus = {
 				category = air_doctrine
 			}
 			random_owned_controlled_state = {
-				prioritize = { 59 }
+				prioritize = { 59 1545 }
 				limit = {
 					air_base > 1
 					air_base < 9
@@ -5973,7 +5974,7 @@ focus = {
 				}
 			}
 			random_owned_controlled_state = {
-				prioritize = { 42 }
+				prioritize = { 42 1414 1551 }
 				limit = {
 					air_base > 1
 					air_base < 9
@@ -5985,7 +5986,7 @@ focus = {
 				}
 			}
 			random_owned_controlled_state = {
-				prioritize = { 51 }
+				prioritize = { 51 1253 }
 				limit = {
 					air_base > 1
 					air_base < 9
@@ -6727,7 +6728,7 @@ focus = {
 					AUS = {
 						has_civil_war = no
 						OR = {
-							owns_state = 4
+							owns_state = 4 owns_state = 1553
 							owns_state = 152
 							owns_state = 153
 						}
@@ -6745,7 +6746,7 @@ focus = {
 						original_tag = AUS
 						has_civil_war = yes
 						OR = {
-							owns_state = 4
+							owns_state = 4 owns_state = 1553
 							owns_state = 152
 							owns_state = 153
 						}
@@ -6794,7 +6795,7 @@ focus = {
 						}
 					}
 				}
-				add_state_core = 4
+				add_state_core = 4 add_state_core = 1553
 			}
 			if = {
 				limit = {
@@ -6870,7 +6871,7 @@ focus = {
 					AUS = {
 						has_civil_war = no
 						OR = {
-							owns_state = 4
+							owns_state = 4 owns_state = 1553
 							owns_state = 152
 							owns_state = 153
 						}
@@ -6888,7 +6889,7 @@ focus = {
 						original_tag = AUS
 						has_civil_war = yes
 						OR = {
-							owns_state = 4
+							owns_state = 4 owns_state = 1553
 							owns_state = 152
 							owns_state = 153
 						}
@@ -6937,7 +6938,7 @@ focus = {
 						}
 					}
 				}
-				add_state_core = 4
+				add_state_core = 4 add_state_core = 1553
 			}
 			if = {
 				limit = {
@@ -7008,12 +7009,12 @@ add_ideas = GER_true_vanguard
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 		CZE = {country_event = fracomev.74}
-			add_state_core = 69
-			add_state_core = 9
-			add_state_core = 972
+			add_state_core = 69 add_state_core = 1556
+			add_state_core = 9 add_state_core = 1555
+			add_state_core = 972 add_state_core = 1608
 			add_state_core = 75
 			add_state_core = 74
-			add_state_core = 72
+			add_state_core = 72 add_state_core = 1727
 		}
 	}
 	focus = {
@@ -7038,12 +7039,12 @@ add_ideas = GER_true_vanguard
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 		CZE = {country_event = fracomev.74}
-		        add_state_core = 69
-			add_state_core = 9
-			add_state_core = 972
+		        add_state_core = 69 add_state_core = 1556
+			add_state_core = 9 add_state_core = 1555
+			add_state_core = 972 add_state_core = 1608
 			add_state_core = 75
 			add_state_core = 74
-			add_state_core = 72
+			add_state_core = 72 add_state_core = 1727
 		}
 	}
 
@@ -7425,8 +7426,8 @@ add_ideas = GER_true_vanguard
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 	add_state_core = 85
-	add_state_core = 807
-		add_state_core = 86
+	add_state_core = 807 add_state_core = 1554
+		add_state_core = 86 add_state_core = 1389
 		POL = {country_event = fracomev.76}
 		}
 	}
@@ -10652,16 +10653,16 @@ focus = {
 						has_a_german_trade_idea = yes
 					}
 					OR = { #Old colonial claims
-						controls_state = 539
-						controls_state = 772
-						controls_state = 660
-						controls_state = 774
+						controls_state = 539 controls_state = 1769
+						controls_state = 772 controls_state = 1766 controls_state = 1767 controls_state = 1768
+						controls_state = 660 controls_state = 1764 controls_state = 1765
+						controls_state = 774 controls_state = 1763
 						controls_state = 771
 						controls_state = 770
 						controls_state = 981
 						controls_state = 545
-						controls_state = 901
-						controls_state = 900
+						controls_state = 901 controls_state = 1762
+						controls_state = 900 controls_state = 1760 controls_state = 1761
 						controls_state = 902
 						controls_state = 558
 						controls_state = 776
@@ -10673,16 +10674,16 @@ focus = {
 				every_controlled_state = {
 					limit = {
 						OR = {
-							state = 539
-							state = 772
-							state = 660
-							state = 774
+							state = 539 state = 1769
+							state = 772 state = 1766 state = 1767 state = 1768
+							state = 660 state = 1764 state = 1765
+							state = 774 state = 1763
 							state = 771
 							state = 770
 							state = 981
 							state = 545
-							state = 901
-							state = 900
+							state = 901 state = 1762
+							state = 900 state = 1760 state = 1761
 							state = 902
 							state = 558
 							state = 776
@@ -10817,7 +10818,7 @@ focus = {
 					}
 					OR = { #Old colonial claims
 						controls_state = 523
-						controls_state = 773
+						controls_state = 773 controls_state = 1770
 						controls_state = 541
 						controls_state = 546
 						controls_state = 737
@@ -10849,7 +10850,7 @@ focus = {
 						NOT = { is_claimed_by = ROOT }
 						OR = {
 							state = 523
-							state = 773
+							state = 773 state = 1770
 							state = 541
 							state = 546
 							state = 737
@@ -11279,10 +11280,10 @@ focus = {
 		completion_reward = {  
 		add_state_core = 28
 		add_state_core = 8
-		add_state_core = 845
-		add_state_core = 3
-		add_state_core = 17
-		add_state_core = 18
+		add_state_core = 845 add_state_core = 1507 add_state_core = 1514
+		add_state_core = 3 add_state_core = 1508 add_state_core = 1515
+		add_state_core = 17 add_state_core = 1257
+		add_state_core = 18 add_state_core = 1258 add_state_core = 1259 add_state_core = 1402
 		add_state_core = 34
 		}
 	}
@@ -12040,7 +12041,7 @@ focus = {
 					AUS = {
 						has_civil_war = no
 						OR = {
-							owns_state = 4
+							owns_state = 4 owns_state = 1553
 							owns_state = 152
 							owns_state = 153
 							owns_state = 848
@@ -12076,7 +12077,7 @@ focus = {
 					}
 					CZE = { NOT = { is_in_faction_with = GER } }
 					CZE = { NOT = { has_war_with = ENG } }
-					CZE = { controls_state = 69 }
+					CZE = { controls_state = 69 controls_state = 1556 }
 					OR = {
 						HUN = {
 							NOT = {
@@ -12145,9 +12146,9 @@ focus = {
 				POL = { exists = no }
 				AND = {
 					owns_state = 85
-					owns_state = 86
+					owns_state = 86 owns_state = 1389
 					owns_state = 762
-					owns_state = 807
+					owns_state = 807 owns_state = 1554
 				}
 			}
 		}
@@ -12338,7 +12339,7 @@ focus = {
 				}
 				OR = {
 					SOU = {
-						NOT = { controls_state = 219 }
+						NOT = { controls_state = 219 controls_state = 1105 controls_state = 1106 controls_state = 1107 controls_state = 1113 controls_state = 1114 controls_state = 1115 }
 					}
 					has_global_flag = sov_yes_pact
 				}
@@ -12842,12 +12843,12 @@ focus = {
 			}
 			completion_reward = {
 				MEX = {
-					add_state_core = 378
-					add_state_core = 377
-					add_state_core = 376
-					add_state_core = 375
-					add_state_core = 385
-					add_state_core = 380
+					add_state_core = 378 add_state_core = 1167 add_state_core = 1562 add_state_core = 1563 add_state_core = 1622 add_state_core = 1623 add_state_core = 1624 add_state_core = 1625 add_state_core = 1655 add_state_core = 1753
+					add_state_core = 377 add_state_core = 1152 add_state_core = 1154 add_state_core = 1641 add_state_core = 1642 add_state_core = 1643 add_state_core = 1644 add_state_core = 1645 add_state_core = 1647 add_state_core = 1649 add_state_core = 1650 add_state_core = 1651 add_state_core = 1652 add_state_core = 1653 add_state_core = 1654 add_state_core = 1656 add_state_core = 1664
+					add_state_core = 376 add_state_core = 1151 add_state_core = 1153 add_state_core = 1352 add_state_core = 1353 add_state_core = 1567 add_state_core = 1657 add_state_core = 1658 add_state_core = 1659 add_state_core = 1660 add_state_core = 1661 add_state_core = 1662 add_state_core = 1663 add_state_core = 1665
+					add_state_core = 375 add_state_core = 1150 add_state_core = 1350 add_state_core = 1351 add_state_core = 1666 add_state_core = 1667 add_state_core = 1668 add_state_core = 1669 add_state_core = 1670 add_state_core = 1671 add_state_core = 1672
+					add_state_core = 385 add_state_core = 1160 add_state_core = 1561 add_state_core = 1616 add_state_core = 1617 add_state_core = 1618 add_state_core = 1619 add_state_core = 1621 add_state_core = 1636
+					add_state_core = 380 add_state_core = 1155 add_state_core = 1637 add_state_core = 1638 add_state_core = 1639 add_state_core = 1640
 					if = {
 						limit = {
 							ROOT = {
@@ -12969,7 +12970,7 @@ focus = {
 					AUS = {
 						has_civil_war = no
 						OR = {
-							owns_state = 4
+							owns_state = 4 owns_state = 1553
 							owns_state = 152
 							owns_state = 153
 							owns_state = 848
@@ -13005,7 +13006,7 @@ focus = {
 					}
 					CZE = { NOT = { is_in_faction_with = GER } }
 					CZE = { NOT = { has_war_with = ENG } }
-					CZE = { controls_state = 69 }
+					CZE = { controls_state = 69 controls_state = 1556 }
 					OR = {
 						HUN = {
 							NOT = {
@@ -13072,9 +13073,9 @@ focus = {
 				POL = { exists = no }
 				AND = {
 					owns_state = 85
-					owns_state = 86
+					owns_state = 86 owns_state = 1389
 					owns_state = 762
-					owns_state = 807
+					owns_state = 807 owns_state = 1554
 				}
 			}
 		}

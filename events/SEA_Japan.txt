@@ -400,98 +400,6 @@ country_event = {
 
 
 
-# Enemy landing on Taiwan (naval invasion or paradrop) raises the Takasago Volunteers
-# Triggered from JAP_takasago_volunteers_landing_check in JAP_scripted_effects.txt
-country_event = {
-	id = SEA_japan.2
-	title = SEA_japan.2.t
-	desc = SEA_japan.2.desc
-	picture = GFX_report_event_japanese_soldiers_01
-
-	is_triggered_only = yes
-
-	fire_only_once = yes
-
-	immediate = {
-		hidden_effect = {
-			division_template = {
-				name = "Takasago Giyutai"		# Takasago Volunteers - indigenous Taiwanese volunteers raised on the island
-				is_locked = yes
-				template_counter = 109
-				role = infantry # front line defence, not garrison duty
-				regiments = {
-					infantry = { x = 0 y = 0 }
-					infantry = { x = 0 y = 1 }
-					infantry = { x = 0 y = 2 }
-					infantry = { x = 1 y = 0 }
-					infantry = { x = 1 y = 1 }
-					infantry = { x = 1 y = 2 }
-				}
-				priority = 0
-			}
-
-			# create_unit only places on provinces friendly to the owner, so the enemy beachhead is skipped automatically
-			524 = { # Taiwan
-				create_unit = {
-					division = "name = \"1. Takasago Giyutai\" division_template = \"Takasago Giyutai\" start_experience_factor = 0.3 start_equipment_factor = 0.5"
-					owner = ROOT
-				}
-				create_unit = {
-					division = "name = \"2. Takasago Giyutai\" division_template = \"Takasago Giyutai\" start_experience_factor = 0.3 start_equipment_factor = 0.5"
-					owner = ROOT
-				}
-				create_unit = {
-					division = "name = \"3. Takasago Giyutai\" division_template = \"Takasago Giyutai\" start_experience_factor = 0.3 start_equipment_factor = 0.5"
-					owner = ROOT
-				}
-			}
-		}
-	}
-
-	option = {
-		name = SEA_japan.2.a
-		custom_effect_tooltip = JAP_takasago_volunteers_raised_tt
-	}
-}
-
-
-# First non-Japanese enemy landing on the Home Islands, naval or airborne, initiates Ketsu-Go
-# Triggered from JAP_home_islands_landing_check in JAP_scripted_effects.txt
-country_event = {
-	id = SEA_japan.3
-	title = SEA_japan.3.t
-	desc = SEA_japan.3.desc
-	picture = GFX_report_event_japanese_soldiers_02
-
-	is_triggered_only = yes
-
-	fire_only_once = yes
-
-	option = {
-		name = SEA_japan.3.a
-
-		add_command_power = 50
-
-		custom_effect_tooltip = generic_skip_one_line_tt
-
-		# Requisitioned civilian lorries, the ones the prefectures were told to hand over
-		add_equipment_to_stockpile = {
-			type = motorized_equipment_1
-			amount = 250
-			producer = ROOT
-		}
-
-		custom_effect_tooltip = generic_skip_one_line_tt
-
-		add_ideas = JAP_ketsugo_field_expedients
-
-		custom_effect_tooltip = generic_skip_one_line_tt
-
-		JAP_small_army_faction_gain = yes
-	}
-}
-
-
 # Japan demands our Submission - event for MEN
 country_event = {
 	id = SEA_japan_foreign_policy.1
@@ -1968,7 +1876,22 @@ country_event = {
 						state = 817
 						state = 330
 						state = 820
-						state = 819
+						state = 819 state = 1442
+						state = 1457
+						state = 1460
+						state = 1461
+						state = 1462
+						state = 1463
+						state = 1464
+						state = 1465
+						state = 1466
+						state = 1467
+						state = 1468
+						state = 1469
+						state = 1470
+						state = 1471
+						state = 1472
+						state = 1473
 						state = 564
 						state = 329
 						state = 654
@@ -1978,7 +1901,15 @@ country_event = {
 						state = 746
 						state = 612
 						state = 611
-						state = 761
+						state = 1441
+						state = 1455
+						state = 1456
+						state = 1458
+						state = 1459
+						state = 1474
+						state = 1475
+						state = 1476
+						state = 761 state = 1432 state = 1433
 						state = 563
 						state = 566
 						state = 616
@@ -3580,9 +3511,9 @@ country_event = {
 				    states = all
 				    states_filter = {
 				        OR = {
-				        	state = 819
-				        	state = 817
-				        	state = 818
+				        	state = 819 state = 1442 state = 1457 state = 1461 state = 1462
+				        	state = 817 state = 1460 state = 1463 state = 1464 state = 1466 state = 1467
+				        	state = 818 state = 1468 state = 1469
 				        }
 				        is_controlled_by = ROOT
 				    }
@@ -3652,9 +3583,9 @@ country_event = {
 				    states = all
 				    states_filter = {
 				        OR = {
-				        	state = 819
-				        	state = 817
-				        	state = 818
+				        	state = 819 state = 1442 state = 1457 state = 1461 state = 1462
+				        	state = 817 state = 1460 state = 1463 state = 1464 state = 1466 state = 1467
+				        	state = 818 state = 1468 state = 1469
 				        }
 				        is_controlled_by = ROOT
 				    }
@@ -3746,8 +3677,18 @@ country_event = {
 				NOT = {
 					state = 745 # Kwantung Leased Territory
 					state = 609 # Easty Hebei
+					state = 1487
+					state = 1488
 					state = 611 # South Chahar
 					state = 612 # Chahar
+					state = 1441
+					state = 1455
+					state = 1456
+					state = 1458
+					state = 1459
+					state = 1474
+					state = 1475
+					state = 1476
 					region = 155 # West Manchuria
 					region = 242 # North Manchuria
 					region = 243 # East Manchuria
@@ -3776,8 +3717,18 @@ country_event = {
 				NOT = {
 					state = 745 # Kwantung Leased Territory
 					state = 609 # Easty Hebei
+					state = 1487
+					state = 1488
 					state = 611 # South Chahar
 					state = 612 # Chahar
+					state = 1441
+					state = 1455
+					state = 1456
+					state = 1458
+					state = 1459
+					state = 1474
+					state = 1475
+					state = 1476
 					region = 155 # West Manchuria
 					region = 242 # North Manchuria
 					region = 243 # East Manchuria
@@ -5869,7 +5820,13 @@ country_event = {
 						state = 655
 						state = 657
 						state = 560
-						state = 561
+						state = 561 state = 1337
+						state = 1332
+						state = 1333
+						state = 1334
+						state = 1335
+						state = 1336
+						state = 1338
 						state = 563
 						state = 564
 						state = 566
@@ -5878,11 +5835,12 @@ country_event = {
 						state = 876
 						state = 877
 						state = 644
+						state = 1629
 						state = 562
 						state = 874
 						state = 637
 						state = 822
-						state = 875
+						state = 875 state = 1609
 						state = 575
 						state = 576
 						state = 567
@@ -5891,6 +5849,9 @@ country_event = {
 						state = 654
 						state = 878
 						state = 516
+						state = 1646
+						state = 1648
+						state = 1628
 					}
 					OR = {
 						is_owned_by = ROOT
@@ -5980,7 +5941,13 @@ country_event = {
 					state = 655
 					state = 657
 					state = 560
-					state = 561
+					state = 561 state = 1337
+					state = 1332
+					state = 1333
+					state = 1334
+					state = 1335
+					state = 1336
+					state = 1338
 					state = 563
 					state = 564
 					state = 566
@@ -5989,11 +5956,12 @@ country_event = {
 					state = 876
 					state = 877
 					state = 644
+					state = 1629
 					state = 562
 					state = 874
 					state = 637
 					state = 822
-					state = 875
+					state = 875 state = 1609
 					state = 575
 					state = 576
 					state = 567
@@ -6002,6 +5970,9 @@ country_event = {
 					state = 654
 					state = 878
 					state = 516
+					state = 1646
+					state = 1648
+					state = 1628
 				}
 				OR = {
 					is_owned_by = FROM
@@ -7922,7 +7893,7 @@ country_event = {
 							state = 336
 							state = 999
 							state = 1024
-							state = 1023
+							state = 1023 state = 1340
 							state = 333
 							state = 334
 							state = 724
@@ -8004,7 +7975,7 @@ country_event = {
 						state = 336
 						state = 999
 						state = 1024
-						state = 1023
+						state = 1023 state = 1340
 						state = 333
 						state = 334
 						state = 724
@@ -8797,7 +8768,18 @@ country_event = {
 			    OR = {
 			    	state = 527
 			    	state = 1028
-			    	state = 525
+			    	state = 525 state = 1316
+			    	state = 1317
+			    	state = 1318
+			    	state = 1320
+			    	state = 1321
+			    	state = 1322
+			    	state = 1323
+			    	state = 1324
+			    	state = 1326
+			    	state = 1327
+			    	state = 1328
+			    	state = 1329
 			    }
 			    is_controlled_by = ROOT
 			}
@@ -8869,9 +8851,9 @@ country_event = {
 			states = all
 			states_filter = {
 			    OR = {
-			    	state = 1031
-			    	state = 1030
-			    	state = 1029
+			    	state = 1031 state = 1311 state = 1315
+			    	state = 1030 state = 1313
+			    	state = 1029 state = 1320 state = 1321
 			    }
 			    is_controlled_by = ROOT
 			}
@@ -12632,6 +12614,14 @@ country_event = {
 			transfer_state_to = ROOT
 			add_core_of = ROOT
 		}
+		1487 = { # KSRE (de 609)
+			transfer_state_to = ROOT
+			add_core_of = ROOT
+		}
+		1488 = { # KSRE (de 609)
+			transfer_state_to = ROOT
+			add_core_of = ROOT
+		}
 
 		custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -12664,6 +12654,14 @@ country_event = {
 		
 		effect_tooltip = {
 			609 = {
+				transfer_state_to = FROM
+				add_core_of = FROM
+			}
+			1487 = { # KSRE (de 609)
+				transfer_state_to = FROM
+				add_core_of = FROM
+			}
+			1488 = { # KSRE (de 609)
 				transfer_state_to = FROM
 				add_core_of = FROM
 			}
@@ -14877,6 +14875,12 @@ country_event = {
 			761 = {
 				add_core_of = MON
 			}
+			1432 = { # KSRE (de 761)
+				add_core_of = MON
+			}
+			1433 = { # KSRE (de 761)
+				add_core_of = MON
+			}
 		}
 
 	}
@@ -14939,6 +14943,12 @@ country_event = {
 				custom_effect_tooltip = generic_skip_one_line_tt
 
 				761 = {
+					add_core_of = PREV
+				}
+				1432 = { # KSRE (de 761)
+					add_core_of = PREV
+				}
+				1433 = { # KSRE (de 761)
 					add_core_of = PREV
 				}
 			}
@@ -15064,6 +15074,12 @@ country_event = {
 		761 = {
 			add_core_of = MON
 		}
+		1432 = { # KSRE (de 761)
+			add_core_of = MON
+		}
+		1433 = { # KSRE (de 761)
+			add_core_of = MON
+		}
 		
 	}
 
@@ -15122,6 +15138,12 @@ country_event = {
 		custom_effect_tooltip = generic_skip_one_line_tt
 
 		761 = {
+			add_core_of = MON
+		}
+		1432 = { # KSRE (de 761)
+			add_core_of = MON
+		}
+		1433 = { # KSRE (de 761)
 			add_core_of = MON
 		}
 

@@ -109,12 +109,15 @@ focus_tree = {
 				GER_remove_mefo_bills = yes
 			}
 			42 = { set_demilitarized_zone = no }
+			1414 = { set_demilitarized_zone = no } # KSRE (de 42)
 			51 = { set_demilitarized_zone = no }
+			1253 = { set_demilitarized_zone = no } # KSRE (de 51)
 			978 = { set_demilitarized_zone = no }
 			# Manaura: Hessen (55), Essen (1085) and Saarland (1089) were missing here
 			55 = { set_demilitarized_zone = no }
-			1085 = { set_demilitarized_zone = no }
-			1089 = { set_demilitarized_zone = no }
+			1254 = { set_demilitarized_zone = no } # KSRE (de 55)
+			1251 = { set_demilitarized_zone = no } 1253 = { set_demilitarized_zone = no } 1254 = { set_demilitarized_zone = no } 1414 = { set_demilitarized_zone = no } # KSRE: Freiburg, Ruhr, Frankfurt, Bonn
+			1551 = { set_demilitarized_zone = no } # KSRE: Saarland
 			add_political_power = 120
 			add_named_threat = { threat = 5 name = GER_oppose_hitler }
 			country_event = { id = wtt_germany.1 }
@@ -183,9 +186,13 @@ focus_tree = {
  				elections_allowed = no
  			}
  			42 = { set_demilitarized_zone = no }
+ 			1414 = { set_demilitarized_zone = no } # KSRE (de 42)
+ 			1551 = { set_demilitarized_zone = no } # KSRE (de 42)
  			51 = { set_demilitarized_zone = no }
+ 			1253 = { set_demilitarized_zone = no } # KSRE (de 51)
  			848 = { set_demilitarized_zone = no }
 			978 = { set_demilitarized_zone = no }
+			1251 = { set_demilitarized_zone = no } # KSRE (de 978)
  			create_country_leader = {
  				name = "Fallen Reichstag"
  				picture = GFX_portrait_Fallen_Government
@@ -928,7 +935,7 @@ focus_tree = {
 					}
 					OR = { #Old colonial claims
 						controls_state = 523
-						controls_state = 773
+						controls_state = 773 controls_state = 1770
 						controls_state = 541
 						controls_state = 546
 						controls_state = 737
@@ -952,7 +959,7 @@ focus_tree = {
 					limit = {
 						OR = {
 							state = 523
-							state = 773
+							state = 773 state = 1770
 							state = 541
 							state = 546
 							state = 737
@@ -1659,7 +1666,7 @@ diplomatic_relation = {
 					NOT = { is_ally_with = ENG } #We don't want to accidentally drag ENG into a war
 					OR = {
 						controls_state = 28
-						controls_state = 773
+						controls_state = 773 controls_state = 1770
 						controls_state = 777
 						controls_state = 461
 						controls_state = 462
@@ -1670,7 +1677,7 @@ diplomatic_relation = {
 					limit = {
 						OR = {
 							state = 28
-							state = 773
+							state = 773 state = 1770
 							state = 777
 							state = 461
 							state = 462
@@ -1791,7 +1798,7 @@ diplomatic_relation = {
 		prerequisite = { focus = ger_57 focus = ger_22 }
 		available = { 
 			is_subject = no
-			has_full_control_of_state = 5
+			has_full_control_of_state = 5 has_full_control_of_state = 1288 has_full_control_of_state = 1427 has_full_control_of_state = 1428 has_full_control_of_state = 1557 has_full_control_of_state = 1701 has_full_control_of_state = 1702 has_full_control_of_state = 1772
 		}
 		cancel_if_invalid = yes
 		x = 4
@@ -1826,7 +1833,7 @@ add_ideas = ger_non_inf add_stability = 0.05 add_war_support = 0.05 add_politica
 			}
 			if = {
 				limit = {
-					has_full_control_of_state = 5
+					has_full_control_of_state = 5 has_full_control_of_state = 1288 has_full_control_of_state = 1427 has_full_control_of_state = 1428 has_full_control_of_state = 1557 has_full_control_of_state = 1701 has_full_control_of_state = 1702 has_full_control_of_state = 1772
 				}
 				5 = {
 					custom_effect_tooltip = GER_see_to_the_eastern_front_tt
@@ -1854,7 +1861,7 @@ add_ideas = ger_non_inf add_stability = 0.05 add_war_support = 0.05 add_politica
 			}
 			if = {
 				limit = {
-					has_full_control_of_state = 763
+					has_full_control_of_state = 763 has_full_control_of_state = 1249
 				}
 				763 = {
 					custom_effect_tooltip = GER_see_to_the_eastern_front_tt2
@@ -1912,9 +1919,9 @@ add_ideas = ger_non_inf add_stability = 0.05 add_war_support = 0.05 add_politica
 				POL = { exists = no }
 				AND = {
 					owns_state = 85
-					owns_state = 86
+					owns_state = 86 owns_state = 1389
 					owns_state = 762
-					owns_state = 807
+					owns_state = 807 owns_state = 1554
 				}
 			}
 		}
@@ -2474,21 +2481,21 @@ swap_ideas = { remove_idea = CZE_export_focus2 add_idea = CZE_export_focus3 }
 					}
 				}
 				random_owned_controlled_state = {
-					prioritize = { 64 }
+					prioritize = { 64 1268 1269 1542 1544 }
 					create_unit = {
 						division = "name = \"1 Magyar Királyi Huszárok\" division_template = \"Magyar Királyi Huszárok\" start_experience_factor = 1.0"
 						owner = GER
 					}
 				}
 				random_owned_controlled_state = {
-					prioritize = { 64 }
+					prioritize = { 64 1268 1269 1542 1544 }
 					create_unit = {
 						division = "name = \"2 Magyar Királyi Huszárok\" division_template = \"Magyar Királyi Huszárok\" start_experience_factor = 1.0"
 						owner = GER
 					}
 				}
 				random_owned_controlled_state = {
-					prioritize = { 64 }
+					prioritize = { 64 1268 1269 1542 1544 }
 					create_unit = {
 						division = "name = \"3 Magyar Királyi Huszárok\" division_template = \"Magyar Királyi Huszárok\" start_experience_factor = 1.0"
 						owner = GER
@@ -3178,10 +3185,10 @@ add_ideas = HUN_hungarian_gendarmerie
 		}
 		search_filters = {FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-		add_state_core = 82
-		add_state_core = 83	
-		add_state_core = 76
-		add_state_core = 84
+		add_state_core = 82 add_state_core = 1479
+		add_state_core = 83 add_state_core = 1480	
+		add_state_core = 76 add_state_core = 1309 add_state_core = 1310 add_state_core = 1722
+		add_state_core = 84 add_state_core = 1387
 		}
 	}
 	
@@ -3205,11 +3212,11 @@ add_ideas = HUN_hungarian_gendarmerie
 		search_filters = {FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 		add_state_core = 853
-		add_state_core = 102	
-		add_state_core = 103
-		add_state_core = 109
-		add_state_core = 45
-		add_state_core = 764
+		add_state_core = 102 add_state_core = 1410 add_state_core = 1704	
+		add_state_core = 103 add_state_core = 1296 add_state_core = 1325 add_state_core = 1339 add_state_core = 1388 add_state_core = 1718
+		add_state_core = 109 add_state_core = 1706 add_state_core = 1707
+		add_state_core = 45 add_state_core = 1477 add_state_core = 1705
+		add_state_core = 764 add_state_core = 1478
 		}
 	}
 	
@@ -3918,8 +3925,8 @@ add_ideas = HUN_hungarian_gendarmerie
                   	 # }
                	 	#}
 		add_state_core = 85
-		add_state_core = 807
-		add_state_core = 86
+		add_state_core = 807 add_state_core = 1554
+		add_state_core = 86 add_state_core = 1389
 		add_state_core = 762
 		add_state_core = 188
 		}
@@ -4099,7 +4106,7 @@ add_ideas = HUN_hungarian_gendarmerie
 		}
 		search_filters = {FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-		add_state_core = 158	
+		add_state_core = 158 add_state_core = 1308	
 		add_state_core = 159
 		add_state_core = 850
 		add_state_core = 39
@@ -4132,7 +4139,7 @@ create_wargoal = {
     type = puppet_wargoal_focus
     target = YUG
 }
-		add_state_core = 102
+		add_state_core = 102 add_state_core = 1410 add_state_core = 1704
 		add_state_core = 853
 		
 	
@@ -4186,15 +4193,15 @@ create_wargoal = {
 		}
 		search_filters = {FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-	add_state_core = 69
-		add_state_core = 9
+	add_state_core = 69 add_state_core = 1556
+		add_state_core = 9 add_state_core = 1555
 		add_state_core = 75
 		add_state_core = 74
-		add_state_core = 72
-		add_state_core = 70
-		add_state_core = 664
-		add_state_core = 71
-		add_state_core = 73
+		add_state_core = 72 add_state_core = 1727
+		add_state_core = 70 add_state_core = 1146 add_state_core = 1147
+		add_state_core = 664 add_state_core = 1560
+		add_state_core = 71 add_state_core = 1148 add_state_core = 1149
+		add_state_core = 73 add_state_core = 1294
 		}
 	}
 	
@@ -5409,12 +5416,12 @@ TUR = {country_event = generic.5}
 						NOT = {
 							OR = {
 								state = 762
-								state = 88
-								state = 91
-								state = 89
+								state = 88 state = 1144 state = 1145 state = 1265 state = 1385 state = 1386 state = 1399 state = 1425 state = 1483 state = 1528 state = 1529 state = 1775
+								state = 91 state = 1531
+								state = 89 state = 1532
 								state = 80
-								state = 72
-								state = 93
+								state = 72 state = 1727
+								state = 93 state = 1533
 							}
 						}
 					}
@@ -6367,12 +6374,12 @@ create_wargoal = {
 		}
 		search_filters = {FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-	add_state_core = 88
-add_state_core = 89
-add_state_core = 91
+	add_state_core = 88 add_state_core = 1144 add_state_core = 1145 add_state_core = 1265 add_state_core = 1385 add_state_core = 1386 add_state_core = 1399 add_state_core = 1425 add_state_core = 1483 add_state_core = 1528 add_state_core = 1529 add_state_core = 1775
+add_state_core = 89 add_state_core = 1532
+add_state_core = 91 add_state_core = 1531
 add_state_core = 762
-add_state_core = 86
-add_state_core = 807
+add_state_core = 86 add_state_core = 1389
+add_state_core = 807 add_state_core = 1554
 add_state_core = 85
 		}
 	}
@@ -8385,10 +8392,10 @@ focus = {
 		x = 2
 		y = 1
 		available = {controls_state = 85
-		controls_state = 807
-		controls_state = 86
-		controls_state = 763
-		controls_state = 5
+		controls_state = 807 controls_state = 1554
+		controls_state = 86 controls_state = 1389
+		controls_state = 763 controls_state = 1249
+		controls_state = 5 controls_state = 1288 controls_state = 1427 controls_state = 1428 controls_state = 1557 controls_state = 1701 controls_state = 1702 controls_state = 1772
 		}
 		
 	prerequisite = { focus = ger_76 }
@@ -8420,10 +8427,10 @@ focus = {
 		x = -2
 		y = 1
 		available = {controls_state = 85
-		controls_state = 807
-		controls_state = 86
-		controls_state = 763
-		controls_state = 5
+		controls_state = 807 controls_state = 1554
+		controls_state = 86 controls_state = 1389
+		controls_state = 763 controls_state = 1249
+		controls_state = 5 controls_state = 1288 controls_state = 1427 controls_state = 1428 controls_state = 1557 controls_state = 1701 controls_state = 1702 controls_state = 1772
 		}
 		
 	prerequisite = { focus = ger_76 }
@@ -8450,16 +8457,25 @@ focus = {
 					51 = {
 						is_controlled_by = ROOT
 					}
+					1253 = { # KSRE (de 51)
+						is_controlled_by = ROOT
+					}
 				}
-				transfer_state = 51
+				transfer_state = 51 transfer_state = 1253
 			}
 			if = {
 				limit = {
 					42 = {
 						is_controlled_by = ROOT
 					}
+					1414 = { # KSRE (de 42)
+						is_controlled_by = ROOT
+					}
+					1551 = { # KSRE (de 42)
+						is_controlled_by = ROOT
+					}
 				}
-				transfer_state = 42
+				transfer_state = 42 transfer_state = 1414 transfer_state = 1551
 			}
 			if = {
 				limit = {
@@ -8468,7 +8484,7 @@ focus = {
 					153 = { is_owned_or_subject_trigger = yes }
 				}
 				AUS = {
-					transfer_state = 4
+					transfer_state = 4 transfer_state = 1553
 					transfer_state = 152
 					transfer_state = 153
 				}
@@ -8481,15 +8497,15 @@ focus = {
 					}
 				}
 				WUR = {
-					transfer_state = 50
+					transfer_state = 50 transfer_state = 1547
 					add_state_core = 50
-					transfer_state = 978
+					transfer_state = 978 transfer_state = 1251
 					add_state_core = 978
-					transfer_state = 42
+					transfer_state = 42 transfer_state = 1414 transfer_state = 1551
 					add_state_core = 42
-					transfer_state = 55
+					transfer_state = 55 transfer_state = 1254
 					add_state_core = 55
-					transfer_state = 51
+					transfer_state = 51 transfer_state = 1253
 					add_state_core = 51
 				}
 				puppet = WUR
@@ -8515,7 +8531,7 @@ focus = {
 				SHL = {
 					transfer_state = 58
 					add_state_core = 58
-					transfer_state = 909
+					transfer_state = 909 transfer_state = 1728
 					add_state_core = 909
 				}
 				puppet = SHL
@@ -8533,9 +8549,9 @@ focus = {
 					}
 				}
 				BAY = {
-					transfer_state = 52
-					transfer_state = 53
-					transfer_state = 54
+					transfer_state = 52 transfer_state = 1549 transfer_state = 1550
+					transfer_state = 53 transfer_state = 1548
+					transfer_state = 54 transfer_state = 1546
 					add_state_core = 52
 					add_state_core = 53
 					add_state_core = 54
@@ -8555,9 +8571,9 @@ focus = {
 					}
 				}
 				HAN = {
-					transfer_state = 59
+					transfer_state = 59 transfer_state = 1545
 					transfer_state = 56
-					transfer_state = 57
+					transfer_state = 57 transfer_state = 1413
 					add_state_core = 59
 					add_state_core = 56
 					add_state_core = 57
@@ -8605,8 +8621,8 @@ focus = {
 						}
 					}
 					NOT = {
-						state = 42
-						state = 51
+						state = 42 state = 1414 state = 1551
+						state = 51 state = 1253
 					}
 				}
 				
@@ -9222,7 +9238,7 @@ focus = {
 		}
 		search_filters = {FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-		add_state_core = 158	
+		add_state_core = 158 add_state_core = 1308	
 		add_state_core = 159
 		add_state_core = 850
 		add_state_core = 39
@@ -9631,7 +9647,7 @@ GER = {
 			}
 			random_owned_controlled_state = {
 				limit = { ROOT = { has_full_control_of_state = PREV } }
-				prioritize = { 64 } #BERLIN
+				prioritize = { 64 1268 1269 1542 1544 } #BERLIN
 				create_unit = {
 					division = "name = \"Oddział Gwardii Królewskiej\" division_template = \"Oddział Gwardii Królewskiej\" start_experience_factor = 1.0" 
 					owner = GER
@@ -11296,7 +11312,7 @@ add_political_power = 150
 	}
 
 	focus = {
-		id = GER_anglo_germanic_cooperation_program2
+		id = GER_anglo_germanic_cooperation_program2_kaiser # Manaura: ID repetido na arvore do Hitler
 		text = GER_anglo_germanic_cooperation_program
 		icon = GFX_focus_generic_naval_discipline
 		prerequisite = { focus = GER_anglo_germanic_defense_pact2 }
@@ -11481,7 +11497,7 @@ add_political_power = 150
 			any_state = {
 				is_owned_and_controlled_by = ENG
 				OR = {
-					state = 773
+					state = 773 state = 1770
 					state = 777
 					state = 546
 					state = 768
@@ -11530,7 +11546,7 @@ add_political_power = 150
 							is_owned_and_controlled_by = AST
 						}
 						OR = {
-							state = 773
+							state = 773 state = 1770
 							state = 777
 							state = 546
 							state = 768
@@ -11618,7 +11634,7 @@ add_political_power = 150
 						state = 641 # Tahiti
 						state = 636 # Fiji
 						state = 726 # Samoa
-						state = 721 # Timor-Leste
+						state = 721 state = 1341 # Timor-Leste
 						state = 667 # Lesser Sunda Islands
 						state = 335 # Java
 						state = 672 # Sumatra
@@ -11736,7 +11752,7 @@ add_political_power = 150
 						has_a_german_trade_idea = no
 						OR = {
 							owns_state = 729 # Macau
-							owns_state = 721 # Timor-Leste
+							owns_state = 721 owns_state = 1341 # Timor-Leste
 						}
 					}
 				}
@@ -12059,7 +12075,7 @@ add_political_power = 150
 					}
 					OR = { #Old colonial claims
 						controls_state = 523
-						controls_state = 773
+						controls_state = 773 controls_state = 1770
 						controls_state = 541
 						controls_state = 546
 						controls_state = 737
@@ -12091,7 +12107,7 @@ add_political_power = 150
 						NOT = { is_claimed_by = ROOT }
 						OR = {
 							state = 523
-							state = 773
+							state = 773 state = 1770
 							state = 541
 							state = 546
 							state = 737
@@ -12346,16 +12362,16 @@ add_political_power = 150
 						has_a_german_trade_idea = yes
 					}
 					OR = { #Old colonial claims
-						controls_state = 539
-						controls_state = 772
-						controls_state = 660
-						controls_state = 774
+						controls_state = 539 controls_state = 1769
+						controls_state = 772 controls_state = 1766 controls_state = 1767 controls_state = 1768
+						controls_state = 660 controls_state = 1764 controls_state = 1765
+						controls_state = 774 controls_state = 1763
 						controls_state = 771
 						controls_state = 770
 						controls_state = 981
 						controls_state = 545
-						controls_state = 901
-						controls_state = 900
+						controls_state = 901 controls_state = 1762
+						controls_state = 900 controls_state = 1760 controls_state = 1761
 						controls_state = 902
 						controls_state = 558
 						controls_state = 776
@@ -12367,16 +12383,16 @@ add_political_power = 150
 				every_controlled_state = {
 					limit = {
 						OR = {
-							state = 539
-							state = 772
-							state = 660
-							state = 774
+							state = 539 state = 1769
+							state = 772 state = 1766 state = 1767 state = 1768
+							state = 660 state = 1764 state = 1765
+							state = 774 state = 1763
 							state = 771
 							state = 770
 							state = 981
 							state = 545
-							state = 901
-							state = 900
+							state = 901 state = 1762
+							state = 900 state = 1760 state = 1761
 							state = 902
 							state = 558
 							state = 776
@@ -12754,9 +12770,9 @@ add_political_power = 150
 		available = {
 			POL = {
 					owns_state = 85
-					owns_state = 86
+					owns_state = 86 owns_state = 1389
 					owns_state = 762
-					owns_state = 807				
+					owns_state = 807 owns_state = 1554				
 			}
 		}
 		bypass = {
@@ -12772,9 +12788,9 @@ add_political_power = 150
 				POL = { exists = no }
 				AND = {
 					owns_state = 85
-					owns_state = 86
+					owns_state = 86 owns_state = 1389
 					owns_state = 762
-					owns_state = 807
+					owns_state = 807 owns_state = 1554
 				}
 			}
 		}
@@ -12794,15 +12810,15 @@ add_political_power = 150
 		y = 1
 		completion_reward = {
 			HUN = {
-				add_state_core = 70
-				add_state_core = 71
-				add_state_core = 73
-				add_state_core = 76
-				add_state_core = 84
-				add_state_core = 83
-				add_state_core = 764
-				add_state_core = 45
-				add_state_core = 109
+				add_state_core = 70 add_state_core = 1146 add_state_core = 1147
+				add_state_core = 71 add_state_core = 1148 add_state_core = 1149
+				add_state_core = 73 add_state_core = 1294
+				add_state_core = 76 add_state_core = 1309 add_state_core = 1310 add_state_core = 1722
+				add_state_core = 84 add_state_core = 1387
+				add_state_core = 83 add_state_core = 1480
+				add_state_core = 764 add_state_core = 1478
+				add_state_core = 45 add_state_core = 1477 add_state_core = 1705
+				add_state_core = 109 add_state_core = 1706 add_state_core = 1707
 				if = {
 					limit = {
 						GER = {
@@ -12888,10 +12904,10 @@ add_political_power = 150
 		}
 		completion_reward = {
 			AUS = {
-				add_state_core = 736
-				add_state_core = 102
-				add_state_core = 69
-				add_state_core = 9
+				add_state_core = 736 add_state_core = 1708
+				add_state_core = 102 add_state_core = 1410 add_state_core = 1704
+				add_state_core = 69 add_state_core = 1556
+				add_state_core = 9 add_state_core = 1555
 				add_state_core = 75
 				add_state_core = 74
 				add_state_core = 39
@@ -13296,32 +13312,69 @@ set_cosmetic_tag = GER_greater_german_reich
 			hidden_effect = {
 				99 = { add_core_of = ROOT }
 				36 = { add_core_of = ROOT }
+				1552 = { add_core_of = ROOT } # KSRE (de 36)
 				7 = { add_core_of = ROOT }
+				1292 = { add_core_of = ROOT } # KSRE (de 7)
 				8 = { add_core_of = ROOT }
 				35 = { add_core_of = ROOT }
+				1255 = { add_core_of = ROOT } # KSRE (de 35)
+				1293 = { add_core_of = ROOT } # KSRE (de 35)
+				1297 = { add_core_of = ROOT } # KSRE (de 35)
+				1376 = { add_core_of = ROOT } # KSRE (de 35)
 				6 = { add_core_of = ROOT }
 				51 = { add_core_of = ROOT }
+				1253 = { add_core_of = ROOT } # KSRE (de 51)
 				42 = { add_core_of = ROOT }
+				1414 = { add_core_of = ROOT } # KSRE (de 42)
+				1551 = { add_core_of = ROOT } # KSRE (de 42)
 				56 = { add_core_of = ROOT }
 				57 = { add_core_of = ROOT }
+				1413 = { add_core_of = ROOT } # KSRE (de 57)
 				55 = { add_core_of = ROOT }
+				1254 = { add_core_of = ROOT } # KSRE (de 55)
 				50 = { add_core_of = ROOT }
+				1547 = { add_core_of = ROOT } # KSRE (de 50)
 				59 = { add_core_of = ROOT }
+				1545 = { add_core_of = ROOT } # KSRE (de 59)
 				58 = { add_core_of = ROOT }
 				60 = { add_core_of = ROOT }
+				1270 = { add_core_of = ROOT } # KSRE (de 60)
 				54 = { add_core_of = ROOT }
+				1546 = { add_core_of = ROOT } # KSRE (de 54)
 				52 = { add_core_of = ROOT }
+				1549 = { add_core_of = ROOT } # KSRE (de 52)
+				1550 = { add_core_of = ROOT } # KSRE (de 52)
 				53 = { add_core_of = ROOT }
+				1548 = { add_core_of = ROOT } # KSRE (de 53)
 				61 = { add_core_of = ROOT }
 				64 = { add_core_of = ROOT }
+				1268 = { add_core_of = ROOT } # KSRE (de 64)
+				1269 = { add_core_of = ROOT } # KSRE (de 64)
+				1542 = { add_core_of = ROOT } # KSRE (de 64)
+				1544 = { add_core_of = ROOT } # KSRE (de 64)
 				65 = { add_core_of = ROOT }
+				1543 = { add_core_of = ROOT } # KSRE (de 65)
 				62 = { add_core_of = ROOT }
 				68 = { add_core_of = ROOT }
+				1429 = { add_core_of = ROOT } # KSRE (de 68)
 				66 = { add_core_of = ROOT }
+				1540 = { add_core_of = ROOT } # KSRE (de 66)
+				1541 = { add_core_of = ROOT } # KSRE (de 66)
+				1558 = { add_core_of = ROOT } # KSRE (de 66)
 				67 = { add_core_of = ROOT }
 				63 = { add_core_of = ROOT }
+				1538 = { add_core_of = ROOT } # KSRE (de 63)
+				1539 = { add_core_of = ROOT } # KSRE (de 63)
 				5 = { add_core_of = ROOT }
+				1288 = { add_core_of = ROOT } # KSRE (de 5)
+				1427 = { add_core_of = ROOT } # KSRE (de 5)
+				1428 = { add_core_of = ROOT } # KSRE (de 5)
+				1557 = { add_core_of = ROOT } # KSRE (de 5)
+				1701 = { add_core_of = ROOT } # KSRE (de 5)
+				1702 = { add_core_of = ROOT } # KSRE (de 5)
+				1772 = { add_core_of = ROOT } # KSRE (de 5)
 				763 = { add_core_of = ROOT }
+				1249 = { add_core_of = ROOT } # KSRE (de 763)
 				912 = { add_core_of = ROOT }
 			}
 			# Austria
@@ -13331,55 +13384,114 @@ set_cosmetic_tag = GER_greater_german_reich
 				153 = { add_core_of = ROOT }
 				152 = { add_core_of = ROOT }
 				4 = { add_core_of = ROOT }
+				1553 = { add_core_of = ROOT } # KSRE (de 4)
 			}
 			# Switzerland
 			custom_effect_tooltip = form_country_switzerland_coring_states_tt
 			hidden_effect = {
 				3 = { add_core_of = ROOT }
+				1508 = { add_core_of = ROOT } # KSRE (de 3)
+				1515 = { add_core_of = ROOT } # KSRE (de 3)
 				151 = { add_core_of = ROOT }
+				1509 = { add_core_of = ROOT } # KSRE (de 151)
+				1510 = { add_core_of = ROOT } # KSRE (de 151)
+				1511 = { add_core_of = ROOT } # KSRE (de 151)
+				1512 = { add_core_of = ROOT } # KSRE (de 151)
+				1513 = { add_core_of = ROOT } # KSRE (de 151)
+				1516 = { add_core_of = ROOT } # KSRE (de 151)
 				845 = { add_core_of = ROOT }
+				1507 = { add_core_of = ROOT } # KSRE (de 845)
+				1514 = { add_core_of = ROOT } # KSRE (de 845)
 				847 = { add_core_of = ROOT }
+				1506 = { add_core_of = ROOT } # KSRE (de 847)
 				846 = { add_core_of = ROOT }
 			}
 			hidden_effect = { 
 				5 = { add_core_of = ROOT }
+				1288 = { add_core_of = ROOT } # KSRE (de 5)
+				1427 = { add_core_of = ROOT } # KSRE (de 5)
+				1428 = { add_core_of = ROOT } # KSRE (de 5)
+				1557 = { add_core_of = ROOT } # KSRE (de 5)
+				1701 = { add_core_of = ROOT } # KSRE (de 5)
+				1702 = { add_core_of = ROOT } # KSRE (de 5)
+				1772 = { add_core_of = ROOT } # KSRE (de 5)
 				42 = { add_core_of = ROOT }
+				1414 = { add_core_of = ROOT } # KSRE (de 42)
+				1551 = { add_core_of = ROOT } # KSRE (de 42)
 				50 = { add_core_of = ROOT }
+				1547 = { add_core_of = ROOT } # KSRE (de 50)
 				51 = { add_core_of = ROOT }
+				1253 = { add_core_of = ROOT } # KSRE (de 51)
 				52 = { add_core_of = ROOT }
+				1549 = { add_core_of = ROOT } # KSRE (de 52)
+				1550 = { add_core_of = ROOT } # KSRE (de 52)
 				53 = { add_core_of = ROOT }
+				1548 = { add_core_of = ROOT } # KSRE (de 53)
 				54 = { add_core_of = ROOT }
+				1546 = { add_core_of = ROOT } # KSRE (de 54)
 				55 = { add_core_of = ROOT }
+				1254 = { add_core_of = ROOT } # KSRE (de 55)
 				56 = { add_core_of = ROOT }
 				57 = { add_core_of = ROOT }
+				1413 = { add_core_of = ROOT } # KSRE (de 57)
 				58 = { add_core_of = ROOT }
 				59 = { add_core_of = ROOT }
+				1545 = { add_core_of = ROOT } # KSRE (de 59)
 				60 = { add_core_of = ROOT }
+				1270 = { add_core_of = ROOT } # KSRE (de 60)
 				61 = { add_core_of = ROOT }
 				62 = { add_core_of = ROOT }
 				63 = { add_core_of = ROOT }
+				1538 = { add_core_of = ROOT } # KSRE (de 63)
+				1539 = { add_core_of = ROOT } # KSRE (de 63)
 				64 = { add_core_of = ROOT }
+				1268 = { add_core_of = ROOT } # KSRE (de 64)
+				1269 = { add_core_of = ROOT } # KSRE (de 64)
+				1542 = { add_core_of = ROOT } # KSRE (de 64)
+				1544 = { add_core_of = ROOT } # KSRE (de 64)
 				65 = { add_core_of = ROOT }
+				1543 = { add_core_of = ROOT } # KSRE (de 65)
 				66 = { add_core_of = ROOT }
+				1540 = { add_core_of = ROOT } # KSRE (de 66)
+				1541 = { add_core_of = ROOT } # KSRE (de 66)
+				1558 = { add_core_of = ROOT } # KSRE (de 66)
 				67 = { add_core_of = ROOT }
 				68 = { add_core_of = ROOT }
+				1429 = { add_core_of = ROOT } # KSRE (de 68)
 				85 = { add_core_of = ROOT }
 				86 = { add_core_of = ROOT }
+				1389 = { add_core_of = ROOT } # KSRE (de 86)
 				39 = { add_core_of = ROOT }
 				28 = { add_core_of = ROOT }
 				4 = { add_core_of = ROOT }
+				1553 = { add_core_of = ROOT } # KSRE (de 4)
 				152 = { add_core_of = ROOT }
 				153 = { add_core_of = ROOT }
 				69 = { add_core_of = ROOT }
+				1556 = { add_core_of = ROOT } # KSRE (de 69)
 				74 = { add_core_of = ROOT }
 				762 = { add_core_of = ROOT }
 				6 = { add_claim_by = ROOT }
 				8 = { add_claim_by = ROOT }
 				3 = { add_claim_by = ROOT }
+				1508 = { add_claim_by = ROOT } # KSRE (de 3)
+				1515 = { add_claim_by = ROOT } # KSRE (de 3)
 				7 = { add_claim_by = ROOT }
+				1292 = { add_claim_by = ROOT } # KSRE (de 7)
 				35 = { add_claim_by = ROOT }
+				1255 = { add_claim_by = ROOT } # KSRE (de 35)
+				1293 = { add_claim_by = ROOT } # KSRE (de 35)
+				1297 = { add_claim_by = ROOT } # KSRE (de 35)
+				1376 = { add_claim_by = ROOT } # KSRE (de 35)
 				36 = { add_claim_by = ROOT }
+				1552 = { add_claim_by = ROOT } # KSRE (de 36)
 				151 = { add_core_of = ROOT }
+				1509 = { add_core_of = ROOT } # KSRE (de 151)
+				1510 = { add_core_of = ROOT } # KSRE (de 151)
+				1511 = { add_core_of = ROOT } # KSRE (de 151)
+				1512 = { add_core_of = ROOT } # KSRE (de 151)
+				1513 = { add_core_of = ROOT } # KSRE (de 151)
+				1516 = { add_core_of = ROOT } # KSRE (de 151)
 				188 = { add_core_of = ROOT }
 			}
 		}
@@ -14276,7 +14388,7 @@ focus = {
 			}
 			random_owned_controlled_state = {
 				limit = { ROOT = { has_full_control_of_state = PREV } }
-				prioritize = { 64 } #BERLIN
+				prioritize = { 64 1268 1269 1542 1544 } #BERLIN
 				create_unit = {
 					division = "name = \"Oddział Gwardii Królewskiej\" division_template = \"Oddział Gwardii Królewskiej\" start_experience_factor = 1.0" 
 					owner = GER
@@ -14289,7 +14401,7 @@ focus = {
 		}
 	}
 	focus = {
-		id = GER_multi_ethnic_empire
+		id = GER_multi_ethnic_empire_hre
 		text = wuw_HUN_a_multi_ethnic_empire
 		#icon = GFX_focus_generic_workers
 		icon = GFX_focus_HRE_land

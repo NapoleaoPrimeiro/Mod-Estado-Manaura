@@ -647,6 +647,7 @@ focus_tree = {
 				is_puppet = no
 			}
 			46 = { is_owned_and_controlled_by = ROOT }
+			1312 = { is_owned_and_controlled_by = ROOT } # KSRE (de 46)
 		}
 
 		bypass = {
@@ -660,7 +661,7 @@ focus_tree = {
 
 		completion_reward = {
 			random_owned_controlled_state = {
-				prioritize = { 46 }
+				prioritize = { 46 1312 }
 				limit = {
 					ROOT = { has_full_control_of_state = PREV }
 				}
@@ -726,10 +727,25 @@ focus_tree = {
 			834 = {
 				add_claim_by = ROM
 				}
+			1261 = { # KSRE (de 834)
+				add_claim_by = ROM
+				}
+			1420 = { # KSRE (de 834)
+				add_claim_by = ROM
+				}
+			1421 = { # KSRE (de 834)
+				add_claim_by = ROM
+				}
+			1500 = { # KSRE (de 834)
+				add_claim_by = ROM
+				}
 			192 = {
 				add_claim_by = ROM
 			}
 			198 = {
+				add_claim_by = ROM
+			}
+			1262 = { # KSRE (de 198)
 				add_claim_by = ROM
 			}
 			add_war_support = 0.1
@@ -1159,7 +1175,7 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				prioritize = { 46 79 81 82 83 76 84 }
+				prioritize = { 46 79 81 82 83 76 84 1312 1267 1479 1480 1309 1310 1722 1387 }
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -1176,7 +1192,7 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				prioritize = { 46 79 81 82 83 76 84 }
+				prioritize = { 46 79 81 82 83 76 84 1312 1267 1479 1480 1309 1310 1722 1387 }
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -1193,7 +1209,7 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				prioritize = { 46 79 81 82 83 76 84 }
+				prioritize = { 46 79 81 82 83 76 84 1312 1267 1479 1480 1309 1310 1722 1387 }
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -1237,7 +1253,7 @@ focus_tree = {
 
 		completion_reward = {
 			random_owned_controlled_state = {
-				prioritize = { 46 }
+				prioritize = { 46 1312 }
 				limit = {
 					ROOT = { has_full_control_of_state = PREV } 
 					free_building_slots = {
@@ -1292,7 +1308,7 @@ focus_tree = {
 
 		completion_reward = {
 			random_owned_controlled_state = {
-				prioritize = { 79 }
+				prioritize = { 79 1267 }
 				limit = {
 					free_building_slots = {
 						building = arms_factory
@@ -1485,7 +1501,7 @@ focus_tree = {
 
 		completion_reward = {
 			random_owned_controlled_state = {
-				prioritize = { 79 }
+				prioritize = { 79 1267 }
 				limit = {
 					ROOT = { has_full_control_of_state = PREV } 
 					free_building_slots = {
@@ -1556,7 +1572,7 @@ focus_tree = {
 		completion_reward = {
 			country_event = DOD_romania.120
 			random_owned_controlled_state = {
-				prioritize = { 46 }
+				prioritize = { 46 1312 }
 				limit = {
 					ROOT = { has_full_control_of_state = PREV } 
 					free_building_slots = {
@@ -1591,6 +1607,7 @@ focus_tree = {
 
 		available = {
 			84 = { is_owned_and_controlled_by = ROOT }
+			1387 = { is_owned_and_controlled_by = ROOT } # KSRE (de 84)
 			# has_tech = excavation1
 		}
 
@@ -1605,7 +1622,7 @@ focus_tree = {
 
 		completion_reward = {
 			random_owned_controlled_state = {
-				prioritize = { 84 }
+				prioritize = { 84 1387 }
 				limit = {
 					ROOT = { has_full_control_of_state = PREV } 
 					free_building_slots = {
@@ -1665,7 +1682,7 @@ focus_tree = {
 		completion_reward = {
 
 			random_owned_controlled_state = {
-				prioritize = { 84 }
+				prioritize = { 84 1387 }
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = arms_factory
@@ -1719,6 +1736,9 @@ focus_tree = {
 			82 = {
 				is_owned_and_controlled_by = ROOT
 			}
+			1479 = { # KSRE (de 82)
+				is_owned_and_controlled_by = ROOT
+			}
 			has_tech = excavation2
 		}
 		completion_reward = {
@@ -1731,7 +1751,7 @@ focus_tree = {
 					}
 					is_core_of = ROOT
 				}
-				prioritize = { 82 }
+				prioritize = { 82 1479 }
 				add_resource = {
 					type = steel
 					amount = 10
@@ -1768,6 +1788,9 @@ focus_tree = {
 
 		available = {
 			46 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			1312 = { # KSRE (de 46)
 				is_owned_and_controlled_by = ROOT
 			}
 			has_tech = excavation2
@@ -2011,8 +2034,8 @@ focus_tree = {
 						has_war_with = ROM
 						has_capitulated = yes
 						ROM = {
-							controls_state = 48
-							controls_state = 212
+							controls_state = 48 controls_state = 1719
+							controls_state = 212 controls_state = 1720
 							controls_state = 211
 						}
 					}
@@ -2078,6 +2101,14 @@ focus_tree = {
 
 		completion_reward = {
 			154 = {
+					add_claim_by = ROM
+				#	transfer_state_to = ROOT
+				}
+			1278 = { # KSRE (de 154)
+					add_claim_by = ROM
+				#	transfer_state_to = ROOT
+				}
+			1700 = { # KSRE (de 154)
 					add_claim_by = ROM
 				#	transfer_state_to = ROOT
 				}
@@ -2185,6 +2216,10 @@ focus_tree = {
 					add_claim_by = ROM
 				#	transfer_state_to = ROOT
 				}
+			1478 = { # KSRE (de 764)
+					add_claim_by = ROM
+				#	transfer_state_to = ROOT
+				}
 			#Only split if YUG is not at war
 			if = {
 				limit = {
@@ -2279,6 +2314,9 @@ focus_tree = {
 			73 = {
 				add_claim_by = ROM
 			}
+			1294 = { # KSRE (de 73)
+				add_claim_by = ROM
+			}
 			GER = { country_event = DOD_romania.110 }
 		}
 	}
@@ -2319,6 +2357,10 @@ focus_tree = {
 					add_core_of = ROM
 					transfer_state_to = ROOT
 				}
+				1294 = { # KSRE (de 73)
+					add_core_of = ROM
+					transfer_state_to = ROOT
+				}
 			}
 			if = {
 				limit = {
@@ -2329,12 +2371,24 @@ focus_tree = {
 					add_core_of = ROM
 					transfer_state_to = ROOT
 				}
+				1278 = { # KSRE (de 154)
+					add_core_of = ROM
+					transfer_state_to = ROOT
+				}
+				1700 = { # KSRE (de 154)
+					add_core_of = ROM
+					transfer_state_to = ROOT
+				}
 			}
 			if = {
 				limit = {
 					764 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
 				}
 				764 = {
+					add_core_of = ROM
+					transfer_state_to = ROOT
+				}				
+				1478 = { # KSRE (de 764)
 					add_core_of = ROM
 					transfer_state_to = ROOT
 				}				
@@ -2442,6 +2496,7 @@ focus_tree = {
 				popularity = 65
 			}
 			remove_ideas = neutrality_idea
+			remove_ideas = ROM_neutrality_idea
 		}		
 	}
 
@@ -2532,7 +2587,9 @@ focus_tree = {
 				if = {
 					limit = {
 						89 = { is_controlled_by = SOV }
+						1532 = { is_controlled_by = SOV } # KSRE (de 89)
 						91 = { is_controlled_by = SOV }
+						1531 = { is_controlled_by = SOV } # KSRE (de 91)
 					}
 					80 = { # bucovina
 						add_building_construction = {
@@ -2583,8 +2640,13 @@ focus_tree = {
 						owns_state = 155
 						owns_state = 154
 						owns_state = 43
+						owns_state = 1278
+						owns_state = 1235
+						owns_state = 1700
 						owns_state = 973
 						owns_state = 974
+						owns_state = 1703
+						owns_state = 1384
 					}
 				}
 			}
@@ -2757,10 +2819,25 @@ focus_tree = {
 			834 = {
 				add_claim_by = ROM
 				}
+			1261 = { # KSRE (de 834)
+				add_claim_by = ROM
+				}
+			1420 = { # KSRE (de 834)
+				add_claim_by = ROM
+				}
+			1421 = { # KSRE (de 834)
+				add_claim_by = ROM
+				}
+			1500 = { # KSRE (de 834)
+				add_claim_by = ROM
+				}
 			192 = {
 				add_claim_by = ROM
 			}
 			198 = {
+				add_claim_by = ROM
+			}
+			1262 = { # KSRE (de 198)
 				add_claim_by = ROM
 			}
 			add_timed_idea = {
@@ -2772,7 +2849,9 @@ focus_tree = {
 					NOT = { has_war_with = SOV }
 					OR = {
 						766 = { is_owned_by = SOV }
+						1092 = { is_owned_by = SOV } # KSRE (de 766)
 						78 = { is_owned_by = SOV }
+						1291 = { is_owned_by = SOV } # KSRE (de 78)
 						80 = { is_owned_by = SOV }
 					}
 				}
@@ -2780,7 +2859,7 @@ focus_tree = {
 				create_wargoal = {
 					type = take_core_state
 					target = SOV
-					generator = { 766 78 80 }
+					generator = { 766 78 80 1092 1291 }
 				}
 			}
 			add_ai_strategy = {
@@ -2811,8 +2890,13 @@ focus_tree = {
 				has_war_with = SOV 
 			}
 			834 = { is_controlled_by = ROM }
+			1261 = { is_controlled_by = ROM } # KSRE (de 834)
+			1420 = { is_controlled_by = ROM } # KSRE (de 834)
+			1421 = { is_controlled_by = ROM } # KSRE (de 834)
+			1500 = { is_controlled_by = ROM } # KSRE (de 834)
 			192 = { is_controlled_by = ROM }
 			198 = { is_controlled_by = ROM }
+			1262 = { is_controlled_by = ROM } # KSRE (de 198)
 		}
 
         completion_reward = {
@@ -2821,11 +2905,31 @@ focus_tree = {
 					add_core_of = ROM
 					# transfer_state_to = ROOT
 				}
+			1261 = { # KSRE (de 834)
+					add_core_of = ROM
+					# transfer_state_to = ROOT
+				}
+			1420 = { # KSRE (de 834)
+					add_core_of = ROM
+					# transfer_state_to = ROOT
+				}
+			1421 = { # KSRE (de 834)
+					add_core_of = ROM
+					# transfer_state_to = ROOT
+				}
+			1500 = { # KSRE (de 834)
+					add_core_of = ROM
+					# transfer_state_to = ROOT
+				}
 			192 = {
 					add_core_of = ROM
 					# transfer_state_to = ROOT
 				}
 			198 = {
+					add_core_of = ROM
+					# transfer_state_to = ROOT
+				}
+			1262 = { # KSRE (de 198)
 					add_core_of = ROM
 					# transfer_state_to = ROOT
 				}
@@ -3402,6 +3506,9 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			764 = {
+				add_claim_by = ROOT
+			}
+			1478 = {
 				add_claim_by = ROOT
 			}
 
@@ -4294,6 +4401,11 @@ focus_tree = {
 				
 				is_owned_and_controlled_by = ROOT
 			}
+			1312 = { # KSRE (de 46)
+				
+				
+				is_owned_and_controlled_by = ROOT
+			}
 		}
 		cancel_if_invalid = no
 		continue_if_invalid = yes
@@ -5043,7 +5155,7 @@ focus_tree = {
 				category = infantry_weapons
 			}
 			random_owned_controlled_state = {
-				prioritize = { 84 }		
+				prioritize = { 84 1387 }		
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 						type = arms_factory
@@ -5106,7 +5218,7 @@ focus_tree = {
 				}
 				random_owned_controlled_state = {
 					limit = { ROOT = { has_full_control_of_state = PREV } }
-					prioritize = { 46 }
+					prioritize = { 1295 }
 					create_unit = {
 						division = "name = \"Vanatori de munte\" division_template = \"Vanatori de munte\" start_experience_factor = 1.0" 
 						owner = ROM
@@ -5352,7 +5464,7 @@ focus_tree = {
 				}
 				random_owned_controlled_state = {
 					limit = { ROOT = { has_full_control_of_state = PREV } }
-					prioritize = { 46 }
+					prioritize = { 46 1312 }
 					create_unit = {
 						division = "name = \"Royal Guards Division\" division_template = \"Royal Guards Division\" start_experience_factor = 1.0" 
 						owner = ROM
@@ -5556,7 +5668,7 @@ focus_tree = {
 				}
 				random_owned_controlled_state = {
 					limit = { ROOT = { has_full_control_of_state = PREV } }
-					prioritize = { 46 }
+					prioritize = { 46 1312 }
 					create_unit = {
 						division = "name = \"Armored Division\" division_template = \"Armored Division\" start_experience_factor = 0.7" 
 						owner = ROM
@@ -5654,7 +5766,7 @@ focus_tree = {
 				show_ideas_tooltip = ROM_leonidas_works
 			}
 			random_owned_controlled_state = {
-				prioritize = { 82 }		
+				prioritize = { 82 1479 }		
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
@@ -5720,6 +5832,9 @@ focus_tree = {
 
 		available = {
 			971 = { 
+				is_owned_and_controlled_by = ROM 
+			}
+			1295 = {  # KSRE (de 971)
 				is_owned_and_controlled_by = ROM 
 			}
 		
@@ -5795,7 +5910,7 @@ focus_tree = {
 				limit = {
 					is_coastal = yes
 				}
-				prioritize = { 971 }
+				prioritize = { 971 1295 }
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = dockyard
@@ -5865,7 +5980,7 @@ focus_tree = {
 				limit = {
 					is_coastal = yes
 				}
-				prioritize = { 971 }
+				prioritize = { 971 1295 }
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = dockyard
@@ -6034,7 +6149,7 @@ focus_tree = {
 				limit = {
 					is_coastal = yes
 				}
-				prioritize = { 971 }
+				prioritize = { 971 1295 }
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = dockyard
@@ -6104,7 +6219,7 @@ focus_tree = {
 				limit = {
 					is_coastal = yes
 				}
-				prioritize = { 971 }
+				prioritize = { 971 1295 }
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = dockyard

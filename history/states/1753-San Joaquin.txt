@@ -1,0 +1,40 @@
+
+state={
+	id=1753
+	name="STATE_1753"
+	manpower = 606275
+	
+	state_category = rural
+	
+	resources={
+		oil=30
+	}
+
+	history={
+		owner = USA
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			dockyard = 1
+		}
+		1939.1.1 = {
+			buildings = {
+				industrial_complex = 3
+			}
+		}
+		victory_points = {
+			6699 3 #Stockton
+		}
+		victory_points = {
+			6694 2 #Modesto
+		}
+		add_core_of = USA
+		add_core_of = CAL
+	}
+
+	provinces={
+		1432 1601 3677 6694 6699 6876 7667 13999 14775
+	}
+
+	local_supplies=0.0 
+}

@@ -360,11 +360,11 @@ country_event = { #event for romania, transnistria controller agrees
 		if = {
 			limit = {
 				FROM = {
-					owns_state = 834
+					owns_state = 834 owns_state = 1261 owns_state = 1420 owns_state = 1421 owns_state = 1500
 				}
 			}
 			ROOT = {
-				transfer_state = 834
+				transfer_state = 834 transfer_state = 1261 transfer_state = 1420 transfer_state = 1421 transfer_state = 1500
 			}
 		}
 		else = {
@@ -550,9 +550,9 @@ country_event = {
 		trigger = {
 			original_tag = GER
 			OR = {
-				POL = { owns_state = 807 }
+				POL = { owns_state = 807 owns_state = 1554 }
 				POL = { owns_state = 85 }
-				POL = { owns_state = 86 }
+				POL = { owns_state = 86 owns_state = 1389 }
 			}
 		}
 		FROM = { country_event = nonhist_POL.400 } #germany demands danzig for alliance
@@ -569,14 +569,14 @@ country_event = {
 		trigger = {
 			original_tag = SOV
 			OR = {
-				POL = { owns_state = 89 }
-				POL = { owns_state = 91 }
-				POL = { owns_state = 93 }
-				POL = { owns_state = 94 }
-				POL = { owns_state = 95 }
-				POL = { owns_state = 96 }
-				POL = { owns_state = 97 }
-				POL = { owns_state = 784 }
+				POL = { owns_state = 89 owns_state = 1532 }
+				POL = { owns_state = 91 owns_state = 1531 }
+				POL = { owns_state = 93 owns_state = 1533 }
+				POL = { owns_state = 94 owns_state = 1484 owns_state = 1534 owns_state = 1535 owns_state = 1610 owns_state = 1814 owns_state = 1815 owns_state = 1818 }
+				POL = { owns_state = 95 owns_state = 1239 owns_state = 1240 owns_state = 1243 owns_state = 1246 owns_state = 1247 }
+				POL = { owns_state = 96 owns_state = 1173 owns_state = 1244 owns_state = 1817 }
+				POL = { owns_state = 97 owns_state = 1241 owns_state = 1242 owns_state = 1245 }
+				POL = { owns_state = 784 owns_state = 1238 owns_state = 1248 owns_state = 1816 }
 			}
 		}
 		FROM = { country_event = nonhist_POL.401 }
@@ -780,6 +780,13 @@ country_event = {
 			807 = { add_core_of = GER }
 			GER = { transfer_state = 807 }
 		}
+		if = { # KSRE (de 807)
+			limit = {
+				owns_state = 1554
+			}
+			1554 = { add_core_of = GER }
+			GER = { transfer_state = 1554 }
+		}
 		if = {
 			limit = {
 				owns_state = 85
@@ -794,6 +801,13 @@ country_event = {
 			86 = { add_core_of = GER }
 			GER = { transfer_state = 86 }
 		}
+		if = { # KSRE (de 86)
+			limit = {
+				owns_state = 1389
+			}
+			1389 = { add_core_of = GER }
+			GER = { transfer_state = 1389 }
+		}
 	}
 
 	option = { #Refuse, don't give Germany Danzig but they get a wargoal to stop players from ragequitting over Danzig. Again.
@@ -806,7 +820,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state
 					target = POL
-					generator = { 85 86 807 }
+					generator = { 85 86 807 1389 1554 }
 				}
 			}
 		}
@@ -852,12 +866,26 @@ country_event = {
 			89 = { add_core_of = SOV }
 			SOV = { transfer_state = 89 }
 		}
+		if = { # KSRE (de 89)
+			limit = {
+				owns_state = 1532
+			}
+			1532 = { add_core_of = SOV }
+			SOV = { transfer_state = 1532 }
+		}
 		if = {
 			limit = {
 				owns_state = 93
 			}
 			93 = { add_core_of = SOV }
 			SOV = { transfer_state = 93 }
+		}
+		if = { # KSRE (de 93)
+			limit = {
+				owns_state = 1533
+			}
+			1533 = { add_core_of = SOV }
+			SOV = { transfer_state = 1533 }
 		}
 		if = {
 			limit = {
@@ -866,12 +894,68 @@ country_event = {
 			91 = { add_core_of = SOV }
 			SOV = { transfer_state = 91 }
 		}
+		if = { # KSRE (de 91)
+			limit = {
+				owns_state = 1531
+			}
+			1531 = { add_core_of = SOV }
+			SOV = { transfer_state = 1531 }
+		}
 		if = {
 			limit = {
 				owns_state = 94
 			}
 			94 = { add_core_of = SOV }
 			SOV = { transfer_state = 94 }
+		}
+		if = { # KSRE (de 94)
+			limit = {
+				owns_state = 1484
+			}
+			1484 = { add_core_of = SOV }
+			SOV = { transfer_state = 1484 }
+		}
+		if = { # KSRE (de 94)
+			limit = {
+				owns_state = 1534
+			}
+			1534 = { add_core_of = SOV }
+			SOV = { transfer_state = 1534 }
+		}
+		if = { # KSRE (de 94)
+			limit = {
+				owns_state = 1535
+			}
+			1535 = { add_core_of = SOV }
+			SOV = { transfer_state = 1535 }
+		}
+		if = { # KSRE (de 94)
+			limit = {
+				owns_state = 1610
+			}
+			1610 = { add_core_of = SOV }
+			SOV = { transfer_state = 1610 }
+		}
+		if = { # KSRE (de 94)
+			limit = {
+				owns_state = 1814
+			}
+			1814 = { add_core_of = SOV }
+			SOV = { transfer_state = 1814 }
+		}
+		if = { # KSRE (de 94)
+			limit = {
+				owns_state = 1815
+			}
+			1815 = { add_core_of = SOV }
+			SOV = { transfer_state = 1815 }
+		}
+		if = { # KSRE (de 94)
+			limit = {
+				owns_state = 1818
+			}
+			1818 = { add_core_of = SOV }
+			SOV = { transfer_state = 1818 }
 		}
 		if = {
 			limit = {
@@ -880,12 +964,68 @@ country_event = {
 			95 = { add_core_of = SOV }
 			SOV = { transfer_state = 95 }
 		}
+		if = { # KSRE (de 95)
+			limit = {
+				owns_state = 1239
+			}
+			1239 = { add_core_of = SOV }
+			SOV = { transfer_state = 1239 }
+		}
+		if = { # KSRE (de 95)
+			limit = {
+				owns_state = 1240
+			}
+			1240 = { add_core_of = SOV }
+			SOV = { transfer_state = 1240 }
+		}
+		if = { # KSRE (de 95)
+			limit = {
+				owns_state = 1243
+			}
+			1243 = { add_core_of = SOV }
+			SOV = { transfer_state = 1243 }
+		}
+		if = { # KSRE (de 95)
+			limit = {
+				owns_state = 1246
+			}
+			1246 = { add_core_of = SOV }
+			SOV = { transfer_state = 1246 }
+		}
+		if = { # KSRE (de 95)
+			limit = {
+				owns_state = 1247
+			}
+			1247 = { add_core_of = SOV }
+			SOV = { transfer_state = 1247 }
+		}
 		if = {
 			limit = {
 				owns_state = 96
 			}
 			96 = { add_core_of = SOV }
 			SOV = { transfer_state = 96 }
+		}
+		if = { # KSRE (de 96)
+			limit = {
+				owns_state = 1173
+			}
+			1173 = { add_core_of = SOV }
+			SOV = { transfer_state = 1173 }
+		}
+		if = { # KSRE (de 96)
+			limit = {
+				owns_state = 1244
+			}
+			1244 = { add_core_of = SOV }
+			SOV = { transfer_state = 1244 }
+		}
+		if = { # KSRE (de 96)
+			limit = {
+				owns_state = 1817
+			}
+			1817 = { add_core_of = SOV }
+			SOV = { transfer_state = 1817 }
 		}
 		if = {
 			limit = {
@@ -894,12 +1034,54 @@ country_event = {
 			97 = { add_core_of = SOV }
 			SOV = { transfer_state = 97 }
 		}
+		if = { # KSRE (de 97)
+			limit = {
+				owns_state = 1241
+			}
+			1241 = { add_core_of = SOV }
+			SOV = { transfer_state = 1241 }
+		}
+		if = { # KSRE (de 97)
+			limit = {
+				owns_state = 1242
+			}
+			1242 = { add_core_of = SOV }
+			SOV = { transfer_state = 1242 }
+		}
+		if = { # KSRE (de 97)
+			limit = {
+				owns_state = 1245
+			}
+			1245 = { add_core_of = SOV }
+			SOV = { transfer_state = 1245 }
+		}
 		if = {
 			limit = {
 				owns_state = 784
 			}
 			784 = { add_core_of = SOV }
 			SOV = { transfer_state = 784 }
+		}
+		if = { # KSRE (de 784)
+			limit = {
+				owns_state = 1238
+			}
+			1238 = { add_core_of = SOV }
+			SOV = { transfer_state = 1238 }
+		}
+		if = { # KSRE (de 784)
+			limit = {
+				owns_state = 1248
+			}
+			1248 = { add_core_of = SOV }
+			SOV = { transfer_state = 1248 }
+		}
+		if = { # KSRE (de 784)
+			limit = {
+				owns_state = 1816
+			}
+			1816 = { add_core_of = SOV }
+			SOV = { transfer_state = 1816 }
 		}
 	}
 
@@ -913,7 +1095,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state
 					target = POL
-					generator = { 89 91 93 94 95 96 97 784 }
+					generator = { 89 91 93 94 95 96 97 784 1532 1531 1533 1484 1534 1535 1610 1814 1815 1818 1239 1240 1243 1246 1247 1173 1244 1817 1241 1242 1245 1238 1248 1816 }
 				}
 			}
 		}
@@ -1060,37 +1242,37 @@ country_event = {
 			if = {
 				limit = {
 					FROM = {
-						controls_state = 76
+						controls_state = 76 controls_state = 1309 controls_state = 1310 controls_state = 1722
 					}
 				}
-				transfer_state = 76
+				transfer_state = 76 transfer_state = 1309 transfer_state = 1310 transfer_state = 1722
 			}
 
 			if = {
 				limit = {
 					FROM = {
-						controls_state = 83
+						controls_state = 83 controls_state = 1480
 					}
 				}
-				transfer_state = 83
+				transfer_state = 83 transfer_state = 1480
 			}
 
 			if = {
 				limit = {
 					FROM = {
-						controls_state = 84
+						controls_state = 84 controls_state = 1387
 					}
 				}
-				transfer_state = 84
+				transfer_state = 84 transfer_state = 1387
 			}
 			
 			if = {
 				limit = {
 					FROM = {
-						controls_state = 82
+						controls_state = 82 controls_state = 1479
 					}
 				}
-				transfer_state = 82
+				transfer_state = 82 transfer_state = 1479
 			}
 		}
 	}
@@ -1139,7 +1321,7 @@ country_event = {
 		}
 		create_wargoal = {
 			type = take_state_focus
-			generator = { 76 83 84 82 }
+			generator = { 76 83 84 82 1309 1310 1722 1480 1387 1479 }
 			target = FROM
 		}
 		add_war_support = 0.1
@@ -1160,11 +1342,11 @@ country_event = {
 				has_completed_focus = POL_assert_eastern_claims
 				has_completed_focus = POL_assert_eastern_claims_pavel
 			}
-			controls_state = 202
+			controls_state = 202 controls_state = 1101 controls_state = 1102 controls_state = 1537
 		}
 		original_tag = SOV
 		has_war_with = POL
-		owns_state = 202
+		owns_state = 202 owns_state = 1101 owns_state = 1102 owns_state = 1537
 	}
 	
 	is_triggered_only = no
@@ -1394,16 +1576,28 @@ country_event = {
 		106 = {
 			remove_core_of = YUG
 		}
+		1298 = { # KSRE (de 106)
+			remove_core_of = YUG
+		}
+		1307 = { # KSRE (de 106)
+			remove_core_of = YUG
+		}
 		IF = {
 			limit = {
 				NOT = {
 					106 = {
 						is_controlled_by = BUL
 					}
+					1298 = { # KSRE (de 106)
+						is_controlled_by = BUL
+					}
+					1307 = { # KSRE (de 106)
+						is_controlled_by = BUL
+					}
 				}
 			}
 			BUL = {
-				transfer_state = 106
+				transfer_state = 106 transfer_state = 1298 transfer_state = 1307
 			}
 		}
 		IF = {
@@ -1412,10 +1606,19 @@ country_event = {
 					803 = {
 						is_controlled_by = BUL
 					}
+					1299 = { # KSRE (de 803)
+						is_controlled_by = BUL
+					}
+					1300 = { # KSRE (de 803)
+						is_controlled_by = BUL
+					}
+					1411 = { # KSRE (de 803)
+						is_controlled_by = BUL
+					}
 				}
 			}
 			BUL = {
-				transfer_state = 803
+				transfer_state = 803 transfer_state = 1299 transfer_state = 1300 transfer_state = 1411
 			}
 		}
 		IF = {
@@ -1424,9 +1627,21 @@ country_event = {
 					106 = {
 						is_core_of = BUL
 					}
+					1298 = { # KSRE (de 106)
+						is_core_of = BUL
+					}
+					1307 = { # KSRE (de 106)
+						is_core_of = BUL
+					}
 				}
 			}
 			106 = {
+				add_core_of = BUL
+			}
+			1298 = { # KSRE (de 106)
+				add_core_of = BUL
+			}
+			1307 = { # KSRE (de 106)
 				add_core_of = BUL
 			}
 		}
@@ -1436,9 +1651,27 @@ country_event = {
 					803 = {
 						is_core_of = BUL
 					}
+					1299 = { # KSRE (de 803)
+						is_core_of = BUL
+					}
+					1300 = { # KSRE (de 803)
+						is_core_of = BUL
+					}
+					1411 = { # KSRE (de 803)
+						is_core_of = BUL
+					}
 				}
 			}
 			803 = {
+				add_core_of = BUL
+			}
+			1299 = { # KSRE (de 803)
+				add_core_of = BUL
+			}
+			1300 = { # KSRE (de 803)
+				add_core_of = BUL
+			}
+			1411 = { # KSRE (de 803)
 				add_core_of = BUL
 			}
 		}
@@ -1785,7 +2018,7 @@ country_event = { #event for manchuria to say they won borderwar against japan
 	option = {
 		name = wtt_border_conflict_won_attacker.1.a
 		add_political_power = 100
-		transfer_state = 609
+		transfer_state = 609 transfer_state = 1487 transfer_state = 1488
 	}	
 }
 
@@ -3029,7 +3262,7 @@ country_event = { #event for JAP to say SOV accepts peace
 		transfer_state = 637
 		transfer_state = 874
 		transfer_state = 562
-		transfer_state = 875
+		transfer_state = 875 transfer_state = 1609
 		SOV = {
 			give_resource_rights = { receiver = JAP state = 657 }
 			give_resource_rights = { receiver = JAP state = 653 }
@@ -3042,16 +3275,31 @@ country_event = { #event for JAP to say SOV accepts peace
 				408 = {
 					is_core_of = MAN
 				}
+				1332 = { # KSRE (de 408)
+					is_core_of = MAN
+				}
+				1333 = { # KSRE (de 408)
+					is_core_of = MAN
+				}
+				1334 = { # KSRE (de 408)
+					is_core_of = MAN
+				}
+				1335 = { # KSRE (de 408)
+					is_core_of = MAN
+				}
+				1336 = { # KSRE (de 408)
+					is_core_of = MAN
+				}
 				MAN = {
 					is_subject_of = JAP
 				}
 			}
 			MAN = {
-				transfer_state = 408
+				transfer_state = 408 transfer_state = 1332 transfer_state = 1333 transfer_state = 1334 transfer_state = 1335 transfer_state = 1336
 			}
 		}
 		else = {
-			transfer_state = 408
+			transfer_state = 408 transfer_state = 1332 transfer_state = 1333 transfer_state = 1334 transfer_state = 1335 transfer_state = 1336
 		}
 		if = {
 			limit = {
@@ -3090,20 +3338,26 @@ country_event = { #event for JAP to say SOV accepts peace
 				560 = {
 					is_core_of = MAN
 				}
+				1338 = { # KSRE (de 560)
+					is_core_of = MAN
+				}
 				MAN = {
 					is_subject_of = JAP
 				}
 			}
 			MAN = {
-				transfer_state = 560
+				transfer_state = 560 transfer_state = 1338
 			}
 		}
 		else = {
-			transfer_state = 560
+			transfer_state = 560 transfer_state = 1338
 		}
 		if = {
 			limit = {
 				561 = {
+					is_claimed_by = MAN
+				}
+				1337 = { # KSRE (de 561)
 					is_claimed_by = MAN
 				}
 				MAN = {
@@ -3111,11 +3365,11 @@ country_event = { #event for JAP to say SOV accepts peace
 				}
 			}
 			MAN = {
-				transfer_state = 561
+				transfer_state = 561 transfer_state = 1337
 			}
 		}
 		else = {
-			transfer_state = 561
+			transfer_state = 561 transfer_state = 1337
 		}
 		if = {
 			limit = {
@@ -3142,7 +3396,7 @@ country_event = { #event for JAP to say SOV accepts peace
 				transfer_state = 563
 			}
 			transfer_state = 574
-			transfer_state = 644
+			transfer_state = 644 transfer_state = 1629
 			transfer_state = 877
 			if = {
 				limit = {
@@ -3171,6 +3425,21 @@ country_event = { #event for JAP to say SOV accepts peace
 				else_if = {
 					limit = {
 						817 = {
+							is_claimed_by = MAN
+						}
+						1460 = { # KSRE (de 817)
+							is_claimed_by = MAN
+						}
+						1463 = { # KSRE (de 817)
+							is_claimed_by = MAN
+						}
+						1464 = { # KSRE (de 817)
+							is_claimed_by = MAN
+						}
+						1466 = { # KSRE (de 817)
+							is_claimed_by = MAN
+						}
+						1467 = { # KSRE (de 817)
 							is_claimed_by = MAN
 						}
 						MAN = {
@@ -3213,7 +3482,7 @@ country_event = { #event for JAP to say SOV accepts peace
 				transfer_state = 563
 			}
 			transfer_state = 574
-			transfer_state = 644
+			transfer_state = 644 transfer_state = 1629
 			transfer_state = 876
 			transfer_state = 877
 			transfer_state = 878
@@ -3222,7 +3491,7 @@ country_event = { #event for JAP to say SOV accepts peace
 			transfer_state = 568
 			transfer_state = 575
 			transfer_state = 576
-			transfer_state = 516
+			transfer_state = 516 transfer_state = 1628 transfer_state = 1646 transfer_state = 1648
 			if = {
 				limit = {
 					FROM = {
@@ -3258,6 +3527,21 @@ country_event = { #event for JAP to say SOV accepts peace
 				else_if = {
 					limit = {
 						817 = {
+							is_claimed_by = MAN
+						}
+						1460 = { # KSRE (de 817)
+							is_claimed_by = MAN
+						}
+						1463 = { # KSRE (de 817)
+							is_claimed_by = MAN
+						}
+						1464 = { # KSRE (de 817)
+							is_claimed_by = MAN
+						}
+						1466 = { # KSRE (de 817)
+							is_claimed_by = MAN
+						}
+						1467 = { # KSRE (de 817)
 							is_claimed_by = MAN
 						}
 						MAN = {
@@ -3306,6 +3590,21 @@ country_event = { #event for JAP to say SOV accepts peace
 				else_if = {
 					limit = {
 						817 = {
+							is_claimed_by = MAN
+						}
+						1460 = { # KSRE (de 817)
+							is_claimed_by = MAN
+						}
+						1463 = { # KSRE (de 817)
+							is_claimed_by = MAN
+						}
+						1464 = { # KSRE (de 817)
+							is_claimed_by = MAN
+						}
+						1466 = { # KSRE (de 817)
+							is_claimed_by = MAN
+						}
+						1467 = { # KSRE (de 817)
 							is_claimed_by = MAN
 						}
 						MAN = {
@@ -3383,8 +3682,8 @@ country_event = { #event for if you will give exiles land, everything but coast 
 						}
 					}
 				}
-				transfer_state = 761
-				transfer_state = 714
+				transfer_state = 761 transfer_state = 1432 transfer_state = 1433
+				transfer_state = 714 transfer_state = 1423 transfer_state = 1424 transfer_state = 1426 transfer_state = 1430 transfer_state = 1431 transfer_state = 1451
 			}
 			else = {
 				JAP = { transfer_state = 657 }
@@ -3413,7 +3712,7 @@ country_event = { #event for if you will give exiles land, everything but coast 
 			transfer_state = 575
 			transfer_state = 876
 			transfer_state = 878
-			transfer_state = 516
+			transfer_state = 516 transfer_state = 1628 transfer_state = 1646 transfer_state = 1648
 			if = {
 				limit = {
 					329 = {
@@ -3528,8 +3827,11 @@ country_event = { #event for if you will give exiles land, everything but coast 
 				561 = {
 					is_owned_by = FER
 				}
+				1337 = { # KSRE (de 561)
+					is_owned_by = FER
+				}
 			}
-			transfer_state = 561
+			transfer_state = 561 transfer_state = 1337
 		}
 		if = {
 			limit = {
@@ -3704,15 +4006,15 @@ country_event = { #Sov accepts
 				has_global_flag = SOV_soviet_civil_war_over
 				has_country_flag = JAP_SOV_rights
 			}
-			transfer_state = 408
+			transfer_state = 408 transfer_state = 1332 transfer_state = 1333 transfer_state = 1334 transfer_state = 1335 transfer_state = 1336
 			transfer_state = 409
 			transfer_state = 655
-			transfer_state = 560
+			transfer_state = 560 transfer_state = 1338
 			transfer_state = 562
 			transfer_state = 822
 			transfer_state = 874
 			transfer_state = 637
-			transfer_state = 875
+			transfer_state = 875 transfer_state = 1609
 			add_timed_idea = {
 				idea = NHMMAP_repaying_debts_JAP #the siberian purchase
 				days = 360
@@ -6483,7 +6785,7 @@ country_event = { #fascist med ally gets an event with offer to carve up greece,
 		if = {
 			limit = {
 				original_tag = YUG
-				owns_state = 106
+				owns_state = 106 owns_state = 1298 owns_state = 1307
 			}
 			ROOT = { 
 				add_state_claim = 731

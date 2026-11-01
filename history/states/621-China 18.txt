@@ -1,7 +1,7 @@
 state = {
 	id = 621
 	name = "STATE_621"
-	manpower = 1572100
+	manpower = 1582100
 	state_category = pastoral
 
 	resources = {
@@ -14,14 +14,15 @@ state = {
 		add_core_of = SHX
 		add_core_of = CHI
 		add_core_of = PRC
-		add_core_of = MEN
 
 		victory_points = {
-			7158 1 # Ulanqab 
+			10424 5 #Kweisui/Hohhot 
 		}
-
 		victory_points = {
-			7631 1 # Kweisui/Hohhot 
+			4525 4 #Baotou
+		}
+		victory_points = {
+			7158 1 #Ulanqab 
 		}
 
 		buildings = {
@@ -38,13 +39,13 @@ state = {
 
 			owner = PRC
 			controller = MEN
-
+			add_core_of = MEN
 		}
 
 	}
 
 	provinces = {
-		2087 4525 7158 7631 10424 12403
+		2087 4525 7158 7631 10424 10629 12403 12609 12880 13961
 	}
 
 	buildings_max_level_factor = 1.000

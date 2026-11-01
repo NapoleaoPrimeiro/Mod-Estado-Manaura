@@ -1310,13 +1310,13 @@ country_event = {
 		FROM = {
 			IF = {
 				limit = {
-					controls_state = 101
+					controls_state = 101 controls_state = 1758
 					NOT = {
 						tag = GRN
 					}
 				}
 				GRN = {
-					transfer_state = 101
+					transfer_state = 101 transfer_state = 1758
 					ROOT = {
 						set_autonomy = {
 							target = PREV

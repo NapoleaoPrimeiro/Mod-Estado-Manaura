@@ -2714,7 +2714,14 @@ focus_tree = {
 
 		bypass = {
 			controls_state = 213 #MURMANSK
+			controls_state = 1714
 			controls_state = 215 #ONEGA
+			controls_state = 1116
+			controls_state = 1117
+			controls_state = 1170
+			controls_state = 1171
+			controls_state = 1174
+			controls_state = 1175
 			controls_state = 216 #OLONETS
 		}
 
@@ -2734,9 +2741,80 @@ focus_tree = {
 						add_to_array = { ROOT.target_countries = THIS }
 					}
 				}
-
+				1714 = {
+					controller = {
+						add_to_array = { ROOT.target_countries = THIS }
+					}
+				}
+				
 				#ONEGA
 				215 = {
+					controller = {
+						if = {
+							limit = {
+								NOT = { is_in_array = { ROOT.target_countries = THIS } }
+							}
+							add_to_array = { ROOT.target_countries = THIS }
+						}
+					}
+				}
+				
+				1116 = {
+					controller = {
+						if = {
+							limit = {
+								NOT = { is_in_array = { ROOT.target_countries = THIS } }
+							}
+							add_to_array = { ROOT.target_countries = THIS }
+						}
+					}
+				}
+				
+				1117 = {
+					controller = {
+						if = {
+							limit = {
+								NOT = { is_in_array = { ROOT.target_countries = THIS } }
+							}
+							add_to_array = { ROOT.target_countries = THIS }
+						}
+					}
+				}
+				
+				1170 = {
+					controller = {
+						if = {
+							limit = {
+								NOT = { is_in_array = { ROOT.target_countries = THIS } }
+							}
+							add_to_array = { ROOT.target_countries = THIS }
+						}
+					}
+				}
+				
+				1171 = {
+					controller = {
+						if = {
+							limit = {
+								NOT = { is_in_array = { ROOT.target_countries = THIS } }
+							}
+							add_to_array = { ROOT.target_countries = THIS }
+						}
+					}
+				}
+				
+				1174 = {
+					controller = {
+						if = {
+							limit = {
+								NOT = { is_in_array = { ROOT.target_countries = THIS } }
+							}
+							add_to_array = { ROOT.target_countries = THIS }
+						}
+					}
+				}
+				
+				1175 = {
 					controller = {
 						if = {
 							limit = {
@@ -3300,7 +3378,14 @@ focus_tree = {
 				
 			}
 			controls_state = 213 #MURMANSK
+			controls_state = 1714
 			controls_state = 215 #ONEGA
+			controls_state = 1116
+			controls_state = 1117
+			controls_state = 1170
+			controls_state = 1171
+			controls_state = 1174
+			controls_state = 1175
 			controls_state = 216 #OLONETS
 		}
 
@@ -3312,7 +3397,28 @@ focus_tree = {
 			213 = { #MURMANSK
 				add_core_of = ROOT
 			}
+			1714 = {
+				add_core_of = ROOT
+			}
 			215 = { #ONEGA
+				add_core_of = ROOT
+			}
+			1116 = {
+				add_core_of = ROOT
+			}
+			1117 = {
+				add_core_of = ROOT
+			}
+			1170 = {
+				add_core_of = ROOT
+			}
+			1171 = {
+				add_core_of = ROOT
+			}
+			1174 = {
+				add_core_of = ROOT
+			}
+			1175 = {
 				add_core_of = ROOT
 			}
 			216 = { #OLONETS
@@ -4383,20 +4489,34 @@ focus_tree = {
 		available = {
 			is_subject = no
 			count_triggers = {
-				amount = 6
+				amount = 20
 				controls_state = 666 #NORRBOTTEN
 				controls_state = 918 #VÄSTERBOTTEN
 				controls_state = 144 #NORDLAND
 				controls_state = 924 #TROMS
 				controls_state = 925 #FINNMARK
 				controls_state = 213 #MURMANSK
+				controls_state = 1714
 				controls_state = 215 #ONEGA
+				controls_state = 1116
+				controls_state = 1117
+				controls_state = 1170
+				controls_state = 1171
+				controls_state = 1174
+				controls_state = 1175
 				controls_state = 216 #OLONETS
 				controls_state = 812 #HARJU
 				controls_state = 813 #VIRUMAA
 				controls_state = 811 #SAAREMAA
 				controls_state = 13 #PÄRNU
 				controls_state = 191 #TARTU
+				controls_state = 1795
+				controls_state = 1796
+				controls_state = 1797
+				controls_state = 1798
+				controls_state = 1799
+				controls_state = 1800
+				controls_state = 1801
 			}
 		}
 
@@ -4408,7 +4528,28 @@ focus_tree = {
 			213 = { #MURMANSK
 				add_core_of = ROOT
 			}
+			1714 = {
+				add_core_of = ROOT
+			}
 			215 = { #ONEGA
+				add_core_of = ROOT
+			}
+			1116 = {
+				add_core_of = ROOT
+			}
+			1117 = {
+				add_core_of = ROOT
+			}
+			1170 = {
+				add_core_of = ROOT
+			}
+			1171 = {
+				add_core_of = ROOT
+			}
+			1174 = {
+				add_core_of = ROOT
+			}
+			1175 = {
 				add_core_of = ROOT
 			}
 			216 = { #OLONETS
@@ -4431,13 +4572,27 @@ focus_tree = {
 							state = 924
 							state = 925
 							state = 213
+							state = 1714
 							state = 215
+							state = 1116
+							state = 1117
+							state = 1170
+							state = 1171
+							state = 1174
+							state = 1175
 							state = 216
 							state = 812
 							state = 813
 							state = 811
 							state = 13
 							state = 191
+							state = 1795
+							state = 1796
+							state = 1797
+							state = 1798
+							state = 1799
+							state = 1800
+							state = 1801
 						}
 						has_resistance = yes
 					}
@@ -4451,13 +4606,27 @@ focus_tree = {
 							state = 924
 							state = 925
 							state = 213
+							state = 1714
 							state = 215
+							state = 1116
+							state = 1117
+							state = 1170
+							state = 1171
+							state = 1174
+							state = 1175
 							state = 216
 							state = 812
 							state = 813
 							state = 811
 							state = 13
 							state = 191
+							state = 1795
+							state = 1796
+							state = 1797
+							state = 1798
+							state = 1799
+							state = 1800
+							state = 1801
 						}
 						has_resistance = yes
 					}
@@ -4476,12 +4645,35 @@ focus_tree = {
 							is_claimed_by = ROOT
 						}
 					}
+					1290 = { # KSRE (de 208)
+						NOT = {
+							is_controlled_by = ROOT
+							is_claimed_by = ROOT
+						}
+					}
 				}
 				add_state_claim = 208 #LUGA
 			}
 			if = {
 				limit = {
+					1290 = {
+						NOT = {
+							is_controlled_by = ROOT
+							is_claimed_by = ROOT
+						}
+					}
+				}
+				add_state_claim = 1290
+			}
+			if = {
+				limit = {
 					195 = {
+						NOT = {
+							is_controlled_by = ROOT
+							is_claimed_by = ROOT
+						}
+					}
+					1289 = { # KSRE (de 195)
 						NOT = {
 							is_controlled_by = ROOT
 							is_claimed_by = ROOT
@@ -4492,7 +4684,24 @@ focus_tree = {
 			}
 			if = {
 				limit = {
+					1289 = {
+						NOT = {
+							is_controlled_by = ROOT
+							is_claimed_by = ROOT
+						}
+					}
+				}
+				add_state_claim = 1289
+			}
+			if = {
+				limit = {
 					244 = {
+						NOT = {
+							is_controlled_by = ROOT
+							is_claimed_by = ROOT
+						}
+					}
+					1802 = { # KSRE (de 244)
 						NOT = {
 							is_controlled_by = ROOT
 							is_claimed_by = ROOT
@@ -7240,7 +7449,14 @@ focus_tree = {
 				}
 			}
 			controls_state = 213 #MURMANSK
+			controls_state = 1714
 			controls_state = 215 #ONEGA
+			controls_state = 1116
+			controls_state = 1117
+			controls_state = 1170
+			controls_state = 1171
+			controls_state = 1174
+			controls_state = 1175
 			controls_state = 216 #OLONETS
 		}
 
@@ -7252,7 +7468,28 @@ focus_tree = {
 			213 = { #MURMANSK
 				add_core_of = ROOT
 			}
+			1714 = {
+				add_core_of = ROOT
+			}
 			215 = { #ONEGA
+				add_core_of = ROOT
+			}
+			1116 = {
+				add_core_of = ROOT
+			}
+			1117 = {
+				add_core_of = ROOT
+			}
+			1170 = {
+				add_core_of = ROOT
+			}
+			1171 = {
+				add_core_of = ROOT
+			}
+			1174 = {
+				add_core_of = ROOT
+			}
+			1175 = {
 				add_core_of = ROOT
 			}
 			216 = { #OLONETS
@@ -7279,7 +7516,9 @@ focus_tree = {
 			}
 
 			add_state_claim = 208 #LUGA
+			add_state_claim = 1290
 			add_state_claim = 195 #LENINGRAD
+			add_state_claim = 1289
 			add_state_claim = 244 #VOLKHOV
 			add_state_claim = 264 #TIKHVIN
 		}
@@ -8790,7 +9029,28 @@ focus_tree = {
 			213 = { #MURMANSK
 				add_claim_by = ROOT
 			}
+			1714 = {
+				add_claim_by = ROOT
+			}
 			215 = { #ONEGA
+				add_claim_by = ROOT
+			}
+			1116 = {
+				add_claim_by = ROOT
+			}
+			1117 = {
+				add_claim_by = ROOT
+			}
+			1170 = {
+				add_claim_by = ROOT
+			}
+			1171 = {
+				add_claim_by = ROOT
+			}
+			1174 = {
+				add_claim_by = ROOT
+			}
+			1175 = {
 				add_claim_by = ROOT
 			}
 			216 = { #OLONETS
@@ -10271,7 +10531,7 @@ focus_tree = {
 				else = {
 					# Helsinki - Porvoo - Kouvola - Kotka
 					build_railway = {
-						path = { 11105 9129 6144 6009 204 9183 3061 }
+						path = { 11105 9129 6144 6009 204 3161 9183 3061 }
 					}
 				}
 

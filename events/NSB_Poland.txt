@@ -57,11 +57,35 @@ country_event = {
 				}
 				POL = { transfer_state = 70 }
 			}
+			if = { # KSRE (de 70)
+				limit = {
+					owns_state = 1146
+				}
+				POL = { transfer_state = 1146 }
+			}
+			if = { # KSRE (de 70)
+				limit = {
+					owns_state = 1147
+				}
+				POL = { transfer_state = 1147 }
+			}
 			if = {
 				limit = {
 					owns_state = 71
 				}
 				POL = { transfer_state = 71 }
+			}
+			if = { # KSRE (de 71)
+				limit = {
+					owns_state = 1148
+				}
+				POL = { transfer_state = 1148 }
+			}
+			if = { # KSRE (de 71)
+				limit = {
+					owns_state = 1149
+				}
+				POL = { transfer_state = 1149 }
 			}
 			if = {
 				limit = {
@@ -69,17 +93,71 @@ country_event = {
 				}
 				POL = { transfer_state = 72 }
 			}
+			if = { # KSRE (de 72)
+				limit = {
+					owns_state = 1727
+				}
+				POL = { transfer_state = 1727 }
+			}
 			if = {
 				limit = {
 					owns_state = 73
 				}
 				POL = { transfer_state = 73 }
 			}
+			if = { # KSRE (de 73)
+				limit = {
+					owns_state = 1294
+				}
+				POL = { transfer_state = 1294 }
+			}
+			if = {
+				limit = {
+					owns_state = 1294
+				}
+				POL = { transfer_state = 1294 }
+			}
 			if = {
 				limit = {
 					owns_state = 664
 				}
 				POL = { transfer_state = 664 }
+			}
+			if = { # KSRE (de 664)
+				limit = {
+					owns_state = 1560
+				}
+				POL = { transfer_state = 1560 }
+			}
+			if = {
+				limit = {
+					owns_state = 1560
+				}
+				POL = { transfer_state = 1560 }
+			}
+			if = {
+				limit = {
+					owns_state = 1146
+				}
+				POL = { transfer_state = 1146 }
+			}
+			if = {
+				limit = {
+					owns_state = 1147
+				}
+				POL = { transfer_state = 1147 }
+			}
+			if = {
+				limit = {
+					owns_state = 1148
+				}
+				POL = { transfer_state = 1148 }
+			}
+			if = {
+				limit = {
+					owns_state = 1149
+				}
+				POL = { transfer_state = 1149 }
 			}
 		}
 		if = {
@@ -173,33 +251,69 @@ country_event = {
 		else = {
 			if = {
 				limit = {
-					FROM = { owns_state = 70 }
+					FROM = { owns_state = 70 owns_state = 1146 owns_state = 1147 }
 				}
-				transfer_state = 70
+				transfer_state = 70 transfer_state = 1146 transfer_state = 1147
 			}
 			if = {
 				limit = {
-					FROM = { owns_state = 71 }
+					FROM = { owns_state = 71 owns_state = 1148 owns_state = 1149 }
 				}
-				transfer_state = 71
+				transfer_state = 71 transfer_state = 1148 transfer_state = 1149
 			}
 			if = {
 				limit = {
-					FROM = { owns_state = 72 }
+					FROM = { owns_state = 72 owns_state = 1727 }
 				}
-				transfer_state = 72
+				transfer_state = 72 transfer_state = 1727
 			}
 			if = {
 				limit = {
-					FROM = { owns_state = 73 }
+					FROM = { owns_state = 73 owns_state = 1294 }
 				}
-				transfer_state = 73
+				transfer_state = 73 transfer_state = 1294
 			}
 			if = {
 				limit = {
-					FROM = { owns_state = 664 }
+					FROM = { owns_state = 1294 }
 				}
-				transfer_state = 664
+				transfer_state = 1294
+			}
+			if = {
+				limit = {
+					FROM = { owns_state = 664 owns_state = 1560 }
+				}
+				transfer_state = 664 transfer_state = 1560
+			}
+			if = {
+				limit = {
+					FROM = { owns_state = 1560 }
+				}
+				transfer_state = 1560
+			}
+			if = {
+				limit = {
+					FROM = { owns_state = 1146 }
+				}
+				transfer_state = 1146
+			}
+			if = {
+				limit = {
+					FROM = { owns_state = 1147 }
+				}
+				transfer_state = 1147
+			}
+			if = {
+				limit = {
+					FROM = { owns_state = 1148 }
+				}
+				transfer_state = 1148
+			}
+			if = {
+				limit = {
+					FROM = { owns_state = 1149 }
+				}
+				transfer_state = 1149
 			}
 		}
 	}
@@ -407,7 +521,7 @@ country_event = {
 		}
 		trigger = {
 			OR = {
-				POL = { owns_state = 807 }
+				POL = { owns_state = 807 owns_state = 1554 }
 				POL = { owns_state = 85 }
 			}
 		}
@@ -506,6 +620,13 @@ country_event = {
 			807 = { add_core_of = GER }
 			GER = { transfer_state = 807 }
 		}
+		if = { # KSRE (de 807)
+			limit = {
+				owns_state = 1554
+			}
+			1554 = { add_core_of = GER }
+			GER = { transfer_state = 1554 }
+		}
 		if = {
 			limit = {
 				owns_state = 85
@@ -525,7 +646,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state
 					target = POL
-					generator = { 85 807 }
+					generator = { 85 807 1554 }
 				}
 			}
 		}
@@ -553,7 +674,7 @@ country_event = {
 		create_wargoal = {
 			type = take_state
 			target = POL
-			generator = { 85 807 }
+			generator = { 85 807 1554 }
 		}
 	}
 }
@@ -830,6 +951,14 @@ country_event = {
 				limit = {
 					event_target:POL_colony_purchase = {
 						state = 773
+					}
+				}
+				remove_decision_on_cooldown = POL_purchase_cheap_colony
+			}
+			if = {
+				limit = {
+					event_target:POL_colony_purchase = {
+						state = 1770
 					}
 				}
 				remove_decision_on_cooldown = POL_purchase_cheap_colony
@@ -2020,6 +2149,10 @@ country_event = {
 			265 = { add_core_of = DON }
 			237 = { add_core_of = DON }
 			236 = { add_core_of = DON }
+			1096 = { add_core_of = DON }
+			1807 = { add_core_of = DON }
+			1808 = { add_core_of = DON }
+			1095 = { add_core_of = DON }
 		}
 	}
 
@@ -2035,6 +2168,10 @@ country_event = {
 			transfer_state = 238
 			transfer_state = 217
 			transfer_state = 265
+			transfer_state = 1096
+			transfer_state = 1807
+			transfer_state = 1808
+			transfer_state = 1095
 			if = {
 				limit = {
 					PREV = { controls_state = 236 }
@@ -2087,6 +2224,10 @@ country_event = {
 			transfer_state = 238
 			transfer_state = 217
 			transfer_state = 265
+			transfer_state = 1096
+			transfer_state = 1807
+			transfer_state = 1808
+			transfer_state = 1095
 			if = {
 				limit = {
 					PREV = { controls_state = 236 }
@@ -2138,10 +2279,9 @@ country_event = {
 			235 = { add_core_of = KUB }
 			233 = { add_core_of = KUB }
 			232 = { add_core_of = KUB }
-			137 = { add_core_of = KUB }
-			827 = { add_core_of = KUB }
-			828 = { add_core_of = KUB }
-			821 = { add_core_of = KUB }
+			1806 = { add_core_of = KUB }
+			1097 = { add_core_of = KUB }
+			1098 = { add_core_of = KUB }
 		}
 	}
 
@@ -2156,30 +2296,9 @@ country_event = {
 			transfer_state = 235
 			transfer_state = 233
 			transfer_state = 232
-			if = {
-				limit = {
-					PREV = { controls_state = 137 }
-				}
-				transfer_state = 137
-			}
-			if = {
-				limit = {
-					PREV = { controls_state = 827 }
-				}
-				transfer_state = 827
-			}
-			if = {
-				limit = {
-					PREV = { controls_state = 828 }
-				}
-				transfer_state = 828
-			}
-			if = {
-				limit = {
-					PREV = { controls_state = 821 }
-				}
-				transfer_state = 821
-			}
+			transfer_state = 1806
+			transfer_state = 1097
+			transfer_state = 1098
 			custom_effect_tooltip = spawn_cossacks_tt
 			hidden_effect = {
 				load_oob = "KUB_cossack_host"
@@ -2219,12 +2338,9 @@ country_event = {
 			transfer_state = 235
 			transfer_state = 233
 			transfer_state = 232
-			if = {
-				limit = {
-					PREV = { controls_state = 137 }
-				}
-				transfer_state = 137
-			}
+			transfer_state = 1806
+			transfer_state = 1097
+			transfer_state = 1098
 			custom_effect_tooltip = spawn_cossacks_tt
 			hidden_effect = {
 				load_oob = "KUB_cossack_host"
@@ -2309,11 +2425,46 @@ country_event = {
 					66 = { add_core_of = PREV }
 				}
 			}
+			if = { # KSRE (de 66)
+				limit = { owns_state = 1540 }
+				FROM = {
+					transfer_state = 1540
+					1540 = { add_core_of = PREV }
+				}
+			}
+			if = { # KSRE (de 66)
+				limit = { owns_state = 1541 }
+				FROM = {
+					transfer_state = 1541
+					1541 = { add_core_of = PREV }
+				}
+			}
+			if = { # KSRE (de 66)
+				limit = { owns_state = 1558 }
+				FROM = {
+					transfer_state = 1558
+					1558 = { add_core_of = PREV }
+				}
+			}
 			if = {
 				limit = { owns_state = 68 }
 				FROM = {
 					transfer_state = 68
 					68 = { add_core_of = PREV }
+				}
+			}
+			if = { # KSRE (de 68)
+				limit = { owns_state = 1429 }
+				FROM = {
+					transfer_state = 1429
+					1429 = { add_core_of = PREV }
+				}
+			}
+			if = {
+				limit = { owns_state = 1429 }
+				FROM = {
+					transfer_state = 1429
+					1429 = { add_core_of = PREV }
 				}
 			}
 			if = {
@@ -2323,6 +2474,55 @@ country_event = {
 					63 = { add_core_of = PREV }
 				}
 			}
+			if = { # KSRE (de 63)
+				limit = { owns_state = 1538 }
+				FROM = {
+					transfer_state = 1538
+					1538 = { add_core_of = PREV }
+				}
+			}
+			if = { # KSRE (de 63)
+				limit = { owns_state = 1539 }
+				FROM = {
+					transfer_state = 1539
+					1539 = { add_core_of = PREV }
+				}
+			}
+			if = {
+				limit = { owns_state = 1540 }
+				FROM = {
+					transfer_state = 1540
+					1540 = { add_core_of = PREV }
+				}
+			}
+			if = {
+				limit = { owns_state = 1541 }
+				FROM = {
+					transfer_state = 1541
+					1541 = { add_core_of = PREV }
+				}
+			}
+			if = {
+				limit = { owns_state = 1558 }
+				FROM = {
+					transfer_state = 1558
+					1558 = { add_core_of = PREV }
+				}
+			}
+			if = {
+				limit = { owns_state = 1538 }
+				FROM = {
+					transfer_state = 1538
+					1538 = { add_core_of = PREV }
+				}
+			}
+			if = {
+				limit = { owns_state = 1539 }
+				FROM = {
+					transfer_state = 1539
+					1539 = { add_core_of = PREV }
+				}
+			}
 			if = {
 				limit = { owns_state = 5 }
 				FROM = {
@@ -2330,11 +2530,130 @@ country_event = {
 					5 = { add_core_of = PREV }
 				}
 			}
+			if = { # KSRE (de 5)
+				limit = { owns_state = 1288 }
+				FROM = {
+					transfer_state = 1288
+					1288 = { add_core_of = PREV }
+				}
+			}
+			if = { # KSRE (de 5)
+				limit = { owns_state = 1427 }
+				FROM = {
+					transfer_state = 1427
+					1427 = { add_core_of = PREV }
+				}
+			}
+			if = { # KSRE (de 5)
+				limit = { owns_state = 1428 }
+				FROM = {
+					transfer_state = 1428
+					1428 = { add_core_of = PREV }
+				}
+			}
+			if = { # KSRE (de 5)
+				limit = { owns_state = 1557 }
+				FROM = {
+					transfer_state = 1557
+					1557 = { add_core_of = PREV }
+				}
+			}
+			if = { # KSRE (de 5)
+				limit = { owns_state = 1701 }
+				FROM = {
+					transfer_state = 1701
+					1701 = { add_core_of = PREV }
+				}
+			}
+			if = { # KSRE (de 5)
+				limit = { owns_state = 1702 }
+				FROM = {
+					transfer_state = 1702
+					1702 = { add_core_of = PREV }
+				}
+			}
+			if = { # KSRE (de 5)
+				limit = { owns_state = 1772 }
+				FROM = {
+					transfer_state = 1772
+					1772 = { add_core_of = PREV }
+				}
+			}
+			if = {
+				limit = { owns_state = 1288 }
+				FROM = {
+					transfer_state = 1288
+					1288 = { add_core_of = PREV }
+				}
+			}
+			if = {
+				limit = { owns_state = 1557 }
+				FROM = {
+					transfer_state = 1557
+					1557 = { add_core_of = PREV }
+				}
+			}
+			if = {
+				limit = { owns_state = 1701 }
+				FROM = {
+					transfer_state = 1701
+					1701 = { add_core_of = PREV }
+				}
+			}
+			if = {
+				limit = { owns_state = 1427 }
+				FROM = {
+					transfer_state = 1427
+					1427 = { add_core_of = PREV }
+				}
+			}
+			if = {
+				limit = { owns_state = 1427 }
+				FROM = {
+					transfer_state = 1427
+					1427 = { add_core_of = PREV }
+				}
+			}
+			if = {
+				limit = { owns_state = 1428 }
+				FROM = {
+					transfer_state = 1428
+					1428 = { add_core_of = PREV }
+				}
+			}
+			if = {
+				limit = { owns_state = 1702 }
+				FROM = {
+					transfer_state = 1702
+					1702 = { add_core_of = PREV }
+				}
+			}
+			if = {
+				limit = { owns_state = 1772 }
+				FROM = {
+					transfer_state = 1772
+					1772 = { add_core_of = PREV }
+				}
+			}
 			if = {
 				limit = { owns_state = 763 }
 				FROM = {
 					transfer_state = 763
 					763 = { add_core_of = PREV }
+				}
+			}
+			if = { # KSRE (de 763)
+				limit = { owns_state = 1249 }
+				FROM = {
+					transfer_state = 1249
+					1249 = { add_core_of = PREV }
+				}
+			}
+			if = {
+				limit = { owns_state = 1249 }
+				FROM = {
+					transfer_state = 1249
+					1249 = { add_core_of = PREV }
 				}
 			}
 		}
@@ -2382,7 +2701,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state_focus
 					target = GER
-					generator = { 67 66 68 63 5 763 }
+					generator = { 67 66 68 1429 63 1540 1541 1558 1538 1539 5 1288 1557 1701 1427 1427 1428 1702 1772 763 1249 }
 				}
 			}
 		}
@@ -2417,29 +2736,104 @@ country_event = {
 			67 = { add_core_of = PREV }
 		}
 		if = {
-			limit = { FROM = { owns_state = 66 } }
-			transfer_state = 66
+			limit = { FROM = { owns_state = 66 owns_state = 1540 owns_state = 1541 owns_state = 1558 } }
+			transfer_state = 66 transfer_state = 1540 transfer_state = 1541 transfer_state = 1558
 			66 = { add_core_of = PREV }
 		}
 		if = {
-			limit = { FROM = { owns_state = 68 } }
-			transfer_state = 68
+			limit = { FROM = { owns_state = 68 owns_state = 1429 } }
+			transfer_state = 68 transfer_state = 1429
 			68 = { add_core_of = PREV }
 		}
 		if = {
-			limit = { FROM = { owns_state = 63 } }
-			transfer_state = 63
+			limit = { FROM = { owns_state = 1429 } }
+			transfer_state = 1429
+			1429 = { add_core_of = PREV }
+		}
+		if = {
+			limit = { FROM = { owns_state = 63 owns_state = 1538 owns_state = 1539 } }
+			transfer_state = 63 transfer_state = 1538 transfer_state = 1539
 			63 = { add_core_of = PREV }
 		}
 		if = {
-			limit = { FROM = { owns_state = 5 } }
-			transfer_state = 5
+			limit = { FROM = { owns_state = 1538 } }
+			transfer_state = 1538
+			1538 = { add_core_of = PREV }
+		}
+		if = {
+			limit = { FROM = { owns_state = 1539 } }
+			transfer_state = 1539
+			1539 = { add_core_of = PREV }
+		}
+		if = {
+			limit = { FROM = { owns_state = 1540 } }
+			transfer_state = 1540
+			1540 = { add_core_of = PREV }
+		}
+		if = {
+			limit = { FROM = { owns_state = 1541 } }
+			transfer_state = 1541
+			1541 = { add_core_of = PREV }
+		}
+		if = {
+			limit = { FROM = { owns_state = 1558 } }
+			transfer_state = 1558
+			1558 = { add_core_of = PREV }
+		}
+		if = {
+			limit = { FROM = { owns_state = 5 owns_state = 1288 owns_state = 1427 owns_state = 1428 owns_state = 1557 owns_state = 1701 owns_state = 1702 owns_state = 1772 } }
+			transfer_state = 5 transfer_state = 1288 transfer_state = 1427 transfer_state = 1428 transfer_state = 1557 transfer_state = 1701 transfer_state = 1702 transfer_state = 1772
 			5 = { add_core_of = PREV }
 		}
 		if = {
-			limit = { FROM = { owns_state = 763 } }
-			transfer_state = 763
+			limit = { FROM = { owns_state = 1288 } }
+			transfer_state = 1288
+			1288 = { add_core_of = PREV }
+		}
+		if = {
+			limit = { FROM = { owns_state = 1557 } }
+			transfer_state = 1557
+			1557 = { add_core_of = PREV }
+		}
+		if = {
+			limit = { FROM = { owns_state = 1701 } }
+			transfer_state = 1701
+			1701 = { add_core_of = PREV }
+		}
+		if = {
+			limit = { FROM = { owns_state = 1427 } }
+			transfer_state = 1427
+			1427 = { add_core_of = PREV }
+		}
+		if = {
+			limit = { FROM = { owns_state = 1427 } }
+			transfer_state = 1427
+			1427 = { add_core_of = PREV }
+		}
+		if = {
+			limit = { FROM = { owns_state = 1428 } }
+			transfer_state = 1428
+			1428 = { add_core_of = PREV }
+		}
+		if = {
+			limit = { FROM = { owns_state = 1702 } }
+			transfer_state = 1702
+			1702 = { add_core_of = PREV }
+		}
+		if = {
+			limit = { FROM = { owns_state = 1772 } }
+			transfer_state = 1772
+			1772 = { add_core_of = PREV }
+		}
+		if = {
+			limit = { FROM = { owns_state = 763 owns_state = 1249 } }
+			transfer_state = 763 transfer_state = 1249
 			763 = { add_core_of = PREV }
+		}
+		if = {
+			limit = { FROM = { owns_state = 1249 } }
+			transfer_state = 1249
+			1249 = { add_core_of = PREV }
 		}
 	}
 }
@@ -2464,7 +2858,7 @@ country_event = {
 		create_wargoal = {
 			type = take_state_focus
 			target = GER
-			generator = { 67 66 68 63 5 763 }
+			generator = { 67 66 68 1429 63 1538 1539 1540 1541 1558 5 1288 1557 1701 1427 1428 1702 1772 763 1249 }
 		}
 	}
 }
@@ -2878,42 +3272,173 @@ country_event = {
 		96 = { add_core_of = SOV }
 		95 = { add_core_of = SOV }
 		94 = { add_core_of = SOV }
+		1815 = { add_core_of = SOV }
 		93 = { add_core_of = SOV }
 		91 = { add_core_of = SOV }
+		1400 = { add_core_of = SOV }
 		89 = { add_core_of = SOV }
 		97 = { add_core_of = SOV }
+		1245 = { add_core_of = SOV }
+		1241 = { add_core_of = SOV }
+		1242 = { add_core_of = SOV }
+		1238 = { add_core_of = SOV }
+		1239 = { add_core_of = SOV }
+		1243 = { add_core_of = SOV }
+		1247 = { add_core_of = SOV }
+		1248 = { add_core_of = SOV }
+		1817 = { add_core_of = SOV }
+		1244 = { add_core_of = SOV }
+		1816 = { add_core_of = SOV }
+		1240 = { add_core_of = SOV }
+		1246 = { add_core_of = SOV }
+		1610 = { add_core_of = SOV }
+		1535 = { add_core_of = SOV }
+		1484 = { add_core_of = SOV }
+		1818 = { add_core_of = SOV }
+		1534 = { add_core_of = SOV }
+		1533 = { add_core_of = SOV }
+		1814 = { add_core_of = SOV }
+		1531 = { add_core_of = SOV }
+		1532 = { add_core_of = SOV }
+		1399 = { add_core_of = SOV }
+		1173 = { add_core_of = SOV }
+		
 		if = {
-			limit = { POL = { owns_state = 96 controls_state = 96 } }
-			transfer_state = 96
+			limit = { POL = { owns_state = 96 owns_state = 1173 owns_state = 1244 owns_state = 1817 controls_state = 96 } }
+			transfer_state = 96 transfer_state = 1173 transfer_state = 1244 transfer_state = 1817
 		}
 		if = {
-			limit = { POL = { owns_state = 95 controls_state = 95 } }
-			transfer_state = 95
+			limit = { POL = { owns_state = 95 owns_state = 1239 owns_state = 1240 owns_state = 1243 owns_state = 1246 owns_state = 1247 controls_state = 95 } }
+			transfer_state = 95 transfer_state = 1239 transfer_state = 1240 transfer_state = 1243 transfer_state = 1246 transfer_state = 1247
 		}
 		if = {
-			limit = { POL = { owns_state = 94 controls_state = 94 } }
-			transfer_state = 94
+			limit = { POL = { owns_state = 94 owns_state = 1484 owns_state = 1534 owns_state = 1535 owns_state = 1610 owns_state = 1814 owns_state = 1815 owns_state = 1818 controls_state = 94 } }
+			transfer_state = 94 transfer_state = 1484 transfer_state = 1534 transfer_state = 1535 transfer_state = 1610 transfer_state = 1814 transfer_state = 1815 transfer_state = 1818
 		}
 		if = {
-			limit = { POL = { owns_state = 93 controls_state = 93 } }
-			transfer_state = 93
+			limit = { POL = { owns_state = 1815 controls_state = 1815 } }
+			transfer_state = 1815
 		}
 		if = {
-			limit = { POL = { owns_state = 91 controls_state = 91 } }
-			transfer_state = 91
+			limit = { POL = { owns_state = 93 owns_state = 1533 controls_state = 93 } }
+			transfer_state = 93 transfer_state = 1533
 		}
 		if = {
-			limit = { POL = { owns_state = 89 controls_state = 89 } }
-			transfer_state = 89
+			limit = { POL = { owns_state = 91 owns_state = 1531 controls_state = 91 } }
+			transfer_state = 91 transfer_state = 1531
 		}
 		if = {
-			limit = { POL = { owns_state = 97 controls_state = 97 } }
-			transfer_state = 97
+			limit = { POL = { owns_state = 1400 controls_state = 1400 } }
+			transfer_state = 1400
 		}
 		if = {
-			limit = { POL = { owns_state = 784 controls_state = 784 } }
-			transfer_state = 784
+			limit = { POL = { owns_state = 89 owns_state = 1532 controls_state = 89 } }
+			transfer_state = 89 transfer_state = 1532
+		}
+		if = {
+			limit = { POL = { owns_state = 97 owns_state = 1241 owns_state = 1242 owns_state = 1245 controls_state = 97 } }
+			transfer_state = 97 transfer_state = 1241 transfer_state = 1242 transfer_state = 1245
+		}
+		if = {
+			limit = { POL = { owns_state = 784 owns_state = 1238 owns_state = 1248 owns_state = 1816 controls_state = 784 } }
+			transfer_state = 784 transfer_state = 1238 transfer_state = 1248 transfer_state = 1816
 			784 = { add_core_of = SOV }
+		}
+		if = {
+			limit = { POL = { owns_state = 1245 controls_state = 1245 } }
+			transfer_state = 1245
+		}
+		if = {
+			limit = { POL = { owns_state = 1241 controls_state = 1241 } }
+			transfer_state = 1241
+		}
+		if = {
+			limit = { POL = { owns_state = 1242 controls_state = 1242 } }
+			transfer_state = 1242
+		}
+		if = {
+			limit = { POL = { owns_state = 1238 controls_state = 1238 } }
+			transfer_state = 1238
+		}
+		if = {
+			limit = { POL = { owns_state = 1239 controls_state = 1239 } }
+			transfer_state = 1239
+		}
+		if = {
+			limit = { POL = { owns_state = 1243 controls_state = 1243 } }
+			transfer_state = 1243
+		}
+		if = {
+			limit = { POL = { owns_state = 1247 controls_state = 1247 } }
+			transfer_state = 1247
+		}
+		if = {
+			limit = { POL = { owns_state = 1248 controls_state = 1248 } }
+			transfer_state = 1248
+		}
+		if = {
+			limit = { POL = { owns_state = 1817 controls_state = 1817 } }
+			transfer_state = 1817
+		}
+		if = {
+			limit = { POL = { owns_state = 1244 controls_state = 1244 } }
+			transfer_state = 1244
+		}
+		if = {
+			limit = { POL = { owns_state = 1816 controls_state = 1816 } }
+			transfer_state = 1816
+		}
+		if = {
+			limit = { POL = { owns_state = 1240 controls_state = 1240 } }
+			transfer_state = 1240
+		}
+		if = {
+			limit = { POL = { owns_state = 1246 controls_state = 1246 } }
+			transfer_state = 1246
+		}
+		if = {
+			limit = { POL = { owns_state = 1610 controls_state = 1610 } }
+			transfer_state = 1610
+		}
+		if = {
+			limit = { POL = { owns_state = 1535 controls_state = 1535 } }
+			transfer_state = 1535
+		}
+		if = {
+			limit = { POL = { owns_state = 1484 controls_state = 1484 } }
+			transfer_state = 1484
+		}
+		if = {
+			limit = { POL = { owns_state = 1818 controls_state = 1818 } }
+			transfer_state = 1818
+		}
+		if = {
+			limit = { POL = { owns_state = 1534 controls_state = 1534 } }
+			transfer_state = 1534
+		}
+		if = {
+			limit = { POL = { owns_state = 1533 controls_state = 1533 } }
+			transfer_state = 1533
+		}
+		if = {
+			limit = { POL = { owns_state = 1814 controls_state = 1814 } }
+			transfer_state = 1814
+		}
+		if = {
+			limit = { POL = { owns_state = 1531 controls_state = 1531 } }
+			transfer_state = 1531
+		}
+		if = {
+			limit = { POL = { owns_state = 1532 controls_state = 1532 } }
+			transfer_state = 1532
+		}
+		if = {
+			limit = { POL = { owns_state = 1399 controls_state = 1399 } }
+			transfer_state = 1399
+		}
+		if = {
+			limit = { POL = { owns_state = 1173 controls_state = 1173 } }
+			transfer_state = 1173
 		}
 		set_autonomy = {
 			target = POL
@@ -2955,43 +3480,173 @@ country_event = {
 			96 = { add_core_of = SOV }
 			95 = { add_core_of = SOV }
 			94 = { add_core_of = SOV }
+			1815 = { add_core_of = SOV }
 			93 = { add_core_of = SOV }
 			91 = { add_core_of = SOV }
+			1400 = { add_core_of = SOV }
 			89 = { add_core_of = SOV }
 			97 = { add_core_of = SOV }
+			1245 = { add_core_of = SOV }
+			1241 = { add_core_of = SOV }
+			1242 = { add_core_of = SOV }
+			1238 = { add_core_of = SOV }
+			1239 = { add_core_of = SOV }
+			1243 = { add_core_of = SOV }
+			1247 = { add_core_of = SOV }
+			1248 = { add_core_of = SOV }
+			1817 = { add_core_of = SOV }
+			1244 = { add_core_of = SOV }
+			1816 = { add_core_of = SOV }
+			1240 = { add_core_of = SOV }
+			1246 = { add_core_of = SOV }
+			1610 = { add_core_of = SOV }
+			1535 = { add_core_of = SOV }
+			1484 = { add_core_of = SOV }
+			1818 = { add_core_of = SOV }
+			1534 = { add_core_of = SOV }
+			1533 = { add_core_of = SOV }
+			1814 = { add_core_of = SOV }
+			1531 = { add_core_of = SOV }
+			1532 = { add_core_of = SOV }
+			1399 = { add_core_of = SOV }
+			1173 = { add_core_of = SOV }
 			SOV = {
 				if = {
-					limit = { POL = { owns_state = 96 controls_state = 96 } }
-					transfer_state = 96
+					limit = { POL = { owns_state = 96 owns_state = 1173 owns_state = 1244 owns_state = 1817 controls_state = 96 } }
+					transfer_state = 96 transfer_state = 1173 transfer_state = 1244 transfer_state = 1817
 				}
 				if = {
-					limit = { POL = { owns_state = 95 controls_state = 95 } }
-					transfer_state = 95
+					limit = { POL = { owns_state = 95 owns_state = 1239 owns_state = 1240 owns_state = 1243 owns_state = 1246 owns_state = 1247 controls_state = 95 } }
+					transfer_state = 95 transfer_state = 1239 transfer_state = 1240 transfer_state = 1243 transfer_state = 1246 transfer_state = 1247
 				}
 				if = {
-					limit = { POL = { owns_state = 94 controls_state = 94 } }
-					transfer_state = 94
+					limit = { POL = { owns_state = 94 owns_state = 1484 owns_state = 1534 owns_state = 1535 owns_state = 1610 owns_state = 1814 owns_state = 1815 owns_state = 1818 controls_state = 94 } }
+					transfer_state = 94 transfer_state = 1484 transfer_state = 1534 transfer_state = 1535 transfer_state = 1610 transfer_state = 1814 transfer_state = 1815 transfer_state = 1818
 				}
 				if = {
-					limit = { POL = { owns_state = 93 controls_state = 93 } }
-					transfer_state = 93
+					limit = { POL = { owns_state = 1815 controls_state = 1815 } }
+					transfer_state = 1815
 				}
 				if = {
-					limit = { POL = { owns_state = 91 controls_state = 91 } }
-					transfer_state = 91
+					limit = { POL = { owns_state = 93 owns_state = 1533 controls_state = 93 } }
+					transfer_state = 93 transfer_state = 1533
 				}
 				if = {
-					limit = { POL = { owns_state = 89 controls_state = 89 } }
-					transfer_state = 89
+					limit = { POL = { owns_state = 91 owns_state = 1531 controls_state = 91 } }
+					transfer_state = 91 transfer_state = 1531
 				}
 				if = {
-					limit = { POL = { owns_state = 97 controls_state = 97 } }
-					transfer_state = 97
+					limit = { POL = { owns_state = 1400 controls_state = 1400 } }
+					transfer_state = 1400
 				}
 				if = {
-					limit = { POL = { owns_state = 784 controls_state = 784 } }
-					transfer_state = 784
+					limit = { POL = { owns_state = 89 owns_state = 1532 controls_state = 89 } }
+					transfer_state = 89 transfer_state = 1532
+				}
+				if = {
+					limit = { POL = { owns_state = 97 owns_state = 1241 owns_state = 1242 owns_state = 1245 controls_state = 97 } }
+					transfer_state = 97 transfer_state = 1241 transfer_state = 1242 transfer_state = 1245
+				}
+				if = {
+					limit = { POL = { owns_state = 784 owns_state = 1238 owns_state = 1248 owns_state = 1816 controls_state = 784 } }
+					transfer_state = 784 transfer_state = 1238 transfer_state = 1248 transfer_state = 1816
 					784 = { add_core_of = SOV }
+				}
+				if = {
+					limit = { POL = { owns_state = 1245 controls_state = 1245 } }
+					transfer_state = 1245
+				}
+				if = {
+					limit = { POL = { owns_state = 1241 controls_state = 1241 } }
+					transfer_state = 1241
+				}
+				if = {
+					limit = { POL = { owns_state = 1242 controls_state = 1242 } }
+					transfer_state = 1242
+				}
+				if = {
+					limit = { POL = { owns_state = 1238 controls_state = 1238 } }
+					transfer_state = 1238
+				}
+				if = {
+					limit = { POL = { owns_state = 1239 controls_state = 1239 } }
+					transfer_state = 1239
+				}
+				if = {
+					limit = { POL = { owns_state = 1243 controls_state = 1243 } }
+					transfer_state = 1243
+				}
+				if = {
+					limit = { POL = { owns_state = 1247 controls_state = 1247 } }
+					transfer_state = 1247
+				}
+				if = {
+					limit = { POL = { owns_state = 1248 controls_state = 1248 } }
+					transfer_state = 1248
+				}
+				if = {
+					limit = { POL = { owns_state = 1817 controls_state = 1817 } }
+					transfer_state = 1817
+				}
+				if = {
+					limit = { POL = { owns_state = 1244 controls_state = 1244 } }
+					transfer_state = 1244
+				}
+				if = {
+					limit = { POL = { owns_state = 1816 controls_state = 1816 } }
+					transfer_state = 1816
+				}
+				if = {
+					limit = { POL = { owns_state = 1240 controls_state = 1240 } }
+					transfer_state = 1240
+				}
+				if = {
+					limit = { POL = { owns_state = 1246 controls_state = 1246 } }
+					transfer_state = 1246
+				}
+				if = {
+					limit = { POL = { owns_state = 1610 controls_state = 1610 } }
+					transfer_state = 1610
+				}
+				if = {
+					limit = { POL = { owns_state = 1535 controls_state = 1535 } }
+					transfer_state = 1535
+				}
+				if = {
+					limit = { POL = { owns_state = 1484 controls_state = 1484 } }
+					transfer_state = 1484
+				}
+				if = {
+					limit = { POL = { owns_state = 1818 controls_state = 1818 } }
+					transfer_state = 1818
+				}
+				if = {
+					limit = { POL = { owns_state = 1534 controls_state = 1534 } }
+					transfer_state = 1534
+				}
+				if = {
+					limit = { POL = { owns_state = 1533 controls_state = 1533 } }
+					transfer_state = 1533
+				}
+				if = {
+					limit = { POL = { owns_state = 1814 controls_state = 1814 } }
+					transfer_state = 1814
+				}
+				if = {
+					limit = { POL = { owns_state = 1531 controls_state = 1531 } }
+					transfer_state = 1531
+				}
+				if = {
+					limit = { POL = { owns_state = 1532 controls_state = 1532 } }
+					transfer_state = 1532
+				}
+				if = {
+					limit = { POL = { owns_state = 1399 controls_state = 1399 } }
+					transfer_state = 1399
+				}
+				if = {
+					limit = { POL = { owns_state = 1173 controls_state = 1173 } }
+					transfer_state = 1173
 				}
 				set_autonomy = {
 					target = POL
@@ -3212,43 +3867,173 @@ country_event = {
 			96 = { add_core_of = POL }
 			95 = { add_core_of = POL }
 			94 = { add_core_of = POL }
+			1815 = { add_core_of = POL }
 			93 = { add_core_of = POL }
 			91 = { add_core_of = POL }
+			1400 = { add_core_of = POL }
 			89 = { add_core_of = POL }
 			97 = { add_core_of = POL }
+			1245 = { add_core_of = SOV }
+			1241 = { add_core_of = SOV }
+			1242 = { add_core_of = SOV }
+			1238 = { add_core_of = SOV }
+			1239 = { add_core_of = SOV }
+			1243 = { add_core_of = SOV }
+			1247 = { add_core_of = SOV }
+			1248 = { add_core_of = SOV }
+			1817 = { add_core_of = SOV }
+			1244 = { add_core_of = SOV }
+			1816 = { add_core_of = SOV }
+			1240 = { add_core_of = SOV }
+			1246 = { add_core_of = SOV }
+			1610 = { add_core_of = SOV }
+			1535 = { add_core_of = SOV }
+			1484 = { add_core_of = SOV }
+			1818 = { add_core_of = SOV }
+			1534 = { add_core_of = SOV }
+			1533 = { add_core_of = SOV }
+			1814 = { add_core_of = SOV }
+			1531 = { add_core_of = SOV }
+			1532 = { add_core_of = SOV }
+			1399 = { add_core_of = SOV }
+			1173 = { add_core_of = SOV }
 			POL = {
 				if = {
-					limit = { ROOT = { owns_state = 96 controls_state = 96 } }
-					transfer_state = 96
+					limit = { ROOT = { owns_state = 96 owns_state = 1173 owns_state = 1244 owns_state = 1817 controls_state = 96 } }
+					transfer_state = 96 transfer_state = 1173 transfer_state = 1244 transfer_state = 1817
 				}
 				if = {
-					limit = { ROOT = { owns_state = 95 controls_state = 95 } }
-					transfer_state = 95
+					limit = { ROOT = { owns_state = 95 owns_state = 1239 owns_state = 1240 owns_state = 1243 owns_state = 1246 owns_state = 1247 controls_state = 95 } }
+					transfer_state = 95 transfer_state = 1239 transfer_state = 1240 transfer_state = 1243 transfer_state = 1246 transfer_state = 1247
 				}
 				if = {
-					limit = { ROOT = { owns_state = 94 controls_state = 94 } }
-					transfer_state = 94
+					limit = { ROOT = { owns_state = 94 owns_state = 1484 owns_state = 1534 owns_state = 1535 owns_state = 1610 owns_state = 1814 owns_state = 1815 owns_state = 1818 controls_state = 94 } }
+					transfer_state = 94 transfer_state = 1484 transfer_state = 1534 transfer_state = 1535 transfer_state = 1610 transfer_state = 1814 transfer_state = 1815 transfer_state = 1818
 				}
 				if = {
-					limit = { ROOT = { owns_state = 93 controls_state = 93 } }
-					transfer_state = 93
+					limit = { ROOT = { owns_state = 1815 controls_state = 1815 } }
+					transfer_state = 1815
 				}
 				if = {
-					limit = { ROOT = { owns_state = 91 controls_state = 91 } }
-					transfer_state = 91
+					limit = { ROOT = { owns_state = 93 owns_state = 1533 controls_state = 93 } }
+					transfer_state = 93 transfer_state = 1533
 				}
 				if = {
-					limit = { ROOT = { owns_state = 89 controls_state = 89 } }
-					transfer_state = 89
+					limit = { ROOT = { owns_state = 91 owns_state = 1531 controls_state = 91 } }
+					transfer_state = 91 transfer_state = 1531
 				}
 				if = {
-					limit = { ROOT = { owns_state = 97 controls_state = 97 } }
-					transfer_state = 97
+					limit = { ROOT = { owns_state = 1400 controls_state = 1400 } }
+					transfer_state = 1400
+				}
+				if = {
+					limit = { ROOT = { owns_state = 89 owns_state = 1532 controls_state = 89 } }
+					transfer_state = 89 transfer_state = 1532
+				}
+				if = {
+					limit = { ROOT = { owns_state = 97 owns_state = 1241 owns_state = 1242 owns_state = 1245 controls_state = 97 } }
+					transfer_state = 97 transfer_state = 1241 transfer_state = 1242 transfer_state = 1245
+				}
+				if = {
+					limit = { POL = { owns_state = 1245 controls_state = 1245 } }
+					transfer_state = 1245
+				}
+				if = {
+					limit = { POL = { owns_state = 1241 controls_state = 1241 } }
+					transfer_state = 1241
+				}
+				if = {
+					limit = { POL = { owns_state = 1242 controls_state = 1242 } }
+					transfer_state = 1242
+				}
+				if = {
+					limit = { POL = { owns_state = 1238 controls_state = 1238 } }
+					transfer_state = 1238
+				}
+				if = {
+					limit = { POL = { owns_state = 1239 controls_state = 1239 } }
+					transfer_state = 1239
+				}
+				if = {
+					limit = { POL = { owns_state = 1243 controls_state = 1243 } }
+					transfer_state = 1243
+				}
+				if = {
+					limit = { POL = { owns_state = 1247 controls_state = 1247 } }
+					transfer_state = 1247
+				}
+				if = {
+					limit = { POL = { owns_state = 1248 controls_state = 1248 } }
+					transfer_state = 1248
+				}
+				if = {
+					limit = { POL = { owns_state = 1817 controls_state = 1817 } }
+					transfer_state = 1817
+				}
+				if = {
+					limit = { POL = { owns_state = 1244 controls_state = 1244 } }
+					transfer_state = 1244
+				}
+				if = {
+					limit = { POL = { owns_state = 1816 controls_state = 1816 } }
+					transfer_state = 1816
+				}
+				if = {
+					limit = { POL = { owns_state = 1240 controls_state = 1240 } }
+					transfer_state = 1240
+				}
+				if = {
+					limit = { POL = { owns_state = 1246 controls_state = 1246 } }
+					transfer_state = 1246
+				}
+				if = {
+					limit = { POL = { owns_state = 1610 controls_state = 1610 } }
+					transfer_state = 1610
+				}
+				if = {
+					limit = { POL = { owns_state = 1535 controls_state = 1535 } }
+					transfer_state = 1535
+				}
+				if = {
+					limit = { POL = { owns_state = 1484 controls_state = 1484 } }
+					transfer_state = 1484
+				}
+				if = {
+					limit = { POL = { owns_state = 1818 controls_state = 1818 } }
+					transfer_state = 1818
+				}
+				if = {
+					limit = { POL = { owns_state = 1534 controls_state = 1534 } }
+					transfer_state = 1534
+				}
+				if = {
+					limit = { POL = { owns_state = 1533 controls_state = 1533 } }
+					transfer_state = 1533
+				}
+				if = {
+					limit = { POL = { owns_state = 1814 controls_state = 1814 } }
+					transfer_state = 1814
+				}
+				if = {
+					limit = { POL = { owns_state = 1531 controls_state = 1531 } }
+					transfer_state = 1531
+				}
+				if = {
+					limit = { POL = { owns_state = 1532 controls_state = 1532 } }
+					transfer_state = 1532
+				}
+				if = {
+					limit = { POL = { owns_state = 1399 controls_state = 1399 } }
+					transfer_state = 1399
+				}
+				if = {
+					limit = { POL = { owns_state = 1173 controls_state = 1173 } }
+					transfer_state = 1173
 				}
 				#Lithuanian states
 				if = {
-					limit = { ROOT = { owns_state = 784 controls_state = 784 } }
-					transfer_state = 784
+					limit = { ROOT = { owns_state = 784 owns_state = 1238 owns_state = 1248 owns_state = 1816 controls_state = 784 } }
+					transfer_state = 784 transfer_state = 1238 transfer_state = 1248 transfer_state = 1816
 					784 = { add_core_of = POL }
 				}
 				if = {
@@ -3260,16 +4045,32 @@ country_event = {
 					transfer_state = 188
 				}
 				if = {
-					limit = { ROOT = { owns_state = 189 controls_state = 189 } }
-					transfer_state = 189
+					limit = { ROOT = { owns_state = 1172 controls_state = 1172 } }
+					transfer_state = 1172
 				}
 				if = {
-					limit = { ROOT = { owns_state = 814 controls_state = 814 } }
-					transfer_state = 814
+					limit = { ROOT = { owns_state = 189 owns_state = 1172 owns_state = 1237 owns_state = 1787 controls_state = 189 } }
+					transfer_state = 189 transfer_state = 1172 transfer_state = 1237 transfer_state = 1787
+				}
+				if = {
+					limit = { ROOT = { owns_state = 814 owns_state = 1236 controls_state = 814 } }
+					transfer_state = 814 transfer_state = 1236
 				}
 				if = {
 					limit = { ROOT = { owns_state = 815 controls_state = 815 } }
 					transfer_state = 815
+				}
+				if = {
+					limit = { ROOT = { owns_state = 1236 controls_state = 1236 } }
+					transfer_state = 1236
+				}
+				if = {
+					limit = { ROOT = { owns_state = 1237 controls_state = 1237 } }
+					transfer_state = 1237
+				}
+				if = {
+					limit = { ROOT = { owns_state = 1787 controls_state = 1787 } }
+					transfer_state = 1787
 				}
 			}
 		}
@@ -3315,43 +4116,173 @@ country_event = {
 		96 = { add_core_of = POL }
 		95 = { add_core_of = POL }
 		94 = { add_core_of = POL }
+		1815 = { add_core_of = POL }
 		93 = { add_core_of = POL }
 		91 = { add_core_of = POL }
+		1400 = { add_core_of = POL }
 		89 = { add_core_of = POL }
 		97 = { add_core_of = POL }
+		1245 = { add_core_of = SOV }
+		1241 = { add_core_of = SOV }
+		1242 = { add_core_of = SOV }
+		1238 = { add_core_of = SOV }
+		1239 = { add_core_of = SOV }
+		1243 = { add_core_of = SOV }
+		1247 = { add_core_of = SOV }
+		1248 = { add_core_of = SOV }
+		1817 = { add_core_of = SOV }
+		1244 = { add_core_of = SOV }
+		1816 = { add_core_of = SOV }
+		1240 = { add_core_of = SOV }
+		1246 = { add_core_of = SOV }
+		1610 = { add_core_of = SOV }
+		1535 = { add_core_of = SOV }
+		1484 = { add_core_of = SOV }
+		1818 = { add_core_of = SOV }
+		1534 = { add_core_of = SOV }
+		1533 = { add_core_of = SOV }
+		1814 = { add_core_of = SOV }
+		1531 = { add_core_of = SOV }
+		1532 = { add_core_of = SOV }
+		1399 = { add_core_of = SOV }
+		1173 = { add_core_of = SOV }
 		if = {
-			limit = { FROM = { owns_state = 96 controls_state = 96 } }
-			transfer_state = 96
+			limit = { FROM = { owns_state = 96 owns_state = 1173 owns_state = 1244 owns_state = 1817 controls_state = 96 } }
+			transfer_state = 96 transfer_state = 1173 transfer_state = 1244 transfer_state = 1817
 		}
 		if = {
-			limit = { FROM = { owns_state = 95 controls_state = 95 } }
-			transfer_state = 95
+			limit = { FROM = { owns_state = 95 owns_state = 1239 owns_state = 1240 owns_state = 1243 owns_state = 1246 owns_state = 1247 controls_state = 95 } }
+			transfer_state = 95 transfer_state = 1239 transfer_state = 1240 transfer_state = 1243 transfer_state = 1246 transfer_state = 1247
 		}
 		if = {
-			limit = { FROM = { owns_state = 94 controls_state = 94 } }
-			transfer_state = 94
+			limit = { FROM = { owns_state = 94 owns_state = 1484 owns_state = 1534 owns_state = 1535 owns_state = 1610 owns_state = 1814 owns_state = 1815 owns_state = 1818 controls_state = 94 } }
+			transfer_state = 94 transfer_state = 1484 transfer_state = 1534 transfer_state = 1535 transfer_state = 1610 transfer_state = 1814 transfer_state = 1815 transfer_state = 1818
 		}
 		if = {
-			limit = { FROM = { owns_state = 93 controls_state = 93 } }
-			transfer_state = 93
+			limit = { FROM = { owns_state = 1815 controls_state = 1815 } }
+			transfer_state = 1815
 		}
 		if = {
-			limit = { FROM = { owns_state = 91 controls_state = 91 } }
-			transfer_state = 91
+			limit = { FROM = { owns_state = 93 owns_state = 1533 controls_state = 93 } }
+			transfer_state = 93 transfer_state = 1533
 		}
 		if = {
-			limit = { FROM = { owns_state = 89 controls_state = 89 } }
-			transfer_state = 89
+			limit = { FROM = { owns_state = 91 owns_state = 1531 controls_state = 91 } }
+			transfer_state = 91 transfer_state = 1531
 		}
 		if = {
-			limit = { FROM = { owns_state = 97 controls_state = 97 } }
-			transfer_state = 97
+			limit = { FROM = { owns_state = 1400 controls_state = 1400 } }
+			transfer_state = 1400
+		}
+		if = {
+			limit = { FROM = { owns_state = 89 owns_state = 1532 controls_state = 89 } }
+			transfer_state = 89 transfer_state = 1532
+		}
+		if = {
+			limit = { FROM = { owns_state = 97 owns_state = 1241 owns_state = 1242 owns_state = 1245 controls_state = 97 } }
+			transfer_state = 97 transfer_state = 1241 transfer_state = 1242 transfer_state = 1245
+		}
+		if = {
+			limit = { FROM = { owns_state = 1245 controls_state = 1245 } }
+			transfer_state = 1245
+		}
+		if = {
+			limit = { FROM = { owns_state = 1241 controls_state = 1241 } }
+			transfer_state = 1241
+		}
+		if = {
+			limit = { FROM = { owns_state = 1242 controls_state = 1242 } }
+			transfer_state = 1242
+		}
+		if = {
+			limit = { FROM = { owns_state = 1238 controls_state = 1238 } }
+			transfer_state = 1238
+		}
+		if = {
+			limit = { FROM = { owns_state = 1239 controls_state = 1239 } }
+			transfer_state = 1239
+		}
+		if = {
+			limit = { FROM = { owns_state = 1243 controls_state = 1243 } }
+			transfer_state = 1243
+		}
+		if = {
+			limit = { FROM = { owns_state = 1247 controls_state = 1247 } }
+			transfer_state = 1247
+		}
+		if = {
+			limit = { FROM = { owns_state = 1248 controls_state = 1248 } }
+			transfer_state = 1248
+		}
+		if = {
+			limit = { FROM = { owns_state = 1817 controls_state = 1817 } }
+			transfer_state = 1817
+		}
+		if = {
+			limit = { FROM = { owns_state = 1244 controls_state = 1244 } }
+			transfer_state = 1244
+		}
+		if = {
+			limit = { FROM = { owns_state = 1816 controls_state = 1816 } }
+			transfer_state = 1816
+		}
+		if = {
+			limit = { FROM = { owns_state = 1240 controls_state = 1240 } }
+			transfer_state = 1240
+		}
+		if = {
+			limit = { FROM = { owns_state = 1246 controls_state = 1246 } }
+			transfer_state = 1246
+		}
+		if = {
+			limit = { FROM = { owns_state = 1610 controls_state = 1610 } }
+			transfer_state = 1610
+		}
+		if = {
+			limit = { FROM = { owns_state = 1535 controls_state = 1535 } }
+			transfer_state = 1535
+		}
+		if = {
+			limit = { FROM = { owns_state = 1484 controls_state = 1484 } }
+			transfer_state = 1484
+		}
+		if = {
+			limit = { FROM = { owns_state = 1818 controls_state = 1818 } }
+			transfer_state = 1818
+		}
+		if = {
+			limit = { FROM = { owns_state = 1534 controls_state = 1534 } }
+			transfer_state = 1534
+		}
+		if = {
+			limit = { FROM = { owns_state = 1533 controls_state = 1533 } }
+			transfer_state = 1533
+		}
+		if = {
+			limit = { FROM = { owns_state = 1814 controls_state = 1814 } }
+			transfer_state = 1814
+		}
+		if = {
+			limit = { FROM = { owns_state = 1531 controls_state = 1531 } }
+			transfer_state = 1531
+		}
+		if = {
+			limit = { FROM = { owns_state = 1532 controls_state = 1532 } }
+			transfer_state = 1532
+		}
+		if = {
+			limit = { FROM = { owns_state = 1399 controls_state = 1399 } }
+			transfer_state = 1399
+		}
+		if = {
+			limit = { FROM = { owns_state = 1173 controls_state = 1173 } }
+			transfer_state = 1173
 		}
 		#Lithuanian states
 		if = {
-			limit = { FROM = { owns_state = 784 controls_state = 784 } }
-			transfer_state = 784
-			784 = { add_core_of = POL }
+			limit = { FROM = { owns_state = 784 owns_state = 1238 owns_state = 1248 owns_state = 1816 controls_state = 784 } }
+			transfer_state = 784 transfer_state = 1238 transfer_state = 1248 transfer_state = 1816
+			784 = { add_core_of = FROM }
 		}
 		if = {
 			limit = { FROM = { owns_state = 11 controls_state = 11 } }
@@ -3362,16 +4293,32 @@ country_event = {
 			transfer_state = 188
 		}
 		if = {
-			limit = { FROM = { owns_state = 189 controls_state = 189 } }
-			transfer_state = 189
+			limit = { FROM = { owns_state = 1172 controls_state = 1172 } }
+			transfer_state = 1172
 		}
 		if = {
-			limit = { FROM = { owns_state = 814 controls_state = 814 } }
-			transfer_state = 814
+			limit = { FROM = { owns_state = 189 owns_state = 1172 owns_state = 1237 owns_state = 1787 controls_state = 189 } }
+			transfer_state = 189 transfer_state = 1172 transfer_state = 1237 transfer_state = 1787
+		}
+		if = {
+			limit = { FROM = { owns_state = 814 owns_state = 1236 controls_state = 814 } }
+			transfer_state = 814 transfer_state = 1236
 		}
 		if = {
 			limit = { FROM = { owns_state = 815 controls_state = 815 } }
 			transfer_state = 815
+		}
+		if = {
+			limit = { FROM = { owns_state = 1236 controls_state = 1236 } }
+			transfer_state = 1236
+		}
+		if = {
+			limit = { FROM = { owns_state = 1237 controls_state = 1237 } }
+			transfer_state = 1237
+		}
+		if = {
+			limit = { FROM = { owns_state = 1787 controls_state = 1787 } }
+			transfer_state = 1787
 		}
 	}
 }
@@ -3499,11 +4446,37 @@ country_event = {
 				add_state_claim = 96
 				add_state_claim = 95
 				add_state_claim = 94
+				add_state_claim = 1815
 				add_state_claim = 93
 				add_state_claim = 91
+				add_state_claim = 1400
 				add_state_claim = 97
 				add_state_claim = 89
 				add_state_claim = 784
+				add_state_claim = 1238
+				add_state_claim = 1247
+				add_state_claim = 1248
+				add_state_claim = 1817
+				add_state_claim = 1241
+				add_state_claim = 1242
+				add_state_claim = 1239
+				add_state_claim = 1243
+				add_state_claim = 1244
+				add_state_claim = 1816
+				add_state_claim = 1245
+				add_state_claim = 1240
+				add_state_claim = 1246
+				add_state_claim = 1610
+				add_state_claim = 1535
+				add_state_claim = 1484
+				add_state_claim = 1818
+				add_state_claim = 1534
+				add_state_claim = 1533
+				add_state_claim = 1814
+				add_state_claim = 1531
+				add_state_claim = 1532
+				add_state_claim = 1399
+				add_state_claim = 1173
 				effect_tooltip = {
 					create_wargoal = {
 						type = annex_everything
@@ -4084,19 +5057,42 @@ country_event = {
 				811 = { add_core_of = ROOT }
 				812 = { add_core_of = ROOT }
 				813 = { add_core_of = ROOT }
+				1795 = { add_core_of = ROOT }
+				1796 = { add_core_of = ROOT }
+				1797 = { add_core_of = ROOT }
+				1798 = { add_core_of = ROOT }
+				1799 = { add_core_of = ROOT }
+				1800 = { add_core_of = ROOT }
+				1801 = { add_core_of = ROOT }
 				# Latvia
 				12 = { add_core_of = ROOT }
 				190 = { add_core_of = ROOT }
+				1559 = { add_core_of = ROOT }
+				1771 = { add_core_of = ROOT }
 				808 = { add_core_of = ROOT }
 				809 = { add_core_of = ROOT }
 				810 = { add_core_of = ROOT }
+				1788 = { add_core_of = ROOT }
+				1789 = { add_core_of = ROOT }
+				1790 = { add_core_of = ROOT }
+				1791 = { add_core_of = ROOT }
+				1792 = { add_core_of = ROOT }
 				# Lithuania
 				11 = { add_core_of = ROOT }
 				189 = { add_core_of = ROOT }
 				188 = { add_core_of = ROOT }
+				1172 = { add_core_of = ROOT }
 				784 = { add_core_of = ROOT }
+				1816 = { add_core_of = ROOT } # KSRE (de 784)
 				814 = { add_core_of = ROOT }
 				815 = { add_core_of = ROOT }
+				1236 = { add_core_of = ROOT }
+				1237 = { add_core_of = ROOT }
+				1787 = { add_core_of = ROOT }
+				1238 = { add_core_of = ROOT }
+				1247 = { add_core_of = ROOT }
+				1248 = { add_core_of = ROOT }
+				1817 = { add_core_of = ROOT }
 			}
 		}
 		else_if = {
@@ -4132,6 +5128,8 @@ country_event = {
 				}
 				137 = { add_core_of = POL }
 				218 = { add_core_of = POL }
+				1096 = { add_core_of = POL } # KSRE (de 218)
+				1807 = { add_core_of = POL } # KSRE (de 218)
 				234 = { add_core_of = POL }
 				233 = { add_core_of = POL }
 				231 = { add_core_of = POL }
@@ -4144,6 +5142,24 @@ country_event = {
 				826 = { add_core_of = POL }
 				827 = { add_core_of = POL }
 				828 = { add_core_of = POL }
+				1086 = { add_core_of = POL }
+				1087 = { add_core_of = POL }
+				1088 = { add_core_of = POL }
+				1098 = { add_core_of = POL }
+				1097 = { add_core_of = POL }
+				1806 = { add_core_of = POL }
+				1118 = { add_core_of = POL }
+				1119 = { add_core_of = POL }
+				1120 = { add_core_of = POL }
+				1811 = { add_core_of = POL }
+				1121 = { add_core_of = POL }
+				1122 = { add_core_of = POL }
+				1123 = { add_core_of = POL }
+				1124 = { add_core_of = POL }
+				1125 = { add_core_of = POL }
+				1126 = { add_core_of = POL }
+				1127 = { add_core_of = POL }
+				1786 = { add_core_of = POL }
 
 			}
 		}

@@ -273,7 +273,7 @@ MR_pact_transfer_state_effect = {
 				OR = {
 					is_controlled_by = ROOT
 					any_other_country = {
-						controls_state = 96
+						controls_state = 96 controls_state = 1173 controls_state = 1244 controls_state = 1817
 						is_subject_of = ROOT
 					}
 				}
@@ -288,7 +288,7 @@ MR_pact_transfer_state_effect = {
 					}
 				}
 			}
-			SOU = { transfer_state = 96 }
+			SOU = { transfer_state = 96 transfer_state = 1173 transfer_state = 1244 transfer_state = 1817 }
 		}
 		else = {
 			random_other_country = {
@@ -301,7 +301,7 @@ MR_pact_transfer_state_effect = {
 						has_cosmetic_tag = BAL_UNIFIED
 					}
 				}
-				transfer_state = 96
+				transfer_state = 96 transfer_state = 1173 transfer_state = 1244 transfer_state = 1817
 			}
 		}
 	}
@@ -311,7 +311,7 @@ MR_pact_transfer_state_effect = {
 				OR = {
 					is_controlled_by = ROOT
 					any_other_country = {
-						controls_state = 95
+						controls_state = 95 controls_state = 1239 controls_state = 1240 controls_state = 1243 controls_state = 1246 controls_state = 1247
 						is_subject_of = ROOT
 					}
 				}
@@ -326,7 +326,7 @@ MR_pact_transfer_state_effect = {
 					}
 				}
 			}
-			SOU = { transfer_state = 95 }
+			SOU = { transfer_state = 95 transfer_state = 1239 transfer_state = 1240 transfer_state = 1243 transfer_state = 1246 transfer_state = 1247 }
 		}
 		else = {
 			random_other_country = {
@@ -339,7 +339,7 @@ MR_pact_transfer_state_effect = {
 						has_cosmetic_tag = BAL_UNIFIED
 					}
 				}
-				transfer_state = 95
+				transfer_state = 95 transfer_state = 1239 transfer_state = 1240 transfer_state = 1243 transfer_state = 1246 transfer_state = 1247
 			}
 		}
 	}
@@ -349,7 +349,7 @@ MR_pact_transfer_state_effect = {
 				OR = {
 					is_controlled_by = ROOT
 					any_other_country = {
-						controls_state = 94
+						controls_state = 94 controls_state = 1484 controls_state = 1534 controls_state = 1535 controls_state = 1610 controls_state = 1814 controls_state = 1815 controls_state = 1818
 						is_subject_of = ROOT
 					}
 				}
@@ -364,7 +364,7 @@ MR_pact_transfer_state_effect = {
 					}
 				}
 			}
-			SOU = { transfer_state = 94 }
+			SOU = { transfer_state = 94 transfer_state = 1484 transfer_state = 1534 transfer_state = 1535 transfer_state = 1610 transfer_state = 1814 transfer_state = 1815 transfer_state = 1818 }
 		}
 		else = {
 			random_other_country = {
@@ -377,7 +377,45 @@ MR_pact_transfer_state_effect = {
 						has_cosmetic_tag = BAL_UNIFIED
 					}
 				}
-				transfer_state = 94
+				transfer_state = 94 transfer_state = 1484 transfer_state = 1534 transfer_state = 1535 transfer_state = 1610 transfer_state = 1814 transfer_state = 1815 transfer_state = 1818
+			}
+		}
+	}
+	if = {
+		limit = {
+			1815 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 1815
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					any_other_country = {
+						is_in_faction_with = SOU
+						has_country_flag = BLT_soviets_said_yes_to_belarus_flag
+					}
+				}
+			}
+			SOU = { transfer_state = 1815 }
+		}
+		else = {
+			random_other_country = {
+				limit = {
+					is_in_faction_with = SOU
+					OR = {
+						has_cosmetic_tag = LIT_belarus
+						has_cosmetic_tag = LAT_belarus
+						has_cosmetic_tag = EST_belarus
+						has_cosmetic_tag = BAL_UNIFIED
+					}
+				}
+				transfer_state = 1815
 			}
 		}
 	}
@@ -387,13 +425,13 @@ MR_pact_transfer_state_effect = {
 				OR = {
 					is_controlled_by = ROOT
 					any_other_country = {
-						controls_state = 93
+						controls_state = 93 controls_state = 1533
 						is_subject_of = ROOT
 					}
 				}
 			}
 		}
-		SOU = { transfer_state = 93 }
+		SOU = { transfer_state = 93 transfer_state = 1533 }
 	}
 	if = {
 		limit = {
@@ -401,41 +439,13 @@ MR_pact_transfer_state_effect = {
 				OR = {
 					is_controlled_by = ROOT
 					any_other_country = {
-						controls_state = 91
+						controls_state = 91 controls_state = 1531
 						is_subject_of = ROOT
 					}
 				}
 			}
 		}
-		SOU = { transfer_state = 91 }
-	}
-	if = { # custom states
-		limit = {
-			1092 = { #CUSTOM STATE PRZEMYSL
-				OR = {
-					is_controlled_by = ROOT
-					any_other_country = {
-						controls_state = 1092
-						is_subject_of = ROOT
-					}
-				}
-			}
-		}
-		SOU = { transfer_state = 1092 }
-	}
-	if = {
-		limit = {
-			1096 = { #CUSTOM STATE TARNOPOL
-				OR = {
-					is_controlled_by = ROOT
-					any_other_country = {
-						controls_state = 1096
-						is_subject_of = ROOT
-					}
-				}
-			}
-		}
-		SOU = { transfer_state = 1096 }
+		SOU = { transfer_state = 91 transfer_state = 1531 }
 	}
 	if = {
 		limit = {
@@ -443,7 +453,7 @@ MR_pact_transfer_state_effect = {
 				OR = {
 					is_controlled_by = ROOT
 					any_other_country = {
-						controls_state = 97
+						controls_state = 97 controls_state = 1241 controls_state = 1242 controls_state = 1245
 						is_subject_of = ROOT
 					}
 				}
@@ -458,7 +468,7 @@ MR_pact_transfer_state_effect = {
 					}
 				}
 			}
-			SOU = { transfer_state = 97 }
+			SOU = { transfer_state = 97 transfer_state = 1241 transfer_state = 1242 transfer_state = 1245 }
 		}
 		else = {
 			random_other_country = {
@@ -471,49 +481,8 @@ MR_pact_transfer_state_effect = {
 						has_cosmetic_tag = BAL_UNIFIED
 					}
 				}
-				transfer_state = 97
+				transfer_state = 97 transfer_state = 1241 transfer_state = 1242 transfer_state = 1245
 				97 = {
-					add_core_of = PREV
-				}
-			}
-		}
-	}
-	if = { #CUSTOM STATE GRODNO
-		limit = {
-			1091 = {
-				OR = {
-					is_controlled_by = ROOT
-					any_other_country = {
-						controls_state = 1091
-						is_subject_of = ROOT
-					}
-				}
-			}
-		}
-		if = {
-			limit = {
-				NOT = {
-					any_other_country = {
-						is_in_faction_with = SOU
-						has_country_flag = BLT_soviets_said_yes_to_belarus_flag
-					}
-				}
-			}
-			SOU = { transfer_state = 1091 }
-		}
-		else = {
-			random_other_country = {
-				limit = {
-					is_in_faction_with = SOU
-					OR = {
-						has_cosmetic_tag = LIT_belarus
-						has_cosmetic_tag = LAT_belarus
-						has_cosmetic_tag = EST_belarus
-						has_cosmetic_tag = BAL_UNIFIED
-					}
-				}
-				transfer_state = 1091
-				1091 = {
 					add_core_of = PREV
 				}
 			}
@@ -525,13 +494,401 @@ MR_pact_transfer_state_effect = {
 				OR = {
 					is_controlled_by = ROOT
 					any_other_country = {
-						controls_state = 89
+						controls_state = 89 controls_state = 1532
 						is_subject_of = ROOT
 					}
 				}
 			}
 		}
-		SOU = { transfer_state = 89 }
+		SOU = { transfer_state = 89 transfer_state = 1532 }
+	}
+	if = {
+		limit = {
+			1531 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 1531
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		SOU = { transfer_state = 1531 }
+	}
+	if = {
+		limit = {
+			1532 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 1532
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		SOU = { transfer_state = 1532 }
+	}
+	if = {
+		limit = {
+			1399 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 1399
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		SOU = { transfer_state = 1399 }
+	}
+	if = {
+		limit = {
+			1483 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 1483
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		SOU = { transfer_state = 1483 }
+	}
+	if = {
+		limit = {
+			1533 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 1533
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		SOU = { transfer_state = 1533 }
+	}
+	if = {
+		limit = {
+			1814 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 1814
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		SOU = { transfer_state = 1814 }
+	}
+	if = {
+		limit = {
+			1534 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 1534
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					any_other_country = {
+						is_in_faction_with = SOU
+						has_country_flag = BLT_soviets_said_yes_to_belarus_flag
+					}
+				}
+			}
+			SOU = { transfer_state = 1534 }
+		}
+		else = {
+			random_other_country = {
+				limit = {
+					is_in_faction_with = SOU
+					OR = {
+						has_cosmetic_tag = LIT_belarus
+						has_cosmetic_tag = LAT_belarus
+						has_cosmetic_tag = EST_belarus
+						has_cosmetic_tag = BAL_UNIFIED
+					}
+				}
+				transfer_state = 1534
+			}
+		}
+	}
+	if = {
+		limit = {
+			1535 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 1535
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					any_other_country = {
+						is_in_faction_with = SOU
+						has_country_flag = BLT_soviets_said_yes_to_belarus_flag
+					}
+				}
+			}
+			SOU = { transfer_state = 1535 }
+		}
+		else = {
+			random_other_country = {
+				limit = {
+					is_in_faction_with = SOU
+					OR = {
+						has_cosmetic_tag = LIT_belarus
+						has_cosmetic_tag = LAT_belarus
+						has_cosmetic_tag = EST_belarus
+						has_cosmetic_tag = BAL_UNIFIED
+					}
+				}
+				transfer_state = 1535
+			}
+		}
+	}
+	if = {
+		limit = {
+			1484 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 1484
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					any_other_country = {
+						is_in_faction_with = SOU
+						has_country_flag = BLT_soviets_said_yes_to_belarus_flag
+					}
+				}
+			}
+			SOU = { transfer_state = 1484 }
+		}
+		else = {
+			random_other_country = {
+				limit = {
+					is_in_faction_with = SOU
+					OR = {
+						has_cosmetic_tag = LIT_belarus
+						has_cosmetic_tag = LAT_belarus
+						has_cosmetic_tag = EST_belarus
+						has_cosmetic_tag = BAL_UNIFIED
+					}
+				}
+				transfer_state = 1484
+			}
+		}
+	}
+	if = {
+		limit = {
+			1818 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 1818
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					any_other_country = {
+						is_in_faction_with = SOU
+						has_country_flag = BLT_soviets_said_yes_to_belarus_flag
+					}
+				}
+			}
+			SOU = { transfer_state = 1818 }
+		}
+		else = {
+			random_other_country = {
+				limit = {
+					is_in_faction_with = SOU
+					OR = {
+						has_cosmetic_tag = LIT_belarus
+						has_cosmetic_tag = LAT_belarus
+						has_cosmetic_tag = EST_belarus
+						has_cosmetic_tag = BAL_UNIFIED
+					}
+				}
+				transfer_state = 1818
+			}
+		}
+	}
+	if = {
+		limit = {
+			1245 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 1245
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					any_other_country = {
+						is_in_faction_with = SOU
+						has_country_flag = BLT_soviets_said_yes_to_belarus_flag
+					}
+				}
+			}
+			SOU = { transfer_state = 1245 }
+		}
+		else = {
+			random_other_country = {
+				limit = {
+					is_in_faction_with = SOU
+					OR = {
+						has_cosmetic_tag = LIT_belarus
+						has_cosmetic_tag = LAT_belarus
+						has_cosmetic_tag = EST_belarus
+						has_cosmetic_tag = BAL_UNIFIED
+					}
+				}
+				transfer_state = 1245
+			}
+		}
+	}
+	if = {
+		limit = {
+			1610 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 1610
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					any_other_country = {
+						is_in_faction_with = SOU
+						has_country_flag = BLT_soviets_said_yes_to_belarus_flag
+					}
+				}
+			}
+			SOU = { transfer_state = 1610 }
+		}
+		else = {
+			random_other_country = {
+				limit = {
+					is_in_faction_with = SOU
+					OR = {
+						has_cosmetic_tag = LIT_belarus
+						has_cosmetic_tag = LAT_belarus
+						has_cosmetic_tag = EST_belarus
+						has_cosmetic_tag = BAL_UNIFIED
+					}
+				}
+				transfer_state = 1610
+			}
+		}
+	}
+	if = {
+		limit = {
+			1246 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 1246
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					any_other_country = {
+						is_in_faction_with = SOU
+						has_country_flag = BLT_soviets_said_yes_to_belarus_flag
+					}
+				}
+			}
+			SOU = { transfer_state = 1246 }
+		}
+		else = {
+			random_other_country = {
+				limit = {
+					is_in_faction_with = SOU
+					OR = {
+						has_cosmetic_tag = LIT_belarus
+						has_cosmetic_tag = LAT_belarus
+						has_cosmetic_tag = EST_belarus
+						has_cosmetic_tag = BAL_UNIFIED
+					}
+				}
+				transfer_state = 1246
+			}
+		}
+	}
+	if = {
+		limit = {
+			1240 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 1240
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					any_other_country = {
+						is_in_faction_with = SOU
+						has_country_flag = BLT_soviets_said_yes_to_belarus_flag
+					}
+				}
+			}
+			SOU = { transfer_state = 1240 }
+		}
+		else = {
+			random_other_country = {
+				limit = {
+					is_in_faction_with = SOU
+					OR = {
+						has_cosmetic_tag = LIT_belarus
+						has_cosmetic_tag = LAT_belarus
+						has_cosmetic_tag = EST_belarus
+						has_cosmetic_tag = BAL_UNIFIED
+					}
+				}
+				transfer_state = 1240
+			}
+		}
 	}
 	if = {
 		limit = {
@@ -539,7 +896,7 @@ MR_pact_transfer_state_effect = {
 				OR = {
 					is_controlled_by = ROOT
 					any_other_country = {
-						controls_state = 784
+						controls_state = 784 controls_state = 1238 controls_state = 1248 controls_state = 1816
 						is_subject_of = ROOT
 					}
 				}
@@ -549,15 +906,12 @@ MR_pact_transfer_state_effect = {
 			limit = {
 				OR = {
 					has_global_flag = LIT_gets_vilnius
+					LIT = { controls_state = 784 controls_state = 1238 controls_state = 1248 controls_state = 1816 }
 					LIT = { is_in_faction_with = SOU }
-					LIT = { controls_state = 784 }
 				}
-				LIT = {
-					exists = yes
-					has_capitulated = no
-				}
+				LIT = { exists = yes }
 			}
-			LIT = { transfer_state = 784 }
+			LIT = { transfer_state = 784 transfer_state = 1238 transfer_state = 1248 transfer_state = 1816 }
 		}
 		else_if = {
 			limit = {
@@ -568,7 +922,7 @@ MR_pact_transfer_state_effect = {
 					}
 				}
 			}
-			SOU = { transfer_state = 784 }
+			SOU = { transfer_state = 784 transfer_state = 1238 transfer_state = 1248 transfer_state = 1816 }
 		}
 		else = {
 			random_other_country = {
@@ -581,17 +935,17 @@ MR_pact_transfer_state_effect = {
 						has_cosmetic_tag = BAL_UNIFIED
 					}
 				}
-				transfer_state = 784
+				transfer_state = 784 transfer_state = 1238 transfer_state = 1248 transfer_state = 1816
 			}
 		}
 	}
-	if = { # CUSTOM ADDITION STATE - DRUSKIENIKI 
+	if = {
 		limit = {
-			1083 = {
+			1238 = {
 				OR = {
 					is_controlled_by = ROOT
 					any_other_country = {
-						controls_state = 1083
+						controls_state = 1238
 						is_subject_of = ROOT
 					}
 				}
@@ -599,17 +953,11 @@ MR_pact_transfer_state_effect = {
 		}
 		if = {
 			limit = {
-				OR = {
-					has_global_flag = LIT_gets_vilnius
-					LIT = { is_in_faction_with = SOU }
-					LIT = { controls_state = 1083 }
-				}
-				LIT = {
-					exists = yes
-					has_capitulated = no
-				}
+				LIT = { controls_state = 1238 }
+				LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+				LIT = { exists = yes }
 			}
-			LIT = { transfer_state = 1083 }
+			LIT = { transfer_state = 1238 }
 		}
 		else_if = {
 			limit = {
@@ -620,7 +968,7 @@ MR_pact_transfer_state_effect = {
 					}
 				}
 			}
-			SOU = { transfer_state = 1083 }
+			SOU = { transfer_state = 1238 }
 		}
 		else = {
 			random_other_country = {
@@ -633,9 +981,432 @@ MR_pact_transfer_state_effect = {
 						has_cosmetic_tag = BAL_UNIFIED
 					}
 				}
-				transfer_state = 1083
+				transfer_state = 1238
 			}
 		}
+	}
+	if = {
+		limit = {
+			1247 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 1247
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				LIT = { controls_state = 1247 }
+				LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+				LIT = { exists = yes }
+			}
+			LIT = { transfer_state = 1247 }
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					any_other_country = {
+						is_in_faction_with = SOU
+						has_country_flag = BLT_soviets_said_yes_to_belarus_flag
+					}
+				}
+			}
+			SOU = { transfer_state = 1247 }
+		}
+		else = {
+			random_other_country = {
+				limit = {
+					is_in_faction_with = SOU
+					OR = {
+						has_cosmetic_tag = LIT_belarus
+						has_cosmetic_tag = LAT_belarus
+						has_cosmetic_tag = EST_belarus
+						has_cosmetic_tag = BAL_UNIFIED
+					}
+				}
+				transfer_state = 1247
+			}
+		}
+	}
+	if = {
+		limit = {
+			1248 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 1248
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				LIT = { controls_state = 1248 }
+				LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+				LIT = { exists = yes }
+			}
+			LIT = { transfer_state = 1248 }
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					any_other_country = {
+						is_in_faction_with = SOU
+						has_country_flag = BLT_soviets_said_yes_to_belarus_flag
+					}
+				}
+			}
+			SOU = { transfer_state = 1248 }
+		}
+		else = {
+			random_other_country = {
+				limit = {
+					is_in_faction_with = SOU
+					OR = {
+						has_cosmetic_tag = LIT_belarus
+						has_cosmetic_tag = LAT_belarus
+						has_cosmetic_tag = EST_belarus
+						has_cosmetic_tag = BAL_UNIFIED
+					}
+				}
+				transfer_state = 1248
+			}
+		}
+	}
+	if = {
+		limit = {
+			1817 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 1817
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				LIT = { controls_state = 1817 }
+				LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+				LIT = { exists = yes }
+			}
+			LIT = { transfer_state = 1817 }
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					any_other_country = {
+						is_in_faction_with = SOU
+						has_country_flag = BLT_soviets_said_yes_to_belarus_flag
+					}
+				}
+			}
+			SOU = { transfer_state = 1817 }
+		}
+		else = {
+			random_other_country = {
+				limit = {
+					is_in_faction_with = SOU
+					OR = {
+						has_cosmetic_tag = LIT_belarus
+						has_cosmetic_tag = LAT_belarus
+						has_cosmetic_tag = EST_belarus
+						has_cosmetic_tag = BAL_UNIFIED
+					}
+				}
+				transfer_state = 1817
+			}
+		}
+	}
+	if = {
+		limit = {
+			1242 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 1242
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				LIT = { controls_state = 1242 }
+				LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+				LIT = { exists = yes }
+			}
+			LIT = { transfer_state = 1242 }
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					any_other_country = {
+						is_in_faction_with = SOU
+						has_country_flag = BLT_soviets_said_yes_to_belarus_flag
+					}
+				}
+			}
+			SOU = { transfer_state = 1242 }
+		}
+		else = {
+			random_other_country = {
+				limit = {
+					is_in_faction_with = SOU
+					OR = {
+						has_cosmetic_tag = LIT_belarus
+						has_cosmetic_tag = LAT_belarus
+						has_cosmetic_tag = EST_belarus
+						has_cosmetic_tag = BAL_UNIFIED
+					}
+				}
+				transfer_state = 1242
+			}
+		}
+	}
+	if = {
+		limit = {
+			1239 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 1239
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				LIT = { controls_state = 1239 }
+				LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+				LIT = { exists = yes }
+			}
+			LIT = { transfer_state = 1239 }
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					any_other_country = {
+						is_in_faction_with = SOU
+						has_country_flag = BLT_soviets_said_yes_to_belarus_flag
+					}
+				}
+			}
+			SOU = { transfer_state = 1239 }
+		}
+		else = {
+			random_other_country = {
+				limit = {
+					is_in_faction_with = SOU
+					OR = {
+						has_cosmetic_tag = LIT_belarus
+						has_cosmetic_tag = LAT_belarus
+						has_cosmetic_tag = EST_belarus
+						has_cosmetic_tag = BAL_UNIFIED
+					}
+				}
+				transfer_state = 1239
+			}
+		}
+	}
+	if = {
+		limit = {
+			1243 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 1243
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				LIT = { controls_state = 1243 }
+				LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+				LIT = { exists = yes }
+			}
+			LIT = { transfer_state = 1243 }
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					any_other_country = {
+						is_in_faction_with = SOU
+						has_country_flag = BLT_soviets_said_yes_to_belarus_flag
+					}
+				}
+			}
+			SOU = { transfer_state = 1243 }
+		}
+		else = {
+			random_other_country = {
+				limit = {
+					is_in_faction_with = SOU
+					OR = {
+						has_cosmetic_tag = LIT_belarus
+						has_cosmetic_tag = LAT_belarus
+						has_cosmetic_tag = EST_belarus
+						has_cosmetic_tag = BAL_UNIFIED
+					}
+				}
+				transfer_state = 1243
+			}
+		}
+	}
+	if = {
+		limit = {
+			1244 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 1244
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				LIT = { controls_state = 1244 }
+				LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+				LIT = { exists = yes }
+			}
+			LIT = { transfer_state = 1244 }
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					any_other_country = {
+						is_in_faction_with = SOU
+						has_country_flag = BLT_soviets_said_yes_to_belarus_flag
+					}
+				}
+			}
+			SOU = { transfer_state = 1244 }
+		}
+		else = {
+			random_other_country = {
+				limit = {
+					is_in_faction_with = SOU
+					OR = {
+						has_cosmetic_tag = LIT_belarus
+						has_cosmetic_tag = LAT_belarus
+						has_cosmetic_tag = EST_belarus
+						has_cosmetic_tag = BAL_UNIFIED
+					}
+				}
+				transfer_state = 1244
+			}
+		}
+	}
+	if = {
+		limit = {
+			1816 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 1816
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				LIT = { controls_state = 1816 }
+				LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+				LIT = { exists = yes }
+			}
+			LIT = { transfer_state = 1816 }
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					any_other_country = {
+						is_in_faction_with = SOU
+						has_country_flag = BLT_soviets_said_yes_to_belarus_flag
+					}
+				}
+			}
+			SOU = { transfer_state = 1816 }
+		}
+		else = {
+			random_other_country = {
+				limit = {
+					is_in_faction_with = SOU
+					OR = {
+						has_cosmetic_tag = LIT_belarus
+						has_cosmetic_tag = LAT_belarus
+						has_cosmetic_tag = EST_belarus
+						has_cosmetic_tag = BAL_UNIFIED
+					}
+				}
+				transfer_state = 1816
+			}
+		}
+	}
+	if = {
+		limit = {
+			1173 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 1173
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				LIT = { controls_state = 1173 }
+				LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+				LIT = { exists = yes }
+			}
+			LIT = { transfer_state = 1173 }
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					any_other_country = {
+						is_in_faction_with = SOU
+						has_country_flag = BLT_soviets_said_yes_to_belarus_flag
+					}
+				}
+			}
+			SOU = { transfer_state = 1173 }
+		}
+		else = {
+			random_other_country = {
+				limit = {
+					is_in_faction_with = SOU
+					OR = {
+						has_cosmetic_tag = LIT_belarus
+						has_cosmetic_tag = LAT_belarus
+						has_cosmetic_tag = EST_belarus
+						has_cosmetic_tag = BAL_UNIFIED
+					}
+				}
+				transfer_state = 1173
+			}
+		}
+	}
+	if = {
+		limit = {
+			1241 = {
+				is_controlled_by = LIT
+				LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+			}
+		}
+		LIT = { transfer_state = 1241 }
 	}
 }
 
@@ -646,13 +1417,17 @@ MR_pact_transfer_faction_state_effect = {
 				OR = {
 					is_controlled_by = ROOT
 					any_other_country = {
-						controls_state = 96
+						controls_state = 96 controls_state = 1173 controls_state = 1244 controls_state = 1817
 						is_in_faction_with = ROOT
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 96 controls_state = 1173 controls_state = 1244 controls_state = 1817 }
 					}
 				}
 			}
 		}
-		SOU = { transfer_state = 96 }
+		SOU = { transfer_state = 96 transfer_state = 1173 transfer_state = 1244 transfer_state = 1817 }
 	}
 	if = {
 		limit = {
@@ -660,134 +1435,459 @@ MR_pact_transfer_faction_state_effect = {
 				OR = {
 					is_controlled_by = ROOT
 					any_other_country = {
-						controls_state = 95
+						controls_state = 95 controls_state = 1239 controls_state = 1240 controls_state = 1243 controls_state = 1246 controls_state = 1247
 						is_in_faction_with = ROOT
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 95 controls_state = 1239 controls_state = 1240 controls_state = 1243 controls_state = 1246 controls_state = 1247 }
 					}
 				}
 			}
 		}
-		SOU = { transfer_state = 95 }
+		SOU = { transfer_state = 95 transfer_state = 1239 transfer_state = 1240 transfer_state = 1243 transfer_state = 1246 transfer_state = 1247 }
 	}
 	if = {
 		limit = {
 			94 = {
 				OR = {
-					is_controlled_by = ROOT
+					is_controlled_by = GER
 					any_other_country = {
-						controls_state = 94
-						is_in_faction_with = ROOT
+						controls_state = 94 controls_state = 1484 controls_state = 1534 controls_state = 1535 controls_state = 1610 controls_state = 1814 controls_state = 1815 controls_state = 1818
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 94 controls_state = 1484 controls_state = 1534 controls_state = 1535 controls_state = 1610 controls_state = 1814 controls_state = 1815 controls_state = 1818 }
 					}
 				}
 			}
 		}
-		SOU = { transfer_state = 94 }
+		SOU = { transfer_state = 94 transfer_state = 1484 transfer_state = 1534 transfer_state = 1535 transfer_state = 1610 transfer_state = 1814 transfer_state = 1815 transfer_state = 1818 }
+	}
+	if = {
+		limit = {
+			1815 = {
+				OR = {
+					is_controlled_by = GER
+					any_other_country = {
+						controls_state = 1815
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 1815 }
+					}
+				}
+			}
+		}
+		SOU = { transfer_state = 1815 }
 	}
 	if = {
 		limit = {
 			93 = {
 				OR = {
-					is_controlled_by = ROOT
+					is_controlled_by = GER
 					any_other_country = {
-						controls_state = 93
-						is_in_faction_with = ROOT
+						controls_state = 93 controls_state = 1533
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 93 controls_state = 1533 }
 					}
 				}
 			}
 		}
-		SOU = { transfer_state = 93 }
+		SOU = { transfer_state = 93 transfer_state = 1533 }
 	}
 	if = {
 		limit = {
 			91 = {
 				OR = {
-					is_controlled_by = ROOT
+					is_controlled_by = GER
 					any_other_country = {
-						controls_state = 91
-						is_in_faction_with = ROOT
+						controls_state = 91 controls_state = 1531
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 91 controls_state = 1531 }
 					}
 				}
 			}
 		}
-		SOU = { transfer_state = 91 }
+		SOU = { transfer_state = 91 transfer_state = 1531 }
 	}
 	if = {
 		limit = {
 			97 = {
 				OR = {
-					is_controlled_by = ROOT
+					is_controlled_by = GER
 					any_other_country = {
-						controls_state = 97
-						is_in_faction_with = ROOT
+						controls_state = 97 controls_state = 1241 controls_state = 1242 controls_state = 1245
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 97 controls_state = 1241 controls_state = 1242 controls_state = 1245 }
 					}
 				}
 			}
 		}
-		SOU = { transfer_state = 97 }
+		SOU = { transfer_state = 97 transfer_state = 1241 transfer_state = 1242 transfer_state = 1245 }
 	}
 	if = {
 		limit = {
 			89 = {
 				OR = {
-					is_controlled_by = ROOT
+					is_controlled_by = GER
 					any_other_country = {
-						controls_state = 89
-						is_in_faction_with = ROOT
+						controls_state = 89 controls_state = 1532
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 89 controls_state = 1532 }
 					}
 				}
 			}
 		}
-		SOU = { transfer_state = 89 }
+		SOU = { transfer_state = 89 transfer_state = 1532 }
 	}
-	if = {# CUSTOM STATE GRODNO
+	if = {
 		limit = {
-			1091 = {
+			1483 = {
+				OR = {
+					is_controlled_by = GER
+					any_other_country = {
+						controls_state = 1483
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 1483 }
+					}
+				}
+			}
+		}
+		SOU = { transfer_state = 1483 }
+	}
+	if = {
+		limit = {
+			1535 = {
+				OR = {
+					is_controlled_by = GER
+					any_other_country = {
+						controls_state = 1535
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 1535 }
+					}
+				}
+			}
+		}
+		SOU = { transfer_state = 1535 }
+	}
+	if = {
+		limit = {
+			1484 = {
+				OR = {
+					is_controlled_by = GER
+					any_other_country = {
+						controls_state = 1484
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 1484 }
+					}
+				}
+			}
+		}
+		SOU = { transfer_state = 1484 }
+	}
+	if = {
+		limit = {
+			1818 = {
+				OR = {
+					is_controlled_by = GER
+					any_other_country = {
+						controls_state = 1818
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 1818 }
+					}
+				}
+			}
+		}
+		SOU = { transfer_state = 1818 }
+	}
+	if = {
+		limit = {
+			1534 = {
+				OR = {
+					is_controlled_by = GER
+					any_other_country = {
+						controls_state = 1534
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 1534 }
+					}
+				}
+			}
+		}
+		SOU = { transfer_state = 1534 }
+	}
+	if = {
+		limit = {
+			1533 = {
+				OR = {
+					is_controlled_by = GER
+					any_other_country = {
+						controls_state = 1533
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 1533 }
+					}
+				}
+			}
+		}
+		SOU = { transfer_state = 1533 }
+	}
+	if = {
+		limit = {
+			1814 = {
+				OR = {
+					is_controlled_by = GER
+					any_other_country = {
+						controls_state = 1814
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 1814 }
+					}
+				}
+			}
+		}
+		SOU = { transfer_state = 1814 }
+	}
+	if = {
+		limit = {
+			1532 = {
+				OR = {
+					is_controlled_by = GER
+					any_other_country = {
+						controls_state = 1532
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 1532 }
+					}
+				}
+			}
+		}
+		SOU = { transfer_state = 1532 }
+	}
+	if = {
+		limit = {
+			1399 = {
+				OR = {
+					is_controlled_by = GER
+					any_other_country = {
+						controls_state = 1399
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 1399 }
+					}
+				}
+			}
+		}
+		SOU = { transfer_state = 1399 }
+	}
+	if = {
+		limit = {
+			1531 = {
+				OR = {
+					is_controlled_by = GER
+					any_other_country = {
+						controls_state = 1531
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 1531 }
+					}
+				}
+			}
+		}
+		SOU = { transfer_state = 1531 }
+	}
+	if = { # custom states
+		limit = {
+			1483 = { #CUSTOM STATE PRZEMYSL
 				OR = {
 					is_controlled_by = ROOT
 					any_other_country = {
-						controls_state = 1091
-						is_in_faction_with = ROOT
+						controls_state = 1483
+						is_subject_of = ROOT
 					}
 				}
 			}
 		}
-		SOU = { transfer_state = 1091 }
+		SOU = { transfer_state = 1483 }
 	}
-	if = { # CUSTOM STATE PRZEMYSL
+	if = {
 		limit = {
-			1092 = {
+			1531 = { #CUSTOM STATE TARNOPOL
 				OR = {
 					is_controlled_by = ROOT
 					any_other_country = {
-						controls_state = 1092
-						is_in_faction_with = ROOT
+						controls_state = 1531
+						is_subject_of = ROOT
 					}
 				}
 			}
 		}
-		SOU = { transfer_state = 1092 }
+		SOU = { transfer_state = 1531 }
 	}
-	if = { # CUSTOM STATE TARNOPOL
+	if = {
 		limit = {
-			1096 = {
+			1610 = {
+				OR = {
+					is_controlled_by = GER
+					any_other_country = {
+						controls_state = 1610
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 1610 }
+					}
+				}
+			}
+		}
+		SOU = { transfer_state = 1610 }
+	}
+	if = {
+		limit = {
+			1245 = {
+				OR = {
+					is_controlled_by = GER
+					any_other_country = {
+						controls_state = 1245
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 1245 }
+					}
+				}
+			}
+		}
+		SOU = { transfer_state = 1245 }
+	}
+	if = {
+		limit = {
+			1246 = {
+				OR = {
+					is_controlled_by = GER
+					any_other_country = {
+						controls_state = 1246
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 1246 }
+					}
+				}
+			}
+		}
+		SOU = { transfer_state = 1246 }
+	}
+	if = { #CUSTOM STATE GRODNO
+		limit = {
+			1239 = {
 				OR = {
 					is_controlled_by = ROOT
 					any_other_country = {
-						controls_state = 1096
-						is_in_faction_with = ROOT
+						controls_state = 1239
+						is_subject_of = ROOT
 					}
 				}
 			}
 		}
-		SOU = { transfer_state = 1096 }
+		if = {
+			limit = {
+				NOT = {
+					any_other_country = {
+						is_in_faction_with = SOU
+						has_country_flag = BLT_soviets_said_yes_to_belarus_flag
+					}
+				}
+			}
+			SOU = { transfer_state = 1239 }
+		}
+		else = {
+			random_other_country = {
+				limit = {
+					is_in_faction_with = SOU
+					OR = {
+						has_cosmetic_tag = LIT_belarus
+						has_cosmetic_tag = LAT_belarus
+						has_cosmetic_tag = EST_belarus
+						has_cosmetic_tag = BAL_UNIFIED
+					}
+				}
+				transfer_state = 1239
+				1239 = {
+					add_core_of = PREV
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			1240 = {
+				OR = {
+					is_controlled_by = GER
+					any_other_country = {
+						controls_state = 1240
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 1240 }
+					}
+				}
+			}
+		}
+		SOU = { transfer_state = 1240 }
 	}
 	if = {
 		limit = {
 			784 = {
 				OR = {
-					is_controlled_by = ROOT
+					is_controlled_by = GER
 					any_other_country = { 
-						controls_state = 784
-						is_in_faction_with = ROOT
+						controls_state = 784 controls_state = 1238 controls_state = 1248 controls_state = 1816
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 784 controls_state = 1238 controls_state = 1248 controls_state = 1816 }
 					}
 				}
 			}
@@ -795,48 +1895,353 @@ MR_pact_transfer_faction_state_effect = {
 		if = {
 			limit = {
 				OR = {
-					has_global_flag = LIT_gets_vilnius
-					LIT = { controls_state = 784 }
-				}
-				LIT = {
-					exists = yes
-					has_capitulated = no
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 784 controls_state = 1238 controls_state = 1248 controls_state = 1816 }
+						LIT = { exists = yes }
+					}
+					AND = {
+						has_global_flag = LIT_gets_vilnius
+						LIT = { exists = yes }
+					}
 				}
 			}
-			LIT = { transfer_state = 784 }
+			LIT = { transfer_state = 784 transfer_state = 1238 transfer_state = 1248 transfer_state = 1816 }
 		}
 		else = {
-			SOU = { transfer_state = 784 }
+			SOU = { transfer_state = 784 transfer_state = 1238 transfer_state = 1248 transfer_state = 1816 }
 		}
 	}
-	if = { # CUSTOM STATE DRUSKIENIKI
+	if = {
 		limit = {
-			1083 = {
+			1238 = {
 				OR = {
-					is_controlled_by = ROOT
+					is_controlled_by = GER
 					any_other_country = { 
-						controls_state = 1083
-						is_in_faction_with = ROOT
+						controls_state = 1238
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 1238 }
 					}
 				}
 			}
 		}
 		if = {
 			limit = {
-				OR = {
-					has_global_flag = LIT_gets_vilnius
-					LIT = { controls_state = 1083 }
-				}
-				LIT = {
-					exists = yes
-					has_capitulated = no
-				}
+				LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+				LIT = { controls_state = 1238 }
+				LIT = { exists = yes }
 			}
-			LIT = { transfer_state = 1083 }
+			LIT = { transfer_state = 1238 }
 		}
 		else = {
-			SOU = { transfer_state = 1083 }
+			SOU = { transfer_state = 1238 }
 		}
+	}
+	if = {
+		limit = {
+			1247 = {
+				OR = {
+					is_controlled_by = GER
+					any_other_country = { 
+						controls_state = 1247
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 1247 }
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+				LIT = { controls_state = 1247 }
+				LIT = { exists = yes }
+			}
+			LIT = { transfer_state = 1247 }
+		}
+		else = {
+			SOU = { transfer_state = 1247 }
+		}
+	}
+	if = {
+		limit = {
+			1248 = {
+				OR = {
+					is_controlled_by = GER
+					any_other_country = { 
+						controls_state = 1248
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 1248 }
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+				LIT = { controls_state = 1248 }
+				LIT = { exists = yes }
+			}
+			LIT = { transfer_state = 1248 }
+		}
+		else = {
+			SOU = { transfer_state = 1248 }
+		}
+	}
+	if = {
+		limit = {
+			1817 = {
+				OR = {
+					is_controlled_by = GER
+					any_other_country = { 
+						controls_state = 1817
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 1817 }
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+				LIT = { controls_state = 1817 }
+				LIT = { exists = yes }
+			}
+			LIT = { transfer_state = 1817 }
+		}
+		else = {
+			SOU = { transfer_state = 1817 }
+		}
+	}
+	if = {
+		limit = {
+			1242 = {
+				OR = {
+					is_controlled_by = GER
+					any_other_country = { 
+						controls_state = 1242
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 1242 }
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+				LIT = { controls_state = 1242 }
+				LIT = { exists = yes }
+			}
+			LIT = { transfer_state = 1242 }
+		}
+		else = {
+			SOU = { transfer_state = 1242 }
+		}
+	}
+	if = {
+		limit = {
+			1239 = {
+				OR = {
+					is_controlled_by = GER
+					any_other_country = { 
+						controls_state = 1239
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 1239 }
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+				LIT = { controls_state = 1239 }
+				LIT = { exists = yes }
+			}
+			LIT = { transfer_state = 1239 }
+		}
+		else = {
+			SOU = { transfer_state = 1239 }
+		}
+	}
+	if = {
+		limit = {
+			1243 = {
+				OR = {
+					is_controlled_by = GER
+					any_other_country = { 
+						controls_state = 1243
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 1243 }
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+				LIT = { controls_state = 1243 }
+				LIT = { exists = yes }
+			}
+			LIT = { transfer_state = 1243 }
+		}
+		else = {
+			SOU = { transfer_state = 1243 }
+		}
+	}
+	if = {
+		limit = {
+			1244 = {
+				OR = {
+					is_controlled_by = GER
+					any_other_country = { 
+						controls_state = 1244
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 1244 }
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+				LIT = { controls_state = 1244 }
+				LIT = { exists = yes }
+			}
+			LIT = { transfer_state = 1244 }
+		}
+		else = {
+			SOU = { transfer_state = 1244 }
+		}
+	}
+	if = {
+		limit = {
+			1816 = {
+				OR = {
+					is_controlled_by = GER
+					any_other_country = { 
+						controls_state = 1816
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 1816 }
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+				LIT = { controls_state = 1816 }
+				LIT = { exists = yes }
+			}
+			LIT = { transfer_state = 1816 }
+		}
+		else = {
+			SOU = { transfer_state = 1816 }
+		}
+	}
+	if = {# CUSTOM STATE GRODNO
+		limit = {
+			1239 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 1239
+						is_in_faction_with = ROOT
+					}
+				}
+			}
+		}
+		SOU = { transfer_state = 1239 }
+	}
+	if = { # CUSTOM STATE PRZEMYSL
+		limit = {
+			1483 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 1483
+						is_in_faction_with = ROOT
+					}
+				}
+			}
+		}
+		SOU = { transfer_state = 1483 }
+	}
+	if = { # CUSTOM STATE TARNOPOL
+		limit = {
+			1531 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 1531
+						is_in_faction_with = ROOT
+					}
+				}
+			}
+		}
+		SOU = { transfer_state = 1531 }
+	}
+	if = {
+		limit = {
+			1173 = {
+				OR = {
+					is_controlled_by = GER
+					any_other_country = { 
+						controls_state = 1173
+						is_in_faction_with = GER
+					}
+					AND = {
+						LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+						LIT = { controls_state = 1173 }
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+				LIT = { controls_state = 1173 }
+				LIT = { exists = yes }
+			}
+			LIT = { transfer_state = 1173 }
+		}
+		else = {
+			SOU = { transfer_state = 1173 }
+		}
+	}
+	if = {
+		limit = {
+			1241 = {
+				is_controlled_by = LIT
+				LIT = { has_country_flag = LIT_agreed_to_MR_pact }
+			}
+		}
+		LIT = { transfer_state = 1241 }
 	}
 }
 
@@ -1397,9 +2802,27 @@ GER_seize_gold_reserves_from_polish_states_peacufully = { #Must be set in German
 						state = 807 #Gdnyia
 						state = 86 #Poznan
 						state = 762 #Katovice
-						state = 87 #Lodz
-						state = 98 #Plock
+						state = 87 state = 1142 #Lodz
+						state = 98 state = 1141 #Plock
 						state = 97 #Byalistock
+						state = 1143
+						state = 1144
+						state = 1145
+						state = 1425
+						state = 1238
+						state = 1239
+						state = 1240
+						state = 1241
+						state = 1242
+						state = 1245
+						state = 1252
+						state = 1389
+						state = 1481
+						state = 1482
+						state = 1484
+						state = 1818
+						state = 1554
+						state = 1447
 					}
 				}
 				add_to_temp_variable = { occupied_state_num_factory = arms_factory_level }
@@ -1490,7 +2913,7 @@ GER_set_consumer_goods_war_reparations = { #Must be set in GER scope
 GER_set_array_of_sudetenland_targeted_states = {
 	if = {
 		limit = {
-			controls_state = 69
+			controls_state = 69 controls_state = 1556
 		}
 		69 = {
 			add_to_array = {
@@ -1501,9 +2924,20 @@ GER_set_array_of_sudetenland_targeted_states = {
 	}
 	if = {
 		limit = {
-			controls_state = 972
+			controls_state = 972 controls_state = 1608
 		}
 		972 = {
+			add_to_array = {
+				array = PREV.sudetenland_states_for_wargoal
+				value = THIS
+			}
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 1608
+		}
+		1608 = {
 			add_to_array = {
 				array = PREV.sudetenland_states_for_wargoal
 				value = THIS
@@ -1515,6 +2949,28 @@ GER_set_array_of_sudetenland_targeted_states = {
 			controls_state = 74
 		}
 		74 = {
+			add_to_array = {
+				array = PREV.sudetenland_states_for_wargoal
+				value = THIS
+			}
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 1727
+		}
+		1727 = {
+			add_to_array = {
+				array = PREV.sudetenland_states_for_wargoal
+				value = THIS
+			}
+		}
+	}
+	if = {
+		limit = {
+			controls_state = 1556
+		}
+		1556 = {
 			add_to_array = {
 				array = PREV.sudetenland_states_for_wargoal
 				value = THIS
@@ -1592,22 +3048,45 @@ GER_setup_GER_sphere_of_influence_array = { #REMEMBER to update the focus toolti
 						state = 85
 						state = 86
 						state = 87
-						state = 88
+						state = 88 state = 1399 state = 1483
 						state = 90
-						state = 92
+						state = 92 state = 1400
 						state = 98
 						state = 10
 						state = 762
-						state = 1093 # CUSTOM STATE SUWALKI
-						state = 1094 # CUSTOM STATE OSWIECIM
+						state = 1528
+						state = 1265
+						state = 1775
+						state = 1529
+						state = 1530
+						state = 1554
+						state = 1447
+						state = 1141
+						state = 1142
+						state = 1143
+						state = 1144
+						state = 1145
+						state = 1425
+						state = 1241
+						state = 1252
+						state = 1256
+						state = 1385
+						state = 1386
+						state = 1389
+						state = 1481
+						state = 1482
 
 						#CZECHIA
 						state = 69
 						state = 972
+						state = 1608
 						state = 9
 						state = 75
 						state = 74
+						state = 1727
 						state = 72
+						state = 1555
+						state = 1556
 					}
 				}
 
@@ -1641,12 +3120,34 @@ GER_setup_SOV_sphere_of_influence_array = { #REMEMBER to update the focus toolti
 						state = 91
 						state = 93
 						state = 94
+						state = 1815
 						state = 95
 						state = 96
-						state = 97
-						state = 1091 # CUSTOM STATE GRODNO
-						state = 1092 # CUSTOM STATE PRZEMYSL
-						state = 1096 # CUSTOM STATE TARNOPOL
+						state = 97 state = 1241
+						state = 1531
+						state = 1532
+						state = 1533
+						state = 1814
+						state = 1534
+						state = 1535
+						state = 1484
+						state = 1818
+						state = 1173
+						state = 1238
+						state = 1239
+						state = 1240
+						state = 1242
+						state = 1243
+						state = 1244
+						state = 1816
+						state = 1245
+						state = 1246
+						state = 1247
+						state = 1248
+						state = 1817
+						state = 1610
+						state = 1399
+						state = 1483
 					}
 				}
 				THIS = {

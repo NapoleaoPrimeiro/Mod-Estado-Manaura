@@ -1340,7 +1340,14 @@ country_event = {
 				limit = {
 					OR = {
 						state = 213
+						state = 1714
 						state = 215
+						state = 1116
+						state = 1117
+						state = 1170
+						state = 1171
+						state = 1174
+						state = 1175
 						state = 216
 					}
 				}
@@ -1374,7 +1381,14 @@ country_event = {
 				limit = {
 					OR = {
 						state = 213
+						state = 1714
 						state = 215
+						state = 1116
+						state = 1117
+						state = 1170
+						state = 1171
+						state = 1174
+						state = 1175
 						state = 216
 					}
 				}
@@ -1387,7 +1401,14 @@ country_event = {
 				limit = {
 					OR = {
 						state = 213
+						state = 1714
 						state = 215
+						state = 1116
+						state = 1117
+						state = 1170
+						state = 1171
+						state = 1174
+						state = 1175
 						state = 216
 					}
 				}
@@ -1425,7 +1446,14 @@ country_event = {
 				limit = {
 					OR = {
 						state = 213
+						state = 1714
 						state = 215
+						state = 1116
+						state = 1117
+						state = 1170
+						state = 1171
+						state = 1174
+						state = 1175
 						state = 216
 					}
 				}
@@ -1475,7 +1503,14 @@ country_event = {
 				limit = {
 					OR = {
 						state = 213
+						state = 1714
 						state = 215
+						state = 1116
+						state = 1117
+						state = 1170
+						state = 1171
+						state = 1174
+						state = 1175
 						state = 216
 					}
 				}
@@ -2036,7 +2071,7 @@ country_event = {
 
 			if = { #REPRESENT PETSAMO NAVAL BASE BY A NAVAL BASE IN KOLA
 				limit = {
-					has_full_control_of_state = 213 #KOLA
+					has_full_control_of_state = 213 has_full_control_of_state = 1714 #KOLA
 				}
 				213 = {
 					#Naval base and foritifcations in Petsamo area
@@ -2217,7 +2252,7 @@ country_event = {
 		FROM = {
 			if = { #REPRESENT PETSAMO NAVAL BASE BY A NAVAL BASE IN KOLA
 				limit = {
-					has_full_control_of_state = 213 #KOLA
+					has_full_control_of_state = 213 has_full_control_of_state = 1714 #KOLA
 				}
 				213 = {
 					#Naval base and foritifcations in Petsamo area
@@ -2994,14 +3029,56 @@ country_event = {
 				limit = {
 					213 = { has_state_flag = FIN_demanded_by_finland_in_winter_war_flag }
 				}
-				FROM = { transfer_state = 213 }
+				FROM = { transfer_state = 213 transfer_state = 1714 }
+			}
+			if = {
+				limit = {
+					1714 = { has_state_flag = FIN_demanded_by_finland_in_winter_war_flag }
+				}
+				FROM = { transfer_state = 1714 }
 			}
 			#ONEGA
 			if = {
 				limit = {
 					215 = { has_state_flag = FIN_demanded_by_finland_in_winter_war_flag }
 				}
-				FROM = { transfer_state = 215 }
+				FROM = { transfer_state = 215 transfer_state = 1116 transfer_state = 1117 transfer_state = 1170 transfer_state = 1171 transfer_state = 1174 transfer_state = 1175 }
+			}
+			if = {
+				limit = {
+					1116 = { has_state_flag = FIN_demanded_by_finland_in_winter_war_flag }
+				}
+				FROM = { transfer_state = 1116 }
+			}
+			if = {
+				limit = {
+					1117 = { has_state_flag = FIN_demanded_by_finland_in_winter_war_flag }
+				}
+				FROM = { transfer_state = 1117 }
+			}
+			if = {
+				limit = {
+					1170 = { has_state_flag = FIN_demanded_by_finland_in_winter_war_flag }
+				}
+				FROM = { transfer_state = 1170 }
+			}
+			if = {
+				limit = {
+					1171 = { has_state_flag = FIN_demanded_by_finland_in_winter_war_flag }
+				}
+				FROM = { transfer_state = 1171 }
+			}
+			if = {
+				limit = {
+					1174 = { has_state_flag = FIN_demanded_by_finland_in_winter_war_flag }
+				}
+				FROM = { transfer_state = 1174 }
+			}
+			if = {
+				limit = {
+					1175 = { has_state_flag = FIN_demanded_by_finland_in_winter_war_flag }
+				}
+				FROM = { transfer_state = 1175 }
 			}
 			#OLONETS
 			if = {
@@ -3013,15 +3090,15 @@ country_event = {
 			# CUSTOM STATES
 			if = {
 				limit = { # CUSTOM STATE REPOLA-PORAJARVI
-					1111 = { has_state_flag = FIN_demanded_by_finland_in_winter_war_flag }
+					1116 = { has_state_flag = FIN_demanded_by_finland_in_winter_war_flag }
 				}
-				FROM = { transfer_state = 1111 }
+				FROM = { transfer_state = 1116 }
 			}
 			if = {
 				limit = { # CUSTOM STATE WHITE KARELIA
-					1112 = { has_state_flag = FIN_demanded_by_finland_in_winter_war_flag }
+					1117 = { has_state_flag = FIN_demanded_by_finland_in_winter_war_flag }
 				}
-				FROM = { transfer_state = 1112 }
+				FROM = { transfer_state = 1117 }
 			}
 		}
 		hidden_effect = {
@@ -3122,14 +3199,56 @@ country_event = {
 			limit = {
 				213 = { has_state_flag = FIN_demanded_by_finland_in_winter_war_flag }
 			}
-			transfer_state = 213
+			transfer_state = 213 transfer_state = 1714
+		}
+		if = {
+			limit = {
+				1714 = { has_state_flag = FIN_demanded_by_finland_in_winter_war_flag }
+			}
+			transfer_state = 1714
 		}
 		#ONEGA
 		if = {
 			limit = {
 				215 = { has_state_flag = FIN_demanded_by_finland_in_winter_war_flag }
 			}
-			transfer_state = 215
+			transfer_state = 215 transfer_state = 1116 transfer_state = 1117 transfer_state = 1170 transfer_state = 1171 transfer_state = 1174 transfer_state = 1175
+		}
+		if = {
+			limit = {
+				1116 = { has_state_flag = FIN_demanded_by_finland_in_winter_war_flag }
+			}
+			transfer_state = 1116
+		}
+		if = {
+			limit = {
+				1117 = { has_state_flag = FIN_demanded_by_finland_in_winter_war_flag }
+			}
+			transfer_state = 1117
+		}
+		if = {
+			limit = {
+				1170 = { has_state_flag = FIN_demanded_by_finland_in_winter_war_flag }
+			}
+			transfer_state = 1170
+		}
+		if = {
+			limit = {
+				1171 = { has_state_flag = FIN_demanded_by_finland_in_winter_war_flag }
+			}
+			transfer_state = 1171
+		}
+		if = {
+			limit = {
+				1174 = { has_state_flag = FIN_demanded_by_finland_in_winter_war_flag }
+			}
+			transfer_state = 1174
+		}
+		if = {
+			limit = {
+				1175 = { has_state_flag = FIN_demanded_by_finland_in_winter_war_flag }
+			}
+			transfer_state = 1175
 		}
 		#OLONETS
 		if = {
@@ -3141,15 +3260,15 @@ country_event = {
 		# CUSTOM STATES
 		if = { # CUSTOM STATE REPOLAPORAJARVI
 			limit = {
-				1111 = { has_state_flag = FIN_demanded_by_finland_in_winter_war_flag }
+				1116 = { has_state_flag = FIN_demanded_by_finland_in_winter_war_flag }
 			}
-			FROM = { transfer_state = 1111 }
+			FROM = { transfer_state = 1116 }
 		}
 		if = { # CUSTOM STATE WHITE KARELIA
 			limit = {
-				1112 = { has_state_flag = FIN_demanded_by_finland_in_winter_war_flag }
+				1117 = { has_state_flag = FIN_demanded_by_finland_in_winter_war_flag }
 			}
-			FROM = { transfer_state = 1112 }
+			FROM = { transfer_state = 1117 }
 		}
 	}
 }
@@ -3303,12 +3422,6 @@ country_event = {
 					amount = 300
 					producer = ROOT
 				}
-
-				add_state_claim = 213
-				add_state_claim = 215
-				add_state_claim = 216
-				add_state_claim = 1111 # CUSTOM STATE REPOLAPORAJARVI
-				add_state_claim = 1112 # CUSTOM STATE WHITE KARELIA
 			}
 		}
 		custom_effect_tooltip = FIN_pact_for_continuation_war_ger_tt
@@ -3469,12 +3582,6 @@ country_event = {
 				amount = 300
 				producer = FROM
 			}
-
-			add_state_claim = 213
-			add_state_claim = 215
-			add_state_claim = 216
-			add_state_claim = 1111 # CUSTOM STATE REPOLAPORAJARVI
-			add_state_claim = 1112 # CUSTOM STATE WHITE KARELIA
 		}
 
 		FIN_pact_for_continuation_war_start = yes
@@ -3724,24 +3831,14 @@ country_event = {
 			transfer_state = 722
 		}
 
-		#CUSTOM STATE - TERIJOKI
+		#CUSTOM STATE - REPOLA-PORAJARVI (KSRE: Reboly)
 		IF = {
 			limit = {
-				1110 = {	
+				1116 = {
 					is_owned_by = FROM
 				}
 			}
-			transfer_state = 1110
-		}
-
-		#CUSTOM STATE - REPOLA-PORAJARVI
-		IF = {
-			limit = {
-				1111 = {	
-					is_owned_by = FROM
-				}
-			}
-			transfer_state = 1111
+			transfer_state = 1116
 		}
 
 		FIN = {
@@ -4566,9 +4663,37 @@ country_event = {
 					}
 				}
 			}
-			KAR = { transfer_state = 215 }
+			KAR = { transfer_state = 215 transfer_state = 1116 transfer_state = 1117 transfer_state = 1170 transfer_state = 1171 transfer_state = 1174 transfer_state = 1175 }
 			hidden_effect = {
 				215 = {
+					remove_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
+					teleport_armies = {
+						limit = {
+							original_tag = SOV 
+						}
+						to_state = 213 #MURMANSK
+					}
+				}
+			}
+			#Add Repola and Uhtua VPs
+			add_victory_points = {
+				province = 3067 #Uhtua
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				1116 = {
+					has_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
+					controller = {
+						original_tag = SOV
+						NOT = { is_in_faction_with = ROOT }
+					}
+				}
+			}
+			KAR = { transfer_state = 1116 }
+			hidden_effect = {
+				1116 = {
 					remove_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
 					teleport_armies = {
 						limit = {
@@ -4583,9 +4708,120 @@ country_event = {
 				province = 6098 #Repola
 				value = 1
 			}
-			add_victory_points = {
-				province = 3067 #Uhtua
-				value = 1
+		}
+		if = {
+			limit = {
+				1117 = {
+					has_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
+					controller = {
+						original_tag = SOV
+						NOT = { is_in_faction_with = ROOT }
+					}
+				}
+			}
+			KAR = { transfer_state = 1117 }
+			hidden_effect = {
+				1117 = {
+					remove_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
+					teleport_armies = {
+						limit = {
+							original_tag = SOV 
+						}
+						to_state = 213 #MURMANSK
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				1170 = {
+					has_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
+					controller = {
+						original_tag = SOV
+						NOT = { is_in_faction_with = ROOT }
+					}
+				}
+			}
+			KAR = { transfer_state = 1170 }
+			hidden_effect = {
+				1170 = {
+					remove_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
+					teleport_armies = {
+						limit = {
+							original_tag = SOV 
+						}
+						to_state = 213 #MURMANSK
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				1171 = {
+					has_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
+					controller = {
+						original_tag = SOV
+						NOT = { is_in_faction_with = ROOT }
+					}
+				}
+			}
+			KAR = { transfer_state = 1171 }
+			hidden_effect = {
+				1171 = {
+					remove_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
+					teleport_armies = {
+						limit = {
+							original_tag = SOV 
+						}
+						to_state = 213 #MURMANSK
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				1174 = {
+					has_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
+					controller = {
+						original_tag = SOV
+						NOT = { is_in_faction_with = ROOT }
+					}
+				}
+			}
+			KAR = { transfer_state = 1174 }
+			hidden_effect = {
+				1174 = {
+					remove_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
+					teleport_armies = {
+						limit = {
+							original_tag = SOV 
+						}
+						to_state = 213 #MURMANSK
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				1175 = {
+					has_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
+					controller = {
+						original_tag = SOV
+						NOT = { is_in_faction_with = ROOT }
+					}
+				}
+			}
+			KAR = { transfer_state = 1175 }
+			hidden_effect = {
+				1175 = {
+					remove_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
+					teleport_armies = {
+						limit = {
+							original_tag = SOV 
+						}
+						to_state = 213 #MURMANSK
+					}
+				}
 			}
 		}
 		#OLONETS
@@ -4675,10 +4911,10 @@ country_event = {
 			KAR = {
 				if = {
 					limit = {
-						owns_state = 215
+						owns_state = 1116
 					}
 					set_capital = {
-						state = 215
+						state = 1116
 					}
 				}
 				
@@ -4864,9 +5100,37 @@ country_event = {
 					}
 				}
 			}
-			KAR = { transfer_state = 215 }
+			KAR = { transfer_state = 215 transfer_state = 1116 transfer_state = 1117 transfer_state = 1170 transfer_state = 1171 transfer_state = 1174 transfer_state = 1175 }
 			hidden_effect = {
 				215 = {
+					remove_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
+					teleport_armies = {
+						limit = {
+							original_tag = SOV 
+						}
+						to_state = 213 #MURMANSK
+					}
+				}
+			}
+			#Add Repola and Uhtua VPs
+			add_victory_points = {
+				province = 3067 #Uhtua
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				1116 = {
+					has_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
+					controller = {
+						original_tag = SOV
+						NOT = { is_in_faction_with = ROOT }
+					}
+				}
+			}
+			KAR = { transfer_state = 1116 }
+			hidden_effect = {
+				1116 = {
 					remove_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
 					teleport_armies = {
 						limit = {
@@ -4881,9 +5145,120 @@ country_event = {
 				province = 6098 #Repola
 				value = 1
 			}
-			add_victory_points = {
-				province = 3067 #Uhtua
-				value = 1
+		}
+		if = {
+			limit = {
+				1117 = {
+					has_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
+					controller = {
+						original_tag = SOV
+						NOT = { is_in_faction_with = ROOT }
+					}
+				}
+			}
+			KAR = { transfer_state = 1117 }
+			hidden_effect = {
+				1117 = {
+					remove_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
+					teleport_armies = {
+						limit = {
+							original_tag = SOV 
+						}
+						to_state = 213 #MURMANSK
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				1170 = {
+					has_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
+					controller = {
+						original_tag = SOV
+						NOT = { is_in_faction_with = ROOT }
+					}
+				}
+			}
+			KAR = { transfer_state = 1170 }
+			hidden_effect = {
+				1170 = {
+					remove_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
+					teleport_armies = {
+						limit = {
+							original_tag = SOV 
+						}
+						to_state = 213 #MURMANSK
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				1171 = {
+					has_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
+					controller = {
+						original_tag = SOV
+						NOT = { is_in_faction_with = ROOT }
+					}
+				}
+			}
+			KAR = { transfer_state = 1171 }
+			hidden_effect = {
+				1171 = {
+					remove_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
+					teleport_armies = {
+						limit = {
+							original_tag = SOV 
+						}
+						to_state = 213 #MURMANSK
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				1174 = {
+					has_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
+					controller = {
+						original_tag = SOV
+						NOT = { is_in_faction_with = ROOT }
+					}
+				}
+			}
+			KAR = { transfer_state = 1174 }
+			hidden_effect = {
+				1174 = {
+					remove_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
+					teleport_armies = {
+						limit = {
+							original_tag = SOV 
+						}
+						to_state = 213 #MURMANSK
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				1175 = {
+					has_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
+					controller = {
+						original_tag = SOV
+						NOT = { is_in_faction_with = ROOT }
+					}
+				}
+			}
+			KAR = { transfer_state = 1175 }
+			hidden_effect = {
+				1175 = {
+					remove_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
+					teleport_armies = {
+						limit = {
+							original_tag = SOV 
+						}
+						to_state = 213 #MURMANSK
+					}
+				}
 			}
 		}
 
@@ -4971,10 +5346,10 @@ country_event = {
 			KAR = {
 				if = {
 					limit = {
-						owns_state = 215
+						owns_state = 1116
 					}
 					set_capital = {
-						state = 215
+						state = 1116
 					}
 				}
 
@@ -5145,9 +5520,45 @@ country_event = {
 		effect_tooltip = {
 			if = {
 				limit = {
-					KAR = { owns_state = 215}
+					KAR = { owns_state = 215 owns_state = 1116 owns_state = 1117 owns_state = 1170 owns_state = 1171 owns_state = 1174 owns_state = 1175}
 				}
-				KAR = { transfer_state = 215 }
+				KAR = { transfer_state = 215 transfer_state = 1116 transfer_state = 1117 transfer_state = 1170 transfer_state = 1171 transfer_state = 1174 transfer_state = 1175 }
+			}
+			if = {
+				limit = {
+					KAR = { owns_state = 1116 }
+				}
+				KAR = { transfer_state = 1116 }
+			}
+			if = {
+				limit = {
+					KAR = { owns_state = 1117 }
+				}
+				KAR = { transfer_state = 1117 }
+			}
+			if = {
+				limit = {
+					KAR = { owns_state = 1170 }
+				}
+				KAR = { transfer_state = 1170 }
+			}
+			if = {
+				limit = {
+					KAR = { owns_state = 1171 }
+				}
+				KAR = { transfer_state = 1171 }
+			}
+			if = {
+				limit = {
+					KAR = { owns_state = 1174 }
+				}
+				KAR = { transfer_state = 1174 }
+			}
+			if = {
+				limit = {
+					KAR = { owns_state = 1175 }
+				}
+				KAR = { transfer_state = 1175 }
 			}
 			if = {
 				limit = {
@@ -5294,9 +5705,45 @@ country_event = {
 		effect_tooltip = {
 			if = {
 				limit = {
-					KAR = { owns_state = 215}
+					KAR = { owns_state = 215 owns_state = 1116 owns_state = 1117 owns_state = 1170 owns_state = 1171 owns_state = 1174 owns_state = 1175}
 				}
-				KAR = { transfer_state = 215 }
+				KAR = { transfer_state = 215 transfer_state = 1116 transfer_state = 1117 transfer_state = 1170 transfer_state = 1171 transfer_state = 1174 transfer_state = 1175 }
+			}
+			if = {
+				limit = {
+					KAR = { owns_state = 1116 }
+				}
+				KAR = { transfer_state = 1116 }
+			}
+			if = {
+				limit = {
+					KAR = { owns_state = 1117 }
+				}
+				KAR = { transfer_state = 1117 }
+			}
+			if = {
+				limit = {
+					KAR = { owns_state = 1170 }
+				}
+				KAR = { transfer_state = 1170 }
+			}
+			if = {
+				limit = {
+					KAR = { owns_state = 1171 }
+				}
+				KAR = { transfer_state = 1171 }
+			}
+			if = {
+				limit = {
+					KAR = { owns_state = 1174 }
+				}
+				KAR = { transfer_state = 1174 }
+			}
+			if = {
+				limit = {
+					KAR = { owns_state = 1175 }
+				}
+				KAR = { transfer_state = 1175 }
 			}
 			if = {
 				limit = {

@@ -294,7 +294,7 @@ FRA_vichy_france = {
 					has_war_with = ROOT
 				}
 			}
-			controls_state = 16 #Paris
+			controls_state = 16 controls_state = 1517 controls_state = 1518 controls_state = 1519 controls_state = 1520 #Paris
 		}
 
 		visible = {
@@ -390,13 +390,21 @@ category_test_decisions = {
 						is_controlled_by = ROOT
 						OR = {
 							state = 735
+							state = 1301
+							state = 1302
+							state = 1303
+							state = 1304
+							state = 1305
+							state = 1306
 							state = 21
 							state = 851
 							state = 32
 							state = 20
+							state = 1522
 							state = 26
 							state = 22
 							state = 31
+							state = 1381
 							state = 25
 							state = 33
 						}
@@ -1339,8 +1347,14 @@ economy_decisions = {
 					OR = {
 						state = 29 
 						state = 785 
-						state = 15 
+						state = 1401
+						state = 15 state = 1403 
+						state = 1402
 						state = 16
+						state = 1517
+						state = 1518
+						state = 1519
+						state = 1520
 					}
 					is_fully_controlled_by = ROOT 
 					free_building_slots = {
@@ -1447,7 +1461,7 @@ economy_decisions = {
 					OR = {
 						state = 24
 						state = 33
-						state = 27
+						state = 27 state = 1521
 						state = 26
 						state = 25
 					}
@@ -1494,9 +1508,9 @@ economy_decisions = {
 			random_owned_state = {
 				limit = { 
 					OR = {
-						state = 735
+						state = 735 state = 1301 state = 1302 state = 1303 state = 1304 state = 1305 state = 1306
 						state = 32
-						state = 20
+						state = 20 state = 1522
 						state = 21
 						state = 851
 					}
@@ -1551,6 +1565,7 @@ economy_decisions = {
 					OR = {
 						state = 22
 						state = 31
+						state = 1381
 						state = 19
 						state = 25
 					}
@@ -1768,14 +1783,14 @@ VIC_concessions_to_the_germans = {
 			if = {
 				limit = {
 					NOT = {
-						controls_state = 16
+						controls_state = 16 controls_state = 1517 controls_state = 1518 controls_state = 1519 controls_state = 1520
 					}
 				}
 				increase_occupation_cost_effect = yes
 			}
 			if = {
 				limit = {
-					controls_state = 16
+					controls_state = 16 controls_state = 1517 controls_state = 1518 controls_state = 1519 controls_state = 1520
 					has_idea = FRA_mandatory_work_service
 				}
 				remove_ideas = FRA_mandatory_work_service
@@ -1881,8 +1896,11 @@ FRA_intervention_in_overseas_territories = {
 							OR = {
 								state = 677
 								state = 680
+								state = 1330
 								state = 554
 								state = 553
+								state = 1779
+								state = 1136
 							}
 						}
 						add_compliance = 5
@@ -1931,9 +1949,9 @@ FRA_intervention_in_overseas_territories = {
 			}
 			any_state = {
 				OR = {
-					state = 680
+					state = 680 state = 1330 state = 1779
 					state = 677
-					state = 554
+					state = 554 state = 1136
 					state = 553
 				}
 				CONTROLLER = {
@@ -1959,9 +1977,12 @@ FRA_intervention_in_overseas_territories = {
 				limit = {
 					OR = {
 						state = 680
+						state = 1330
 						state = 677
 						state = 554
 						state = 553
+						state = 1779
+						state = 1136
 					}
 					not = { is_controlled_by = ROOT }
 					CONTROLLER = {
@@ -2110,10 +2131,6 @@ FRA_intervention_in_overseas_territories = {
 								state = 286
 								state = 741
 								state = 1017
-								state = 1066 
-								state = 1067 
-								state = 1068 
-								state = 1069 
 							}
 						}
 						add_compliance = 5
@@ -2194,10 +2211,6 @@ FRA_intervention_in_overseas_territories = {
 						state = 286
 						state = 741
 						state = 1017
-						state = 1066 
-						state = 1067 
-						state = 1068 
-						state = 1069 
 					}
 					not = { is_controlled_by = ROOT }
 					CONTROLLER = {
@@ -2341,10 +2354,18 @@ FRA_intervention_in_overseas_territories = {
 							is_controlled_by = ROOT
 							OR = {
 								state = 772
+								state = 1766
+								state = 1767
+								state = 1768
 								state = 539
+								state = 1769
 								state = 773
+								state = 1770
 								state = 660
+								state = 1764
+								state = 1765
 								state = 774
+								state = 1763
 							}
 						}
 						add_compliance = 5
@@ -2390,11 +2411,11 @@ FRA_intervention_in_overseas_territories = {
 			}
 			any_state = {
 				OR = {
-					state = 772
-					state = 539
-					state = 773
-					state = 660
-					state = 774
+					state = 772 state = 1766 state = 1767 state = 1768
+					state = 539 state = 1769
+					state = 773 state = 1770
+					state = 660 state = 1764 state = 1765
+					state = 774 state = 1763
 				}
 				CONTROLLER = {
 					NOT = { has_war_with = ROOT }
@@ -2417,10 +2438,18 @@ FRA_intervention_in_overseas_territories = {
 				limit = {
 					OR = {
 						state = 772
+						state = 1766
+						state = 1767
+						state = 1768
 						state = 539
+						state = 1769
 						state = 773
+						state = 1770
 						state = 660
+						state = 1764
+						state = 1765
 						state = 774
+						state = 1763
 					}
 					not = { is_controlled_by = ROOT }
 					CONTROLLER = {
@@ -2870,9 +2899,12 @@ FRA_decolonization = {
 				country_exists = LEB
 			}
 			680 = { is_controlled_by = ROOT }
+			1330 = { is_controlled_by = ROOT }
 			677 = { is_controlled_by = ROOT }
 			554 = { is_controlled_by = ROOT }
 			553 = { is_controlled_by = ROOT }
+			1779 = { is_controlled_by = ROOT }
+			1136 = { is_controlled_by = ROOT }
 		}
 
 		days_mission_timeout = 180

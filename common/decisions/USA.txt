@@ -9,13 +9,17 @@ war_measures = {
 		}
 
 		available = {
-			any_core_state = {
-				NOT = {
-					is_controlled_by = USA
+			OR = {
+				any_core_state = {
+					NOT = {
+						is_fully_controlled_by = USA
+					}
 				}
+				america_is_being_invaded = yes
 			}
+			hidden_trigger = { has_country_flag = USA_has_completed_homeland_defense_emergency_act_focus_equivalent }
 			has_civil_war = no
-
+			#has_completed_focus = USA_homeland_defense_emergency_act_focus
 		}
 
 		cost = 50
@@ -38,11 +42,32 @@ war_measures = {
 				}
 				set_war_support = 0.9
 			}
+			#if = {
+			#	limit = {
+			#		has_idea = great_depression
+			#	}
+			#	remove_ideas = great_depression
+			#}
 			if = {
 				limit = {
-					has_idea = great_depression
+					check_variable = {
+						var = USA_eco_dy_consumer_goods_factor
+						value > 0.4
+					}
 				}
-				remove_ideas = great_depression
+				custom_effect_tooltip = econ_mod_tt
+				add_to_variable = {
+					USA_eco_dy_consumer_goods_factor = -0.20
+					tooltip = special_v_consumer_goods_factor_tt
+				}
+				add_to_variable = {
+					USA_eco_dy_industrial_capacity_factory = 0.05
+					tooltip = industrial_capacity_factory_tt
+				}
+				add_to_variable = {
+					USA_eco_dy_industrial_capacity_dockyard = 0.05
+					tooltip = industrial_capacity_dockyard_tt
+				}
 			}
 			if = {
 				limit = {
@@ -68,7 +93,7 @@ war_measures = {
 				}
 				add_ideas = war_economy
 			}
-			add_ideas = USA_homeland_defense
+			#add_ideas = USA_homeland_defense
 		}
 	}
 	USA_raise_silver_legions = {
@@ -281,7 +306,7 @@ war_measures = {
 						owner = ROOT
 					}
 			}
-			371 = {
+			1346 = {
 					create_unit = {
 						division = "name = \"I/Free Corps Louisiana\" division_template = \"Free Corps\" start_experience_factor = 0.7" 
 						owner = ROOT
@@ -1368,6 +1393,7 @@ USA_foreign_support = {
 USA_honor_the_confederacy = {
 	USA_celebrate_montgomery_convention_day = {
 		icon = generic_nationalism
+																			visible = { always = no }
 		available = {
 			
 		}
@@ -1415,9 +1441,19 @@ USA_honor_the_confederacy = {
 			362 = {
 				is_controlled_by = ROOT
 			}
+			1697 = { # KSRE (de 362)
+				is_controlled_by = ROOT
+			}
+			1698 = { # KSRE (de 362)
+				is_controlled_by = ROOT
+			}
+			1699 = { # KSRE (de 362)
+				is_controlled_by = ROOT
+			}
 		}
 		visible = {
 			NOT = { has_country_flag = USA_did_move_government_to_richmond }
+																			always = no
 		}
 		cost = 25
 		ai_will_do = {
@@ -1464,7 +1500,7 @@ USA_honor_the_confederacy = {
 			has_cosmetic_tag = USA_CSA 
 		}
 		visible = {
-			
+													always = no
 		}
 		cost = 75
 		fire_only_once = yes
@@ -3180,6 +3216,9 @@ operations = {
 			101 = {
 				is_owned_and_controlled_by = DEN
 			}
+			1758 = {
+				is_owned_and_controlled_by = DEN
+			}
 			DEN = {
 				is_subject = yes
 			}
@@ -3241,6 +3280,9 @@ operations = {
 			101 = {
 				is_owned_and_controlled_by = DEN
 			}
+			1758 = {
+				is_owned_and_controlled_by = DEN
+			}
 			DEN = {
 				is_subject = yes
 				overlord = {
@@ -3260,6 +3302,7 @@ operations = {
 			add_ideas = USA_greenland_patrol_idea
 			ROOT = {
 				transfer_state = 101
+				transfer_state = 1758
 			}
 			hidden_effect = {
 				set_global_flag = USA_occupied_DEN_greenland

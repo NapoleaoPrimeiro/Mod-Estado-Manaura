@@ -1,0 +1,188 @@
+new_usa_star_and_econ_inlay_window = {
+
+    window_name = new_usa_star_and_econ_ui_window
+
+    internal = no
+    visible = {
+
+    }
+
+    scripted_images = {
+        dot_ring_element = {
+            GFX_ecostar_frame_ring_0 = {
+                #check_variable = { ecostar_ring_var_test = 0 }
+                check_variable = { var = USA_eco_dy_consumer_goods_factor value = -0.30 compare = less_than_or_equals }
+            }
+            GFX_ecostar_frame_ring_1 = {
+                #check_variable = { ecostar_ring_var_test = 1 }
+                check_variable = { var = USA_eco_dy_consumer_goods_factor value = -0.20 compare = less_than_or_equals }
+            }
+            GFX_ecostar_frame_ring_2 = {
+                #check_variable = { ecostar_ring_var_test = 2 }
+                check_variable = { var = USA_eco_dy_consumer_goods_factor value = -0.10 compare = less_than_or_equals }
+            }
+            GFX_ecostar_frame_ring_3 = {
+                #check_variable = { ecostar_ring_var_test = 3 }
+                check_variable = { var = USA_eco_dy_consumer_goods_factor value = 0 compare = less_than_or_equals }
+            }
+            GFX_ecostar_frame_ring_4 = {
+                #check_variable = { ecostar_ring_var_test = 4 }
+                check_variable = { var = USA_eco_dy_consumer_goods_factor value = 0.125 compare = less_than_or_equals }
+            }
+            GFX_ecostar_frame_ring_5 = {
+                #check_variable = { ecostar_ring_var_test = 5 }
+                check_variable = { var = USA_eco_dy_consumer_goods_factor value = 0.25 compare = less_than_or_equals }
+            }
+            GFX_ecostar_frame_ring_6 = {
+                #check_variable = { ecostar_ring_var_test = 6 }
+                check_variable = { var = USA_eco_dy_consumer_goods_factor value = 0.375 compare = less_than_or_equals }
+            }
+            GFX_ecostar_frame_ring_7 = {
+                #check_variable = { ecostar_ring_var_test = 7 }
+                check_variable = { var = USA_eco_dy_consumer_goods_factor value = 0.5 compare = less_than_or_equals }
+            }
+            GFX_ecostar_frame_ring_8 = {
+                #check_variable = { ecostar_ring_var_test = 8 }
+                check_variable = { var = USA_eco_dy_consumer_goods_factor value = 0.625 compare = less_than_or_equals }
+            }
+            GFX_ecostar_frame_ring_9 = {
+                #check_variable = { ecostar_ring_var_test = 9 }
+                check_variable = { var = USA_eco_dy_consumer_goods_factor value = 0.75 compare = less_than_or_equals }
+            }
+            GFX_ecostar_frame_ring_10 = {
+                #check_variable = { ecostar_ring_var_test = 10 }
+                check_variable = { var = USA_eco_dy_consumer_goods_factor value = 0.875 compare = less_than_or_equals }
+            }
+            GFX_ecostar_frame_ring_11 = {
+                #check_variable = { ecostar_ring_var_test = 11 }
+                check_variable = { var = USA_eco_dy_consumer_goods_factor value = 1 compare = less_than_or_equals }
+            }
+            GFX_ecostar_frame_ring_12 = {
+                #check_variable = { ecostar_ring_var_test = 12 }
+                check_variable = { var = USA_eco_dy_consumer_goods_factor value = 1 compare = greater_than }
+            }
+            GFX_ecostar_frame_ring_0 = yes
+        }
+        star_element = {
+            GFX_ecostar_star_0 = {
+                #check_variable = { ecostar_star_var_test = 0 }
+                has_country_flag = { flag = usa_core_recovery_flag value = 1 }
+            }
+            GFX_ecostar_star_1 = {
+                #check_variable = { ecostar_star_var_test = 1 }
+                has_country_flag = { flag = usa_core_recovery_flag value = 2 }
+            }
+            GFX_ecostar_star_2 = {
+                #check_variable = { ecostar_star_var_test = 2 }
+                has_country_flag = { flag = usa_core_recovery_flag value = 3 }
+            }
+            GFX_ecostar_star_3 = {
+                #check_variable = { ecostar_star_var_test = 3 }
+                has_country_flag = { flag = usa_core_recovery_flag value = 4 }
+            }
+            GFX_ecostar_star_0 = yes
+        }
+    }
+
+    scripted_buttons = {
+ 		#usa_nc_test_set_button = { 
+	 	#	available = {
+	 	#		always = yes
+	 	#	}
+	 	#	click_effect = {
+	 	#		set_variable = { ecostar_ring_var_test = 0 }
+	 	#	}
+ 		#}
+        #usa_nc_test_increment_button = { 
+	 	#	available = {
+	 	#		always = yes
+	 	#	}
+	 	#	click_effect = {
+        #        if = {
+        #            limit = { check_variable = { var = ecostar_ring_var_test value = 12 compare = less_than } }
+	 	#		    add_to_variable = { ecostar_ring_var_test = 1 }
+        #        }
+	 	#	}
+ 		#}
+        #usa_nc_test_decrement_button = { 
+	 	#	available = {
+	 	#		always = yes
+	 	#	}
+	 	#	click_effect = {
+	 	#		if = {
+        #            limit = { check_variable = { var = ecostar_ring_var_test value = 0 compare = greater_than } }
+	 	#		    add_to_variable = { ecostar_ring_var_test = -1 }
+        #        }
+	 	#	}
+ 		#}
+        #usa_nc_test_star_set_button = { 
+	 	#	available = {
+	 	#		always = yes
+	 	#	}
+	 	#	click_effect = {
+	 	#		set_variable = { ecostar_star_var_test = 0 }
+	 	#	}
+ 		#}
+        #usa_nc_test_star_fill_button = { 
+	 	#	available = {
+	 	#		always = yes
+	 	#	}
+	 	#	click_effect = {
+	 	#		if = {
+        #            limit = { check_variable = { var = ecostar_star_var_test value = 3 compare = less_than } }
+	 	#		    add_to_variable = { ecostar_star_var_test = 1 }
+        #        }
+	 	#	}
+ 		#}
+        #usa_nc_test_star_empty_button = { 
+	 	#	available = {
+	 	#		always = yes
+	 	#	}
+	 	#	click_effect = {
+	 	#		if = {
+        #            limit = { check_variable = { var = ecostar_star_var_test value = 0 compare = greater_than } }
+	 	#		    add_to_variable = { ecostar_star_var_test = -1 }
+        #        }
+	 	#	}
+ 		#}
+    }
+}
+new_usa_conserve_resist_bar_inlay_window = {
+
+    window_name = new_usa_conserve_resist_bar_ui_window
+
+    internal = yes
+    visible = {
+        has_completed_focus = USA_an_american_five_year_plan
+        #has_conservative_resistance = yes
+        #always = yes
+    }
+
+    scripted_images = {
+        CRB_background_element = {
+            GFX_overlay_bar_0 = {
+                has_conservative_resistance = no
+            }
+            GFX_overlay_bar_1 = {
+                has_idea = usa_conservative_resistance_idea_1
+            }
+            GFX_overlay_bar_2 = {
+                has_idea = usa_conservative_resistance_idea_2
+            }
+            GFX_overlay_bar_3 = {
+                has_idea = usa_conservative_resistance_idea_3
+            }
+            GFX_overlay_bar_4 = {
+                has_idea = usa_conservative_resistance_idea_4
+            }
+            GFX_overlay_bar_5 = {
+                has_idea = usa_conservative_resistance_idea_5
+            }
+            GFX_overlay_bar_0 = yes
+        }
+    }
+
+    scripted_buttons = {
+
+    }
+}

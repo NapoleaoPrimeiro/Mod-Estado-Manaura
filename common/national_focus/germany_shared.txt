@@ -361,6 +361,9 @@
 				763 = { #Köningsberg
 					is_owned_and_controlled_by = ROOT
 				}
+				1249 = { # KSRE (de 763)
+					is_owned_and_controlled_by = ROOT
+				}
 				56 = { #Weser-Ems
 					is_owned_and_controlled_by = ROOT
 				}
@@ -373,6 +376,9 @@
 			if = {
 				limit = {
 					763 = { #Köningsberg
+						is_owned_and_controlled_by = ROOT
+					}
+					1249 = { # KSRE (de 763)
 						is_owned_and_controlled_by = ROOT
 					}
 				}
@@ -662,6 +668,9 @@
 					909 = {
 						is_owned_and_controlled_by = ROOT
 					}
+					1728 = { # KSRE (de 909)
+						is_owned_and_controlled_by = ROOT
+					}
 				}
 				909 = { add_extra_state_shared_building_slots = 1 }
 			}
@@ -686,12 +695,39 @@
 					63 = {
 						is_owned_and_controlled_by = ROOT
 					}
+					1538 = { # KSRE (de 63)
+						is_owned_and_controlled_by = ROOT
+					}
+					1539 = { # KSRE (de 63)
+						is_owned_and_controlled_by = ROOT
+					}
 				}
 				63 = { add_extra_state_shared_building_slots = 1 }
 			}
 			if = {
 				limit = {
 					5 = {
+						is_owned_and_controlled_by = ROOT
+					}
+					1288 = { # KSRE (de 5)
+						is_owned_and_controlled_by = ROOT
+					}
+					1427 = { # KSRE (de 5)
+						is_owned_and_controlled_by = ROOT
+					}
+					1428 = { # KSRE (de 5)
+						is_owned_and_controlled_by = ROOT
+					}
+					1557 = { # KSRE (de 5)
+						is_owned_and_controlled_by = ROOT
+					}
+					1701 = { # KSRE (de 5)
+						is_owned_and_controlled_by = ROOT
+					}
+					1702 = { # KSRE (de 5)
+						is_owned_and_controlled_by = ROOT
+					}
+					1772 = { # KSRE (de 5)
 						is_owned_and_controlled_by = ROOT
 					}
 				}
@@ -723,7 +759,13 @@
 				59 = { #Hannover
 					is_owned_and_controlled_by = ROOT
 				}
+				1545 = { # KSRE (de 59)
+					is_owned_and_controlled_by = ROOT
+				}
 				978 = { #Baden
+					is_owned_and_controlled_by = ROOT
+				}
+				1251 = { # KSRE (de 978)
 					is_owned_and_controlled_by = ROOT
 				}
 			}
@@ -738,12 +780,18 @@
 					59 = { #Hannover
 						is_owned_and_controlled_by = ROOT
 					}
+					1545 = { # KSRE (de 59)
+						is_owned_and_controlled_by = ROOT
+					}
 				}
 				59 = { set_state_category = metropolis }
 			}
 			if = {
 				limit = {
 					978 = { #Baden
+						is_owned_and_controlled_by = ROOT
+					}
+					1251 = { # KSRE (de 978)
 						is_owned_and_controlled_by = ROOT
 					}
 				}
@@ -1024,18 +1072,18 @@
 		cost = 5
 		available = {
 			OR = {
-				has_full_control_of_state = 64 #Brandenburg
-				has_full_control_of_state = 59 #Hannover
-				has_full_control_of_state = 60 #Thüringen
-				has_full_control_of_state = 54 #Franken
+				has_full_control_of_state = 64 has_full_control_of_state = 1268 has_full_control_of_state = 1269 has_full_control_of_state = 1542 has_full_control_of_state = 1544 #Brandenburg
+				has_full_control_of_state = 59 has_full_control_of_state = 1545 #Hannover
+				has_full_control_of_state = 60 has_full_control_of_state = 1270 #Thüringen
+				has_full_control_of_state = 54 has_full_control_of_state = 1546 #Franken
 			}
 		}
 		bypass = {
 			has_civil_war = no
-			NOT = { has_full_control_of_state = 64 }
-			NOT = {	has_full_control_of_state = 59 }
-			NOT = {	has_full_control_of_state = 60 }
-			NOT = {	has_full_control_of_state = 54 }
+			NOT = { has_full_control_of_state = 64 has_full_control_of_state = 1268 has_full_control_of_state = 1269 has_full_control_of_state = 1542 has_full_control_of_state = 1544 }
+			NOT = {	has_full_control_of_state = 59 has_full_control_of_state = 1545 }
+			NOT = {	has_full_control_of_state = 60 has_full_control_of_state = 1270 }
+			NOT = {	has_full_control_of_state = 54 has_full_control_of_state = 1546 }
 		}
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
@@ -2060,7 +2108,7 @@
 						include_locked = yes
 					}
 				}
-				prioritize = { 59 }
+				prioritize = { 59 1545 }
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
@@ -2352,7 +2400,7 @@
 						include_locked = yes
 					}
 				}
-				prioritize = { 65 }
+				prioritize = { 65 1543 }
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = synthetic_refinery
@@ -2468,7 +2516,7 @@
 						include_locked = yes
 					}
 				}
-				prioritize = { 57 }
+				prioritize = { 57 1413 }
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = synthetic_refinery
@@ -2562,7 +2610,7 @@
 						include_locked = yes
 					}
 				}
-				prioritize = { 65 }
+				prioritize = { 65 1543 }
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = synthetic_refinery
@@ -4012,7 +4060,7 @@
 
 			if = {
 				limit = {
-					controls_state = 54
+					controls_state = 54 controls_state = 1546
 					54 = {
 						free_building_slots = {
 							building = arms_factory
@@ -4438,6 +4486,9 @@
 			51 = {
 				is_fully_controlled_by = ROOT
 			}
+			1253 = { # KSRE (de 51)
+				is_fully_controlled_by = ROOT
+			}
 
 		}
 		continue_if_invalid = yes
@@ -4562,7 +4613,7 @@
 		completion_reward = {
 			if = {
 				limit = {
-					controls_state = 64
+					controls_state = 64 controls_state = 1268 controls_state = 1269 controls_state = 1542 controls_state = 1544
 				}
 				64 = { #Brandenburg
 					add_extra_state_shared_building_slots = 1
@@ -5804,8 +5855,8 @@
 						is_core_of = SWI
 						is_core_of = YUG
 						state = 85
-						state = 5
-						state = 763
+						state = 5 state = 1288 state = 1427 state = 1428 state = 1557 state = 1701 state = 1702 state = 1772
+						state = 763 state = 1249
 						state = 67
 						state = 923
 						state = 1053
@@ -5854,7 +5905,7 @@
 		completion_reward = {
 			if = {
 				limit = {
-					controls_state = 59
+					controls_state = 59 controls_state = 1545
 				}
 				59 = { #Hannover
 					add_extra_state_shared_building_slots = 1
@@ -6866,18 +6917,18 @@
 						state = 140
 						state = 99
 						state = 912
-						state = 909
+						state = 909 state = 1728
 						state = 58 
-						state = 59
+						state = 59 state = 1545
 						state = 56
-						state = 36
-						state = 7
-						state = 35
+						state = 36 state = 1552
+						state = 7 state = 1292
+						state = 35 state = 1255 state = 1293 state = 1297 state = 1376
 						state = 6
 						state = 977
 						state = 29
-						state = 785
-						state = 15
+						state = 785 state = 1401
+						state = 15 state = 1403
 						state = 14
 					}
 				}
@@ -7071,7 +7122,7 @@
 		completion_reward = {
 			if = {
 				limit = {
-					controls_state = 59
+					controls_state = 59 controls_state = 1545
 				}
 				59 = { #Hannover
 					add_extra_state_shared_building_slots = 1
@@ -7688,7 +7739,7 @@
 						include_locked = yes
 					}
 				}
-				prioritize = { 807 }
+				prioritize = { 807 1554 }
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = dockyard
@@ -8371,7 +8422,7 @@
 					naval_base < 10
 					OR = { #Atlantic Islands from Greenland to Cape Verde
 						state = 914
-						state = 101
+						state = 101 state = 1758
 						state = 100
 						state = 337
 						state = 933
@@ -8400,7 +8451,7 @@
 					is_coastal = yes 
 					coastal_bunker < 10
 					OR = { #Atlantic Islands from Greenland to the Falklands
-						state = 101
+						state = 101 state = 1758
 						#state = 914 #Not you Jan Mayen
 						state = 100
 						state = 337

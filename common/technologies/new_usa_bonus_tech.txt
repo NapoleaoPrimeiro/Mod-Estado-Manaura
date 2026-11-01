@@ -1,0 +1,48 @@
+technologies = {
+    
+	#mountain_gun = {
+	 #
+	 #	research_cost = 1
+	 #
+	 #	# only from focus!!! #####
+	 #	allow = {
+	 #		always = no
+	 #	}
+	 #
+	 #	artillery_brigade = {
+	 #		mountain = {
+	 #			attack = 0.08
+	 #			movement = 0.15 #If you change this - Change the custom tooltip too: mountain_guns_tt ROM_modern_at_guns_tech_tt
+	 #		}
+	 #	}
+	 #
+	 #	anti_tank_brigade = {
+	 #		mountain = {
+	 #			attack = 0.08
+	 #			movement = 0.15 #If you change this - Change the custom tooltip too: mountain_guns_tt ROM_modern_at_guns_tech_tt
+	 #		}
+	 #	}
+	#}
+	
+	urban_infantry_tactics = {
+        allow = { always = no }
+        #start_technology = 0
+        #visible = 0
+        research_cost = 1
+
+        category_all_infantry = {
+            urban = {
+				attack = 0.1
+            	defence = 0.1
+			}
+			fort = {
+				attack = 0.05
+            	defence = 0.05
+			}
+        }
+
+        # Optional icon & tech path position
+        # graphic = { no_icon = yes }
+    }
+
+}

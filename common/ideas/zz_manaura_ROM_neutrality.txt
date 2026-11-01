@@ -1,0 +1,30 @@
+ideas = {
+	country = {
+		# Manaura: copia do neutrality_idea para a Romenia, sem o ai_get_ally_desire_factor = -100
+		ROM_neutrality_idea = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+
+			cancel = {
+				has_war = yes
+			}
+
+			removal_cost = -1
+
+			picture = neutrality_idea
+
+			modifier = {
+				join_faction_tension = 1.00
+				send_volunteers_tension = 0.20
+				guarantee_tension = 1.0
+				embargo_threshold_factor = 2.5
+				ai_badass_factor = 0.01
+			}
+		}
+	}
+}

@@ -2244,7 +2244,7 @@ SPR_the_inevitable_civil_war = {
 		}
 
 		available = {
-			has_full_control_of_state = 166
+			has_full_control_of_state = 166 has_full_control_of_state = 1485
 			if = {
 				limit = {
 					has_completed_focus = SPA_a_great_spain
@@ -2269,7 +2269,7 @@ SPR_the_inevitable_civil_war = {
 		}
 
 		highlight_states = {
- highlight_state_targets = { state = 166 } 
+ highlight_state_targets = { state = 166 state = 1485 } 
 }
 
 		on_map_mode = map_only
@@ -2366,6 +2366,245 @@ SPR_the_inevitable_civil_war = {
 			}
 		}
 	}
+	
+	SPA_expand_influence_in_the_huesca_garrison = {
+
+		icon = {
+			key = spa_garrison_control_none
+			trigger = {
+				has_completed_focus = SPA_a_great_spain
+				1485 = { check_variable = { var = SPA_garrison_control value = 1 compare = equals } }
+			}
+		}
+		icon = {
+			key = spa_garrison_control_weak
+			trigger = {
+				has_completed_focus = SPA_a_great_spain
+				1485 = {
+					check_variable = { var = SPA_garrison_control value = 2 compare = equals }
+					NOT = { has_state_flag = SPA_northern_garrisons_state_flag }
+				}
+			}
+		}
+		icon = {
+			key = spa_garrison_control_weak2
+			trigger = {
+				has_completed_focus = SPA_a_great_spain
+				1485 = {
+					check_variable = { var = SPA_garrison_control value = 2 compare = equals }
+					has_state_flag = SPA_northern_garrisons_state_flag
+				}
+			}
+		}
+		icon = {
+			key = spa_garrison_control_strong
+			trigger = {
+				has_completed_focus = SPA_a_great_spain
+				1485 = {
+					check_variable = { var = SPA_garrison_control value = 3 compare = equals }
+					NOT = { has_state_flag = SPA_northern_garrisons_state_flag }
+				}
+			}
+		}
+		icon = {
+			key = spa_garrison_control_strong2
+			trigger = {
+				has_completed_focus = SPA_a_great_spain
+				1485 = {
+					check_variable = { var = SPA_garrison_control value = 3 compare = equals }
+					has_state_flag = SPA_northern_garrisons_state_flag
+				}
+			}
+		}
+		icon = {
+			key = spa_garrison_control_total
+			trigger = {
+				has_completed_focus = SPA_a_great_spain
+				1485 = { check_variable = { var = SPA_garrison_control value = 4 compare = greater_than_or_equals } }
+			}
+		}
+		icon = {
+			key = spr_garrison_control_none
+			trigger = {
+				has_completed_focus = SPR_the_popular_front
+				1485 = { check_variable = { var = SPA_garrison_control value = 1 compare = equals } }
+			}
+		}
+		icon = {
+			key = spr_garrison_control_weak
+			trigger = {
+				has_completed_focus = SPR_the_popular_front
+				1485 = {
+					check_variable = { var = SPA_garrison_control value = 2 compare = equals }
+					NOT = { has_state_flag = SPA_northern_garrisons_state_flag }
+				}
+			}
+		}
+		icon = {
+			key = spr_garrison_control_weak2
+			trigger = {
+				has_completed_focus = SPR_the_popular_front
+				1485 = {
+					check_variable = { var = SPA_garrison_control value = 2 compare = equals }
+					has_state_flag = SPA_northern_garrisons_state_flag
+				}
+			}
+		}
+		icon = {
+			key = spr_garrison_control_strong
+			trigger = {
+				has_completed_focus = SPR_the_popular_front
+				1485 = {
+					check_variable = { var = SPA_garrison_control value = 3 compare = equals }
+					NOT = { has_state_flag = SPA_northern_garrisons_state_flag }
+				}
+			}
+		}
+		icon = {
+			key = spr_garrison_control_strong2
+			trigger = {
+				has_completed_focus = SPR_the_popular_front
+				1485 = {
+					check_variable = { var = SPA_garrison_control value = 3 compare = equals }
+					has_state_flag = SPA_northern_garrisons_state_flag
+				}
+			}
+		}
+		icon = {
+			key = spr_garrison_control_total
+			trigger = {
+				has_completed_focus = SPR_the_popular_front
+				1485 = { check_variable = { var = SPA_garrison_control value = 4 compare = greater_than_or_equals } }
+			}
+		}
+
+		available = {
+			has_full_control_of_state = 1485
+			if = {
+				limit = {
+					has_completed_focus = SPA_a_great_spain
+				}
+				custom_trigger_tooltip = {
+					tooltip = SPA_expand_influence_nationalists_trigger_tt
+					1485 = { check_variable = { var = SPA_garrison_control value = 4 compare = less_than } }
+				}
+			}
+			if = {
+				limit = {
+					has_completed_focus = SPR_the_popular_front
+				}
+				custom_trigger_tooltip = {
+					tooltip = SPR_expand_influence_republicans_trigger_tt
+					1485 = { check_variable = { var = SPA_garrison_control value = 2 compare = greater_than_or_equals } }
+				}
+			}
+			NOT = {
+				has_country_flag = SPA_already_expanding_influence_flag
+			}
+		}
+
+		highlight_states = {
+		 highlight_state_targets = { state = 1485 } 
+		}
+
+		on_map_mode = map_only
+
+		cost = 1485.SPA_garrison_control_cost?10
+
+		fire_only_once = no
+
+		days_remove = 14
+
+		visible = {
+			NOT = { has_global_flag = spanish_civil_war }
+			has_country_flag = SPR_spanish_elections_flag
+		}
+
+		cancel_if_not_visible = yes
+
+		complete_effect = {
+			set_country_flag = SPA_already_expanding_influence_flag
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					has_completed_focus = SPA_a_great_spain
+				}
+				1485 = {
+					custom_effect_tooltip = SPA_expand_influence_nationalists_tt
+					set_state_flag = { flag = SPR_recently_expanded_influence_flag value = 1 days = 15 }
+					hidden_effect = {
+						if = {
+							limit = { check_variable = { SPA_garrison_control < 4 } }
+							
+							add_to_variable = { var = SPA_garrison_control value = 1 }
+							SPR = { add_to_variable = { var = spa_civil_war_divisions_counter_var value = 1 } }
+							SPR = { subtract_from_variable = { var = spr_civil_war_divisions_counter_var value = 1 } }
+						}
+					}
+					SPA_garrison_control_tooltip = yes
+					SPA_garrison_control_cost_calculation = yes
+				}
+			}
+			if = {
+				limit = {
+					has_completed_focus = SPR_the_popular_front
+				}
+				1485 = {
+					custom_effect_tooltip = SPR_expand_influence_republicans_tt
+					set_state_flag = { flag = SPR_recently_expanded_influence_flag value = 1 days = 15 }
+					hidden_effect = {
+						subtract_from_variable = { var = SPA_garrison_control value = 1 }
+						SPR = { subtract_from_variable = { var = spa_civil_war_divisions_counter_var value = 1 } }
+						SPR = { add_to_variable = { var = spr_civil_war_divisions_counter_var value = 1 } }
+					}
+					SPA_garrison_control_tooltip = yes
+					SPR_garrison_control_cost_calculation = yes
+				}
+			}
+			clr_country_flag = SPA_already_expanding_influence_flag
+		}
+
+		ai_will_do = {
+			base = 110
+			modifier = {
+				1485 = { has_state_flag = SPR_recently_expanded_influence_flag }
+				factor = 10
+			}
+			modifier = {
+				has_completed_focus = SPA_a_great_spain
+				NOT = { has_completed_focus = SPA_secure_the_northern_garrisons }
+				factor = 0
+			}
+			modifier = {
+				has_completed_focus = SPA_a_great_spain
+				1485 = { check_variable = { var = SPA_garrison_control value = 2 compare = greater_than_or_equals } }
+				factor = 5
+			}
+			modifier = {
+				has_completed_focus = SPA_a_great_spain
+				1485 = { check_variable = { var = SPA_garrison_control value = 3 compare = greater_than_or_equals } }
+				factor = 5
+			}
+			modifier = {
+				has_completed_focus = SPA_a_great_spain
+				OR = {
+					has_country_flag = SPR_AI_NAT_STRAT_A
+					has_country_flag = SPR_AI_NAT_STRAT_B
+					has_country_flag = SPR_AI_NAT_STRAT_D
+					has_country_flag = SPR_AI_NAT_STRAT_E
+					is_historical_focus_on = yes
+				}
+				factor = 0
+			}
+			modifier = {
+				has_completed_focus = SPA_a_great_spain
+				has_country_flag = SPR_AI_NAT_STRAT_C
+				factor = 10
+			}
+		}
+	}
 
 	SPA_expand_influence_in_the_eastern_aragon_garrison = {
 
@@ -2427,7 +2666,7 @@ SPR_the_inevitable_civil_war = {
 		} 
 
 		available = {
-			has_full_control_of_state = 794
+			has_full_control_of_state = 794 has_full_control_of_state = 1486
 			if = {
 				limit = {
 					has_completed_focus = SPA_a_great_spain
@@ -2452,8 +2691,8 @@ SPR_the_inevitable_civil_war = {
 		}
 
 		highlight_states = {
- highlight_state_targets = { state = 794 } 
-}
+			highlight_state_targets = { state = 794 state = 1486 } 
+		}
 
 		on_map_mode = map_only
 
@@ -2544,6 +2783,184 @@ SPR_the_inevitable_civil_war = {
 			modifier = {
 				has_completed_focus = SPA_a_great_spain
 				has_country_flag = SPR_AI_NAT_STRAT_C
+				factor = 10
+			}
+		}
+	}
+	
+	SPA_expand_influence_in_the_monzon_garrison = {
+
+		icon = {
+			key = spa_garrison_control_none
+			trigger = {
+				has_completed_focus = SPA_a_great_spain
+				1486 = { check_variable = { var = SPA_garrison_control value = 1 compare = equals } }
+			}
+		}
+		icon = {
+			key = spa_garrison_control_weak
+			trigger = {
+				has_completed_focus = SPA_a_great_spain
+				1486 = { check_variable = { var = SPA_garrison_control value = 2 compare = equals } }
+			}
+		}
+		icon = {
+			key = spa_garrison_control_strong
+			trigger = {
+				has_completed_focus = SPA_a_great_spain
+				1486 = { check_variable = { var = SPA_garrison_control value = 3 compare = equals } }
+			}
+		}
+		icon = {
+			key = spa_garrison_control_total
+			trigger = {
+				has_completed_focus = SPA_a_great_spain
+				1486 = { check_variable = { var = SPA_garrison_control value = 4 compare = greater_than_or_equals } }
+			}
+		}
+		icon = {
+			key = spr_garrison_control_none
+			trigger = {
+				has_completed_focus = SPR_the_popular_front
+				1486 = { check_variable = { var = SPA_garrison_control value = 1 compare = equals } }
+			}
+		}
+		icon = {
+			key = spr_garrison_control_weak
+			trigger = {
+				has_completed_focus = SPR_the_popular_front
+				1486 = { check_variable = { var = SPA_garrison_control value = 2 compare = equals } }
+			}
+		}
+		icon = {
+			key = spr_garrison_control_strong
+			trigger = {
+				has_completed_focus = SPR_the_popular_front
+				1486 = { check_variable = { var = SPA_garrison_control value = 3 compare = equals } }
+			}
+		}
+		icon = {
+			key = spr_garrison_control_total
+			trigger = {
+				has_completed_focus = SPR_the_popular_front
+				1486 = { check_variable = { var = SPA_garrison_control value = 4 compare = greater_than_or_equals } }
+			}
+		} 
+
+		available = {
+			has_full_control_of_state = 1486
+			if = {
+				limit = {
+					has_completed_focus = SPA_a_great_spain
+				}
+				custom_trigger_tooltip = {
+					tooltip = SPA_expand_influence_nationalists_trigger_tt
+					1486 = { check_variable = { var = SPA_garrison_control value = 4 compare = less_than } }
+				}
+			}
+			if = {
+				limit = {
+					has_completed_focus = SPR_the_popular_front
+				}
+				custom_trigger_tooltip = {
+					tooltip = SPR_expand_influence_republicans_trigger_tt
+					1486 = { check_variable = { var = SPA_garrison_control value = 2 compare = greater_than_or_equals } }
+				}
+			}
+			NOT = {
+				has_country_flag = SPA_already_expanding_influence_flag
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = { state = 1486 } 
+		}
+
+		on_map_mode = map_only
+
+		cost = 1486.SPA_garrison_control_cost?10
+
+		fire_only_once = no
+
+		days_remove = 14
+
+		visible = {
+			NOT = { has_global_flag = spanish_civil_war }
+			has_country_flag = SPR_spanish_elections_flag
+		}
+
+		cancel_if_not_visible = yes
+
+		complete_effect = {
+			set_country_flag = SPA_already_expanding_influence_flag
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					has_completed_focus = SPA_a_great_spain
+				}
+				1486 = {
+					custom_effect_tooltip = SPA_expand_influence_nationalists_tt
+					set_state_flag = { flag = SPR_recently_expanded_influence_flag value = 1 days = 15 }
+					hidden_effect = {
+						if = {
+							limit = { check_variable = { SPA_garrison_control < 4 } }
+							
+							add_to_variable = { var = SPA_garrison_control value = 1 }
+							SPR = { add_to_variable = { var = spa_civil_war_divisions_counter_var value = 1 } }
+							SPR = { subtract_from_variable = { var = spr_civil_war_divisions_counter_var value = 1 } }
+						}
+					}
+					SPA_garrison_control_tooltip = yes
+					SPA_garrison_control_cost_calculation = yes
+				}
+			}
+			if = {
+				limit = {
+					has_completed_focus = SPR_the_popular_front
+				}
+				1486 = {
+					custom_effect_tooltip = SPR_expand_influence_republicans_tt
+					set_state_flag = { flag = SPR_recently_expanded_influence_flag value = 1 days = 15 }
+					hidden_effect = {
+						subtract_from_variable = { var = SPA_garrison_control value = 1 }
+						SPR = { subtract_from_variable = { var = spa_civil_war_divisions_counter_var value = 1 } }
+						SPR = { add_to_variable = { var = spr_civil_war_divisions_counter_var value = 1 } }
+					}
+					SPA_garrison_control_tooltip = yes
+					SPR_garrison_control_cost_calculation = yes
+				}
+			}
+			clr_country_flag = SPA_already_expanding_influence_flag
+		}
+
+		ai_will_do = {
+			base = 110
+			modifier = {
+				1486 = { has_state_flag = SPR_recently_expanded_influence_flag }
+				factor = 10
+			}
+			modifier = {
+				has_completed_focus = SPA_a_great_spain
+				1486 = { check_variable = { var = SPA_garrison_control value = 2 compare = greater_than_or_equals } }
+				factor = 5
+			}
+			modifier = {
+				has_completed_focus = SPA_a_great_spain
+				1486 = { check_variable = { var = SPA_garrison_control value = 3 compare = greater_than_or_equals } }
+				factor = 5
+			}
+			modifier = {
+				has_completed_focus = SPA_a_great_spain
+				OR = {
+					has_country_flag = SPR_AI_NAT_STRAT_A
+					has_country_flag = SPR_AI_NAT_STRAT_B
+					has_country_flag = SPR_AI_NAT_STRAT_C
+					has_country_flag = SPR_AI_NAT_STRAT_D
+					has_country_flag = SPR_AI_NAT_STRAT_E
+					is_historical_focus_on = yes
+				}
 				factor = 10
 			}
 		}
@@ -2714,19 +3131,19 @@ SPR_the_inevitable_civil_war = {
 			}
 			modifier = {
 				has_completed_focus = SPA_a_great_spain
+				has_country_flag = SPR_AI_NAT_STRAT_D
+				factor = 10
+			}
+			modifier = {
+				has_completed_focus = SPA_a_great_spain
 				OR = {
 					has_country_flag = SPR_AI_NAT_STRAT_A
 					has_country_flag = SPR_AI_NAT_STRAT_B
-					has_country_flag = SPR_AI_NAT_STRAT_D
+					has_country_flag = SPR_AI_NAT_STRAT_C
 					has_country_flag = SPR_AI_NAT_STRAT_E
 					is_historical_focus_on = yes
 				}
 				factor = 0
-			}
-			modifier = {
-				has_completed_focus = SPA_a_great_spain
-				has_country_flag = SPR_AI_NAT_STRAT_C
-				factor = 10
 			}
 		}
 	}
@@ -2953,15 +3370,19 @@ SPR_the_inevitable_civil_war = {
 			}
 			modifier = {
 				has_completed_focus = SPA_a_great_spain
+				has_country_flag = SPR_AI_NAT_STRAT_B
+				factor = 5
+			}
+			modifier = {
+				has_completed_focus = SPA_a_great_spain
 				OR = {
 					has_country_flag = SPR_AI_NAT_STRAT_A
-					has_country_flag = SPR_AI_NAT_STRAT_B
 					has_country_flag = SPR_AI_NAT_STRAT_C
 					has_country_flag = SPR_AI_NAT_STRAT_D
 					has_country_flag = SPR_AI_NAT_STRAT_E
 					is_historical_focus_on = yes
 				}
-				factor = 10
+				factor = 0
 			}
 		}
 	}
@@ -3125,19 +3546,19 @@ SPR_the_inevitable_civil_war = {
 			}
 			modifier = {
 				has_completed_focus = SPA_a_great_spain
-				has_country_flag = SPR_AI_NAT_STRAT_D
-				factor = 10
-			}
-			modifier = {
-				has_completed_focus = SPA_a_great_spain
 				OR = {
 					has_country_flag = SPR_AI_NAT_STRAT_A
 					has_country_flag = SPR_AI_NAT_STRAT_B
-					has_country_flag = SPR_AI_NAT_STRAT_C
+					has_country_flag = SPR_AI_NAT_STRAT_D
 					has_country_flag = SPR_AI_NAT_STRAT_E
 					is_historical_focus_on = yes
 				}
 				factor = 0
+			}
+			modifier = {
+				has_completed_focus = SPA_a_great_spain
+				has_country_flag = SPR_AI_NAT_STRAT_C
+				factor = 5
 			}
 		}
 	}
@@ -3307,19 +3728,27 @@ SPR_the_inevitable_civil_war = {
 			}
 			modifier = {
 				has_completed_focus = SPA_a_great_spain
-				has_country_flag = SPR_AI_NAT_STRAT_B
-				factor = 5
+				OR = {
+					has_country_flag = SPR_AI_NAT_STRAT_B
+					has_country_flag = SPR_AI_NAT_STRAT_C
+					has_country_flag = SPR_AI_NAT_STRAT_E
+				}
+				is_historical_focus_on = no
+				factor = 0
 			}
 			modifier = {
 				has_completed_focus = SPA_a_great_spain
 				OR = {
 					has_country_flag = SPR_AI_NAT_STRAT_A
-					has_country_flag = SPR_AI_NAT_STRAT_C
-					has_country_flag = SPR_AI_NAT_STRAT_D
-					has_country_flag = SPR_AI_NAT_STRAT_E
 					is_historical_focus_on = yes
 				}
-				factor = 0
+				factor = 10
+			}
+			modifier = {
+				has_completed_focus = SPA_a_great_spain
+				has_country_flag = SPR_AI_NAT_STRAT_D
+				is_historical_focus_on = no
+				factor = 5
 			}
 		}
 	}
@@ -3409,8 +3838,8 @@ SPR_the_inevitable_civil_war = {
 		}
 
 		highlight_states = {
- highlight_state_targets = { state = 167 } 
-}
+ 			highlight_state_targets = { state = 167 } 
+		}
 
 		on_map_mode = map_only
 
@@ -3492,16 +3921,12 @@ SPR_the_inevitable_civil_war = {
 				OR = {
 					has_country_flag = SPR_AI_NAT_STRAT_A
 					has_country_flag = SPR_AI_NAT_STRAT_B
+					has_country_flag = SPR_AI_NAT_STRAT_C
 					has_country_flag = SPR_AI_NAT_STRAT_D
 					has_country_flag = SPR_AI_NAT_STRAT_E
 					is_historical_focus_on = yes
 				}
 				factor = 0
-			}
-			modifier = {
-				has_completed_focus = SPA_a_great_spain
-				has_country_flag = SPR_AI_NAT_STRAT_C
-				factor = 5
 			}
 		}
 	}
@@ -3672,26 +4097,14 @@ SPR_the_inevitable_civil_war = {
 			modifier = {
 				has_completed_focus = SPA_a_great_spain
 				OR = {
+					has_country_flag = SPR_AI_NAT_STRAT_A
 					has_country_flag = SPR_AI_NAT_STRAT_B
 					has_country_flag = SPR_AI_NAT_STRAT_C
+					has_country_flag = SPR_AI_NAT_STRAT_D
 					has_country_flag = SPR_AI_NAT_STRAT_E
-				}
-				is_historical_focus_on = no
-				factor = 0
-			}
-			modifier = {
-				has_completed_focus = SPA_a_great_spain
-				OR = {
-					has_country_flag = SPR_AI_NAT_STRAT_A
 					is_historical_focus_on = yes
 				}
-				factor = 10
-			}
-			modifier = {
-				has_completed_focus = SPA_a_great_spain
-				has_country_flag = SPR_AI_NAT_STRAT_D
-				is_historical_focus_on = no
-				factor = 5
+				factor = 0
 			}
 		}
 	}
@@ -3862,14 +4275,21 @@ SPR_the_inevitable_civil_war = {
 			modifier = {
 				has_completed_focus = SPA_a_great_spain
 				OR = {
-					has_country_flag = SPR_AI_NAT_STRAT_A
 					has_country_flag = SPR_AI_NAT_STRAT_B
 					has_country_flag = SPR_AI_NAT_STRAT_C
 					has_country_flag = SPR_AI_NAT_STRAT_D
+				}
+				is_historical_focus_on = no
+				factor = 0
+			}
+			modifier = {
+				has_completed_focus = SPA_a_great_spain
+				OR = {
+					has_country_flag = SPR_AI_NAT_STRAT_A
 					has_country_flag = SPR_AI_NAT_STRAT_E
 					is_historical_focus_on = yes
 				}
-				factor = 0
+				factor = 10
 			}
 		}
 	}
@@ -4040,14 +4460,21 @@ SPR_the_inevitable_civil_war = {
 			modifier = {
 				has_completed_focus = SPA_a_great_spain
 				OR = {
-					has_country_flag = SPR_AI_NAT_STRAT_A
 					has_country_flag = SPR_AI_NAT_STRAT_B
 					has_country_flag = SPR_AI_NAT_STRAT_C
 					has_country_flag = SPR_AI_NAT_STRAT_D
+				}
+				is_historical_focus_on = no
+				factor = 0
+			}
+			modifier = {
+				has_completed_focus = SPA_a_great_spain
+				OR = {
+					has_country_flag = SPR_AI_NAT_STRAT_A
 					has_country_flag = SPR_AI_NAT_STRAT_E
 					is_historical_focus_on = yes
 				}
-				factor = 0
+				factor = 5
 			}
 		}
 	}
@@ -4218,20 +4645,17 @@ SPR_the_inevitable_civil_war = {
 			modifier = {
 				has_completed_focus = SPA_a_great_spain
 				OR = {
+					has_country_flag = SPR_AI_NAT_STRAT_A
 					has_country_flag = SPR_AI_NAT_STRAT_B
 					has_country_flag = SPR_AI_NAT_STRAT_C
 					has_country_flag = SPR_AI_NAT_STRAT_D
+					is_historical_focus_on = yes
 				}
-				is_historical_focus_on = no
 				factor = 0
 			}
 			modifier = {
 				has_completed_focus = SPA_a_great_spain
-				OR = {
-					has_country_flag = SPR_AI_NAT_STRAT_A
-					has_country_flag = SPR_AI_NAT_STRAT_E
-					is_historical_focus_on = yes
-				}
+				has_country_flag = SPR_AI_NAT_STRAT_E
 				factor = 10
 			}
 		}
@@ -4402,297 +4826,9 @@ SPR_the_inevitable_civil_war = {
 			}
 			modifier = {
 				has_completed_focus = SPA_a_great_spain
-				OR = {
-					has_country_flag = SPR_AI_NAT_STRAT_B
-					has_country_flag = SPR_AI_NAT_STRAT_C
-					has_country_flag = SPR_AI_NAT_STRAT_D
-				}
-				is_historical_focus_on = no
-				factor = 0
-			}
-			modifier = {
-				has_completed_focus = SPA_a_great_spain
-				OR = {
-					has_country_flag = SPR_AI_NAT_STRAT_A
-					has_country_flag = SPR_AI_NAT_STRAT_E
-					is_historical_focus_on = yes
-				}
+				is_historical_focus_on = yes
 				factor = 5
 			}
-		}
-	}
-
-	SPA_expand_influence_in_the_granada_garrison = {
-
-		icon = {
-			key = spa_garrison_control_none
-			trigger = {
-				has_completed_focus = SPA_a_great_spain
-				173 = { check_variable = { var = SPA_garrison_control value = 1 compare = equals } }
-			}
-		}
-		icon = {
-			key = spa_garrison_control_weak
-			trigger = {
-				has_completed_focus = SPA_a_great_spain
-				173 = { check_variable = { var = SPA_garrison_control value = 2 compare = equals } }
-			}
-		}
-		icon = {
-			key = spa_garrison_control_strong
-			trigger = {
-				has_completed_focus = SPA_a_great_spain
-				173 = { check_variable = { var = SPA_garrison_control value = 3 compare = equals } }
-			}
-		}
-		icon = {
-			key = spa_garrison_control_total
-			trigger = {
-				has_completed_focus = SPA_a_great_spain
-				173 = { check_variable = { var = SPA_garrison_control value = 4 compare = greater_than_or_equals } }
-			}
-		}
-		icon = {
-			key = spr_garrison_control_none
-			trigger = {
-				has_completed_focus = SPR_the_popular_front
-				173 = { check_variable = { var = SPA_garrison_control value = 1 compare = equals } }
-			}
-		}
-		icon = {
-			key = spr_garrison_control_weak
-			trigger = {
-				has_completed_focus = SPR_the_popular_front
-				173 = { check_variable = { var = SPA_garrison_control value = 2 compare = equals } }
-			}
-		}
-		icon = {
-			key = spr_garrison_control_strong
-			trigger = {
-				has_completed_focus = SPR_the_popular_front
-				173 = { check_variable = { var = SPA_garrison_control value = 3 compare = equals } }
-			}
-		}
-		icon = {
-			key = spr_garrison_control_total
-			trigger = {
-				has_completed_focus = SPR_the_popular_front
-				173 = { check_variable = { var = SPA_garrison_control value = 4 compare = greater_than_or_equals } }
-			}
-		}
-
-		available = {
-			has_full_control_of_state = 173
-			if = {
-				limit = {
-					has_completed_focus = SPA_a_great_spain
-				}
-				custom_trigger_tooltip = {
-					tooltip = SPA_expand_influence_nationalists_trigger_tt
-					173 = { check_variable = { var = SPA_garrison_control value = 4 compare = less_than } }
-				}
-			}
-			if = {
-				limit = {
-					has_completed_focus = SPR_the_popular_front
-				}
-				custom_trigger_tooltip = {
-					tooltip = SPR_expand_influence_republicans_trigger_tt
-					173 = { check_variable = { var = SPA_garrison_control value = 2 compare = greater_than_or_equals } }
-				}
-			}
-			NOT = {
-				has_country_flag = SPA_already_expanding_influence_flag
-			}
-		}
-
-		highlight_states = {
- highlight_state_targets = { state = 173 } 
-}
-
-		on_map_mode = map_only
-
-		cost = 173.SPA_garrison_control_cost?10
-
-		fire_only_once = no
-
-		days_remove = 14
-
-		visible = {
-			NOT = { has_global_flag = spanish_civil_war }
-			has_country_flag = SPR_spanish_elections_flag
-		}
-
-		cancel_if_not_visible = yes
-
-		complete_effect = {
-			set_country_flag = SPA_already_expanding_influence_flag
-		}
-
-		remove_effect = {
-			if = {
-				limit = {
-					has_completed_focus = SPA_a_great_spain
-				}
-				173 = {
-					custom_effect_tooltip = SPA_expand_influence_nationalists_tt
-					set_state_flag = { flag = SPR_recently_expanded_influence_flag value = 1 days = 15 }
-					hidden_effect = {
-						if = {
-							limit = { check_variable = { SPA_garrison_control < 4 } }
-							
-							add_to_variable = { var = SPA_garrison_control value = 1 }
-							SPR = { add_to_variable = { var = spa_civil_war_divisions_counter_var value = 1 } }
-							SPR = { subtract_from_variable = { var = spr_civil_war_divisions_counter_var value = 1 } }
-						}
-					}
-					SPA_garrison_control_tooltip = yes
-					SPA_garrison_control_cost_calculation = yes
-				}
-			}
-			if = {
-				limit = {
-					has_completed_focus = SPR_the_popular_front
-				}
-				173 = {
-					custom_effect_tooltip = SPR_expand_influence_republicans_tt
-					set_state_flag = { flag = SPR_recently_expanded_influence_flag value = 1 days = 15 }
-					hidden_effect = {
-						subtract_from_variable = { var = SPA_garrison_control value = 1 }
-						SPR = { subtract_from_variable = { var = spa_civil_war_divisions_counter_var value = 1 } }
-						SPR = { add_to_variable = { var = spr_civil_war_divisions_counter_var value = 1 } }
-					}
-					SPA_garrison_control_tooltip = yes
-					SPR_garrison_control_cost_calculation = yes
-				}
-			}
-			clr_country_flag = SPA_already_expanding_influence_flag
-		}
-
-		ai_will_do = {
-			base = 110
-			modifier = {
-				173 = { has_state_flag = SPR_recently_expanded_influence_flag }
-				factor = 10
-			}
-			modifier = {
-				has_completed_focus = SPA_a_great_spain
-				173 = { check_variable = { var = SPA_garrison_control value = 2 compare = greater_than_or_equals } }
-				factor = 5
-			}
-			modifier = {
-				has_completed_focus = SPA_a_great_spain
-				173 = { check_variable = { var = SPA_garrison_control value = 3 compare = greater_than_or_equals } }
-				factor = 5
-			}
-			modifier = {
-				has_completed_focus = SPA_a_great_spain
-				OR = {
-					has_country_flag = SPR_AI_NAT_STRAT_A
-					has_country_flag = SPR_AI_NAT_STRAT_B
-					has_country_flag = SPR_AI_NAT_STRAT_C
-					has_country_flag = SPR_AI_NAT_STRAT_D
-					is_historical_focus_on = yes
-				}
-				factor = 0
-			}
-			modifier = {
-				has_completed_focus = SPA_a_great_spain
-				has_country_flag = SPR_AI_NAT_STRAT_E
-				factor = 10
-			}
-		}
-	}
-
-}
-
-SPR_opposition_civil_war_preparations = {
-
-###  ##   ##  #  #  ##     #  #  ##  ### ### ### ###  ##   ##  ### ###  ##  #  #     #   # ###  ##  ## ###  ##  #  #  ## 
-#   #  # #  # #  # #       ## # #  #  #   #  #    #  #  # #  #  #   #  #  # ## #     ## ##  #  #   #    #  #  # ## # #   
-##  #  # #    #  #  #      # ## #  #  #   #  ##   #  #    ####  #   #  #  # # ##     # # #  #   #   #   #  #  # # ##  #  
-#   #  # #  # #  #   #     #  # #  #  #   #  #    #  #  # #  #  #   #  #  # #  #     #   #  #    #   #  #  #  # #  #   # 
-#    ##   ##   ##  ##      #  #  ##   #  ### #   ###  ##  #  #  #  ###  ##  #  #     #   # ### ##  ##  ###  ##  #  # ##  
-
-	SPA_hand_over_the_ceda_campaign_chest_mission = {
-
-		priority = 10
-
-		name = SPA_hand_over_the_ceda_campaign_chest
-
-		icon = eng_trade_unions_support
-
-		available = {
-			hidden_trigger = { always = no }
-		}
-
-		days_mission_timeout = 23
-
-		fire_only_once = yes
-
-		activation = {
-			always = no
-		}
-
-		visible = {
-			tag = SPR
-			NOT = { has_global_flag = spanish_civil_war }
-		}
-
-		cancel_if_not_visible = yes
-
-		is_good = yes
-
-		timeout_effect = {
-			set_country_flag = SPA_hand_over_the_ceda_campaign_chest_flag
-			hidden_effect = { activate_mission = SPA_negotiate_carlist_support_mission }
-		}
-	}
-
-	SPA_negotiate_carlist_support_mission = {
-
-		priority = 10
-
-		name = SPA_negotiate_carlist_support
-
-		icon = eng_trade_unions_support
-
-		available = {
-			hidden_trigger = { always = no }
-		}
-
-		days_mission_timeout = 28
-
-		fire_only_once = yes
-
-		activation = {
-			always = no
-		}
-
-		visible = {
-			tag = SPR
-			NOT = { has_global_flag = spanish_civil_war }
-		}
-
-		cancel_if_not_visible = yes
-
-		is_good = yes
-
-		timeout_effect = {
-			if = {
-				limit = {
-					difficulty > 1
-					is_ai = no
-				}
-				custom_effect_tooltip = SPA_negotiate_carlist_support_mission_tt_2
-				add_to_variable = { var = spa_civil_war_divisions_counter_var value = 10 }
-			}
-			else = {
-				custom_effect_tooltip = SPA_negotiate_carlist_support_mission_tt
-				add_to_variable = { var = spa_civil_war_divisions_counter_var value = 5 }
-			}
-			set_country_flag = SPA_negotiate_carlist_support_flag
-			hidden_effect = { activate_mission = SPA_the_army_of_africa_mission }
 		}
 	}
 
@@ -4788,6 +4924,7 @@ SPR_opposition_civil_war_preparations = {
 							state = 791
 							state = 176
 							state = 166
+							state = 1485
 							state = 172
 						}
 					}
@@ -4807,6 +4944,7 @@ SPR_opposition_civil_war_preparations = {
 							state = 791
 							state = 176
 							state = 166
+							state = 1485
 							state = 172
 						}
 					}
@@ -4826,6 +4964,7 @@ SPR_opposition_civil_war_preparations = {
 							state = 791
 							state = 176
 							state = 166
+							state = 1485
 							state = 172
 						}
 					}
@@ -5653,14 +5792,14 @@ SPR_opposition_civil_war_preparations = {
 						date > 1936.7.19
 						date < 1936.9.16
 					}
-					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 21 }
+					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 30 }
 				}
 				if = {
 					limit = {
 						ROOT = { has_completed_focus = SPR_the_popular_front }
 						date > 1936.9.15
 					}
-					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 30 }
+					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 45 }
 				}
 			}
 			if = {
@@ -5693,7 +5832,7 @@ SPR_opposition_civil_war_preparations = {
 							date > 1936.7.19
 							date < 1936.9.16
 						}
-						country_event = { id = lar_spain.5 days = 5 random_days = 5 }
+						country_event = { id = lar_spain.5 days = 5 random_days = 10 }
 					}
 					if = {
 						limit = {
@@ -5832,14 +5971,14 @@ SPR_opposition_civil_war_preparations = {
 						date > 1936.7.19
 						date < 1936.9.16
 					}
-					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 21 }
+					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 30 }
 				}
 				if = {
 					limit = {
 						ROOT = { has_completed_focus = SPR_the_popular_front }
 						date > 1936.9.15
 					}
-					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 30 }
+					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 45 }
 				}
 			}
 			if = {
@@ -5872,7 +6011,7 @@ SPR_opposition_civil_war_preparations = {
 							date > 1936.7.19
 							date < 1936.9.16
 						}
-						country_event = { id = lar_spain.5 days = 5 random_days = 5 }
+						country_event = { id = lar_spain.5 days = 5 random_days = 10 }
 					}
 					if = {
 						limit = {
@@ -6011,14 +6150,14 @@ SPR_opposition_civil_war_preparations = {
 						date > 1936.7.19
 						date < 1936.9.16
 					}
-					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 21 }
+					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 30 }
 				}
 				if = {
 					limit = {
 						ROOT = { has_completed_focus = SPR_the_popular_front }
 						date > 1936.9.15
 					}
-					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 30 }
+					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 45 }
 				}
 			}
 			if = {
@@ -6051,7 +6190,7 @@ SPR_opposition_civil_war_preparations = {
 							date > 1936.7.19
 							date < 1936.9.16
 						}
-						country_event = { id = lar_spain.5 days = 5 random_days = 5 }
+						country_event = { id = lar_spain.5 days = 5 random_days = 10 }
 					}
 					if = {
 						limit = {
@@ -6838,7 +6977,7 @@ SPR_opposition_civil_war_preparations = {
 		}
 
 		highlight_states = {
- highlight_state_targets = { state = 166 } 
+ highlight_state_targets = { state = 166 state = 1485 } 
 }
 
 		on_map_mode = map_and_decisions_view
@@ -7003,6 +7142,185 @@ SPR_opposition_civil_war_preparations = {
 		}
 
 	}
+	
+	SPA_expand_influence_in_the_huesca_garrison_mission = {
+
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			tag = SPR
+		}
+
+		available = {
+			hidden_trigger = { always = no }
+		}
+
+		highlight_states = {
+			highlight_state_targets = { state = 1485 } 
+		}
+
+		on_map_mode = map_and_decisions_view
+
+		fire_only_once = no
+
+		days_mission_timeout = 14
+
+		is_good = no
+
+		cancel_if_not_visible = yes
+
+		activation = {
+			always = no
+		}
+
+		visible = {
+			tag = SPR
+			has_country_flag = SPR_spanish_elections_flag
+			NOT = { has_global_flag = spanish_civil_war }
+		}
+
+		timeout_effect = {
+			1485 = {
+				if = {
+					limit = {
+						ROOT = { has_completed_focus = SPA_a_great_spain }
+						date < 1936.5.2
+					}
+					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 45 }
+				}
+				if = {
+					limit = {
+						ROOT = { has_completed_focus = SPA_a_great_spain }
+						date > 1936.5.1
+						date < 1936.8.10
+					}
+					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 30 }
+				}
+				if = {
+					limit = {
+						ROOT = { has_completed_focus = SPA_a_great_spain }
+						date > 1936.8.9
+						date < 1936.10.2
+					}
+					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 21 }
+				}
+				if = {
+					limit = {
+						ROOT = { has_completed_focus = SPA_a_great_spain }
+						date > 1936.10.1
+					}
+					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 15 }
+				}
+				if = {
+					limit = {
+						ROOT = { has_completed_focus = SPR_the_popular_front }
+						date < 1936.7.20
+					}
+					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 15 }
+				}
+				if = {
+					limit = {
+						ROOT = { has_completed_focus = SPR_the_popular_front }
+						date > 1936.7.19
+						date < 1936.9.16
+					}
+					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 21 }
+				}
+				if = {
+					limit = {
+						ROOT = { has_completed_focus = SPR_the_popular_front }
+						date > 1936.9.15
+					}
+					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 30 }
+				}
+			}
+			if = {
+				limit = {
+					has_completed_focus = SPR_the_popular_front
+				}
+				1485 = {
+					custom_effect_tooltip = SPA_expand_influence_nationalists_tt
+					SPA_garrison_control_tooltip = yes
+				}
+				hidden_effect = {
+					1485 = {
+						if = {
+							limit = { check_variable = { SPA_garrison_control < 4 } }
+							
+							add_to_variable = { var = SPA_garrison_control value = 1 }
+							SPR = { add_to_variable = { var = spa_civil_war_divisions_counter_var value = 1 } }
+							SPR = { subtract_from_variable = { var = spr_civil_war_divisions_counter_var value = 1 } }
+						}
+						SPR_garrison_control_cost_calculation = yes
+					}
+					if = {
+						limit = {
+							date < 1936.7.20
+						}
+						country_event = { id = lar_spain.5 }
+					}
+					if = {
+						limit = {
+							date > 1936.7.19
+							date < 1936.9.16
+						}
+						country_event = { id = lar_spain.5 days = 5 random_days = 5 }
+					}
+					if = {
+						limit = {
+							date > 1936.9.15
+						}
+						country_event = { id = lar_spain.5 days = 15 random_days = 15 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_completed_focus = SPA_a_great_spain
+				}
+				1485 = {
+					custom_effect_tooltip = SPR_expand_influence_republicans_tt
+					SPA_garrison_control_tooltip = yes
+					SPA_garrison_control_cost_calculation = yes
+				}
+				hidden_effect = {
+					1485 = {
+						subtract_from_variable = { var = SPA_garrison_control value = 1 }
+						SPR = { subtract_from_variable = { var = spa_civil_war_divisions_counter_var value = 1 } }
+						SPR = { add_to_variable = { var = spr_civil_war_divisions_counter_var value = 1 } }
+						SPA_garrison_control_cost_calculation = yes
+					}
+					if = {
+						limit = {
+							date < 1936.5.2
+						}
+						country_event = { id = lar_spain.5 days = 20 random_days = 10 }
+					}
+					if = {
+						limit = {
+							date > 1936.5.1
+							date < 1936.8.10
+						}
+						country_event = { id = lar_spain.5 days = 6 random_days = 9 }
+					}
+					if = {
+						limit = {
+							date > 1936.8.9
+							date < 1936.10.2
+						}
+						country_event = { id = lar_spain.5 days = 1 random_days = 5 }
+					}
+					if = {
+						limit = {
+							date > 1936.10.1
+						}
+						country_event = { id = lar_spain.5 }
+					}
+				}
+			}
+		}
+
+	}
 
 	SPA_expand_influence_in_the_eastern_aragon_garrison_mission = {
 
@@ -7017,7 +7335,7 @@ SPR_opposition_civil_war_preparations = {
 		}
 
 		highlight_states = {
- highlight_state_targets = { state = 794 } 
+ highlight_state_targets = { state = 794 state = 1486 } 
 }
 
 		on_map_mode = map_and_decisions_view
@@ -7146,6 +7464,185 @@ SPR_opposition_civil_war_preparations = {
 				}
 				hidden_effect = {
 					794 = {
+						subtract_from_variable = { var = SPA_garrison_control value = 1 }
+						SPR = { subtract_from_variable = { var = spa_civil_war_divisions_counter_var value = 1 } }
+						SPR = { add_to_variable = { var = spr_civil_war_divisions_counter_var value = 1 } }
+						SPA_garrison_control_cost_calculation = yes
+					}
+					if = {
+						limit = {
+							date < 1936.5.2
+						}
+						country_event = { id = lar_spain.5 days = 20 random_days = 10 }
+					}
+					if = {
+						limit = {
+							date > 1936.5.1
+							date < 1936.8.10
+						}
+						country_event = { id = lar_spain.5 days = 6 random_days = 9 }
+					}
+					if = {
+						limit = {
+							date > 1936.8.9
+							date < 1936.10.2
+						}
+						country_event = { id = lar_spain.5 days = 1 random_days = 5 }
+					}
+					if = {
+						limit = {
+							date > 1936.10.1
+						}
+						country_event = { id = lar_spain.5 }
+					}
+				}
+			}
+		}
+
+	}
+	
+	SPA_expand_influence_in_the_monzon_garrison_mission = {
+
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			tag = SPR
+		}
+
+		available = {
+			hidden_trigger = { always = no }
+		}
+
+		highlight_states = {
+			highlight_state_targets = { state = 1486 } 
+		}
+
+		on_map_mode = map_and_decisions_view
+
+		fire_only_once = no
+
+		days_mission_timeout = 14
+
+		is_good = no
+
+		cancel_if_not_visible = yes
+
+		activation = {
+			always = no
+		}
+
+		visible = {
+			tag = SPR
+			has_country_flag = SPR_spanish_elections_flag
+			NOT = { has_global_flag = spanish_civil_war }
+		}
+
+		timeout_effect = {
+			1486 = {
+				if = {
+					limit = {
+						ROOT = { has_completed_focus = SPA_a_great_spain }
+						date < 1936.5.2
+					}
+					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 45 }
+				}
+				if = {
+					limit = {
+						ROOT = { has_completed_focus = SPA_a_great_spain }
+						date > 1936.5.1
+						date < 1936.8.10
+					}
+					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 30 }
+				}
+				if = {
+					limit = {
+						ROOT = { has_completed_focus = SPA_a_great_spain }
+						date > 1936.8.9
+						date < 1936.10.2
+					}
+					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 21 }
+				}
+				if = {
+					limit = {
+						ROOT = { has_completed_focus = SPA_a_great_spain }
+						date > 1936.10.1
+					}
+					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 15 }
+				}
+				if = {
+					limit = {
+						ROOT = { has_completed_focus = SPR_the_popular_front }
+						date < 1936.7.20
+					}
+					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 15 }
+				}
+				if = {
+					limit = {
+						ROOT = { has_completed_focus = SPR_the_popular_front }
+						date > 1936.7.19
+						date < 1936.9.16
+					}
+					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 21 }
+				}
+				if = {
+					limit = {
+						ROOT = { has_completed_focus = SPR_the_popular_front }
+						date > 1936.9.15
+					}
+					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 30 }
+				}
+			}
+			if = {
+				limit = {
+					has_completed_focus = SPR_the_popular_front
+				}
+				1486 = {
+					custom_effect_tooltip = SPA_expand_influence_nationalists_tt
+					SPA_garrison_control_tooltip = yes
+				}
+				hidden_effect = {
+					1486 = {
+						if = {
+							limit = { check_variable = { SPA_garrison_control < 4 } }
+							
+							add_to_variable = { var = SPA_garrison_control value = 1 }
+							SPR = { add_to_variable = { var = spa_civil_war_divisions_counter_var value = 1 } }
+							SPR = { subtract_from_variable = { var = spr_civil_war_divisions_counter_var value = 1 } }
+						}
+						SPR_garrison_control_cost_calculation = yes
+					}
+					if = {
+						limit = {
+							date < 1936.7.20
+						}
+						country_event = { id = lar_spain.5 }
+					}
+					if = {
+						limit = {
+							date > 1936.7.19
+							date < 1936.9.16
+						}
+						country_event = { id = lar_spain.5 days = 5 random_days = 5 }
+					}
+					if = {
+						limit = {
+							date > 1936.9.15
+						}
+						country_event = { id = lar_spain.5 days = 15 random_days = 15 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_completed_focus = SPA_a_great_spain
+				}
+				1486 = {
+					custom_effect_tooltip = SPR_expand_influence_republicans_tt
+					SPA_garrison_control_tooltip = yes
+					SPA_garrison_control_cost_calculation = yes
+				}
+				hidden_effect = {
+					1486 = {
 						subtract_from_variable = { var = SPA_garrison_control value = 1 }
 						SPR = { subtract_from_variable = { var = spa_civil_war_divisions_counter_var value = 1 } }
 						SPR = { add_to_variable = { var = spr_civil_war_divisions_counter_var value = 1 } }
@@ -9152,6 +9649,262 @@ SPR_opposition_civil_war_preparations = {
 
 	}
 
+	# KSRE / jogo base: SPA_expand_influence_in_the_granada_garrison
+	SPA_expand_influence_in_the_granada_garrison = {
+
+		icon = {
+			key = spa_garrison_control_none
+			trigger = {
+				has_completed_focus = SPA_a_great_spain
+				173 = { check_variable = { var = SPA_garrison_control value = 1 compare = equals } }
+			}
+		}
+		icon = {
+			key = spa_garrison_control_weak
+			trigger = {
+				has_completed_focus = SPA_a_great_spain
+				173 = { check_variable = { var = SPA_garrison_control value = 2 compare = equals } }
+			}
+		}
+		icon = {
+			key = spa_garrison_control_strong
+			trigger = {
+				has_completed_focus = SPA_a_great_spain
+				173 = { check_variable = { var = SPA_garrison_control value = 3 compare = equals } }
+			}
+		}
+		icon = {
+			key = spa_garrison_control_total
+			trigger = {
+				has_completed_focus = SPA_a_great_spain
+				173 = { check_variable = { var = SPA_garrison_control value = 4 compare = greater_than_or_equals } }
+			}
+		}
+		icon = {
+			key = spr_garrison_control_none
+			trigger = {
+				has_completed_focus = SPR_the_popular_front
+				173 = { check_variable = { var = SPA_garrison_control value = 1 compare = equals } }
+			}
+		}
+		icon = {
+			key = spr_garrison_control_weak
+			trigger = {
+				has_completed_focus = SPR_the_popular_front
+				173 = { check_variable = { var = SPA_garrison_control value = 2 compare = equals } }
+			}
+		}
+		icon = {
+			key = spr_garrison_control_strong
+			trigger = {
+				has_completed_focus = SPR_the_popular_front
+				173 = { check_variable = { var = SPA_garrison_control value = 3 compare = equals } }
+			}
+		}
+		icon = {
+			key = spr_garrison_control_total
+			trigger = {
+				has_completed_focus = SPR_the_popular_front
+				173 = { check_variable = { var = SPA_garrison_control value = 4 compare = greater_than_or_equals } }
+			}
+		}
+
+		available = {
+			has_full_control_of_state = 173
+			if = {
+				limit = {
+					has_completed_focus = SPA_a_great_spain
+				}
+				custom_trigger_tooltip = {
+					tooltip = SPA_expand_influence_nationalists_trigger_tt
+					173 = { check_variable = { var = SPA_garrison_control value = 4 compare = less_than } }
+				}
+			}
+			if = {
+				limit = {
+					has_completed_focus = SPR_the_popular_front
+				}
+				custom_trigger_tooltip = {
+					tooltip = SPR_expand_influence_republicans_trigger_tt
+					173 = { check_variable = { var = SPA_garrison_control value = 2 compare = greater_than_or_equals } }
+				}
+			}
+			NOT = {
+				has_country_flag = SPA_already_expanding_influence_flag
+			}
+		}
+
+		highlight_states = {
+ highlight_state_targets = { state = 173 } 
+}
+
+		on_map_mode = map_only
+
+		cost = 173.SPA_garrison_control_cost?10
+
+		fire_only_once = no
+
+		days_remove = 14
+
+		visible = {
+			NOT = { has_global_flag = spanish_civil_war }
+			has_country_flag = SPR_spanish_elections_flag
+		}
+
+		cancel_if_not_visible = yes
+
+		complete_effect = {
+			set_country_flag = SPA_already_expanding_influence_flag
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					has_completed_focus = SPA_a_great_spain
+				}
+				173 = {
+					custom_effect_tooltip = SPA_expand_influence_nationalists_tt
+					set_state_flag = { flag = SPR_recently_expanded_influence_flag value = 1 days = 15 }
+					hidden_effect = {
+						if = {
+							limit = { check_variable = { SPA_garrison_control < 4 } }
+							
+							add_to_variable = { var = SPA_garrison_control value = 1 }
+							SPR = { add_to_variable = { var = spa_civil_war_divisions_counter_var value = 1 } }
+							SPR = { subtract_from_variable = { var = spr_civil_war_divisions_counter_var value = 1 } }
+						}
+					}
+					SPA_garrison_control_tooltip = yes
+					SPA_garrison_control_cost_calculation = yes
+				}
+			}
+			if = {
+				limit = {
+					has_completed_focus = SPR_the_popular_front
+				}
+				173 = {
+					custom_effect_tooltip = SPR_expand_influence_republicans_tt
+					set_state_flag = { flag = SPR_recently_expanded_influence_flag value = 1 days = 15 }
+					hidden_effect = {
+						subtract_from_variable = { var = SPA_garrison_control value = 1 }
+						SPR = { subtract_from_variable = { var = spa_civil_war_divisions_counter_var value = 1 } }
+						SPR = { add_to_variable = { var = spr_civil_war_divisions_counter_var value = 1 } }
+					}
+					SPA_garrison_control_tooltip = yes
+					SPR_garrison_control_cost_calculation = yes
+				}
+			}
+			clr_country_flag = SPA_already_expanding_influence_flag
+		}
+
+		ai_will_do = {
+			base = 110
+			modifier = {
+				173 = { has_state_flag = SPR_recently_expanded_influence_flag }
+				factor = 10
+			}
+			modifier = {
+				has_completed_focus = SPA_a_great_spain
+				173 = { check_variable = { var = SPA_garrison_control value = 2 compare = greater_than_or_equals } }
+				factor = 5
+			}
+			modifier = {
+				has_completed_focus = SPA_a_great_spain
+				173 = { check_variable = { var = SPA_garrison_control value = 3 compare = greater_than_or_equals } }
+				factor = 5
+			}
+			modifier = {
+				has_completed_focus = SPA_a_great_spain
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+
+	# KSRE / jogo base: SPA_hand_over_the_ceda_campaign_chest_mission
+	SPA_hand_over_the_ceda_campaign_chest_mission = {
+
+		priority = 10
+
+		name = SPA_hand_over_the_ceda_campaign_chest
+
+		icon = eng_trade_unions_support
+
+		available = {
+			hidden_trigger = { always = no }
+		}
+
+		days_mission_timeout = 23
+
+		fire_only_once = yes
+
+		activation = {
+			always = no
+		}
+
+		visible = {
+			tag = SPR
+			NOT = { has_global_flag = spanish_civil_war }
+		}
+
+		cancel_if_not_visible = yes
+
+		is_good = yes
+
+		timeout_effect = {
+			set_country_flag = SPA_hand_over_the_ceda_campaign_chest_flag
+			hidden_effect = { activate_mission = SPA_negotiate_carlist_support_mission }
+		}
+	}
+
+	# KSRE / jogo base: SPA_negotiate_carlist_support_mission
+	SPA_negotiate_carlist_support_mission = {
+
+		priority = 10
+
+		name = SPA_negotiate_carlist_support
+
+		icon = eng_trade_unions_support
+
+		available = {
+			hidden_trigger = { always = no }
+		}
+
+		days_mission_timeout = 28
+
+		fire_only_once = yes
+
+		activation = {
+			always = no
+		}
+
+		visible = {
+			tag = SPR
+			NOT = { has_global_flag = spanish_civil_war }
+		}
+
+		cancel_if_not_visible = yes
+
+		is_good = yes
+
+		timeout_effect = {
+			if = {
+				limit = {
+					difficulty > 1
+					is_ai = no
+				}
+				custom_effect_tooltip = SPA_negotiate_carlist_support_mission_tt_2
+				add_to_variable = { var = spa_civil_war_divisions_counter_var value = 10 }
+			}
+			else = {
+				custom_effect_tooltip = SPA_negotiate_carlist_support_mission_tt
+				add_to_variable = { var = spa_civil_war_divisions_counter_var value = 5 }
+			}
+			set_country_flag = SPA_negotiate_carlist_support_flag
+			hidden_effect = { activate_mission = SPA_the_army_of_africa_mission }
+		}
+	}
+
 }
 
  ##  ### #   # ### #       #   #  ##  ###       ##  ### ### ### #  #  ## ### #   # ###  ## 
@@ -9336,22 +10089,59 @@ SPR_civil_war_offensives = {
 			790 = { has_state_flag = SPR_unplanned_offensive_flag }
 		}
 
-		complete_effect = {
-			activate_mission = SPR_preparing_offensive
-			set_country_flag = SPR_preparing_offensive_in_progress_flag
-			every_other_country = {
-				limit = {
-					original_tag = SPR
+		timeout_effect = {
+			173 = {
+				if = {
+					limit = {
+						ROOT = { has_completed_focus = SPA_a_great_spain }
+						date < 1936.5.2
+					}
+					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 45 }
 				}
-				activate_mission = SPA_asturias_offensive_mission
-			}
-		}
-
-		remove_effect = {
-			790 = {
-				clr_state_flag = SPR_unplanned_offensive_flag
-				remove_dynamic_modifier = {
-					modifier = unplanned_offensive
+				if = {
+					limit = {
+						ROOT = { has_completed_focus = SPA_a_great_spain }
+						date > 1936.5.1
+						date < 1936.8.10
+					}
+					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 30 }
+				}
+				if = {
+					limit = {
+						ROOT = { has_completed_focus = SPA_a_great_spain }
+						date > 1936.8.9
+						date < 1936.10.2
+					}
+					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 21 }
+				}
+				if = {
+					limit = {
+						ROOT = { has_completed_focus = SPA_a_great_spain }
+						date > 1936.10.1
+					}
+					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 15 }
+				}
+				if = {
+					limit = {
+						ROOT = { has_completed_focus = SPR_the_popular_front }
+						date < 1936.7.20
+					}
+					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 15 }
+				}
+				if = {
+					limit = {
+						ROOT = { has_completed_focus = SPR_the_popular_front }
+						date > 1936.7.19
+						date < 1936.9.16
+					}
+					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 21 }
+				}
+				if = {
+					limit = {
+						ROOT = { has_completed_focus = SPR_the_popular_front }
+						date > 1936.9.15
+					}
+					set_state_flag = { flag = SPR_ai_recently_expanded_influence_flag value = 1 days = 30 }
 				}
 			}
 			if = {
@@ -9359,12 +10149,36 @@ SPR_civil_war_offensives = {
 					has_completed_focus = SPA_tackle_the_vulnerable_fronts
 					790 = { is_controlled_by = SPR }
 				}
-				add_timed_idea = { idea = SPA_anti_republican_offensive days = 30 }
-			}
-			if = {
-				limit = {
-					has_completed_focus = SPA_tackle_the_vulnerable_fronts
-					790 = { is_controlled_by = SPC }
+				hidden_effect = {
+					173 = {
+						if = {
+							limit = { check_variable = { SPA_garrison_control < 4 } }
+							
+							add_to_variable = { var = SPA_garrison_control value = 1 }
+							SPR = { add_to_variable = { var = spa_civil_war_divisions_counter_var value = 1 } }
+							SPR = { subtract_from_variable = { var = spr_civil_war_divisions_counter_var value = 1 } }
+						}
+						SPR_garrison_control_cost_calculation = yes
+					}
+					if = {
+						limit = {
+							date < 1936.7.20
+						}
+						country_event = { id = lar_spain.5 }
+					}
+					if = {
+						limit = {
+							date > 1936.7.19
+							date < 1936.9.16
+						}
+						country_event = { id = lar_spain.5 days = 5 random_days = 5 }
+					}
+					if = {
+						limit = {
+							date > 1936.9.15
+						}
+						country_event = { id = lar_spain.5 days = 15 random_days = 15 }
+					}
 				}
 				add_timed_idea = { idea = SPA_anti_anarchist_offensive days = 30 }
 			}
@@ -9392,14 +10206,8 @@ SPR_civil_war_offensives = {
 			}
 			modifier = {
 				factor = 0
+				is_historical_focus_on = yes
 				tag = SPD
-				SPA = {
-					NOT = {
-						has_full_control_of_state = 790
-					}
-					has_full_control_of_state = 174
-				}
-				
 			}
 			modifier = {
 				factor = 10
@@ -9424,7 +10232,20 @@ SPR_civil_war_offensives = {
 				NOT = {
 					controls_state = 790
 				}
-				has_completed_focus = SPA_unify_the_nationalist_front
+				OR = {
+					AND = {
+						is_historical_focus_on = yes
+						has_game_rule = {
+							rule = SPR_ai_behavior 
+							option = DEFAULT
+						}
+					}
+					has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
+					has_game_rule = {
+						rule = SPR_ai_behavior 
+						option = NATIONALIST_HISTORICAL
+					}
+				}
 			}
 		}
 	}
@@ -9649,7 +10470,18 @@ SPR_civil_war_offensives = {
 			base = 0.1
 			modifier = {
 				factor = 0
-				has_full_control_of_state = 791
+				has_full_control_of_state = 790
+			}
+			modifier = {
+				factor = 0
+				tag = SPD
+				SPA = {
+					NOT = {
+						has_full_control_of_state = 790
+					}
+					has_full_control_of_state = 174
+				}
+				
 			}
 			modifier = {
 				factor = 10
@@ -9665,8 +10497,16 @@ SPR_civil_war_offensives = {
 					size > 0
 				}
 				NOT = {
-					has_full_control_of_state = 791
+					has_full_control_of_state = 790
 				}
+			}
+			modifier = {
+				factor = 100
+				tag = SPA
+				NOT = {
+					controls_state = 790
+				}
+				has_completed_focus = SPA_unify_the_nationalist_front
 			}
 		}
 	}
@@ -9796,8 +10636,18 @@ SPR_civil_war_offensives = {
 					controls_state = 176
 				}
 				OR = {
-					has_completed_focus = SPA_unify_the_nationalist_front
-					has_completed_focus = SPA_supremacy_of_the_communion
+					AND = {
+						is_historical_focus_on = yes
+						has_game_rule = {
+							rule = SPR_ai_behavior 
+							option = DEFAULT
+						}
+					}
+					has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
+					has_game_rule = {
+						rule = SPR_ai_behavior 
+						option = NATIONALIST_HISTORICAL
+					}
 				}
 			}
 		}
@@ -9913,14 +10763,8 @@ SPR_civil_war_offensives = {
 			}
 			modifier = {
 				factor = 0
+				is_historical_focus_on = yes
 				tag = SPD
-				SPA = {
-					NOT = {
-						has_full_control_of_state = 790
-					}
-					has_full_control_of_state = 174
-				}
-				
 			}
 			modifier = {
 				factor = 10
@@ -9939,10 +10783,19 @@ SPR_civil_war_offensives = {
 					controls_state = 792
 				}
 				OR = {
-					has_completed_focus = SPA_unify_the_nationalist_front
-					has_completed_focus = SPA_supremacy_of_the_communion
+					AND = {
+						is_historical_focus_on = yes
+						has_game_rule = {
+							rule = SPR_ai_behavior 
+							option = DEFAULT
+						}
+					}
+					has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
+					has_game_rule = {
+						rule = SPR_ai_behavior 
+						option = NATIONALIST_HISTORICAL
+					}
 				}
-				
 			}
 		}
 	}
@@ -10071,7 +10924,10 @@ SPR_civil_war_offensives = {
 				NOT = {
 					controls_state = 172
 				}
-				has_completed_focus = SPA_unify_the_nationalist_front
+				OR = {
+					has_completed_focus = SPA_unify_the_nationalist_front
+					has_completed_focus = SPA_supremacy_of_the_communion
+				}
 			}
 		}
 	}
@@ -10085,7 +10941,7 @@ SPR_civil_war_offensives = {
 		}
 
 		available = {
-			NOT = { has_full_control_of_state = 166 }
+			NOT = { has_full_control_of_state = 166 has_full_control_of_state = 1485 }
 			NOT = { has_active_mission = SPR_preparing_offensive }
 			166 = {
 				has_state_flag = SPR_unplanned_offensive_flag
@@ -10099,7 +10955,7 @@ SPR_civil_war_offensives = {
 		}
 
 		highlight_states = {
-			highlight_state_targets = { state = 166 }
+			highlight_state_targets = { state = 166 state = 1485 }
 	 		highlight_color_before_active = 3
 			highlight_color_while_active = 2 
 		}
@@ -10145,6 +11001,7 @@ SPR_civil_war_offensives = {
 				limit = {
 					has_completed_focus = SPA_tackle_the_vulnerable_fronts
 					166 = { is_controlled_by = SPR }
+					1485 = { is_controlled_by = SPR } # KSRE (de 166)
 				}
 				add_timed_idea = { idea = SPA_anti_republican_offensive days = 30 }
 			}
@@ -10152,6 +11009,7 @@ SPR_civil_war_offensives = {
 				limit = {
 					has_completed_focus = SPA_tackle_the_vulnerable_fronts
 					166 = { is_controlled_by = SPC }
+					1485 = { is_controlled_by = SPC } # KSRE (de 166)
 				}
 				add_timed_idea = { idea = SPA_anti_anarchist_offensive days = 30 }
 			}
@@ -10159,6 +11017,7 @@ SPR_civil_war_offensives = {
 				limit = {
 					has_completed_focus = SPA_tackle_the_vulnerable_fronts
 					166 = { is_controlled_by = SPB }
+					1485 = { is_controlled_by = SPB } # KSRE (de 166)
 				}
 				add_timed_idea = { idea = SPA_anti_carlist_offensive days = 30 }
 			}
@@ -10166,6 +11025,7 @@ SPR_civil_war_offensives = {
 				limit = {
 					has_completed_focus = SPR_take_the_initiative
 					166 = { is_controlled_by = SPA }
+					1485 = { is_controlled_by = SPA } # KSRE (de 166)
 				}
 				add_timed_idea = { idea = SPR_anti_nationalist_offensive days = 30 }
 			}
@@ -10179,7 +11039,7 @@ SPR_civil_war_offensives = {
 			}
 			modifier = {
 				factor = 0
-				SPA = { has_completed_focus = SPA_unify_the_nationalist_front }
+				is_historical_focus_on = yes
 				SPA = { is_ai = yes }
 				has_completed_focus = SPR_the_popular_front
 			}
@@ -10189,6 +11049,17 @@ SPR_civil_war_offensives = {
 					tag = SPA
 					tag = SPB
 				}
+			}
+			modifier = {
+				factor = 0
+				tag = SPD
+				SPA = {
+					NOT = {
+						has_full_control_of_state = 790
+					}
+					has_full_control_of_state = 174
+				}
+				
 			}
 			modifier = {
 				factor = 10
@@ -10206,6 +11077,145 @@ SPR_civil_war_offensives = {
 				NOT = {
 					controls_state = 166
 				}
+				OR = {
+					has_completed_focus = SPA_unify_the_nationalist_front
+					has_completed_focus = SPA_supremacy_of_the_communion
+				}
+				
+			}
+		}
+	}
+	
+	SPA_huesca_offensive = {
+
+		icon = hol_draw_up_staff_plans
+
+		allowed = {
+			original_tag = SPR
+		}
+
+		available = {
+			NOT = { has_full_control_of_state = 1485 }
+			NOT = { has_active_mission = SPR_preparing_offensive }
+			1485 = {
+				has_state_flag = SPR_unplanned_offensive_flag
+				OR = {
+					is_controlled_by = ROOT
+					any_neighbor_state = {
+						is_controlled_by = ROOT
+					}
+				}
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = { state = 1485 }
+	 		highlight_color_before_active = 3
+			highlight_color_while_active = 2 
+		}
+
+		on_map_mode = map_only
+
+		cost = 0
+
+		fire_only_once = yes
+
+		days_remove = 14
+
+		modifier = {
+			
+		}
+
+		visible = {
+			original_tag = SPR
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			1485 = { has_state_flag = SPR_unplanned_offensive_flag }
+		}
+
+		complete_effect = {
+			activate_mission = SPR_preparing_offensive
+			set_country_flag = SPR_preparing_offensive_in_progress_flag
+			every_other_country = {
+				limit = {
+					original_tag = SPR
+				}
+				activate_mission = SPA_western_aragon_offensive_mission
+			}
+		}
+
+		remove_effect = {
+			1485 = {
+				clr_state_flag = SPR_unplanned_offensive_flag
+				remove_dynamic_modifier = {
+					modifier = unplanned_offensive
+				}
+			}
+			if = {
+				limit = {
+					has_completed_focus = SPA_tackle_the_vulnerable_fronts
+					1485 = { is_controlled_by = SPR }
+				}
+				add_timed_idea = { idea = SPA_anti_republican_offensive days = 30 }
+			}
+			if = {
+				limit = {
+					has_completed_focus = SPA_tackle_the_vulnerable_fronts
+					1485 = { is_controlled_by = SPC }
+				}
+				add_timed_idea = { idea = SPA_anti_anarchist_offensive days = 30 }
+			}
+			if = {
+				limit = {
+					has_completed_focus = SPA_tackle_the_vulnerable_fronts
+					1485 = { is_controlled_by = SPB }
+				}
+				add_timed_idea = { idea = SPA_anti_carlist_offensive days = 30 }
+			}
+			if = {
+				limit = {
+					has_completed_focus = SPR_take_the_initiative
+					1485 = { is_controlled_by = SPA }
+				}
+				add_timed_idea = { idea = SPR_anti_nationalist_offensive days = 30 }
+			}
+		}
+
+		ai_will_do = {
+			base = 0.1
+			modifier = {
+				factor = 0
+				has_full_control_of_state = 1485
+			}
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+				SPA = { is_ai = yes }
+				has_completed_focus = SPR_the_popular_front
+			}
+			modifier = {
+				factor = 10
+				OR = {
+					tag = SPA
+					tag = SPB
+				}
+			}
+			modifier = {
+				factor = 10
+				divisions_in_state = {
+					state = 1485
+					size > 0
+				}
+				NOT = {
+					has_full_control_of_state = 1485
+				}
+			}
+			modifier = {
+				factor = 100
+				tag = SPA
+				NOT = {
+					controls_state = 1485
+				}
 				has_completed_focus = SPA_unify_the_nationalist_front
 			}
 		}
@@ -10220,7 +11230,7 @@ SPR_civil_war_offensives = {
 		}
 
 		available = {
-			NOT = { has_full_control_of_state = 794 }
+			NOT = { has_full_control_of_state = 794 has_full_control_of_state = 1486 }
 			NOT = { has_active_mission = SPR_preparing_offensive }
 			794 = {
 				has_state_flag = SPR_unplanned_offensive_flag
@@ -10234,7 +11244,7 @@ SPR_civil_war_offensives = {
 		}
 
 		highlight_states = {
-	 		highlight_state_targets = { state = 794 } 
+	 		highlight_state_targets = { state = 794 state = 1486 } 
 	 		highlight_color_before_active = 3
 			highlight_color_while_active = 2
 		}
@@ -10280,6 +11290,7 @@ SPR_civil_war_offensives = {
 				limit = {
 					has_completed_focus = SPA_tackle_the_vulnerable_fronts
 					794 = { is_controlled_by = SPR }
+					1486 = { is_controlled_by = SPR } # KSRE (de 794)
 				}
 				add_timed_idea = { idea = SPA_anti_republican_offensive days = 30 }
 			}
@@ -10287,6 +11298,7 @@ SPR_civil_war_offensives = {
 				limit = {
 					has_completed_focus = SPA_tackle_the_vulnerable_fronts
 					794 = { is_controlled_by = SPC }
+					1486 = { is_controlled_by = SPC } # KSRE (de 794)
 				}
 				add_timed_idea = { idea = SPA_anti_anarchist_offensive days = 30 }
 			}
@@ -10294,6 +11306,7 @@ SPR_civil_war_offensives = {
 				limit = {
 					has_completed_focus = SPA_tackle_the_vulnerable_fronts
 					794 = { is_controlled_by = SPB }
+					1486 = { is_controlled_by = SPB } # KSRE (de 794)
 				}
 				add_timed_idea = { idea = SPA_anti_carlist_offensive days = 30 }
 			}
@@ -10301,6 +11314,7 @@ SPR_civil_war_offensives = {
 				limit = {
 					has_completed_focus = SPR_take_the_initiative
 					794 = { is_controlled_by = SPA }
+					1486 = { is_controlled_by = SPA } # KSRE (de 794)
 				}
 				add_timed_idea = { idea = SPR_anti_nationalist_offensive days = 30 }
 			}
@@ -10311,6 +11325,141 @@ SPR_civil_war_offensives = {
 			modifier = {
 				factor = 0
 				has_full_control_of_state = 794
+			}
+			modifier = {
+				factor = 0
+				SPA = { has_completed_focus = SPA_unify_the_nationalist_front }
+				SPA = { is_ai = yes }
+				has_completed_focus = SPR_the_popular_front
+			}
+			modifier = {
+				factor = 10
+				OR = {
+					tag = SPA
+					tag = SPB
+				}
+			}
+			modifier = {
+				factor = 10
+				divisions_in_state = {
+					state = 794
+					size > 0
+				}
+				NOT = {
+					has_full_control_of_state = 166
+				}
+			}
+			modifier = {
+				factor = 100
+				tag = SPA
+				NOT = {
+					controls_state = 166
+				}
+				has_completed_focus = SPA_unify_the_nationalist_front
+			}
+		}
+	}
+	
+	SPA_monzon_offensive = {
+
+		icon = hol_draw_up_staff_plans
+
+		allowed = {
+			original_tag = SPR
+		}
+
+		available = {
+			NOT = { has_full_control_of_state = 1486 }
+			NOT = { has_active_mission = SPR_preparing_offensive }
+			1486 = {
+				has_state_flag = SPR_unplanned_offensive_flag
+				OR = {
+					is_controlled_by = ROOT
+					any_neighbor_state = {
+						is_controlled_by = ROOT
+					}
+				}
+			}
+		}
+
+		highlight_states = {
+	 		highlight_state_targets = { state = 1486 } 
+	 		highlight_color_before_active = 3
+			highlight_color_while_active = 2
+		}
+
+		on_map_mode = map_only
+
+		cost = 0
+
+		fire_only_once = yes
+
+		days_remove = 14
+
+		modifier = {
+			
+		}
+
+		visible = {
+			original_tag = SPR
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			1486 = { has_state_flag = SPR_unplanned_offensive_flag }
+		}
+
+		complete_effect = {
+			activate_mission = SPR_preparing_offensive
+			set_country_flag = SPR_preparing_offensive_in_progress_flag
+			every_other_country = {
+				limit = {
+					original_tag = SPR
+				}
+				activate_mission = SPA_eastern_aragon_offensive_mission
+			}
+		}
+
+		remove_effect = {
+			1486 = {
+				clr_state_flag = SPR_unplanned_offensive_flag
+				remove_dynamic_modifier = {
+					modifier = unplanned_offensive
+				}
+			}
+			if = {
+				limit = {
+					has_completed_focus = SPA_tackle_the_vulnerable_fronts
+					1486 = { is_controlled_by = SPR }
+				}
+				add_timed_idea = { idea = SPA_anti_republican_offensive days = 30 }
+			}
+			if = {
+				limit = {
+					has_completed_focus = SPA_tackle_the_vulnerable_fronts
+					1486 = { is_controlled_by = SPC }
+				}
+				add_timed_idea = { idea = SPA_anti_anarchist_offensive days = 30 }
+			}
+			if = {
+				limit = {
+					has_completed_focus = SPA_tackle_the_vulnerable_fronts
+					1486 = { is_controlled_by = SPB }
+				}
+				add_timed_idea = { idea = SPA_anti_carlist_offensive days = 30 }
+			}
+			if = {
+				limit = {
+					has_completed_focus = SPR_take_the_initiative
+					1486 = { is_controlled_by = SPA }
+				}
+				add_timed_idea = { idea = SPR_anti_nationalist_offensive days = 30 }
+			}
+		}
+
+		ai_will_do = {
+			base = 0.1
+			modifier = {
+				factor = 0
+				has_full_control_of_state = 1486
 			}
 			modifier = {
 				factor = 0
@@ -10327,11 +11476,11 @@ SPR_civil_war_offensives = {
 			modifier = {
 				factor = 10
 				divisions_in_state = {
-					state = 794
+					state = 1486
 					size > 0
 				}
 				NOT = {
-					has_full_control_of_state = 794
+					has_full_control_of_state = 1486
 				}
 			}
 		}
@@ -12094,7 +13243,7 @@ SPR_civil_war_offensives = {
 		}
 
 		highlight_states = {
-			highlight_state_targets = { state = 166 } 
+			highlight_state_targets = { state = 166 state = 1485 } 
 	 		highlight_color_while_active = 1
 		}
 
@@ -12128,6 +13277,54 @@ SPR_civil_war_offensives = {
 			}
 		}
 	}
+	
+	SPA_huesca_offensive_mission = {
+
+		icon = hol_draw_up_staff_plans
+
+		allowed = {
+			original_tag = SPR
+		}
+
+		available = {
+			hidden_trigger = { always = no }
+		}
+
+		highlight_states = {
+			highlight_state_targets = { state = 1485 } 
+	 		highlight_color_while_active = 1
+		}
+
+		on_map_mode = map_and_decisions_view
+
+		fire_only_once = yes
+
+		days_mission_timeout = 14
+
+		is_good = no
+
+		cancel_if_not_visible = yes
+
+		activation = {
+			always = no
+		}
+
+		visible = {
+			original_tag = SPR
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			1485 = { has_state_flag = SPR_unplanned_offensive_flag }
+		}
+
+		timeout_effect = {
+			1485 = {
+				clr_state_flag = SPR_unplanned_offensive_flag
+				remove_dynamic_modifier = {
+					modifier = unplanned_offensive
+				}
+			}
+		}
+	}
 
 	SPA_eastern_aragon_offensive_mission = {
 
@@ -12142,7 +13339,7 @@ SPR_civil_war_offensives = {
 		}
 
 		highlight_states = {
-			highlight_state_targets = { state = 794 } 
+			highlight_state_targets = { state = 794 state = 1486 } 
 	 		highlight_color_while_active = 1
 		}
 
@@ -12169,6 +13366,54 @@ SPR_civil_war_offensives = {
 
 		timeout_effect = {
 			794 = {
+				clr_state_flag = SPR_unplanned_offensive_flag
+				remove_dynamic_modifier = {
+					modifier = unplanned_offensive
+				}
+			}
+		}
+	}
+	
+	SPA_monzon_offensive_mission = {
+
+		icon = hol_draw_up_staff_plans
+
+		allowed = {
+			original_tag = SPR
+		}
+
+		available = {
+			hidden_trigger = { always = no }
+		}
+
+		highlight_states = {
+			highlight_state_targets = { state = 1486 } 
+	 		highlight_color_while_active = 1
+		}
+
+		on_map_mode = map_and_decisions_view
+
+		fire_only_once = yes
+
+		days_mission_timeout = 14
+
+		is_good = no
+
+		cancel_if_not_visible = yes
+
+		activation = {
+			always = no
+		}
+
+		visible = {
+			original_tag = SPR
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			1486 = { has_state_flag = SPR_unplanned_offensive_flag }
+		}
+
+		timeout_effect = {
+			1486 = {
 				clr_state_flag = SPR_unplanned_offensive_flag
 				remove_dynamic_modifier = {
 					modifier = unplanned_offensive
@@ -13233,8 +14478,8 @@ SPR_civil_war_offensives = {
 		}
 
 		highlight_states = {
- highlight_state_targets = { state = 166 } 
-}
+			highlight_state_targets = { state = 166 state = 1485 } 
+		}
 
 		on_map_mode = map_only
 
@@ -13253,6 +14498,7 @@ SPR_civil_war_offensives = {
 			has_global_flag = spanish_civil_war
 			NOT = { has_global_flag = scw_over }
 			166 = { NOT = { is_controlled_by = ROOT } }
+			1485 = { NOT = { is_controlled_by = ROOT } } # KSRE (de 166)
 			has_completed_focus = SPA_the_fifth_column
 		}
 
@@ -13262,6 +14508,78 @@ SPR_civil_war_offensives = {
 
 		remove_effect = {
 			166 = {
+				create_unit = {
+					division = "division_template = \"Fifth Columnist Brigade\"	start_experience_factor = 0	start_equipment_factor = 1"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = yes
+					count = 2
+					country_score = {
+						base = 100
+						modifier = {
+							tag = SPR
+							add = 100
+						}
+						modifier = {
+							tag = SPB
+							add = 100
+						}
+						modifier = {
+							tag = SPC
+							add = 100
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	SPA_activate_huesca_fifth_columnists = {
+
+		icon = generic_ignite_civil_war
+
+		allowed = {
+			tag = SPA
+		}
+
+		available = {
+			1485 = {
+				NOT = { is_controlled_by = ROOT }
+				any_neighbor_state = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = { state = 1485 } 
+		}
+
+		on_map_mode = map_only
+
+		cost = 25
+
+		fire_only_once = yes
+
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		visible = {
+			tag = SPA
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			1485 = { NOT = { is_controlled_by = ROOT } }
+			has_completed_focus = SPA_the_fifth_column
+		}
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			1485 = {
 				create_unit = {
 					division = "division_template = \"Fifth Columnist Brigade\"	start_experience_factor = 0	start_equipment_factor = 1"
 					owner = ROOT
@@ -13305,8 +14623,8 @@ SPR_civil_war_offensives = {
 		}
 
 		highlight_states = {
- highlight_state_targets = { state = 794 } 
-}
+			highlight_state_targets = { state = 794 state = 1486 } 
+		}
 
 		on_map_mode = map_only
 
@@ -13325,6 +14643,7 @@ SPR_civil_war_offensives = {
 			has_global_flag = spanish_civil_war
 			NOT = { has_global_flag = scw_over }
 			794 = { NOT = { is_controlled_by = ROOT } }
+			1486 = { NOT = { is_controlled_by = ROOT } } # KSRE (de 794)
 			has_completed_focus = SPA_the_fifth_column
 		}
 
@@ -13334,6 +14653,78 @@ SPR_civil_war_offensives = {
 
 		remove_effect = {
 			794 = {
+				create_unit = {
+					division = "division_template = \"Fifth Columnist Brigade\"	start_experience_factor = 0	start_equipment_factor = 1"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = yes
+					count = 2
+					country_score = {
+						base = 100
+						modifier = {
+							tag = SPR
+							add = 100
+						}
+						modifier = {
+							tag = SPB
+							add = 100
+						}
+						modifier = {
+							tag = SPC
+							add = 100
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	SPA_activate_monzon_fifth_columnists = {
+
+		icon = generic_ignite_civil_war
+
+		allowed = {
+			tag = SPA
+		}
+
+		available = {
+			1486 = {
+				NOT = { is_controlled_by = ROOT }
+				any_neighbor_state = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = { state = 1486 } 
+		}
+
+		on_map_mode = map_only
+
+		cost = 25
+
+		fire_only_once = yes
+
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		visible = {
+			tag = SPA
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			1486 = { NOT = { is_controlled_by = ROOT } }
+			has_completed_focus = SPA_the_fifth_column
+		}
+
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			1486 = {
 				create_unit = {
 					division = "division_template = \"Fifth Columnist Brigade\"	start_experience_factor = 0	start_equipment_factor = 1"
 					owner = ROOT
@@ -14548,20 +15939,20 @@ SPR_expand_resource_extraction = {
 		}
 
 		highlight_states = {
- highlight_state_targets = {
-			state = 166
-		} 
-}
+			highlight_state_targets = {
+					state = 166 state = 1485
+				} 
+		}
 
 		available = {
 			has_tech = construction3
 			num_of_civilian_factories_available_for_projects > 2
-			owns_state = 166
+			owns_state = 166 owns_state = 1485
 			controls_state = 166
 		}
 
 		visible = {
-			owns_state = 166
+			owns_state = 166 owns_state = 1485
 			controls_state = 166
 			166 = {
 				NOT = {
@@ -14611,7 +16002,7 @@ SPR_expand_resource_extraction = {
 		}
 
 		highlight_states = {
- highlight_state_targets = {
+			highlight_state_targets = {
 			state = 173
 		} 
 }
@@ -15442,7 +16833,7 @@ SPA_preparing_the_carlist_insurrection = {
 		icon = generic_prepare_civil_war
 
 		available = {
-			controls_state = 166
+			controls_state = 166 controls_state = 1485
 			166 = {
 				NOT = {
 					has_state_flag = SPA_carlist_cell_flag
@@ -15457,8 +16848,8 @@ SPA_preparing_the_carlist_insurrection = {
 		}
 
 		highlight_states = {
- highlight_state_targets = { state = 166 } 
-}
+			highlight_state_targets = { state = 166 state = 1485 } 
+		}
 
 		on_map_mode = map_only
 
@@ -15498,13 +16889,67 @@ SPA_preparing_the_carlist_insurrection = {
 			}
 		}
 	}
+	
+	SPA_establish_huesca_carlist_cell = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			controls_state = 1485
+			1485 = {
+				NOT = {
+					has_state_flag = SPA_carlist_cell_flag
+				}
+			}
+			1485 = {
+				NOT = {
+					has_state_flag = SPA_union_militar_flag
+				}
+			}
+			NOT = { has_country_flag = SPA_already_establishing_carlist_cell_flag }
+		}
+
+		highlight_states = {
+			highlight_state_targets = { state = 1485 } 
+		}
+
+		on_map_mode = map_only
+
+		cost = 50
+
+		fire_only_once = no
+
+		days_remove = 90
+
+		visible = {
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			has_completed_focus = SPA_prepare_the_carlist_insurrection
+			NOT = { has_global_flag = SPR_carlist_uprising_flag }
+		}
+
+		cancel_if_not_visible = yes
+
+		complete_effect = {
+			set_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		remove_effect = {
+			1485 = { set_state_flag = SPA_carlist_cell_flag }
+			clr_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		ai_will_do = {
+
+		}
+	}
 
 	SPA_establish_eastern_aragon_carlist_cell = {
 
 		icon = generic_prepare_civil_war
 
 		available = {
-			controls_state = 794
+			controls_state = 794 controls_state = 1486
 			794 = {
 				NOT = {
 					has_state_flag = SPA_carlist_cell_flag
@@ -15519,8 +16964,8 @@ SPA_preparing_the_carlist_insurrection = {
 		}
 
 		highlight_states = {
- highlight_state_targets = { state = 794 } 
-}
+			highlight_state_targets = { state = 794 state = 1486 } 
+		}
 
 		on_map_mode = map_only
 
@@ -15558,6 +17003,60 @@ SPA_preparing_the_carlist_insurrection = {
 					}
 				}
 			}
+		}
+	}
+	
+	SPA_establish_monzon_carlist_cell = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			controls_state = 1486
+			1486 = {
+				NOT = {
+					has_state_flag = SPA_carlist_cell_flag
+				}
+			}
+			1486 = {
+				NOT = {
+					has_state_flag = SPA_union_militar_flag
+				}
+			}
+			NOT = { has_country_flag = SPA_already_establishing_carlist_cell_flag }
+		}
+
+		highlight_states = {
+			highlight_state_targets = { state = 1486 } 
+		}
+
+		on_map_mode = map_only
+
+		cost = 50
+
+		fire_only_once = no
+
+		days_remove = 90
+
+		visible = {
+			has_global_flag = spanish_civil_war
+			NOT = { has_global_flag = scw_over }
+			has_completed_focus = SPA_prepare_the_carlist_insurrection
+			NOT = { has_global_flag = SPR_carlist_uprising_flag }
+		}
+
+		cancel_if_not_visible = yes
+
+		complete_effect = {
+			set_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		remove_effect = {
+			1486 = { set_state_flag = SPA_carlist_cell_flag }
+			clr_country_flag = SPA_already_establishing_carlist_cell_flag
+		}
+
+		ai_will_do = {
+
 		}
 	}
 
@@ -17338,6 +18837,7 @@ SPR_the_seeds_of_revolution = {
 						state = 41
 						state = 165
 						state = 166
+						state = 1485
 						state = 167
 						state = 168
 						state = 169
@@ -17355,6 +18855,7 @@ SPR_the_seeds_of_revolution = {
 						state = 792
 						state = 793
 						state = 794
+						state = 1486
 					}
 				}
 				compliance > 35
@@ -17368,7 +18869,7 @@ SPR_the_seeds_of_revolution = {
 		days_remove = 50
 
 		modifier = {
-			political_power_gain = -0.5
+			political_power_gain = -1
 		}
 
 		ai_will_do = {
@@ -17443,6 +18944,7 @@ SPR_the_seeds_of_revolution = {
 						state = 41
 						state = 165
 						state = 166
+						state = 1485
 						state = 167
 						state = 168
 						state = 169
@@ -17460,6 +18962,7 @@ SPR_the_seeds_of_revolution = {
 						state = 792
 						state = 793
 						state = 794
+						state = 1486
 					}
 				}
 				compliance > 35
@@ -17473,7 +18976,7 @@ SPR_the_seeds_of_revolution = {
 		days_remove = 75
 
 		modifier = {
-			political_power_gain = -0.5
+			political_power_gain = -1
 		}
 
 		visible = {
@@ -17535,11 +19038,11 @@ SPR_the_seeds_of_revolution = {
 			}
 		}
 
-		cost = 75
+		cost = 150
 
 		fire_only_once = yes
 
-		days_remove = 60
+		days_remove = 90
 
 		modifier = {
 			
@@ -18525,7 +20028,7 @@ SPR_recovering_from_civil_war = {
 
 		state_target = yes
 
-		targets = { 41 165 166 167 168 169 170 171 172 173 174 175 176 177 178 788 789 790 791 792 793 794 }
+		targets = { 41 165 166 1485 167 168 169 170 171 172 173 174 175 176 177 178 788 789 790 791 792 793 794 1486 }
 
 		target_trigger = {
 			OR = {

@@ -1,0 +1,43 @@
+state={
+	id=1741
+	name="STATE_1741"
+	manpower=1651230
+
+	state_category = developed_rural
+
+
+	history={
+		owner = USA
+		buildings = {
+			infrastructure = 4 #was: 7
+			arms_factory = 1
+			industrial_complex = 1
+			dockyard = 1
+			9832 = {
+				naval_base = 3
+			}
+		}
+		victory_points = {
+			9850 6 #Hartford
+		}
+		victory_points = {
+			6909 5 #New Haven
+		}
+		victory_points = {
+			9847 5 #Bridgeport
+		}
+		victory_points = {
+			9832 3 #New London
+		}
+		add_core_of = USA
+		add_core_of = CTS
+		add_core_of = NEG
+	}
+
+	provinces={
+		6909 9832 9847 9850 11830 
+	}
+	buildings_max_level_factor=1.000
+
+	local_supplies=0.0 
+}

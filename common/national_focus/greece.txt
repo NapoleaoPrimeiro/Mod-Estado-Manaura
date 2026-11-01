@@ -627,11 +627,12 @@ focus_tree = {
 				declare_war_on = {
 					target = TUR
 					type = take_state_focus
-					generator = { 797 341 347 340 339 }
+					generator = { 797 1223 341 347 340 339 1266 }
 				}
 				if = { 
 					limit = { 
 						354 = { is_claimed_by = ENG }
+						1286 = { is_claimed_by = ENG }
 					}
 					ENG = {
 						country_event = { id = bftb_greece.229 }
@@ -644,6 +645,7 @@ focus_tree = {
 						352 = { is_claimed_by = FRA }
 						353 = { is_claimed_by = FRA }
 						800 = { is_claimed_by = FRA }
+						1287 = { is_claimed_by = FRA }
 					}
 					FRA = { 
 						country_event = { id = bftb_greece.229 }
@@ -717,7 +719,7 @@ focus_tree = {
 			declare_war_on = {
 				target = TUR
 				type = take_state_focus
-				generator = { 797 341 347 340 339 }
+				generator = { 797 1223 341 347 340 339 1266 }
 			}
 			hidden_effect = {
 				country_event = { id = bftb_greece.207 days = 60 }
@@ -731,6 +733,8 @@ focus_tree = {
 		available = { 
 			ROOT = {
 				controls_state = 797 
+				controls_state = 1223
+				controls_state = 1266
 				controls_state = 341
 				controls_state = 347
 				controls_state = 340
@@ -1093,30 +1097,31 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					has_full_control_of_state = 185
+					has_full_control_of_state = 185 has_full_control_of_state = 1319
 				}
 				build_railway = { #Athens - Ioannina
-					path = { 3988 1109 976 11895 11786 3914 9805 }
+					path = { 4109 3988 1109 976 11895 11786 3914 9805 }
 				}
 			}
 			if = {
 				limit = {
-					has_full_control_of_state = 731
+					has_full_control_of_state = 731 has_full_control_of_state = 1607
 				}
 				build_railway = { #Athens - Tessaloniki
 					path = {
-						4109 3988 1109 976 863 6930 3844 10163 11818
+						4109 3988 1109 976 863 6930 3844 14604 10163
 					}
 				}	
 			}
 			if = {
 				limit = {
-					has_full_control_of_state = 731
+					has_full_control_of_state = 731 has_full_control_of_state = 1607
 					has_full_control_of_state = 184
+					has_full_control_of_state = 1181
 				}
 				build_railway = { #Tessaloniki - Alexandroupolis
 					path = {
-						11818 3936 9930 11774 11905 
+						10163 11818 3936 9930 11774 11905 
 					}
 				}
 			}
@@ -1600,6 +1605,7 @@ focus_tree = {
 				AND = { 
 					owns_state = 341
 					owns_state = 340
+					owns_state = 1266
 					owns_state = 339
 					owns_state = 342
 				}
@@ -1614,6 +1620,7 @@ focus_tree = {
 		completion_reward = {
 			GRE = {
 				add_state_core = 341
+				add_state_core = 1266
 				add_state_claim = 340
 				add_state_claim = 339
 				add_state_claim = 342
@@ -1921,16 +1928,16 @@ focus_tree = {
 			
 			hidden_effect = {
 				delete_unit_template_and_units = {
-					division_template = "Tmíma Vasilikís Synodeías"
+					division_template = "Tm?ma Vasilik?s Synode?as"
 					disband = yes #if yes, will refund equipment/manpower.
 				}
 				delete_unit_template_and_units = {
-					division_template = "Íli Vasilikís Frourás"
+					division_template = "?li Vasilik?s Frour?s"
 					disband = yes #if yes, will refund equipment/manpower.
 				}
 
 				division_template = {
-					name = "Tmíma Vasilikís Synodeías"		
+					name = "Tm?ma Vasilik?s Synode?as"		
 					division_names_group = GRE_INF_01
 					is_locked = no
 					regiments = {
@@ -1945,7 +1952,7 @@ focus_tree = {
 					}
 				}
 				division_template = {
-					name = "Íli Vasilikís Frourás"		
+					name = "?li Vasilik?s Frour?s"		
 					division_names_group = GRE_CAV_01
 					is_locked = no
 					regiments = {
@@ -1968,7 +1975,7 @@ focus_tree = {
 					is_core_of = ROOT
 				}
 				create_unit = {
-				    division = "name = \"Tmíma Vasilikís Synodeías'\" division_template = \"Tmíma Vasilikís Synodeías\" start_experience_factor = 0.4 start_equipment_factor = 0.9"
+				    division = "name = \"Tm?ma Vasilik?s Synode?as'\" division_template = \"Tm?ma Vasilik?s Synode?as\" start_experience_factor = 0.4 start_equipment_factor = 0.9"
 				    owner = ROOT
 				}
 			}
@@ -1980,7 +1987,7 @@ focus_tree = {
 					is_core_of = ROOT
 				}
 				create_unit = {
-				    division = "name = \"Íli Vasilikís Frourás'\" division_template = \"Íli Vasilikís Frourás\" start_experience_factor = 0.4 start_equipment_factor = 0.9"
+				    division = "name = \"?li Vasilik?s Frour?s'\" division_template = \"?li Vasilik?s Frour?s\" start_experience_factor = 0.4 start_equipment_factor = 0.9"
 				    owner = ROOT
 				}
 			}
@@ -2729,12 +2736,6 @@ focus_tree = {
 							province = 3526
 							instant_build = yes
 						}
-						add_building_construction = {
-							type = bunker
-							level = 1
-							province = 6990
-							instant_build = yes
-						}
 					}
 				}
 				184 = {
@@ -2746,6 +2747,17 @@ focus_tree = {
 							province = 9791
 							instant_build = yes
 						}
+						add_building_construction = {
+							type = bunker
+							level = 1
+							province = 6990
+							instant_build = yes
+						}
+					}
+				}	
+				1181 = {
+					if = {
+						limit = { is_controlled_by = ROOT }
 						add_building_construction = {
 							type = bunker
 							level = 1
@@ -3637,6 +3649,10 @@ focus_tree = {
 				is_fully_controlled_by = ROOT
 				is_core_of = ROOT
 			}
+			1607 = { # KSRE (de 731)
+				is_fully_controlled_by = ROOT
+				is_core_of = ROOT
+			}
 		}
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -3938,7 +3954,7 @@ focus_tree = {
 			OR = {
 				has_full_control_of_state = 186
 				has_full_control_of_state = 47
-				has_full_control_of_state = 185
+				has_full_control_of_state = 185 has_full_control_of_state = 1319
 			}
 		}
 		x = 0
@@ -4686,19 +4702,27 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			random_owned_controlled_state = {
-				prioritize = { 184 }
+				prioritize = { 184 1181 }
 				add_extra_state_shared_building_slots = 2
-			}		
+			}	
 			random_owned_controlled_state = {
-				prioritize = { 731 }
+				prioritize = { 1181 }
+				add_extra_state_shared_building_slots = 2
+			}			
+			random_owned_controlled_state = {
+				prioritize = { 731 1607 }
 				add_extra_state_shared_building_slots = 1
-			}		
+			}	
+			random_owned_controlled_state = {
+				prioritize = { 1607 }
+				add_extra_state_shared_building_slots = 1
+			}			
 			random_owned_controlled_state = {
 				prioritize = { 186 }
 				add_extra_state_shared_building_slots = 1
 			}		
 			random_owned_controlled_state = {
-				prioritize = { 185 }
+				prioritize = { 185 1319 }
 				add_extra_state_shared_building_slots = 1
 			}			
 			add_manpower = 66750
@@ -5119,7 +5143,7 @@ focus_tree = {
 		available = {
 			OR = {
 				has_full_control_of_state = 182
-				has_full_control_of_state = 185
+				has_full_control_of_state = 185 has_full_control_of_state = 1319
 				has_full_control_of_state = 47
 			}
 		}
@@ -5140,7 +5164,7 @@ focus_tree = {
 				}
 			}
 			random_owned_controlled_state = {	
-				prioritize = { 185 } 
+				prioritize = { 185 1319 } 
 					if = {
 						limit = { 
 							is_controlled_by = ROOT

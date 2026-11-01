@@ -992,4 +992,44 @@ guiTypes = {
 			pdx_tooltip = "TREE_FILTER_TOGGLE"
 		}
 	}
+
+	# Manaura: tipo exigido pelo jogo (vanilla 1.19)
+	containerWindowType = {
+		name = "focus_tree_shortcut_item"
+		position = { x=8 y=0 }
+		size = { width = 190 height = 72 }
+
+		# Full-size button instead of a background, so the whole bookmark gets hover/highlight states.
+		buttonType = {
+			name = "shortcut_button"
+			spriteType = "GFX_focus_shortcut_button"
+			size = { x = 190 y = 72 }
+		}
+
+		instantTextboxType = {
+			name = "name"
+			position = { x = -32 y = -30 }
+			font = "hoi_20b"
+			borderSize = {x = 0 y = 0}
+			text = "blep blep blep blep"
+			maxWidth = 112
+			maxHeight = 60
+			multiline = yes
+			format = center
+			vertical_alignment = center
+			fixedsize = yes
+			orientation = center
+			alwaystransparent = yes
+		}
+
+		buttonType = {
+			name = "focus_button"
+			position = { x = 37 y = 37 }
+			quadTextureSprite = "GFX_goal_unknown"
+			centerposition = yes
+			Orientation = left
+			scale = 0.6
+			alwaystransparent = yes
+		}
+	}
 }

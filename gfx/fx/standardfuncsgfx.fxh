@@ -223,30 +223,8 @@ PixelShader =
 	float3 ApplySnow( float3 vColor, float3 vPos, inout float3 vNormal, float4 vMudSnowColor, in sampler2D SnowTextureSampler,
 					 in sampler2D SnowNoise, inout float vGlossiness, inout float vSnowAlphaOut )
 	{
-		float vSnowFade = saturate( vPos.y - SNOW_START_HEIGHT );
-		float vNormalFade = saturate( saturate( vNormal.y - SNOW_NORMAL_START ) * SNOW_CLIFFS );
-		float4 vSnowTexture = tex2D( SnowTextureSampler, vPos.xz * SNOW_TILING );
-		float vNoise = tex2D( SnowNoise, vPos.xz * SNOW_NOISE_TILING ).a;
-
-		float vIsSnow = GetSnow( vMudSnowColor );
-
-		float vTransp = 1.0;
-
-		float vSnow = saturate( saturate( vTransp - ( 1.0f - vIsSnow ) ) * 5.0f );
-		float vFrost = saturate( saturate( vTransp + 0.5f ) - ( 1.0f - vIsSnow ) );
-
-		float vOpacity = cam_distance( SNOW_CAM_MIN, SNOW_CAM_MAX );
-		vOpacity = SNOW_OPACITY_MIN + vOpacity * ( SNOW_OPACITY_MAX - SNOW_OPACITY_MIN );
-
-		float vSnowAlpha = saturate( ( saturate( vSnow + vFrost ) * vSnowFade * vNormalFade * saturate(vIsSnow * 2.25) * vOpacity ) );
-		float vMinSnow = smoothstep( 0.0f, 1.0f, vIsSnow );
-		vColor = lerp( vColor, vSnowTexture.a * SNOW_COLOR, vSnowAlphaOut * saturate( vSnowAlpha + ( SNOW_FROST_MIN_EFFECT * vMinSnow ) ) );
-
-		vNormal = normalize(lerp( vNormal, float3(0, 1, 0), vSnowAlpha ));
-
-		vSnowAlphaOut = vSnowAlpha;
-		vGlossiness += vSnowTexture.a * vSnowAlpha * SNOW_SPEC_GLOSS_MULT;
-
+		// Manaura: neve desligada no visual (virava mancha branca). Clima/gameplay nao muda.
+		vSnowAlphaOut = 0.0f;
 		return vColor;
 	}
 

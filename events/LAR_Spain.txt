@@ -849,7 +849,7 @@ country_event = {
 							count = 2
 						}
 					}
-					166 = {
+					1485 = {
 						create_unit = {
 							division = "division_template = \"Requeté Carlista\" start_experience_factor = 0.3" 
 							owner = SPA
@@ -5505,6 +5505,36 @@ country_event = {
 				modifier = {
 					factor = 0
 					has_completed_focus = SPA_a_great_spain
+					OR = {
+						1485 = { check_variable = { var = SPA_garrison_control value = 2 compare = less_than } }
+						is_historical_focus_on = yes
+					}
+				}
+				modifier = {
+					factor = 0
+					has_completed_focus = SPR_the_popular_front
+					1485 = { check_variable = { var = SPA_garrison_control value = 4 compare = equals } }
+				}
+				modifier = {
+					factor = 0
+					has_completed_focus = SPR_the_popular_front
+					NOT = { has_country_flag = SPA_secure_the_northern_garrisons_flag }
+				}
+				modifier = {
+					factor = 10
+					1485 = { has_state_flag = SPR_ai_recently_expanded_influence_flag }
+				}
+				modifier = {
+					factor = 20
+					has_completed_focus = SPR_the_popular_front
+					is_historical_focus_on = yes
+				}
+				activate_mission = SPA_expand_influence_in_the_huesca_garrison_mission
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					has_completed_focus = SPA_a_great_spain
 					794 = { check_variable = { var = SPA_garrison_control value = 2 compare = less_than } }
 				}
 				modifier = {
@@ -5528,6 +5558,28 @@ country_event = {
 					is_ai = yes
 				}
 				activate_mission = SPA_expand_influence_in_the_eastern_aragon_garrison_mission
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					has_completed_focus = SPA_a_great_spain
+					1486 = { check_variable = { var = SPA_garrison_control value = 2 compare = less_than } }
+				}
+				modifier = {
+					factor = 0
+					has_completed_focus = SPR_the_popular_front
+					1486 = { check_variable = { var = SPA_garrison_control value = 4 compare = equals } }
+				}
+				modifier = {
+					factor = 10
+					1486 = { has_state_flag = SPR_ai_recently_expanded_influence_flag }
+				}
+				modifier = {
+					factor = 10
+					has_completed_focus = SPA_a_great_spain
+					is_historical_focus_on = yes
+				}
+				activate_mission = SPA_expand_influence_in_the_monzon_garrison_mission
 			}
 			20 = {
 				modifier = {
@@ -5879,6 +5931,7 @@ country_event = {
 					OR = {
 						any_owned_state = {
 							NOT = { state = 166 }
+							NOT = { state = 1485 }
 							NOT = { state = 169 }
 							NOT = { state = 170 }
 							NOT = { state = 171 }
@@ -5917,6 +5970,7 @@ country_event = {
 					any_owned_state = {
 						OR = {
 							state = 166
+							state = 1485
 							state = 169
 							state = 170
 							state = 171
@@ -5959,6 +6013,7 @@ country_event = {
 						state = 41
 						state = 165
 						state = 166
+						state = 1485
 						state = 167
 						state = 168
 						state = 169
@@ -5976,6 +6031,7 @@ country_event = {
 						state = 792
 						state = 793
 						state = 794
+						state = 1486
 					}
 				}
 				set_state_flag = SPR_unplanned_offensive_flag
@@ -6001,6 +6057,7 @@ country_event = {
 						state = 41
 						state = 165
 						state = 166
+						state = 1485
 						state = 167
 						state = 168
 						state = 169
@@ -6018,6 +6075,7 @@ country_event = {
 						state = 792
 						state = 793
 						state = 794
+						state = 1486
 					}
 				}
 				add_dynamic_modifier = {
@@ -7405,7 +7463,9 @@ country_event = {
 					OR = {
 						controls_state = 165
 						controls_state = 794
+						controls_state = 1486
 						controls_state = 166
+						controls_state = 1485
 					}
 				}
 				every_state = {
@@ -7413,7 +7473,9 @@ country_event = {
 						OR = {
 							state = 165
 							state = 794
+							state = 1486
 							state = 166
+							state = 1485
 						}
 						is_capital = no
 						is_controlled_by = ROOT
@@ -7429,7 +7491,9 @@ country_event = {
 								AND = {
 									controls_state = 165
 									controls_state = 794
+									controls_state = 1486
 									controls_state = 166
+									controls_state = 1485
 								}
 							}
 						}
@@ -7443,7 +7507,9 @@ country_event = {
 								OR = {
 									state = 165
 									state = 794
+									state = 1486
 									state = 166
+									state = 1485
 								}
 								is_owned_by = SPC
 							}
@@ -7470,7 +7536,9 @@ country_event = {
 								OR = {
 									state = 165
 									state = 794
+									state = 1486
 									state = 166
+									state = 1485
 									state = 167
 								}
 							}
@@ -7488,7 +7556,9 @@ country_event = {
 								OR = {
 									state = 165
 									state = 794
+									state = 1486
 									state = 166
+									state = 1485
 									state = 167
 								}
 							}
@@ -8221,6 +8291,7 @@ country_event = {
 				limit = {
 					controls_state = 165
 					controls_state = 794
+					controls_state = 1486
 				}
 				set_capital = { state = 165 }
 				every_state = {
@@ -8228,7 +8299,9 @@ country_event = {
 						OR = {
 							state = 165
 							state = 794
+							state = 1486
 							state = 166
+							state = 1485
 						}
 						is_controlled_by = ROOT
 					}
@@ -8241,8 +8314,10 @@ country_event = {
 					random_state = {
 						limit = {
 							NOT = { state = 165 }
-							NOT = { state = 794 }
-							NOT = { state = 166 }
+							NOT = { state = 794 state = 1486 }
+							NOT = { state = 1486 }
+							NOT = { state = 166 state = 1485 }
+							NOT = { state = 1485 }
 							NOT = { state = 41 }
 							is_controlled_by = ROOT
 							NOT = { has_state_flag = SPR_anarchist_state_flag }
@@ -8250,6 +8325,7 @@ country_event = {
 								OR = {
 									state = 165
 									state = 794
+									state = 1486
 									has_state_flag = SPR_anarchist_state_flag
 								}
 							}
@@ -8264,8 +8340,10 @@ country_event = {
 					random_state = {
 						limit = {
 							NOT = { state = 165 }
-							NOT = { state = 794 }
-							NOT = { state = 166 }
+							NOT = { state = 794 state = 1486 }
+							NOT = { state = 1486 }
+							NOT = { state = 166 state = 1485 }
+							NOT = { state = 1485 }
 							NOT = { state = 41 }
 							is_controlled_by = ROOT
 							NOT = { has_state_flag = SPR_anarchist_state_flag }
@@ -8273,6 +8351,7 @@ country_event = {
 								OR = {
 									state = 165
 									state = 794
+									state = 1486
 									has_state_flag = SPR_anarchist_state_flag
 								}
 							}
@@ -8287,8 +8366,10 @@ country_event = {
 					random_state = {
 						limit = {
 							NOT = { state = 165 }
-							NOT = { state = 794 }
-							NOT = { state = 166 }
+							NOT = { state = 794 state = 1486 }
+							NOT = { state = 1486 }
+							NOT = { state = 166 state = 1485 }
+							NOT = { state = 1485 }
 							NOT = { state = 41 }
 							is_controlled_by = ROOT
 							NOT = { has_state_flag = SPR_anarchist_state_flag }
@@ -8296,6 +8377,7 @@ country_event = {
 								OR = {
 									state = 165
 									state = 794
+									state = 1486
 									has_state_flag = SPR_anarchist_state_flag
 								}
 							}
@@ -8310,8 +8392,10 @@ country_event = {
 					random_state = {
 						limit = {
 							NOT = { state = 165 }
-							NOT = { state = 794 }
-							NOT = { state = 166 }
+							NOT = { state = 794 state = 1486 }
+							NOT = { state = 1486 }
+							NOT = { state = 166 state = 1485 }
+							NOT = { state = 1485 }
 							NOT = { state = 41 }
 							is_controlled_by = ROOT
 							NOT = { has_state_flag = SPR_anarchist_state_flag }
@@ -8319,6 +8403,7 @@ country_event = {
 								OR = {
 									state = 165
 									state = 794
+									state = 1486
 									has_state_flag = SPR_anarchist_state_flag
 								}
 							}
@@ -8333,14 +8418,17 @@ country_event = {
 					random_state = {
 						limit = {
 							NOT = { state = 165 }
-							NOT = { state = 794 }
-							NOT = { state = 166 }
+							NOT = { state = 794 state = 1486 }
+							NOT = { state = 1486 }
+							NOT = { state = 166 state = 1485 }
+							NOT = { state = 1485 }
 							is_controlled_by = ROOT
 							NOT = { has_state_flag = SPR_anarchist_state_flag }
 							any_neighbor_state = {
 								OR = {
 									state = 165
 									state = 794
+									state = 1486
 									has_state_flag = SPR_anarchist_state_flag
 								}
 							}
@@ -8355,14 +8443,17 @@ country_event = {
 					random_state = {
 						limit = {
 							NOT = { state = 165 }
-							NOT = { state = 794 }
-							NOT = { state = 166 }
+							NOT = { state = 794 state = 1486 }
+							NOT = { state = 1486 }
+							NOT = { state = 166 state = 1485 }
+							NOT = { state = 1485 }
 							is_controlled_by = ROOT
 							NOT = { has_state_flag = SPR_anarchist_state_flag }
 							any_neighbor_state = {
 								OR = {
 									state = 165
 									state = 794
+									state = 1486
 									has_state_flag = SPR_anarchist_state_flag
 								}
 							}
@@ -8377,14 +8468,17 @@ country_event = {
 					random_state = {
 						limit = {
 							NOT = { state = 165 }
-							NOT = { state = 794 }
-							NOT = { state = 166 }
+							NOT = { state = 794 state = 1486 }
+							NOT = { state = 1486 }
+							NOT = { state = 166 state = 1485 }
+							NOT = { state = 1485 }
 							is_controlled_by = ROOT
 							NOT = { has_state_flag = SPR_anarchist_state_flag }
 							any_neighbor_state = {
 								OR = {
 									state = 165
 									state = 794
+									state = 1486
 									has_state_flag = SPR_anarchist_state_flag
 								}
 							}
@@ -8394,14 +8488,17 @@ country_event = {
 					random_state = {
 						limit = {
 							NOT = { state = 165 }
-							NOT = { state = 794 }
-							NOT = { state = 166 }
+							NOT = { state = 794 state = 1486 }
+							NOT = { state = 1486 }
+							NOT = { state = 166 state = 1485 }
+							NOT = { state = 1485 }
 							is_controlled_by = ROOT
 							NOT = { has_state_flag = SPR_anarchist_state_flag }
 							any_neighbor_state = {
 								OR = {
 									state = 165
 									state = 794
+									state = 1486
 									has_state_flag = SPR_anarchist_state_flag
 								}
 							}
@@ -8424,14 +8521,18 @@ country_event = {
 					OR = {
 						controls_state = 165
 						controls_state = 166
+						controls_state = 1485
 						controls_state = 794
+						controls_state = 1486
 					}
 				}
 				random_owned_state = {
 					limit = {
 						NOT = { state = 165 }
-						NOT = { state = 794 }
-						NOT = { state = 166 }
+						NOT = { state = 794 state = 1486 }
+						NOT = { state = 1486 }
+						NOT = { state = 166 state = 1485 }
+						NOT = { state = 1485 }
 						is_controlled_by = ROOT
 					}
 					set_state_flag = SPR_anarchist_state_flag
@@ -8440,8 +8541,10 @@ country_event = {
 					limit = {
 						has_state_flag = SPR_core_of_spain_flag
 						NOT = { state = 165 }
-						NOT = { state = 794 }
-						NOT = { state = 166 }
+						NOT = { state = 794 state = 1486 }
+						NOT = { state = 1486 }
+						NOT = { state = 166 state = 1485 }
+						NOT = { state = 1485 }
 						is_controlled_by = ROOT
 						NOT = { has_state_flag = SPR_anarchist_state_flag }
 					}
@@ -11339,6 +11442,7 @@ country_event = {
 				transfer_state = 165
 				transfer_state = 167
 				transfer_state = 794
+				transfer_state = 1486
 			}
 		}
 		FROM = { country_event = lar_spain.89 }
@@ -11956,6 +12060,7 @@ country_event = {
 		transfer_state = 165
 		transfer_state = 167
 		transfer_state = 794
+		transfer_state = 1486
 		hidden_effect = { SPD = { country_event = { id = lar_spain.84 } } }
 		division_template = {
 			name = "Spanish Loyalist Division"
@@ -12080,6 +12185,7 @@ country_event = {
 				transfer_state = 165
 				transfer_state = 167
 				transfer_state = 794
+				transfer_state = 1486
 			}
 		}
 	}
@@ -12167,8 +12273,10 @@ country_event = {
 		has_completed_focus = SPR_war_of_independence
 		has_country_flag = SOV_took_spanish_states
 		has_war_with = SOV
-		SOV = { owns_state = 794 }
+		SOV = { owns_state = 794 owns_state = 1486 }
+		SOV = { owns_state = 1486 }
 		has_full_control_of_state = 794
+		has_full_control_of_state = 1486
 	}
 
 	mean_time_to_happen = {
@@ -12180,12 +12288,13 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			794 = { save_event_target_as = SPR_stolen_state_name }
+			1486 = { save_event_target_as = SPR_stolen_state_name }
 		}
 	}
 
 	option = { # Excellent!
 		name = lar_spain.85.a
-		transfer_state = 794
+		transfer_state = 794 transfer_state = 1486
 		hidden_effect = { SOV = { country_event = { id = lar_spain.88 } } }
 	}
 }
@@ -12226,6 +12335,7 @@ country_event = {
 					transfer_state = 165
 					transfer_state = 167
 					transfer_state = 794
+					transfer_state = 1486
 				}
 			}
 		}

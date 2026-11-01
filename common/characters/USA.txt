@@ -1,1218 +1,16 @@
 characters={
-	###福斯特派系
-		##威廉·福斯特	
-		USA_willam_foster={
-			name=USA_willam_foster
-			portraits={
-				civilian={
-					large = GFX_portrait_USA_willam_foster_large
-					small = GFX_portrait_USA_willam_foster
-				}
-			}
-			advisor={
-				slot = political_advisor
-				idea_token = USA_willam_foster
-				allowed  = {
-					Belongs_to_US = yes
-				}
-				available  = {
-					has_government=communism
-					NOT = {
-						has_country_flag = USA_fusite_out_flag
-					}
-				}
-				traits  = {
-					USA_gonghuizuzhizhe
-				}
-				
-				ai_will_do  = {
-					factor  = 0.000
-				}
-			}
-		}
-		#尤金·丹尼斯
-		USA_youjin_dannisi = {
-			name = USA_youjin_dannisi
-			portraits = {
-				civilian = {
-					large = GFX_portrait_youjin_dannisi
-					small = GFX_portrait_youjin_dannisi_small
-				}
-			}
-			advisor={
-				slot = political_advisor
-				idea_token = USA_youjin_dannisi
-				allowed  = {
-					OR = {
-						Belongs_to_US = yes
-					}			
-				}
-				available  = {
-					has_government = communism
-					NOT = {
-						has_country_flag = USA_fusite_out_flag
-					}
-				}
-				traits  = {
-					USA_bujuan_zuzhizhe
-				}
-				
-				ai_will_do  = {
-					factor  = 0.000
-				}
-			}
-		}			
-		#伊丽莎白·弗林
-		USA_yilishabai_fulin = {
-			name = USA_yilishabai_fulin
-			portraits = {
-				civilian = {
-					large = GFX_portrait_yilishabai_fulin
-					small = GFX_portrait_yilishabai_fulin_small
-				}
-			}
-			advisor={
-				slot = political_advisor
-				idea_token = USA_yilishabai_fulin
-				cost = 100
-				allowed  = {
-					OR = {
-						Belongs_to_US = yes
-					}			
-				}
-				available  = {
-					has_government = communism
-					NOT = {
-						has_country_flag = USA_fusite_out_flag
-					}
-				}
-				traits  = {
-					USA_laogong_zuzhizhe 
-				}
-				
-				ai_will_do  = {
-					factor  = 0.000
-				}
-			}
-		}
-
-	###白劳德派系
-		##厄尔·白劳德
-		USA_earl_browder={
-			name=USA_earl_browder
-			portraits={
-				civilian={
-					large=GFX_portrait_USA_earl_browder
-				}
-				army={
-					small=GFX_portrait_USA_earl_browder_small
-				}
-			}
-			advisor={
-				slot = political_advisor
-				idea_token = earl_browder
-				allowed  = {
-					Belongs_to_US = yes
-				}
-				available  = {
-					if  = {
-						limit  = {
-							has_dlc = "Man the Guns"
-						}
-						has_completed_focus  = USA_suspend_the_presecution
-						NOT  = {
-							focus_progress  = {
-								focus  = USA_neutrality_act
-								progress > 0.000
-							}
-						}
-						NOT  = {
-							focus_progress  = {
-								focus  = USA_limited_intervention
-								progress > 0.000
-							}
-						}
-						NOT  = {
-							has_autonomy_state  = autonomy_supervised_state
-						}
-						NOT = {
-							has_country_leader = {
-								ruling_only = yes
-								character = USA_earl_browder
-							}
-						}
-						NOT = {
-							has_country_flag = USA_bailaode_out_flag
-						}
-					}
-				}
-				traits  = {
-					communist_jihui_zhuyizhe
-					communist_revolutionary
-				}
-				do_effect  = {
-					NOT  = {
-						has_government  = communism
-					}
-				}
-				ai_will_do  = {
-					factor  = 10.000
-					modifier  = {
-						is_historical_focus_on  = yes
-						has_game_rule  = {
-							rule  = USA_ai_behavior
-							option  = default
-						}
-						factor  = 0.000
-					}
-					modifier  = {
-						is_historical_focus_on  = yes
-						NOT  = {
-							has_dlc = "Man the Guns"
-						}
-						factor  = 0.000
-					}
-					modifier  = {
-						NOT  = {
-							has_dlc = "Man the Guns"
-						}
-						has_idea_with_trait = fascist_demagogue
-						factor  = 0.000
-					}
-				}
-			}
-			country_leader={
-				ideology=marxism
-				expire="1965.1.1.1"
-				id=-1
-			}
-		}
-		#查尔斯·卢森堡
-		USA_chaersi_lusengbao = {
-			name = USA_chaersi_lusengbao
-			portraits = {
-				civilian = {
-					large = GFX_portrait_chaersi_lusengbao
-					small = GFX_portrait_chaersi_lusengbao_small
-				}
-			}
-			advisor={
-				slot = political_advisor
-				idea_token = USA_chaersi_lusengbao
-				allowed  = {
-					OR = {
-						Belongs_to_US = yes
-					}			
-				}
-				available  = {
-					has_government = communism
-					NOT = {
-						has_country_flag = USA_bailaode_party_out_flag
-					}
-				}
-				traits  = {
-					USA_zongshuji
-				}
-				
-				ai_will_do  = {
-					factor  = 0.000
-				}
-			}
-		}
-		#杰伊·洛夫斯通
-		USA_jieyi_luofisitong = {
-			name = USA_jieyi_luofisitong
-			portraits = {
-				civilian = {
-					large = GFX_portrait_jieyi_luofisitong
-					small = GFX_portrait_jieyi_luofisitong_small
-				}
-			}
-			advisor={
-				slot = political_advisor
-				idea_token = USA_jieyi_luofisitong
-				cost = 100
-				allowed  = {
-					OR = {
-						Belongs_to_US = yes
-					}			
-				}
-				available  = {
-					has_government = communism
-					has_country_flag = USA_luofusitong_on_flag
-				}
-				traits  = {
-					USA_tiewan_quanmou
-				}
-				
-				ai_will_do  = {
-					factor  = 0.000
-				}
-			}
-		}
-		#罗伯特·迈纳
-		USA_luobote_maina = {
-			name = USA_luobote_maina
-			portraits = {
-				civilian = {
-					large = GFX_portrait_luobote_maina
-					small = GFX_portrait_luobote_maina_small
-				}
-			}
-			advisor={
-				slot = political_advisor
-				idea_token = USA_luobote_maina
-				allowed  = {
-					OR = {
-						Belongs_to_US = yes
-					}			
-				}
-				available  = {
-					has_government = communism
-					NOT = {
-						has_country_flag = USA_bailaode_party_out_flag
-					}
-				}
-				traits  = {
-					USA_xuanchuan_dashi
-				}
-				
-				ai_will_do  = {
-					factor  = 0.000
-				}
-			}
-		}
-
-	###托派
-		#詹姆斯·坎农
-		USA_zhanmusi_kannong = {
-			name = USA_zhanmusi_kannong
-			portraits = {
-				civilian = {
-					large = GFX_portrait_zhanmusi_kannong
-				}
-				army = {
-					large = GFX_portrait_zhanmusi_kannong
-					small = GFX_portrait_zhanmusi_kannong_small
-				}
-			}
-			advisor={
-				slot = political_advisor
-				idea_token = USA_zhanmusi_kannong
-				allowed  = {
-					OR = {
-						Belongs_to_US = yes
-					}			
-				}
-				available  = {
-					has_government = communism
-					has_country_flag = USA_tuopai_hezuo_flag
-					NOT = {
-						has_country_flag = USA_kannong_out_flag
-					}
-				}
-				traits  = {
-					USA_tuoluociji_zhichizhe
-				}
-				
-				ai_will_do  = {
-					factor  = 0.000
-				}
-			}
-		}
-		#约瑟夫·汉森
-		USA_yuesefu_hanseng = {
-			name = USA_yuesefu_hanseng
-			portraits = {
-				civilian = {
-					large = GFX_portrait_yuesefu_hanseng
-					small = GFX_portrait_yuesefu_hanseng_small
-				}
-			}
-			advisor={
-				slot = political_advisor
-				idea_token = USA_yuesefu_hanseng
-				allowed  = {
-					OR = {
-						Belongs_to_US = yes
-					}			
-				}
-				available  = {
-					has_government = communism
-					has_country_flag = USA_tuopai_hezuo_flag
-					NOT = {
-						has_country_flag = USA_kannong_out_flag
-					}
-				}
-				traits  = {
-					USA_deli_zhushou
-				}
-				
-				ai_will_do  = {
-					factor  = 0.000
-				}
-			}
-		}
-		#詹姆斯·伯纳姆
-		USA_zhanmusi_bonamu = {
-			name = USA_zhanmusi_bonamu
-			portraits = {
-				civilian = {
-					large = GFX_portrait_zhanmusi_bonamu
-					small = GFX_portrait_zhanmusi_bonamu_small
-				}
-			}
-			advisor={
-				slot = political_advisor
-				idea_token = USA_zhanmusi_bonamu
-				allowed  = {
-					OR = {
-						Belongs_to_US = yes
-					}			
-				}
-				available  = {
-					has_government = communism
-					has_country_flag = USA_tuopai_hezuo_flag
-					NOT = {
-						has_country_flag = USA_kannong_out_flag
-					}
-				}
-				traits  = {
-					USA_jijin_xuezhe
-				}
-				
-				ai_will_do  = {
-					factor  = 0.000
-				}
-			}
-		}
-
-	#罗伯特·瓦格纳
-	USA_luobote_wagena = {
-		name = USA_luobote_wagena
-		portraits={
-			civilian={
-				small="GFX_idea_south_america_generic_5"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = USA_luobote_wagena
-			allowed  = {
-				OR = {
-					Belongs_to_US = yes
-					TAG = HAW
-				}
-				
-			}
-			available  = {
-				if = {
-					limit = {
-						TAG = HAW
-					}
-					has_completed_focus = HAW_us_neige_genghuan
-				}
-				else = {
-					OR = {
-						has_country_flag = USA_zhengzhi_xiehui_flag
-						has_government = democratic
-					}
-				}
-			}
-			traits  = {
-				USA_xinzheng_canyiyuan
-			}
-			
-			ai_will_do  = {
-				factor  = 0.000
-			}
-		}
-	}
-	#罗伯特·帕特森
-	USA_luobote_patesen = {
-		name = USA_luobote_patesen
-		portraits={
-			civilian={
-				small="GFX_idea_FRA_generic_3"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = USA_luobote_patesen
-			allowed  = {
-				OR = {
-					Belongs_to_US = yes
-					TAG = HAW
-				}
-				
-			}
-			available  = {
-				if = {
-					limit = {
-						TAG = HAW
-					}
-					has_completed_focus = HAW_us_neige_genghuan
-				}
-				else = {
-					OR = {
-						has_country_flag = USA_zhengzhi_xiehui_flag
-						has_government = democratic
-					}
-				}
-			}
-			traits  = {
-				USA_wenhe_faguan
-			}
-			
-			ai_will_do  = {
-				factor  = 0.000
-			}
-		}
-	}
-	#亚瑟·卡珀 农场主报刊出版商
-	USA_arthur_kapo = {
-		name = USA_arthur_kapo
-		portraits={
-			civilian={
-				small="GFX_idea_europe_generic_5"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = USA_arthur_kapo
-			allowed  = {
-				OR = {
-					Belongs_to_US = yes
-					TAG = HAW
-				}
-				
-			}
-			available  = {
-				if = {
-					limit = {
-						TAG = HAW
-					}
-					has_completed_focus = HAW_us_neige_genghuan
-				}
-				else = {
-					OR = {
-						has_country_flag = USA_zhengzhi_xiehui_flag
-						has_government = democratic
-					}
-				}
-			}
-			traits  = {
-				USA_nongchangzhu_baokan_chubanshang
-			}
-			
-			ai_will_do  = {
-				factor  = 0.000
-			}
-		}
-	}
-
-
-	#约翰·汉密尔顿 共和党全国委员会主席
-	USA_john_hanmiertun = {
-		name = USA_john_hanmiertun
-		portraits={
-			civilian={
-				small="GFX_idea_generic_political_advisor_south_america_2"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = USA_john_hanmiertun
-			allowed  = {
-				OR = {
-					Belongs_to_US = yes
-					TAG = HAW
-				}
-				
-			}
-			available  = {
-				if = {
-					limit = {
-						TAG = HAW
-					}
-					has_completed_focus = HAW_us_neige_genghuan
-				}
-				else = {
-					OR = {
-						has_country_flag = USA_zhengzhi_xiehui_flag
-						has_government = democratic
-					}
-				}
-			}
-			traits  = {
-				USA_quanguo_weiyuanhui_zhuxi
-			}
-			
-			ai_will_do  = {
-				factor  = 0.000
-			}
-		}
-	}
-	#刘易斯·道格拉斯 稳健的财政部长
-	USA_liuyisi_daogelasi = {
-		name = USA_liuyisi_daogelasi
-		portraits={
-			civilian={
-				small="GFX_idea_USA_generic_land_3"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = liuyisi_daogelasi
-			allowed  = {
-				OR = {
-					Belongs_to_US = yes
-					TAG = HAW
-				}
-				
-			}
-			available  = {
-				if = {
-					limit = {
-						TAG = HAW
-					}
-					has_completed_focus = HAW_us_neige_genghuan
-				}
-				else = {
-					OR = {
-						has_country_flag = USA_zhengzhi_xiehui_flag
-						has_government = democratic
-					}
-				}
-			}
-			traits  = {
-				USA_wenjian_caizheng
-			}
-			
-			ai_will_do  = {
-				factor  = 0.000
-			}
-		}
-	}
-
-	USA_Frank_Knox = {
-		name = USA_Frank_Knox
-		portraits={
-			civilian={
-				small="GFX_idea_generic_air_europe_3"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = Frank_Knox
-			allowed  = {
-				Belongs_to_US = yes
-			}
-			available  = {
-				OR = {
-					has_country_flag = USA_zhengzhi_xiehui_flag
-					has_government = democratic
-				}
-			}
-			traits  = {
-				USA_qiangying_ganshepai
-			}
-			
-			ai_will_do  = {
-				factor  = 0.000
-			}
-		}
-	}
-
-	
-	USA_supreme_soviet = { #Country Leader role added via decisions
-		name = USA_supreme_soviet
-
-		portraits = {
-			civilian = {
-				large = GFX_portrait_SOV_supreme_soviet
-			}
-		}
-	}
-	USA_broadway={
-		name=USA_broadway
-		portraits={
-			civilian={
-				small="GFX_idea_USA_broadway"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = USA_broadway
-			allowed  = {
-				Belongs_to_US = yes
-			}
-			available  = {
-				
-			}
-			traits  = {
-				USA_broadway_trait
-			}
-			
-			ai_will_do  = {
-				factor  = 0.000
-			}
-		}
-	}
-	USA_GCGJ={
-		name=USA_GCGJ
-		portraits={
-			civilian={
-				small="GFX_idea_SPR_anarchist_council"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = USA_GCGJ
-			allowed  = {
-				Belongs_to_US = yes
-			}
-			available  = {
-				has_completed_focus= USA_focus69
-			}
-			traits  = {
-				USA_gcgjdaibiao
-			}
-			
-			ai_will_do  = {
-				factor  = 0.000
-			}
-		}
-	}
-	USA_steve_luokingsi={
-		name=USA_steve_luokingsi
-		portraits={
-			army={
-				large=GFX_portrait_USA_steve
-			}
-			civilian={
-				small=GFX_portrait_USA_steve_small
-			}
-		}
-
-		corps_commander={
-			traits={  armor_officer  logistics_wizard offensive_doctrine }
-			skill=1
-			attack_skill=1
-			defense_skill=1
-			planning_skill=1
-			logistics_skill=1
-			legacy_id=-1
-		}
-	}
-
-	USA_hali_huopujinsi={
-		name=USA_hali_huopujinsi
-		portraits={
-			civilian={
-				small=GFX_portrait_USA_hali_huopujinsi
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = USA_hali_huopujinsi
-			allowed  = {
-				Belongs_to_US = yes
-			}
-			available  = {
-				has_completed_focus=USA_continue_the_new_deal
-			}
-			traits  = {
-				USA_xinzhengshejishi
-			}
-			
-			ai_will_do  = {
-				factor  = 0.000
-			}
-		}
-	}
-
-	USA_fulangxisi_bojinsi={
-		name=USA_fulangxisi_bojinsi
-		portraits={
-			civilian={
-				small=GFX_portrait_USA_fulangxisi_bojinsi
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = USA_fulangxisi_bojinsi
-			allowed  = {
-				Belongs_to_US = yes
-			}
-			available  = {
-				OR = {
-					has_country_flag = USA_zhengzhi_xiehui_flag
-					has_government = democratic
-				}
-			}
-			traits  = {
-				USA_shehuibaozhangzhimu
-			}
-			
-			ai_will_do  = {
-				factor  = 0.000
-			}
-		}
-	}
-
-
-
-	USA_anna_luochebao={
-		name=USA_anna_luochebao
-		portraits={
-			civilian={
-				small=GFX_portrait_USA_anna_luochebao
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = USA_anna_luochebao
-			allowed  = {
-				Belongs_to_US = yes
-			}
-			available  = {
-				has_government=communism
-			}
-			traits  = {
-				USA_maxism
-			}
-			
-			ai_will_do  = {
-				factor  = 0.000
-			}
-		}
-	}
-
-
-	USA_yuesefu_panxing={
-		name=USA_yuesefu_panxing
-		portraits={
-			civilian={
-				small=GFX_portrait_USA_yuesefu_panxing
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = USA_yuesefu_panxing
-			allowed  = {
-				Belongs_to_US = yes
-			}
-			available  = {
-			}
-			traits  = {
-				USA_tejishangjiang
-			}
-			
-			ai_will_do  = {
-				factor  = 0.000
-			}
-		}
-	}
-	USA_yagebu_defusi={
-		name=USA_yagebu_defusi
-		portraits={
-			army={
-				large=GFX_portrait_yagebu_defusi
-			}
-			civilian={
-				small=GFX_portrait_yagebu_defusi_small
-			}
-		}
-
-		corps_commander={
-			traits={   expert_delegator  organizer  thorough_planner  }
-			skill=4
-			attack_skill=3
-			defense_skill=2
-			planning_skill=5
-			logistics_skill=5
-			legacy_id=-1
-		}
-	}
-	USA_maxiu_B_liqiwei={
-		name=USA_maxiu_B_liqiwei
-		portraits={
-			army={
-				large=GFX_portrait_maxiu_B_liqiwei
-			}
-			civilian={
-				small=GFX_portrait_maxiu_B_liqiwei_small
-			}
-		}
-		advisor={
-			slot = high_command
-			idea_token = USA_maxiu_B_liqiwei
-			allowed = {
-				OR = {
-					original_tag = USA
-				}
-			}
-			available = {
-				has_completed_focus = Shared_usa_focus3
-			}
-			traits = {
-				air_airborne_2
-			}
-			cost = 150
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
-		corps_commander={
-			traits={  brilliant_strategist    commando    }
-			skill=3
-			attack_skill=3
-			defense_skill=4
-			planning_skill=3
-			logistics_skill=2
-			legacy_id=-1
-		}
-	}
-	USA_woerdun_halisi_woke={
-		name=USA_woerdun_halisi_woke
-		portraits={
-			army={
-				large=GFX_portrait_woerdun_halisi_woke
-			}
-			civilian={
-				small=GFX_portrait_woerdun_halisi_woke_small
-			}
-		}
-
-		corps_commander={
-			traits={   panzer_leader fast_planner     }
-			skill=3
-			attack_skill=4
-			defense_skill=2
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	USA_huolande_shimisi={
-		name=USA_huolande_shimisi
-		portraits={
-			army={
-				large=GFX_portrait_huolande_shimisi
-			}
-			civilian={
-				small=GFX_portrait_huolande_shimisi_small
-			}
-		}
-
-		corps_commander={
-			traits={  invader_ii   naval_liason  harsh_leader    }
-			skill=4
-			attack_skill=4
-			defense_skill=2
-			planning_skill=4
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	USA_andongni_maikaolifu={
-		name=USA_andongni_maikaolifu
-		portraits={
-			army={
-				large=GFX_portrait_andongni_maikaolifu
-			}
-			civilian={
-				small=GFX_portrait_andongni_maikaolifu_small
-			}
-		}
-
-		corps_commander={
-			traits={   war_hero  unyielding_defender    }
-			skill=2
-			attack_skill=1
-			defense_skill=3
-			planning_skill=1
-			logistics_skill=2
-			legacy_id=-1
-		}
-	}
-	USA_yuehanni_daerkuisite={
-		name=USA_yuehanni_daerkuisite
-		portraits={
-			army={
-				large=GFX_portrait_yuehanni_daerkuisite
-			}
-			civilian={
-				small=GFX_portrait_yuehanni_daerkuisite_small
-			}
-		}
-
-		corps_commander={
-			traits={ infantry_expert   guerilla_fighter   }
-			skill=2
-			attack_skill=2
-			defense_skill=1
-			planning_skill=1
-			logistics_skill=2
-			legacy_id=-1
-		}
-	}
-	USA_malin_kelaige={
-		name=USA_malin_kelaige
-		portraits={
-			army={
-				large=GFX_portrait_malin_kelaige
-			}
-			civilian={
-				small=GFX_portrait_malin_kelaige_small
-			}
-		}
-		advisor={
-			slot = army_chief
-			idea_token = USA_malin_kelaige
-			allowed = {
-				OR = {
-					original_tag = USA
-				}
-			}
-			available = {
-			}
-			traits = {
-				army_chief_maneuver_2
-			}
-			cost = 150
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
-		corps_commander={
-			traits={   trait_engineer  logistics_wizard   }
-			skill=2
-			attack_skill=2
-			defense_skill=2
-			planning_skill=1
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	USA_tuomasi_handy={
-		name=USA_tuomasi_handy
-		portraits={
-			army={
-				large=GFX_portrait_tuomasi_handy
-			}
-			civilian={
-				small=GFX_portrait_tuomasi_handy_small
-			}
-		}
-
-		corps_commander={
-			traits={   fast_planner    }
-			skill=1
-			attack_skill=1
-			defense_skill=1
-			planning_skill=1
-			logistics_skill=1
-			legacy_id=-1
-		}
-	}
-	USA_qiaozhi_kenni={
-		name=USA_qiaozhi_kenni
-		portraits={
-			army={
-				large=GFX_portrait_qiaozhi_kenni
-			}
-			civilian={
-				small=GFX_portrait_qiaozhi_kenni_small
-			}
-		}
-
-		corps_commander={
-			traits={      }
-			skill=1
-			attack_skill=1
-			defense_skill=1
-			planning_skill=1
-			logistics_skill=1
-			legacy_id=-1
-		}
-	}
-	USA_yuesefu_maikenani={
-		name=USA_yuesefu_maikenani
-		portraits={
-			army={
-				large=GFX_portrait_yuesefu_maikenani
-			}
-			civilian={
-				small=GFX_portrait_yuesefu_maikenani_small
-			}
-		}
-
-		corps_commander={
-			traits={    logistics_wizard  thorough_planner  }
-			skill=3
-			attack_skill=2
-			defense_skill=2
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	USA_weilian_laixi={
-		name=USA_weilian_laixi
-		portraits={
-			army={
-				large="GFX_portrait_USA_weilian_laixi"
-			}
-			army={
-				small="GFX_portrait_USA_weilian_laixi_small"
-			}
-		}
-		advisor={
-			slot = navy_chief
-			idea_token = USA_weilian_laixi
-			allowed = {
-				original_tag = USA
-			}
-			traits = {
-				 navy_chief_decisive_battle_2
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
-
-		navy_leader={
-			traits={ gentlemanly blockade_runner  concealment_expert aviation_enthusiast }
-			skill=4
-			attack_skill=3
-			defense_skill=3
-			maneuvering_skill=5
-			coordination_skill=4
-			legacy_id=-1
-		}
-	}
-	USA_qiaonasi_enggelamu={
-		name=USA_qiaonasi_enggelamu
-		portraits={
-			army={
-				large="GFX_portrait_USA_qiaonasi_enggelamu"
-			}
-			army={
-				small="GFX_portrait_USA_qiaonasi_enggelamu_small"
-			}
-		}
-
-		navy_leader={
-			traits={  fleet_protector  destroyer_leader  spotter  }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			maneuvering_skill=2
-			coordination_skill=3
-			legacy_id=-1
-		}
-	}
-	USA_make_miqieer={
-		name=USA_make_miqieer
-		portraits={
-			army={
-				large="GFX_portrait_USA_make_miqieer"
-			}
-			army={
-				small="GFX_portrait_USA_make_miqieer_small"
-			}
-		}
-
-		navy_leader={
-			traits={  aviation_enthusiast  spotter  }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			maneuvering_skill=2
-			coordination_skill=2
-			legacy_id=-1
-		}
-	}
-	USA_chaersi_luokewude={
-		name=USA_chaersi_luokewude
-		portraits={
-			army={
-				large="GFX_portrait_USA_chaersi_luokewude"
-			}
-			army={
-				small="GFX_portrait_USA_chaersi_luokewude_small"
-			}
-		}
-	
-		advisor={
-			slot = high_command
-			idea_token = USA_chaersi_luokewude
-			allowed = {
-				original_tag = USA
-			}
-			traits = {
-				navy_submarine_2
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
-		navy_leader={
-			traits={  seawolf spotter bold  }
-			skill=3
-			attack_skill=4
-			defense_skill=2
-			maneuvering_skill=2
-			coordination_skill=3
-			legacy_id=-1
-		}
-	}
-
-	
 	USA_franklin_delano_roosevelt={
 		name=USA_franklin_delano_roosevelt
 		portraits={
 			civilian={
 				large=GFX_portrait_USA_franklin_delano_roosevelt
-				small=GFX_portrait_USA_franklin_delano_roosevelt_small
 			}
 		}
 		country_leader={
 			ideology=liberalism
-			traits={ dislikes_germany }
+			traits={ dislikes_germany architect_of_the_new_deal }
 			expire="1947.1.1.1"
 			id=-1
-		}
-		advisor={
-			slot = political_advisor
-			idea_token =USA_franklin_delano_roosevelt
-			allowed  = {
-				Belongs_to_US = yes
-			}
-			available  = {
-				NOT={
-					has_country_leader = { ruling_only = yes character = USA_franklin_delano_roosevelt }
-				}
-				OR = {
-					has_country_flag = USA_zhengzhi_xiehui_flag
-					has_government = democratic
-				}
-				date < 1945.1.1
-			}
-			visible={
-				has_government=democratic
-			}
-			traits  = {
-				USA_xinzhengtuixinzhe
-			}
-			
-			ai_will_do  = {
-				factor  = 0.000
-			}
 		}
 	}
 
@@ -1225,6 +23,57 @@ characters={
 		}
 		country_leader={
 			ideology=fascism_ideology
+			traits = {
+				american_fuhrer
+			}
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	USA_smedley_butler={
+		name=USA_smedley_butler
+		portraits={
+			civilian={
+				large=GFX_portrait_USA_smedley_butler
+			}
+		}
+		country_leader={
+			ideology=fascism_ideology
+			traits = {
+				american_generalissimo
+			}
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	USA_robert_e_wood={
+		name=USA_robert_e_wood
+		portraits={
+			civilian={
+				large=GFX_portrait_USA_robert_e_wood
+			}
+		}
+		country_leader={
+			ideology=fascism_ideology
+			traits = {
+				wallstreet_leader america_first
+			}
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	USA_john_aubitz={
+		name=USA_john_aubitz
+		portraits={
+			civilian={
+				large=GFX_portrait_USA_john_aubitz
+			}
+		}
+		country_leader={
+			ideology=fascism_ideology
+			traits = {
+				goldstar_phoenix
+			}
 			expire="1965.1.1.1"
 			id=-1
 		}
@@ -1258,8 +107,76 @@ characters={
 		}
 	}
 
+	USA_earl_browder={
+		name=USA_earl_browder
+		portraits={
+			civilian={
+				large=GFX_portrait_USA_earl_browder
+			}
+			army={
+				small=GFX_portrait_USA_earl_browder_small
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = earl_browder
+			allowed  = {
+				original_tag  = USA
+			}
+			visible = {
+				#always = no
+			}
+			available  = {
+				#has_completed_focus = USA_an_american_five_year_plan
+				NOT = {
+					has_country_leader = {
+						ruling_only = yes
+						character = USA_earl_browder
+					}
+				}
+			}
+			traits  = {
+				communist_revolutionary
+			}
+			do_effect  = {
+				NOT  = {
+					has_government  = communism
+				}
+			}
+			ai_will_do  = {
+				factor  = 10.000
+				modifier  = {
+					is_historical_focus_on  = yes
+					has_game_rule  = {
+						rule  = USA_ai_behavior
+						option  = default
+					}
+					factor  = 0.000
+				}
+				modifier  = {
+					is_historical_focus_on  = yes
+					NOT  = {
+						has_dlc = "Man the Guns"
+					}
+					factor  = 0.000
+				}
+				modifier  = {
+					NOT  = {
+						has_dlc = "Man the Guns"
+					}
+					has_idea_with_trait = fascist_demagogue
+					factor  = 0.000
+				}
+			}
+		}
+		country_leader={
+			ideology=marxism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
 
-
+ # Generals
 	USA_george_s_patton={
 		name=USA_george_s_patton
 		portraits={
@@ -1583,9 +500,9 @@ characters={
 			allowed = {
 				original_tag = USA
 			}
-			available = {
-				has_completed_focus = USA_war_plans_division
-			}
+			#available = {
+			#	has_completed_focus = USA_war_plans_division
+			#}
 			traits = {
 				army_chief_planning_2
 			}
@@ -1656,7 +573,8 @@ characters={
 			visible = {
 				if = { 
 					limit = { has_dlc = "No Compromise, No Surrender" } 
-					has_completed_focus = PHI_subordinate_philippine_department
+					#has_completed_focus = PHI_subordinate_philippine_department
+					has_completed_focus = USA_support_the_phillipines
 				}
 			}
 			skill=1
@@ -1937,11 +855,13 @@ characters={
 			planning_skill = 3
 			logistics_skill = 3
 			visible = {
-				has_completed_focus = USA_intervention_in_asia
+				#has_completed_focus = USA_intervention_in_asia
+				has_completed_focus = USA_the_far_eastern_realm
 			}
 		}
 	}
 
+ # Admirals
 	USA_ernest_king={
 		name=USA_ernest_king
 		portraits={
@@ -2180,7 +1100,7 @@ characters={
 	}
 
 
-	### THEORISTS ###
+ ### THEORISTS ###
 
 	# Patton up there
 
@@ -2268,7 +1188,7 @@ characters={
 	}
 
 
-	### ARMY CHIEFS ###
+ ### ARMY CHIEFS ###
 
 	# Eisenhower up there
 
@@ -2305,14 +1225,14 @@ characters={
 	}
 
 
-	### NAVY CHIEFS ###
+ ### NAVY CHIEFS ###
 
 	# King up there
 
 	# Nimitz up there
 
 
-	### AIR CHIEFS
+ ### AIR CHIEFS
 
 	USA_henry_arnold={
 		name=USA_henry_arnold
@@ -2405,6 +1325,7 @@ characters={
 			}
 			visible = {
 				has_dlc = "Man the Guns"
+				always = no
 			}
 			cost = 100.000
 			# TODO [AB] add support for equipment bonuses
@@ -2429,8 +1350,8 @@ characters={
 	}
 
 
-	### MILITARY HIGH COMMAND ###
-
+ ### MILITARY HIGH COMMAND ###
+  # Old
 	# Clark up there
 
 	# Hodges up there
@@ -2535,9 +1456,65 @@ characters={
 		}
 	}
 
+  # NEW
+	USA_william_friedman={
+		name = USA_william_friedman
+		portraits = {
+			army = {
+				small="GFX_idea_william_friedman"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = william_friedman
+			ledger = army
+			allowed = {
+				original_tag = USA
+			}
+			available = {
+				has_completed_focus = USA_oss_expansion
+			}
+			traits = {
+				head_of_army_signal_intelligence_service
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
 
-	### POLITICAL ADVISORS ###
+	USA_willis_lee = {
+		name = USA_willis_lee
+		portraits = {
+			army = {
+				small="GFX_idea_willis_lee"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = willis_lee
+			ledger = navy
+			allowed = {
+				original_tag = USA
+			}
+			available = {
+				has_completed_focus = USA_gunnery_innovations
+			}
+			traits = {
+				naval_gunnery_innovator
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
 
+
+
+ ### POLITICAL ADVISORS ###
+  # OLD
 	#Earl Bowder up there
 
 	USA_harry_white={
@@ -2551,28 +1528,22 @@ characters={
 			slot = political_advisor
 			idea_token = harry_white
 			allowed  = {
-				Belongs_to_US = yes
+				original_tag  = USA
 			}
 			available  = {
-
-				if  = {
-					limit  = {
-						has_dlc = "Man the Guns"
-					}
-					has_completed_focus  = USA_reach_out_to_the_ware_group
-				}
-
+				has_completed_focus = USA_an_american_five_year_plan
 				NOT  = {
 					has_idea  = USA_henry_morgenthau
 				}
 			}
 			visible  = {
-				has_dlc = "Man the Guns"
+				#always = no
+				#has_dlc = "Man the Guns"
 			}
 			traits  = {
 				financial_expert
 			}
-			cost  = 0.000
+			cost  = 120
 			do_effect  = {
 			}
 			ai_will_do  = {
@@ -2596,31 +1567,21 @@ characters={
 			idea_token = victor_perlo
 			allowed  = {
 				OR = {
-					Belongs_to_US = yes
+					original_tag  = USA
 					original_tag = SWE
 				}
 			}
 			available  = {
-				OR = {
-					if  = {
-						limit  = {
-							has_dlc = "Man the Guns"
-						}
-						has_completed_focus  = USA_reach_out_to_the_ware_group
-					}
-					AND = {
-						SWE_refuge_for_revolutionaries_trigger = yes
-						USA = { has_completed_focus = USA_america_first }
-					}
-				}
+				has_completed_focus = USA_an_american_five_year_plan
 			}
 			visible  = {
-				has_dlc = "Man the Guns"
+				#always = no
+				#has_dlc = "Man the Guns"
 			}
 			traits  = {
 				economist
 			}
-			cost  = 0.000
+			cost  = 120
 			do_effect  = {
 			}
 			ai_will_do  = {
@@ -2644,31 +1605,21 @@ characters={
 			idea_token = whittaker_chambers
 			allowed  = {
 				OR = {
-					Belongs_to_US = yes
+					original_tag  = USA
 					original_tag = SWE
 				}
 			}
 			available  = {
-				OR = {
-					if  = {
-						limit  = {
-							has_dlc = "Man the Guns"
-						}
-						has_completed_focus  = USA_reach_out_to_the_ware_group
-					}
-					AND = {
-						SWE_refuge_for_revolutionaries_trigger = yes
-						USA = { has_completed_focus = USA_america_first }
-					}
-				}
+				has_completed_focus = USA_an_american_five_year_plan
 			}
 			visible  = {
-				has_dlc = "Man the Guns"
+				#always = no
+				#has_dlc = "Man the Guns"
 			}
 			traits  = {
 				editor
 			}
-			cost  = 0.000
+			cost  = 120
 			do_effect  = {
 			}
 			ai_will_do  = {
@@ -2691,7 +1642,7 @@ characters={
 			slot = political_advisor
 			idea_token = USA_joseph_patterson
 			allowed  = {
-				Belongs_to_US = yes
+				original_tag  = USA
 			}
 			available  = {
 				if  = {
@@ -2702,7 +1653,8 @@ characters={
 				}
 			}
 			visible  = {
-				has_dlc = "Man the Guns"
+				always = no
+				#has_dlc = "Man the Guns"
 			}
 			traits  = {
 				editor
@@ -2732,7 +1684,7 @@ characters={
 			slot = political_advisor
 			idea_token = USA_william_regnery
 			allowed  = {
-				Belongs_to_US = yes
+				original_tag  = USA
 			}
 			available  = {
 				if  = {
@@ -2743,7 +1695,8 @@ characters={
 				}
 			}
 			visible  = {
-				has_dlc = "Man the Guns"
+				always = no
+				#has_dlc = "Man the Guns"
 			}
 			traits  = {
 				captain_of_industry
@@ -2773,7 +1726,7 @@ characters={
 			slot = political_advisor
 			idea_token = harold_ickes
 			allowed  = {
-				Belongs_to_US = yes
+				original_tag  = USA
 			}
 			available  = {
 				if  = {
@@ -2784,9 +1737,10 @@ characters={
 						has_autonomy_state  = autonomy_supervised_state
 					}
 				}
+				not = { has_completed_focus = USA_an_american_five_year_plan }
 			}
 			traits  = {
-				USA_zhengzhidegaigejia
+				democratic_reformer
 			}
 			do_effect  = {
 				NOT  = {
@@ -2810,35 +1764,13 @@ characters={
 			slot = political_advisor
 			idea_token = charles_coughlin
 			allowed  = {
-				Belongs_to_US = yes
+				original_tag  = USA
+			}
+			visible = {
+				not = { has_taken_core_path_communist = yes }
 			}
 			available  = {
-				if  = {
-					limit  = {
-						has_dlc = "Man the Guns"
-					}
-					has_completed_focus  = USA_america_first
-					NOT  = {
-						focus_progress  = {
-							focus  = USA_neutrality_act
-							progress > 0.000
-						}
-					}
-					NOT  = {
-						focus_progress  = {
-							focus  = USA_limited_intervention
-							progress > 0.000
-						}
-					}
-				}
-				if  = {
-					limit  = {
-						has_dlc = "Man the Guns"
-					}
-					NOT  = {
-						has_autonomy_state  = autonomy_supervised_state
-					}
-				}
+				always = yes
 			}
 			traits  = {
 				fascist_demagogue
@@ -2887,16 +1819,10 @@ characters={
 			slot = political_advisor
 			idea_token = USA_robert_taft
 			allowed  = {
-				Belongs_to_US = yes
-			}
-			available = {
-				OR = {
-					has_country_flag = USA_zhengzhi_xiehui_flag
-					has_government = democratic
-				}
+				original_tag  = USA
 			}
 			traits  = {
-				USA_xianzhengbaoshoupai
+				silent_workhorse
 			}
 		}
 	}
@@ -2912,10 +1838,10 @@ characters={
 			slot = political_advisor
 			idea_token = USA_joseph_mccarthy
 			allowed  = {
-				Belongs_to_US = yes
+				original_tag  = USA
 			}
 			available  = {
-				has_completed_focus  = USA_empower_the_huac
+				not = { has_completed_focus = USA_an_american_five_year_plan }
 			}
 			traits  = {
 				anti_communist_crusader
@@ -2934,16 +1860,10 @@ characters={
 			slot = political_advisor
 			idea_token = USA_john_winant
 			allowed  = {
-				Belongs_to_US = yes
-			}
-			available = {
-				OR = {
-					has_country_flag = USA_zhengzhi_xiehui_flag
-					has_government = democratic
-				}
+				original_tag  = USA
 			}
 			traits  = {
-				gonghedang_xinzhengpai
+				compassionate_gentleman
 			}
 		}
 	}
@@ -2959,16 +1879,10 @@ characters={
 			slot = political_advisor
 			idea_token = USA_cordell_hull
 			allowed  = {
-				Belongs_to_US = yes
-			}
-			available = {
-				OR = {
-					has_country_flag = USA_zhengzhi_xiehui_flag
-					has_government = democratic
-				}
+				original_tag  = USA
 			}
 			traits  = {
-				father_of_un
+				smooth_talking_charmer
 			}
 		}
 	}
@@ -2984,20 +1898,15 @@ characters={
 			slot = political_advisor
 			idea_token = USA_henry_morgenthau
 			allowed  = {
-				Belongs_to_US = yes
+				original_tag  = USA
 			}
 			available  = {
 				NOT  = {
 					has_idea  = harry_white
 				}
-				
-				OR = {
-					has_country_flag = USA_zhengzhi_xiehui_flag
-					has_government = democratic
-				}
 			}
 			traits  = {
-				USA_caizhengguanjia
+				financial_expert
 			}
 		}
 	}
@@ -3013,16 +1922,10 @@ characters={
 			slot = political_advisor
 			idea_token = USA_henry_stimson
 			allowed  = {
-				Belongs_to_US = yes
-			}
-			available = {
-				OR = {
-					has_country_flag = USA_zhengzhi_xiehui_flag
-					has_government = democratic
-				}
+				original_tag  = USA
 			}
 			traits  = {
-				jianzhipai_yuanlao
+				war_industrialist
 			}
 		}
 	}
@@ -3038,16 +1941,10 @@ characters={
 			slot = political_advisor
 			idea_token = USA_donald_nelson
 			allowed  = {
-				Belongs_to_US = yes
-			}
-			available = {
-				OR = {
-					has_country_flag = USA_zhengzhi_xiehui_flag
-					has_government = democratic
-				}
+				original_tag  = USA
 			}
 			traits  = {
-				jishu_guanliao
+				armaments_organizer
 			}
 		}
 	}
@@ -3067,7 +1964,7 @@ characters={
 				threat > 0.500
 			}
 			allowed  = {
-				Belongs_to_US = yes
+				original_tag  = USA
 				has_dlc = "La Resistance"
 			}
 			traits  = {
@@ -3076,6 +1973,172 @@ characters={
 		}
 	}
 
+  # NEW
+	USA_ralph_van_deman = {
+		name = USA_ralph_van_deman
+		portraits = {
+			army = {
+				small="GFX_idea_ralph_van_deman"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ralph_van_deman
+			#ledger = 
+			available  = {
+				has_intelligence_agency  = yes
+			}
+			allowed  = {
+				original_tag  = USA
+				has_dlc = "La Resistance"
+			}
+			traits  = {
+				defensive_spymaster
+				head_of_intelligence
+			}
+			
+		}
+	}
+	USA_harry_hopkins = {
+		name = USA_harry_hopkins
+		portraits = {
+			army = {
+				small="GFX_idea_harry_hopkins"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = harry_hopkins
+			available  = {
+				has_country_leader = { ruling_only = yes character = USA_franklin_delano_roosevelt }
+			}
+			allowed  = {
+				original_tag  = USA
+			}
+			traits  = {
+				interventionist_strategist
+			}
+		}
+	}
+	USA_henry_kaiser = {
+		name = USA_henry_kaiser
+		portraits = {
+			army = {
+				small="GFX_idea_henry_kaiser"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = henry_kaiser
+			available  = {
+				has_war_support > 0.50
+			}
+			allowed  = {
+				original_tag  = USA
+			}
+			traits  = {
+				liberty_ship_architect
+			}
+		}
+	}
+	USA_henry_cabot_lodge_jr = {
+		name = USA_henry_cabot_lodge_jr
+		portraits = {
+			army = {
+				small="GFX_idea_henry_cabot_lodge_jr"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = henry_cabot_lodge_jr
+			available  = {
+				OR = {
+					has_war_support > 0.3
+					threat > 0.4
+				}
+			}
+			allowed  = {
+				original_tag  = USA
+			}
+			traits  = {
+				war_hawk
+			}
+		}
+	}
+
+   # AN
+	USA_fritz_kuhn = {
+		name = USA_fritz_kuhn
+		portraits = {
+			army = {
+				small="GFX_idea_fritz_kuhn"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = fritz_kuhn
+			available  = {
+				has_taken_core_path_nationalist = yes
+			}
+			allowed  = {
+				original_tag  = USA
+			}
+			traits  = {
+				leader_of_the_bund
+			}
+			visible = {
+				has_taken_core_path_non_nationalist = no
+			}
+		}
+	}
+	USA_gerald_lk_smith = {
+		name = USA_gerald_lk_smith
+		portraits = {
+			army = {
+				small="GFX_idea_gerald_lk_smith"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = gerald_lk_smith
+			available  = {
+				has_taken_core_path_nationalist = yes
+			}
+			allowed  = {
+				original_tag  = USA
+			}
+			traits  = {
+				AFP_radio_demagogue
+			}
+			visible = {
+				has_taken_core_path_non_nationalist = no
+			}
+		}
+	}
+	USA_lawrence_dennis = {
+		name = USA_lawrence_dennis
+		portraits = {
+			army = {
+				small="GFX_idea_lawrence_dennis"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = lawrence_dennis
+			available  = {
+				has_taken_core_path_nationalist = yes
+			}
+			allowed  = {
+				original_tag  = USA
+			}
+			traits  = {
+				americas_fascist_intellectual
+			}
+			visible = {
+				has_taken_core_path_non_nationalist = no
+			}
+		}
+	}
 
   #####
  #     #   ####   #  ######  #    #  #####  #   ####   #####   ####
@@ -3085,39 +2148,25 @@ characters={
  #     #  #    #  #  #       #   ##    #    #  #    #    #    #    #
   #####    ####   #  ######  #    #    #    #   ####     #     ####
 
+  # NEW
+	#USA_robert_oppenheimer = {
+	#	name = USA_robert_oppenheimer
+	#	portraits = {
+	#		army = {
+	#			large = GFX_portrait_USA_robert_oppenheimer
+	#			small = GFX_idea_robert_oppenheimer
+	#		}
+	#	}
+	#
+	#	scientist = {
+	#		traits = { scientist_trait_nuclear_specialist scientist_trait_brilliant_theorist }
+	#		skills = {
+	#			specialization_nuclear = 2
+	#		}
+	#	}
+	#}
 
-	USA_huohuade_stark = {
-		name = USA_huohuade_stark
-		portraits = {
-			army = {
-				large = GFX_portrait_USA_huohuade_stark
-				small = GFX_portrait_USA_huohuade_stark_small
-			}
-		}
-
-		scientist = {
-			traits = {  scientist_trait_brilliant_theorist  scientist_trait_bright }
-			skills = {
-				specialization_land= 3
-			}
-		}
-	}
-	USA_aiyinsitan= {
-		name = USA_aiyinsitan
-		portraits = {
-			army = {
-				large = GFX_portrait_USA_aiyinsitan
-				small = GFX_portrait_USA_aiyinsitan_small
-			}
-		}
-
-		scientist = {
-			traits = {  scientist_trait_brilliant_theorist scientist_trait_nuclear_specialist  scientist_trait_bright}
-			skills = {
-				specialization_nuclear= 2
-			}
-		}
-	}
+  # OLD
 	USA_robert_oppenheimer = {
 		name = USA_robert_oppenheimer
 		portraits = {

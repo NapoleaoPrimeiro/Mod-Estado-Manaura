@@ -38,7 +38,9 @@ focus_tree = {
 		bypass = {
 			341 = { is_demilitarized_zone = no }
 			797 = { is_demilitarized_zone = no }
+			1223 = { is_demilitarized_zone = no }
 			340 = { is_demilitarized_zone = no }
+			1266 = { is_demilitarized_zone = no }
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -1803,7 +1805,7 @@ focus_tree = {
 						ideology = democratic
 						size = 0.45
 						capital = 797
-						states = { 797 341 354 339 340 }
+						states = { 797 1223 341 354 1286 339 340 1266 }
 					}
 				}
 				if = { 
@@ -1817,7 +1819,7 @@ focus_tree = {
 						ideology = neutrality
 						size = 0.5
 						capital = 797
-						states = { 797 341 354 339 340 }
+						states = { 797 1223 341 354 1286 339 340 1266 }
 					}
 				}
 			}
@@ -1953,7 +1955,9 @@ focus_tree = {
 		prerequisite = { focus = TUR_the_sun_language_theory focus = TUR_variant_turkish_tax_focus focus = TUR_restack_the_officer_corps }
 		available = {
 			owns_state = 354
+			owns_state = 1286
 			owns_state = 800
+			owns_state = 1287
 			owns_state = 353
 		}
 		x = 0
@@ -1967,7 +1971,9 @@ focus_tree = {
 		bypass = {
 			NOT = {
 				owns_state = 354
+				owns_state = 1286
 				owns_state = 800
+				owns_state = 1287
 				owns_state = 353
 			}
 		}
@@ -2390,7 +2396,7 @@ focus_tree = {
 		icon = {
 			value = GFX_focus_generic_steel
 			trigger = {
-				SOV = { NOT = { controls_state = 231 } } #APPROPRIATE CONDITIONS FOR GENERIC ICON
+				SOV = { NOT = { controls_state = 231 controls_state = 1121 controls_state = 1123 controls_state = 1124 controls_state = 1125 controls_state = 1126 } } #APPROPRIATE CONDITIONS FOR GENERIC ICON
 			}
 		}
 		icon = GFX_focus_chi_mission_to_the_soviet_union
@@ -2407,7 +2413,7 @@ focus_tree = {
 		completion_reward = {
 			every_country = {
 				limit = {	
-					controls_state = 231
+					controls_state = 231 controls_state = 1121 controls_state = 1123 controls_state = 1124 controls_state = 1125 controls_state = 1126
 					owns_state = 231
 				}
 				country_event = { id = bftb_turkey.38 }
@@ -2788,7 +2794,9 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			add_state_claim = 184
+			add_state_claim = 1181
 			add_state_claim = 731
+			add_state_claim = 1607
 			create_wargoal = {
 				type = take_state_focus
 				target = GRE
@@ -2827,7 +2835,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TUR_reclaim_macedonia
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -2909,7 +2917,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TUR_reclaim_macedonia
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			base = 10
 		}
@@ -2917,11 +2925,30 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			add_state_claim = 106
-			add_state_claim = 970
+			add_state_claim = 1412
+			add_state_claim = 1307
+			add_state_claim = 1298
 			add_state_claim = 105
 			add_state_claim = 108
 			add_state_claim = 107
-			add_state_core = 104
+			add_state_claim = 970
+			add_state_claim = 803
+			add_state_claim = 1411
+			add_state_claim = 1299
+			add_state_claim = 1300
+			add_state_claim = 802
+			add_state_claim = 1715
+			add_state_claim = 1776
+			add_state_claim = 1260
+			add_state_claim = 1777
+			add_state_claim = 1710
+			add_state_claim = 1709
+			add_state_claim = 1721
+			add_state_claim = 1711
+			add_state_claim = 1712
+			add_state_core = 104 add_state_core = 1711 add_state_core = 1712
+			add_state_core = 804 add_state_core = 1717
+			add_state_core = 1713
 			create_wargoal = {
 				type = take_state_focus
 				target = YUG
@@ -2930,6 +2957,9 @@ focus_tree = {
 			add_state_claim = 971
 			add_state_claim = 79
 			add_state_claim = 77
+			add_state_claim = 81
+			add_state_claim = 1312
+			add_state_claim = 1295
 			create_wargoal = {
 				type = take_state_focus
 				target = ROM
@@ -3282,7 +3312,21 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			1286 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
 			800 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			1287 = {
 				add_building_construction = {
 					type = infrastructure
 					level = 2
@@ -3334,36 +3378,7 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = TUR_unlock_camelry_effect_tt
-			hidden_effect = { 
-				set_technology = { 
-					camelry = 1 
-					popup = no 
-				} 
-			} 
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			division_template = {
-				name = "Camel Corps" 	
-
-				division_names_group = TUR_CAV_01
-
-				regiments = {
-					camelry = { x = 0 y = 0 } 
-					camelry = { x = 0 y = 1 } 
-					camelry = { x = 0 y = 2 } 
-					camelry = { x = 1 y = 0 } 
-					camelry = { x = 1 y = 1 }
-					camelry = { x = 1 y = 2 }
-				}
-			}
-			random_owned_controlled_state = {
-				create_unit = {
-					division = "division_template = \"Camel Corps\" start_experience_factor = 0.05 start_equipment_factor = 1"
-					owner = TUR 
-					count = 3 
-				}
-			}
+			hidden_effect = { set_technology = { camelry = 1 } } 
 		}
 	}
 
@@ -3624,85 +3639,6 @@ focus_tree = {
 		}
 	}
 
-
-	focus = {
-		id = TUR_third_expedition_to_aceh
-		icon = GFX_focus_INS_dominion_of_atjeh
-		prerequisite = { focus = TUR_the_damascus_diktat }
-		x = 0 
-		y = 1
-		relative_position_id = TUR_the_damascus_diktat
-		cost = 10
-		ai_will_do = {
-			base = 10
-		}
-
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-
-		completion_reward = {
-
-			navy_experience = 50  
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			random_owned_controlled_state = {
-				limit = {
-					is_coastal = yes 
-					free_building_slots = {
-						building = dockyard
-						size > 2
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = dockyard
-					level = 3
-					instant_build = yes
-				}
-			}
-
-			IF = {
-				limit = {
-					ATJ = {
-						exists = yes 
-					}
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-				create_wargoal = {
-					type = puppet_wargoal_focus
-					target = ATJ 
-					expire = 0 
-				}	
-			}
-			ELSE_IF = {
-				limit = {
-					ATJ = {
-						exists = no  
-					}
-					1050 = {
-						NOT = {
-							is_owned_by = ROOT 
-						}
-					}
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-				1050 = {
-					OWNER = {
-						ROOT = {
-							create_wargoal = {
-								type = liberate_wargoal
-								target = PREV
-								generator = { 1050 } 
-								expire = 0 
-							}	
-						}
-					}
-				}	
-			}
-			
-		}
-	}
 
 	focus = {
 		id = TUR_refining_our_strategies
@@ -4483,6 +4419,8 @@ focus_tree = {
 							controls_state = 49
 							controls_state = 347
 							controls_state = 797
+							controls_state = 1223
+							controls_state = 1266
 							controls_state = 341
 						}
 					}
@@ -4508,7 +4446,21 @@ focus_tree = {
 						instant_build = yes
 					}
 				}
+				1223 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
 				341 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				1266 = {
 					add_building_construction = {
 						type = infrastructure
 						level = 1
@@ -4524,7 +4476,9 @@ focus_tree = {
 						AND = {
 							controls_state = 47
 							controls_state = 731
+							controls_state = 1607
 							controls_state = 184
+							controls_state = 1181
 						}
 					}
 				}
@@ -4542,7 +4496,21 @@ focus_tree = {
 						instant_build = yes
 					}
 				}
+				1607 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
 				184 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				1181 = {
 					add_building_construction = {
 						type = infrastructure
 						level = 1
@@ -4557,13 +4525,40 @@ focus_tree = {
 						is_in_faction_with = TUR
 						AND = {
 							controls_state = 106
-							controls_state = 970
-							controls_state = 108
+							controls_state = 1412
+							controls_state = 1307
+							controls_state = 1298
+							controls_state = 108 controls_state = 1709 controls_state = 1710 controls_state = 1721 controls_state = 1777
 							controls_state = 107
+							controls_state = 803
+							controls_state = 1411
+							controls_state = 1299
+							controls_state = 1300
 						}
 					}
 				}
 				106 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}	
+				}
+				1412 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}	
+				}
+				1307 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}	
+				}
+				1298 = {
 					add_building_construction = {
 						type = infrastructure
 						level = 1
@@ -4584,7 +4579,35 @@ focus_tree = {
 						instant_build = yes
 					}
 				}
+				803 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
 				970 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				1411 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				1299 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				1300 = {
 					add_building_construction = {
 						type = infrastructure
 						level = 1
@@ -4599,13 +4622,21 @@ focus_tree = {
 						is_in_faction_with = TUR
 						AND = {
 							controls_state = 82
+							controls_state = 1479
 							controls_state = 81
-							controls_state = 46
-							controls_state = 971
+							controls_state = 46 controls_state = 1312
+							controls_state = 971 controls_state = 1295
 						}
 					}
 				}
 				82 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}	
+				}
+				1479 = {
 					add_building_construction = {
 						type = infrastructure
 						level = 1
@@ -4646,7 +4677,9 @@ focus_tree = {
 						AND = {
 							controls_state = 47
 							controls_state = 731
+							controls_state = 1607
 							controls_state = 184
+							controls_state = 1181
 						}
 					}
 				}
@@ -4666,7 +4699,21 @@ focus_tree = {
 							instant_build = yes
 						}
 					}
+					1607 = {
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
 					184 = {
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+					1181 = {
 						add_building_construction = {
 							type = infrastructure
 							level = 1
@@ -4683,15 +4730,23 @@ focus_tree = {
 						has_completed_focus = ROM_danubian_transport_network
 						AND = {
 							controls_state = 82
+							controls_state = 1479
 							controls_state = 81
-							controls_state = 46
-							controls_state = 971
+							controls_state = 46 controls_state = 1312
+							controls_state = 971 controls_state = 1295
 						}
 					}
 				}
 				custom_effect_tooltip = TUR_connect_capitals_romania_tt
 				hidden_effect = { 
 					82 = {
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}	
+					}
+					1479 = {
 						add_building_construction = {
 							type = infrastructure
 							level = 1
@@ -4732,15 +4787,42 @@ focus_tree = {
 						}
 						AND = {
 							controls_state = 106
-							controls_state = 970
-							controls_state = 108
+							controls_state = 1412
+							controls_state = 1307
+							controls_state = 1298
+							controls_state = 108 controls_state = 1709 controls_state = 1710 controls_state = 1721 controls_state = 1777
 							controls_state = 107
+							controls_state = 803
+							controls_state = 1411
+							controls_state = 1299
+							controls_state = 1300
 						}
 					}
 				}
 				custom_effect_tooltip = TUR_connect_capitals_greece_tt
 				hidden_effect = { 
 					106 = {
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}	
+					}
+					1412 = {
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}	
+					}
+					1307 = {
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}	
+					}
+					1298 = {
 						add_building_construction = {
 							type = infrastructure
 							level = 1
@@ -4761,7 +4843,28 @@ focus_tree = {
 							instant_build = yes
 						}
 					}
-					970 = {
+					803 = {
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+					1411 = {
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+					1299 = {
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+					1300 = {
 						add_building_construction = {
 							type = infrastructure
 							level = 1
@@ -4857,24 +4960,6 @@ focus_tree = {
 					hidden_effect = {
 						add_building_construction = {
 							type = bunker
-							level = 3
-							province = 10472
-							instant_build = yes
-						}
-						add_building_construction = {
-							type = bunker
-							level = 2
-							province = 10403
-							instant_build = yes
-						}
-						add_building_construction = {
-							type = bunker
-							level = 2
-							province = 7454
-							instant_build = yes
-						}
-						add_building_construction = {
-							type = bunker
 							level = 2
 							province = 11753
 							instant_build = yes
@@ -4894,6 +4979,32 @@ focus_tree = {
 					}
 				}
 			}
+			1286 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					custom_effect_tooltip = TUR_fortify_the_north_tt
+					hidden_effect = {
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 10472
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 10403
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 7454
+							instant_build = yes
+						}
+					}
+				}
+			}
 			800 = {
 				if = {
 					limit = { is_controlled_by = ROOT }
@@ -4905,10 +5016,18 @@ focus_tree = {
 							province = 4583
 							instant_build = yes
 						}
+					}
+				}
+			}
+			1287 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					custom_effect_tooltip = TUR_fortify_the_east_tt
+					hidden_effect = {
 						add_building_construction = {
 							type = bunker
-							level = 2
-							province = 12376
+							level = 3
+							province = 13742
 							instant_build = yes
 						}
 					}
@@ -5649,6 +5768,13 @@ focus_tree = {
 					modifier = TUR_regional_force_of_stability
 				}
 			}
+			ENG = {
+				diplomatic_relation = {
+					country = TUR
+					relation = guarantee
+					active = yes
+				}
+			}
 			if = {
 				limit = {
 					ENG = {
@@ -5973,7 +6099,7 @@ focus_tree = {
 			}
 			else = {
 				random_owned_controlled_state = {
-					prioritize = { 354 342 339 }
+					prioritize = { 354 342 339 1286 }
 					limit = {
 						is_in_home_area = yes
 						free_building_slots = {
@@ -5982,10 +6108,10 @@ focus_tree = {
 						}
 						OR = {
 							is_coastal = yes
-							state = 354
+							state = 354 state = 1286
 						}
 						NOT = {
-							state = 797
+							state = 797 state = 1223
 						}
 					}
 					add_building_construction = {
@@ -5996,7 +6122,7 @@ focus_tree = {
 					set_state_flag = TUR_radar_focus_state
 				}
 				random_owned_controlled_state = {
-					prioritize = { 354 342 339 }
+					prioritize = { 354 342 339 1286 }
 					limit = {
 						is_in_home_area = yes
 						NOT = { has_state_flag = TUR_radar_focus_state }
@@ -6006,10 +6132,10 @@ focus_tree = {
 						}
 						OR = {
 							is_coastal = yes
-							state = 354
+							state = 354 state = 1286
 						}
 						NOT = {
-							state = 797
+							state = 797 state = 1223
 						}
 					}
 					add_building_construction = {
@@ -6020,7 +6146,7 @@ focus_tree = {
 					set_state_flag = TUR_radar_focus_state
 				}
 				random_owned_controlled_state = {
-					prioritize = { 354 342 339 }
+					prioritize = { 354 342 339 1286 }
 					limit = {
 						is_in_home_area = yes
 						NOT = { has_state_flag = TUR_radar_focus_state }
@@ -6030,10 +6156,10 @@ focus_tree = {
 						}
 						OR = {
 							is_coastal = yes
-							state = 354
+							state = 354 state = 1286
 						}
 						NOT = {
-							state = 797
+							state = 797 state = 1223
 						}
 					}
 					add_building_construction = {
@@ -6230,7 +6356,7 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					has_full_control_of_state = 797
+					has_full_control_of_state = 797 has_full_control_of_state = 1223
 				}
 				797 = {
 					add_extra_state_shared_building_slots = 2
@@ -6499,7 +6625,16 @@ focus_tree = {
 				ENG = {
 					NOT = {
 						controls_state = 455
+						controls_state = 1780
+						controls_state = 1781
 						controls_state = 454
+						controls_state = 1133
+						controls_state = 1134
+						controls_state = 1135
+						controls_state = 1137
+						controls_state = 1138
+						controls_state = 1139
+						controls_state = 1140
 						controls_state = 453
 					}
 				}
@@ -6986,6 +7121,11 @@ focus_tree = {
 						relation = guarantee
 						active = yes
 					}
+				}
+				diplomatic_relation = {
+					country = TUR
+					relation = guarantee
+					active = yes
 				}
 			}
 			hidden_effect = {
@@ -8214,12 +8354,6 @@ focus_tree = {
 						add_building_construction = {
 							type = bunker
 							level = 2
-							province = 849
-							instant_build = yes
-						}
-						add_building_construction = {
-							type = bunker
-							level = 2
 							province = 3893
 							instant_build = yes
 						}
@@ -8227,6 +8361,20 @@ focus_tree = {
 							type = bunker
 							level = 2
 							province = 11842
+							instant_build = yes
+						}
+					}
+				}
+			}
+			1266 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					custom_effect_tooltip = TUR_fortifying_the_bosporus_edirne_tt
+					hidden_effect = {
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 849
 							instant_build = yes
 						}
 						add_building_construction = {
@@ -8423,7 +8571,7 @@ focus_tree = {
 				}
 				if = {
 					limit = {
-						ENG = { owns_state = 454 }
+						ENG = { owns_state = 454 owns_state = 1133 owns_state = 1134 owns_state = 1135 owns_state = 1137 owns_state = 1138 owns_state = 1139 owns_state = 1140 }
 					}
 					454 = {
 						set_state_flag = TUR_turkey_england_state_flag
@@ -8431,7 +8579,7 @@ focus_tree = {
 				}
 				if = {
 					limit = {
-						ENG = { owns_state = 455 }
+						ENG = { owns_state = 455 owns_state = 1780 owns_state = 1781 }
 					}
 					455 = {
 						set_state_flag = TUR_turkey_england_state_flag
@@ -8534,7 +8682,7 @@ focus_tree = {
 				}
 				if = {
 					limit = {
-						FRA = { owns_state = 680 }
+						FRA = { owns_state = 680 owns_state = 1330 owns_state = 1779 }
 					}
 					680 = {
 						set_state_flag = TUR_turkey_france_state_flag
@@ -8550,7 +8698,7 @@ focus_tree = {
 				}
 				if = {
 					limit = {
-						FRA = { owns_state = 554 }
+						FRA = { owns_state = 554 owns_state = 1136 }
 					}
 					554 = {
 						set_state_flag = TUR_turkey_france_state_flag
@@ -8834,7 +8982,9 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			add_state_claim = 184
+			add_state_claim = 1181
 			add_state_claim = 731
+			add_state_claim = 1607
 			add_state_claim = 187
 			create_wargoal = {
 				type = annex_everything
@@ -9259,7 +9409,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			354 = {
+			1286 = {
 				if = {
 					limit = {
 						free_building_slots = {
@@ -10628,7 +10778,7 @@ focus_tree = {
 					}
 				}
 			}
-			341 = {
+			1266 = {
 				if = {
 					limit = { is_controlled_by = ROOT }
 					add_building_construction = {
@@ -10871,10 +11021,22 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			add_state_claim = 680
+			add_state_claim = 1330
 			add_state_claim = 676
 			add_state_claim = 291
+			add_state_claim = 1010
 			add_state_claim = 419
 			add_state_claim = 421
+			add_state_claim = 1276
+			add_state_claim = 1277
+			add_state_claim = 1011
+			add_state_claim = 1279
+			add_state_claim = 1280
+			add_state_claim = 1281
+			add_state_claim = 1282
+			add_state_claim = 1283
+			add_state_claim = 1284
+			add_state_claim = 1285
 			create_wargoal = {
 				type = take_claimed_state
 				target = PER
@@ -10973,7 +11135,12 @@ focus_tree = {
 			add_state_claim = 48
 			add_state_claim = 801
 			add_state_claim = 803
+			add_state_claim = 1411
+			add_state_claim = 1299
+			add_state_claim = 1300
 			add_state_claim = 212
+			add_state_claim = 1719
+			add_state_claim = 1720
 			add_state_claim = 77
 			if = {
 				limit = {
@@ -11231,9 +11398,11 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			add_state_core = 184
+			add_state_core = 1181
 			add_state_claim = 230
 			add_state_claim = 187
 			add_state_claim = 731
+			add_state_claim = 1607
 			if = {
 				limit = {
 					has_global_flag = TUR_soviets_keeping_eye_on_turkey
@@ -11246,9 +11415,11 @@ focus_tree = {
 							NOT = { tag = TUR }
 							OR = {
 								controls_state = 184
-								controls_state = 230
+								controls_state = 1181
+								controls_state = 230 controls_state = 1127 controls_state = 1786
 								controls_state = 187
 								controls_state = 731
+								controls_state = 1607
 							}
 						}
 					}
@@ -11267,9 +11438,11 @@ focus_tree = {
 							NOT = { tag = TUR }
 							OR = {
 								controls_state = 184
-								controls_state = 230
+								controls_state = 1181
+								controls_state = 230 controls_state = 1127 controls_state = 1786
 								controls_state = 187
 								controls_state = 731
+								controls_state = 1607
 							}
 						}
 					}
@@ -11289,9 +11462,11 @@ focus_tree = {
 							NOT = { tag = TUR }
 							OR = {
 								controls_state = 184
-								controls_state = 230
+								controls_state = 1181
+								controls_state = 230 controls_state = 1127 controls_state = 1786
 								controls_state = 187
 								controls_state = 731
+								controls_state = 1607
 							}
 						}
 					}
@@ -11313,9 +11488,11 @@ focus_tree = {
 							NOT = { tag = TUR }
 							OR = {
 								controls_state = 184
-								controls_state = 230
+								controls_state = 1181
+								controls_state = 230 controls_state = 1127 controls_state = 1786
 								controls_state = 187
 								controls_state = 731
+								controls_state = 1607
 							}
 						}
 					}
@@ -11342,8 +11519,20 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			add_state_claim = 231
+			add_state_claim = 1123
+			add_state_claim = 1124
+			add_state_claim = 1125
+			add_state_claim = 1126
+			add_state_claim = 826
 			add_state_claim = 230
+			add_state_claim = 1127
 			add_state_claim = 229
+			add_state_claim = 1118
+			add_state_claim = 1119
+			add_state_claim = 1120
+			add_state_claim = 1811
+			add_state_claim = 1121
+			add_state_claim = 1122
 			add_state_claim = 233
 			if = {
 				limit = {
@@ -11357,8 +11546,20 @@ focus_tree = {
 							NOT = { tag = TUR }
 							OR = {
 								controls_state = 231
-								controls_state = 230
+								controls_state = 1123
+								controls_state = 1124
+								controls_state = 1125
+								controls_state = 1126
+								controls_state = 826
+								controls_state = 230 controls_state = 1786
+								controls_state = 1127
 								controls_state = 229
+								controls_state = 1118
+								controls_state = 1119
+								controls_state = 1120
+								controls_state = 1811
+								controls_state = 1121
+								controls_state = 1122
 								controls_state = 233
 							}
 						}
@@ -11378,8 +11579,20 @@ focus_tree = {
 							NOT = { tag = TUR }
 							OR = {
 								controls_state = 231
-								controls_state = 230
+								controls_state = 1123
+								controls_state = 1124
+								controls_state = 1125
+								controls_state = 1126
+								controls_state = 826
+								controls_state = 230 controls_state = 1786
+								controls_state = 1127
 								controls_state = 229
+								controls_state = 1118
+								controls_state = 1119
+								controls_state = 1120
+								controls_state = 1811
+								controls_state = 1121
+								controls_state = 1122
 								controls_state = 233
 							}
 						}
@@ -11400,8 +11613,20 @@ focus_tree = {
 							NOT = { tag = TUR }
 							OR = {
 								controls_state = 231
-								controls_state = 230
+								controls_state = 1123
+								controls_state = 1124
+								controls_state = 1125
+								controls_state = 1126
+								controls_state = 826
+								controls_state = 230 controls_state = 1786
+								controls_state = 1127
 								controls_state = 229
+								controls_state = 1118
+								controls_state = 1119
+								controls_state = 1120
+								controls_state = 1811
+								controls_state = 1121
+								controls_state = 1122
 								controls_state = 233
 							}
 						}
@@ -11424,8 +11649,20 @@ focus_tree = {
 							NOT = { tag = TUR }
 							OR = {
 								controls_state = 231
-								controls_state = 230
+								controls_state = 1123
+								controls_state = 1124
+								controls_state = 1125
+								controls_state = 1126
+								controls_state = 826
+								controls_state = 230 controls_state = 1786
+								controls_state = 1127
 								controls_state = 229
+								controls_state = 1118
+								controls_state = 1119
+								controls_state = 1120
+								controls_state = 1811
+								controls_state = 1121
+								controls_state = 1122
 								controls_state = 233
 							}
 						}
@@ -11454,10 +11691,15 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			add_state_core = 229
-			add_state_core = 231
+			add_state_core = 1118
+			add_state_core = 1119
+			add_state_core = 1120
+			add_state_core = 1811
+			add_state_core = 1121
+			add_state_core = 1122
+			add_state_core = 1786
 			add_state_core = 420
 			add_state_core = 419
-			add_state_core = 1000 #East Azerbaijan
 			add_state_core = 417
 			add_state_claim = 413
 			add_state_claim = 232
@@ -11473,7 +11715,13 @@ focus_tree = {
 							NOT = { tag = TUR }
 							OR = {
 								controls_state = 229
-								controls_state = 231
+								controls_state = 1118
+								controls_state = 1119
+								controls_state = 1120
+								controls_state = 1811
+								controls_state = 1121
+								controls_state = 1122
+								controls_state = 1786
 								controls_state = 420
 								controls_state = 419
 								controls_state = 417
@@ -11497,7 +11745,13 @@ focus_tree = {
 							NOT = { tag = TUR }
 							OR = {
 								controls_state = 229
-								controls_state = 231
+								controls_state = 1118
+								controls_state = 1119
+								controls_state = 1120
+								controls_state = 1811
+								controls_state = 1121
+								controls_state = 1122
+								controls_state = 1786
 								controls_state = 420
 								controls_state = 419
 								controls_state = 417
@@ -11522,7 +11776,13 @@ focus_tree = {
 							NOT = { tag = TUR }
 							OR = {
 								controls_state = 229
-								controls_state = 231
+								controls_state = 1118
+								controls_state = 1119
+								controls_state = 1120
+								controls_state = 1811
+								controls_state = 1121
+								controls_state = 1122
+								controls_state = 1786
 								controls_state = 420
 								controls_state = 419
 								controls_state = 417
@@ -11549,7 +11809,13 @@ focus_tree = {
 							NOT = { tag = TUR }
 							OR = {
 								controls_state = 229
-								controls_state = 231
+								controls_state = 1118
+								controls_state = 1119
+								controls_state = 1120
+								controls_state = 1811
+								controls_state = 1121
+								controls_state = 1122
+								controls_state = 1786
 								controls_state = 420
 								controls_state = 419
 								controls_state = 417
@@ -11585,6 +11851,13 @@ focus_tree = {
 				add_core_of = TUR
 				add_extra_state_shared_building_slots = 3
 			}
+			1118 = { add_core_of = TUR }
+			1119 = { add_core_of = TUR }
+			1120 = { add_core_of = TUR }
+			1811 = { add_core_of = TUR }
+			1121 = { add_core_of = TUR }
+			1122 = { add_core_of = TUR }
+			1786 = { add_core_of = TUR }
 			add_war_support = 0.1
 			add_stability = 0.1
 		}
@@ -11607,8 +11880,21 @@ focus_tree = {
 		completion_reward = {
 			add_state_claim = 677
 			add_state_claim = 680
+			add_state_claim = 1330
 			add_state_claim = 291
+			add_state_claim = 1010
+			add_state_claim = 675
+			add_state_claim = 1276
+			add_state_claim = 1277
+			add_state_claim = 1011
+			add_state_claim = 1283
+			add_state_claim = 1284
+			add_state_claim = 1285
 			add_state_core = 676
+			add_state_core = 1279
+			add_state_core = 1280
+			add_state_core = 1281
+			add_state_core = 1282
 			if = {
 				limit = {
 					has_global_flag = TUR_soviets_keeping_eye_on_turkey
@@ -11621,9 +11907,22 @@ focus_tree = {
 							NOT = { tag = TUR }
 							OR = {
 								controls_state = 677
-								controls_state = 680
+								controls_state = 680 controls_state = 1779
+								controls_state = 1330
 								controls_state = 676
 								controls_state = 291
+								controls_state = 675 controls_state = 1778
+								controls_state = 1010
+								controls_state = 1276
+								controls_state = 1277
+								controls_state = 1011
+								controls_state = 1279
+								controls_state = 1280
+								controls_state = 1281
+								controls_state = 1282
+								controls_state = 1283
+								controls_state = 1284
+								controls_state = 1285
 							}
 						}
 					}
@@ -11642,9 +11941,22 @@ focus_tree = {
 							NOT = { tag = TUR }
 							OR = {
 								controls_state = 677
-								controls_state = 680
+								controls_state = 680 controls_state = 1779
+								controls_state = 1330
 								controls_state = 676
 								controls_state = 291
+								controls_state = 1010
+								controls_state = 675 controls_state = 1778
+								controls_state = 1276
+								controls_state = 1277
+								controls_state = 1011
+								controls_state = 1279
+								controls_state = 1280
+								controls_state = 1281
+								controls_state = 1282
+								controls_state = 1283
+								controls_state = 1284
+								controls_state = 1285
 							}
 						}
 					}
@@ -11664,9 +11976,22 @@ focus_tree = {
 							NOT = { tag = TUR }
 							OR = {
 								controls_state = 677
-								controls_state = 680
+								controls_state = 680 controls_state = 1779
+								controls_state = 1330
 								controls_state = 676
 								controls_state = 291
+								controls_state = 1010
+								controls_state = 675 controls_state = 1778
+								controls_state = 1276
+								controls_state = 1277
+								controls_state = 1011
+								controls_state = 1279
+								controls_state = 1280
+								controls_state = 1281
+								controls_state = 1282
+								controls_state = 1283
+								controls_state = 1284
+								controls_state = 1285
 							}
 						}
 					}
@@ -11688,9 +12013,22 @@ focus_tree = {
 							NOT = { tag = TUR }
 							OR = {
 								controls_state = 677
-								controls_state = 680
+								controls_state = 680 controls_state = 1779
+								controls_state = 1330
 								controls_state = 676
 								controls_state = 291
+								controls_state = 1010
+								controls_state = 675 controls_state = 1778
+								controls_state = 1276
+								controls_state = 1277
+								controls_state = 1011
+								controls_state = 1279
+								controls_state = 1280
+								controls_state = 1281
+								controls_state = 1282
+								controls_state = 1283
+								controls_state = 1284
+								controls_state = 1285
 							}
 						}
 					}
@@ -11742,9 +12080,14 @@ focus_tree = {
 							NOT = { tag = TUR }
 							OR = {
 								controls_state = 419
-								controls_state = 680
+								controls_state = 680 controls_state = 1779
+								controls_state = 1330
 								controls_state = 676
 								controls_state = 421
+								controls_state = 1279
+								controls_state = 1280
+								controls_state = 1281
+								controls_state = 1282
 							}
 						}
 					}
@@ -11763,9 +12106,14 @@ focus_tree = {
 							NOT = { tag = TUR }
 							OR = {
 								controls_state = 419
-								controls_state = 680
+								controls_state = 680 controls_state = 1779
+								controls_state = 1330
 								controls_state = 676
 								controls_state = 421
+								controls_state = 1279
+								controls_state = 1280
+								controls_state = 1281
+								controls_state = 1282
 							}
 						}
 					}
@@ -11785,9 +12133,14 @@ focus_tree = {
 							NOT = { tag = TUR }
 							OR = {
 								controls_state = 419
-								controls_state = 680
+								controls_state = 680 controls_state = 1779
+								controls_state = 1330
 								controls_state = 676
 								controls_state = 421
+								controls_state = 1279
+								controls_state = 1280
+								controls_state = 1281
+								controls_state = 1282
 							}
 						}
 					}
@@ -11809,9 +12162,14 @@ focus_tree = {
 							NOT = { tag = TUR }
 							OR = {
 								controls_state = 419
-								controls_state = 680
+								controls_state = 680 controls_state = 1779
+								controls_state = 1330
 								controls_state = 676
 								controls_state = 421
+								controls_state = 1279
+								controls_state = 1280
+								controls_state = 1281
+								controls_state = 1282
 							}
 						}
 					}
@@ -11885,16 +12243,32 @@ focus_tree = {
 			}
 			else = {
 				43 = { add_claim_by = TUR }
-				973 = { add_claim_by = TUR }
-				974 = { add_claim_by = TUR }
 				154 = { add_claim_by = TUR }
 				155 = { add_claim_by = TUR }
+				1560 = { add_claim_by = TUR }
+				1278 = { add_claim_by = TUR }
+				1235 = { add_claim_by = TUR }
+				1700 = { add_claim_by = TUR }
+				973 = { add_claim_by = TUR }
+				974 = { add_claim_by = TUR }
+				1703 = { add_claim_by = TUR }
+				1384 = { add_claim_by = TUR }
+				1705 = { add_claim_by = TUR }
 				76 = { add_claim_by = TUR }
+				1309 = { add_claim_by = TUR }
+				1310 = { add_claim_by = TUR }
 				84 = { add_claim_by = TUR }
+				1387 = { add_claim_by = TUR }
 				83 = { add_claim_by = TUR }
+				1480 = { add_claim_by = TUR }
 				82 = { add_claim_by = TUR }
+				1479 = { add_claim_by = TUR }
+				1722 = { add_claim_by = TUR }
 				764 = { add_claim_by = TUR }
+				1478 = { add_claim_by = TUR }
+				1092 = { add_claim_by = TUR }
 				45 = { add_claim_by = TUR }
+				1477 = { add_claim_by = TUR }
 				664 = { add_claim_by = TUR }
 			}
 			create_wargoal = {
@@ -12130,7 +12504,14 @@ focus_tree = {
 			}
 			216 = { add_claim_by = TUR }
 			215 = { add_claim_by = TUR }
+			1170 = { add_claim_by = TUR } # KSRE (de 215)
+			1171 = { add_claim_by = TUR } # KSRE (de 215)
+			1174 = { add_claim_by = TUR } # KSRE (de 215)
+			1175 = { add_claim_by = TUR } # KSRE (de 215)
 			213 = { add_claim_by = TUR }
+			1714 = { add_claim_by = TUR }
+			1116 = { add_claim_by = TUR }
+			1117 = { add_claim_by = TUR }
 			if = { 
 				limit = {
 					FIN = { exists = yes }
@@ -12155,7 +12536,7 @@ focus_tree = {
 				}
 				create_wargoal = {
 					type = take_state_focus
-					generator = { 216 215 213 }
+					generator = { 216 215 213 1714 1116 1117 1170 1171 1174 1175 }
 					target = SOV
 				}
 			}

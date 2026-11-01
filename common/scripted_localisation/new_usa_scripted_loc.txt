@@ -1,0 +1,492 @@
+defined_text = { # USAGetCGLevelText
+	name = USAGetCGLevelText
+	text = {
+		trigger = {
+			check_variable = { var = USA_eco_dy_consumer_goods_factor value = 0.75 compare = greater_than_or_equals }
+		}
+		localization_key = usa_inlay_window_consumer_goods_5_tt
+	}
+	text = {
+		trigger = {
+			check_variable = { var = USA_eco_dy_consumer_goods_factor value = 0.5 compare = greater_than_or_equals }
+		}
+		localization_key = usa_inlay_window_consumer_goods_4_tt
+	}
+	text = {
+		trigger = {
+			check_variable = { var = USA_eco_dy_consumer_goods_factor value = 0.25 compare = greater_than_or_equals }
+		}
+		localization_key = usa_inlay_window_consumer_goods_3_tt
+	}
+	text = {
+		trigger = {
+			check_variable = { var = USA_eco_dy_consumer_goods_factor value = 0 compare = greater_than_or_equals }
+		}
+		localization_key = usa_inlay_window_consumer_goods_2_tt
+	}
+	text = {
+		trigger = {
+			check_variable = { var = USA_eco_dy_consumer_goods_factor value = -0.25 compare = greater_than_or_equals }
+		}
+		localization_key = usa_inlay_window_consumer_goods_1_tt
+	}
+	text = {
+		trigger = {
+			check_variable = { var = USA_eco_dy_consumer_goods_factor value = -0.25 compare = less_than }
+		}
+		localization_key = usa_inlay_window_consumer_goods_0_tt
+	}
+	#text = {
+	#	trigger = {
+	#		OR = {
+	#			has_dynamic_modifier = { modifier = GER_mefo_bills_modifier }
+	#			has_dynamic_modifier = { modifier = GER_economy_of_conquest_modifier }
+	#		}
+	#		check_variable = { GER_industrial_consumer_goods_factor < 1 }
+	#	}
+	#	localization_key = GER_increasing_cg_tt 
+	#}
+}
+
+defined_text = { # USAGetRecoveryLevelText
+	name = USAGetRecoveryLevelText
+	text = {
+		trigger = {
+			has_country_flag = {
+				flag = usa_core_recovery_flag
+				value > 3
+			}
+		}
+		localization_key = usa_inlay_window_recovery_4_tt
+	}
+	text = {
+		trigger = {
+			has_country_flag = {
+				flag = usa_core_recovery_flag
+				value > 2
+			}
+		}
+		localization_key = usa_inlay_window_recovery_3_tt
+	}
+	text = {
+		trigger = {
+			has_country_flag = {
+				flag = usa_core_recovery_flag
+				value > 1
+			}
+		}
+		localization_key = usa_inlay_window_recovery_2_tt
+	}
+	text = {
+		trigger = {
+			has_country_flag = {
+				flag = usa_core_recovery_flag
+				value > 0
+			}
+		}
+		localization_key = usa_inlay_window_recovery_1_tt
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_country_flag = usa_core_recovery_flag
+			}
+		}
+		localization_key = usa_inlay_window_recovery_0_tt
+	}
+}
+
+defined_text = { # USAGetResistanceText
+	name = USAGetResistanceText
+	text = {
+		trigger = {
+			has_idea = usa_conservative_resistance_idea_5
+		}
+		localization_key = usa_inlay_window_CRB_tt_2
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_idea = usa_conservative_resistance_idea_4
+				has_idea = usa_conservative_resistance_idea_3
+				has_idea = usa_conservative_resistance_idea_2
+				has_idea = usa_conservative_resistance_idea_1
+			}
+		}
+		localization_key = usa_inlay_window_CRB_tt_1
+	}
+	text = {
+		trigger = {
+			has_conservative_resistance = no
+		}
+		localization_key = usa_inlay_window_CRB_tt_0
+	}
+}
+
+# FREE
+ # Fake Focus Description
+	defined_text = { name = USA_federal_recovery_emergency_enterprise_SL_a text = { trigger = { always = yes } localization_key = idea_desc|usa_free_civilian_industry_si_-1 } }
+	defined_text = { name = USA_federal_recovery_emergency_enterprise_SL_b text = { trigger = { always = yes } localization_key = idea_desc|usa_free_military_industry_si_-1 } }
+	defined_text = { name = USA_federal_recovery_emergency_enterprise_SL_c text = { trigger = { always = yes } localization_key = idea_desc|usa_free_army_si_-1} }
+	defined_text = { name = USA_federal_recovery_emergency_enterprise_SL_d text = { trigger = { always = yes } localization_key = idea_desc|usa_free_navy_si_-1 } }
+	defined_text = { name = USA_federal_recovery_emergency_enterprise_SL_e text = { trigger = { always = yes } localization_key = idea_desc|usa_free_air_si_-1 } }
+	defined_text = { name = USA_federal_recovery_emergency_enterprise_SL_f text = { trigger = { always = yes } localization_key = idea_desc|usa_free_science_si_-1} }
+defined_text = { name = USAGetFREECivilianIndustryNL text = { trigger = { USA_AN_has_FREE_civ_si = yes } localization_key = NL_2s_tt } }
+defined_text = { # USAGetFREECivilianIndustry
+	name = USAGetFREECivilianIndustry
+
+	text = {
+		trigger = {
+			has_idea = usa_free_civilian_industry_si_-3
+		}
+		localization_key = idea_desc|usa_free_civilian_industry_si_-3
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_civilian_industry_si_-2
+		}
+		localization_key = idea_desc|usa_free_civilian_industry_si_-2
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_civilian_industry_si_-1
+		}
+		localization_key = idea_desc|usa_free_civilian_industry_si_-1
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_civilian_industry_si_0
+		}
+		localization_key = idea_desc|usa_free_civilian_industry_si_0
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_civilian_industry_si_1
+		}
+		localization_key = idea_desc|usa_free_civilian_industry_si_1
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_civilian_industry_si_2
+		}
+		localization_key = idea_desc|usa_free_civilian_industry_si_2
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_civilian_industry_si_3
+		}
+		localization_key = idea_desc|usa_free_civilian_industry_si_3
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_civilian_industry_si_4
+		}
+		localization_key = idea_desc|usa_free_civilian_industry_si_4
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_civilian_industry_si_5
+		}
+		localization_key = idea_desc|usa_free_civilian_industry_si_5
+	}
+}
+defined_text = { name = USAGetFREEMilitaryIndustryNL text = { trigger = { USA_AN_has_FREE_mil_si = yes } localization_key = NL_2s_tt } }
+defined_text = { # USAGetFREEMilitaryIndustry
+	name = USAGetFREEMilitaryIndustry
+
+	text = {
+		trigger = {
+			has_idea = usa_free_military_industry_si_-3
+		}
+		localization_key = idea_desc|usa_free_military_industry_si_-3
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_military_industry_si_-2
+		}
+		localization_key = idea_desc|usa_free_military_industry_si_-2
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_military_industry_si_-1
+		}
+		localization_key = idea_desc|usa_free_military_industry_si_-1
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_military_industry_si_0
+		}
+		localization_key = idea_desc|usa_free_military_industry_si_0
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_military_industry_si_1
+		}
+		localization_key = idea_desc|usa_free_military_industry_si_1
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_military_industry_si_2
+		}
+		localization_key = idea_desc|usa_free_military_industry_si_2
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_military_industry_si_3
+		}
+		localization_key = idea_desc|usa_free_military_industry_si_3
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_military_industry_si_4
+		}
+		localization_key = idea_desc|usa_free_military_industry_si_4
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_military_industry_si_5
+		}
+		localization_key = idea_desc|usa_free_military_industry_si_5
+	}
+}
+defined_text = { name = USAGetFREEArmyNL text = { trigger = { USA_AN_has_FREE_arm_si = yes } localization_key = NL_2s_tt } }
+defined_text = { # USAGetFREEArmy
+	name = USAGetFREEArmy
+
+	text = {
+		trigger = {
+			has_idea = usa_free_army_si_-3
+		}
+		localization_key = idea_desc|usa_free_army_si_-3
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_army_si_-2
+		}
+		localization_key = idea_desc|usa_free_army_si_-2
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_army_si_-1
+		}
+		localization_key = idea_desc|usa_free_army_si_-1
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_army_si_0
+		}
+		localization_key = idea_desc|usa_free_army_si_0
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_army_si_1
+		}
+		localization_key = idea_desc|usa_free_army_si_1
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_army_si_2
+		}
+		localization_key = idea_desc|usa_free_army_si_2
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_army_si_3
+		}
+		localization_key = idea_desc|usa_free_army_si_3
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_army_si_4
+		}
+		localization_key = idea_desc|usa_free_army_si_4
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_army_si_5
+		}
+		localization_key = idea_desc|usa_free_army_si_5
+	}
+}
+defined_text = { name = USAGetFREENavyNL text = { trigger = { USA_AN_has_FREE_nav_si = yes } localization_key = NL_2s_tt } }
+defined_text = { # USAGetFREENavy
+	name = USAGetFREENavy
+
+	text = {
+		trigger = {
+			has_idea = usa_free_navy_si_-3
+		}
+		localization_key = idea_desc|usa_free_navy_si_-3
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_navy_si_-2
+		}
+		localization_key = idea_desc|usa_free_navy_si_-2
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_navy_si_-1
+		}
+		localization_key = idea_desc|usa_free_navy_si_-1
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_navy_si_0
+		}
+		localization_key = idea_desc|usa_free_navy_si_0
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_navy_si_1
+		}
+		localization_key = idea_desc|usa_free_navy_si_1
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_navy_si_2
+		}
+		localization_key = idea_desc|usa_free_navy_si_2
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_navy_si_3
+		}
+		localization_key = idea_desc|usa_free_navy_si_3
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_navy_si_4
+		}
+		localization_key = idea_desc|usa_free_navy_si_4
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_navy_si_5
+		}
+		localization_key = idea_desc|usa_free_navy_si_5
+	}
+}
+defined_text = { name = USAGetFREEAirNL text = { trigger = { USA_AN_has_FREE_air_si = yes } localization_key = NL_2s_tt } }
+defined_text = { # USAGetFREEAir
+	name = USAGetFREEAir
+
+	text = {
+		trigger = {
+			has_idea = usa_free_air_si_-3
+		}
+		localization_key = idea_desc|usa_free_air_si_-3
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_air_si_-2
+		}
+		localization_key = idea_desc|usa_free_air_si_-2
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_air_si_-1
+		}
+		localization_key = idea_desc|usa_free_air_si_-1
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_air_si_0
+		}
+		localization_key = idea_desc|usa_free_air_si_0
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_air_si_1
+		}
+		localization_key = idea_desc|usa_free_air_si_1
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_air_si_2
+		}
+		localization_key = idea_desc|usa_free_air_si_2
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_air_si_3
+		}
+		localization_key = idea_desc|usa_free_air_si_3
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_air_si_4
+		}
+		localization_key = idea_desc|usa_free_air_si_4
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_air_si_5
+		}
+		localization_key = idea_desc|usa_free_air_si_5
+	}
+}
+defined_text = { name = USAGetFREEScienceNL text = { trigger = { USA_AN_has_FREE_sci_si = yes } localization_key = NL_2s_tt } }
+defined_text = { # USAGetFREEScience
+	name = USAGetFREEScience
+
+	text = {
+		trigger = {
+			has_idea = usa_free_science_si_-3
+		}
+		localization_key = idea_desc|usa_free_science_si_-3
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_science_si_-2
+		}
+		localization_key = idea_desc|usa_free_science_si_-2
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_science_si_-1
+		}
+		localization_key = idea_desc|usa_free_science_si_-1
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_science_si_0
+		}
+		localization_key = idea_desc|usa_free_science_si_0
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_science_si_1
+		}
+		localization_key = idea_desc|usa_free_science_si_1
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_science_si_2
+		}
+		localization_key = idea_desc|usa_free_science_si_2
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_science_si_3
+		}
+		localization_key = idea_desc|usa_free_science_si_3
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_science_si_4
+		}
+		localization_key = idea_desc|usa_free_science_si_4
+	}
+	text = {
+		trigger = {
+			has_idea = usa_free_science_si_5
+		}
+		localization_key = idea_desc|usa_free_science_si_5
+	}
+}
+defined_text = { # FREE Title
+	name = USAGetFREETitle
+	text = { trigger = { has_dynamic_modifier = USA_FREE_dynamic_modifier_2 } localization_key = FREE_tt_2 }
+	text = { localization_key = FREE_tt_1 }
+}

@@ -260,6 +260,12 @@ country_event = {
 		102 = {
 			add_claim_by = ROOT
 		}
+		1410 = { # KSRE (de 102)
+			add_claim_by = ROOT
+		}
+		1704 = { # KSRE (de 102)
+			add_claim_by = ROOT
+		}
 
 		custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -270,7 +276,21 @@ country_event = {
 		108 = {
 			add_claim_by = ROOT
 		}
-
+		1710 = { # KSRE (de 108)
+			add_claim_by = ROOT
+		}
+		1777 = { # KSRE (de 108)
+			add_claim_by = ROOT
+		}
+		1709 = {
+			add_claim_by = ROOT
+		}
+		1715 = {
+			add_claim_by = ROOT
+		}
+		1721 = {
+			add_claim_by = ROOT
+		}
 	}
 }
 
@@ -298,6 +318,12 @@ country_event = {
 		102 = {
 			add_claim_by = ROOT
 		}
+		1410 = { # KSRE (de 102)
+			add_claim_by = ROOT
+		}
+		1704 = { # KSRE (de 102)
+			add_claim_by = ROOT
+		}
 
 		custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -308,7 +334,21 @@ country_event = {
 		108 = {
 			add_claim_by = ROOT
 		}
-
+		1710 = { # KSRE (de 108)
+			add_claim_by = ROOT
+		}
+		1777 = { # KSRE (de 108)
+			add_claim_by = ROOT
+		}
+		1709 = {
+			add_claim_by = ROOT
+		}
+		1715 = {
+			add_claim_by = ROOT
+		}
+		1721 = {
+			add_claim_by = ROOT
+		}
 	}
 
 	option = { #rescue
@@ -349,9 +389,17 @@ country_event = {
 				CRO = { is_subject_of = YUG }
 			}
 			109 = { is_owned_and_controlled_by = YUG }
+			1706 = { is_owned_and_controlled_by = YUG } # KSRE (de 109)
+			1707 = { is_owned_and_controlled_by = YUG } # KSRE (de 109)
 			103 = { is_owned_and_controlled_by = YUG }
+			1296 = { is_owned_and_controlled_by = YUG } # KSRE (de 103)
+			1325 = { is_owned_and_controlled_by = YUG } # KSRE (de 103)
+			1339 = { is_owned_and_controlled_by = YUG } # KSRE (de 103)
+			1388 = { is_owned_and_controlled_by = YUG } # KSRE (de 103)
+			1718 = { is_owned_and_controlled_by = YUG } # KSRE (de 103)
 			163 = { is_owned_and_controlled_by = YUG }
 			852 = { is_owned_and_controlled_by = YUG }
+			1169 = { is_owned_and_controlled_by = YUG } # KSRE (de 852)
 		}
 	}
 	
@@ -401,169 +449,69 @@ country_event = {
 				CRO = {
 					exists = no
 				}
-			}
-			if = {
-				limit = { 109 = { is_owned_and_controlled_by = YUG } }
-				CRO = { transfer_state = 109 }
-			}
-			IF = {
-				limit = { 103 = { is_owned_and_controlled_by = YUG } }
-				CRO = { transfer_state = 103 }
-			}
-			IF = {
-				limit = { 163 = { is_owned_and_controlled_by = YUG } }
-				CRO = { transfer_state = 163 }
-			}
-			IF = {
-				limit = { 852 = { is_owned_and_controlled_by = YUG } }
-				CRO = { transfer_state = 852 }
-			}
-			hidden_effect = {
-				104 =  {
-					add_claim_by = CRO
-				}
-				804 =  {
-					add_claim_by = CRO
-				}
-
-				IF = {
-					limit = {
-						CRO = {
-							capital_scope = {
-								NOT = {
-									is_in_array = {
-										array = AUS.expansion_targets
-										value = THIS
-									}
-								}
-							}
-						}
-					}
-
-					CRO = {
-						capital_scope = {
-							add_to_array = {
-								array = AUS.expansion_targets
-								value = THIS
-							}
-						}
-					}
-
-					IF = {
-						limit = {
-							SLV = {
-								capital_scope = {
-									NOT = {
-										is_in_array = {
-											array = AUS.expansion_targets
-											value = THIS
-										}
-									}
-								}
-							}
-						}
-
-						YUG = {
-							capital_scope = {
-								remove_from_array = {
-									array = AUS.expansion_targets
-									value = THIS
-								}
-								set_state_flag = AUS_no_longer_expansion_target
-							} 
-						}
-						
-					}
-				}
-				
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			CRO = {
-				declare_war_on = {
-					target = YUG
-					type = annex_everything
-				}
-				custom_effect_tooltip = YUG_CRO_independence_war_troops_tt
-				hidden_effect = {
-					load_oob = "CRO_YUG_independence"
-				}
-			}
-		}
-	}
-	# Play as Croatia
-	option = { 
-		name = DOD_yugoslavia.10.b
-		ai_chance = {
-			base = 0
-		}	
-		
-		IF = {
-			limit = {
-				CRO = {
-					exists = yes
-					is_subject_of = YUG
-				}
-			}
-			set_autonomy = { target = CRO autonomy_state = autonomy_free }
-			CRO = {
-				declare_war_on = {
-					target = YUG
-					type = annex_everything
-				}
-			}
-		}
-
-		IF = { #if Montenegro exists, they also join
-			limit = {
-				MNT = {
-					exists = yes
-					is_subject_of = YUG
-				}
-			}
-			set_autonomy = { target = MNT autonomy_state = autonomy_free }
-			MNT = {
-				declare_war_on = {
-					target = YUG
-					type = annex_everything
-				}
-			}
-		}
-
-		IF = {
-			limit = {
-				CRO = {
-					exists = no
-				}
 				109 = { is_owned_and_controlled_by = YUG }
+				1706 = { is_owned_and_controlled_by = YUG } # KSRE (de 109)
+				1707 = { is_owned_and_controlled_by = YUG } # KSRE (de 109)
 			}
-			CRO = { transfer_state = 109 }
-			IF = {
+			CRO = { transfer_state = 109 transfer_state = 1706 transfer_state = 1707 }
+			if = {
 				limit = {
 					103 = { is_owned_and_controlled_by = YUG }
+					1296 = { is_owned_and_controlled_by = YUG } # KSRE (de 103)
+					1325 = { is_owned_and_controlled_by = YUG } # KSRE (de 103)
+					1339 = { is_owned_and_controlled_by = YUG } # KSRE (de 103)
+					1388 = { is_owned_and_controlled_by = YUG } # KSRE (de 103)
+					1718 = { is_owned_and_controlled_by = YUG } # KSRE (de 103)
 				}
-				CRO = { transfer_state = 103 }
+				CRO = { transfer_state = 103 transfer_state = 1296 transfer_state = 1325 transfer_state = 1339 transfer_state = 1388 transfer_state = 1718 }
 			}
-			IF = {
+			if = {
 				limit = {
-					163 = { is_owned_and_controlled_by = YUG }
+					1296 = { is_owned_and_controlled_by = YUG }
 				}
-				CRO = { transfer_state = 163 }
+				CRO = { transfer_state = 1296 }
 			}
-			IF = {
+			if = {
 				limit = {
-					852 = { is_owned_and_controlled_by = YUG }
+					1718 = { is_owned_and_controlled_by = YUG }
 				}
-				CRO = { transfer_state = 852 }
+				CRO = { transfer_state = 1718 }
 			}
-			hidden_effect = {
-				104 =  {
-					add_claim_by = CRO
+			if = {
+				limit = {
+					1388 = { is_owned_and_controlled_by = YUG }
 				}
-				804 =  {
-					add_claim_by = CRO
+				CRO = { transfer_state = 1388 }
+			}
+			if = {
+				limit = {
+					1314 = { is_owned_and_controlled_by = YUG }
 				}
+				CRO = { transfer_state = 1314 }
+			}
+			if = {
+				limit = {
+					1325 = { is_owned_and_controlled_by = YUG }
+				}
+				CRO = { transfer_state = 1325 }
+			}
+			if = {
+				limit = {
+					1339 = { is_owned_and_controlled_by = YUG }
+				}
+				CRO = { transfer_state = 1339 }
+			}
+			if = {
+				limit = {
+					1706 = { is_owned_and_controlled_by = YUG }
+				}
+				CRO = { transfer_state = 1706 }
+			}
+			if = {
+				limit = {
+					1705 = { is_owned_and_controlled_by = YUG }
+				}
+				CRO = { transfer_state = 1705 }
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -6221,6 +6169,12 @@ country_event = {
 				102 = {
 					add_claim_by = GER
 				}
+				1410 = { # KSRE (de 102)
+					add_claim_by = GER
+				}
+				1704 = { # KSRE (de 102)
+					add_claim_by = GER
+				}
 			}
 			else_if = {
 				limit = {
@@ -6510,7 +6464,15 @@ country_event = {
 	
 	option = {
 		name = DOD_yugoslavia.801.a #I'mma join anyway
-		ITA = { transfer_state = 103 }
+		ITA = { transfer_state = 103 transfer_state = 1296 transfer_state = 1325 transfer_state = 1339 transfer_state = 1388 transfer_state = 1718 }
+		ITA = { transfer_state = 1296 }
+		ITA = { transfer_state = 1716 }
+		ITA = { transfer_state = 1717 }
+		ITA = { transfer_state = 1718 }
+		ITA = { transfer_state = 1388 }
+		ITA = { transfer_state = 1314 }
+		ITA = { transfer_state = 1325 }
+		ITA = { transfer_state = 1339 }
 		if = {
 			limit = {
 				GER = {

@@ -24,6 +24,9 @@ country_event = {
 		add_state_claim = 453
 		add_state_claim = 558
 		add_state_claim = 900
+		add_state_claim = 1760
+		add_state_claim = 1761
+		add_state_claim = 1762
 		add_state_claim = 901
 		add_state_claim = 902
 		add_state_claim = 274
@@ -1299,8 +1302,11 @@ country_event = {
 		event_target:free_france = {
 			transfer_state = 554
 			transfer_state = 680
+			transfer_state = 1330
 			transfer_state = 677
 			transfer_state = 553
+			transfer_state = 1136
+			transfer_state = 1779
 		}
 	}
 }
@@ -1319,8 +1325,11 @@ country_event = {
 			event_target:free_france = {
 				transfer_state = 554
 				transfer_state = 680
+				transfer_state = 1330
 				transfer_state = 677
 				transfer_state = 553
+				transfer_state = 1136
+				transfer_state = 1779
 			}
 		}
 	}
@@ -2062,9 +2071,12 @@ country_event = {
 			ITA = { 
 				add_state_claim = 185
 				add_state_claim = 731
+				add_state_claim = 1607
 				add_state_claim = 184
+				add_state_claim = 1181
 				add_state_claim = 47
 				add_state_claim = 186
+				add_state_claim = 1319
 			}
 			FRA = {
 				add_state_claim = 187
@@ -2099,9 +2111,12 @@ country_event = {
 		FROM = {
 			add_state_claim = 185
 			add_state_claim = 731
+			add_state_claim = 1607
 			add_state_claim = 184
+			add_state_claim = 1181
 			add_state_claim = 47
 			add_state_claim = 186
+			add_state_claim = 1319
 		}
 		FRA = {
 			add_state_claim = 187
@@ -2239,8 +2254,14 @@ country_event = {
 		effect_tooltip = {
 			ROOT = {
 				add_state_claim = 7
+				add_state_claim = 1292
 				add_state_claim = 35
+				add_state_claim = 1297
+				add_state_claim = 1293
 				add_state_claim = 36
+				add_state_claim = 1250
+				add_state_claim = 1255
+				add_state_claim = 1552
 				add_to_faction = FROM
 			}
 			FROM = {
@@ -2279,8 +2300,14 @@ country_event = {
 		}
 		FROM = {
 			add_state_claim = 7
+			add_state_claim = 1292
 			add_state_claim = 35
+			add_state_claim = 1297
+			add_state_claim = 1293
 			add_state_claim = 36
+			add_state_claim = 1250
+			add_state_claim = 1255
+			add_state_claim = 1552
 			add_to_faction = ROOT
 		}
 		ROOT = {
@@ -2309,12 +2336,17 @@ country_event = {
 		}
 		add_state_claim = 34
 		add_state_claim = 6
-		add_state_claim = 977
-		add_state_claim = 980
 		add_state_claim = 8
 		add_state_claim = 7
+		add_state_claim = 1292
 		add_state_claim = 35
+		add_state_claim = 1297
+		add_state_claim = 1293
 		add_state_claim = 36
+		add_state_claim = 1250
+		add_state_claim = 1255
+		add_state_claim = 1552
+		add_state_claim = 980
 	}
 }
 
@@ -2434,6 +2466,7 @@ country_event = {
 				puppet = PREV
 				transfer_state = 34
 				transfer_state = 980
+				transfer_state = 1250
 			}
 		}
 	}
@@ -2470,6 +2503,7 @@ country_event = {
 		puppet = FROM
 		transfer_state = 34
 		transfer_state = 980
+		transfer_state = 1250
 	}
 }
 #response event for France - Belgium refuses
@@ -3134,6 +3168,7 @@ country_event = {
 				limit = {
 					is_core_of = FROM
 					is_controlled_by = ROOT
+					NOT = { state = 29 }
 				}
 				FROM = { transfer_state = PREV }
 			}
@@ -3179,7 +3214,13 @@ country_event = {
 			limit = {
 				is_core_of = ROOT
 				NOT = { state = 28 } #Elsass-Lothringen ist deutsch!
-				NOT = { state = 735 } #Savoy is Italian
+				NOT = { state = 29 } #Belgien-Nordfrankreich territory
+				NOT = { state = 735 state = 1301 state = 1302 state = 1303 state = 1304 state = 1305 state = 1306 } #Savoy is Italian
+				NOT = { state = 1301 }
+				NOT = { state = 1302 }
+				NOT = { state = 1303 }
+				NOT = { state = 1304 }
+				NOT = { state = 1305 }
 				OR = {
 					is_controlled_by = FROM
 					CONTROLLER = {

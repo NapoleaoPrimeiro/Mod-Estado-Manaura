@@ -1271,14 +1271,22 @@ focus_tree = {
 			NOT = {
 				has_war_with = ENG
 			}
-			311 = {
-				is_owned_by = ENG
+			OR = {
+				311 = {
+					is_owned_by = ENG
+				}
+				1368 = {
+					is_owned_by = ENG
+				}
 			}
 		}
 
 		bypass = {
 		NOT= {
 			311 = {
+				is_owned_by = ENG
+				}
+			1368 = { # KSRE (de 311)
 				is_owned_by = ENG
 				}
 			}
@@ -4960,12 +4968,32 @@ focus_tree = {
 					original_tag = FRA
 					OR = {
 						AND = {
-							owns_state = 694
+							owns_state = 694 owns_state = 1374 owns_state = 1375
 							has_full_control_of_state = 694
 						}
 						AND = {
-							owns_state = 310
+							owns_state = 1374
+							has_full_control_of_state = 1374
+						}
+						AND = {
+							owns_state = 1375
+							has_full_control_of_state = 1375
+						}
+						AND = {
+							owns_state = 1376
+							has_full_control_of_state = 1376
+						}
+						AND = {
+							owns_state = 310 owns_state = 1393 owns_state = 1394
 							has_full_control_of_state = 310
+						}
+						AND = {
+							owns_state = 1394
+							has_full_control_of_state = 1394
+						}
+						AND = {
+							owns_state = 1393
+							has_full_control_of_state = 1393
 						}
 						CAY = {
 							is_subject_of = PREV
@@ -4982,7 +5010,7 @@ focus_tree = {
 					original_tag = USA
 					OR = {
 						AND = {
-							owns_state = 686
+							owns_state = 686 owns_state = 1380
 							has_full_control_of_state = 686
 						}
 						PUE = {
@@ -5021,15 +5049,29 @@ focus_tree = {
 						AND = {
 							owns_state = 691 #trinidad
 							has_full_control_of_state = 691
+							owns_state = 1370
+							has_full_control_of_state = 1370
 						}
 						AND = {
 							owns_state = 692
 							has_full_control_of_state = 692
+							owns_state = 1373
+							has_full_control_of_state = 1373
+							owns_state = 1372
+							has_full_control_of_state = 1372
+							owns_state = 1371
+							has_full_control_of_state = 1371
 							owns_state = 308
-							has_full_control_of_state = 308							
+							has_full_control_of_state = 308	
+							owns_state = 1379
+							has_full_control_of_state = 1379
+							owns_state = 1378
+							has_full_control_of_state = 1378							
+							owns_state = 1377
+							has_full_control_of_state = 1377									
 						}
 						AND = {
-							owns_state = 687 #british guyana
+							owns_state = 687 owns_state = 1214 owns_state = 1217 owns_state = 1233 #british guyana
 							has_full_control_of_state = 687
 						}						
 						AND = {
@@ -5045,6 +5087,8 @@ focus_tree = {
 						AND = {
 							owns_state = 311 #belize
 							has_full_control_of_state = 311
+							owns_state = 1368
+							has_full_control_of_state = 1368
 						}																		
 						BLZ = {
 							is_subject_of = PREV
@@ -5262,6 +5306,7 @@ focus_tree = {
 						is_core_of = HON
 						is_core_of = ELS
 						state = 311 # British Honduras
+						state = 1368
 					}
 					NOT = {
 						is_core_of = ROOT
@@ -6036,11 +6081,19 @@ focus_tree = {
 			OR = {
 				controls_state = 312
 				controls_state = 313
+				controls_state = 1342
+				controls_state = 1343
+				controls_state = 1344
+				controls_state = 1345
 				controls_state = 314
+				controls_state = 1369
 				controls_state = 317
 				controls_state = 316
 				controls_state = 304
+				controls_state = 1215
+				controls_state = 1216
 				controls_state = 311
+				controls_state = 1368
 				controls_state = 685
 			}
 		}
@@ -6164,7 +6217,7 @@ focus_tree = {
 					type = take_state_focus
 					target = USA
 					expire = 0
-					generator = { 375 376 377 378 379 380 382 }
+					generator = { 375 1666 1667 1668 1669 1670 1671 1672 1350 1351 376 1657 1658 1659 1660 1662 1663 1664 1567 1353 377 1641 1642 1643 1644 1645 1467 1649 1650 1651 1652 1653 1654 378 1753 1624 1625 1655 1562 1563 1622 1623 379 1752 1673 1674 1626 1627 1566 380 1638 1150 1151 1661 1352 1152 1656 1153 1665 1154 1155 1637 1639 1640 1176 1177 1178 1179 1356 1354 1180 1357 1167 1647 1159 }
 				}
 			}
 			every_other_country = {
@@ -6177,7 +6230,7 @@ focus_tree = {
 						type = take_state_focus
 						target = PREV
 						expire = 0
-						generator = { 375 376 377 378 379 380 382 }
+						generator = { 375 1666 1667 1668 1669 1670 1671 1672 1350 1351 376 1657 1658 1659 1660 1662 1663 1664 1567 1353 377 1641 1642 1643 1644 1645 1467 1649 1650 1651 1652 1653 1654 378 1753 1624 1625 1655 1562 1563 1622 1623 379 1752 1673 1674 1626 1627 1566 380 1638 1151 1661 1352 1152 1656 1153 1665 1154 1155 1637 1639 1640 1176 1177 1178 1179 1356 1354 1180 1357 1167 1150 1647 1159 }
 					}
 				}
 			}
@@ -6186,12 +6239,78 @@ focus_tree = {
 				limit = {
 					OR = {
 						state = 375
+						state = 1666
+						state = 1667
+						state = 1668
+						state = 1669
+						state = 1670
+						state = 1671
+						state = 1672
+						state = 1350
+						state = 1351
 						state = 376
+						state = 1657
+						state = 1658
+						state = 1659
+						state = 1660
+						state = 1662
+						state = 1663
+						state = 1664
+						state = 1567
+						state = 1353
 						state = 377
+						state = 1641
+						state = 1642
+						state = 1643
+						state = 1644
+						state = 1645
+						state = 1647
+						state = 1649
+						state = 1650
+						state = 1651
+						state = 1652
+						state = 1653
+						state = 1654
 						state = 378
-						state = 379
+						state = 1753
+						state = 1624
+						state = 1625
+						state = 1655
+						state = 1562
+						state = 1563
+						state = 1622
+						state = 1623
+						state = 379 state = 1159
+						state = 1752
+						state = 1673
+						state = 1674
+						state = 1626
+						state = 1627
+						state = 1566
 						state = 380
-						state = 382
+						state = 1638
+						state = 1150
+						state = 1151
+						state = 1661
+						state = 1352
+						state = 1152
+						state = 1656
+						state = 1153
+						state = 1665
+						state = 1154
+						state = 1155
+						state = 1637
+						state = 1639
+						state = 1640
+						state = 1176
+						state = 1177
+						state = 1178
+						state = 1179
+						state = 1356
+						state = 1354
+						state = 1180
+						state = 1357
+						state = 1167
 					}
 					NOT = {
 						is_core_of = ROOT
@@ -6229,7 +6348,151 @@ focus_tree = {
 					}
 				}
 			}
+			1666 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1667 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1668 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1669 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1670 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1671 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1672 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1350 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1351 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
 			376 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1657 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1658 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1659 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1660 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1662 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1663 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1664 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1567 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1353 = {
 				controller = {
 					OR = {
 						is_subject_of = ROOT
@@ -6245,7 +6508,167 @@ focus_tree = {
 					}
 				}
 			}
+			1641 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1642 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1643 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1644 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1645 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1647 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1649 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1650 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1651 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1652 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1653 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1654 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
 			378 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1753 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1624 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1625 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1655 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1562 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1563 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1622 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1623 = {
 				controller = {
 					OR = {
 						is_subject_of = ROOT
@@ -6261,6 +6684,54 @@ focus_tree = {
 					}
 				}
 			}
+			1752 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1673 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1674 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1626 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1627 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1566 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
 			380 = {
 				controller = {
 					OR = {
@@ -6269,7 +6740,183 @@ focus_tree = {
 					}
 				}
 			}
-			382 = {
+			1638 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1150 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1151 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1661 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1352 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1152 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1656 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1153 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1665 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1154 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1155 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1637 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1639 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1640 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1176 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1177 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1178 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1179 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1356 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1354 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1180 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1357 = {
+				controller = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+			1167 = {
 				controller = {
 					OR = {
 						is_subject_of = ROOT
@@ -6293,12 +6940,78 @@ focus_tree = {
 				limit = {
 					OR = {
 						state = 375
+						state = 1666
+						state = 1667
+						state = 1668
+						state = 1669
+						state = 1670
+						state = 1671
+						state = 1672
+						state = 1350
+						state = 1351
 						state = 376
+						state = 1657
+						state = 1658
+						state = 1659
+						state = 1660
+						state = 1662
+						state = 1663
+						state = 1664
+						state = 1567
+						state = 1353
 						state = 377
+						state = 1641
+						state = 1642
+						state = 1643
+						state = 1644
+						state = 1645
+						state = 1647
+						state = 1649
+						state = 1650
+						state = 1651
+						state = 1652
+						state = 1653
+						state = 1654
 						state = 378
-						state = 379
+						state = 1753
+						state = 1624
+						state = 1625
+						state = 1655
+						state = 1562
+						state = 1563
+						state = 1622
+						state = 1623
+						state = 379 state = 1159
+						state = 1752
+						state = 1673
+						state = 1674
+						state = 1626
+						state = 1627
+						state = 1566
 						state = 380
-						state = 382
+						state = 1638
+						state = 1150
+						state = 1151
+						state = 1661
+						state = 1352
+						state = 1152
+						state = 1656
+						state = 1153
+						state = 1665
+						state = 1154
+						state = 1155
+						state = 1637
+						state = 1639
+						state = 1640
+						state = 1176
+						state = 1177
+						state = 1178
+						state = 1179
+						state = 1356
+						state = 1354
+						state = 1180
+						state = 1357
+						state = 1167
 					}
 				}
 				add_core_of = ROOT

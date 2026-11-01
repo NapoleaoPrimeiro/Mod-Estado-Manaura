@@ -455,8 +455,10 @@ ITA_is_southern_state_for_cw = {
 
 ITA_is_centre_state_for_cw = {
 	OR = {
-		state = 2 #LATIUM (Roma)
-		state = 157 #ABRUZZO
+		state = 2 state = 1404 #LATIUM (Roma)
+		state = 157 state = 1405 #ABRUZZO
+		state = 1406
+		state = 1407
 	}
 }
 
@@ -464,15 +466,21 @@ ITA_is_north_western_state_for_cw = {
 	OR = {
 		state = 162 #TOSCANA
 		state = 158 #PIEMONTE
+		state = 1308 #GENOVA
 	}
 }
 
 ITA_is_north_eastern_state_for_cw = {
 	OR = {
 		state = 161 #EMILIA ROMAGNA
+		state = 1408
+		state = 1409
 		state = 160 #VENETO
+		state = 1168 #FRIULI
 		state = 736 #LITORALE
 		state = 852 #ISTRIA
+		state = 1169 #FIUME
+		state = 1708 #TRIESTE
 	}
 }
 
@@ -489,7 +497,7 @@ ITA_state_or_vp_name_should_change = {
 		}
 	}
 	OR = {
-		FROM.FROM = { state = 852 } # ISTRIA (Fiume / Rijeka)
+		FROM.FROM = { state = 1169 } # ISTRIA (Fiume / Rijeka)
 		FROM.FROM = { state = 163 } # ZARA / ZADAR // (Zara / Zadar)
 		FROM.FROM = { state = 164 } # DODECANESO / DODECANESE // (Rodi / Rhodes)
 	}

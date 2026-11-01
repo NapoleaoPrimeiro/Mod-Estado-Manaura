@@ -472,7 +472,7 @@ shared_focus = {
 				add_building_construction = { type = bunker province = 11226 level = 2 instant_build = yes }
 			}
 			if = {
-				limit = { NOT = { owns_state = 784 } }
+				limit = { NOT = { owns_state = 784 owns_state = 1238 owns_state = 1248 owns_state = 1816 } }
 				11 = {
 					add_building_construction = { type = bunker province = 327 level = 2 instant_build = yes }
 					add_building_construction = { type = bunker province = 9404 level = 1 instant_build = yes }
@@ -486,15 +486,14 @@ shared_focus = {
 					add_building_construction = { type = bunker province = 11342 level = 1 instant_build = yes }
 					add_building_construction = { type = bunker province = 9295 level = 2 instant_build = yes }
 					add_building_construction = { type = bunker province = 3320 level = 1 instant_build = yes }
-					add_building_construction = { type = bunker province = 9274 level = 2 instant_build = yes }
 				}
 			}
 		}
 		if = {
 			limit = { tag = LAT }
 			if = {
-				limit = { controls_state = 809 }
-				809 = {
+				limit = { controls_state = 1788 }
+				1788 = {
 					add_building_construction = {
 						type = bunker
 						province = 11358
@@ -504,7 +503,7 @@ shared_focus = {
 				}
 			}
 			if = {
-				limit = { controls_state = 810 }
+				limit = { controls_state = 810 controls_state = 1789 controls_state = 1790 controls_state = 1792 }
 				810 = {
 					add_building_construction = {
 						type = bunker
@@ -512,6 +511,28 @@ shared_focus = {
 						level = 2
 						instant_build = yes
 					}
+					add_building_construction = {
+						type = bunker
+						province = 222
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = { controls_state = 1789 }
+				1789 = {
+					add_building_construction = {
+						type = bunker
+						province = 13679
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = { controls_state = 1790 }
+				1790 = {
 					add_building_construction = {
 						type = bunker
 						province = 6459
@@ -524,43 +545,25 @@ shared_focus = {
 						level = 2
 						instant_build = yes
 					}
-					add_building_construction = {
-						type = bunker
-						province = 222
-						level = 2
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = bunker
-						province = 319
-						level = 2
-						instant_build = yes
-					}
 				}
 			}
 		}
 		if = {
 			limit = { tag = EST }
 			if = {
-				limit = { controls_state = 191 }
-				191 = {
+				limit = { controls_state = 1798 }
+				1798 = {
 					add_building_construction = {
 						type = bunker
-						province = 592
-						level = 2
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = bunker
-						province = 9221
+						province = 13661
 						level = 2
 						instant_build = yes
 					}
 				}
 			}
 			if = {
-				limit = { controls_state = 813 }
-				813 = {
+				limit = { controls_state = 1800 }
+				1800 = {
 					add_building_construction = {
 						type = bunker
 						province = 4640
@@ -609,15 +612,21 @@ shared_focus = {
 		if = {
 			limit = { tag = LIT }
 			if = {
-				limit = { controls_state = 189 }
-				189 = {
-					add_building_construction = { type = coastal_bunker province = 6314 level = 6 instant_build = yes }
+				limit = { controls_state = 1787 }
+				1787 = {
+					add_building_construction = { type = coastal_bunker province = 13657 level = 6 instant_build = yes }
 				}
 			}
 			if = {
 				limit = { controls_state = 188 }
 				188 = {
 					add_building_construction = { type = coastal_bunker province = 3288 level = 6 instant_build = yes }
+				}
+			}
+			if = {
+				limit = { controls_state = 1172 }
+				1172 = {
+					add_building_construction = { type = coastal_bunker province = 14838 level = 6 instant_build = yes }
 				}
 			}
 		}
@@ -631,6 +640,10 @@ shared_focus = {
 						state = 13
 						state = 812
 						state = 813
+						state = 1797
+						state = 1801
+						state = 1800
+						state = 1799
 					}
 				}
 				add_building_construction = {
@@ -651,9 +664,12 @@ shared_focus = {
 					controller = { tag = ROOT }
 					OR = {
 						state = 190
-						state = 809
+						state = 1559
+						state = 1771
+						state = 809 state = 1788
 						state = 808
 						state = 12
+						state = 1791
 					}
 				}
 				add_building_construction = {
@@ -1629,15 +1645,21 @@ shared_focus = {
 		if = {
 			limit = { tag = LIT }
 			if = {
-				limit = { controls_state = 189 }
-				189 = {
-					add_building_construction = { type = coastal_bunker province = 6314 level = 4 instant_build = yes }
+				limit = { controls_state = 1787 }
+				1787 = {
+					add_building_construction = { type = coastal_bunker province = 13657 level = 4 instant_build = yes }
 				}
 			}
 			if = {
 				limit = { controls_state = 188 }
 				188 = {
 					add_building_construction = { type = coastal_bunker province = 3288 level = 4 instant_build = yes }
+				}
+			}
+			if = {
+				limit = { controls_state = 1172 }
+				1172 = {
+					add_building_construction = { type = coastal_bunker province = 14838 level = 4 instant_build = yes }
 				}
 			}
 		}
@@ -1651,6 +1673,10 @@ shared_focus = {
 						state = 13
 						state = 812
 						state = 813
+						state = 1797
+						state = 1801
+						state = 1800
+						state = 1799
 					}
 				}
 				add_building_construction = {
@@ -1671,9 +1697,12 @@ shared_focus = {
 					controller = { tag = ROOT }
 					OR = {
 						state = 190
-						state = 809
+						state = 1559
+						state = 1771
+						state = 809 state = 1788
 						state = 808
 						state = 12
+						state = 1791
 					}
 				}
 				add_building_construction = {
@@ -1748,14 +1777,17 @@ shared_focus = {
 			AND = {
 				original_tag = LIT
 				controls_state = 11
+				controls_state = 814 controls_state = 1236
 			}
 			AND = {
 				original_tag = LAT
-				controls_state = 12
+				controls_state = 12 controls_state = 1791
+				controls_state = 808
+				controls_state = 809 controls_state = 1788
 			}
 			AND = {
 				original_tag = EST
-				controls_state = 13
+				controls_state = 13 controls_state = 1797
 			}
 		}
 	}
@@ -1783,12 +1815,14 @@ shared_focus = {
 			limit = { original_tag = LAT }
 			808 = {
 				add_building_construction = { type = bunker province = 9340 level = 2 instant_build = yes }
-				add_building_construction = { type = bunker province = 9240 level = 2 instant_build = yes }
-				add_building_construction = { type = bunker province = 10323 level = 2 instant_build = yes }
 			}
 			809 = {
 				add_building_construction = { type = bunker province = 6222 level = 2 instant_build = yes }
 				add_building_construction = { type = bunker province = 265 level = 2 instant_build = yes }
+			}
+			12 = {
+				add_building_construction = { type = bunker province = 9240 level = 2 instant_build = yes }
+				add_building_construction = { type = bunker province = 10323 level = 2 instant_build = yes }
 			}
 		}
 		if = {
@@ -1834,7 +1868,7 @@ shared_focus = {
 			limit = {
 				is_core_of = ROOT
 			}
-			prioritize = { 11 12 13 }
+			prioritize = { 11 12 13 1791 1797 }
 			add_extra_state_shared_building_slots = 1
 			add_building_construction = {
 				type = arms_factory
@@ -1846,7 +1880,7 @@ shared_focus = {
 			limit = {
 				is_core_of = ROOT
 			}
-			prioritize = { 814 808 811 }
+			prioritize = { 814 808 811 1236 1801 }
 			add_extra_state_shared_building_slots = 1
 			add_building_construction = {
 				type = arms_factory
@@ -1858,7 +1892,7 @@ shared_focus = {
 			limit = {
 				is_core_of = ROOT
 			}
-			prioritize = { 188 810 813 }
+			prioritize = { 188 810 813 1789 1790 1792 1799 1800 }
 			add_extra_state_shared_building_slots = 1
 			add_building_construction = {
 				type = arms_factory
@@ -2019,7 +2053,7 @@ shared_focus = {
 			limit = {
 				is_core_of = ROOT
 			}
-			prioritize = { 11 12 13 }
+			prioritize = { 11 12 13 1791 1797 }
 			add_extra_state_shared_building_slots = 1
 			add_building_construction = {
 				type = industrial_complex
@@ -2031,7 +2065,7 @@ shared_focus = {
 			limit = {
 				is_core_of = ROOT
 			}
-			prioritize = { 189 190 191 }
+			prioritize = { 189 190 191 1172 1237 1787 1559 1771 1795 1796 1798 }
 			add_extra_state_shared_building_slots = 1
 			add_building_construction = {
 				type = industrial_complex
@@ -2043,7 +2077,7 @@ shared_focus = {
 			limit = {
 				is_core_of = ROOT
 			}
-			prioritize = { 814 808 811 }
+			prioritize = { 814 808 811 1236 1801 }
 			add_extra_state_shared_building_slots = 1
 			add_building_construction = {
 				type = industrial_complex
@@ -2055,7 +2089,7 @@ shared_focus = {
 			limit = {
 				is_core_of = ROOT
 			}
-			prioritize = { 815 809 812 }
+			prioritize = { 815 809 812 1788 }
 			add_extra_state_shared_building_slots = 1
 			add_building_construction = {
 				type = industrial_complex
@@ -2293,7 +2327,7 @@ shared_focus = {
 			limit = {
 				is_core_of = ROOT
 			}
-			prioritize = { 814 808 811 }
+			prioritize = { 814 808 811 1236 1801 }
 			add_extra_state_shared_building_slots = 1
 			add_building_construction = {
 				type = arms_factory
@@ -2305,7 +2339,7 @@ shared_focus = {
 			limit = {
 				is_core_of = ROOT
 			}
-			prioritize = { 815 809 812 }
+			prioritize = { 815 809 812 1788 }
 			add_extra_state_shared_building_slots = 1
 			add_building_construction = {
 				type = arms_factory
@@ -2590,12 +2624,12 @@ shared_focus = {
 			limit = {
 				tag = LIT
 			}
-			189 = {
+			1787 = {
 				add_building_construction = {
 					type = naval_base
 					level = 2
 					instant_build = yes
-					province = 6314
+					province = 13657
 				}
 			}
 		}
@@ -4591,21 +4625,21 @@ shared_focus = {
 				ROOT = { is_subject_of = SOV }
 			}
 			if = { limit = { 812 = { is_controlled_by = SOV } } ROOT = { transfer_state = 812 } }
-			if = { limit = { 13 = { is_controlled_by = SOV } } ROOT = { transfer_state = 13 } }
-			if = { limit = { 811 = { is_controlled_by = SOV } } ROOT = { transfer_state = 811 } }
-			if = { limit = { 191 = { is_controlled_by = SOV } } ROOT = { transfer_state = 191 } }
-			if = { limit = { 813 = { is_controlled_by = SOV } } ROOT = { transfer_state = 813 } }
+			if = { limit = { 13 = { is_controlled_by = SOV } } ROOT = { transfer_state = 13 transfer_state = 1797 } }
+			if = { limit = { 811 = { is_controlled_by = SOV } } ROOT = { transfer_state = 811 transfer_state = 1801 } }
+			if = { limit = { 191 = { is_controlled_by = SOV } } ROOT = { transfer_state = 191 transfer_state = 1795 transfer_state = 1796 transfer_state = 1798 } }
+			if = { limit = { 813 = { is_controlled_by = SOV } } ROOT = { transfer_state = 813 transfer_state = 1799 transfer_state = 1800 } }
 		}
 		if = {
 			limit = {
 				LAT = { exists = no }
 				ROOT = { is_subject_of = SOV }
 			}
-			if = { limit = { 12 = { is_controlled_by = SOV } } ROOT = { transfer_state = 12 } }
-			if = { limit = { 190 = { is_controlled_by = SOV } } ROOT = { transfer_state = 190 } }
+			if = { limit = { 12 = { is_controlled_by = SOV } } ROOT = { transfer_state = 12 transfer_state = 1791 } }
+			if = { limit = { 190 = { is_controlled_by = SOV } } ROOT = { transfer_state = 190 transfer_state = 1559 transfer_state = 1771 } }
 			if = { limit = { 808 = { is_controlled_by = SOV } } ROOT = { transfer_state = 808 } }
-			if = { limit = { 809 = { is_controlled_by = SOV } } ROOT = { transfer_state = 809 } }
-			if = { limit = { 810 = { is_controlled_by = SOV } } ROOT = { transfer_state = 810 } }
+			if = { limit = { 809 = { is_controlled_by = SOV } } ROOT = { transfer_state = 809 transfer_state = 1788 } }
+			if = { limit = { 810 = { is_controlled_by = SOV } } ROOT = { transfer_state = 810 transfer_state = 1789 transfer_state = 1790 transfer_state = 1792 } }
 		}
 		if = {
 			limit = {
@@ -4613,18 +4647,26 @@ shared_focus = {
 				ROOT = { is_subject_of = SOV }
 			}
 			if = { limit = { 11 = { is_controlled_by = SOV } } ROOT = { transfer_state = 11 } }
-			if = { limit = { 189 = { is_controlled_by = SOV } } ROOT = { transfer_state = 189 } }
+			if = { limit = { 189 = { is_controlled_by = SOV } } ROOT = { transfer_state = 189 transfer_state = 1172 transfer_state = 1237 transfer_state = 1787 } }
 			if = { limit = { 188 = { is_controlled_by = SOV } } ROOT = { transfer_state = 188 } }
-			if = { limit = { 814 = { is_controlled_by = SOV } } ROOT = { transfer_state = 814 } }
+			if = { limit = { 814 = { is_controlled_by = SOV } } ROOT = { transfer_state = 814 transfer_state = 1236 } }
 			if = { limit = { 815 = { is_controlled_by = SOV } } ROOT = { transfer_state = 815 } }
-			if = { limit = { 784 = { is_controlled_by = SOV } } ROOT = { transfer_state = 784 } }
+			if = { limit = { 784 = { is_controlled_by = SOV } } ROOT = { transfer_state = 784 transfer_state = 1238 transfer_state = 1248 transfer_state = 1816 } }
 		}
 		if = {
 			limit = { 
 				95 = { is_controlled_by = ROOT } 
+				1239 = { is_controlled_by = ROOT }  # KSRE (de 95)
+				1240 = { is_controlled_by = ROOT }  # KSRE (de 95)
+				1243 = { is_controlled_by = ROOT }  # KSRE (de 95)
+				1246 = { is_controlled_by = ROOT }  # KSRE (de 95)
+				1247 = { is_controlled_by = ROOT }  # KSRE (de 95)
 				784 = { is_controlled_by = SOV }
+				1238 = { is_controlled_by = SOV } # KSRE (de 784)
+				1248 = { is_controlled_by = SOV } # KSRE (de 784)
+				1816 = { is_controlled_by = SOV } # KSRE (de 784)
 			} 
-			ROOT = { transfer_state = 784 }
+			ROOT = { transfer_state = 784 transfer_state = 1238 transfer_state = 1248 transfer_state = 1816 }
 		}
 		effect_tooltip = {
 			set_cosmetic_tag = BAL_UNIFIED_communism

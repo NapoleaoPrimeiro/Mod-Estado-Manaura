@@ -17,7 +17,7 @@ BOL_bolivian_irredentism = {
 		}
 
 		available = {
-			controls_state = 506
+			controls_state = 506 controls_state = 1234
 			506 = {
 				NOT = {
 					is_core_of = ROOT
@@ -35,6 +35,9 @@ BOL_bolivian_irredentism = {
 		visible = { 
 			NOT = {
 				506 = {
+					is_core_of = ROOT
+				}
+				1234 = { # KSRE (de 506)
 					is_core_of = ROOT
 				}
 			}
@@ -60,8 +63,14 @@ BOL_bolivian_irredentism = {
 					506 = {
 						is_claimed_by = ROOT
 					}
+					1234 = { # KSRE (de 506)
+						is_claimed_by = ROOT
+					}
 				}
 				506 = {
+					remove_claim_by = ROOT
+				}
+				1234 = { # KSRE (de 506)
 					remove_claim_by = ROOT
 				}
 			}
@@ -69,9 +78,12 @@ BOL_bolivian_irredentism = {
 			506 = {
 				add_core_of = ROOT
 			}
+			1234 = { # KSRE (de 506)
+				add_core_of = ROOT
+			}
 
 			ROOT = {
-				transfer_state = 506
+				transfer_state = 506 transfer_state = 1234
 			}
 			
 			add_war_support = 0.05

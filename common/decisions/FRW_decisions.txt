@@ -701,7 +701,7 @@ FRW_colonial_integration_cat = {
 		allowed = { original_tag = FRA }
 		visible = {
 			has_completed_focus = FRW_ministry_of_colonies
-			any_owned_state = { NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } OR = { state = 458 state = 459 state = 460 state = 461 state = 462 state = 513 state = 514 state = 515 state = 665 state = 786 } }
+			any_owned_state = { NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } OR = { state = 458 state = 459 state = 460 state = 461 state = 462 state = 513 state = 514 state = 515 state = 1759 state = 665 state = 786 } }
 		}
 		cost = 50
 		days_re_enable = 30
@@ -713,7 +713,7 @@ FRW_colonial_integration_cat = {
 			}
 			hidden_effect = {
 				every_owned_state = {
-					limit = { NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } OR = { state = 458 state = 459 state = 460 state = 461 state = 462 state = 513 state = 514 state = 515 state = 665 state = 786 } }
+					limit = { NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } OR = { state = 458 state = 459 state = 460 state = 461 state = 462 state = 513 state = 514 state = 515 state = 1759 state = 665 state = 786 } }
 					set_state_flag = FRW_colony_administered add_dynamic_modifier = { modifier = FRW_colonial_administration }
 				}
 			}
@@ -745,7 +745,7 @@ FRW_colonial_integration_cat = {
 		allowed = { original_tag = FRA }
 		visible = {
 			has_completed_focus = FRW_ministry_of_colonies
-			any_owned_state = { NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } OR = { state = 539 state = 660 state = 772 state = 773 state = 774 state = 775 } }
+			any_owned_state = { NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } OR = { state = 539 state = 1769 state = 660 state = 1764 state = 1765 state = 772 state = 1766 state = 1767 state = 1768 state = 773 state = 1770 state = 774 state = 1763 state = 775 } }
 		}
 		cost = 35
 		days_re_enable = 30
@@ -753,7 +753,7 @@ FRW_colonial_integration_cat = {
 			custom_effect_tooltip = FRW_colonial_administration_tt
 			hidden_effect = {
 				every_owned_state = {
-					limit = { NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } OR = { state = 539 state = 660 state = 772 state = 773 state = 774 state = 775 } }
+					limit = { NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } OR = { state = 539 state = 1769 state = 660 state = 1764 state = 1765 state = 772 state = 1766 state = 1767 state = 1768 state = 773 state = 1770 state = 774 state = 1763 state = 775 } }
 					set_state_flag = FRW_colony_administered add_dynamic_modifier = { modifier = FRW_colonial_administration }
 				}
 			}
@@ -865,7 +865,7 @@ FRW_colonial_integration_cat = {
 		allowed = { original_tag = FRA }
 		visible = {
 			has_completed_focus = FRW_colonial_purchases
-			any_owned_state = { NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } OR = { state = 274 state = 558 state = 700 state = 701 state = 900 state = 901 state = 902 } }
+			any_owned_state = { NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } OR = { state = 274 state = 558 state = 700 state = 701 state = 900 state = 1760 state = 1761 state = 901 state = 1762 state = 902 } }
 		}
 		cost = 35
 		days_re_enable = 30
@@ -873,7 +873,7 @@ FRW_colonial_integration_cat = {
 			custom_effect_tooltip = FRW_colonial_administration_tt
 			hidden_effect = {
 				every_owned_state = {
-					limit = { NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } OR = { state = 274 state = 558 state = 700 state = 701 state = 900 state = 901 state = 902 } }
+					limit = { NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } OR = { state = 274 state = 558 state = 700 state = 701 state = 900 state = 1760 state = 1761 state = 901 state = 1762 state = 902 } }
 					set_state_flag = FRW_colony_administered add_dynamic_modifier = { modifier = FRW_colonial_administration }
 				}
 			}
@@ -887,14 +887,14 @@ FRW_colonial_integration_cat = {
 			has_completed_focus = FRW_algerian_departments
 			OR = {
 				any_owned_state = { is_on_continent = africa NOT = { is_core_of = ROOT } NOT = { has_state_flag = FRW_colony_administered } }
-				any_owned_state = { NOT = { is_core_of = ROOT } OR = { state = 694 state = 310 state = 706 state = 459 state = 460 state = 513 state = 514 } }
+				any_owned_state = { NOT = { is_core_of = ROOT } OR = { state = 694 state = 1374 state = 1375 state = 310 state = 1393 state = 1394 state = 706 state = 459 state = 460 state = 513 state = 514 } }
 			}
 		}
 		cost = 75
 		days_re_enable = 60
 		complete_effect = {
 			every_owned_state = {
-				limit = { NOT = { is_core_of = ROOT } OR = { state = 694 state = 310 state = 706 state = 459 state = 460 state = 513 state = 514 } }
+				limit = { NOT = { is_core_of = ROOT } OR = { state = 694 state = 1374 state = 1375 state = 310 state = 1393 state = 1394 state = 706 state = 459 state = 460 state = 513 state = 514 } }
 				add_core_of = ROOT
 			}
 			custom_effect_tooltip = FRW_colonial_administration_all_tt
@@ -1085,7 +1085,7 @@ FRW_liberation_cat = {
 		allowed = { original_tag = FRA }
 		visible = { has_completed_focus = FRW_continue_the_fight }
 		available = {
-			controls_state = 16
+			controls_state = 16 controls_state = 1517 controls_state = 1518 controls_state = 1519 controls_state = 1520
 			controls_state = 29
 			controls_state = 28
 			controls_state = 19
@@ -3712,7 +3712,7 @@ FRW_franc_cat = {
 		icon = generic_colonial_administration
 		allowed = { original_tag = FRA }
 		visible = { tag = FRA has_capitulated = no }
-		available = { controls_state = 459 controls_state = 272 controls_state = 772 }
+		available = { controls_state = 459 controls_state = 272 controls_state = 772 controls_state = 1766 controls_state = 1767 controls_state = 1768 }
 		cost = 40
 		fire_only_once = yes
 		complete_effect = {

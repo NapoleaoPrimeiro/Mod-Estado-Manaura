@@ -1,0 +1,271 @@
+
+usa_defense_readiness_bop = {
+	initial_value = -1
+	left_side = usa_ready_not_side
+	right_side = usa_ready_full_side
+	decision_category = USA_defense_preparedness_bop_cat
+
+	#### Neutral status
+	#range = {
+	#	id = ITA_balance_range
+	#	min = -0.10
+	#	max = 0.10
+	#	modifier = {
+	#	}
+	#	on_activate = {
+	#
+	#	}
+	#	on_deactivate = {
+	#		
+	#	}
+	#}
+
+ ### Low Preparedness
+	side = {
+		id = usa_low_preparedness_side
+		icon = GFX_bop_usa_not_ready_side
+
+		range = {
+			id = usa_low_preparedness_0_range
+			min = -1
+			max = -0.8
+			modifier = {
+				defensive_war_stability_factor = -0.10
+				stability_factor = -0.10
+				army_core_attack_factor = -0.10
+				army_core_defence_factor = -0.10
+				supply_combat_penalties_on_core_factor = 0.10
+				production_speed_arms_factory_factor = -0.10
+				surrender_limit = -0.25
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = usa_low_preparedness_1_range
+			min = -0.8
+			max = -0.6
+			modifier = {
+				defensive_war_stability_factor = -0.10
+				war_support_factor = 0.02
+				army_core_attack_factor = -0.05
+				army_core_defence_factor = -0.05
+				supply_combat_penalties_on_core_factor = -0.05
+				production_speed_arms_factory_factor = -0.05
+				surrender_limit = -0.20
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = usa_low_preparedness_2_range
+			min = -0.6
+			max = -0.4
+			modifier = {
+				defensive_war_stability_factor = -0.05
+				war_support_factor = 0.04
+				supply_combat_penalties_on_core_factor = -0.05
+				surrender_limit = -0.15
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = usa_low_preparedness_3_range
+			min = -0.4
+			max = -0.2
+			modifier = {
+				defensive_war_stability_factor = -0.05
+				army_core_attack_factor = 0.03
+				army_core_defence_factor = 0.03
+				war_support_factor = 0.06
+				supply_combat_penalties_on_core_factor = -0.05
+				surrender_limit = -0.10
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = usa_low_preparedness_4_range
+			min = -0.2
+			max = 0
+			modifier = {
+				defensive_war_stability_factor = -0.05
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				war_support_factor = 0.08
+				supply_combat_penalties_on_core_factor = -0.10
+				consumer_goods_factor = 0.05
+				surrender_limit = -0.05
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+
+	}
+
+ ### High Preparedness
+	side = {
+		id = usa_high_preparedness_side
+		icon = GFX_bop_usa_ready_side
+
+		range = {
+			id = usa_high_preparedness_5_range
+			min = 0
+			max = 0.2
+			modifier = {
+				political_power_factor = -0.05
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				war_support_factor = 0.10
+				supply_combat_penalties_on_core_factor = -0.10
+				production_speed_industrial_complex_factor = -0.05
+				consumer_goods_factor = 0.10
+				modifier_army_sub_unit_militia_attack_factor = 0.05
+				modifier_army_sub_unit_militia_defence_factor = 0.05
+				modifier_army_sub_unit_militia_max_org_factor = 0.05
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = usa_high_preparedness_6_range
+			min = 0.2
+			max = 0.4
+			modifier = {
+				political_power_factor = -0.10
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				war_support_factor = 0.14
+				supply_combat_penalties_on_core_factor = -0.15
+				production_speed_industrial_complex_factor = -0.05
+				consumer_goods_factor = 0.15
+				modifier_army_sub_unit_militia_attack_factor = 0.05
+				modifier_army_sub_unit_militia_defence_factor = 0.05
+				modifier_army_sub_unit_militia_max_org_factor = 0.05
+				surrender_limit = 0.05
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = usa_high_preparedness_7_range
+			min = 0.4
+			max = 0.6
+			modifier = {
+				stability_factor = -0.10
+				political_power_factor = -0.10
+				defensive_war_stability_factor = 0.05
+				army_core_attack_factor = 0.08
+				army_core_defence_factor = 0.08
+				war_support_factor = 0.18
+				supply_combat_penalties_on_core_factor = -0.20
+				production_speed_industrial_complex_factor = -0.10
+				consumer_goods_factor = 0.20
+				conscription = 0.01
+				modifier_army_sub_unit_militia_attack_factor = 0.05
+				modifier_army_sub_unit_militia_defence_factor = 0.05
+				modifier_army_sub_unit_militia_max_org_factor = 0.05
+				surrender_limit = 0.10
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = usa_high_preparedness_8_range
+			min = 0.6
+			max = 0.8
+			modifier = {
+				stability_factor = -0.15
+				political_power_factor = -0.15
+				defensive_war_stability_factor = 0.05
+				army_core_attack_factor = 0.08
+				army_core_defence_factor = 0.08
+				war_support_factor = 0.22
+				supply_combat_penalties_on_core_factor = -0.25
+				production_speed_industrial_complex_factor = -0.10
+				consumer_goods_factor = 0.25
+				conscription = 0.01
+				modifier_army_sub_unit_militia_attack_factor = 0.10
+				modifier_army_sub_unit_militia_defence_factor = 0.10
+				modifier_army_sub_unit_militia_max_org_factor = 0.10
+				surrender_limit = 0.15
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = usa_high_preparedness_9_range
+			min = 0.8
+			max = 0.99
+			modifier = {
+				stability_factor = -0.15
+				political_power_factor = -0.20
+				defensive_war_stability_factor = 0.05
+				army_core_attack_factor = 0.10
+				army_core_defence_factor = 0.10
+				war_support_factor = 0.26
+				supply_combat_penalties_on_core_factor = -0.30
+				production_speed_industrial_complex_factor = -0.15
+				consumer_goods_factor = 0.30
+				conscription = 0.02
+				modifier_army_sub_unit_militia_attack_factor = 0.10
+				modifier_army_sub_unit_militia_defence_factor = 0.10
+				modifier_army_sub_unit_militia_max_org_factor = 0.10
+				surrender_limit = 0.20
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = usa_high_preparedness_10_range
+			min = 0.99
+			max = 1
+			modifier = {
+				stability_factor = -0.225
+				political_power_factor = -0.30
+				defensive_war_stability_factor = 0.10
+				war_support_factor = 0.30
+				army_core_attack_factor = 0.125
+				army_core_defence_factor = 0.125
+				supply_combat_penalties_on_core_factor = -0.50
+				production_speed_industrial_complex_factor = -0.30
+				consumer_goods_factor = 0.35 # was 0.50
+				conscription = 0.025
+				minimum_training_level = -0.10
+				training_time_factor = -0.10
+				modifier_army_sub_unit_militia_attack_factor = 0.15
+				modifier_army_sub_unit_militia_defence_factor = 0.15
+				modifier_army_sub_unit_militia_max_org_factor = 0.15
+				surrender_limit = 0.30
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+
+	}
+
+}
+

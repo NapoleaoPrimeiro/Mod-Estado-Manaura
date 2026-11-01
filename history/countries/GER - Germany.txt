@@ -1,5 +1,4 @@
-﻿#eo
-capital = 64 # Berlin/Brandeburg
+﻿capital = 1269 # Berlin
 
 if = {
 	limit = {
@@ -477,12 +476,18 @@ set_war_support = 0.3
 		autonomous_state = autonomy_puppet
 	}
 	give_military_access = SLO
+	
+	set_autonomy = {
+		target = RKH
+		autonomous_state = autonomy_puppet
+	}
+	give_military_access = RKH
 
 	# So that the war can fire immediately 
 	create_wargoal = {
 		type = take_state_focus
 		target = POL
-		generator = { 72 88 90 87 86 762 807 85 } # Zaolzie Krakow Kielce Lodz Poznan Katowice Gdynia Danzig
+		generator = { 72 88 90 87 86 762 807 85 1727 1144 1145 1265 1385 1386 1399 1425 1483 1528 1529 1775 1143 1142 1481 1389 1554 } # Zaolzie Krakow Kielce Lodz Poznan Katowice Gdynia Danzig
 	}
 
 	# Setup Trade with the Soviets

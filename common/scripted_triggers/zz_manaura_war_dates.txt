@@ -1,0 +1,36 @@
+# Manaura: datas de guerra por rank (agora_country_power_classification)
+# Pais sem rank calculado nao tem trava. So trava justificar (focos nao).
+
+
+manaura_justify_allowed = {
+	OR = {
+		NOT = {
+			has_idea = agora_country_power_classification_rank_weak_power
+			has_idea = agora_country_power_classification_rank_lesser_power
+			has_idea = agora_country_power_classification_rank_emerging_power
+			has_idea = agora_country_power_classification_rank_reginoal_power
+			has_idea = agora_country_power_classification_rank_superior_power
+			has_idea = agora_country_power_classification_rank_great_power
+			has_idea = agora_country_power_classification_rank_dominant_power
+			has_idea = agora_country_power_classification_rank_absolute_power
+		}
+		AND = {
+			OR = {
+				has_idea = agora_country_power_classification_rank_weak_power
+				has_idea = agora_country_power_classification_rank_lesser_power
+			}
+			date > 1937.1.1
+		}
+		AND = { has_idea = agora_country_power_classification_rank_emerging_power date > 1938.1.1 }
+		AND = { has_idea = agora_country_power_classification_rank_reginoal_power date > 1939.6.1 }
+		AND = { has_idea = agora_country_power_classification_rank_superior_power date > 1940.1.1 }
+		AND = {
+			OR = {
+				has_idea = agora_country_power_classification_rank_great_power
+				has_idea = agora_country_power_classification_rank_dominant_power
+				has_idea = agora_country_power_classification_rank_absolute_power
+			}
+			date > 1941.1.1
+		}
+	}
+}

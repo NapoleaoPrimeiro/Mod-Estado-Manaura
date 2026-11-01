@@ -118,7 +118,7 @@
 		}
 
 		available = {
-			CZE = { controls_state = 9 }
+			CZE = { controls_state = 9 controls_state = 1555 }
 		}
 
 		bypass = {
@@ -137,12 +137,13 @@
 
 			9 = {
 				add_building_construction = { type = bunker province = 6440 level = 3 instant_build = yes }
-				add_building_construction = { type = bunker province = 6418 level = 3 instant_build = yes }
-				add_building_construction = { type = bunker province = 6592 level = 3 instant_build = yes }
 				add_building_construction = { type = bunker province = 9414 level = 3 instant_build = yes }
 				add_building_construction = { type = bunker province = 3462 level = 3 instant_build = yes }
 			}
-
+			1555 = {
+				add_building_construction = { type = bunker province = 6418 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 6592 level = 3 instant_build = yes }
+			}
 		}
 	}
 
@@ -174,8 +175,8 @@
 
 		available = {
 			CZE = { 
-				controls_state = 69 
-				controls_state = 972 
+				controls_state = 69 controls_state = 1556 
+				controls_state = 972 controls_state = 1608 
 			}
 		}
 
@@ -191,7 +192,27 @@
 						level < 3
 					}
 				}
+				1556 = {
+					any_province_building_level = {
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						building = bunker
+						level < 3
+					}
+				}
 				972 = {
+					any_province_building_level = {
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						building = bunker
+						level < 3
+					}
+				}
+				1608 = {
 					any_province_building_level = {
 						province = {
 							all_provinces = yes
@@ -218,7 +239,16 @@
 							id = 421
 							id = 6485
 							id = 3414
-							id = 3583
+							limit_to_border = yes
+						}
+						building = bunker
+						level < 3
+					}
+				}
+				1727 = {
+					any_province_building_level = {
+						province = {
+							id = 15516
 							limit_to_border = yes
 						}
 						building = bunker
@@ -256,7 +286,7 @@
 			}
 
 			if = {
-				limit = { controls_state = 69 }
+				limit = { controls_state = 69 controls_state = 1556 }
 				69 = {
 					set_building_level = {
 						type = bunker
@@ -269,10 +299,40 @@
 					}
 				}
 			}
-
+			
 			if = {
-				limit = { controls_state = 972 }
+				limit = { controls_state = 1556 }
+				1556 = {
+					set_building_level = {
+						type = bunker
+						level = 3
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+							level < 3
+						}
+					}
+				}
+			}
+			
+			if = {
+				limit = { controls_state = 972 controls_state = 1608 }
 				972 = {
+					set_building_level = {
+						type = bunker
+						level = 3
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+							level < 3
+						}
+					}
+				}
+			}
+			
+			if = {
+				limit = { controls_state = 1608 }
+				1608 = {
 					set_building_level = {
 						type = bunker
 						level = 3
@@ -286,7 +346,7 @@
 			}
 
 			if = {
-				limit = { controls_state = 9 }
+				limit = { controls_state = 9 controls_state = 1555 }
 				9 = {
 					set_building_level = {
 						type = bunker
@@ -311,7 +371,21 @@
 							id = 421
 							id = 6485
 							id = 3414
-							id = 3583
+							limit_to_border = yes
+							level < 3
+						}
+					}
+				}
+			}
+			
+			if = {
+				limit = { controls_state = 1727 }
+				1727 = {
+					set_building_level = {
+						type = bunker
+						level = 3
+						province = {
+							id = 15516
 							limit_to_border = yes
 							level < 3
 						}
@@ -320,7 +394,7 @@
 			}
 
 			if = {
-				limit = { controls_state = 70 }
+				limit = { controls_state = 70 controls_state = 1146 controls_state = 1147 }
 				70 = {
 					set_building_level = {
 						type = bunker
@@ -366,14 +440,44 @@
 
 		available = {
 			CZE = { 
-				controls_state = 69 
-				controls_state = 972 
+				controls_state = 69 controls_state = 1556 
+				controls_state = 972 controls_state = 1608 
 			}
 		}
 
 		bypass = {
 			NOT = {			
 				69 = {
+					any_province_building_level = {
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						building = bunker
+						level < 5
+					}
+				}
+				1556 = {
+					any_province_building_level = {
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						building = bunker
+						level < 5
+					}
+				}
+				972 = {
+					any_province_building_level = {
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						building = bunker
+						level < 5
+					}
+				}
+				1608 = {
 					any_province_building_level = {
 						province = {
 							all_provinces = yes
@@ -400,7 +504,16 @@
 							id = 421
 							id = 6485
 							id = 3414
-							id = 3583
+							limit_to_border = yes
+						}
+						building = bunker
+						level < 5
+					}
+				}
+				1727 = {
+					any_province_building_level = {
+						province = {
+							id = 15516
 							limit_to_border = yes
 						}
 						building = bunker
@@ -438,7 +551,7 @@
 			}	
 
 			if = {
-				limit = { controls_state = 69 }
+				limit = { controls_state = 69 controls_state = 1556 }
 				69 = {
 					set_building_level = {
 						type = bunker
@@ -451,10 +564,40 @@
 					}
 				}
 			}
-
+			
 			if = {
-				limit = { controls_state = 972 }
+				limit = { controls_state = 1556 }
+				1556 = {
+					set_building_level = {
+						type = bunker
+						level = 5
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+							level < 5
+						}
+					}
+				}
+			}
+			
+			if = {
+				limit = { controls_state = 972 controls_state = 1608 }
 				972 = {
+					set_building_level = {
+						type = bunker
+						level = 5
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+							level < 5
+						}
+					}
+				}
+			}
+			
+			if = {
+				limit = { controls_state = 1608 }
+				1608 = {
 					set_building_level = {
 						type = bunker
 						level = 5
@@ -468,7 +611,7 @@
 			}
 
 			if = {
-				limit = { controls_state = 9 }
+				limit = { controls_state = 9 controls_state = 1555 }
 				9 = {
 					set_building_level = {
 						type = bunker
@@ -493,7 +636,21 @@
 							id = 421
 							id = 6485
 							id = 3414
-							id = 3583
+							limit_to_border = yes
+							level < 5
+						}
+					}
+				}
+			}
+			
+			if = {
+				limit = { controls_state = 1727 }
+				1727 = {
+					set_building_level = {
+						type = bunker
+						level = 5
+						province = {
+							id = 15516
 							limit_to_border = yes
 							level < 5
 						}
@@ -502,7 +659,7 @@
 			}
 
 			if = {
-				limit = { controls_state = 70 }
+				limit = { controls_state = 70 controls_state = 1146 controls_state = 1147 }
 				70 = {
 					set_building_level = {
 						type = bunker
@@ -548,8 +705,8 @@
 
 		available = {
 			CZE = { 
-				controls_state = 69 
-				controls_state = 972
+				controls_state = 69 controls_state = 1556 
+				controls_state = 972 controls_state = 1608
 			}
 		}
 
@@ -565,7 +722,27 @@
 						level < 7
 					}
 				}
+				1556 = {
+					any_province_building_level = {
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						building = bunker
+						level < 7
+					}
+				}
 				972 = {
+					any_province_building_level = {
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						building = bunker
+						level < 7
+					}
+				}
+				1608 = {
 					any_province_building_level = {
 						province = {
 							all_provinces = yes
@@ -592,7 +769,16 @@
 							id = 421
 							id = 6485
 							id = 3414
-							id = 3583
+							limit_to_border = yes
+						}
+						building = bunker
+						level < 7
+					}
+				}
+				1727 = {
+					any_province_building_level = {
+						province = {
+							id = 15516
 							limit_to_border = yes
 						}
 						building = bunker
@@ -630,7 +816,7 @@
 			}
 
 			if = {
-				limit = { controls_state = 69 }
+				limit = { controls_state = 69 controls_state = 1556 }
 				69 = {
 					set_building_level = {
 						type = bunker
@@ -643,10 +829,40 @@
 					}
 				}
 			}
-
+			
 			if = {
-				limit = { controls_state = 972 }
+				limit = { controls_state = 1556 }
+				1556 = {
+					set_building_level = {
+						type = bunker
+						level = 7
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+							level < 7
+						}
+					}
+				}
+			}
+			
+			if = {
+				limit = { controls_state = 972 controls_state = 1608 }
 				972 = {
+					set_building_level = {
+						type = bunker
+						level = 7
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+							level < 7
+						}
+					}
+				}
+			}
+			
+			if = {
+				limit = { controls_state = 1608 }
+				1608 = {
 					set_building_level = {
 						type = bunker
 						level = 7
@@ -660,7 +876,7 @@
 			}
 
 			if = {
-				limit = { controls_state = 9 }
+				limit = { controls_state = 9 controls_state = 1555 }
 				9 = {
 					set_building_level = {
 						type = bunker
@@ -685,7 +901,21 @@
 							id = 421
 							id = 6485
 							id = 3414
-							id = 3583
+							limit_to_border = yes
+							level < 7
+						}
+					}
+				}
+			}
+			
+			if = {
+				limit = { controls_state = 1727 }
+				1727 = {
+					set_building_level = {
+						type = bunker
+						level = 7
+						province = {
+							id = 15516
 							limit_to_border = yes
 							level < 7
 						}
@@ -694,7 +924,7 @@
 			}
 
 			if = {
-				limit = { controls_state = 70 }
+				limit = { controls_state = 70 controls_state = 1146 controls_state = 1147 }
 				70 = {
 					set_building_level = {
 						type = bunker
@@ -743,8 +973,8 @@
 		}
 
 		available = {
-			CZE = { controls_state = 664 }
-			CZE = { controls_state = 73 }
+			CZE = { controls_state = 664 controls_state = 1560 }
+			CZE = { controls_state = 73 controls_state = 1294 }
 		}
 
 		bypass = {
@@ -762,17 +992,19 @@
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			664 = {
-				add_building_construction = { type = bunker province = 3565 level = 3 instant_build = yes }
 				add_building_construction = { type = bunker province = 3716 level = 3 instant_build = yes }
 				add_building_construction = { type = bunker province = 6561 level = 3 instant_build = yes }
-				add_building_construction = { type = bunker province = 6573 level = 3 instant_build = yes }
-				add_building_construction = { type = bunker province = 9537 level = 3 instant_build = yes }
 				add_building_construction = { type = bunker province = 11679 level = 3 instant_build = yes }
 			}
 			
-			73 = {
-				add_building_construction = { type = bunker province = 11691 level = 3 instant_build = yes }
-				add_building_construction = { type = bunker province = 3548 level = 3 instant_build = yes }
+			1560 = {
+				add_building_construction = { type = bunker province = 3565 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 6573 level = 3 instant_build = yes }
+				add_building_construction = { type = bunker province = 9537 level = 3 instant_build = yes }
+			}
+			
+			1294 = {
+				add_building_construction = { type = bunker province = 13752 level = 3 instant_build = yes }
 			}
 
 		}
@@ -801,8 +1033,10 @@
 		}
 
 		available = {
-			CZE = { controls_state = 71 }
-			CZE = { controls_state = 72 }
+			CZE = { controls_state = 70 controls_state = 1146 controls_state = 1147 }
+			CZE = { controls_state = 71 controls_state = 1148 controls_state = 1149 }
+			CZE = { controls_state = 72 controls_state = 1727 }
+			CZE = { controls_state = 1149 }
 		}
 
 		bypass = {
@@ -821,15 +1055,18 @@
 
 			72 = {
 				add_building_construction = { type = bunker province = 9567 level = 2 instant_build = yes }
-				add_building_construction = { type = bunker province = 9551 level = 2 instant_build = yes }
 			}
-
+			70 = {
+				add_building_construction = { type = bunker province = 13693 level = 2 instant_build = yes }
+			}
 			71 = {      
 				add_building_construction = { type = bunker province = 581 level = 2 instant_build = yes }
 				add_building_construction = { type = bunker province = 3550 level = 2 instant_build = yes }
+				add_building_construction = { type = bunker province = 11554 level = 2 instant_build = yes }
+			}
+			1149 = {
 				add_building_construction = { type = bunker province = 3581 level = 2 instant_build = yes }
 				add_building_construction = { type = bunker province = 6604 level = 2 instant_build = yes }
-				add_building_construction = { type = bunker province = 11554 level = 2 instant_build = yes }
 			}
 
 		}
@@ -854,10 +1091,11 @@
 		}
 
 		available = {
-			CZE = { controls_state = 9 }
-			CZE = { controls_state = 70 }
+			CZE = { controls_state = 9 controls_state = 1555 }
+			CZE = { controls_state = 1555 }
+			CZE = { controls_state = 1147 }
 			CZE = { controls_state = 75 }
-			CZE = { controls_state = 664 }
+			CZE = { controls_state = 1560 }
 		}
 
 		bypass = {
@@ -874,17 +1112,19 @@
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			664 = {
+			1560 = {
 				add_building_construction = { type = bunker province = 6573 level = 2 instant_build = yes }
 			}
-			70 = {
+			1147 = {
 				add_building_construction = { type = bunker province = 9692 level = 2 instant_build = yes }
 			}
 			75 = {
 				add_building_construction = { type = bunker province = 3569 level = 2 instant_build = yes }
 			}
-			9 = {
+			1555 = {
 				add_building_construction = { type = bunker province = 6418 level = 2 instant_build = yes }
+			}
+			9 = {
 				add_building_construction = { type = bunker province = 11542 level = 3 instant_build = yes }
 			}
 
@@ -972,7 +1212,7 @@
 		}
 
 		available = {
-			CZE = { controls_state = 9 }
+			CZE = { controls_state = 9 controls_state = 1555 }
 			CZE = { controls_state = 75 }
 		}
 
@@ -1024,7 +1264,7 @@
 		}
 
 		available = {
-			CZE = { controls_state = 9 }
+			CZE = { controls_state = 1555 }
 			CZE = { controls_state = 75 }
 		}
 
@@ -1038,7 +1278,7 @@
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
-			9 = {
+			1555 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
@@ -1076,7 +1316,7 @@
 		}
 
 		available = {
-			CZE = { controls_state = 9 }
+			CZE = { controls_state = 9 controls_state = 1555 }
 			CZE = { controls_state = 75 }
 		}
 
@@ -1137,8 +1377,8 @@
 		}
 
 		available = {
-			CZE = { controls_state = 9 }
-			CZE = { controls_state = 70 }
+			CZE = { controls_state = 9 controls_state = 1555 }
+			CZE = { controls_state = 1147 }
 		}
 
 		bypass = {
@@ -1159,7 +1399,7 @@
 					instant_build = yes
 				}
 			}
-			70 = {
+			1147 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
@@ -1194,8 +1434,8 @@
 		}
 
 		available = {
-			CZE = { controls_state = 9 }
-			CZE = { controls_state = 71 }
+			CZE = { controls_state = 9 controls_state = 1555 }
+			CZE = { controls_state = 71 controls_state = 1148 controls_state = 1149 }
 		}
 
 		bypass = {
@@ -1251,8 +1491,8 @@
 		}
 
 		available = {
-			CZE = { controls_state = 9 }
-			CZE = { controls_state = 73 }
+			CZE = { controls_state = 9 controls_state = 1555 }
+			CZE = { controls_state = 73 controls_state = 1294 }
 		}
 
 		bypass = {
@@ -2158,7 +2398,7 @@
 		}
 
 		available = {
-			controls_state = 70
+			controls_state = 70 controls_state = 1146 controls_state = 1147
 			GER = { exists = yes }
 			POL = {	exists = yes }
 			NOT = {
@@ -2214,7 +2454,13 @@
 				owns_state = 70
 				owns_state = 71
 				owns_state = 73
+				owns_state = 1294
 				owns_state = 664
+				owns_state = 1560
+				owns_state = 1146
+				owns_state = 1147
+				owns_state = 1148
+				owns_state = 1149
 			}
 		}
 
@@ -2527,7 +2773,7 @@
 		}
 
 		available = {
-			controls_state = 70
+			controls_state = 70 controls_state = 1146 controls_state = 1147
 			NOT = {
 				is_in_faction_with = HUN
 			}
@@ -2580,7 +2826,10 @@
 			AND = {
 				owns_state = 69
 				owns_state = 74
+				owns_state = 1727
 				owns_state = 972
+				owns_state = 1608
+				owns_state = 1556
 			}
 		}
 
@@ -2595,7 +2844,22 @@
 					is_owned_and_controlled_by = ROOT
 				}
 			}
+			1727 = {
+				NOT = {
+					is_owned_and_controlled_by = ROOT
+				}
+			}
 			972 = {
+				NOT = {
+					is_owned_and_controlled_by = ROOT
+				}
+			}
+			1608 = {
+				NOT = {
+					is_owned_and_controlled_by = ROOT
+				}
+			}
+			1556 = {
 				NOT = {
 					is_owned_and_controlled_by = ROOT
 				}
@@ -3214,7 +3478,7 @@
 			OR = {
 				is_in_faction_with = ROM
 				has_subject = ROM
-				owns_state = 46
+				owns_state = 46 owns_state = 1312
 			}
 		}
 

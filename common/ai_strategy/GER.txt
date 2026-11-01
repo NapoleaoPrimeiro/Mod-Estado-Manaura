@@ -1963,7 +1963,7 @@ GER_avoid_air_war_before_fall_gelb = { #prevents GER air from uselessly beating 
 	enable = {
 		is_historical_focus_on = yes
 		has_war_with = FRA
-		FRA = { controls_state = 16 } # Checks that they control Paris
+		FRA = { controls_state = 16 controls_state = 1517 controls_state = 1518 controls_state = 1519 controls_state = 1520 } # Checks that they control Paris
 		HOL = { has_capitulated = no }
 	}
 
@@ -3013,7 +3013,16 @@ GER_around_the_maginot = {
 		42 = {
 			is_controlled_by = GER
 		}
+		1414 = { # KSRE (de 42)
+			is_controlled_by = GER
+		}
+		1551 = { # KSRE (de 42)
+			is_controlled_by = GER
+		}
 		978 = {
+			is_controlled_by = GER
+		}
+		1251 = { # KSRE (de 978)
 			is_controlled_by = GER
 		}
 
@@ -3626,20 +3635,20 @@ GER_blitzkrieg_russia_hard_air_north  = { #get GER to focus on breaking border d
 		NOT = {
 			GER = {
 				controls_state = 188 
-				controls_state = 189
-				controls_state = 814
+				controls_state = 189 controls_state = 1172 controls_state = 1237 controls_state = 1787
+				controls_state = 814 controls_state = 1236
 				controls_state = 11
 				controls_state = 815
-				controls_state = 190
-				controls_state = 809
+				controls_state = 190 controls_state = 1559 controls_state = 1771
+				controls_state = 809 controls_state = 1788
 				controls_state = 808
-				controls_state = 810
-				controls_state = 12
-				controls_state = 811
-				controls_state = 13
+				controls_state = 810 controls_state = 1789 controls_state = 1790 controls_state = 1792
+				controls_state = 12 controls_state = 1791
+				controls_state = 811 controls_state = 1801
+				controls_state = 13 controls_state = 1797
 				controls_state = 812
-				controls_state = 191
-				controls_state = 813
+				controls_state = 191 controls_state = 1795 controls_state = 1796 controls_state = 1798
+				controls_state = 813 controls_state = 1799 controls_state = 1800
 			}
 		}
 	}
@@ -3669,15 +3678,15 @@ GER_blitzkrieg_russia_hard_air_center  = { #get GER to focus on breaking border 
 		}
 		NOT = {
 			GER = {
-				controls_state = 96
-				controls_state = 784
-				controls_state = 95
-				controls_state = 97
-				controls_state = 92
-				controls_state = 94
-				controls_state = 93
-				controls_state = 91
-				controls_state = 89
+				controls_state = 96 controls_state = 1173 controls_state = 1244 controls_state = 1817
+				controls_state = 784 controls_state = 1238 controls_state = 1248 controls_state = 1816
+				controls_state = 95 controls_state = 1239 controls_state = 1240 controls_state = 1243 controls_state = 1246 controls_state = 1247
+				controls_state = 97 controls_state = 1241 controls_state = 1242 controls_state = 1245
+				controls_state = 92 controls_state = 1400 controls_state = 1530
+				controls_state = 94 controls_state = 1484 controls_state = 1534 controls_state = 1535 controls_state = 1610 controls_state = 1814 controls_state = 1815 controls_state = 1818
+				controls_state = 93 controls_state = 1533
+				controls_state = 91 controls_state = 1531
+				controls_state = 89 controls_state = 1532
 			}
 		}
 	}
@@ -3710,22 +3719,22 @@ GER_blitzkrieg_russia_hard_air_south  = { #get GER to focus on breaking border d
 			GER = {
 				controls_state = 199
 				controls_state = 201
-				controls_state = 198
-				controls_state = 834
+				controls_state = 198 controls_state = 1262
+				controls_state = 834 controls_state = 1261 controls_state = 1420 controls_state = 1421 controls_state = 1500
 				controls_state = 192
-				controls_state = 202
-				controls_state = 203
+				controls_state = 202 controls_state = 1101 controls_state = 1102 controls_state = 1537
+				controls_state = 203 controls_state = 1103
 				controls_state = 197
-				controls_state = 196
-				controls_state = 137
+				controls_state = 196 controls_state = 1606
+				controls_state = 137 controls_state = 1086 controls_state = 1087 controls_state = 1088
 				controls_state = 200
-				controls_state = 226
+				controls_state = 226 controls_state = 1536 controls_state = 1612
 				controls_state = 259
-				controls_state = 193
-				controls_state = 225
-				controls_state = 221
-				controls_state = 227
-				controls_state = 228
+				controls_state = 193 controls_state = 1100
+				controls_state = 225 controls_state = 1812 controls_state = 1819
+				controls_state = 221 controls_state = 1099
+				controls_state = 227 controls_state = 1089 controls_state = 1090
+				controls_state = 228 controls_state = 1091 controls_state = 1095
 			}
 		}
 	}
@@ -3805,8 +3814,15 @@ GER_normandy_buffer = {
 		states = {
 			14
 			15
+			1403 # KSRE (de 15)
 			29
 			735
+			1301 # KSRE (de 735)
+			1302 # KSRE (de 735)
+			1303 # KSRE (de 735)
+			1304 # KSRE (de 735)
+			1305 # KSRE (de 735)
+			1306 # KSRE (de 735)
 			22
 		}
 		ratio = 0.11
@@ -3839,6 +3855,7 @@ GER_invasion_buffer = {
 		type = put_unit_buffers
 		states = {
 			15
+			1403 # KSRE (de 15)
 			14
 			23
 			29
@@ -4469,7 +4486,9 @@ GER_dont_send_half_the_army_to_finland_if_not_in_our_faction = {
 
 		# Safety measures, if Soviets have lost Leningrad or Novgorod the Finnish and German frontlines are probably close to becoming one, and then we need to disable the strategy
 		195 = { is_controlled_by = SOV }  # Leningrad
+		1289 = { is_controlled_by = SOV } # KSRE (de 195)
 		263 = { is_controlled_by = SOV }  # Novgorod
+		1803 = { is_controlled_by = SOV } # KSRE (de 263)
 	}
 	abort_when_not_enabled = yes
 

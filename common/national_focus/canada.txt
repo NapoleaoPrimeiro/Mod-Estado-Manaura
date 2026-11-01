@@ -294,8 +294,8 @@ focus_tree = {
 		
 		bypass = {
 			NOT = {
-				owns_state = 473
-				owns_state = 471
+				owns_state = 473 owns_state = 1162
+				owns_state = 471 owns_state = 1163 owns_state = 1588 owns_state = 1593
 			}
 		}
 
@@ -496,10 +496,10 @@ focus_tree = {
 		}
 
 		available = {
-			controls_state = 470
-			controls_state = 471
-			controls_state = 472
-			controls_state = 683
+			controls_state = 470 controls_state = 1164 controls_state = 1165 controls_state = 1362 controls_state = 1363
+			controls_state = 471 controls_state = 1163 controls_state = 1588 controls_state = 1593
+			controls_state = 472 controls_state = 1166 controls_state = 1582 controls_state = 1583 controls_state = 1584 controls_state = 1585 controls_state = 1589 controls_state = 1590 controls_state = 1592 controls_state = 1594 controls_state = 1595 controls_state = 1596 controls_state = 1620
+			controls_state = 683 controls_state = 1597 controls_state = 1598 controls_state = 1599 controls_state = 1600 controls_state = 1614
 		}
 		
 		bypass = {
@@ -879,7 +879,7 @@ focus_tree = {
 
 		completion_reward = {
 			random_owned_controlled_state = {
-				prioritize = { 471 472 683 }
+				prioritize = { 471 472 683 1163 1588 1593 1166 1582 1583 1584 1585 1589 1590 1592 1594 1595 1596 1620 1597 1598 1599 1600 1614 }
 				limit = {
 					is_in_home_area = yes
 				}
@@ -889,7 +889,7 @@ focus_tree = {
 				}
 			}
 			random_owned_controlled_state = {
-				prioritize = { 471 472 683 }
+				prioritize = { 471 472 683 1163 1588 1593 1166 1582 1583 1584 1585 1589 1590 1592 1594 1595 1596 1620 1597 1598 1599 1600 1614 }
 				limit = {
 					is_in_home_area = yes
 				}
@@ -899,7 +899,7 @@ focus_tree = {
 				}
 			}
 			random_owned_controlled_state = {
-				prioritize = { 471 472 683 }
+				prioritize = { 471 472 683 1163 1588 1593 1166 1582 1583 1584 1585 1589 1590 1592 1594 1595 1596 1620 1597 1598 1599 1600 1614 }
 				limit = {
 					is_in_home_area = yes
 				}
@@ -1117,7 +1117,7 @@ focus_tree = {
 
 		completion_reward = {
 			random_owned_controlled_state = {
-				prioritize = { 470 }
+				prioritize = { 470 1164 1165 1362 1363 }
 				limit = {
 					free_building_slots = {
 						building = industrial_complex
@@ -2841,7 +2841,7 @@ focus_tree = {
 		}
 
 		available = {
-			controls_state = 470
+			controls_state = 470 controls_state = 1164 controls_state = 1165 controls_state = 1362 controls_state = 1363
 		}
 		
 		bypass = {
@@ -3885,6 +3885,10 @@ focus_tree = {
 				is_owned_by = CAN
 				is_controlled_by = CAN
 			}
+			1162 = { # KSRE (de 473)
+				is_owned_by = CAN
+				is_controlled_by = CAN
+			}
 			ENG = {
 				owns_state = 331
 				owns_state = 332
@@ -4164,7 +4168,13 @@ focus_tree = {
 			has_war = yes
 			has_civil_war = no
 			469 = { is_fully_controlled_by = ROOT }
+			1364 = { is_fully_controlled_by = ROOT } # KSRE (de 469)
+			1591 = { is_fully_controlled_by = ROOT } # KSRE (de 469)
 			470 = { is_fully_controlled_by = ROOT }
+			1164 = { is_fully_controlled_by = ROOT } # KSRE (de 470)
+			1165 = { is_fully_controlled_by = ROOT } # KSRE (de 470)
+			1362 = { is_fully_controlled_by = ROOT } # KSRE (de 470)
+			1363 = { is_fully_controlled_by = ROOT } # KSRE (de 470)
 			467 = { is_fully_controlled_by = ROOT }
 		}
 		
@@ -4734,7 +4744,7 @@ focus_tree = {
 			if = {
 				limit = { has_tech = radio_detection }
 				random_owned_controlled_state = {
-					prioritize = { 473 }
+					prioritize = { 473 1162 }
 					limit = {
 						is_in_home_area = yes
 						free_building_slots = {
@@ -4790,7 +4800,7 @@ focus_tree = {
 					}
 					effect_tooltip = {
 						random_owned_controlled_state = {
-							prioritize = { 473 }
+							prioritize = { 473 1162 }
 							limit = {
 								is_in_home_area = yes
 							}
@@ -4803,7 +4813,7 @@ focus_tree = {
 
 						random_owned_controlled_state = {
 							limit = {
-								NOT = { state = 473 }
+								NOT = { state = 473 state = 1162 }
 								NOT = { has_state_flag = CAN_the_pacific_coast_air_defence_radar_system_radar1 }
 								is_in_home_area = yes
 							}
@@ -4815,7 +4825,7 @@ focus_tree = {
 						}
 					}
 					random_owned_controlled_state = {
-						prioritize = { 473 }
+						prioritize = { 473 1162 }
 						limit = {
 							is_in_home_area = yes
 							free_building_slots = {
