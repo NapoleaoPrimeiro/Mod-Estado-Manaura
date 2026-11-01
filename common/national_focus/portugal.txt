@@ -2058,7 +2058,7 @@ focus_tree = {
 			OR = {
 				has_full_control_of_state = 321
 				has_full_control_of_state = 729
-				has_full_control_of_state = 721
+				has_full_control_of_state = 721 has_full_control_of_state = 1341
 			}
 		}
 
@@ -2123,7 +2123,7 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = { has_full_control_of_state = 721 }
+				limit = { has_full_control_of_state = 721 has_full_control_of_state = 1341 }
 				721 = { #Portuguese Timor
 					add_building_construction = {
 						type = coastal_bunker
@@ -5571,8 +5571,9 @@ focus_tree = {
 						controls_state = 622
 						controls_state = 604
 						controls_state = 615
-						controls_state = 611
-						controls_state = 328
+						controls_state = 611 controls_state = 1476
+						controls_state = 328 controls_state = 1422 controls_state = 1434 controls_state = 1435 controls_state = 1437 controls_state = 1439 controls_state = 1454
+						controls_state = 1416
 					}
 				}
 				ROOT = {
@@ -5726,6 +5727,21 @@ focus_tree = {
 				}
 
 				328 = {
+					owner =  {
+						ROOT = {
+							if = {
+								limit = {
+									NOT = { has_wargoal_against = PREV }
+								}
+								create_wargoal = {
+								  	target = PREV
+								    type = annex_everything
+								}
+							}					
+						}
+					}				
+				}
+				1416 = {
 					owner =  {
 						ROOT = {
 							if = {
@@ -6044,6 +6060,8 @@ focus_tree = {
 			owns_state = 496
 			owns_state = 943
 			owns_state = 280
+			owns_state = 1383
+			owns_state = 1382
 			owns_state = 505
 			owns_state = 499
 			owns_state = 941
@@ -6055,8 +6073,17 @@ focus_tree = {
 			owns_state = 497
 			owns_state = 938
 			owns_state = 939
-			owns_state = 495
+			owns_state = 495 owns_state = 1391
+			owns_state = 1392
 			owns_state = 940
+			owns_state = 1221
+			owns_state = 1222
+			owns_state = 1224
+			owns_state = 1271
+			owns_state = 1272
+			owns_state = 1273
+			owns_state = 1274
+			owns_state = 1275
 		}
 		prerequisite = { focus = POR_mapa_cor_de_rosa }
 
@@ -6079,6 +6106,8 @@ focus_tree = {
 			add_state_claim = 496 #Minas Gerais
 			add_state_claim = 943 #Espirito Santo
 			add_state_claim = 280 #Mato Grosso
+			add_state_claim = 1383
+			add_state_claim = 1382
 			add_state_claim = 505 #Goias
 			add_state_claim = 499 #Bahia
 			add_state_claim = 941 #Tocantins
@@ -6091,7 +6120,16 @@ focus_tree = {
 			add_state_claim = 938 #Para
 			add_state_claim = 939 #Amapa - Rio Branco
 			add_state_claim = 495 #Amazonas
+			add_state_claim = 1392 #Amazonas
 			add_state_claim = 940 #Acre
+			add_state_claim = 1221
+			add_state_claim = 1222
+			add_state_claim = 1224
+			add_state_claim = 1271
+			add_state_claim = 1272
+			add_state_claim = 1273
+			add_state_claim = 1274
+			add_state_claim = 1275
 
 			hidden_effect = {
 				random_country = {

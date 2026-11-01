@@ -968,10 +968,10 @@ ROM_dividing_yugo = {
 
 		on_map_mode = map_only
 
-		cost = 20
+		cost = 10
 		
 		fire_only_once = no
-		days_remove = 7
+		days_remove = 3
 		
 		remove_effect = {
 			45 = {
@@ -990,6 +990,225 @@ ROM_dividing_yugo = {
 			modifier = {
 				NOT = {
 					45 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+	
+	ROM_claim_1477 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				1477 = {
+					1477 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				1477 = {
+					1477 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				1477 = {
+					1477 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				1477 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				1477 = {
+					1477 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				1477 = {
+					1477 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				1477 = {
+					1477 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				1477 = {
+					1477 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				1477 = {
+					1477 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				1477 = {
+					1477 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				1477 = {
+					1477 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				1477 = {
+					1477 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				1477 = {
+					1477 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			1477 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			1477 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 1477 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			1477 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					1477 = {
 						any_neighbor_state = {
 							OR = {
 								AND = {
@@ -1189,10 +1408,10 @@ ROM_dividing_yugo = {
 
 		on_map_mode = map_only
 
-		cost = 20
+		cost = 10
 		
 		fire_only_once = no
-		days_remove = 7
+		days_remove = 3
 		
 		remove_effect = {
 			764 = {
@@ -1211,6 +1430,225 @@ ROM_dividing_yugo = {
 			modifier = {
 				NOT = {
 					764 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+	
+	ROM_claim_1478 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				1478 = {
+					1478 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				1478 = {
+					1478 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				1478 = {
+					1478 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				1478 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				1478 = {
+					1478 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				1478 = {
+					1478 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				1478 = {
+					1478 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				1478 = {
+					1478 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				1478 = {
+					1478 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				1478 = {
+					1478 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				1478 = {
+					1478 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				1478 = {
+					1478 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				1478 = {
+					1478 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			1478 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			1478 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 1478 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			1478 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					1478 = {
 						any_neighbor_state = {
 							OR = {
 								AND = {
@@ -1410,10 +1848,10 @@ ROM_dividing_yugo = {
 
 		on_map_mode = map_only
 
-		cost = 20
+		cost = 10
 		
 		fire_only_once = no
-		days_remove = 7
+		days_remove = 3
 		
 		remove_effect = {
 			107 = {
@@ -1631,10 +2069,10 @@ ROM_dividing_yugo = {
 
 		on_map_mode = map_only
 
-		cost = 20
+		cost = 10
 		
 		fire_only_once = no
-		days_remove = 7
+		days_remove = 3
 		
 		remove_effect = {
 			108 = {
@@ -1852,10 +2290,10 @@ ROM_dividing_yugo = {
 
 		on_map_mode = map_only
 
-		cost = 20
+		cost = 10
 		
 		fire_only_once = no
-		days_remove = 7
+		days_remove = 3
 		
 		remove_effect = {
 			802 = {
@@ -2073,10 +2511,10 @@ ROM_dividing_yugo = {
 
 		on_map_mode = map_only
 
-		cost = 20
+		cost = 10
 		
 		fire_only_once = no
-		days_remove = 7
+		days_remove = 3
 		
 		remove_effect = {
 			803 = {
@@ -2095,6 +2533,892 @@ ROM_dividing_yugo = {
 			modifier = {
 				NOT = {
 					803 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+	
+	
+	# Claiming Preševo
+
+	ROM_claim_1411 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				1411 = {
+					1411 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				1411 = {
+					1411 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				1411 = {
+					1411 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				1411 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				1411 = {
+					1411 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				1411 = {
+					1411 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				1411 = {
+					1411 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				1411 = {
+					1411 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				1411 = {
+					1411 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				1411 = {
+					1411 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				1411 = {
+					1411 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				1411 = {
+					1411 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				1411 = {
+					1411 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			1411 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			1411 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 1411 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			1411 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					1411 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+	
+	
+	# Claiming strumica
+	
+	ROM_claim_1298 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				1298 = {
+					1298 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				1298 = {
+					1298 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				1298 = {
+					1298 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				1298 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				1298 = {
+					1298 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				1298 = {
+					1298 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				1298 = {
+					1298 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				1298 = {
+					1298 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				1298 = {
+					1298 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				1298 = {
+					1298 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				1298 = {
+					1298 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				1298 = {
+					1298 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				1298 = {
+					1298 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			1298 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			1298 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 1298 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			1298 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					1298 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+	
+	# Claiming bosilegrad
+	
+	ROM_claim_1299 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				1299 = {
+					1299 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				1299 = {
+					1299 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				1299 = {
+					1299 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				1299 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				1299 = {
+					1299 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				1299 = {
+					1299 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				1299 = {
+					1299 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				1299 = {
+					1299 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				1299 = {
+					1299 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				1299 = {
+					1299 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				1299 = {
+					1299 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				1299 = {
+					1299 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				1299 = {
+					1299 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			1299 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			1299 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 1299 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			1299 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					1299 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+	
+	# Claiming dimitrovgrad
+	
+	ROM_claim_1300 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				1300 = {
+					1300 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				1300 = {
+					1300 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				1300 = {
+					1300 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				1300 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				1300 = {
+					1300 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				1300 = {
+					1300 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				1300 = {
+					1300 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				1300 = {
+					1300 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				1300 = {
+					1300 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				1300 = {
+					1300 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				1300 = {
+					1300 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				1300 = {
+					1300 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				1300 = {
+					1300 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			1300 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			1300 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 1300 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			1300 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					1300 = {
 						any_neighbor_state = {
 							OR = {
 								AND = {
@@ -2294,10 +3618,10 @@ ROM_dividing_yugo = {
 
 		on_map_mode = map_only
 
-		cost = 20
+		cost = 10
 		
 		fire_only_once = no
-		days_remove = 7
+		days_remove = 3
 		
 		remove_effect = {
 			106 = {
@@ -2340,17 +3664,17 @@ ROM_dividing_yugo = {
 		}
 
 	}
+	
+	# Claiming Galičiča
 
-	# Claiming Debar
-
-	ROM_claim_debar = {
+	ROM_claim_1412 = {
 
 		#ROM
 		icon = {
 			key = GFX_decision_ROM_claim_yugo_4
 			trigger = {
-				970 = {
-					970 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+				1412 = {
+					1412 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
 					has_state_flag = strongest_claimant_ROM
 				}
 			}
@@ -2358,8 +3682,8 @@ ROM_dividing_yugo = {
 		icon = {
 			key = GFX_decision_ROM_claim_yugo_3
 			trigger = {
-				970 = {
-					970 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+				1412 = {
+					1412 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
 					has_state_flag = strongest_claimant_ROM
 				}
 			}
@@ -2367,8 +3691,8 @@ ROM_dividing_yugo = {
 		icon = {
 			key = GFX_decision_ROM_claim_yugo_2
 			trigger = {
-				970 = {
-					970 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+				1412 = {
+					1412 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
 					has_state_flag = strongest_claimant_ROM
 				}
 			}
@@ -2376,7 +3700,7 @@ ROM_dividing_yugo = {
 		icon = {
 			key = GFX_decision_ROM_claim_yugo_1
 			trigger = {
-				970 = {
+				1412 = {
 					NOT = {
 						has_state_flag = strongest_claimant_GER
 						has_state_flag = strongest_claimant_ROM
@@ -2391,8 +3715,8 @@ ROM_dividing_yugo = {
 		icon = {
 			key = GFX_decision_ITA_claim_yugo_4
 			trigger = {
-				970 = {
-					970 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+				1412 = {
+					1412 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
 					has_state_flag = strongest_claimant_ITA
 				}
 			}
@@ -2400,8 +3724,8 @@ ROM_dividing_yugo = {
 		icon = {
 			key = GFX_decision_ITA_claim_yugo_3
 			trigger = {
-				970 = {
-					970 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+				1412 = {
+					1412 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
 					has_state_flag = strongest_claimant_ITA
 				}
 			}
@@ -2409,8 +3733,8 @@ ROM_dividing_yugo = {
 		icon = {
 			key = GFX_decision_ITA_claim_yugo_2
 			trigger = {
-				970 = {
-					970 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+				1412 = {
+					1412 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
 					has_state_flag = strongest_claimant_ITA
 				}
 			}
@@ -2420,8 +3744,8 @@ ROM_dividing_yugo = {
 		icon = {
 			key = GFX_decision_HUN_claim_yugo_4
 			trigger = {
-				970 = {
-					970 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+				1412 = {
+					1412 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
 					has_state_flag = strongest_claimant_HUN
 				}
 			}
@@ -2429,8 +3753,8 @@ ROM_dividing_yugo = {
 		icon = {
 			key = GFX_decision_HUN_claim_yugo_3
 			trigger = {
-				970 = {
-					970 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+				1412 = {
+					1412 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
 					has_state_flag = strongest_claimant_HUN
 				}
 			}
@@ -2438,8 +3762,8 @@ ROM_dividing_yugo = {
 		icon = {
 			key = GFX_decision_HUN_claim_yugo_2
 			trigger = {
-				970 = {
-					970 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+				1412 = {
+					1412 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
 					has_state_flag = strongest_claimant_HUN
 				}
 			}
@@ -2449,8 +3773,8 @@ ROM_dividing_yugo = {
 		icon = {
 			key = GFX_decision_GER_claim_yugo_4
 			trigger = {
-				970 = {
-					970 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+				1412 = {
+					1412 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
 					has_state_flag = strongest_claimant_GER
 				}
 			}
@@ -2458,8 +3782,8 @@ ROM_dividing_yugo = {
 		icon = {
 			key = GFX_decision_GER_claim_yugo_3
 			trigger = {
-				970 = {
-					970 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+				1412 = {
+					1412 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
 					has_state_flag = strongest_claimant_GER
 				}
 			}
@@ -2467,8 +3791,8 @@ ROM_dividing_yugo = {
 		icon = {
 			key = GFX_decision_GER_claim_yugo_2
 			trigger = {
-				970 = {
-					970 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+				1412 = {
+					1412 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
 					has_state_flag = strongest_claimant_GER
 				}
 			}
@@ -2478,7 +3802,7 @@ ROM_dividing_yugo = {
 		}
 
 		available = {
-			970 = {
+			1412 = {
 				has_anyone_else_claimed_ROM = yes
 			}
 			OR = {
@@ -2499,7 +3823,7 @@ ROM_dividing_yugo = {
 			hidden_trigger = {
 				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
 			}
-			970 = {
+			1412 = {
 				owner = {
 					OR = {
 						tag = YUG
@@ -2510,18 +3834,18 @@ ROM_dividing_yugo = {
 		}
 		
 		highlight_states = {
-			highlight_states_trigger = { state = 970 }
+			highlight_states_trigger = { state = 1412 }
 		}
 
 		on_map_mode = map_only
 
-		cost = 20
+		cost = 10
 		
 		fire_only_once = no
-		days_remove = 7
+		days_remove = 3
 		
 		remove_effect = {
-			970 = {
+			1412 = {
 				custom_effect_tooltip = romania_total_claims_tt
 				calculate_claimant_effect = yes
 			}
@@ -2536,7 +3860,226 @@ ROM_dividing_yugo = {
 			factor = 100
 			modifier = {
 				NOT = {
-					970 = {
+					1412 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+	
+	ROM_claim_1307 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				1307 = {
+					1307 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				1307 = {
+					1307 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				1307 = {
+					1307 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				1307 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				1307 = {
+					1307 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				1307 = {
+					1307 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				1307 = {
+					1307 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				1307 = {
+					1307 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				1307 = {
+					1307 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				1307 = {
+					1307 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				1307 = {
+					1307 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				1307 = {
+					1307 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				1307 = {
+					1307 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			1307 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			1307 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 1307 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			1307 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					1307 = {
 						any_neighbor_state = {
 							OR = {
 								AND = {
@@ -2736,10 +4279,10 @@ ROM_dividing_yugo = {
 
 		on_map_mode = map_only
 
-		cost = 20
+		cost = 10
 		
 		fire_only_once = no
-		days_remove = 7
+		days_remove = 3
 		
 		remove_effect = {
 			105 = {
@@ -2957,10 +4500,10 @@ ROM_dividing_yugo = {
 
 		on_map_mode = map_only
 
-		cost = 20
+		cost = 10
 		
 		fire_only_once = no
-		days_remove = 7
+		days_remove = 3
 		
 		remove_effect = {
 			104 = {
@@ -3178,10 +4721,10 @@ ROM_dividing_yugo = {
 
 		on_map_mode = map_only
 
-		cost = 20
+		cost = 10
 		
 		fire_only_once = no
-		days_remove = 7
+		days_remove = 3
 		
 		remove_effect = {
 			103 = {
@@ -3200,6 +4743,228 @@ ROM_dividing_yugo = {
 			modifier = {
 				NOT = {
 					103 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+	
+	
+	# Claiming dubrovnik
+
+	ROM_claim_1296 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				1296 = {
+					1296 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				1296 = {
+					1296 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				1296 = {
+					1296 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				1296 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				1296 = {
+					1296 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				1296 = {
+					1296 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				1296 = {
+					1296 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				1296 = {
+					1296 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				1296 = {
+					1296 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				1296 = {
+					1296 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				1296 = {
+					1296 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				1296 = {
+					1296 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				1296 = {
+					1296 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			1296 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			1296 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 1296 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			1296 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					1296 = {
 						any_neighbor_state = {
 							OR = {
 								AND = {
@@ -3399,10 +5164,10 @@ ROM_dividing_yugo = {
 
 		on_map_mode = map_only
 
-		cost = 20
+		cost = 10
 		
 		fire_only_once = no
-		days_remove = 7
+		days_remove = 3
 		
 		remove_effect = {
 			109 = {
@@ -3620,10 +5385,10 @@ ROM_dividing_yugo = {
 
 		on_map_mode = map_only
 
-		cost = 20
+		cost = 10
 		
 		fire_only_once = no
-		days_remove = 7
+		days_remove = 3
 		
 		remove_effect = {
 			102 = {
@@ -3841,10 +5606,10 @@ ROM_dividing_yugo = {
 
 		on_map_mode = map_only
 
-		cost = 20
+		cost = 10
 		
 		fire_only_once = no
-		days_remove = 7
+		days_remove = 3
 		
 		remove_effect = {
 			853 = {
@@ -4064,10 +5829,10 @@ ROM_dividing_yugo = {
 
 		on_map_mode = map_only
 
-		cost = 20
+		cost = 10
 		
 		fire_only_once = no
-		days_remove = 7
+		days_remove = 3
 		
 		remove_effect = {
 			804 = {
@@ -4110,4 +5875,5134 @@ ROM_dividing_yugo = {
 		}
 
 	}
-}
+	
+	
+	
+	# Claiming Debar
+
+	ROM_claim_970 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				970 = {
+					970 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				970 = {
+					970 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				970 = {
+					970 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				970 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				970 = {
+					970 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				970 = {
+					970 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				970 = {
+					970 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				970 = {
+					970 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				970 = {
+					970 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				970 = {
+					970 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				970 = {
+					970 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				970 = {
+					970 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				970 = {
+					970 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			970 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			970 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 970 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			970 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					970 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+	
+	
+	
+	# Claiming Ulcinj
+
+	ROM_claim_1260 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				1260 = {
+					1260 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				1260 = {
+					1260 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				1260 = {
+					1260 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				1260 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				1260 = {
+					1260 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				1260 = {
+					1260 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				1260 = {
+					1260 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				1260 = {
+					1260 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				1260 = {
+					1260 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				1260 = {
+					1260 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				1260 = {
+					1260 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				1260 = {
+					1260 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				1260 = {
+					1260 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			1260 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			1260 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 1260 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			1260 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					1260 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+	
+	
+	
+	# Claiming Kotor
+
+	ROM_claim_1716 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				1716 = {
+					1716 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				1716 = {
+					1716 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				1716 = {
+					1716 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				1716 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				1716 = {
+					1716 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				1716 = {
+					1716 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				1716 = {
+					1716 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				1716 = {
+					1716 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				1716 = {
+					1716 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				1716 = {
+					1716 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				1716 = {
+					1716 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				1716 = {
+					1716 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				1716 = {
+					1716 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			1716 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			1716 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 1716 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			1716 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					1716 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+	
+	
+	
+	# Claiming Rozaje
+
+	ROM_claim_1776 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				1776 = {
+					1776 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				1776 = {
+					1776 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				1776 = {
+					1776 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				1776 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				1776 = {
+					1776 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				1776 = {
+					1776 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				1776 = {
+					1776 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				1776 = {
+					1776 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				1776 = {
+					1776 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				1776 = {
+					1776 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				1776 = {
+					1776 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				1776 = {
+					1776 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				1776 = {
+					1776 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			1776 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			1776 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 1776 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			1776 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					1776 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+	
+	
+	
+	# Claiming Kosovska Mitrovica
+
+	ROM_claim_1715 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				1715 = {
+					1715 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				1715 = {
+					1715 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				1715 = {
+					1715 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				1715 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				1715 = {
+					1715 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				1715 = {
+					1715 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				1715 = {
+					1715 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				1715 = {
+					1715 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				1715 = {
+					1715 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				1715 = {
+					1715 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				1715 = {
+					1715 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				1715 = {
+					1715 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				1715 = {
+					1715 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			1715 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			1715 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 1715 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			1715 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					1715 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+	
+	
+	
+	# Claiming Tutin
+
+	ROM_claim_1777 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				1777 = {
+					1777 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				1777 = {
+					1777 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				1777 = {
+					1777 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				1777 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				1777 = {
+					1777 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				1777 = {
+					1777 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				1777 = {
+					1777 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				1777 = {
+					1777 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				1777 = {
+					1777 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				1777 = {
+					1777 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				1777 = {
+					1777 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				1777 = {
+					1777 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				1777 = {
+					1777 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			1777 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			1777 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 1777 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			1777 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					1777 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+	
+	
+	
+	# Claiming Novi Pazar
+
+	ROM_claim_1710 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				1710 = {
+					1710 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				1710 = {
+					1710 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				1710 = {
+					1710 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				1710 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				1710 = {
+					1710 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				1710 = {
+					1710 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				1710 = {
+					1710 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				1710 = {
+					1710 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				1710 = {
+					1710 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				1710 = {
+					1710 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				1710 = {
+					1710 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				1710 = {
+					1710 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				1710 = {
+					1710 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			1710 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			1710 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 1710 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			1710 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					1710 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+	
+	
+	
+	# Claiming Niš
+	
+	ROM_claim_1709 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				1709 = {
+					1709 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				1709 = {
+					1709 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				1709 = {
+					1709 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				1709 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				1709 = {
+					1709 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				1709 = {
+					1709 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				1709 = {
+					1709 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				1709 = {
+					1709 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				1709 = {
+					1709 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				1709 = {
+					1709 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				1709 = {
+					1709 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				1709 = {
+					1709 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				1709 = {
+					1709 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			1709 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			1709 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 1709 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			1709 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					1709 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+	
+	
+	
+	# Claiming Bor
+	
+	ROM_claim_1721 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				1721 = {
+					1721 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				1721 = {
+					1721 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				1721 = {
+					1721 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				1721 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				1721 = {
+					1721 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				1721 = {
+					1721 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				1721 = {
+					1721 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				1721 = {
+					1721 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				1721 = {
+					1721 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				1721 = {
+					1721 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				1721 = {
+					1721 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				1721 = {
+					1721 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				1721 = {
+					1721 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			1721 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			1721 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 1721 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			1721 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					1721 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+	
+	
+	
+	# Claiming Sremska Mitrovica
+	
+	ROM_claim_1707 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				1707 = {
+					1707 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				1707 = {
+					1707 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				1707 = {
+					1707 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				1707 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				1707 = {
+					1707 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				1707 = {
+					1707 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				1707 = {
+					1707 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				1707 = {
+					1707 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				1707 = {
+					1707 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				1707 = {
+					1707 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				1707 = {
+					1707 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				1707 = {
+					1707 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				1707 = {
+					1707 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			1707 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			1707 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 1707 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			1707 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					1707 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+	
+	
+	
+	# Claiming Prekmurje
+	
+	ROM_claim_1704 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				1704 = {
+					1704 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				1704 = {
+					1704 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				1704 = {
+					1704 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				1704 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				1704 = {
+					1704 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				1704 = {
+					1704 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				1704 = {
+					1704 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				1704 = {
+					1704 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				1704 = {
+					1704 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				1704 = {
+					1704 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				1704 = {
+					1704 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				1704 = {
+					1704 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				1704 = {
+					1704 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			1704 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			1704 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 1704 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			1704 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					1704 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+	
+	
+	
+	
+	# Claiming Medimurje
+	
+	ROM_claim_1410 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				1410 = {
+					1410 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				1410 = {
+					1410 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				1410 = {
+					1410 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				1410 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				1410 = {
+					1410 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				1410 = {
+					1410 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				1410 = {
+					1410 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				1410 = {
+					1410 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				1410 = {
+					1410 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				1410 = {
+					1410 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				1410 = {
+					1410 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				1410 = {
+					1410 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				1410 = {
+					1410 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			1410 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			1410 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 1410 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			1410 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					1410 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+	
+	
+	
+	# Claiming Korcula Mljet
+	
+	ROM_claim_1325 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				1325 = {
+					1325 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				1325 = {
+					1325 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				1325 = {
+					1325 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				1325 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				1325 = {
+					1325 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				1325 = {
+					1325 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				1325 = {
+					1325 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				1325 = {
+					1325 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				1325 = {
+					1325 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				1325 = {
+					1325 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				1325 = {
+					1325 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				1325 = {
+					1325 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				1325 = {
+					1325 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			1325 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			1325 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 1325 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			1325 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					1325 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+	
+	
+	
+	# Claiming Split
+	
+	ROM_claim_1339 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				1339 = {
+					1339 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				1339 = {
+					1339 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				1339 = {
+					1339 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				1339 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				1339 = {
+					1339 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				1339 = {
+					1339 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				1339 = {
+					1339 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				1339 = {
+					1339 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				1339 = {
+					1339 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				1339 = {
+					1339 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				1339 = {
+					1339 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				1339 = {
+					1339 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				1339 = {
+					1339 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			1339 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			1339 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 1339 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			1339 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					1339 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+	
+	
+	
+	# Claiming Šibenik
+	
+	ROM_claim_1314 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				1314 = {
+					1314 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				1314 = {
+					1314 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				1314 = {
+					1314 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				1314 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				1314 = {
+					1314 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				1314 = {
+					1314 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				1314 = {
+					1314 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				1314 = {
+					1314 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				1314 = {
+					1314 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				1314 = {
+					1314 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				1314 = {
+					1314 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				1314 = {
+					1314 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				1314 = {
+					1314 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			1314 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			1314 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 1314 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			1314 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					1314 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+	
+	
+	
+	# Claiming Lika-Krbava
+	
+	ROM_claim_1718 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				1718 = {
+					1718 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				1718 = {
+					1718 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				1718 = {
+					1718 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				1718 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				1718 = {
+					1718 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				1718 = {
+					1718 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				1718 = {
+					1718 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				1718 = {
+					1718 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				1718 = {
+					1718 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				1718 = {
+					1718 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				1718 = {
+					1718 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				1718 = {
+					1718 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				1718 = {
+					1718 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			1718 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			1718 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 1718 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			1718 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					1718 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+	
+	
+	
+	# Claiming Lika-Krbava
+	
+	ROM_claim_1388 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				1388 = {
+					1388 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				1388 = {
+					1388 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				1388 = {
+					1388 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				1388 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				1388 = {
+					1388 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				1388 = {
+					1388 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				1388 = {
+					1388 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				1388 = {
+					1388 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				1388 = {
+					1388 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				1388 = {
+					1388 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				1388 = {
+					1388 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				1388 = {
+					1388 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				1388 = {
+					1388 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			1388 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			1388 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 1388 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			1388 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					1388 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+	
+	
+	
+	# Claiming Beli Manastir
+	
+	ROM_claim_1705 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				1705 = {
+					1705 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				1705 = {
+					1705 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				1705 = {
+					1705 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				1705 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				1705 = {
+					1705 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				1705 = {
+					1705 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				1705 = {
+					1705 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				1705 = {
+					1705 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				1705 = {
+					1705 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				1705 = {
+					1705 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				1705 = {
+					1705 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				1705 = {
+					1705 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				1705 = {
+					1705 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			1705 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			1705 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 1705 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			1705 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					1705 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+	
+	
+	
+	# Claiming Osijek
+	
+	ROM_claim_1706 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				1706 = {
+					1706 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				1706 = {
+					1706 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				1706 = {
+					1706 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				1706 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				1706 = {
+					1706 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				1706 = {
+					1706 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				1706 = {
+					1706 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				1706 = {
+					1706 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				1706 = {
+					1706 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				1706 = {
+					1706 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				1706 = {
+					1706 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				1706 = {
+					1706 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				1706 = {
+					1706 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			1706 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			1706 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 1706 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			1706 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					1706 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+	
+	
+	
+	# Claiming Neum
+	
+	ROM_claim_1717 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				1717 = {
+					1717 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				1717 = {
+					1717 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				1717 = {
+					1717 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				1717 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				1717 = {
+					1717 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				1717 = {
+					1717 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				1717 = {
+					1717 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				1717 = {
+					1717 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				1717 = {
+					1717 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				1717 = {
+					1717 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				1717 = {
+					1717 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				1717 = {
+					1717 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				1717 = {
+					1717 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			1717 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			1717 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 1717 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			1717 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					1717 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+	
+	
+	
+	# Claiming Bosnian Posavina
+	
+	ROM_claim_1711 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				1711 = {
+					1711 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				1711 = {
+					1711 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				1711 = {
+					1711 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				1711 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				1711 = {
+					1711 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				1711 = {
+					1711 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				1711 = {
+					1711 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				1711 = {
+					1711 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				1711 = {
+					1711 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				1711 = {
+					1711 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				1711 = {
+					1711 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				1711 = {
+					1711 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				1711 = {
+					1711 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			1711 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			1711 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 1711 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			1711 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					1711 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+	
+	
+	
+	# Claiming Bosnian Krajina
+	
+	ROM_claim_1713 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				1713 = {
+					1713 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				1713 = {
+					1713 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				1713 = {
+					1713 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				1713 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				1713 = {
+					1713 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				1713 = {
+					1713 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				1713 = {
+					1713 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				1713 = {
+					1713 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				1713 = {
+					1713 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				1713 = {
+					1713 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				1713 = {
+					1713 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				1713 = {
+					1713 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				1713 = {
+					1713 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			1713 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			1713 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 1713 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			1713 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					1713 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+	
+	
+	
+	# Claiming Mostar
+	
+	ROM_claim_1712 = {
+
+		#ROM
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_4
+			trigger = {
+				1712 = {
+					1712 = { check_variable = {  var = claim_strength_ROM value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_3
+			trigger = {
+				1712 = {
+					1712 = { check_variable = {  var = claim_strength_ROM value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_2
+			trigger = {
+				1712 = {
+					1712 = { check_variable = {  var = claim_strength_ROM value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ROM
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ROM_claim_yugo_1
+			trigger = {
+				1712 = {
+					NOT = {
+						has_state_flag = strongest_claimant_GER
+						has_state_flag = strongest_claimant_ROM
+						has_state_flag = strongest_claimant_ITA
+						has_state_flag = strongest_claimant_HUN
+					}
+				}
+			}
+		}
+
+		#ITA
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_4
+			trigger = {
+				1712 = {
+					1712 = { check_variable = {  var = claim_strength_ITA value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_3
+			trigger = {
+				1712 = {
+					1712 = { check_variable = {  var = claim_strength_ITA value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_ITA_claim_yugo_2
+			trigger = {
+				1712 = {
+					1712 = { check_variable = {  var = claim_strength_ITA value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_ITA
+				}
+			}
+		}
+
+		#HUN
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_4
+			trigger = {
+				1712 = {
+					1712 = { check_variable = {  var = claim_strength_HUN value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_3
+			trigger = {
+				1712 = {
+					1712 = { check_variable = {  var = claim_strength_HUN value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_HUN_claim_yugo_2
+			trigger = {
+				1712 = {
+					1712 = { check_variable = {  var = claim_strength_HUN value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_HUN
+				}
+			}
+		}
+
+		#GER
+		icon = {
+			key = GFX_decision_GER_claim_yugo_4
+			trigger = {
+				1712 = {
+					1712 = { check_variable = {  var = claim_strength_GER value = 3 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_3
+			trigger = {
+				1712 = {
+					1712 = { check_variable = {  var = claim_strength_GER value = 2 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+		icon = {
+			key = GFX_decision_GER_claim_yugo_2
+			trigger = {
+				1712 = {
+					1712 = { check_variable = {  var = claim_strength_GER value = 1 compare = greater_than_or_equals } }
+					has_state_flag = strongest_claimant_GER
+				}
+			}
+		}
+
+		allowed = {
+		}
+
+		available = {
+			1712 = {
+				has_anyone_else_claimed_ROM = yes
+			}
+			OR = {
+				GER = {
+					has_country_flag = invited_to_split_yugo
+				}
+				ITA = {
+					has_country_flag = invited_to_split_yugo
+				}
+				HUN = {
+					has_country_flag = invited_to_split_yugo
+				}
+			}
+		}
+		
+		visible = {
+			has_country_flag = invited_to_split_yugo
+			hidden_trigger = {
+				NOT = { has_country_flag = claiming_a_yugoslav_state_flag }
+			}
+			1712 = {
+				owner = {
+					OR = {
+						tag = YUG
+						is_subject_of = YUG
+					}
+				}
+			}
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = { state = 1712 }
+		}
+
+		on_map_mode = map_only
+
+		cost = 10
+		
+		fire_only_once = no
+		days_remove = 3
+		
+		remove_effect = {
+			1712 = {
+				custom_effect_tooltip = romania_total_claims_tt
+				calculate_claimant_effect = yes
+			}
+			hidden_effect = { clr_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		complete_effect = {
+			hidden_effect = { set_country_flag = claiming_a_yugoslav_state_flag }
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				NOT = {
+					1712 = {
+						any_neighbor_state = {
+							OR = {
+								AND = {
+									owner = {
+										OR = {
+											tag = YUG
+											is_subject_of = YUG
+										}
+									}
+									OR = {
+										is_claimed_by = ROOT
+										has_state_flag = strongest_claimant_@ROOT
+									}
+								}
+								is_owned_by = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+
+	}
+}

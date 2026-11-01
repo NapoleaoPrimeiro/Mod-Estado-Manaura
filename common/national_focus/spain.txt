@@ -260,6 +260,7 @@ focus_tree = {
 							state = 791
 							state = 176
 							state = 166
+							state = 1485
 							state = 172
 						}
 					}
@@ -279,6 +280,7 @@ focus_tree = {
 							state = 791
 							state = 176
 							state = 166
+							state = 1485
 							state = 172
 						}
 					}
@@ -298,6 +300,7 @@ focus_tree = {
 							state = 791
 							state = 176
 							state = 166
+							state = 1485
 							state = 172
 						}
 					}
@@ -1453,8 +1456,8 @@ focus_tree = {
 		available = {
 			has_full_control_of_state = 792
 			has_full_control_of_state = 172
-			has_full_control_of_state = 166
-			has_full_control_of_state = 794
+			has_full_control_of_state = 1485
+			has_full_control_of_state = 1486
 			has_full_control_of_state = 165
 		}
 		bypass = {
@@ -1493,7 +1496,7 @@ focus_tree = {
 						instant_build = yes
 					}
 				}
-				166 = {
+				1485 = {
 					add_building_construction = {
 						type = bunker
 						province = {
@@ -1503,7 +1506,7 @@ focus_tree = {
 						instant_build = yes
 					}
 				}
-				794 = {
+				1486 = {
 					add_building_construction = {
 						type = bunker
 						province = {
@@ -2410,7 +2413,7 @@ focus_tree = {
 				create_wargoal = {
 				    type = take_state_focus
 				    target = USA
-				    generator = { 378 379 380 377 376 375 }
+				    generator = { 378 1753 1624 1625 1655 1562 1563 1622 1623 379 1752 1673 1674 1626 1627 1566 380 1638 377 1641 1642 1643 1644 1645 1647 1649 1650 1651 1652 1653 1654 376 1657 1658 1659 1660 1662 1663 1664 1567 1353 375 1666 1667 1668 1669 1670 1671 1672 1350 1351 1167 1159 1155 1637 1639 1640 1152 1154 1656 1151 1153 1352 1661 1665 1150 }
 				    expire = 0
 				}
 			}
@@ -2540,14 +2543,62 @@ focus_tree = {
 				}
 			}
 			AND = {
-				controls_state = 375
-				controls_state = 376
-				controls_state = 377
-				controls_state = 378
-				controls_state = 379
-				controls_state = 380
-				controls_state = 382
+				controls_state = 375 controls_state = 1150
+				controls_state = 1666
+				controls_state = 1667
+				controls_state = 1668
+				controls_state = 1669
+				controls_state = 1670
+				controls_state = 1671
+				controls_state = 1672
+				controls_state = 1350
+				controls_state = 1351
+				controls_state = 376 controls_state = 1151 controls_state = 1153 controls_state = 1352 controls_state = 1661 controls_state = 1665
+				controls_state = 1657
+				controls_state = 1658
+				controls_state = 1659
+				controls_state = 1660
+				controls_state = 1662
+				controls_state = 1663
+				controls_state = 1664
+				controls_state = 1567
+				controls_state = 1353
+				controls_state = 377 controls_state = 1152 controls_state = 1154 controls_state = 1656
+				controls_state = 1641
+				controls_state = 1642
+				controls_state = 1643
+				controls_state = 1644
+				controls_state = 1645
+				controls_state = 1647
+				controls_state = 1649
+				controls_state = 1650
+				controls_state = 1651
+				controls_state = 1652
+				controls_state = 1653
+				controls_state = 1654
+				controls_state = 378 controls_state = 1167
+				controls_state = 1753
+				controls_state = 1624
+				controls_state = 1625
+				controls_state = 1655
+				controls_state = 1562
+				controls_state = 1563
+				controls_state = 1622
+				controls_state = 1623
+				controls_state = 379 controls_state = 1159
+				controls_state = 1752
+				controls_state = 1673
+				controls_state = 1674
+				controls_state = 1626
+				controls_state = 1627
+				controls_state = 1566
+				controls_state = 380 controls_state = 1155 controls_state = 1637 controls_state = 1639 controls_state = 1640
+				controls_state = 1638
+				controls_state = 382 controls_state = 1156 controls_state = 1178 controls_state = 1179 controls_state = 1354
+				controls_state = 1355
 				controls_state = 366
+				controls_state = 1690
+				controls_state = 1691
 			}
 		}
 
@@ -2564,14 +2615,62 @@ focus_tree = {
 						is_core_of = ROOT
 					}
 					OR = {
-						state = 375
-						state = 376
-						state = 377
-						state = 378
-						state = 379
-						state = 380
-						state = 382
+						state = 375 state = 1150
+						state = 1666
+						state = 1667
+						state = 1668
+						state = 1669
+						state = 1670
+						state = 1671
+						state = 1672
+						state = 1350
+						state = 1351
+						state = 376 state = 1151 state = 1153 state = 1352 state = 1661 state = 1665
+						state = 1657
+						state = 1658
+						state = 1659
+						state = 1660
+						state = 1662
+						state = 1663
+						state = 1664
+						state = 1567
+						state = 1353
+						state = 377 state = 1152 state = 1154 state = 1656
+						state = 1641
+						state = 1642
+						state = 1643
+						state = 1644
+						state = 1645
+						state = 1647
+						state = 1649
+						state = 1650
+						state = 1651
+						state = 1652
+						state = 1653
+						state = 1654
+						state = 378 state = 1167
+						state = 1753
+						state = 1624
+						state = 1625
+						state = 1655
+						state = 1562
+						state = 1563
+						state = 1622
+						state = 1623
+						state = 379 state = 1159
+						state = 1752
+						state = 1673
+						state = 1674
+						state = 1626
+						state = 1627
+						state = 1566
+						state = 380 state = 1155 state = 1637 state = 1639 state = 1640
+						state = 1638
+						state = 382 state = 1156 state = 1178 state = 1179 state = 1354
+						state = 1355
 						state = 366
+						state = 1690
+						state = 1691
 						is_core_of = CHL 
 						is_core_of = ARG
 						is_core_of = URG
@@ -3037,6 +3136,7 @@ focus_tree = {
 		available = {
 			has_full_control_of_state = 793
 			has_full_control_of_state = 794
+			has_full_control_of_state = 1486
 			has_full_control_of_state = 165
 			has_full_control_of_state = 176
 			has_full_control_of_state = 792
@@ -3075,6 +3175,13 @@ focus_tree = {
 						instant_build = yes
 					}
 				}
+				1486 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 5
+						instant_build = yes
+					}
+				}
 				165 = {
 					add_building_construction = {
 						type = infrastructure
@@ -3106,12 +3213,12 @@ focus_tree = {
 			}
 			build_railway = { #Madrid - Zaragoza - Pyrinnes
 				path = {
-					3938 9767 6993 9785 11766 813 3816 9813 11821 915
+					3938 6993 9785 11766 813 14580 3816 14581 9813 11821 915
 				}
 			}
 			build_railway = { #Zaragoza - Barcelona - French Border
 				path = {
-					3816 3954 13223 6966 6812 9764 854 9824 
+					3816 14580 3954 13223 6966 6812 14852 9764 854 9824 
 				}
 			}
 			build_railway = { #Madrid - Valladolid - Burgos - Bilbao - French Border
@@ -3151,7 +3258,7 @@ focus_tree = {
 		completion_reward = {
 			build_railway = { #Madrid - Crodoba - Sevilla
 				path = {
-					3938 13224 13229 6800 6832 6948 3810 3871 875 1178 7183
+					3938 9767 6914 13224 13229 6800 6832 6948 3810 3871 875 1178 7183
 				}
 			}
 			build_railway = { #Madrid - Granada
@@ -3161,7 +3268,7 @@ focus_tree = {
 			}
 			build_railway = { #Madrid - Murcia - Valencia
 				path = {
-					3938 6914 9757 942 832 9903 1093 10024 4098 9889 6959 6906
+					3938 9767 6914 9757 942 832 9903 1093 10024 4098 9889 6959 6906
 				}
 			}
 		}
@@ -3824,7 +3931,7 @@ focus_tree = {
 	focus = {
 		id = SPA_consolidate_the_north
 		available = {
-			controls_state = 166
+			controls_state = 166 controls_state = 1485
 			controls_state = 172
 			controls_state = 176
 			controls_state = 792
@@ -5618,10 +5725,18 @@ focus_tree = {
 			add_state_claim = 777
 			add_state_claim = 776
 			add_state_claim = 773
+			add_state_claim = 1770
 			add_state_claim = 774
+			add_state_claim = 1763
 			add_state_claim = 660
+			add_state_claim = 1764
+			add_state_claim = 1765
 			add_state_claim = 539
+			add_state_claim = 1769
 			add_state_claim = 772
+			add_state_claim = 1766
+			add_state_claim = 1767
+			add_state_claim = 1768
 			IF = {
 				limit = {
 					any_country = {
@@ -5637,10 +5752,18 @@ focus_tree = {
 							owns_state = 777
 							owns_state = 776
 							owns_state = 773
+							owns_state = 1770
 							owns_state = 774
+							owns_state = 1763
 							owns_state = 660
+							owns_state = 1764
+							owns_state = 1765
 							owns_state = 539
+							owns_state = 1769
 							owns_state = 772
+							owns_state = 1766
+							owns_state = 1767
+							owns_state = 1768
 						}
 					}
 				}
@@ -5658,17 +5781,25 @@ focus_tree = {
 							owns_state = 777
 							owns_state = 776
 							owns_state = 773
+							owns_state = 1770
 							owns_state = 774
+							owns_state = 1763
 							owns_state = 660
+							owns_state = 1764
+							owns_state = 1765
 							owns_state = 539
+							owns_state = 1769
 							owns_state = 772
+							owns_state = 1766
+							owns_state = 1767
+							owns_state = 1768
 						}
 					}
 					ROOT = {
 						create_wargoal = {
 							type = take_state_focus
 							target = PREV
-							generator = { 557 272 780 556 779 778 781 777 776 773 774 660 539 772 }
+							generator = { 557 272 780 556 779 778 781 777 776 773 1770 774 1763 660 1764 1765 539 1769 772 1766 1767 1768 }
 							expire = 0
 						}
 					}
@@ -6564,6 +6695,7 @@ focus_tree = {
 					OR = {
 						state = 792
 						state = 166
+						state = 1485
 						state = 173
 						state = 788
 						state = 791
@@ -6590,6 +6722,7 @@ focus_tree = {
 					OR = {
 						state = 792
 						state = 166
+						state = 1485
 						state = 173
 						state = 788
 						state = 791
@@ -7056,7 +7189,7 @@ focus_tree = {
 			create_wargoal = {
 			    type = take_state_focus
 			    target = USA
-			    generator = { 378 379 380 377 376 375 }
+			    generator = { 378 1753 1624 1625 1655 1562 1563 1622 1623 379 1752 1673 1674 1626 1627 1566 380 1638 377 1641 1642 1643 1644 1645 1647 1649 1650 1651 1652 1653 1654 376 1657 1658 1659 1660 1662 1663 1664 1567 1353 375 1666 1667 1668 1669 1670 1671 1672 1350 1351 1167 1159 1155 1637 1639 1640 1152 1154 1656 1151 1153 1352 1661 1665 1150 }
 			    expire = 0
 			}
 			create_wargoal = {
@@ -8382,7 +8515,6 @@ focus_tree = {
 		available = {
 		}
 		bypass = {
-			has_war_support > 0.99
 		}
 		prerequisite = { focus = SPR_all_must_bear_the_torch }
 		
@@ -8603,8 +8735,8 @@ focus_tree = {
 		available = {
 			has_full_control_of_state = 792
 			has_full_control_of_state = 172
-			has_full_control_of_state = 166
-			has_full_control_of_state = 794
+			has_full_control_of_state = 1485
+			has_full_control_of_state = 1486
 			has_full_control_of_state = 165
 		}
 		bypass = {
@@ -8643,7 +8775,7 @@ focus_tree = {
 						instant_build = yes
 					}
 				}
-				166 = {
+				1485 = {
 					add_building_construction = {
 						type = bunker
 						province = {
@@ -8653,7 +8785,7 @@ focus_tree = {
 						instant_build = yes
 					}
 				}
-				794 = {
+				1486 = {
 					add_building_construction = {
 						type = bunker
 						province = {
@@ -8988,14 +9120,6 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_WAR_SUPPORT}
 		completion_reward = {
 			add_war_support = 0.1
-			if = { # Target the Commune directly so the trait cannot land on another ruling leader
-				limit = {
-					has_character = SPR_anarchist_commune
-				}
-				SPR_anarchist_commune = {
-					add_country_leader_trait = protector_of_the_people
-				}
-			}
 		}
 	}
 
@@ -11084,8 +11208,8 @@ focus_tree = {
 			is_in_faction_with = SOV
 			SOV = { has_government = communism }
 			has_full_control_of_state = 172
-			has_full_control_of_state = 166
-			has_full_control_of_state = 794
+			has_full_control_of_state = 1485
+			has_full_control_of_state = 1486
 			NOT = {
 				any_state = {
 					is_core_of = ROOT
@@ -11134,7 +11258,7 @@ focus_tree = {
 						instant_build = yes
 					}
 				}
-				166 = {
+				1485 = {
 					add_building_construction = {
 						type = bunker
 						province = {
@@ -11144,7 +11268,7 @@ focus_tree = {
 						instant_build = yes
 					}
 				}
-				794 = {
+				1486 = {
 					add_building_construction = {
 						type = bunker
 						province = {

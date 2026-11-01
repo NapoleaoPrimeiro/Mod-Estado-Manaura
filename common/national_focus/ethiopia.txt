@@ -4275,10 +4275,10 @@ focus_tree = {
 					value > 99
 				}
 				OR = {
-					owns_state = 454
+					owns_state = 454 owns_state = 1133 owns_state = 1134 owns_state = 1135 owns_state = 1137 owns_state = 1138 owns_state = 1139 owns_state = 1140
 					any_country = {
 						is_subject_of = PREV
-						owns_state = 454
+						owns_state = 454 owns_state = 1133 owns_state = 1134 owns_state = 1135 owns_state = 1137 owns_state = 1138 owns_state = 1139 owns_state = 1140
 					}
 				}
 			}
@@ -4654,6 +4654,7 @@ focus_tree = {
 			659 = { add_claim_by = ROOT }
 			550 = { add_claim_by = ROOT }
 			293 = { add_claim_by = ROOT }
+			1785 = { add_claim_by = ROOT } # KSRE (de 293)
 			906 = { add_claim_by = ROOT }
 			268 = { add_claim_by = ROOT }
 			883 = { add_claim_by = ROOT }
@@ -4941,10 +4942,17 @@ focus_tree = {
 					NOT = { 454 = { is_owned_by = ROOT } }
 				}
 				454 = { add_core_of = ROOT }
+				1133 = { add_core_of = ROOT } # KSRE (de 454)
+				1134 = { add_core_of = ROOT } # KSRE (de 454)
+				1135 = { add_core_of = ROOT } # KSRE (de 454)
+				1137 = { add_core_of = ROOT } # KSRE (de 454)
+				1138 = { add_core_of = ROOT } # KSRE (de 454)
+				1139 = { add_core_of = ROOT } # KSRE (de 454)
+				1140 = { add_core_of = ROOT } # KSRE (de 454)
 				create_wargoal = {
 					type = take_core_state  
 					target = 454.owner
-					generator = { 454 }
+					generator = { 454 1133 1134 1135 1137 1138 1139 1140 }
 				}
 				453 = { add_claim_by = ROOT }
 				446 = { add_claim_by = ROOT }
@@ -5033,6 +5041,7 @@ focus_tree = {
 			318 = { add_claim_by = ROOT } # Haiti
 			319 = { add_claim_by = ROOT } # Dominican Republic
 			686 = { add_claim_by = ROOT } # Puero Rico
+			1380 = { add_claim_by = ROOT } # KSRE (de 686)
 		}
 	}	
 

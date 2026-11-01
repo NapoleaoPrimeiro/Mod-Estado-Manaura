@@ -21,6 +21,302 @@
 #	}
 # }
 
+
+
+ksr_dynamic_renaming = {
+	name = "RULE_KSR_DYNAMIC_RENAMES"
+	group = "RULE_GROUP_KOVAS_STATES_REWORK"
+	icon = "GFX_game_rule_ksr"
+	default = {
+		name = "ENABLED"
+		text = "RULE_OPTION_ENABLED"
+		desc = "RULE_KSR_DYNAMIC_RENAMES_ENABLED_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = "DISABLED"
+		text = "RULE_OPTION_DISABLED"
+		desc = "RULE_KSR_DYNAMIC_RENAMES_DISABLED_DESC"
+		allow_achievements = yes
+	}
+}
+
+
+ksr_subjects = {
+	name = "RULE_KSR_SUBJECTS"
+	group = "RULE_GROUP_KOVAS_STATES_REWORK"
+	icon = "GFX_game_rule_ksr"
+	default = {
+		name = "ENABLED"
+		text = RULE_OPTION_ENABLED
+		desc = "RULE_KSR_SUBJECTS_ENABLED_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = "DISABLED"
+		text = "RULE_OPTION_DISABLED"
+		desc = "RULE_KSR_SUBJECTS_DISABLED_DESC"
+		allow_achievements = yes
+	}
+}
+
+
+
+ksr_formable_nations = {
+	name = "RULE_KSR_FORMABLE_NATIONS"
+	group = "RULE_GROUP_KOVAS_STATES_REWORK"
+	icon = "GFX_game_rule_ksr"
+	option = {
+		name = ENABLED
+		text = RULE_OPTION_ENABLED
+		desc = RULE_KSR_FORMABLE_NATIONS_ENABLED_DESC
+		allow_achievements = yes
+	}
+	default = {
+		name = PLAYERS_ONLY
+		text = RULE_OPTION_PLAYERS_ONLY
+		desc = RULE_KSR_FORMABLE_NATIONS_PLAYERS_ONLY_DESC
+		allow_achievements = yes
+	}
+	option = {
+		name = "DISABLED"
+		text = "RULE_OPTION_DISABLED"
+		desc = "RULE_KSR_FORMABLE_NATIONS_DISABLED_DESC"
+		allow_achievements = yes
+	}
+}
+
+
+
+ksr_reichskommissariats = {
+	name = "RULE_KSR_REICHSKOMMISSARIATS"
+	group = "RULE_GROUP_KOVAS_STATES_REWORK"
+	icon = "GFX_game_rule_ksr"
+	default = {
+		name = "ENABLED"
+		text = RULE_OPTION_ENABLED
+		desc = "RULE_KSR_REICHSKOMMISSARIATS_ENABLED_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = "DISABLED"
+		text = "RULE_OPTION_DISABLED"
+		desc = "RULE_KSR_REICHSKOMMISSARIATS_DISABLED_DESC"
+		allow_achievements = yes
+	}
+}
+
+
+
+uncensored_nsdap_symbols = {
+	name = "RULE_UNCENSORED_NSDAP_SYMBOLS"
+	group = "RULE_GROUP_KOVAS_STATES_REWORK"
+	icon = "GFX_game_rule_ksr"
+	option = {
+		name = "ENABLED"
+		text = "RULE_OPTION_ENABLED"
+		desc = "RULE_UNCENSORED_NSDAP_SYMBOLS_ENABLED_DESC"
+		allow_achievements = yes
+	}
+	default = {
+		name = "DISABLED"
+		text = RULE_OPTION_DISABLED
+		desc = "RULE_UNCENSORED_NSDAP_SYMBOLS_DISABLED_DESC"
+		allow_achievements = yes
+	}
+}
+
+
+allow_release_ksr_nations = {
+	name = "RULE_ALLOW_RELEASE_KSR_NATIONS"
+	group = "RULE_GROUP_KOVAS_STATES_REWORK"
+	icon = "GFX_game_rule_ksr"
+	option = {
+		name = "ENABLED"
+		text = "RULE_OPTION_ENABLED"
+		desc = "RULE_ALLOW_RELEASE_KSR_NATIONS_ENABLED_DESC"
+		allow_achievements = yes
+	}
+	default = {
+		name = "DISABLED"
+		text = RULE_OPTION_DISABLED
+		desc = "RULE_ALLOW_RELEASE_KSR_NATIONS_DISABLED_DESC"
+		allow_achievements = yes
+	}
+}
+
+
+allow_ksr_subjects = {
+	name = "RULE_ALLOW_KSR_SUBJECTS"
+	group = "RULE_GROUP_KOVAS_STATES_REWORK"
+	icon = "GFX_game_rule_ksr"
+	option = {
+		name = "ENABLED"
+		text = "RULE_OPTION_ENABLED"
+		desc = "RULE_ALLOW_KSR_SUBJECTS_ENABLED_DESC"
+		allow_achievements = yes
+	}
+	default = {
+		name = "DISABLED"
+		text = RULE_OPTION_DISABLED
+		desc = "RULE_ALLOW_KSR_SUBJECTS_DISABLED_DESC"
+		allow_achievements = yes
+	}
+}
+
+
+allow_ksr_subjects_on_controlled = {
+	name = "RULE_ALLOW_KSR_SUBJECTS_ON_CONTROLLED"
+	group = "RULE_GROUP_KOVAS_STATES_REWORK"
+	icon = "GFX_game_rule_ksr"
+	option = {
+		name = "ENABLED"
+		text = "RULE_OPTION_ENABLED"
+		desc = "RULE_ALLOW_KSR_SUBJECTS_ON_CONTROLLED_ENABLED_DESC"
+		allow_achievements = yes
+	}
+	default = {
+		name = "WW2_HISTORICAL_ONLY"
+		text = "RULE_OPTION_WW2_HISTORICAL_ONLY"
+		desc = "RULE_ALLOW_KSR_SUBJECTS_ON_CONTROLLED_WW2_HISTORICAL_ONLY_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = "DISABLED"
+		text = RULE_OPTION_DISABLED
+		desc = "RULE_ALLOW_KSR_SUBJECTS_ON_CONTROLLED_DISABLED_DESC"
+		allow_achievements = yes
+	}
+}
+
+
+allow_german_fragmentation = {
+	name = "RULE_ALLOW_GERMAN_FRAGMENTATION"
+	group = "RULE_GROUP_KOVAS_STATES_REWORK"
+	icon = "GFX_game_rule_ksr"
+	option = {
+		name = "ENABLED"
+		text = "RULE_OPTION_ENABLED"
+		desc = "RULE_ALLOW_GERMAN_FRAGMENTATION_ENABLED_DESC"
+		allow_achievements = yes
+	}
+	default = {
+		name = "DISABLED"
+		text = RULE_OPTION_DISABLED
+		desc = "RULE_ALLOW_GERMAN_FRAGMENTATION_DISABLED_DESC"
+		allow_achievements = yes
+	}
+}
+
+
+
+united_states_fragmentation_status = {
+	name = "UNITED_STATES_FRAGMENTATION_STATUS"
+	group = "RULE_GROUP_KOVAS_STATES_REWORK"
+	icon = "GFX_game_rule_ksr"
+	option = {
+		name = UNITED_STATES_INDEPENDENT_STATES
+		text = "RULE_OPTION_UNITED_STATES_INDEPENDENT_STATES"
+		desc = "RULE_UNITED_STATES_INDEPENDENT_STATES_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = UNITED_STATES_INDEPENDENT_STATES_TRIBES
+		text = "RULE_OPTION_UNITED_STATES_INDEPENDENT_STATES_TRIBES"
+		desc = "RULE_UNITED_STATES_INDEPENDENT_STATES_TRIBES_DESC"
+		allow_achievements = yes
+	}
+	default = {
+		name = DISABLED
+		text = "RULE_OPTION_DISABLED"
+		desc = "RULE_OPTION_UNITED_STATES_DISABLED_DESC"
+		allow_achievements = yes
+	}
+}
+
+
+
+united_states_fragmentation_play_as = {
+	name = "UNITED_STATES_FRAGMENTATION_PLAY_AS"
+	group = "RULE_GROUP_KOVAS_STATES_REWORK"
+	icon = "GFX_game_rule_ksr"
+	option = {
+		name = UNITED_STATES_FRAGMENTATION_PLAY_AS_AKS
+		text = "RULE_OPTION_UNITED_STATES_FRAGMENTATION_PLAY_AS_AKS"
+		desc = "RULE_UNITED_STATES_FRAGMENTATION_PLAY_AS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = UNITED_STATES_FRAGMENTATION_PLAY_AS_CAL
+		text = "RULE_OPTION_UNITED_STATES_FRAGMENTATION_PLAY_AS_CAL"
+		desc = "RULE_UNITED_STATES_FRAGMENTATION_PLAY_AS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = UNITED_STATES_FRAGMENTATION_PLAY_AS_CLS
+		text = "RULE_OPTION_UNITED_STATES_FRAGMENTATION_PLAY_AS_CLS"
+		desc = "RULE_UNITED_STATES_FRAGMENTATION_PLAY_AS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = UNITED_STATES_FRAGMENTATION_PLAY_AS_FLS
+		text = "RULE_OPTION_UNITED_STATES_FRAGMENTATION_PLAY_AS_FLS"
+		desc = "RULE_UNITED_STATES_FRAGMENTATION_PLAY_AS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = UNITED_STATES_FRAGMENTATION_PLAY_AS_ILS
+		text = "RULE_OPTION_UNITED_STATES_FRAGMENTATION_PLAY_AS_ILS"
+		desc = "RULE_UNITED_STATES_FRAGMENTATION_PLAY_AS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = UNITED_STATES_FRAGMENTATION_PLAY_AS_MAS
+		text = "RULE_OPTION_UNITED_STATES_FRAGMENTATION_PLAY_AS_MAS"
+		desc = "RULE_UNITED_STATES_FRAGMENTATION_PLAY_AS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = UNITED_STATES_FRAGMENTATION_PLAY_AS_NYS
+		text = "RULE_OPTION_UNITED_STATES_FRAGMENTATION_PLAY_AS_NYS"
+		desc = "RULE_UNITED_STATES_FRAGMENTATION_PLAY_AS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = UNITED_STATES_FRAGMENTATION_PLAY_AS_RIS
+		text = "RULE_OPTION_UNITED_STATES_FRAGMENTATION_PLAY_AS_RIS"
+		desc = "RULE_UNITED_STATES_FRAGMENTATION_PLAY_AS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = UNITED_STATES_FRAGMENTATION_PLAY_AS_TEX
+		text = "RULE_OPTION_UNITED_STATES_FRAGMENTATION_PLAY_AS_TEX"
+		desc = "RULE_UNITED_STATES_FRAGMENTATION_PLAY_AS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = UNITED_STATES_FRAGMENTATION_PLAY_AS_VAS
+		text = "RULE_OPTION_UNITED_STATES_FRAGMENTATION_PLAY_AS_VAS"
+		desc = "RULE_UNITED_STATES_FRAGMENTATION_PLAY_AS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = UNITED_STATES_FRAGMENTATION_PLAY_AS_WAS
+		text = "RULE_OPTION_UNITED_STATES_FRAGMENTATION_PLAY_AS_WAS"
+		desc = "RULE_UNITED_STATES_FRAGMENTATION_PLAY_AS_DESC"
+		allow_achievements = yes
+	}
+	default = {
+		name = DISABLED
+		text = "RULE_OPTION_DISABLED"
+		desc = "RULE_OPTION_UNITED_STATES_PLAY_AS_DISABLED_DESC"
+		allow_achievements = yes
+	}
+}
+
+
+
+
 allow_wargoals = {
 	name = "RULE_ALLOW_WARGOALS"
 	group = "RULE_GROUP_GENERAL_FOREIGN_POLICY"

@@ -1,0 +1,610 @@
+KSR_additional_political_decisions_cat = {
+	
+	KSR_rename_jaunlatgale_to_abrene = {
+		
+		icon = generic_form_nation
+	
+		allowed = {
+			original_tag = LAT
+		}
+		
+		visible = {
+			hidden_trigger = { NOT = { 1789 = { has_state_flag = ksr_state_1789_abrene } } }
+			date > 1937.12.31
+		}
+		
+		available = {
+			1789 = {
+				is_owned_by = ROOT
+				is_fully_controlled_by = ROOT
+			}
+		}
+		
+		ai_will_do = {
+			base = 0
+			
+			modifier = {
+				date > 1938.01.01
+				add = 1
+			}
+		}
+		
+		complete_effect = {
+			hidden_effect = { 
+				1789 = { 
+					set_state_flag = ksr_state_1789_abrene
+					set_state_name = STATE_1789_ABRENE
+				}
+			}
+			set_province_name = { id = 13679 name = VICTORY_POINTS_13679_ABRENE }
+		}
+	}
+	
+	KSR_rename_santo_domingo_to_ciudad_trujillo = {
+		
+		icon = generic_form_nation
+	
+		allowed = {
+			original_tag = DOM
+		}
+		
+		visible = {
+			hidden_trigger = {
+				NOT = { 319 = { has_state_flag = ksr_state_319_ciudad_trujillo } } 
+				has_government = fascism
+			}
+		}
+		
+		available = {
+			319 = {
+				is_owned_by = ROOT
+				is_fully_controlled_by = ROOT
+			}
+		}
+		
+		ai_will_do = {
+			base = 0
+			
+			modifier = {
+				date > 1936.01.07
+				add = 1
+			}
+		}
+		
+		complete_effect = {
+			hidden_effect = { 
+				319 = { 
+					set_state_flag = ksr_state_319_ciudad_trujillo
+				}
+			}
+			set_province_name = { id = 7660 name = VICTORY_POINTS_7660_CIUDAD_TRUJILLO }
+		}
+	}
+	
+	KSR_rename_orenburg_to_chkalov = {
+		
+		icon = generic_form_nation
+	
+		allowed = {
+			original_tag = SOV
+		}
+		
+		visible = {
+			hidden_trigger = { NOT = { 652 = { has_state_flag = ksr_state_652_chkalov } } }
+			has_government = communism
+			date > 1938.12.14
+		}
+		
+		available = {
+			652 = {
+				is_owned_by = ROOT
+				is_fully_controlled_by = ROOT
+			}
+		}
+		
+		ai_will_do = {
+			base = 0
+			
+			modifier = {
+				date > 1938.12.25
+				add = 1
+			}
+		}
+		
+		complete_effect = {
+			hidden_effect = { 
+				652 = { 
+					set_state_flag = ksr_state_652_chkalov
+					set_state_name = STATE_652_CHKALOV
+				}
+			}
+			set_province_name = { id = 12128 name = VICTORY_POINTS_12128_CHKALOV }
+		}
+	}
+	
+	KSR_rename_kirovo_to_kirovograd = {
+		
+		icon = generic_form_nation
+	
+		allowed = {
+			original_tag = SOV
+		}
+		
+		visible = {
+			hidden_trigger = { NOT = { 1103 = { has_state_flag = ksr_state_1103_kirovograd } } }
+			has_government = communism
+			date > 1939.1.9
+		}
+		
+		available = {
+			1103 = {
+				is_owned_by = ROOT
+				is_fully_controlled_by = ROOT
+			}
+		}
+		
+		ai_will_do = {
+			base = 0
+			
+			modifier = {
+				date > 1939.1.9
+				add = 1
+			}
+		}
+		
+		complete_effect = {
+			hidden_effect = { 
+				1103 = { 
+					set_state_flag = ksr_state_1103_kirovograd
+					set_state_name = STATE_1103_KIROVOGRAD
+				}
+			}
+			set_province_name = { id = 3452 name = VICTORY_POINTS_3452_KIROVOGRAD }
+		}
+	}
+	
+	KSR_move_capital_to_istanbul = {
+	
+		icon = generic_form_nation
+	
+		allowed = {
+			original_tag = TUR
+		}
+		
+		visible = {
+			country_exists = TUR
+			797 = {
+				is_owned_and_controlled_by = TUR 
+				is_capital = no
+			}
+			OR = {
+				has_cosmetic_tag = OTT_UNIFIED
+				has_cosmetic_tag = OTT_UNIFIED_communism
+				has_cosmetic_tag = OTT_UNIFIED_fascism
+				has_cosmetic_tag = OTT_UNIFIED_democratic
+				has_cosmetic_tag = OTT_UNIFIED_neutrality
+				has_cosmetic_tag = OTT_SULTANATE
+				has_cosmetic_tag = OTT_SULTANATE_communism
+				has_cosmetic_tag = OTT_SULTANATE_fascism
+				has_cosmetic_tag = OTT_SULTANATE_democratic
+				has_cosmetic_tag = OTT_SULTANATE_neutrality
+			}
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+		
+		complete_effect = {
+			set_capital = { state = 797 remember_old_capital = no }
+		}
+	}
+	
+	
+	KSR_rename_istanbul = {
+	
+		icon = generic_form_nation
+	
+		allowed = {
+			original_tag = TUR
+		}
+		
+		visible = {
+			country_exists = TUR
+			OR = {
+				TUR = { controls_state = 797 }
+				TUR = { controls_state = 1223 }
+			}
+			OR = {
+				has_cosmetic_tag = OTT_UNIFIED
+				has_cosmetic_tag = OTT_UNIFIED_communism
+				has_cosmetic_tag = OTT_UNIFIED_fascism
+				has_cosmetic_tag = OTT_UNIFIED_democratic
+				has_cosmetic_tag = OTT_UNIFIED_neutrality
+				has_cosmetic_tag = OTT_SULTANATE
+				has_cosmetic_tag = OTT_SULTANATE_communism
+				has_cosmetic_tag = OTT_SULTANATE_fascism
+				has_cosmetic_tag = OTT_SULTANATE_democratic
+				has_cosmetic_tag = OTT_SULTANATE_neutrality
+			}
+			hidden_trigger = { NOT = { has_global_flag = KSR_istanbul_renamed } }
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_province_name = { id = 9833 name = VICTORY_POINTS_9833_KONST }
+				set_global_flag = KSR_istanbul_renamed
+				ksr_update_naming_localisation = yes
+			}
+		}
+	}
+	
+	
+	
+	#KSR_rename_siam_to_thailand = {
+	#	icon = generic_form_nation
+	#
+	#	allowed = {
+	#		original_tag = SIA
+	#	}
+	#	
+	#	cost = 100
+	#	
+	#	visible = {
+	#		NOT = {
+	#			has_cosmetic_tag = SIA_THAILAND
+	#			has_cosmetic_tag = RAT_UNIFIED 
+	#		}
+	#		date > 1939.1.1
+	#	}
+	#	
+	#	ai_will_do = {
+	#		base = 0
+	#		
+	#		modifier = {
+	#			date > 1939.6.24
+	#			add = 1
+	#		}
+	#	}
+	#	
+	#	complete_effect = {
+	#		country_event = ksr.40
+	#	}
+	#}
+	
+	KSR_rename_mengkukuo_to_muag = {
+		icon = generic_form_nation
+	
+		allowed = {
+			original_tag = MEN
+		}
+		
+		visible = {
+			date > 1937.1.1
+		}
+		
+		ai_will_do = {
+			base = 0
+			
+			modifier = {
+				date > 1937.10.27
+				add = 1
+			}
+		}
+		
+		complete_effect = {
+			set_cosmetic_tag = MEN_mongol_united_autonomous_government
+		}
+	}
+	
+	KSR_move_east_hebei_capital = {
+	
+		allowed = {
+			original_tag = EHE
+		}
+		
+		visible = {
+			date > 1937.8.1
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+		
+		complete_effect = {
+			set_capital = { state = 1488 remember_old_capital = no }
+		}
+	}
+	
+	KSR_form_the_papal_states = {
+	
+		icon = generic_form_nation
+	
+		allowed = {
+			original_tag = VAT
+		}
+		
+		visible = {
+			NOT = { 
+				country_exists = PAP
+				has_cosmetic_tag = VAT_papal_states
+			}
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1130
+				state = 2
+				state = 1406
+				state = 1407
+				state = 1409
+			}
+		}
+		
+		available = {
+			NOT = { country_exists = PAP }
+			1130 = {
+				is_owned_by = ROOT
+				is_fully_controlled_by = ROOT
+			}
+			2 = {
+				is_owned_by = ROOT
+				is_fully_controlled_by = ROOT
+			}
+			1406 = {
+				is_owned_by = ROOT
+				is_fully_controlled_by = ROOT
+			}
+			1407 = {
+				is_owned_by = ROOT
+				is_fully_controlled_by = ROOT
+			}
+			1409 = {
+				is_owned_by = ROOT
+				is_fully_controlled_by = ROOT
+			}
+		}
+		
+		complete_effect = {
+			set_cosmetic_tag = VAT_papal_states
+			if = {
+				limit = {
+					1130 = {
+						NOT = { is_core_of = ROOT }
+					}
+				}
+				1130 = { add_core_of = ROOT }
+			}
+			if = {
+				limit = {
+					2 = {
+						NOT = { is_core_of = ROOT }
+					}
+				}
+				2 = { add_core_of = ROOT }
+			}
+			if = {
+				limit = {
+					1406 = {
+						NOT = { is_core_of = ROOT }
+					}
+				}
+				1406 = { add_core_of = ROOT }
+			}
+			if = {
+				limit = {
+					1407 = {
+						NOT = { is_core_of = ROOT }
+					}
+				}
+				1407 = { add_core_of = ROOT }
+			}
+			if = {
+				limit = {
+					1409 = {
+						NOT = { is_core_of = ROOT }
+					}
+				}
+				1409 = { add_core_of = ROOT }
+			}
+			hidden_effect = {
+				1130 = { remove_core_of = PAP }
+				2 = { remove_core_of = PAP }
+				1406 = { remove_core_of = PAP }
+				1407 = { remove_core_of = PAP }
+				1409 = { remove_core_of = PAP }
+			}
+		}
+	}
+	
+	KSR_papal_states_move_capital_to_rome = {
+	
+		allowed = {
+			original_tag = VAT
+		}
+		
+		visible = {
+			has_cosmetic_tag = VAT_papal_states
+			capital_scope = {
+				is_owned_by = ROOT
+				is_fully_controlled_by = ROOT
+				NOT = { state = 2 }
+			}
+		}
+		
+		complete_effect = {
+			set_capital = {
+				state = 2
+				remember_old_capital = no
+			}
+		}
+	}
+	
+	KSR_demand_hultschiner_landchen = {
+	
+		allowed = {
+			OR = {
+				original_tag = GER
+				original_tag = PRE
+			}
+		}
+		
+		icon = infiltrate_state
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1727
+			}
+		}
+		
+		visible = {
+			ROOT = {
+				OR = {
+					has_completed_focus = GER_restore_eastern_imperial_possessions
+					1727 = { is_claimed_by = PREV }
+					1727 = { is_core_of = PREV }
+				}
+				NOT = { 
+					has_country_flag = KSR_flag_hultschiner_landchen
+					owns_state = 1727 
+				}
+				OR = { # Only include states that border Hlucinsko itself
+					74 = { is_owned_and_controlled_by = ROOT }
+					75 = { is_owned_and_controlled_by = ROOT }
+					72 = { is_owned_and_controlled_by = ROOT }
+					762 = { is_owned_and_controlled_by = ROOT }
+					1540 = { is_owned_and_controlled_by = ROOT }
+				}
+			}
+		}
+		
+		complete_effect = {
+			if = {
+				limit = { 1727 = { OWNER = { NOT = { is_subject_of = ROOT } } } }
+				country_event = ksr.144
+				set_variable = { KSR_var_hlucinsko_willingness = 35 }
+				if = {
+					limit = {
+						1727 = { OWNER = { is_ally_with = ROOT } }
+					}
+					add_to_variable = { KSR_var_hlucinsko_willingness = 15 }
+				}
+				if = {
+					limit = {
+						1727 = { OWNER = { has_government = ROOT } }
+					}
+					add_to_variable = { KSR_var_hlucinsko_willingness = 15 }
+				}
+				if = {
+					limit = {
+						1727 = { 
+							OWNER = {  
+								has_opinion = { target = ROOT value > 50 }
+							} 
+						}
+					}
+					add_to_variable = { KSR_var_hlucinsko_willingness = 15 }
+				}
+				if = {
+					limit = {
+						1727 = { OWNER = { is_guaranteed_by = ROOT } }
+					}
+					add_to_variable = { KSR_var_hlucinsko_willingness = 15 }
+				}
+			}
+			else = {
+				ROOT = {
+					transfer_state = 1727
+					if = {
+						limit = { 1727 = { NOT = { is_core_of = ROOT } } }
+						1727 = { add_core_of = ROOT }
+					}
+				}
+			}
+		}
+	}
+	
+	KSR_move_capital_to_iasi = {
+	
+		icon = generic_form_nation
+	
+		allowed = {
+			original_tag = MOL
+		}
+		
+		visible = {
+			country_exists = MOL
+			79 = {
+				is_owned_and_controlled_by = ROOT 
+				is_capital = no
+			}
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+		
+		complete_effect = {
+			set_capital = { state = 79 remember_old_capital = no }
+		}
+	}
+	
+	KSR_move_capital_to_belgorod = {
+	
+		icon = generic_form_nation
+	
+		allowed = {
+			original_tag = SBU
+		}
+		
+		visible = {
+			country_exists = SBU
+			1805 = {
+				is_owned_and_controlled_by = ROOT 
+				is_capital = no
+			}
+			221 = { NOT = { is_owned_and_controlled_by = ROOT } }
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+		
+		complete_effect = {
+			set_capital = { state = 1805 remember_old_capital = no }
+		}
+	}
+	
+	KSR_move_capital_to_kharkov = {
+	
+		icon = generic_form_nation
+	
+		allowed = {
+			original_tag = SBU
+		}
+		
+		visible = {
+			country_exists = SBU
+			221 = {
+				is_owned_and_controlled_by = ROOT 
+				is_capital = no
+			}
+			1805 = {
+				is_owned_and_controlled_by = ROOT
+				is_capital = yes
+			}
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+		
+		complete_effect = {
+			set_capital = { state = 221 remember_old_capital = no }
+		}
+	}
+}

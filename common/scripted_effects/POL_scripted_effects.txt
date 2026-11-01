@@ -469,15 +469,15 @@ POL_monarchist_civil_war_effect = {
 		if = {
 			limit = {
 				POL = {
-					owns_state = 784
+					owns_state = 784 owns_state = 1238 owns_state = 1248 owns_state = 1816
 				}
 			}
-			transfer_state = 784
+			transfer_state = 784 transfer_state = 1238 transfer_state = 1248 transfer_state = 1816
 			start_civil_war = {
 				ideology = neutrality
 				size = civil_war_size_var
 				keep_political_leader = yes
-				states = { 784 }
+				states = { 784 1238 1248 1816 }
 				keep_unit_leaders_trigger = {
 					NOT = { has_unit_leader_flag = POL_monarchy_sympathies_flag }
 				}
@@ -681,20 +681,20 @@ POL_become_german_puppet_effect = {
 		if = {
 			limit = {
 				POL = {
-					controls_state = 807
+					controls_state = 807 controls_state = 1554
 					owns_state = 807
 				}
 			}
-			transfer_state = 807
+			transfer_state = 807 transfer_state = 1554
 		}
 		if = {
 			limit = {
 				POL = {
-					controls_state = 86
+					controls_state = 86 controls_state = 1389
 					owns_state = 86
 				}
 			}
-			transfer_state = 86
+			transfer_state = 86 transfer_state = 1389
 		}
 		if = {
 			limit = {
@@ -705,10 +705,40 @@ POL_become_german_puppet_effect = {
 			}
 			transfer_state = 762
 		}
+		if = {
+			limit = {
+				POL = {
+					controls_state = 1554
+					owns_state = 1554
+				}
+			}
+			transfer_state = 1554
+		}
+		if = {
+			limit = {
+				POL = {
+					controls_state = 1447
+					owns_state = 1447
+				}
+			}
+			transfer_state = 1447
+		}
+		if = {
+			limit = {
+				POL = {
+					controls_state = 1389
+					owns_state = 1389
+				}
+			}
+			transfer_state = 1389
+		}
 		85 = { add_core_of = GER } #Danzig
 		86 = { add_core_of = GER } #Poznan
 		807 = { add_core_of = GER } #Gdynia
 		762 = { add_core_of = GER } #Upper Silesia
+		1554 = { add_core_of = GER } #Torun
+		1447 = { add_core_of = GER }
+		1389 = { add_core_of = GER } #Bygdoszcz
 		if = {
 			limit = {
 				has_dlc = "Death or Dishonor"
@@ -746,6 +776,7 @@ POL_become_german_puppet_effect = {
 
 POL_divide_lithuania_effect = {
 	188 = { add_core_of = GER }
+	1172 = { add_core_of = GER }
 	LIT = {
 		every_owned_state = {
 			limit = {
@@ -753,6 +784,7 @@ POL_divide_lithuania_effect = {
 					is_core_of = GER
 					is_claimed_by = GER
 					state = 188
+					state = 1172
 				}
 			}
 			GER = {
@@ -770,14 +802,18 @@ POL_divide_lithuania_effect = {
 
 POL_lithuania_wargoal_claims_effect = {
 	188 = { add_core_of = GER }
+	1172 = { add_core_of = GER }
 	189 = { add_claim_by = POL }
 	815 = { add_claim_by = POL }
 	11 = { add_claim_by = POL }
 	814 = { add_claim_by = POL }
+	1236 = { add_claim_by = POL }
+	1237 = { add_claim_by = POL }
+	1787 = { add_claim_by = POL }
 	GER = {
 		create_wargoal = {
 			type = take_core_state
-			generator = { 188 }
+			generator = { 188 1172 }
 			target = LIT
 		}
 	}
@@ -820,14 +856,26 @@ POL_basic_form_commonwealth = {
 		189 = { add_core_of = ROOT }
 		188 = { add_core_of = ROOT }
 		784 = { add_core_of = ROOT }
+		1816 = { add_core_of = ROOT } # KSRE (de 784)
+		1247 = { add_core_of = ROOT }
+		1248 = { add_core_of = ROOT }
+		1817 = { add_core_of = ROOT }
 		814 = { add_core_of = ROOT }
 		815 = { add_core_of = ROOT }
+		1236 = { add_core_of = ROOT }
+		1237 = { add_core_of = ROOT }
+		1238 = { add_core_of = ROOT }
+		1787 = { add_core_of = ROOT }
+		1172 = { add_core_of = ROOT }
 	}
 	# Poland
 	custom_effect_tooltip = form_country_poland_coring_states_tt
 	hidden_effect = {
 		66 = { add_core_of = ROOT }
 		67 = { add_core_of = ROOT }
+		1540 = { add_core_of = ROOT }
+		1541 = { add_core_of = ROOT }
+		1558 = { add_core_of = ROOT }
 		85 = { add_core_of = ROOT }
 		86 = { add_core_of = ROOT }
 		87 = { add_core_of = ROOT }
@@ -838,19 +886,76 @@ POL_basic_form_commonwealth = {
 		97 = { add_core_of = ROOT }
 		92 = { add_core_of = ROOT }
 		91 = { add_core_of = ROOT }
+		1400 = { add_core_of = ROOT }
 		89 = { add_core_of = ROOT }
 		93 = { add_core_of = ROOT }
 		94 = { add_core_of = ROOT }
+		1815 = { add_core_of = ROOT }
 		95 = { add_core_of = ROOT }
 		96 = { add_core_of = ROOT }
 		784 = { add_core_of = ROOT }
+		1245 = { add_core_of = ROOT }
+		1241 = { add_core_of = ROOT }
+		1242 = { add_core_of = ROOT }
+		1238 = { add_core_of = ROOT }
+		1239 = { add_core_of = ROOT }
+		1243 = { add_core_of = ROOT }
+		1247 = { add_core_of = ROOT }
+		1248 = { add_core_of = ROOT }
+		1817 = { add_core_of = ROOT }
+		1244 = { add_core_of = ROOT }
+		1816 = { add_core_of = ROOT }
+		1173 = { add_core_of = ROOT }
+		1240 = { add_core_of = ROOT }
+		1246 = { add_core_of = ROOT }
+		1610 = { add_core_of = ROOT }
+		1535 = { add_core_of = ROOT }
+		1484 = { add_core_of = ROOT }
+		1818 = { add_core_of = ROOT }
+		1534 = { add_core_of = ROOT }
+		1533 = { add_core_of = ROOT }
+		1814 = { add_core_of = ROOT }
+		1531 = { add_core_of = ROOT }
+		1532 = { add_core_of = ROOT }
+		1399 = { add_core_of = ROOT }
+		1483 = { add_core_of = ROOT }
+		1528 = { add_core_of = ROOT }
+		1265 = { add_core_of = ROOT }
+		1775 = { add_core_of = ROOT }
+		1529 = { add_core_of = ROOT }
+		1385 = { add_core_of = ROOT }
+		1386 = { add_core_of = ROOT }
+		1530 = { add_core_of = ROOT }
+		1256 = { add_core_of = ROOT }
+		1482 = { add_core_of = ROOT }
+		1554 = { add_core_of = ROOT }
+		1447 = { add_core_of = ROOT }
+		1481 = { add_core_of = ROOT }
+		1252 = { add_core_of = ROOT }
+		1389 = { add_core_of = ROOT }
+		1141 = { add_core_of = ROOT }
+		1142 = { add_core_of = ROOT }
+		1143 = { add_core_of = ROOT }
+		1144 = { add_core_of = ROOT }
+		1145 = { add_core_of = ROOT }
+		1425 = { add_core_of = ROOT }
 		5 = { add_core_of = ROOT }
+		1288 = { add_core_of = ROOT }
+		1557 = { add_core_of = ROOT }
+		1701 = { add_core_of = ROOT }
+		1427 = { add_core_of = ROOT }
+		1428 = { add_core_of = ROOT }
+		1702 = { add_core_of = ROOT }
+		1772 = { add_core_of = ROOT }
 		763 = { add_core_of = ROOT }
+		1249 = { add_core_of = ROOT }
 		207 = { add_core_of = ROOT }
 		242 = { add_core_of = ROOT }
+		1773 = { add_core_of = ROOT }
 		206 = { add_core_of = ROOT }
 		241 = { add_core_of = ROOT }
 		243 = { add_core_of = ROOT }
+		1774 = { add_core_of = ROOT }
 		204 = { add_core_of = ROOT }
 		194 = { add_core_of = ROOT }
 		201 = { add_core_of = ROOT }
@@ -862,14 +967,48 @@ POL_basic_form_commonwealth = {
 		259 = { add_core_of = ROOT }
 		762 = { add_core_of = ROOT }
 		807 = { add_core_of = ROOT }
+		1262 = { add_core_of = ROOT }
+		1102 = { add_core_of = ROOT }
+		1101 = { add_core_of = ROOT }
+		1537 = { add_core_of = ROOT }
+		1100 = { add_core_of = ROOT }
+		1094 = { add_core_of = ROOT }
+		1611 = { add_core_of = ROOT }
+		1084 = { add_core_of = ROOT }
+		1103 = { add_core_of = ROOT }
+		225 = { add_core_of = ROOT }
+		1819 = { add_core_of = ROOT }
+		1812 = { add_core_of = ROOT }
+		1083 = { add_core_of = ROOT }
+		1085 = { add_core_of = ROOT }
+		210 = { add_core_of = ROOT }
+		1110 = { add_core_of = ROOT } # KSRE (de 210)
+		1804 = { add_core_of = ROOT } # KSRE (de 210)
+		1794 = { add_core_of = ROOT }
+		1793 = { add_core_of = ROOT }
+		1264 = { add_core_of = ROOT }
+		1263 = { add_core_of = ROOT }
+		1104 = { add_core_of = ROOT }
+		1795 = { add_core_of = ROOT }
+		1796 = { add_core_of = ROOT }
+		1797 = { add_core_of = ROOT }
+		1798 = { add_core_of = ROOT }
+		191 = { add_core_of = ROOT }
 	}
 	custom_effect_tooltip = form_country_latvia_coring_states_tt
 	hidden_effect = {
 		12 = { add_core_of = ROOT }
 		190 = { add_core_of = ROOT }
+		1559 = { add_core_of = ROOT }
+		1771 = { add_core_of = ROOT }
 		808 = { add_core_of = ROOT }
 		809 = { add_core_of = ROOT }
 		810 = { add_core_of = ROOT }
+		1788 = { add_core_of = ROOT }
+		1789 = { add_core_of = ROOT }
+		1790 = { add_core_of = ROOT }
+		1791 = { add_core_of = ROOT }
+		1792 = { add_core_of = ROOT }
 	}
 
 	hidden_effect = {

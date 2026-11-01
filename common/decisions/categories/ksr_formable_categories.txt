@@ -1,0 +1,26 @@
+ksr_form_new_england_cat = {
+
+	icon = generic_formable_nations
+
+	picture = GFX_ksr_form_new_england_cat
+
+	allowed = {
+	
+	}
+	
+	visible = {
+		OR = {
+			has_game_rule = {
+				rule = ksr_formable_nations
+				option = ENABLED
+			}
+			AND = {
+				has_game_rule = {
+					rule = ksr_formable_nations
+					option = PLAYERS_ONLY
+				}
+				is_ai = no
+			}
+		}
+	}
+}

@@ -1,0 +1,38 @@
+
+state={
+	id=1729
+	name="STATE_1729"
+	manpower = 1471260
+	
+	state_category = town
+
+	history={
+		owner = USA
+		victory_points = {
+			6984 20 #Baltimore
+		}
+		victory_points = {
+			6823 3 #Cumberland
+		}
+		victory_points = {
+			6929 2 #Frederick
+		}
+		buildings = {
+			infrastructure = 4 #was: 7
+			industrial_complex = 3
+			dockyard = 1
+			air_base = 6
+			6984 = {
+				naval_base = 2
+			}
+		}
+		add_core_of = USA
+		add_core_of = MDS
+	}
+
+	provinces={
+		6823 6929 6984
+	}
+
+	local_supplies=0.0 
+}

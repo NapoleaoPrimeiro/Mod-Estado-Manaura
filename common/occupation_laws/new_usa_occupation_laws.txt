@@ -1,0 +1,152 @@
+###############################################################################################################################
+apple_pie_occupation = {
+	#gfx
+	icon = 18
+	sound_effect = "Martial_Law_Interface_Autonomous_Occupation_Unique_DEM"
+
+	visible = {
+		original_tag = USA
+		has_completed_focus = USA_apple_pie_diplomacy
+		NOT = {
+			has_completed_focus = USA_spread_american_ideals
+		}
+	}
+
+	state_modifier = {
+		resistance_target 				= +0.15
+		compliance_gain 				= 0.04
+		required_garrison_factor 		= -0.50
+		resistance_damage_to_garrison 	= -0.35
+	}
+
+	fallback_law = apple_pie_occupation_2
+
+	ai_will_do = {
+		base = 200
+
+		modifier = {
+			set_temp_variable = { resistance_limit = 30 }
+			if = {
+				limit = { occupation_law = martial_law_occupation }
+				set_temp_variable = { resistance_limit = 35 }
+			}
+			resistance < autonomous_occupation # if we are under base resistance try to build compliance instead
+			add = 500
+		}
+	}
+}
+apple_pie_occupation_2 = {
+	#gfx
+	icon = 18
+	sound_effect = "Martial_Law_Interface_Autonomous_Occupation_Unique_DEM"
+
+	visible = {
+		original_tag = USA
+		has_completed_focus = USA_spread_american_ideals
+	}
+
+	state_modifier = {
+		resistance_target 				= +0.15
+		compliance_gain 				= 0.04
+		required_garrison_factor 		= -0.50
+		resistance_damage_to_garrison 	= -0.35
+	}
+
+	suppressed_state_modifier = {
+		resistance_target 				= +0.15
+		compliance_gain 				= 0.05
+		required_garrison_factor 		= -0.50
+		resistance_damage_to_garrison 	= -0.35
+		local_factories 				= 0.05
+		local_resources 				= 0.05
+	}
+
+	ai_will_do = {
+		base = 200
+
+		modifier = {
+			set_temp_variable = { resistance_limit = 30 }
+			if = {
+				limit = { occupation_law = martial_law_occupation }
+				set_temp_variable = { resistance_limit = 35 }
+			}
+			resistance < autonomous_occupation # if we are under base resistance try to build compliance instead
+			add = 500
+		}
+	}
+}
+
+continuity_occupation = {
+	#gfx
+	icon = 19
+	sound_effect = "Martial_Law_Interface_Autonomous_Occupation_Unique_DEM"
+
+	visible = {
+		original_tag = USA
+		has_completed_focus = USA_industrial_continuity
+		NOT = {
+			has_completed_focus = USA_establish_regional_administrations
+		}
+	}
+
+	state_modifier = {
+		resistance_target 				= 0.05
+		compliance_gain 				= 0.01
+		required_garrison_factor 		= -0.25
+		resistance_damage_to_garrison 	= -0.35
+		local_factories					= 0.05
+		local_manpower					= 0.01
+		local_resources					= 0.10
+	}
+
+	fallback_law = continuity_occupation_2
+
+	ai_will_do = {
+		base = 200
+
+		modifier = {
+			set_temp_variable = { resistance_limit = 30 }
+			if = {
+				limit = { occupation_law = martial_law_occupation }
+				set_temp_variable = { resistance_limit = 35 }
+			}
+			resistance < autonomous_occupation # if we are under base resistance try to build compliance instead
+			add = 500
+		}
+	}
+}
+continuity_occupation_2 = {
+	#gfx
+	icon = 19
+	sound_effect = "Martial_Law_Interface_Autonomous_Occupation_Unique_DEM"
+
+	visible = {
+		original_tag = USA
+		has_completed_focus = USA_establish_regional_administrations
+	}
+
+	state_modifier = {
+		resistance_target 				= 0.05
+		compliance_gain 				= 0.01
+		required_garrison_factor 		= -0.25
+		resistance_damage_to_garrison 	= -0.35
+		local_factories					= 0.10
+		local_manpower					= 0.02
+		local_resources					= 0.15
+	}
+
+	ai_will_do = {
+		base = 200
+
+		modifier = {
+			set_temp_variable = { resistance_limit = 30 }
+			if = {
+				limit = { occupation_law = martial_law_occupation }
+				set_temp_variable = { resistance_limit = 35 }
+			}
+			resistance < autonomous_occupation # if we are under base resistance try to build compliance instead
+			add = 500
+		}
+	}
+}
+###############################################################################################################################

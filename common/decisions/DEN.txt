@@ -4671,6 +4671,9 @@ DEN_overlord_category = {
 			101 = {
 				is_owned_and_controlled_by = USA
 			}
+			1758 = { # KSRE (de 101)
+				is_owned_and_controlled_by = USA
+			}
 			NOT = {
 				has_war_with = USA
 				any_allied_country = {
@@ -4697,6 +4700,9 @@ DEN_overlord_category = {
 			has_global_flag = USA_occupied_DEN_greenland
 			has_subject = DEN
 			101 = {
+				is_fully_controlled_by = USA
+			}
+			1758 = { # KSRE (de 101)
 				is_fully_controlled_by = USA
 			}
 			NOT = {
@@ -5342,7 +5348,7 @@ DEN_development_category = {
 
 		visible = {
 			has_civil_war = no
-			has_full_control_of_state = 101
+			has_full_control_of_state = 101 has_full_control_of_state = 1758
 			has_completed_focus = DEN_expand_the_industries 
 			101 = {
 				NOT = {
@@ -5353,7 +5359,7 @@ DEN_development_category = {
 
 		highlight_states = {
 			highlight_state_targets = {
-				state = 101
+				state = 101 state = 1758
 			}
 		}
 
@@ -8557,6 +8563,9 @@ DEN_return_occupied_territory_category = {
 			101 = {
 				is_owned_and_controlled_by = USA
 			}
+			1758 = { # KSRE (de 101)
+				is_owned_and_controlled_by = USA
+			}
 			is_subject = no
 			NOT = {
 				has_war_with = USA
@@ -8622,7 +8631,7 @@ DEN_return_occupied_territory_category = {
 			custom_effect_tooltip = if_they_accept_tt
 			effect_tooltip = {
 				DEN = {
-					transfer_state = 101
+					transfer_state = 101 transfer_state = 1758
 				}
 			}
 		}

@@ -4005,7 +4005,7 @@ BUL_internal_factions = {
 				random_country = {
 					limit = {
 						original_tag = BUL
-						controls_state = 212
+						controls_state = 212 controls_state = 1720
 					}
 					set_cosmetic_tag = BUL_zveno_bulgaria
 					set_country_flag = BUL_zveno_bulgaria_flag
@@ -4308,26 +4308,31 @@ BUL_macedonian_revolutionary_organizations = {
 			divisions_in_border_state = { #SOFIA - Macedonia
 				size > 1
 				state = 48
-				border_state = 106
+				border_state = 1307
 			}
 			divisions_in_border_state = { #PLOVDIV - Central Macedonia
 				size > 3
 				state = 212
-				border_state = 731
+				border_state = 1607
 			}
-			divisions_in_border_state = { #PLOVDIV - Thrace
-				size > 3
+			divisions_in_border_state = { #PLOVDIV - West Thrace
+				size > 2
 				state = 212
 				border_state = 184
-			}		
+			}
+			divisions_in_border_state = { #PLOVDIV - East Thrace
+				size > 1
+				state = 212
+				border_state = 1181
+			}			
 		}
 
 		days_remove = 60
 
 		visible = {
 			has_country_flag = { flag = BUL_repress_imro_flag value = 2 }
-			owns_state = 212
-			owns_state = 48
+			owns_state = 212 owns_state = 1720
+			owns_state = 48 owns_state = 1719
 		}
 
 		cancel_trigger = {
@@ -4337,7 +4342,7 @@ BUL_macedonian_revolutionary_organizations = {
 					divisions_in_border_state = {
 						size < 2
 						state = 48
-						border_state = 106
+						border_state = 1307
 					}
 				}
 				custom_trigger_tooltip = { #PLOVDIV - Central Macedonia
@@ -4345,7 +4350,7 @@ BUL_macedonian_revolutionary_organizations = {
 					divisions_in_border_state = {
 						size < 4
 						state = 212
-						border_state = 731
+						border_state = 1607
 					}
 				}
 				custom_trigger_tooltip = { #PLOVDIV - Thrace
@@ -4710,6 +4715,8 @@ BUL_macedonian_revolutionary_organizations = {
 			if = {
 				limit = {
 					106 = {	is_fully_controlled_by = ROOT }
+					1298 = {	is_fully_controlled_by = ROOT } # KSRE (de 106)
+					1307 = {	is_fully_controlled_by = ROOT } # KSRE (de 106)
 				}
 				106 = {
 					create_unit = {
@@ -4729,7 +4736,11 @@ BUL_macedonian_revolutionary_organizations = {
 					limit = {
 						BUL_is_macedonian_state = yes
 						is_fully_controlled_by = BUL
-						NOT = { state = 106 }
+						NOT = { 
+							state = 106 
+							state = 1307 
+							state = 1298
+						}
 					}
 					create_unit = {
 						division = "division_template = \"Makedonska Revolyutsionna Militsiya\" start_experience_factor = 0.4" 
@@ -4931,11 +4942,15 @@ BUL_macedonian_revolutionary_organizations_foreign = {
 			NOT = { has_country_flag = BUL_macedonian_affairs_ongoing_flag }
 			OR = {
 				has_full_control_of_state = 106
+				has_full_control_of_state = 1307
+				has_full_control_of_state = 1298
 				has_full_control_of_state = 731
+				has_full_control_of_state = 1607
 				has_full_control_of_state = 184
+				has_full_control_of_state = 1181
 			}
 			OR = {
-				NOT = { has_full_control_of_state = 106 }
+				NOT = { has_full_control_of_state = 106 has_full_control_of_state = 1298 has_full_control_of_state = 1307 }
 				divisions_in_state = {
 					type = infantry
 					size > 8
@@ -4943,7 +4958,7 @@ BUL_macedonian_revolutionary_organizations_foreign = {
 				}
 			}
 			OR = {
-				NOT = { has_full_control_of_state = 731 }
+				NOT = { has_full_control_of_state = 731 has_full_control_of_state = 1607 }
 				divisions_in_state = {
 					type = infantry
 					size > 3
@@ -4951,11 +4966,27 @@ BUL_macedonian_revolutionary_organizations_foreign = {
 				}
 			}
 			OR = {
-				NOT = { has_full_control_of_state = 184 }
+				NOT = { has_full_control_of_state = 1607 }
 				divisions_in_state = {
 					type = infantry
-					size > 2
+					size > 1
+					state = 1607
+				}
+			}
+			OR = {
+				NOT = { has_full_control_of_state = 184 has_full_control_of_state = 1181 }
+				divisions_in_state = {
+					type = infantry
+					size > 1
 					state = 184
+				}
+			}
+			OR = {
+				NOT = { has_full_control_of_state = 1181 }
+				divisions_in_state = {
+					type = infantry
+					size > 1
+					state = 1181
 				}
 			}
 		}
@@ -5010,6 +5041,25 @@ BUL_macedonian_revolutionary_organizations_foreign = {
 						}
 					}
 					AND = {
+						has_country_flag = BUL_imro_awakened_in_central_macedonia_flag
+						1607 = {
+							has_dynamic_modifier = { modifier = skirmishes_against_imro }
+							OR = {
+								NOT = { is_fully_controlled_by = ROOT }	
+								custom_trigger_tooltip = {
+									tooltip = BUL_destroy_imro_divisions_central_macedonia_foreign_tt
+									ROOT = {
+										divisions_in_state = {
+											type = infantry
+											size < 4
+											state = 1607
+										}
+									}
+								}
+							}		
+						}
+					}
+					AND = {
 						has_country_flag = BUL_imro_awakened_in_thrace_flag
 						184 = {
 							has_dynamic_modifier = { modifier = skirmishes_against_imro }
@@ -5022,6 +5072,25 @@ BUL_macedonian_revolutionary_organizations_foreign = {
 											type = infantry
 											size < 3
 											state = 184
+										}
+									}
+								}
+							}		
+						}
+					}
+					AND = {
+						has_country_flag = BUL_imro_awakened_in_thrace_flag
+						1181 = {
+							has_dynamic_modifier = { modifier = skirmishes_against_imro }
+							OR = {
+								NOT = { is_fully_controlled_by = ROOT }	
+								custom_trigger_tooltip = {
+									tooltip = BUL_destroy_imro_divisions_thrace_foreign_tt
+									ROOT = {
+										divisions_in_state = {
+											type = infantry
+											size < 3
+											state = 1181
 										}
 									}
 								}
@@ -7877,7 +7946,7 @@ prospect_for_resources = {
 
 		highlight_states = {
 			highlight_state_targets = {
-				state = 212
+				state = 212 state = 1720
 			}
 		}
 
@@ -7887,7 +7956,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			owns_state = 212
+			owns_state = 212 owns_state = 1720
 			controls_state = 212
 			212 = {
 				NOT = {
@@ -7986,7 +8055,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			controls_state = 48
+			controls_state = 48 controls_state = 1719
 		}
 
 		fire_only_once = yes
@@ -8217,10 +8286,11 @@ BUL_bulgarian_administration_of_the_balkans = {
 				}
 			}
 		}
-  
-		cost = 35
+  		
+  		#KSRE: Intentional change to account for more states.
+		cost = 20
 
-		days_remove = 70
+		days_remove = 45
 		
 		complete_effect = {
 			FROM = { set_state_flag = BUL_bulgarian_reintegration_campaign_flag }
@@ -9084,7 +9154,8 @@ BUL_the_balkan_federation_dream = {
 			TUR = {
 				OR = {
 					controls_state = 341
-					controls_state = 797
+					controls_state = 1266
+					controls_state = 797 controls_state = 1223
 				}	
 			}
 			NOT = { is_in_faction_with = TUR }

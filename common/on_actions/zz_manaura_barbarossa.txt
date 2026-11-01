@@ -1,0 +1,37 @@
+on_actions = {
+	# Manaura: a IA alema tinha o wargoal do Barbarossa mas nunca declarava.
+	# Depois de 22/06/1941, com o foco feito, ela declara sozinha.
+	on_weekly_GER = {
+		effect = {
+			if = {
+				limit = {
+					is_ai = yes
+					original_tag = GER
+					date > 1941.6.21
+					has_completed_focus = GER_ussr_war_goal
+					has_capitulated = no
+					is_subject = no
+					country_exists = SOV
+					NOT = { has_war_with = SOV }
+					NOT = { is_in_faction_with = SOV }
+					SOV = {
+						has_capitulated = no
+						NOT = { is_subject_of = GER }
+					}
+				}
+				if = {
+					limit = { has_non_aggression_pact_with = SOV }
+					diplomatic_relation = {
+						country = SOV
+						relation = non_aggression_pact
+						active = no
+					}
+				}
+				declare_war_on = {
+					target = SOV
+					type = annex_everything
+				}
+			}
+		}
+	}
+}

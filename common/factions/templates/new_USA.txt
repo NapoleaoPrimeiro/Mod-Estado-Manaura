@@ -1,0 +1,128 @@
+faction_template_usa_american_alliance = {
+	name = usa_american_alliance_faction
+	icon = GFX_faction_logo_generic_17
+	manifest = faction_manifest_strength_in_unity
+	can_leader_join_other_factions = yes
+	visible = {
+		always = no  
+	}
+
+	goals = {
+		# Short term goals
+		faction_goal_growing_the_faction # Acceptable not to be empty at start.
+
+		# Medium term goals
+		faction_goal_industrial_expansion
+		
+		# Long term goals
+		faction_goal_industrial_domination
+		#faction_goal_contain_japanese_expansion_asia	#Granted/Unlocked by War Plan Orange
+	}
+
+	default_rules = {
+		joining_rule_americas_only
+		war_declaration_generated_tension_25
+		war_declaration_threat_75
+		change_leader_rule_industry
+		change_leader_rule_manpower
+		change_leader_rule_manifest_below_35
+	}	
+	
+}
+
+
+faction_template_usa_intercontinental_vigilance_pact = {
+	name = usa_intercontinental_vigilance_pact_faction
+	icon = GFX_faction_logo_generic_17
+	manifest = faction_manifest_strength_in_unity
+	can_leader_join_other_factions = yes
+	visible = {
+		always = no  
+	}
+
+	goals = {
+		# Short term goals
+		faction_goal_growing_the_faction # Acceptable not to be empty at start.
+
+		# Medium term goals
+		faction_goal_industrial_expansion
+		
+		# Long term goals
+		faction_goal_industrial_domination
+		#faction_goal_contain_japanese_expansion_asia	#Granted/Unlocked by War Plan Orange
+	}
+
+	default_rules = {
+		joining_rule_americas_only
+		war_declaration_generated_tension_25
+		war_declaration_threat_75
+		change_leader_rule_industry
+		change_leader_rule_manpower
+		change_leader_rule_manifest_below_35
+	}	
+	
+}
+
+faction_template_usa_new_world_market_system = {
+	name = usa_new_world_market_system_faction
+	icon = GFX_faction_logo_generic_17
+	manifest = faction_manifest_strength_in_unity
+	can_leader_join_other_factions = yes
+	visible = {
+		always = no  
+	}
+
+	goals = {
+		# Short term goals
+		faction_goal_growing_the_faction # Acceptable not to be empty at start.
+
+		# Medium term goals
+		faction_goal_industrial_expansion
+		
+		# Long term goals
+		faction_goal_industrial_domination
+		#faction_goal_contain_japanese_expansion_asia	#Granted/Unlocked by War Plan Orange
+	}
+
+	default_rules = {
+		joining_rule_americas_only
+		war_declaration_generated_tension_25
+		war_declaration_threat_75
+		change_leader_rule_industry
+		change_leader_rule_manpower
+		change_leader_rule_manifest_below_35
+	}	
+	
+}
+
+faction_template_usa_continental_citadel = {
+	name = usa_continental_citadel_faction
+	icon = GFX_faction_logo_generic_17
+	manifest = faction_manifest_strength_in_unity
+	can_leader_join_other_factions = yes
+	visible = {
+		always = no  
+	}
+
+	goals = {
+		# Short term goals
+		faction_goal_growing_the_faction # Acceptable not to be empty at start.
+
+		# Medium term goals
+		faction_goal_industrial_expansion
+		
+		# Long term goals
+		faction_goal_industrial_domination
+		#faction_goal_contain_japanese_expansion_asia	#Granted/Unlocked by War Plan Orange
+	}
+
+	default_rules = {
+		joining_rule_americas_only
+		war_declaration_generated_tension_25
+		war_declaration_threat_75
+		change_leader_rule_industry
+		change_leader_rule_manpower
+		change_leader_rule_manifest_below_35
+	}	
+	
+}

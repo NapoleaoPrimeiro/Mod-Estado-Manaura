@@ -1,0 +1,314 @@
+@tier1_cp_cap_increase = 10
+@tier2_cp_cap_increase = 20
+@tier3_cp_cap_increase = 30
+
+@tier1_cp_cost = 0
+@tier2_cp_cost = 0
+@tier3_cp_cost = 0
+
+@experience_gain_low = 0.03
+@experience_gain_medium = 0.06
+@experience_gain_high = 0.08
+
+@chief_experience_gain_low = 0.20
+@chief_experience_gain_medium = 0.30
+@chief_experience_gain_high = 0.40
+
+@army_chief_factor_1 = 0.42
+@army_chief_factor_2 = 0.68
+@army_chief_factor_3 = 0.84
+
+@navy_chief_factor_1 = 0.31
+@navy_chief_factor_2 = 0.57
+@navy_chief_factor_3 = 0.73
+
+@air_chief_factor_1 = 0.10
+@air_chief_factor_2 = 0.13
+@air_chief_factor_3 = 0.16
+
+@army_command_factor_1 = 0.42
+@army_command_factor_2 = 0.64
+@army_command_factor_3 = 0.86
+
+@navy_command_factor_1 = 0.41
+@navy_command_factor_2 = 0.62
+@navy_command_factor_3 = 0.83
+
+@air_command_factor_1 = 0.40
+@air_command_factor_2 = 0.60
+@air_command_factor_3 = 0.80
+
+
+
+leader_traits = {
+ # NEW
+	goldstar_phoenix = { # John Aubitz
+		random = no
+
+		drift_defence_factor = 0.50
+		political_power_factor = 0.05
+		compliance_gain = 0.1
+		resistance_target = -0.05
+	}
+
+	americas_fascist_intellectual = { # Lawrence Dennis
+		random = no
+		sprite = 13
+		fascism_drift = 0.02
+		research_speed_factor = 0.05
+	}
+
+	AFP_radio_demagogue = { # Gerald L.K. Smith
+		random = no
+		sprite = 13
+		fascism_drift = 0.05
+		political_power_factor = 0.15
+	}
+
+	leader_of_the_bund = { # Fritz Kuhn
+		random = no
+		sprite = 18
+		fascism_acceptance = 50
+		fascism_drift = 0.03
+		political_power_factor = 0.05
+		resistance_target = -0.05
+	}
+
+	wallstreet_leader = { # Robert E. Wood
+		random = no
+
+		consumer_goods_factor = -0.05
+		production_speed_buildings_factor = 0.05
+		trade_laws_cost_factor = -0.15
+		economy_cost_factor = -0.35
+		industrial_capacity_factory = 0.05
+		military_industrial_organization_design_team_assign_cost = -0.25
+	}
+	america_first = { # Robert E. Wood
+		random = no
+
+		political_power_factor = 0.10
+		fascism_acceptance = -20
+		communism_acceptance = -75
+		democratic_acceptance = -35
+	}
+	american_generalissimo = { # Smedley Butler
+		random = no
+		
+		air_advisor_cost_factor = -0.75
+		army_advisor_cost_factor = -0.75
+		navy_advisor_cost_factor = -0.75
+		experience_gain_air = 0.15
+		experience_gain_army = 0.15
+		experience_gain_navy = 0.15
+		mobilization_laws_cost_factor = -0.20
+	}
+	american_fuhrer = { # William Dudley Pelley
+		random = no
+		
+		political_power_factor = 0.15
+		fascism_drift = 0.10
+		democratic_acceptance = -75
+	}
+
+	confederacy_president = { # For Confederate leaders
+		random = no
+		
+		political_power_factor = 0.10
+		production_speed_buildings_factor = 0.10
+		local_resources_factor = 0.05
+		communism_acceptance = -75
+		democratic_acceptance = -75
+	}
+	eagle_eyed = { # For RIG leader
+		random = no
+
+		army_attack_against_major_factor = 0.10
+		army_leader_cost_factor = -0.5
+	}
+	retired_foreign_diplomat = { # For RSN leader
+		random = no
+
+		improve_relations_maintain_cost_factor = -0.75
+		opinion_gain_monthly = 0.25
+		stability_factor = 0.10
+	}
+ 	goldstar_official = { # For Goldstar leaders
+		random = no
+		
+		command_power_gain_mult = 0.20
+		political_power_factor = 0.05
+		stability_factor = 0.05
+		conscription_factor = 0.10
+		communism_acceptance = -75
+		democratic_acceptance = -75
+	}
+	stallion_of_the_south = { # For RIG leader
+		random = no
+		
+		#consumer_goods_factor = -0.10
+		war_support_factor = 0.10
+		army_core_attack_factor = 0.05
+		army_core_defence_factor = 0.05
+	}
+	cunning_financier = { # For RSN leader
+		random = no
+		
+		consumer_goods_factor = -0.20
+		political_power_factor = 0.15
+	}
+
+	free_marketeer = { # For Landon Upgraded
+		random = no
+		
+		consumer_goods_factor = -0.10
+		democratic_acceptance = 10
+	}
+
+	architect_of_the_new_deal = { # For Roosevelt
+		random = no
+		
+		political_power_factor = 0.10
+		democratic_acceptance = 10
+	}
+	architect_of_the_new_deal_2 = { # For Roosevelt Upgraded
+		random = no
+		
+		political_power_factor = 0.15
+		democratic_acceptance = 10
+		stability_factor = 0.05
+	}
+	architect_of_the_new_deal_3 = { # For Roosevelt in the Nationalist Communist Path
+		random = no
+		
+		political_power_factor = 0.10
+		democratic_acceptance = 10
+		communism_acceptance = 10
+	}
+	architect_of_the_new_deal_4 = { # For Roosevelt in the Nationalist Communist Civil War Path
+		random = no
+		
+		political_power_factor = 0.05
+		democratic_acceptance = 5
+		communism_acceptance = 25
+		ai_focus_peaceful_factor = 0.20
+	}
+
+	head_of_army_signal_intelligence_service = {
+		random = no
+		sprite = 15
+		civilian_intel_factor = 0.05
+		army_intel_factor = 0.10
+		navy_intel_factor = 0.03
+		airforce_intel_factor = 0.03		
+		initiative_factor = 0.02
+
+		#experience_gain_army = @experience_gain_low
+
+		command_cap_increase = @tier2_cp_cap_increase
+		command_power = @tier2_cp_cost
+
+		#ai_will_do = {
+		#	factor = @army_command_factor_2
+		#	modifier = {
+		#		factor = 0
+		#		command_power < @tier1_cp_cost
+		#	}
+		#}
+	}
+
+	defensive_spymaster = {
+		random = no
+		sprite = 15
+		#operative_slot = 1
+		agency_upgrade_time = 0.15 # counters illusive gentleman
+		intelligence_agency_defense = 1
+		intel_network_gain_factor = 0.2
+	}
+
+	interventionist_strategist = {
+		random = no
+		sprite = 13
+		political_power_factor = 0.05
+		justify_war_goal_time = -0.15
+		lend_lease_tension = -0.25
+	}
+
+	liberty_ship_architect = {
+		random = no
+		sprite = 3
+		production_speed_dockyard_factor = 0.10
+		equipment_bonus = {
+			convoy = {
+				build_cost_ic = -0.15
+			}
+		}
+	}
+
+	war_hawk = {
+		random = no
+		sprite = 7
+		war_support_factor = 0.05
+		offensive_war_stability_factor = 0.05
+		mobilization_speed = 0.10
+	}
+
+	naval_gunnery_innovator = {
+		random = no
+		sprite = 3
+		naval_hit_chance = 0.15
+		naval_night_attack = 0.10
+		navy_anti_air_attack_factor = 0.10
+
+		command_cap_increase = @tier2_cp_cap_increase
+		command_power = @tier2_cp_cost
+	}
+ # Industrial Concerns
+	usa_territorial_investments_company = {
+		random = no
+	}
+
+	usa_free_federal_industry_trust = {
+		random = no
+		#sprite = 3
+
+		#command_cap_increase = @tier2_cp_cap_increase
+		#command_power = @tier2_cp_cost
+	}
+
+	usa_american_architectural_administration_trait = {
+		random = no
+	}
+	usa_american_wellspring_administration_trait = {
+		random = no
+	}
+
+	US_steel_industrial_concern_trait = {
+		random = no
+	}
+	alcoa_industrial_concern_trait = {
+		random = no
+	}
+	deere_industrial_concern_trait = {
+		random = no
+	}
+	union_carbide_industrial_concern_trait = {
+		random = no
+	}
+	bechtel_industrial_concern_trait = {
+		random = no
+	}
+	bell_telephone_laboratories_industrial_concern_trait = {
+		random = no
+	}
+	brown_and_sharpe_industrial_concern_trait = {
+		random = no
+	}
+	packard_industrial_concern_trait = {
+		random = no
+	}
+	kaiser_industrial_concern_trait = {
+		random = no
+	}
+
+}

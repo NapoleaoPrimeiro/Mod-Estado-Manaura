@@ -1,0 +1,219 @@
+on_actions = {
+	#ROOT is new controller #FROM is old controller #FROM.FROM is state ID
+	on_startup = {
+		effect = {
+			TST = {
+				ksr_update_naming_localisation = yes
+				ksr_clean_subject_cores = yes
+				ksr_clean_subject_cosmetics = yes
+				ksr_clear_impassable_states = yes
+			}
+			every_possible_country = {
+				limit = {
+					NOT = { has_country_flag = ksr_test_nonexistant_flag }
+				}
+				ksr_load_states_arrays = yes
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = uncensored_nsdap_symbols
+						option = ENABLED
+					}
+				}
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					country_event = ksr.44
+				}
+			}
+			JAP = {
+                country_event = { id = ksr.45 days = 130 }
+            }
+			
+			
+			if = { limit = { has_game_rule = { rule = united_states_fragmentation_play_as option = DISABLED } }
+			DCS = { set_country_flag = united_states_fragmentation_tag } }
+			
+			if = { limit = { has_game_rule = { rule = united_states_fragmentation_play_as option = UNITED_STATES_FRAGMENTATION_PLAY_AS_AKS } }
+			AKS = { set_country_flag = united_states_fragmentation_tag } }
+			
+			if = { limit = { has_game_rule = { rule = united_states_fragmentation_play_as option = UNITED_STATES_FRAGMENTATION_PLAY_AS_CAL } }
+			CAL = { set_country_flag = united_states_fragmentation_tag } }
+			
+			if = { limit = { has_game_rule = { rule = united_states_fragmentation_play_as option = UNITED_STATES_FRAGMENTATION_PLAY_AS_CLS } }
+			CLS = { set_country_flag = united_states_fragmentation_tag } }
+			
+			if = { limit = { has_game_rule = { rule = united_states_fragmentation_play_as option = UNITED_STATES_FRAGMENTATION_PLAY_AS_FLS } }
+			FLS = { set_country_flag = united_states_fragmentation_tag } }
+			
+			if = { limit = { has_game_rule = { rule = united_states_fragmentation_play_as option = UNITED_STATES_FRAGMENTATION_PLAY_AS_ILS } }
+			ILS = { set_country_flag = united_states_fragmentation_tag } }
+			
+			if = { limit = { has_game_rule = { rule = united_states_fragmentation_play_as option = UNITED_STATES_FRAGMENTATION_PLAY_AS_MAS } }
+			MAS = { set_country_flag = united_states_fragmentation_tag } }
+			
+			if = { limit = { has_game_rule = { rule = united_states_fragmentation_play_as option = UNITED_STATES_FRAGMENTATION_PLAY_AS_NYS } }
+			NYS = { set_country_flag = united_states_fragmentation_tag } }
+			
+			if = { limit = { has_game_rule = { rule = united_states_fragmentation_play_as option = UNITED_STATES_FRAGMENTATION_PLAY_AS_RIS } }
+			RIS = { set_country_flag = united_states_fragmentation_tag } }
+			
+			if = { limit = { has_game_rule = { rule = united_states_fragmentation_play_as option = UNITED_STATES_FRAGMENTATION_PLAY_AS_TEX } }
+			TEX = { set_country_flag = united_states_fragmentation_tag } }
+			
+			if = { limit = { has_game_rule = { rule = united_states_fragmentation_play_as option = UNITED_STATES_FRAGMENTATION_PLAY_AS_VAS } }
+			VAS = { set_country_flag = united_states_fragmentation_tag } }
+			
+			if = { limit = { has_game_rule = { rule = united_states_fragmentation_play_as option = UNITED_STATES_FRAGMENTATION_PLAY_AS_WAS } }
+			WAS = { set_country_flag = united_states_fragmentation_tag } }
+			
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = united_states_fragmentation_status
+						option = UNITED_STATES_INDEPENDENT_STATES
+					}
+				}
+				USA = {
+					ksr_map_USA_release_states = yes
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_game_rule = {
+								rule = united_states_fragmentation_play_as
+								option = DISABLED
+							}
+						}
+					}
+					random_country = {
+						limit = {
+							has_country_flag = united_states_fragmentation_tag
+						}
+						change_tag_from = USA
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							USA = {
+								is_ai = no
+							}
+						}
+						DCS = { change_tag_from = USA }
+					}
+				}
+				629 = { transfer_state_to = HAW }
+				727 = { transfer_state_to = HAW }
+				630 = { transfer_state_to = HAW }
+				631 = { transfer_state_to = HAW }
+				642 = { transfer_state_to = HAW }
+				686 = { transfer_state_to = PUE }
+				1380 = { transfer_state_to = PUE }
+				1380 = { add_core_of = PUE }
+				632 = { transfer_state_to = GUM }
+				638 = { transfer_state_to = GUM }
+				685 = { transfer_state_to = PAN }
+			}
+			
+			
+			
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = united_states_fragmentation_status
+						option = UNITED_STATES_INDEPENDENT_STATES_TRIBES
+					}
+				}
+				USA = {
+					ksr_map_USA_release_tribes = yes
+					ksr_map_USA_release_states = yes
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_game_rule = {
+								rule = united_states_fragmentation_play_as
+								option = DISABLED
+							}
+						}
+					}
+					random_country = {
+						limit = {
+							has_country_flag = united_states_fragmentation_tag
+						}
+						change_tag_from = USA
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							USA = {
+								is_ai = no
+							}
+						}
+						DCS = { change_tag_from = USA }
+					}
+				}
+				629 = { transfer_state_to = HAW }
+				727 = { transfer_state_to = HAW }
+				630 = { transfer_state_to = HAW }
+				631 = { transfer_state_to = HAW }
+				642 = { transfer_state_to = HAW }
+				686 = { transfer_state_to = PUE }
+				1380 = { transfer_state_to = PUE }
+				1380 = { add_core_of = PUE }
+				632 = { transfer_state_to = GUM }
+				638 = { transfer_state_to = GUM }
+				685 = { transfer_state_to = PAN }
+			}
+		}
+	}
+	on_state_control_changed = {
+		effect = {
+			ksr_update_naming_localisation = yes
+			ksr_clean_subject_cores = yes
+			ksr_clean_subject_cosmetics = yes
+			ksr_clear_impassable_states = yes
+		}
+	}
+	on_weekly = {
+		effect = {
+			ksr_clear_impassable_states = yes
+		}
+	}
+	on_peaceconference_ended = {
+		effect = {
+			#KSRE: Non-fascist German AI refuses to take Glatz and Sudschlesien, so we force it on them
+			if = {
+				limit = {
+					ROOT = { 
+						original_tag = GER
+						is_ai = yes
+					}
+					FROM = { original_tag = SIL }
+					SIL = { has_country_flag = KSR_silesian_annexation_flag }
+				}
+				if = {
+					limit = {
+						1540 = {
+							is_owned_by = SIL
+						}
+					}
+					1540 = { transfer_state_to = GER }
+				}
+				if = {
+					limit = {
+						1558 = {
+							is_owned_by = SIL
+						}
+					}
+					1558 = { transfer_state_to = GER }
+				}
+				SIL = { clr_country_flag = KSR_silesian_annexation_flag }
+			}
+		}
+	}
+}

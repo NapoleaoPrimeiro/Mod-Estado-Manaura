@@ -596,7 +596,7 @@ focus_tree = {
 			}
 
 			build_railway = {
-				path = { 12674 13268 13266 13267 }
+				path = { 13730 12674 13268 13266 13267 }
 			}
 
 			random_state = {
@@ -1795,6 +1795,7 @@ focus_tree = {
 		available = {
 			OR = {
 				101 = { is_owned_by = DEN }
+				1758 = { is_owned_by = DEN }
 				337 = { is_owned_by = DEN }
 			}
 		}
@@ -2849,10 +2850,16 @@ focus_tree = {
 		cost = 10
 		available = {
 			NOT = {
-				owns_state = 101
+				OR = {
+					owns_state = 101
+					owns_state = 1758
+				}
 			}
 			any_country = {
-				owns_state = 101
+				OR = {
+					owns_state = 101
+					owns_state = 1758
+				}
 				NOT = {
 					has_war_with = ROOT
 				}
@@ -2864,8 +2871,11 @@ focus_tree = {
 				101 = {
 					is_owned_and_controlled_by = ROOT
 				}
+				1758 = { # KSRE (de 101)
+					is_owned_and_controlled_by = ROOT
+				}
 				any_country = {
-					owns_state = 101
+					owns_state = 101 owns_state = 1758
 					has_war_with = ROOT
 				}
 			}
@@ -2877,9 +2887,15 @@ focus_tree = {
 			101 = {
 				add_claim_by = ROOT
 			}
-			random_other_country = {
+			1758 = {
+				add_claim_by = ROOT
+			}
+			every_country = {
 				limit = {
-					owns_state = 101
+					OR = {
+						owns_state = 101
+						owns_state = 1758
+					}
 				}
 				country_event = {
 					id = iceland_events.20
@@ -2890,9 +2906,15 @@ focus_tree = {
 			custom_effect_tooltip = if_they_accept_tt
 			effect_tooltip = {
 				ROOT = {
-					transfer_state = 101
+					transfer_state = 101 transfer_state = 1758
 				}
 				101 = {
+					add_core_of = ROOT
+				}
+				ROOT = {
+					transfer_state = 1758
+				}
+				1758 = {
 					add_core_of = ROOT
 				}
 			}

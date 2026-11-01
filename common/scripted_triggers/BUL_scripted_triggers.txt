@@ -18,7 +18,9 @@ BUL_state_is_in_the_aegean_sea = {
 		tooltip = BUL_state_is_in_the_aegean_sea_tt
 		OR = {
 			state = 184
+			state = 1181
 			state = 731
+			state = 1607
 			state = 47
 			state = 186
 			state = 187
@@ -26,7 +28,7 @@ BUL_state_is_in_the_aegean_sea = {
 			state = 342
 			state = 339
 			state = 340
-			state = 341
+			state = 1266
 			state = 164
 		}
 	}
@@ -38,25 +40,37 @@ BUL_state_is_in_the_black_sea = {
 		OR = {
 			state = 341
 			state = 797
+			state = 1223
 			state = 211
 			state = 77
-			state = 971
-			state = 766
+			state = 766 state = 1092
 			state = 192
+			state = 1420
 			state = 197
+			state = 1606
 			state = 196
 			state = 137
 			state = 200
-			state = 227
-			state = 218
+			state = 227 state = 1090
+			state = 218 state = 1807
 			state = 233
-			state = 234
-			state = 231
 			state = 354
+			state = 1286
 			state = 355
 			state = 356
 			state = 347
 			state = 826
+			state = 1266
+			state = 1295
+			state = 1086
+			state = 1087
+			state = 1088
+			state = 1089
+			state = 1096
+			state = 1097
+			state = 1098
+			state = 1125
+			state = 1126
 		}
 	}
 }
@@ -70,16 +84,28 @@ BUL_state_is_in_the_adriatic_sea = {
 			state = 44
 			state = 934
 			state = 105
-			state = 103
+			state = 103 state = 1325
+			state = 1296
 			state = 163
 			state = 736
-			state = 852
-			state = 160
-			state = 161
-			state = 157
+			state = 852 state = 1169
+			state = 160 state = 1168
+			state = 1409
+			state = 157 state = 1405 state = 1406
+			state = 1407
 			state = 117
 			state = 156
 			state = 849
+			state = 1708
+			state = 1718
+			state = 1388
+			state = 1314
+			state = 1646
+			state = 1339
+			state = 1717
+			state = 1716
+			state = 1260
+			state = 1319
 		}
 	}
 }
@@ -89,10 +115,17 @@ BUL_country_seeks_macedonian_stability = {
 		tooltip = BUL_country_seeks_macedonian_stability_tt
 		OR = {
 			controls_state = 803
+			controls_state = 1411
+			controls_state = 1299
+			controls_state = 1300
 			controls_state = 106
-			controls_state = 970
+			controls_state = 1412
+			controls_state = 1307
+			controls_state = 1298
 			controls_state = 731
+			controls_state = 1607
 			controls_state = 184
+			controls_state = 1181
 			AND = {
 				tag = ENG
 				OR = {
@@ -100,10 +133,17 @@ BUL_country_seeks_macedonian_stability = {
 					is_in_faction_with = GRE
 					is_in_faction_with = YUG
 					803 = { controller = { is_in_faction_with = ENG } }
+					1411 = { controller = { is_in_faction_with = ENG } }
+					1299 = { controller = { is_in_faction_with = ENG } }
+					1300 = { controller = { is_in_faction_with = ENG } }
 					106 = { controller = { is_in_faction_with = ENG } }
-					970 = { controller = { is_in_faction_with = ENG } }
+					1412 = { controller = { is_in_faction_with = ENG } }
+					1307 = { controller = { is_in_faction_with = ENG } }
+					1298 = { controller = { is_in_faction_with = ENG } }
 					731 = { controller = { is_in_faction_with = ENG } }
+					1607 = { controller = { is_in_faction_with = ENG } }
 					184 = { controller = { is_in_faction_with = ENG } }
+					1181 = { controller = { is_in_faction_with = ENG } }
 				}
 				
 			}
@@ -114,10 +154,17 @@ BUL_country_seeks_macedonian_stability = {
 					is_in_faction_with = GRE
 					is_in_faction_with = YUG
 					803 = { controller = { is_in_faction_with = ENG } }
+					1411 = { controller = { is_in_faction_with = ENG } }
+					1299 = { controller = { is_in_faction_with = ENG } }
+					1300 = { controller = { is_in_faction_with = ENG } }
 					106 = { controller = { is_in_faction_with = ENG } }
-					970 = { controller = { is_in_faction_with = ENG } }
+					1412 = { controller = { is_in_faction_with = ENG } }
+					1307 = { controller = { is_in_faction_with = ENG } }
+					1298 = { controller = { is_in_faction_with = ENG } }
 					731 = { controller = { is_in_faction_with = ENG } }
+					1607 = { controller = { is_in_faction_with = ENG } }
 					184 = { controller = { is_in_faction_with = ENG } }
+					1181 = { controller = { is_in_faction_with = ENG } }
 				}
 				
 			}
@@ -172,8 +219,16 @@ BUL_historical_requirements_met = {
 				NOT = {
 					state = 188
 					state = 763
+					state = 1249
 					state = 5
-					state = 807
+					state = 1288
+					state = 1557
+					state = 1701
+					state = 1427
+					state = 1428
+					state = 1702
+					state = 1772
+					state = 807 state = 1554
 					state = 85
 				}
 			}
@@ -186,12 +241,21 @@ BUL_has_restored_greater_bulgaria = {
 	212 = { is_fully_controlled_by = ROOT } #Plovdiv
 	801 = { is_fully_controlled_by = ROOT } #Moesia
 	211 = { is_fully_controlled_by = ROOT } #Burgas
+	1719 = { is_fully_controlled_by = ROOT } #Vidin
+	1720 = { is_fully_controlled_by = ROOT } #Stara Zagora
 	803 = { is_fully_controlled_by = ROOT } #Southern Serbia
+	1411 = { is_fully_controlled_by = ROOT } #Southern Serbia
+	1299 = { is_fully_controlled_by = ROOT } #Southern Serbia
+	1300 = { is_fully_controlled_by = ROOT } #Southern Serbia
 	106 = { is_fully_controlled_by = ROOT } #Macedonia
-	184 = { is_fully_controlled_by = ROOT } #Central Macedonia
+	1412 = { is_fully_controlled_by = ROOT } #Macedonia
+	1307 = { is_fully_controlled_by = ROOT } #Macedonia
+	1298 = { is_fully_controlled_by = ROOT } #Macedonia
+	184 = { is_fully_controlled_by = ROOT } #West Thrace
+	1181 = { is_fully_controlled_by = ROOT } #East Thrace
 	731 = { is_fully_controlled_by = ROOT } #Thrace
+	1607 = { is_fully_controlled_by = ROOT }
 	77 = { is_fully_controlled_by = ROOT } #Dobrudja
-	971 = { is_fully_controlled_by = ROOT } #North Dobrudja
 }
 
 BUL_country_can_influence_bulgaria = {
@@ -206,8 +270,12 @@ BUL_country_can_influence_bulgaria = {
 BUL_is_macedonian_state = {
 	OR = {
 		state = 106
+		state = 1412
+		state = 1307
+		state = 1298
 		state = 731
-		state = 184
+		state = 1607
+		state = 184 state = 1181
 	}
 }
 

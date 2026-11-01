@@ -1,0 +1,55 @@
+state={
+	id=1743
+	name="STATE_1743"
+	manpower=4279360
+
+	state_category = town
+
+
+	history={
+		owner = USA
+		buildings = {
+			infrastructure = 4 #was: 7
+			industrial_complex = 1
+			dockyard = 3
+			air_base = 10
+			6732 = {
+				naval_base = 8
+			}
+		}
+		victory_points = {
+			6732 20 #Boston
+		}
+		victory_points = {
+			3710 6 #Worcester
+		}
+		victory_points = {
+			15524 6 #Springfield
+		}
+		victory_points = {
+			15525 5 #New Bedford
+		}
+		victory_points = {
+			3906 5 #Fall River
+		}
+		victory_points = {
+			15522 5 #Lowell
+		}
+		victory_points = {
+			908 4 #Pittsfield
+		}
+		victory_points = {
+			715 2 #Leominster
+		}
+		add_core_of = USA
+		add_core_of = MAS
+		add_core_of = NEG
+	}
+
+	provinces={
+		715 718 905 908 3710 3906 6732 15522 15523 15524 15525
+	}
+	buildings_max_level_factor=1.000
+
+	local_supplies=0.0 
+}

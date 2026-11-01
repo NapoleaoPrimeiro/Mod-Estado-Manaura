@@ -598,7 +598,7 @@ focus_tree = {
 		completion_reward = {
 			
 			random_core_state = {
-				prioritize = { 328 }
+				prioritize = { 328 1416 1422 1434 1435 1437 1439 1454 }
 				limit = {
 					is_fully_controlled_by = ROOT
 				}
@@ -635,13 +635,61 @@ focus_tree = {
 				716 = {
 					is_fully_controlled_by = ROOT
 				}
+				1452 = {
+					is_fully_controlled_by = ROOT
+				}
+				1453 = {
+					is_fully_controlled_by = ROOT
+				}
 				328 = {
+					is_fully_controlled_by = ROOT
+				} 
+				1434 = { # KSRE (de 328)
+					is_fully_controlled_by = ROOT
+				} 
+				1435 = { # KSRE (de 328)
+					is_fully_controlled_by = ROOT
+				} 
+				1437 = { # KSRE (de 328)
+					is_fully_controlled_by = ROOT
+				} 
+				1439 = { # KSRE (de 328)
+					is_fully_controlled_by = ROOT
+				} 
+				1454 = { # KSRE (de 328)
 					is_fully_controlled_by = ROOT
 				} 
 				610 = {
 					is_fully_controlled_by = ROOT
 				} 
+				1444 = {
+					is_fully_controlled_by = ROOT
+				}
+				1446 = {
+					is_fully_controlled_by = ROOT
+				}
+				1448 = {
+					is_fully_controlled_by = ROOT
+				}
+				1449 = {
+					is_fully_controlled_by = ROOT
+				}
+				1450 = {
+					is_fully_controlled_by = ROOT
+				}
 				717 = {
+					is_fully_controlled_by = ROOT
+				}
+				1416 = {
+					is_fully_controlled_by = ROOT
+				}
+				1417 = {
+					is_fully_controlled_by = ROOT
+				}
+				1419 = {
+					is_fully_controlled_by = ROOT
+				}
+				1422 = {
 					is_fully_controlled_by = ROOT
 				}
 			}
@@ -662,7 +710,9 @@ focus_tree = {
 
 			if = {
 					limit = {
-						controls_state = 716
+						controls_state = 716 controls_state = 1448
+						controls_state = 1452
+						controls_state = 1453
 					}
 					build_railway = { #Mukden-Korean border
 						path = {
@@ -678,19 +728,27 @@ focus_tree = {
 			if = {
 				limit = { 
 					328 = { is_fully_controlled_by = ROOT } 
-					controls_state = 715
-					controls_state = 716
+					1416 = { is_fully_controlled_by = ROOT }  # KSRE (de 328)
+					1434 = { is_fully_controlled_by = ROOT }  # KSRE (de 328)
+					1435 = { is_fully_controlled_by = ROOT }  # KSRE (de 328)
+					1437 = { is_fully_controlled_by = ROOT }  # KSRE (de 328)
+					1439 = { is_fully_controlled_by = ROOT }  # KSRE (de 328)
+					1454 = { is_fully_controlled_by = ROOT }  # KSRE (de 328)
+					controls_state = 715 controls_state = 1440 controls_state = 1443 controls_state = 1445
+					controls_state = 716 controls_state = 1448 controls_state = 1452 controls_state = 1453
+					controls_state = 1422
 				}
 				build_railway = {
 					path = { #Mukden - Hsinking - Harbin
-						11771 11808 916 4642 4572 4503 7652 10433
+						11771 11808 916 4642 1567 11744 7523 10433
 					}
 				}
 			}
 			if = {
 				limit = {
-					controls_state = 716
-					controls_state = 610
+					controls_state = 716 controls_state = 1452 controls_state = 1453
+					controls_state = 610 controls_state = 1444 controls_state = 1446 controls_state = 1449 controls_state = 1450
+					controls_state = 1448
 				}
 				build_railway = { #Mukden - Chinese border
 					path = { 11771 6951 11815 9835 6837 11886 3900 }
@@ -698,11 +756,12 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					controls_state = 714
-					controls_state = 715
+					controls_state = 714 controls_state = 1423 controls_state = 1424 controls_state = 1426 controls_state = 1430 controls_state = 1431 controls_state = 1451
+					controls_state = 715 controls_state = 1440 controls_state = 1443 controls_state = 1445
+					controls_state = 1422
 				}
 				build_railway = { #Mukden - central Manchuria
-					path = { 11771 846 9831 930 4633 4561 4506 7582 10433 }
+					path = { 11771 846 9831 4642 930 1499 4633 4561 4506 7582 10433 }
 				}
 			}
 
@@ -805,7 +864,7 @@ focus_tree = {
 		}
 
 		available = {
-			716 = { is_fully_controlled_by = ROOT }
+			1453 = { is_fully_controlled_by = ROOT }
 		}
 
 		bypass = {
@@ -821,8 +880,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
-
-			716 = {
+			1453 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
@@ -977,6 +1035,9 @@ focus_tree = {
 
 		available = {
 			716 = { is_fully_controlled_by = ROOT }
+			1448 = { is_fully_controlled_by = ROOT } # KSRE (de 716)
+			1452 = { is_fully_controlled_by = ROOT } # KSRE (de 716)
+			1453 = { is_fully_controlled_by = ROOT } # KSRE (de 716)
 		}
 
 		bypass = {
@@ -1371,7 +1432,37 @@ focus_tree = {
 				716 = {
 					is_fully_controlled_by = ROOT
 				}
+				1448 = { # KSRE (de 716)
+					is_fully_controlled_by = ROOT
+				}
+				1452 = { # KSRE (de 716)
+					is_fully_controlled_by = ROOT
+				}
+				1453 = { # KSRE (de 716)
+					is_fully_controlled_by = ROOT
+				}
 				328 = {
+					is_fully_controlled_by = ROOT
+				}
+				1416 = { # KSRE (de 328)
+					is_fully_controlled_by = ROOT
+				}
+				1422 = { # KSRE (de 328)
+					is_fully_controlled_by = ROOT
+				}
+				1434 = { # KSRE (de 328)
+					is_fully_controlled_by = ROOT
+				}
+				1435 = { # KSRE (de 328)
+					is_fully_controlled_by = ROOT
+				}
+				1437 = { # KSRE (de 328)
+					is_fully_controlled_by = ROOT
+				}
+				1439 = { # KSRE (de 328)
+					is_fully_controlled_by = ROOT
+				}
+				1454 = { # KSRE (de 328)
 					is_fully_controlled_by = ROOT
 				}
 			}
@@ -1416,6 +1507,50 @@ focus_tree = {
 				}
 			}
 			if = {
+				limit = { 1416 = { is_fully_controlled_by = ROOT } }
+				1416 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					add_extra_state_shared_building_slots = 1
+				}
+			}
+			if = {
+				limit = { 1417 = { is_fully_controlled_by = ROOT } }
+				1417 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					add_extra_state_shared_building_slots = 1
+				}
+			}
+			if = {
+				limit = { 1419 = { is_fully_controlled_by = ROOT } }
+				1419 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					add_extra_state_shared_building_slots = 1
+				}
+			}
+			if = {
+				limit = { 1422 = { is_fully_controlled_by = ROOT } }
+				1422 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					add_extra_state_shared_building_slots = 1
+				}
+			}
+			if = {
 				limit = { 715 = { is_fully_controlled_by = ROOT } }
 				715 = {
 					add_building_construction = {
@@ -1437,7 +1572,61 @@ focus_tree = {
 					add_extra_state_shared_building_slots = 1
 				} 
 			}
-
+			if = {
+				limit = { 1434 = { is_fully_controlled_by = ROOT } }
+				1434 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					add_extra_state_shared_building_slots = 1
+				} 
+			}
+			if = {
+				limit = { 1435 = { is_fully_controlled_by = ROOT } }
+				1435 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					add_extra_state_shared_building_slots = 1
+				} 
+			}
+			if = {
+				limit = { 1437 = { is_fully_controlled_by = ROOT } }
+				1437 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					add_extra_state_shared_building_slots = 1
+				} 
+			}
+			if = {
+				limit = { 1439 = { is_fully_controlled_by = ROOT } }
+				1439 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					add_extra_state_shared_building_slots = 1
+				} 
+			}
+			if = {
+				limit = { 1440 = { is_fully_controlled_by = ROOT } }
+				1440 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					add_extra_state_shared_building_slots = 1
+				} 
+			}
 		}
 
 	}
@@ -1525,7 +1714,7 @@ focus_tree = {
 				}
 				random_owned_controlled_state = {
 					limit = { ROOT = { has_full_control_of_state = PREV } }
-					prioritize = { 328 }
+					prioritize = { 328 1416 1422 1434 1435 1437 1439 1454 }
 					create_unit = {
 						division = "name = \"1. Imperial Guards Division\" division_template = \"Imperial Guards Division\" start_experience_factor = 1.0" 
 						owner = MAN
@@ -1838,7 +2027,7 @@ focus_tree = {
 				}
 				random_owned_controlled_state = {
 					limit = { ROOT = { has_full_control_of_state = PREV } }
-					prioritize = { 328 }
+					prioritize = { 328 1416 1422 1434 1435 1437 1439 1454 }
 					create_unit = {
 						division = "name = \"People's Volunteers Division\" division_template = \"People's Volunteers Division\" start_experience_factor = 1.0" 
 						owner = MAN
@@ -2138,6 +2327,10 @@ focus_tree = {
 
 		available = {
 			608 = { is_fully_controlled_by = ROOT }
+			1489 = { is_fully_controlled_by = ROOT } # KSRE (de 608)
+			1490 = { is_fully_controlled_by = ROOT } # KSRE (de 608)
+			1491 = { is_fully_controlled_by = ROOT } # KSRE (de 608)
+			1492 = { is_fully_controlled_by = ROOT } # KSRE (de 608)
 		}
 
 		bypass = {

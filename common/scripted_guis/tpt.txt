@@ -2647,7 +2647,7 @@ scripted_gui = {
 							NOT = { has_global_flag = tpt_taken_treaty_geneva }
 							NOT = { has_global_flag = tpt_stop_faction_names }
 							OR = {
-								owns_state = 3
+								owns_state = 3 owns_state = 1508 owns_state = 1515
 								tag = SWI
 								AND = {
 									NOT = { country_exists = SWI }
@@ -2669,7 +2669,7 @@ scripted_gui = {
 							NOT = { has_global_flag = tpt_taken_nato }
 							NOT = { has_global_flag = tpt_stop_faction_names }
 							OR = {
-								owns_state = 16
+								owns_state = 16 owns_state = 1517 owns_state = 1518 owns_state = 1519 owns_state = 1520
 								tag = FRA
 								AND = {
 									NOT = { country_exists = FRA }
@@ -2713,7 +2713,7 @@ scripted_gui = {
 							NOT = { has_global_flag = tpt_taken_treaty_berlin }
 							NOT = { has_global_flag = tpt_stop_faction_names }
 							OR = {
-								owns_state = 64
+								owns_state = 64 owns_state = 1268 owns_state = 1269 owns_state = 1542 owns_state = 1544
 								tag = GER
 								AND = {
 									NOT = { country_exists = GER }
@@ -2735,7 +2735,7 @@ scripted_gui = {
 							NOT = { has_global_flag = tpt_taken_treaty_rome }
 							NOT = { has_global_flag = tpt_stop_faction_names }
 							OR = {
-								owns_state = 2
+								owns_state = 2 owns_state = 1404
 								tag = ITA
 								AND = {
 									NOT = { country_exists = ITA }
@@ -2757,7 +2757,7 @@ scripted_gui = {
 							NOT = { has_global_flag = tpt_taken_treaty_moscow }
 							NOT = { has_global_flag = tpt_stop_faction_names }
 							OR = {
-								owns_state = 219
+								owns_state = 219 owns_state = 1105 owns_state = 1106 owns_state = 1107 owns_state = 1113 owns_state = 1114 owns_state = 1115
 								tag = SOV
 								AND = {
 									NOT = { country_exists = SOV }
@@ -2779,7 +2779,7 @@ scripted_gui = {
 							NOT = { has_global_flag = tpt_taken_treaty_vienna }
 							NOT = { has_global_flag = tpt_stop_faction_names }
 							OR = {
-								owns_state = 4
+								owns_state = 4 owns_state = 1553
 								tag = AUS
 								AND = {
 									NOT = { country_exists = AUS }
@@ -2801,7 +2801,7 @@ scripted_gui = {
 							NOT = { has_global_flag = tpt_taken_treaty_warsaw }
 							NOT = { has_global_flag = tpt_stop_faction_names }
 							OR = {
-								owns_state = 10
+								owns_state = 10 owns_state = 1256
 								tag = POL
 								AND = {
 									NOT = { country_exists = POL }

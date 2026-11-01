@@ -1279,6 +1279,7 @@ focus_tree = {
 	
 		available = {
 			101 = { is_fully_controlled_by = ROOT }
+			1758 = { is_fully_controlled_by = ROOT } # KSRE (de 101)
 		}
 	
 		ai_will_do = {
@@ -1317,6 +1318,7 @@ focus_tree = {
 	
 		available = {
 			101 = { is_fully_controlled_by = ROOT }
+			1758 = { is_fully_controlled_by = ROOT } # KSRE (de 101)
 		}
 	
 		ai_will_do = {
@@ -1361,6 +1363,7 @@ focus_tree = {
 	
 		available = {
 			101 = { is_fully_controlled_by = ROOT }
+			1758 = { is_fully_controlled_by = ROOT } # KSRE (de 101)
 			has_tech = excavation3
 		}
 	
@@ -1417,6 +1420,7 @@ focus_tree = {
 	
 		available = {
 			101 = { is_fully_controlled_by = ROOT }
+			1758 = { is_fully_controlled_by = ROOT } # KSRE (de 101)
 		}
 	
 		ai_will_do = {
@@ -2456,6 +2460,10 @@ focus_tree = {
 					check_variable = { DEN.DEN_overlord_nation = GER }
 				}
 				909 = { 
+					set_state_flag = DEN_buffert_zone_state_flag
+					add_claim_by = DEN 
+				} 
+				1728 = { 
 					set_state_flag = DEN_buffert_zone_state_flag
 					add_claim_by = DEN 
 				} 
@@ -4025,6 +4033,7 @@ focus_tree = {
 			OR = {
 				100 = { NOT = {	is_controlled_by = ROOT }}
 				101 = { NOT = {	is_controlled_by = ROOT }}
+				1758 = { NOT = {	is_controlled_by = ROOT }} # KSRE (de 101)
 				337 = { NOT = {	is_controlled_by = ROOT }}
 			}
 		}
@@ -4081,9 +4090,10 @@ focus_tree = {
 			if = {
 				limit = {
 					101 = { NOT = {	is_controlled_by = ROOT }}
+					1758 = { NOT = {	is_controlled_by = ROOT }} # KSRE (de 101)
 					NOT = {
 						any_allied_country = {
-							controls_state = 101
+							controls_state = 101 controls_state = 1758
 						}
 					}
 				}
@@ -4093,8 +4103,18 @@ focus_tree = {
 							declare_war_on = {
 							    target = PREV
 							    type = take_state_focus
-							    generator = { 101 }
+							    generator = { 101 1758 }
 							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					1758 = { NOT = {	is_controlled_by = ROOT }}
+					NOT = {
+						any_allied_country = {
+							controls_state = 337
 						}
 					}
 				}
@@ -9170,20 +9190,22 @@ focus_tree = {
 				limit = {
 					GER = {
 						controls_state = 909
+						controls_state = 1728
 						controls_state = 58
 					}
 				}
 				create_wargoal = {
 					type = take_state_focus
 					target = GER
-					generator = { 909 58 } # optional 
+					generator = { 909 1728 58 } # optional 
 				}
 			}
 			if = {
 				limit = {
 					GER = {
 						OR = {
-							NOT = { controls_state = 909 }
+							NOT = { controls_state = 909 controls_state = 1728 }
+							NOT = { controls_state = 1728 }
 							NOT = { controls_state = 58 }
 						}
 					}
@@ -9191,13 +9213,26 @@ focus_tree = {
 				every_other_country = {
 					limit =  {
 						NOT = { original_tag = DEN }
-						controls_state = 909
+						controls_state = 909 controls_state = 1728
 					}
 					ROOT = {
 						create_wargoal = {
 							type = take_state
 							target = PREV
 							generator = 909
+						}
+					}
+				}
+				every_other_country = {
+					limit =  {
+						NOT = { original_tag = DEN }
+						controls_state = 1728
+					}
+					ROOT = {
+						create_wargoal = {
+							type = take_state
+							target = PREV
+							generator = 1728
 						}
 					}
 				}
@@ -9220,6 +9255,10 @@ focus_tree = {
 			909 = { 
 				set_state_flag = DEN_southern_baltic_sea_state_flag
 				add_claim_by = ROOT 
+			}
+			1728 = { 
+				set_state_flag = DEN_southern_baltic_sea_state_flag
+				add_claim_by = ROOT 
 			} 
 			58 = { 
 				set_state_flag = DEN_southern_baltic_sea_state_flag
@@ -9237,6 +9276,14 @@ focus_tree = {
 				set_state_flag = DEN_southern_baltic_sea_state_flag
 				add_claim_by = ROOT 
 			}	
+			1539 = { 
+				set_state_flag = DEN_southern_baltic_sea_state_flag
+				add_claim_by = ROOT 
+			}
+			1538 = { 
+				set_state_flag = DEN_southern_baltic_sea_state_flag
+				add_claim_by = ROOT 
+			}
 		}
 	}
 
@@ -10228,6 +10275,7 @@ focus_tree = {
 
 		available = {
 			101 = { is_fully_controlled_by = ROOT }
+			1758 = { is_fully_controlled_by = ROOT } # KSRE (de 101)
 			if = {
 				limit = {
 					is_subject = yes

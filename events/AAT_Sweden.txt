@@ -3762,9 +3762,12 @@ country_event = { #yes
 				101 = {
 					is_owned_and_controlled_by = ROOT  
 				}
+				1758 = { # KSRE (de 101)
+					is_owned_and_controlled_by = ROOT  
+				}
 			}
 
-			FROM = { transfer_state = 101 }
+			FROM = { transfer_state = 101 transfer_state = 1758 }
 		}
 
 		if = {
@@ -3821,7 +3824,7 @@ country_event = { #yes
 				create_wargoal = {
 					type = take_state_focus
 					target = PREV
-					generator = { 337 101 } # optional 
+					generator = { 337 101 1758 } # optional 
 				}
 
 				create_wargoal = {
@@ -3862,6 +3865,9 @@ country_event = { #overseas territories is accepted
 					101 = {
 						is_owned_and_controlled_by = ROOT
 					}
+					1758 = { # KSRE (de 101)
+						is_owned_and_controlled_by = ROOT
+					}
 				}
 
 				101 = {
@@ -3896,7 +3902,7 @@ country_event = { #overseas is rejected
 		create_wargoal = {
 			type = take_state_focus
 			target = FROM
-			generator = { 337 101 } # optional 
+			generator = { 337 101 1758 } # optional 
 		}
 
 		create_wargoal = {

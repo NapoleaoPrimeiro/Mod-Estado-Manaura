@@ -389,6 +389,7 @@ HOL_prepare_the_inundation_lines = {
 		available = {
 			has_war = yes
 			7 = { is_fully_controlled_by = ROOT }
+			1292 = { is_fully_controlled_by = ROOT } # KSRE (de 7)
 		}
 
 		cost = 25
@@ -407,7 +408,7 @@ HOL_prepare_the_inundation_lines = {
 		}
 
 		highlight_states = {
-			highlight_state_targets = { state = 7 }
+			highlight_state_targets = { state = 7 state = 1292 }
 			highlight_provinces = {
 				9498
 				391
@@ -423,6 +424,7 @@ HOL_prepare_the_inundation_lines = {
 		visible = {
 			HOL = { has_completed_focus = HOL_prepare_the_inundation_lines }
 			7 = { is_fully_controlled_by = ROOT }
+			1292 = { is_fully_controlled_by = ROOT } # KSRE (de 7)
 			NOT = { has_global_flag = HOL_inundation_lines_flooded }
 		}
 
@@ -430,6 +432,7 @@ HOL_prepare_the_inundation_lines = {
 			if = {
 				limit = {
 					7 = { is_fully_controlled_by = ROOT }
+					1292 = { is_fully_controlled_by = ROOT } # KSRE (de 7)
 				}
 				7 = {
 					add_province_modifier = {
@@ -512,6 +515,7 @@ HOL_prepare_the_inundation_lines = {
 
 		available = {
 			7 = { is_fully_controlled_by = ROOT }
+			1292 = { is_fully_controlled_by = ROOT } # KSRE (de 7)
 		}
 
 		cost = 25
@@ -535,7 +539,7 @@ HOL_prepare_the_inundation_lines = {
 		}
 
 		highlight_states = {
-			highlight_state_targets = { state = 7 }
+			highlight_state_targets = { state = 7 state = 1292 }
 			highlight_provinces = {
 				9498
 				391
@@ -550,6 +554,7 @@ HOL_prepare_the_inundation_lines = {
 		visible = {
 			HOL = { has_completed_focus = HOL_prepare_the_inundation_lines }
 			7 = { is_fully_controlled_by = ROOT }
+			1292 = { is_fully_controlled_by = ROOT } # KSRE (de 7)
 			has_global_flag = HOL_inundation_lines_flooded
 		}
 
@@ -1948,9 +1953,9 @@ HOL_request_allied_favors = {
 
 		available = {
 			has_war = yes
-			NOT = { controls_state = 7 }
-			NOT = { controls_state = 35 }
-			NOT = { controls_state = 36 }
+			NOT = { controls_state = 7 controls_state = 1292 }
+			NOT = { controls_state = 35 controls_state = 1255 controls_state = 1293 controls_state = 1297 controls_state = 1376 }
+			NOT = { controls_state = 36 controls_state = 1552 }
 			has_capitulated = yes
 			has_legitimacy > 40
 		}

@@ -4454,6 +4454,69 @@ focus_tree = {
 					}
 				}
 			}
+			# KSRE: West Cameroon
+			if = {
+				limit = {
+					has_full_control_of_state = 1760
+					has_full_control_of_state = 1761
+					has_full_control_of_state = 1762
+				}
+				release = WCM
+				WCM = { set_cosmetic_tag = WCM_british_cameroons }
+				hidden_effect = {
+					WCM = {
+						if = {
+							limit = {
+								NOT = {
+									owns_state = 1760
+								}
+							}
+							transfer_state = 1760
+							1760 = { add_core_of = PREV }
+						}
+						if = {
+							limit = {
+								NOT = {
+									owns_state = 1761
+								}
+							}
+							transfer_state = 1761
+							1761 = { add_core_of = PREV }
+						}
+						if = {
+							limit = {
+								NOT = {
+									owns_state = 1762
+								}
+							}
+							transfer_state = 1762
+							1762 = { add_core_of = PREV }
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_dlc = "Together for Victory"
+					}
+					set_autonomy = { target = WCM autonomy_state = autonomy_dominion }
+				}
+				if = {
+					limit = {
+						NOT = { has_dlc = "Together for Victory" }
+					}
+					puppet = WCM
+				}
+				hidden_effect = {
+					every_other_country = {
+						limit = {
+							has_war_with = ENG
+						}
+						WCM = {
+							add_to_war = { targeted_alliance = ENG enemy = PREV hostility_reason = asked_to_join }
+						}
+					}
+				}
+			}
 			if = {
 				limit = {
 					has_full_control_of_state = 183
@@ -4507,8 +4570,8 @@ focus_tree = {
 				has_full_control_of_state = 545
 				has_full_control_of_state = 542
 				has_full_control_of_state = 558
-				has_full_control_of_state = 900
-				has_full_control_of_state = 901
+				has_full_control_of_state = 900 has_full_control_of_state = 1760 has_full_control_of_state = 1761
+				has_full_control_of_state = 901 has_full_control_of_state = 1762
 				has_full_control_of_state = 902
 				has_full_control_of_state = 274
 				has_full_control_of_state = 700
@@ -4540,8 +4603,8 @@ focus_tree = {
 					NOT = { owns_state = 545 }
 					NOT = { owns_state = 542 }
 					NOT = { owns_state = 558 }
-					NOT = { owns_state = 900 }
-					NOT = { owns_state = 901 }
+					NOT = { owns_state = 900 owns_state = 1760 owns_state = 1761 }
+					NOT = { owns_state = 901 owns_state = 1762 }
 					NOT = { owns_state = 902 }
 					NOT = { owns_state = 274 }
 					NOT = { owns_state = 700 }
@@ -4853,8 +4916,8 @@ focus_tree = {
 			if = {
 				limit = {
 					has_full_control_of_state = 558
-					has_full_control_of_state = 900
-					has_full_control_of_state = 901
+					has_full_control_of_state = 900 has_full_control_of_state = 1760 has_full_control_of_state = 1761
+					has_full_control_of_state = 901 has_full_control_of_state = 1762
 					has_full_control_of_state = 902
 				}
 				release = NGA
@@ -4974,8 +5037,8 @@ focus_tree = {
 		available = { 
 			is_subject = no
 			OR = {
-				has_full_control_of_state = 454
-				has_full_control_of_state = 455
+				has_full_control_of_state = 454 has_full_control_of_state = 1133 has_full_control_of_state = 1134 has_full_control_of_state = 1135 has_full_control_of_state = 1137 has_full_control_of_state = 1138 has_full_control_of_state = 1139 has_full_control_of_state = 1140
+				has_full_control_of_state = 455 has_full_control_of_state = 1780 has_full_control_of_state = 1781
 				has_full_control_of_state = 453
 				has_full_control_of_state = 452
 				has_full_control_of_state = 447
@@ -4993,8 +5056,8 @@ focus_tree = {
 		bypass = {
 			NOT = {
 				OR = {
-					owns_state = 454
-					owns_state = 455
+					owns_state = 454 owns_state = 1133 owns_state = 1134 owns_state = 1135 owns_state = 1137 owns_state = 1138 owns_state = 1139 owns_state = 1140
+					owns_state = 455 owns_state = 1780 owns_state = 1781
 					owns_state = 453
 					owns_state = 452
 					owns_state = 447
@@ -5027,7 +5090,7 @@ focus_tree = {
 			add_manpower = 50000
 			if = {
 				limit = {
-					has_full_control_of_state = 454
+					has_full_control_of_state = 454 has_full_control_of_state = 1133 has_full_control_of_state = 1134 has_full_control_of_state = 1135 has_full_control_of_state = 1137 has_full_control_of_state = 1138 has_full_control_of_state = 1139 has_full_control_of_state = 1140
 					date < 1939.01.01
 				}
 				release = PAL
@@ -5056,7 +5119,7 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					has_full_control_of_state = 454
+					has_full_control_of_state = 454 has_full_control_of_state = 1133 has_full_control_of_state = 1134 has_full_control_of_state = 1135 has_full_control_of_state = 1137 has_full_control_of_state = 1138 has_full_control_of_state = 1139 has_full_control_of_state = 1140
 					date > 1939.01.01
 				}
 				release = ISR
@@ -5121,7 +5184,7 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					has_full_control_of_state = 455
+					has_full_control_of_state = 455 has_full_control_of_state = 1780 has_full_control_of_state = 1781
 				}
 				release = JOR
 				if = {
@@ -5301,27 +5364,27 @@ focus_tree = {
 		available = { 
 			is_subject = no
 			OR = {
-			has_full_control_of_state = 311
+			has_full_control_of_state = 311 has_full_control_of_state = 1368
 			has_full_control_of_state = 690
 			has_full_control_of_state = 693
 			has_full_control_of_state = 689
-			has_full_control_of_state = 691
-			has_full_control_of_state = 692
-			has_full_control_of_state = 308
-			has_full_control_of_state = 687
+			has_full_control_of_state = 691 has_full_control_of_state = 1370
+			has_full_control_of_state = 692 has_full_control_of_state = 1371 has_full_control_of_state = 1372 has_full_control_of_state = 1373
+			has_full_control_of_state = 308 has_full_control_of_state = 1377 has_full_control_of_state = 1378 has_full_control_of_state = 1379
+			has_full_control_of_state = 687 has_full_control_of_state = 1214 has_full_control_of_state = 1217 has_full_control_of_state = 1233
 		}
 		}
 		bypass = {
 			NOT = {
 				AND = {
-					owns_state = 311
+					owns_state = 311 owns_state = 1368
 					owns_state = 690
 					owns_state = 693
 					owns_state = 689
-					owns_state = 691
-					owns_state = 692
-					owns_state = 308
-					owns_state = 687
+					owns_state = 691 owns_state = 1370
+					owns_state = 692 owns_state = 1371 owns_state = 1372 owns_state = 1373
+					owns_state = 308 owns_state = 1377 owns_state = 1378 owns_state = 1379
+					owns_state = 687 owns_state = 1214 owns_state = 1217 owns_state = 1233
 		}
 			}
 		}
@@ -5342,7 +5405,7 @@ focus_tree = {
 			add_manpower = 50000
 			if = {
 				limit = {
-					has_full_control_of_state = 311
+					has_full_control_of_state = 311 has_full_control_of_state = 1368
 				}
 				release = BLZ
 				if = {
@@ -5427,7 +5490,7 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					has_full_control_of_state = 691
+					has_full_control_of_state = 691 has_full_control_of_state = 1370
 				}
 				release = TRI
 				if = {
@@ -5455,8 +5518,8 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					has_full_control_of_state = 692
-					has_full_control_of_state = 308
+					has_full_control_of_state = 692 has_full_control_of_state = 1371 has_full_control_of_state = 1372 has_full_control_of_state = 1373
+					has_full_control_of_state = 308 has_full_control_of_state = 1377 has_full_control_of_state = 1378 has_full_control_of_state = 1379
 				}
 				release = BAS
 				if = {
@@ -5484,7 +5547,7 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					has_full_control_of_state = 687
+					has_full_control_of_state = 687 has_full_control_of_state = 1214 has_full_control_of_state = 1217 has_full_control_of_state = 1233
 				}
 				release = GYA
 				if = {
@@ -10238,7 +10301,7 @@ focus_tree = {
 			create_wargoal = {
 				type = take_state_focus
 				target = IRQ
-				generator = { 291 }
+				generator = { 291 1276 1283 1284 1285 }
 				expire = 0
 			}
 		}
@@ -10246,7 +10309,7 @@ focus_tree = {
 	focus = {
 		id = uk_iran_focus
 		prerequisite = { focus = uk_iraq_focus }
-		icon = GFX_focus_generic_attack_iran
+		icon = GFX_goal_generic_forceful_treaty
 		x = 0
 		y = 1
 		relative_position_id = uk_iraq_focus
@@ -10848,7 +10911,7 @@ focus_tree = {
 			has_war_with_major = yes
 			OR = {
 				any_enemy_country = {
-					controls_state = 16
+					controls_state = 16 controls_state = 1517 controls_state = 1518 controls_state = 1519 controls_state = 1520
 					controls_state = 142
 				}
 				has_completed_focus = ENG_maintaining_imperial_integrity
@@ -11552,7 +11615,7 @@ focus_tree = {
 		available = {
 			has_war_with = GER
 			any_enemy_country = {
-				controls_state = 15
+				controls_state = 15 controls_state = 1403
 			}
 			any_state = {
 				is_core_of = ITA
@@ -11664,7 +11727,7 @@ focus_tree = {
 		available = {
 			has_war_with = GER
 			any_enemy_country = {
-				controls_state = 36
+				controls_state = 36 controls_state = 1552
 			}
 			custom_trigger_tooltip = {
 				tooltip = ENG_currently_doing_strategic_operation_flag_not_tt
@@ -11740,7 +11803,7 @@ focus_tree = {
 				}
 			}
 			any_enemy_country = {
-				controls_state = 64
+				controls_state = 64 controls_state = 1268 controls_state = 1269 controls_state = 1542 controls_state = 1544
 			}
 			custom_trigger_tooltip = {
 				tooltip = ENG_currently_doing_strategic_operation_flag_not_tt
@@ -11765,6 +11828,18 @@ focus_tree = {
 					}
 				}
 				64 = {
+					is_controlled_by = SOV
+				}
+				1268 = { # KSRE (de 64)
+					is_controlled_by = SOV
+				}
+				1269 = { # KSRE (de 64)
+					is_controlled_by = SOV
+				}
+				1542 = { # KSRE (de 64)
+					is_controlled_by = SOV
+				}
+				1544 = { # KSRE (de 64)
 					is_controlled_by = SOV
 				}
 			}
@@ -12638,7 +12713,7 @@ focus_tree = {
 							create_wargoal = {
 								type = take_claimed_state
 								target = PREV
-								generator = { 15 }
+								generator = { 15 1403 }
 							}
 						}
 					}
@@ -12659,7 +12734,7 @@ focus_tree = {
 			controls_state = 141
 			controls_state = 37
 			controls_state = 100
-			controls_state = 101
+			controls_state = 101 controls_state = 1758
 			custom_trigger_tooltip = {
 				tooltip = ENG_has_formed_nse_tt
 				has_country_flag = ENG_has_formed_nse_flag
@@ -12736,8 +12811,8 @@ focus_tree = {
 			every_state = {
 				limit = {
 					OR = {
-						state = 195
-						state = 208
+						state = 195 state = 1289
+						state = 208 state = 1290
 						AND = {
 							is_controlled_by = SOV
 							OR = {
@@ -13000,7 +13075,7 @@ focus_tree = {
 				limit = {
 					OR = {
 						state = 56
-						state = 59
+						state = 59 state = 1545
 					}
 				}
 				add_claim_by = ROOT
@@ -13301,32 +13376,32 @@ focus_tree = {
 				every_state = {
 					limit = {
 						OR = {
-							state = 52
-							state = 50
-							state = 53
+							state = 52 state = 1549 state = 1550
+							state = 50 state = 1547
+							state = 53 state = 1548
 							state = 152
-							state = 4
+							state = 4 state = 1553
 							state = 975
-							state = 70
-							state = 664
-							state = 155
-							state = 43
+							state = 70 state = 1146 state = 1147
+							state = 664 state = 1560
+							state = 155 state = 1384 state = 1703
+							state = 43 state = 1235
 							state = 973
 							state = 974
-							state = 45
-							state = 109
+							state = 45 state = 1477 state = 1705
+							state = 109 state = 1706 state = 1707
 							state = 107
-							state = 764
-							state = 108
-							state = 82
+							state = 764 state = 1478
+							state = 108 state = 1709 state = 1710 state = 1721 state = 1777
+							state = 82 state = 1479
 							state = 81
-							state = 48
+							state = 48 state = 1719
 							state = 801
 							state = 77
-							state = 46
-							state = 971
-							state = 79
-							state = 766
+							state = 46 state = 1312
+							state = 971 state = 1295
+							state = 79 state = 1267
+							state = 766 state = 1092
 						}
 					}
 					add_claim_by = ROOT
@@ -13493,7 +13568,7 @@ focus_tree = {
 							create_wargoal = {
 								target = PREV
 								type = take_state_focus
-								generator = { 454 }
+								generator = { 454 1133 1134 1135 1137 1138 1139 1140 }
 							}
 						}
 					}
@@ -13520,7 +13595,7 @@ focus_tree = {
 							create_wargoal = {
 								target = PREV
 								type = take_state_focus
-								generator = { 2 }
+								generator = { 2 1404 }
 							}
 						}
 					}
@@ -13547,7 +13622,7 @@ focus_tree = {
 							create_wargoal = {
 								target = PREV
 								type = take_state_focus
-								generator = { 797 }
+								generator = { 797 1223 }
 							}
 						}
 					}
@@ -13574,7 +13649,7 @@ focus_tree = {
 							create_wargoal = {
 								target = PREV
 								type = take_state_focus
-								generator = { 219 }
+								generator = { 219 1105 1106 1107 1113 1114 1115 }
 							}
 						}
 					}
@@ -13601,7 +13676,7 @@ focus_tree = {
 			}
 		}
 		bypass = {
-			controls_state = 2
+			controls_state = 2 controls_state = 1404
 		}
 		icon = GFX_focus_ENG_attack_vatican
 		x = -2
@@ -13618,7 +13693,7 @@ focus_tree = {
 						create_wargoal = {
 							target = PREV
 							type = take_state_focus
-							generator = { 2 }
+							generator = { 2 1404 }
 						}
 					}
 				}
@@ -16168,7 +16243,7 @@ focus_tree = {
 					OR = {
 						AND = {
 							NOT = { original_tag = PUE }
-							owns_state = 686
+							owns_state = 686 owns_state = 1380
 							has_full_control_of_state = 686
 						}
 						PUE = {
@@ -16179,16 +16254,16 @@ focus_tree = {
 						}
 						AND = {
 							NOT = { original_tag = GDL }
-							owns_state = 694
+							owns_state = 694 owns_state = 1374 owns_state = 1375
 							has_full_control_of_state = 694
 						}
 						AND = {
 							NOT = { original_tag = SYR }
 							owns_state = 677
 							has_full_control_of_state = 677
-							owns_state = 680
+							owns_state = 680 owns_state = 1330 owns_state = 1779
 							has_full_control_of_state = 680
-							owns_state = 554
+							owns_state = 554 owns_state = 1136
 							has_full_control_of_state = 554
 						}
 						AND = {
@@ -16251,27 +16326,27 @@ focus_tree = {
 						}
 						AND = {
 							NOT = { original_tag = RCG }
-							owns_state = 772
+							owns_state = 772 owns_state = 1766 owns_state = 1767 owns_state = 1768
 							has_full_control_of_state = 772
 						}
 						AND = {
 							NOT = { original_tag = GAB }
-							owns_state = 539
+							owns_state = 539 owns_state = 1769
 							has_full_control_of_state = 539
 						}
 						AND = {
 							NOT = { original_tag = CMR }
-							owns_state = 773
+							owns_state = 773 owns_state = 1770
 							has_full_control_of_state = 773
 						}
 						AND = {
 							NOT = { original_tag = CAR }
-							owns_state = 660
+							owns_state = 660 owns_state = 1764 owns_state = 1765
 							has_full_control_of_state = 660
 						}
 						AND = {
 							NOT = { original_tag = CHA }
-							owns_state = 774
+							owns_state = 774 owns_state = 1763
 							has_full_control_of_state = 774
 							owns_state = 775
 							has_full_control_of_state = 775
@@ -16280,7 +16355,7 @@ focus_tree = {
 							NOT = { original_tag = NGR }
 							owns_state = 781
 							has_full_control_of_state = 781
-							owns_state = 515
+							owns_state = 515 owns_state = 1759
 							has_full_control_of_state = 515
 						}
 						AND = {
@@ -16322,7 +16397,7 @@ focus_tree = {
 						}
 						AND = {
 							NOT = { original_tag = CAY }
-							owns_state = 310
+							owns_state = 310 owns_state = 1393 owns_state = 1394
 							has_full_control_of_state = 310
 						}
 						GDL = {
@@ -16416,7 +16491,7 @@ focus_tree = {
 							has_full_control_of_state = 451
 							owns_state = 663
 							has_full_control_of_state = 663
-							owns_state = 273
+							owns_state = 273 owns_state = 1756 owns_state = 1757
 							has_full_control_of_state = 273
 						}
 						AND = {
@@ -16448,14 +16523,14 @@ focus_tree = {
 						}
 						AND = {
 							NOT = { original_tag = KOR }
-							owns_state = 527
+							owns_state = 527 owns_state = 1318 owns_state = 1322 owns_state = 1328 owns_state = 1329
 							has_full_control_of_state = 527
-							owns_state = 525
+							owns_state = 525 owns_state = 1316 owns_state = 1317
 							has_full_control_of_state = 525
 						}
 						AND = {
 							original_tag = JAP
-							owns_state = 609
+							owns_state = 609 owns_state = 1487 owns_state = 1488
 							has_full_control_of_state = 609
 						}
 						AND = {
@@ -16498,7 +16573,7 @@ focus_tree = {
 						}
 						AND = {
 							NOT = { original_tag = INS }
-							owns_state = 721
+							owns_state = 721 owns_state = 1341
 							has_full_control_of_state = 721
 						}
 						AND = {
@@ -18954,7 +19029,7 @@ focus_tree = {
 			every_country = {
 				limit = {
 					OR = {
-						controls_state = 101
+						controls_state = 101 controls_state = 1758
 						controls_state = 100
 						controls_state = 337
 						has_subject = GRN
@@ -20778,7 +20853,7 @@ focus_tree = {
 		prerequisite = { focus = ENG_restore_bavaria }
 		mutually_exclusive = {  }
 		available = {
-			controls_state = 52
+			controls_state = 52 controls_state = 1549 controls_state = 1550
 		}
 		bypass = {
 		}
@@ -20811,8 +20886,8 @@ focus_tree = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = ENG_controls_habsburg_areas_tt
-				controls_state = 3
-				controls_state = 4
+				controls_state = 3 controls_state = 1508 controls_state = 1515
+				controls_state = 4 controls_state = 1553
 			}
 		}
 		bypass = {
@@ -20923,9 +20998,9 @@ focus_tree = {
 		prerequisite = { focus = ENG_meet_the_pope }
 		mutually_exclusive = {  }
 		available = {
-			controls_state = 64
-			controls_state = 52
-			controls_state = 4
+			controls_state = 64 controls_state = 1268 controls_state = 1269 controls_state = 1542 controls_state = 1544
+			controls_state = 52 controls_state = 1549 controls_state = 1550
+			controls_state = 4 controls_state = 1553
 		}
 		bypass = {
 		}
@@ -20950,7 +21025,7 @@ focus_tree = {
 		prerequisite = { focus = ENG_restore_the_hre }
 		mutually_exclusive = {  }
 		available = {
-			controls_state = 2
+			controls_state = 2 controls_state = 1404
 		}
 		bypass = {
 		}
@@ -21074,7 +21149,7 @@ focus_tree = {
 		prerequisite = { focus = ENG_correct_the_treaty_of_london }
 		mutually_exclusive = { focus = ENG_recognize_the_frisians }
 		available = {
-			controls_state = 36
+			controls_state = 36 controls_state = 1552
 		}
 		icon = GFX_focus_ENG_befriend_low_germans
 		x = 1
@@ -21109,11 +21184,11 @@ focus_tree = {
 				limit = {
 					OR = {
 						state = 56
-						state = 59
-						state = 909
+						state = 59 state = 1545
+						state = 909 state = 1728
 						state = 58
-						state = 57
-						state = 64
+						state = 57 state = 1413
+						state = 64 state = 1268 state = 1269 state = 1542 state = 1544
 						state = 62
 						state = 61
 					}
@@ -21128,11 +21203,11 @@ focus_tree = {
 					}
 					OR = {
 						controls_state = 56
-						controls_state = 59
-						controls_state = 909
+						controls_state = 59 controls_state = 1545
+						controls_state = 909 controls_state = 1728
 						controls_state = 58
-						controls_state = 57
-						controls_state = 64
+						controls_state = 57 controls_state = 1413
+						controls_state = 64 controls_state = 1268 controls_state = 1269 controls_state = 1542 controls_state = 1544
 						controls_state = 62
 						controls_state = 61
 					}
@@ -21167,13 +21242,19 @@ focus_tree = {
 			360 = {
 				add_claim_by = ROOT
 			}
+			1735 = { # KSRE (de 360)
+				add_claim_by = ROOT
+			}
+			1736 = { # KSRE (de 360)
+				add_claim_by = ROOT
+			}
 			every_country = {
 				limit = {
 					NOT = {
 						tag = ROOT
 						is_subject_of = ROOT
 					}
-					controls_state = 360
+					controls_state = 360 controls_state = 1735 controls_state = 1736
 				}
 				ROOT = {
 					create_wargoal = {
@@ -21192,7 +21273,7 @@ focus_tree = {
 		prerequisite = { focus = ENG_correct_the_treaty_of_london }
 		mutually_exclusive = { focus = ENG_recognize_the_low_germans }
 		available = {
-			controls_state = 36
+			controls_state = 36 controls_state = 1552
 		}
 		icon = GFX_focus_ENG_befriend_frisians
 		x = -1
@@ -21227,8 +21308,8 @@ focus_tree = {
 				limit = {
 					OR = {
 						state = 56
-						state = 59
-						state = 909
+						state = 59 state = 1545
+						state = 909 state = 1728
 					}
 				}
 				add_claim_by = ROOT
@@ -21241,8 +21322,8 @@ focus_tree = {
 					}
 					OR = {
 						controls_state = 56
-						controls_state = 59
-						controls_state = 909
+						controls_state = 59 controls_state = 1545
+						controls_state = 909 controls_state = 1728
 					}
 				}
 				ROOT = {
@@ -21277,7 +21358,7 @@ focus_tree = {
 				limit = {
 					OR = {
 						state = 21
-						state = 51
+						state = 51 state = 1253
 					}
 				}
 				add_claim_by = ROOT
@@ -21290,7 +21371,7 @@ focus_tree = {
 					}
 					OR = {
 						controls_state = 21
-						controls_state = 51
+						controls_state = 51 controls_state = 1253
 					}
 				}
 				ROOT = {
@@ -21324,8 +21405,8 @@ focus_tree = {
 			every_state = {
 				limit = {
 					OR = {
-						state = 358
-						state = 359
+						state = 358 state = 1418 state = 1737 state = 1738 state = 1739 state = 1740
+						state = 359 state = 1734
 					}
 				}
 				add_claim_by = ROOT
@@ -21337,8 +21418,8 @@ focus_tree = {
 						is_subject_of = ROOT
 					}
 					OR = {
-						controls_state = 358
-						controls_state = 359
+						controls_state = 358 controls_state = 1418 controls_state = 1737 controls_state = 1738 controls_state = 1739 controls_state = 1740
+						controls_state = 359 controls_state = 1734
 					}
 				}
 				ROOT = {
@@ -21430,8 +21511,8 @@ focus_tree = {
 				limit = {
 					OR = {
 						state = 85
-						state = 807
-						state = 86
+						state = 807 state = 1554
+						state = 86 state = 1389
 						state = 762
 						state = 188
 					}
@@ -21446,8 +21527,8 @@ focus_tree = {
 					}
 					OR = {
 						controls_state = 85
-						controls_state = 807
-						controls_state = 86
+						controls_state = 807 controls_state = 1554
+						controls_state = 86 controls_state = 1389
 						controls_state = 762
 						controls_state = 188
 					}

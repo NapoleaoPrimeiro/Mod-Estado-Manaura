@@ -1,0 +1,30 @@
+capital = 46
+
+set_research_slots = 2
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1935.12.9"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 55
+	fascism = 13
+	communism = 7
+	neutrality = 25
+}
+
+1939.1.1 = {
+	set_politics = {
+		ruling_party = democratic
+		last_election = "1936.6.10"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+}
+
+recruit_character = WLH_democratic_leader
+recruit_character = WLH_communism_leader
+recruit_character = WLH_fascism_leader
+recruit_character = WLH_neutrality_leader

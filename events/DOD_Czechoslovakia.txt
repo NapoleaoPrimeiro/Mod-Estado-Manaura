@@ -250,10 +250,27 @@ country_event = {
 	
 	option = {
 		name = excellent
+		add_state_claim = 88
+		add_state_claim = 1529
+		add_state_claim = 1385
+		add_state_claim = 1386
+		add_state_claim = 1528
+		add_state_claim = 1265
+		add_state_claim = 1775
+		add_state_claim = 1483
+		add_state_claim = 91
+		add_state_claim = 1400
+		add_state_claim = 89
+		add_state_claim = 1531
+		add_state_claim = 1532
+		add_state_claim = 1399
+		add_state_claim = 1144
+		add_state_claim = 1145
+		add_state_claim = 1425
 		create_wargoal = {
 			type = take_state_focus
 			target = POL
-			generator = { 88 89 90 91 792 }
+			generator = { 88 89 90 91 792 1144 1145 1265 1385 1386 1399 1425 1483 1528 1529 1775 1532 1143 1531 }
 		}
 		hidden_effect = {
 			
@@ -334,10 +351,27 @@ country_event = {
 	
 	option = {
 		name = excellent
+		add_state_claim = 88
+		add_state_claim = 1529
+		add_state_claim = 1385
+		add_state_claim = 1386
+		add_state_claim = 1528
+		add_state_claim = 1265
+		add_state_claim = 1775
+		add_state_claim = 1483
+		add_state_claim = 91
+		add_state_claim = 1400
+		add_state_claim = 89
+		add_state_claim = 1531
+		add_state_claim = 1532
+		add_state_claim = 1399
+		add_state_claim = 1144
+		add_state_claim = 1145
+		add_state_claim = 1425
 		create_wargoal = {
 			type = take_state_focus
 			target = POL
-			generator = { 88 89 90 91 }
+			generator = { 88 1529 1385 1386 1528 1265 1775 1483 91 1400 89 1531 1532 1399 1144 1145 1425 }
 		}
 		
 		hidden_effect = {
@@ -378,52 +412,105 @@ country_event = {
 		#		ideology = neutrality
 		#		size = 0.45
 		#		capital = 70
-		#		states = { 70 71 664 73 }
+		#		states = { 70 71 664 73 1294 1560 1146 1147 1148 1149 }
 		#	}
 
 		SLO = {
 			if = {
 				limit = {
 					CZE = {
-						owns_state = 70
+						owns_state = 70 owns_state = 1146 owns_state = 1147
 					}
 				}
-				transfer_state = 70
+				transfer_state = 70 transfer_state = 1146 transfer_state = 1147
 			}
 			if = {
 				limit = {
 					CZE = {
-						owns_state = 71
+						owns_state = 71 owns_state = 1148 owns_state = 1149
 					}
 				}
-				transfer_state = 71
+				transfer_state = 71 transfer_state = 1148 transfer_state = 1149
 			}
 			if = {
 				limit = {
 					CZE = {
-						owns_state = 73
+						owns_state = 73 owns_state = 1294
 					}
 				}
-				transfer_state = 73
+				transfer_state = 73 transfer_state = 1294
 			}
 			if = {
 				limit = {
 					CZE = {
-						owns_state = 664
+						owns_state = 1294
 					}
 				}
-				transfer_state = 664
+				transfer_state = 1294
 			}
-			
+			if = {
+				limit = {
+					CZE = {
+						owns_state = 664 owns_state = 1560
+					}
+				}
+				transfer_state = 664 transfer_state = 1560
+			}
+			if = {
+				limit = {
+					CZE = {
+						owns_state = 1560
+					}
+				}
+				transfer_state = 1560
+			}
+			if = {
+				limit = {
+					CZE = {
+						owns_state = 1146
+					}
+				}
+				transfer_state = 1146
+			}
+			if = {
+				limit = {
+					CZE = {
+						owns_state = 1147
+					}
+				}
+				transfer_state = 1147
+			}
+			if = {
+				limit = {
+					CZE = {
+						owns_state = 1148
+					}
+				}
+				transfer_state = 1148
+			}
+			if = {
+				limit = {
+					CZE = {
+						owns_state = 1149
+					}
+				}
+				transfer_state = 1149
+			}
 		}
 		declare_war_on = {
 			target = SLO
 			type = annex_everything
 		}
-		SLO = { add_state_core = 70 }
-		SLO = { add_state_core = 71 }
-		SLO = { add_state_core = 73 }
-		SLO = { add_state_core = 664 }
+		SLO = { add_state_core = 70 add_state_core = 1146 add_state_core = 1147 }
+		SLO = { add_state_core = 71 add_state_core = 1148 add_state_core = 1149 }
+		SLO = { add_state_core = 73 add_state_core = 1294 }
+		SLO = { add_state_core = 1294 }
+		SLO = { add_state_core = 664 add_state_core = 1560 }
+		SLO = { add_state_core = 1560 }
+		SLO = { add_state_core = 1146 }
+		SLO = { add_state_core = 1147 }
+		SLO = { add_state_core = 1148 }
+		SLO = { add_state_core = 1149 }
 		
 		hidden_effect = {
 			SLO = {
@@ -639,15 +726,17 @@ country_event = {
 			factor = 100
 		}
 		GER = {
-			add_state_core = 69
+			add_state_core = 69 add_state_core = 1556
 			transfer_state = 69
 			add_state_core = 74
 			transfer_state = 74
+			add_state_core = 1727
+			transfer_state = 1727
 		}
 		if = {
 			limit = {
 				AUS = {
-					controls_state = 4
+					controls_state = 4 controls_state = 1553
 				}
 				OR = {
 					has_government = fascism
@@ -655,14 +744,14 @@ country_event = {
 				}
 			}
 			AUS = {
-				add_state_core = 972
+				add_state_core = 972 add_state_core = 1608
 				transfer_state = 972
 			}
 		}
 		else_if = {
 			limit = {
 				HUN = {
-					controls_state = 4
+					controls_state = 4 controls_state = 1553
 					controls_state = 152
 				}
 				OR = {
@@ -671,12 +760,12 @@ country_event = {
 				}
 			}
 			HUN = {
-				transfer_state = 972
+				transfer_state = 972 transfer_state = 1608
 			}
 		}
 		else = {
 			GER = {
-				add_state_core = 972
+				add_state_core = 972 add_state_core = 1608
 				transfer_state = 972
 			}
 		}
@@ -1008,7 +1097,13 @@ country_event = {
 			owns_state = 70
 			owns_state = 71
 			owns_state = 73
+			owns_state = 1294
 			owns_state = 664
+			owns_state = 1560
+			owns_state = 1146
+			owns_state = 1147
+			owns_state = 1148
+			owns_state = 1149
 		}
 		NOT = { has_war_with = SLO }
 		NOT = { has_global_flag = CZE_became_czech }
@@ -1034,7 +1129,13 @@ country_event = {
 			owns_state = 70
 			owns_state = 71
 			owns_state = 73
+			owns_state = 1294
 			owns_state = 664
+			owns_state = 1560
+			owns_state = 1146
+			owns_state = 1147
+			owns_state = 1148
+			owns_state = 1149
 		}
 		has_global_flag = CZE_became_czech
 	}
@@ -1047,7 +1148,13 @@ country_event = {
 		add_state_core = 70
 		add_state_core = 71
 		add_state_core = 73
+		add_state_core = 1294
 		add_state_core = 664
+		add_state_core = 1560
+		add_state_core = 1146
+		add_state_core = 1147
+		add_state_core = 1148
+		add_state_core = 1149
 		drop_cosmetic_tag = yes
 		clr_global_flag = CZE_became_czech
 	}
@@ -1155,22 +1262,22 @@ country_event = { # event for CZE and SOV - Romania Agrees
 				CZE = { puppet = TRA }
 				TRA = { set_politics = { ruling_party = communism elections_allowed = no } }
 				SOV = { puppet = ROM }
-				SOV = { transfer_state = 78 }
-				SOV = { transfer_state = 766 }
+				SOV = { transfer_state = 78 transfer_state = 1291 }
+				SOV = { transfer_state = 766 transfer_state = 1092 }
 				SOV = { transfer_state = 80 }
-				TRA = { transfer_state = 76 }
-				TRA = { transfer_state = 83 }
-				TRA = { transfer_state = 84 }
+				TRA = { transfer_state = 76 transfer_state = 1309 transfer_state = 1310 transfer_state = 1722 }
+				TRA = { transfer_state = 83 transfer_state = 1480 }
+				TRA = { transfer_state = 84 transfer_state = 1387 }
 				if = {
 					limit = {
 						YUG = {
 							has_completed_focus = YUG_recognize_the_soviet_union
 						}
 					}
-					YUG = { transfer_state = 82 }
+					YUG = { transfer_state = 82 transfer_state = 1479 }
 				}
 				else = {
-					TRA = { transfer_state = 82 }
+					TRA = { transfer_state = 82 transfer_state = 1479 }
 				}
 				if = {
 					limit = {
@@ -1203,14 +1310,14 @@ country_event = { #romania said no? wtf???  - - - event for SOV
 			create_wargoal = {
 				type = take_state_focus
 				target = ROM
-				generator = { 76 83 82 84 }
+				generator = { 76 83 82 84 1309 1310 1722 1480 1479 1387 }
 			}
 		}
 		SOV = {
 			create_wargoal = {
 				type = take_state_focus
 				target = ROM
-				generator = { 78 79 80 46 81  }
+				generator = { 78 79 80 46 81 1291 1267 1312 }
 			}
 			
 		}
@@ -1336,8 +1443,20 @@ country_event = { #sov wants peace after we took cze
 							is_owned_by = GER
 						}
 					}
+					1146 = { # KSRE (de 70)
+						OR = {
+							is_owned_by = CZE
+							is_owned_by = GER
+						}
+					}
+					1147 = { # KSRE (de 70)
+						OR = {
+							is_owned_by = CZE
+							is_owned_by = GER
+						}
+					}
 				}
-				SLO = { transfer_state = 70 }
+				SLO = { transfer_state = 70 transfer_state = 1146 transfer_state = 1147 }
 			}
 			if = {
 				limit = {
@@ -1347,6 +1466,8 @@ country_event = { #sov wants peace after we took cze
 						is_friend_or_potential_friend_of_GER = yes
 					}
 					154 = { is_owned_by = HUN }
+					1278 = { is_owned_by = HUN } # KSRE (de 154)
+					1700 = { is_owned_by = HUN } # KSRE (de 154)
 				}
 				HUN = { 
 					annex_country = {
@@ -1363,12 +1484,26 @@ country_event = { #sov wants peace after we took cze
 							is_owned_by = GER
 						}
 					}
+					1148 = { # KSRE (de 71)
+						OR = {
+							is_owned_by = CZE
+							is_owned_by = GER
+						}
+					}
+					1149 = { # KSRE (de 71)
+						OR = {
+							is_owned_by = CZE
+							is_owned_by = GER
+						}
+					}
 				}
-				SLO = { transfer_state = 71 }
+				SLO = { transfer_state = 71 transfer_state = 1148 transfer_state = 1149 }
 			}
 			if = {
 				limit = {
 					154 = { is_owned_by = HUN }
+					1278 = { is_owned_by = HUN } # KSRE (de 154)
+					1700 = { is_owned_by = HUN } # KSRE (de 154)
 					HUN = {
 						is_friend_or_potential_friend_of_GER = yes
 					}
@@ -1378,9 +1513,15 @@ country_event = { #sov wants peace after we took cze
 							is_owned_by = GER
 						}
 					}
+					1294 = { # KSRE (de 73)
+						OR = {
+							is_owned_by = CZE
+							is_owned_by = GER
+						}
+					}
 					country_exists = HUN
 				}
-				HUN = { transfer_state = 73 }
+				HUN = { transfer_state = 73 transfer_state = 1294 }
 			}
 		
 		
@@ -1396,8 +1537,14 @@ country_event = { #sov wants peace after we took cze
 							is_owned_by = GER
 						}
 					}
+					1294 = { # KSRE (de 73)
+						OR = {
+							is_owned_by = CZE
+							is_owned_by = GER
+						}
+					}
 				}
-				SLO = { transfer_state = 73 }
+				SLO = { transfer_state = 73 transfer_state = 1294 }
 			}
 		
 			if = {
@@ -1408,8 +1555,14 @@ country_event = { #sov wants peace after we took cze
 							is_owned_by = GER
 						}
 					}
+					1560 = { # KSRE (de 664)
+						OR = {
+							is_owned_by = CZE
+							is_owned_by = GER
+						}
+					}
 				}
-				SLO = { transfer_state = 664 }
+				SLO = { transfer_state = 664 transfer_state = 1560 }
 			}
 			if = {
 				limit = { country_exists = CZE }
@@ -1428,14 +1581,22 @@ country_event = { #sov wants peace after we took cze
 							is_owned_by = GER
 						}
 					}
+					1727 = { # KSRE (de 72)
+						OR = {
+							is_owned_by = CZE
+							is_owned_by = GER
+						}
+					}
 					country_exists = POL
 				}
-				POL = { transfer_state = 72 } # Give Poland Zaolzie
+				POL = { transfer_state = 72 transfer_state = 1727 } # Give Poland Zaolzie
 			}
 
 			if = {
 				limit = {
 					154 = { is_owned_by = HUN }
+					1278 = { is_owned_by = HUN } # KSRE (de 154)
+					1700 = { is_owned_by = HUN } # KSRE (de 154)
 					HUN = {
 						is_friend_or_potential_friend_of_GER = yes
 					}
@@ -1445,13 +1606,33 @@ country_event = { #sov wants peace after we took cze
 							is_owned_by = GER
 						}
 					}
+					1309 = { # KSRE (de 76)
+						OR = {
+							is_owned_by = CZE
+							is_owned_by = GER
+						}
+					}
+					1310 = { # KSRE (de 76)
+						OR = {
+							is_owned_by = CZE
+							is_owned_by = GER
+						}
+					}
+					1722 = { # KSRE (de 76)
+						OR = {
+							is_owned_by = CZE
+							is_owned_by = GER
+						}
+					}
 					country_exists = HUN
 				}
-				HUN = { transfer_state = 76 }
+				HUN = { transfer_state = 76 transfer_state = 1309 transfer_state = 1310 transfer_state = 1722 }
 			}
 			if = {
 				limit = {
 					154 = { is_owned_by = HUN }
+					1278 = { is_owned_by = HUN } # KSRE (de 154)
+					1700 = { is_owned_by = HUN } # KSRE (de 154)
 					HUN = {
 						is_friend_or_potential_friend_of_GER = yes
 					}
@@ -1461,13 +1642,21 @@ country_event = { #sov wants peace after we took cze
 							is_owned_by = GER
 						}
 					}
+					1387 = { # KSRE (de 84)
+						OR = {
+							is_owned_by = CZE
+							is_owned_by = GER
+						}
+					}
 					country_exists = HUN
 				}
-				HUN = { transfer_state = 84 }
+				HUN = { transfer_state = 84 transfer_state = 1387 }
 			}
 			if = {
 				limit = {
 					154 = { is_owned_by = HUN }
+					1278 = { is_owned_by = HUN } # KSRE (de 154)
+					1700 = { is_owned_by = HUN } # KSRE (de 154)
 					HUN = {
 						is_friend_or_potential_friend_of_GER = yes
 					}
@@ -1477,13 +1666,21 @@ country_event = { #sov wants peace after we took cze
 							is_owned_by = GER
 						}
 					}
+					1480 = { # KSRE (de 83)
+						OR = {
+							is_owned_by = CZE
+							is_owned_by = GER
+						}
+					}
 					country_exists = HUN
 				}
-				HUN = { transfer_state = 83 }
+				HUN = { transfer_state = 83 transfer_state = 1480 }
 			}
 			if = {
 				limit = {
 					154 = { is_owned_by = HUN }
+					1278 = { is_owned_by = HUN } # KSRE (de 154)
+					1700 = { is_owned_by = HUN } # KSRE (de 154)
 					HUN = {
 						is_friend_or_potential_friend_of_GER = yes
 					}
@@ -1493,15 +1690,21 @@ country_event = { #sov wants peace after we took cze
 							is_owned_by = GER
 						}
 					}
+					1479 = { # KSRE (de 82)
+						OR = {
+							is_owned_by = CZE
+							is_owned_by = GER
+						}
+					}
 					country_exists = HUN
 				}
-				HUN = { transfer_state = 82 }
+				HUN = { transfer_state = 82 transfer_state = 1479 }
 			}
 			every_state = {
 				limit = {
 					is_core_of = CZE
 					NOT = { is_core_of = SLO }
-					NOT = { state = 72 }
+					NOT = { state = 72 state = 1727 }
 				}
 				add_claim_by = GER
 			}

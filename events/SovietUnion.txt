@@ -185,8 +185,9 @@ country_event = {
 			if = { #NSB note: Now this will check for ownership and control so that in edge cases where there might be more than one controller, it won't break.
 				limit = {
 					78 = { is_owned_and_controlled_by = FROM }
+					1291 = { is_owned_and_controlled_by = FROM } # KSRE (de 78)
 				}
-				transfer_state = 78
+				transfer_state = 78 transfer_state = 1291
 			}
 			if = {
 				limit = {
@@ -197,8 +198,21 @@ country_event = {
 			if = {
 				limit = {
 					766 = { is_owned_and_controlled_by = FROM }
+					1092 = { is_owned_and_controlled_by = FROM } # KSRE (de 766)
 				}
-				transfer_state = 766
+				transfer_state = 766 transfer_state = 1092
+			}
+			if = {
+				limit = {
+					1092 = { is_owned_and_controlled_by = FROM }
+				}
+				transfer_state = 1092
+			}
+			if = {
+				limit = {
+					1291 = { is_owned_and_controlled_by = FROM }
+				}
+				transfer_state = 1291
 			}
 		}
 		hidden_effect = {
@@ -224,7 +238,7 @@ country_event = {
 		create_wargoal = {
 			type = take_state
 			target = FROM
-			generator = { 78 }
+			generator = { 78 1291 }
 		}
 		hidden_effect = {
 			SOV = {
@@ -374,13 +388,8 @@ country_event = {
 	option = {
 		name = soviet.12.a
 		SOV = { 
-			transfer_state = 1110 # CUSTOM STATE TERIJOKI
+			transfer_state = 146
 			custom_effect_tooltip = FIN_remove_soviet_claims_in_other_states_tt
-			remove_state_core = 1111 # CUSTOM STATE REPOLAPORAJARVI
-		}
-		FIN = {
-			transfer_state = 1111 # CUSTOM STATE REPOLAPORAJARVI
-			add_state_core = 1111 # CUSTOM STATE REPOLAPORAJARVI
 		}
 		hidden_effect = {
 			FIN = {
@@ -496,108 +505,104 @@ country_event = {
 	option = {
 		name = soviet.17.a
 
-		209 = {
+		1093 = {
 			add_building_construction = {
 				type = bunker
-				province = 11202
-				level = 5
-			}
-			add_building_construction = {
-				type = bunker
-				province = 6324
-				level = 5
-			}
-			add_building_construction = {
-				type = bunker
-				province = 11392
-				level = 5
+				level = 6
+				province = 415
+				instant_build = yes
 			}
 		}
-		210 = {
+		1794 = {
 			add_building_construction = {
 				type = bunker
-				province = 6242
-				level = 5
+				level = 4
+				province = 3333
+				instant_build = yes
 			}
 		}
-		207 = {
+		1793 = {
 			add_building_construction = {
 				type = bunker
-				province = 6249
-				level = 5
+				level = 4
+				province = 3219
+				instant_build = yes
+			}
+		}
+		1264 = {
+			add_building_construction = {
+				type = bunker
+				level = 4
+				province = 6371
+				instant_build = yes
 			}
 			add_building_construction = {
 				type = bunker
-				province = 9241
-				level = 5
-			}
-			add_building_construction = {
-				type = bunker
-				province = 3331
-				level = 5
+				level = 4
+				province = 6220
+				instant_build = yes
 			}
 		}
 		206 = {
 			add_building_construction = {
 				type = bunker
-				province = 9289
-				level = 5
+				level = 4
+				province = 11370
+				instant_build = yes
 			}
 		}
 		202 = {
 			add_building_construction = {
 				type = bunker
-				province = 9568
-				level = 5
-			}
-			add_building_construction = {
-				type = bunker
-				province = 3543
-				level = 5
-			}
-			add_building_construction = {
-				type = bunker
-				province = 504
-				level = 5
-			}
-			add_building_construction = {
-				type = bunker
-				province = 6497
-				level = 5
+				level = 7
+				province = 525
+				instant_build = yes
 			}
 		}
-		203 = {		
+		1102 = {
 			add_building_construction = {
 				type = bunker
-				province = 9451
+				level = 7
+				province = 3494
+				instant_build = yes
+			}
+		}
+		203 = {
+			add_building_construction = {
+				type = bunker
+				level = 7
+				province = 11409
+				instant_build = yes
+			}
+		}
+		1500 = {
+			add_building_construction = {
+				type = bunker
 				level = 5
+				province = 13645
+				instant_build = yes
 			}
 			add_building_construction = {
 				type = bunker
-				province = 11409
 				level = 5
+				province = 13644
+				instant_build = yes
+			}
+		}
+		1261 = {
+			add_building_construction = {
+				type = bunker
+				level = 5
+				province = 13646
+				instant_build = yes
 			}
 		}
 		192 = {
 			add_building_construction = {
 				type = bunker
-				province = 3757
 				level = 5
-			}
-			add_building_construction = {
-				type = bunker
-				province = 9714
-				level = 5
-			}
-			add_building_construction = {
-				type = bunker
-				province = 741
-				level = 5
-			}
-			add_building_construction = {
-				type = bunker
 				province = 11670
-				level = 5
+				instant_build = yes
 			}
 		}
 	}
@@ -1188,6 +1193,10 @@ country_event = {
 		FROM = { tag = ROM }
 		NOT = { has_country_flag = bessarabia_demand }
 		78 = {
+			is_claimed_by = SOV
+			is_owned_by = ROM
+		}
+		1291 = { # KSRE (de 78)
 			is_claimed_by = SOV
 			is_owned_by = ROM
 		}
@@ -2114,8 +2123,8 @@ country_event = {
 		NOT = { has_global_flag = germany_lost_the_war }
 		OR = {
 			OR = {
-				owns_state = 88 #KRAKOW
-				owns_state = 92 #LUBLIN
+				owns_state = 88 owns_state = 1399 owns_state = 1483 #KRAKOW
+				owns_state = 92 owns_state = 1400 #LUBLIN
 				owns_state = 90 #KIELCE
 				owns_state = 86 #POZNAN
 				owns_state = 87 #LODZ
@@ -2124,12 +2133,35 @@ country_event = {
 				owns_state = 10 #WARSAW
 				owns_state = 762 #KATOWICE
 				owns_state = 807 #GDYNIA
+				
+				# KSRE
+				owns_state = 1241
+				owns_state = 1554
+				owns_state = 1447
+				owns_state = 1389
+				owns_state = 1481
+				owns_state = 1252
+				owns_state = 1482
+				owns_state = 1256
+				owns_state = 1528
+				owns_state = 1265
+				owns_state = 1775
+				owns_state = 1529
+				owns_state = 1385
+				owns_state = 1386
+				owns_state = 1530
+				owns_state = 1141
+				owns_state = 1142
+				owns_state = 1143
+				owns_state = 1144
+				owns_state = 1145
+				owns_state = 1425
 			}
 			AND = {
 				POL = { has_capitulated = yes }
 				OR = {
-					controls_state = 88 #KRAKOW
-					controls_state = 92 #LUBLIN
+					controls_state = 88 controls_state = 1399 controls_state = 1483 #KRAKOW
+					controls_state = 92 controls_state = 1400 #LUBLIN
 					controls_state = 90 #KIELCE
 					controls_state = 86 #POZNAN
 					controls_state = 87 #LODZ
@@ -2138,6 +2170,29 @@ country_event = {
 					controls_state = 10 #WARSAW
 					controls_state = 762 #KATOWICE
 					controls_state = 807 #GDYNIA
+					
+					# KSRE
+					controls_state = 1241
+					controls_state = 1554
+					controls_state = 1447
+					controls_state = 1389
+					controls_state = 1481
+					controls_state = 1252
+					controls_state = 1482
+					controls_state = 1256
+					controls_state = 1528
+					controls_state = 1265
+					controls_state = 1775
+					controls_state = 1529
+					controls_state = 1385
+					controls_state = 1386
+					controls_state = 1530
+					controls_state = 1141
+					controls_state = 1142
+					controls_state = 1143
+					controls_state = 1144
+					controls_state = 1145
+					controls_state = 1425
 				}
 			}
 			OR = {
@@ -2147,8 +2202,8 @@ country_event = {
 						is_faction_leader = yes
 					}
 					OR = {
-						owns_state = 88 #KRAKOW
-						owns_state = 92 #LUBLIN
+						owns_state = 88 owns_state = 1399 owns_state = 1483 #KRAKOW
+						owns_state = 92 owns_state = 1400 #LUBLIN
 						owns_state = 90 #KIELCE
 						owns_state = 86 #POZNAN
 						owns_state = 87 #LODZ
@@ -2157,11 +2212,34 @@ country_event = {
 						owns_state = 10 #WARSAW
 						owns_state = 762 #KATOWICE
 						owns_state = 807 #GDYNIA
+						
+						# KSRE
+						owns_state = 1241
+						owns_state = 1554
+						owns_state = 1447
+						owns_state = 1389
+						owns_state = 1481
+						owns_state = 1252
+						owns_state = 1482
+						owns_state = 1256
+						owns_state = 1528
+						owns_state = 1265
+						owns_state = 1775
+						owns_state = 1529
+						owns_state = 1385
+						owns_state = 1386
+						owns_state = 1530
+						owns_state = 1141
+						owns_state = 1142
+						owns_state = 1143
+						owns_state = 1144
+						owns_state = 1145
+						owns_state = 1425
 						AND = {
 							POL = { has_capitulated = yes }
 							OR = {
-								controls_state = 88 #KRAKOW
-								controls_state = 92 #LUBLIN
+								controls_state = 88 controls_state = 1399 controls_state = 1483 #KRAKOW
+								controls_state = 92 controls_state = 1400 #LUBLIN
 								controls_state = 90 #KIELCE
 								controls_state = 86 #POZNAN
 								controls_state = 87 #LODZ
@@ -2170,6 +2248,29 @@ country_event = {
 								controls_state = 10 #WARSAW
 								controls_state = 762 #KATOWICE
 								controls_state = 807 #GDYNIA
+								
+								# KSRE
+								controls_state = 1241
+								controls_state = 1554
+								controls_state = 1447
+								controls_state = 1389
+								controls_state = 1481
+								controls_state = 1252
+								controls_state = 1482
+								controls_state = 1256
+								controls_state = 1528
+								controls_state = 1265
+								controls_state = 1775
+								controls_state = 1529
+								controls_state = 1385
+								controls_state = 1386
+								controls_state = 1530
+								controls_state = 1141
+								controls_state = 1142
+								controls_state = 1143
+								controls_state = 1144
+								controls_state = 1145
+								controls_state = 1425
 							}
 						}		
 					}
@@ -2204,14 +2305,14 @@ country_event = {
 					OR = {
 						is_controlled_by = SOV
 						any_other_country = {
-							controls_state = 88
+							controls_state = 88 controls_state = 1144 controls_state = 1145 controls_state = 1265 controls_state = 1385 controls_state = 1386 controls_state = 1399 controls_state = 1425 controls_state = 1483 controls_state = 1528 controls_state = 1529 controls_state = 1775
 							is_in_faction_with = SOV
 							SOV = { is_faction_leader = yes }
 						}
 					}
 				}
 			}
-			GER = { transfer_state = 88 }
+			GER = { transfer_state = 88 transfer_state = 1144 transfer_state = 1145 transfer_state = 1265 transfer_state = 1385 transfer_state = 1386 transfer_state = 1399 transfer_state = 1425 transfer_state = 1483 transfer_state = 1528 transfer_state = 1529 transfer_state = 1775 }
 		}
 		#LUBLIN
 		if = {
@@ -2220,14 +2321,14 @@ country_event = {
 					OR = {
 						is_controlled_by = SOV
 						any_other_country = {
-							controls_state = 92
+							controls_state = 92 controls_state = 1400 controls_state = 1530
 							is_in_faction_with = SOV
 							SOV = { is_faction_leader = yes }
 						}
 					}
 				}
 			}
-			GER = { transfer_state = 92 }
+			GER = { transfer_state = 92 transfer_state = 1400 transfer_state = 1530 }
 		}
 		#KIELCE
 		if = {
@@ -2236,14 +2337,14 @@ country_event = {
 					OR = {
 						is_controlled_by = SOV
 						any_other_country = {
-							controls_state = 90
+							controls_state = 90 controls_state = 1143
 							is_in_faction_with = SOV
 							SOV = { is_faction_leader = yes }
 						}
 					}
 				}
 			}
-			GER = { transfer_state = 90 }
+			GER = { transfer_state = 90 transfer_state = 1143 }
 		}
 		#POZNAN
 		if = {
@@ -2252,7 +2353,7 @@ country_event = {
 					OR = {
 						is_controlled_by = SOV
 						any_other_country = {
-							controls_state = 86
+							controls_state = 86 controls_state = 1389
 							is_in_faction_with = SOV
 							SOV = { is_faction_leader = yes }
 						}
@@ -2260,7 +2361,7 @@ country_event = {
 				}
 			}
 			GER = {
-				transfer_state = 86
+				transfer_state = 86 transfer_state = 1389
 				add_state_core = 86
 			}
 		}
@@ -2271,14 +2372,14 @@ country_event = {
 					OR = {
 						is_controlled_by = SOV
 						any_other_country = {
-							controls_state = 87
+							controls_state = 87 controls_state = 1142 controls_state = 1481
 							is_in_faction_with = SOV
 							SOV = { is_faction_leader = yes }
 						}
 					}
 				}
 			}
-			GER = { transfer_state = 87 }
+			GER = { transfer_state = 87 transfer_state = 1142 transfer_state = 1481 }
 		}
 		#DANZIG
 		if = {
@@ -2306,14 +2407,14 @@ country_event = {
 					OR = {
 						is_controlled_by = SOV
 						any_other_country = {
-							controls_state = 98
+							controls_state = 98 controls_state = 1141 controls_state = 1252 controls_state = 1447 controls_state = 1482
 							is_in_faction_with = SOV
 							SOV = { is_faction_leader = yes }
 						}
 					}
 				}
 			}
-			GER = { transfer_state = 98 }
+			GER = { transfer_state = 98 transfer_state = 1141 transfer_state = 1252 transfer_state = 1447 transfer_state = 1482 }
 		}
 		#WARSAW
 		if = {
@@ -2322,14 +2423,14 @@ country_event = {
 					OR = {
 						is_controlled_by = SOV
 						any_other_country = {
-							controls_state = 10
+							controls_state = 10 controls_state = 1256
 							is_in_faction_with = SOV
 							SOV = { is_faction_leader = yes }
 						}
 					}
 				}
 			}
-			GER = { transfer_state = 10 }
+			GER = { transfer_state = 10 transfer_state = 1256 }
 		}
 		#KATOWICE
 		if = {
@@ -2357,15 +2458,346 @@ country_event = {
 					OR = {
 						is_controlled_by = SOV
 						any_other_country = {
-							controls_state = 807
+							controls_state = 807 controls_state = 1554
 							is_in_faction_with = SOV
 							SOV = { is_faction_leader = yes }
 						}
 					}
 				}
 			}
-			GER = { transfer_state = 807 }
+			GER = { transfer_state = 807 transfer_state = 1554 }
 		}
+		#Suwalki
+		if = {
+			limit = {
+				1241 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 1241
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 1241 }
+		}
+
+		if = {
+			limit = {
+				1554 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 1554
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 1554 }
+		}
+		
+		if = {
+			limit = {
+				1447 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 1447
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 1447 }
+		}
+		
+		if = {
+			limit = {
+				1389 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 1389
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 1389 }
+		}
+		
+		if = {
+			limit = {
+				1481 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 1481
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 1481 }
+		}
+		
+		if = {
+			limit = {
+				1252 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 1252
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 1252 }
+		}
+		
+		if = {
+			limit = {
+				1482 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 1482
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 1482 }
+		}
+		
+		if = {
+			limit = {
+				1256 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 1256
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 1256 }
+		}
+		
+		if = {
+			limit = {
+				1528 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 1528
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 1528 }
+		}
+		
+		if = {
+			limit = {
+				1265 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 1265
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 1265 }
+		}
+		
+		if = {
+			limit = {
+				1775 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 1775
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 1775 }
+		}
+		
+		if = {
+			limit = {
+				1529 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 1529
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 1529 }
+		}
+		
+		if = {
+			limit = {
+				1385 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 1385
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 1385 }
+		}
+		
+		if = {
+			limit = {
+				1386 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 1386
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 1386 }
+		}
+		
+		if = {
+			limit = {
+				1530 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 1530
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 1530 }
+		}
+		if = {
+			limit = {
+				1141 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 1141
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 1141 }
+		}
+		if = {
+			limit = {
+				1142 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 1142
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 1142 }
+		}
+		if = {
+			limit = {
+				1143 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 1143
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 1143 }
+		}
+		if = {
+			limit = {
+				1144 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 1144
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 1144 }
+		}
+		if = {
+			limit = {
+				1145 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 1145
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 1145 }
+		}
+		if = {
+			limit = {
+				1425 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 1425
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 1425 }
+		}
+		
 		#MEMEL
 		if = {
 			limit = {
@@ -2389,17 +2821,14 @@ country_event = {
 					OR = {
 						is_controlled_by = SOV
 						any_other_country = {
-							controls_state = 70
-							NOT = {	#no taking Slovakia from a comintern Slovakia/Czechoslovakia
-								owns_state = 70
-							}
+							controls_state = 70 controls_state = 1146 controls_state = 1147
 							is_in_faction_with = SOV
 							SOV = { is_faction_leader = yes }
 						}
 					}
 				}
 			}
-			GER = { transfer_state = 70 }
+			GER = { transfer_state = 70 transfer_state = 1146 transfer_state = 1147 }
 		}
 		#EASTERN SLOVAKIA
 		if = {
@@ -2408,17 +2837,14 @@ country_event = {
 					OR = {
 						is_controlled_by = SOV
 						any_other_country = {
-							controls_state = 71
-							NOT = {	#no taking Slovakia from a comintern Slovakia/Czechoslovakia
-								owns_state = 71
-							}
+							controls_state = 71 controls_state = 1148 controls_state = 1149
 							is_in_faction_with = SOV
 							SOV = { is_faction_leader = yes }
 						}
 					}
 				}
 			}
-			GER = { transfer_state = 71 }
+			GER = { transfer_state = 71 transfer_state = 1148 transfer_state = 1149 }
 		}
 		#SOUTHERN SLOVAKIA
 		if = {
@@ -2427,17 +2853,90 @@ country_event = {
 					OR = {
 						is_controlled_by = SOV
 						any_other_country = {
-							controls_state = 664
-							NOT = {	#no taking Slovakia from a comintern Slovakia/Czechoslovakia
-								owns_state = 664
-							}
+							controls_state = 664 controls_state = 1560
 							is_in_faction_with = SOV
 							SOV = { is_faction_leader = yes }
 						}
 					}
 				}
 			}
-			GER = { transfer_state = 664 }
+			GER = { transfer_state = 664 transfer_state = 1560 }
+		}
+		#Kosice
+		if = {
+			limit = {
+				1560 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 1560
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 1560 }
+		}
+		if = {
+			limit = {
+				1146 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 1146
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 1146 }
+		}
+		if = {
+			limit = {
+				1147 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 1147
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 1147 }
+		}
+		if = {
+			limit = {
+				1148 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 1148
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 1148 }
+		}
+		if = {
+			limit = {
+				1149 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 1149
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 1149 }
 		}
 		#ZAOLZIE
 		if = {
@@ -2446,14 +2945,14 @@ country_event = {
 					OR = {
 						is_controlled_by = SOV
 						any_other_country = {
-							controls_state = 72
+							controls_state = 72 controls_state = 1727
 							is_in_faction_with = SOV
 							SOV = { is_faction_leader = yes }
 						}
 					}
 				}
 			}
-			GER = { transfer_state = 72 }
+			GER = { transfer_state = 72 transfer_state = 1727 }
 		}
 
 		GER = { country_event = soviet.61 }
@@ -2494,6 +2993,27 @@ country_event = {
 			add_state_claim = 10
 			add_state_claim = 762
 			add_state_claim = 807
+			add_state_claim = 1241
+			add_state_claim = 1554
+			add_state_claim = 1447
+			add_state_claim = 1389
+			add_state_claim = 1481
+			add_state_claim = 1252
+			add_state_claim = 1482
+			add_state_claim = 1256
+			add_state_claim = 1528
+			add_state_claim = 1265
+			add_state_claim = 1775
+			add_state_claim = 1529
+			add_state_claim = 1385
+			add_state_claim = 1386
+			add_state_claim = 1530
+			add_state_claim = 1141
+			add_state_claim = 1142
+			add_state_claim = 1143
+			add_state_claim = 1144
+			add_state_claim = 1145
+			add_state_claim = 1425
 			effect_tooltip = {
 				create_wargoal = {
 					type = annex_everything
@@ -2519,8 +3039,8 @@ country_event = {
 			limit = {
 				GER = {
 					controls_state = 85
-					controls_state = 86
-					controls_state = 87
+					controls_state = 86 controls_state = 1389
+					controls_state = 87 controls_state = 1142 controls_state = 1481
 				}
 			}
 			hidden_effect = {
@@ -2822,11 +3342,11 @@ country_event = {
 					is_core_of = POL 
 					OR = {
 						# Białystok
-						state = 97 
+						state = 97 state = 1241 state = 1242 state = 1245 
 						# Uncontested Polish Cores
 						NOT = {
-							state = 91 # CUSTOM ADDITION LWOW
-							state = 1091 # CUSTOM ADDITION CUSTOM STATE GRODNO 
+							state = 91 state = 1531 # CUSTOM ADDITION LWOW
+							state = 1239 # CUSTOM ADDITION CUSTOM STATE GRODNO 
 							any_country_with_core = {
 								NOT = { tag = POL }
 							}
@@ -2862,11 +3382,11 @@ country_event = {
 					is_core_of = POL 
 					OR = {
 						# Białystok
-						state = 97 
+						state = 97 state = 1241 state = 1242 state = 1245 
 						# Uncontested Polish Cores
 						NOT = {
-							state = 91 # CUSTOM ADDITION
-							state = 1091 # CUSTOM ADDITION CUSTOM STATE GRODNO
+							state = 91 state = 1531 # CUSTOM ADDITION
+							state = 1239 # CUSTOM ADDITION CUSTOM STATE GRODNO
 							any_country_with_core = {
 								NOT = { tag = POL }
 							}

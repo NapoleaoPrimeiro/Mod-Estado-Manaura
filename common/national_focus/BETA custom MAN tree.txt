@@ -605,7 +605,7 @@
 # 		completion_reward = {
 			
 # 			random_core_state = {
-# 				prioritize = { 328 }
+# 				prioritize = { 328 1416 1422 1434 1435 1437 1439 1454 }
 # 				limit = {
 # 					is_fully_controlled_by = ROOT
 # 				}
@@ -2383,7 +2383,7 @@
 # 						include_locked = yes
 # 					}
 # 				}
-# 				prioritize = { 714 }
+# 				prioritize = { 714 1423 1424 1426 1430 1431 1451 }
 # 				add_extra_state_shared_building_slots = 1
 # 				add_building_construction = {
 # 					type = synthetic_refinery
@@ -3471,7 +3471,7 @@
 # 				}
 # 				random_owned_controlled_state = {
 # 					limit = { ROOT = { has_full_control_of_state = PREV } }
-# 					prioritize = { 328 }
+# 					prioritize = { 328 1416 1422 1434 1435 1437 1439 1454 }
 # 					create_unit = {
 # 						division = "name = \"1. Imperial Guards Division\" division_template = \"Imperial Guards Division\" start_experience_factor = 1.0" 
 # 						owner = MAN
@@ -3857,7 +3857,7 @@
 # 		completion_reward = {
 # 			add_ideas = NHMMAP_modern_western_economic_system
 # 			random_owned_controlled_state = {
-# 				prioritize = { 716 }
+# 				prioritize = { 716 1448 1452 1453 }
 # 				limit = {
 # 					is_coastal = yes
 # 					free_building_slots = {
@@ -4012,7 +4012,7 @@
 # 		search_filters = { FOCUS_FILTER_INDUSTRY }
 # 		completion_reward = {
 # 			random_owned_controlled_state = {
-# 				prioritize = { 716 }
+# 				prioritize = { 716 1448 1452 1453 }
 # 				add_extra_state_shared_building_slots = 2
 # 				add_building_construction = {
 # 					type = industrial_complex
@@ -4764,7 +4764,7 @@
 # 				}
 # 				random_owned_controlled_state = {
 # 					limit = { ROOT = { has_full_control_of_state = PREV } }
-# 					prioritize = { 610 }
+# 					prioritize = { 610 1444 1446 1449 1450 }
 # 					create_unit = {
 # 						division = "name = \"1. Western Redemption Army\" division_template = \"Redemption Army\" start_experience_factor = 0.5" 
 # 						owner = MAN
@@ -4782,7 +4782,7 @@
 # 				}
 # 				random_owned_controlled_state = {
 # 					limit = { ROOT = { has_full_control_of_state = PREV } }
-# 					prioritize = { 717 }
+# 					prioritize = { 717 1417 1419 }
 # 					create_unit = {
 # 						division = "name = \"1. Eastern Redemption Army\" division_template = \"Redemption Army\" start_experience_factor = 0.5" 
 # 						owner = MAN
@@ -4800,7 +4800,7 @@
 # 				}
 # 				random_owned_controlled_state = {
 # 					limit = { ROOT = { has_full_control_of_state = PREV } }
-# 					prioritize = { 714 }
+# 					prioritize = { 714 1423 1424 1426 1430 1431 1451 }
 # 					create_unit = {
 # 						division = "name = \"1. Northern Redemption Army\" division_template = \"Redemption Army\" start_experience_factor = 0.5" 
 # 						owner = MAN
@@ -4968,7 +4968,7 @@
 # 				}
 # 				random_owned_controlled_state = {
 # 					limit = { ROOT = { has_full_control_of_state = PREV } }
-# 					prioritize = { 328 }
+# 					prioritize = { 328 1416 1422 1434 1435 1437 1439 1454 }
 # 					create_unit = {
 # 						division = "name = \"People's Volunteers Division\" division_template = \"People's Volunteers Division\" start_experience_factor = 1.0" 
 # 						owner = MAN

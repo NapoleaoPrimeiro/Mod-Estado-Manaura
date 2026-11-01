@@ -144,7 +144,7 @@ posteffect_values = {
 	#lut = "gfx/world/colorcorrection_green_night.tga"
 	lut = "gfx/world/colorcorrection_green_night3.tga"
 	tonemap_middlegrey = 0.7
-	BLOOM_WIDTH = 20
+	BLOOM_WIDTH = 2.0
 	BLOOM_SCALE = 1.5
 	BRIGHT_THRESHOLD = 0.8
 	
@@ -164,14 +164,14 @@ posteffect_values = {
 	#lut = "gfx/world/colorcorrection_green_night2.tga" #screenshots
 	#lut = "gfx/world/colorcorrection_green_night.tga"
 	lut = "gfx/world/colorcorrection_green_night3.tga"
-	tonemap_middlegrey = 0.45 # EIM 0.45
-	BLOOM_WIDTH = 20 # EIM 3
+	tonemap_middlegrey = 0.45
+	BLOOM_WIDTH = 3
 	BLOOM_SCALE = 1.5
-	BRIGHT_THRESHOLD = 0.8 # EIM 0.9
+	BRIGHT_THRESHOLD = 0.9
 	
-	hdr_min_adjustment = 0.8 # EIM 0.38
+	hdr_min_adjustment = 0.38
 	
-	hdr_max_adjustment = 0.6 # EIM // 0.3
+	#hdr_max_adjustment = 0.3
 	
 	#MIN_HDR_ADJUSTMENT = 0.5,     --0.18 0.7  how it adapts to dark areas, smaller value -> more nightvision
 	#MAX_HDR_ADJUSTMENT = 1.0,      --0.8 0.8  opposite of the above, how it adapts to bright areas, really high value will reduce chance to be "blinded"
@@ -200,7 +200,7 @@ posteffect_values = {
 	#lut = "gfx/world/colorcorrection_winter.tga"
 	lut = "gfx/world/colorcorrection_winter_asia.tga"
 	
-	tonemap_middlegrey = 0.8 # EIM 0.1
+	tonemap_middlegrey = 0.1
 	
 	hdr_min_adjustment = 1.0
 	hdr_max_adjustment = 0.3
@@ -371,6 +371,7 @@ posteffect_volumes = {
 		height = 0
 		fade_distance = 0
 	}
+
 	
 ################################# 
 
@@ -437,7 +438,83 @@ posteffect_volumes = {
 		size = { 60.0 200.0 80.0 }
 		fade_distance = 35.0
 	}
+	
+################################# 
 
+############ VOLUMES ############ 
+############ AFRICA ############ 
+
+#################################
+	
+	posteffect_volume = {
+		name = Africa_volume
+		
+		posteffect_values_day = africa_values
+		posteffect_values_night = africa_values_night
+    
+		position = { 3115.0 200.0 1025.0 }
+		size = { 900.0 600.0 300.0 }
+		fade_distance = 110.0
+	}
+	
+	posteffect_volume = {
+		name = southafrica_mid_forest_volume
+		
+		posteffect_values_day = green
+		posteffect_values_night = green_night
+    
+		position = { 3150.0 300.0 628.0 }
+		size = { 450.0 800.0 443 }
+		fade_distance = 50.0
+		
+	}
+	
+	posteffect_volume = {
+		name = southafrica_bottom_volume
+		
+		posteffect_values_day = green
+		posteffect_values_night = green_night
+    
+		position = { 3150.0 300.0 190.0 }
+		size = { 380.0 800.0 433 }
+		fade_distance = 60.0
+	}
+	
+	
+	posteffect_volume = {
+		name = africa_middleeastern_volume
+		
+		posteffect_values_day = africa_values
+		posteffect_values_night = africa_values_night
+    
+		position = { 3530.0 300.0 1275.0 }
+		size = { 300.0 800.0 150.0 }
+		fade_distance = 80.0
+	}
+	
+	posteffect_volume = {
+		name = southafrica_island_volume
+		
+		posteffect_values_day = africa_values
+		posteffect_values_night = africa_values_night
+    
+		position = { 3534.0 30.0 310.0 }
+		size = { 140.0 300.0 220 }
+		fade_distance = 80.0
+	}
+	
+	posteffect_volume = {
+		name = southafrica_right_upper_desert
+		
+		posteffect_values_day = green
+		posteffect_values_night = green_night
+    
+		position = { 3500.0 30.0 740.0 }
+		size = { 250.0 800.0 220 }
+		fade_distance = 30.0
+	}
+	
+	
 ################################# 
 
 ############ VOLUMES ############ 
@@ -450,22 +527,34 @@ posteffect_volumes = {
 	posteffect_volume = {
 		name = Asia
 		
-		posteffect_values_day = green # EIM asia_values
-		posteffect_values_night = green_night # EIM added
-		posteffect_values_day_winter = winter_values # EIM winter_values_day
-		posteffect_values_night = standard # EIM green_night_asia
+		posteffect_values_day = asia_values
+		posteffect_values_day_winter = winter_values_day
+		posteffect_values_night = green_night_asia
     
 		position = { 4505.0 290.0 1400.0 }
 		size = { 900.0 800.0 800.0 }
-		fade_distance = 100.0 # EIM 50
+		fade_distance = 120.0
 	}
+	
+#posteffect_volume = {
+#	name = Asiabelowdesert
+#	
+#	posteffect_values_day = asia_values
+#	posteffect_values_day_winter = winter_values_asia_day
+#	posteffect_values_night = max_distance
+#
+#
+#	position = { 4350.0 200.0 1050.0 }
+#	size = { 650.0 800.0 100.0 }
+#	fade_distance = 75.0
+#}
 	
 	posteffect_volume = {
 		name = south_Asia
 		
 		posteffect_values_day = green
 		posteffect_values_night = green_night
-		posteffect_values_day_winter = winter_values # EIM winter_values_day
+		posteffect_values_day_winter = winter_values_day
 		posteffect_values_night_winter = blue
     
 		position = { 4010.0 100.0 900.0 }
@@ -476,14 +565,14 @@ posteffect_volumes = {
 		posteffect_volume = {
 		name = japan
 		
-		posteffect_values_day = green # EIM japan_values
+		posteffect_values_day = japan_values
 		posteffect_values_night = green_night
 		posteffect_values_day_winter = winter_values
 		posteffect_values_night_winter = winter_values_night
     
 		position = { 4750.0 200.0 700.0 }
 		size = { 1100.0 800.0 600.0 }
-		fade_distance = 100.0 # EIM 150 , 50 looks okay
+		fade_distance = 150.0
 	}
 	
 	
@@ -491,14 +580,99 @@ posteffect_volumes = {
 		name = australia
 		
 		posteffect_values_day = green
-		posteffect_values_night = green_night # EIM standard
+		posteffect_values_night = standard
 		posteffect_values_day_winter = winter_values
 		posteffect_values_night_winter = winter_values_night
     
 		position = { 4850.0 10.0 280.0 }
 		size = { 400.0 600.0 150.0 }
-		fade_distance = 100.0 # EIM 50.0
+		fade_distance = 50.0
 	}
+	
+
+	
+################################# 
+
+############ VOLUMES ############ 
+############ EUROPE	 ############ 
+
+#################################	
+
+	posteffect_volume = {
+		name = EuropeandRussia
+		
+		posteffect_values_day = green
+		posteffect_values_night = green_night
+		posteffect_values_day_winter = winter_values_day
+		posteffect_values_night_winter = winter_values_night
+    
+		position = { 3300.0 275.0 1700.0 }
+		size = { 1300.0 800.0 700.0 }
+		fade_distance = 125.0
+	}
+
+#	posteffect_volume = {
+#		name = Europe
+#		
+#		posteffect_values_day = green
+#		posteffect_values_night = green_night
+#		posteffect_values_day_winter = winter_values_day
+#		posteffect_values_night_winter = winter_values_night
+#    
+#		position = { 3100.0 300.0 1700.0 }
+#		size = { 1160.0 800.0 700.0 }
+#		fade_distance = 75.0
+#	}
+	
+	
+	posteffect_volume = {
+		name = rome
+		
+		posteffect_values_day = medither
+		posteffect_values_night = medither_night
+		posteffect_values_day_winter = winter_values_day
+		posteffect_values_night_winter = winter_values_night
+    
+		position = { 3100.0 100.0 1275.0 }
+		size = { 400.0 400.0 150.0 }
+		fade_distance = 100.0
+	}
+	
+	
+################################# 
+
+############ VOLUMES ############ 
+############ RUSSIA	 ############ 
+
+#################################	
+
+#		posteffect_volume = {
+#		name = russia_snowborder
+#		
+#		posteffect_values_day = winter_values
+#		posteffect_values_night = standard
+#		posteffect_values_day_winter = winter_values
+#		posteffect_values_night_winter = blue
+#    
+#		position = { 3730.0 50.0 1680.0 }
+#		size = { 100.0 200.0 400.0 }
+#		fade_distance = 25.0
+#	}
+
+
+#		posteffect_volume = {
+#		name = russia
+#		
+#		posteffect_values_day = green
+#		posteffect_values_night = standard
+#		posteffect_values_day_winter = winter_values_day
+#		posteffect_values_night_winter = winter_values_night
+#    
+#		position = { 4380.0 300.0 1755.0 }
+#		size = { 1200.0 800.0 550.0 }
+#		fade_distance = 50.0
+#	}
+
 	
 ################################# 
 
@@ -513,12 +687,12 @@ posteffect_volumes = {
 		
 		posteffect_values_day = green
 		posteffect_values_night = green_night
-		posteffect_values_day_winter = winter_values # EIM winter_values_day
+		posteffect_values_day_winter = winter_values_day
 		posteffect_values_night_winter = winter_values_night
     
 		position = { 1470.0 300.0 1650.0 }
 		size = { 600.0 800.0 550.0 }
-		fade_distance = 100.0 # EIM 55
+		fade_distance = 75.0
 	}
 	
 	
@@ -535,17 +709,17 @@ posteffect_volumes = {
 		fade_distance = 75.0
 	}
 	
-	posteffect_volume = { # EIM LOOKS VERY UGLY AT posteffect_values_night = standard , and fade_distance = 50.0
+	posteffect_volume = {
 		name = america_yellow
 		
-		posteffect_values_day = green # EIM africa_values
-		posteffect_values_night = standard # EIM africa_values_night
+		posteffect_values_day = africa_values
+		posteffect_values_night = africa_values_night
 		posteffect_values_day_winter = winter_values_day
 		posteffect_values_night_winter = winter_values_night
     
 		position = { 1040.0 75.0 1475.0 }
 		size = { 260.0 500.0 290.0 }
-		fade_distance = 150.0 # EIM 120
+		fade_distance = 120.0
 	}
 	
 	posteffect_volume = {
@@ -560,4 +734,99 @@ posteffect_volumes = {
 		size = { 260.0 800.0 350.0 }
 		fade_distance = 80.0
 	}
+	
+
+################################# 
+
+############ VOLUMES  ############ 
+############ GREENLAND ############ 
+
+#################################	
+	
+	posteffect_volume = {
+		name = greenland
+		
+		posteffect_values_day = blue_water
+		posteffect_values_night = blue_water_night
+    
+		position = { 2100.0 200.0 2000.0 }
+		size = { 400.0 800.0 290.0 }
+		fade_distance = 75.0
+	}
+	
+	
+################################# 
+
+############ VOLUMES ############ 
+############ WATER	 ############ 
+
+#################################		
+	
+	#posteffect_volume = {
+	#	name = BlueWaterLeftOfEurope
+	#	
+	#	posteffect_values_day = blue_water
+	#	posteffect_values_night = blue_water_night
+    #
+	#	position = { 2200.0 200.0 1450.0 }
+	#	size = { 650.0 800.0 800.0 }
+	#	fade_distance = 100.0
+	#}
+	
+	#posteffect_volume = {
+	#	name = BlueWater_skarv1_usarus
+	#	
+	#	posteffect_values_day = blue_water
+	#	posteffect_values_night = blue_water_night
+    #
+	#	position = { 200.0 100.0 1450.0 }
+	#	size = { 1000.0 800.0 800.0 }
+	#	fade_distance = 300.0
+	#}
+	
+	#posteffect_volume = {
+	#	name = BlueWater_skarv2_usarus
+	#	
+	#	posteffect_values_day = blue_water
+	#	posteffect_values_night = blue_water_night
+    #
+	#	position = { 1000.0 300.0 600.0 }
+	#	size = { 1000.0 800.0 800.0 }
+	#	fade_distance = 200.0
+	#}
+	
+	#posteffect_volume = {
+	#	name = BlueWater_thin_africa_samerica
+	#	
+	#	posteffect_values_day = blue_water
+	#	posteffect_values_night = blue_water_night
+    #
+	#	position = { 2400.0 100.0 640.0 }
+	#	size = { 200.0 900.0 800.0 }
+	#	fade_distance = 200.0
+	#}
+	
+	#posteffect_volume = {
+	#	name = BlueWater_thin_africa_samerica2
+	#	
+	#	posteffect_values_day = blue_water
+	#	posteffect_values_night = blue_water_night
+    #
+	#	position = { 2700.0 300.0 340.0 }
+	#	size = { 400.0 800.0 800.0 }
+	#	fade_distance = 200.0
+	#}
+	
+	#	posteffect_volume = {
+	#	name = BlueWater_africa_asia
+	#	
+	#	posteffect_values_day = blue_water
+	#	posteffect_values_night = blue_water_night
+    #
+	#	position = { 3915.0 300.0 340.0 }
+	#	size = { 570.0 800.0 800.0 }
+	#	fade_distance = 200.0
+	#}
+	
+	
 }

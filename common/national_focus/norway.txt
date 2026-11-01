@@ -280,6 +280,7 @@ focus_tree = {
 						include_locked = yes 
 					}
 					NOT = { state = 914 } # F you Jan Mayen
+					NOT = { state = 1724 }
 				}
 				random_select_amount = 2
 				add_extra_state_shared_building_slots = 1 
@@ -720,6 +721,7 @@ focus_tree = {
 						is_fully_controlled_by = ROOT 
 						industrial_complex < 1 
 						NOT = { state = 914 } # Jan Mayen =( 
+						NOT = { state = 1724 }
 					}
 					random_select_amount = 3
 					add_extra_state_shared_building_slots = 1
@@ -1774,6 +1776,7 @@ focus_tree = {
 				limit = {
 					is_controlled_by = ROOT 
 					NOT = { state = 914 } #Not you Jan Mayen
+					NOT = { state = 1724 }
 					free_building_slots = {
 						building = arms_factory
 						size > 0
@@ -1792,6 +1795,7 @@ focus_tree = {
 				limit = {
 					is_controlled_by = ROOT 
 					NOT = { state = 914 } #Not you Jan Mayen
+					NOT = { state = 1724 }
 					free_building_slots = {
 						building = dockyard
 						size > 0
@@ -1811,6 +1815,7 @@ focus_tree = {
 				limit = {
 					is_controlled_by = ROOT 
 					NOT = { state = 914 } #Not you Jan Mayen
+					NOT = { state = 1724 }
 					air_base > 0
 					air_base < 8
 				}
@@ -2198,6 +2203,7 @@ focus_tree = {
 				limit = {
 					is_controlled_by = ROOT 
 					NOT = { state = 914 } # Not Jan Mayen
+					NOT = { state = 1724 }
 				}
 				effect_tooltip = {
 					create_unit = {
@@ -2345,6 +2351,7 @@ focus_tree = {
 				}
 				any_other_country = {
 					has_government = communism
+					original_tag = SOV
 					is_faction_leader = yes 
 					is_in_faction_with = ROOT
 				}
@@ -3193,6 +3200,7 @@ focus_tree = {
 						include_locked = yes 
 					}
 					NOT = { state = 914 } # >=( No Polar bear factories 
+					NOT = { state = 1724 }
 					is_controlled_by = ROOT 
 				}
 				random_select_amount = 3
@@ -4982,6 +4990,7 @@ focus_tree = {
 					NOT = {
 						state = 914 # Don't want the unit spawning in Jan Mayen
 					}
+					NOT = { state = 1724 }
 				}
 				create_unit = { 
 					division = "name = \"1. Hirden\" division_template = \"Hirden\" start_experience_factor = 0.8" 
@@ -5068,6 +5077,7 @@ focus_tree = {
 				limit = {
 					is_controlled_by = ROOT 
 					NOT = { state = 914 } # No Polar Bears 
+					NOT = { state = 1724 }
 					free_building_slots = {
 						building = arms_factory
 						size > 2 
@@ -5117,6 +5127,7 @@ focus_tree = {
 				limit = {
 					is_controlled_by = ROOT 
 					NOT = { state = 914 } # No Polar Bears 
+					NOT = { state = 1724 }
 					free_building_slots = {
 						building = industrial_complex
 						size > 1 
@@ -5190,6 +5201,7 @@ focus_tree = {
 				limit = {
 					is_controlled_by = ROOT 
 					NOT = { state = 914 } # Jan Mayen
+					NOT = { state = 1724 }
 					free_building_slots = {
 						building = arms_factory
 						size > 1
@@ -5536,6 +5548,7 @@ focus_tree = {
 					NOT = {
 						state = 914 # Don't want the unit spawning in Jan Mayen
 					}
+					NOT = { state = 1724 }
 				}
 				create_unit = { 
 					division = "name = \"1. Frontkjempere\" division_template = \"Frontkjempere\" start_experience_factor = 0.5" 
@@ -5587,6 +5600,7 @@ focus_tree = {
 					NOT = {
 						state = 914 # Don't want the building spawning in Jan Mayen
 					}
+					NOT = { state = 1724 }
 				}
 				add_extra_state_shared_building_slots = 2 
 				add_building_construction = {
@@ -5606,6 +5620,7 @@ focus_tree = {
 					NOT = {
 						state = 914 # Don't want the building spawning in Jan Mayen
 					}
+					NOT = { state = 1724 }
 				}
 				add_extra_state_shared_building_slots = 2 
 				add_building_construction = {
@@ -5682,6 +5697,7 @@ focus_tree = {
 				limit = {
 					is_controlled_by = ROOT 
 					NOT = { state = 914 } # No Jan Mayen pls
+					NOT = { state = 1724 }
 					free_building_slots = {
 						building = arms_factory 
 						size > 1
@@ -6310,6 +6326,7 @@ focus_tree = {
 					is_coastal = yes
 					naval_base < 1
 					NOT = { state = 914 } # Have some patience Jan Mayen 
+					NOT = { state = 1724 }
 				}
 				add_building_construction = {
 					type = naval_base 
@@ -6329,6 +6346,16 @@ focus_tree = {
 					instant_build = yes 
 					province = {
 						all_provinces = yes
+					}
+				}	
+			}
+			1724 = { # Svalbard
+				add_building_construction = {
+					type = naval_base 
+					level = 1
+					instant_build = yes 
+					province = {
+						id = 15401
 					}
 				}	
 			}
@@ -6371,6 +6398,7 @@ focus_tree = {
 						size > 1
 					}
 					NOT = { state = 914 } #Not enough people for a Dockyard in Jan Mayen
+					NOT = { state = 1724 }
 				}
 				random_select_amount = 3
 				add_extra_state_shared_building_slots = 2
@@ -6423,6 +6451,16 @@ focus_tree = {
 					instant_build = yes
 					province = {
 						all_provinces = yes
+					}
+				}
+			}
+			1724 = {
+				add_building_construction = {
+					type = coastal_bunker 
+					level = 2
+					instant_build = yes
+					province = {
+						id = 15401
 					}
 				}
 			}
@@ -6557,6 +6595,7 @@ focus_tree = {
 				limit = {
 					is_controlled_by = ROOT 
 					NOT = { state = 914 } # We don't serve your kind, Jan Mayen
+					NOT = { state = 1724 }
 					free_building_slots = {
 					 	building = arms_factory
 					 	size > 2
@@ -6575,6 +6614,7 @@ focus_tree = {
 				limit = {
 					is_controlled_by = ROOT 
 					NOT = { state = 914 } # We don't serve your kind, Jan Mayen
+					NOT = { state = 1724 }
 					free_building_slots = {
 					 	building = dockyard
 					 	size > 1
@@ -6994,19 +7034,32 @@ focus_tree = {
 		cost = 10
 		available = {
 			NOT = { 
-				owns_state = 101 
+				owns_state = 101
+				owns_state = 1758
 				has_war_with = 101.OWNER
 				is_in_faction_with = 101.OWNER
+				has_war_with = 1758.OWNER
+				is_in_faction_with = 1758.OWNER
 			}
-			OR = { 
-				101 = { is_controlled_by = 101.OWNER }
-				101 = { is_controlled_by = ROOT }
+			OR = {
+				AND = {
+					101 = { is_controlled_by = 101.OWNER }
+					1758 = { is_controlled_by = 101.OWNER } # KSRE (de 101)
+					101 = { is_controlled_by = ROOT }
+				}
+				AND = {
+					1758 = { is_controlled_by = 1758.OWNER }
+					1758 = { is_controlled_by = ROOT }
+				}
 			}
 			is_subject = no
 		}
 
 		bypass = {
 			101 = {
+				is_owned_by = ROOT
+			}
+			1758 = {
 				is_owned_by = ROOT
 			}
 		}
@@ -7022,10 +7075,26 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = {
+					1758 = { OWNER = { NOT = { owns_state = 101 owns_state = 1758 } } }
+				}
+				1758 = {
+					OWNER = {
+						country_event = {
+							id = AAT_norway.17
+							hours = 3 
+						}
+					}
+				}
+			}
 			set_country_flag = NOR_claiming_greenland
 			effect_tooltip = {
 				custom_effect_tooltip = if_they_accept
 				101 = {
+					transfer_state_to = NOR
+				}
+				1758 = {
 					transfer_state_to = NOR
 				}
 				custom_effect_tooltip = if_they_reject
@@ -7035,7 +7104,18 @@ focus_tree = {
 							create_wargoal = {
 								type = take_state_focus
 								target = PREV
-								generator = { 101 } 
+								generator = { 101 1758 } 
+							}
+						}
+					}
+				}
+				1758 = {
+					OWNER = {
+						ROOT = {
+							create_wargoal = {
+								type = take_state_focus
+								target = PREV
+								generator = { 1758 } 
 							}
 						}
 					}
@@ -7276,14 +7356,21 @@ focus_tree = {
 		available = {
 			NOT = {
 				owns_state = 213
+				owns_state = 1714
 				owns_state = 214
 				owns_state = 215
-				has_war_with = 213.OWNER
-				is_in_faction_with = 213.OWNER
+				owns_state = 1116
+				owns_state = 1117
+				owns_state = 1170
+				owns_state = 1171
+				owns_state = 1174
+				owns_state = 1175
+				has_war_with = 1714.OWNER
+				is_in_faction_with = 1714.OWNER
 			}
 			OR = {
-				213 = {	is_controlled_by = 213.OWNER }
-				213 = { is_controlled_by = ROOT }
+				1714 = {	is_controlled_by = 1714.OWNER }
+				1714 = { is_controlled_by = ROOT }
 			}
 			is_subject = no
 		}
@@ -7292,10 +7379,31 @@ focus_tree = {
 			213 = {
 				is_owned_by = ROOT
 			}
+			1714 = {
+				is_owned_by = ROOT
+			}
 			214 = {
 				is_owned_by = ROOT
 			}
 			215 = {
+				is_owned_by = ROOT
+			}
+			1116 = {
+				is_owned_by = ROOT
+			}
+			1117 = {
+				is_owned_by = ROOT
+			}
+			1170 = {
+				is_owned_by = ROOT
+			}
+			1171 = {
+				is_owned_by = ROOT
+			}
+			1174 = {
+				is_owned_by = ROOT
+			}
+			1175 = {
 				is_owned_by = ROOT
 			}
 		}
@@ -7304,7 +7412,7 @@ focus_tree = {
 
 		completion_reward = {
 			set_country_flag = NOR_claiming_bjarmeland
-			213 = { # Using Murmansk because it's the closest one to Norway  
+			1714 = { # Using Kandalaksha because it's the closest one to Norway  
 				OWNER = {
 					country_event = {
 						id = AAT_norway.17
@@ -7313,8 +7421,14 @@ focus_tree = {
 					effect_tooltip = {
 						custom_effect_tooltip = if_they_accept
 		
-						213 = { # Murmansk 
+						1714 = { # Murmansk 
 							transfer_state_to = NOR
+						}
+						if = { 
+							limit = {
+								owns_state = 213 owns_state = 1714
+							}
+							213 = { transfer_State_to = NOR }
 						}
 						if = {  # Arkhangelsk  
 							limit = {
@@ -7324,40 +7438,58 @@ focus_tree = {
 						}
 						if = { # Onega  
 							limit = {
-								owns_state = 215 
+								owns_state = 215 owns_state = 1116 owns_state = 1117 owns_state = 1170 owns_state = 1171 owns_state = 1174 owns_state = 1175 
 							}
 							215 = { transfer_state_to = NOR }
+							1116 = { transfer_state_to = NOR } # KSRE (de 215)
+							1117 = { transfer_state_to = NOR } # KSRE (de 215)
+							1170 = { transfer_state_to = NOR } # KSRE (de 215)
+							1171 = { transfer_state_to = NOR } # KSRE (de 215)
+							1174 = { transfer_state_to = NOR } # KSRE (de 215)
+							1175 = { transfer_state_to = NOR } # KSRE (de 215)
+						}
+						if = { 
+							limit = {
+								owns_state = 1116 
+							}
+							1116 = { transfer_state_to = NOR }
+						}
+						if = { 
+							limit = {
+								owns_state = 1117 
+							}
+							1117 = { transfer_state_to = NOR }
+						}
+						if = { 
+							limit = {
+								owns_state = 1170
+							}
+							1170 = { transfer_state_to = NOR }
+						}
+						if = { 
+							limit = {
+								owns_state = 1171
+							}
+							1171 = { transfer_state_to = NOR }
+						}
+						if = { 
+							limit = {
+								owns_state = 1174
+							}
+							1174 = { transfer_state_to = NOR }
+						}
+						if = { 
+							limit = {
+								owns_state = 1175 
+							}
+							1175 = { transfer_state_to = NOR }
 						}
 						custom_effect_tooltip = if_they_reject
 						ROOT = {
 							create_wargoal = {
 								type = take_state_focus
 								target = PREV
-								generator = { 213 } 
-							}
-						}
-						if = {  #  Arkhangelsk 
-							limit = {
-								owns_state = 214
-							}
-							ROOT = {
-								create_wargoal = {
-									type = take_state_focus
-									target = PREV
-									generator = { 214 } 
-								}
-							}
-						}
-						if = { # Onega  
-							limit = {
-								owns_state = 215 
-							}
-							ROOT = {
-								create_wargoal = {
-									type = take_state_focus
-									target = PREV
-									generator = { 215 } 
-								}
+								generator = { 1714 } 
 							}
 						}
 						
@@ -7765,6 +7897,14 @@ focus_tree = {
 					add_core_of = ROOT
 				}
 			}
+			1758 = {
+				if = {
+					limit = {
+						is_owned_and_controlled_by = ROOT
+					}
+					add_core_of = ROOT
+				}
+			}
 			# Iceland 
 			100 = {
 				if = {
@@ -7783,6 +7923,14 @@ focus_tree = {
 					add_core_of = ROOT
 				}
 			}
+			1714 = { 
+				if = {
+					limit = {
+						is_owned_and_controlled_by = ROOT
+					}
+					add_core_of = ROOT
+				}
+			}
 			# Arkhangelsk
 			214 = { 
 				if = {
@@ -7794,6 +7942,54 @@ focus_tree = {
 			}
 			# Onega
 			215 = { 
+				if = {
+					limit = {
+						is_owned_and_controlled_by = ROOT
+					}
+					add_core_of = ROOT
+				}
+			}
+			1116 = { 
+				if = {
+					limit = {
+						is_owned_and_controlled_by = ROOT
+					}
+					add_core_of = ROOT
+				}
+			}
+			1117 = { 
+				if = {
+					limit = {
+						is_owned_and_controlled_by = ROOT
+					}
+					add_core_of = ROOT
+				}
+			}
+			1170 = { 
+				if = {
+					limit = {
+						is_owned_and_controlled_by = ROOT
+					}
+					add_core_of = ROOT
+				}
+			}
+			1171 = { 
+				if = {
+					limit = {
+						is_owned_and_controlled_by = ROOT
+					}
+					add_core_of = ROOT
+				}
+			}
+			1174 = { 
+				if = {
+					limit = {
+						is_owned_and_controlled_by = ROOT
+					}
+					add_core_of = ROOT
+				}
+			}
+			1175 = { 
 				if = {
 					limit = {
 						is_owned_and_controlled_by = ROOT
@@ -7986,6 +8182,7 @@ focus_tree = {
 					is_fully_controlled_by = ROOT
 					is_core_of = ROOT 
 					NOT = { state = 914 } # You thought you could get away with it this time huh? 
+					NOT = { state = 1724 }
 					free_building_slots = {
 						building = arms_factory
 						size > 1 
@@ -8450,6 +8647,7 @@ focus_tree = {
 					922 # Agder
 					142 # Vestlandet
 					920 # Opladene
+					1724 # KSRE (de 920)
 				}
 				add_extra_state_shared_building_slots = 2 
 				add_building_construction = {
@@ -8642,6 +8840,7 @@ focus_tree = {
 					is_core_of = ROOT
 					NOT = { 
 						state = 914 # Not this time Jan Mayen
+						state = 1724
 						state = 110 # Also not Oslo  
 					}
 					free_building_slots = {
@@ -8805,6 +9004,9 @@ focus_tree = {
 				is_owned_and_controlled_by = ROOT
 			}
 			920 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			1724 = { # KSRE (de 920)
 				is_owned_and_controlled_by = ROOT
 			}
 			142 = {
@@ -9078,6 +9280,7 @@ focus_tree = {
 					922 # Agder 
 					142 # Vestlandet
 					920 # Oppladene
+					1724 # KSRE (de 920)
 				}
 				add_building_construction = {
 					type = anti_air_building
@@ -9200,6 +9403,7 @@ focus_tree = {
 						922 # Agder 
 						142 # Vestlandet
 						920 # Oppladene
+						1724 # KSRE (de 920)
 					}
 					add_building_construction = {
 						type = air_base 
@@ -9543,12 +9747,16 @@ focus_tree = {
 						NOT = { 
 							state = 914 
 						}
+						NOT = { 
+							state = 1724
+						}
 						free_building_slots = {
 							building = dockyard 
 							size > 0
 							include_locked = yes 
 						}
 						NOT = { state = 914 } # Almost got away 
+						NOT = { state = 1724 }
 					}
 					random_select_amount = 3
 					add_extra_state_shared_building_slots = 1 
@@ -9763,6 +9971,9 @@ focus_tree = {
 						not = {
 							state = 914 
 						}
+						NOT = {
+							state = 1724
+						}
 						free_building_slots = {
 							building = dockyard
 							size > 1 
@@ -9960,6 +10171,7 @@ focus_tree = {
 						is_controlled_by = ROOT
 						is_coastal = yes 
 						NOT = { state = 914 } # Jan Mayen shouldn't have a dockyard
+						NOT = { state = 1724 }
 						free_building_slots = {
 							building = dockyard
 							size > 0

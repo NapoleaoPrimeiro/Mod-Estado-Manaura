@@ -2,27 +2,27 @@ state = {
 	id = 160
 	name = "STATE_160"
 	resources = {
-		steel=13 # was: 32.000
-		aluminium=11 # was: 18.000
+		steel=14 # was: 32.000
+		aluminium=7 # was: 18.000
 	}
 	
 	state_category = city
 
 	history = {
 		owner = ITA
-		victory_points = { #Venezia
-			11584 10 
+		victory_points = { 
+			11584 8 #Venezia
 		}
-		victory_points = { #Padova
-			3604 3 
+		victory_points = {
+			603 6 #Verona
 		}
-		victory_points = { #Verona
-			603 1
+		victory_points = {
+			3604 6 #Padova
 		}
 
 		buildings = {
 			infrastructure = 3 #was: 6
-			arms_factory = 2
+			arms_factory = 1
 			industrial_complex = 3
 			dockyard = 1
 			air_base = 3
@@ -34,17 +34,17 @@ state = {
 		add_core_of = LBV
 		1939.1.1 = {
 			buildings = {
-				dockyard = 1
-				industrial_complex = 3
+				dockyard = 2
+				industrial_complex = 4
 			}
 		}
 
 	}
 
 	provinces = {
-		603 3604 9582 11584 
+		603 656 3604 6656 9582 11584 13989 13997 14600
 	}
-	manpower = 3073151
+	manpower = 3343151
 	buildings_max_level_factor = 1.000
 
 	local_supplies = 5.0 

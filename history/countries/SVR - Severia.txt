@@ -1,0 +1,30 @@
+capital = 193
+
+set_research_slots = 2
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1935.12.9"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 56
+	fascism = 9
+	communism = 32
+	neutrality = 3
+}
+
+1939.1.1 = {
+	set_politics = {
+		ruling_party = democratic
+		last_election = "1936.6.10"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+}
+
+recruit_character = SVR_democratic_leader
+recruit_character = SVR_communism_leader
+recruit_character = SVR_fascism_leader
+recruit_character = SVR_neutrality_leader

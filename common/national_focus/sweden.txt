@@ -8721,11 +8721,20 @@ focus_tree = {
 		completion_reward = {
 			
 			213 = { set_state_flag = SWE_nordland_claims }
+			1714 = { set_state_flag = SWE_nordland_claims }
 			214 = { set_state_flag = SWE_nordland_claims }
 			215 = { set_state_flag = SWE_nordland_claims }
+			1116 = { set_state_flag = SWE_nordland_claims }
+			1117 = { set_state_flag = SWE_nordland_claims }
+			1170 = { set_state_flag = SWE_nordland_claims }
+			1171 = { set_state_flag = SWE_nordland_claims }
+			1174 = { set_state_flag = SWE_nordland_claims }
+			1175 = { set_state_flag = SWE_nordland_claims }
 			216 = { set_state_flag = SWE_nordland_claims }
 			879 = { set_state_flag = SWE_nordland_claims }
 			825 = { set_state_flag = SWE_nordland_claims }
+			1725 = { set_state_flag = SWE_nordland_claims }
+			1726 = { set_state_flag = SWE_nordland_claims }
 			262 = { set_state_flag = SWE_nordland_claims }
 			397 = { set_state_flag = SWE_nordland_claims }
 			880 = { set_state_flag = SWE_nordland_claims }
@@ -8741,59 +8750,6 @@ focus_tree = {
 				set_cosmetic_tag = SWE_nordland_ger
 			}
 			add_manpower = 65482
-			every_state = {
-				limit = {
-					OR = {
-						state = 111
-						state = 145
-						state = 148
-						state = 149
-						state = 150
-						state = 926
-						state = 927
-						state = 928
-						state = 929
-						state = 930
-						state = 37
-						state = 99
-						state = 101
-						state = 337
-						state = 910
-						state = 911
-						state = 912
-						state = 100
-						state = 38
-						state = 124
-						state = 138
-						state = 139
-						state = 140
-						state = 141
-						state = 666
-						state = 913
-						state = 915
-						state = 916
-						state = 917
-						state = 918
-						state = 919
-						state = 110
-						state = 142
-						state = 143
-						state = 144
-						state = 920
-						state = 921
-						state = 922
-						state = 923
-						state = 924
-						state = 925
-						state = 914
-					}
-					NOT = {
-						is_claimed_by = ROOT
-						is_core_of = ROOT
-					}
-				}
-				add_claim_by = ROOT
-			}
 			custom_effect_tooltip = if_they_accept_tt
 			effect_tooltip = {
 				if = {
@@ -8801,11 +8757,27 @@ focus_tree = {
 						213 = {
 							is_controlled_by = GER
 						}
+						1714 = { # KSRE (de 213)
+							is_controlled_by = GER
+						}
 					}
-					SWE = { transfer_state = 213 }
+					SWE = { transfer_state = 213 transfer_state = 1714 }
 				}
 				else = {
 					213 = { add_claim_by = SWE }
+					1714 = { add_claim_by = SWE } # KSRE (de 213)
+				}
+				
+				if = {
+					limit = {
+						1714 = {
+							is_controlled_by = GER
+						}
+					}
+					SWE = { transfer_state = 1714 }
+				}
+				else = {
+					1714 = { add_claim_by = SWE }
 				}
 
 				if = {
@@ -8825,11 +8797,107 @@ focus_tree = {
 						215 = {
 							is_controlled_by = GER
 						}
+						1116 = { # KSRE (de 215)
+							is_controlled_by = GER
+						}
+						1117 = { # KSRE (de 215)
+							is_controlled_by = GER
+						}
+						1170 = { # KSRE (de 215)
+							is_controlled_by = GER
+						}
+						1171 = { # KSRE (de 215)
+							is_controlled_by = GER
+						}
+						1174 = { # KSRE (de 215)
+							is_controlled_by = GER
+						}
+						1175 = { # KSRE (de 215)
+							is_controlled_by = GER
+						}
 					}
-					SWE = { transfer_state = 215 }
+					SWE = { transfer_state = 215 transfer_state = 1116 transfer_state = 1117 transfer_state = 1170 transfer_state = 1171 transfer_state = 1174 transfer_state = 1175 }
 				}
 				else = {
 					215 = { add_claim_by = SWE }
+					1116 = { add_claim_by = SWE } # KSRE (de 215)
+					1117 = { add_claim_by = SWE } # KSRE (de 215)
+					1170 = { add_claim_by = SWE } # KSRE (de 215)
+					1171 = { add_claim_by = SWE } # KSRE (de 215)
+					1174 = { add_claim_by = SWE } # KSRE (de 215)
+					1175 = { add_claim_by = SWE } # KSRE (de 215)
+				}
+				
+				if = {
+					limit = {
+						1116 = {
+							is_controlled_by = GER
+						}
+					}
+					SWE = { transfer_state = 1116 }
+				}
+				else = {
+					1116 = { add_claim_by = SWE }
+				}
+				
+				if = {
+					limit = {
+						1117 = {
+							is_controlled_by = GER
+						}
+					}
+					SWE = { transfer_state = 1117 }
+				}
+				else = {
+					1117 = { add_claim_by = SWE }
+				}
+				
+				if = {
+					limit = {
+						1170 = {
+							is_controlled_by = GER
+						}
+					}
+					SWE = { transfer_state = 1170 }
+				}
+				else = {
+					1170 = { add_claim_by = SWE }
+				}
+				
+				if = {
+					limit = {
+						1171 = {
+							is_controlled_by = GER
+						}
+					}
+					SWE = { transfer_state = 1171 }
+				}
+				else = {
+					1171 = { add_claim_by = SWE }
+				}
+				
+				if = {
+					limit = {
+						1174 = {
+							is_controlled_by = GER
+						}
+					}
+					SWE = { transfer_state = 1174 }
+				}
+				else = {
+					1174 = { add_claim_by = SWE }
+				}
+				
+				if = {
+					limit = {
+						1175 = {
+							is_controlled_by = GER
+						}
+					}
+					SWE = { transfer_state = 1175 }
+				}
+				else = {
+					1175 = { add_claim_by = SWE }
 				}
 
 				if = {
@@ -8862,13 +8930,44 @@ focus_tree = {
 						825 = {
 							is_controlled_by = GER
 						}
+						1725 = { # KSRE (de 825)
+							is_controlled_by = GER
+						}
+						1726 = { # KSRE (de 825)
+							is_controlled_by = GER
+						}
 					}
-					SWE = { transfer_state = 825 }
+					SWE = { transfer_state = 825 transfer_state = 1725 transfer_state = 1726 }
 				}
 				else = {
 					825 = { add_claim_by = SWE }
+					1725 = { add_claim_by = SWE } # KSRE (de 825)
+					1726 = { add_claim_by = SWE } # KSRE (de 825)
 				}
-
+				
+				if = {
+					limit = {
+						1725 = {
+							is_controlled_by = GER
+						}
+					}
+					SWE = { transfer_state = 1725 }
+				}
+				else = {
+					1725 = { add_claim_by = SWE }
+				}
+				
+				if = {
+					limit = {
+						1726 = {
+							is_controlled_by = GER
+						}
+					}
+					SWE = { transfer_state = 1726 }
+				}
+				else = {
+					1726 = { add_claim_by = SWE }
+				}
 
 				if = {
 					limit = {
@@ -9273,10 +9372,19 @@ focus_tree = {
 				359 = {
 					NOT = { controller = { has_war_with = ROOT } }
 				}
+				1734 = {
+					NOT = { controller = { has_war_with = ROOT } }
+				}
 				320 = {
 					NOT = { controller = { has_war_with = ROOT } }
 				}
 				694 = {
+					NOT = { controller = { has_war_with = ROOT } }
+				}
+				1374 = {
+					NOT = { controller = { has_war_with = ROOT } }
+				}
+				1375 = {
 					NOT = { controller = { has_war_with = ROOT } }
 				}
 			}
@@ -9320,6 +9428,21 @@ focus_tree = {
 						}
 					}
 				}
+				
+				if = {
+					limit = {
+						1734 = {
+							controller = {
+								NOT = { has_war_with = ROOT }
+							}
+						}
+					}
+					1734 = {
+						controller = {
+							country_event = { id = AAT_Sweden.28 hours = 1 }
+						}
+					}
+				}
 
 				if = {
 					limit = {
@@ -9345,6 +9468,36 @@ focus_tree = {
 						}
 					}
 					694 = {
+						controller = {
+							country_event = { id = AAT_Sweden.28 hours = 1 }
+						}
+					}
+				}
+				
+				if = {
+					limit = {
+						1374 = {
+							controller = {
+								NOT = { has_war_with = ROOT }
+							}
+						}
+					}
+					1374 = {
+						controller = {
+							country_event = { id = AAT_Sweden.28 hours = 1 }
+						}
+					}
+				}
+				
+				if = {
+					limit = {
+						1375 = {
+							controller = {
+								NOT = { has_war_with = ROOT }
+							}
+						}
+					}
+					1375 = {
 						controller = {
 							country_event = { id = AAT_Sweden.28 hours = 1 }
 						}
@@ -9380,6 +9533,19 @@ focus_tree = {
 					PREV = { add_to_array = { SWE_states_to_transfers = PREV } }
 				}
 			}
+			
+			if = {
+				limit = {
+					1734 = {
+						controller = {
+							NOT = { has_war_with = ROOT }
+						}
+					}
+				}
+				1734 = {
+					PREV = { add_to_array = { SWE_states_to_transfers = PREV } }
+				}
+			}
 
 			if = {
 				limit = {
@@ -9403,6 +9569,32 @@ focus_tree = {
 					}
 				}
 				694 = {
+					PREV = { add_to_array = { SWE_states_to_transfers = PREV } }
+				}
+			}
+			
+			if = {
+				limit = {
+					1374 = {
+						controller = {
+							NOT = { has_war_with = ROOT }
+						}
+					}
+				}
+				1374 = {
+					PREV = { add_to_array = { SWE_states_to_transfers = PREV } }
+				}
+			}
+			
+			if = {
+				limit = {
+					1375 = {
+						controller = {
+							NOT = { has_war_with = ROOT }
+						}
+					}
+				}
+				1375 = {
 					PREV = { add_to_array = { SWE_states_to_transfers = PREV } }
 				}
 			}
@@ -9698,6 +9890,7 @@ focus_tree = {
 				DEN = {
 					OR = {
 						controls_state = 101
+						controls_state = 1758
 						controls_state = 337
 					}
 
@@ -9713,11 +9906,13 @@ focus_tree = {
 				AND = {
 					337 = { is_controlled_by = SWE  }
 					101  = { is_controlled_by = SWE }
+					1758  = { is_controlled_by = SWE }
 				}
 
 				AND = {
 					337 = { controller = { is_in_faction_with = SWE  }}
 					101 = { controller = { is_in_faction_with = SWE  }}
+					1758 = { controller = { is_in_faction_with = SWE  }}
 				}
 			}		
 		}
@@ -9740,6 +9935,7 @@ focus_tree = {
 				}
 
 				transfer_state = 101
+				transfer_state = 1758
 				transfer_state = 337
 			}
 			custom_effect_tooltip = SWE_crisis_affecting_variables
@@ -10008,11 +10204,14 @@ focus_tree = {
 						region = 131 #Ukraine
 						region = 130 #Belarus
 						region = 132 #Novgorod
-						state = 813 #Virumaa
-						state = 234
+						state = 813 state = 1799 state = 1800 #Virumaa
+						state = 234 state = 1097 state = 1098
 						state = 217 #Stalingrad
 					}
-					NOT = { state = 137 } #Crimea
+					NOT = { state = 137 state = 1086 state = 1087 state = 1088 } #Crimea
+					NOT = { state = 1086 } #Crimea
+					NOT = { state = 1087 } #Crimea
+					NOT = { state = 1088 } #Crimea
 				} 
 				add_claim_by = ROOT
 			}

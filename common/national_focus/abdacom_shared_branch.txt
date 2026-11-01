@@ -6,282 +6,273 @@
 
 	x = 0
 	y = 0
+ # 
+  ### UK OFFSET START ###
 
-	### UK OFFSET START ###
-
-		offset = {
-			x = -18
-			y = 0
-			trigger = {
-				tag = ENG
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = ENG_a_change_in_course
+	offset = {
+		x = -18
+		y = 0
+		trigger = {
+			tag = ENG
+			has_game_rule = {
+				rule = obsolete_focus_branches_visibility
+				option = HIDE
 			}
+			has_completed_focus = ENG_a_change_in_course
 		}
+	}
 
-		offset = {
-			x = -8
-			y = 0
-			trigger = {
-				tag = ENG
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = ENG_concessions_to_the_trade_unions
+	offset = {
+		x = -8
+		y = 0
+		trigger = {
+			tag = ENG
+			has_game_rule = {
+				rule = obsolete_focus_branches_visibility
+				option = HIDE
 			}
+			has_completed_focus = ENG_concessions_to_the_trade_unions
 		}
+	}
 
-		offset = {
-			x = -6
-			y = 0
-			trigger = {
-				tag = ENG
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = ENG_organize_the_blackshirts
+	offset = {
+		x = -6
+		y = 0
+		trigger = {
+			tag = ENG
+			has_game_rule = {
+				rule = obsolete_focus_branches_visibility
+				option = HIDE
 			}
+			has_completed_focus = ENG_organize_the_blackshirts
 		}
+	}
 
-		offset = {
-			x = -9
-			y = 0
-			trigger = {
-				tag = ENG
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = ENG_the_kings_party
+	offset = {
+		x = -9
+		y = 0
+		trigger = {
+			tag = ENG
+			has_game_rule = {
+				rule = obsolete_focus_branches_visibility
+				option = HIDE
 			}
+			has_completed_focus = ENG_the_kings_party
 		}
+	}
 
-		offset = {
-			x = -17
-			y = 0
-			trigger = {
-				tag = ENG
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = ENG_steady_as_she_goes
+	offset = {
+		x = -17
+		y = 0
+		trigger = {
+			tag = ENG
+			has_game_rule = {
+				rule = obsolete_focus_branches_visibility
+				option = HIDE
 			}
+			has_completed_focus = ENG_steady_as_she_goes
 		}
+	}
 
-		offset = {
-			x = -5
-			y = 0
-			trigger = {
-				tag = ENG
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = ENG_home_defence
+	offset = {
+		x = -5
+		y = 0
+		trigger = {
+			tag = ENG
+			has_game_rule = {
+				rule = obsolete_focus_branches_visibility
+				option = HIDE
 			}
+			has_completed_focus = ENG_home_defence
 		}
+	}
 
-		offset = {
-			x = -10
-			y = 0
-			trigger = {
-				tag = ENG
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = ENG_global_defense
+	offset = {
+		x = -10
+		y = 0
+		trigger = {
+			tag = ENG
+			has_game_rule = {
+				rule = obsolete_focus_branches_visibility
+				option = HIDE
 			}
+			has_completed_focus = ENG_global_defense
 		}
+	}
 
-		offset = {
-			x = -18
-			y = 0
-			trigger = {
-				tag = ENG
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = ENG_revisit_colonial_policy
+	offset = {
+		x = -18
+		y = 0
+		trigger = {
+			tag = ENG
+			has_game_rule = {
+				rule = obsolete_focus_branches_visibility
+				option = HIDE
 			}
+			has_completed_focus = ENG_revisit_colonial_policy
 		}
+	}
 
-		offset = {
-			x = -5
-			y = 0
-			trigger = {
-				tag = ENG
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = uk_empire_focus
+	offset = {
+		x = -5
+		y = 0
+		trigger = {
+			tag = ENG
+			has_game_rule = {
+				rule = obsolete_focus_branches_visibility
+				option = HIDE
 			}
-		}	
-	### UK OFFSET END ###
+			has_completed_focus = uk_empire_focus
+		}
+	}
+	
+  ### UK OFFSET END ###
 
-	### USA OFFSET START ###
-		#红线
-		offset = {
-			x = -60
-			y = 0
-			trigger = {
-				has_completed_focus = USA_suspend_the_presecution
+  ### USA OFFSET START ###
+
+	offset = {
+		x = -10
+		y = 0
+		trigger = {
+			tag = USA
+			has_game_rule = {
+				rule = obsolete_focus_branches_visibility
+				option = HIDE
 			}
+			has_completed_focus = USA_do_our_part
 		}
+	}
 
-		#蓝线一般偏移
-		offset = {
-			x = -33
-			y = 0
-			trigger = {
-				has_completed_focus = USA_zhunbei_37_xuanju
+
+  ### USA OFFSET END ###
+
+  ### FRANCE OFFSET START ###
+
+	offset = {
+		x = -10
+		y = 0
+		trigger = {
+			tag = FRA
+			has_game_rule = {
+				rule = obsolete_focus_branches_visibility
+				option = HIDE
 			}
+			has_completed_focus = FRA_revive_the_national_bloc
 		}
+	}
 
-		#黑线一般偏移
-		offset = {
-			x = -40
-			y = 0
-			trigger = {
-				has_completed_focus = USA_focus100
+	offset = {
+		x = -5
+		y = 0
+		trigger = {
+			tag = FRA
+			has_game_rule = {
+				rule = obsolete_focus_branches_visibility
+				option = HIDE
 			}
+			has_completed_focus = FRA_utilize_the_leagues
 		}
-	### USA OFFSET END ###
+	}
 
-	### FRANCE OFFSET START ###
-		offset = {
-			x = -10
-			y = 0
-			trigger = {
-				tag = FRA
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = FRA_revive_the_national_bloc
+	offset = {
+		x = -16
+		y = 0
+		trigger = {
+			tag = FRA
+			has_game_rule = {
+				rule = obsolete_focus_branches_visibility
+				option = HIDE
 			}
+			has_completed_focus = FRA_the_council_of_rambouillet
 		}
+	}
 
-		offset = {
-			x = -5
-			y = 0
-			trigger = {
-				tag = FRA
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = FRA_utilize_the_leagues
+	offset = {
+		x = -12
+		y = 0
+		trigger = {
+			tag = FRA
+			has_game_rule = {
+				rule = obsolete_focus_branches_visibility
+				option = HIDE
 			}
+			has_completed_focus = FRA_national_regeneration
 		}
+	}
 
-		offset = {
-			x = -16
-			y = 0
-			trigger = {
-				tag = FRA
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = FRA_the_council_of_rambouillet
+	offset = {
+		x = -25
+		y = 0
+		trigger = {
+			tag = FRA
+			has_game_rule = {
+				rule = obsolete_focus_branches_visibility
+				option = HIDE
 			}
+			has_completed_focus = FRA_form_the_popular_front
 		}
+	}
 
-		offset = {
-			x = -12
-			y = 0
-			trigger = {
-				tag = FRA
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = FRA_national_regeneration
+	offset = {
+		x = -8
+		y = 0
+		trigger = {
+			tag = FRA
+			has_game_rule = {
+				rule = obsolete_focus_branches_visibility
+				option = HIDE
 			}
+			has_completed_focus = FRA_invite_communist_ministers
 		}
+	}
+  ### FRANCE OFFSET END ###
 
-		offset = {
-			x = -25
-			y = 0
-			trigger = {
-				tag = FRA
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = FRA_form_the_popular_front
+  ### AUSTRALIA OFFSET START ###
+	offset = {
+		x = 132
+		y = 0
+		trigger = { tag = AST }
+	}
+
+	offset = {
+		x = -49
+		y = 0
+		trigger = {
+			tag = AST
+			has_game_rule = {
+				rule = obsolete_focus_branches_visibility
+				option = HIDE
 			}
+			has_completed_focus = AST_australia_first
 		}
+	}
 
-		offset = {
-			x = -8
-			y = 0
-			trigger = {
-				tag = FRA
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = FRA_invite_communist_ministers
+	offset = {
+		x = -25
+		y = 0
+		trigger = {
+			tag = AST
+			has_game_rule = {
+				rule = obsolete_focus_branches_visibility
+				option = HIDE
 			}
+			has_completed_focus = AST_war_is_coming
 		}
-	### FRANCE OFFSET END ###
+	}
 
-	### AUSTRALIA OFFSET START ###
-		offset = {
-			x = 132
-			y = 0
-			trigger = { tag = AST }
-		}
-
-		offset = {
-			x = -49
-			y = 0
-			trigger = {
-				tag = AST
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = AST_australia_first
+	offset = {
+		x = -58
+		y = 0
+		trigger = {
+			tag = AST
+			has_game_rule = {
+				rule = obsolete_focus_branches_visibility
+				option = HIDE
 			}
+			has_completed_focus = AST_against_war_and_fascism
 		}
-
-		offset = {
-			x = -25
-			y = 0
-			trigger = {
-				tag = AST
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = AST_war_is_coming
-			}
-		}
-
-		offset = {
-			x = -58
-			y = 0
-			trigger = {
-				tag = AST
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = AST_against_war_and_fascism
-			}
-		}
-	### AUSTRALIA OFFSET END ###
+	}
+  ### AUSTRALIA OFFSET END ###
 
 	offset = {
 		x = 79
@@ -295,8 +286,8 @@
 		trigger = { tag = FRA }
 	}
 
-	offset = {
-		x = 130
+	offset = { # modified
+		x = 89
 		y = 0
 		trigger = { tag = USA }
 	}
@@ -319,11 +310,11 @@
 	}
 
 	offset = {
-		x = -83
+		x = -77
 		y = 0
 		trigger = { tag = INS }
 	}
-
+ #
 	cost = 10
 
 	available_if_capitulated = no
@@ -349,6 +340,30 @@
 				has_completed_focus = INS_the_declaration_of_independence
 			}
 		}
+		if = { # modified
+			limit = {
+				original_tag = USA
+			}
+			or = {
+				NOT = {
+					#has_completed_focus = USA_an_american_five_year_plan
+					has_taken_core_path_non_democratic = yes
+				}
+				has_completed_focus = USA_do_our_part
+			}
+		}
+		if = {
+			limit = {
+				original_tag = USA
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+			}
+			NOT = {
+				has_completed_focus = USA_an_american_five_year_plan
+			}
+		}
 		is_vichy_france = no
 	}
 
@@ -363,7 +378,20 @@
 		OR = {
 			has_government = democratic
 			has_government = neutrality
+			if = {
+				limit = {
+					original_tag = USA
+					has_completed_focus = USA_do_our_part
+				}
+				has_government = fascism
+			}
 		}
+		#NOT = {
+		#	AND = {
+		#		original_tag = USA
+		#		has_completed_focus = USA_an_american_five_year_plan
+		#	}
+		#}
 	}
 
 	completion_reward_joint_originator = {
@@ -380,7 +408,7 @@
 		}
 
 		custom_effect_tooltip = ABDA_faction_membership_requirement_tt
-		
+
 		every_country = {
 			limit = {
 				OR = {

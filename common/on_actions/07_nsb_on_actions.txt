@@ -21,7 +21,7 @@ on_actions = {
 						is_core_of = GER
 						NOT = { #these two cores are given to germany in the Danzig or War event, but the states are not transfered immediately
 							state = 85
-							state = 807
+							state = 807 state = 1554
 							state = 8 #Luxembourg & Alsace
 							state = 28
 						}
@@ -419,11 +419,11 @@ on_actions = {
 					784 = { is_capital = no }
 					OR = {
 						controls_state = 11
-						controls_state = 784
+						controls_state = 784 controls_state = 1238 controls_state = 1248 controls_state = 1816
 					}
 				}
 				if = {
-					limit = { controls_state = 784 }
+					limit = { controls_state = 784 controls_state = 1238 controls_state = 1248 controls_state = 1816 }
 					set_capital = { state = 784 }
 				}
 				if = {

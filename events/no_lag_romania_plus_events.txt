@@ -131,12 +131,12 @@ country_event = {
 			}
 			if = {
 				limit = { 834 = { is_owned_by = FROM } }
-				transfer_state = 834
+				transfer_state = 834 transfer_state = 1261 transfer_state = 1420 transfer_state = 1421 transfer_state = 1500
 				834 = { remove_claim_by = FROM }
 			}
 			if = {
 				limit = { 198 = { is_owned_by = FROM } }
-				transfer_state = 198
+				transfer_state = 198 transfer_state = 1262
 				198 = { remove_claim_by = FROM }
 			}
 
@@ -180,11 +180,11 @@ country_event = {
 			FROM = {
 				if = {
 					limit = { 766 = { is_owned_by = ROM } }
-					transfer_state = 766
+					transfer_state = 766 transfer_state = 1092
 				}
 				if = {
 					limit = { 78 = { is_owned_by = ROM } }
-					transfer_state = 78
+					transfer_state = 78 transfer_state = 1291
 				}
 				if = {
 					limit = { 80 = { is_owned_by = ROM } }

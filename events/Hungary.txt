@@ -32,6 +32,9 @@ country_event = {
 
 		HUN = { 
 			transfer_state = 76
+			transfer_state = 1309
+			transfer_state = 1310
+			transfer_state = 1722
 			add_opinion_modifier = {
 				target = GER
 				modifier = GER_align_hungary	
@@ -72,8 +75,13 @@ country_event = {
 
 		HUN = { 
 			transfer_state = 76
+			transfer_state = 1309
+			transfer_state = 1310
+			transfer_state = 1722
 			transfer_state = 83
-			transfer_state = 84
+			transfer_state = 1479
+			transfer_state = 1480
+			transfer_state = 84 transfer_state = 1387
 			add_opinion_modifier = {
 				target = GER
 				modifier = GER_align_hungary	
@@ -114,7 +122,9 @@ country_event = {
 		name = hungary.4.a
 
 		add_state_claim = 76
-
+		add_state_claim = 1309
+		add_state_claim = 1310
+		add_state_claim = 1722
 		hidden_effect = {
 			country_event = { 
 				days = 1 
@@ -137,9 +147,14 @@ country_event = {
 		name = hungary.4.a
 
 		add_state_claim = 76
+		add_state_claim = 1309
+		add_state_claim = 1310
 		add_state_claim = 83
+		add_state_claim = 1480
 		add_state_claim = 84
+		add_state_claim = 1387
 		add_state_claim = 82
+		add_state_claim = 1722
 		hidden_effect = {
 			country_event = { 
 				days = 1 
@@ -161,7 +176,7 @@ country_event = {
 	
 	option = {
 		name = hungary.6.a
-		HUN = { transfer_state = 45 }
-		HUN = { transfer_state = 764 }
+		HUN = { transfer_state = 45 transfer_state = 1477 transfer_state = 1705 }
+		HUN = { transfer_state = 764 transfer_state = 1478 }
 	}
 }

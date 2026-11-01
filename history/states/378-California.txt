@@ -1,0 +1,48 @@
+
+state={
+	id=378
+	name="STATE_378"
+	manpower = 948329
+	
+	state_category = developed_rural
+	
+	resources={
+		oil=65
+		aluminium=5
+	}
+
+	history={
+		owner = USA
+		buildings = {
+			infrastructure = 3 #was: 6
+			arms_factory = 1
+			dockyard = 1
+			air_base = 10
+		}
+		1939.1.1 = {
+			buildings = {
+				industrial_complex = 3
+			}
+		}
+		victory_points = {
+			4518 4 #Fresno
+		}
+		victory_points = {
+			10483 3 #San Bernardino
+		}
+		victory_points = {
+			9911 3 #Bakersfield
+		}
+		victory_points = {
+			11859 3 #Santa Barbara
+		}
+		add_core_of = USA
+		add_core_of = CAL
+	}
+
+	provinces={
+		941 986 1651 3784 3840 4518 4657 4727 6861 6881 9637 9855 9911 10387 10483 11763 11795 11859 11876 12303 15536
+	}
+
+	local_supplies=0.0 
+}

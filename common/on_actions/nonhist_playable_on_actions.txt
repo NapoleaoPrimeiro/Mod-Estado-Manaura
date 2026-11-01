@@ -118,9 +118,9 @@ on_actions = {
 				}
 				clr_global_flag = MAN_fin_will_get_claims
 				FIN = {
-					transfer_state = 215
+					transfer_state = 215 transfer_state = 1116 transfer_state = 1117 transfer_state = 1170 transfer_state = 1171 transfer_state = 1174 transfer_state = 1175
 					transfer_state = 216
-					transfer_state = 213
+					transfer_state = 213 transfer_state = 1714
 				}
 				if = {
 					limit = {
@@ -149,9 +149,9 @@ on_actions = {
 							state = 146
 							state = 147
 							state = 722
-							state = 215
+							state = 215 state = 1116 state = 1117 state = 1170 state = 1171 state = 1174 state = 1175
 							state = 216
-							state = 213
+							state = 213 state = 1714
 						}
 					}
 					add_core_of = FIN
@@ -165,7 +165,7 @@ on_actions = {
 					}
 				}
 				ENG = { 
-					transfer_state = 230
+					transfer_state = 230 transfer_state = 1127 transfer_state = 1786
 					release_autonomy = { 
 						target = ARM
 						autonomy_state = autonomy_puppet
@@ -182,8 +182,18 @@ on_actions = {
 					transfer_state_to = ARM
 				}
 				231 = { add_core_of = ARM }
+				1121 = { add_core_of = ARM } # KSRE (de 231)
+				1123 = { add_core_of = ARM } # KSRE (de 231)
+				1124 = { add_core_of = ARM } # KSRE (de 231)
+				1125 = { add_core_of = ARM } # KSRE (de 231)
+				1126 = { add_core_of = ARM } # KSRE (de 231)
 				826 = { add_core_of = ARM }
 				229 = { add_core_of = ARM }
+				1118 = { add_core_of = ARM } # KSRE (de 229)
+				1119 = { add_core_of = ARM } # KSRE (de 229)
+				1120 = { add_core_of = ARM } # KSRE (de 229)
+				1122 = { add_core_of = ARM } # KSRE (de 229)
+				1811 = { add_core_of = ARM } # KSRE (de 229)
 				clr_global_flag = MAN_eng_will_get_armenia
 			}
 			if = {
@@ -342,7 +352,7 @@ on_actions = {
 										GER_is_soviet_greater_romania_state = yes
 									}
 									NOT = {
-										state = 202
+										state = 202 state = 1101 state = 1102 state = 1537
 									}
 									OR = {
 										is_owned_by = ROOT
@@ -359,7 +369,7 @@ on_actions = {
 										GER_is_soviet_greater_romania_state = yes
 									}
 									NOT = {
-										state = 202
+										state = 202 state = 1101 state = 1102 state = 1537
 									}
 									NOT = {
 										OR = {
@@ -423,8 +433,18 @@ on_actions = {
 					transfer_state_to = ARM
 				}
 				231 = { add_core_of = ARM }
+				1121 = { add_core_of = ARM } # KSRE (de 231)
+				1123 = { add_core_of = ARM } # KSRE (de 231)
+				1124 = { add_core_of = ARM } # KSRE (de 231)
+				1125 = { add_core_of = ARM } # KSRE (de 231)
+				1126 = { add_core_of = ARM } # KSRE (de 231)
 				826 = { add_core_of = ARM }
 				229 = { add_core_of = ARM }
+				1118 = { add_core_of = ARM } # KSRE (de 229)
+				1119 = { add_core_of = ARM } # KSRE (de 229)
+				1120 = { add_core_of = ARM } # KSRE (de 229)
+				1122 = { add_core_of = ARM } # KSRE (de 229)
+				1811 = { add_core_of = ARM } # KSRE (de 229)
 				clr_global_flag = MAN_ukr_blr_decision_GER_will_get_them
 			}
 		}
@@ -619,7 +639,7 @@ on_actions = {
 					FROM.FROM = {
 						OR = {
 							state = 81
-							state = 79
+							state = 79 state = 1267
 						}	
 					}
 					OR = {
@@ -759,7 +779,7 @@ on_actions = {
 					FROM = { has_war_with = JAP }
 					FROM.FROM = {
 						OR = {
-							state = 597
+							state = 597 state = 1497 state = 1498 state = 1499 state = 1503 state = 1504 state = 1505
 							state = 743
 							state = 613
 						}	
@@ -870,7 +890,7 @@ on_actions = {
 				}
 				662 = {
 					OWNER = {
-						transfer_state = 273
+						transfer_state = 273 transfer_state = 1756 transfer_state = 1757
 					}
 				}
 			}

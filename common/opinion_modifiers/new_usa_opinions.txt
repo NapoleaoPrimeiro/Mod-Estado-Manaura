@@ -1,0 +1,389 @@
+#########################################################################
+# OPINION MODIFIERS
+##########################################################################
+# value
+# min_trust
+# max_trust
+# decay
+# months/years/days = timer
+# trade = yes/no
+
+opinion_modifiers = {
+ # DEMOCRATIC
+	usa_reconciliation_opinion_modifier = {
+		value = 30
+		#months = 120
+		#decay = 0.125
+	}
+	usa_charity_opinion_modifier = {
+		value = 20
+		#months = 120
+		#decay = 0.125
+	}
+	usa_monroe_rejected_modifier = {
+		value = -50
+		#months = 120
+		#decay = 0.125
+	}
+	usa_defence_of_hemisphere_modifier = {
+		value = 50
+		#months = 120
+		#decay = 0.125
+	}
+	usa_security_alliance_rejected_modifier = {
+		value = -75
+		#months = 120
+		#decay = 0.125
+	}
+	usa_great_white_north_modifier = {
+		value = 50
+		#months = 120
+		#decay = 0.125
+	}
+	usa_support_mexico_modifier = {
+		value = 50
+		#months = 120
+		#decay = 0.125
+	}
+	usa_invest_mesoamerica_modifier = {
+		value = 50
+		#months = 120
+		#decay = 0.125
+	}
+	usa_sa_industrialization_modifier = {
+		value = 50
+		#months = 120
+		#decay = 0.125
+	}
+	usa_miami_modifier = {
+		value = 25
+		#months = 120
+		#decay = 0.125
+	}
+
+	usa_wp_black_modifier = {
+		value = -50
+		decay = 0.125
+	}
+	usa_wp_red_modifier = {
+		value = -50
+		decay = 0.125
+	}
+	usa_wp_white_modifier = {
+		value = -50
+		decay = 0.125
+	}
+	usa_wp_silver_modifier = {
+		value = -50
+		decay = 0.125
+	}
+	usa_wp_gold_modifier = {
+		value = -50
+		decay = 0.125
+	}
+	usa_wp_chrome_modifier = {
+		value = -25
+		decay = 0.125
+	}
+	usa_victory_act_modifier = {
+		value = -30
+		decay = 0.125
+	}
+	usa_victory_act_more_modifier = {
+		value = -15
+		decay = 0.125
+	}
+	usa_wp_orange_modifier = {
+		value = -50
+		decay = 0.125
+	}
+	usa_wp_yellow_modifier = {
+		value = -50
+		decay = 0.125
+	}
+	usa_wp_vermilion_modifier = {
+		value = -50
+		decay = 0.125
+	}
+	usa_wp_crimson_modifier = {
+		value = -50
+		decay = 0.125
+	}
+	usa_wp_green_modifier = {
+		value = -50
+		decay = 0.125
+	}
+	usa_wp_turquoise_modifier = {
+		value = -50
+		decay = 0.125
+	}
+	usa_wp_jade_modifier = {
+		value = -50
+		decay = 0.125
+	}
+	usa_wp_mint_modifier = {
+		value = -50
+		decay = 0.125
+	}
+	usa_wp_teal_modifier = {
+		value = -50
+		decay = 0.125
+	}
+	usa_wp_lime_modifier = {
+		value = -50
+		decay = 0.125
+	}
+	usa_wp_scarlet_garnet_modifier = {
+		value = -50
+		decay = 0.125
+	}
+	usa_wp_ruby_modifier = {
+		value = -50
+		decay = 0.125
+	}
+	usa_wp_onyx_modifier = {
+		value = -25
+		decay = 0.125
+	}
+	usa_wp_diamond_modifier = {
+		value = -25
+		decay = 0.125
+	}
+	usa_calm_waves_modifier = {
+		value = 35
+		#decay = 0.125
+	}
+	usa_miiea_modifier = {
+		value = 40
+		#decay = 0.125
+	}
+	usa_extend_american_hegemony_modifier = {
+		value = -25
+		decay = 0.125
+	}
+	usa_cooperative_outreach_modifier = {
+		value = 20
+		#decay = 0.125
+	}
+	usa_agree_to_give_overlordship_modifier = {
+		value = 40
+		#decay = 0.125
+	}
+	usa_slay_the_dragon_modifier = {
+		value = -80
+		decay = 0.125
+	}
+	usa_operation_downfall_modifier = {
+		value = -80
+		decay = 0.125
+	}
+	usa_america_of_the_orient_modifier = {
+		value = 50
+		#decay = 0.125
+	}
+	usa_protect_the_pacific_modifier = {
+		value = 40
+		#decay = 0.125
+	}
+	usa_the_flying_tigers_modifier = {
+		value = 35
+		#decay = 0.125
+	}
+	usa_the_firestar_project_modifier = {
+		value = 75
+		#decay = 0.125
+	}
+	usa_guerilla_support_modifier = {
+		value = 35
+		#decay = 0.125
+	}
+	usa_purused_american_prosperity_modifier = {
+		value = 25
+		#decay = 0.125
+	}
+	usa_trade_in_inner_asia_modifier = {
+		value = 30
+		#decay = 0.125
+	}
+	usa_reopen_trade_modifier = {
+		value = 15
+		#decay = 0.125
+	}
+	usa_extend_american_charity_modifier = {
+		value = 15
+		#decay = 0.125
+	}
+	usa_american_influence_pro_modifier = {
+		value = 15
+		#decay = 0.125
+	}
+	usa_american_influence_anti_modifier = {
+		value = -20
+		decay = 0.125
+	}
+	usa_seek_regime_change_modifier = {
+		value = -15
+		decay = 0.125
+	}
+	usa_the_old_world_modifier = {
+		value = -80
+		decay = 0.125
+	}
+	usa_promoted_peace_modifier = {
+		value = 30
+		#decay = 0.125
+	}
+	usa_rejected_peace_modifier = {
+		value = -30
+		decay = 0.125
+	}
+	usa_left_naval_treaties_modifier = {
+		value = -30
+		decay = 1
+	}
+	usa_overwhelming_material_support_modifier = {
+		value = 40
+		#decay = 1
+	}
+	usa_shatter_the_crown_modifier = {
+		value = -80
+		decay = 0.125
+	}
+	usa_duel_of_the_eagles_modifier = {
+		value = -80
+		decay = 0.125
+	}
+	usa_approach_russia_modifier = {
+		value = 25
+		decay = 0.125
+	}
+	usa_american_industrial_tutelage_modifier = {
+		value = 30
+		#decay = 0.125
+	}
+	usa_crusade_for_freedom_good_modifier = {
+		value = 150
+		#decay = 0.125
+	}
+	usa_crusade_for_freedom_bad_modifier = {
+		value = -150
+		#decay = 0.125
+	}
+	usa_establish_official_partnership_modifier = {
+		value = 80
+		#decay = 0.125
+	}
+	usa_new_world_order_modifier = {
+		value = 75
+		decay = 0.25
+	}
+	usa_new_world_order_bad_modifier = {
+		value = -100
+		decay = 0.125
+	}
+	usa_restore_the_kadets_modifier = {
+		value = 100
+		#decay = 0.125
+	}
+	usa_unheilige_politik_good_modifier = {
+		value = 75
+		decay = 0.125
+	}
+	usa_unheilige_politik_bad_modifier = {
+		value = -75
+		decay = 0.125
+	}
+ # NATIONALIST COMMUNIST
+	usa_secure_peace_guarantees_rejected_modifier = {
+		value = -50
+		#decay = 0.125
+	}
+	usa_denounce_capitalism_good_modifier = {
+		value = 50
+	}
+	usa_denounce_capitalism_bad_modifier = {
+		value = -50
+	}
+ # AMERICAN NATIONALIST
+	usa_bay_otzen_dem_modifier = {
+		value = -30
+		#decay = 0.125
+	}
+	usa_bay_otzen_not_dem_modifier = {
+		value = -15
+		#decay = 0.125
+	}
+
+	usa_first_among_equals_modifier = {
+		value = -20
+		#decay = 0.125
+	}
+
+	usa_ballads_between_brothers_modifier = {
+		value = 50
+		#decay = 0.125
+	}
+
+	usa_peace_guarantees_modifier = {
+		value = 30
+		#decay = 0.125
+	}
+
+	usa_rightful_claims_opening_talks_modifier = {
+		value = 25
+		#decay = 0.125
+	}
+
+	usa_our_saftey_before_yours_far_modifier = {
+		value = -10
+		#decay = 0.125
+	}
+	usa_our_saftey_before_yours_close_modifier = {
+		value = -15
+		#decay = 0.125
+	}
+	usa_our_saftey_before_yours_trade_modifier = {
+		value = 75
+		trade = yes
+	}
+	usa_our_saftey_before_yours_trade_rejected_modifier = {
+		value = -20
+		#trade = yes
+	}
+	usa_our_saftey_before_yours_accepted_modifier = {
+		value = 20
+	}
+
+	usa_throw_in_with_the_old_modifier = {
+		value = 35
+	}
+
+	usa_pledge_for_the_new_order_modifier = {
+		value = 25
+	}
+
+	usa_the_sun_has_already_set_modifier = {
+		value = -75
+	}
+
+	usa_the_eagle_flies_alone_modifier = {
+		value = 50
+	}
+	usa_the_eagle_flies_alone_trade_modifier = {
+		value = 200
+		trade = yes
+	}
+	usa_the_eagle_flies_alone_rejected_modifier = {
+		value = -150
+	}
+
+	usa_imperial_roost_modifier = {
+		value = 50
+		max_trust = 25
+	}
+	usa_imperial_roost_trade_modifier = {
+		value = 200
+		trade = yes
+	}
+
+}	

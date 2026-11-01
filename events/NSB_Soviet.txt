@@ -2800,9 +2800,93 @@ country_event = {
 			effect_tooltip = {
 				if = {
 					limit = {
-						ROOT = { controls_state = 463 }
+						ROOT = { controls_state = 463 controls_state = 1568 controls_state = 1569 controls_state = 1570 controls_state = 1571 controls_state = 1572 controls_state = 1573 controls_state = 1574 controls_state = 1575 controls_state = 1576 controls_state = 1577 controls_state = 1578 controls_state = 1579 controls_state = 1580 controls_state = 1581 }
 					}
-					transfer_state = 463 #ALASKA
+					transfer_state = 463 transfer_state = 1568 transfer_state = 1569 transfer_state = 1570 transfer_state = 1571 transfer_state = 1572 transfer_state = 1573 transfer_state = 1574 transfer_state = 1575 transfer_state = 1576 transfer_state = 1577 transfer_state = 1578 transfer_state = 1579 transfer_state = 1580 transfer_state = 1581 #ALASKA
+				}
+				if = {
+					limit = {
+						ROOT = { controls_state = 1568 }
+					}
+					transfer_state = 1568
+				}
+				if = {
+					limit = {
+						ROOT = { controls_state = 1569 }
+					}
+					transfer_state = 1569
+				}
+				if = {
+					limit = {
+						ROOT = { controls_state = 1570 }
+					}
+					transfer_state = 1570
+				}
+				if = {
+					limit = {
+						ROOT = { controls_state = 1571 }
+					}
+					transfer_state = 1571
+				}
+				if = {
+					limit = {
+						ROOT = { controls_state = 1572 }
+					}
+					transfer_state = 1572
+				}
+				if = {
+					limit = {
+						ROOT = { controls_state = 1573 }
+					}
+					transfer_state = 1573
+				}
+				if = {
+					limit = {
+						ROOT = { controls_state = 1574 }
+					}
+					transfer_state = 1574
+				}
+				if = {
+					limit = {
+						ROOT = { controls_state = 1575 }
+					}
+					transfer_state = 1575
+				}
+				if = {
+					limit = {
+						ROOT = { controls_state = 1576 }
+					}
+					transfer_state = 1576
+				}
+				if = {
+					limit = {
+						ROOT = { controls_state = 1577 }
+					}
+					transfer_state = 1577
+				}
+				if = {
+					limit = {
+						ROOT = { controls_state = 1578 }
+					}
+					transfer_state = 1578
+				}
+				if = {
+					limit = {
+						ROOT = { controls_state = 1579 }
+					}
+					transfer_state = 1579
+				}
+				if = {
+					limit = {
+						ROOT = { controls_state = 1580 }
+					}
+					transfer_state = 1580
+				}
+				if = {
+					limit = {
+						ROOT = { controls_state = 1581 }
+					}
+					transfer_state = 1581
 				}
 				if = {
 					limit = {
@@ -2869,9 +2953,93 @@ country_event = {
 		
 		if = {
 			limit = {
-				FROM = { controls_state = 463 }
+				FROM = { controls_state = 463 controls_state = 1568 controls_state = 1569 controls_state = 1570 controls_state = 1571 controls_state = 1572 controls_state = 1573 controls_state = 1574 controls_state = 1575 controls_state = 1576 controls_state = 1577 controls_state = 1578 controls_state = 1579 controls_state = 1580 controls_state = 1581 }
 			}
-			transfer_state = 463 #ALASKA
+			transfer_state = 463 transfer_state = 1568 transfer_state = 1569 transfer_state = 1570 transfer_state = 1571 transfer_state = 1572 transfer_state = 1573 transfer_state = 1574 transfer_state = 1575 transfer_state = 1576 transfer_state = 1577 transfer_state = 1578 transfer_state = 1579 transfer_state = 1580 transfer_state = 1581 #ALASKA
+		}
+		if = {
+			limit = {
+				ROOT = { controls_state = 1568 }
+			}
+			transfer_state = 1568
+		}
+		if = {
+			limit = {
+				ROOT = { controls_state = 1569 }
+			}
+			transfer_state = 1569
+		}
+		if = {
+			limit = {
+				ROOT = { controls_state = 1570 }
+			}
+			transfer_state = 1570
+		}
+		if = {
+			limit = {
+				ROOT = { controls_state = 1571 }
+			}
+			transfer_state = 1571
+		}
+		if = {
+			limit = {
+				ROOT = { controls_state = 1572 }
+			}
+			transfer_state = 1572
+		}
+		if = {
+			limit = {
+				ROOT = { controls_state = 1573 }
+			}
+			transfer_state = 1573
+		}
+		if = {
+			limit = {
+				ROOT = { controls_state = 1574 }
+			}
+			transfer_state = 1574
+		}
+		if = {
+			limit = {
+				ROOT = { controls_state = 1575 }
+			}
+			transfer_state = 1575
+		}
+		if = {
+			limit = {
+				ROOT = { controls_state = 1576 }
+			}
+			transfer_state = 1576
+		}
+		if = {
+			limit = {
+				ROOT = { controls_state = 1577 }
+			}
+			transfer_state = 1577
+		}
+		if = {
+			limit = {
+				ROOT = { controls_state = 1578 }
+			}
+			transfer_state = 1578
+		}
+		if = {
+			limit = {
+				ROOT = { controls_state = 1579 }
+			}
+			transfer_state = 1579
+		}
+		if = {
+			limit = {
+				ROOT = { controls_state = 1580 }
+			}
+			transfer_state = 1580
+		}
+		if = {
+			limit = {
+				ROOT = { controls_state = 1581 }
+			}
+			transfer_state = 1581
 		}
 		if = {
 			limit = {
@@ -4402,6 +4570,20 @@ country_event = {
 
 			#Claims
 			463 = { add_claim_by = SOV } #Alaska
+			1568 = { add_claim_by = SOV }
+			1569 = { add_claim_by = SOV }
+			1570 = { add_claim_by = SOV }
+			1571 = { add_claim_by = SOV }
+			1572 = { add_claim_by = SOV }
+			1573 = { add_claim_by = SOV }
+			1574 = { add_claim_by = SOV }
+			1575 = { add_claim_by = SOV }
+			1576 = { add_claim_by = SOV }
+			1577 = { add_claim_by = SOV }
+			1578 = { add_claim_by = SOV }
+			1579 = { add_claim_by = SOV }
+			1580 = { add_claim_by = SOV }
+			1581 = { add_claim_by = SOV }
 			650 = { add_claim_by = SOV } #Atu Island
 			632 = { add_claim_by = JAP } #Wake Island
 			631 = { add_claim_by = JAP } #Midway Island
@@ -4494,6 +4676,20 @@ country_event = {
 		name = NSB_soviet_foreign_politics_events.268.a
 
 		463 = { add_claim_by = SOV } #Alaska
+		1568 = { add_claim_by = SOV }
+		1569 = { add_claim_by = SOV }
+		1570 = { add_claim_by = SOV }
+		1571 = { add_claim_by = SOV }
+		1572 = { add_claim_by = SOV }
+		1573 = { add_claim_by = SOV }
+		1574 = { add_claim_by = SOV }
+		1575 = { add_claim_by = SOV }
+		1576 = { add_claim_by = SOV }
+		1577 = { add_claim_by = SOV }
+		1578 = { add_claim_by = SOV }
+		1579 = { add_claim_by = SOV }
+		1580 = { add_claim_by = SOV }
+		1581 = { add_claim_by = SOV }
 		650 = { add_claim_by = SOV } #Atu Island
 		add_opinion_modifier = { target = FROM modifier = SOV_soviet_japanese_pact_against_usa }
 		FROM = {
@@ -6944,7 +7140,7 @@ country_event = {
 					include_locked = yes
 				}	
 			}
-			prioritize = { 217 202 195 }
+			prioritize = { 217 202 195 1101 1102 1537 1289 }
 			add_extra_state_shared_building_slots = 2
 			add_building_construction = {
 				type = industrial_complex
@@ -9686,15 +9882,15 @@ country_event = {
 				}
 			}
 			JAP = {
-				transfer_state = 408
+				transfer_state = 408 transfer_state = 1332 transfer_state = 1333 transfer_state = 1334 transfer_state = 1335 transfer_state = 1336
 				transfer_state = 409
 				transfer_state = 655
-				transfer_state = 560
+				transfer_state = 560 transfer_state = 1338
 				transfer_state = 562
 				transfer_state = 822
 				transfer_state = 874
 				transfer_state = 637
-				transfer_state = 875
+				transfer_state = 875 transfer_state = 1609
 			}
 			give_resource_rights = { receiver = JAP state = 657 }
 			give_resource_rights = { receiver = JAP state = 653 }
@@ -9705,9 +9901,19 @@ country_event = {
 			limit = {
 				has_country_flag = SOV_CSW_transfer_vladivostok_flag 
 				owns_state = 408
+				owns_state = 1332
+				owns_state = 1333
+				owns_state = 1334
+				owns_state = 1335
+				owns_state = 1336
 			}
 			JAP = {
 				transfer_state = 408
+				transfer_state = 1332
+				transfer_state = 1333
+				transfer_state = 1334
+				transfer_state = 1335
+				transfer_state = 1336
 			}
 		}
 
@@ -9734,7 +9940,7 @@ country_event = {
 		IF = {
 			limit = {
 				has_country_flag = SOV_CSW_baku_oil_flag 
-				owns_state = 229
+				owns_state = 229 owns_state = 1118 owns_state = 1119 owns_state = 1120 owns_state = 1122 owns_state = 1811
 			}
 			give_resource_rights = { receiver = GER state = 229 }
 		}
@@ -9813,6 +10019,30 @@ country_event = {
 				is_owned_by = ROOT 
 				is_controlled_by = ROOT
 			}
+			1105 = {  # KSRE (de 219)
+				is_owned_by = ROOT 
+				is_controlled_by = ROOT
+			}
+			1106 = {  # KSRE (de 219)
+				is_owned_by = ROOT 
+				is_controlled_by = ROOT
+			}
+			1107 = {  # KSRE (de 219)
+				is_owned_by = ROOT 
+				is_controlled_by = ROOT
+			}
+			1113 = {  # KSRE (de 219)
+				is_owned_by = ROOT 
+				is_controlled_by = ROOT
+			}
+			1114 = {  # KSRE (de 219)
+				is_owned_by = ROOT 
+				is_controlled_by = ROOT
+			}
+			1115 = {  # KSRE (de 219)
+				is_owned_by = ROOT 
+				is_controlled_by = ROOT
+			}
 		}
 		set_capital = { state = 219 }
 
@@ -9832,6 +10062,10 @@ country_event = {
 				is_owned_by = ROOT 
 				is_controlled_by = ROOT
 			}
+			1289 = {  # KSRE (de 195)
+				is_owned_by = ROOT 
+				is_controlled_by = ROOT
+			}
 			NOT = { SOV_is_exiles = yes }
 		}
 		set_capital = { state = 195 }
@@ -9848,6 +10082,10 @@ country_event = {
 		}
 		trigger = {
 			195 = { 
+				is_owned_by = ROOT 
+				is_controlled_by = ROOT
+			}
+			1289 = {  # KSRE (de 195)
 				is_owned_by = ROOT 
 				is_controlled_by = ROOT
 			}
@@ -9882,6 +10120,26 @@ country_event = {
 				is_owned_by = ROOT 
 				is_controlled_by = ROOT
 			}
+			1332 = {  # KSRE (de 408)
+				is_owned_by = ROOT 
+				is_controlled_by = ROOT
+			}
+			1333 = {  # KSRE (de 408)
+				is_owned_by = ROOT 
+				is_controlled_by = ROOT
+			}
+			1334 = {  # KSRE (de 408)
+				is_owned_by = ROOT 
+				is_controlled_by = ROOT
+			}
+			1335 = {  # KSRE (de 408)
+				is_owned_by = ROOT 
+				is_controlled_by = ROOT
+			}
+			1336 = {  # KSRE (de 408)
+				is_owned_by = ROOT 
+				is_controlled_by = ROOT
+			}
 			SOV_is_exiles = yes
 		}
 		set_capital = { state = 408 }
@@ -9894,6 +10152,10 @@ country_event = {
 		}
 		trigger = {
 			195 = { 
+				is_owned_by = ROOT 
+				is_controlled_by = ROOT
+			}
+			1289 = {  # KSRE (de 195)
 				is_owned_by = ROOT 
 				is_controlled_by = ROOT
 			}
@@ -10323,7 +10585,14 @@ country_event = {
 			}
 			hidden_effect = { 250 = { set_state_name = SOV_Simbirsk } }
 		}
-
+		hidden_effect = { 
+			clr_country_flag = KSR_stalinist_russian_names
+			clr_country_flag = KSR_tsarist_russian_names 
+			clr_country_flag = KSR_trotskyist_russian_names 
+			clr_country_flag = KSR_bukharinist_russian_names 
+			
+			ksr_update_naming_localisation = yes
+		}
 	}
 	# Tsaritsyn
 	option = {
@@ -10556,8 +10825,14 @@ country_event = {
 			}
 			hidden_effect = { 250 = { set_state_name = SOV_Simbirsk } }
 		}
-	
-		
+		hidden_effect = { 
+			clr_country_flag = KSR_stalinist_russian_names
+			set_country_flag = KSR_tsarist_russian_names 
+			clr_country_flag = KSR_trotskyist_russian_names 
+			clr_country_flag = KSR_bukharinist_russian_names 
+			
+			ksr_update_naming_localisation = yes
+		}
 	}
 	# Trotskygrad
 	option = {
@@ -10622,6 +10897,15 @@ country_event = {
 		}
 		hidden_effect = { 252 = { set_state_name = SOV_Nizhny_Novgorod } }
 		
+		hidden_effect = { 
+			clr_country_flag = KSR_stalinist_russian_names
+			clr_country_flag = KSR_tsarist_russian_names 
+			set_country_flag = KSR_trotskyist_russian_names 
+			clr_country_flag = KSR_bukharinist_russian_names 
+			
+			ksr_update_naming_localisation = yes
+		}
+		
 	}
 	# Bukharino - Only if Right opposition, but Bukharin has been killed
 	option = {
@@ -10674,6 +10958,14 @@ country_event = {
 			name = SOV_Nizhny_Novgorod
 		}
 		hidden_effect = { 252 = { set_state_name = SOV_Nizhny_Novgorod } }
+		hidden_effect = { 
+			clr_country_flag = KSR_stalinist_russian_names
+			clr_country_flag = KSR_tsarist_russian_names 
+			clr_country_flag = KSR_trotskyist_russian_names 
+			set_country_flag = KSR_bukharinist_russian_names 
+			
+			ksr_update_naming_localisation = yes
+		}
 	}
 }
 

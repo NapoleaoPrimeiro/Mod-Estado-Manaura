@@ -1,0 +1,87 @@
+spriteTypes = {
+	# de countrypoliticsview.gfx
+	spriteType = {
+		name = "GFX_autonomy_aat_defense_council_member_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_colony_icon.dds"
+	}
+	# de countrypoliticsview.gfx
+	spriteType = {
+		name = "GFX_autonomy_austro_hungarian_subject_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_austro_hungarian_vassal_icon.dds"
+	}
+	# de countrypoliticsview.gfx
+	spriteType = {
+		name = "GFX_autonomy_volkskommissariat_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_volkskommissariat_icon.dds"
+	}
+	# de countrypoliticsview.gfx
+	spriteType = {
+		name = "GFX_autonomy_eu_member_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_eu_member_icon.dds"
+	}
+	# de countrypoliticsview.gfx
+	spriteType = {
+		name = "GFX_autonomy_sea_warlord_subject_icon"
+		textureFile = "gfx/interface/autonomy/sea_warlord_subject_icon.dds"
+	}
+	# de countrypoliticsview.gfx
+	spriteType = {
+		name = "GFX_autonomy_sea_integrated_warlord_subject_icon"
+		textureFile = "gfx/interface/autonomy/sea_integrated_warlord_subject_icon.dds"
+	}
+	# de countrypoliticsview.gfx
+	spriteType = {
+		name = "GFX_autonomy_associated_dominion_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_associated_dominion_icon.dds"
+	}
+	# de countrypoliticsview.gfx
+	spriteType = {
+		name = "GFX_idea_entry_bg_4"
+		texturefile = "gfx/interface/idea_entry_bg_4.dds"
+	}
+	# de countrypoliticsview.gfx
+	spriteType = {
+		name = "GFX_pol_view_bg_no_dlc"
+		textureFile = "gfx//interface//pol_view_bg_no_dlc.dds"
+	}
+	# de general_stuff.gfx
+	spriteType = {
+		name = "GFX_privacy_reveal_eye"
+		texturefile = "gfx/interface/privacy_reveal_eye.dds"
+		noOfFrames = 2
+	}
+	# de mapicons.gfx
+	spriteType = {
+		name = "GFX_onmap_unit_counter_empty"
+		noOfFrames = 3
+		texturefile = "gfx/interface/onmap_unit_counter_empty.dds"
+	}
+	# de mapicons.gfx
+	spriteType = { # Texture file is set in code to the pinging country's flag
+		name = "GFX_mapicon_ping_flag"
+		alwaystransparent = yes
+		legacy_lazy_load = no
+		framedirectiony = yes
+	}
+	# de menubar.gfx
+	spriteType = {
+		name = "GFX_settings_ingame_tab"
+		texturefile = "gfx/interface/tab_small_110.dds"
+		noOfFrames = 2
+	}
+	# de menubar.gfx
+	corneredTileSpriteType = {
+		name = "GFX_settings_tabs_bottom"
+		size = { x = 464 y = 150 }
+		textureFile = "gfx//interface//fullborder_tiled.dds"
+		borderSize = { x = 64 y = 64 }
+		tilingCenter = yes
+		alwaystransparent = yes
+	}
+	# de topbar.gfx
+	spriteType = {
+		name = "GFX_topbar_international_market"
+		texturefile = "gfx/interface/topbar/toolbar/international_market_button.dds"
+		noOfFrames = 2		
+	}
+}

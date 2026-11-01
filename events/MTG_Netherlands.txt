@@ -2666,8 +2666,11 @@ country_event = {
 	trigger = {
 		has_global_flag = HOL_inundation_lines_flooded
 		has_full_control_of_state = 7
-		has_full_control_of_state = 35
-		has_full_control_of_state = 36
+		has_full_control_of_state = 1292
+		has_full_control_of_state = 35 has_full_control_of_state = 1255 has_full_control_of_state = 1376
+		has_full_control_of_state = 1297
+		has_full_control_of_state = 1293
+		has_full_control_of_state = 36 has_full_control_of_state = 1552
 		NOT = { has_global_flag = HOL_inundation_lines_flooded_unhappiness_timer }
 		NOT = { has_country_flag = HOL_draining_in_progress }
 	}
@@ -2717,8 +2720,14 @@ country_event = {
 		if = {
 			limit = {
 				7 = { is_core_of = ROOT }
+				1292 = { is_core_of = ROOT }
 				35 = { is_core_of = ROOT }
+				1376 = { is_core_of = ROOT } # KSRE (de 35)
+				1297 = { is_core_of = ROOT }
+				1293 = { is_core_of = ROOT }
 				36 = { is_core_of = ROOT }
+				1255 = { is_core_of = ROOT }
+				1552 = { is_core_of = ROOT }
 			}
 			add_war_support = HOL_inundation_lines_flooding_unhappiness_var
 		}
@@ -2727,12 +2736,32 @@ country_event = {
 				NOT = {
 					AND = {
 						7 = { is_core_of = ROOT }
+						1292 = { is_core_of = ROOT }
 						35 = { is_core_of = ROOT }
+						1376 = { is_core_of = ROOT } # KSRE (de 35)
+						1297 = { is_core_of = ROOT }
+						1293 = { is_core_of = ROOT }
 						36 = { is_core_of = ROOT }
+						1255 = { is_core_of = ROOT }
+						1552 = { is_core_of = ROOT }
 					}
 				}
 			}
 			7 = {
+				damage_building = {
+				    type = infrastructure
+				    damage = 4
+				}
+				damage_building = {
+				    type = industrial_complex
+				    damage = 2
+				}
+				damage_building = {
+				    type = arms_factory
+				    damage = 2
+				}
+			}
+			1292 = {
 				damage_building = {
 				    type = infrastructure
 				    damage = 4
@@ -2760,7 +2789,63 @@ country_event = {
 				    damage = 1.5
 				}
 			}
+			1297 = {
+				damage_building = {
+				    type = infrastructure
+				    damage = 3
+				}
+				damage_building = {
+				    type = industrial_complex
+				    damage = 1.5
+				}
+				damage_building = {
+				    type = arms_factory
+				    damage = 1.5
+				}
+			}
+			1293 = {
+				damage_building = {
+				    type = infrastructure
+				    damage = 3
+				}
+				damage_building = {
+				    type = industrial_complex
+				    damage = 1.5
+				}
+				damage_building = {
+				    type = arms_factory
+				    damage = 1.5
+				}
+			}
 			36 = {
+				damage_building = {
+				    type = infrastructure
+				    damage = 3
+				}
+				damage_building = {
+				    type = industrial_complex
+				    damage = 1.5
+				}
+				damage_building = {
+				    type = arms_factory
+				    damage = 1.5
+				}
+			}
+			1255 = {
+				damage_building = {
+				    type = infrastructure
+				    damage = 3
+				}
+				damage_building = {
+				    type = industrial_complex
+				    damage = 1.5
+				}
+				damage_building = {
+				    type = arms_factory
+				    damage = 1.5
+				}
+			}
+			1552 = {
 				damage_building = {
 				    type = infrastructure
 				    damage = 3

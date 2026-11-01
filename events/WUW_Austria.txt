@@ -154,10 +154,20 @@ country_event = { #Worry Regarding Anschluss
 				has_completed_focus = GER_remilitarize_the_rhineland
 				controls_state = 51
 				controls_state = 42
+				controls_state = 1551
+				controls_state = 1251
+				controls_state = 1253
+				controls_state = 1254
+				controls_state = 1414
 			}
 
 			51 = { is_demilitarized_zone = no }
 			42 = { is_demilitarized_zone = no }
+			1551 = { is_demilitarized_zone = no }
+			1251 = { is_demilitarized_zone = no }
+			1253 = { is_demilitarized_zone = no }
+			1254 = { is_demilitarized_zone = no }
+			1414 = { is_demilitarized_zone = no }
 
 			original_tag = AUS
 			has_dlc = "Gotterdammerung"
@@ -1794,7 +1804,7 @@ country_event = { #Austria finds out FROM diplomatically supports them
 							is_fully_controlled_by = FROM
 						}
 	
-						prioritize = { 361 378 } #Maryland or California
+						prioritize = { 361 378 1729 1730 1731 1732 1733 1167 1562 1563 1622 1623 1624 1625 1655 1753 } #Maryland or California
 	
 						add_extra_state_shared_building_slots = 2
 	
@@ -1829,7 +1839,7 @@ country_event = { #Austria finds out FROM diplomatically supports them
 							is_fully_controlled_by = FROM
 						}
 	
-						prioritize = { 16 19 } #Ile de France or Aquitane
+						prioritize = { 16 19 1517 1518 1519 1520 } #Ile de France or Aquitane
 	
 						add_extra_state_shared_building_slots = 2
 	
@@ -1865,7 +1875,7 @@ country_event = { #Austria finds out FROM diplomatically supports them
 							is_fully_controlled_by = FROM
 						}
 	
-						prioritize = { 2 17 } #Lazio or Campania
+						prioritize = { 2 17 1404 1257 } #Lazio or Campania
 	
 						add_extra_state_shared_building_slots = 2
 	
@@ -3037,6 +3047,10 @@ country_event = { #Austria requests payment for their help in scw
 						is_fully_controlled_by = FROM 
 						is_core_of = FROM
 					} 
+					1553 = {  # KSRE (de 4)
+						is_fully_controlled_by = FROM 
+						is_core_of = FROM
+					} 
 				}
 
 				4 = {
@@ -3364,6 +3378,12 @@ country_event = { #Austria picks cosmetic tag, and in what way and to what exten
 		add_state_core = 52 #Oberbayern
 		add_state_core = 53 #Niederbayern
 		add_state_core = 54 #Franken
+		add_state_core = 1546
+		add_state_core = 1547
+		add_state_core = 1548
+		add_state_core = 1549
+		add_state_core = 1550
+		add_state_core = 1251
 
 		IF = {
 			limit = {
@@ -3500,6 +3520,11 @@ country_event = { #FROM, Austria, Demands we integrate
 							state = 973
 							state = 154
 							state = 43
+							state = 1278
+							state = 1235
+							state = 1700
+							state = 1703
+							state = 1384
 						}
 						OR = {
 							is_fully_controlled_by = ROOT
@@ -3566,10 +3591,14 @@ country_event = { #FROM, Austria, Demands we integrate
 						OR = {
 							state = 69
 							state = 972
+							state = 1608
 							state = 9
 							state = 75
 							state = 74
+							state = 1727
 							state = 72
+							state = 1555
+							state = 1556
 						}
 						OR = {
 							is_fully_controlled_by = ROOT
@@ -3621,12 +3650,60 @@ country_event = { #FROM, Austria, Demands we integrate
 							controls_state = 853
 						}
 						AND = {
-							owns_state = 102
+							owns_state = 102 owns_state = 1410 owns_state = 1704
 							controls_state = 102
 						}
 						AND = {
-							owns_state = 103
+							owns_state = 103 owns_state = 1296 owns_state = 1325 owns_state = 1339 owns_state = 1388 owns_state = 1718
 							controls_state = 103
+						}
+						AND = {
+							owns_state = 109 owns_state = 1706 owns_state = 1707
+							controls_state = 109
+						}
+						AND = {
+							owns_state = 1704
+							controls_state = 1704
+						}
+						AND = {
+							owns_state = 1705
+							controls_state = 1705
+						}
+						AND = {
+							owns_state = 1706
+							controls_state = 1706
+						}
+						AND = {
+							owns_state = 1716
+							controls_state = 1716
+						}
+						AND = {
+							owns_state = 1718
+							controls_state = 1718
+						}
+						AND = {
+							owns_state = 1314
+							controls_state = 1314
+						}
+						AND = {
+							owns_state = 1325
+							controls_state = 1325
+						}
+						AND = {
+							owns_state = 1339
+							controls_state = 1339
+						}
+						AND = {
+							owns_state = 1296
+							controls_state = 1296
+						}
+						AND = {
+							owns_state = 1388
+							controls_state = 1388
+						}
+						AND = {
+							owns_state = 1410
+							controls_state = 1410
 						}
 					}
 				}
@@ -3642,7 +3719,7 @@ country_event = { #FROM, Austria, Demands we integrate
 			}
 			IF = {
 				limit = { 
-					owns_state = 102 
+					owns_state = 102 owns_state = 1410 owns_state = 1704 
 					controls_state = 102
 				}
 				FROM = {
@@ -3652,12 +3729,134 @@ country_event = { #FROM, Austria, Demands we integrate
 
 			IF = {
 				limit = {
-					owns_state = 103 
+					owns_state = 103 owns_state = 1296 owns_state = 1325 owns_state = 1339 owns_state = 1388 owns_state = 1718 
 					controls_state = 103
 				}
 
 				FROM = {
 					add_state_claim = 103
+				}
+			}
+			
+			IF = {
+				limit = {
+					owns_state = 109 owns_state = 1706 owns_state = 1707 
+					controls_state = 109
+				}
+
+				FROM = {
+					add_state_claim = 109
+				}
+			}
+			
+			IF = {
+				limit = {
+					owns_state = 1704
+					controls_state = 1704
+				}
+
+				FROM = {
+					add_state_claim = 1704
+				}
+			}
+			IF = {
+				limit = {
+					owns_state = 1705
+					controls_state = 1705
+				}
+
+				FROM = {
+					add_state_claim = 1705
+				}
+			}
+			IF = {
+				limit = {
+					owns_state = 1706 
+					controls_state = 1706
+				}
+
+				FROM = {
+					add_state_claim = 1706
+				}
+			}
+			IF = {
+				limit = {
+					owns_state = 1716
+					controls_state = 1716
+				}
+
+				FROM = {
+					add_state_claim = 1716
+				}
+			}
+			IF = {
+				limit = {
+					owns_state = 1718
+					controls_state = 1718
+				}
+
+				FROM = {
+					add_state_claim = 1718
+				}
+			}
+			IF = {
+				limit = {
+					owns_state = 1314
+					controls_state = 1314
+				}
+
+				FROM = {
+					add_state_claim = 1314
+				}
+			}
+			IF = {
+				limit = {
+					owns_state = 1325
+					controls_state = 1325
+				}
+
+				FROM = {
+					add_state_claim = 1325
+				}
+			}
+			IF = {
+				limit = {
+					owns_state = 1339
+					controls_state = 1339
+				}
+
+				FROM = {
+					add_state_claim = 1339
+				}
+			}
+			IF = {
+				limit = {
+					owns_state = 1296
+					controls_state = 1296
+				}
+
+				FROM = {
+					add_state_claim = 1296
+				}
+			}
+			IF = {
+				limit = {
+					owns_state = 1388
+					controls_state = 1388
+				}
+
+				FROM = {
+					add_state_claim = 1388
+				}
+			}
+			IF = {
+				limit = {
+					owns_state = 1410
+					controls_state = 1410
+				}
+
+				FROM = {
+					add_state_claim = 1410
 				}
 			}
 			FROM = {
@@ -3695,11 +3894,11 @@ country_event = { #FROM, Austria, Demands we integrate
 								controls_state = 853
 							}
 							AND = {
-								owns_state = 102
+								owns_state = 102 owns_state = 1410 owns_state = 1704
 								controls_state = 102
 							}
 							AND = {
-								owns_state = 109
+								owns_state = 109 owns_state = 1706 owns_state = 1707
 								controls_state = 109
 							}
 						}
@@ -3743,7 +3942,7 @@ country_event = { #FROM, Austria, Demands we integrate
 					FROM.FROM = {
 						OWNER = {
 							is_subject_of = ROOT
-							owns_state = 102
+							owns_state = 102 owns_state = 1410 owns_state = 1704
 							controls_state = 102
 						}
 					} 
@@ -3775,7 +3974,7 @@ country_event = { #FROM, Austria, Demands we integrate
 					FROM.FROM = {
 						OWNER = {
 							is_subject_of = ROOT
-							owns_state = 109
+							owns_state = 109 owns_state = 1706 owns_state = 1707
 							controls_state = 109 
 						}
 					}
@@ -3840,9 +4039,21 @@ country_event = { #FROM, Austria, Demands we integrate
 				every_state = {
 					limit = {
 						OR = {
-							state = 88
+							state = 88 state = 1144
 							state = 89
 							state = 91
+							state = 1528
+							state = 1265
+							state = 1775
+							state = 1529
+							state = 1531
+							state = 1532
+							state = 1145
+							state = 1425
+							state = 1385
+							state = 1386
+							state = 1399
+							state = 1483
 						}
 						OR = {
 							is_fully_controlled_by = ROOT
@@ -3906,6 +4117,13 @@ country_event = { #FROM, Austria, Demands we integrate
 						state = 84
 						state = 82
 						state = 80
+						state = 1722
+						state = 1267
+						state = 1309
+						state = 1310
+						state = 1387
+						state = 1479
+						state = 1480
 					}
 					OR = {
 						is_fully_controlled_by = ROOT
@@ -4025,24 +4243,26 @@ country_event = { #FROM, Austria, Demands we integrate
 					limit = {
 						is_on_continent = europe
 						OR = {
-							state = 155
+							state = 155 state = 1384 state = 1703
 							state = 974
 							state = 973
-							state = 154
-							state = 43
-							state = 69
+							state = 154 state = 1278 state = 1700
+							state = 43 state = 1235
+							state = 69 state = 1556
 							state = 972
-							state = 9
+							state = 1608
+							state = 9 state = 1555
 							state = 75
 							state = 74
+							state = 1727
 							state = 72
-							state = 88
-							state = 89
-							state = 91
-							state = 76
-							state = 83
-							state = 84
-							state = 82
+							state = 88 state = 1144 state = 1145 state = 1265 state = 1385 state = 1386 state = 1399 state = 1425 state = 1483 state = 1528 state = 1529 state = 1775
+							state = 89 state = 1532
+							state = 91 state = 1531
+							state = 76 state = 1309 state = 1310 state = 1722
+							state = 83 state = 1480
+							state = 84 state = 1387
+							state = 82 state = 1479
 							state = 80
 							state = 934
 							state = 44
@@ -4195,9 +4415,21 @@ country_event = { #FROM, Austria, Demands we integrate
 					every_state = {
 						limit = {
 							OR = {
-								state = 88
+								state = 88 state = 1144
 								state = 89
 								state = 91
+								state = 1528
+								state = 1265
+								state = 1775
+								state = 1529
+								state = 1531
+								state = 1532
+								state = 1145
+								state = 1425
+								state = 1385
+								state = 1386
+								state = 1399
+								state = 1483
 							}
 							OR = {
 								is_fully_controlled_by = ROOT
@@ -4241,6 +4473,13 @@ country_event = { #FROM, Austria, Demands we integrate
 								state = 84
 								state = 82
 								state = 80
+								state = 1722
+								state = 1267
+								state = 1309
+								state = 1310
+								state = 1387
+								state = 1479
+								state = 1480
 							}
 							OR = {
 								is_fully_controlled_by = ROOT
@@ -4262,12 +4501,56 @@ country_event = { #FROM, Austria, Demands we integrate
 							controls_state = 853
 						}
 						AND = {
-							owns_state = 102
+							owns_state = 102 owns_state = 1410 owns_state = 1704
 							controls_state = 102
 						}
 						AND = {
-							owns_state = 109
+							owns_state = 109 owns_state = 1706 owns_state = 1707
 							controls_state = 109
+						}
+						AND = {
+							owns_state = 103 owns_state = 1296 owns_state = 1325 owns_state = 1339 owns_state = 1388 owns_state = 1718
+							controls_state = 103
+						}
+						AND = {
+							owns_state = 1704
+							controls_state = 1704
+						}
+						AND = {
+							owns_state = 1705
+							controls_state = 1705
+						}
+						AND = {
+							owns_state = 1706
+							controls_state = 1706
+						}
+						AND = {
+							owns_state = 1716
+							controls_state = 1716
+						}
+						AND = {
+							owns_state = 1718
+							controls_state = 1718
+						}
+						AND = {
+							owns_state = 1314
+							controls_state = 1314
+						}
+						AND = {
+							owns_state = 1325
+							controls_state = 1325
+						}
+						AND = {
+							owns_state = 1339
+							controls_state = 1339
+						}
+						AND = {
+							owns_state = 1388
+							controls_state = 1388
+						}
+						AND = {
+							owns_state = 1410
+							controls_state = 1410
 						}
 					}
 				}
@@ -4291,10 +4574,109 @@ country_event = { #FROM, Austria, Demands we integrate
 						102 = {
 							transfer_state_to = FROM
 						}
+						1410 = { # KSRE (de 102)
+							transfer_state_to = FROM
+						}
+						1704 = { # KSRE (de 102)
+							transfer_state_to = FROM
+						}
 					}
 					IF = {
 						limit = { 109 = { is_fully_controlled_by = ROOT }}
 						109 = {
+							transfer_state_to = FROM
+						}
+						1706 = { # KSRE (de 109)
+							transfer_state_to = FROM
+						}
+						1707 = { # KSRE (de 109)
+							transfer_state_to = FROM
+						}
+					}
+					IF = {
+						limit = { 103 = { is_fully_controlled_by = ROOT }}
+						103 = {
+							transfer_state_to = FROM
+						}
+						1296 = { # KSRE (de 103)
+							transfer_state_to = FROM
+						}
+						1325 = { # KSRE (de 103)
+							transfer_state_to = FROM
+						}
+						1339 = { # KSRE (de 103)
+							transfer_state_to = FROM
+						}
+						1388 = { # KSRE (de 103)
+							transfer_state_to = FROM
+						}
+						1718 = { # KSRE (de 103)
+							transfer_state_to = FROM
+						}
+					}
+					IF = {
+						limit = { 1704 = { is_fully_controlled_by = ROOT }}
+						1704 = {
+							transfer_state_to = FROM
+						}
+					}
+					IF = {
+						limit = { 1705 = { is_fully_controlled_by = ROOT }}
+						1705 = {
+							transfer_state_to = FROM
+						}
+					}
+					IF = {
+						limit = { 1706 = { is_fully_controlled_by = ROOT }}
+						1706 = {
+							transfer_state_to = FROM
+						}
+					}
+					IF = {
+						limit = { 1716 = { is_fully_controlled_by = ROOT }}
+						1716 = {
+							transfer_state_to = FROM
+						}
+					}
+					IF = {
+						limit = { 1718 = { is_fully_controlled_by = ROOT }}
+						1718 = {
+							transfer_state_to = FROM
+						}
+					}
+					IF = {
+						limit = { 1314 = { is_fully_controlled_by = ROOT }}
+						1314 = {
+							transfer_state_to = FROM
+						}
+					}
+					IF = {
+						limit = { 1325 = { is_fully_controlled_by = ROOT }}
+						1325 = {
+							transfer_state_to = FROM
+						}
+					}
+					IF = {
+						limit = { 1339 = { is_fully_controlled_by = ROOT }}
+						1339 = {
+							transfer_state_to = FROM
+						}
+					}
+					IF = {
+						limit = { 1296 = { is_fully_controlled_by = ROOT }}
+						1296 = {
+							transfer_state_to = FROM
+						}
+					}
+					IF = {
+						limit = { 1388 = { is_fully_controlled_by = ROOT }}
+						1388 = {
+							transfer_state_to = FROM
+						}
+					}
+					IF = {
+						limit = { 1410 = { is_fully_controlled_by = ROOT }}
+						1410 = {
 							transfer_state_to = FROM
 						}
 					}
@@ -4312,12 +4694,56 @@ country_event = { #FROM, Austria, Demands we integrate
 									controls_state = 853
 								}
 								AND = {
-									owns_state = 102
+									owns_state = 102 owns_state = 1410 owns_state = 1704
 									controls_state = 102
 								}
 								AND = {
-									owns_state = 109
+									owns_state = 109 owns_state = 1706 owns_state = 1707
 									controls_state = 109
+								}
+								AND = {
+									owns_state = 103 owns_state = 1296 owns_state = 1325 owns_state = 1339 owns_state = 1388 owns_state = 1718
+									controls_state = 103
+								}
+								AND = {
+									owns_state = 1704
+									controls_state = 1704
+								}
+								AND = {
+									owns_state = 1705
+									controls_state = 1705
+								}
+								AND = {
+									owns_state = 1706
+									controls_state = 1706
+								}
+								AND = {
+									owns_state = 1716
+									controls_state = 1716
+								}
+								AND = {
+									owns_state = 1718
+									controls_state = 1718
+								}
+								AND = {
+									owns_state = 1314
+									controls_state = 1314
+								}
+								AND = {
+									owns_state = 1325
+									controls_state = 1325
+								}
+								AND = {
+									owns_state = 1339
+									controls_state = 1339
+								}
+								AND = {
+									owns_state = 1388
+									controls_state = 1388
+								}
+								AND = {
+									owns_state = 1410
+									controls_state = 1410
 								}
 							}
 						}
@@ -4346,7 +4772,7 @@ country_event = { #FROM, Austria, Demands we integrate
 						FROM.FROM = {
 							OWNER = {
 								is_subject_of = ROOT
-								owns_state = 102
+								owns_state = 102 owns_state = 1410 owns_state = 1704
 								controls_state = 102
 							}
 						}  
@@ -4354,6 +4780,12 @@ country_event = { #FROM, Austria, Demands we integrate
 
 					effect_tooltip = {
 						102 = {
+							transfer_state_to = FROM
+						}
+						1410 = { # KSRE (de 102)
+							transfer_state_to = FROM
+						}
+						1704 = { # KSRE (de 102)
 							transfer_state_to = FROM
 						}
 					}
@@ -4364,7 +4796,7 @@ country_event = { #FROM, Austria, Demands we integrate
 						FROM.FROM = {
 							OWNER = {
 								is_subject_of = ROOT
-								owns_state = 109
+								owns_state = 109 owns_state = 1706 owns_state = 1707
 								controls_state = 109 
 							}
 						}
@@ -4372,6 +4804,243 @@ country_event = { #FROM, Austria, Demands we integrate
 
 					effect_tooltip = {
 						109 = {
+							transfer_state_to = FROM
+						}
+						1706 = { # KSRE (de 109)
+							transfer_state_to = FROM
+						}
+						1707 = { # KSRE (de 109)
+							transfer_state_to = FROM
+						}
+					}
+
+				}
+				IF = {
+					limit = {
+						FROM.FROM = {
+							OWNER = {
+								is_subject_of = ROOT
+								owns_state = 103 owns_state = 1296 owns_state = 1325 owns_state = 1339 owns_state = 1388 owns_state = 1718
+								controls_state = 103
+							}
+						}
+					}
+
+					effect_tooltip = {
+						103 = {
+							transfer_state_to = FROM
+						}
+						1296 = { # KSRE (de 103)
+							transfer_state_to = FROM
+						}
+						1325 = { # KSRE (de 103)
+							transfer_state_to = FROM
+						}
+						1339 = { # KSRE (de 103)
+							transfer_state_to = FROM
+						}
+						1388 = { # KSRE (de 103)
+							transfer_state_to = FROM
+						}
+						1718 = { # KSRE (de 103)
+							transfer_state_to = FROM
+						}
+					}
+
+				}
+				IF = {
+					limit = {
+						FROM.FROM = {
+							OWNER = {
+								is_subject_of = ROOT
+								owns_state = 1704
+								controls_state = 1704
+							}
+						}
+					}
+
+					effect_tooltip = {
+						1704 = {
+							transfer_state_to = FROM
+						}
+					}
+
+				}
+				IF = {
+					limit = {
+						FROM.FROM = {
+							OWNER = {
+								is_subject_of = ROOT
+								owns_state = 1705
+								controls_state = 1705 
+							}
+						}
+					}
+
+					effect_tooltip = {
+						1705 = {
+							transfer_state_to = FROM
+						}
+					}
+
+				}
+				IF = {
+					limit = {
+						FROM.FROM = {
+							OWNER = {
+								is_subject_of = ROOT
+								owns_state = 1706
+								controls_state = 1706 
+							}
+						}
+					}
+
+					effect_tooltip = {
+						1706 = {
+							transfer_state_to = FROM
+						}
+					}
+
+				}
+				IF = {
+					limit = {
+						FROM.FROM = {
+							OWNER = {
+								is_subject_of = ROOT
+								owns_state = 1716
+								controls_state = 1716 
+							}
+						}
+					}
+
+					effect_tooltip = {
+						1716 = {
+							transfer_state_to = FROM
+						}
+					}
+
+				}
+				IF = {
+					limit = {
+						FROM.FROM = {
+							OWNER = {
+								is_subject_of = ROOT
+								owns_state = 1718
+								controls_state = 1718 
+							}
+						}
+					}
+
+					effect_tooltip = {
+						1718 = {
+							transfer_state_to = FROM
+						}
+					}
+
+				}
+				IF = {
+					limit = {
+						FROM.FROM = {
+							OWNER = {
+								is_subject_of = ROOT
+								owns_state = 1314
+								controls_state = 1314 
+							}
+						}
+					}
+
+					effect_tooltip = {
+						1314 = {
+							transfer_state_to = FROM
+						}
+					}
+
+				}
+				IF = {
+					limit = {
+						FROM.FROM = {
+							OWNER = {
+								is_subject_of = ROOT
+								owns_state = 1325
+								controls_state = 1325 
+							}
+						}
+					}
+
+					effect_tooltip = {
+						1325 = {
+							transfer_state_to = FROM
+						}
+					}
+
+				}
+				IF = {
+					limit = {
+						FROM.FROM = {
+							OWNER = {
+								is_subject_of = ROOT
+								owns_state = 1339
+								controls_state = 1339 
+							}
+						}
+					}
+
+					effect_tooltip = {
+						1339 = {
+							transfer_state_to = FROM
+						}
+					}
+
+				}
+				IF = {
+					limit = {
+						FROM.FROM = {
+							OWNER = {
+								is_subject_of = ROOT
+								owns_state = 1296
+								controls_state = 1296
+							}
+						}
+					}
+
+					effect_tooltip = {
+						1296 = {
+							transfer_state_to = FROM
+						}
+					}
+
+				}
+				IF = {
+					limit = {
+						FROM.FROM = {
+							OWNER = {
+								is_subject_of = ROOT
+								owns_state = 1388
+								controls_state = 1388
+							}
+						}
+					}
+
+					effect_tooltip = {
+						1388 = {
+							transfer_state_to = FROM
+						}
+					}
+
+				}
+				IF = {
+					limit = {
+						FROM.FROM = {
+							OWNER = {
+								is_subject_of = ROOT
+								owns_state = 1410
+								controls_state = 1410 
+							}
+						}
+					}
+
+					effect_tooltip = {
+						1410 = {
 							transfer_state_to = FROM
 						}
 					}
@@ -4513,9 +5182,21 @@ country_event = { #FROM integrates
 			every_state = {
 				limit = {
 					OR = {
-						state = 88
+						state = 88 state = 1144
 						state = 89
 						state = 91
+						state = 1528
+						state = 1265
+						state = 1775
+						state = 1529
+						state = 1531
+						state = 1532
+						state = 1145
+						state = 1425
+						state = 1385
+						state = 1386
+						state = 1399
+						state = 1483
 					}
 					OR = {
 						is_fully_controlled_by = FROM
@@ -4566,6 +5247,13 @@ country_event = { #FROM integrates
 						state = 84
 						state = 82
 						state = 80
+						state = 1722
+						state = 1267
+						state = 1309
+						state = 1310
+						state = 1387
+						state = 1479
+						state = 1480
 					}
 					OR = {
 						is_fully_controlled_by = FROM
@@ -4668,28 +5356,80 @@ country_event = { #FROM integrates
 					limit = {
 						is_on_continent = europe
 						OR = {
-							state = 155
-							state = 974
-							state = 973
-							state = 154
-							state = 43
+							state = 848
+							state = 153
+							state = 152
+							state = 976
+							state = 1390
+							state = 4
+							state = 1553
+							state = 975
 							state = 69
-							state = 972
 							state = 9
 							state = 75
 							state = 74
+							state = 1727
 							state = 72
-							state = 88
-							state = 89
-							state = 91
+							state = 70
+							state = 664
+							state = 71
+							state = 73
+							state = 1294
+							state = 1555
+							state = 1556
+							state = 972
+							state = 1608
+							state = 1560
+							state = 1146
+							state = 1147
+							state = 1148
+							state = 1149
+							state = 155
+							state = 43
+							state = 154
+							state = 1278
+							state = 1235
+							state = 1700
+							state = 973
+							state = 974
+							state = 1703
+							state = 1384
+							state = 45
 							state = 76
+							state = 82
 							state = 83
 							state = 84
-							state = 82
-							state = 80
-							state = 934
-							state = 44
-							state = 805
+							state = 102
+							state = 103
+							state = 104
+							state = 109
+							state = 764
+							state = 804
+							state = 853
+							state = 1704
+							state = 1705
+							state = 1706
+							state = 1707
+							state = 1711
+							state = 1712
+							state = 1713
+							state = 1716
+							state = 1717
+							state = 1718
+							state = 1722
+							state = 1314
+							state = 1325
+							state = 1339
+							state = 1296
+							state = 1309
+							state = 1310
+							state = 1387
+							state = 1388
+							state = 1410
+							state = 1477
+							state = 1478
+							state = 1479
+							state = 1480
 						}
 						OR = {
 							is_fully_controlled_by = FROM
@@ -4737,13 +5477,13 @@ country_event = { #FROM integrates
 		IF = { #YUG stuff
 			limit = { 
 				FROM = { 
-					owns_state = 102
+					owns_state = 102 owns_state = 1410 owns_state = 1704
 					controls_state = 102
 				}
 			}
 
 			ROOT = {
-				transfer_state = 102
+				transfer_state = 102 transfer_state = 1410 transfer_state = 1704
 			}
 		}
 
@@ -4751,14 +5491,14 @@ country_event = { #FROM integrates
 			limit = { 
 				FROM.FROM = { 
 					OWNER = {
-						owns_state = 102
+						owns_state = 102 owns_state = 1410 owns_state = 1704
 						controls_state = 102
 					}
 				}
 			}
 
 			ROOT = {
-				transfer_state = 102
+				transfer_state = 102 transfer_state = 1410 transfer_state = 1704
 			}
 		}
 		IF = { #YUG stuff
@@ -4793,12 +5533,18 @@ country_event = { #FROM integrates
 		IF = { #YUG stuff
 			limit = { 
 				FROM = { 
-					owns_state = 109
+					owns_state = 109 owns_state = 1706 owns_state = 1707
 					controls_state = 109
 				}
 			}
 
 			109 = {
+				transfer_state_to = ROOT
+			}
+			1706 = { # KSRE (de 109)
+				transfer_state_to = ROOT
+			}
+			1707 = { # KSRE (de 109)
 				transfer_state_to = ROOT
 			}
 		}
@@ -4807,7 +5553,7 @@ country_event = { #FROM integrates
 			limit = { 
 				FROM.FROM = { 
 					OWNER = {
-						owns_state = 109
+						owns_state = 109 owns_state = 1706 owns_state = 1707
 						controls_state = 109
 					}
 				}
@@ -4816,9 +5562,379 @@ country_event = { #FROM integrates
 			109 = {
 				transfer_state_to = ROOT
 			}
+			1706 = { # KSRE (de 109)
+				transfer_state_to = ROOT
+			}
+			1707 = { # KSRE (de 109)
+				transfer_state_to = ROOT
+			}
+		}
+		
+		IF = {
+			limit = { 
+				FROM = { 
+					owns_state = 103 owns_state = 1296 owns_state = 1325 owns_state = 1339 owns_state = 1388 owns_state = 1718
+					controls_state = 103
+				}
+			}
+
+			103 = {
+				transfer_state_to = ROOT
+			}
+			1296 = { # KSRE (de 103)
+				transfer_state_to = ROOT
+			}
+			1325 = { # KSRE (de 103)
+				transfer_state_to = ROOT
+			}
+			1339 = { # KSRE (de 103)
+				transfer_state_to = ROOT
+			}
+			1388 = { # KSRE (de 103)
+				transfer_state_to = ROOT
+			}
+			1718 = { # KSRE (de 103)
+				transfer_state_to = ROOT
+			}
 		}
 
+		ELSE_IF = {
+			limit = { 
+				FROM.FROM = { 
+					OWNER = {
+						owns_state = 103 owns_state = 1296 owns_state = 1325 owns_state = 1339 owns_state = 1388 owns_state = 1718
+						controls_state = 103
+					}
+				}
+			}
 
+			103 = {
+				transfer_state_to = ROOT
+			}
+			1296 = { # KSRE (de 103)
+				transfer_state_to = ROOT
+			}
+			1325 = { # KSRE (de 103)
+				transfer_state_to = ROOT
+			}
+			1339 = { # KSRE (de 103)
+				transfer_state_to = ROOT
+			}
+			1388 = { # KSRE (de 103)
+				transfer_state_to = ROOT
+			}
+			1718 = { # KSRE (de 103)
+				transfer_state_to = ROOT
+			}
+		}
+		
+		IF = {
+			limit = { 
+				FROM = { 
+					owns_state = 1704
+					controls_state = 1704
+				}
+			}
+
+			1704 = {
+				transfer_state_to = ROOT
+			}
+		}
+
+		ELSE_IF = {
+			limit = { 
+				FROM.FROM = { 
+					OWNER = {
+						owns_state = 1704
+						controls_state = 1704
+					}
+				}
+			}
+
+			1704 = {
+				transfer_state_to = ROOT
+			}
+		}
+		
+		IF = {
+			limit = { 
+				FROM = { 
+					owns_state = 1705
+					controls_state = 1705
+				}
+			}
+
+			1705 = {
+				transfer_state_to = ROOT
+			}
+		}
+
+		ELSE_IF = {
+			limit = { 
+				FROM.FROM = { 
+					OWNER = {
+						owns_state = 1705
+						controls_state = 1705
+					}
+				}
+			}
+
+			1705 = {
+				transfer_state_to = ROOT
+			}
+		}
+		
+		IF = {
+			limit = { 
+				FROM = { 
+					owns_state = 1706
+					controls_state = 1706
+				}
+			}
+
+			1706 = {
+				transfer_state_to = ROOT
+			}
+		}
+
+		ELSE_IF = {
+			limit = { 
+				FROM.FROM = { 
+					OWNER = {
+						owns_state = 1706
+						controls_state = 1706
+					}
+				}
+			}
+
+			1706 = {
+				transfer_state_to = ROOT
+			}
+		}
+		
+		IF = {
+			limit = { 
+				FROM = { 
+					owns_state = 1716
+					controls_state = 1716
+				}
+			}
+
+			1716 = {
+				transfer_state_to = ROOT
+			}
+		}
+
+		ELSE_IF = {
+			limit = { 
+				FROM.FROM = { 
+					OWNER = {
+						owns_state = 1716
+						controls_state = 1716
+					}
+				}
+			}
+
+			1716 = {
+				transfer_state_to = ROOT
+			}
+		}
+		
+		IF = {
+			limit = { 
+				FROM = { 
+					owns_state = 1718
+					controls_state = 1718
+				}
+			}
+
+			1718 = {
+				transfer_state_to = ROOT
+			}
+		}
+
+		ELSE_IF = {
+			limit = { 
+				FROM.FROM = { 
+					OWNER = {
+						owns_state = 1718
+						controls_state = 1718
+					}
+				}
+			}
+
+			1718 = {
+				transfer_state_to = ROOT
+			}
+		}
+		
+		IF = {
+			limit = { 
+				FROM = { 
+					owns_state = 1314
+					controls_state = 1314
+				}
+			}
+
+			1314 = {
+				transfer_state_to = ROOT
+			}
+		}
+
+		ELSE_IF = {
+			limit = { 
+				FROM.FROM = { 
+					OWNER = {
+						owns_state = 1314
+						controls_state = 1314
+					}
+				}
+			}
+
+			1314 = {
+				transfer_state_to = ROOT
+			}
+		}
+		
+		IF = {
+			limit = { 
+				FROM = { 
+					owns_state = 1325
+					controls_state = 1325
+				}
+			}
+
+			1325 = {
+				transfer_state_to = ROOT
+			}
+		}
+
+		ELSE_IF = {
+			limit = { 
+				FROM.FROM = { 
+					OWNER = {
+						owns_state = 1325
+						controls_state = 1325
+					}
+				}
+			}
+
+			1325 = {
+				transfer_state_to = ROOT
+			}
+		}
+
+		IF = {
+			limit = { 
+				FROM = { 
+					owns_state = 1339
+					controls_state = 1339
+				}
+			}
+
+			1339 = {
+				transfer_state_to = ROOT
+			}
+		}
+
+		ELSE_IF = {
+			limit = { 
+				FROM.FROM = { 
+					OWNER = {
+						owns_state = 1339
+						controls_state = 1339
+					}
+				}
+			}
+
+			1339 = {
+				transfer_state_to = ROOT
+			}
+		}
+		
+		IF = {
+			limit = { 
+				FROM = { 
+					owns_state = 1296
+					controls_state = 1296
+				}
+			}
+
+			1296 = {
+				transfer_state_to = ROOT
+			}
+		}
+
+		ELSE_IF = {
+			limit = { 
+				FROM.FROM = { 
+					OWNER = {
+						owns_state = 1296
+						controls_state = 1296
+					}
+				}
+			}
+
+			1296 = {
+				transfer_state_to = ROOT
+			}
+		}
+		
+		IF = {
+			limit = { 
+				FROM = { 
+					owns_state = 1388
+					controls_state = 1388
+				}
+			}
+
+			1388 = {
+				transfer_state_to = ROOT
+			}
+		}
+
+		ELSE_IF = {
+			limit = { 
+				FROM.FROM = { 
+					OWNER = {
+						owns_state = 1388
+						controls_state = 1388
+					}
+				}
+			}
+
+			1388 = {
+				transfer_state_to = ROOT
+			}
+		}
+		
+		IF = {
+			limit = { 
+				FROM = { 
+					owns_state = 1410
+					controls_state = 1410
+				}
+			}
+
+			1410 = {
+				transfer_state_to = ROOT
+			}
+		}
+
+		ELSE_IF = {
+			limit = { 
+				FROM.FROM = { 
+					OWNER = {
+						owns_state = 1410
+						controls_state = 1410
+					}
+				}
+			}
+
+			1410 = {
+				transfer_state_to = ROOT
+			}
+		}
 	}
 }
 
@@ -5134,9 +6250,21 @@ country_event = { #Austria demands subjugation
 			original_tag = POL
 			ROOT = {
 				OR = {
-					owns_state = 88
+					owns_state = 88 owns_state = 1144
 					owns_state = 89
 					owns_state = 91
+					owns_state = 1528
+					owns_state = 1265
+					owns_state = 1775
+					owns_state = 1529
+					owns_state = 1531
+					owns_state = 1532
+					owns_state = 1145
+					owns_state = 1425
+					owns_state = 1385
+					owns_state = 1386
+					owns_state = 1399
+					owns_state = 1483
 				}
 
 			}
@@ -5148,9 +6276,75 @@ country_event = { #Austria demands subjugation
 					88 = { #Krakow
 						is_owned_and_controlled_by = ROOT
 					}
+					1144 = { # KSRE (de 88)
+						is_owned_and_controlled_by = ROOT
+					}
+					1145 = { # KSRE (de 88)
+						is_owned_and_controlled_by = ROOT
+					}
+					1265 = { # KSRE (de 88)
+						is_owned_and_controlled_by = ROOT
+					}
+					1385 = { # KSRE (de 88)
+						is_owned_and_controlled_by = ROOT
+					}
+					1386 = { # KSRE (de 88)
+						is_owned_and_controlled_by = ROOT
+					}
+					1399 = { # KSRE (de 88)
+						is_owned_and_controlled_by = ROOT
+					}
+					1425 = { # KSRE (de 88)
+						is_owned_and_controlled_by = ROOT
+					}
+					1483 = { # KSRE (de 88)
+						is_owned_and_controlled_by = ROOT
+					}
+					1528 = { # KSRE (de 88)
+						is_owned_and_controlled_by = ROOT
+					}
+					1529 = { # KSRE (de 88)
+						is_owned_and_controlled_by = ROOT
+					}
+					1775 = { # KSRE (de 88)
+						is_owned_and_controlled_by = ROOT
+					}
 				}
 
 				88 = {
+					transfer_state_to = FROM
+				}	
+				1144 = { # KSRE (de 88)
+					transfer_state_to = FROM
+				}	
+				1145 = { # KSRE (de 88)
+					transfer_state_to = FROM
+				}	
+				1265 = { # KSRE (de 88)
+					transfer_state_to = FROM
+				}	
+				1385 = { # KSRE (de 88)
+					transfer_state_to = FROM
+				}	
+				1386 = { # KSRE (de 88)
+					transfer_state_to = FROM
+				}	
+				1399 = { # KSRE (de 88)
+					transfer_state_to = FROM
+				}	
+				1425 = { # KSRE (de 88)
+					transfer_state_to = FROM
+				}	
+				1483 = { # KSRE (de 88)
+					transfer_state_to = FROM
+				}	
+				1528 = { # KSRE (de 88)
+					transfer_state_to = FROM
+				}	
+				1529 = { # KSRE (de 88)
+					transfer_state_to = FROM
+				}	
+				1775 = { # KSRE (de 88)
 					transfer_state_to = FROM
 				}	
 			}
@@ -5160,9 +6354,15 @@ country_event = { #Austria demands subjugation
 					89 = { #Stanislawow
 						is_owned_and_controlled_by = ROOT
 					}
+					1532 = { # KSRE (de 89)
+						is_owned_and_controlled_by = ROOT
+					}
 				}
 
 				89 = {
+					transfer_state_to = FROM
+				}	
+				1532 = { # KSRE (de 89)
 					transfer_state_to = FROM
 				}	
 			}
@@ -5172,25 +6372,162 @@ country_event = { #Austria demands subjugation
 					91 = { #Lwow
 						is_owned_and_controlled_by = ROOT
 					}
+					1531 = { # KSRE (de 91)
+						is_owned_and_controlled_by = ROOT
+					}
 				}
 
 				91 = {
 					transfer_state_to = FROM
 				}	
+				1531 = { # KSRE (de 91)
+					transfer_state_to = FROM
+				}	
 			}
-
+			
 			IF = {
 				limit = {
-					762 = { #Katowice
+					1528 = {
 						is_owned_and_controlled_by = ROOT
 					}
 				}
 
-				762 = {
+				1528 = {
 					transfer_state_to = FROM
 				}	
 			}
+			
+			IF = {
+				limit = {
+					1265 = {
+						is_owned_and_controlled_by = ROOT
+					}
+				}
 
+				1265 = {
+					transfer_state_to = FROM
+				}	
+			}
+			
+			IF = {
+				limit = {
+					1775 = {
+						is_owned_and_controlled_by = ROOT
+					}
+				}
+
+				1775 = {
+					transfer_state_to = FROM
+				}	
+			}
+			
+			IF = {
+				limit = {
+					1529 = {
+						is_owned_and_controlled_by = ROOT
+					}
+				}
+
+				1529 = {
+					transfer_state_to = FROM
+				}	
+			}
+			
+			IF = {
+				limit = {
+					1531 = {
+						is_owned_and_controlled_by = ROOT
+					}
+				}
+
+				1531 = {
+					transfer_state_to = FROM
+				}	
+			}
+			
+			IF = {
+				limit = {
+					1532 = {
+						is_owned_and_controlled_by = ROOT
+					}
+				}
+
+				1532 = {
+					transfer_state_to = FROM
+				}	
+			}
+			
+			IF = {
+				limit = {
+					1145 = {
+						is_owned_and_controlled_by = ROOT
+					}
+				}
+
+				1145 = {
+					transfer_state_to = FROM
+				}	
+			}
+			
+			IF = {
+				limit = {
+					1425 = {
+						is_owned_and_controlled_by = ROOT
+					}
+				}
+
+				1425 = {
+					transfer_state_to = FROM
+				}	
+			}
+			
+			IF = {
+				limit = {
+					1385 = {
+						is_owned_and_controlled_by = ROOT
+					}
+				}
+
+				1385 = {
+					transfer_state_to = FROM
+				}	
+			}
+			
+			IF = {
+				limit = {
+					1386 = {
+						is_owned_and_controlled_by = ROOT
+					}
+				}
+
+				1386 = {
+					transfer_state_to = FROM
+				}	
+			}
+			
+			IF = {
+				limit = {
+					1399 = {
+						is_owned_and_controlled_by = ROOT
+					}
+				}
+
+				1399 = {
+					transfer_state_to = FROM
+				}	
+			}
+			
+			IF = {
+				limit = {
+					1483 = {
+						is_owned_and_controlled_by = ROOT
+					}
+				}
+
+				1483 = {
+					transfer_state_to = FROM
+				}	
+			}
 
 			FROM = {
 				add_political_power = 50
@@ -5300,9 +6637,75 @@ country_event = { #Poland hands over states
 				88 = { #Krakow
 					is_owned_and_controlled_by = FROM
 				}
+				1144 = { # KSRE (de 88)
+					is_owned_and_controlled_by = FROM
+				}
+				1145 = { # KSRE (de 88)
+					is_owned_and_controlled_by = FROM
+				}
+				1265 = { # KSRE (de 88)
+					is_owned_and_controlled_by = FROM
+				}
+				1385 = { # KSRE (de 88)
+					is_owned_and_controlled_by = FROM
+				}
+				1386 = { # KSRE (de 88)
+					is_owned_and_controlled_by = FROM
+				}
+				1399 = { # KSRE (de 88)
+					is_owned_and_controlled_by = FROM
+				}
+				1425 = { # KSRE (de 88)
+					is_owned_and_controlled_by = FROM
+				}
+				1483 = { # KSRE (de 88)
+					is_owned_and_controlled_by = FROM
+				}
+				1528 = { # KSRE (de 88)
+					is_owned_and_controlled_by = FROM
+				}
+				1529 = { # KSRE (de 88)
+					is_owned_and_controlled_by = FROM
+				}
+				1775 = { # KSRE (de 88)
+					is_owned_and_controlled_by = FROM
+				}
 			}
 
 			88 = {
+				transfer_state_to = ROOT
+			}	
+			1144 = { # KSRE (de 88)
+				transfer_state_to = ROOT
+			}	
+			1145 = { # KSRE (de 88)
+				transfer_state_to = ROOT
+			}	
+			1265 = { # KSRE (de 88)
+				transfer_state_to = ROOT
+			}	
+			1385 = { # KSRE (de 88)
+				transfer_state_to = ROOT
+			}	
+			1386 = { # KSRE (de 88)
+				transfer_state_to = ROOT
+			}	
+			1399 = { # KSRE (de 88)
+				transfer_state_to = ROOT
+			}	
+			1425 = { # KSRE (de 88)
+				transfer_state_to = ROOT
+			}	
+			1483 = { # KSRE (de 88)
+				transfer_state_to = ROOT
+			}	
+			1528 = { # KSRE (de 88)
+				transfer_state_to = ROOT
+			}	
+			1529 = { # KSRE (de 88)
+				transfer_state_to = ROOT
+			}	
+			1775 = { # KSRE (de 88)
 				transfer_state_to = ROOT
 			}	
 		}
@@ -5312,21 +6715,15 @@ country_event = { #Poland hands over states
 				89 = { #Stanislawow
 					is_owned_and_controlled_by = FROM
 				}
+				1532 = { # KSRE (de 89)
+					is_owned_and_controlled_by = FROM
+				}
 			}
 
 			89 = {
 				transfer_state_to = ROOT
 			}	
-		}
-
-		IF = {
-			limit = {
-				762 = { #Katowice
-					is_owned_and_controlled_by = FROM
-				}
-			}
-
-			762 = {
+			1532 = { # KSRE (de 89)
 				transfer_state_to = ROOT
 			}	
 		}
@@ -5336,9 +6733,159 @@ country_event = { #Poland hands over states
 				91 = { #Lwow
 					is_owned_and_controlled_by = FROM
 				}
+				1531 = { # KSRE (de 91)
+					is_owned_and_controlled_by = FROM
+				}
 			}
 
 			91 = {
+				transfer_state_to = ROOT
+			}	
+			1531 = { # KSRE (de 91)
+				transfer_state_to = ROOT
+			}	
+		}
+		
+		IF = {
+			limit = {
+				1528 = {
+					is_owned_and_controlled_by = FROM
+				}
+			}
+
+			1528 = {
+				transfer_state_to = ROOT
+			}	
+		}
+		
+		IF = {
+			limit = {
+				1265 = {
+					is_owned_and_controlled_by = FROM
+				}
+			}
+
+			1265 = {
+				transfer_state_to = ROOT
+			}	
+		}
+		
+		IF = {
+			limit = {
+				1775 = {
+					is_owned_and_controlled_by = FROM
+				}
+			}
+
+			1775 = {
+				transfer_state_to = ROOT
+			}	
+		}
+		
+		IF = {
+			limit = {
+				1529 = {
+					is_owned_and_controlled_by = FROM
+				}
+			}
+
+			1529 = {
+				transfer_state_to = ROOT
+			}	
+		}
+		
+		IF = {
+			limit = {
+				1531 = {
+					is_owned_and_controlled_by = FROM
+				}
+			}
+
+			1531 = {
+				transfer_state_to = ROOT
+			}	
+		}
+		
+		IF = {
+			limit = {
+				1532 = {
+					is_owned_and_controlled_by = FROM
+				}
+			}
+
+			1532 = {
+				transfer_state_to = ROOT
+			}	
+		}
+		
+		IF = {
+			limit = {
+				1145 = {
+					is_owned_and_controlled_by = FROM
+				}
+			}
+
+			1145 = {
+				transfer_state_to = ROOT
+			}	
+		}
+		
+		IF = {
+			limit = {
+				1425 = {
+					is_owned_and_controlled_by = FROM
+				}
+			}
+
+			1425 = {
+				transfer_state_to = ROOT
+			}	
+		}
+		
+		IF = {
+			limit = {
+				1385 = {
+					is_owned_and_controlled_by = FROM
+				}
+			}
+
+			1385 = {
+				transfer_state_to = ROOT
+			}	
+		}
+		
+		IF = {
+			limit = {
+				1386 = {
+					is_owned_and_controlled_by = FROM
+				}
+			}
+
+			1386 = {
+				transfer_state_to = ROOT
+			}	
+		}
+		
+		IF = {
+			limit = {
+				1399 = {
+					is_owned_and_controlled_by = FROM
+				}
+			}
+
+			1399 = {
+				transfer_state_to = ROOT
+			}	
+		}
+		
+		IF = {
+			limit = {
+				1483 = {
+					is_owned_and_controlled_by = FROM
+				}
+			}
+
+			1483 = {
 				transfer_state_to = ROOT
 			}	
 		}
@@ -5588,8 +7135,26 @@ country_event = { #FROM gives ROOT Silesia
 				66 = {
 					is_controlled_by = FROM
 				}
+				1540 = { # KSRE (de 66)
+					is_controlled_by = FROM
+				}
+				1541 = { # KSRE (de 66)
+					is_controlled_by = FROM
+				}
+				1558 = { # KSRE (de 66)
+					is_controlled_by = FROM
+				}
 			}
 			66 = { #Niederschlesien
+				transfer_state_to = ROOT
+			}
+			1540 = { # KSRE (de 66)
+				transfer_state_to = ROOT
+			}
+			1541 = { # KSRE (de 66)
+				transfer_state_to = ROOT
+			}
+			1558 = { # KSRE (de 66)
 				transfer_state_to = ROOT
 			}
 		}
@@ -5604,6 +7169,39 @@ country_event = { #FROM gives ROOT Silesia
 				transfer_state_to = ROOT
 			}
 		}
+		
+		IF = {
+			limit = {
+				1540 = {
+					is_controlled_by = FROM
+				}
+			}
+			1540 = {
+				transfer_state_to = ROOT
+			}
+		}
+		
+		IF = {
+			limit = {
+				1541 = {
+					is_controlled_by = FROM
+				}
+			}
+			1541 = {
+				transfer_state_to = ROOT
+			}
+		}
+		
+		IF = {
+			limit = {
+				1558 = {
+					is_controlled_by = FROM
+				}
+			}
+			1558 = {
+				transfer_state_to = ROOT
+			}
+		}
 
 	
 		FROM = {
@@ -5613,6 +7211,9 @@ country_event = { #FROM gives ROOT Silesia
 					NOT = {
 						state = 66
 						state = 67
+						state = 1540
+						state = 1541
+						state = 1558
 					}
 				}
 				add_extra_state_shared_building_slots = 1
@@ -5646,8 +7247,26 @@ country_event = { #FROM refuses to give ROOT Silesia
 				66 = {
 					is_controlled_by = FROM
 				}
+				1540 = { # KSRE (de 66)
+					is_controlled_by = FROM
+				}
+				1541 = { # KSRE (de 66)
+					is_controlled_by = FROM
+				}
+				1558 = { # KSRE (de 66)
+					is_controlled_by = FROM
+				}
 			}
 			66 = { #Niederschlesien
+				add_claim_by = ROOT
+			}
+			1540 = { # KSRE (de 66)
+				add_claim_by = ROOT
+			}
+			1541 = { # KSRE (de 66)
+				add_claim_by = ROOT
+			}
+			1558 = { # KSRE (de 66)
 				add_claim_by = ROOT
 			}
 		}
@@ -5659,6 +7278,39 @@ country_event = { #FROM refuses to give ROOT Silesia
 				}
 			}
 			67 = { #Oberschlesien
+				add_claim_by = ROOT
+			}
+		}
+		
+		IF = {
+			limit = {
+				1540 = {
+					is_controlled_by = FROM
+				}
+			}
+			1540 = {
+				add_claim_by = ROOT
+			}
+		}
+		
+		IF = {
+			limit = {
+				1541 = {
+					is_controlled_by = FROM
+				}
+			}
+			1541 = {
+				add_claim_by = ROOT
+			}
+		}
+		
+		IF = {
+			limit = {
+				1558 = {
+					is_controlled_by = FROM
+				}
+			}
+			1558 = {
 				add_claim_by = ROOT
 			}
 		}
@@ -5675,11 +7327,20 @@ country_event = { #FROM refuses to give ROOT Silesia
 				66 = {
 					is_controlled_by = FROM
 				}
+				1540 = { # KSRE (de 66)
+					is_controlled_by = FROM
+				}
+				1541 = { # KSRE (de 66)
+					is_controlled_by = FROM
+				}
+				1558 = { # KSRE (de 66)
+					is_controlled_by = FROM
+				}
 			}
 			create_wargoal = {
 				type = take_claimed_state
 				target = FROM
-				generator = { 66 } 
+				generator = { 66 1540 1541 1558 } 
 			}
 		}
 
@@ -5693,6 +7354,45 @@ country_event = { #FROM refuses to give ROOT Silesia
 				type = take_claimed_state
 				target = FROM
 				generator = { 67 } 
+			}
+		}
+		
+		IF = {
+			limit = {
+				1540 = {
+					is_controlled_by = FROM
+				}
+			}
+			create_wargoal = {
+				type = take_claimed_state
+				target = FROM
+				generator = { 1540 } 
+			}
+		}
+		
+		IF = {
+			limit = {
+				1541 = {
+					is_controlled_by = FROM
+				}
+			}
+			create_wargoal = {
+				type = take_claimed_state
+				target = FROM
+				generator = { 1541 } 
+			}
+		}
+		
+		IF = {
+			limit = {
+				1558 = {
+					is_controlled_by = FROM
+				}
+			}
+			create_wargoal = {
+				type = take_claimed_state
+				target = FROM
+				generator = { 1558 } 
 			}
 		}
 	}
@@ -6735,7 +8435,7 @@ country_event = { #FROM offers compensation for guarantee
 						is_fully_controlled_by = ROOT
 					}
 		
-					prioritize = { 361 378 } #Maryland or California
+					prioritize = { 361 378 1729 1730 1731 1732 1733 1167 1562 1563 1622 1623 1624 1625 1655 1753 } #Maryland or California
 		
 					add_extra_state_shared_building_slots = 2
 		
@@ -6761,7 +8461,7 @@ country_event = { #FROM offers compensation for guarantee
 						is_fully_controlled_by = ROOT
 					}
 		
-					prioritize = { 16 19 } #Ile de France or Aquitane
+					prioritize = { 16 19 1517 1518 1519 1520 } #Ile de France or Aquitane
 		
 					add_extra_state_shared_building_slots = 2
 		
@@ -6787,7 +8487,7 @@ country_event = { #FROM offers compensation for guarantee
 						is_fully_controlled_by = ROOT
 					}
 		
-					prioritize = { 2 17 } #Lazio or Campania
+					prioritize = { 2 17 1404 1257 } #Lazio or Campania
 		
 					add_extra_state_shared_building_slots = 2
 		
@@ -6919,7 +8619,7 @@ country_event = { #FROM accepts compensation for guarantee
 							is_fully_controlled_by = FROM
 						}
 
-						prioritize = { 361 378 } #Maryland or California
+						prioritize = { 361 378 1729 1730 1731 1732 1733 1167 1562 1563 1622 1623 1624 1625 1655 1753 } #Maryland or California
 
 						add_extra_state_shared_building_slots = 2
 
@@ -6954,7 +8654,7 @@ country_event = { #FROM accepts compensation for guarantee
 							is_fully_controlled_by = FROM
 						}
 
-						prioritize = { 16 19 } #Ile de France or Aquitane
+						prioritize = { 16 19 1517 1518 1519 1520 } #Ile de France or Aquitane
 
 						add_extra_state_shared_building_slots = 2
 
@@ -6990,7 +8690,7 @@ country_event = { #FROM accepts compensation for guarantee
 							is_fully_controlled_by = FROM
 						}
 
-						prioritize = { 2 17 } #Lazio or Campania
+						prioritize = { 2 17 1404 1257 } #Lazio or Campania
 
 						add_extra_state_shared_building_slots = 2
 
@@ -8455,6 +10155,14 @@ country_event = { #Otto wants to be a field marshal
 
 	option = { #go forth king... for LIECHTENSTEIN!!
 		name = AUS_political_events.91.a
+		
+		trigger = {
+			ROOT = {
+				owns_state = 1128
+			}
+			NOT = { country_exists = LCH }
+		}
+		
 		ai_chance = {
 			base = 1
 			modifier = {
@@ -8480,14 +10188,22 @@ country_event = { #Otto wants to be a field marshal
 			}
 		}
 
-		add_victory_points = {
-  			province = 6680
-  			value = 10
-  		}
+		#KSRE: The mod will not follow the practice of spontaneous massive victory point boosts. VP's will adhere to population proportions.
+		#add_victory_points = {
+  		#	province = 6680
+  		#	value = 10
+  		#}
 
 		set_capital = {
-			state = 848
-			remember_old_capital = yes
+			state = 1128
+			remember_old_capital = no
+		}
+		
+		hidden_effect = {
+			1128 = { 
+				remove_core_of = LCH
+				add_core_of = ROOT
+			}
 		}
 
 		custom_effect_tooltip = AUS_political_events.91.a_tt
@@ -8543,11 +10259,26 @@ country_event = { #Liechtenstein seeks to purchase Alaska
 		effect_tooltip = {
 			FROM = {
 				add_state_claim = 463 #Alaska
+				add_state_claim = 1568
+				add_state_claim = 1569
+				add_state_claim = 1570
+				add_state_claim = 1571
+				add_state_claim = 1572
+				add_state_claim = 1573
+				add_state_claim = 1574
+				add_state_claim = 1575
+				add_state_claim = 1576
+				add_state_claim = 1577
+				add_state_claim = 1578
+				add_state_claim = 1579
+				add_state_claim = 1580
+				add_state_claim = 1581
+				add_state_claim = 650
 
 				create_wargoal = {
 					type = take_claimed_state
 					target = ROOT
-					generator = { 463 } 
+					generator = { 463 1568 1569 1570 1571 1572 1573 1574 1575 1576 1577 1578 1579 1580 1581 650 } 
 				}
 			}
 		}
@@ -8577,10 +10308,22 @@ country_event = { #Liechtenstein seeks to purchase Alaska
 		custom_effect_tooltip = generic_skip_one_line_tt
 
 		effect_tooltip = {
-			463 = {
-				transfer_state_to = FROM
-			}
-
+			463 = { transfer_state_to = FROM }
+			1568 = { transfer_state_to = FROM }
+			1569 = { transfer_state_to = FROM }
+			1570 = { transfer_state_to = FROM }
+			1571 = { transfer_state_to = FROM }
+			1572 = { transfer_state_to = FROM }
+			1573 = { transfer_state_to = FROM }
+			1574 = { transfer_state_to = FROM }
+			1575 = { transfer_state_to = FROM }
+			1576 = { transfer_state_to = FROM }
+			1577 = { transfer_state_to = FROM }
+			1578 = { transfer_state_to = FROM }
+			1579 = { transfer_state_to = FROM }
+			1580 = { transfer_state_to = FROM }
+			1581 = { transfer_state_to = FROM }
+			650 = { transfer_state_to = FROM }
 			
 			add_ideas = AUS_payment_for_alaska
 			
@@ -8605,9 +10348,22 @@ country_event = { #America Sells Alaska
 			
 		}
 
-		463 = {
-			transfer_state_to = ROOT
-		}
+		463 = { transfer_state_to = ROOT }
+		1568 = { transfer_state_to = ROOT }
+		1569 = { transfer_state_to = ROOT }
+		1570 = { transfer_state_to = ROOT }
+		1571 = { transfer_state_to = ROOT }
+		1572 = { transfer_state_to = ROOT }
+		1573 = { transfer_state_to = ROOT }
+		1574 = { transfer_state_to = ROOT }
+		1575 = { transfer_state_to = ROOT }
+		1576 = { transfer_state_to = ROOT }
+		1577 = { transfer_state_to = ROOT }
+		1578 = { transfer_state_to = ROOT }
+		1579 = { transfer_state_to = ROOT }
+		1580 = { transfer_state_to = ROOT }
+		1581 = { transfer_state_to = ROOT }
+		650 = { transfer_state_to = ROOT }
 
 		FROM = {
 			add_ideas = AUS_payment_for_alaska
@@ -8639,11 +10395,26 @@ country_event = { #America refuses to sell Alaska
 		}
 
 		add_state_claim = 463 #Alaska
+		add_state_claim = 1568
+		add_state_claim = 1569
+		add_state_claim = 1570
+		add_state_claim = 1571
+		add_state_claim = 1572
+		add_state_claim = 1573
+		add_state_claim = 1574
+		add_state_claim = 1575
+		add_state_claim = 1576
+		add_state_claim = 1577
+		add_state_claim = 1578
+		add_state_claim = 1579
+		add_state_claim = 1580
+		add_state_claim = 1581
+		add_state_claim = 650
 
 		create_wargoal = {
 			type = take_claimed_state
 			target =  FROM
-			generator = { 463 } 
+			generator = { 463 1568 1569 1570 1571 1572 1573 1574 1575 1576 1577 1578 1579 1580 1581 } 
 		}
 	
 	}
@@ -9431,10 +11202,12 @@ country_event = { #Austria informed of Italy backing down
 				add_state_claim = 848
 				add_state_claim = 975
 				add_state_claim = 976
+				add_state_claim = 1553
+				add_state_claim = 1390
 				create_wargoal = {
 					type = take_state_focus
 					target = AUS
-					generator = { 4 152 153 848 975 976 }
+					generator = { 4 152 153 848 975 976 1553 1390 }
 				}
 				
 			}
@@ -9493,10 +11266,12 @@ country_event = { #Austria informed of Italy supporting them
 				add_state_claim = 848
 				add_state_claim = 975
 				add_state_claim = 976
+				add_state_claim = 1553
+				add_state_claim = 1390
 				create_wargoal = {
 					type = take_state_focus
 					target = AUS
-					generator = { 4 152 153 848 975 976 }
+					generator = { 4 152 153 848 975 976 1553 1390 }
 				}
 			} 
 
@@ -10011,57 +11786,293 @@ country_event = { #FROM demands further concessions
 			IF = {
 				limit = {
 					OR = {
-						controls_state = 764
+						controls_state = 102 controls_state = 1410 controls_state = 1704
 						any_subject_country = {
-							controls_state = 764
+							controls_state = 102 controls_state = 1410 controls_state = 1704
 						}
 					}
 				}
-				764 = { transfer_state_to = FROM } 
+				102 = { transfer_state_to = FROM } 
+				1410 = { transfer_state_to = FROM }  # KSRE (de 102)
+				1704 = { transfer_state_to = FROM }  # KSRE (de 102)
 			}
 			IF = {
 				limit = {
 					OR = {
-						controls_state = 104
+						controls_state = 1704
 						any_subject_country = {
-							controls_state = 104
+							controls_state = 1704
 						}
 					}
 				}
-				104 = { transfer_state_to = FROM } 
+				1704 = { transfer_state_to = FROM } 
 			}
 			IF = {
 				limit = {
 					OR = {
-						controls_state = 103
+						controls_state = 1410
 						any_subject_country = {
-							controls_state = 103
+							controls_state = 1410
+						}
+					}
+				}
+				1410 = { transfer_state_to = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 109 controls_state = 1706 controls_state = 1707
+						any_subject_country = {
+							controls_state = 109 controls_state = 1706 controls_state = 1707
+						}
+					}
+				}
+				109 = { transfer_state_to = FROM } 
+				1706 = { transfer_state_to = FROM }  # KSRE (de 109)
+				1707 = { transfer_state_to = FROM }  # KSRE (de 109)
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 853
+						any_subject_country = {
+							controls_state = 853
+						}
+					}
+				}
+				853 = { transfer_state_to = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 1388
+						any_subject_country = {
+							controls_state = 1388
+						}
+					}
+				}
+				1388 = { transfer_state_to = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 1718
+						any_subject_country = {
+							controls_state = 1718
+						}
+					}
+				}
+				1718 = { transfer_state_to = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 1314
+						any_subject_country = {
+							controls_state = 1314
+						}
+					}
+				}
+				1314 = { transfer_state_to = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 1339
+						any_subject_country = {
+							controls_state = 1339
+						}
+					}
+				}
+				1339 = { transfer_state_to = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 103 controls_state = 1296 controls_state = 1325 controls_state = 1339 controls_state = 1388 controls_state = 1718
+						any_subject_country = {
+							controls_state = 103 controls_state = 1296 controls_state = 1325 controls_state = 1339 controls_state = 1388 controls_state = 1718
 						}
 					}
 				}
 				103 = { transfer_state_to = FROM } 
+				1296 = { transfer_state_to = FROM }  # KSRE (de 103)
+				1325 = { transfer_state_to = FROM }  # KSRE (de 103)
+				1339 = { transfer_state_to = FROM }  # KSRE (de 103)
+				1388 = { transfer_state_to = FROM }  # KSRE (de 103)
+				1718 = { transfer_state_to = FROM }  # KSRE (de 103)
 			}
 			IF = {
 				limit = {
 					OR = {
-						controls_state = 804
+						controls_state = 1717
 						any_subject_country = {
-							controls_state = 804
+							controls_state = 1717
 						}
 					}
 				}
-				804 = { transfer_state_to = FROM } 
+				1717 = { transfer_state_to = FROM } 
 			}
 			IF = {
 				limit = {
 					OR = {
-						controls_state = 45
+						controls_state = 1296
 						any_subject_country = {
-							controls_state = 45
+							controls_state = 1296
+						}
+					}
+				}
+				1296 = { transfer_state_to = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 1716
+						any_subject_country = {
+							controls_state = 1716
+						}
+					}
+				}
+				1716 = { transfer_state_to = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 1705
+						any_subject_country = {
+							controls_state = 1705
+						}
+					}
+				}
+				1705 = { transfer_state_to = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 1477
+						any_subject_country = {
+							controls_state = 1477
+						}
+					}
+				}
+				1477 = { transfer_state_to = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 1478
+						any_subject_country = {
+							controls_state = 1478
+						}
+					}
+				}
+				1478 = { transfer_state_to = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 764 controls_state = 1478
+						any_subject_country = {
+							controls_state = 764 controls_state = 1478
+						}
+					}
+				}
+				764 = { transfer_state_to = FROM } 
+				1478 = { transfer_state_to = FROM }  # KSRE (de 764)
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 45 controls_state = 1477 controls_state = 1705
+						any_subject_country = {
+							controls_state = 45 controls_state = 1477 controls_state = 1705
 						}
 					}
 				}
 				45 = { transfer_state_to = FROM } 
+				1477 = { transfer_state_to = FROM }  # KSRE (de 45)
+				1705 = { transfer_state_to = FROM }  # KSRE (de 45)
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 1707
+						any_subject_country = {
+							controls_state = 1707
+						}
+					}
+				}
+				1707 = { transfer_state_to = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 1706
+						any_subject_country = {
+							controls_state = 1706
+						}
+					}
+				}
+				1706 = { transfer_state_to = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 1711
+						any_subject_country = {
+							controls_state = 1711
+						}
+					}
+				}
+				1711 = { transfer_state_to = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 1712
+						any_subject_country = {
+							controls_state = 1712
+						}
+					}
+				}
+				1712 = { transfer_state_to = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 1713
+						any_subject_country = {
+							controls_state = 1713
+						}
+					}
+				}
+				1713 = { transfer_state_to = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 104 controls_state = 1711 controls_state = 1712 controls_state = 1713
+						any_subject_country = {
+							controls_state = 104 controls_state = 1711 controls_state = 1712 controls_state = 1713
+						}
+					}
+				}
+				104 = { transfer_state_to = FROM } 
+				1711 = { transfer_state_to = FROM }  # KSRE (de 104)
+				1712 = { transfer_state_to = FROM }  # KSRE (de 104)
+				1713 = { transfer_state_to = FROM }  # KSRE (de 104)
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 804 controls_state = 1717
+						any_subject_country = {
+							controls_state = 804 controls_state = 1717
+						}
+					}
+				}
+				804 = { transfer_state_to = FROM } 
+				1717 = { transfer_state_to = FROM }  # KSRE (de 804)
 			}
 		}
 			
@@ -10098,57 +12109,293 @@ country_event = { #FROM demands further concessions
 			IF = {
 				limit = {
 					OR = {
-						controls_state = 764
+						controls_state = 102 controls_state = 1410 controls_state = 1704
 						any_subject_country = {
-							controls_state = 764
+							controls_state = 102 controls_state = 1410 controls_state = 1704
 						}
 					}
 				}
-				764 = { add_claim_by = FROM } 
+				102 = { add_claim_by = FROM } 
+				1410 = { add_claim_by = FROM }  # KSRE (de 102)
+				1704 = { add_claim_by = FROM }  # KSRE (de 102)
 			}
 			IF = {
 				limit = {
 					OR = {
-						controls_state = 104
+						controls_state = 1704
 						any_subject_country = {
-							controls_state = 104
+							controls_state = 1704
 						}
 					}
 				}
-				104 = { add_claim_by = FROM } 
+				1704 = { add_claim_by = FROM } 
 			}
 			IF = {
 				limit = {
 					OR = {
-						controls_state = 103
+						controls_state = 1410
 						any_subject_country = {
-							controls_state = 103
+							controls_state = 1410
+						}
+					}
+				}
+				1410 = { add_claim_by = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 109 controls_state = 1706 controls_state = 1707
+						any_subject_country = {
+							controls_state = 109 controls_state = 1706 controls_state = 1707
+						}
+					}
+				}
+				109 = { add_claim_by = FROM } 
+				1706 = { add_claim_by = FROM }  # KSRE (de 109)
+				1707 = { add_claim_by = FROM }  # KSRE (de 109)
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 853
+						any_subject_country = {
+							controls_state = 853
+						}
+					}
+				}
+				853 = { add_claim_by = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 1388
+						any_subject_country = {
+							controls_state = 1388
+						}
+					}
+				}
+				1388 = { add_claim_by = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 1718
+						any_subject_country = {
+							controls_state = 1718
+						}
+					}
+				}
+				1718 = { add_claim_by = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 1314
+						any_subject_country = {
+							controls_state = 1314
+						}
+					}
+				}
+				1314 = { add_claim_by = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 1339
+						any_subject_country = {
+							controls_state = 1339
+						}
+					}
+				}
+				1339 = { add_claim_by = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 103 controls_state = 1296 controls_state = 1325 controls_state = 1339 controls_state = 1388 controls_state = 1718
+						any_subject_country = {
+							controls_state = 103 controls_state = 1296 controls_state = 1325 controls_state = 1339 controls_state = 1388 controls_state = 1718
 						}
 					}
 				}
 				103 = { add_claim_by = FROM } 
+				1296 = { add_claim_by = FROM }  # KSRE (de 103)
+				1325 = { add_claim_by = FROM }  # KSRE (de 103)
+				1339 = { add_claim_by = FROM }  # KSRE (de 103)
+				1388 = { add_claim_by = FROM }  # KSRE (de 103)
+				1718 = { add_claim_by = FROM }  # KSRE (de 103)
 			}
 			IF = {
 				limit = {
 					OR = {
-						controls_state = 804
+						controls_state = 1717
 						any_subject_country = {
-							controls_state = 804
+							controls_state = 1717
 						}
 					}
 				}
-				804 = { add_claim_by = FROM } 
+				1717 = { add_claim_by = FROM } 
 			}
 			IF = {
 				limit = {
 					OR = {
-						controls_state = 45
+						controls_state = 1296
 						any_subject_country = {
-							controls_state = 45
+							controls_state = 1296
+						}
+					}
+				}
+				1296 = { add_claim_by = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 1716
+						any_subject_country = {
+							controls_state = 1716
+						}
+					}
+				}
+				1716 = { add_claim_by = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 1705
+						any_subject_country = {
+							controls_state = 1705
+						}
+					}
+				}
+				1705 = { add_claim_by = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 1477
+						any_subject_country = {
+							controls_state = 1477
+						}
+					}
+				}
+				1477 = { add_claim_by = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 1478
+						any_subject_country = {
+							controls_state = 1478
+						}
+					}
+				}
+				1478 = { add_claim_by = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 764 controls_state = 1478
+						any_subject_country = {
+							controls_state = 764 controls_state = 1478
+						}
+					}
+				}
+				764 = { add_claim_by = FROM } 
+				1478 = { add_claim_by = FROM }  # KSRE (de 764)
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 45 controls_state = 1477 controls_state = 1705
+						any_subject_country = {
+							controls_state = 45 controls_state = 1477 controls_state = 1705
 						}
 					}
 				}
 				45 = { add_claim_by = FROM } 
+				1477 = { add_claim_by = FROM }  # KSRE (de 45)
+				1705 = { add_claim_by = FROM }  # KSRE (de 45)
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 1707
+						any_subject_country = {
+							controls_state = 1707
+						}
+					}
+				}
+				1707 = { add_claim_by = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 1706
+						any_subject_country = {
+							controls_state = 1706
+						}
+					}
+				}
+				1706 = { add_claim_by = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 1711
+						any_subject_country = {
+							controls_state = 1711
+						}
+					}
+				}
+				1711 = { add_claim_by = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 1712
+						any_subject_country = {
+							controls_state = 1712
+						}
+					}
+				}
+				1712 = { add_claim_by = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 1713
+						any_subject_country = {
+							controls_state = 1713
+						}
+					}
+				}
+				1713 = { add_claim_by = FROM } 
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 104 controls_state = 1711 controls_state = 1712 controls_state = 1713
+						any_subject_country = {
+							controls_state = 104 controls_state = 1711 controls_state = 1712 controls_state = 1713
+						}
+					}
+				}
+				104 = { add_claim_by = FROM } 
+				1711 = { add_claim_by = FROM }  # KSRE (de 104)
+				1712 = { add_claim_by = FROM }  # KSRE (de 104)
+				1713 = { add_claim_by = FROM }  # KSRE (de 104)
+			}
+			IF = {
+				limit = {
+					OR = {
+						controls_state = 804 controls_state = 1717
+						any_subject_country = {
+							controls_state = 804 controls_state = 1717
+						}
+					}
+				}
+				804 = { add_claim_by = FROM } 
+				1717 = { add_claim_by = FROM }  # KSRE (de 804)
 			}
 
 			FROM = {
@@ -10180,76 +12427,346 @@ country_event = { #FROM hands over states
 		ai_chance = {
 			base = 10
 		}
-
 		IF = {
 			limit = {
 				FROM = {
 					OR = {
-						controls_state = 764
+						controls_state = 102 controls_state = 1410 controls_state = 1704
 						any_subject_country = {
-							controls_state = 764
+							controls_state = 102 controls_state = 1410 controls_state = 1704
 						}
 					}
 				}
-				
 			}
-			764 = { transfer_state_to = ROOT } 
+			102 = { transfer_state_to = ROOT } 
+			1410 = { transfer_state_to = ROOT }  # KSRE (de 102)
+			1704 = { transfer_state_to = ROOT }  # KSRE (de 102)
 		}
 		IF = {
 			limit = {
 				FROM = {
 					OR = {
-						controls_state = 104
+						controls_state = 1704
 						any_subject_country = {
-							controls_state = 104
+							controls_state = 1704
 						}
 					}
 				}
-				
 			}
-			104 = { transfer_state_to = ROOT } 
+			1704 = { transfer_state_to = ROOT } 
 		}
 		IF = {
 			limit = {
 				FROM = {
 					OR = {
-						controls_state = 103
+						controls_state = 1410
 						any_subject_country = {
-							controls_state = 103
+							controls_state = 1410
 						}
 					}
 				}
-				
+			}
+			1410 = { transfer_state_to = ROOT } 
+		}
+		IF = {
+			limit = {
+				FROM = {
+					OR = {
+						controls_state = 109 controls_state = 1706 controls_state = 1707
+						any_subject_country = {
+							controls_state = 109 controls_state = 1706 controls_state = 1707
+						}
+					}
+				}
+			}
+			109 = { transfer_state_to = ROOT } 
+			1706 = { transfer_state_to = ROOT }  # KSRE (de 109)
+			1707 = { transfer_state_to = ROOT }  # KSRE (de 109)
+		}
+		IF = {
+			limit = {
+				FROM = {
+					OR = {
+						controls_state = 853
+						any_subject_country = {
+							controls_state = 853
+						}
+					}
+				}
+			}
+			853 = { transfer_state_to = ROOT } 
+		}
+		IF = {
+			limit = {
+				FROM = {
+					OR = {
+						controls_state = 1388
+						any_subject_country = {
+							controls_state = 1388
+						}
+					}
+				}
+			}
+			1388 = { transfer_state_to = ROOT } 
+		}
+		IF = {
+			limit = {
+				FROM = {
+					OR = {
+						controls_state = 1718
+						any_subject_country = {
+							controls_state = 1718
+						}
+					}
+				}
+			}
+			1718 = { transfer_state_to = ROOT } 
+		}
+		IF = {
+			limit = {
+				FROM = {
+					OR = {
+						controls_state = 1314
+						any_subject_country = {
+							controls_state = 1314
+						}
+					}
+				}
+			}
+			1314 = { transfer_state_to = ROOT } 
+		}
+		IF = {
+			limit = {
+				FROM = {
+					OR = {
+						controls_state = 1339
+						any_subject_country = {
+							controls_state = 1339
+						}
+					}
+				}
+			}
+			1339 = { transfer_state_to = ROOT } 
+		}
+		IF = {
+			limit = {
+				FROM = {
+					OR = {
+						controls_state = 103 controls_state = 1296 controls_state = 1325 controls_state = 1339 controls_state = 1388 controls_state = 1718
+						any_subject_country = {
+							controls_state = 103 controls_state = 1296 controls_state = 1325 controls_state = 1339 controls_state = 1388 controls_state = 1718
+						}
+					}
+				}
 			}
 			103 = { transfer_state_to = ROOT } 
+			1296 = { transfer_state_to = ROOT }  # KSRE (de 103)
+			1325 = { transfer_state_to = ROOT }  # KSRE (de 103)
+			1339 = { transfer_state_to = ROOT }  # KSRE (de 103)
+			1388 = { transfer_state_to = ROOT }  # KSRE (de 103)
+			1718 = { transfer_state_to = ROOT }  # KSRE (de 103)
 		}
 		IF = {
 			limit = {
 				FROM = {
 					OR = {
-						controls_state = 804
+						controls_state = 1717
 						any_subject_country = {
-							controls_state = 804
+							controls_state = 1717
 						}
 					}
 				}
-				
 			}
-			804 = { transfer_state_to = ROOT } 
+			1717 = { transfer_state_to = ROOT } 
 		}
 		IF = {
 			limit = {
 				FROM = {
 					OR = {
-						controls_state = 45
+						controls_state = 1296
 						any_subject_country = {
-							controls_state = 45
+							controls_state = 1296
 						}
 					}
 				}
-				
+			}
+			1296 = { transfer_state_to = ROOT } 
+		}
+		IF = {
+			limit = {
+				FROM = {
+					OR = {
+						controls_state = 1716
+						any_subject_country = {
+							controls_state = 1716
+						}
+					}
+				}
+			}
+			1716 = { transfer_state_to = ROOT } 
+		}
+		IF = {
+			limit = {
+				FROM = {
+					OR = {
+						controls_state = 1705
+						any_subject_country = {
+							controls_state = 1705
+						}
+					}
+				}
+			}
+			1705 = { transfer_state_to = ROOT } 
+		}
+		IF = {
+			limit = {
+				FROM = {
+					OR = {
+						controls_state = 1477
+						any_subject_country = {
+							controls_state = 1477
+						}
+					}
+				}
+			}
+			1477 = { transfer_state_to = ROOT } 
+		}
+		IF = {
+			limit = {
+				FROM = {
+					OR = {
+						controls_state = 1478
+						any_subject_country = {
+							controls_state = 1478
+						}
+					}
+				}
+			}
+			1478 = { transfer_state_to = ROOT } 
+		}
+		IF = {
+			limit = {
+				FROM = {
+					OR = {
+						controls_state = 764 controls_state = 1478
+						any_subject_country = {
+							controls_state = 764 controls_state = 1478
+						}
+					}
+				}
+			}
+			764 = { transfer_state_to = ROOT } 
+			1478 = { transfer_state_to = ROOT }  # KSRE (de 764)
+		}
+		IF = {
+			limit = {
+				FROM = {
+					OR = {
+						controls_state = 45 controls_state = 1477 controls_state = 1705
+						any_subject_country = {
+							controls_state = 45 controls_state = 1477 controls_state = 1705
+						}
+					}
+				}
 			}
 			45 = { transfer_state_to = ROOT } 
+			1477 = { transfer_state_to = ROOT }  # KSRE (de 45)
+			1705 = { transfer_state_to = ROOT }  # KSRE (de 45)
+		}
+		IF = {
+			limit = {
+				FROM = {
+					OR = {
+						controls_state = 1707
+						any_subject_country = {
+							controls_state = 1707
+						}
+					}
+				}
+			}
+			1707 = { transfer_state_to = ROOT } 
+		}
+		IF = {
+			limit = {
+				FROM = {
+					OR = {
+						controls_state = 1706
+						any_subject_country = {
+							controls_state = 1706
+						}
+					}
+				}
+			}
+			1706 = { transfer_state_to = ROOT } 
+		}
+		IF = {
+			limit = {
+				FROM = {
+					OR = {
+						controls_state = 1711
+						any_subject_country = {
+							controls_state = 1711
+						}
+					}
+				}
+			}
+			1711 = { transfer_state_to = ROOT } 
+		}
+		IF = {
+			limit = {
+				FROM = {
+					OR = {
+						controls_state = 1712
+						any_subject_country = {
+							controls_state = 1712
+						}
+					}
+				}
+			}
+			1712 = { transfer_state_to = ROOT } 
+		}
+		IF = {
+			limit = {
+				FROM = {
+					OR = {
+						controls_state = 1713
+						any_subject_country = {
+							controls_state = 1713
+						}
+					}
+				}
+			}
+			1713 = { transfer_state_to = ROOT } 
+		}
+		IF = {
+			limit = {
+				FROM = {
+					OR = {
+						controls_state = 104 controls_state = 1711 controls_state = 1712 controls_state = 1713
+						any_subject_country = {
+							controls_state = 104 controls_state = 1711 controls_state = 1712 controls_state = 1713
+						}
+					}
+				}
+			}
+			104 = { transfer_state_to = ROOT } 
+			1711 = { transfer_state_to = ROOT }  # KSRE (de 104)
+			1712 = { transfer_state_to = ROOT }  # KSRE (de 104)
+			1713 = { transfer_state_to = ROOT }  # KSRE (de 104)
+		}
+		IF = {
+			limit = {
+				FROM = {
+					OR = {
+						controls_state = 804 controls_state = 1717
+						any_subject_country = {
+							controls_state = 804 controls_state = 1717
+						}
+					}
+				}
+			}
+			804 = { transfer_state_to = ROOT } 
+			1717 = { transfer_state_to = ROOT }  # KSRE (de 804)
 		}
 	}
 }
@@ -10272,71 +12789,181 @@ country_event = { #FROM refuses to give us what we want
 			limit = {
 				FROM = {
 					OR = {
-						controls_state = 764
+						controls_state = 764 controls_state = 1478
 						any_subject_country = {
-							controls_state = 764
+							controls_state = 764 controls_state = 1478
 						}
 					}
 				}
 				
 			}
 			764 = { add_claim_by = ROOT } 
+			1478 = { add_claim_by = ROOT }  # KSRE (de 764)
 		}
 		IF = {
 			limit = {
 				FROM = {
 					OR = {
-						controls_state = 104
+						controls_state = 104 controls_state = 1711 controls_state = 1712 controls_state = 1713
 						any_subject_country = {
-							controls_state = 104
+							controls_state = 104 controls_state = 1711 controls_state = 1712 controls_state = 1713
 						}
 					}
 				}
 				
 			}
 			104 = { add_claim_by = ROOT } 
+			1711 = { add_claim_by = ROOT }  # KSRE (de 104)
+			1712 = { add_claim_by = ROOT }  # KSRE (de 104)
+			1713 = { add_claim_by = ROOT }  # KSRE (de 104)
 		}
 		IF = {
 			limit = {
 				FROM = {
 					OR = {
-						controls_state = 103
+						controls_state = 103 controls_state = 1296 controls_state = 1325 controls_state = 1339 controls_state = 1388 controls_state = 1718
 						any_subject_country = {
-							controls_state = 103
+							controls_state = 103 controls_state = 1296 controls_state = 1325 controls_state = 1339 controls_state = 1388 controls_state = 1718
 						}
 					}
 				}
 				
 			}
 			103 = { add_claim_by = ROOT } 
+			1296 = { add_claim_by = ROOT }  # KSRE (de 103)
+			1325 = { add_claim_by = ROOT }  # KSRE (de 103)
+			1339 = { add_claim_by = ROOT }  # KSRE (de 103)
+			1388 = { add_claim_by = ROOT }  # KSRE (de 103)
+			1718 = { add_claim_by = ROOT }  # KSRE (de 103)
 		}
 		IF = {
 			limit = {
 				FROM = {
 					OR = {
-						controls_state = 804
+						controls_state = 804 controls_state = 1717
 						any_subject_country = {
-							controls_state = 804
+							controls_state = 804 controls_state = 1717
 						}
 					}
 				}
 				
 			}
 			804 = { add_claim_by = ROOT } 
+			1717 = { add_claim_by = ROOT }  # KSRE (de 804)
 		}
 		IF = {
 			limit = {
 				FROM = {
 					OR = {
-						controls_state = 45
+						controls_state = 45 controls_state = 1477 controls_state = 1705
 						any_subject_country = {
-							controls_state = 45
+							controls_state = 45 controls_state = 1477 controls_state = 1705
 						}
 					}
 				}
 				
 			}
 			45 = { add_claim_by = ROOT } 
+			1477 = { add_claim_by = ROOT }  # KSRE (de 45)
+			1705 = { add_claim_by = ROOT }  # KSRE (de 45)
+		}
+		IF = {
+			limit = {
+				FROM = {
+					OR = {
+						controls_state = 1707
+						any_subject_country = {
+							controls_state = 1707
+						}
+					}
+				}
+				
+			}
+			1707 = { add_claim_by = ROOT } 
+		}
+		IF = {
+			limit = {
+				FROM = {
+					OR = {
+						controls_state = 1711
+						any_subject_country = {
+							controls_state = 1711
+						}
+					}
+				}
+				
+			}
+			1711 = { add_claim_by = ROOT } 
+		}
+		IF = {
+			limit = {
+				FROM = {
+					OR = {
+						controls_state = 1712
+						any_subject_country = {
+							controls_state = 1712
+						}
+					}
+				}
+				
+			}
+			1712 = { add_claim_by = ROOT } 
+		}
+		IF = {
+			limit = {
+				FROM = {
+					OR = {
+						controls_state = 1713
+						any_subject_country = {
+							controls_state = 1713
+						}
+					}
+				}
+				
+			}
+			1713 = { add_claim_by = ROOT } 
+		}
+		IF = {
+			limit = {
+				FROM = {
+					OR = {
+						controls_state = 1717
+						any_subject_country = {
+							controls_state = 1717
+						}
+					}
+				}
+				
+			}
+			1717 = { add_claim_by = ROOT } 
+		}
+		IF = {
+			limit = {
+				FROM = {
+					OR = {
+						controls_state = 1477
+						any_subject_country = {
+							controls_state = 1477
+						}
+					}
+				}
+				
+			}
+			1477 = { add_claim_by = ROOT } 
+		}
+		IF = {
+			limit = {
+				FROM = {
+					OR = {
+						controls_state = 1478
+						any_subject_country = {
+							controls_state = 1478
+						}
+					}
+				}
+				
+			}
+			1478 = { add_claim_by = ROOT } 
 		}
 
 		

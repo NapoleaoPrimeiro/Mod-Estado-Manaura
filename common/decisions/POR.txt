@@ -438,7 +438,7 @@ POR_arms_purchases = {
 				NOT = { has_war_with = ROOT }
 				has_civil_war = no
 				has_capitulated = no
-				owns_state = 2 #Owns Rome
+				owns_state = 2 owns_state = 1404 #Owns Rome
 			}
 			NOT = { has_country_flag = POR_ships_purchase_in_progress_flag }
 			NOT = { has_country_flag = POR_british_ships_purchase_rejected_flag }
@@ -703,7 +703,7 @@ POR_arms_purchases = {
 						has_war_with = ROOT
 						has_civil_war = yes
 						has_capitulated = yes
-						NOT = { owns_state = 2 } #Owns Rome
+						NOT = { owns_state = 2 owns_state = 1404 } #Owns Rome
 					}
 				}
 			}	
@@ -1152,7 +1152,7 @@ POR_arms_purchases = {
 						has_war_with = ROOT
 						has_civil_war = yes
 						has_capitulated = yes
-						NOT = { owns_state = 2 } #Owns Rome
+						NOT = { owns_state = 2 owns_state = 1404 } #Owns Rome
 					}
 				}
 			}
@@ -1638,7 +1638,7 @@ POR_arms_purchases = {
 						has_war_with = ROOT
 						has_civil_war = yes
 						has_capitulated = yes
-						NOT = { owns_state = 2 } #Owns Rome
+						NOT = { owns_state = 2 owns_state = 1404 } #Owns Rome
 					}
 				}
 			}

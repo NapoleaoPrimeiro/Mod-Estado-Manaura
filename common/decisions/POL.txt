@@ -446,7 +446,7 @@ POL_peasant_strike_category = {
 						size = 0.6
 						capital = 10
 						states = { 
-							10 92 91 93 94 89 #One state less but that's probably better than having Vilnius completely encircled by peasants (as Habsburg Poland)
+							10 92 91 1400 93 94 1815 89 1256 1530 1532 1399 1531 1533 1814 1534 1535 1484 1818 #One state less but that's probably better than having Vilnius completely encircled by peasants (as Habsburg Poland)
 						}
 					}
 				}
@@ -456,7 +456,7 @@ POL_peasant_strike_category = {
 						size = 0.6
 						capital = 88
 						states = { 
-							88 89 91 93 94 95 96
+							88 89 91 1400 93 94 1815 95 96 1529 1385 1386 1528 1265 1775 1483 1532 1399 1531 1533 1814 1534 1535 1484 1818 1610 1244 1816 1246 1144 1145 1425 1173
 						}
 					}
 				}
@@ -685,7 +685,7 @@ POL_peasant_strike_category = {
 
 		highlight_states = {
 		 	highlight_state_targets = {
-					state = 91
+					state = 91 state = 1531
 				} 
 		}
 		
@@ -745,14 +745,14 @@ POL_peasant_strike_category = {
 
 		available = {
 			divisions_in_state = {
-				state = 88	
+				state = 1528	
 				size > 9
 			}
 		}
 
 		highlight_states = {
 		 	highlight_state_targets = {
-					state = 88
+					state = 1528
 				} 
 		}
 		
@@ -798,8 +798,8 @@ POL_peasant_strike_category = {
 						OR = {
 							is_core_of = UKR
 							is_core_of = BLR
-							state = 92
-							state = 97
+							state = 92 state = 1400 state = 1530
+							state = 97 state = 1241 state = 1242 state = 1245
 						}
 					}
 					PREV = {
@@ -890,8 +890,8 @@ POL_peasant_strike_category = {
 						OR = {
 							is_core_of = UKR
 							is_core_of = BLR
-							state = 92
-							state = 97
+							state = 92 state = 1400 state = 1530
+							state = 97 state = 1241 state = 1242 state = 1245
 						}
 						NOT = {
 							state = var:peasant_state_var #Prevent the same state from being targeted twice
@@ -1136,7 +1136,7 @@ POL_organize_the_peasants_strike = {
 
 		state_target = yes
 		
-		targets = { 96 784 95 94 93 91 89 90 88 92 97 98 87 86 807 85 762 }
+		targets = { 96 784 95 94 1815 93 91 1400 89 90 88 92 97 98 87 86 807 85 762 1554 1447 1389 1481 1252 1482 1245 1241 1242 1530 1238 1247 1248 1817 1244 1816 1239 1243 1246 1240 1610 1535 1484 1818 1534 1533 1814 1531 1532 1399 1483 1528 1265 1775 1529 1256 1141 1142 1143 1144 1145 1425 1173 1385 1386 }
 
 		available = {
 			NOT = { has_country_flag = adding_state_to_strike_flag }
@@ -1152,8 +1152,21 @@ POL_organize_the_peasants_strike = {
 				is_core_of = POL
 				OR = {
 					owner = { has_country_flag = POL_expanded_to_factories }
-					state = 97
+					state = 97 state = 1245
+					state = 1241
+					state = 1242
 					state = 88
+					state = 1144
+					state = 1145
+					state = 1425
+					state = 1529
+					state = 1385
+					state = 1386
+					state = 1528
+					state = 1265
+					state = 1775
+					state = 1483
+					state = 1399
 					is_core_of = UKR #Ukraine and Belarus are where the majority of Poland's agriculture was, expanding it beyond those states would mean expanding the strike to the industrial sector.
 					is_core_of = BLR
 				}
@@ -1164,18 +1177,18 @@ POL_organize_the_peasants_strike = {
 
 		fire_only_once = no
 		custom_cost_trigger = {
-			command_power > 4
-			has_political_power > 24
+			command_power > 2
+			has_political_power > 14
 		}
-		custom_cost_text = decision_cost_CP_5_pp_25
+		custom_cost_text = decision_cost_CP_3_pp_15
 
-		days_remove = 30
+		days_remove = 14
 		on_map_mode = map_only
 		complete_effect = {
 			hidden_effect = {
 				FROM = { set_state_flag = POL_currently_being_added_to_strike_flag }
-				add_political_power = -25
-				add_command_power = -5
+				add_political_power = -15
+				add_command_power = -3
 			}
 			set_country_flag = adding_state_to_strike_flag
 		}
@@ -2234,8 +2247,9 @@ POL_reopen_the_maritime_and_colonial_league = {
 			FROM = {
 				OR = {
 					state = 773 #Cameroon
+					state = 1770
 					state = 546 #Tanganyika
-					state = 454 #Palestine
+					state = 454 state = 1133 state = 1134 state = 1135 state = 1137 state = 1138 state = 1139 state = 1140 #Palestine
 				}
 			}
 		}
@@ -3252,6 +3266,10 @@ POL_cossack_republic_decisions = {
 			controls_state = 238
 			controls_state = 217
 			controls_state = 265
+			controls_state = 1096
+			controls_state = 1807
+			controls_state = 1808
+			controls_state = 1095
 			#controls_state = 237
 			#controls_state = 236
 		}
@@ -3298,7 +3316,9 @@ POL_cossack_republic_decisions = {
 			controls_state = 235
 			controls_state = 233
 			controls_state = 232
-			#controls_state = 137
+			controls_state = 1098
+			controls_state = 1097
+			controls_state = 1806
 		}
 		
 		

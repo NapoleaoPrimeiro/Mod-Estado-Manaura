@@ -4309,7 +4309,7 @@ focus_tree = {
 			custom_effect_tooltip = FRW_crown_of_the_franks_tt
 			add_state_claim = 34
 			add_state_claim = 8
-			hidden_effect = { if = { limit = { GER = { exists = yes NOT = { is_in_faction_with = ROOT } NOT = { has_war_with = ROOT } } NOT = { has_wargoal_against = GER } NOT = { AND = { owns_state = 42 owns_state = 51 } } } create_wargoal = { type = take_state_focus target = GER generator = { 42 51 } } } }
+			hidden_effect = { if = { limit = { GER = { exists = yes NOT = { is_in_faction_with = ROOT } NOT = { has_war_with = ROOT } } NOT = { has_wargoal_against = GER } NOT = { AND = { owns_state = 42 owns_state = 1414 owns_state = 1551 owns_state = 51 owns_state = 1253 } } } create_wargoal = { type = take_state_focus target = GER generator = { 42 51 1414 1551 1253 } } } }
 			hidden_effect = { FRW_form_francia = yes }
 			hidden_effect = { FRW_idle_reset = yes set_country_flag = FRW_fc_FRW_crown_of_the_franks }
 		}
@@ -4861,7 +4861,7 @@ focus_tree = {
 			custom_effect_tooltip = FRW_rhine_confederation_tt
 			add_war_support = 0.05
 			add_state_claim = 978
-			hidden_effect = { if = { limit = { NOT = { has_wargoal_against = GER } GER = { exists = yes NOT = { is_in_faction_with = ROOT } NOT = { has_war_with = ROOT } } } create_wargoal = { type = take_state_focus target = GER generator = { 42 51 978 } } } }
+			hidden_effect = { if = { limit = { NOT = { has_wargoal_against = GER } GER = { exists = yes NOT = { is_in_faction_with = ROOT } NOT = { has_war_with = ROOT } } } create_wargoal = { type = take_state_focus target = GER generator = { 42 51 978 1414 1551 1253 1251 } } } }
 			hidden_effect = { FRW_idle_reset = yes set_country_flag = FRW_fc_FRW_rhine_confederation }
 		}
 	}
@@ -4878,7 +4878,7 @@ focus_tree = {
 			NOT = { OR = { has_completed_focus = FRW_defend_the_republic has_completed_focus = FRW_workers_popular_front has_completed_focus = FRW_national_renewal } }
 		}
 		bypass = {
-			owns_state = 158
+			owns_state = 158 owns_state = 1308
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -4888,7 +4888,7 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = FRW_kingdom_of_italy_napoleon_tt
 			add_state_claim = 158
-			hidden_effect = { if = { limit = { NOT = { has_wargoal_against = ITA } ITA = { exists = yes NOT = { is_in_faction_with = ROOT } NOT = { has_war_with = ROOT } } } create_wargoal = { type = take_state_focus target = ITA generator = { 158 } } } }
+			hidden_effect = { if = { limit = { NOT = { has_wargoal_against = ITA } ITA = { exists = yes NOT = { is_in_faction_with = ROOT } NOT = { has_war_with = ROOT } } } create_wargoal = { type = take_state_focus target = ITA generator = { 158 1308 } } } }
 			hidden_effect = { FRW_idle_reset = yes set_country_flag = FRW_fc_FRW_kingdom_of_italy_napoleon }
 		}
 	}
@@ -5132,7 +5132,7 @@ focus_tree = {
 			add_state_claim = 207
 			add_state_claim = 242
 			add_state_claim = 219
-			hidden_effect = { if = { limit = { NOT = { has_wargoal_against = SOV } NOT = { has_war_with = SOV } } create_wargoal = { type = take_state_focus target = SOV generator = { 206 207 242 219 } } } }
+			hidden_effect = { if = { limit = { NOT = { has_wargoal_against = SOV } NOT = { has_war_with = SOV } } create_wargoal = { type = take_state_focus target = SOV generator = { 206 207 242 219 1263 1264 1793 1104 1773 1105 1106 1107 1113 1114 1115 } } } }
 			army_experience = 15
 			hidden_effect = { FRW_idle_reset = yes set_country_flag = FRW_fc_FRW_road_to_moscow }
 		}
@@ -5937,7 +5937,7 @@ focus_tree = {
 			if = { limit = { owns_state = 32 } 32 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
 			else_if = { limit = { 32 = { owner = { is_subject_of = ROOT } } } 32 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
 			else = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
-			if = { limit = { owns_state = 735 } 735 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
+			if = { limit = { owns_state = 735 owns_state = 1301 owns_state = 1302 owns_state = 1303 owns_state = 1304 owns_state = 1305 owns_state = 1306 } 735 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
 			else_if = { limit = { 735 = { owner = { is_subject_of = ROOT } } } 735 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
 			else = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
 			hidden_effect = { FRW_idle_reset = yes set_country_flag = FRW_fc_FRW_hydroelectric_alps }
@@ -6272,7 +6272,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		ai_will_do = { factor = 2 }
 		completion_reward = {
-			if = { limit = { owns_state = 31 } 31 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } }
+			if = { limit = { owns_state = 31 owns_state = 1381 } 31 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } }
 			else_if = { limit = { 31 = { owner = { is_subject_of = ROOT } } } 31 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } }
 			else = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } }
 			if = { limit = { owns_state = 19 } 19 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
@@ -7357,7 +7357,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		ai_will_do = { factor = 2 }
 		completion_reward = {
-			if = { limit = { owns_state = 16 } 16 = { add_building_construction = { type = anti_air_building level = 2 instant_build = yes } } }
+			if = { limit = { owns_state = 16 owns_state = 1517 owns_state = 1518 owns_state = 1519 owns_state = 1520 } 16 = { add_building_construction = { type = anti_air_building level = 2 instant_build = yes } } }
 			else_if = { limit = { 16 = { owner = { is_subject_of = ROOT } } } 16 = { add_building_construction = { type = anti_air_building level = 2 instant_build = yes } } }
 			else = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_building_construction = { type = anti_air_building level = 2 instant_build = yes } } }
 			add_tech_bonus = { name = FRW_air_defence_paris bonus = 0.5 uses = 1 category = radar_tech }
@@ -8198,10 +8198,10 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = FRW_libyan_question }
 		available = {
-			OR = { SYR = { is_subject_of = ROOT } LEB = { is_subject_of = ROOT } owns_state = 553 owns_state = 554 }
+			OR = { SYR = { is_subject_of = ROOT } LEB = { is_subject_of = ROOT } owns_state = 553 owns_state = 554 owns_state = 1136 }
 		}
 		bypass = {
-			NOT = { OR = { any_country = { OR = { tag = SYR tag = LEB } is_subject_of = ROOT } owns_state = 553 owns_state = 554 } }
+			NOT = { OR = { any_country = { OR = { tag = SYR tag = LEB } is_subject_of = ROOT } owns_state = 553 owns_state = 554 owns_state = 1136 } }
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -8611,7 +8611,7 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_ideas = FRW_prize_economy
-			if = { limit = { owns_state = 16 } 16 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 2 instant_build = yes } } }
+			if = { limit = { owns_state = 16 owns_state = 1517 owns_state = 1518 owns_state = 1519 owns_state = 1520 } 16 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 2 instant_build = yes } } }
 			else_if = { limit = { 16 = { owner = { is_subject_of = ROOT } } } 16 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 2 instant_build = yes } } }
 			else = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 2 instant_build = yes } } }
 			add_tech_bonus = { name = FRW_corsair_economy bonus = 0.5 uses = 1 category = industry }
@@ -8922,7 +8922,7 @@ focus_tree = {
 			add_state_claim = 318
 			add_state_claim = 319
 			add_state_claim = 315
-			if = { limit = { ENG = { exists = yes } NOT = { has_wargoal_against = ENG } NOT = { has_war_with = ENG } } create_wargoal = { type = take_state_focus target = ENG generator = { 689 690 691 692 693 696 } } }
+			if = { limit = { ENG = { exists = yes } NOT = { has_wargoal_against = ENG } NOT = { has_war_with = ENG } } create_wargoal = { type = take_state_focus target = ENG generator = { 689 690 691 692 693 696 1370 1371 1372 1373 } } }
 			if = { limit = { HOL = { exists = yes } NOT = { has_wargoal_against = HOL } NOT = { has_war_with = HOL } } create_wargoal = { type = take_state_focus target = HOL generator = { 695 } } }
 			if = { limit = { HAI = { exists = yes } NOT = { has_wargoal_against = HAI } NOT = { has_war_with = HAI } } create_wargoal = { type = take_state_focus target = HAI generator = { 318 } } }
 			if = { limit = { DOM = { exists = yes } NOT = { has_wargoal_against = DOM } NOT = { has_war_with = DOM } } create_wargoal = { type = take_state_focus target = DOM generator = { 319 } } }
@@ -9018,7 +9018,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = { type = dockyard level = 1 instant_build = yes }
 			}
-			hidden_effect = { every_owned_state = { limit = { NOT = { is_core_of = ROOT } OR = { state = 177 state = 178 state = 697 state = 698 state = 702 state = 705 state = 116 state = 118 state = 689 state = 690 state = 691 state = 692 state = 693 state = 695 state = 696 state = 707 state = 709 state = 933 state = 337 } } add_core_of = ROOT } }
+			hidden_effect = { every_owned_state = { limit = { NOT = { is_core_of = ROOT } OR = { state = 177 state = 178 state = 697 state = 698 state = 702 state = 705 state = 116 state = 118 state = 689 state = 690 state = 691 state = 1370 state = 692 state = 1371 state = 1372 state = 1373 state = 693 state = 695 state = 696 state = 707 state = 709 state = 933 state = 337 } } add_core_of = ROOT } }
 			hidden_effect = { FRW_idle_reset = yes set_country_flag = FRW_fc_FRW_isles_republic }
 		}
 	}
@@ -9460,8 +9460,8 @@ focus_tree = {
 			custom_effect_tooltip = FRW_rally_the_colonies_tt
 			add_political_power = 15
 			hidden_effect = { every_state = { limit = { is_core_of = ROOT is_on_continent = africa NOT = { is_owned_by = ROOT } NOT = { is_claimed_by = ROOT } } add_claim_by = ROOT } }
-			hidden_effect = { every_state = { limit = { is_on_continent = africa NOT = { is_core_of = ROOT } NOT = { is_owned_by = ROOT } NOT = { is_claimed_by = ROOT } OR = { state = 459 state = 460 state = 461 state = 462 state = 458 state = 513 state = 272 state = 556 state = 557 state = 515 state = 539 state = 660 state = 543 state = 268 state = 772 state = 773 state = 774 } } add_claim_by = ROOT } }
-			hidden_effect = { every_country = { limit = { NOT = { tag = ROOT } NOT = { has_war_with = ROOT } NOT = { is_in_faction_with = ROOT } any_owned_state = { is_on_continent = africa is_claimed_by = ROOT } ROOT = { NOT = { has_wargoal_against = PREV } } } ROOT = { create_wargoal = { type = take_state_focus target = PREV generator = { 459 460 461 462 458 513 514 665 786 272 556 557 515 539 660 543 268 772 773 774 } } } } }
+			hidden_effect = { every_state = { limit = { is_on_continent = africa NOT = { is_core_of = ROOT } NOT = { is_owned_by = ROOT } NOT = { is_claimed_by = ROOT } OR = { state = 459 state = 460 state = 461 state = 462 state = 458 state = 513 state = 272 state = 556 state = 557 state = 515 state = 1759 state = 539 state = 1769 state = 660 state = 1764 state = 1765 state = 543 state = 268 state = 772 state = 1766 state = 1767 state = 1768 state = 773 state = 1770 state = 774 state = 1763 } } add_claim_by = ROOT } }
+			hidden_effect = { every_country = { limit = { NOT = { tag = ROOT } NOT = { has_war_with = ROOT } NOT = { is_in_faction_with = ROOT } any_owned_state = { is_on_continent = africa is_claimed_by = ROOT } ROOT = { NOT = { has_wargoal_against = PREV } } } ROOT = { create_wargoal = { type = take_state_focus target = PREV generator = { 459 460 461 462 458 513 514 665 786 272 556 557 515 539 660 543 268 772 773 774 1759 1769 1764 1765 1766 1767 1768 1770 1763 } } } } }
 			hidden_effect = { add_to_variable = { FRW_ff_prestige = 10 } FRW_ff_update = yes }
 			hidden_effect = { FRW_idle_reset = yes set_country_flag = FRW_fc_FRW_rally_the_colonies }
 		}
@@ -9535,7 +9535,7 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = FRW_algiers_capital_tt
 			hidden_effect = { add_offsite_building = { type = industrial_complex level = 2 } }
-			hidden_effect = { if = { limit = { owns_state = 459 controls_state = 459 } set_capital = { state = 459 } } else_if = { limit = { owns_state = 460 controls_state = 460 } set_capital = { state = 460 } } else_if = { limit = { owns_state = 772 controls_state = 772 } set_capital = { state = 772 } } }
+			hidden_effect = { if = { limit = { owns_state = 459 controls_state = 459 } set_capital = { state = 459 } } else_if = { limit = { owns_state = 460 controls_state = 460 } set_capital = { state = 460 } } else_if = { limit = { owns_state = 772 owns_state = 1766 owns_state = 1767 owns_state = 1768 controls_state = 772 } set_capital = { state = 772 } } }
 			if = { limit = { owns_state = 460 } 460 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
 			else_if = { limit = { 460 = { owner = { is_subject_of = ROOT } } } 460 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
 			else = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
@@ -9709,7 +9709,7 @@ focus_tree = {
 			OR = { has_country_flag = FRW_exile_open has_capitulated = yes 16 = { NOT = { is_controlled_by = ROOT } } has_completed_focus = FRW_appeal_of_18_june }
 		}
 		available = {
-			controls_state = 16
+			controls_state = 16 controls_state = 1517 controls_state = 1518 controls_state = 1519 controls_state = 1520
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -9720,7 +9720,7 @@ focus_tree = {
 			custom_effect_tooltip = FRW_liberation_of_paris_tt
 			add_manpower = 50000
 			add_war_support = 0.1
-			hidden_effect = { if = { limit = { NOT = { owns_state = 16 } } transfer_state = 16 } set_capital = { state = 16 } }
+			hidden_effect = { if = { limit = { NOT = { owns_state = 16 owns_state = 1517 owns_state = 1518 owns_state = 1519 owns_state = 1520 } } transfer_state = 16 transfer_state = 1517 transfer_state = 1518 transfer_state = 1519 transfer_state = 1520 } set_capital = { state = 16 } }
 			if = { limit = { has_idea = FRW_free_france_spirit } remove_ideas = FRW_free_france_spirit }
 			add_timed_idea = { idea = FRW_liberation_spirit days = 730 }
 			add_political_power = 60
@@ -10238,10 +10238,10 @@ focus_tree = {
 			if = { limit = { owns_state = 29 } 29 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 2 instant_build = yes } } }
 			else_if = { limit = { 29 = { owner = { is_subject_of = ROOT } } } 29 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 2 instant_build = yes } } }
 			else = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 2 instant_build = yes } } }
-			if = { limit = { owns_state = 16 } 16 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
+			if = { limit = { owns_state = 16 owns_state = 1517 owns_state = 1518 owns_state = 1519 owns_state = 1520 } 16 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
 			else_if = { limit = { 16 = { owner = { is_subject_of = ROOT } } } 16 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
 			else = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
-			if = { limit = { owns_state = 15 } 15 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
+			if = { limit = { owns_state = 15 owns_state = 1403 } 15 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
 			else_if = { limit = { 15 = { owner = { is_subject_of = ROOT } } } 15 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
 			else = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
 			hidden_effect = { add_to_variable = { FRW_inflation = 10 } FRW_inflation_update = yes }
@@ -10506,10 +10506,10 @@ focus_tree = {
 			NOT = { OR = { has_completed_focus = FRW_workers_popular_front has_completed_focus = FRW_national_renewal has_completed_focus = FRW_above_the_parties } }
 		}
 		available = {
-			GER = { exists = yes owns_state = 42 NOT = { has_war_with = ROOT } }
+			GER = { exists = yes owns_state = 42 owns_state = 1414 owns_state = 1551 NOT = { has_war_with = ROOT } }
 		}
 		bypass = {
-			OR = { owns_state = 42 NOT = { GER = { owns_state = 42 } } }
+			OR = { owns_state = 42 owns_state = 1414 owns_state = 1551 NOT = { GER = { owns_state = 42 owns_state = 1414 owns_state = 1551 } } }
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -10535,10 +10535,10 @@ focus_tree = {
 			NOT = { OR = { has_completed_focus = FRW_workers_popular_front has_completed_focus = FRW_national_renewal has_completed_focus = FRW_above_the_parties } }
 		}
 		available = {
-			GER = { exists = yes owns_state = 51 NOT = { has_war_with = ROOT } }
+			GER = { exists = yes owns_state = 51 owns_state = 1253 NOT = { has_war_with = ROOT } }
 		}
 		bypass = {
-			OR = { owns_state = 51 NOT = { GER = { owns_state = 51 } } }
+			OR = { owns_state = 51 owns_state = 1253 NOT = { GER = { owns_state = 51 owns_state = 1253 } } }
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -10665,7 +10665,7 @@ focus_tree = {
 			SWI = { exists = yes NOT = { has_war_with = ROOT } }
 		}
 		bypass = {
-			OR = { NOT = { country_exists = SWI } AND = { owns_state = 845 owns_state = 847 } }
+			OR = { NOT = { country_exists = SWI } AND = { owns_state = 845 owns_state = 1507 owns_state = 1514 owns_state = 847 owns_state = 1506 } }
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -10693,10 +10693,10 @@ focus_tree = {
 			NOT = { OR = { has_completed_focus = FRW_defend_the_republic has_completed_focus = FRW_workers_popular_front has_completed_focus = FRW_above_the_parties } }
 		}
 		available = {
-			ITA = { exists = yes owns_state = 158 NOT = { has_war_with = ROOT } }
+			ITA = { exists = yes owns_state = 158 owns_state = 1308 NOT = { has_war_with = ROOT } }
 		}
 		bypass = {
-			OR = { owns_state = 158 NOT = { ITA = { owns_state = 158 } } }
+			OR = { owns_state = 158 owns_state = 1308 NOT = { ITA = { owns_state = 158 owns_state = 1308 } } }
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -10970,7 +10970,7 @@ focus_tree = {
 			BEL = { exists = yes owns_state = 34 NOT = { has_war_with = ROOT } }
 		}
 		bypass = {
-			OR = { NOT = { country_exists = BEL } AND = { owns_state = 34 owns_state = 980 } }
+			OR = { NOT = { country_exists = BEL } AND = { owns_state = 34 owns_state = 980 owns_state = 1250 } }
 		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no

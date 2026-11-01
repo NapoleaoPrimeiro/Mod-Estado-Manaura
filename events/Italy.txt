@@ -203,11 +203,6 @@ country_event = {
 		158 = {
 			add_building_construction = {
 				type = bunker
-				province = 11891
-				level = 3
-			}
-			add_building_construction = {
-				type = bunker
 				province = 11721
 				level = 3
 			}
@@ -218,7 +213,21 @@ country_event = {
 				level = 3
 			}
 		}
-		160 = {
+		1308 = {
+			add_building_construction = {
+				type = bunker
+				province = 11891
+				level = 3
+			}
+		}
+		736 = {
+			add_building_construction = {
+				type = bunker
+				province = 11595
+				level = 3
+			}
+		}
+		1168 = {
 			add_building_construction = {
 				type = bunker
 				province = 3657
@@ -227,11 +236,6 @@ country_event = {
 			add_building_construction = {
 				type = bunker
 				province = 9613
-				level = 3
-			}
-			add_building_construction = {
-				type = bunker
-				province = 11595
 				level = 3
 			}
 		}
@@ -544,23 +548,51 @@ country_event = {
 		name = italy.13.a
 		if = {
 			limit = { has_completed_focus = ITA_balkan_ambition }
-			ITA = { transfer_state = 1105 } #CUSTOM STATE - SPLIT
+			ITA = { transfer_state = 1339 } #CUSTOM STATE - SPLIT
 		}
 		if = {
 			limit = { has_completed_focus = ITA_balkan_ambition }
-			ITA = { transfer_state = 1082 } #CUSTOM STATE - KOTOR
+			ITA = { transfer_state = 1716 } #CUSTOM STATE - KOTOR
+		}
+		if = {
+			limit = { has_completed_focus = ITA_balkan_ambition }
+			ITA = { transfer_state = 1296 }
+		}
+		if = {
+			limit = { has_completed_focus = ITA_balkan_ambition }
+			ITA = { transfer_state = 1718 }
 		}
 		if = {
 			limit = { owns_state = 44 }
-			ITA = { transfer_state = 105 }
+			ITA = { transfer_state = 105 transfer_state = 1260 transfer_state = 1716 }
 		}
 		if = {
 			limit = { owns_state = 44 }
-			ITA = { transfer_state = 802 }
+			ITA = { transfer_state = 802 transfer_state = 1715 transfer_state = 1776 }
 		}
 		if = {
 			limit = { owns_state = 44 }
-			ITA = { transfer_state = 970 }
+			ITA = { transfer_state = 970 transfer_state = 1412 }
+		}
+		if = {
+			limit = { owns_state = 44 }
+			ITA = { transfer_state = 1412 }
+		}
+		if = {
+			limit = { owns_state = 44 }
+			ITA = { transfer_state = 1260 }
+		}
+		if = {
+			limit = { owns_state = 44 }
+			ITA = { transfer_state = 1776 }
+		}
+		if = {
+			limit = { owns_state = 44 }
+			ITA = { transfer_state = 1777 }
+		}
+		if = {
+			limit = { owns_state = 44 }
+			ITA = { transfer_state = 1716 }
 		}
 	}
 }
@@ -620,12 +652,48 @@ country_event = {
 		name = italy.15.a
 		if = {
 			limit = { has_global_flag = ITA_claims_on_france_735 }
-			ITA = { transfer_state = 735 }
+			ITA = { transfer_state = 735 transfer_state = 1301 transfer_state = 1302 transfer_state = 1303 transfer_state = 1304 transfer_state = 1305 transfer_state = 1306 }
 		}
 		if = {
 			limit = { has_global_flag = ITA_claims_on_france_1 }
 			ITA = { transfer_state = 1 }
-		}		
+		}
+		if = {
+			limit = { has_global_flag = ITA_claims_on_france_851 }
+			ITA = { transfer_state = 851 }
+		}
+		if = {
+			limit = { has_global_flag = ITA_claims_on_france_32 }
+			ITA = { transfer_state = 32 }
+		}
+		if = {
+			limit = { has_global_flag = ITA_claims_on_france_1301 }
+			ITA = { transfer_state = 1301 }
+		}
+		if = {
+			limit = { has_global_flag = ITA_claims_on_france_1302 }
+			ITA = { transfer_state = 1302 }
+		}
+		if = {
+			limit = { has_global_flag = ITA_claims_on_france_1303 }
+			ITA = { transfer_state = 1303 }
+		}
+		if = {
+			limit = { has_global_flag = ITA_claims_on_france_1304 }
+			ITA = { transfer_state = 1304 }
+		}
+		if = {
+			limit = { has_global_flag = ITA_claims_on_france_1305 }
+			ITA = { transfer_state = 1305 }
+		}
+		if = {
+			limit = { has_global_flag = ITA_claims_on_france_1306 }
+			ITA = { transfer_state = 1306 }
+		}	
+		if = {
+			limit = { has_global_flag = ITA_claims_on_france_21 }
+			ITA = { transfer_state = 21 }
+		}
 	}
 }
 
@@ -642,7 +710,12 @@ country_event = {
 	option = {
 		name = italy.16.a
 
-		transfer_state = 735
+		transfer_state = 735 transfer_state = 1306
+		transfer_state = 1301
+		transfer_state = 1302
+		transfer_state = 1303
+		transfer_state = 1304
+		transfer_state = 1305
 	}
 }
 

@@ -1,0 +1,412 @@
+USA_written_war_plans = {
+	#priority = 1
+	icon = GFX_decision_category_generic_industry
+	allowed = {
+		original_tag = USA
+	}
+	visible = {
+		OR = {
+			has_completed_focus = USA_write_war_plan_black
+			has_completed_focus = USA_write_war_plan_gold
+			has_completed_focus = USA_write_war_plan_red
+			has_completed_focus = USA_write_war_plan_silver
+			has_completed_focus = USA_write_war_plan_white
+			has_completed_focus = USA_write_war_plan_chrome
+
+			has_completed_focus = USA_write_war_plan_orange
+			has_completed_focus = USA_write_war_plan_yellow
+			has_completed_focus = USA_write_war_plan_vermilion
+			has_completed_focus = USA_write_war_plan_lime
+			has_completed_focus = USA_write_war_plan_scarlet_garnet
+			has_completed_focus = USA_write_war_plan_ruby
+			has_completed_focus = USA_write_war_plan_diamond
+
+			has_completed_focus = USA_write_war_plan_crimson
+			has_completed_focus = USA_write_war_plan_green
+			has_completed_focus = USA_write_war_plan_turquoise
+			has_completed_focus = USA_write_war_plan_jade
+			has_completed_focus = USA_write_war_plan_mint
+			has_completed_focus = USA_write_war_plan_teal
+			has_completed_focus = USA_write_war_plan_onyx
+
+			has_completed_focus = USA_the_vast_frontier
+			has_completed_focus = USA_conquer_the_subcontinent
+			has_completed_focus = USA_outback_offensive
+			has_completed_focus = USA_oceanic_dominance
+			has_completed_focus = USA_island_hopping
+			has_completed_focus = USA_quench_the_flames
+			has_completed_focus = USA_steppe_warfare
+
+			has_completed_focus = USA_operation_unthinkable
+			has_completed_focus = USA_flank_the_maginot
+			has_completed_focus = USA_challenge_the_empire
+			has_completed_focus = USA_destroy_the_reich
+			has_completed_focus = USA_strike_the_soft_underbelly
+		}
+	}
+	#priority = 85
+}
+
+USA_foreign_funds_cat = {
+	priority = 1
+	icon = GFX_decision_category_generic_industry
+
+	allowed = {
+		original_tag = USA
+	}
+
+	visible_when_empty = no
+
+	visible = {
+		OR = {
+			has_completed_focus = USA_foreign_funds
+			has_completed_focus = USA_mutual_investment_in_east_asia
+		}
+	}
+	
+}
+
+USA_enforce_continental_security_cat = {
+	priority = 1
+	icon = GFX_decision_category_generic_industry
+
+	allowed = {
+		original_tag = USA
+	}
+
+	visible_when_empty = no
+
+	visible = {
+		OR = {
+			has_completed_focus = USA_enforce_continental_security
+		}
+	}
+	
+}
+
+USA_enforce_the_naval_treaties_cat = {
+	priority = 1
+	icon = generic_political_actions
+
+	allowed = {
+		original_tag = USA
+	}
+
+	visible_when_empty = no
+
+	visible = {
+		OR = {
+			has_completed_focus = USA_enforce_the_naval_treaties
+		}
+	}
+}
+
+USA_international_trade_cat = {
+	priority = 1
+	icon = decision_category_gre_investment_decisions
+
+	allowed = {
+		original_tag = USA
+	}
+
+	visible_when_empty = no
+
+	visible = {
+		#OR = {
+		has_completed_focus = USA_international_industrial_tutelage
+		#}
+	}
+	
+}
+
+USA_homeland_defense_cat = {
+	priority = 10
+	icon = GFX_decision_category_usa_homeland_defense
+
+	allowed = {
+		original_tag = USA
+	}
+
+	visible_when_empty = no
+
+	on_map_area = {
+	    state = 382 state = 1156 state = 1178 state = 1179 state = 1354 state = 1355 
+	    name = USA_homeland_defense_cat_zoom
+	    zoom = 850
+	    target_root_trigger = {
+	        tag = USA
+	    }
+	}
+
+	visible = {
+		#always = yes
+		#OR = {
+			#has_country_flag = USA_has_completed_homeland_defense_emergency_act_focus_equivalent
+			##has_country_flag = USA_homeland_defense_activated_flag
+			#has_completed_focus = USA_homeland_defense_emergency_act_focus
+			#has_completed_focus = USA_evacuate_civilians_and_industry
+			#has_completed_focus = USA_coordinate_militia_defenses
+			#has_completed_focus = USA_spirit_of_defiance
+			#has_completed_focus = USA_regional_strategic_commands
+		#}
+		has_country_flag = america_is_being_invaded_flag
+		has_country_flag = USA_has_completed_homeland_defense_emergency_act_focus_equivalent
+	}
+	
+}
+
+USA_arising_opportunities_cat = {
+	priority = 8
+	#icon = GFX_decision_category_generic_arms_trade
+	icon = GFX_decision_category_partner_in_arms
+
+	allowed = {
+		original_tag = USA
+	}
+
+	visible_when_empty = yes
+
+	visible = {
+		#always = yes
+		OR = {
+			has_completed_focus = USA_arising_opportunities
+		}
+	}
+	
+}
+
+USA_FOREIGN_partners_in_arms_cat = {
+	priority = 10
+	icon = GFX_decision_category_partner_in_arms
+
+	allowed = {
+		#original_tag = USA
+		NOT = { original_tag = USA }
+	}
+
+	visible_when_empty = no
+
+	visible = {
+		#always = yes
+		USA = {
+			has_completed_focus = USA_war_is_business
+		}
+		OR = {
+			has_idea = usa_american_partner_in_arms_idea
+			has_idea = usa_american_partner_in_arms_upgraded_idea
+		}
+		
+	}
+	
+}
+
+USA_balanced_carnage_cat = { # War Interference and Profiteering
+	priority = 9
+	#icon = GFX_decision_category_generic_arms_trade
+	icon = GFX_decision_category_hol_war_on_pacifism
+	picture = GFX_decision_cat_picture_NOR_preparedness
+
+	#custom_icon = {
+	#	tag = SPA
+	#	value = x
+	#	desc = x
+	#	visible = { }
+	#}
+
+	allowed = {
+		original_tag = USA
+	}
+
+	visible_when_empty = yes
+
+	visible = {
+		#always = yes
+		OR = {
+			has_completed_focus = USA_balanced_carnage
+			has_completed_focus = USA_war_is_business
+		   	has_completed_focus = USA_orchestrate_the_infernos
+		}
+	}
+	
+}
+
+USA_dawn_over_europe_cat = { # Dawn Over Europe
+	priority = 7
+	#icon = GFX_decision_category_generic_arms_trade
+	icon = GFX_decision_category_GER_weltpolitik
+
+	allowed = {
+		original_tag = USA
+	}
+
+	on_map_area = {
+	    state = 18 state = 1258 state = 1259 state = 1402
+	    name = USA_dawn_over_europe_cat_zoom
+	    zoom = 500
+	    target_root_trigger = {
+	        tag = USA
+	    }
+	}
+
+	visible_when_empty = yes
+
+	visible = {
+		#always = yes
+		#OR = {
+			has_completed_focus = USA_dawn_over_europe
+		#}
+	}
+	
+}
+
+USA_defense_preparedness_bop_cat = { # Def Prep BOP
+	priority = 7
+	#icon = GFX_decision_category_generic_arms_trade
+	icon = GFX_decision_category_GER_weltpolitik
+
+	allowed = {
+		original_tag = USA
+	}
+
+
+	#visible_when_empty = yes
+
+	#visible = {
+	#	always = yes
+	#	#OR = {
+	#	#	has_completed_focus = USA_dawn_over_europe
+	#	#}
+	#}
+	
+}
+
+USA_the_western_project_cat = {
+	priority = 3
+	icon = GFX_decision_category_SWI_imperial_council
+
+	allowed = {
+		original_tag = USA
+	}
+
+	#visible_when_empty = yes
+	visible_when_empty = no
+
+	visible = {
+		OR = {
+			has_completed_focus = USA_the_western_project
+			has_completed_focus = USA_the_frontier_sandbox
+		}
+		#always = yes
+	}
+	
+}
+
+USA_NC_start_civil_war_cat = {
+	priority = 100
+	icon = GFX_decision_category_SOV_civil_puppet_interaction
+
+	allowed = {
+		original_tag = USA
+	}
+
+	#visible_when_empty = yes
+	visible_when_empty = no
+
+	visible = {
+		OR = {
+			has_completed_focus = USA_denounce_capitalism
+		}
+		has_civil_war = no
+		not = { has_country_flag = USA_NC_civil_war_is_over }
+		#has_conservative_resistance = yes
+		#always = yes
+	}
+	
+}
+
+USA_blue_districts_cat = {
+	priority = 3
+	icon = GFX_decision_category_gre_paying_ifc_debt
+
+	allowed = {
+		original_tag = USA
+	}
+
+	#visible_when_empty = yes
+	visible_when_empty = no
+
+	visible = {
+		OR = {
+			has_completed_focus = USA_blue_districts
+		}
+		#always = yes
+	}
+	
+}
+
+USA_americas_rightful_claims_cat = {
+	priority = 3
+	icon = GFX_decision_category_generic_democracy
+
+	allowed = {
+		original_tag = USA
+	}
+
+	#visible_when_empty = yes
+	visible_when_empty = no
+
+	visible = {
+		OR = {
+			has_completed_focus = USA_americas_rightful_claims
+		}
+		#always = yes
+	}
+	
+}
+
+USA_renaissance_and_retribution_cat = {
+	priority = 4
+	icon = GFX_decision_category_ger_reichskommissariats
+	picture = GFX_decision_cat_picture_greater_german_reich
+
+	allowed = {
+		original_tag = USA
+	}
+
+	#visible_when_empty = yes
+	visible_when_empty = no
+
+	visible = {
+		not = { GER = { is_subject_of = USA } }
+		OR = {
+			has_completed_focus = USA_renaissance_and_retribution
+		}
+		hidden_trigger = {
+			is_in_faction_with = GER
+			GER = {
+				has_government = fascism
+			}
+		}
+		#always = yes
+	}
+	
+}
+
+USA_golden_opportunities_cat = {
+	priority = 3
+	icon = GFX_decision_category_golden_opportunities
+
+	allowed = {
+		original_tag = USA
+	}
+
+	visible_when_empty = no
+
+	visible = {
+		OR = {
+			has_completed_focus = USA_golden_opportunities
+		}
+		#always = yes
+	}
+	
+}

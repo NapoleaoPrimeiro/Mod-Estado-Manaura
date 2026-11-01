@@ -1,0 +1,30 @@
+capital = 80
+
+set_research_slots = 2
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1935.12.9"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	democratic = 35
+	fascism = 8
+	communism = 12
+	neutrality = 45
+}
+
+1939.1.1 = {
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "1936.6.10"
+		election_frequency = 48
+		elections_allowed = no
+	}
+}
+
+recruit_character = BKV_democratic_leader
+recruit_character = BKV_communism_leader
+recruit_character = BKV_fascism_leader
+recruit_character = BKV_neutrality_leader

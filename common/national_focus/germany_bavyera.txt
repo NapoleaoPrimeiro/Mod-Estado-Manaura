@@ -151,7 +151,7 @@ keep_all_characters = yes
     ideology = fascism
     size = 0.5
     capital = 64
-    states = { 42 55 51 57 56 59 60 64 61 58 62 63 68 66 978 763 67 5 763 65 }
+    states = { 42 55 51 57 56 59 60 64 61 58 62 63 68 66 978 763 67 5 763 65 1414 1551 1254 1253 1413 1545 1270 1268 1269 1542 1544 1538 1539 1429 1540 1541 1558 1251 1249 1288 1427 1428 1557 1701 1702 1772 1543 }
     keep_unit_leaders = { 1 2 9 11 20 24 25
     }
 }
@@ -4619,8 +4619,8 @@ focus = {
 					add_extra_state_shared_building_slots = 1	
 				}
 			POL = {
-            remove_state_core = 807
-			remove_state_core = 86
+            remove_state_core = 807 remove_state_core = 1554
+			remove_state_core = 86 remove_state_core = 1389
 			remove_state_core = 85
 			remove_state_core = 762
 			}
@@ -4628,7 +4628,7 @@ focus = {
             remove_state_core = 28
 			remove_state_core = 22
 			remove_state_core = 21
-			remove_state_core = 31
+			remove_state_core = 31 remove_state_core = 1381
 			}
 			} 
 		}
@@ -4695,67 +4695,6 @@ focus = {
 			} 
 		}
 		
-		focus = {
-			id = GER_collectivize_slots_2
-			icon = GFX_focus_generic_annex_country
-			
-			available = {
-			
-			}
-			
-			
-			
-			x = 0
-			y = 1
-			
-			prerequisite = { focus = GER_collectivize_slots }
-			 
-			relative_position_id = GER_collectivize_slots
-			
-			cost = 5
-			ai_will_do = {
-				factor = 5 
-			}
-			search_filters = { FOCUS_FILTER_INDUSTRY }
-			completion_reward = {
-			random_owned_controlled_state = {
-					add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes 
-				}
-				}
-			random_owned_controlled_state = {
-					add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes 
-				}
-				}
-				random_owned_controlled_state = {
-					add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes 
-				}
-				}
-				random_owned_controlled_state = {
-					add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes 
-				}
-				}
-				random_owned_controlled_state = {
-					add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes 
-				}
-				}
-				
-			} 
-		}
 		
 		focus = {
 			id = GER_collectivize_industry
@@ -4830,8 +4769,8 @@ focus = {
 		completion_reward = {
 			add_political_power = 150
 							POL = {
-            remove_state_core = 807
-			remove_state_core = 86
+            remove_state_core = 807 remove_state_core = 1554
+			remove_state_core = 86 remove_state_core = 1389
 			remove_state_core = 85
 			remove_state_core = 762
 			}
@@ -4839,7 +4778,7 @@ focus = {
             remove_state_core = 28
 			remove_state_core = 22
 			remove_state_core = 21
-			remove_state_core = 31
+			remove_state_core = 31 remove_state_core = 1381
 			}
 			}	
 		}
@@ -5639,8 +5578,8 @@ add_ideas = GER_red_advisors_idea
 			completion_reward = {
 			
 			add_state_core = 85
-			add_state_core = 807
-			add_state_core = 86
+			add_state_core = 807 add_state_core = 1554
+			add_state_core = 86 add_state_core = 1389
 			add_state_core = 188
 			}  
 		}

@@ -1,0 +1,39 @@
+
+state = {
+	id=154
+	name="STATE_154"
+	manpower = 859600
+
+	state_category = town
+
+	history = {
+		owner = HUN
+		buildings = {
+			infrastructure = 3 #was: 6
+			arms_factory = 1
+			air_base = 2
+		}
+		victory_points = {
+			9656 4 #Békéscsaba
+		}
+		victory_points = {
+			11644 3 #Békés
+		}
+		victory_points = {
+			11646 3 #Hódmezövásárhely
+		}
+		victory_points = {
+			679 3 #Makó
+		}
+		victory_points = {
+			699 3 #Mezötúr
+		}
+		add_core_of = HUN
+	}
+
+	provinces={
+		679 699 9656 11644 11646
+	}
+
+	local_supplies=0.0 
+}

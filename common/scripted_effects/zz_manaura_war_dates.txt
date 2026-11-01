@@ -1,0 +1,16 @@
+manaura_update_justify_lock = {
+	if = {
+		limit = {
+			manaura_justify_allowed = no
+			NOT = { has_idea = manaura_justify_lock }
+		}
+		add_ideas = manaura_justify_lock
+	}
+	else_if = {
+		limit = {
+			manaura_justify_allowed = yes
+			has_idea = manaura_justify_lock
+		}
+		remove_ideas = manaura_justify_lock
+	}
+}

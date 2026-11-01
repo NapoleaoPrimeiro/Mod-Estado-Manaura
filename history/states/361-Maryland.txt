@@ -1,0 +1,32 @@
+
+state={
+	id=361
+	name="STATE_361"
+	manpower = 574980
+	
+	state_category = town
+
+	history={
+		owner = USA
+		victory_points = {
+			3957 15 #Washington D.C.
+		}
+		buildings = {
+			infrastructure = 4 #was: 7
+			industrial_complex = 2
+			3957 = {
+				naval_base = 1
+				# United States Naval Research Laboratory (NRL)
+				naval_facility = 1
+			}
+		}
+		add_core_of = USA
+		add_core_of = DCS
+	}
+
+	provinces={
+		3957
+	}
+
+	local_supplies=0.0 
+}

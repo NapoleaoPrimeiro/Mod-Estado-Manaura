@@ -214,12 +214,15 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }	
 		completion_reward = {
 			42 = { set_demilitarized_zone = no }
+			1414 = { set_demilitarized_zone = no } # KSRE (de 42)
 			51 = { set_demilitarized_zone = no }
+			1253 = { set_demilitarized_zone = no } # KSRE (de 51)
 			978 = { set_demilitarized_zone = no }
 			# Manaura: Hessen (55), Essen (1085) and Saarland (1089) were missing here
 			55 = { set_demilitarized_zone = no }
-			1085 = { set_demilitarized_zone = no }
-			1089 = { set_demilitarized_zone = no }
+			1254 = { set_demilitarized_zone = no } # KSRE (de 55)
+			1251 = { set_demilitarized_zone = no } 1253 = { set_demilitarized_zone = no } 1254 = { set_demilitarized_zone = no } 1414 = { set_demilitarized_zone = no } # KSRE: Freiburg, Ruhr, Frankfurt, Bonn
+			1551 = { set_demilitarized_zone = no } # KSRE: Saarland
 			custom_effect_tooltip = GER_rhineland_ultimatum
 			add_political_power = 120
 			army_experience = 5
@@ -440,7 +443,7 @@ focus_tree = {
 					AUS = {
 						has_civil_war = no
 						OR = {
-							owns_state = 4
+							owns_state = 4 owns_state = 1553
 							owns_state = 152
 							owns_state = 153
 						}
@@ -458,7 +461,7 @@ focus_tree = {
 						original_tag = AUS
 						has_civil_war = yes
 						OR = {
-							owns_state = 4
+							owns_state = 4 owns_state = 1553
 							owns_state = 152
 							owns_state = 153
 						}
@@ -507,7 +510,7 @@ focus_tree = {
 						}
 					}
 				}
-				add_state_core = 4
+				add_state_core = 4 add_state_core = 1553
 			}
 			if = {
 				limit = {
@@ -819,6 +822,7 @@ focus_tree = {
 		}
 		
 		available = {
+			date > 1941.1.1 # Manaura: Barbarossa so a partir de 1941
 			is_subject = no
 		}
 		x = -1
@@ -1307,6 +1311,7 @@ focus_tree = {
 			188 = { is_owned_by = GER }
 			85 = { is_owned_by = GER }
 			86 = { is_owned_by = GER }
+			1389 = { is_owned_by = GER } # KSRE (de 86)
 		}
 		ai_will_do = {
 			factor = 10	
@@ -1320,7 +1325,9 @@ focus_tree = {
 			188 = { add_claim_by = GER }
 			85 = { add_claim_by = GER }
 			807 = { add_claim_by = GER }
+			1554 = { add_claim_by = GER } # KSRE (de 807)
 			86 = { add_claim_by = GER }
+			1389 = { add_claim_by = GER } # KSRE (de 86)
 			762 = { add_claim_by = GER }
 			add_named_threat = { threat = 3 name = GER_demand_memel_threat }
 			if = {
@@ -1344,8 +1351,9 @@ focus_tree = {
 		mutually_exclusive = { focus = GER_danzig_vs_slovakia }
 		will_lead_to_war_with = POL
 		available = {
+			date > 1939.1.1 # Manaura: so a partir de 1939
 			is_subject = no
-			has_army_manpower = { size > 949999 } #100 div			
+			has_army_manpower = { size > 949999 } #100 div
 			#Make custom trigger tooltip here
 			85 = {
 				owner = {
@@ -1430,7 +1438,7 @@ focus_tree = {
 				effect_tooltip = {
 					transfer_state = 85
 					add_state_core = 85
-					transfer_state = 807
+					transfer_state = 807 transfer_state = 1554
 					add_state_core = 807
 					remove_state_claim = 86
 					remove_state_claim = 762
@@ -1943,7 +1951,7 @@ focus = {
 		available = {
 			POL = {
 				NOT = { controls_state = 85 }
-				NOT = { controls_state = 10 }	
+				NOT = { controls_state = 10 controls_state = 1256 }	
 			}
 			OR = { 
 				has_war_with = ENG
@@ -2163,7 +2171,7 @@ focus = {
 					type = take_state_focus
 					target = HOL
 					expire = 0
-					generator = { 7 }
+					generator = { 7 1292 }
 				}
 			}
 			if =  {
@@ -2429,8 +2437,8 @@ focus = {
 						limit = {
 							is_owned_and_controlled_by = CZE
 							OR = {
-								state = 69
-								state = 972
+								state = 69 state = 1556
+								state = 972 state = 1608
 								state = 74
 							}
 						}
@@ -2479,7 +2487,7 @@ focus = {
 						has_war_with = GER
 					}
 				}
-				GER = { controls_state = 69 }
+				GER = { controls_state = 69 controls_state = 1556 }
 			}
 		}
 		cancel = {
@@ -2520,7 +2528,7 @@ focus = {
 						CZE = { has_war_with = FRA }
 						CZE = { is_in_faction_with = GER }
 					}
-					CZE = { controls_state = 69 }
+					CZE = { controls_state = 69 controls_state = 1556 }
 				}
 				if = {
 					limit = {
@@ -2542,9 +2550,11 @@ focus = {
 					CZE = { NOT = { is_in_faction_with = GER } } #in case AH is in faction with GER and dragged a subject CZE along.
 					OR = {
 						69 = { is_owned_by = HUN } #AH restored
+						1556 = { is_owned_by = HUN } # KSRE (de 69)
 						AND = {
 							CZE = { is_subject_of = HUN }
 							69 = { is_owned_by = CZE }
+							1556 = { is_owned_by = CZE } # KSRE (de 69)
 						}
 					}
 				}
@@ -2569,7 +2579,7 @@ focus = {
 					}
 					CZE = { NOT = { is_in_faction_with = GER } }
 					CZE = { NOT = { has_war_with = ENG } }
-					CZE = { controls_state = 69 }
+					CZE = { controls_state = 69 controls_state = 1556 }
 					OR = {
 						HUN = {
 							NOT = {
@@ -2596,7 +2606,7 @@ focus = {
 					NOT = { has_war_with = FRA }
 					CZE = { is_subject = no }
 					CZE = { is_in_faction_with = HOL }
-					CZE = { controls_state = 69 }
+					CZE = { controls_state = 69 controls_state = 1556 }
 					OR = {
 						HUN = {
 							NOT = {
@@ -2616,11 +2626,15 @@ focus = {
 			69 = {
 				add_claim_by = GER
 			}
+			1556 = { # KSRE (de 69)
+				add_claim_by = GER
+			}
 			if = { 
 				limit = {
-					NOT = { CZE = { controls_state = 69 } }
+					NOT = { CZE = { controls_state = 69 controls_state = 1556 } }
 					NOT = {
 						69 = { is_controlled_by = HUN }
+						1556 = { is_controlled_by = HUN } # KSRE (de 69)
 						HUN = { has_completed_focus = HUN_protect_czechoslovakia }
 					}
 					69 = {
@@ -2646,8 +2660,8 @@ focus = {
 		bypass = {
 			OR = {
 				AND = {
-					NOT = { CZE = { controls_state = 664 } }
-					NOT = { owns_state = 664 }
+					NOT = { CZE = { controls_state = 664 controls_state = 1560 } }
+					NOT = { owns_state = 664 owns_state = 1560 }
 				}
 				HUN = { is_friend_or_potential_friend_of_GER = no }
 				CZE = { is_puppet_of = GER }
@@ -2656,7 +2670,7 @@ focus = {
 		}
 		available = {
 			is_subject = no
-			owns_state = 69
+			owns_state = 69 owns_state = 1556
 		}
 		x = 0
 		y = 1
@@ -2724,7 +2738,7 @@ focus = {
 							is_subject_of = HUN
 						}
 						HUN = {
-							owns_state = 9#Prague - AH annexed CZE
+							owns_state = 9 owns_state = 1555#Prague - AH annexed CZE
 						}
 					}
 				}
@@ -2733,7 +2747,7 @@ focus = {
 				create_wargoal = {
 					type = take_state_focus
 					target = CZE
-					generator = { 9 75 }
+					generator = { 9 75 1555 }
 				}
 			}
 			if = {
@@ -2753,7 +2767,7 @@ focus = {
 				create_wargoal = {
 					type = take_state_focus
 					target = CZE
-					generator = { 9 75 }
+					generator = { 9 75 1555 }
 				}
 			}
 			if = {
@@ -2792,9 +2806,9 @@ focus = {
 						ROM = {
 							OR = {
 								AND = {
-									NOT = { controls_state = 76 }
-									NOT = { controls_state = 83 }
-									NOT = { controls_state = 84 }
+									NOT = { controls_state = 76 controls_state = 1309 controls_state = 1310 controls_state = 1722 }
+									NOT = { controls_state = 83 controls_state = 1480 }
+									NOT = { controls_state = 84 controls_state = 1387 }
 								}
 								has_war_with = HUN
 								AND = {
@@ -2828,7 +2842,7 @@ focus = {
 						is_friend_or_potential_friend_of_GER = yes
 					}
 					ROM = {
-						controls_state = 76
+						controls_state = 76 controls_state = 1309 controls_state = 1310 controls_state = 1722
 						NOT = { has_war_with = HUN }
 					}
 				}
@@ -3273,11 +3287,11 @@ focus = {
 					exists = yes
 					is_in_faction_with = GER
 				}
-				owns_state = 70
+				owns_state = 70 owns_state = 1146 owns_state = 1147
 			}
 			NOT = { owns_state = 85 }
 			NOT = { has_war_with = POL }
-			POL = { owns_state = 72 }
+			POL = { owns_state = 72 owns_state = 1727 }
 		}
 
 
@@ -3636,7 +3650,15 @@ focus = {
 				is_in_faction_with = SWI
 				AND = {
 					3 = { is_controlled_by = ROOT }
+					1508 = { is_controlled_by = ROOT } # KSRE (de 3)
+					1515 = { is_controlled_by = ROOT } # KSRE (de 3)
 					151 = { is_controlled_by = ROOT }
+					1509 = { is_controlled_by = ROOT } # KSRE (de 151)
+					1510 = { is_controlled_by = ROOT } # KSRE (de 151)
+					1511 = { is_controlled_by = ROOT } # KSRE (de 151)
+					1512 = { is_controlled_by = ROOT } # KSRE (de 151)
+					1513 = { is_controlled_by = ROOT } # KSRE (de 151)
+					1516 = { is_controlled_by = ROOT } # KSRE (de 151)
 				}
 			}
 		}
@@ -3694,11 +3716,22 @@ focus = {
 					NOT = { country_exists = SWI }
 				}
 				count_triggers = {
-					amount = 4
+					amount = 15
 					3 = { is_controlled_by = ROOT }
+					1508 = { is_controlled_by = ROOT } # KSRE (de 3)
+					1515 = { is_controlled_by = ROOT } # KSRE (de 3)
 					151 = { is_controlled_by = ROOT }
+					1509 = { is_controlled_by = ROOT } # KSRE (de 151)
+					1510 = { is_controlled_by = ROOT } # KSRE (de 151)
+					1511 = { is_controlled_by = ROOT } # KSRE (de 151)
+					1512 = { is_controlled_by = ROOT } # KSRE (de 151)
+					1513 = { is_controlled_by = ROOT } # KSRE (de 151)
+					1516 = { is_controlled_by = ROOT } # KSRE (de 151)
 					845 = { is_controlled_by = ROOT }
+					1507 = { is_controlled_by = ROOT } # KSRE (de 845)
+					1514 = { is_controlled_by = ROOT } # KSRE (de 845)
 					847 = { is_controlled_by = ROOT }
+					1506 = { is_controlled_by = ROOT } # KSRE (de 847)
 					846 = { is_controlled_by = ROOT }
 				}
 			}
@@ -4761,6 +4794,18 @@ focus = {
 					64 = {
 						is_fully_controlled_by = ROOT
 					}
+					1268 = { # KSRE (de 64)
+						is_fully_controlled_by = ROOT
+					}
+					1269 = { # KSRE (de 64)
+						is_fully_controlled_by = ROOT
+					}
+					1542 = { # KSRE (de 64)
+						is_fully_controlled_by = ROOT
+					}
+					1544 = { # KSRE (de 64)
+						is_fully_controlled_by = ROOT
+					}
 				}
 				64 = {
 					custom_effect_tooltip = GER_create_four_militia_units_tt
@@ -4820,6 +4865,18 @@ focus = {
 			if = {
 				limit = {
 					64 = {
+						is_fully_controlled_by = ROOT
+					}
+					1268 = { # KSRE (de 64)
+						is_fully_controlled_by = ROOT
+					}
+					1269 = { # KSRE (de 64)
+						is_fully_controlled_by = ROOT
+					}
+					1542 = { # KSRE (de 64)
+						is_fully_controlled_by = ROOT
+					}
+					1544 = { # KSRE (de 64)
 						is_fully_controlled_by = ROOT
 					}
 				}
@@ -4931,10 +4988,10 @@ focus = {
 					}
 				}
 				OR = {
-					GER = { controls_state = 16 }
+					GER = { controls_state = 16 controls_state = 1517 controls_state = 1518 controls_state = 1519 controls_state = 1520 }
 					any_other_country = {
 						is_in_faction_with = GER
-						controls_state = 16
+						controls_state = 16 controls_state = 1517 controls_state = 1518 controls_state = 1519 controls_state = 1520
 					}
 				}
 			}
@@ -5421,7 +5478,7 @@ focus = {
 		icon = GFX_goal_other_yugoslavs
 		available = {
 			is_subject = no
-			controls_state = 4
+			controls_state = 4 controls_state = 1553
 			controls_state = 152
 			has_army_manpower = { size > 749999 } #ca 80 div
 		}
@@ -5429,7 +5486,7 @@ focus = {
 			OR = {
 				NOT = {
 					OR = {
-						YUG = { owns_state = 102 }
+						YUG = { owns_state = 102 owns_state = 1410 owns_state = 1704 }
 						102 = { owner = { is_subject_of = YUG } }
 					}
 				}
@@ -5495,7 +5552,7 @@ focus = {
 					country_exists = YUG
 					NOT = { has_war_with = YUG }
 					OR = {
-						owns_state = 102
+						owns_state = 102 owns_state = 1410 owns_state = 1704
 						102 = { owner = { is_subject_of = YUG } }
 					}
 				}
@@ -5504,35 +5561,35 @@ focus = {
 					AND = {
 						NOT = { country_exists = YUG }
 						OR = {
-							owns_state = 102
+							owns_state = 102 owns_state = 1410 owns_state = 1704
 							102 = { owner = { is_subject_of = YUG } }
 						}
 						OR = {
-							owns_state = 45
+							owns_state = 45 owns_state = 1477 owns_state = 1705
 							45 = { owner = { is_subject_of = YUG } }
 						}
 						OR = { #Macedonia
-							owns_state = 106
+							owns_state = 106 owns_state = 1298 owns_state = 1307
 							106 = { owner = { is_subject_of = YUG } }
 						}
 						OR = { #New Southern Serbia state
-							owns_state = 803
+							owns_state = 803 owns_state = 1299 owns_state = 1300 owns_state = 1411
 							803 = { owner = { is_subject_of = YUG } }
 						}
 						OR = { #Herzegovina
-							owns_state = 803
+							owns_state = 803 owns_state = 1299 owns_state = 1300 owns_state = 1411
 							804 = { owner = { is_subject_of = YUG } }
 						}
 						OR = { #Kosovo
-							owns_state = 803
+							owns_state = 803 owns_state = 1299 owns_state = 1300 owns_state = 1411
 							802 = { owner = { is_subject_of = YUG } }
 						}
 						OR = {
-							owns_state = 103
+							owns_state = 103 owns_state = 1296 owns_state = 1325 owns_state = 1339 owns_state = 1388 owns_state = 1718
 							103 = { owner = { is_subject_of = YUG } }
 						}
 						OR = {
-							owns_state = 105
+							owns_state = 105 owns_state = 1260 owns_state = 1716
 							105 = { owner = { is_subject_of = YUG } }
 						}
 					}
@@ -5557,12 +5614,12 @@ focus = {
 				NOT = {
 					OR = {
 						YUG = {
-							owns_state = 45
+							owns_state = 45 owns_state = 1477 owns_state = 1705
 						}
 						45 = { owner = { is_subject_of = YUG } }
 						
 						YUG = {
-							owns_state = 106
+							owns_state = 106 owns_state = 1298 owns_state = 1307
 						}
 						106 = { owner = { is_subject_of = YUG } }
 					}
@@ -5595,6 +5652,8 @@ focus = {
 						limit = { 
 							OR = {
 								45 = { is_owned_by = YUG }
+								1477 = { is_owned_by = YUG } # KSRE (de 45)
+								1705 = { is_owned_by = YUG } # KSRE (de 45)
 								45 = { is_owned_by = GER }
 							}
 						}
@@ -5610,12 +5669,14 @@ focus = {
 						limit = {
 								OR = {
 									45 = { is_owned_by = YUG }
+									1477 = { is_owned_by = YUG } # KSRE (de 45)
+									1705 = { is_owned_by = YUG } # KSRE (de 45)
 									45 = { is_owned_by = GER }
 								}
 						}
 						HUN = {
 							add_opinion_modifier = { target = GER modifier = GER_first_ljubljana_award_GER }
-							transfer_state = 45
+							transfer_state = 45 transfer_state = 1477 transfer_state = 1705
 						}
 					}
 				}
@@ -5639,8 +5700,13 @@ focus = {
 						limit = {
 							OR = {
 								106 = { is_owned_by = YUG }
+								1298 = { is_owned_by = YUG } # KSRE (de 106)
+								1307 = { is_owned_by = YUG } # KSRE (de 106)
 								106 = { is_owned_by = GER }
 								803 = { is_owned_by = YUG }
+								1299 = { is_owned_by = YUG } # KSRE (de 803)
+								1300 = { is_owned_by = YUG } # KSRE (de 803)
+								1411 = { is_owned_by = YUG } # KSRE (de 803)
 								803 = { is_owned_by = GER }
 							}
 						}
@@ -5656,8 +5722,13 @@ focus = {
 						limit = {
 							OR = {
 								106 = { is_owned_by = YUG }
+								1298 = { is_owned_by = YUG } # KSRE (de 106)
+								1307 = { is_owned_by = YUG } # KSRE (de 106)
 								106 = { is_owned_by = GER }
 								803 = { is_owned_by = YUG }
+								1299 = { is_owned_by = YUG } # KSRE (de 803)
+								1300 = { is_owned_by = YUG } # KSRE (de 803)
+								1411 = { is_owned_by = YUG } # KSRE (de 803)
 								803 = { is_owned_by = GER }
 							}
 						}
@@ -5666,16 +5737,21 @@ focus = {
 							if = {
 								limit = {
 									106 = { is_owned_by = YUG }
+									1298 = { is_owned_by = YUG } # KSRE (de 106)
+									1307 = { is_owned_by = YUG } # KSRE (de 106)
 									106 = { is_owned_by = GER }
 								}
-								transfer_state = 106
+								transfer_state = 106 transfer_state = 1298 transfer_state = 1307
 							}
 							if = {
 								limit = {
 									803 = { is_owned_by = YUG }
+									1299 = { is_owned_by = YUG } # KSRE (de 803)
+									1300 = { is_owned_by = YUG } # KSRE (de 803)
+									1411 = { is_owned_by = YUG } # KSRE (de 803)
 									803 = { is_owned_by = GER }
 								}
-								transfer_state = 803
+								transfer_state = 803 transfer_state = 1299 transfer_state = 1300 transfer_state = 1411
 							}
 						}
 					}
@@ -5710,15 +5786,15 @@ focus = {
 						add_opinion_modifier = { target = GER modifier = GER_first_ljubljana_award_GER }
 						if = {
 							limit = { has_completed_focus = ITA_slovenia_dalmatia_claims }
-							transfer_state = 103
+							transfer_state = 103 transfer_state = 1296 transfer_state = 1325 transfer_state = 1339 transfer_state = 1388 transfer_state = 1718
 						}
 						if = {
 							limit = { owns_state = 44 }
-							transfer_state = 105
+							transfer_state = 105 transfer_state = 1260 transfer_state = 1716
 						}
 						if = {
 							limit = { owns_state = 44 }
-							transfer_state = 802
+							transfer_state = 802 transfer_state = 1715 transfer_state = 1776
 						}
 					}
 				}
@@ -6918,6 +6994,7 @@ focus = {
 			if = {
 				limit = {
 					59 = { is_fully_controlled_by = ROOT }
+					1545 = { is_fully_controlled_by = ROOT } # KSRE (de 59)
 				}
 				59 = { #Hannover
 					add_resource = {
@@ -6933,7 +7010,7 @@ focus = {
 					limit = {
 						is_fully_controlled_by = ROOT
 						NOT = {
-							state = 59
+							state = 59 state = 1545
 						}
 						OR = {
 							has_resources_amount = {
@@ -7685,6 +7762,18 @@ focus = {
 					64 = {
 						is_fully_controlled_by = ROOT
 					}
+					1268 = { # KSRE (de 64)
+						is_fully_controlled_by = ROOT
+					}
+					1269 = { # KSRE (de 64)
+						is_fully_controlled_by = ROOT
+					}
+					1542 = { # KSRE (de 64)
+						is_fully_controlled_by = ROOT
+					}
+					1544 = { # KSRE (de 64)
+						is_fully_controlled_by = ROOT
+					}
 				}
 				64 = {
 					custom_effect_tooltip = GER_create_two_militia_units_tt
@@ -7752,6 +7841,18 @@ focus = {
 					64 = {
 						is_fully_controlled_by = ROOT
 					}
+					1268 = { # KSRE (de 64)
+						is_fully_controlled_by = ROOT
+					}
+					1269 = { # KSRE (de 64)
+						is_fully_controlled_by = ROOT
+					}
+					1542 = { # KSRE (de 64)
+						is_fully_controlled_by = ROOT
+					}
+					1544 = { # KSRE (de 64)
+						is_fully_controlled_by = ROOT
+					}
 				}
 				64 = {
 					custom_effect_tooltip = GER_create_one_motorized_units_tt
@@ -7813,6 +7914,18 @@ focus = {
 						64 = {
 							is_fully_controlled_by = ROOT
 						}
+						1268 = { # KSRE (de 64)
+							is_fully_controlled_by = ROOT
+						}
+						1269 = { # KSRE (de 64)
+							is_fully_controlled_by = ROOT
+						}
+						1542 = { # KSRE (de 64)
+							is_fully_controlled_by = ROOT
+						}
+						1544 = { # KSRE (de 64)
+							is_fully_controlled_by = ROOT
+						}
 					}
 					64 = {
 						custom_effect_tooltip = GER_create_two_light_panzer_units_tt
@@ -7868,6 +7981,18 @@ focus = {
 				if = {
 					limit = {
 						64 = {
+							is_fully_controlled_by = ROOT
+						}
+						1268 = { # KSRE (de 64)
+							is_fully_controlled_by = ROOT
+						}
+						1269 = { # KSRE (de 64)
+							is_fully_controlled_by = ROOT
+						}
+						1542 = { # KSRE (de 64)
+							is_fully_controlled_by = ROOT
+						}
+						1544 = { # KSRE (de 64)
 							is_fully_controlled_by = ROOT
 						}
 					}
@@ -9162,9 +9287,9 @@ focus = {
 			is_subject = no
 			GRE = { 
 				has_war = no 
-				owns_state = 731
+				owns_state = 731 owns_state = 1607
 				owns_state = 186
-				owns_state = 185
+				owns_state = 185 owns_state = 1319
 				owns_state = 47 
 			}
 		}
@@ -9236,7 +9361,7 @@ focus = {
 				limit = {
 					GRE = {
 						OR = {
-							owns_state = 185
+							owns_state = 185 owns_state = 1319
 							owns_state = 186
 							owns_state = 47
 						} 
@@ -9256,7 +9381,7 @@ focus = {
 			}
 			if = {
 				limit = {
-					GRE = { owns_state = 184 }
+					GRE = { owns_state = 184 owns_state = 1181 }
 					BUL = {
 						NOT = { has_war_with = GRE }
 						country_exists = BUL
@@ -10929,6 +11054,9 @@ focus = {
 						539 = { #Gabon
 							is_claimed_by = ROOT
 						}
+						1769 = { # KSRE (de 539)
+							is_claimed_by = ROOT
+						}
 					}
 				}
 				add_state_claim = 539
@@ -10937,6 +11065,15 @@ focus = {
 				limit = {
 					NOT = {
 						772 = { #Middle Congo
+							is_claimed_by = ROOT
+						}
+						1766 = { # KSRE (de 772)
+							is_claimed_by = ROOT
+						}
+						1767 = { # KSRE (de 772)
+							is_claimed_by = ROOT
+						}
+						1768 = { # KSRE (de 772)
 							is_claimed_by = ROOT
 						}
 					}
@@ -11464,7 +11601,7 @@ focus = {
 							}
 							any_other_country = {
 								is_in_faction_with = ROOT
-								controls_state = 721
+								controls_state = 721 controls_state = 1341
 								NOT = {
 									has_country_flag = {
 										flag = GER_se_asia_colony_demand_sent_flag
@@ -12850,7 +12987,7 @@ create_wargoal = {
 		available = {
 			ROM = {
 				fascism > 0.35
-				has_full_control_of_state = 46
+				has_full_control_of_state = 46 has_full_control_of_state = 1312
 				NOT = { has_war_with = ROOT }
 				OR = {
 					is_in_faction = no
@@ -13541,12 +13678,12 @@ focus = {
 	}
 	completion_reward = {
 		MEX = {
-			add_state_core = 378
-			add_state_core = 377
-			add_state_core = 376
-			add_state_core = 375
-			add_state_core = 385
-			add_state_core = 380
+			add_state_core = 378 add_state_core = 1167 add_state_core = 1562 add_state_core = 1563 add_state_core = 1622 add_state_core = 1623 add_state_core = 1624 add_state_core = 1625 add_state_core = 1655 add_state_core = 1753
+			add_state_core = 377 add_state_core = 1152 add_state_core = 1154 add_state_core = 1641 add_state_core = 1642 add_state_core = 1643 add_state_core = 1644 add_state_core = 1645 add_state_core = 1647 add_state_core = 1649 add_state_core = 1650 add_state_core = 1651 add_state_core = 1652 add_state_core = 1653 add_state_core = 1654 add_state_core = 1656 add_state_core = 1664
+			add_state_core = 376 add_state_core = 1151 add_state_core = 1153 add_state_core = 1352 add_state_core = 1353 add_state_core = 1567 add_state_core = 1657 add_state_core = 1658 add_state_core = 1659 add_state_core = 1660 add_state_core = 1661 add_state_core = 1662 add_state_core = 1663 add_state_core = 1665
+			add_state_core = 375 add_state_core = 1150 add_state_core = 1350 add_state_core = 1351 add_state_core = 1666 add_state_core = 1667 add_state_core = 1668 add_state_core = 1669 add_state_core = 1670 add_state_core = 1671 add_state_core = 1672
+			add_state_core = 385 add_state_core = 1160 add_state_core = 1561 add_state_core = 1616 add_state_core = 1617 add_state_core = 1618 add_state_core = 1619 add_state_core = 1621 add_state_core = 1636
+			add_state_core = 380 add_state_core = 1155 add_state_core = 1637 add_state_core = 1638 add_state_core = 1639 add_state_core = 1640
 			if = {
 				limit = {
 					ROOT = {
@@ -14588,12 +14725,15 @@ available = {has_war_with = SOV}
 		search_filters = { FOCUS_FILTER_POLITICAL }	
 		completion_reward = {
 			42 = { set_demilitarized_zone = no }
+			1414 = { set_demilitarized_zone = no } # KSRE (de 42)
 			51 = { set_demilitarized_zone = no }
+			1253 = { set_demilitarized_zone = no } # KSRE (de 51)
 			978 = { set_demilitarized_zone = no }
 			# Manaura: Hessen (55), Essen (1085) and Saarland (1089) were missing here
 			55 = { set_demilitarized_zone = no }
-			1085 = { set_demilitarized_zone = no }
-			1089 = { set_demilitarized_zone = no }
+			1254 = { set_demilitarized_zone = no } # KSRE (de 55)
+			1251 = { set_demilitarized_zone = no } 1253 = { set_demilitarized_zone = no } 1254 = { set_demilitarized_zone = no } 1414 = { set_demilitarized_zone = no } # KSRE: Freiburg, Ruhr, Frankfurt, Bonn
+			1551 = { set_demilitarized_zone = no } # KSRE: Saarland
 			custom_effect_tooltip = GER_rhineland_ultimatum
 			add_political_power = 120
 			army_experience = 5

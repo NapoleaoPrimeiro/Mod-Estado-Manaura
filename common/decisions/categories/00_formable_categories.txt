@@ -477,13 +477,7 @@ greater_italy_category = {
 	picture = GFX_decision_cat_picture_greater_italy
 	
 	allowed = {
-		original_tag = ITA # Italy
-	}
-	visible = {
-		NOT = {
-			has_global_flag = greater_italy_flag
-			has_completed_focus = ITA_mare_nostrum_bba	#Mutually exclusive
-		}
+		
 	}
 }
 
@@ -514,6 +508,13 @@ antilles_category = {
 			original_tag = BAH # Bahamas
 			original_tag = GDL # Guadeloupe 
 			original_tag = BAS # British Antilles 
+			original_tag = GRD
+			original_tag = STV
+			original_tag = STL
+			original_tag = BRB
+			original_tag = DMN
+			original_tag = ATB
+			original_tag = SKN
 		}
 	}
 }
@@ -669,3 +670,57 @@ neo_mesopotamia_category = {
 	}
 }
 
+
+GOE_form_hindustan_category = {
+
+	icon = generic_formable_nations
+ 
+	picture = GFX_form_hindustan_category_icon
+
+	allowed = {
+		has_dlc = "Graveyard of Empires" 
+	}
+}
+
+form_maphilindo_category = {
+
+	icon = generic_formable_nations
+	picture = GFX_decision_cat_picture_form_maphilindo
+
+	allowed = {
+		original_tag = PHI # Philippines 
+		has_dlc = "No Compromise, No Surrender"
+	}
+}
+greater_mongolia_category = {
+
+	icon = generic_formable_nations
+
+	picture = GFX_decision_cat_picture_form_greater_mongolia
+	
+	allowed = {
+		OR = {
+			original_tag = MON # Mongolia
+			original_tag = BYA # Buryatia
+			original_tag = MEN # Mengkukuo
+			original_tag = KUM # Kumul Khanate
+			original_tag = KAL # Kalmykia 
+		}
+	}
+}
+
+greater_hui_state_category = {
+
+	icon = generic_formable_nations
+
+	picture = GFX_decision_cat_picture_form_united_hui_state
+	
+	allowed = {
+		OR = {
+			original_tag = XSM # Qinghai Ma 
+			original_tag = GSM # Gansu Ma
+			original_tag = KHM # Khotan Ma
+			original_tag = NXM # Ningxia Ma
+		}
+	}
+}

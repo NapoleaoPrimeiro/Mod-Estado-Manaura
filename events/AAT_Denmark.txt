@@ -2583,15 +2583,20 @@ country_event = { #Overlord accepts allegiance
 		if = {
 			limit = {
 				OVERLORD = {
-					owns_state = 909
+					owns_state = 909 owns_state = 1728
 				}
 				909 = {
 					NOT = {
 						is_core_of = OVERLORD
 					}
 				}
+				1728 = { # KSRE (de 909)
+					NOT = {
+						is_core_of = OVERLORD
+					}
+				}
 			}
-			ROOT = { transfer_state = 909 }
+			ROOT = { transfer_state = 909 transfer_state = 1728 }
 		}
 	}
 }
@@ -11256,6 +11261,7 @@ country_event = { #Danish Empire Cores
  			}
  		}
 		909 = { is_fully_controlled_by = ROOT }
+		1728 = { is_fully_controlled_by = ROOT } # KSRE (de 909)
 		138 = { is_fully_controlled_by = ROOT }
 	}
 
@@ -11312,11 +11318,13 @@ country_event = { #Danish Empire Cores
 			limit = {
 				OR = {
 					909 = { is_claimed_by = ROOT }
+					1728 = { is_claimed_by = ROOT } # KSRE (de 909)
 					909 = { is_fully_controlled_by = ROOT }
 				}
 				NOT = { 909 = { is_core_of = ROOT }}
 			}
 			909 = {	add_core_of = ROOT }
+			1728 = {	add_core_of = ROOT } # KSRE (de 909)
 		}
 		else_if = {
 			limit = {
@@ -11324,6 +11332,7 @@ country_event = { #Danish Empire Cores
 				NOT = { 909 = { is_core_of = ROOT }}
 			}
 			909 = { add_claim_by = ROOT } 
+			1728 = { add_claim_by = ROOT }  # KSRE (de 909)
 		}
 		if = {
 			limit = {
@@ -11380,11 +11389,15 @@ country_event = { #Danish Empire Cores
 			limit = {
 				OR = {
 					63 = { is_claimed_by = ROOT }
+					1538 = { is_claimed_by = ROOT } # KSRE (de 63)
+					1539 = { is_claimed_by = ROOT } # KSRE (de 63)
 					63 = { is_fully_controlled_by = ROOT }
 				}
 				NOT = { 63 = { is_core_of = ROOT }}
 			}
 			63 = {	add_core_of = ROOT }
+			1538 = {	add_core_of = ROOT } # KSRE (de 63)
+			1539 = {	add_core_of = ROOT } # KSRE (de 63)
 		}
 		else_if = {
 			limit = {
@@ -11392,6 +11405,8 @@ country_event = { #Danish Empire Cores
 				NOT = { 63 = { is_core_of = ROOT }}
 			}
 			63 = { add_claim_by = ROOT } 
+			1538 = { add_claim_by = ROOT }  # KSRE (de 63)
+			1539 = { add_claim_by = ROOT }  # KSRE (de 63)
 		}
 	}
 	option = {

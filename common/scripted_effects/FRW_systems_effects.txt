@@ -112,7 +112,7 @@ FRW_ff_update = {
 	clamp_temp_variable = { var = t min = 0 max = 3 }
 	multiply_temp_variable = { t = 10 }
 	add_to_variable = { FRW_ffc_aof = t }
-		if = { limit = { controls_state = 774 } add_to_variable = { FRW_ffc_aof = 10 } }
+		if = { limit = { controls_state = 774 controls_state = 1763 } add_to_variable = { FRW_ffc_aof = 10 } }
 	clamp_variable = { var = FRW_ffc_aof min = 5 max = 90 }
 	set_variable = { FRW_ffe_aof = FRW_ffc_aof }
 	add_to_variable = { FRW_ffe_aof = 25 }
@@ -234,7 +234,7 @@ FRW_ff_set_capital = {
 				capital_scope = { NOT = { is_on_continent = europe } NOT = { is_on_continent = africa } }
 			}
 		}
-		if = { limit = { controls_state = 772 } set_capital = { state = 772 } }
+		if = { limit = { controls_state = 772 controls_state = 1766 controls_state = 1767 controls_state = 1768 } set_capital = { state = 772 } }
 		else_if = { limit = { controls_state = 459 } set_capital = { state = 459 } }
 		else_if = { limit = { controls_state = 272 } set_capital = { state = 272 } }
 	}
@@ -242,7 +242,7 @@ FRW_ff_set_capital = {
 
 FRW_ff_join_eq = {
 	every_state = {
-		limit = { OR = { state = 772 state = 773 state = 774 state = 775 state = 539 } owner = { FRW_is_vichy = yes } }
+		limit = { OR = { state = 772 state = 1766 state = 1767 state = 1768 state = 773 state = 1770 state = 774 state = 1763 state = 775 state = 539 state = 1769 } owner = { FRW_is_vichy = yes } }
 		ROOT = { transfer_state = PREV }
 	}
 	add_manpower = 10000
@@ -338,7 +338,7 @@ FRW_ff_exped_aof = {
 
 FRW_ff_join_afn = {
 	every_state = {
-		limit = { OR = { state = 458 state = 459 state = 460 state = 461 state = 462 state = 513 state = 514 state = 515 state = 665 } owner = { FRW_is_vichy = yes } }
+		limit = { OR = { state = 458 state = 459 state = 460 state = 461 state = 462 state = 513 state = 514 state = 515 state = 1759 state = 665 } owner = { FRW_is_vichy = yes } }
 		ROOT = { transfer_state = PREV }
 	}
 	add_manpower = 60000
