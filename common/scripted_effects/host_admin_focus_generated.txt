@@ -1334,7 +1334,6 @@ admin_focus_tick = {
 		else_if = { limit = { NOT = { has_completed_focus = air_defense_focus } focus_progress = { focus = air_defense_focus progress > 0 } } complete_national_focus = air_defense_focus }
 		else_if = { limit = { NOT = { has_completed_focus = radar_focus } focus_progress = { focus = radar_focus progress > 0 } } complete_national_focus = radar_focus }
 		else_if = { limit = { NOT = { has_completed_focus = shadow_scheme_focus } focus_progress = { focus = shadow_scheme_focus progress > 0 } } complete_national_focus = shadow_scheme_focus }
-		else_if = { limit = { NOT = { has_completed_focus = uk_industrial_focus } focus_progress = { focus = uk_industrial_focus progress > 0 } } complete_national_focus = uk_industrial_focus }
 		else_if = { limit = { NOT = { has_completed_focus = ENG_vickers_experimental_facility_focus } focus_progress = { focus = ENG_vickers_experimental_facility_focus progress > 0 } } complete_national_focus = ENG_vickers_experimental_facility_focus }
 		else_if = { limit = { NOT = { has_completed_focus = uk_extra_tech_slot } focus_progress = { focus = uk_extra_tech_slot progress > 0 } } complete_national_focus = uk_extra_tech_slot }
 		else_if = { limit = { NOT = { has_completed_focus = general_rearmament_focus } focus_progress = { focus = general_rearmament_focus progress > 0 } } complete_national_focus = general_rearmament_focus }
@@ -1379,7 +1378,6 @@ admin_focus_tick = {
 		else_if = { limit = { NOT = { has_completed_focus = ENG_guide_the_colonies } focus_progress = { focus = ENG_guide_the_colonies progress > 0 } } complete_national_focus = ENG_guide_the_colonies }
 		else_if = { limit = { NOT = { has_completed_focus = ENG_towards_dominion_independence } focus_progress = { focus = ENG_towards_dominion_independence progress > 0 } } complete_national_focus = ENG_towards_dominion_independence }
 		else_if = { limit = { NOT = { has_completed_focus = ENG_foundations_for_an_indian_state } focus_progress = { focus = ENG_foundations_for_an_indian_state progress > 0 } } complete_national_focus = ENG_foundations_for_an_indian_state }
-		else_if = { limit = { NOT = { has_completed_focus = ENG_the_three_nation_solution } focus_progress = { focus = ENG_the_three_nation_solution progress > 0 } } complete_national_focus = ENG_the_three_nation_solution }
 		else_if = { limit = { NOT = { has_completed_focus = ENG_towards_indian_independence } focus_progress = { focus = ENG_towards_indian_independence progress > 0 } } complete_national_focus = ENG_towards_indian_independence }
 		else_if = { limit = { NOT = { has_completed_focus = ENG_withdraw_from_contested_territories } focus_progress = { focus = ENG_withdraw_from_contested_territories progress > 0 } } complete_national_focus = ENG_withdraw_from_contested_territories }
 		else_if = { limit = { NOT = { has_completed_focus = ENG_self_government_for_the_mediterranean } focus_progress = { focus = ENG_self_government_for_the_mediterranean progress > 0 } } complete_national_focus = ENG_self_government_for_the_mediterranean }
@@ -1388,20 +1386,14 @@ admin_focus_tick = {
 		else_if = { limit = { NOT = { has_completed_focus = ENG_self_government_for_the_americas } focus_progress = { focus = ENG_self_government_for_the_americas progress > 0 } } complete_national_focus = ENG_self_government_for_the_americas }
 		else_if = { limit = { NOT = { has_completed_focus = ENG_self_government_for_asia } focus_progress = { focus = ENG_self_government_for_asia progress > 0 } } complete_national_focus = ENG_self_government_for_asia }
 		else_if = { limit = { NOT = { has_completed_focus = ENG_decolonization } focus_progress = { focus = ENG_decolonization progress > 0 } } complete_national_focus = ENG_decolonization }
-		else_if = { limit = { NOT = { has_completed_focus = ENG_the_winds_of_change } focus_progress = { focus = ENG_the_winds_of_change progress > 0 } } complete_national_focus = ENG_the_winds_of_change }
 		else_if = { limit = { NOT = { has_completed_focus = uk_colonial_focus } focus_progress = { focus = uk_colonial_focus progress > 0 } } complete_national_focus = uk_colonial_focus }
 		else_if = { limit = { NOT = { has_completed_focus = uk_asia_focus } focus_progress = { focus = uk_asia_focus progress > 0 } } complete_national_focus = uk_asia_focus }
 		else_if = { limit = { NOT = { has_completed_focus = uk_burma_focus } focus_progress = { focus = uk_burma_focus progress > 0 } } complete_national_focus = uk_burma_focus }
 		else_if = { limit = { NOT = { has_completed_focus = uk_sanction_japan_focus } focus_progress = { focus = uk_sanction_japan_focus progress > 0 } } complete_national_focus = uk_sanction_japan_focus }
 		else_if = { limit = { NOT = { has_completed_focus = ENG_war_with_japan } focus_progress = { focus = ENG_war_with_japan progress > 0 } } complete_national_focus = ENG_war_with_japan }
 		else_if = { limit = { NOT = { has_completed_focus = singapore_focus } focus_progress = { focus = singapore_focus progress > 0 } } complete_national_focus = singapore_focus }
-		else_if = { limit = { NOT = { has_completed_focus = ENG_royal_malay_regiment_focus } focus_progress = { focus = ENG_royal_malay_regiment_focus progress > 0 } } complete_national_focus = ENG_royal_malay_regiment_focus }
-		else_if = { limit = { NOT = { has_completed_focus = ENG_territorial_army_of_malaysia_focus } focus_progress = { focus = ENG_territorial_army_of_malaysia_focus progress > 0 } } complete_national_focus = ENG_territorial_army_of_malaysia_focus }
 		else_if = { limit = { NOT = { has_completed_focus = peninsular_focus } focus_progress = { focus = peninsular_focus progress > 0 } } complete_national_focus = peninsular_focus }
-		else_if = { limit = { NOT = { has_completed_focus = ENG_sarawakrangers_focus } focus_progress = { focus = ENG_sarawakrangers_focus progress > 0 } } complete_national_focus = ENG_sarawakrangers_focus }
 		else_if = { limit = { NOT = { has_completed_focus = hongkong_focus } focus_progress = { focus = hongkong_focus progress > 0 } } complete_national_focus = hongkong_focus }
-		else_if = { limit = { NOT = { has_completed_focus = ENG_south_east_asia_air_command_focus } focus_progress = { focus = ENG_south_east_asia_air_command_focus progress > 0 } } complete_national_focus = ENG_south_east_asia_air_command_focus }
-		else_if = { limit = { NOT = { has_completed_focus = ENG_east_indies_fleet_focus } focus_progress = { focus = ENG_east_indies_fleet_focus progress > 0 } } complete_national_focus = ENG_east_indies_fleet_focus }
 		else_if = { limit = { NOT = { has_completed_focus = uk_china_focus } focus_progress = { focus = uk_china_focus progress > 0 } } complete_national_focus = uk_china_focus }
 		else_if = { limit = { NOT = { has_completed_focus = uk_commonwealth_focus } focus_progress = { focus = uk_commonwealth_focus progress > 0 } } complete_national_focus = uk_commonwealth_focus }
 		else_if = { limit = { NOT = { has_completed_focus = ENG_british_commonwealth_air_training_plan } focus_progress = { focus = ENG_british_commonwealth_air_training_plan progress > 0 } } complete_national_focus = ENG_british_commonwealth_air_training_plan }
@@ -1428,10 +1420,8 @@ admin_focus_tick = {
 		else_if = { limit = { NOT = { has_completed_focus = ENG_home_defence } focus_progress = { focus = ENG_home_defence progress > 0 } } complete_national_focus = ENG_home_defence }
 		else_if = { limit = { NOT = { has_completed_focus = uk_iraq_focus } focus_progress = { focus = uk_iraq_focus progress > 0 } } complete_national_focus = uk_iraq_focus }
 		else_if = { limit = { NOT = { has_completed_focus = uk_iran_focus } focus_progress = { focus = uk_iran_focus progress > 0 } } complete_national_focus = uk_iran_focus }
-		else_if = { limit = { NOT = { has_completed_focus = ENG_embargo_ussr } focus_progress = { focus = ENG_embargo_ussr progress > 0 } } complete_national_focus = ENG_embargo_ussr }
 		else_if = { limit = { NOT = { has_completed_focus = ENG_war_with_ussr } focus_progress = { focus = ENG_war_with_ussr progress > 0 } } complete_national_focus = ENG_war_with_ussr }
 		else_if = { limit = { NOT = { has_completed_focus = ENG_issue_gasmasks } focus_progress = { focus = ENG_issue_gasmasks progress > 0 } } complete_national_focus = ENG_issue_gasmasks }
-		else_if = { limit = { NOT = { has_completed_focus = ENG_military_training_act } focus_progress = { focus = ENG_military_training_act progress > 0 } } complete_national_focus = ENG_military_training_act }
 		else_if = { limit = { NOT = { has_completed_focus = ENG_embargo_germany } focus_progress = { focus = ENG_embargo_germany progress > 0 } } complete_national_focus = ENG_embargo_germany }
 		else_if = { limit = { NOT = { has_completed_focus = ENG_war_with_germany } focus_progress = { focus = ENG_war_with_germany progress > 0 } } complete_national_focus = ENG_war_with_germany }
 		else_if = { limit = { NOT = { has_completed_focus = uk_scandinavian_focus } focus_progress = { focus = uk_scandinavian_focus progress > 0 } } complete_national_focus = uk_scandinavian_focus }
@@ -1453,7 +1443,6 @@ admin_focus_tick = {
 		else_if = { limit = { NOT = { has_completed_focus = ENG_the_british_path_to_fascism } focus_progress = { focus = ENG_the_british_path_to_fascism progress > 0 } } complete_national_focus = ENG_the_british_path_to_fascism }
 		else_if = { limit = { NOT = { has_completed_focus = ENG_secure_the_italian_alliance } focus_progress = { focus = ENG_secure_the_italian_alliance progress > 0 } } complete_national_focus = ENG_secure_the_italian_alliance }
 		else_if = { limit = { NOT = { has_completed_focus = ENG_gibraltar_for_spanish_support } focus_progress = { focus = ENG_gibraltar_for_spanish_support progress > 0 } } complete_national_focus = ENG_gibraltar_for_spanish_support }
-		else_if = { limit = { NOT = { has_completed_focus = ENG_pre_empt_spanish_alignment } focus_progress = { focus = ENG_pre_empt_spanish_alignment progress > 0 } } complete_national_focus = ENG_pre_empt_spanish_alignment }
 		else_if = { limit = { NOT = { has_completed_focus = ENG_prevent_a_continental_hegemony } focus_progress = { focus = ENG_prevent_a_continental_hegemony progress > 0 } } complete_national_focus = ENG_prevent_a_continental_hegemony }
 		else_if = { limit = { NOT = { has_completed_focus = ENG_enact_the_mosley_manifesto } focus_progress = { focus = ENG_enact_the_mosley_manifesto progress > 0 } } complete_national_focus = ENG_enact_the_mosley_manifesto }
 		else_if = { limit = { NOT = { has_completed_focus = ENG_god_save_the_king } focus_progress = { focus = ENG_god_save_the_king progress > 0 } } complete_national_focus = ENG_god_save_the_king }
@@ -1461,7 +1450,6 @@ admin_focus_tick = {
 		else_if = { limit = { NOT = { has_completed_focus = ENG_imperial_conscription } focus_progress = { focus = ENG_imperial_conscription progress > 0 } } complete_national_focus = ENG_imperial_conscription }
 		else_if = { limit = { NOT = { has_completed_focus = ENG_reclaim_burma } focus_progress = { focus = ENG_reclaim_burma progress > 0 } } complete_national_focus = ENG_reclaim_burma }
 		else_if = { limit = { NOT = { has_completed_focus = ENG_pre_empt_the_ideological_threat } focus_progress = { focus = ENG_pre_empt_the_ideological_threat progress > 0 } } complete_national_focus = ENG_pre_empt_the_ideological_threat }
-		else_if = { limit = { NOT = { has_completed_focus = ENG_expose_the_belly_of_the_bear } focus_progress = { focus = ENG_expose_the_belly_of_the_bear progress > 0 } } complete_national_focus = ENG_expose_the_belly_of_the_bear }
 		else_if = { limit = { NOT = { has_completed_focus = ENG_reclaim_the_jewel_in_the_crown } focus_progress = { focus = ENG_reclaim_the_jewel_in_the_crown progress > 0 } } complete_national_focus = ENG_reclaim_the_jewel_in_the_crown }
 		else_if = { limit = { NOT = { has_completed_focus = ENG_consolidate_the_british_isles } focus_progress = { focus = ENG_consolidate_the_british_isles progress > 0 } } complete_national_focus = ENG_consolidate_the_british_isles }
 		else_if = { limit = { NOT = { has_completed_focus = ENG_unite_the_anglosphere } focus_progress = { focus = ENG_unite_the_anglosphere progress > 0 } } complete_national_focus = ENG_unite_the_anglosphere }
@@ -3057,7 +3045,6 @@ admin_focus_tick = {
 		else_if = { limit = { NOT = { has_completed_focus = CZE_the_polish_division } focus_progress = { focus = CZE_the_polish_division progress > 0 } } complete_national_focus = CZE_the_polish_division }
 		else_if = { limit = { NOT = { has_completed_focus = CZE_democratic_bastion } focus_progress = { focus = CZE_democratic_bastion progress > 0 } } complete_national_focus = CZE_democratic_bastion }
 		else_if = { limit = { NOT = { has_completed_focus = CZE_beacon_of_liberty } focus_progress = { focus = CZE_beacon_of_liberty progress > 0 } } complete_national_focus = CZE_beacon_of_liberty }
-		else_if = { limit = { NOT = { has_completed_focus = CZE_healing_a_divided_nation } focus_progress = { focus = CZE_healing_a_divided_nation progress > 0 } } complete_national_focus = CZE_healing_a_divided_nation }
 		else_if = { limit = { NOT = { has_completed_focus = CZE_defensive_preparations } focus_progress = { focus = CZE_defensive_preparations progress > 0 } } complete_national_focus = CZE_defensive_preparations }
 		else_if = { limit = { NOT = { has_completed_focus = CZE_bonus_research_slot_1 } focus_progress = { focus = CZE_bonus_research_slot_1 progress > 0 } } complete_national_focus = CZE_bonus_research_slot_1 }
 		else_if = { limit = { NOT = { has_completed_focus = CZE_go_right } focus_progress = { focus = CZE_go_right progress > 0 } } complete_national_focus = CZE_go_right }
@@ -3768,191 +3755,6 @@ admin_focus_tick = {
 	else_if = {
 		limit = { has_focus_tree = french_focus }
 		if = { limit = { always = no } }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_devalue_the_franc } focus_progress = { focus = FRA_devalue_the_franc progress > 0 } } complete_national_focus = FRA_devalue_the_franc }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_autoroutes } focus_progress = { focus = FRA_autoroutes progress > 0 } } complete_national_focus = FRA_autoroutes }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_invest_in_the_metropole } focus_progress = { focus = FRA_invest_in_the_metropole progress > 0 } } complete_national_focus = FRA_invest_in_the_metropole }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_metropolitan_france } focus_progress = { focus = FRA_metropolitan_france progress > 0 } } complete_national_focus = FRA_metropolitan_france }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_industrial_expansion } focus_progress = { focus = FRA_industrial_expansion progress > 0 } } complete_national_focus = FRA_industrial_expansion }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_military_factories } focus_progress = { focus = FRA_military_factories progress > 0 } } complete_national_focus = FRA_military_factories }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_algerie_france } focus_progress = { focus = FRA_algerie_france progress > 0 } } complete_national_focus = FRA_algerie_france }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_invest_in_the_colonies } focus_progress = { focus = FRA_invest_in_the_colonies progress > 0 } } complete_national_focus = FRA_invest_in_the_colonies }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_invest_in_west_africa } focus_progress = { focus = FRA_invest_in_west_africa progress > 0 } } complete_national_focus = FRA_invest_in_west_africa }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_invest_in_indochina } focus_progress = { focus = FRA_invest_in_indochina progress > 0 } } complete_national_focus = FRA_invest_in_indochina }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_invest_in_syria } focus_progress = { focus = FRA_invest_in_syria progress > 0 } } complete_national_focus = FRA_invest_in_syria }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_colonial_industry } focus_progress = { focus = FRA_colonial_industry progress > 0 } } complete_national_focus = FRA_colonial_industry }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_extra_research_slot } focus_progress = { focus = FRA_extra_research_slot progress > 0 } } complete_national_focus = FRA_extra_research_slot }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_extra_research_slot_2 } focus_progress = { focus = FRA_extra_research_slot_2 progress > 0 } } complete_national_focus = FRA_extra_research_slot_2 }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_global_integration } focus_progress = { focus = FRA_global_integration progress > 0 } } complete_national_focus = FRA_global_integration }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_begin_rearmament } focus_progress = { focus = FRA_begin_rearmament progress > 0 } } complete_national_focus = FRA_begin_rearmament }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_defensive_focus } focus_progress = { focus = FRA_defensive_focus progress > 0 } } complete_national_focus = FRA_defensive_focus }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_firepower_kills } focus_progress = { focus = FRA_firepower_kills progress > 0 } } complete_national_focus = FRA_firepower_kills }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_methodical_battle } focus_progress = { focus = FRA_methodical_battle progress > 0 } } complete_national_focus = FRA_methodical_battle }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_fortification_focus } focus_progress = { focus = FRA_fortification_focus progress > 0 } } complete_national_focus = FRA_fortification_focus }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_alpine_forts } focus_progress = { focus = FRA_alpine_forts progress > 0 } } complete_national_focus = FRA_alpine_forts }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_extend_the_maginot_line } focus_progress = { focus = FRA_extend_the_maginot_line progress > 0 } } complete_national_focus = FRA_extend_the_maginot_line }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_infantry_focus } focus_progress = { focus = FRA_infantry_focus progress > 0 } } complete_national_focus = FRA_infantry_focus }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_artillery_focus } focus_progress = { focus = FRA_artillery_focus progress > 0 } } complete_national_focus = FRA_artillery_focus }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_heavy_armor_focus } focus_progress = { focus = FRA_heavy_armor_focus progress > 0 } } complete_national_focus = FRA_heavy_armor_focus }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_division_cuirassee } focus_progress = { focus = FRA_division_cuirassee progress > 0 } } complete_national_focus = FRA_division_cuirassee }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_infantry_tanks } focus_progress = { focus = FRA_infantry_tanks progress > 0 } } complete_national_focus = FRA_infantry_tanks }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_special_forces } focus_progress = { focus = FRA_special_forces progress > 0 } } complete_national_focus = FRA_special_forces }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_fusiliers_marine } focus_progress = { focus = FRA_fusiliers_marine progress > 0 } } complete_national_focus = FRA_fusiliers_marine }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_aggressive_focus } focus_progress = { focus = FRA_aggressive_focus progress > 0 } } complete_national_focus = FRA_aggressive_focus }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_battle_of_maneuver } focus_progress = { focus = FRA_battle_of_maneuver progress > 0 } } complete_national_focus = FRA_battle_of_maneuver }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_motorized_focus } focus_progress = { focus = FRA_motorized_focus progress > 0 } } complete_national_focus = FRA_motorized_focus }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_mechanized_focus } focus_progress = { focus = FRA_mechanized_focus progress > 0 } } complete_national_focus = FRA_mechanized_focus }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_light_medium_armor } focus_progress = { focus = FRA_light_medium_armor progress > 0 } } complete_national_focus = FRA_light_medium_armor }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_air_dominance } focus_progress = { focus = FRA_air_dominance progress > 0 } } complete_national_focus = FRA_air_dominance }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_cas_focus } focus_progress = { focus = FRA_cas_focus progress > 0 } } complete_national_focus = FRA_cas_focus }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_air_ground_cooperation } focus_progress = { focus = FRA_air_ground_cooperation progress > 0 } } complete_national_focus = FRA_air_ground_cooperation }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_flying_artillery } focus_progress = { focus = FRA_flying_artillery progress > 0 } } complete_national_focus = FRA_flying_artillery }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_army_reform } focus_progress = { focus = FRA_army_reform progress > 0 } } complete_national_focus = FRA_army_reform }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_form_the_popular_front } focus_progress = { focus = FRA_form_the_popular_front progress > 0 } } complete_national_focus = FRA_form_the_popular_front }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_invite_communist_ministers } focus_progress = { focus = FRA_invite_communist_ministers progress > 0 } } complete_national_focus = FRA_invite_communist_ministers }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_strengthen_the_unions } focus_progress = { focus = FRA_strengthen_the_unions progress > 0 } } complete_national_focus = FRA_strengthen_the_unions }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_celebrate_the_commune } focus_progress = { focus = FRA_celebrate_the_commune progress > 0 } } complete_national_focus = FRA_celebrate_the_commune }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_womens_suffrage } focus_progress = { focus = FRA_womens_suffrage progress > 0 } } complete_national_focus = FRA_womens_suffrage }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_legal_equality } focus_progress = { focus = FRA_legal_equality progress > 0 } } complete_national_focus = FRA_legal_equality }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_industrial_collectivization } focus_progress = { focus = FRA_industrial_collectivization progress > 0 } } complete_national_focus = FRA_industrial_collectivization }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_agricultural_collectivization } focus_progress = { focus = FRA_agricultural_collectivization progress > 0 } } complete_national_focus = FRA_agricultural_collectivization }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_force_the_issue } focus_progress = { focus = FRA_force_the_issue progress > 0 } } complete_national_focus = FRA_force_the_issue }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_reconciliation } focus_progress = { focus = FRA_reconciliation progress > 0 } } complete_national_focus = FRA_reconciliation }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_constitutional_convention } focus_progress = { focus = FRA_constitutional_convention progress > 0 } } complete_national_focus = FRA_constitutional_convention }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_anti_fascist_coalition } focus_progress = { focus = FRA_anti_fascist_coalition progress > 0 } } complete_national_focus = FRA_anti_fascist_coalition }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_invite_anti_fascist_emigrants } focus_progress = { focus = FRA_invite_anti_fascist_emigrants progress > 0 } } complete_national_focus = FRA_invite_anti_fascist_emigrants }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_reconnect_to_the_balkans } focus_progress = { focus = FRA_reconnect_to_the_balkans progress > 0 } } complete_national_focus = FRA_reconnect_to_the_balkans }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_pre_empt_the_fascist_attack } focus_progress = { focus = FRA_pre_empt_the_fascist_attack progress > 0 } } complete_national_focus = FRA_pre_empt_the_fascist_attack }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_loyalty_to_moscow } focus_progress = { focus = FRA_loyalty_to_moscow progress > 0 } } complete_national_focus = FRA_loyalty_to_moscow }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_league_of_french_bolshevist_volunteers } focus_progress = { focus = FRA_league_of_french_bolshevist_volunteers progress > 0 } } complete_national_focus = FRA_league_of_french_bolshevist_volunteers }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_host_the_german_exiles } focus_progress = { focus = FRA_host_the_german_exiles progress > 0 } } complete_national_focus = FRA_host_the_german_exiles }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_revolution_to_the_utmost } focus_progress = { focus = FRA_revolution_to_the_utmost progress > 0 } } complete_national_focus = FRA_revolution_to_the_utmost }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_destroy_the_counter_revolution } focus_progress = { focus = FRA_destroy_the_counter_revolution progress > 0 } } complete_national_focus = FRA_destroy_the_counter_revolution }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_revolutionary_zeal } focus_progress = { focus = FRA_revolutionary_zeal progress > 0 } } complete_national_focus = FRA_revolutionary_zeal }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_loyalty_to_the_cause } focus_progress = { focus = FRA_loyalty_to_the_cause progress > 0 } } complete_national_focus = FRA_loyalty_to_the_cause }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_carry_the_revolution_north } focus_progress = { focus = FRA_carry_the_revolution_north progress > 0 } } complete_national_focus = FRA_carry_the_revolution_north }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_carry_the_revolution_west } focus_progress = { focus = FRA_carry_the_revolution_west progress > 0 } } complete_national_focus = FRA_carry_the_revolution_west }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_carry_the_revolution_east } focus_progress = { focus = FRA_carry_the_revolution_east progress > 0 } } complete_national_focus = FRA_carry_the_revolution_east }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_carry_the_revolution_south } focus_progress = { focus = FRA_carry_the_revolution_south progress > 0 } } complete_national_focus = FRA_carry_the_revolution_south }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_egalite_liberte_solidarite } focus_progress = { focus = FRA_egalite_liberte_solidarite progress > 0 } } complete_national_focus = FRA_egalite_liberte_solidarite }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_reform_the_labour_laws } focus_progress = { focus = FRA_reform_the_labour_laws progress > 0 } } complete_national_focus = FRA_reform_the_labour_laws }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_nationalize_key_industry } focus_progress = { focus = FRA_nationalize_key_industry progress > 0 } } complete_national_focus = FRA_nationalize_key_industry }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_reorganize_the_aviation_industry } focus_progress = { focus = FRA_reorganize_the_aviation_industry progress > 0 } } complete_national_focus = FRA_reorganize_the_aviation_industry }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_form_the_state_arsenals } focus_progress = { focus = FRA_form_the_state_arsenals progress > 0 } } complete_national_focus = FRA_form_the_state_arsenals }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_general_work_council } focus_progress = { focus = FRA_general_work_council progress > 0 } } complete_national_focus = FRA_general_work_council }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_dirigisme } focus_progress = { focus = FRA_dirigisme progress > 0 } } complete_national_focus = FRA_dirigisme }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_national_champions } focus_progress = { focus = FRA_national_champions progress > 0 } } complete_national_focus = FRA_national_champions }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_ban_the_leagues } focus_progress = { focus = FRA_ban_the_leagues progress > 0 } } complete_national_focus = FRA_ban_the_leagues }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_the_blum_viollette_proposal } focus_progress = { focus = FRA_the_blum_viollette_proposal progress > 0 } } complete_national_focus = FRA_the_blum_viollette_proposal }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_expand_the_citizenship } focus_progress = { focus = FRA_expand_the_citizenship progress > 0 } } complete_national_focus = FRA_expand_the_citizenship }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_france_undividable } focus_progress = { focus = FRA_france_undividable progress > 0 } } complete_national_focus = FRA_france_undividable }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_french_union } focus_progress = { focus = FRA_french_union progress > 0 } } complete_national_focus = FRA_french_union }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_encourage_immigration } focus_progress = { focus = FRA_encourage_immigration progress > 0 } } complete_national_focus = FRA_encourage_immigration }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_review_foreign_policy } focus_progress = { focus = FRA_review_foreign_policy progress > 0 } } complete_national_focus = FRA_review_foreign_policy }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_intervention_in_spain } focus_progress = { focus = FRA_intervention_in_spain progress > 0 } } complete_national_focus = FRA_intervention_in_spain }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_support_the_finns } focus_progress = { focus = FRA_support_the_finns progress > 0 } } complete_national_focus = FRA_support_the_finns }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_confirm_eastern_commitments } focus_progress = { focus = FRA_confirm_eastern_commitments progress > 0 } } complete_national_focus = FRA_confirm_eastern_commitments }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_strengthen_the_little_entente } focus_progress = { focus = FRA_strengthen_the_little_entente progress > 0 } } complete_national_focus = FRA_strengthen_the_little_entente }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_invite_yugoslavia } focus_progress = { focus = FRA_invite_yugoslavia progress > 0 } } complete_national_focus = FRA_invite_yugoslavia }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_invite_romania } focus_progress = { focus = FRA_invite_romania progress > 0 } } complete_national_focus = FRA_invite_romania }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_invest_in_our_weaker_allies } focus_progress = { focus = FRA_invest_in_our_weaker_allies progress > 0 } } complete_national_focus = FRA_invest_in_our_weaker_allies }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_coordinate_rearmament } focus_progress = { focus = FRA_coordinate_rearmament progress > 0 } } complete_national_focus = FRA_coordinate_rearmament }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_foreign_guest_workers } focus_progress = { focus = FRA_foreign_guest_workers progress > 0 } } complete_national_focus = FRA_foreign_guest_workers }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_join_the_ententes } focus_progress = { focus = FRA_join_the_ententes progress > 0 } } complete_national_focus = FRA_join_the_ententes }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_revive_the_franco_polish_alliance } focus_progress = { focus = FRA_revive_the_franco_polish_alliance progress > 0 } } complete_national_focus = FRA_revive_the_franco_polish_alliance }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_buy_time } focus_progress = { focus = FRA_buy_time progress > 0 } } complete_national_focus = FRA_buy_time }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_strengthen_government_support } focus_progress = { focus = FRA_strengthen_government_support progress > 0 } } complete_national_focus = FRA_strengthen_government_support }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_defensive_strategems } focus_progress = { focus = FRA_defensive_strategems progress > 0 } } complete_national_focus = FRA_defensive_strategems }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_go_with_britain } focus_progress = { focus = FRA_go_with_britain progress > 0 } } complete_national_focus = FRA_go_with_britain }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_arms_purchases_in_the_us } focus_progress = { focus = FRA_arms_purchases_in_the_us progress > 0 } } complete_national_focus = FRA_arms_purchases_in_the_us }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_france_leads } focus_progress = { focus = FRA_france_leads progress > 0 } } complete_national_focus = FRA_france_leads }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_concessions_to_italy } focus_progress = { focus = FRA_concessions_to_italy progress > 0 } } complete_national_focus = FRA_concessions_to_italy }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_ratify_the_stresa_front } focus_progress = { focus = FRA_ratify_the_stresa_front progress > 0 } } complete_national_focus = FRA_ratify_the_stresa_front }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_franco_soviet_treaty } focus_progress = { focus = FRA_franco_soviet_treaty progress > 0 } } complete_national_focus = FRA_franco_soviet_treaty }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_leftist_rhetoric } focus_progress = { focus = FRA_leftist_rhetoric progress > 0 } } complete_national_focus = FRA_leftist_rhetoric }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_national_mobilization } focus_progress = { focus = FRA_national_mobilization progress > 0 } } complete_national_focus = FRA_national_mobilization }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_join_comintern } focus_progress = { focus = FRA_join_comintern progress > 0 } } complete_national_focus = FRA_join_comintern }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_humanite_unie } focus_progress = { focus = FRA_humanite_unie progress > 0 } } complete_national_focus = FRA_humanite_unie }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_revive_the_national_bloc } focus_progress = { focus = FRA_revive_the_national_bloc progress > 0 } } complete_national_focus = FRA_revive_the_national_bloc }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_laissez_faire } focus_progress = { focus = FRA_laissez_faire progress > 0 } } complete_national_focus = FRA_laissez_faire }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_protect_the_rights_of_man } focus_progress = { focus = FRA_protect_the_rights_of_man progress > 0 } } complete_national_focus = FRA_protect_the_rights_of_man }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_freedom_front } focus_progress = { focus = FRA_freedom_front progress > 0 } } complete_national_focus = FRA_freedom_front }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_stimulate_the_dynamic_market } focus_progress = { focus = FRA_stimulate_the_dynamic_market progress > 0 } } complete_national_focus = FRA_stimulate_the_dynamic_market }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_agricultural_protectionism } focus_progress = { focus = FRA_agricultural_protectionism progress > 0 } } complete_national_focus = FRA_agricultural_protectionism }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_economic_devolution } focus_progress = { focus = FRA_economic_devolution progress > 0 } } complete_national_focus = FRA_economic_devolution }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_promote_entrepeneurship } focus_progress = { focus = FRA_promote_entrepeneurship progress > 0 } } complete_national_focus = FRA_promote_entrepeneurship }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_ban_communism } focus_progress = { focus = FRA_ban_communism progress > 0 } } complete_national_focus = FRA_ban_communism }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_utilize_the_leagues } focus_progress = { focus = FRA_utilize_the_leagues progress > 0 } } complete_national_focus = FRA_utilize_the_leagues }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_national_regeneration } focus_progress = { focus = FRA_national_regeneration progress > 0 } } complete_national_focus = FRA_national_regeneration }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_destroy_decadence } focus_progress = { focus = FRA_destroy_decadence progress > 0 } } complete_national_focus = FRA_destroy_decadence }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_integralism } focus_progress = { focus = FRA_integralism progress > 0 } } complete_national_focus = FRA_integralism }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_work } focus_progress = { focus = FRA_work progress > 0 } } complete_national_focus = FRA_work }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_family } focus_progress = { focus = FRA_family progress > 0 } } complete_national_focus = FRA_family }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_fatherland } focus_progress = { focus = FRA_fatherland progress > 0 } } complete_national_focus = FRA_fatherland }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_political_unity } focus_progress = { focus = FRA_political_unity progress > 0 } } complete_national_focus = FRA_political_unity }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_diplomatic_freedom } focus_progress = { focus = FRA_diplomatic_freedom progress > 0 } } complete_national_focus = FRA_diplomatic_freedom }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_latin_entente } focus_progress = { focus = FRA_latin_entente progress > 0 } } complete_national_focus = FRA_latin_entente }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_reach_out_to_spain } focus_progress = { focus = FRA_reach_out_to_spain progress > 0 } } complete_national_focus = FRA_reach_out_to_spain }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_invite_portugal } focus_progress = { focus = FRA_invite_portugal progress > 0 } } complete_national_focus = FRA_invite_portugal }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_compensate_italy } focus_progress = { focus = FRA_compensate_italy progress > 0 } } complete_national_focus = FRA_compensate_italy }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_intervention_in_greece } focus_progress = { focus = FRA_intervention_in_greece progress > 0 } } complete_national_focus = FRA_intervention_in_greece }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_the_congress_of_paris } focus_progress = { focus = FRA_the_congress_of_paris progress > 0 } } complete_national_focus = FRA_the_congress_of_paris }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_the_natural_borders_of_france } focus_progress = { focus = FRA_the_natural_borders_of_france progress > 0 } } complete_national_focus = FRA_the_natural_borders_of_france }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_towards_a_new_europe } focus_progress = { focus = FRA_towards_a_new_europe progress > 0 } } complete_national_focus = FRA_towards_a_new_europe }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_establish_spheres_of_influence } focus_progress = { focus = FRA_establish_spheres_of_influence progress > 0 } } complete_national_focus = FRA_establish_spheres_of_influence }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_split_belgium } focus_progress = { focus = FRA_split_belgium progress > 0 } } complete_national_focus = FRA_split_belgium }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_align_belgium } focus_progress = { focus = FRA_align_belgium progress > 0 } } complete_national_focus = FRA_align_belgium }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_grow_the_empire } focus_progress = { focus = FRA_grow_the_empire progress > 0 } } complete_national_focus = FRA_grow_the_empire }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_bring_home_quebec } focus_progress = { focus = FRA_bring_home_quebec progress > 0 } } complete_national_focus = FRA_bring_home_quebec }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_expand_to_the_suez } focus_progress = { focus = FRA_expand_to_the_suez progress > 0 } } complete_national_focus = FRA_expand_to_the_suez }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_dominate_the_middle_east } focus_progress = { focus = FRA_dominate_the_middle_east progress > 0 } } complete_national_focus = FRA_dominate_the_middle_east }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_right_wing_rhetoric } focus_progress = { focus = FRA_right_wing_rhetoric progress > 0 } } complete_national_focus = FRA_right_wing_rhetoric }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_army_of_aggression } focus_progress = { focus = FRA_army_of_aggression progress > 0 } } complete_national_focus = FRA_army_of_aggression }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_france_first } focus_progress = { focus = FRA_france_first progress > 0 } } complete_national_focus = FRA_france_first }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_woo_italy } focus_progress = { focus = FRA_woo_italy progress > 0 } } complete_national_focus = FRA_woo_italy }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_dismantle_the_democracies } focus_progress = { focus = FRA_dismantle_the_democracies progress > 0 } } complete_national_focus = FRA_dismantle_the_democracies }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_join_germany } focus_progress = { focus = FRA_join_germany progress > 0 } } complete_national_focus = FRA_join_germany }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_the_council_of_rambouillet } focus_progress = { focus = FRA_the_council_of_rambouillet progress > 0 } } complete_national_focus = FRA_the_council_of_rambouillet }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_revise_the_constitution } focus_progress = { focus = FRA_revise_the_constitution progress > 0 } } complete_national_focus = FRA_revise_the_constitution }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_repeal_the_law_of_exile } focus_progress = { focus = FRA_repeal_the_law_of_exile progress > 0 } } complete_national_focus = FRA_repeal_the_law_of_exile }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_orleanist_restoration } focus_progress = { focus = FRA_orleanist_restoration progress > 0 } } complete_national_focus = FRA_orleanist_restoration }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_guarantee_the_constitution } focus_progress = { focus = FRA_guarantee_the_constitution progress > 0 } } complete_national_focus = FRA_guarantee_the_constitution }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_the_first_citizen_of_the_state } focus_progress = { focus = FRA_the_first_citizen_of_the_state progress > 0 } } complete_national_focus = FRA_the_first_citizen_of_the_state }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_counter_action } focus_progress = { focus = FRA_counter_action progress > 0 } } complete_national_focus = FRA_counter_action }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_no_further_humiliations } focus_progress = { focus = FRA_no_further_humiliations progress > 0 } } complete_national_focus = FRA_no_further_humiliations }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_slum_clearing } focus_progress = { focus = FRA_slum_clearing progress > 0 } } complete_national_focus = FRA_slum_clearing }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_public_welfare } focus_progress = { focus = FRA_public_welfare progress > 0 } } complete_national_focus = FRA_public_welfare }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_the_legitimate_heir } focus_progress = { focus = FRA_the_legitimate_heir progress > 0 } } complete_national_focus = FRA_the_legitimate_heir }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_secure_the_crown_of_spain } focus_progress = { focus = FRA_secure_the_crown_of_spain progress > 0 } } complete_national_focus = FRA_secure_the_crown_of_spain }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_unite_the_crowns } focus_progress = { focus = FRA_unite_the_crowns progress > 0 } } complete_national_focus = FRA_unite_the_crowns }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_two_countries_two_crowns } focus_progress = { focus = FRA_two_countries_two_crowns progress > 0 } } complete_national_focus = FRA_two_countries_two_crowns }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_proclaim_the_third_empire } focus_progress = { focus = FRA_proclaim_the_third_empire progress > 0 } } complete_national_focus = FRA_proclaim_the_third_empire }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_avenge_waterloo } focus_progress = { focus = FRA_avenge_waterloo progress > 0 } } complete_national_focus = FRA_avenge_waterloo }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_reorganize_the_dutch } focus_progress = { focus = FRA_reorganize_the_dutch progress > 0 } } complete_national_focus = FRA_reorganize_the_dutch }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_retribution_for_sedan } focus_progress = { focus = FRA_retribution_for_sedan progress > 0 } } complete_national_focus = FRA_retribution_for_sedan }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_disunite_germany } focus_progress = { focus = FRA_disunite_germany progress > 0 } } complete_national_focus = FRA_disunite_germany }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_return_to_borodino } focus_progress = { focus = FRA_return_to_borodino progress > 0 } } complete_national_focus = FRA_return_to_borodino }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_je_suis_la_deluge } focus_progress = { focus = FRA_je_suis_la_deluge progress > 0 } } complete_national_focus = FRA_je_suis_la_deluge }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_naval_rearmament } focus_progress = { focus = FRA_naval_rearmament progress > 0 } } complete_national_focus = FRA_naval_rearmament }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_colonial_naval_bases } focus_progress = { focus = FRA_colonial_naval_bases progress > 0 } } complete_national_focus = FRA_colonial_naval_bases }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_develop_colonial_dockyards } focus_progress = { focus = FRA_develop_colonial_dockyards progress > 0 } } complete_national_focus = FRA_develop_colonial_dockyards }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_the_old_school } focus_progress = { focus = FRA_the_old_school progress > 0 } } complete_national_focus = FRA_the_old_school }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_capital_ship_focus } focus_progress = { focus = FRA_capital_ship_focus progress > 0 } } complete_national_focus = FRA_capital_ship_focus }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_carrier_focus } focus_progress = { focus = FRA_carrier_focus progress > 0 } } complete_national_focus = FRA_carrier_focus }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_carrier_planes } focus_progress = { focus = FRA_carrier_planes progress > 0 } } complete_national_focus = FRA_carrier_planes }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_rush_the_richelieus } focus_progress = { focus = FRA_rush_the_richelieus progress > 0 } } complete_national_focus = FRA_rush_the_richelieus }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_prioritize_the_joffre } focus_progress = { focus = FRA_prioritize_the_joffre progress > 0 } } complete_national_focus = FRA_prioritize_the_joffre }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_the_young_school } focus_progress = { focus = FRA_the_young_school progress > 0 } } complete_national_focus = FRA_the_young_school }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_undersea_combat } focus_progress = { focus = FRA_undersea_combat progress > 0 } } complete_national_focus = FRA_undersea_combat }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_surface_combat } focus_progress = { focus = FRA_surface_combat progress > 0 } } complete_national_focus = FRA_surface_combat }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_improved_screen_ships } focus_progress = { focus = FRA_improved_screen_ships progress > 0 } } complete_national_focus = FRA_improved_screen_ships }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_naval_doctrine } focus_progress = { focus = FRA_naval_doctrine progress > 0 } } complete_national_focus = FRA_naval_doctrine }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_air_focus } focus_progress = { focus = FRA_air_focus progress > 0 } } complete_national_focus = FRA_air_focus }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_fighter_focus } focus_progress = { focus = FRA_fighter_focus progress > 0 } } complete_national_focus = FRA_fighter_focus }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_heavy_fighter_focus } focus_progress = { focus = FRA_heavy_fighter_focus progress > 0 } } complete_national_focus = FRA_heavy_fighter_focus }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_bomber_focus } focus_progress = { focus = FRA_bomber_focus progress > 0 } } complete_national_focus = FRA_bomber_focus }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_air_doctrine } focus_progress = { focus = FRA_air_doctrine progress > 0 } } complete_national_focus = FRA_air_doctrine }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_heavy_bomber_focus } focus_progress = { focus = FRA_heavy_bomber_focus progress > 0 } } complete_national_focus = FRA_heavy_bomber_focus }
-		else_if = { limit = { NOT = { has_completed_focus = FRA_naval_bomber_focus } focus_progress = { focus = FRA_naval_bomber_focus progress > 0 } } complete_national_focus = FRA_naval_bomber_focus }
 	}
 	else_if = {
 		limit = { has_focus_tree = generic_focus }
@@ -4115,13 +3917,9 @@ admin_focus_tick = {
 		else_if = { limit = { NOT = { has_completed_focus = GER_unrestricted_convoy_raiding } focus_progress = { focus = GER_unrestricted_convoy_raiding progress > 0 } } complete_national_focus = GER_unrestricted_convoy_raiding }
 		else_if = { limit = { NOT = { has_completed_focus = GER_seeherrschaft } focus_progress = { focus = GER_seeherrschaft progress > 0 } } complete_national_focus = GER_seeherrschaft }
 		else_if = { limit = { NOT = { has_completed_focus = GER_remilitarize_the_rhineland } focus_progress = { focus = GER_remilitarize_the_rhineland progress > 0 } } complete_national_focus = GER_remilitarize_the_rhineland }
-		else_if = { limit = { NOT = { has_completed_focus = GER_legion_condor } focus_progress = { focus = GER_legion_condor progress > 0 } } complete_national_focus = GER_legion_condor }
 		else_if = { limit = { NOT = { has_completed_focus = GER_heed_von_neuraths_concerns } focus_progress = { focus = GER_heed_von_neuraths_concerns progress > 0 } } complete_national_focus = GER_heed_von_neuraths_concerns }
 		else_if = { limit = { NOT = { has_completed_focus = GER_war_preparations } focus_progress = { focus = GER_war_preparations progress > 0 } } complete_national_focus = GER_war_preparations }
 		else_if = { limit = { NOT = { has_completed_focus = GER_prepare_for_the_next_blockade_ww } focus_progress = { focus = GER_prepare_for_the_next_blockade_ww progress > 0 } } complete_national_focus = GER_prepare_for_the_next_blockade_ww }
-		else_if = { limit = { NOT = { has_completed_focus = GER_reorganize_secret_services } focus_progress = { focus = GER_reorganize_secret_services progress > 0 } } complete_national_focus = GER_reorganize_secret_services }
-		else_if = { limit = { NOT = { has_completed_focus = GER_subversive_infiltrators } focus_progress = { focus = GER_subversive_infiltrators progress > 0 } } complete_national_focus = GER_subversive_infiltrators }
-		else_if = { limit = { NOT = { has_completed_focus = GER_befriend_czechoslovakia } focus_progress = { focus = GER_befriend_czechoslovakia progress > 0 } } complete_national_focus = GER_befriend_czechoslovakia }
 		else_if = { limit = { NOT = { has_completed_focus = GER_integrate_czechoslovakia } focus_progress = { focus = GER_integrate_czechoslovakia progress > 0 } } complete_national_focus = GER_integrate_czechoslovakia }
 		else_if = { limit = { NOT = { has_completed_focus = GER_anschluss } focus_progress = { focus = GER_anschluss progress > 0 } } complete_national_focus = GER_anschluss }
 		else_if = { limit = { NOT = { has_completed_focus = GER_bribe_senior_officers } focus_progress = { focus = GER_bribe_senior_officers progress > 0 } } complete_national_focus = GER_bribe_senior_officers }
@@ -4135,28 +3933,18 @@ admin_focus_tick = {
 		else_if = { limit = { NOT = { has_completed_focus = GER_demand_sudetenland } focus_progress = { focus = GER_demand_sudetenland progress > 0 } } complete_national_focus = GER_demand_sudetenland }
 		else_if = { limit = { NOT = { has_completed_focus = GER_first_vienna_award } focus_progress = { focus = GER_first_vienna_award progress > 0 } } complete_national_focus = GER_first_vienna_award }
 		else_if = { limit = { NOT = { has_completed_focus = GER_fate_of_czechoslovakia } focus_progress = { focus = GER_fate_of_czechoslovakia progress > 0 } } complete_national_focus = GER_fate_of_czechoslovakia }
-		else_if = { limit = { NOT = { has_completed_focus = GER_integrate_czech_manufacturers } focus_progress = { focus = GER_integrate_czech_manufacturers progress > 0 } } complete_national_focus = GER_integrate_czech_manufacturers }
 		else_if = { limit = { NOT = { has_completed_focus = GER_demonstration_of_military_achievements } focus_progress = { focus = GER_demonstration_of_military_achievements progress > 0 } } complete_national_focus = GER_demonstration_of_military_achievements }
 		else_if = { limit = { NOT = { has_completed_focus = GER_an_invincible_army } focus_progress = { focus = GER_an_invincible_army progress > 0 } } complete_national_focus = GER_an_invincible_army }
 		else_if = { limit = { NOT = { has_completed_focus = GER_the_supreme_leader } focus_progress = { focus = GER_the_supreme_leader progress > 0 } } complete_national_focus = GER_the_supreme_leader }
-		else_if = { limit = { NOT = { has_completed_focus = GER_the_triumphant_will } focus_progress = { focus = GER_the_triumphant_will progress > 0 } } complete_national_focus = GER_the_triumphant_will }
 		else_if = { limit = { NOT = { has_completed_focus = GER_support_a_coup_in_liechtenstein } focus_progress = { focus = GER_support_a_coup_in_liechtenstein progress > 0 } } complete_national_focus = GER_support_a_coup_in_liechtenstein }
 		else_if = { limit = { NOT = { has_completed_focus = GER_reassert_eastern_claims } focus_progress = { focus = GER_reassert_eastern_claims progress > 0 } } complete_national_focus = GER_reassert_eastern_claims }
 		else_if = { limit = { NOT = { has_completed_focus = GER_expand_claims_in_baltic } focus_progress = { focus = GER_expand_claims_in_baltic progress > 0 } } complete_national_focus = GER_expand_claims_in_baltic }
 		else_if = { limit = { NOT = { has_completed_focus = GER_influence_the_baltics } focus_progress = { focus = GER_influence_the_baltics progress > 0 } } complete_national_focus = GER_influence_the_baltics }
-		else_if = { limit = { NOT = { has_completed_focus = GER_form_rome_berlin_axis } focus_progress = { focus = GER_form_rome_berlin_axis progress > 0 } } complete_national_focus = GER_form_rome_berlin_axis }
-		else_if = { limit = { NOT = { has_completed_focus = GER_invade_italy } focus_progress = { focus = GER_invade_italy progress > 0 } } complete_national_focus = GER_invade_italy }
-		else_if = { limit = { NOT = { has_completed_focus = GER_alliance_with_spain } focus_progress = { focus = GER_alliance_with_spain progress > 0 } } complete_national_focus = GER_alliance_with_spain }
-		else_if = { limit = { NOT = { has_completed_focus = GER_operation_felix } focus_progress = { focus = GER_operation_felix progress > 0 } } complete_national_focus = GER_operation_felix }
-		else_if = { limit = { NOT = { has_completed_focus = GER_alliance_with_portugal } focus_progress = { focus = GER_alliance_with_portugal progress > 0 } } complete_national_focus = GER_alliance_with_portugal }
-		else_if = { limit = { NOT = { has_completed_focus = GER_operation_isabella } focus_progress = { focus = GER_operation_isabella progress > 0 } } complete_national_focus = GER_operation_isabella }
-		else_if = { limit = { NOT = { has_completed_focus = GER_danzig_for_slovakia } focus_progress = { focus = GER_danzig_for_slovakia progress > 0 } } complete_national_focus = GER_danzig_for_slovakia }
 		else_if = { limit = { NOT = { has_completed_focus = GER_danzig_or_war } focus_progress = { focus = GER_danzig_or_war progress > 0 } } complete_national_focus = GER_danzig_or_war }
 		else_if = { limit = { NOT = { has_completed_focus = GER_befriend_poland } focus_progress = { focus = GER_befriend_poland progress > 0 } } complete_national_focus = GER_befriend_poland }
 		else_if = { limit = { NOT = { has_completed_focus = GER_subjugate_romanian_economy } focus_progress = { focus = GER_subjugate_romanian_economy progress > 0 } } complete_national_focus = GER_subjugate_romanian_economy }
 		else_if = { limit = { NOT = { has_completed_focus = GER_influence_the_benelux } focus_progress = { focus = GER_influence_the_benelux progress > 0 } } complete_national_focus = GER_influence_the_benelux }
 		else_if = { limit = { NOT = { has_completed_focus = GER_around_maginot } focus_progress = { focus = GER_around_maginot progress > 0 } } complete_national_focus = GER_around_maginot }
-		else_if = { limit = { NOT = { has_completed_focus = GER_operation_weserubung } focus_progress = { focus = GER_operation_weserubung progress > 0 } } complete_national_focus = GER_operation_weserubung }
 		else_if = { limit = { NOT = { has_completed_focus = GER_utilize_the_nordliche_gesellschaft } focus_progress = { focus = GER_utilize_the_nordliche_gesellschaft progress > 0 } } complete_national_focus = GER_utilize_the_nordliche_gesellschaft }
 		else_if = { limit = { NOT = { has_completed_focus = GER_war_with_france } focus_progress = { focus = GER_war_with_france progress > 0 } } complete_national_focus = GER_war_with_france }
 		else_if = { limit = { NOT = { has_completed_focus = GER_demands_to_sweden } focus_progress = { focus = GER_demands_to_sweden progress > 0 } } complete_national_focus = GER_demands_to_sweden }
@@ -4179,13 +3967,10 @@ admin_focus_tick = {
 		else_if = { limit = { NOT = { has_completed_focus = GER_reorganize_the_wehrmacht } focus_progress = { focus = GER_reorganize_the_wehrmacht progress > 0 } } complete_national_focus = GER_reorganize_the_wehrmacht }
 		else_if = { limit = { NOT = { has_completed_focus = GER_anti_comintern_pact } focus_progress = { focus = GER_anti_comintern_pact progress > 0 } } complete_national_focus = GER_anti_comintern_pact }
 		else_if = { limit = { NOT = { has_completed_focus = GER_anti_soviet_pact } focus_progress = { focus = GER_anti_soviet_pact progress > 0 } } complete_national_focus = GER_anti_soviet_pact }
-		else_if = { limit = { NOT = { has_completed_focus = GER_support_finland } focus_progress = { focus = GER_support_finland progress > 0 } } complete_national_focus = GER_support_finland }
 		else_if = { limit = { NOT = { has_completed_focus = GER_war_with_the_ussr } focus_progress = { focus = GER_war_with_the_ussr progress > 0 } } complete_national_focus = GER_war_with_the_ussr }
 		else_if = { limit = { NOT = { has_completed_focus = GER_molotov_ribbentrop_pact } focus_progress = { focus = GER_molotov_ribbentrop_pact progress > 0 } } complete_national_focus = GER_molotov_ribbentrop_pact }
 		else_if = { limit = { NOT = { has_completed_focus = GER_treaty_with_the_ussr } focus_progress = { focus = GER_treaty_with_the_ussr progress > 0 } } complete_national_focus = GER_treaty_with_the_ussr }
 		else_if = { limit = { NOT = { has_completed_focus = GER_alliance_with_the_ussr } focus_progress = { focus = GER_alliance_with_the_ussr progress > 0 } } complete_national_focus = GER_alliance_with_the_ussr }
-		else_if = { limit = { NOT = { has_completed_focus = GER_puppet_turkey } focus_progress = { focus = GER_puppet_turkey progress > 0 } } complete_national_focus = GER_puppet_turkey }
-		else_if = { limit = { NOT = { has_completed_focus = GER_befriend_turkey } focus_progress = { focus = GER_befriend_turkey progress > 0 } } complete_national_focus = GER_befriend_turkey }
 		else_if = { limit = { NOT = { has_completed_focus = GER_influence_the_middle_east } focus_progress = { focus = GER_influence_the_middle_east progress > 0 } } complete_national_focus = GER_influence_the_middle_east }
 		else_if = { limit = { NOT = { has_completed_focus = GER_the_final_blow_to_communism } focus_progress = { focus = GER_the_final_blow_to_communism progress > 0 } } complete_national_focus = GER_the_final_blow_to_communism }
 		else_if = { limit = { NOT = { has_completed_focus = GER_befriend_china } focus_progress = { focus = GER_befriend_china progress > 0 } } complete_national_focus = GER_befriend_china }
@@ -4233,11 +4018,7 @@ admin_focus_tick = {
 		else_if = { limit = { NOT = { has_completed_focus = GER_a_strong_successor } focus_progress = { focus = GER_a_strong_successor progress > 0 } } complete_national_focus = GER_a_strong_successor }
 		else_if = { limit = { NOT = { has_completed_focus = GER_loyalty_to_the_fuhrer } focus_progress = { focus = GER_loyalty_to_the_fuhrer progress > 0 } } complete_national_focus = GER_loyalty_to_the_fuhrer }
 		else_if = { limit = { NOT = { has_completed_focus = GER_oppose_hitler_ww } focus_progress = { focus = GER_oppose_hitler_ww progress > 0 } } complete_national_focus = GER_oppose_hitler_ww }
-		else_if = { limit = { NOT = { has_completed_focus = GER_rally_the_nation } focus_progress = { focus = GER_rally_the_nation progress > 0 } } complete_national_focus = GER_rally_the_nation }
-		else_if = { limit = { NOT = { has_completed_focus = GER_denazification_campaigns } focus_progress = { focus = GER_denazification_campaigns progress > 0 } } complete_national_focus = GER_denazification_campaigns }
 		else_if = { limit = { NOT = { has_completed_focus = GER_rebuild_the_nation_ww } focus_progress = { focus = GER_rebuild_the_nation_ww progress > 0 } } complete_national_focus = GER_rebuild_the_nation_ww }
-		else_if = { limit = { NOT = { has_completed_focus = GER_revitalize_the_nation } focus_progress = { focus = GER_revitalize_the_nation progress > 0 } } complete_national_focus = GER_revitalize_the_nation }
-		else_if = { limit = { NOT = { has_completed_focus = GER_tend_to_the_future_of_germany } focus_progress = { focus = GER_tend_to_the_future_of_germany progress > 0 } } complete_national_focus = GER_tend_to_the_future_of_germany }
 		else_if = { limit = { NOT = { has_completed_focus = GER_start_the_proletarian_revolution } focus_progress = { focus = GER_start_the_proletarian_revolution progress > 0 } } complete_national_focus = GER_start_the_proletarian_revolution }
 		else_if = { limit = { NOT = { has_completed_focus = GER_formalize_the_intelligence_wing } focus_progress = { focus = GER_formalize_the_intelligence_wing progress > 0 } } complete_national_focus = GER_formalize_the_intelligence_wing }
 		else_if = { limit = { NOT = { has_completed_focus = GER_form_the_stasi } focus_progress = { focus = GER_form_the_stasi progress > 0 } } complete_national_focus = GER_form_the_stasi }
@@ -7125,21 +6906,6 @@ admin_focus_tick = {
 		else_if = { limit = { NOT = { has_completed_focus = HOL_the_east_indies_war_machine } focus_progress = { focus = HOL_the_east_indies_war_machine progress > 0 } } complete_national_focus = HOL_the_east_indies_war_machine }
 		else_if = { limit = { NOT = { has_completed_focus = HOL_prepare_for_our_return } focus_progress = { focus = HOL_prepare_for_our_return progress > 0 } } complete_national_focus = HOL_prepare_for_our_return }
 		else_if = { limit = { NOT = { has_completed_focus = HOL_liberation } focus_progress = { focus = HOL_liberation progress > 0 } } complete_national_focus = HOL_liberation }
-		else_if = { limit = { NOT = { has_completed_focus = HOL_obtain_foreign_colonial_investments_taog } focus_progress = { focus = HOL_obtain_foreign_colonial_investments_taog progress > 0 } } complete_national_focus = HOL_obtain_foreign_colonial_investments_taog }
-		else_if = { limit = { NOT = { has_completed_focus = HOL_taog_guarantee_colonial_loyalty } focus_progress = { focus = HOL_taog_guarantee_colonial_loyalty progress > 0 } } complete_national_focus = HOL_taog_guarantee_colonial_loyalty }
-		else_if = { limit = { NOT = { has_completed_focus = HOL_curtail_colonial_autonomy_taog } focus_progress = { focus = HOL_curtail_colonial_autonomy_taog progress > 0 } } complete_national_focus = HOL_curtail_colonial_autonomy_taog }
-		else_if = { limit = { NOT = { has_completed_focus = HOL_the_western_possessions_taog } focus_progress = { focus = HOL_the_western_possessions_taog progress > 0 } } complete_national_focus = HOL_the_western_possessions_taog }
-		else_if = { limit = { NOT = { has_completed_focus = HOL_expand_curacao_oil_refineries_taog } focus_progress = { focus = HOL_expand_curacao_oil_refineries_taog progress > 0 } } complete_national_focus = HOL_expand_curacao_oil_refineries_taog }
-		else_if = { limit = { NOT = { has_completed_focus = HOL_open_second_paranam_bauxite_mine_taog } focus_progress = { focus = HOL_open_second_paranam_bauxite_mine_taog progress > 0 } } complete_national_focus = HOL_open_second_paranam_bauxite_mine_taog }
-		else_if = { limit = { NOT = { has_completed_focus = HOL_antilles_defenses_taog } focus_progress = { focus = HOL_antilles_defenses_taog progress > 0 } } complete_national_focus = HOL_antilles_defenses_taog }
-		else_if = { limit = { NOT = { has_completed_focus = HOL_pre_empt_venezuelan_aggression_taog } focus_progress = { focus = HOL_pre_empt_venezuelan_aggression_taog progress > 0 } } complete_national_focus = HOL_pre_empt_venezuelan_aggression_taog }
-		else_if = { limit = { NOT = { has_completed_focus = HOL_continue_the_war_in_batavia_taog } focus_progress = { focus = HOL_continue_the_war_in_batavia_taog progress > 0 } } complete_national_focus = HOL_continue_the_war_in_batavia_taog }
-		else_if = { limit = { NOT = { has_completed_focus = HOL_a_western_capital_taog } focus_progress = { focus = HOL_a_western_capital_taog progress > 0 } } complete_national_focus = HOL_a_western_capital_taog }
-		else_if = { limit = { NOT = { has_completed_focus = HOL_expand_the_colonial_army_taog } focus_progress = { focus = HOL_expand_the_colonial_army_taog progress > 0 } } complete_national_focus = HOL_expand_the_colonial_army_taog }
-		else_if = { limit = { NOT = { has_completed_focus = HOL_colonial_shipbuilding_taog } focus_progress = { focus = HOL_colonial_shipbuilding_taog progress > 0 } } complete_national_focus = HOL_colonial_shipbuilding_taog }
-		else_if = { limit = { NOT = { has_completed_focus = HOL_the_east_indies_war_machine_taog } focus_progress = { focus = HOL_the_east_indies_war_machine_taog progress > 0 } } complete_national_focus = HOL_the_east_indies_war_machine_taog }
-		else_if = { limit = { NOT = { has_completed_focus = HOL_prepare_for_our_return_taog } focus_progress = { focus = HOL_prepare_for_our_return_taog progress > 0 } } complete_national_focus = HOL_prepare_for_our_return_taog }
-		else_if = { limit = { NOT = { has_completed_focus = HOL_liberation_taog } focus_progress = { focus = HOL_liberation_taog progress > 0 } } complete_national_focus = HOL_liberation_taog }
 		else_if = { limit = { NOT = { has_completed_focus = HOL_abandon_the_gold_standard } focus_progress = { focus = HOL_abandon_the_gold_standard progress > 0 } } complete_national_focus = HOL_abandon_the_gold_standard }
 		else_if = { limit = { NOT = { has_completed_focus = HOL_continue_the_public_works } focus_progress = { focus = HOL_continue_the_public_works progress > 0 } } complete_national_focus = HOL_continue_the_public_works }
 		else_if = { limit = { NOT = { has_completed_focus = HOL_finish_the_noordoostpolder } focus_progress = { focus = HOL_finish_the_noordoostpolder progress > 0 } } complete_national_focus = HOL_finish_the_noordoostpolder }
@@ -7218,7 +6984,6 @@ admin_focus_tick = {
 		else_if = { limit = { NOT = { has_completed_focus = HOL_affirm_loyalty_to_moscow } focus_progress = { focus = HOL_affirm_loyalty_to_moscow progress > 0 } } complete_national_focus = HOL_affirm_loyalty_to_moscow }
 		else_if = { limit = { NOT = { has_completed_focus = HOL_soviet_technical_teams } focus_progress = { focus = HOL_soviet_technical_teams progress > 0 } } complete_national_focus = HOL_soviet_technical_teams }
 		else_if = { limit = { NOT = { has_completed_focus = HOL_making_the_ends_of_europe_meet } focus_progress = { focus = HOL_making_the_ends_of_europe_meet progress > 0 } } complete_national_focus = HOL_making_the_ends_of_europe_meet }
-		else_if = { limit = { NOT = { has_completed_focus = HOL_join_the_french } focus_progress = { focus = HOL_join_the_french progress > 0 } } complete_national_focus = HOL_join_the_french }
 		else_if = { limit = { NOT = { has_completed_focus = HOL_french_military_mission } focus_progress = { focus = HOL_french_military_mission progress > 0 } } complete_national_focus = HOL_french_military_mission }
 		else_if = { limit = { NOT = { has_completed_focus = HOL_socialist_industrial_support } focus_progress = { focus = HOL_socialist_industrial_support progress > 0 } } complete_national_focus = HOL_socialist_industrial_support }
 		else_if = { limit = { NOT = { has_completed_focus = HOL_for_the_common_good } focus_progress = { focus = HOL_for_the_common_good progress > 0 } } complete_national_focus = HOL_for_the_common_good }
@@ -7264,7 +7029,6 @@ admin_focus_tick = {
 		else_if = { limit = { NOT = { has_completed_focus = NZL_transfer_the_new_zealand_division } focus_progress = { focus = NZL_transfer_the_new_zealand_division progress > 0 } } complete_national_focus = NZL_transfer_the_new_zealand_division }
 		else_if = { limit = { NOT = { has_completed_focus = NZL_form_the_rnzn } focus_progress = { focus = NZL_form_the_rnzn progress > 0 } } complete_national_focus = NZL_form_the_rnzn }
 		else_if = { limit = { NOT = { has_completed_focus = NZL_expand_devonport_naval_base } focus_progress = { focus = NZL_expand_devonport_naval_base progress > 0 } } complete_national_focus = NZL_expand_devonport_naval_base }
-		else_if = { limit = { NOT = { has_completed_focus = NZL_purchase_old_ships } focus_progress = { focus = NZL_purchase_old_ships progress > 0 } } complete_national_focus = NZL_purchase_old_ships }
 		else_if = { limit = { NOT = { has_completed_focus = NZL_coastal_defense } focus_progress = { focus = NZL_coastal_defense progress > 0 } } complete_national_focus = NZL_coastal_defense }
 		else_if = { limit = { NOT = { has_completed_focus = NZL_destroyer_effort } focus_progress = { focus = NZL_destroyer_effort progress > 0 } } complete_national_focus = NZL_destroyer_effort }
 		else_if = { limit = { NOT = { has_completed_focus = NZL_submarine_effort } focus_progress = { focus = NZL_submarine_effort progress > 0 } } complete_national_focus = NZL_submarine_effort }
@@ -7277,29 +7041,15 @@ admin_focus_tick = {
 		else_if = { limit = { NOT = { has_completed_focus = NZL_defend_our_islands } focus_progress = { focus = NZL_defend_our_islands progress > 0 } } complete_national_focus = NZL_defend_our_islands }
 		else_if = { limit = { NOT = { has_completed_focus = NZL_modern_fighters } focus_progress = { focus = NZL_modern_fighters progress > 0 } } complete_national_focus = NZL_modern_fighters }
 		else_if = { limit = { NOT = { has_completed_focus = NZL_heavy_bombers } focus_progress = { focus = NZL_heavy_bombers progress > 0 } } complete_national_focus = NZL_heavy_bombers }
-		else_if = { limit = { NOT = { has_completed_focus = NZL_the_plan } focus_progress = { focus = NZL_the_plan progress > 0 } } complete_national_focus = NZL_the_plan }
-		else_if = { limit = { NOT = { has_completed_focus = NZL_ministry_of_public_works } focus_progress = { focus = NZL_ministry_of_public_works progress > 0 } } complete_national_focus = NZL_ministry_of_public_works }
-		else_if = { limit = { NOT = { has_completed_focus = NZL_abolish_the_railways_board } focus_progress = { focus = NZL_abolish_the_railways_board progress > 0 } } complete_national_focus = NZL_abolish_the_railways_board }
-		else_if = { limit = { NOT = { has_completed_focus = NZL_rail_standardization } focus_progress = { focus = NZL_rail_standardization progress > 0 } } complete_national_focus = NZL_rail_standardization }
-		else_if = { limit = { NOT = { has_completed_focus = NZL_full_employment } focus_progress = { focus = NZL_full_employment progress > 0 } } complete_national_focus = NZL_full_employment }
-		else_if = { limit = { NOT = { has_completed_focus = NZL_direct_the_coal_industry } focus_progress = { focus = NZL_direct_the_coal_industry progress > 0 } } complete_national_focus = NZL_direct_the_coal_industry }
-		else_if = { limit = { NOT = { has_completed_focus = NZL_establish_the_ncb } focus_progress = { focus = NZL_establish_the_ncb progress > 0 } } complete_national_focus = NZL_establish_the_ncb }
-		else_if = { limit = { NOT = { has_completed_focus = NZL_electrification } focus_progress = { focus = NZL_electrification progress > 0 } } complete_national_focus = NZL_electrification }
 		else_if = { limit = { NOT = { has_completed_focus = NZL_bureau_of_industry } focus_progress = { focus = NZL_bureau_of_industry progress > 0 } } complete_national_focus = NZL_bureau_of_industry }
 		else_if = { limit = { NOT = { has_completed_focus = NZL_wairarapa_sheep_farms } focus_progress = { focus = NZL_wairarapa_sheep_farms progress > 0 } } complete_national_focus = NZL_wairarapa_sheep_farms }
-		else_if = { limit = { NOT = { has_completed_focus = NZL_support_allies_with_meat } focus_progress = { focus = NZL_support_allies_with_meat progress > 0 } } complete_national_focus = NZL_support_allies_with_meat }
 		else_if = { limit = { NOT = { has_completed_focus = NZL_national_roads_board } focus_progress = { focus = NZL_national_roads_board progress > 0 } } complete_national_focus = NZL_national_roads_board }
 		else_if = { limit = { NOT = { has_completed_focus = NZL_taranaki_oil } focus_progress = { focus = NZL_taranaki_oil progress > 0 } } complete_national_focus = NZL_taranaki_oil }
-		else_if = { limit = { NOT = { has_completed_focus = NZL_women_in_the_workforce } focus_progress = { focus = NZL_women_in_the_workforce progress > 0 } } complete_national_focus = NZL_women_in_the_workforce }
-		else_if = { limit = { NOT = { has_completed_focus = NZL_restart_the_onekaka_ironworks } focus_progress = { focus = NZL_restart_the_onekaka_ironworks progress > 0 } } complete_national_focus = NZL_restart_the_onekaka_ironworks }
 		else_if = { limit = { NOT = { has_completed_focus = NZL_new_zealand_steel } focus_progress = { focus = NZL_new_zealand_steel progress > 0 } } complete_national_focus = NZL_new_zealand_steel }
-		else_if = { limit = { NOT = { has_completed_focus = NZL_national_broadcasting_service } focus_progress = { focus = NZL_national_broadcasting_service progress > 0 } } complete_national_focus = NZL_national_broadcasting_service }
-		else_if = { limit = { NOT = { has_completed_focus = NZL_scrap_metal_recycling } focus_progress = { focus = NZL_scrap_metal_recycling progress > 0 } } complete_national_focus = NZL_scrap_metal_recycling }
 		else_if = { limit = { NOT = { has_completed_focus = NZL_department_of_scientific_and_industrial_research } focus_progress = { focus = NZL_department_of_scientific_and_industrial_research progress > 0 } } complete_national_focus = NZL_department_of_scientific_and_industrial_research }
 		else_if = { limit = { NOT = { has_completed_focus = NZL_project_seal } focus_progress = { focus = NZL_project_seal progress > 0 } } complete_national_focus = NZL_project_seal }
 		else_if = { limit = { NOT = { has_completed_focus = NZL_think_big } focus_progress = { focus = NZL_think_big progress > 0 } } complete_national_focus = NZL_think_big }
 		else_if = { limit = { NOT = { has_completed_focus = NZL_expand_the_university_of_auckland } focus_progress = { focus = NZL_expand_the_university_of_auckland progress > 0 } } complete_national_focus = NZL_expand_the_university_of_auckland }
-		else_if = { limit = { NOT = { has_completed_focus = NZL_domestic_car_industry } focus_progress = { focus = NZL_domestic_car_industry progress > 0 } } complete_national_focus = NZL_domestic_car_industry }
 		else_if = { limit = { NOT = { has_completed_focus = NZL_national_defense_institute } focus_progress = { focus = NZL_national_defense_institute progress > 0 } } complete_national_focus = NZL_national_defense_institute }
 		else_if = { limit = { NOT = { has_completed_focus = NZL_army_reforms } focus_progress = { focus = NZL_army_reforms progress > 0 } } complete_national_focus = NZL_army_reforms }
 		else_if = { limit = { NOT = { has_completed_focus = NZL_charlton_automatic_rifle } focus_progress = { focus = NZL_charlton_automatic_rifle progress > 0 } } complete_national_focus = NZL_charlton_automatic_rifle }
@@ -8350,10 +8100,6 @@ admin_focus_tick = {
 		else_if = { limit = { NOT = { has_completed_focus = POR_colonial_army } focus_progress = { focus = POR_colonial_army progress > 0 } } complete_national_focus = POR_colonial_army }
 		else_if = { limit = { NOT = { has_completed_focus = POR_luso_tropicalism } focus_progress = { focus = POR_luso_tropicalism progress > 0 } } complete_national_focus = POR_luso_tropicalism }
 		else_if = { limit = { NOT = { has_completed_focus = POR_limited_self_rule } focus_progress = { focus = POR_limited_self_rule progress > 0 } } complete_national_focus = POR_limited_self_rule }
-		else_if = { limit = { NOT = { has_completed_focus = POR_haven_of_neutrality_macau } focus_progress = { focus = POR_haven_of_neutrality_macau progress > 0 } } complete_national_focus = POR_haven_of_neutrality_macau }
-		else_if = { limit = { NOT = { has_completed_focus = POR_restart_investment_into_timor } focus_progress = { focus = POR_restart_investment_into_timor progress > 0 } } complete_national_focus = POR_restart_investment_into_timor }
-		else_if = { limit = { NOT = { has_completed_focus = POR_revert_the_local_autonomy_policies } focus_progress = { focus = POR_revert_the_local_autonomy_policies progress > 0 } } complete_national_focus = POR_revert_the_local_autonomy_policies }
-		else_if = { limit = { NOT = { has_completed_focus = POR_invest_in_sandalwood_and_coffee_production } focus_progress = { focus = POR_invest_in_sandalwood_and_coffee_production progress > 0 } } complete_national_focus = POR_invest_in_sandalwood_and_coffee_production }
 		else_if = { limit = { NOT = { has_completed_focus = POR_infrastructure_in_angola } focus_progress = { focus = POR_infrastructure_in_angola progress > 0 } } complete_national_focus = POR_infrastructure_in_angola }
 		else_if = { limit = { NOT = { has_completed_focus = POR_develop_north_angola } focus_progress = { focus = POR_develop_north_angola progress > 0 } } complete_national_focus = POR_develop_north_angola }
 		else_if = { limit = { NOT = { has_completed_focus = POR_develop_south_angola } focus_progress = { focus = POR_develop_south_angola progress > 0 } } complete_national_focus = POR_develop_south_angola }
@@ -8722,32 +8468,7 @@ admin_focus_tick = {
 		else_if = { limit = { NOT = { has_completed_focus = SIA_artillery_reigns_supreme } focus_progress = { focus = SIA_artillery_reigns_supreme progress > 0 } } complete_national_focus = SIA_artillery_reigns_supreme }
 		else_if = { limit = { NOT = { has_completed_focus = SIA_prepare_northern_infrastructure_for_war } focus_progress = { focus = SIA_prepare_northern_infrastructure_for_war progress > 0 } } complete_national_focus = SIA_prepare_northern_infrastructure_for_war }
 		else_if = { limit = { NOT = { has_completed_focus = SIA_yield_the_air_war } focus_progress = { focus = SIA_yield_the_air_war progress > 0 } } complete_national_focus = SIA_yield_the_air_war }
-		else_if = { limit = { NOT = { has_completed_focus = SIA_camouflage } focus_progress = { focus = SIA_camouflage progress > 0 } } complete_national_focus = SIA_camouflage }
 		else_if = { limit = { NOT = { has_completed_focus = SIA_directorate_of_aeronautical_engineering } focus_progress = { focus = SIA_directorate_of_aeronautical_engineering progress > 0 } } complete_national_focus = SIA_directorate_of_aeronautical_engineering }
-		else_if = { limit = { NOT = { has_completed_focus = SIA_thai_french_liaison } focus_progress = { focus = SIA_thai_french_liaison progress > 0 } } complete_national_focus = SIA_thai_french_liaison }
-		else_if = { limit = { NOT = { has_completed_focus = SIA_expand_don_mueang } focus_progress = { focus = SIA_expand_don_mueang progress > 0 } } complete_national_focus = SIA_expand_don_mueang }
-		else_if = { limit = { NOT = { has_completed_focus = SIA_air_defense_of_the_kra } focus_progress = { focus = SIA_air_defense_of_the_kra progress > 0 } } complete_national_focus = SIA_air_defense_of_the_kra }
-		else_if = { limit = { NOT = { has_completed_focus = SIA_the_interceptor_force } focus_progress = { focus = SIA_the_interceptor_force progress > 0 } } complete_national_focus = SIA_the_interceptor_force }
-		else_if = { limit = { NOT = { has_completed_focus = SIA_hardened_air_defenses } focus_progress = { focus = SIA_hardened_air_defenses progress > 0 } } complete_national_focus = SIA_hardened_air_defenses }
-		else_if = { limit = { NOT = { has_completed_focus = SIA_forward_strike_wings } focus_progress = { focus = SIA_forward_strike_wings progress > 0 } } complete_national_focus = SIA_forward_strike_wings }
-		else_if = { limit = { NOT = { has_completed_focus = SIA_conserve_air_crews } focus_progress = { focus = SIA_conserve_air_crews progress > 0 } } complete_national_focus = SIA_conserve_air_crews }
-		else_if = { limit = { NOT = { has_completed_focus = SIA_increase_air_crews } focus_progress = { focus = SIA_increase_air_crews progress > 0 } } complete_national_focus = SIA_increase_air_crews }
-		else_if = { limit = { NOT = { has_completed_focus = SIA_tropical_operations } focus_progress = { focus = SIA_tropical_operations progress > 0 } } complete_national_focus = SIA_tropical_operations }
-		else_if = { limit = { NOT = { has_completed_focus = SIA_veteran_jungle_aviators } focus_progress = { focus = SIA_veteran_jungle_aviators progress > 0 } } complete_national_focus = SIA_veteran_jungle_aviators }
-		else_if = { limit = { NOT = { has_completed_focus = SIA_long_range_strike_wings } focus_progress = { focus = SIA_long_range_strike_wings progress > 0 } } complete_national_focus = SIA_long_range_strike_wings }
-		else_if = { limit = { NOT = { has_completed_focus = SIA_lightweight_airframes } focus_progress = { focus = SIA_lightweight_airframes progress > 0 } } complete_national_focus = SIA_lightweight_airframes }
-		else_if = { limit = { NOT = { has_completed_focus = SIA_tactical_bombing_school } focus_progress = { focus = SIA_tactical_bombing_school progress > 0 } } complete_national_focus = SIA_tactical_bombing_school }
-		else_if = { limit = { NOT = { has_completed_focus = SIA_reinforced_platings } focus_progress = { focus = SIA_reinforced_platings progress > 0 } } complete_national_focus = SIA_reinforced_platings }
-		else_if = { limit = { NOT = { has_completed_focus = SIA_destroy_the_indochinese_ports } focus_progress = { focus = SIA_destroy_the_indochinese_ports progress > 0 } } complete_national_focus = SIA_destroy_the_indochinese_ports }
-		else_if = { limit = { NOT = { has_completed_focus = SIA_reverse_engineer_french_airplanes } focus_progress = { focus = SIA_reverse_engineer_french_airplanes progress > 0 } } complete_national_focus = SIA_reverse_engineer_french_airplanes }
-		else_if = { limit = { NOT = { has_completed_focus = SIA_specialized_airframe_construction } focus_progress = { focus = SIA_specialized_airframe_construction progress > 0 } } complete_national_focus = SIA_specialized_airframe_construction }
-		else_if = { limit = { NOT = { has_completed_focus = SIA_license_equipment } focus_progress = { focus = SIA_license_equipment progress > 0 } } complete_national_focus = SIA_license_equipment }
-		else_if = { limit = { NOT = { has_completed_focus = SIA_accept_a_japanese_technical_mission } focus_progress = { focus = SIA_accept_a_japanese_technical_mission progress > 0 } } complete_national_focus = SIA_accept_a_japanese_technical_mission }
-		else_if = { limit = { NOT = { has_completed_focus = SIA_fighter_type_12_conversion } focus_progress = { focus = SIA_fighter_type_12_conversion progress > 0 } } complete_national_focus = SIA_fighter_type_12_conversion }
-		else_if = { limit = { NOT = { has_completed_focus = SIA_preserve_american_procurement_channels } focus_progress = { focus = SIA_preserve_american_procurement_channels progress > 0 } } complete_national_focus = SIA_preserve_american_procurement_channels }
-		else_if = { limit = { NOT = { has_completed_focus = SIA_hawk_iii_production_line } focus_progress = { focus = SIA_hawk_iii_production_line progress > 0 } } complete_national_focus = SIA_hawk_iii_production_line }
-		else_if = { limit = { NOT = { has_completed_focus = SIA_mixed_inventory_standardization } focus_progress = { focus = SIA_mixed_inventory_standardization progress > 0 } } complete_national_focus = SIA_mixed_inventory_standardization }
-		else_if = { limit = { NOT = { has_completed_focus = SIA_womens_auxiliary_air_force } focus_progress = { focus = SIA_womens_auxiliary_air_force progress > 0 } } complete_national_focus = SIA_womens_auxiliary_air_force }
 		else_if = { limit = { NOT = { has_completed_focus = SIA_the_thunder_at_the_gates } focus_progress = { focus = SIA_the_thunder_at_the_gates progress > 0 } } complete_national_focus = SIA_the_thunder_at_the_gates }
 		else_if = { limit = { NOT = { has_completed_focus = SIA_night_time_training } focus_progress = { focus = SIA_night_time_training progress > 0 } } complete_national_focus = SIA_night_time_training }
 		else_if = { limit = { NOT = { has_completed_focus = SIA_steel_arteries } focus_progress = { focus = SIA_steel_arteries progress > 0 } } complete_national_focus = SIA_steel_arteries }
@@ -8761,7 +8482,6 @@ admin_focus_tick = {
 		else_if = { limit = { NOT = { has_completed_focus = SIA_seri_thai } focus_progress = { focus = SIA_seri_thai progress > 0 } } complete_national_focus = SIA_seri_thai }
 		else_if = { limit = { NOT = { has_completed_focus = SIA_contact_the_south_east_asia_command } focus_progress = { focus = SIA_contact_the_south_east_asia_command progress > 0 } } complete_national_focus = SIA_contact_the_south_east_asia_command }
 		else_if = { limit = { NOT = { has_completed_focus = SIA_broadcast_weather_reports_to_the_allies } focus_progress = { focus = SIA_broadcast_weather_reports_to_the_allies progress > 0 } } complete_national_focus = SIA_broadcast_weather_reports_to_the_allies }
-		else_if = { limit = { NOT = { has_completed_focus = SIA_free_thai_air_liaison } focus_progress = { focus = SIA_free_thai_air_liaison progress > 0 } } complete_national_focus = SIA_free_thai_air_liaison }
 		else_if = { limit = { NOT = { has_completed_focus = SIA_american_investment_aid } focus_progress = { focus = SIA_american_investment_aid progress > 0 } } complete_national_focus = SIA_american_investment_aid }
 		else_if = { limit = { NOT = { has_completed_focus = SIA_thai_students_in_the_oss } focus_progress = { focus = SIA_thai_students_in_the_oss progress > 0 } } complete_national_focus = SIA_thai_students_in_the_oss }
 		else_if = { limit = { NOT = { has_completed_focus = SIA_prepare_to_drop } focus_progress = { focus = SIA_prepare_to_drop progress > 0 } } complete_national_focus = SIA_prepare_to_drop }

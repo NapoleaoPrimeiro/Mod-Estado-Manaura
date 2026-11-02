@@ -1,5 +1,5 @@
 # France Rework: Kopie der Vanilla-Datei; einzige Aenderung: die Truce-Fokusse (Flag FRW_social_truce_done)
-# verhindert (wie FRA_form_the_popular_front in Vanilla) den kommunistischen Buergerkrieg bei niedriger Stabilitaet.
+# verhindert (wie FRW_front_populaire in Vanilla) den kommunistischen Buergerkrieg bei niedriger Stabilitaet.
 FRA_civil_unrest_category = {
 
 	FRA_communist_civil_war_decision = {
@@ -11,7 +11,7 @@ FRA_civil_unrest_category = {
 				has_stability > 0.25	
 				communism < 0.01
 				has_government = communism
-				has_completed_focus = FRA_form_the_popular_front
+				has_completed_focus = FRW_front_populaire
 				has_country_flag = FRW_social_truce_done # France Rework
 				custom_trigger_tooltip = {
 					tooltip = french_communist_civil_war_intervention_tt 
@@ -48,7 +48,7 @@ FRA_civil_unrest_category = {
 					}
 				}
 			}
-			not = { has_completed_focus = FRA_form_the_popular_front }
+			not = { has_completed_focus = FRW_front_populaire }
 			not = { has_country_flag = FRW_social_truce_done } # France Rework
 			not = { has_global_flag = flag_french_communist_civil_war }
 		}
@@ -112,7 +112,7 @@ FRA_civil_unrest_category = {
 					}
 				}
 			}
-			has_completed_focus = FRA_form_the_popular_front
+			has_completed_focus = FRW_front_populaire
 			NOT = { has_completed_focus = FRA_destroy_the_counter_revolution }
 			not = { has_global_flag = flag_french_fascist_civil_war }
 		}
@@ -1338,7 +1338,7 @@ economy_decisions = {
 	FRA_reorganize_aviation_industry_north = {
 		available = {  }
 
-		visible = { has_completed_focus = FRA_reorganize_the_aviation_industry }
+		visible = { has_completed_focus = FRW_aviation_industry }
 
 		remove_effect = { 
 			set_country_flag = FRA_SNCAN_formed
@@ -1399,7 +1399,7 @@ economy_decisions = {
 	FRA_reorganize_aviation_industry_west = {
 		available = {  }
 
-		visible = { has_completed_focus = FRA_reorganize_the_aviation_industry }
+		visible = { has_completed_focus = FRW_aviation_industry }
 
 		remove_effect = { 
 			set_country_flag = FRA_SNCAO_formed
@@ -1452,7 +1452,7 @@ economy_decisions = {
 	FRA_reorganize_aviation_industry_center = {
 		available = {  }
 
-		visible = { has_completed_focus = FRA_reorganize_the_aviation_industry }
+		visible = { has_completed_focus = FRW_aviation_industry }
 
 		remove_effect = { 
 			set_country_flag = FRA_SNCAC_formed
@@ -1501,7 +1501,7 @@ economy_decisions = {
 	FRA_reorganize_aviation_industry_south_east = {
 		available = {  }
 
-		visible = { has_completed_focus = FRA_reorganize_the_aviation_industry }
+		visible = { has_completed_focus = FRW_aviation_industry }
 
 		remove_effect = { 
 			set_country_flag = FRA_SNCASE_formed
@@ -1556,7 +1556,7 @@ economy_decisions = {
 	FRA_reorganize_aviation_industry_south_west = {
 		available = {  }
 
-		visible = { has_completed_focus = FRA_reorganize_the_aviation_industry }
+		visible = { has_completed_focus = FRW_aviation_industry }
 
 		remove_effect = { 
 			set_country_flag = FRA_SNCASO_formed
@@ -1843,30 +1843,6 @@ FRA_intervention_in_overseas_territories = {
 			factor = 3
 		}
 	}
-	FRA_prepare_coup_in_north_africa = {
-		available = { 
-			NOT = {
-				FRA_controls_north_africa = yes
-			}
-			has_intelligence_agency = yes
-		} 
-
-		visible = { 
-			has_completed_focus = FRA_intervention_in_north_africa 
-		}
-
-		complete_effect = { 
-			set_country_flag = FRA_coup_in_north_africa_flag
-			custom_effect_tooltip = FRA_prepare_coup_tt
-			
-			
-		}
-		fire_only_once = yes
-		cost = 25
-		ai_will_do = {
-			factor = 0 #at least until we know the AI can handle it
-		}
-	}
 	FRA_promise_independence_to_syria = {
 		available = { 
 			NOT = {
@@ -1915,32 +1891,6 @@ FRA_intervention_in_overseas_territories = {
 			factor = 3
 		}
 		
-	}
-	FRA_prepare_coup_in_syria = {
-		available = { 
-			NOT = {
-				FRA_controls_syria = yes
-			}
-			has_intelligence_agency = yes
-		} 
-
-		visible = { 
-			has_completed_focus = FRA_intervention_in_syria 
-			NOT = {
-				FRA_controls_syria = yes
-			}
-		}
-
-		complete_effect = { 
-			custom_effect_tooltip = FRA_prepare_coup_tt
-			set_country_flag = FRA_coup_in_syria_flag
-		}
-		
-		fire_only_once = yes
-		cost = 25
-		ai_will_do = {
-			factor = 0
-		}
 	}
 	FRA_invasion_in_syria = {
 		available = { 
@@ -2143,28 +2093,6 @@ FRA_intervention_in_overseas_territories = {
 		cost = 25
 		ai_will_do = {
 			factor = 3
-		}
-	}
-	FRA_prepare_coup_in_indochina = {
-		available = { 
-			NOT = {
-				FRA_controls_indochina = yes
-			}
-			has_intelligence_agency = yes
-		} 
-
-		visible = { 
-			has_completed_focus = FRA_intervention_in_indochina 
-		}
-
-		complete_effect = { 
-			custom_effect_tooltip = FRA_prepare_coup_tt
-			set_country_flag = FRA_coup_in_indochina_flag
-		}
-		fire_only_once = yes
-		cost = 25
-		ai_will_do = {
-			factor = 0
 		}
 	}
 	FRA_invasion_in_indochina = {
@@ -2380,29 +2308,6 @@ FRA_intervention_in_overseas_territories = {
 			factor = 4
 		}
 		
-	}
-	FRA_prepare_coup_in_central_africa = {
-		available = { 
-			NOT = {
-				FRA_controls_central_africa = yes
-			}
-			has_intelligence_agency = yes
-		} 
-
-		visible = { 
-			has_completed_focus = FRA_intervention_in_central_africa 
-		}
-
-		complete_effect = {
-			custom_effect_tooltip = FRA_prepare_coup_tt
-			set_country_flag = FRA_coup_in_central_africa_flag
-		}
-
-		fire_only_once = yes
-		cost = 25
-		ai_will_do = {
-			factor = 0
-		}
 	}
 	FRA_invasion_in_central_africa = {
 		available = { 
@@ -2622,29 +2527,6 @@ FRA_intervention_in_overseas_territories = {
 			factor = 4
 		}
 	}
-	FRA_prepare_coup_in_west_africa = {
-		available = { 
-			NOT = {
-				FRA_controls_west_africa = yes
-			}
-			has_intelligence_agency = yes
-		} 
-
-		visible = { 
-			has_completed_focus = FRA_intervention_in_west_africa 
-		}
-
-		complete_effect = { 
-			custom_effect_tooltip = FRA_prepare_coup_tt
-			set_country_flag = FRA_coup_in_west_africa_flag
-						
-		}
-		fire_only_once = yes
-		cost = 25
-		ai_will_do = {
-			factor = 0
-		}
-	}
 	FRA_invasion_in_west_africa = {
 		available = { 
 			NOT = {
@@ -2851,36 +2733,6 @@ FRA_intervention_in_overseas_territories = {
 		cost = 25
 		ai_will_do = {
 			factor = 5
-		}
-	}
-	FRA_prepare_coup_in_madagascar = {
-		available = { 
-			NOT = {
-				543 = {
-					OR = {
-						is_controlled_by = ROOT
-						CONTROLLER = {
-							is_subject_of = ROOT
-						}
-					}
-				}
-			}
-			has_intelligence_agency = yes
-		} 
-
-		visible = { 
-			has_completed_focus = FRA_intervention_in_madagascar
-		}
-
-		complete_effect = { 
-			custom_effect_tooltip = FRA_prepare_coup_tt
-			set_country_flag = FRA_coup_in_madagascar_flag
-			
-		}
-		fire_only_once = yes
-		cost = 25
-		ai_will_do = {
-			factor = 0
 		}
 	}
 }

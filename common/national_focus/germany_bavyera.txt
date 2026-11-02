@@ -880,7 +880,6 @@ focus = {
 		SOV = {remove_ideas = {trotskyite_plot_nsb} }
 		set_cosmetic_tag = GER_trots 
 		retire_ideology_leader = communism
-		name = "GER_trotsky"
 		create_country_leader = {
 			name = "Leon Trotsky"
 			picture = GFX_portrait_SOV_lev_trotsky
@@ -4920,7 +4919,6 @@ add_ideas = GER_red_advisors_idea
 				set_cosmetic_tag = SPC_global_defense_council
 			}
 			custom_effect_tooltip = SPR_global_defense_council_tt_2
-		}
 			GER = {
 				capital_scope = {
 					create_unit = {
@@ -4949,6 +4947,7 @@ add_ideas = GER_red_advisors_idea
 					}
 				}
 			}
+		}
 				
 			 
 		}
@@ -7159,7 +7158,7 @@ add_ideas = GER_red_advisors_idea
 					}
 					if = {
 						limit = {
-							has_tech = basic_medium_battery
+							has_tech = basic_heavy_battery
 						}
 						create_equipment_variant = {
 							name = "Hipper Class"

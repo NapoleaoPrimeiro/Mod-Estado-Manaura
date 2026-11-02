@@ -265,42 +265,8 @@ on_actions = {
 				}
 
 
-				if = {
-					limit = {
-						has_game_rule = {
-							rule = rule_special_forces
-							option = RULE_SPECIAL_FORCES_1
-						}
-					}
-					add_ideas = RULE_SPECIAL_FORCES_1_IDEA
-				}
-				if = {
-					limit = {
-						has_game_rule = {
-							rule = rule_special_forces
-							option = RULE_SPECIAL_FORCES_2
-						}
-					}
-					add_ideas = RULE_SPECIAL_FORCES_2_IDEA
-				}
-				if = {
-					limit = {
-						has_game_rule = {
-							rule = rule_special_forces
-							option = RULE_SPECIAL_FORCES_3
-						}
-					}
-					add_ideas = RULE_SPECIAL_FORCES_3_IDEA
-				}
-				if = {
-					limit = {
-						has_game_rule = {
-							rule = rule_special_forces
-							option = RULE_SPECIAL_FORCES_4
-						}
-					}
-					add_ideas = RULE_SPECIAL_FORCES_4_IDEA
-				}
+				# Special Forces limit is always on (no rule needed)
+				add_ideas = RULE_SPECIAL_FORCES_4_IDEA
 
 
 				if = {

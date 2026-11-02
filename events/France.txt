@@ -2057,7 +2057,7 @@ country_event = {
 	trigger = {
 		NOT = { has_government = communism }
 		NOT = { has_idea = FRA_matignon_agreements }
-		has_completed_focus = FRA_form_the_popular_front
+		has_completed_focus = FRW_front_populaire
 		NOT = { has_country_flag = FRA_popular_front_cooldown }
 		tag = FRA
 		date > 1936.4.1
@@ -2331,7 +2331,7 @@ country_event = {
 			}
 		}
 		if = {
-			limit = { NOT = { has_completed_focus = FRA_strengthen_the_little_entente } }
+			limit = { NOT = { has_completed_focus = FRW_little_entente_guarantees } }
 			add_stability = 0.05
 		}
 	}

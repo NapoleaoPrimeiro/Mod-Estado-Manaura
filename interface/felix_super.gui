@@ -1,0 +1,500 @@
+@sp_first_frame_x = 41
+@sp_second_frame_x = 140
+@sp_third_frame_x = 239
+@sp_fourth_frame_x = 338
+@sp_first_frame_y = 64
+
+@3sp_second_frame_x = 173
+@3sp_third_frame_x = 305
+
+
+@sp2_first_frame_x = 16
+@sp2_first_frame_y = 50
+guiTypes = {
+
+	containerWindowType = {
+		name = "ase_window"	
+		position = { x = 0 y = 0 }	
+		size = { width = 472 height = 423 }
+		orientation = center
+		origo = center
+		moveable = yes
+		click_to_front = no
+		clipping = no
+
+		background = {
+			name = "Background"	
+			spriteType = "GFX_ase_window"
+			
+		}
+		###############
+		###INTERFACE###
+		###############
+		iconType = {
+			name = "ASE_Image_Asia_War"
+			spriteType = "GFX_ase_Asia_War"
+			position = {x = @sp_first_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Barbarossa"
+			spriteType = "GFX_ase_Barbarossa"
+			position = {x = @sp_first_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Blitzkrieg"
+			spriteType = "GFX_ase_Blitzkrieg"
+			position = {x = @sp_first_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Great_Italy"
+			spriteType = "GFX_ase_Great_Italy"
+			position = {x = @sp_first_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Anschluss"
+			spriteType = "GFX_ase_Austria"
+			position = {x = @sp_first_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Stalingrad"
+			spriteType = "GFX_ase_Stalingrad"
+			position = {x = @sp_first_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Czech"
+			spriteType = "GFX_ase_Czech"
+			position = {x = @sp_first_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Berlin1"
+			spriteType = "GFX_ase_Berlin1"
+			position = {x = @sp_first_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Berlin2"
+			spriteType = "GFX_ase_Berlin2"
+			position = {x = @sp_second_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Berlin3"
+			spriteType = "GFX_ase_Berlin3"
+			position = {x = @sp_third_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Berlin4"
+			spriteType = "GFX_ase_Berlin4"
+			position = {x = @sp_fourth_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Dday1"
+			spriteType = "GFX_ase_Dday1"
+			position = {x = @sp_first_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Dday2"
+			spriteType = "GFX_ase_Dday2"
+			position = {x = @sp_third_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Cairo1"
+			spriteType = "GFX_ase_Cairo1"
+			position = {x = @sp_first_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Cairo2"
+			spriteType = "GFX_ase_Cairo2"
+			position = {x = @sp_second_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Cairo3"
+			spriteType = "GFX_ase_Cairo3"
+			position = {x = @sp_third_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Cairo4"
+			spriteType = "GFX_ase_Cairo4"
+			position = {x = @sp_fourth_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Fall_Fra1"
+			spriteType = "GFX_ase_Fall_Fra1"
+			position = {x = @sp_first_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Fall_Fra2"
+			spriteType = "GFX_ase_Fall_Fra2"
+			position = {x = @sp_second_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Fall_Fra3"
+			spriteType = "GFX_ase_Fall_Fra3"
+			position = {x = @sp_third_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Fall_Fra4"
+			spriteType = "GFX_ase_Fall_Fra4"
+			position = {x = @sp_fourth_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Moskov1"
+			spriteType = "GFX_ase_Moskov1"
+			position = {x = @sp_first_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Moskov2"
+			spriteType = "GFX_ase_Moskov2"
+			position = {x = @3sp_second_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Moskov3"
+			spriteType = "GFX_ase_Moskov3"
+			position = {x = @3sp_third_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Italy_War1"
+			spriteType = "GFX_ase_Italy_War1"
+			position = {x = @sp_first_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Italy_War2"
+			spriteType = "GFX_ase_Italy_War2"
+			position = {x = @sp_second_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Italy_War3"
+			spriteType = "GFX_ase_Italy_War3"
+			position = {x = @sp_third_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Italy_War4"
+			spriteType = "GFX_ase_Italy_War4"
+			position = {x = @sp_fourth_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Kursk1"
+			spriteType = "GFX_ase_Kursk1"
+			position = {x = @sp_first_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Kursk2"
+			spriteType = "GFX_ase_Kursk2"
+			position = {x = @sp_second_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Kursk3"
+			spriteType = "GFX_ase_Kursk3"
+			position = {x = @sp_third_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Kursk4"
+			spriteType = "GFX_ase_Kursk4"
+			position = {x = @sp_fourth_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_WW21"
+			spriteType = "GFX_ase_WW21"
+			position = {x = @sp_first_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_WW22"
+			spriteType = "GFX_ase_WW22"
+			position = {x = @sp_second_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_WW23"
+			spriteType = "GFX_ase_WW23"
+			position = {x = @sp_third_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_WW24"
+			spriteType = "GFX_ase_WW24"
+			position = {x = @sp_fourth_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_2SinoWar1"
+			spriteType = "GFX_ase_2SinoWar1"
+			position = {x = @sp_first_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_2SinoWar2"
+			spriteType = "GFX_ase_2SinoWar2"
+			position = {x = @3sp_second_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_2SinoWar3"
+			spriteType = "GFX_ase_2SinoWar3"
+			position = {x = @3sp_third_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_WinterWar1"
+			spriteType = "GFX_ase_WinterWar1"
+			position = {x = @sp_first_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_WinterWar2"
+			spriteType = "GFX_ase_WinterWar2"
+			position = {x = @3sp_second_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_WinterWar3"
+			spriteType = "GFX_ase_WinterWar3"
+			position = {x = @3sp_third_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Citadel1"
+			spriteType = "GFX_ase_Citadel1"
+			position = {x = @sp_first_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Citadel2"
+			spriteType = "GFX_ase_Citadel2"
+			position = {x = @3sp_second_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Citadel3"
+			spriteType = "GFX_ase_Citadel3"
+			position = {x = @3sp_third_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Kiev1"
+			spriteType = "GFX_ase_Kiev1"
+			position = {x = @sp_first_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Kiev2"
+			spriteType = "GFX_ase_Kiev2"
+			position = {x = @3sp_second_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Kiev3"
+			spriteType = "GFX_ase_Kiev3"
+			position = {x = @3sp_third_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Normandy1"
+			spriteType = "GFX_ase_Normandy1"
+			position = {x = @sp_first_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Normandy2"
+			spriteType = "GFX_ase_Normandy2"
+			position = {x = @sp_second_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Normandy3"
+			spriteType = "GFX_ase_Normandy3"
+			position = {x = @sp_third_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Normandy4"
+			spriteType = "GFX_ase_Normandy4"
+			position = {x = @sp_fourth_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Spain_Civil_War1"
+			spriteType = "GFX_ase_Spain_Civil_War1"
+			position = {x = @sp_first_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Spain_Civil_War2"
+			spriteType = "GFX_ase_Spain_Civil_War2"
+			position = {x = @sp_second_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Spain_Civil_War3"
+			spriteType = "GFX_ase_Spain_Civil_War3"
+			position = {x = @sp_third_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Spain_Civil_War4"
+			spriteType = "GFX_ase_Spain_Civil_War4"
+			position = {x = @sp_fourth_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Spain_Franco_Win1"
+			spriteType = "GFX_ase_Spain_Franco_Win1"
+			position = {x = @sp_first_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Spain_Franco_Win2"
+			spriteType = "GFX_ase_Spain_Franco_Win2"
+			position = {x = @sp_second_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Spain_Franco_Win3"
+			spriteType = "GFX_ase_Spain_Franco_Win3"
+			position = {x = @sp_third_frame_x y = @sp_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Spain_Franco_Win4"
+			spriteType = "GFX_ase_Spain_Franco_Win4"
+			position = {x = @sp_fourth_frame_x y = @sp_first_frame_y}
+		}
+		
+		instantTextBoxType = {
+			name = "ase_quote_animated"
+			position = { x = 17 y = 235 }
+			font = "hoi_18mbs"
+			borderSize = {x = 0 y = 0}
+			text = "[get_ase_quote]"
+			maxWidth = 440
+			maxHeight = 140
+			fixedsize = yes	
+			format = center
+		}
+		instantTextboxType = {
+			name = "ase_title"
+			position = { x = 0 y = 17 }
+			font = "hoi_24header"
+			format = center
+			borderSize = {x = 0 y = 0}
+			text = "[get_ase_title]"
+			maxWidth = 465
+			maxHeight = 50
+			fixedsize = yes
+		}
+		buttonType = {
+			name = "ase_close_button"
+			spriteType = "GFX_ase_close_button"
+			position = { x = 122 y = 387 }
+			clicksound = click_close
+			buttonText = "[get_ase_remark]"
+			buttonFont = "hoi_20b"
+		}
+	}
+	
+	containerWindowType = {
+		name = "ase2_window"	
+		position = { x = 0 y = 0 }	
+		size = { width = 472 height = 536 }
+		orientation = center
+		origo = center
+		moveable = yes
+		click_to_front = no
+		clipping = no
+
+		background = {
+			name = "Background"	
+			spriteType = "GFX_ase2_window"
+			
+		}
+		###############
+		###INTERFACE###
+		###############
+		iconType = {
+			name = "ASE_Image_Nuclear1"
+			spriteType = "GFX_ase_Nuclear1"
+			position = {x = @sp2_first_frame_x y = @sp2_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Nuclear2"
+			spriteType = "GFX_ase_Nuclear2"
+			position = {x = 163 y = @sp2_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Nuclear3"
+			spriteType = "GFX_ase_Nuclear3"
+			position = {x = 310 y = @sp2_first_frame_y}
+		}
+		
+		iconType = {
+			name = "ASE_Image_Great_Reich1"
+			spriteType = "GFX_ase_Great_Reich1"
+			position = {x = @sp2_first_frame_x y = @sp2_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Great_Reich2"
+			spriteType = "GFX_ase_Great_Reich2"
+			position = {x = 126  y = @sp2_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Great_Reich3"
+			spriteType = "GFX_ase_Great_Reich3"
+			position = {x = 236 y = @sp2_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Great_Reich4"
+			spriteType = "GFX_ase_Great_Reich4"
+			position = {x = 346 y = @sp2_first_frame_y}
+		}
+		
+		iconType = {
+			name = "ASE_Image_New_Order1"
+			spriteType = "GFX_ase_New_Order1"
+			position = {x = @sp2_first_frame_x y = @sp2_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_New_Order2"
+			spriteType = "GFX_ase_New_Order2"
+			position = {x = 163 y = @sp2_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_New_Order3"
+			spriteType = "GFX_ase_New_Order3"
+			position = {x = 310 y = @sp2_first_frame_y}
+		}
+		
+		iconType = {
+			name = "ASE_Image_Eva_Braun1"
+			spriteType = "GFX_ase_Eva_Braun1"
+			position = {x = @sp2_first_frame_x y = @sp2_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Eva_Braun2"
+			spriteType = "GFX_ase_Eva_Braun2"
+			position = {x = 126  y = @sp2_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Eva_Braun3"
+			spriteType = "GFX_ase_Eva_Braun3"
+			position = {x = 236 y = @sp2_first_frame_y}
+		}
+		iconType = {
+			name = "ASE_Image_Eva_Braun4"
+			spriteType = "GFX_ase_Eva_Braun4"
+			position = {x = 346 y = @sp2_first_frame_y}
+		}
+		
+		instantTextBoxType = {
+			name = "ase_quote_animated"
+			position = { x = 125 y = 318 }
+			font = "hoi_18mbs"
+			borderSize = {x = 0 y = 0}
+			text = "[get_ase2_quote]"
+			maxWidth = 325
+			maxHeight = 170
+			fixedsize = yes	
+			format = right
+		}
+		instantTextBoxType = {
+			name = "ase_quote_animated_lower"
+			position = { x = 125 y = 390 }
+			font = "hoi_18mbs"
+			borderSize = {x = 0 y = 0}
+			text = "[get_ase2_quote_lower]"
+			maxWidth = 325
+			maxHeight = 188
+			fixedsize = yes	
+			format = right
+		}
+		instantTextboxType = {
+			name = "ase_title"
+			position = { x = 0 y = 17 }
+			font = "hoi_24header"
+			format = center
+			borderSize = {x = 0 y = 0}
+			text = "[get_ase2_title]"
+			maxWidth = 465
+			maxHeight = 50
+			fixedsize = yes
+		}
+		buttonType = {
+			name = "ase2_close_button"
+			spriteType = "GFX_ase_close_button"
+			position = { x = 122 y = 499 }
+			clicksound = click_close
+			buttonText = "[get_ase2_remark]"
+			buttonFont = "hoi_20b"
+		}
+	}
+}

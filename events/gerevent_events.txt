@@ -7497,10 +7497,6 @@ country_event = {
 		add_political_power = 300
 		add_war_support = 0.2
 		add_research_slot = 1
-		swap_ideas = {
-				remove_idea = idea_GER_the_best_german_herbs
-				add_idea = idea_GER_the_most_excellent_german_herbs
-			}
 		
 	}
 	option = {
@@ -7511,17 +7507,13 @@ country_event = {
 		add_tech_bonus = {
 			bonus = 0.75
 			uses = 2
-			category = field_hospital
+			category = hospital_tech
 		}
 		add_tech_bonus = {
 			bonus = 0.75
 			uses = 2
-			category = logistics_company
+			category = logistics_tech
 		}
-		swap_ideas = {
-				remove_idea = idea_GER_the_best_german_herbs
-				add_idea = idea_GER_the_most_excellent_german_herbs
-			}
 		
 	}
 }

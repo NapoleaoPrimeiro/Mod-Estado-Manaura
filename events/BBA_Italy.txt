@@ -11891,25 +11891,14 @@ country_event = {
 				remove_claim_by = ITA
 			}
 		}
-		IF = {
+		# KSRE split the old state 45 into 45, 1477 and 1705: hand each one to Hungary
+		# when Italy or an Italian subject controls it (same rule as the base game for 45).
+		every_state = {
 			limit = {
-				OR = {
-					45 = {
-						is_controlled_by = ITA
-					}
-					1477 = { # KSRE (de 45)
-						is_controlled_by = ITA
-					}
-					1705 = { # KSRE (de 45)
-						is_controlled_by = ITA
-					}
-					any_country = {
-						is_subject_of = ITA
-						controls_state = 45 controls_state = 1477 controls_state = 1705
-					}
-				}
-				HUN = { transfer_state = PREV }
+				OR = { state = 45 state = 1477 state = 1705 }
+				controller = { OR = { tag = ITA is_subject_of = ITA } }
 			}
+			HUN = { transfer_state = PREV }
 		}
 		IF = {
 			limit = {

@@ -316,7 +316,10 @@ KSR_additional_political_decisions_cat = {
 		}
 		
 		complete_effect = {
-			set_capital = { state = 1488 remember_old_capital = no }
+			if = {
+				limit = { owns_state = 1488 }
+				set_capital = { state = 1488 remember_old_capital = no }
+			}
 		}
 	}
 	

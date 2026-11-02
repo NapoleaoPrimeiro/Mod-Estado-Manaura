@@ -756,15 +756,25 @@
 		}
 
 		completion_reward = {
+
+			add_mastery_bonus = {
+				name = flexible_navy
+				bonus = 0.1
+				days = 240
+				grand_doctrine = new_convoy_raiding
+			}
+			add_mastery_bonus = {
+				name = flexible_navy
+				bonus = 0.1
+				days = 240
+				grand_doctrine = new_base_strike
+			}
+
 			add_doctrine_cost_reduction = {
-				name = sub_op_bonus
+				name = flexible_navy
 				cost_reduction = 0.5
 				uses = 2
-				technology = convoy_interdiction_ti
-				technology = unrestricted_submarine_warfare
-				technology = wolfpacks
-				technology = advanced_submarine_warfare
-				technology = combined_operations_raiding
+				category = naval_doctrine
 			}
 		}
 	}

@@ -192,38 +192,61 @@ country_event = {
 		name = conquest_integration.6.a
 		ai_chance = { base = 100 }
 
-		# license production penalty comes from the pre-game rule (default free)
-		if = {
-			limit = { has_game_rule = { rule = ci_license_cost option = CI_LIC_HALF } }
-			set_variable = { global.ci_lic_cost = 0.5 }
-		}
-		else_if = {
-			limit = { has_game_rule = { rule = ci_license_cost option = CI_LIC_FULL } }
-			set_variable = { global.ci_lic_cost = 1 }
-		}
-		else = {
-			set_variable = { global.ci_lic_cost = 0 }
-		}
-
+		# license production penalty comes from the pre-game rule (default free).
+		# cost_factor only takes literal numbers, so the list is repeated per rule option.
 		# new_prioritised defaults yes -> grabs their latest variant of each type.
 		# Types they never designed silently create no license.
-		# ponytail: verify cost_factor accepts a variable in-game; if not, split the
-		# list by rule option with literal cost_factors.
 		event_target:ci_defeated_licensor = {
-			create_production_license = { target = ROOT cost_factor = global.ci_lic_cost equipment = { type = light_tank_chassis } }
-			create_production_license = { target = ROOT cost_factor = global.ci_lic_cost equipment = { type = medium_tank_chassis } }
-			create_production_license = { target = ROOT cost_factor = global.ci_lic_cost equipment = { type = heavy_tank_chassis } }
-			create_production_license = { target = ROOT cost_factor = global.ci_lic_cost equipment = { type = super_heavy_tank_chassis } }
-			create_production_license = { target = ROOT cost_factor = global.ci_lic_cost equipment = { type = modern_tank_chassis } }
-			create_production_license = { target = ROOT cost_factor = global.ci_lic_cost equipment = { type = small_plane_airframe } }
-			create_production_license = { target = ROOT cost_factor = global.ci_lic_cost equipment = { type = medium_plane_airframe } }
-			create_production_license = { target = ROOT cost_factor = global.ci_lic_cost equipment = { type = large_plane_airframe } }
-			create_production_license = { target = ROOT cost_factor = global.ci_lic_cost equipment = { type = cv_small_plane_airframe } }
-			create_production_license = { target = ROOT cost_factor = global.ci_lic_cost equipment = { type = ship_hull_light } }
-			create_production_license = { target = ROOT cost_factor = global.ci_lic_cost equipment = { type = ship_hull_cruiser } }
-			create_production_license = { target = ROOT cost_factor = global.ci_lic_cost equipment = { type = ship_hull_heavy } }
-			create_production_license = { target = ROOT cost_factor = global.ci_lic_cost equipment = { type = ship_hull_carrier } }
-			create_production_license = { target = ROOT cost_factor = global.ci_lic_cost equipment = { type = ship_hull_submarine } }
+			if = {
+				limit = { has_game_rule = { rule = ci_license_cost option = CI_LIC_HALF } }
+				create_production_license = { target = ROOT cost_factor = 0.5 equipment = { type = light_tank_chassis } }
+				create_production_license = { target = ROOT cost_factor = 0.5 equipment = { type = medium_tank_chassis } }
+				create_production_license = { target = ROOT cost_factor = 0.5 equipment = { type = heavy_tank_chassis } }
+				create_production_license = { target = ROOT cost_factor = 0.5 equipment = { type = super_heavy_tank_chassis } }
+				create_production_license = { target = ROOT cost_factor = 0.5 equipment = { type = modern_tank_chassis } }
+				create_production_license = { target = ROOT cost_factor = 0.5 equipment = { type = small_plane_airframe } }
+				create_production_license = { target = ROOT cost_factor = 0.5 equipment = { type = medium_plane_airframe } }
+				create_production_license = { target = ROOT cost_factor = 0.5 equipment = { type = large_plane_airframe } }
+				create_production_license = { target = ROOT cost_factor = 0.5 equipment = { type = cv_small_plane_airframe } }
+				create_production_license = { target = ROOT cost_factor = 0.5 equipment = { type = ship_hull_light } }
+				create_production_license = { target = ROOT cost_factor = 0.5 equipment = { type = ship_hull_cruiser } }
+				create_production_license = { target = ROOT cost_factor = 0.5 equipment = { type = ship_hull_heavy } }
+				create_production_license = { target = ROOT cost_factor = 0.5 equipment = { type = ship_hull_carrier } }
+				create_production_license = { target = ROOT cost_factor = 0.5 equipment = { type = ship_hull_submarine } }
+			}
+			else_if = {
+				limit = { has_game_rule = { rule = ci_license_cost option = CI_LIC_FULL } }
+				create_production_license = { target = ROOT cost_factor = 1 equipment = { type = light_tank_chassis } }
+				create_production_license = { target = ROOT cost_factor = 1 equipment = { type = medium_tank_chassis } }
+				create_production_license = { target = ROOT cost_factor = 1 equipment = { type = heavy_tank_chassis } }
+				create_production_license = { target = ROOT cost_factor = 1 equipment = { type = super_heavy_tank_chassis } }
+				create_production_license = { target = ROOT cost_factor = 1 equipment = { type = modern_tank_chassis } }
+				create_production_license = { target = ROOT cost_factor = 1 equipment = { type = small_plane_airframe } }
+				create_production_license = { target = ROOT cost_factor = 1 equipment = { type = medium_plane_airframe } }
+				create_production_license = { target = ROOT cost_factor = 1 equipment = { type = large_plane_airframe } }
+				create_production_license = { target = ROOT cost_factor = 1 equipment = { type = cv_small_plane_airframe } }
+				create_production_license = { target = ROOT cost_factor = 1 equipment = { type = ship_hull_light } }
+				create_production_license = { target = ROOT cost_factor = 1 equipment = { type = ship_hull_cruiser } }
+				create_production_license = { target = ROOT cost_factor = 1 equipment = { type = ship_hull_heavy } }
+				create_production_license = { target = ROOT cost_factor = 1 equipment = { type = ship_hull_carrier } }
+				create_production_license = { target = ROOT cost_factor = 1 equipment = { type = ship_hull_submarine } }
+			}
+			else = {
+				create_production_license = { target = ROOT cost_factor = 0 equipment = { type = light_tank_chassis } }
+				create_production_license = { target = ROOT cost_factor = 0 equipment = { type = medium_tank_chassis } }
+				create_production_license = { target = ROOT cost_factor = 0 equipment = { type = heavy_tank_chassis } }
+				create_production_license = { target = ROOT cost_factor = 0 equipment = { type = super_heavy_tank_chassis } }
+				create_production_license = { target = ROOT cost_factor = 0 equipment = { type = modern_tank_chassis } }
+				create_production_license = { target = ROOT cost_factor = 0 equipment = { type = small_plane_airframe } }
+				create_production_license = { target = ROOT cost_factor = 0 equipment = { type = medium_plane_airframe } }
+				create_production_license = { target = ROOT cost_factor = 0 equipment = { type = large_plane_airframe } }
+				create_production_license = { target = ROOT cost_factor = 0 equipment = { type = cv_small_plane_airframe } }
+				create_production_license = { target = ROOT cost_factor = 0 equipment = { type = ship_hull_light } }
+				create_production_license = { target = ROOT cost_factor = 0 equipment = { type = ship_hull_cruiser } }
+				create_production_license = { target = ROOT cost_factor = 0 equipment = { type = ship_hull_heavy } }
+				create_production_license = { target = ROOT cost_factor = 0 equipment = { type = ship_hull_carrier } }
+				create_production_license = { target = ROOT cost_factor = 0 equipment = { type = ship_hull_submarine } }
+			}
 		}
 	}
 

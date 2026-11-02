@@ -1376,10 +1376,7 @@ NOR_historical_deploy_prep_decisions_category = {
 			has_completed_focus = NOR_broken_gun_policies
 			has_country_flag = NOR_going_dem_historical
 			has_defensive_war = yes
-			OR = {
-				NOT = { has_country_flag = NOR_state_prep_deployment_in_progress } 
-				FROM = { has_state_flag = NOR_deploying_prep_in_state } 
-			}
+			NOT = { has_country_flag = NOR_state_prep_deployment_in_progress }
 		}
 
 		target_trigger = {

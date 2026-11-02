@@ -4218,7 +4218,7 @@ country_event = {
 		if = {
 			limit = {
 				is_in_faction_with = CZE
-				has_completed_focus = FRA_strengthen_the_little_entente
+				has_completed_focus = FRW_little_entente_guarantees
 			}
 			add_political_power = -100
 		}
@@ -4369,7 +4369,7 @@ country_event = {
 		}
 		
 		if = {
-			limit = { NOT = { has_completed_focus = FRA_strengthen_the_little_entente } }
+			limit = { NOT = { has_completed_focus = FRW_little_entente_guarantees } }
 			add_stability = 0.05
 		}
 	}
@@ -4425,7 +4425,7 @@ country_event = {
 			limit = {
 				is_in_faction_with = CZE
 				is_faction_leader = yes
-				has_completed_focus = FRA_strengthen_the_little_entente
+				has_completed_focus = FRW_little_entente_guarantees
 				NOT = { is_in_faction_with = ENG }
 			}
 			add_to_faction = ENG #Britain joins the little entente
@@ -13997,7 +13997,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				FRA = { has_completed_focus = FRA_strengthen_the_little_entente }
+				FRA = { has_completed_focus = FRW_little_entente_guarantees }
 			}
 			modifier = {
 				factor = 0

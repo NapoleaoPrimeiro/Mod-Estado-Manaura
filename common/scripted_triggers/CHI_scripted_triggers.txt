@@ -414,3 +414,14 @@ CHI_southern_warlords = {
 		tag = GDC
 	}
 }
+
+# Added from the 1.19.4 base game (missing from this older copy)
+
+### Attacking them calls in the USSR - evaluated in the scope of the country being targeted.
+CHI_is_soviet_protected = {
+	OR = {
+		is_in_faction_with = SOU
+		is_subject_of = SOU
+		is_guaranteed_by = SOU
+	}
+}

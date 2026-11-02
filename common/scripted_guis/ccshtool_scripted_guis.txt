@@ -666,10 +666,10 @@ scripted_gui = {
 				var:global.ccshtool_target_var = { set_country_leader_ideology = socialism }
 				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to socialism"
 			}
-			ccshtool_democratic_subideology6_button_click = {
-				var:global.ccshtool_target_var = { set_country_leader_ideology = centrism_democratic }
-				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to centrism_democratic"
-			}
+			#ccshtool_democratic_subideology6_button_click = {
+				#var:global.ccshtool_target_var = { set_country_leader_ideology = centrism_democratic }
+				#log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to centrism_democratic"
+			#}
 			#ccshtool_democratic_subideology11_button_click = {  }
 			#ccshtool_democratic_subideology12_button_click = {  }
 			#ccshtool_democratic_subideology13_button_click = {  }
@@ -747,14 +747,14 @@ scripted_gui = {
 				var:global.ccshtool_target_var = { set_country_leader_ideology = anarchist_communism }
 				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to anarchist_communism"
 			}
-			ccshtool_communism_subideology6_button_click = {
-				var:global.ccshtool_target_var = { set_country_leader_ideology = islamic_socialism }
-				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to islamic_socialism"
-			}
-			ccshtool_communism_subideology11_button_click = {
-				var:global.ccshtool_target_var = { set_country_leader_ideology = syndicalism }
-				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to syndicalism"
-			}
+			#ccshtool_communism_subideology6_button_click = {
+				#var:global.ccshtool_target_var = { set_country_leader_ideology = islamic_socialism }
+				#log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to islamic_socialism"
+			#}
+			#ccshtool_communism_subideology11_button_click = {
+				#var:global.ccshtool_target_var = { set_country_leader_ideology = syndicalism }
+				#log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to syndicalism"
+			#}
 			#ccshtool_communism_subideology13_button_click = {  }
 			#ccshtool_communism_subideology14_button_click = {  }
 			#ccshtool_communism_subideology15_button_click = {  }
@@ -826,18 +826,18 @@ scripted_gui = {
 				var:global.ccshtool_target_var = { set_country_leader_ideology = falangism }
 				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to falangism"
 			}
-			ccshtool_fascism_subideology6_button_click = {
-				var:global.ccshtool_target_var = { set_country_leader_ideology = clerical_fascism }
-				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to clerical_fascism"
-			}
+			#ccshtool_fascism_subideology6_button_click = {
+				#var:global.ccshtool_target_var = { set_country_leader_ideology = clerical_fascism }
+				#log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to clerical_fascism"
+			#}
 			ccshtool_fascism_subideology7_button_click = {
 				var:global.ccshtool_target_var = { set_country_leader_ideology = rexism }
 				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to rexism"
 			}
-			ccshtool_fascism_subideology9_button_click = {
-				var:global.ccshtool_target_var = { set_country_leader_ideology = islamism }
-				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to islamism"
-			}
+			#ccshtool_fascism_subideology9_button_click = {
+				#var:global.ccshtool_target_var = { set_country_leader_ideology = islamism }
+				#log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to islamism"
+			#}
 			#ccshtool_fascism_subideology10_button_click = {  }
 			#ccshtool_fascism_subideology11_button_click = {  }
 			#ccshtool_fascism_subideology12_button_click = {  }
@@ -916,14 +916,14 @@ scripted_gui = {
 				var:global.ccshtool_target_var = { set_country_leader_ideology = centrism }
 				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to centrism"
 			}
-			ccshtool_neutrality_subideology14_button_click = {
-				var:global.ccshtool_target_var = { set_country_leader_ideology = military_junta }
-				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to military_junta"
-			}
-			ccshtool_neutrality_subideology18_button_click = {
-				var:global.ccshtool_target_var = { set_country_leader_ideology = colonial_government }
-				log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to colonial_government"
-			}
+			#ccshtool_neutrality_subideology14_button_click = {
+				#var:global.ccshtool_target_var = { set_country_leader_ideology = military_junta }
+				#log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to military_junta"
+			#}
+			#ccshtool_neutrality_subideology18_button_click = {
+				#var:global.ccshtool_target_var = { set_country_leader_ideology = colonial_government }
+				#log = "<CCSHTOOL> Host: ([?ROOT.GetTag]) [?ROOT.GetName]; Action: Changed subideology of ([?global.ccshtool_target_var.GetTag]) to colonial_government"
+			#}
 		
 		### Autonomy tools
 			# add/remove autonomy points

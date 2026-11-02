@@ -2394,8 +2394,7 @@ focus_tree = {
 	focus = {
 		id = TUR_georgian_manganese_extraction
 		icon = {
-			value = GFX_focus_generic_steel
-			trigger = {
+			GFX_focus_generic_steel = {
 				SOV = { NOT = { controls_state = 231 controls_state = 1121 controls_state = 1123 controls_state = 1124 controls_state = 1125 controls_state = 1126 } } #APPROPRIATE CONDITIONS FOR GENERIC ICON
 			}
 		}
@@ -7540,8 +7539,7 @@ focus_tree = {
 	focus = {
 		id = TUR_the_mediterranean_entente
 		icon = {
-			value = GFX_focus_ITA_generic_fascist_workers
-			trigger = {
+			GFX_focus_ITA_generic_fascist_workers = {
 				ITA = {
 					NOT = {
 						has_government = fascism
@@ -7875,8 +7873,7 @@ focus_tree = {
 	focus = {
 		id = TUR_join_the_axis
 		icon = {
-			value = GFX_focus_ger_revive_kaiserreich
-			trigger = {
+			GFX_focus_ger_revive_kaiserreich = {
 				GER = {
 					NOT = {
 						has_government = fascism
@@ -9813,8 +9810,7 @@ focus_tree = {
 	focus = {
 		id = TUR_anti_bolshevik_mediterranean_bloc
 		icon = {
-			value = GFX_focus_intervention_spain_republic
-			trigger = {
+			GFX_focus_intervention_spain_republic = {
 				has_global_flag = scw_over
 				any_country = {
 					is_subject = no
@@ -9834,8 +9830,7 @@ focus_tree = {
 			}
 		}
 		icon = {
-			value = GFX_focus_chi_reach_out_to_france
-			trigger = {
+			GFX_focus_chi_reach_out_to_france = {
 				FRA = {
 					has_government = communism
 					NOT = { is_in_faction_with = ENG }
@@ -9845,8 +9840,7 @@ focus_tree = {
 			}
 		}
 		icon = {
-			value = GFX_focus_befriend_italy
-			trigger = {
+			GFX_focus_befriend_italy = {
 				ITA = {
 					has_government = communism
 					NOT = { is_in_faction_with = ENG }
@@ -9856,8 +9850,7 @@ focus_tree = {
 			}
 		}
 		icon = {
-			value = GFX_focus_invite_yugoslavia
-			trigger = {
+			GFX_focus_invite_yugoslavia = {
 				YUG = {
 					has_government = communism
 					NOT = { is_in_faction_with = ENG }
@@ -9867,8 +9860,7 @@ focus_tree = {
 			}
 		}
 		icon = {
-			value = GFX_focus_generic_befriend_greece
-			trigger = {
+			GFX_focus_generic_befriend_greece = {
 				GRE = {
 					has_government = communism
 					NOT = { is_in_faction_with = ENG }
@@ -9878,8 +9870,7 @@ focus_tree = {
 			}
 		}
 		icon = {
-			value = GFX_focus_generic_befriend_bulgaria
-			trigger = {
+			GFX_focus_generic_befriend_bulgaria = {
 				BUL = {
 					has_government = communism
 					NOT = { is_in_faction_with = ENG }

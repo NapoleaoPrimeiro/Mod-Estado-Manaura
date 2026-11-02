@@ -1351,6 +1351,35 @@ SOV_ai_behavior = {
 		desc = "RULE_OPTION_RANDOM_AI_DESC"
 		allow_achievements = yes
 	}
+	option = {
+		name = HISTORICAL
+		text = "RULE_OPTION_HISTORICAL"
+		desc = "RULE_OPTION_HISTORICAL_SOV_AI_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = LEFT_OPPOSITION
+		text = "RULE_OPTION_LEFT_OPPOSITION"
+		desc = "RULE_OPTION_LEFT_OPPOSITION_SOV_AI_DESC"
+	}
+	option = {
+		required_dlc = "No Step Back"
+		name = RIGHT_OPPOSITION
+		text = "RULE_OPTION_RIGHT_OPPOSITION"
+		desc = "RULE_OPTION_RIGHT_OPPOSITION_SOV_AI_DESC"
+	}
+	option = {
+		required_dlc = "No Step Back"
+		name = EXILES_TSARIST
+		text = "RULE_EXILES_TSARIST"
+		desc = "RULE_OPTION_EXILES_TSARIST_SOV_AI_DESC"
+	}
+	option = {
+		required_dlc = "No Step Back"
+		name = EXILES_FASCIST
+		text = "RULE_EXILES_FASCIST"
+		desc = "RULE_OPTION_EXILES_FASCIST_SOV_AI_DESC"
+	}
 }
 SOV_ai_right_coup = {
 	name = "SOV_AI_RIGHT_COUP"
@@ -1448,6 +1477,11 @@ JAP_ai_behavior = {
 		text = "RULE_OPTION_RANDOM"
 		desc = "RULE_OPTION_RANDOM_AI_DESC"
 		allow_achievements = yes
+	}
+	option = {
+		name = NEUTRALITY
+		text = "RULE_OPTION_JAP_NEUTRALITY"
+		desc = "RULE_OPTION_NEUTRALITY_JAP_AI_DESC"
 	}
 }
 
@@ -1834,6 +1868,30 @@ ITA_ai_behavior = {
 		text = "RULE_OPTION_RANDOM"
 		desc = "RULE_OPTION_RANDOM_AI_DESC"
 		allow_achievements = yes
+	}
+	option = {
+		required_dlc = "By Blood Alone"
+		name = ALT_FASCIST_BALBO
+		text = "RULE_OPTION_ALT_FASCIST_BALBO"
+		desc = "RULE_ALT_FASCIST_BALBO_ITA_AI_DESC"
+	}
+	option = {
+		required_dlc = "By Blood Alone"
+		name = ALT_FASCIST_GRANDI
+		text = "RULE_OPTION_ALT_FASCIST_GRANDI"
+		desc = "RULE_ALT_FASCIST_GRANDI_ITA_AI_DESC"
+	}
+	option = {
+		required_dlc = "By Blood Alone"
+		name = ITA_MONARCHIST_ROMAN_EMPIRE
+		text = "RULE_OPTION_ITA_MONARCHIST_ROMAN_EMPIRE"
+		desc = "RULE_OPTION_ITA_MONARCHIST_ROMAN_EMPIRE_AI_DESC"
+	}
+	option = {
+		required_dlc = "By Blood Alone"
+		name = ITA_CHRISTIAN_DEMOCRACY
+		text = "RULE_OPTION_ITA_CHRISTIAN_DEMOCRACY"
+		desc = "RULE_OPTION_ITA_CHRISTIAN_DEMOCRACY_AI_DESC"
 	}
 }
 
@@ -2276,6 +2334,48 @@ AST_ai_behavior = {
 		text = "RULE_OPTION_RANDOM"
 		desc = "RULE_OPTION_RANDOM_AI_DESC"
 		allow_achievements = yes
+	}
+	option = {
+		required_dlc = "Thunder at Our Gates"
+		name = HISTORICAL
+		text = "RULE_OPTION_AST_AI_RANDOM_TAOG_HISTORICAL"
+		desc = "RULE_OPTION_AST_AI_RANDOM_TAOG_HISTORICAL_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		required_dlc = "Thunder at Our Gates"
+		name = ADELA
+		text = "RULE_OPTION_AST_ADELA_FASCIST_TAOG_AI"
+		desc = "RULE_OPTION_AST_ADELA_FASCIST_TAOG_AI_DESC"
+		allow_achievements = no
+	}
+	option = {
+		required_dlc = "Thunder at Our Gates"
+		name = PETER
+		text = "RULE_OPTION_AST_PETER_FASCIST_TAOG_AI"
+		desc = "RULE_OPTION_AST_PETER_FASCIST_TAOG_AI_DESC"
+		allow_achievements = no
+	}
+	option = {
+		required_dlc = "Thunder at Our Gates"
+		name = DEMOCRATIC_TAOG
+		text = "RULE_OPTION_AST_RANDOM_DEMOCRATIC_TAOG_AI"
+		desc = "RULE_OPTION_AST_RANDOM_DEMOCRATIC_TAOG_AI_DESC"
+		allow_achievements = no
+	}
+	option = {
+		required_dlc = "Thunder at Our Gates"
+		name = ANTICOMMONWEALTHCOMMUNIST
+		text = "RULE_OPTION_AST_ANTI_COMMONWEALTH_COMMUNIST_TAOG_AI"
+		desc = "RULE_OPTION_AST_ANTI_COMMONWEALTH_COMMUNIST_TAOG_AI_DESC"
+		allow_achievements = no
+	}
+	option = {
+		required_dlc = "Thunder at Our Gates"
+		name = COMINTERNCOMMUNIST
+		text = "RULE_OPTION_AST_COMINTERN_COMMUNIST_TAOG_AI"
+		desc = "RULE_OPTION_AST_COMINTERN_COMMUNIST_TAOG_AI_DESC"
+		allow_achievements = no
 	}
 }
 
@@ -2927,6 +3027,11 @@ HUN_ai_behavior = {
 		desc = "RULE_OPTION_RANDOM_AI_DESC"
 		allow_achievements = yes
 	}
+	option = {
+		name = FASCIST_ALTERNATE
+		text = "RULE_OPTION_HUN_ROME_PROTOCOLS"
+		desc = "RULE_FASCIST_ALTERNATE_HUN_AI_DESC"
+	}
 }
 
 ROM_ai_behavior = {
@@ -3155,6 +3260,16 @@ YUG_ai_behavior = {
 		text = "RULE_OPTION_RANDOM"
 		desc = "RULE_OPTION_RANDOM_AI_DESC"
 	}
+	option = {
+		name = DEMOCRATIC
+		text = "RULE_OPTION_DEMOCRATIC"
+		desc = "RULE_OPTION_DEMOCRATIC_YUG_AI_DESC"
+	}
+	option = {
+		name = FASCIST
+		text = "RULE_OPTION_FASCIST"
+		desc = "RULE_FASCIST_YUG_AI_DESC"
+	}
 }
 
 CZE_ai_behavior = {
@@ -3214,6 +3329,17 @@ CZE_ai_behavior = {
 		text = "RULE_OPTION_RANDOM"
 		desc = "RULE_OPTION_RANDOM_AI_DESC"
 		allow_achievements = yes
+	}
+	option = {
+		name = FASCIST
+		text = "RULE_OPTION_FASCIST"
+		desc = "RULE_FASCIST_CZE_AI_DESC"
+	}
+	option = {
+		name = MONARCHIST
+		text = "RULE_OPTION_NEUTRALITY_MONARCHIST"
+		desc = "RULE_OPTION_MONARCHIST_CZE_AI_DESC"
+		required_dlc = "Peace For Our Time"
 	}
 }
 
@@ -3275,6 +3401,12 @@ CHI_ai_behavior = {
 		text = "RULE_OPTION_RANDOM"
 		desc = "RULE_OPTION_RANDOM_AI_DESC"
 		allow_achievements = yes
+	}
+	option = {
+		name = ALTERNATE
+		text = "RULE_OPTION_ALTERNATE"
+		desc = "RULE_OPTION_ALTERNATE_CHI_AI_DESC"
+		exclude_dlc = "No Compromise, No Surrender"
 	}
 }
 CHI_ai_behavior_focus = {
@@ -3370,6 +3502,12 @@ PRC_ai_behavior = {
 		text = "RULE_OPTION_RANDOM"
 		desc = "RULE_OPTION_RANDOM_AI_DESC"
 	}
+	option = {
+		name = ALTERNATE
+		text = "RULE_OPTION_ALTERNATE"
+		desc = "RULE_OPTION_ALTERNATE_PRC_AI_DESC"
+		exclude_dlc = "No Compromise, No Surrender"
+	}
 }
 MAN_ai_behavior = {
 	name = "MAN_AI_BEHAVIOR"
@@ -3435,6 +3573,18 @@ MAN_ai_behavior = {
 		text = "RULE_OPTION_RANDOM"
 		desc = "RULE_OPTION_RANDOM_AI_DESC"
 		allow_achievements = yes
+	}
+	option = {
+		required_dlc = "No Compromise, No Surrender"
+		name = OBEDIENCE_CHINA
+		text = "RULE_OPTION_OBEDIENCE_CHINA"
+		desc = "RULE_OPTION_OBEDIENCE_CHINA_MAN_AI_DESC"
+	}
+	option = {
+		exclude_dlc = "No Compromise, No Surrender"
+		name = INDEPENDENCE
+		text = "RULE_OPTION_INDEPENDENCE"
+		desc = "RULE_OPTION_INDEPENDENCE_MAN_AI_DESC"
 	}
 }
 SHX_ai_behavior = {
@@ -3817,6 +3967,12 @@ ENG_ai_behavior = {
 		desc = "RULE_OPTION_RANDOM_AI_DESC"
 		required_dlc = "Man the Guns"
 	}
+	option = {
+		name = COMMUNIST
+		text = "RULE_OPTION_TRADE_UNIONS"
+		desc = "RULE_OPTION_TRADE_UNIONS_ENG_AI_DESC"
+		required_dlc = "Man the Guns"
+	}
 }
 
 ENG_ai_decolonize = {
@@ -3907,6 +4063,11 @@ USA_ai_behavior = {
 		name = RANDOM
 		text = "RULE_OPTION_RANDOM"
 		desc = "RULE_OPTION_RANDOM_AI_DESC"
+	}
+	option = {
+		name = DEMOCRATIC_ALTERNATE
+		text = "RULE_OPTION_DEMOCRATIC_ALTERNATE"
+		desc = "RULE_DEMOCRATIC_ALTERNATE_USA_AI_DESC"
 	}
 }
 
@@ -4859,6 +5020,51 @@ TUR_ai_behavior = {
 		desc = "RULE_OPTION_RANDOM_AI_DESC"
 		allow_achievements = yes
 	}
+	option = {
+		name = ALTERNATE_KEMALIST
+		text = "RULE_OPTION_ALTERNATE_KEMALIST_AI"
+		desc = "RULE_OPTION_ALTERNATE_KEMALIST_AI_DESC"
+	}
+	option = {
+		name = TUR_DEMOCRATIC_KEMALIST
+		text = "RULE_OPTION_TUR_DEMOCRATIC_KEMALIST"
+		desc = "RULE_OPTION_TUR_DEMOCRATIC_KEMALIST_DESC"
+	}
+	option = {
+		name = TUR_DEMOCRATIC_ALTERNATE
+		text = "RULE_OPTION_TUR_DEMOCRATIC_ALTERNATE"
+		desc = "RULE_OPTION_TUR_DEMOCRATIC_ALTERNATE_DESC"
+	}
+	option = {
+		name = FASCISM_TUR_AI
+		text = "RULE_OPTION_FASCISM_TUR_AI"
+		desc = "RULE_OPTION_FASCISM_TUR_AI_DESC"
+	}
+	option = {
+		name = TUR_FASCISM_ALTERNATE
+		text = "RULE_OPTION_TUR_FASCISM_ALTERNATE"
+		desc = "RULE_OPTION_TUR_FASCISM_ALTERNATE_DESC"
+	}
+	option = {
+		name = COMMUNIST_TUR_AI
+		text = "RULE_OPTION_COMMUNIST_TUR_AI"
+		desc = "RULE_OPTION_COMMUNIST_TUR_AI_DESC"
+	}
+	option = {
+		name = TUR_COMMUNISM_ALTERNATE
+		text = "RULE_OPTION_ALTERNATE_COMMUNIST_TUR_AI"
+		desc = "RULE_OPTION_ALTERNATE_COMMUNIST_TUR_AI_DESC"
+	}
+	option = {
+		name = BALKAN_ENTENTE
+		text = "RULE_OPTION_BALKAN_ENTENTE"
+		desc = "RULE_OPTION_BALKAN_ENTENTE_DESC"
+	}
+	option = {
+		name = OTTOMAN
+		text = "RULE_OPTION_OTTOMAN"
+		desc = "RULE_OPTION_OTTOMAN_DESC"
+	}
 }
 
 TUR_aggr_ai_behavior = {
@@ -5192,6 +5398,12 @@ LAT_ai_behavior = {
 		desc = "RULE_OPTION_RANDOM_AI_DESC"
 		allow_achievements = yes
 	}
+	option = {
+		name = FASCIST
+		text = "RULE_OPTION_FASCIST"
+		desc = "RULE_FASCIST_LAT_AI_DESC"
+		allow_achievements = no
+	}
 }
 
 EST_ai_behavior = {
@@ -5335,6 +5547,12 @@ EST_ai_behavior = {
 		desc = "RULE_OPTION_RANDOM_AI_DESC"
 		allow_achievements = yes
 	}
+	option = {
+		name = FASCIST
+		text = "RULE_OPTION_FASCIST"
+		desc = "RULE_FASCIST_EST_AI_DESC"
+		allow_achievements = no
+	}
 }
 
 ETH_ai_behavior = {
@@ -5442,6 +5660,24 @@ ETH_ai_behavior = {
 		desc = "RULE_OPTION_RANDOM_AI_DESC"
 		allow_achievements = yes
 	}
+	option = {
+		name = IMPERIAL
+		text = "RULE_OPTION_ETH_IMPERIAL"
+		desc = "RULE_ETH_IMPERIAL_AI_DESC"
+		allow_achievements = no
+	}
+	option = {
+		name = Collaborationist
+		text = "RULE_OPTION_ETH_COLLABORATIONIST"
+		desc = "RULE_OPTION_ETH_COLLABORATIONIST_desc"
+		allow_achievements = no
+	}	
+	option = {
+		name = Independent_Fascist
+		text = "RULE_OPTION_ETH_INDEPENDENT_FASCIST"
+		desc = "RULE_OPTION_ETH_INDEPENDENT_FASCIST_desc"
+		allow_achievements = no
+	}	
 }
 
 ETH_ai_host_behavior = {
@@ -5998,6 +6234,12 @@ SWE_ai_behavior = {
 		desc = "RULE_OPTION_RANDOM_AI_DESC"
 		allow_achievements = yes
 	} 
+	option = {
+		name = SWE_COMMUNISM
+		text = "RULE_OPTION_SWE_COMMUNISM"
+		desc = "RULE_OPTION_SWE_COMMUNISM_DESC"
+		allow_achievements = no
+	}
 }
 
 NOR_ai_behavior = {
@@ -6544,6 +6786,12 @@ FIN_ai_behavior = {
 		desc = "RULE_OPTION_RANDOM_AI_DESC"
 		allow_achievements = yes
 	}
+	option = {
+		required_dlc = "Arms Against Tyranny"
+		name = FIN_FASCIST_PLAN
+		text = "RULE_OPTION_FIN_FASCIST_PLAN"
+		desc = "RULE_OPTION_FIN_FASCIST_PLAN_DESC"
+	}
 }
 
 DEN_ai_behavior = {
@@ -6819,6 +7067,21 @@ DEN_ai_behavior = {
 		desc = "RULE_OPTION_RANDOM_AI_DESC"
 		allow_achievements = yes
 	} 
+	option = {
+		name = DEN_REARMAMENT_PLAN
+		text = "RULE_OPTION_DEN_REARMAMENT"
+		desc = "RULE_OPTION_DEN_REARMAMENT_AI_DESC"
+	}
+	option = {
+		name = DEN_MONARCHIST_PLAN
+		text = "RULE_OPTION_DEN_MONARCHIST"
+		desc = "RULE_OPTION_DEN_MONARCHIST_AI_DESC"
+	}
+	option = {
+		name = DEN_FASCIST_PLAN
+		text = "RULE_OPTION_DEN_FASCIST"
+		desc = "RULE_OPTION_DEN_FASCIST_AI_DESC"
+	}
 }
 
 DEN_ai_overlord_behavior = {
@@ -6984,6 +7247,11 @@ ICE_ai_behavior = {
 		text = "RULE_OPTION_RANDOM"
 		desc = "RULE_OPTION_RANDOM_AI_DESC"
 		allow_achievements = yes
+	}
+	option = {
+		name = ICE_SUPPORT_DENMARK
+		text = "RULE_OPTION_ICE_SUPPORT"
+		desc = "RULE_OPTION_ICE_SUPPORT_AI_DESC"
 	}
 }
 
@@ -7439,6 +7707,24 @@ AFG_ai_behavior = {
 		name = RANDOM
 		text = "RULE_OPTION_RANDOM"
 		desc = "RULE_OPTION_RANDOM_AI_DESC"
+	}
+	option = {
+		name = CALIPHATE
+		text = "RULE_OPTION_CALIPHATE_AFG"
+		desc = "RULE_OPTION_CALIPHATE_AFG_AI_DESC"
+		allow_achievements = no
+	}
+	option = {
+		name = EMPIRE
+		text = "RULE_OPTION_EMPIRE_AFG"
+		desc = "RULE_OPTION_EMPIRE_AFG_AI_DESC"
+		allow_achievements = no
+	}
+	option = {
+		name = MUGHALS
+		text = "RULE_OPTION_MUGHAL_AFG"
+		desc = "RULE_OPTION_MUGHAL_AFG_AI_DESC"
+		allow_achievements = no
 	}
 }
 
@@ -9317,6 +9603,32 @@ INS_ai_behavior = {
 		desc = "RULE_OPTION_RANDOM_AI_DESC"
 		allow_achievements = yes
 	}
+	option = {
+		name = TRUE_HISTORICAL
+		text = "RULE_OPTION_TRUE_HISTORICAL_INS_AI"
+		desc = "RULE_OPTION_TRUE_HISTORICAL_INS_AI_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = LOYALIST
+		text = "RULE_OPTION_LOYALIST_INS_AI"
+		desc = "RULE_OPTION_LOYALIST_INS_AI_DESC"
+	}
+	option = {
+		name = REVOLUTION_DEMOCRATIC
+		text = "RULE_OPTION_REVOLUTION_DEMOCRATIC_INS_AI"
+		desc = "RULE_OPTION_REVOLUTION_DEMOCRATIC_INS_AI_DESC"
+	}
+	option = {
+		name = REVOLUTION_UNALIGNED
+		text = "RULE_OPTION_REVOLUTION_UNALIGNED_INS_AI"
+		desc = "RULE_OPTION_REVOLUTION_UNALIGNED_INS_AI_DESC"
+	}
+	option = {
+		name = REVOLUTION_COMMUNIST
+		text = "RULE_OPTION_REVOLUTION_COMMUNIST_INS_AI"
+		desc = "RULE_OPTION_REVOLUTION_COMMUNIST_INS_AI_DESC"
+	}
 }
 
 SIA_ai_behavior = {
@@ -9374,6 +9686,18 @@ SIA_ai_behavior = {
 		text = "RULE_OPTION_RANDOM"
 		desc = "RULE_OPTION_RANDOM_AI_DESC"
 		allow_achievements = yes
+	}
+	option = {
+		name = MONARCHIST
+		text = "RULE_OPTION_MONARCHIST_SIA_AI"
+		desc = "RULE_OPTION_MONARCHIST_SIA_AI_DESC"
+		allow_achievements = no
+	}
+	option = {
+		name = DEMOCRATIC
+		text = "RULE_OPTION_DEMOCRATIC"
+		desc = "RULE_OPTION_DEMOCRATIC_SIA_AI_DESC"
+		allow_achievements = no
 	}
 }
 

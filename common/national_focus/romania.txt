@@ -4318,6 +4318,7 @@ focus_tree = {
 		completion_reward = {
 			air_experience = 25
 			46 = {
+				if = {
 				limit = {
 					ROOT = { has_full_control_of_state = PREV }
 					free_building_slots = {
@@ -4331,8 +4332,10 @@ focus_tree = {
 					instant_build = yes
 				}
 				set_state_flag = ROM_expand_the_air_force_AB
+				}
 			}
 			79 = {
+				if = {
 				limit = {
 					ROOT = { has_full_control_of_state = PREV }
 					free_building_slots = {
@@ -4346,6 +4349,7 @@ focus_tree = {
 					instant_build = yes
 				}
 				set_state_flag = ROM_expand_the_air_force_AB_2
+				}
 			}
 		}
 	}
@@ -5852,6 +5856,7 @@ focus_tree = {
 		completion_reward = {
 			navy_experience = 25
 			971 = {
+				if = {
 				limit = {
 					ROOT = { has_full_control_of_state = PREV }
 					free_building_slots = {
@@ -5865,6 +5870,7 @@ focus_tree = {
 					type = dockyard
 					level = 2
 					instant_build = yes
+				}
 				}
 			}
 		}

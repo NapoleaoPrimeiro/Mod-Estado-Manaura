@@ -1,0 +1,151 @@
+scripted_gui = {
+
+	ase_window = {
+		window_name = "ase_window"
+		context_type = player_context
+
+		visible = {
+			has_country_flag = ASE_Visible
+		}
+		triggers = {
+			### --- One frame events ---
+			ASE_Image_Asia_War_visible     = { has_country_flag = Asia_War }
+			ASE_Image_Barbarossa_visible   = { has_country_flag = Barbarossa_Started }
+			ASE_Image_Blitzkrieg_visible   = { has_country_flag = ASE_Blitzkrieg }
+			ASE_Image_Great_Italy_visible  = { has_country_flag = Great_Italy }
+			ASE_Image_Anschluss_visible    = { has_country_flag = Anschluss }
+			ASE_Image_Czech_visible        = { has_country_flag = Czech }
+			ASE_Image_Stalingrad_visible   = { has_country_flag = Stalingrad }
+
+			### --- Berlin ---
+			ASE_Image_Berlin1_visible = { has_country_flag = Berlin }
+			ASE_Image_Berlin2_visible = { has_country_flag = Berlin }
+			ASE_Image_Berlin3_visible = { has_country_flag = Berlin }
+			ASE_Image_Berlin4_visible = { has_country_flag = Berlin }
+
+			### --- D-day ---
+			ASE_Image_Dday1_visible = { has_country_flag = Dday }
+			ASE_Image_Dday2_visible = { has_country_flag = Dday }
+
+			### --- Cairo ---
+			ASE_Image_Cairo1_visible = { has_country_flag = Cairo }
+			ASE_Image_Cairo2_visible = { has_country_flag = Cairo }
+			ASE_Image_Cairo3_visible = { has_country_flag = Cairo }
+			ASE_Image_Cairo4_visible = { has_country_flag = Cairo }
+
+			### --- Fall of France ---
+			ASE_Image_Fall_Fra1_visible = { has_country_flag = Fall_Fra }
+			ASE_Image_Fall_Fra2_visible = { has_country_flag = Fall_Fra }
+			ASE_Image_Fall_Fra3_visible = { has_country_flag = Fall_Fra }
+			ASE_Image_Fall_Fra4_visible = { has_country_flag = Fall_Fra }
+
+			### --- Moscow ---
+			ASE_Image_Moskov1_visible = { has_country_flag = Moskov }
+			ASE_Image_Moskov2_visible = { has_country_flag = Moskov }
+			ASE_Image_Moskov3_visible = { has_country_flag = Moskov }
+			
+			### --- Italy join war ---
+			ASE_Image_Italy_War1_visible = { has_country_flag = Italy_War }
+			ASE_Image_Italy_War2_visible = { has_country_flag = Italy_War }
+			ASE_Image_Italy_War3_visible = { has_country_flag = Italy_War }
+			ASE_Image_Italy_War4_visible = { has_country_flag = Italy_War }
+			
+			### --- Kursk ---
+			ASE_Image_Kursk1_visible = { has_country_flag = Kursk }
+			ASE_Image_Kursk2_visible = { has_country_flag = Kursk }
+			ASE_Image_Kursk3_visible = { has_country_flag = Kursk }
+			ASE_Image_Kursk4_visible = { has_country_flag = Kursk }
+			ASE_Image_Citadel1_visible = { has_country_flag = ASE_Citadel }
+			ASE_Image_Citadel2_visible = { has_country_flag = ASE_Citadel }
+			ASE_Image_Citadel3_visible = { has_country_flag = ASE_Citadel }
+			
+			### --- WW2 ---
+			ASE_Image_WW21_visible = { has_country_flag = WW2_Started }
+			ASE_Image_WW22_visible = { has_country_flag = WW2_Started }
+			ASE_Image_WW23_visible = { has_country_flag = WW2_Started }
+			ASE_Image_WW24_visible = { has_country_flag = WW2_Started }
+			
+			### --- 2 Sino War ---
+			ASE_Image_2SinoWar1_visible = { has_country_flag = ASE_2Sino_War }
+			ASE_Image_2SinoWar2_visible = { has_country_flag = ASE_2Sino_War }
+			ASE_Image_2SinoWar3_visible = { has_country_flag = ASE_2Sino_War }
+			
+			### --- Winter War ---
+			ASE_Image_WinterWar1_visible = { has_country_flag = ASE_Winter_War }
+			ASE_Image_WinterWar2_visible = { has_country_flag = ASE_Winter_War }
+			ASE_Image_WinterWar3_visible = { has_country_flag = ASE_Winter_War }
+			
+			ASE_Image_Kiev1_visible = { has_country_flag = ASE_Kiev }
+			ASE_Image_Kiev2_visible = { has_country_flag = ASE_Kiev }
+			ASE_Image_Kiev3_visible = { has_country_flag = ASE_Kiev }
+			
+			ASE_Image_Normandy1_visible = { has_country_flag = ASE_Normandy }
+			ASE_Image_Normandy2_visible = { has_country_flag = ASE_Normandy }
+			ASE_Image_Normandy3_visible = { has_country_flag = ASE_Normandy }
+			ASE_Image_Normandy4_visible = { has_country_flag = ASE_Normandy }
+			
+			ASE_Image_Spain_Civil_War1_visible = { has_country_flag = ASE_Spain_Civil_War }
+			ASE_Image_Spain_Civil_War2_visible = { has_country_flag = ASE_Spain_Civil_War }
+			ASE_Image_Spain_Civil_War3_visible = { has_country_flag = ASE_Spain_Civil_War }
+			ASE_Image_Spain_Civil_War4_visible = { has_country_flag = ASE_Spain_Civil_War }
+			
+			ASE_Image_Spain_Franco_Win1_visible = { has_country_flag = ASE_Spain_Franco_Win }
+			ASE_Image_Spain_Franco_Win2_visible = { has_country_flag = ASE_Spain_Franco_Win }
+			ASE_Image_Spain_Franco_Win3_visible = { has_country_flag = ASE_Spain_Franco_Win }
+			ASE_Image_Spain_Franco_Win4_visible = { has_country_flag = ASE_Spain_Franco_Win }
+			
+			
+			#super_quote_animated_visible = { super_event_active = yes }
+		}
+		############
+		###BUTTON###
+		############
+		
+		effects = {
+			ase_close_button_click = {
+				super_event_clear_flags = yes
+			}
+		}
+	}
+	ase2_window = {
+		window_name = "ase2_window"
+		context_type = player_context
+
+		visible = {
+			has_country_flag = ASE2_Visible
+		}
+		triggers = {
+			### --- Nuclear Fallout ---
+			ASE_Image_Nuclear1_visible = { has_country_flag = Nuclear1 }
+			ASE_Image_Nuclear2_visible = { has_country_flag = Nuclear1 }
+			ASE_Image_Nuclear3_visible = { has_country_flag = Nuclear1 }
+			
+			### --- Great Reich ---
+			ASE_Image_Great_Reich1_visible = { has_country_flag = Great_Reich }
+			ASE_Image_Great_Reich2_visible = { has_country_flag = Great_Reich }
+			ASE_Image_Great_Reich3_visible = { has_country_flag = Great_Reich }
+			ASE_Image_Great_Reich4_visible = { has_country_flag = Great_Reich }
+			
+			### --- New Order ---
+			ASE_Image_New_Order1_visible = { has_country_flag = New_Order }
+			ASE_Image_New_Order2_visible = { has_country_flag = New_Order }
+			ASE_Image_New_Order3_visible = { has_country_flag = New_Order }
+			
+			ASE_Image_Eva_Braun1_visible = { has_country_flag = ASE_Eva_Braun }
+			ASE_Image_Eva_Braun2_visible = { has_country_flag = ASE_Eva_Braun }
+			ASE_Image_Eva_Braun3_visible = { has_country_flag = ASE_Eva_Braun }
+			ASE_Image_Eva_Braun4_visible = { has_country_flag = ASE_Eva_Braun }
+
+			#super_quote_animated_visible = { super2_event_active = yes }
+		}
+		############
+		###BUTTON###
+		############
+		
+		effects = {
+			ase2_close_button_click = {
+				super2_event_clear_flags = yes
+			}
+		}
+	}
+}

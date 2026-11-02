@@ -1,0 +1,778 @@
+spriteTypes = {
+	
+	spriteType = {
+		name = "GFX_ase_window"
+		textureFile = "/gfx/ASE_Window.dds"
+	}
+	spriteType = {
+		name = "GFX_ase_close_button"
+		textureFile = "/gfx/ASE_Close_Button.dds"
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Asia_War"
+		texturefile = "/gfx/ase_events/Super_Event_Asia_War.dds"
+		noOfFrames = 40
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Barbarossa"
+		texturefile = "/gfx/ase_events/Super_Event_Barbarossa.dds"
+		noOfFrames = 40
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 8
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Blitzkrieg"
+		texturefile = "/gfx/ase_events/Super_Event_Blitzkrieg.dds"
+		noOfFrames = 40
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 8
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Great_Italy"
+		texturefile = "/gfx/ase_events/Super_Event_Great_Italy.dds"
+		noOfFrames = 40
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Austria"
+		texturefile = "/gfx/ase_events/Super_Event_Austria.dds"
+		noOfFrames = 40
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 8
+		looping = yes
+		play_on_show = yes
+	}
+	
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Czech"
+		texturefile = "/gfx/ase_events/Super_Event_Czech.dds"
+		noOfFrames = 40
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 8
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Stalingrad"
+		texturefile = "/gfx/ase_events/Super_Event_Stalingrad.dds"
+		noOfFrames = 40
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 8
+		looping = yes
+		play_on_show = yes
+	}
+	#Berlin
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Berlin1"
+		texturefile = "/gfx/ase_events/Super_Event_berlin1.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 8
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Berlin2"
+		texturefile = "/gfx/ase_events/Super_Event_berlin2.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 8
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Berlin3"
+		texturefile = "/gfx/ase_events/Super_Event_berlin3.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 8
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Berlin4"
+		texturefile = "/gfx/ase_events/Super_Event_berlin4.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 8
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Dday1"
+		texturefile = "/gfx/ase_events/Super_Event_dday1.dds"
+		noOfFrames = 80
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Dday2"
+		texturefile = "/gfx/ase_events/Super_Event_dday2.dds"
+		noOfFrames = 80
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Cairo1"
+		texturefile = "/gfx/ase_events/Super_Event_Cairo_1.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 8
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Cairo2"
+		texturefile = "/gfx/ase_events/Super_Event_Cairo_2.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 8
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Cairo3"
+		texturefile = "/gfx/ase_events/Super_Event_Cairo_3.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 8
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Cairo4"
+		texturefile = "/gfx/ase_events/Super_Event_Cairo_4.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 8
+		looping = yes
+		play_on_show = yes
+	}
+	
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Moskov1"
+		texturefile = "/gfx/ase_events/Super_Event_Moskov_1.dds"
+		noOfFrames = 120
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 8
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Moskov2"
+		texturefile = "/gfx/ase_events/Super_Event_Moskov_2.dds"
+		noOfFrames = 120
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 8
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Moskov3"
+		texturefile = "/gfx/ase_events/Super_Event_Moskov_3.dds"
+		noOfFrames = 120
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 8
+		looping = yes
+		play_on_show = yes
+	}
+	
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Fall_Fra1"
+		texturefile = "/gfx/ase_events/Super_Event_Fall_Fra1.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 8
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Fall_Fra2"
+		texturefile = "/gfx/ase_events/Super_Event_Fall_Fra2.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 8
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Fall_Fra3"
+		texturefile = "/gfx/ase_events/Super_Event_Fall_Fra3.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 8
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Fall_Fra4"
+		texturefile = "/gfx/ase_events/Super_Event_Fall_Fra4.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 8
+		looping = yes
+		play_on_show = yes
+	}
+	
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Italy_War1"
+		texturefile = "/gfx/ase_events/Super_Event_Italy_War_1.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Italy_War2"
+		texturefile = "/gfx/ase_events/Super_Event_Italy_War_2.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Italy_War3"
+		texturefile = "/gfx/ase_events/Super_Event_Italy_War_3.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Italy_War4"
+		texturefile = "/gfx/ase_events/Super_Event_Italy_War_4.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Kursk1"
+		texturefile = "/gfx/ase_events/Super_Event_Kursk_1.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Kursk2"
+		texturefile = "/gfx/ase_events/Super_Event_Kursk_2.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Kursk3"
+		texturefile = "/gfx/ase_events/Super_Event_Kursk_3.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Kursk4"
+		texturefile = "/gfx/ase_events/Super_Event_Kursk_4.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_WW21"
+		texturefile = "/gfx/ase_events/Super_Event_WW2_1.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_WW22"
+		texturefile = "/gfx/ase_events/Super_Event_WW2_2.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_WW23"
+		texturefile = "/gfx/ase_events/Super_Event_WW2_3.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_WW24"
+		texturefile = "/gfx/ase_events/Super_Event_WW2_4.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_2SinoWar1"
+		texturefile = "/gfx/ase_events/Super_Event_2SinoWar_1.dds"
+		noOfFrames = 120
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_2SinoWar2"
+		texturefile = "/gfx/ase_events/Super_Event_2SinoWar_2.dds"
+		noOfFrames = 120
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_2SinoWar3"
+		texturefile = "/gfx/ase_events/Super_Event_2SinoWar_3.dds"
+		noOfFrames = 120
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_WinterWar1"
+		texturefile = "/gfx/ase_events/Super_Event_WinterWar_1.dds"
+		noOfFrames = 120
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_WinterWar2"
+		texturefile = "/gfx/ase_events/Super_Event_WinterWar_2.dds"
+		noOfFrames = 120
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_WinterWar3"
+		texturefile = "/gfx/ase_events/Super_Event_WinterWar_3.dds"
+		noOfFrames = 120
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Citadel1"
+		texturefile = "/gfx/ase_events/ASE_Citadel_1.dds"
+		noOfFrames = 120
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Citadel2"
+		texturefile = "/gfx/ase_events/ASE_Citadel_2.dds"
+		noOfFrames = 120
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Citadel3"
+		texturefile = "/gfx/ase_events/ASE_Citadel_3.dds"
+		noOfFrames = 120
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Kiev1"
+		texturefile = "/gfx/ase_events/ASE_Kiev_1.dds"
+		noOfFrames = 120
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Kiev2"
+		texturefile = "/gfx/ase_events/ASE_Kiev_2.dds"
+		noOfFrames = 120
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Kiev3"
+		texturefile = "/gfx/ase_events/ASE_Kiev_3.dds"
+		noOfFrames = 120
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Normandy1"
+		texturefile = "/gfx/ase_events/ASE_Normandy_1.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Normandy2"
+		texturefile = "/gfx/ase_events/ASE_Normandy_2.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Normandy3"
+		texturefile = "/gfx/ase_events/ASE_Normandy_3.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Normandy4"
+		texturefile = "/gfx/ase_events/ASE_Normandy_4.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Spain_Civil_War1"
+		texturefile = "/gfx/ase_events/ASE_Spain_Civil_War_1.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Spain_Civil_War2"
+		texturefile = "/gfx/ase_events/ASE_Spain_Civil_War_2.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Spain_Civil_War3"
+		texturefile = "/gfx/ase_events/ASE_Spain_Civil_War_3.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Spain_Civil_War4"
+		texturefile = "/gfx/ase_events/ASE_Spain_Civil_War_4.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Spain_Franco_Win1"
+		texturefile = "/gfx/ase_events/ASE_Spain_Franco_Win_1.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Spain_Franco_Win2"
+		texturefile = "/gfx/ase_events/ASE_Spain_Franco_Win_2.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Spain_Franco_Win3"
+		texturefile = "/gfx/ase_events/ASE_Spain_Franco_Win_3.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Spain_Franco_Win4"
+		texturefile = "/gfx/ase_events/ASE_Spain_Franco_Win_4.dds"
+		noOfFrames = 160
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	
+	################################################
+	spriteType = {
+		name = "GFX_ase2_window"
+		textureFile = "/gfx/ASE2_Window.dds"
+	}
+	
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Nuclear1"
+		texturefile = "/gfx/ase2_events/Super_Event_nuclear1.dds"
+		noOfFrames = 108
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 8
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Nuclear2"
+		texturefile = "/gfx/ase2_events/Super_Event_nuclear2.dds"
+		noOfFrames = 108
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 8
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Nuclear3"
+		texturefile = "/gfx/ase2_events/Super_Event_nuclear3.dds"
+		noOfFrames = 108
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 8
+		looping = yes
+		play_on_show = yes
+	}
+	
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Great_Reich1"
+		texturefile = "/gfx/ase2_events/Super_Event_Great_Reich_1.dds"
+		noOfFrames = 144
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Great_Reich2"
+		texturefile = "/gfx/ase2_events/Super_Event_Great_Reich_2.dds"
+		noOfFrames = 144
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Great_Reich3"
+		texturefile = "/gfx/ase2_events/Super_Event_Great_Reich_3.dds"
+		noOfFrames = 144
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Great_Reich4"
+		texturefile = "/gfx/ase2_events/Super_Event_Great_Reich_4.dds"
+		noOfFrames = 144
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_New_Order1"
+		texturefile = "/gfx/ase2_events/Super_Event_New_Order_1.dds"
+		noOfFrames = 108
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_New_Order2"
+		texturefile = "/gfx/ase2_events/Super_Event_New_Order_2.dds"
+		noOfFrames = 108
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_New_Order3"
+		texturefile = "/gfx/ase2_events/Super_Event_New_Order_3.dds"
+		noOfFrames = 108
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Eva_Braun1"
+		texturefile = "/gfx/ase2_events/ASE2_Eva_Braun_1.dds"
+		noOfFrames = 144
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Eva_Braun2"
+		texturefile = "/gfx/ase2_events/ASE2_Eva_Braun_2.dds"
+		noOfFrames = 144
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Eva_Braun3"
+		texturefile = "/gfx/ase2_events/ASE2_Eva_Braun_3.dds"
+		noOfFrames = 144
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_ase_Eva_Braun4"
+		texturefile = "/gfx/ase2_events/ASE2_Eva_Braun_4.dds"
+		noOfFrames = 144
+		loadType = "INGAME"
+		transparencecheck = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+}

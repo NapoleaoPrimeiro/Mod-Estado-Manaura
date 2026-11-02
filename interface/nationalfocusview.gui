@@ -116,7 +116,7 @@ guiTypes = {
 		}
 
 		### end zoom slider
-
+		
 		containerWindowType = {
 			name = "tree"
 			position = { x=0 y=47 }
@@ -159,28 +159,28 @@ guiTypes = {
 				iconType ={
 					name ="tutorial_glow_1"
 					spriteType = "GFX_tutorial_national_focus_icon_glow"
-					position = { x= 61 y = 20 }
+					position = { x= 252 y = 20 }
 					Orientation = "UPPER_LEFT"
 					hide = yes
 				}
 				iconType ={
 					name ="tutorial_glow_2"
 					spriteType = "GFX_tutorial_national_focus_icon_glow"
-					position = { x= 61 y = 150 }
+					position = { x= 829 y = 20 }
 					Orientation = "UPPER_LEFT"
 					hide = yes
 				}
 				iconType ={
 					name ="tutorial_glow_3"
 					spriteType = "GFX_tutorial_national_focus_icon_glow"
-					position = { x= 61 y = 280 }
+					position = { x= 1116 y = 150 }
 					Orientation = "UPPER_LEFT"
 					hide = yes
 				}
 				iconType ={
 					name ="tutorial_glow_4"
 					spriteType = "GFX_tutorial_national_focus_icon_glow"
-					position = { x= 155 y = 410 }
+					position = { x= 1308 y = 150 }
 					Orientation = "UPPER_LEFT"
 					hide = yes
 				}
@@ -368,6 +368,7 @@ guiTypes = {
 				background = {
 					name = "Background"
 					spriteType ="GFX_tiled_window_transparent"
+					alwaystransparent = yes
 				}
 			
 				containerWindowType = {
@@ -380,6 +381,7 @@ guiTypes = {
 					background = {
 						name = "Background"
 						spriteType ="GFX_tiled_window_transparent"
+						alwaystransparent = yes
 					}
 					
 					gridboxtype = {
@@ -403,6 +405,120 @@ guiTypes = {
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			pdx_tooltip = "CLOSE"
+		}
+		
+		buttonType = {
+			name = "cycle_focus_next"
+			quadTextureSprite = "GFX_tiled_window_transparent"
+			size = { x = 1 y = 1 }
+			shortcut = "ctrl+TAB"
+		}
+		
+		buttonType = {
+			name = "cycle_focus_prev"
+			quadTextureSprite = "GFX_tiled_window_transparent"
+			size = { x = 1 y = 1 }
+			shortcut = "ctrl+shift+TAB"
+		}
+		
+		containerWindowType = {
+			name = "shortcut_grid_container"
+			position = { x=4 y=-56 }
+			orientation = lower_left
+			
+			gridboxtype = {
+				name = "shortcut_grid"
+				position = { x = 0 y = 0 }
+				slotsize = { width = 200 height = 68 }
+				max_slots_horizontal = 1
+				max_slots_vertical = 8
+				format = "LOWER_LEFT"
+				
+				#Contains focus_tree_shortcut_item
+			}
+		}
+		
+		buttonType = {
+			name = "toggle_shortcuts"
+			position = { x = 17 y = -56 }
+			quadTextureSprite ="GFX_production_line_arrow_left"
+			buttonFont = "Main_14_black"
+			orientation = lower_left
+			# Sprite and tooltip are driven from code: they follow the collapsed state.
+		}
+
+		containerWindowType = {
+			name = "mini_map_clip"
+			size = { width = 100%% height = 100%% }
+			clipping = no # C++ installs a custom scissor so the hidden mini-map crops behind the tree scrollbar
+
+			containerWindowType = {
+				name = "mini_map"
+				position = { x = -35 y = -38 }
+				Orientation = LOWER_RIGHT
+				origo = LOWER_RIGHT
+				size = { width = 200 height = 150 }
+				clipping = no # so the proud tileable frame isn't cropped to the panel bounds
+
+				background = {
+					name = "mini_map_bg"
+					quadTextureSprite = "GFX_focus_minimap_bg"
+					frame = 1 # pins the bg to a fixed state so dragging it doesn't trigger the button press/hover visual
+				}
+
+				iconType = {
+					name = "camera_quad_left"
+					spriteType = "GFX_minimap_quad_pixel"
+					Orientation = "UPPER_LEFT"
+					centerPosition = yes
+					alwaystransparent = yes
+				}
+				iconType = {
+					name = "camera_quad_right"
+					spriteType = "GFX_minimap_quad_pixel"
+					Orientation = "UPPER_LEFT"
+					centerPosition = yes
+					alwaystransparent = yes
+				}
+				iconType = {
+					name = "camera_quad_top"
+					spriteType = "GFX_minimap_quad_pixel"
+					Orientation = "UPPER_LEFT"
+					centerPosition = yes
+					alwaystransparent = yes
+					rotation = 1.5708
+				}
+				iconType = {
+					name = "camera_quad_bottom"
+					spriteType = "GFX_minimap_quad_pixel"
+					Orientation = "UPPER_LEFT"
+					centerPosition = yes
+					alwaystransparent = yes
+					rotation = 1.5708
+				}
+
+				containerWindowType = {
+					name = "minimap_border"
+					position = { x = -5 y = -5 }
+					size = { width = 210 height = 160 }
+					Orientation = UPPER_LEFT
+					# Content inset read in C++; on the frame so it doesn't shift mini_map's children.
+					margin = { top = 5 left = 5 bottom = 5 right = 5 }
+					background = {
+						name = "minimap_border_bg"
+						quadTextureSprite = "GFX_focus_minimap_border"
+					}
+				}
+
+				buttonType = {
+					name = "handle"
+					position = { x = -22 y = -51 }
+					Orientation = "LOWER_LEFT"
+					spriteType = "GFX_minimap_handle_default"
+					scale = 0.8
+					shortcut = "ctrl+m"
+				}
+			}
 		}
 	}
 
@@ -493,6 +609,12 @@ guiTypes = {
 			centerposition = yes
 			Orientation = CENTER
 		}
+
+		iconType = {
+		    name = "overlay"
+		    position = { x = -9 y = -28 }
+		    alwaystransparent = yes
+		}
 		
 		iconType = {
 			name = "historical"
@@ -510,6 +632,20 @@ guiTypes = {
 			maxHeight = 20
 			format = center
 			vertical_alignment = center 			
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "viewing_flag"
+			quadTextureSprite ="GFX_flag_small2"
+			position = {  x=110 y=30 }
+			Orientation = "UPPER_LEFT"
+		}
+
+		iconType ={
+			name ="viewing_flag_border"
+			quadTextureSprite = "GFX_diplo_countrylist_flag_frame"
+			position = { x= 105 y = 25 }
 			alwaystransparent = yes
 		}
 	}
@@ -626,9 +762,10 @@ guiTypes = {
 	containerWindowType = {
 		name = "national_focus_detail_view"
 		position = { x=500 y=100 }
-		size = { width = 550 height = 650 }
+		size = { width = 550 height = 550 }
 		Orientation = UPPER_LEFT
 		moveable = yes
+		click_to_front = yes
 		clipping = no
 		fade_time = 500
 		fade_type = linear
@@ -669,7 +806,8 @@ guiTypes = {
 			text = ""
 			maxWidth = 450
 			maxHeight = 30
-			format = center		
+			format = center
+			fixedsize = yes		
 		}
 		iconType = {
 			name = "symbol"
@@ -711,7 +849,6 @@ guiTypes = {
 			}
 			
 		}
-		
 		instantTextboxType = {
 			name = "desc"
 			position = { x = 34 y = 250 }
@@ -719,21 +856,20 @@ guiTypes = {
 			font = "hoi_18mbs"
 			borderSize = {x = 5 y = 0}
 			text = "Description"
-			maxWidth = 450
-			maxHeight = 200
+			maxWidth = 485
+			maxHeight = 70
 			format = center
-			scrollbarType = standardtext_slider
 		}
 
 		iconType = {
 			name = "reward_bg"
-			position = { x = 84 y = 463 }
+			position = { x = 84 y = 363 }
 			spriteType = "GFX_unit_list_header"
 		}		
 		
 		instantTextboxType = {
 			name = "reward_label"
-			position = { x = 34 y = 470 }
+			position = { x = 34 y = 370 }
 			textureFile = ""
 			font = "hoi_18mbs"
 			borderSize = {x = 0 y = 0}
@@ -745,7 +881,7 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "reward"
-			position = { x = 50 y = 497 }
+			position = { x = 50 y = 397 }
 			textureFile = ""
 			font = "hoi_16mbs"
 			borderSize = {x = 0 y = 0}
@@ -796,6 +932,7 @@ guiTypes = {
 		size = { width = 550 height = 550 }
 		Orientation = UPPER_LEFT
 		moveable = yes
+		click_to_front = yes
 		clipping = no
 		fade_time = 500
 		fade_type = linear
@@ -940,7 +1077,6 @@ guiTypes = {
 			buttonFont = "hoi_20b"
 			position = { x=390 y=53 }
 			clicksound = click_default
-			hide = yes
 		}
 		
 		instantTextboxType = {
@@ -966,8 +1102,9 @@ guiTypes = {
 			quadTextureSprite ="GFX_FOCUS_FILTER_ICON_BG"
 			Orientation = "UPPER_LEFT"
 			clicksound = click_checkbox
+			frame = 1
 		}
-		
+
 		iconType = {
 			name = "icon"
 			position = { x = 8 y = 7 }
@@ -976,24 +1113,29 @@ guiTypes = {
 			alwaystransparent = yes
 		}
 	}
-	
+
 	containerWindowType = {
-		name = "focus_tree_filter_show_rest"
-		position = { x=0 y=5 }
+		name = "focus_tree_alternate_icon_button_container"
+		position = { x=-20 y=0 }
 		size = { width = 200 height = 80 }
 
 		buttonType = {
-			name = "toggle"
+			name = "checkbox"
 			position = { x = 0 y = 0 }
-			quadTextureSprite ="GFX_production_line_arrow_down"
+			quadTextureSprite ="GFX_FOCUS_FILTER_ICON_BG"
 			Orientation = "UPPER_LEFT"
 			clicksound = click_checkbox
-			frame = 1
-			pdx_tooltip = "TREE_FILTER_TOGGLE"
+			frame = 2
+		}
+
+		iconType = {
+			name = "icon"
+			position = { x = 7 y = 6 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
 		}
 	}
-
-	# Manaura: tipo exigido pelo jogo (vanilla 1.19)
+	
 	containerWindowType = {
 		name = "focus_tree_shortcut_item"
 		position = { x=8 y=0 }
@@ -1030,6 +1172,22 @@ guiTypes = {
 			Orientation = left
 			scale = 0.6
 			alwaystransparent = yes
+		}
+	}
+	
+	containerWindowType = {
+		name = "focus_tree_filter_show_rest"
+		position = { x=0 y=5 }
+		size = { width = 200 height = 80 }
+
+		buttonType = {
+			name = "toggle"
+			position = { x = 0 y = 0 }
+			quadTextureSprite ="GFX_production_line_arrow_down"
+			Orientation = "UPPER_LEFT"
+			clicksound = click_checkbox
+			frame = 1
+			pdx_tooltip = "TREE_FILTER_TOGGLE"
 		}
 	}
 }

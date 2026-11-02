@@ -1,0 +1,127 @@
+super_event_clear_flags = {
+	clr_country_flag = ASE_Visible
+	clr_country_flag = Asia_War
+	clr_country_flag = Barbarossa_Started
+	clr_country_flag = WW2_Started
+	clr_country_flag = Great_Italy
+	clr_country_flag = Anschluss
+	clr_country_flag = Czech
+	clr_country_flag = Stalingrad
+	clr_country_flag = Berlin
+	clr_country_flag = Dday
+	clr_country_flag = Cairo
+	clr_country_flag = Fall_Fra
+	clr_country_flag = Moskov
+	clr_country_flag = Italy_War
+	clr_country_flag = Kursk
+	clr_country_flag = ASE_Blitzkrieg
+	clr_country_flag = ASE_2Sino_War
+	clr_country_flag = ASE_Winter_War
+	clr_country_flag = ASE_Citadel
+	clr_country_flag = ASE_Kiev
+	clr_country_flag = ASE_Normandy
+	clr_country_flag = ASE_Spain_Civil_War
+	clr_country_flag = ASE_Spain_Franco_Win
+}
+super2_event_clear_flags = {
+	clr_country_flag = ASE2_Visible
+	clr_country_flag = Nuclear1
+	clr_country_flag = Great_Reich
+	clr_country_flag = New_Order
+	clr_country_flag = ASE_Eva_Braun
+	}
+##############
+ase_apply_game_rules = {
+	if = { limit = { has_game_rule = { rule = allow_Super_Asia_War_event option = BLOCKED } }
+		set_global_flag = Super_Asia_War
+	}
+	if = { limit = { has_game_rule = { rule = allow_Super_Barbarossa_Started_event option = BLOCKED } }
+		set_global_flag = Super_Barbarossa_Started
+	}
+	if = { limit = { has_game_rule = { rule = allow_Super_WW2_Started_event option = BLOCKED } }
+		set_global_flag = Super_WW2_Started
+	}
+	if = { limit = { has_game_rule = { rule = allow_Super_Great_Italy_event option = BLOCKED } }
+		set_global_flag = Super_Great_Italy
+	}
+	if = { limit = { has_game_rule = { rule = allow_Super_Anschluss_event option = BLOCKED } }
+		set_global_flag = Super_Anschluss
+	}
+	if = { limit = { has_game_rule = { rule = allow_Super_Czech_event option = BLOCKED } }
+		set_global_flag = Super_Czech
+	}
+	if = { limit = { has_game_rule = { rule = allow_Super_Stalingrad_event option = BLOCKED } }
+		set_global_flag = Super_Stalingrad
+	}
+	if = { limit = { has_game_rule = { rule = allow_Super_Berlin_event option = BLOCKED } }
+		set_global_flag = Super_Berlin
+	}
+	if = { limit = { has_game_rule = { rule = allow_Super_Dday_event option = BLOCKED } }
+		set_global_flag = Super_Dday
+	}
+	if = { limit = { has_game_rule = { rule = allow_Super_Cairo_event option = BLOCKED } }
+		set_global_flag = Super_Cairo
+	}
+	if = { limit = { has_game_rule = { rule = allow_Super_Fall_Fra_event option = BLOCKED } }
+		set_global_flag = Super_Fall_Fra
+	}
+	if = { limit = { has_game_rule = { rule = allow_Super_Moskov_event option = BLOCKED } }
+		set_global_flag = Super_Moskov
+	}
+	if = { limit = { has_game_rule = { rule = allow_Super_Italy_War_event option = BLOCKED } }
+		set_global_flag = Super_Italy_War
+	}
+	if = { limit = { has_game_rule = { rule = allow_Super_Kursk_event option = BLOCKED } }
+		set_global_flag = Super_Kursk
+	}
+	if = { limit = { has_game_rule = { rule = allow_Super_ASE_Blitzkrieg_event option = BLOCKED } }
+		set_global_flag = Super_ASE_Blitzkrieg
+	}
+	if = { limit = { has_game_rule = { rule = allow_Super_ASE_2Sino_War_event option = BLOCKED } }
+		set_global_flag = Super_ASE_2Sino_War
+	}
+	if = { limit = { has_game_rule = { rule = allow_Super_ASE_Winter_War_event option = BLOCKED } }
+		set_global_flag = Super_ASE_Winter_War
+	}
+	if = { limit = { has_game_rule = { rule = allow_Super_ASE_Kiev_event option = BLOCKED } }
+		set_global_flag = Super_ASE_Kiev
+	}
+	if = { limit = { has_game_rule = { rule = allow_Super_ASE_Normandy_event option = BLOCKED } }
+		set_global_flag = Super_ASE_Normandy
+	}
+	if = { limit = { has_game_rule = { rule = allow_Super_ASE_Spain_Civil_War_event option = BLOCKED } }
+		set_global_flag = Super_ASE_Spain_Civil_War
+	}
+	if = { limit = { has_game_rule = { rule = allow_Super_ASE_Spain_Franco_Win_event option = BLOCKED } }
+		set_global_flag = Super_ASE_Spain_Franco_Win
+	}
+	#######################
+	if = { limit = { has_game_rule = { rule = allow_Super_Nuclear1_event option = BLOCKED } }
+		set_global_flag = Super_Nuclear1
+	}
+	if = { limit = { has_game_rule = { rule = allow_Super_Great_Reich_event option = BLOCKED } }
+		set_global_flag = Super_Great_Reich
+	}
+	if = { limit = { has_game_rule = { rule = allow_Super_New_Order_event option = BLOCKED } }
+		set_global_flag = Super_New_Order
+	}
+	if = { limit = { has_game_rule = { rule = allow_ASE_Eva_Braun_event option = BLOCKED } }
+		set_global_flag = Super_ASE_Eva_Braun
+	}
+}
+
+##############
+super_event_trigger_effect = {
+	super_event_clear_flags = yes
+    every_country = { limit = { is_ai = no } set_country_flag = ASE_Visible }
+}
+super2_event_trigger_effect = {
+	super2_event_clear_flags = yes
+    every_country = { limit = { is_ai = no } set_country_flag = ASE2_Visible }
+}
+set_new_light_cooldown_effect = {
+    GER = { add_timed_idea = { idea = felix_cooldown_idea days = 10 }}
+}
+set_new_hard_cooldown_effect = {
+    GER = { add_timed_idea = { idea = felix_cooldown_idea days = 15 }}
+}

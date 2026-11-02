@@ -1,0 +1,77 @@
+sp_is_axis_country = {
+	GER = {
+		has_government = fascism
+	}
+    OR = {
+		AND = {
+			is_in_faction_with = GER
+			GER = { is_faction_leader = yes }
+		}
+		AND = {
+			OR = {
+				tag = ROM
+				tag = HUN
+				tag = BUL
+				tag = ITA
+				tag = GER
+			}
+			has_government = fascism
+			NOT = {has_war_with = GER}
+		}
+    }
+}
+
+sp_is_comintern_country = {
+	SOV = {
+		has_government = communism
+	}
+    OR = {
+        AND = {
+			is_in_faction_with = SOV
+			SOV = { is_faction_leader = yes }
+		}
+        AND = {
+			tag = SOV
+			NOT = { is_in_faction_with = GER }
+		}
+    }
+}
+
+sp_is_allies_country = {
+    OR = {
+		AND = {
+			is_in_faction_with = ENG
+			ENG = { is_faction_leader = yes }
+			ENG = { has_government = democratic }
+		}
+        AND = {
+			OR = {
+				tag = USA
+				tag = FRA
+			}
+			NOT = { is_in_faction_with = GER }
+			has_government = democratic
+        }
+    }
+}
+sp_is_geacps_country = {
+	JAP = {
+		OR = {
+			has_government = fascism
+			has_government = neutrality
+		}
+	}
+    OR = {
+		AND = {
+			is_in_faction_with = JAP
+			JAP = { is_faction_leader = yes }
+		}
+		tag = JAP
+    }
+}
+
+sp_is_china_country = {
+    OR = {
+		tag = CHI
+    }
+}

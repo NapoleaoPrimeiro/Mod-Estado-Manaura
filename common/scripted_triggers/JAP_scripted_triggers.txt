@@ -465,3 +465,117 @@ JAP_imperial_influence_demands_ready = {
 	NOT = { has_country_flag = JAP_faction_demands_cooldown_flag }
 }
 
+# Added from the 1.19.4 base game (missing from this older copy)
+
+# The four main islands only. Okinawa, Karafuto and the Kurils are deliberately excluded: they are small enough that
+# a full levy dumped into them would overstack a handful of provinces.
+JAP_is_main_home_islands_state = {
+	custom_trigger_tooltip = {
+		tooltip = JAP_is_main_home_islands_state_tt
+		OR = {
+			state = 536 # Hokkaido
+			state = 533 # Kita-Tohoku
+			state = 1019 # Minami-Tohoku
+			state = 534 # Koshinetsu
+			state = 535 # Hokuriku
+			state = 282 # Kanto
+			state = 532 # Tokai
+			state = 531 # Kansai
+			state = 530 # Shikoku
+			state = 529 # Sanyo
+			state = 1020 # Sanin
+			state = 528 # Hokubu Kyushu
+			state = 1018 # Minami Kyushu
+		}
+	}
+}
+
+# Where the Boeitai should form. ROOT is the country raising the levy.
+# The enemy holds part of this state but we still hold the rest of it, so create_unit has friendly provinces to use.
+JAP_boeitai_beachhead_state = {
+	JAP_is_main_home_islands_state = yes
+	is_controlled_by = ROOT
+	NOT = { is_fully_controlled_by = ROOT }
+}
+
+# Intact, but the enemy is next door or can land here.
+JAP_boeitai_threatened_state = {
+	JAP_is_main_home_islands_state = yes
+	is_fully_controlled_by = ROOT
+	is_coastal = yes
+	any_neighbor_state = {
+		NOT = { is_controlled_by = ROOT }
+	}
+}
+
+# Last resort before the capital: anywhere on the main islands that can actually be landed on.
+JAP_boeitai_coastal_state = {
+	JAP_is_main_home_islands_state = yes
+	is_controlled_by = ROOT
+	is_coastal = yes
+}
+
+JAP_state_is_soviet_bloc_controlled = { ### State scope. The Soviet bloc as the northern strategy sees it.
+	OR = {
+		is_controlled_by = SOV
+		AND = {
+			is_controlled_by = MON
+			MON = { is_in_faction_with = SOV }
+		}
+		AND = {
+			is_controlled_by = SIK
+			SIK = { is_in_faction_with = SOV }
+		}
+		AND = {
+			is_controlled_by = TAN
+			TAN = { is_in_faction_with = SOV }
+		}
+	}
+}
+
+JAP_borders_the_soviet_bloc = {
+	OR = {
+		any_owned_state = {
+			any_neighbor_state = {
+				JAP_state_is_soviet_bloc_controlled = yes
+			}
+		}
+		any_subject_country = {
+			any_owned_state = {
+				any_neighbor_state = {
+					JAP_state_is_soviet_bloc_controlled = yes
+				}
+			}
+		}
+	}
+}
+
+### Home islands facing the Pacific - the decisive landing zone, so this approach takes precedence over the others.
+JAP_pacific_approach_breached = {
+	OR = {
+		282 = { NOT = { is_fully_controlled_by = JAP } }
+		532 = { NOT = { is_fully_controlled_by = JAP } }
+		530 = { NOT = { is_fully_controlled_by = JAP } }
+		1019 = { NOT = { is_fully_controlled_by = JAP } }
+	}
+}
+
+### Kyushu and the Inland Sea, reached across the East China Sea.
+JAP_western_approach_breached = {
+	OR = {
+		528 = { NOT = { is_fully_controlled_by = JAP } }
+		1018 = { NOT = { is_fully_controlled_by = JAP } }
+		529 = { NOT = { is_fully_controlled_by = JAP } }
+		531 = { NOT = { is_fully_controlled_by = JAP } }
+	}
+}
+
+### Hokkaido and the Sea of Japan coast, the Soviet approach.
+JAP_northern_approach_breached = {
+	OR = {
+		536 = { NOT = { is_fully_controlled_by = JAP } }
+		534 = { NOT = { is_fully_controlled_by = JAP } }
+		1020 = { NOT = { is_fully_controlled_by = JAP } }
+		533 = { NOT = { is_fully_controlled_by = JAP } }
+	}
+}

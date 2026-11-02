@@ -1,0 +1,576 @@
+################
+# SUPER EVENTS #
+################
+
+add_namespace = ase
+add_namespace = ase2
+
+
+country_event = {	#Asia_War
+	id = ase.1
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		IF = {
+			limit = { not_have_cooldown_trigger = yes }
+			sound_effect = russo_japanese_war
+			set_new_light_cooldown_effect = yes
+		}
+		super_event_trigger_effect = yes
+		
+		set_country_flag = Asia_War
+		#Asia_War Flag
+		set_global_flag = Super_Asia_War
+	#####################################################
+		
+	}
+}
+
+country_event = {	#Barbarossa_Started
+	id = ase.2
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		
+	}
+	
+	option = {
+		IF = {
+			limit = { not_have_cooldown_trigger = yes }
+			sound_effect = barbarossa
+			set_new_hard_cooldown_effect = yes
+		}
+		super_event_trigger_effect = yes
+		
+		set_country_flag = Barbarossa_Started
+		#Barbarossa_Started Flag
+		set_global_flag = Super_Barbarossa_Started
+	#####################################################
+		
+	}
+}
+
+country_event = {	#WW2_Started
+	id = ase.3
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+	
+	}
+	
+	option = {
+		IF = {
+			limit = { not_have_cooldown_trigger = yes }
+			sound_effect = ww2
+			set_new_hard_cooldown_effect = yes
+		}
+		super_event_trigger_effect = yes
+
+		set_country_flag = WW2_Started
+		#WW2_Started Flag
+		set_global_flag = Super_WW2_Started
+	#####################################################
+	}
+}	
+
+country_event = {
+	id = ase.41
+	hidden = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_global_flag = greater_italy_flag
+	}
+
+	immediate = {
+		IF = {
+			limit = { NOT = { has_global_flag = Super_Great_Italy }}
+			every_country = {
+				limit = {
+					is_ai = no
+				}
+				country_event = { id = ase.4 }
+			}
+		}
+	}
+}
+
+country_event = {	#Great_Italy
+	id = ase.4
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+	
+	}
+	
+	option = {
+		IF = {
+			limit = { not_have_cooldown_trigger = yes }
+			sound_effect = Mussolini
+			set_new_light_cooldown_effect = yes
+		}
+		super_event_trigger_effect = yes
+		set_country_flag = Great_Italy
+		set_global_flag = Super_Great_Italy
+	#####################################################
+	}
+}
+
+country_event = {	#Anschluss
+	id = ase.5
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		IF = {
+			limit = { not_have_cooldown_trigger = yes }
+			sound_effect = anschluss
+			set_new_hard_cooldown_effect = yes
+		}
+		super_event_trigger_effect = yes
+		set_country_flag = Anschluss
+		set_global_flag = Super_Anschluss
+		
+	}
+}
+
+country_event = {	#Annex of Czechoslovakia
+	id = ase.6
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		IF = {
+			limit = { not_have_cooldown_trigger = yes }
+			sound_effect = czech
+			set_new_light_cooldown_effect = yes
+		}
+		super_event_trigger_effect = yes
+		set_country_flag = Czech
+		set_global_flag = Super_Czech
+		
+	}
+}
+
+country_event = {	#Battle of Stalingrad
+	id = ase.7
+	hidden = yes
+	is_triggered_only = yes
+	
+	
+	trigger = {
+		
+	}
+	
+	option = {
+		IF = {
+			limit = { not_have_cooldown_trigger = yes }
+			sound_effect = stalingrad
+			set_new_light_cooldown_effect = yes
+		}
+		super_event_trigger_effect = yes
+		set_country_flag = Stalingrad
+		set_global_flag = Super_Stalingrad
+		
+	}
+}
+country_event = {	#Battle of Berlin
+	id = ase.8
+	hidden = yes
+	is_triggered_only = yes
+	
+	
+	trigger = {
+		
+	}
+	
+	option = {
+		IF = {
+			limit = { not_have_cooldown_trigger = yes }
+			sound_effect = berlin
+			set_new_hard_cooldown_effect = yes
+		}
+		super_event_trigger_effect = yes
+		set_country_flag = Berlin
+		set_global_flag = Super_Berlin
+		
+	}
+}
+
+country_event = {	#D-day
+	id = ase.9
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		IF = {
+			limit = { not_have_cooldown_trigger = yes }
+			sound_effect = dday
+			set_new_hard_cooldown_effect = yes
+		}
+		super_event_trigger_effect = yes
+		set_country_flag = Dday
+		set_global_flag = Super_Dday
+		
+	}
+}
+
+
+country_event = {	#Cairo
+	id = ase.10
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		IF = {
+			limit = { not_have_cooldown_trigger = yes }
+			sound_effect = cairo
+			set_new_light_cooldown_effect = yes
+		}
+		super_event_trigger_effect = yes
+		set_country_flag = Cairo
+		set_global_flag = Super_Cairo
+		
+	}
+}
+
+country_event = {	#Moskov
+	id = ase.11
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		IF = {
+			limit = { not_have_cooldown_trigger = yes }
+			sound_effect = moskov
+			set_new_light_cooldown_effect = yes
+		}
+		super_event_trigger_effect = yes
+		set_country_flag = Moskov
+		set_global_flag = Super_Moskov
+		
+	}
+}
+
+country_event = {	#Fall_Fra
+	id = ase.12
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		IF = {
+			limit = { not_have_cooldown_trigger = yes }
+			sound_effect = fall_france
+			set_new_light_cooldown_effect = yes
+		}
+		super_event_trigger_effect = yes
+		set_country_flag = Fall_Fra
+		set_global_flag = Super_Fall_Fra
+		
+	}
+}
+
+country_event = {	#Italy_War
+	id = ase.13
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		IF = {
+			limit = { not_have_cooldown_trigger = yes }
+			sound_effect = italy_war
+			set_new_light_cooldown_effect = yes
+		}
+		super_event_trigger_effect = yes
+		set_country_flag = Italy_War
+		set_global_flag = Super_Italy_War
+		
+	}
+}
+
+country_event = {	#Kursk
+	id = ase.14
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		IF = {
+			limit = { not_have_cooldown_trigger = yes }
+			sound_effect = kursk
+			set_new_light_cooldown_effect = yes
+		}
+		super_event_trigger_effect = yes
+		random_list = {
+			50 = {
+				set_country_flag = Kursk
+			}
+			50 = {
+				set_country_flag = ASE_Citadel
+			}
+		}
+		set_global_flag = Super_Kursk
+	}
+}
+
+country_event = {	#ASE_Blitzkrieg
+	id = ase.15
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		IF = {
+			limit = { not_have_cooldown_trigger = yes }
+			sound_effect = blitzkrieg
+			set_new_light_cooldown_effect = yes
+		}
+		super_event_trigger_effect = yes
+		set_country_flag = ASE_Blitzkrieg
+		set_global_flag = Super_ASE_Blitzkrieg
+	}
+}
+
+country_event = {	#ASE_2Sino_War
+	id = ase.16
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		IF = {
+			limit = { not_have_cooldown_trigger = yes }
+			sound_effect = 2sino_war
+			set_new_light_cooldown_effect = yes
+		}
+		super_event_trigger_effect = yes
+		set_country_flag = ASE_2Sino_War
+		set_global_flag = Super_ASE_2Sino_War
+	}
+}
+
+country_event = {	#ASE_Winter_War
+	id = ase.17
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		IF = {
+			limit = { not_have_cooldown_trigger = yes }
+			sound_effect = winter_war
+			set_new_light_cooldown_effect = yes
+		}
+		super_event_trigger_effect = yes
+		set_country_flag = ASE_Winter_War
+		set_global_flag = Super_ASE_Winter_War
+	}
+}
+
+country_event = {	#ASE_Kiev
+	id = ase.18
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		IF = {
+			limit = { not_have_cooldown_trigger = yes }
+			sound_effect = kiev
+			set_new_light_cooldown_effect = yes
+		}
+		super_event_trigger_effect = yes
+		set_country_flag = ASE_Kiev
+		set_global_flag = Super_ASE_Kiev
+	}
+}
+
+country_event = {	#ASE_Normandy
+	id = ase.19
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		IF = {
+			limit = { not_have_cooldown_trigger = yes }
+			sound_effect = normandy
+			set_new_light_cooldown_effect = yes
+		}
+		super_event_trigger_effect = yes
+		set_country_flag = ASE_Normandy
+		set_global_flag = Super_ASE_Normandy
+	}
+}
+
+country_event = {
+	id = ase.2000
+	hidden = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_global_flag = spanish_civil_war
+	}
+
+	immediate = {
+		IF = {
+			limit = { 
+				NOT = { has_global_flag = Super_ASE_Spain_Civil_War }
+				date < 1938.01.01
+			}
+			every_country = {
+				limit = {
+					is_ai = no
+				}
+				country_event = { id = ase.20 }
+			}
+		}
+	}
+}
+
+country_event = {	#ASE_Spain_Civil_War
+	id = ase.20
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		#IF = {
+		#	limit = { not_have_cooldown_trigger = yes }
+		#	sound_effect = 
+		#	set_new_light_cooldown_effect = yes
+		#}
+		super_event_trigger_effect = yes
+		set_country_flag = ASE_Spain_Civil_War
+		set_global_flag = Super_ASE_Spain_Civil_War
+	}
+}
+
+country_event = {
+	id = ase.2100
+	hidden = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_global_flag = SPR_franco_won
+	}
+
+	immediate = {
+		IF = {
+			limit = { NOT = { has_global_flag = Super_ASE_Spain_Franco_Win }}
+			every_country = {
+				limit = {
+					is_ai = no
+				}
+				country_event = { id = ase.21 }
+			}
+		}
+	}
+}
+country_event = {	#ASE_Spain_Franco_Win
+	id = ase.21
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		IF = {
+			limit = { not_have_cooldown_trigger = yes }
+			sound_effect = franco_win
+			set_new_light_cooldown_effect = yes
+		}
+		super_event_trigger_effect = yes
+		set_country_flag = ASE_Spain_Franco_Win
+		set_global_flag = Super_ASE_Spain_Franco_Win
+	}
+}
+
+##################################
+
+country_event = {	#Nuclear
+	id = ase2.1
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		IF = {
+			limit = { not_have_cooldown_trigger = yes }
+			sound_effect = nuke1
+			set_new_light_cooldown_effect = yes
+		}
+		super2_event_trigger_effect = yes
+		set_country_flag = Nuclear1
+		set_global_flag = Super_Nuclear1
+		
+	}
+}
+
+country_event = {
+	id = ase2.201
+	hidden = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_global_flag = form_greater_german_reich_flag
+	}
+
+	immediate = {
+		IF = {
+			limit = { NOT = { has_global_flag = Super_Great_Reich }}
+			every_country = {
+				limit = {
+					is_ai = no
+				}
+				country_event = { id = ase2.2 }
+			}
+		}
+	}
+}
+country_event = {	#Great_Reich
+	id = ase2.2
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		IF = {
+			limit = { not_have_cooldown_trigger = yes }
+			sound_effect = great_german_reich
+			set_new_light_cooldown_effect = yes
+		}
+		super2_event_trigger_effect = yes
+		set_country_flag = Great_Reich
+		set_global_flag = Super_Great_Reich
+		
+	}
+}
+country_event = {	#New_Order
+	id = ase2.3
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		IF = {
+			limit = { not_have_cooldown_trigger = yes }
+			sound_effect = new_order
+			set_new_hard_cooldown_effect = yes
+		}
+		super2_event_trigger_effect = yes
+		set_country_flag = New_Order
+		set_global_flag = Super_New_Order
+		
+	}
+}
+
+country_event = {	#ASE_Eva_Braun
+	id = ase2.4
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		IF = {
+			limit = { not_have_cooldown_trigger = yes }
+			sound_effect = eva_braun
+			set_new_hard_cooldown_effect = yes
+		}
+		super2_event_trigger_effect = yes
+		set_country_flag = ASE_Eva_Braun
+		set_global_flag = Super_ASE_Eva_Braun
+		
+	}
+}

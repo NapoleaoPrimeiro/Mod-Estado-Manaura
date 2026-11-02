@@ -8341,7 +8341,7 @@ focus_tree = {
 					FRA = {
 						exists = yes
 						is_subject = no
-						has_completed_focus = FRA_strengthen_the_little_entente
+						has_completed_focus = FRW_little_entente_guarantees
 					}
 				}
 				FRA = { country_event = { id = DOD_hungary.30 } }
@@ -8350,7 +8350,7 @@ focus_tree = {
 				limit = {
 					country_exists = ROM
 					OR = {
-						FRA = { NOT = { has_completed_focus = FRA_strengthen_the_little_entente } }
+						FRA = { NOT = { has_completed_focus = FRW_little_entente_guarantees } }
 						FRA = { exists = no }
 						FRA = { is_subject = yes }
 					}
@@ -9381,7 +9381,7 @@ focus_tree = {
 			IF = {
 				limit = {
 					FRA = {
-						has_completed_focus = FRA_strengthen_the_little_entente
+						has_completed_focus = FRW_little_entente_guarantees
 						exists = yes
 						is_subject = no
 					}
@@ -9399,7 +9399,7 @@ focus_tree = {
 					OR = {
 						NOT = {
 							FRA = {
-								has_completed_focus = FRA_strengthen_the_little_entente
+								has_completed_focus = FRW_little_entente_guarantees
 							}
 						}
 						FRA = {
@@ -18108,7 +18108,7 @@ focus_tree = {
 						OR = {
 							exists = no
 							is_puppet = yes
-							NOT = { has_completed_focus = FRA_strengthen_the_little_entente }
+							NOT = { has_completed_focus = FRW_little_entente_guarantees }
 						}
 					}
 				}
@@ -18126,13 +18126,13 @@ focus_tree = {
 
 			IF = {
 				limit = {
-					FRA = { has_completed_focus = FRA_strengthen_the_little_entente }
+					FRA = { has_completed_focus = FRW_little_entente_guarantees }
 				}
 				FRA = { country_event = DOD_hungary.140 }
 			}
 			IF = {
 				limit = {
-					NOT = { FRA = { has_completed_focus = FRA_strengthen_the_little_entente } }
+					NOT = { FRA = { has_completed_focus = FRW_little_entente_guarantees } }
 				}
 				ROM = { country_event = DOD_hungary.140 }
 			}

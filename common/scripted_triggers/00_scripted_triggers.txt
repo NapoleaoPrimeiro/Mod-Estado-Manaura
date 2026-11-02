@@ -1579,3 +1579,86 @@ check_allow_alternate_political_events = {
 		#
 	}
 }
+
+# Added from the 1.19.4 base game (missing from this older copy)
+
+# Single definition of being past the treaty benchmark, used live by the signatory panel and daily by its refresh counter.
+# The benchmark selection and the weights match MTG_treaty_reduction_signatory_mission so the badge and the mission agree.
+has_naval_treaty_over_allowance_trigger = {
+	if = {
+		limit = {
+			ENG = { has_naval_treaty_trigger = yes }
+		}
+		NOT = {
+			naval_strength_comparison = {
+				other = ENG
+				ratio < 1
+				sub_unit_def_weights = {
+					carrier = 0.5
+					battleship = 1
+					battle_cruiser = 0.8
+					heavy_cruiser = 0.5
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			USA = { has_naval_treaty_trigger = yes }
+		}
+		NOT = {
+			naval_strength_comparison = {
+				other = USA
+				ratio < 1
+				sub_unit_def_weights = {
+					carrier = 0.5
+					battleship = 1
+					battle_cruiser = 0.8
+					heavy_cruiser = 0.5
+				}
+			}
+		}
+	}
+	else = {
+		has_navy_size = {
+			type = capital_ship
+			size > 50
+		}
+	}
+}
+
+can_unlock_second_track_of_sf_doctrine = {
+	if = {
+		limit = { check_variable = { sf_trees > 1 } }
+		custom_trigger_tooltip = {
+			tooltip = can_unlock_second_track_special_forces_doctrine_yes
+			check_variable = { sf_trees > 1 }
+		}
+	}
+	else = {
+		custom_trigger_tooltip = {
+			tooltip = can_unlock_second_track_special_forces_doctrine_no
+			always = no
+		}
+	}
+}
+
+### Countries that a designer has written a deliberate wholesale puppet plan for in common/peace_conference/ai_peace.
+### dont_even_try_to_puppet_large_states exists to stop the AI fragmenting a big loser by accident, but its
+### num_owned_states > 30 test also fires on the countries whose authored plan is precisely to puppet them whole,
+### which silently cancels that plan. Exempt those, and the rule keeps working for the incidental cases.
+### Scoped in the loser, ROOT is the winner doing the bidding. Paired where only one winner has a plan, so the
+### -200 still protects the loser from every other winner carving a second puppet out of it.
+pc_has_authored_wholesale_puppet_plan = {
+	OR = {
+		original_tag = GER # yalta.txt, FRA/USA/ENG each puppet an occupation zone. Was the existing exemption.
+		AND = {
+			original_tag = CHI # JAP.txt, JAP_create_chinese_puppet
+			ROOT = { original_tag = JAP }
+		}
+		AND = {
+			original_tag = JAP # USA.txt, USA_puppet_japan
+			ROOT = { original_tag = USA }
+		}
+	}
+}

@@ -1,0 +1,710 @@
+on_actions = {
+	#FROM is war target
+	on_declare_war = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						original_tag = POL
+					}
+					NOT = { has_global_flag = Super_WW2_Started }
+					tag = GER
+					has_government = fascism
+					date < 1940.06.01
+				}
+				GER = { add_timed_idea = { idea = ASE_blitzkrieg days = 31 }}
+				every_country = {
+					limit ={
+						is_ai = no
+					}
+					country_event = {
+						id = ase.3
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						original_tag = SOV
+					}
+					NOT = { has_global_flag = Super_Barbarossa_Started }
+					tag = GER
+					has_government = fascism
+					date < 1943.01.01
+				}
+
+				every_country = {
+					limit ={
+						is_ai = no
+					}
+					country_event = {
+						id = ase.2
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						original_tag = FIN
+					}
+					NOT = { has_global_flag = Super_ASE_Winter_War }
+					tag = SOV
+					has_government = communism
+					date > 1939.09.01
+					date < 1940.04.01
+				}
+				every_country = {
+					limit ={
+						is_ai = no
+					}
+					country_event = {
+						id = ase.17
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						original_tag = CHI
+					}
+					NOT = { has_global_flag = Super_ASE_2Sino_War }
+					tag = JAP
+					OR = {
+						has_government = fascism
+						has_government = neutrality
+					}
+					date < 1939.04.01
+				}
+				every_country = {
+					limit ={
+						is_ai = no
+					}
+					country_event = {
+						id = ase.16
+					}
+				}
+			}
+		}
+	}
+	#ROOT is winner, FROM gets annexed. For civil wars on_civil_war_end is also fired.
+	on_annex = {
+		effect = {
+			if = {
+				limit = {
+					FROM = { original_tag = AUS }
+					NOT = { has_global_flag = Super_Anschluss }
+					ROOT = {
+						original_tag = GER
+						has_government = fascism
+					}
+					date < 1941.01.01
+				}
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					country_event = { id = ase.5 }
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					FROM = { original_tag = CZE }
+					NOT = { has_global_flag = Super_Czech }
+					ROOT = {
+						original_tag = GER
+						has_government = fascism
+					}
+					date < 1941.01.01
+				}
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					country_event = { id = ase.6 }
+				}
+			}
+		}
+	}
+	#ROOT is new controller #FROM is old controller #FROM.FROM is state ID
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					FROM.FROM = {
+						state = 217
+					}
+					NOT = { has_global_flag = Super_Stalingrad }
+					FROM = {
+						original_tag = SOV
+						has_government = communism
+					}
+					ROOT = { 
+						OR = { 
+							original_tag = GER
+							AND = {
+								is_in_faction_with = GER
+								GER = { 
+									is_faction_leader = yes
+									has_war_with = FROM
+								}
+								has_government = fascism
+							}
+						}
+					}
+					divisions_in_state = { state = 217 size > 1 }
+				}
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					country_event = { id = ase.7 }
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					FROM.FROM = {
+						state = 64
+					}
+					NOT = { has_global_flag = Super_Berlin }
+					FROM = {
+						original_tag = GER
+					}
+					ROOT = { 
+						original_tag = SOV
+						has_government = communism
+						OR = {
+							10 = { is_fully_controlled_by = SOV }
+							87 = { is_fully_controlled_by = SOV }
+							86 = { is_fully_controlled_by = SOV }
+							68 = { is_fully_controlled_by = SOV }
+						}
+					}
+					divisions_in_state = { state = 64 size > 1 }
+				}
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					country_event = { id = ase.8 }
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						FROM.FROM = {
+							state = 14
+						}
+						FROM.FROM = {
+							state = 15
+						}
+					}
+					NOT = { has_global_flag = Super_Dday }
+					
+					FRA = {
+						OR = {
+							exists = no
+							has_capitulated = yes
+							is_in_faction_with = GER
+						}
+					}
+					
+					USA = { 
+						has_government = democratic 
+						has_war_with = FROM
+					}
+					
+					GER = {
+						has_government = fascism
+						has_war_with = ROOT
+					}
+					FROM = {
+						OR = {
+							original_tag = GER
+							is_in_faction_with = GER
+						}
+					}
+					ROOT = {
+						OR = {
+							original_tag = USA
+							is_in_faction_with = USA
+						}
+						NOT = { 
+							controls_state = 16
+							controls_state = 24
+							controls_state = 25
+						}
+					}
+					OR = {
+						divisions_in_state = { state = 14 size > 1 }
+						divisions_in_state = { state = 15 size > 1 }
+					}
+				}
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					country_event = { id = ase.9 }
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					FROM.FROM = {
+						state = 219
+					}
+					NOT = { has_global_flag = Super_Moskov }
+					FROM = {
+						original_tag = SOV
+						has_government = communism
+					}
+					ROOT = { 
+						OR = { 
+							original_tag = GER
+							AND = {
+								is_in_faction_with = GER
+								GER = { 
+									is_faction_leader = yes
+									has_war_with = FROM
+								}
+								has_government = fascism
+							}
+						}
+					}
+					divisions_in_state = { state = 219 size > 1 }
+				}
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					country_event = { id = ase.11 }
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					FROM.FROM = {
+						state = 907
+					}
+					NOT = { has_global_flag = Super_Cairo }
+					FROM = {
+						OR = {
+							original_tag = ENG
+							is_subject_of = ENG
+						}
+					}
+					GER = { has_government = fascism }
+					ROOT = { 
+						OR = { 
+							original_tag = GER
+							AND = {
+								is_in_faction_with = GER
+								GER = { 
+									is_faction_leader = yes
+									has_war_with = FROM
+								}
+								has_government = fascism
+							}
+						}
+					}
+					divisions_in_state = { state = 907 size > 1 }
+				}
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					country_event = { id = ase.10 }
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					FROM.FROM = {
+						state = 220
+					}
+					NOT = { has_global_flag = Super_Kursk }
+					FROM = {
+						original_tag = SOV
+					}
+					ROOT = { 
+						OR = { 
+							original_tag = GER
+							AND = {
+								is_in_faction_with = GER
+								GER = { 
+									is_faction_leader = yes
+									has_war_with = FROM
+								}
+							}
+						}
+					}
+					divisions_in_state = { state = 220 size > 1 }
+				}
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					country_event = { id = ase.14 }
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					FROM.FROM = {
+						OR = {
+							state = 358
+							state = 395
+							state = 371
+						}
+					}
+					NOT = { has_global_flag = Super_New_Order }
+					FROM = {
+						original_tag = USA
+					}
+					ROOT = {
+						358 = { is_controlled_by = ROOT }
+						395 = { is_controlled_by = ROOT }
+						371 = { is_controlled_by = ROOT }
+						has_government = fascism
+						OR = { 
+							original_tag = GER
+							AND = {
+								is_in_faction_with = GER
+								GER = {
+									is_faction_leader = yes
+									has_war_with = FROM
+									has_government = fascism
+								}
+							}
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					country_event = { id = ase2.3 }
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					FROM.FROM = {
+						state = 202
+					}
+					NOT = { has_global_flag = Super_ASE_Kiev }
+					FROM = {
+						original_tag = SOV
+						has_government = communism
+					}
+					ROOT = {
+						OR = { 
+							original_tag = GER
+							AND = {
+								is_in_faction_with = GER
+								GER = { 
+									is_faction_leader = yes
+									has_war_with = FROM
+								}
+							}
+						}
+					}
+					divisions_in_state = { state = 202 size > 1 }
+				}
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					country_event = { id = ase.18 }
+				}
+			}
+		}
+	}
+	#ROOT = attacking side
+	#FROM = defending side
+	#fired when two countries end up at war with each other (on_war is fired when a country goes to war against anyone and is not fired again when it enters war against another country unless it went to peace first)
+	on_war_relation_added = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_global_flag = Super_Asia_War }
+					FROM = {
+						original_tag = USA
+					}
+					ROOT = {
+						tag = JAP
+						OR = {
+							has_government = fascism
+							has_government = neutrality
+						}
+						date < 1943.01.01
+					}
+				}
+
+				every_country = {
+					limit ={
+						is_ai = no
+					}
+					country_event = {
+						id = ase.1
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_global_flag = Super_Italy_War }
+					FROM = {
+						original_tag = ENG
+					}
+					ROOT = {
+						tag = ITA
+						has_government = fascism
+						date < 1941.01.01
+					}
+				}
+
+				every_country = {
+					limit ={
+						is_ai = no
+					}
+					country_event = {
+						id = ase.13
+					}
+				}
+			}
+		}
+	}
+	on_nuke_drop = {
+		effect = {			
+			if = {
+				limit = {
+					NOT = { has_global_flag = Super_Nuclear1 }
+				}
+				set_country_flag = Nuclear1
+				every_country = {
+					limit ={
+						is_ai = no
+					}
+					country_event = {
+						id = ase2.1
+					}
+				}
+			}
+		}
+	}
+	# ROOT is capitulated country, FROM is winner
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					tag = FRA
+					NOT = { has_global_flag = Super_Fall_Fra }
+					FROM = {
+						tag = GER
+						has_government = fascism
+					}
+					date < 1942.01.01
+				}
+				every_country = {
+					limit ={
+						is_ai = no
+					}
+					country_event = {
+						id = ase.12
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					tag = POL
+					NOT = { has_global_flag = Super_ASE_Blitzkrieg }
+					FROM = {
+						tag = GER
+						has_government = fascism
+						has_idea = ASE_blitzkrieg
+					}
+					date > 1939.01.01
+					date < 1940.01.01
+				}
+				every_country = {
+					limit ={
+						is_ai = no
+					}
+					country_event = {
+						id = ase.15
+					}
+				}
+			}
+		}
+	}
+	on_monthly_GER = {
+		effect = {
+			IF = {
+				limit = {
+					NOT = { has_global_flag = Super_ASE_Normandy }
+					15 = {
+						state_is_fully_controlled_by_ROOT_subject_or_faction_member = yes
+						coastal_bunker > 6
+						is_coastal = yes 
+					}
+				}
+				every_country = {
+					limit ={
+						is_ai = no
+					}
+					country_event = {
+						id = ase.19
+					}
+				}
+			}
+		}
+		effect = {
+			IF = {
+				limit = {
+				NOT = { has_global_flag = Super_ASE_Eva_Braun }
+				OR = {
+				AND = {
+					owns_state = 357 #New England
+					owns_state = 358 #New York
+					owns_state = 359 #New Jersey
+					owns_state = 360 #Pennsylvania
+					owns_state = 361 #Maryland
+					owns_state = 362 #Virginia
+					owns_state = 363 #North Carolina
+					owns_state = 364 #South Carolina
+					owns_state = 365 #Georgia
+					owns_state = 366 #Florida
+					owns_state = 367 #Alabama
+					owns_state = 368 #Tennessee
+					owns_state = 369 #Kentucky
+					owns_state = 261 #Ohio
+					owns_state = 393 #Michigan
+					owns_state = 396 #Indiana
+					owns_state = 395 #Illinois
+					owns_state = 373 #Missouri
+					owns_state = 372 #Arkansas
+					owns_state = 371 #Louisiana
+					owns_state = 370 #mississippi
+					owns_state = 375 #Texas
+					owns_state = 374 #Oklahoma
+					owns_state = 383 #Kansas
+					owns_state = 392 #Iowa
+					owns_state = 394 #Wisconsin
+					owns_state = 391 #Minnesota
+					owns_state = 389 #North Dakota
+					owns_state = 390 #South Dakota
+					owns_state = 384 #Nebraska
+					owns_state = 382 #Colorado
+					owns_state = 381 #Wyoming
+					owns_state = 388 #Montana
+					owns_state = 376 #New Mexico
+					owns_state = 377 #Arizona
+					owns_state = 380 #Utah
+					owns_state = 387 #Idaho
+					owns_state = 386 #Washington
+					owns_state = 385 #Oregon
+					owns_state = 379 #Nevada
+					owns_state = 378 #California
+					owns_state = 463 #Alaska
+					owns_state = 629 #Hawaii
+					has_country_leader = {
+						ruling_only = yes
+						character = GER_eva_braun
+				}
+				}
+				AND = {
+					USA = {
+						is_subject_of = GER
+						owns_state = 357 #New England
+						owns_state = 358 #New York
+						owns_state = 359 #New Jersey
+						owns_state = 360 #Pennsylvania
+						owns_state = 361 #Maryland
+						owns_state = 362 #Virginia
+						owns_state = 363 #North Carolina
+						owns_state = 364 #South Carolina
+						owns_state = 365 #Georgia
+						owns_state = 366 #Florida
+						owns_state = 367 #Alabama
+						owns_state = 368 #Tennessee
+						owns_state = 369 #Kentucky
+						owns_state = 261 #Ohio
+						owns_state = 393 #Michigan
+						owns_state = 396 #Indiana
+						owns_state = 395 #Illinois
+						owns_state = 373 #Missouri
+						owns_state = 372 #Arkansas
+						owns_state = 371 #Louisiana
+						owns_state = 370 #mississippi
+						owns_state = 375 #Texas
+						owns_state = 374 #Oklahoma
+						owns_state = 383 #Kansas
+						owns_state = 392 #Iowa
+						owns_state = 394 #Wisconsin
+						owns_state = 391 #Minnesota
+						owns_state = 389 #North Dakota
+						owns_state = 390 #South Dakota
+						owns_state = 384 #Nebraska
+						owns_state = 382 #Colorado
+						owns_state = 381 #Wyoming
+						owns_state = 388 #Montana
+						owns_state = 376 #New Mexico
+						owns_state = 377 #Arizona
+						owns_state = 380 #Utah
+						owns_state = 387 #Idaho
+						owns_state = 386 #Washington
+						owns_state = 385 #Oregon
+						owns_state = 379 #Nevada
+						owns_state = 378 #California
+						owns_state = 463 #Alaska
+						owns_state = 629 #Hawaii
+					}
+					GER = {
+						has_country_leader = {
+							ruling_only = yes
+							character = GER_eva_braun
+						}
+					}
+				}
+				}
+				}
+				every_country = {
+					limit ={
+						is_ai = no
+					}
+					country_event = {
+						id = ase2.4
+					}
+				}
+			}
+		}
+	}
+	
+	on_startup = {
+		effect = {
+			random_country = {
+				ase_apply_game_rules = yes
+			}
+		}
+	}
+}

@@ -3634,13 +3634,12 @@ add_ideas = HUN_hungarian_gendarmerie
 		#icon = GFX_HOL_Royal_Netherlands_Army
 		#icon = GFX_focus_HRE_FORM
 		icon = {
-			trigger = {
+			GFX_focus_HRE_victoria = {
 				has_country_leader = {
 					ruling_only = yes
 					character = GER_victoria
 				}
 			}
-			value = GFX_focus_HRE_victoria
 		}
 		icon = GFX_focus_HRE_wilhelm2
 
@@ -9088,35 +9087,30 @@ focus = {
 		add_ideas = GER_anarch_output_idea 
 		add_stability = 0.1
                 MEK = {
-   			transfer_troops = yes
                     every_controlled_state = {
                         transfer_state_to = GER
                         add_core_of = GER
                     }
                 }
                 SHL = {
-   			transfer_troops = yes
                     every_controlled_state = {
                         transfer_state_to = GER
                         add_core_of = GER
                     }
                 }
                 HAN = {
-   			transfer_troops = yes
                     every_controlled_state = {
                         transfer_state_to = GER
                         add_core_of = GER
                     }
                 }
                 WUR = {
-   			transfer_troops = yes
                     every_controlled_state = {
                         transfer_state_to = GER
                         add_core_of = GER
                     }
                 }
                 BAY = {
-   			transfer_troops = yes
                     every_controlled_state = {
                         transfer_state_to = GER
                         add_core_of = GER
@@ -13278,7 +13272,7 @@ add_political_power = 150
 		}
 		completion_reward = {
 			add_stability = 0.05
-			complete_decision = form_greater_german_reich
+complete_decision = form_greater_german_reich
 set_cosmetic_tag = GER_greater_german_reich
 			every_state = {
 				limit = { is_core_of = AUS }
@@ -14572,7 +14566,7 @@ focus = {
 		completion_reward = {
 				GER = {
     LIT = { every_core_state = { add_core_of = GER } }
-    LET = { every_core_state = { add_core_of = GER } }
+    LAT = { every_core_state = { add_core_of = GER } }
     EST = { every_core_state = { add_core_of = GER } }
 }	
 		

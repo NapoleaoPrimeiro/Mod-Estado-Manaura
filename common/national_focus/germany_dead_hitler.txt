@@ -6322,7 +6322,6 @@ focus = {
 		create_faction = "Phalange Entente"
 		set_cosmetic_tag = GER_falan
 		#retire_ideology_leader = fascism
-		name = "GER_felix_steiner"
 		create_country_leader = {
 			name = "Felix Steiner"
 			picture = GFX_portrait_ger_felix_steiner
@@ -11362,7 +11361,7 @@ focus = {
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-		every_country {
+		every_country = {
 		limit = {has_government = fascism}
 		country_event = gerevents.17
 		}

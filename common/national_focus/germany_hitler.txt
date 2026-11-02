@@ -5820,76 +5820,68 @@ focus = {
 		alternate_icon = GFX_focus_GER_support_the_fuhrer_historical
 
 		icon = {
-			trigger = {
+			GFX_focus_GER_fuhrerprinzip_todt = {
 				has_country_leader = {
 					ruling_only = yes
 					character = GER_fritz_todt
 				}
 			}
-			value = GFX_focus_GER_fuhrerprinzip_todt
 		}
 		icon = {
-			trigger = {
+			GFX_focus_GER_fuhrerprinzip_speer = {
 				has_country_leader = {
 					ruling_only = yes
 					character = GER_albert_speer
 				}
 			}
-			value = GFX_focus_GER_fuhrerprinzip_speer
 		}
 		icon = {
-			trigger = {
+			GFX_focus_GER_fuhrerprinzip_goring = {
 				has_country_leader = {
 					ruling_only = yes
 					character = GER_hermann_goring
 				}
 			}
-			value = GFX_focus_GER_fuhrerprinzip_goring
 		}
 		icon = {
-			trigger = {
+			GFX_focus_GER_fuhrerprinzip_himmler = {
 				has_country_leader = {
 					ruling_only = yes
 					character = GER_heinrich_himmler
 				}
 			}
-			value = GFX_focus_GER_fuhrerprinzip_himmler
 		}
 		icon = {
-			trigger = {
+			GFX_focus_GER_fuhrerprinzip_goebbels = {
 				has_country_leader = {
 					ruling_only = yes
 					character = GER_joseph_goebbels
 				}
 			}
-			value = GFX_focus_GER_fuhrerprinzip_goebbels
 		}
 		icon = {
-			trigger = {
+			GFX_focus_GER_fuhrerprinzip_hess = {
 				has_country_leader = {
 					ruling_only = yes
 					character = GER_rudolf_hess
 				}
 			}
-			value = GFX_focus_GER_fuhrerprinzip_hess
 		}
 		icon = {
-			trigger = {
+			GFX_focus_GER_fuhrerprinzip_bormann = {
 				has_country_leader = {
 					ruling_only = yes
 					character = GER_martin_bormann
 				}
 			}
-			value = GFX_focus_GER_fuhrerprinzip_bormann
 		}
 		icon = {
-			trigger = {
+			GFX_focus_GER_fuhrerprinzip_braun = {
 				has_country_leader = {
 					ruling_only = yes
 					character = GER_eva_braun
 				}
 			}
-			value = GFX_focus_GER_fuhrerprinzip_braun
 		}
 		#icon = GFX_focus_GER_support_the_fuhrer
 		icon = GFX_focus_GER_fuhrer_ascended
@@ -12534,7 +12526,7 @@ focus = {
 		#icon =  GFX_GER_asdasd-313089
 		icon = GFX_endsieg
 		available = {surrender_progress > 0.01
-		has_major_war = yes
+		has_war_with_major = yes
 		}
 		prerequisite = { focus = GER_anschluss focus = GER_ally_with_austria focus = GER_coup_austria focus = GER_hun_austria }
 		mutually_exclusive = {focus = ger109}
@@ -12611,7 +12603,7 @@ focus = {
 		#icon =  GFX_GENERIC_Political_Army
 		icon = GFX_focus_GER_new_eco_gaint
 		available = {surrender_progress > 0.05
-		has_major_war = yes
+		has_war_with_major = yes
 		}
 		prerequisite = { focus = ger108}
 		
@@ -12632,7 +12624,7 @@ focus = {
 		id = ger111
 		icon =  GFX_GER_Volkssturm
 		available = {surrender_progress > 0.08
-		has_major_war = yes
+		has_war_with_major = yes
 		}
 		prerequisite = { focus = ger110}
 		
@@ -12653,7 +12645,7 @@ focus = {
 		id = ger112
 		icon =  GFX_GER_asdasd-313090
 		available = {surrender_progress > 0.1
-		has_major_war = yes
+		has_war_with_major = yes
 		}
 		prerequisite = { focus = ger111}
 		
@@ -12674,7 +12666,7 @@ focus = {
 		id = ger113
 		icon =  GFX_GENERIC_Superior_Firepower
 		available = {surrender_progress > 0.15
-		has_major_war = yes
+		has_war_with_major = yes
 		}
 		prerequisite = { focus = ger112}
 		
@@ -12695,7 +12687,7 @@ focus = {
 		icon =  GFX_GER_Europaischer_Staatenbund
 		available = {
 		surrender_progress > 0.25
-		has_major_war = yes
+		has_war_with_major = yes
 			ARG = {
 		is_ai = yes
 		}

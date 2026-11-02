@@ -1,5 +1,6 @@
 #eo
-	alternate_icon_set = FOCUS_ICON_SET_HISTORICAL_KEY_FOCUS
+	# alternate_icon_set only works inside a focus_tree block, not in a shared focus file
+	#alternate_icon_set = FOCUS_ICON_SET_HISTORICAL_KEY_FOCUS
 	#alternate_icon_set = FOCUS_ALTERNATE_ICONS
 	# ==> Loc key for toggle button : FOCUS_ALTERNATE_ICONS
 	# ==> GFX for icon on toggle button : GFX_FOCUS_ALTERNATE_ICONS
@@ -1341,18 +1342,6 @@
 					add_mio_research_bonus = 0.05
 					#complete_mio_trait = 
 				}
-				if = {
-					limit = {
-						has_idea =  krupp
-					}
-					swap_ideas = {
-						remove_idea = krupp
-						add_idea = krupp_improved
-					}
-				}
-			}
-			else = {
-				GER_replace_krupp_companies = yes
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = GER_comprimise_with_barons_tt

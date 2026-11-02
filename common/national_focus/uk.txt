@@ -2012,7 +2012,7 @@ focus_tree = {
 				name = ENG_secure_the_imperial_shipping_routes
 				bonus = 1.0
 				uses = 2
-				category = cl_tech
+				category = ca_tech
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = ENG_secure_the_imperial_shipping_routes
@@ -2673,11 +2673,6 @@ focus_tree = {
 						tag = BRM
 						tag = OMA
 					}
-				}
-				free_building_slots = {
-					building = infrastructure
-					size > 2
-					include_locked = yes
 				}
 				add_ideas = UK_sterling_area_idea
 			}
@@ -15692,7 +15687,6 @@ focus_tree = {
 				bonus = 1.0
 				uses = 1
 				category = dd_tech
-				category = cl_tech
 				category = ca_tech
 				category = bb_tech
 				category = cv_tech
@@ -21924,7 +21918,7 @@ focus_tree = {
 		mutually_exclusive = {  }
 		available = {
 			custom_trigger_tooltip = {
-				trigger = ENG_kaiserreich_democracy_tt
+				tooltip = ENG_kaiserreich_democracy_tt
 				has_country_flag = ENG_GER_return_to_democratic_ideals_flag
 			}
 			democratic > 0.4

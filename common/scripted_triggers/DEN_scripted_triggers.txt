@@ -527,3 +527,25 @@ DEN_rearmament_seller_trigger = {
 		}
 	}
 }
+
+# Added from the 1.19.4 base game (missing from this older copy)
+
+DEN_royal_ai = {
+	OR = {
+		has_country_flag = DEN_AI_RANDOM_MONARCHIST_PLAN
+		has_game_rule = {
+			rule = DEN_ai_behavior
+			option = DEN_monarchist_plan
+		}
+	}
+}
+
+DEN_fascist_ai = {
+	OR = {
+		has_country_flag = DEN_AI_RANDOM_FASCIST_PLAN
+		has_game_rule = {
+			rule = DEN_ai_behavior
+			option = DEN_fascist_plan
+		}
+	}
+}

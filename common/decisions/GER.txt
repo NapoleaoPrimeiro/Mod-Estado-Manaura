@@ -15987,7 +15987,7 @@ special_projects = {
 			controls_state = 28
 			if = {
 				limit = {
-					FRA = { has_completed_focus = FRA_extend_the_maginot_line }
+					FRA = { has_completed_focus = FRW_maginot_extension }
 				}
 				controls_state = 18 controls_state = 1258 controls_state = 1259 controls_state = 1402
 				controls_state = 29
@@ -16005,7 +16005,7 @@ special_projects = {
 			controls_state = 28
 			if = {
 				limit = {
-					FRA = { has_completed_focus = FRA_extend_the_maginot_line }
+					FRA = { has_completed_focus = FRW_maginot_extension }
 				}
 				controls_state = 18 controls_state = 1258 controls_state = 1259 controls_state = 1402
 				controls_state = 29
@@ -16029,7 +16029,7 @@ special_projects = {
 			}
 			if = {
 				limit = {
-					FRA = { has_completed_focus = FRA_extend_the_maginot_line }
+					FRA = { has_completed_focus = FRW_maginot_extension }
 				}
 				18 = {
 					set_building_level = {
@@ -16063,7 +16063,7 @@ special_projects = {
 		}
 		complete_effect = {
 			if = {
-				limit = { FRA = { has_completed_focus = FRA_extend_the_maginot_line } }
+				limit = { FRA = { has_completed_focus = FRW_maginot_extension } }
 				add_timed_idea = { idea = GER_dismantle_maginot days = 270 }
 				else = {
 					add_timed_idea = { idea = GER_dismantle_maginot days = 180 }
