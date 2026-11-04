@@ -1,0 +1,82 @@
+scripted_gui = {
+	
+	scc_tno_colors = {
+        window_name = "scc_tno_colors"
+        context_type = selected_country_context
+         
+        visible = {
+            check_variable = { global.scc_color = 23 }
+			check_variable = { global.scc_open_main_gui = 1 }
+        }
+		
+		effects = {
+			TNO1_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TNO_GER
+			}
+			TNO2_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TNO_ITA
+			}
+			TNO3_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TNO_FRA
+			}
+			TNO4_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TNO_BRITIAN
+			}
+			TNO5_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TNO_JAPAN
+			}
+			TNO6_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TNO_MAN
+			}
+			TNO7_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TNO_MEN
+			}
+			TNO8_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TNO_CHI
+			}
+			TNO9_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TNO_IBR
+			}
+			TNO10_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TNO_FREEFRA
+			}
+			TNO11_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TNO_USA
+			}
+			TNO12_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TNO_CANADA
+			}
+			TNO13_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TNO_WESTRUSSIA
+			}
+			TNO14_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TNO_VYA
+			}
+			TNO15_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TNO_NOVO
+			}
+			TNO16_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TNO_OMSK
+			}
+		}
+		
+		triggers = {
+		}
+	}
+}

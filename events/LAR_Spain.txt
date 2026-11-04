@@ -2625,6 +2625,11 @@ country_event = {
 				#	ROOT = { remove_unit_leader = PREV }
 				#}
 				add_timed_idea = { idea = SPA_death_before_surrender days = 900 }
+				transfer_state = 169
+				transfer_state = 170
+				transfer_state = 789
+				transfer_state = 793
+				load_oob = "SPA_Civil_War"
 				set_global_flag = spanish_civil_war # Start civil war - used in many triggers
 				country_event = { id = lar_spain.6 days = 7 } # SCW notification event for the player
 				country_event = { id = lar_spain.78 days = 7 random_days = 7 } # Sanjurjo dies
@@ -4856,6 +4861,13 @@ country_event = {
 				SPA = { add_timed_idea = { idea = SPA_death_before_surrender days = 900 } }
 				add_timed_idea = { idea = SPR_death_before_surrender days = 900 }
 				add_ideas = SPR_disbanded_army_1
+				SPA = {
+					transfer_state = 169
+					transfer_state = 170
+					transfer_state = 789
+					transfer_state = 793
+					load_oob = "SPA_Civil_War"
+				}
 				set_global_flag = spanish_civil_war
 				country_event = { id = lar_spain.6 days = 7 }
 				SPA = { country_event = { id = lar_spain.78 days = 7 random_days = 7 } } # Sanjurjo dies

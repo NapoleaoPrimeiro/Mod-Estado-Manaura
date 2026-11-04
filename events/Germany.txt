@@ -122,7 +122,6 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			news_event = { hours = 6 id = news.36 }
 
 			BEL = {
 				country_event = {
@@ -6201,7 +6200,6 @@ country_event = {
 		}
 
 		hidden_effect = {
-			country_event = { hours = 6 id = news.60 }
 			every_state = {
 				limit = {
 					is_controlled_by = SLO
@@ -7137,7 +7135,6 @@ country_event = {
 		}
 
 		hidden_effect = {
-			country_event = { hours = 6 id = news.60 }
 			every_state = {
 				limit = {
 					is_controlled_by = SLO
@@ -8548,7 +8545,6 @@ country_event = {
 			POL = { transfer_state = 72 transfer_state = 1727 } # Give Poland Zaolzie
 		}
 		hidden_effect = {
-			country_event = { hours = 6 id = news.60 }
 		}
 	}
 	option = {
@@ -14442,7 +14438,6 @@ country_event = {
 					hostility_reason = war
 				}
 				annex_country = { target = ROOT transfer_troops = yes }
-				hidden_effect = { news_event = { id = news.237 } }
 			}
 		}
 		custom_effect_tooltip = GAME_OVER_TT

@@ -1,0 +1,17 @@
+scripted_gui = {
+    global.scc_random_warning_3 = {
+        window_name = "scc_random_warning_3"
+        context_type = selected_country_context
+         
+        visible = {
+            check_variable = { global.scc_random = 5 }
+        }
+        
+        effects = {
+			
+		}
+		
+		triggers = {
+        }
+    }
+}

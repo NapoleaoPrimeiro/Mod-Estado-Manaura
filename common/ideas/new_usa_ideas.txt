@@ -6390,6 +6390,18 @@ ideas = {
     }
 
     hidden_ideas = {
+        # Guerra sem restrições (ideologia e tensão mundial)
+        manaura_guerra_sem_restricoes = {
+            allowed = { always = yes }
+            allowed_civil_war = { always = yes }
+            removal_cost = -1
+            picture = usa_federal_recovery_emergency_enterprise
+
+            rule = {
+                can_declare_war_on_same_ideology = yes
+                can_only_justify_war_on_threat_country = no
+            }
+        }
         # FREE Sub-Ideas
          # Civ
          usa_free_civilian_industry_si_-3 = { # Civilian Industry Sub-Idea

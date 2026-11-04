@@ -1,0 +1,290 @@
+guiTypes = {
+
+	containerWindowType = {
+		
+		name = "scc_twr_colors"
+		position = { x = -925 y = 40 }
+		orientation = UPPER_RIGHT
+		
+		size = { width = 300 height = 340 }
+		
+		#show_position = { x = -925 y = 40 }
+		#show_animation_type = decelerated
+		#hide_animation_type = accelerated
+		#animation_time = 300
+		fade_time = 300
+		fade_type = linear
+		moveable = yes
+		show_sound = menu_open_window
+		click_to_front = yes
+        
+		background = {
+			name = "Background"		
+			quadTextureSprite = "GFX_tiled_plain_bg"
+		}
+        
+		instantTextboxType = {
+			name = "type_title_2"
+			position = { x = 15 y = 8 }
+			font = "hoi_18mbs"
+			borderSize = {x = 0 y = 0}
+			text = "title_colors_8"
+			maxWidth = 240
+			maxHeight = 20
+			format = left	
+		}
+		
+		containerWindowType = {
+		
+			name = "color_grid_container"
+			position = { x = 10 y = 30 }
+			
+			size = { width = 280 height = 300 } 
+			
+            margin = { top = 10 bottom = 10 }
+			Orientation = upper_left
+
+			verticalScrollbar = "right_vertical_slider"
+
+			background = {
+				name = "Background"
+				quadTextureSprite = "GFX_tiled_window_1b_thin_border"
+			}
+			
+			buttonType = {
+				name = "TWR1_button"
+				position = { x = 10 y = 0 }
+				spriteType = "GFX_button_typeA_1"
+				frame = 1
+				
+				buttonFont = "hoi_16mbs"
+				buttonText = "apply_apply"
+			}
+			
+			instantTextboxType = {
+				name = "TWR1_desc"
+				position = { x = 72 y = 0 }
+				font = "hoi_18mbs"
+				borderSize = { x = 0 y = 0 }
+				text = "TW1_desc"
+				maxWidth = 240
+				maxHeight = 20
+				format = left	
+			}
+
+			buttonType = {
+				name = "TWR2_button"
+				position = { x = 10 y = 25 }
+				spriteType = "GFX_button_typeA_1"
+				frame = 1
+				
+				buttonFont = "hoi_16mbs"
+				buttonText = "apply_apply"
+			}
+			
+			instantTextboxType = {
+				name = "TWR2_desc"
+				position = { x = 72 y = 25 }
+				font = "hoi_18mbs"
+				borderSize = { x = 0 y = 0 }
+				text = "TW2_desc"
+				maxWidth = 240
+				maxHeight = 20
+				format = left	
+			}
+
+			buttonType = {
+				name = "TWR3_button"
+				position = { x = 10 y = 50 }
+				spriteType = "GFX_button_typeA_1"
+				frame = 1
+				
+				buttonFont = "hoi_16mbs"
+				buttonText = "apply_apply"
+			}
+			
+			instantTextboxType = {
+				name = "TWR3_desc"
+				position = { x = 72 y = 50 }
+				font = "hoi_18mbs"
+				borderSize = { x = 0 y = 0 }
+				text = "TW3_desc"
+				maxWidth = 240
+				maxHeight = 20
+				format = left	
+			}
+
+			buttonType = {
+				name = "TWR4_button"
+				position = { x = 10 y = 75 }
+				spriteType = "GFX_button_typeA_1"
+				frame = 1
+				
+				buttonFont = "hoi_16mbs"
+				buttonText = "apply_apply"
+			}
+			
+			instantTextboxType = {
+				name = "TWR4_desc"
+				position = { x = 72 y = 75 }
+				font = "hoi_18mbs"
+				borderSize = { x = 0 y = 0 }
+				text = "TW4_desc"
+				maxWidth = 240
+				maxHeight = 20
+				format = left	
+			}
+
+			buttonType = {
+				name = "TWR5_button"
+				position = { x = 10 y = 100 }
+				spriteType = "GFX_button_typeA_1"
+				frame = 1
+				
+				buttonFont = "hoi_16mbs"
+				buttonText = "apply_apply"
+			}
+			
+			instantTextboxType = {
+				name = "TWR5_desc"
+				position = { x = 72 y = 100 }
+				font = "hoi_18mbs"
+				borderSize = { x = 0 y = 0 }
+				text = "TW5_desc"
+				maxWidth = 240
+				maxHeight = 20
+				format = left	
+			}
+
+			buttonType = {
+				name = "TWR6_button"
+				position = { x = 10 y = 125 }
+				spriteType = "GFX_button_typeA_1"
+				frame = 1
+				
+				buttonFont = "hoi_16mbs"
+				buttonText = "apply_apply"
+			}
+			
+			instantTextboxType = {
+				name = "TWR6_desc"
+				position = { x = 72 y = 125 }
+				font = "hoi_18mbs"
+				borderSize = { x = 0 y = 0 }
+				text = "TW6_desc"
+				maxWidth = 240
+				maxHeight = 20
+				format = left	
+			}
+
+			buttonType = {
+				name = "TWR7_button"
+				position = { x = 10 y = 150 }
+				spriteType = "GFX_button_typeA_1"
+				frame = 1
+				
+				buttonFont = "hoi_16mbs"
+				buttonText = "apply_apply"
+			}
+			
+			instantTextboxType = {
+				name = "TWR7_desc"
+				position = { x = 72 y = 150 }
+				font = "hoi_18mbs"
+				borderSize = { x = 0 y = 0 }
+				text = "TW7_desc"
+				maxWidth = 240
+				maxHeight = 20
+				format = left	
+			}
+
+			buttonType = {
+				name = "TWR8_button"
+				position = { x = 10 y = 175 }
+				spriteType = "GFX_button_typeA_1"
+				frame = 1
+				
+				buttonFont = "hoi_16mbs"
+				buttonText = "apply_apply"
+			}
+			
+			instantTextboxType = {
+				name = "TWR8_desc"
+				position = { x = 72 y = 175 }
+				font = "hoi_18mbs"
+				borderSize = { x = 0 y = 0 }
+				text = "TW8_desc"
+				maxWidth = 240
+				maxHeight = 20
+				format = left	
+			}
+
+			buttonType = {
+				name = "TWR9_button"
+				position = { x = 10 y = 200 }
+				spriteType = "GFX_button_typeA_1"
+				frame = 1
+				
+				buttonFont = "hoi_16mbs"
+				buttonText = "apply_apply"
+			}
+			
+			instantTextboxType = {
+				name = "TWR9_desc"
+				position = { x = 72 y = 200 }
+				font = "hoi_18mbs"
+				borderSize = { x = 0 y = 0 }
+				text = "TW9_desc"
+				maxWidth = 240
+				maxHeight = 20
+				format = left	
+			}
+
+			buttonType = {
+				name = "TWR10_button"
+				position = { x = 10 y = 225 }
+				spriteType = "GFX_button_typeA_1"
+				frame = 1
+				
+				buttonFont = "hoi_16mbs"
+				buttonText = "apply_apply"
+			}
+			
+			instantTextboxType = {
+				name = "TWR10_desc"
+				position = { x = 72 y = 225 }
+				font = "hoi_18mbs"
+				borderSize = { x = 0 y = 0 }
+				text = "TW10_desc"
+				maxWidth = 240
+				maxHeight = 20
+				format = left	
+			}
+
+			buttonType = {
+				name = "TWR11_button"
+				position = { x = 10 y = 250 }
+				spriteType = "GFX_button_typeA_1"
+				frame = 1
+				
+				buttonFont = "hoi_16mbs"
+				buttonText = "apply_apply"
+			}
+			
+			instantTextboxType = {
+				name = "TWR11_desc"
+				position = { x = 72 y = 250 }
+				font = "hoi_18mbs"
+				borderSize = { x = 0 y = 0 }
+				text = "TW11_desc"
+				maxWidth = 240
+				maxHeight = 20
+				format = left	
+			}
+
+			
+			
+			# this MAY be time consuming
+		}
+	}
+}

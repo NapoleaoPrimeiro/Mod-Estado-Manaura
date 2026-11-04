@@ -1,0 +1,25 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			every_country = {
+				limit = {
+					is_ai = no
+					NOT = { has_idea = manaura_guerra_sem_restricoes }
+				}
+				add_ideas = manaura_guerra_sem_restricoes
+			}
+		}
+	}
+
+	on_daily = {
+		effect = {
+			every_country = {
+				limit = {
+					is_ai = no
+					NOT = { has_idea = manaura_guerra_sem_restricoes }
+				}
+				add_ideas = manaura_guerra_sem_restricoes
+			}
+		}
+	}
+}

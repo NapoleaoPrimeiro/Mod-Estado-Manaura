@@ -1,0 +1,62 @@
+scripted_gui = {
+	
+	scc_twr_colors = {
+        window_name = "scc_twr_colors"
+        context_type = selected_country_context
+         
+        visible = {
+            check_variable = { global.scc_color = 22 }
+			check_variable = { global.scc_open_main_gui = 1 }
+        }
+		
+		effects = {
+			TWR1_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TWR_CAN
+			}
+			TWR2_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TWR_ITA
+			}
+			TWR3_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TWR_GER
+			}
+			TWR4_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TWR_SOV
+			}
+			TWR5_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TWR_ROC
+			}
+			TWR6_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TWR_FRA
+			}
+			TWR7_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TWR_PRC
+			}
+			TWR8_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TWR_FFR
+			}
+			TWR9_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TWR_RK
+			}
+			TWR10_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TWR_ZHU
+			}
+			TWR11_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TWR_WRM
+			}
+		}
+		
+		triggers = {
+		}
+	}
+}

@@ -1,0 +1,393 @@
+guiTypes = {
+
+	containerWindowType = {
+		
+		name = "scc_tno_colors"
+		position = { x = -925 y = 40 }
+		orientation = UPPER_RIGHT
+		
+		size = { width = 300 height = 340 }
+		
+		#show_position = { x = -925 y = 40 }
+		#show_animation_type = decelerated
+		#hide_animation_type = accelerated
+		#animation_time = 300
+		fade_time = 300
+		fade_type = linear
+		moveable = yes
+		show_sound = menu_open_window
+		click_to_front = yes
+        
+		background = {
+			name = "Background"		
+			quadTextureSprite = "GFX_tiled_plain_bg"
+		}
+        
+		instantTextboxType = {
+			name = "type_title_3"
+			position = { x = 15 y = 8 }
+			font = "hoi_18mbs"
+			borderSize = {x = 0 y = 0}
+			text = "title_colors_9"
+			maxWidth = 240
+			maxHeight = 20
+			format = left	
+		}
+		
+		containerWindowType = {
+		
+			name = "color_grid_container"
+			position = { x = 10 y = 30 }
+			
+			size = { width = 280 height = 300 } 
+			
+            margin = { top = 10 bottom = 10 }
+			Orientation = upper_left
+
+			verticalScrollbar = "right_vertical_slider"
+
+			background = {
+				name = "Background"
+				quadTextureSprite = "GFX_tiled_window_1b_thin_border"
+			}
+			
+			buttonType = {
+				name = "TNO1_button"
+				position = { x = 10 y = 0 }
+				spriteType = "GFX_button_typeA_1"
+				frame = 1
+				
+				buttonFont = "hoi_16mbs"
+				buttonText = "apply_apply"
+			}
+			
+			instantTextboxType = {
+				name = "TNO1_desc"
+				position = { x = 72 y = 0 }
+				font = "hoi_18mbs"
+				borderSize = { x = 0 y = 0 }
+				text = "TNO1_desc"
+				maxWidth = 240
+				maxHeight = 20
+				format = left	
+			}	
+
+			buttonType = {
+				name = "TNO2_button"
+				position = { x = 10 y = 25 }
+				spriteType = "GFX_button_typeA_1"
+				frame = 1
+				
+				buttonFont = "hoi_16mbs"
+				buttonText = "apply_apply"
+			}
+			
+			instantTextboxType = {
+				name = "TNO2_desc"
+				position = { x = 72 y = 25 }
+				font = "hoi_18mbs"
+				borderSize = { x = 0 y = 0 }
+				text = "TNO2_desc"
+				maxWidth = 240
+				maxHeight = 20
+				format = left	
+			}	
+
+			buttonType = {
+				name = "TNO3_button"
+				position = { x = 10 y = 50 }
+				spriteType = "GFX_button_typeA_1"
+				frame = 1
+				
+				buttonFont = "hoi_16mbs"
+				buttonText = "apply_apply"
+			}
+			
+			instantTextboxType = {
+				name = "TNO3_desc"
+				position = { x = 72 y = 50 }
+				font = "hoi_18mbs"
+				borderSize = { x = 0 y = 0 }
+				text = "TNO3_desc"
+				maxWidth = 240
+				maxHeight = 20
+				format = left	
+			}	
+
+			buttonType = {
+				name = "TNO4_button"
+				position = { x = 10 y = 75 }
+				spriteType = "GFX_button_typeA_1"
+				frame = 1
+				
+				buttonFont = "hoi_16mbs"
+				buttonText = "apply_apply"
+			}
+			
+			instantTextboxType = {
+				name = "TNO4_desc"
+				position = { x = 72 y = 75 }
+				font = "hoi_18mbs"
+				borderSize = { x = 0 y = 0 }
+				text = "TNO4_desc"
+				maxWidth = 240
+				maxHeight = 20
+				format = left	
+			}	
+
+			buttonType = {
+				name = "TNO5_button"
+				position = { x = 10 y = 100 }
+				spriteType = "GFX_button_typeA_1"
+				frame = 1
+				
+				buttonFont = "hoi_16mbs"
+				buttonText = "apply_apply"
+			}
+			
+			instantTextboxType = {
+				name = "TNO5_desc"
+				position = { x = 72 y = 100 }
+				font = "hoi_18mbs"
+				borderSize = { x = 0 y = 0 }
+				text = "TNO5_desc"
+				maxWidth = 240
+				maxHeight = 20
+				format = left	
+			}	
+
+			buttonType = {
+				name = "TNO6_button"
+				position = { x = 10 y = 125 }
+				spriteType = "GFX_button_typeA_1"
+				frame = 1
+				
+				buttonFont = "hoi_16mbs"
+				buttonText = "apply_apply"
+			}
+			
+			instantTextboxType = {
+				name = "TNO6_desc"
+				position = { x = 72 y = 125 }
+				font = "hoi_18mbs"
+				borderSize = { x = 0 y = 0 }
+				text = "TNO6_desc"
+				maxWidth = 240
+				maxHeight = 20
+				format = left	
+			}	
+
+			buttonType = {
+				name = "TNO7_button"
+				position = { x = 10 y = 150 }
+				spriteType = "GFX_button_typeA_1"
+				frame = 1
+				
+				buttonFont = "hoi_16mbs"
+				buttonText = "apply_apply"
+			}
+			
+			instantTextboxType = {
+				name = "TNO7_desc"
+				position = { x = 72 y = 150 }
+				font = "hoi_18mbs"
+				borderSize = { x = 0 y = 0 }
+				text = "TNO7_desc"
+				maxWidth = 240
+				maxHeight = 20
+				format = left	
+			}	
+
+			buttonType = {
+				name = "TNO8_button"
+				position = { x = 10 y = 175 }
+				spriteType = "GFX_button_typeA_1"
+				frame = 1
+				
+				buttonFont = "hoi_16mbs"
+				buttonText = "apply_apply"
+			}
+			
+			instantTextboxType = {
+				name = "TNO8_desc"
+				position = { x = 72 y = 175 }
+				font = "hoi_18mbs"
+				borderSize = { x = 0 y = 0 }
+				text = "TNO8_desc"
+				maxWidth = 240
+				maxHeight = 20
+				format = left	
+			}	
+
+			buttonType = {
+				name = "TNO9_button"
+				position = { x = 10 y = 200 }
+				spriteType = "GFX_button_typeA_1"
+				frame = 1
+				
+				buttonFont = "hoi_16mbs"
+				buttonText = "apply_apply"
+			}
+			
+			instantTextboxType = {
+				name = "TNO9_desc"
+				position = { x = 72 y = 200 }
+				font = "hoi_18mbs"
+				borderSize = { x = 0 y = 0 }
+				text = "TNO9_desc"
+				maxWidth = 240
+				maxHeight = 20
+				format = left	
+			}	
+
+			buttonType = {
+				name = "TNO10_button"
+				position = { x = 10 y = 225 }
+				spriteType = "GFX_button_typeA_1"
+				frame = 1
+				
+				buttonFont = "hoi_16mbs"
+				buttonText = "apply_apply"
+			}
+			
+			instantTextboxType = {
+				name = "TNO10_desc"
+				position = { x = 72 y = 225 }
+				font = "hoi_18mbs"
+				borderSize = { x = 0 y = 0 }
+				text = "TNO10_desc"
+				maxWidth = 240
+				maxHeight = 20
+				format = left	
+			}	
+
+			buttonType = {
+				name = "TNO11_button"
+				position = { x = 10 y = 250 }
+				spriteType = "GFX_button_typeA_1"
+				frame = 1
+				
+				buttonFont = "hoi_16mbs"
+				buttonText = "apply_apply"
+			}
+			
+			instantTextboxType = {
+				name = "TNO11_desc"
+				position = { x = 72 y = 250 }
+				font = "hoi_18mbs"
+				borderSize = { x = 0 y = 0 }
+				text = "TNO11_desc"
+				maxWidth = 240
+				maxHeight = 20
+				format = left	
+			}	
+
+			buttonType = {
+				name = "TNO12_button"
+				position = { x = 10 y = 275 }
+				spriteType = "GFX_button_typeA_1"
+				frame = 1
+				
+				buttonFont = "hoi_16mbs"
+				buttonText = "apply_apply"
+			}
+			
+			instantTextboxType = {
+				name = "TNO12_desc"
+				position = { x = 72 y = 275 }
+				font = "hoi_18mbs"
+				borderSize = { x = 0 y = 0 }
+				text = "TNO12_desc"
+				maxWidth = 240
+				maxHeight = 20
+				format = left	
+			}	
+
+			buttonType = {
+				name = "TNO13_button"
+				position = { x = 10 y = 300 }
+				spriteType = "GFX_button_typeA_1"
+				frame = 1
+				
+				buttonFont = "hoi_16mbs"
+				buttonText = "apply_apply"
+			}
+			
+			instantTextboxType = {
+				name = "TNO13_desc"
+				position = { x = 72 y = 300 }
+				font = "hoi_18mbs"
+				borderSize = { x = 0 y = 0 }
+				text = "TNO13_desc"
+				maxWidth = 240
+				maxHeight = 20
+				format = left	
+			}	
+
+			buttonType = {
+				name = "TNO14_button"
+				position = { x = 10 y = 325 }
+				spriteType = "GFX_button_typeA_1"
+				frame = 1
+				
+				buttonFont = "hoi_16mbs"
+				buttonText = "apply_apply"
+			}
+			
+			instantTextboxType = {
+				name = "TNO14_desc"
+				position = { x = 72 y = 325 }
+				font = "hoi_18mbs"
+				borderSize = { x = 0 y = 0 }
+				text = "TNO14_desc"
+				maxWidth = 240
+				maxHeight = 20
+				format = left	
+			}	
+
+			buttonType = {
+				name = "TNO15_button"
+				position = { x = 10 y = 350 }
+				spriteType = "GFX_button_typeA_1"
+				frame = 1
+				
+				buttonFont = "hoi_16mbs"
+				buttonText = "apply_apply"
+			}
+			
+			instantTextboxType = {
+				name = "TNO15_desc"
+				position = { x = 72 y = 350 }
+				font = "hoi_18mbs"
+				borderSize = { x = 0 y = 0 }
+				text = "TNO15_desc"
+				maxWidth = 240
+				maxHeight = 20
+				format = left	
+			}	
+
+			buttonType = {
+				name = "TNO16_button"
+				position = { x = 10 y = 375 }
+				spriteType = "GFX_button_typeA_1"
+				frame = 1
+				
+				buttonFont = "hoi_16mbs"
+				buttonText = "apply_apply"
+			}
+			
+			instantTextboxType = {
+				name = "TNO16_desc"
+				position = { x = 72 y = 375 }
+				font = "hoi_18mbs"
+				borderSize = { x = 0 y = 0 }
+				text = "TNO16_desc"
+				maxWidth = 240
+				maxHeight = 20
+				format = left	
+			}	
+			
+			# this MAY be time consuming
+		}
+	}
+}

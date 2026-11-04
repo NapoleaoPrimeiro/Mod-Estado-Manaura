@@ -5,34 +5,6 @@
 add_namespace = news
 
 # Marco Polo Bridge I
-news_event = {
-	id = news.1
-	title = news.1.t
-	desc = news.1.d
-	picture = GFX_news_event_001
-	
-	major = yes
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = news.1.a
-		trigger = {
-			NOT = {
-				TAG = JAP
-				TAG = CHI
-			}
-		}
-	}
-	option = {
-		name = news.1.b
-		trigger = { TAG = JAP }
-	}
-	option = {
-		name = news.1.c
-		trigger = { TAG = CHI }
-	}
-}
 
 # Marco Polo Bridge II
 news_event = {
@@ -1284,45 +1256,6 @@ news_event = {
 }
 
 # Anschluss of Austria
-news_event = {
-	id = news.36
-	title = news.36.t
-	desc = news.36.d
-	picture = GFX_news_event_german_speech
-	
-	major = yes
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = news.36.a
-		trigger = {
-			NOT = {
-				TAG = GER
-				TAG = ITA
-				TAG = FRA
-				TAG = ENG
-			}
-		}
-	}
-	option = {
-		name = news.36.b
-		trigger = { TAG = GER }
-	}
-	option = {
-		name = news.36.c
-		trigger = { TAG = ITA }
-	}
-	option = {
-		name = news.36.e
-		trigger = {
-			OR = {
-				TAG = FRA
-				TAG = ENG
-			}
-		}
-	}
-}
 
 # Trotsky Assassination
 news_event = {
@@ -2114,47 +2047,6 @@ news_event = {
 }
 
 # End of Czechoslovakia
-news_event = {
-	id = news.60
-	title = news.60.t
-	desc = {
-		text = news.60.d
-		trigger = { has_global_flag = end_of_czechoslovakia }
-	}
-	desc = {
-		text = news.60.d_2
-		trigger = { NOT = { has_global_flag = end_of_czechoslovakia } }
-	}
-	picture = GFX_news_event_german_inspect_troops
-
-	major = yes
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = news.60.a
-		trigger = {
-			NOT = {
-				TAG = GER
-				TAG = ENG
-				TAG = FRA
-			}
-		}
-	}
-	option = {
-		name = news.60.b
-		trigger = { TAG = GER }
-	}
-	option = {
-		name = news.60.c
-		trigger = {
-			 OR = {
-				TAG = ENG
-				TAG = FRA
-			}
-		}
-	}
-}
 
 # End of Czechoslovakia (Hungary Annexes Slovakia)
 news_event = {
@@ -2248,77 +2140,8 @@ news_event = {
 }
 
 # The Spanish Civil War
-news_event = {
-	id = news.63
-	title = news.63.t
-	desc = news.63.d
-	picture = GFX_news_event_032
-	
-	major = yes
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = news.63.a
-		trigger = {
-			NOT = { original_tag = SPR }
-		}
-	}
-	option = {
-		name = news.63.b
-		trigger = { 
-			original_tag = SPR
-		}
-	}
-}
 
 # End of the Spanish Civil War (Nationalist victory)
-news_event = {
-	id = news.64
-	title = news.64.t
-	desc = news.64.d
-	picture = GFX_news_event_033
-	
-	major = yes
-	
-	trigger = {
-		has_global_flag = spanish_civil_war
-		NOT = { has_global_flag = scw_over }
-		NOT = { has_dlc = "La Resistance" }
-		SPR = { has_civil_war = no }
-		any_other_country = {
-			original_tag = SPR
-			has_government = fascism
-		}
-		all_country = {
-			OR = {
-				NOT = { original_tag = SPR }
-				has_government = fascism
-			}
-		}
-	}
-	
-	mean_time_to_happen = {
-		days = 2
-	}
-	
-	immediate = {
-		set_global_flag = nationalist_victory
-		set_global_flag = scw_over
-	}
-	
-	option = {
-		name = news.64.a
-		trigger = {
-			NOT = { original_tag = SPA }
-		}
-	}
-	option = {
-		name = news.64.b
-		trigger = { original_tag = SPA }
-		delete_unit_template_and_units = { division_template = "Brigada Legionario" }
-	}
-}
 
 # End of the Spanish Civil War (Republican victory)
 news_event = {
@@ -2670,47 +2493,6 @@ news_event = {
 }
 
 # The Fall of Paris (Germany)
-news_event = {
-	id = news.101
-	title = news.101.t
-	desc = news.101.d
-	picture = GFX_news_event_german_soldiers
-	
-	major = yes
-	
-	trigger = {
-		16 = { is_controlled_by = GER }
-		16 = { is_owned_by = FRA }
-		FRA = { has_war_with = GER }
-		NOT = { has_global_flag = fall_of_paris_ger }
-	}
-	
-	immediate = {
-		set_global_flag = fall_of_paris_ger
-	}
-	
-	mean_time_to_happen = {
-		days = 2
-	}
-	
-	option = {
-		name = news.101.a
-		trigger = {
-			NOT = {
-				TAG = GER
-				TAG = FRA
-			}
-		}
-	}
-	option = {
-		name = news.100.b
-		trigger = { TAG = GER }
-	}
-	option = {
-		name = news.100.c
-		trigger = { TAG = FRA }
-	}
-}
 
 # The Fall of London (Germany)
 news_event = {
@@ -2873,142 +2655,10 @@ news_event = {
 }
 
 # The Fall of Kiev
-news_event = {
-	id = news.104
-	title = news.104.t
-	desc = news.104.d
-	picture = GFX_news_event_kiev_ruins
-	
-	major = yes
-	
-	trigger = {
-		202 = { is_controlled_by = GER }
-		202 = { is_owned_by = SOV }
-		SOV = { has_government = communism }
-		GER = { has_war_with = SOV }
-		NOT = { has_global_flag = fall_of_kiev }
-	}
-	
-	immediate = {
-		set_global_flag = fall_of_kiev
-	}
-	
-	mean_time_to_happen = {
-		days = 2
-	}
-	
-	option = {
-		name = news.145.a
-		trigger = {
-			NOT = {
-				TAG = GER
-				TAG = SOV
-			}
-		}
-	}
-	option = {
-		name = news.100.b
-		trigger = { TAG = GER }
-	}
-	option = {
-		name = news.103.c
-		trigger = { TAG = SOV }
-	}
-}
 
 # The Fall of Stalingrad
-news_event = {
-	id = news.105
-	title = news.105.t
-	desc = {
-		text = news.105.d
-		trigger = { NOT = { SOV_is_opposition = yes } }
-	}
-	desc = {
-		text = news.105.d_alt
-		trigger = { SOV_is_opposition = yes }
-	}
-
-	picture = GFX_news_event_soviet_soldiers_ruins
-	
-	major = yes
-	
-	trigger = {
-		217 = { is_controlled_by = GER }
-		217 = { is_owned_by = SOV }
-		GER = { has_war_with = SOV }
-		NOT = { has_global_flag = fall_of_stalingrad }
-	}
-	
-	immediate = {
-		set_global_flag = fall_of_stalingrad
-	}
-	
-	mean_time_to_happen = {
-		days = 2
-	}
-	
-	option = {
-		name = news.145.a
-		trigger = {
-			NOT = {
-				TAG = GER
-				TAG = SOV
-			}
-		}
-	}
-	option = {
-		name = news.100.b
-		trigger = { TAG = GER }
-	}
-	option = {
-		name = news.103.c
-		trigger = { TAG = SOV }
-	}
-}
 
 # The Fall of Moscow
-news_event = {
-	id = news.106
-	title = news.106.t
-	desc = news.106.d
-	picture = GFX_news_event_soldiers_marching
-	
-	major = yes
-	
-	trigger = {
-		219 = { is_controlled_by = GER }
-		219 = { is_owned_by = SOV }
-		SOV = { has_war_with = GER }
-		NOT = { has_global_flag = fall_of_moscow }
-	}
-	
-	immediate = {
-		set_global_flag = fall_of_moscow
-	}
-	
-	mean_time_to_happen = {
-		days = 2
-	}
-	
-	option = {
-		name = news.106.a
-		trigger = {
-			NOT = {
-				TAG = GER
-				TAG = SOV
-			}
-		}
-	}
-	option = {
-		name = news.106.b
-		trigger = { TAG = GER }
-	}
-	option = {
-		name = news.106.c
-		trigger = { TAG = SOV }
-	}
-}
 
 # The Fall of Sevastopol
 news_event = {
@@ -3097,59 +2747,6 @@ news_event = {
 }
 
 # The Fall of Cairo (Germany)
-news_event = {
-	id = news.109
-	title = news.109.t
-	desc = news.109.d
-	picture = GFX_news_event_042
-	
-	major = yes
-	
-	trigger = {
-		907 = { is_controlled_by = GER }
-		OR = {
-			AND = {
-				907 = { is_owned_by = ENG }
-				GER = { has_war_with = ENG }
-			}
-			AND = {
-				907 = { is_owned_by = EGY }
-				EGY = {
-					is_ally_with = ENG
-				}
-				GER = { has_war_with = ENG }
-				GER = { has_war_with = EGY }
-			}
-		}
-		NOT = { has_global_flag = fall_of_cairo }
-	}
-	
-	immediate = {
-		set_global_flag = fall_of_cairo
-	}
-	
-	mean_time_to_happen = {
-		days = 2
-	}
-	
-	option = {
-		name = news.145.a
-		trigger = {
-			NOT = {
-				TAG = GER
-				TAG = ENG
-			}
-		}
-	}
-	option = {
-		name = news.100.b
-		trigger = { TAG = GER }
-	}
-	option = {
-		name = news.100.c
-		trigger = { TAG = ENG }
-	}
-}
 
 # The Fall of Washington
 news_event = {
@@ -3541,47 +3138,6 @@ news_event = {
 }
 
 # The Fall of Pearl Harbor
-news_event = {
-	id = news.118
-	title = news.118.t
-	desc = news.118.d
-	picture = GFX_news_event_soldiers_marching
-	
-	major = yes
-	
-	trigger = {
-		629 = { is_controlled_by = JAP }
-		629 = { is_owned_by = USA }
-		JAP = { has_war_with = USA }
-		NOT = { has_global_flag = fall_of_pearl_harbor }
-	}
-	
-	immediate = {
-		set_global_flag = fall_of_pearl_harbor
-	}
-	
-	mean_time_to_happen = {
-		days = 2
-	}
-	
-	option = {
-		name = news.145.a
-		trigger = {
-			NOT = {
-				TAG = JAP
-				TAG = USA
-			}
-		}
-	}
-	option = {
-		name = news.117.b
-		trigger = { TAG = JAP }
-	}
-	option = {
-		name = news.100.c
-		trigger = { TAG = USA }
-	}
-}
 
 # The Fall of Sydney
 news_event = {
@@ -4067,47 +3623,6 @@ news_event = {
 }
 
 # The Fall of Berlin (USA)
-news_event = {
-	id = news.128
-	title = news.128.t
-	desc = news.128.d
-	picture = GFX_news_event_german_reichstag_ruins
-	
-	major = yes
-	
-	trigger = {
-		1269 = { is_controlled_by = USA }
-		1269 = { is_owned_by = GER }
-		USA = { has_war_with = GER }
-		NOT = { has_global_flag = fall_of_berlin_usa }
-	}
-	
-	immediate = {
-		set_global_flag = fall_of_berlin_usa
-	}
-	
-	mean_time_to_happen = {
-		days = 2
-	}
-	
-	option = {
-		name = news.139.a
-		trigger = {
-			NOT = {
-				TAG = USA
-				TAG = GER
-			}
-		}
-	}
-	option = {
-		name = news.128.b
-		trigger = { TAG = USA }
-	}
-	option = {
-		name = news.100.c
-		trigger = { TAG = GER }
-	}
-}
 
 # The Fall of Berlin (Britain)
 news_event = {
@@ -4633,48 +4148,6 @@ news_event = {
 }
 
 # The Fall of Berlin (USSR)
-news_event = {
-	id = news.140
-	title = news.128.t
-	desc = news.140.d
-	picture = GFX_news_event_german_reichstag_graffiti_ruins
-	
-	major = yes
-	
-	trigger = {
-		1269 = { is_controlled_by = SOV }
-		1269 = { is_owned_by = GER }
-		GER = { has_war_with = SOV }
-		NOT = { has_global_flag = fall_of_berlin_sov }
-	}
-	
-	immediate = {
-		set_global_flag = fall_of_berlin_sov
-		play_victory_parade_effect = yes
-	}
-	
-	mean_time_to_happen = {
-		days = 2
-	}
-	
-	option = {
-		name = news.140.a
-		trigger = {
-			NOT = {
-				TAG = SOV
-				TAG = GER
-			}
-		}
-	}
-	option = {
-		name = news.140.b
-		trigger = { TAG = SOV }
-	}
-	option = {
-		name = news.100.c
-		trigger = { TAG = GER }
-	}
-}
 
 # The Fall of Rome (USSR)
 news_event = {
@@ -9912,45 +9385,6 @@ news_event = {
 }
 
 # Anschluss of Austria in civil war
-news_event = {
-	id = news.237
-	title = news.237.t
-	desc = news.237.d
-	picture = GFX_news_event_german_speech
-	
-	major = yes
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = news.237.a
-		trigger = {
-			NOT = {
-				TAG = GER
-				TAG = ITA
-				TAG = FRA
-				TAG = ENG
-			}
-		}
-	}
-	option = {
-		name = news.237.b
-		trigger = { TAG = GER }
-	}
-	option = {
-		name = news.237.c
-		trigger = { TAG = ITA }
-	}
-	option = {
-		name = news.237.e
-		trigger = {
-			OR = {
-				TAG = FRA
-				TAG = ENG
-			}
-		}
-	}
-}
 
 # Australia Singapore Strategy transfer
 news_event = {

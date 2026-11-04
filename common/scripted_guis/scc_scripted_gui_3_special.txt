@@ -1,0 +1,603 @@
+scripted_gui = {
+	
+	scc_special = {
+        window_name = "scc_special"
+        context_type = selected_country_context
+         
+        visible = {
+            check_variable = { global.scc_color = 999 }
+			check_variable = { global.scc_open_main_gui = 1 }
+        }
+		
+		effects = {
+			SPECIAL1_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_UNIFIED_EUROPE1
+            }
+
+			SPECIAL2_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_UNIFIED_EUROPE2
+            }
+
+			SPECIAL3_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_UNIFIED_EUROPE3
+            }
+
+			SPECIAL4_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_NORTH_GERMAN
+            }
+
+			SPECIAL5_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_SOUTH_GERMAN
+            }
+
+			SPECIAL5_1_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_GREAT_GERMAN
+            }
+
+			SPECIAL5_2_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_GER_greater_german_reich
+            }
+
+			SPECIAL5_3_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_BURGUNDY
+            }
+
+			SPECIAL5_4_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_KAISERLICHE_FODERATION
+            }
+
+			SPECIAL5_5_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_ENG_imperial_federation_unified
+            }
+
+			SPECIAL5_6_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_UNITED_NATIONS
+            }
+
+			SPECIAL6_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_ZAPADOSLAVIA
+            }
+
+			SPECIAL7_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_SCA_UNIFIED
+            }
+
+			SPECIAL8_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_HOL_benelux_unified
+            }
+			SPECIAL9_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_BALKAN
+            }
+
+			SPECIAL10_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SWI_alpine
+            }
+
+			SPECIAL11_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_ESU_POR_unified
+            }
+
+			SPECIAL12_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = FRA_UK
+            }
+
+			SPECIAL13_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_LATIN
+            }
+
+			SPECIAL14_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_CELT
+            }
+
+			SPECIAL15_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_PLC_UNIFIED
+            }
+
+			SPECIAL16_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_INTERMARIUM
+            }
+
+			SPECIAL17_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_SLAVIC_UNIFIED
+            }
+
+			SPECIAL18_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_BAL_UNIFIED
+            }
+
+			SPECIAL19_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_UBD
+            }
+
+			SPECIAL20_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_SPQR_UNIFIED
+            }
+
+			SPECIAL21_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_BYZ_UNIFIED
+            }
+
+			SPECIAL22_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_HRE_UNIFIED
+            }
+
+			SPECIAL23_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_SWEDEN_NORWAY
+            }
+
+			SPECIAL24_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_HUN_EMPIRE
+            }
+
+			SPECIAL25_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_FRA_THIRD_EMPIRE
+            }
+		
+			SPECIAL26_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_HUN_GREATER
+            }		
+		
+			SPECIAL27_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = CZE_ONLY
+            }		
+
+			SPECIAL28_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_ENG_england
+            }		
+
+			SPECIAL29_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SOV_russia_communism
+            }
+
+			SPECIAL30_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_EURASIA
+            }
+
+			SPECIAL31_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_EURASIA1984
+            }
+
+			SPECIAL32_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_SOV_ROME
+            }
+
+			SPECIAL33_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_SIBERIA
+            }
+
+			SPECIAL33_1_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_URAL
+            }
+
+			SPECIAL33_2_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_WEST_RUSSIA
+            }
+
+			SPECIAL33_3_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_WEST_SIBERIA
+            }
+
+			SPECIAL33_4_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_IDEL_URAL
+            }
+
+			SPECIAL34_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_UNIFIED_AFRICA
+            }
+
+			SPECIAL35_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_NORTH_AFRICA
+            }
+
+			SPECIAL36_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_WEST_AFRICA
+            }
+
+			SPECIAL37_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_EAST_AFRICA
+            }
+
+			SPECIAL38_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_CENTRAL_AFRICA
+            }
+
+			SPECIAL39_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_SAHARA
+            }
+
+			SPECIAL40_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_OTT_UNIFIED
+            }
+
+			SPECIAL41_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_ARA_UNIFIED
+            }
+
+			SPECIAL42_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_LEVANT
+            }
+
+			SPECIAL43_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_PRC_proclaimed
+            }
+
+			SPECIAL44_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_QING
+            }
+
+			SPECIAL45_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_TSR_empire_of_china
+            }
+
+			SPECIAL46_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_CHINESE_PROVINCE
+            }
+
+			SPECIAL47_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_GNG
+            }
+
+			SPECIAL48_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_EAST_TURKESTAN
+            }
+
+			SPECIAL49_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_TURKESTAN
+            }
+
+			SPECIAL50_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_INDOCHINA
+            }
+
+			SPECIAL51_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_AUSTRALASIA
+            }
+
+			SPECIAL52_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_JAP_pacific_union
+            }
+
+			SPECIAL53_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_EASTASIA1984
+            }
+
+			SPECIAL54_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_USA_CSA
+            }
+
+			SPECIAL55_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_AMERICAN_REPUBLIC
+            }
+
+			SPECIAL56_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_CHRISTIAN_COMMONWEALTH
+            }
+
+			SPECIAL57_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_COLUMBIA
+            }
+
+			SPECIAL58_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_NEW_AFRIKA
+            }
+
+			SPECIAL59_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_NORTH_AMERICA
+            }
+
+			SPECIAL60_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_NORTH_AMERICA_ENG
+            }
+
+			SPECIAL61_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_PACIFIC_STATES
+            }
+
+			SPECIAL62_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_AMERICAN_REICH
+            }
+
+			SPECIAL63_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_IMPERIUM
+            }
+
+			SPECIAL64_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_MEX_cristero
+            }
+
+			SPECIAL65_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = MEX_habsburg_empire
+            }
+
+			SPECIAL66_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_USC_UNIFIED
+            }
+
+			SPECIAL67_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_BRA_united_states_of_south_america_cos_tag
+            }
+
+			SPECIAL68_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_GCO_UNIFIED
+            }
+
+			SPECIAL69_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_peru_bolivian_confederation
+            }
+
+			SPECIAL70_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CYCR_OCEANIA1984
+            }
+
+			SPECIAL71_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_NDC_UNIFIED
+			}
+
+			SPECIAL72_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_EUR_UNIFIED
+			}
+
+			SPECIAL73_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_PER_UNIFIED
+			}
+
+			SPECIAL74_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_MAJ_UNIFIED
+			}
+
+			SPECIAL75_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_RAT_UNIFIED
+			}
+
+			SPECIAL76_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CEL_GREEN
+			}
+
+			SPECIAL77_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_MUT_UNIFIED
+			}
+
+			SPECIAL78_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_SCCwNrk
+			}
+
+			SPECIAL79_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_SCCwoNrk
+			}
+
+			SPECIAL80_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_MAN_restored
+			}
+
+			SPECIAL81_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_JAP_showa_restoration
+			}
+
+			SPECIAL82_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CHI_warlord_PRC
+			}
+
+			SPECIAL83_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CHI_power_struggle_defeated
+			}
+
+			SPECIAL84_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_eur_french
+			}
+
+			SPECIAL85_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_eur_german
+			}
+
+			SPECIAL86_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_eur_prussia
+			}
+
+			SPECIAL87_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_SPC_global_defense_council
+			}
+
+			SPECIAL88_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_CAN_north_america_dominion
+			}
+
+			SPECIAL89_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_SOV_PANSLAVIC
+			}
+
+			SPECIAL90_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_russian_empire
+			}
+
+			SPECIAL91_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_greater_italy
+			}
+
+			SPECIAL92_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_DEN_GLO
+			}
+
+			SPECIAL93_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_UNITED_KINGDOMS
+			}
+
+			SPECIAL94_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_UK_EXILE
+			}
+
+			SPECIAL95_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_RUS_EXILE
+			}
+
+			SPECIAL96_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_GUS_Greater
+			}
+
+			SPECIAL97_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_USN_Command
+			}
+
+			SPECIAL98_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_USM_Command
+			}
+
+			SPECIAL99_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_USE_Force
+			}
+
+			SPECIAL100_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_IBR_TNO
+			}
+
+			SPECIAL101_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_FRA_STATE
+			}
+
+			SPECIAL102_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_HOI_EMPIRE
+			}
+
+			SPECIAL103_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_BRITISH_EMPIRE
+			}
+
+			SPECIAL104_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_england
+			}
+
+			SPECIAL105_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_NORTH_GERMAN
+			}
+
+			SPECIAL106_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_SOUTH_GERMAN
+			}
+
+			SPECIAL107_button_click = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = SCC_PEOPLES_ARMY
+			}
+
+
+		}
+		
+		triggers = {
+		}
+	}
+}
