@@ -9511,18 +9511,11 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_HOMELAND_DEFENSE FOCUS_FILTER_USA_CONGRESS }
 		available = {
-			#or = {
-				#surrender_progress > 0.2
-			has_defensive_war = yes
-			#}
-			america_is_being_invaded = yes
+			always = yes
 		}
 		
 		bypass = {
-			NOT = {
-				has_defensive_war = yes
-			}
-			america_is_being_invaded = yes
+			always = no
 		}
 		enable_automatic_bypass = no
 		bypass_effect = {
@@ -13365,19 +13358,13 @@ focus_tree = {
 			}
 		}
 		search_filters = { FOCUS_FILTER_HOMELAND_DEFENSE }
-		available = {
-			has_civil_war = no
-			has_defensive_war = yes
-			america_is_being_invaded = yes
-		}
-		
-		bypass = {
-			has_civil_war = no
-			NOT = {
-				has_defensive_war = yes
+			available = {
+				has_civil_war = no
 			}
-			america_is_being_invaded = yes
-		}
+			
+			bypass = {
+				always = no
+			}
 		enable_automatic_bypass = no
 		bypass_effect = {
 			set_america_being_invaded = yes
