@@ -1,0 +1,379 @@
+add_namespace = RP_miscevents
+add_namespace = RP_namechanges
+
+country_event = { #Form a Corporate State in the Caucasus?
+    id = RP_miscevents.1
+    title = RP_miscevents.1.t
+    desc = RP_miscevents.1.d
+    picture = GFX_report_event_germany_politician_handshake
+
+    is_triggered_only = yes
+
+    option = {
+        name = RP_miscevents.1.a
+
+        ai_chance = {
+            base = 0
+        }
+
+        KKA = {
+            add_ideas = {
+                RP_corporate_state
+            }
+
+            set_cosmetic_tag = KKA_corporate
+
+            retire_character = KKA_leader
+
+            create_country_leader = {
+                name = "Alfried Krupp"
+                picture = GFX_portrait_KKA_alfried_krupp
+                expire = "1965.1.1"
+                ideology = despotism
+                traits = {
+                }
+            }
+
+            set_party_name = {
+                ideology = neutrality
+                name = KKA_neutrality_party_corporate
+            }
+        }
+    }
+
+    option = {
+        name = RP_miscevents.1.b
+
+        ai_chance = {
+            base = 10
+        }
+    }
+}
+
+country_event = { #Install an Ethiopian Local?
+    id = RP_miscevents.2
+    title = RP_miscevents.2.t
+    desc = RP_miscevents.2.d
+    picture = GFX_report_event_generic_african_unity
+
+    is_triggered_only = yes
+
+    option = {
+        name = RP_miscevents.2.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        custom_effect_tooltip = "We wil install Haile Selassie as leader of Ethiopia, and Deutsch-Abessinien will be dissolved"
+
+        hidden_effect = {
+            KBY = {
+
+                set_cosmetic_tag = KBY_collaboration
+                retire_character = KBY_leader
+                create_country_leader = {
+                    name = "Haile Selassie"
+                    picture = GFX_portrait_KBY_haile_selassie
+                    expire = "1965.1.1"
+                    ideology = despotism
+                    traits = {
+                    }
+                }
+
+                set_party_name = {
+                    ideology = neutrality
+                    name = KBY_neutrality_party_collaboration
+                }
+            }
+
+            set_autonomy = { target = KBY autonomous_state = autonomy_RP_kaiserreich_puppet }
+        }
+    }
+
+    option = {
+        name = RP_miscevents.2.b
+
+        ai_chance = {
+            base = 5
+        }
+    }
+}
+
+country_event = { #Japanese leader decision
+    id = RP_miscevents.5
+    title = RP_miscevents.5.t
+    desc = RP_miscevents.5.d
+    picture = GFX_report_event_generic_handshake
+
+    is_triggered_only = yes
+
+    option = { #Hirohito
+        name = RP_miscevents.5.a
+
+        ai_chance = {
+            base = 5
+        }
+    }
+
+    option = { #Tojo
+        name = RP_miscevents.5.b
+
+        ai_chance = {
+            base = 5
+        }
+    }
+}
+
+country_event = { #Eiffel Tower Destroyed
+    id = RP_miscevents.6
+    title = RP_miscevents.6.t
+    desc = RP_miscevents.6.d
+    picture = GFX_report_event_generic_communist_militia
+
+    is_triggered_only = yes
+
+    option = {
+        name = RP_miscevents.6.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        damage_building = {
+            type = landmark_eiffel_tower
+            state = 16
+            damage = 5
+        }
+    }
+}
+
+country_event = { # Grand Duchy of Luxembourg
+    id = RP_miscevents.7
+    title = RP_miscevents.7.t
+    desc = RP_miscevents.7.d
+    picture = GFX_report_event_peasant_revolt
+
+    is_triggered_only = yes
+
+    option = { # Yasssssssssssssss
+        name = RP_miscevents.7.a
+
+        ai_chance = {
+            base = 0
+        }
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KLU = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 8
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+
+    option = { # Narrrrrrrrrrrrr
+        name = RP_miscevents.7.b
+
+        ai_chance = {
+            base = 5
+        }
+    }
+}
+
+country_event = { #Change name to Flanders-Wallonia?
+    id = RP_namechanges.1
+    title = RP_namechanges.1.t
+    desc = RP_namechanges.1.d
+    picture = GFX_report_event_germany_politician_handshake
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_namechanges.1.a
+
+        ai_chance = {
+            base = 0
+        }
+
+        KBE = {
+            set_cosmetic_tag = KBE_flanderswallonia
+        }
+    }
+
+    option = { #No
+        name = RP_namechanges.1.b
+
+        ai_chance = {
+            base = 10
+        }
+    }
+}
+
+country_event = { #Change name to Kingdom of Croatia?
+    id = RP_namechanges.2
+    title = RP_namechanges.2.t
+    desc = RP_namechanges.2.d
+    picture = GFX_report_event_germany_politician_handshake
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_namechanges.2.a
+
+        ai_chance = {
+            base = 0
+        }
+
+        KCR = {
+            set_cosmetic_tag = KCR_croatia
+        }
+    }
+
+    option = { #No
+        name = RP_namechanges.2.b
+
+        ai_chance = {
+            base = 10
+        }
+    }
+}
+
+country_event = { #Change name to Livonian Order?
+    id = RP_namechanges.3
+    title = RP_namechanges.3.t
+    desc = RP_namechanges.3.d
+    picture = GFX_report_event_germany_politician_handshake
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_namechanges.3.a
+
+        ai_chance = {
+            base = 0
+        }
+
+        KLV = {
+            set_cosmetic_tag = KLV_livonia
+        }
+        GER = {
+            country_event = {
+                id = RP_livoniaevents.1
+            }
+        }
+    }
+
+    option = { #No
+        name = RP_namechanges.3.b
+
+        ai_chance = {
+            base = 10
+        }
+        GER = {
+            country_event = {
+                id = RP_livoniaevents.1
+            }
+        }
+    }
+}
+
+country_event = { #Change name to Ukrainian State?
+    id = RP_namechanges.4
+    title = RP_namechanges.4.t  
+    desc = RP_namechanges.4.d
+    picture = GFX_report_event_germany_politician_handshake
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_namechanges.4.a
+
+        ai_chance = {
+            base = 0
+        }
+
+        KUK = {
+            set_cosmetic_tag = KUK_state
+        }
+        GER = {
+            country_event = RP_ukrainianevents.1
+        }
+    }
+
+    option = { #No
+        name = RP_namechanges.4.b
+
+        ai_chance = {
+            base = 10
+        }
+        
+        GER = {
+            country_event = RP_ukrainianevents.1
+        }
+    }
+}
+
+country_event = { #Change name of KWC?
+    id = RP_namechanges.5
+    title = RP_namechanges.5.t
+    desc = RP_namechanges.5.d
+    picture = GFX_report_event_germany_politician_handshake
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_namechanges.5.a
+
+        ai_chance = {
+            base = 0
+        }
+
+        KWC = {
+            set_cosmetic_tag = KWC_allofcalifornia
+        }
+    }
+
+    option = { #No
+        name = RP_namechanges.5.b
+
+        ai_chance = {
+            base = 0
+        }
+
+        KWC = {
+            set_cosmetic_tag = KWC_sudwestamerika
+        }
+    }
+
+    option = { #No
+        name = RP_namechanges.5.c
+
+        ai_chance = {
+            base = 0
+        }
+
+        KWC = {
+            set_cosmetic_tag = KWC_pacificcoast
+        }
+    }
+
+    option = { #No
+        name = RP_namechanges.5.e
+
+        ai_chance = {
+            base = 10
+        }
+    }
+}

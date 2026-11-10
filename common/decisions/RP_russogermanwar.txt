@@ -1,0 +1,2138 @@
+RP_second_russo_german_war = {
+	RP_rgw_declarevictory_overrussia = {
+        icon = GFX_decision_generic_speech
+
+		ai_will_do = {
+			base = 40
+		}
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 810
+                state = 12
+                state = 13
+                state = 191
+                state = 813
+                state = 812
+                state = 811
+                state = 808
+                state = 809
+                state = 190
+                state = 189
+                state = 814
+                state = 11
+                state = 815
+                state = 784
+                state = 93
+                state = 94
+                state = 95
+                state = 96
+                state = 97
+                state = 89
+                state = 91
+				state = 80
+                state = 78
+				state = 766
+                state = 834
+				state = 192
+                state = 201
+				state = 199
+				state = 198
+				state = 202
+				state = 203
+				state = 197
+				state = 226
+				state = 200
+				state = 227
+				state = 228
+				state = 225
+				state = 221
+				state = 259
+				state = 193
+				state = 196
+				state = 137
+                state = 206
+				state = 204
+				state = 194
+				state = 241
+				state = 207
+            }
+        }
+
+        fire_only_once = yes
+        days_remove = 200
+
+		available = {
+            has_war_with = SOV
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_declarevictory_overrussia_trigger_tt.1
+                189 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                814 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                11 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                815 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                784 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                93 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                94 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                95 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                96 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                97 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                89 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                91 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+				80 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                78 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+				766 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                834 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+				192 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                201 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+				199 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+				198 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+				202 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+				203 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+				197 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                206 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+				204 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+				194 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+				241 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+				207 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_declarevictory_overrussia_trigger_tt.3
+                OR = {
+                    AND = {
+                        810 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                        12 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                        13 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                        191 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                        813 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                        812 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                        811 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                        808 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                        809 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                        190 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                    }
+                    AND = {
+                        137 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                        196 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                        200 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                        226 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                        227 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                        228 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                        221 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                        259 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                        225 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                        193 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                    }
+                }
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_declarevictory_overrussia_trigger_tt.2
+                count_triggers = {
+                    amount = 4
+                    has_country_flag = RP_rgw_choosingobjectives_secure_murmansk_complete
+                    has_country_flag = RP_rgw_choosingobjectives_secure_leningrad_complete
+                    has_country_flag = RP_rgw_choosingobjectives_secure_novgorod_complete
+                    has_country_flag = RP_rgw_choosingobjectives_secure_smolensk_complete
+                    has_country_flag = RP_rgw_choosingobjectives_secure_moscow_complete
+                    has_country_flag = RP_rgw_choosingobjectives_secure_transukraine_complete
+                    has_country_flag = RP_rgw_choosingobjectives_secure_rostov_complete
+                    has_country_flag = RP_rgw_choosingobjectives_secure_stalingrad_complete
+                }
+            }
+		}
+
+		complete_effect = {
+            custom_effect_tooltip = RP_rgw_declarevictory_overrussia_effect_tt.1
+            custom_effect_tooltip = generic_skip_one_line_tt
+            set_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins
+            every_country = {
+                limit = {
+                    OR = {
+                        tag = GER
+                        is_ally_with = GER
+                    }
+                }
+                add_timed_idea = {
+                    idea = RP_rgw_deescalatingwar
+                    days = 180
+                }
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = RP_rgw_declarevictory_overrussia_effect_tt.2
+            hidden_effect = {
+                remove_ideas = { 
+                    RP_GER_snowballoffensive_i
+                    RP_GER_snowballoffensive_ii
+                    RP_GER_snowballoffensive_iii
+                    RP_GER_snowballoffensive_iv
+                    RP_GER_snowballoffensive_v
+                    RP_GER_snowballoffensive_vi
+                    RP_GER_snowballoffensive_vii
+                    RP_GER_snowballoffensive_viii
+                    RP_GER_snowballoffensive_ix
+                    RP_GER_snowballoffensive_x
+                    RP_GER_snowballoffensive_xi
+                    RP_GER_snowballoffensive_xii
+                    RP_GER_snowballoffensive_xiii
+                    RP_GER_snowballoffensive_xiv
+                    RP_GER_snowballoffensive_xv
+                    RP_GER_snowballoffensive_xvi
+                }
+            }
+            custom_effect_tooltip = generic_skip_one_line_tt
+		}
+
+        remove_effect = {
+            set_global_flag = RP_rgw_declarevictory_overrussia_peaceprocesscomplete
+            custom_effect_tooltip = RP_rgw_declarevictory_overrussia_effect_tt.3
+            hidden_effect = {
+                RP_rgw_russianpeaceachieved = yes
+            }
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = RP_rgw_declarevictory_overrusia_effect_wewillannex_tt
+            if = {
+                limit = {
+                    has_country_flag = RP_rgw_consolidate_karelia_complete
+                }
+                custom_effect_tooltip = RP_rgw_declarevictory_overrusia_effect_wewillannex_tt_karelia
+            }
+
+            if = {
+                limit = {
+                    has_country_flag = RP_rgw_consolidate_leningrad_complete
+                }
+                custom_effect_tooltip = RP_rgw_declarevictory_overrusia_effect_wewillannex_tt_leningrad
+            }
+
+            if = {
+                limit = {
+                    has_country_flag = RP_rgw_consolidate_livonia_complete
+                }
+                custom_effect_tooltip = RP_rgw_declarevictory_overrusia_effect_wewillannex_tt_livonia
+            }
+
+            if = {
+                limit = {
+                    has_country_flag = RP_rgw_consolidate_ruthenia_complete
+                }
+                custom_effect_tooltip = RP_rgw_declarevictory_overrusia_effect_wewillannex_tt_ruthenia
+            }
+
+            if = {
+                limit = {
+                    has_country_flag = RP_rgw_consolidate_northernrussia_complete
+                }
+                custom_effect_tooltip = RP_rgw_declarevictory_overrusia_effect_wewillannex_tt_northernrussia
+            }
+
+            if = {
+                limit = {
+                    has_country_flag = RP_rgw_consolidate_southernrussia_complete
+                }
+                custom_effect_tooltip = RP_rgw_declarevictory_overrusia_effect_wewillannex_tt_southernrussia
+            }
+
+            if = {
+                limit = {
+                    has_country_flag = RP_rgw_consolidate_westernukraine_complete
+                }
+                custom_effect_tooltip = RP_rgw_declarevictory_overrusia_effect_wewillannex_tt_westernukraine
+            }
+
+            if = {
+                limit = {
+                    has_country_flag = RP_rgw_consolidate_easternukraine_complete
+                }
+                custom_effect_tooltip = RP_rgw_declarevictory_overrusia_effect_wewillannex_tt_easternukraine
+            }
+
+            if = {
+                limit = {
+                    has_country_flag = RP_rgw_consolidate_russianheartland_complete
+                }
+                custom_effect_tooltip = RP_rgw_declarevictory_overrusia_effect_wewillannex_tt_russianheartland
+            }
+
+            if = {
+                limit = {
+                    has_country_flag = RP_rgw_consolidate_donregion_complete
+                }
+                custom_effect_tooltip = RP_rgw_declarevictory_overrusia_effect_wewillannex_tt_donregion
+            }
+            
+            if = {
+                limit = {
+                    has_country_flag = RP_rgw_consolidate_caucasus_complete
+                }
+                custom_effect_tooltip = RP_rgw_declarevictory_overrusia_effect_wewillannex_tt_caucasus
+            }
+		}
+    }
+
+    RP_rgw_consolidate_karelia = {
+        icon = GFX_decision_generic_form_nation
+
+		ai_will_do = {
+			base = 40
+		}
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 146
+				state = 147
+				state = 722
+                state = 216
+				state = 215
+				state = 213
+            }
+        }
+
+        visible = {
+            any_state = {
+                OR = {
+                    state = 146
+                    state = 147
+                    state = 722
+                    state = 216
+                    state = 215
+                    state = 213
+                }
+                is_owned_by = SOV
+            }
+            has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins
+            NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocesscomplete }
+        }
+
+        fire_only_once = yes
+        days_remove = 35
+        custom_cost_trigger = {
+            command_power > 4
+            has_political_power > 4
+        }
+        custom_cost_text = decision_cost_CP_5_PP_5
+
+		available = {
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.1
+                has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins
+                NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocesscomplete }
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.2
+                146 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+				147 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+				722 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                216 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+				215 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+				213 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.3
+                RP_rgw_consolidation_trigger = yes
+            }
+		}
+
+		complete_effect = {
+            set_country_flag = RP_rgw_consolidate_karelia_timer
+        }
+
+        remove_effect = {
+            add_stability = 0.025
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = RP_rgw_consolidation_effect_tt
+            clr_country_flag = RP_rgw_consolidate_karelia_timer
+            set_country_flag = RP_rgw_consolidate_karelia_complete
+        }
+    }
+
+    RP_rgw_consolidate_leningrad = {
+        icon = GFX_decision_generic_form_nation
+
+		ai_will_do = {
+			base = 40
+		}
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 195
+				state = 244
+            }
+        }
+
+        visible = {
+            any_state = {
+                OR = {
+                    state = 195
+				    state = 244
+                }
+                is_owned_by = SOV
+            }
+            has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins
+            NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocesscomplete }
+        }
+
+        fire_only_once = yes
+        days_remove = 35
+        custom_cost_trigger = {
+            command_power > 9
+            has_political_power > 29
+        }
+        custom_cost_text = decision_cost_CP_10_PP_30
+
+		available = {
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.1
+                has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins
+                NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocesscomplete }
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.2
+                195 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+				244 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.3
+                RP_rgw_consolidation_trigger = yes
+            }
+		}
+
+		complete_effect = {
+            set_country_flag = RP_rgw_consolidate_leningrad_timer
+        }
+
+        remove_effect = {
+            add_stability = 0.025
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = RP_rgw_consolidation_effect_tt
+            clr_country_flag = RP_rgw_consolidate_leningrad_timer
+            set_country_flag = RP_rgw_consolidate_leningrad_complete
+        }
+    }
+
+    RP_rgw_consolidate_livonia = {
+        icon = GFX_decision_generic_form_nation
+
+		ai_will_do = {
+			base = 40
+		}
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 810
+                state = 12
+                state = 13
+                state = 191
+                state = 813
+                state = 812
+                state = 811
+                state = 808
+                state = 809
+                state = 190
+            }
+        }
+
+        visible = {
+            any_state = {
+                OR = {
+                    state = 810
+                    state = 12
+                    state = 13
+                    state = 191
+                    state = 813
+                    state = 812
+                    state = 811
+                    state = 808
+                    state = 809
+                    state = 190
+                }
+                is_owned_by = SOV
+            }
+            has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins
+            NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocesscomplete }
+        }
+
+        fire_only_once = yes
+        days_remove = 35
+        custom_cost_trigger = {
+            command_power > 9
+            has_political_power > 19
+        }
+        custom_cost_text = decision_cost_CP_10_PP_20
+
+		available = {
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.1
+                has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins
+                NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocesscomplete }
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.2
+				810 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                12 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                13 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                191 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                813 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                812 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                811 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                808 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                809 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                190 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.3
+                RP_rgw_consolidation_trigger = yes
+            }
+		}
+
+		complete_effect = {
+            set_country_flag = RP_rgw_consolidate_livonia_timer
+        }
+
+        remove_effect = {
+            add_stability = 0.025
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = RP_rgw_consolidation_effect_tt
+            clr_country_flag = RP_rgw_consolidate_livonia_timer
+            set_country_flag = RP_rgw_consolidate_livonia_complete
+        }
+    }
+    
+    RP_rgw_consolidate_ruthenia = {
+        icon = GFX_decision_generic_form_nation
+
+		ai_will_do = {
+			base = 40
+		}
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 204
+                state = 206
+                state = 207
+                state = 194
+            }
+        }
+
+        visible = {
+            any_state = {
+                OR = {
+                    state = 204
+                    state = 206
+                    state = 207
+                    state = 194
+                }
+                is_owned_by = SOV
+            }
+            has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins
+            NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocesscomplete }
+        }
+
+        fire_only_once = yes
+        days_remove = 35
+        custom_cost_trigger = {
+            command_power > 9
+            has_political_power > 9
+        }
+        custom_cost_text = decision_cost_CP_10_PP_10
+
+		available = {
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.1
+                has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins
+                NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocesscomplete }
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.2
+				204 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                206 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                207 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                194 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.3
+                RP_rgw_consolidation_trigger = yes
+            }
+		}
+
+		complete_effect = {
+            set_country_flag = RP_rgw_consolidate_ruthenia_timer
+        }
+
+        remove_effect = {
+            add_stability = 0.025
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = RP_rgw_consolidation_effect_tt
+            clr_country_flag = RP_rgw_consolidate_ruthenia_timer
+            set_country_flag = RP_rgw_consolidate_ruthenia_complete
+        }
+    }
+
+    RP_rgw_consolidate_northernrussia = {
+        icon = GFX_decision_generic_form_nation
+
+		ai_will_do = {
+			base = 40
+		}
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 210
+                state = 246
+                state = 263
+                state = 209
+                state = 208
+                state = 242
+            }
+        }
+
+        visible = {
+            any_state = {
+                OR = {
+                    state = 210
+                    state = 246
+                    state = 263
+                    state = 209
+                    state = 208
+                    state = 242
+                }
+                is_owned_by = SOV
+            }
+            has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins
+            NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocesscomplete }
+        }
+
+        fire_only_once = yes
+        days_remove = 35
+        custom_cost_trigger = {
+            command_power > 4
+            has_political_power > 14
+        }
+        custom_cost_text = decision_cost_CP_5_PP_15
+
+		available = {
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.1
+                has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins
+                NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocesscomplete }
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.2
+				210 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                246 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                263 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                209 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                208 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                242 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.3
+                RP_rgw_consolidation_trigger = yes
+            }
+		}
+
+		complete_effect = {
+            set_country_flag = RP_rgw_consolidate_northernrussia_timer
+        }
+
+        remove_effect = {
+            add_stability = 0.025
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = RP_rgw_consolidation_effect_tt
+            clr_country_flag = RP_rgw_consolidate_northernrussia_timer
+            set_country_flag = RP_rgw_consolidate_northernrussia_complete
+        }
+    }
+
+    RP_rgw_consolidate_southernrussia = {
+        icon = GFX_decision_generic_form_nation
+
+		ai_will_do = {
+			base = 40
+		}
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 241
+                state = 224
+                state = 243
+                state = 220
+                state = 205
+                state = 222
+                state = 223
+                state = 240
+            }
+        }
+
+        visible = {
+            any_state = {
+                OR = {
+                    state = 241
+                    state = 224
+                    state = 243
+                    state = 220
+                    state = 205
+                    state = 222
+                    state = 223
+                    state = 240
+                }
+                is_owned_by = SOV
+            }
+            has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins
+            NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocesscomplete }
+        }
+
+        fire_only_once = yes
+        days_remove = 35
+        custom_cost_trigger = {
+            command_power > 14
+            has_political_power > 29
+        }
+        custom_cost_text = decision_cost_CP_15_PP_30
+
+		available = {
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.1
+                has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins
+                NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocesscomplete }
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.2
+                241 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                224 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                243 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                220 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                205 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                222 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                223 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                240 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.3
+                RP_rgw_consolidation_trigger = yes
+            }
+		}
+
+		complete_effect = {
+            set_country_flag = RP_rgw_consolidate_southernrussia_timer
+        }
+
+        remove_effect = {
+            add_stability = 0.025
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = RP_rgw_consolidation_effect_tt
+            clr_country_flag = RP_rgw_consolidate_southernrussia_timer
+            set_country_flag = RP_rgw_consolidate_southernrussia_complete
+        }
+    }
+
+    RP_rgw_consolidate_westernukraine = {
+        icon = GFX_decision_generic_form_nation
+
+		ai_will_do = {
+			base = 40
+		}
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 201
+				state = 199
+				state = 198
+				state = 202
+				state = 203
+				state = 197
+                state = 834
+                state = 192
+            }
+        }
+
+        visible = {
+            any_state = {
+                OR = {
+                    state = 201
+                    state = 199
+                    state = 198
+                    state = 202
+                    state = 203
+                    state = 197
+                    state = 834
+                    state = 192
+                }
+                is_owned_by = SOV
+            }
+            has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins
+            NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocesscomplete }
+        }
+
+        fire_only_once = yes
+        days_remove = 35
+        custom_cost_trigger = {
+            command_power > 14
+            has_political_power > 24
+        }
+        custom_cost_text = decision_cost_CP_15_PP_25
+
+		available = {
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.1
+                has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins
+                NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocesscomplete }
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.2
+                201 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+				199 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+				198 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+				202 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+				203 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+				197 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                834 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                192 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.3
+                RP_rgw_consolidation_trigger = yes
+            }
+		}
+
+		complete_effect = {
+            set_country_flag = RP_rgw_consolidate_westernukraine_timer
+        }
+
+        remove_effect = {
+            add_stability = 0.025
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = RP_rgw_consolidation_effect_tt
+            clr_country_flag = RP_rgw_consolidate_westernukraine_timer
+            set_country_flag = RP_rgw_consolidate_westernukraine_complete
+        }
+    }
+    
+    RP_rgw_consolidate_easternukraine = {
+        icon = GFX_decision_generic_form_nation
+
+		ai_will_do = {
+			base = 40
+		}
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 137
+                state = 196
+                state = 200
+                state = 226
+                state = 227
+                state = 228
+                state = 221
+                state = 259
+                state = 225
+                state = 193
+            }
+        }
+
+        visible = {
+            any_state = {
+                OR = {
+                    state = 137
+                    state = 196
+                    state = 200
+                    state = 226
+                    state = 227
+                    state = 228
+                    state = 221
+                    state = 259
+                    state = 225
+                    state = 193
+                }
+                is_owned_by = SOV
+            }
+            has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins
+            NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocesscomplete }
+        }
+
+        fire_only_once = yes
+        days_remove = 35
+        custom_cost_trigger = {
+            command_power > 9
+            has_political_power > 24
+        }
+        custom_cost_text = decision_cost_CP_10_PP_25
+
+		available = {
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.1
+                has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins
+                NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocesscomplete }
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.2
+                137 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                196 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                200 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                226 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                227 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                228 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                221 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                259 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                225 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                193 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.3
+                RP_rgw_consolidation_trigger = yes
+            }
+		}
+
+		complete_effect = {
+            set_country_flag = RP_rgw_consolidate_easternukraine_timer
+        }
+
+        remove_effect = {
+            add_stability = 0.025
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = RP_rgw_consolidation_effect_tt
+            clr_country_flag = RP_rgw_consolidate_easternukraine_timer
+            set_country_flag = RP_rgw_consolidate_easternukraine_complete
+        }
+    }
+
+    RP_rgw_consolidate_russianheartland = {
+        icon = GFX_decision_generic_form_nation
+
+		ai_will_do = {
+			base = 40
+		}
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 264
+                state = 247
+                state = 219
+                state = 254
+                state = 257
+                state = 258
+                state = 260
+                state = 265
+                state = 245
+                state = 218
+                state = 217
+            }
+        }
+
+        visible = {
+            any_state = {
+                OR = {
+                    state = 264
+                    state = 247
+                    state = 219
+                    state = 254
+                    state = 257
+                    state = 258
+                    state = 260
+                    state = 265
+                    state = 245
+                    state = 218
+                    state = 217
+                }
+                is_owned_by = SOV
+            }
+            has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins
+            NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocesscomplete }
+        }
+
+        fire_only_once = yes
+        days_remove = 35
+        custom_cost_trigger = {
+            command_power > 19
+            has_political_power > 49
+        }
+        custom_cost_text = decision_cost_CP_20_PP_50
+
+		available = {
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.1
+                has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins
+                NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocesscomplete }
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.2
+                264 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                247 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                219 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                254 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                257 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                258 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                260 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                265 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                245 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                218 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                217 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.3
+                RP_rgw_consolidation_trigger = yes
+            }
+		}
+
+		complete_effect = {
+            set_country_flag = RP_rgw_consolidate_russianheartland_timer
+        }
+
+        remove_effect = {
+            add_stability = 0.025
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = RP_rgw_consolidation_effect_tt
+            clr_country_flag = RP_rgw_consolidate_russianheartland_timer
+            set_country_flag = RP_rgw_consolidate_russianheartland_complete
+        }
+    }
+
+    RP_rgw_consolidate_donregion = {
+        icon = GFX_decision_generic_form_nation
+
+		ai_will_do = {
+			base = 40
+		}
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 238
+				state = 237
+				state = 234
+				state = 235
+				state = 233
+                state = 236
+                state = 827
+				state = 828
+				state = 821
+				state = 232
+            }
+        }
+
+        visible = {
+            any_state = {
+                OR = {
+                    state = 238
+                    state = 237
+                    state = 234
+                    state = 235
+                    state = 233
+                    state = 236
+                    state = 827
+                    state = 828
+                    state = 821
+                    state = 232
+                }
+                is_owned_by = SOV
+            }
+            has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins
+            NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocesscomplete }
+        }
+
+        fire_only_once = yes
+        days_remove = 35
+        custom_cost_trigger = {
+            command_power > 9
+            has_political_power > 29
+        }
+
+        custom_cost_text = decision_cost_CP_10_PP_30
+
+		available = {
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.1
+                has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins
+                NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocesscomplete }
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.2
+                238 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+				237 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+				234 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+				235 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+				233 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                236 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                827 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                828 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                821 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                232 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.3
+                RP_rgw_consolidation_trigger = yes
+            }
+		}
+
+		complete_effect = {
+            set_country_flag = RP_rgw_consolidate_donregion_timer
+        }
+
+        remove_effect = {
+            add_stability = 0.025
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = RP_rgw_consolidation_effect_tt
+            clr_country_flag = RP_rgw_consolidate_donregion_timer
+            set_country_flag = RP_rgw_consolidate_donregion_complete
+        }
+    }
+    
+    RP_rgw_consolidate_caucasus = {
+        icon = GFX_decision_generic_form_nation
+
+		ai_will_do = {
+			base = 40
+		}
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 826
+                state = 231
+                state = 230
+                state = 229
+            }
+        }
+
+        visible = {
+            any_state = {
+                OR = {
+                    state = 826
+                    state = 231
+                    state = 230
+                    state = 229
+                }
+                is_owned_by = SOV
+            }
+            has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins
+            NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocesscomplete }
+        }
+
+        fire_only_once = yes
+        days_remove = 35
+        custom_cost_trigger = {
+            command_power > 9
+            has_political_power > 29
+        }
+        custom_cost_text = decision_cost_CP_10_PP_30
+
+		available = {
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.1
+                has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins
+                NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocesscomplete }
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.2
+                826 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                231 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                230 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+                229 = { RP_rgw_declarevictory_overrussia_strigger = yes }
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_consolidation_trigger_tt.3
+                RP_rgw_consolidation_trigger = yes
+            }
+		}
+
+		complete_effect = {
+            set_country_flag = RP_rgw_consolidate_caucasus_timer
+        }
+
+        remove_effect = {
+            add_stability = 0.025
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = RP_rgw_consolidation_effect_tt
+            clr_country_flag = RP_rgw_consolidate_caucasus_timer
+            set_country_flag = RP_rgw_consolidate_caucasus_complete
+        }
+    }
+    
+    RP_rgw_choosingobjectives_secure_murmansk = {
+        icon = GFX_decision_generic_operation
+
+        available = {
+            has_war_with = SOV
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_choosingobjectives_availability_tooltip
+                RP_rgw_choosingobjectives_missionslotopen_trigger = yes
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 213
+            }
+        }
+
+        visible = {
+            NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins }
+            SOV = {
+                any_owned_state = {
+                    OR = {
+                        state = 213
+                    }
+                }
+            }
+            NOT = {
+                OR = {
+                    has_country_flag = RP_rgw_choosingobjectives_secure_murmansk_timer
+                    has_country_flag = RP_rgw_choosingobjectives_secure_murmansk_complete
+                }
+            }
+        }
+        
+        cancel_trigger = {
+            any_country = {
+                is_ally_with = GER
+                controls_province = 3134
+            }
+        }
+
+        days_remove = 120
+
+        complete_effect = {
+            set_country_flag = RP_rgw_choosingobjectives_secure_murmansk_timer
+        }
+        
+        remove_effect = {
+            add_war_support = -0.005
+            clr_country_flag = RP_rgw_choosingobjectives_secure_murmansk_timer
+        }
+
+        cancel_effect = {
+            RP_rgw_objective_successful = yes
+            clr_country_flag = RP_rgw_choosingobjectives_secure_murmansk_timer
+            set_country_flag = RP_rgw_choosingobjectives_secure_murmansk_complete
+            custom_effect_tooltip = generic_skip_one_line_tt
+        }
+    }
+    
+    RP_rgw_choosingobjectives_secure_leningrad = {
+        icon = GFX_decision_generic_operation
+
+        available = {
+            has_war_with = SOV
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_choosingobjectives_availability_tooltip
+                RP_rgw_choosingobjectives_missionslotopen_trigger = yes
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 195
+            }
+        }
+
+        visible = {
+            NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins }
+            SOV = {
+                any_owned_state = {
+                    OR = {
+                        state = 195
+                    }
+                }
+            }
+            NOT = {
+                OR = {
+                    has_country_flag = RP_rgw_choosingobjectives_secure_leningrad_timer
+                    has_country_flag = RP_rgw_choosingobjectives_secure_leningrad_complete
+                }
+            }
+        }
+        
+        cancel_trigger = {
+            any_country = {
+                is_ally_with = GER
+                controls_province = 3151
+            }
+        }
+
+        days_remove = 120
+
+        complete_effect = {
+            set_country_flag = RP_rgw_choosingobjectives_secure_leningrad_timer
+        }
+        
+        remove_effect = {
+            add_war_support = -0.005
+            clr_country_flag = RP_rgw_choosingobjectives_secure_leningrad_timer
+        }
+
+        cancel_effect = {
+            RP_rgw_objective_successful = yes
+            clr_country_flag = RP_rgw_choosingobjectives_secure_leningrad_timer
+            set_country_flag = RP_rgw_choosingobjectives_secure_leningrad_complete
+            custom_effect_tooltip = generic_skip_one_line_tt
+        }
+    }
+
+    RP_rgw_choosingobjectives_secure_novgorod = {
+        icon = GFX_decision_generic_operation
+
+        available = {
+            has_war_with = SOV
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_choosingobjectives_availability_tooltip
+                RP_rgw_choosingobjectives_missionslotopen_trigger = yes
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 263
+            }
+        }
+
+        visible = {
+            NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins }
+            SOV = {
+                any_owned_state = {
+                    OR = {
+                        state = 263
+                    }
+                }
+            }
+            NOT = {
+                OR = {
+                    has_country_flag = RP_rgw_choosingobjectives_secure_novgorod_timer
+                    has_country_flag = RP_rgw_choosingobjectives_secure_novgorod_complete
+                }
+            }
+        }
+        
+        cancel_trigger = {
+            any_country = {
+                is_ally_with = GER
+                controls_province = 117
+            }
+        }
+
+        days_remove = 120
+
+        complete_effect = {
+            set_country_flag = RP_rgw_choosingobjectives_secure_novgorod_timer
+        }
+        
+        remove_effect = {
+            add_war_support = -0.005
+            clr_country_flag = RP_rgw_choosingobjectives_secure_novgorod_timer
+        }
+
+        cancel_effect = {
+            RP_rgw_objective_successful = yes
+            clr_country_flag = RP_rgw_choosingobjectives_secure_novgorod_timer
+            set_country_flag = RP_rgw_choosingobjectives_secure_novgorod_complete
+            custom_effect_tooltip = generic_skip_one_line_tt
+        }
+    }
+
+    RP_rgw_choosingobjectives_secure_riga = {
+        icon = GFX_decision_generic_operation
+
+        available = {
+            has_war_with = SOV
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_choosingobjectives_availability_tooltip
+                RP_rgw_choosingobjectives_missionslotopen_trigger = yes
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 808
+            }
+        }
+
+        visible = {
+            NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins }
+            SOV = {
+                any_owned_state = {
+                    OR = {
+                        state = 808
+                    }
+                }
+            }
+            NOT = {
+                OR = {
+                    has_country_flag = RP_rgw_choosingobjectives_secure_riga_timer
+                    has_country_flag = RP_rgw_choosingobjectives_secure_riga_complete
+                }
+            }
+        }
+        
+        cancel_trigger = {
+            any_country = {
+                is_ally_with = GER
+                controls_province = 9340
+            }
+        }
+
+        days_remove = 120
+
+        complete_effect = {
+            set_country_flag = RP_rgw_choosingobjectives_secure_riga_timer
+        }
+        
+        remove_effect = {
+            add_war_support = -0.005
+            clr_country_flag = RP_rgw_choosingobjectives_secure_riga_timer
+        }
+
+        cancel_effect = {
+            RP_rgw_objective_successful = yes
+            clr_country_flag = RP_rgw_choosingobjectives_secure_riga_timer
+            set_country_flag = RP_rgw_choosingobjectives_secure_riga_complete
+            custom_effect_tooltip = generic_skip_one_line_tt
+        }
+    }
+    
+    RP_rgw_choosingobjectives_secure_smolensk = {
+        icon = GFX_decision_generic_operation
+
+        available = {
+            has_war_with = SOV
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_choosingobjectives_availability_tooltip
+                RP_rgw_choosingobjectives_missionslotopen_trigger = yes
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 242
+            }
+        }
+
+        visible = {
+            NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins }
+            SOV = {
+                any_owned_state = {
+                    OR = {
+                        state = 242
+                    }
+                }
+            }
+            NOT = {
+                OR = {
+                    has_country_flag = RP_rgw_choosingobjectives_secure_smolensk_timer
+                    has_country_flag = RP_rgw_choosingobjectives_secure_smolensk_complete
+                }
+            }
+        }
+        
+        cancel_trigger = {
+            any_country = {
+                is_ally_with = GER
+                controls_province = 306
+            }
+        }
+
+        days_remove = 120
+
+        complete_effect = {
+            set_country_flag = RP_rgw_choosingobjectives_secure_smolensk_timer
+        }
+        
+        remove_effect = {
+            add_war_support = -0.005
+            clr_country_flag = RP_rgw_choosingobjectives_secure_smolensk_timer
+        }
+
+        cancel_effect = {
+            RP_rgw_objective_successful = yes
+            clr_country_flag = RP_rgw_choosingobjectives_secure_smolensk_timer
+            set_country_flag = RP_rgw_choosingobjectives_secure_smolensk_complete
+            custom_effect_tooltip = generic_skip_one_line_tt
+        }
+    }
+
+    RP_rgw_choosingobjectives_secure_moscow = {
+        icon = GFX_decision_generic_operation
+
+        available = {
+            has_war_with = SOV
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_choosingobjectives_availability_tooltip
+                RP_rgw_choosingobjectives_missionslotopen_trigger = yes
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 219
+            }
+        }
+
+        visible = {
+            NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins }
+            SOV = {
+                any_owned_state = {
+                    OR = {
+                        state = 219
+                    }
+                }
+            }
+            NOT = {
+                OR = {
+                    has_country_flag = RP_rgw_choosingobjectives_secure_moscow_timer
+                    has_country_flag = RP_rgw_choosingobjectives_secure_moscow_complete
+                }
+            }
+        }
+        
+        cancel_trigger = {
+            any_country = {
+                is_ally_with = GER
+                controls_province = 6380
+            }
+        }
+
+        days_remove = 120
+
+        complete_effect = {
+            set_country_flag = RP_rgw_choosingobjectives_secure_moscow_timer
+        }
+        
+        remove_effect = {
+            add_war_support = -0.005
+            clr_country_flag = RP_rgw_choosingobjectives_secure_moscow_timer
+        }
+
+        cancel_effect = {
+            RP_rgw_objective_successful = yes
+            clr_country_flag = RP_rgw_choosingobjectives_secure_moscow_timer
+            set_country_flag = RP_rgw_choosingobjectives_secure_moscow_complete
+            custom_effect_tooltip = generic_skip_one_line_tt
+        }
+    }
+
+    RP_rgw_choosingobjectives_secure_minsk = {
+        icon = GFX_decision_generic_operation
+
+        available = {
+            has_war_with = SOV
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_choosingobjectives_availability_tooltip
+                RP_rgw_choosingobjectives_missionslotopen_trigger = yes
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 206
+            }
+        }
+
+        visible = {
+            NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins }
+            SOV = {
+                any_owned_state = {
+                    OR = {
+                        state = 206
+                    }
+                }
+            }
+            NOT = {
+                OR = {
+                    has_country_flag = RP_rgw_choosingobjectives_secure_minsk_timer
+                    has_country_flag = RP_rgw_choosingobjectives_secure_minsk_complete
+                }
+            }
+        }
+        
+        cancel_trigger = {
+            any_country = {
+                is_ally_with = GER
+                controls_province = 11370
+            }
+        }
+
+        days_remove = 120
+
+        complete_effect = {
+            set_country_flag = RP_rgw_choosingobjectives_secure_minsk_timer
+        }
+        
+        remove_effect = {
+            add_war_support = -0.005
+            clr_country_flag = RP_rgw_choosingobjectives_secure_minsk_timer
+        }
+
+        cancel_effect = {
+            RP_rgw_objective_successful = yes
+            clr_country_flag = RP_rgw_choosingobjectives_secure_minsk_timer
+            set_country_flag = RP_rgw_choosingobjectives_secure_minsk_complete
+            custom_effect_tooltip = generic_skip_one_line_tt
+        }
+    }
+
+    RP_rgw_choosingobjectives_secure_brestlitovsk = {
+        icon = GFX_decision_generic_operation
+
+        available = {
+            has_war_with = SOV
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_choosingobjectives_availability_tooltip
+                RP_rgw_choosingobjectives_missionslotopen_trigger = yes
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 94
+            }
+        }
+
+        visible = {
+            NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins }
+            SOV = {
+                any_owned_state = {
+                    OR = {
+                        state = 94
+                    }
+                }
+            }
+            NOT = {
+                OR = {
+                    has_country_flag = RP_rgw_choosingobjectives_secure_brestlitovsk_timer
+                    has_country_flag = RP_rgw_choosingobjectives_secure_brestlitovsk_complete
+                }
+            }
+        }
+        
+        cancel_trigger = {
+            any_country = {
+                is_ally_with = GER
+                controls_province = 3392
+            }
+        }
+
+        days_remove = 120
+
+        complete_effect = {
+            set_country_flag = RP_rgw_choosingobjectives_secure_brestlitovsk_timer
+        }
+        
+        remove_effect = {
+            add_war_support = -0.005
+            clr_country_flag = RP_rgw_choosingobjectives_secure_brestlitovsk_timer
+        }
+
+        cancel_effect = {
+            RP_rgw_objective_successful = yes
+            clr_country_flag = RP_rgw_choosingobjectives_secure_brestlitovsk_timer
+            set_country_flag = RP_rgw_choosingobjectives_secure_brestlitovsk_complete
+            custom_effect_tooltip = generic_skip_one_line_tt
+        }
+    }
+
+    RP_rgw_choosingobjectives_secure_transukraine = {
+        icon = GFX_decision_generic_operation
+
+        available = {
+            has_war_with = SOV
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_choosingobjectives_availability_tooltip
+                RP_rgw_choosingobjectives_missionslotopen_trigger = yes
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 220
+                state = 222
+                state = 224
+            }
+        }
+
+        visible = {
+            NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins }
+            SOV = {
+                any_owned_state = {
+                    OR = {
+                        state = 220
+                        state = 222
+                        state = 224
+                    }
+                }
+            }
+            NOT = {
+                OR = {
+                    has_country_flag = RP_rgw_choosingobjectives_secure_transukraine_timer
+                    has_country_flag = RP_rgw_choosingobjectives_secure_transukraine_complete
+                }
+            }
+        }
+        
+        cancel_trigger = {
+            any_country = {
+                is_ally_with = GER
+                AND = {
+                    controls_province = 3580
+                    controls_province = 9355
+                    controls_province = 3335
+                }
+            }
+        }
+
+        days_remove = 120
+
+        complete_effect = {
+            set_country_flag = RP_rgw_choosingobjectives_secure_transukraine_timer
+        }
+        
+        remove_effect = {
+            add_war_support = -0.005
+            clr_country_flag = RP_rgw_choosingobjectives_secure_transukraine_timer
+        }
+
+        cancel_effect = {
+            RP_rgw_objective_successful = yes
+            clr_country_flag = RP_rgw_choosingobjectives_secure_transukraine_timer
+            set_country_flag = RP_rgw_choosingobjectives_secure_transukraine_complete
+            custom_effect_tooltip = generic_skip_one_line_tt
+        }
+    }
+
+    RP_rgw_choosingobjectives_secure_kiev = {
+        icon = GFX_decision_generic_operation
+
+        available = {
+            has_war_with = SOV
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_choosingobjectives_availability_tooltip
+                RP_rgw_choosingobjectives_missionslotopen_trigger = yes
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 202
+            }
+        }
+
+        visible = {
+            NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins }
+            SOV = {
+                any_owned_state = {
+                    OR = {
+                        state = 202
+                    }
+                }
+            }
+            NOT = {
+                OR = {
+                    has_country_flag = RP_rgw_choosingobjectives_secure_kiev_timer
+                    has_country_flag = RP_rgw_choosingobjectives_secure_kiev_complete
+                }
+            }
+        }
+        
+        cancel_trigger = {
+            any_country = {
+                is_ally_with = GER
+                AND = {
+                    controls_province = 525
+                }
+            }
+        }
+
+        days_remove = 120
+
+        complete_effect = {
+            set_country_flag = RP_rgw_choosingobjectives_secure_kiev_timer
+        }
+        
+        remove_effect = {
+            add_war_support = -0.005
+            clr_country_flag = RP_rgw_choosingobjectives_secure_kiev_timer
+        }
+
+        cancel_effect = {
+            RP_rgw_objective_successful = yes
+            clr_country_flag = RP_rgw_choosingobjectives_secure_kiev_timer
+            set_country_flag = RP_rgw_choosingobjectives_secure_kiev_complete
+            custom_effect_tooltip = generic_skip_one_line_tt
+        }
+    }
+
+    RP_rgw_choosingobjectives_secure_galicia = {
+        icon = GFX_decision_generic_operation
+
+        available = {
+            has_war_with = SOV
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_choosingobjectives_availability_tooltip
+                RP_rgw_choosingobjectives_missionslotopen_trigger = yes
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 89
+                state = 91
+            }
+        }
+
+        visible = {
+            NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins }
+            SOV = {
+                any_owned_state = {
+                    OR = {
+                        state = 89
+                        state = 91
+                    }
+                }
+            }
+            NOT = {
+                OR = {
+                    has_country_flag = RP_rgw_choosingobjectives_secure_galicia_timer
+                    has_country_flag = RP_rgw_choosingobjectives_secure_galicia_complete
+                }
+            }
+        }
+        
+        cancel_trigger = {
+            any_country = {
+                is_ally_with = GER
+                AND = {
+                    controls_province = 11479
+                    controls_province = 11411
+                }
+            }
+        }
+
+        days_remove = 120
+
+        complete_effect = {
+            set_country_flag = RP_rgw_choosingobjectives_secure_galicia_timer
+        }
+        
+        remove_effect = {
+            add_war_support = -0.005
+            clr_country_flag = RP_rgw_choosingobjectives_secure_galicia_timer
+        }
+
+        cancel_effect = {
+            RP_rgw_objective_successful = yes
+            clr_country_flag = RP_rgw_choosingobjectives_secure_galicia_timer
+            set_country_flag = RP_rgw_choosingobjectives_secure_galicia_complete
+            custom_effect_tooltip = generic_skip_one_line_tt
+        }
+    }
+
+    RP_rgw_choosingobjectives_secure_odessa = {
+        icon = GFX_decision_generic_operation
+
+        available = {
+            has_war_with = SOV
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_choosingobjectives_availability_tooltip
+                RP_rgw_choosingobjectives_missionslotopen_trigger = yes
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 192
+            }
+        }
+
+        visible = {
+            NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins }
+            SOV = {
+                any_owned_state = {
+                    OR = {
+                        state = 192
+                    }
+                }
+            }
+            NOT = {
+                OR = {
+                    has_country_flag = RP_rgw_choosingobjectives_secure_odessa_timer
+                    has_country_flag = RP_rgw_choosingobjectives_secure_odessa_complete
+                }
+            }
+        }
+        
+        cancel_trigger = {
+            any_country = {
+                is_ally_with = GER
+                AND = {
+                    controls_province = 11670
+                }
+            }
+        }
+
+        days_remove = 120
+
+        complete_effect = {
+            set_country_flag = RP_rgw_choosingobjectives_secure_odessa_timer
+        }
+        
+        remove_effect = {
+            add_war_support = -0.005
+            clr_country_flag = RP_rgw_choosingobjectives_secure_odessa_timer
+        }
+
+        cancel_effect = {
+            RP_rgw_objective_successful = yes
+            clr_country_flag = RP_rgw_choosingobjectives_secure_odessa_timer
+            set_country_flag = RP_rgw_choosingobjectives_secure_odessa_complete
+            custom_effect_tooltip = generic_skip_one_line_tt
+        }
+    }
+
+    RP_rgw_choosingobjectives_secure_dniepercrossings = {
+        icon = GFX_decision_generic_operation
+
+        available = {
+            has_war_with = SOV
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_choosingobjectives_availability_tooltip
+                RP_rgw_choosingobjectives_missionslotopen_trigger = yes
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 196
+                state = 200
+                state = 226
+            }
+        }
+
+        visible = {
+            NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins }
+            SOV = {
+                any_owned_state = {
+                    OR = {
+                        state = 196
+                        state = 200
+                        state = 226
+                    }
+                }
+            }
+            NOT = {
+                OR = {
+                    has_country_flag = RP_rgw_choosingobjectives_secure_dniepercrossings_timer
+                    has_country_flag = RP_rgw_choosingobjectives_secure_dniepercrossings_complete
+                }
+            }
+        }
+        
+        cancel_trigger = {
+            any_country = {
+                is_ally_with = GER
+                AND = {
+                    controls_province = 721
+                    controls_province = 11405
+                    controls_province = 11437
+                }
+            }
+        }
+
+        days_remove = 120
+
+        complete_effect = {
+            set_country_flag = RP_rgw_choosingobjectives_secure_dniepercrossings_timer
+        }
+        
+        remove_effect = {
+            add_war_support = -0.005
+            clr_country_flag = RP_rgw_choosingobjectives_secure_dniepercrossings_timer
+        }
+
+        cancel_effect = {
+            RP_rgw_objective_successful = yes
+            clr_country_flag = RP_rgw_choosingobjectives_secure_dniepercrossings_timer
+            set_country_flag = RP_rgw_choosingobjectives_secure_dniepercrossings_complete
+            custom_effect_tooltip = generic_skip_one_line_tt
+        }
+    }
+
+    RP_rgw_choosingobjectives_secure_rostov = {
+        icon = GFX_decision_generic_operation
+
+        available = {
+            has_war_with = SOV
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_choosingobjectives_availability_tooltip
+                RP_rgw_choosingobjectives_missionslotopen_trigger = yes
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 218
+            }
+        }
+
+        visible = {
+            NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins }
+            SOV = {
+                any_owned_state = {
+                    OR = {
+                        state = 218
+                    }
+                }
+            }
+            NOT = {
+                OR = {
+                    has_country_flag = RP_rgw_choosingobjectives_secure_rostov_timer
+                    has_country_flag = RP_rgw_choosingobjectives_secure_rostov_complete
+                }
+            }
+        }
+        
+        cancel_trigger = {
+            any_country = {
+                is_ally_with = GER
+                AND = {
+                    controls_province = 9417
+                }
+            }
+        }
+
+        days_remove = 120
+
+        complete_effect = {
+            set_country_flag = RP_rgw_choosingobjectives_secure_rostov_timer
+        }
+        
+        remove_effect = {
+            add_war_support = -0.005
+            clr_country_flag = RP_rgw_choosingobjectives_secure_rostov_timer
+        }
+
+        cancel_effect = {
+            RP_rgw_objective_successful = yes
+            clr_country_flag = RP_rgw_choosingobjectives_secure_rostov_timer
+            set_country_flag = RP_rgw_choosingobjectives_secure_rostov_complete
+            custom_effect_tooltip = generic_skip_one_line_tt
+        }
+    }
+
+    RP_rgw_choosingobjectives_secure_stalingrad = {
+        icon = GFX_decision_generic_operation
+
+        available = {
+            has_war_with = SOV
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_choosingobjectives_availability_tooltip
+                RP_rgw_choosingobjectives_missionslotopen_trigger = yes
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 217
+            }
+        }
+
+        visible = {
+            NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins }
+            SOV = {
+                any_owned_state = {
+                    OR = {
+                        state = 217
+                    }
+                }
+            }
+            NOT = {
+                OR = {
+                    has_country_flag = RP_rgw_choosingobjectives_secure_stalingrad_timer
+                    has_country_flag = RP_rgw_choosingobjectives_secure_stalingrad_complete
+                }
+            }
+        }
+        
+        cancel_trigger = {
+            any_country = {
+                is_ally_with = GER
+                AND = {
+                    controls_province = 3529
+                }
+            }
+        }
+
+        days_remove = 120
+
+        complete_effect = {
+            set_country_flag = RP_rgw_choosingobjectives_secure_stalingrad_timer
+        }
+        
+        remove_effect = {
+            add_war_support = -0.005
+            clr_country_flag = RP_rgw_choosingobjectives_secure_stalingrad_timer
+        }
+
+        cancel_effect = {
+            RP_rgw_objective_successful = yes
+            clr_country_flag = RP_rgw_choosingobjectives_secure_stalingrad_timer
+            set_country_flag = RP_rgw_choosingobjectives_secure_stalingrad_complete
+            custom_effect_tooltip = generic_skip_one_line_tt
+        }
+    }
+
+    RP_rgw_choosingobjectives_secure_sevastapol = {
+        icon = GFX_decision_generic_operation
+
+        available = {
+            has_war_with = SOV
+            custom_trigger_tooltip = {
+                tooltip = RP_rgw_choosingobjectives_availability_tooltip
+                RP_rgw_choosingobjectives_missionslotopen_trigger = yes
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 137
+            }
+        }
+
+        visible = {
+            NOT = { has_global_flag = RP_rgw_declarevictory_overrussia_peaceprocessbegins }
+            SOV = {
+                any_owned_state = {
+                    OR = {
+                        state = 137
+                    }
+                }
+            }
+            NOT = {
+                OR = {
+                    has_country_flag = RP_rgw_choosingobjectives_secure_sevastapol_timer
+                    has_country_flag = RP_rgw_choosingobjectives_secure_sevastapol_complete
+                }
+            }
+        }
+        
+        cancel_trigger = {
+            any_country = {
+                is_ally_with = GER
+                AND = {
+                    controls_province = 3686
+                }
+            }
+        }
+
+        days_remove = 120
+
+        complete_effect = {
+            set_country_flag = RP_rgw_choosingobjectives_secure_sevastapol_timer
+        }
+        
+        remove_effect = {
+            add_war_support = -0.005
+            clr_country_flag = RP_rgw_choosingobjectives_secure_sevastapol_timer
+        }
+
+        cancel_effect = {
+            RP_rgw_objective_successful = yes
+            clr_country_flag = RP_rgw_choosingobjectives_secure_sevastapol_timer
+            set_country_flag = RP_rgw_choosingobjectives_secure_sevastapol_complete
+            custom_effect_tooltip = generic_skip_one_line_tt
+        }
+    }
+}

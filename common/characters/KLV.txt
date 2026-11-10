@@ -1,0 +1,101 @@
+characters={
+	KLV_leader ={
+		name= "Duke Adolf Friedrich of Mecklenburg-Schwerin"
+		portraits={
+			civilian={
+				large=GFX_portrait_KLV_Adolf_Friedrich
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1989.1.1.1"
+			id=-1
+			traits = {
+				last_governor_togoland, african_explorer
+			}
+			desc = KLV_leader_desc
+		}
+		field_marshal = {
+    		traits = { old_guard politically_connected }
+   		 	skill = 3
+   			attack_skill = 3
+  			defense_skill = 4
+    		planning_skill = 3
+   		 	logistics_skill = 4
+		}
+	}
+	rudiger_von_der_goltz ={
+		name= "Rüdiger von der Goltz"
+		portraits={
+			civilian={
+				large=GFX_portrait_KLV_rudiger_goltz
+			}
+		}
+		corps_commander = {
+			traits = { war_hero career_officer infantry_officer }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 5
+			visible = {
+				has_completed_focus = KLV_reinstate_german_officials
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = rudiger_goltz
+			allowed = {
+				original_tag = KLV
+			}
+			traits = {
+				army_chief_offensive_2
+			}
+			visible = {
+				has_completed_focus = KLV_reinstate_german_officials
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	anatol_leonid_furst_von_lieven ={
+		name= "Anatol Leonid Fürst von Lieven"
+		portraits={
+			civilian={
+				large=GFX_portrait_KLV_anatol_lieven
+			}
+		}
+		corps_commander = {
+			traits = { old_guard infantry_officer }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 2
+			visible = {
+				has_completed_focus = KLV_reinstate_german_officials
+			}
+		}
+	}
+	alfred_fletcher ={
+		name= "Alfred Fletcher"
+		portraits={
+			civilian={
+				large=GFX_portrait_KLV_Alfred_Fletcher
+			}
+		}
+		corps_commander = {
+			traits = { old_guard infantry_officer }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 3
+			visible = {
+				has_completed_focus = KLV_reinstate_german_officials
+			}
+		}
+	}
+}

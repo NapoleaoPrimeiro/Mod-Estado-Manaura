@@ -1,0 +1,1119 @@
+add_namespace = RP_frenchcollapse
+add_namespace = RP_frenchcollapsenews
+
+news_event = { # News: Congolese Revolt 
+    id = RP_frenchcollapsenews.1
+    title = RP_frenchcollapsenews.1.t
+    desc = RP_frenchcollapsenews.1.d
+    picture = GFX_news_event_COG_force_publique_marching_to_war
+
+    is_triggered_only = yes
+
+    is_triggered_only = yes
+    major = yes
+
+    option = {
+        name = RP_frenchcollapsenews.1.a
+
+        ai_chance = {
+            base = 10
+        }
+    }
+}
+
+country_event = { # Congolese Event: Belgium moves government to Léopoldville 
+    id = RP_frenchcollapse.1
+    title = RP_frenchcollapse.1.t
+    desc = RP_frenchcollapse.1.d
+    picture = GFX_report_event_COG_force_publique_capturing_area
+
+    is_triggered_only = yes
+
+    option = {
+        name = RP_frenchcollapse.1.a
+
+        ai_chance = {
+            base = 10
+        }
+		
+		BEL = {
+			annex_country = {
+				target = COG
+				transfer_troops = yes
+			}
+			add_stability = -0.25
+
+			hidden_effect = {
+				country_event = { id = RP_frenchcollapse.2 days = 60 }
+				load_focus_tree = generic_focus
+                set_cosmetic_tag = RP_BEL_incongo
+                set_capital = { state = 295 }
+			}
+
+            add_ideas = {
+                RP_BEL_disorganizedgov
+            }
+
+            set_rule = {
+                can_join_factions = no
+            }
+		}
+    }
+}
+
+country_event = { # Belgian Event: Congo Uprising 
+    id = RP_frenchcollapse.2
+    title = RP_frenchcollapse.2.t
+    desc = RP_frenchcollapse.2.d
+    picture = GFX_report_event_COG_force_publique_marching_to_war
+
+    is_triggered_only = yes
+
+    option = { #Give in to their demands
+        name = RP_frenchcollapse.2.a
+
+        ai_chance = {
+            base = 0
+        }
+		
+		COG = {
+
+            set_rule = {
+                can_join_factions = no
+            }
+
+            set_cosmetic_tag = RP_COG_peoplesrepublic
+
+            set_politics = {
+                ruling_party = communism
+                elections_allowed = no
+            }
+
+			annex_country = {
+				target = BEL
+				transfer_troops = yes
+			}
+
+			hidden_effect = {
+				load_focus_tree = generic_focus
+                news_event = { id = RP_frenchcollapsenews.1 hours = 12 }
+                retire_country_leader = yes
+			}
+		}
+    }
+
+    option = { #Keep fighting
+        name = RP_frenchcollapse.2.b
+
+        ai_chance = {
+            base = 10
+        }
+                
+        set_global_flag = RP_congocivilwar
+        load_oob = RP_congocivilwar_templates
+
+        BEL = {
+            every_state = {
+                limit = {
+                    is_owned_by = BEL
+                    OR = {
+                        state = 538
+                        state = 889
+                        state = 890
+                        state = 768
+                        state = 769
+                    }
+                }
+                transfer_state_to = COG
+            }
+
+            295 = {
+                create_unit = {
+                    division = "name = \"Republican Army\" division_template = \"Republican Army\" start_experience_factor = 0.6"
+                    owner = BEL
+                    count = 4
+                    prioritize_location = 5117
+                }
+            }
+
+            718 = {
+                create_unit = {
+                    division = "name = \"Republican Army\" division_template = \"Republican Army\" start_experience_factor = 0.6"
+                    owner = BEL
+                    count = 2
+                    prioritize_location = 1950
+                }
+            }
+        }
+		
+		COG = {
+
+            set_politics = {
+                ruling_party = communism
+                elections_allowed = no
+            }
+
+            set_cosmetic_tag = RP_COG_freefighters
+            load_oob = RP_congocivilwar_templates
+            declare_war_on = {
+                target = BEL
+                type = independence_wargoal
+            }
+			hidden_effect = {
+        		news_event = { id = RP_frenchcollapsenews.1 hours = 12 }
+				load_focus_tree = generic_focus
+                retire_country_leader = yes
+
+                889 = {
+                    create_unit = {
+                        division = "name = \"Freedom Fighters\" division_template = \"Freedom Fighters\" start_experience_factor = 0.3"
+                        owner = COG
+                        count = 12
+                        prioritize_location = 191
+                    }
+                }
+			}
+		}
+    }
+}
+
+country_event = { # French Event: Indochina Breaks Away 
+    id = RP_frenchcollapse.3
+    title = RP_frenchcollapse.3.t
+    desc = RP_frenchcollapse.3.d
+    picture = GFX_report_event_china_infiltration
+
+    is_triggered_only = yes
+
+    option = {
+        name = RP_frenchcollapse.3.a
+
+        ai_chance = {
+            base = 10
+        }
+                
+        set_global_flag = RP_frenchindochinabreaksaway
+
+        every_state = {
+            limit = {
+                is_owned_by = FRA
+                OR = {
+                    state = 741
+                    state = 670
+                    state = 671
+                    state = 1017
+                    state = 1066
+                    state = 1067
+                    state = 1068
+                    state = 1069
+                    state = 286
+                    state = 728
+                }
+            }
+            transfer_state_to = VIN
+        }
+
+        every_state = {
+            limit = {
+                is_core_of = VIN
+                OR = {
+                    state = 741
+                    state = 670
+                    state = 671
+                    state = 1017
+                    state = 1066
+                    state = 1067
+                    state = 1068
+                    state = 1069
+                    state = 286
+                    state = 728
+                }
+            }
+            remove_core_of = VIN
+        }
+
+        VIN = {
+
+            set_rule = {
+                can_join_factions = no
+            }
+
+            set_cosmetic_tag = RP_VIN_indochinabreakaway
+
+            create_country_leader = {
+                name = "Georges Cautrox"
+                picture = GFX_portrait_VIN_georges_cantroux
+                expire = "1965.1.1"
+                ideology = liberalism
+                traits = {
+                }
+            }
+            set_party_name = {
+                ideology = democratic
+                name = RP_VIN_indochinabreakaway_party
+            }
+        }
+
+        JAP = {
+            country_event = {
+                id = RP_frenchcollapse.4
+                days = 7
+                random_days = 7
+            }
+        }
+    }
+}
+
+country_event = { # Japanese Event: Invade Indochina? 
+    id = RP_frenchcollapse.4
+    title = RP_frenchcollapse.4.t
+    desc = RP_frenchcollapse.4.d
+    picture = GFX_report_event_china_infiltration
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_frenchcollapse.4.a
+
+        ai_chance = {
+            base = 10
+        }
+                
+        declare_war_on = {
+            target = VIN
+            type = annex_everything
+        }
+
+        SIA = {
+            country_event = {
+                id = RP_frenchcollapse.5
+                days = 7
+                random_days = 7
+            }
+        }
+    }
+
+    option = { # No
+        name = RP_frenchcollapse.4.b
+
+        ai_chance = {
+            base = 0
+        } 
+    }
+}
+
+country_event = { # Siamese Event: Invade Indochina? 
+    id = RP_frenchcollapse.5
+    title = RP_frenchcollapse.5.t
+    desc = RP_frenchcollapse.5.d
+    picture = GFX_report_event_china_infiltration
+
+    is_triggered_only = yes
+
+    option = { #Keep fighting
+        name = RP_frenchcollapse.5.a
+
+        ai_chance = {
+            base = 10
+        }
+                
+        declare_war_on = {
+            target = VIN
+            type = annex_everything
+        }
+    }
+
+    option = { #Keep fighting
+        name = RP_frenchcollapse.5.b
+
+        ai_chance = {
+            base = 0
+        }
+    }
+}
+
+country_event = { # US Event: Invade FWI?
+    id = RP_frenchcollapse.6
+    title = RP_frenchcollapse.6.t
+    desc = RP_frenchcollapse.6.d
+    picture = GFX_report_event_usa_heavy_cruiser
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_frenchcollapse.6.a
+
+        ai_chance = {
+            base = 10
+        }
+                
+        FRA = {
+            country_event = {
+                id = RP_frenchcollapse.7
+                hours = 12
+            }
+        }
+    }
+
+    option = { # No
+        name = RP_frenchcollapse.6.b
+
+        ai_chance = {
+            base = 0
+        }
+    }
+}
+
+country_event = { # French Event: USA seizes FWI
+    id = RP_frenchcollapse.7
+    title = RP_frenchcollapse.7.t
+    desc = RP_frenchcollapse.7.d
+    picture = GFX_report_event_usa_heavy_cruiser
+
+    is_triggered_only = yes
+
+    option = { # Okay
+        name = RP_frenchcollapse.7.a
+
+        ai_chance = {
+            base = 10
+        }
+                
+        every_state = {
+            limit = {
+                is_owned_by = FRA
+                OR = {
+                    state = 310
+                    state = 694
+                    state = 730
+                }
+            }
+            transfer_state_to = USA
+        }
+    }
+
+    option = { # Fuck you
+        name = RP_frenchcollapse.7.b
+
+        ai_chance = {
+            base = 0
+        }
+
+        USA = {
+            declare_war_on = {
+                target = FRA
+                type = take_state
+                generator = { 310 694 730 }
+            }
+        }
+    }
+}
+
+country_event = { # Syrian Event: United Arab Republic
+    id = RP_frenchcollapse.8
+    title = RP_frenchcollapse.8.t
+    desc = RP_frenchcollapse.8.d
+    picture = GFX_report_event_france_victory_syria
+
+    is_triggered_only = yes
+
+    option = { # Peak
+        name = RP_frenchcollapse.8.a
+
+        ai_chance = {
+            base = 10
+        }
+                
+        every_state = {
+            limit = {
+                is_owned_by = LEB
+                is_core_of = LEB
+            }
+            transfer_state_to = SYR 
+            add_core_of = SYR 
+        }
+
+        set_cosmetic_tag = RP_SYR_levantunion
+    }
+}
+
+country_event = { # UK Event: Invade French India?
+    id = RP_frenchcollapse.9
+    title = RP_frenchcollapse.9.t
+    desc = RP_frenchcollapse.9.d
+    picture = GFX_report_event_usa_heavy_cruiser
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_frenchcollapse.6.a
+
+        ai_chance = {
+            base = 10
+        }
+                
+        FRA = {
+            country_event = {
+                id = RP_frenchcollapse.10
+                hours = 12
+            }
+        }
+    }
+
+    option = { # No
+        name = RP_frenchcollapse.6.b
+
+        ai_chance = {
+            base = 0
+        }
+    }
+}
+
+country_event = { # French Event: UK seizes French India
+    id = RP_frenchcollapse.10
+    title = RP_frenchcollapse.10.t
+    desc = RP_frenchcollapse.10.d
+    picture = GFX_report_event_usa_heavy_cruiser
+
+    is_triggered_only = yes
+
+    option = { # Okay
+        name = RP_frenchcollapse.10.a
+
+        ai_chance = {
+            base = 10
+        }
+                
+        every_state = {
+            limit = {
+                is_owned_by = FRA
+                OR = {
+                    state = 320
+                }
+            }
+            transfer_state_to = RAJ
+        }
+    }
+
+    option = { # Fuck you
+        name = RP_frenchcollapse.10.b
+
+        ai_chance = {
+            base = 0
+        }
+
+        ENG = {
+            declare_war_on = {
+                target = FRA
+                type = take_state
+                generator = { 320 }
+            }
+        }
+    }
+}
+
+country_event = { # UK Event: Invade FEI?
+    id = RP_frenchcollapse.11
+    title = RP_frenchcollapse.11.t
+    desc = RP_frenchcollapse.11.d
+    picture = GFX_report_event_usa_heavy_cruiser
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_frenchcollapse.11.a
+
+        ai_chance = {
+            base = 10
+        }
+                
+        FRA = {
+            country_event = {
+                id = RP_frenchcollapse.12
+                hours = 12
+            }
+        }
+    }
+
+    option = { # No
+        name = RP_frenchcollapse.11.b
+
+        ai_chance = {
+            base = 0
+        }
+    }
+}
+
+country_event = { # French Event: UK seizes French India
+    id = RP_frenchcollapse.12
+    title = RP_frenchcollapse.12.t
+    desc = RP_frenchcollapse.12.d
+    picture = GFX_report_event_usa_heavy_cruiser
+
+    is_triggered_only = yes
+
+    option = { # Okay
+        name = RP_frenchcollapse.12.a
+
+        ai_chance = {
+            base = 10
+        }
+                
+        every_state = {
+            limit = {
+                is_owned_by = FRA
+                OR = {
+                    state = 635
+                    state = 1071
+                    state = 641
+                }
+            }
+            transfer_state_to = ENG
+        }
+    }
+
+    option = { # Fuck you
+        name = RP_frenchcollapse.12.b
+
+        ai_chance = {
+            base = 0
+        }
+
+        ENG = {
+            declare_war_on = {
+                target = FRA
+                type = take_state
+                generator = { 635 1071 641 }
+            }
+        }
+    }
+}
+
+country_event = { # French Event: Tensions in Madagascar
+    id = RP_frenchcollapse.13
+    title = RP_frenchcollapse.13.t
+    desc = RP_frenchcollapse.13.d
+    picture = GFX_report_event_ger_civil_war
+
+    is_triggered_only = yes
+
+    option = { # Okay
+        name = RP_frenchcollapse.13.a
+
+        ai_chance = {
+            base = 10
+        }
+                
+        every_state = {
+            limit = {
+                is_owned_by = FRA
+                OR = {
+                    state = 706
+                    state = 708
+                    state = 543
+                    state = 713
+                }
+            }
+            set_demilitarized_zone = yes
+        }
+
+        add_stability = -0.05
+    }
+}
+
+country_event = { # UK Event: Seize Madagascar?
+    id = RP_frenchcollapse.14
+    title = RP_frenchcollapse.14.t
+    desc = RP_frenchcollapse.14.d
+    picture = GFX_report_event_usa_heavy_cruiser
+
+    is_triggered_only = yes
+
+    option = { # Okay
+        name = RP_frenchcollapse.14.a
+
+        ai_chance = {
+            base = 10
+        }
+                
+        every_state = {
+            limit = {
+                is_owned_by = FRA
+                OR = {
+                    state = 706
+                    state = 708
+                    state = 543
+                    state = 713
+                }
+            }
+            transfer_state_to = ENG
+            set_demilitarized_zone = no
+        }
+    }
+
+    option = { # Fuck you
+        name = RP_frenchcollapse.14.b
+
+        ai_chance = {
+            base = 0
+        }
+    }
+}
+
+country_event = { # French Event: FWA Revolt
+    id = RP_frenchcollapse.15
+    title = RP_frenchcollapse.15.t
+    desc = RP_frenchcollapse.15.d
+    picture = GFX_report_event_ger_civil_war
+
+    is_triggered_only = yes
+
+    option = { # Okay
+        name = RP_frenchcollapse.15.a
+
+        ai_chance = {
+            base = 10
+        }
+
+        if = {
+            limit = {
+                has_cosmetic_tag = RP_FRA_govnationaldefense
+            }
+            country_event = {
+                id = RP_frenchcollapse.17
+                days = 30
+                random_days = 10
+            }
+        }
+
+        if = {
+            limit = {
+                has_cosmetic_tag = RP_FRA_comnationalliberation
+            }
+            country_event = {
+                id = RP_frenchcollapse.21
+                days = 30
+                random_days = 10
+            }
+        }
+                
+        every_state = {
+            limit = {
+                is_owned_by = FRA
+                OR = {
+                    state = 778
+                    state = 781
+                    state = 515
+                    state = 776
+                    state = 777
+                }
+            }
+            transfer_state_to = VOL
+            add_core_of = VOL
+        }
+
+        if = {
+            limit = {
+                FRA = { has_cosmetic_tag = RP_FRA_comnationalliberation }
+            }
+            every_state = {
+                limit = {
+                    is_owned_by = FRA
+                    OR = {
+                        state = 778
+                        state = 781
+                        state = 515
+                        state = 779
+                    }
+                }
+                transfer_state_to = VOL
+                add_core_of = VOL
+            }
+        }
+
+        VOL = {
+
+            set_rule = {
+                can_join_factions = no
+            }
+
+            set_politics = {
+                ruling_party = communism
+                elections_allowed = no
+            }
+            load_oob = RP_frenchcollapse_fwa_template
+            778 = {
+                create_unit = {
+                    division = "name = \"West African Freedom Figher\" division_template = \"West African Freedom Fighers\" start_experience_factor = 0.2"
+                    owner = VOL
+                    count = 2
+                }
+            }
+
+            781 = {
+                create_unit = {
+                    division = "name = \"West African Freedom Figher\" division_template = \"West African Freedom Fighers\" start_experience_factor = 0.2"
+                    owner = VOL
+                    count = 1
+                }
+            }
+            set_cosmetic_tag = RP_VOL_westafricanrevolt
+            declare_war_on = {
+                target = FRA
+                type = independence_wargoal
+            }
+        }
+
+        custom_effect_tooltip = RP_frenchcollapse.15_effect_tt
+
+        set_country_flag = RP_frenchcollapse_fwarevolt
+        set_country_flag = {  
+            flag = RP_frenchcollapse_fwarevolt_timer
+            days = 60
+            value = 1
+        }
+    }
+}
+
+country_event = { # French Event: Djibouti Breaks Off
+    id = RP_frenchcollapse.16
+    title = RP_frenchcollapse.16.t
+    desc = RP_frenchcollapse.16.d
+    picture = GFX_report_event_generic_conference
+
+    is_triggered_only = yes
+
+    option = { # Okay
+        name = RP_frenchcollapse.16.a
+
+        ai_chance = {
+            base = 10
+        }
+                
+        every_state = {
+            limit = {
+                is_owned_by = FRA
+                OR = {
+                    state = 268
+                }
+            }
+            transfer_state_to = DJI
+            add_core_of = DJI
+        }
+    }
+
+    option = { # War
+        name = RP_frenchcollapse.16.b
+
+        ai_chance = {
+            base = 0
+        }
+                
+        every_state = {
+            limit = {
+                is_owned_by = FRA
+                OR = {
+                    state = 268
+                }
+            }
+            transfer_state_to = DJI
+            add_core_of = DJI
+        }
+
+        declare_war_on = {
+            target = DJI
+            type = annex_everything
+        }
+    }
+}
+
+country_event = { # French Event: FCL Revolt
+    id = RP_frenchcollapse.17
+    title = RP_frenchcollapse.17.t
+    desc = RP_frenchcollapse.17.d
+    picture = GFX_report_event_ger_civil_war
+
+    is_triggered_only = yes
+
+    option = { # Okay
+        name = RP_frenchcollapse.17.a
+
+        ai_chance = {
+            base = 10
+        }
+
+        country_event = {
+            id = RP_frenchcollapse.18
+            days = 5
+            random_days = 5
+        }
+                
+        every_state = {
+            limit = {
+                is_owned_by = FRA
+                OR = {
+                    state = 772
+                    state = 773
+                    state = 774
+                    state = 775
+                    state = 539
+                    state = 660
+                }
+            }
+            transfer_state_to = FCL
+            add_core_of = FCL
+        }
+
+        FCL = {
+
+            set_rule = {
+                can_join_factions = no
+            }
+
+            load_oob = RP_frenchcollapse_fwa_template
+            772 = {
+                create_unit = {
+                    division = "name = \"West African Freedom Figher\" division_template = \"West African Freedom Fighers\" start_experience_factor = 0.2"
+                    owner = FCL
+                    count = 3
+                }
+            }
+
+            779 = {
+                create_unit = {
+                    division = "name = \"West African Freedom Figher\" division_template = \"West African Freedom Fighers\" start_experience_factor = 0.2"
+                    owner = FCL
+                    count = 3
+                }
+            }
+            
+            declare_war_on = {
+                target = FRA
+                type = topple_government
+            }
+        }
+
+        custom_effect_tooltip = RP_frenchcollapse_addthirtydays_tt
+
+        set_country_flag = RP_frenchcollapse_fclrevolt
+        modify_country_flag = {
+            flag = RP_frenchcollapse_fwarevolt_timer
+            value = 30
+        }
+    }
+}
+
+country_event = { # French Event: FCL Revolt moves West
+    id = RP_frenchcollapse.18
+    title = RP_frenchcollapse.18.t
+    desc = RP_frenchcollapse.18.d
+    picture = GFX_report_event_ger_civil_war
+
+    is_triggered_only = yes
+
+    option = { # Okay
+        name = RP_frenchcollapse.18.a
+
+        ai_chance = {
+            base = 10
+        }
+                
+        every_state = {
+            limit = {
+                is_owned_by = FRA
+                OR = {
+                    state = 779
+                }
+            }
+            transfer_state_to = FCL
+            add_core_of = FCL
+        }
+
+        FCL = {
+            load_oob = RP_frenchcollapse_fwa_template
+            779 = {
+                create_unit = {
+                    division = "name = \"West African Freedom Figher\" division_template = \"West African Freedom Fighers\" start_experience_factor = 0.2"
+                    owner = FCL
+                    count = 1
+                }
+            }
+        }
+
+        custom_effect_tooltip = RP_frenchcollapse_addtendays_tt
+
+        set_country_flag = RP_frenchcollapse_fclrevolt_moveswest
+        modify_country_flag = {
+            flag = RP_frenchcollapse_fwarevolt_timer
+            value = 10
+        }
+    }
+}
+
+country_event = { # French Event: FWA Secedes
+    id = RP_frenchcollapse.19
+    title = RP_frenchcollapse.19.t
+    desc = RP_frenchcollapse.19.d
+    picture = GFX_report_event_gre_diplomacy
+
+    is_triggered_only = yes
+
+    option = { # Okay
+        name = RP_frenchcollapse.19.a
+
+        ai_chance = {
+            base = 10
+        }
+
+        MLI = {
+            set_rule = {
+                can_join_factions = no
+            }
+
+            country_event = {
+                id = RP_frenchcollapse.20
+                days = 10
+            }
+        }
+        
+                
+        release = MLI
+        release = MRT
+        release = GNA
+        release = SEN
+
+        set_country_flag = RP_frenchcollapse_fwa_secedes
+    }
+}
+
+country_event = { # Mali Event: Formation of the Confederation
+    id = RP_frenchcollapse.20
+    title = RP_frenchcollapse.20.t
+    desc = RP_frenchcollapse.20.d
+    picture = GFX_report_event_generic_conference
+
+    is_triggered_only = yes
+
+    option = { # Okay
+        name = RP_frenchcollapse.20.a
+
+        ai_chance = {
+            base = 10
+        }
+
+        set_politics = {
+            ruling_party = democratic
+            elections_allowed = yes
+        }
+
+        create_faction_from_template = {
+            template = faction_template_sahelconfederation
+            color = { 66 133 38 }
+        }
+
+        puppet = MRT
+        puppet = GNA
+        puppet = SEN
+
+        MLI = { 
+            set_cosmetic_tag = MLI_sahelconfederation
+            set_rule = {
+                can_join_factions = no
+            }
+        }
+        MRT = { 
+            set_cosmetic_tag = MRT_sahelconfederation
+            set_rule = {
+                can_join_factions = no
+            }
+        }
+        GNA = { 
+            set_cosmetic_tag = GNA_sahelconfederation
+            set_rule = {
+                can_join_factions = no
+            }
+        }
+        SEN = { 
+            set_cosmetic_tag = SEN_sahelconfederation
+            set_rule = {
+                can_join_factions = no
+            }
+        }
+
+        set_country_flag = RP_frenchcollapse_fwa_secedes
+    }
+}
+
+country_event = { # French Event: French Congo Revolt
+    id = RP_frenchcollapse.21
+    title = RP_frenchcollapse.21.t
+    desc = RP_frenchcollapse.21.d
+    picture = GFX_report_event_ger_civil_war
+
+    is_triggered_only = yes
+
+    option = { # Okay
+        name = RP_frenchcollapse.21.a
+
+        ai_chance = {
+            base = 10
+        }
+                
+        every_state = {
+            limit = {
+                is_owned_by = FRA
+                OR = {
+                    state = 772
+                    state = 773
+                    state = 774
+                    state = 775
+                    state = 539
+                    state = 660
+                }
+            }
+            transfer_state_to = CAR
+            add_core_of = CAR
+        }
+
+        CAR = {
+            set_rule = {
+                can_join_factions = no
+            }
+            
+            set_cosmetic_tag = RP_CAR_congoleserevolt
+            set_politics = {
+                ruling_party = communism
+                elections_allowed = no
+            }
+            load_oob = RP_frenchcollapse_fwa_template
+            772 = {
+                create_unit = {
+                    division = "name = \"West African Freedom Figher\" division_template = \"West African Freedom Fighers\" start_experience_factor = 0.2"
+                    owner = CAR
+                    count = 2
+                }
+            }
+
+            779 = {
+                create_unit = {
+                    division = "name = \"West African Freedom Figher\" division_template = \"West African Freedom Fighers\" start_experience_factor = 0.2"
+                    owner = CAR
+                    count = 2
+                }
+            }
+            
+            declare_war_on = {
+                target = FRA
+                type = independence_wargoal
+            }
+        }
+
+        custom_effect_tooltip = RP_frenchcollapse_addthirtydays_tt
+
+        set_country_flag = RP_frenchcollapse_fclrevolt
+        modify_country_flag = {
+            flag = RP_frenchcollapse_fwarevolt_timer
+            value = 30
+        }
+    }
+}

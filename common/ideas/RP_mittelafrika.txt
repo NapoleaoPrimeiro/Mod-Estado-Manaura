@@ -1,0 +1,148 @@
+ideas = {
+	country = {
+		KOA_mittelafrika_stability_abysmal = {
+			picture = ICE_general_strike
+
+			modifier = {
+				local_resources_factor = -0.3
+				surrender_limit = -0.25
+				political_power_factor = -0.35
+				stability_factor = -0.45
+				war_support_factor = -0.25
+				production_speed_buildings_factor = -0.2
+				consumer_goods_factor = 0.25
+			}
+		}
+		KOA_mittelafrika_stability_verylow = {
+			picture = ICE_general_strike
+
+			modifier = {
+				local_resources_factor = -0.3
+				surrender_limit = -0.15
+				political_power_factor = -0.3
+				stability_factor = -0.35
+				war_support_factor = -0.20
+				production_speed_buildings_factor = -0.2
+				consumer_goods_factor = 0.25
+			}
+		}
+		KOA_mittelafrika_stability_low = {
+			picture = ICE_general_strike
+
+			modifier = {
+				local_resources_factor = -0.3
+				surrender_limit = -0.05
+				political_power_factor = -0.1
+				stability_factor = -0.25
+				war_support_factor = -0.1
+				production_speed_buildings_factor = -0.2
+				consumer_goods_factor = 0.25
+			}
+		}
+		KOA_mittelafrika_stability_recovering = {
+			picture = generic_political_support
+
+			modifier = {
+				surrender_limit = -0.05
+				political_power_factor = -0.1
+				stability_factor = -0.2
+				war_support_factor = -0.1
+				consumer_goods_factor = 0.1
+			}
+		}
+		KOA_mittelafrika_stability_stabilizing = {
+			picture = generic_political_support
+
+			modifier = {
+				stability_factor = -0.1
+				war_support_factor = -0.05
+				consumer_goods_factor = 0.1
+			}
+		}
+		KOA_mittelafrika_stability_stable = {
+			picture = ger_rebuild_the_nation
+
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				consumer_goods_factor = 0.1
+				stability_factor = 0.1
+			}
+		}
+		KOA_mittelafrika_stability_stable1 = {
+			picture = ger_rebuild_the_nation
+
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				consumer_goods_factor = 0.1
+				stability_factor = 0.1
+				war_support_factor = 0.1
+				weekly_manpower = 750
+			}
+		}
+		KOA_mittelafrika_stability_stable2 = {
+			picture = ger_rebuild_the_nation
+
+			modifier = {
+				production_speed_buildings_factor = 0.15
+				consumer_goods_factor = 0.1
+				stability_factor = 0.1
+				war_support_factor = 0.2
+				weekly_manpower = 750
+			}
+		}
+		KOA_mittelafrika_stability_stable3 = {
+			picture = ger_rebuild_the_nation
+
+			modifier = {
+				production_speed_buildings_factor = 0.15
+				consumer_goods_factor = 0.1
+				stability_factor = 0.15
+				war_support_factor = 0.2
+				weekly_manpower = 750
+				political_power_factor = 0.2
+			}
+		}
+		KOA_mittelafrika_stability_stable4 = {
+			picture = ger_rebuild_the_nation
+
+			modifier = {
+				production_speed_buildings_factor = 0.2
+				consumer_goods_factor = 0.1
+				stability_factor = 0.2
+				war_support_factor = 0.2
+				weekly_manpower = 750
+				political_power_factor = 0.25
+			}
+		}
+		KOA_mittelafrika_forwards = {
+			picture = generic_victors_of_ww1
+
+			modifier = {
+				production_speed_buildings_factor = 0.2
+				consumer_goods_factor = 0.1
+				stability_factor = 0.25
+				war_support_factor = 0.2
+				weekly_manpower = 800
+				political_power_factor = 0.3
+				surrender_limit = 0.25
+			}
+		}
+		KOA_african_economy = {
+			picture = ETH_joint_african_development_program
+
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				consumer_goods_factor = -0.05
+			}
+		}
+		KOA_mittelafrikan_profits = {
+			picture = idea_GER_german_trade
+
+			modifier = {
+				stability_factor = 0.1
+				consumer_goods_factor = -0.25
+			}
+		}
+		
+	}
+}

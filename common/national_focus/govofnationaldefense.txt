@@ -1,0 +1,329 @@
+﻿focus_tree = {
+	id = governmentofnationaldefense_focus
+	
+	country = {
+		factor = 0
+	}
+	
+	focus = {
+		id = RP_GND_thenewfrenchera
+		icon = GFX_focus_fra_le_deluge
+
+		x = 15 
+		y = 0
+		cost = 1
+		#relative_position_id = 
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RP_GND_defeatism
+		icon = GFX_focus_generic_surrender
+
+		x = -10 
+		y = 1
+		cost = 1
+		relative_position_id = RP_GND_thenewfrenchera
+
+		prerequisite = { focus = RP_GND_thenewfrenchera }
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_GND_defeatism_requirement_tt
+				has_global_flag = RP_parispeaceevents_minormainlandconcessions
+				has_global_flag = RP_treatyofsedan_signed
+			}
+		}
+
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.02
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GND_bendingtheknee
+		icon = GFX_focus_GER_german_hegemony_in_the_middle_east_neutrality
+
+		x = 5 
+		y = 1
+		cost = 5
+		relative_position_id = RP_GND_defeatism
+
+		prerequisite = { focus = RP_GND_defeatism }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			every_state = {
+				limit = {
+					OR = {
+						is_owned_by = GER
+						owner = {
+							is_subject_of = GER
+						}
+						owner = {
+							is_ally_with = GER
+						}
+					}
+					OR = {
+						state = 980
+						state = 34
+						state = 29
+						state = 28
+					}
+				}
+				add_manpower = -200000
+				remove_core_of = FRA
+			}
+
+			every_state = {
+				limit = {
+					OR = {
+						is_owned_by = FRA
+					}
+					OR = {
+						state = 785
+						state = 16
+						state = 17
+						state = 18
+					}
+				}
+				add_manpower = 200000
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GND_forgiveandforget
+		icon = GFX_goal_generic_dangerous_deal
+
+		x = -1 
+		y = 1
+		cost = 5
+		relative_position_id = RP_GND_bendingtheknee
+
+		prerequisite = { focus = RP_GND_bendingtheknee }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			set_cosmetic_tag = RP_FRA_frenchstate
+			add_stability = -0.1
+			add_war_support = -0.1
+		}
+	}
+
+	focus = {
+		id = RP_GND_harshreality
+		icon = GFX_focus_GER_integration_of_puppet_economies
+
+		x = 1 
+		y = 1
+		cost = 5
+		relative_position_id = RP_GND_bendingtheknee
+
+		prerequisite = { focus = RP_GND_bendingtheknee }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_ideas = {
+				RP_GND_movingtowardsgermany_i
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = RP_GND_harshreality_effect_tt
+			hidden_effect = {
+				country_event = {
+					id = RP_GND_focustreeevents.1
+					days = 30
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GND_negotiateremilitarization
+		icon = GFX_focus_generic_treaty
+
+		x = 1
+		y = 1
+		cost = 5
+		relative_position_id = RP_GND_harshreality
+
+		prerequisite = { focus = RP_GND_forgiveandforget }
+		prerequisite = { focus = RP_GND_harshreality }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			GER = {
+				country_event = {
+					id = RP_GND_focustreeevents.2
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GND_joinmitteleuropa
+		icon = GFX_focus_GER_mitteleuropa
+
+		x = -1
+		y = 1
+		cost = 5
+		relative_position_id = RP_GND_harshreality
+
+		prerequisite = { focus = RP_GND_forgiveandforget }
+		prerequisite = { focus = RP_GND_harshreality }
+
+		available = {
+			is_in_faction = no
+			NOT = {
+				has_war_with = GER
+			}
+			GER = {
+				is_faction_leader = yes
+			}
+		}
+
+		completion_reward = {
+			set_rule = {
+				can_join_factions = yes
+			}
+			GER = {
+				country_event = generic.2
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GND_securethecolonies
+		icon = GFX_focus_fra_french_union
+
+		x = -3
+		y = 1
+		cost = 5
+		relative_position_id = RP_GND_harshreality
+
+		prerequisite = { focus = RP_GND_forgiveandforget }
+		prerequisite = { focus = RP_GND_harshreality }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RP_GND_questionoftheopposition
+		icon = GFX_focus_BRA_end_the_state_of_emergency
+
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = RP_GND_joinmitteleuropa
+
+		prerequisite = { focus = RP_GND_joinmitteleuropa }
+		prerequisite = { focus = RP_GND_securethecolonies }
+		prerequisite = { focus = RP_GND_negotiateremilitarization }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RP_GND_avisittohastings
+		icon = GFX_focus_RAJ_the_sun_sets
+
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = RP_GND_questionoftheopposition
+
+		prerequisite = { focus = RP_GND_questionoftheopposition }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RP_GND_onaknifesedge
+		icon = GFX_focus_ICE_thungur_hnifur
+
+		x = 0
+		y = 1
+		cost = 1
+		relative_position_id = RP_GND_thenewfrenchera
+
+		prerequisite = { focus = RP_GND_thenewfrenchera }
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_GND_onaknifesedge_requirement_tt
+				has_global_flag = RP_parispeaceevents_northernmainlandconcessions
+				has_global_flag = RP_treatyofsedan_signed
+			}
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RP_GND_theriseofpetain
+		icon = GFX_focus_generic_military_academy
+
+		x = 10
+		y = 1
+		cost = 1
+		relative_position_id = RP_GND_thenewfrenchera
+
+		prerequisite = { focus = RP_GND_thenewfrenchera }
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_GND_theriseofpetain_requirement_tt
+				has_global_flag = RP_parispeaceevents_fullmainlandconcessions
+				has_global_flag = RP_treatyofsedan_signed
+			}
+		}
+
+		completion_reward = {
+			
+		}
+	}
+}

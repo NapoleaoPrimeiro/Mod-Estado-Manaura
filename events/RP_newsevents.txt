@@ -1,0 +1,315 @@
+add_namespace = RP_newsevents
+add_namespace = RP_arabnews
+add_namespace = RP_focustreenewsevents
+
+news_event = { #Treaty of Sedan
+    id = RP_newsevents.1
+    title = RP_newsevents.1.t
+    desc = RP_newsevents.1.d
+    picture = GFX_news_event_021
+
+    is_triggered_only = yes
+    major = yes
+
+    option = {
+        name = RP_newsevents.1.a
+
+        trigger = {
+            OR = {
+                original_tag = GER 
+                is_in_faction_with = GER
+            }
+        }
+
+        add_political_power = 25
+        add_stability = 0.05
+        add_war_support = 0.10
+    }
+
+    option = {
+        name = RP_newsevents.1.b
+
+        trigger = {
+            original_tag = FRA
+        }
+    }
+
+    option = {
+        name = RP_newsevents.1.c
+
+        trigger = {
+            OR = {
+                original_tag = ENG 
+                is_in_faction_with = ENG
+            }
+        }
+    }
+
+    option = {
+        name = RP_newsevents.1.e
+
+        trigger = {
+            original_tag = JAP
+        }
+    }
+
+    option = {
+        name = RP_newsevents.1.f
+
+        trigger = {
+            OR = {
+                original_tag = SOV
+                is_in_faction_with = SOV
+            }
+        }
+    }
+
+    option = {
+        name = RP_newsevents.1.g
+
+        trigger = {
+            NOT = {
+                OR = {
+                    original_tag = GER 
+                    is_in_faction_with = GER
+                    original_tag = ENG 
+                    is_in_faction_with = ENG
+                    original_tag = SOV
+                    is_in_faction_with = SOV
+                    original_tag = FRA
+                    original_tag = JAP
+                }
+            }
+        }
+    }
+}
+
+news_event = { # The Smolensk Proclamation
+    id = RP_newsevents.2
+    title = RP_newsevents.2.t
+    desc = RP_newsevents.2.d
+    picture = GFX_news_event_021
+
+    is_triggered_only = yes
+    major = yes
+
+    option = {
+        name = RP_newsevents.2.a
+
+        trigger = {
+            original_tag = GER
+        }
+    }
+
+    option = {
+        name = RP_newsevents.2.b
+
+        trigger = {
+            OR = {
+                original_tag = SOV
+            }
+        }
+    }
+
+    option = {
+        name = RP_newsevents.2.c
+
+        trigger = {
+            NOT = {
+                OR = {
+                    original_tag = SOV
+                    original_tag = GER
+                }
+            }
+        }
+    }
+}
+
+news_event = { #French Republic Collapses
+    id = RP_newsevents.3
+    title = RP_newsevents.3.t
+    desc = RP_newsevents.3.d
+    picture = GFX_news_event_021
+
+    is_triggered_only = yes
+    major = yes
+
+    option = {
+        name = RP_newsevents.3.a
+
+        trigger = {
+            original_tag = FRA
+        }
+    }
+
+    option = {
+        name = RP_newsevents.3.b
+
+        trigger = {
+            OR = {
+                original_tag = GER
+                is_ally_with = GER
+            }
+        }
+    }
+
+    option = {
+        name = RP_newsevents.3.c
+
+        trigger = {
+            NOT = {
+                OR = {
+                    original_tag = FRA
+                    original_tag = GER
+                    is_ally_with = GER
+                }
+            }
+        }
+    }
+}
+
+news_event = { #French Socialist Republic Collapses
+    id = RP_newsevents.4
+    title = RP_newsevents.4.t
+    desc = RP_newsevents.4.d
+    picture = GFX_news_event_021
+
+    is_triggered_only = yes
+    major = yes
+
+    option = {
+        name = RP_newsevents.4.a
+
+        trigger = {
+            original_tag = FRA
+        }
+    }
+
+    option = {
+        name = RP_newsevents.4.b
+
+        trigger = {
+            OR = {
+                original_tag = GER
+                is_ally_with = GER
+            }
+        }
+    }
+
+    option = {
+        name = RP_newsevents.4.c
+
+        trigger = {
+            NOT = {
+                OR = {
+                    original_tag = FRA
+                    original_tag = GER
+                    is_ally_with = GER
+                }
+            }
+        }
+    }
+}
+
+news_event = { #saudi arabia refounded but also not really but we'll let them have this one 
+    id = RP_arabnews.1
+    title = RP_arabnews.1.t
+    desc = RP_arabnews.1.d
+    picture = GFX_news_event_021
+
+    is_triggered_only = yes
+    major = yes
+
+    option = {				
+        name = RP_arabnews.1.a
+        trigger = {
+            OR = {
+                original_tag = GER
+                original_tag = KNJ
+            }		
+        }
+    }
+
+    option = {
+        name = RP_arabnews.1.b
+
+		trigger = {
+            NOT = {
+                OR = {
+                    original_tag = GER
+                    original_tag = KNJ
+                }
+            }
+        }
+
+    }
+}
+
+news_event = { #Operation Ruess Begins
+    id = RP_focustreenewsevents.1
+    title = RP_focustreenewsevents.1.t
+    desc = RP_focustreenewsevents.1.d
+    picture = GFX_news_event_german_officers
+
+    is_triggered_only = yes
+    major = yes
+
+    option = {				
+        name = RP_focustreenewsevents.1.a
+        trigger = {
+            OR = {
+                original_tag = GER
+                has_country_flag = RP_GER_balkan_sweep_participant
+            }		
+        }
+    }
+
+    option = {				
+        name = RP_focustreenewsevents.1.b
+        trigger = {
+            AND = {
+                is_in_faction_with = GER
+                NOT = {
+                    has_country_flag = RP_GER_balkan_sweep_participant
+                }
+            }	
+            NOT = {
+                tag = GER
+            }
+        }
+    }
+
+    option = {				
+        name = RP_focustreenewsevents.1.c
+        trigger = {
+            OR = {
+                original_tag = ROM
+                original_tag = YUG
+            }		
+        }
+    }
+
+    option = {				
+        name = RP_focustreenewsevents.1.e
+        trigger = {
+            NOT = {
+                OR = {
+                    OR = {
+                        original_tag = GER
+                        has_country_flag = RP_GER_balkan_sweep_participant
+                    }	
+                    AND = {
+                        is_in_faction_with = GER
+                        NOT = {
+                            has_country_flag = RP_GER_balkan_sweep_participant
+                        }
+                    }
+                    OR = {
+                        original_tag = ROM
+                        original_tag = YUG
+                    }
+                }
+            }	
+        }
+    }
+}

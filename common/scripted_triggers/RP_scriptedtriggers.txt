@@ -1,0 +1,73 @@
+RP_hasautonomylevel_icmima = { # Has autonomy level imperial colony/militarstaat/marinestaat
+	OR = {
+        has_autonomy_state = autonomy_RP_imperialcolony
+        has_autonomy_state = autonomy_RP_militarstaat
+        has_autonomy_state = autonomy_RP_marinestaat
+    }
+}
+
+RP_rgw_choosingobjectives_missionslotopen_trigger = {
+    NOT = {
+        count_triggers = {
+            amount = 4
+            has_country_flag = RP_rgw_choosingobjectives_secure_murmansk_timer
+            has_country_flag = RP_rgw_choosingobjectives_secure_leningrad_timer
+            has_country_flag = RP_rgw_choosingobjectives_secure_novgorod_timer
+            has_country_flag = RP_rgw_choosingobjectives_secure_riga_timer
+            has_country_flag = RP_rgw_choosingobjectives_secure_smolensk_timer
+            has_country_flag = RP_rgw_choosingobjectives_secure_moscow_timer
+            has_country_flag = RP_rgw_choosingobjectives_secure_minsk_timer
+            has_country_flag = RP_rgw_choosingobjectives_secure_brestlitovsk_timer
+            has_country_flag = RP_rgw_choosingobjectives_secure_transukraine_timer
+            has_country_flag = RP_rgw_choosingobjectives_secure_kiev_timer
+            has_country_flag = RP_rgw_choosingobjectives_secure_galicia_timer
+            has_country_flag = RP_rgw_choosingobjectives_secure_odessa_timer
+            has_country_flag = RP_rgw_choosingobjectives_secure_dniepercrossings_timer
+            has_country_flag = RP_rgw_choosingobjectives_secure_rostov_timer
+            has_country_flag = RP_rgw_choosingobjectives_secure_stalingrad_timer
+            has_country_flag = RP_rgw_choosingobjectives_secure_sevastapol_timer
+        }
+    }
+}
+
+RP_rgw_declarevictory_overrussia_strigger = {
+    OR = {
+        NOT = { is_owned_by = SOV }
+        NOT = { is_controlled_by = SOV }
+    }
+}
+
+RP_rgw_consolidation_trigger = {
+    NOT = {
+        count_triggers = {
+            amount = 2
+            has_country_flag = RP_rgw_consolidate_karelia_timer
+            has_country_flag = RP_rgw_consolidate_leningrad_timer
+            has_country_flag = RP_rgw_consolidate_livonia_timer
+            has_country_flag = RP_rgw_consolidate_ruthenia_timer
+            has_country_flag = RP_rgw_consolidate_northernrussia_timer
+            has_country_flag = RP_rgw_consolidate_southernrussia_timer
+            has_country_flag = RP_rgw_consolidate_westernukraine_timer
+            has_country_flag = RP_rgw_consolidate_easternukraine_timer
+            has_country_flag = RP_rgw_consolidate_russianheartland_timer
+            has_country_flag = RP_rgw_consolidate_caucasus_timer
+        }
+    }
+}
+
+RP_state_is_fully_controlled_by_ROOT_or_subject_easterndecisionvarient_trigger = {
+    OR = {
+        is_fully_controlled_by = ROOT
+        controller = {
+            is_subject_of = ROOT
+            has_full_control_of_state = PREV
+        }
+    }
+    owner = {
+        NOT = {
+            original_tag = SOV
+            is_subject_of = SOV
+            is_in_faction_with = SOV
+        }
+    }
+}

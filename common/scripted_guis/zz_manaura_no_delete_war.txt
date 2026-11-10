@@ -1,0 +1,42 @@
+# Manaura: bloqueia deletar divisoes terrestres durante a guerra.
+# O botao de deletar do jogo nao aceita condicao, entao estas GUIs colocam um botao
+# desativado por cima dele enquanto o pais estiver em guerra. Em paz elas somem.
+scripted_gui = {
+	# lista de divisoes do exercito (interface/unitview.gui -> army_division_list_view)
+	manaura_no_delete_division_list = {
+		context_type = player_context
+		window_name = "manaura_no_delete_division_list_window"
+		parent_window_window = "army_division_list_view"
+
+		visible = {
+			has_war = yes
+		}
+
+		effects = {
+			manaura_no_delete_btn_click = { }
+		}
+
+		triggers = {
+			manaura_no_delete_btn_click_enabled = { always = no }
+		}
+	}
+
+	# janela de detalhes da divisao (interface/unitview.gui -> army_division_stats_view)
+	manaura_no_delete_division_stats = {
+		context_type = player_context
+		window_name = "manaura_no_delete_division_stats_window"
+		parent_window_window = "army_division_stats_view"
+
+		visible = {
+			has_war = yes
+		}
+
+		effects = {
+			manaura_no_delete_btn_click = { }
+		}
+
+		triggers = {
+			manaura_no_delete_btn_click_enabled = { always = no }
+		}
+	}
+}

@@ -1,0 +1,35 @@
+﻿division_template = {
+	name = "Freedom Fighters"			# Rifle Division
+	is_locked = yes
+
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 0 y = 2 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+		militia = { x = 1 y = 2 }
+	}
+	support = {
+		#recon = { x = 0 y = 0 } 		
+		#engineer = { x = 0 y = 1 } 		
+	}
+}
+
+division_template = {
+	name = "Republican Army"			# Rifle Division
+	is_locked = yes
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		artillery_brigade = { x = 2 y = 0 }
+	}
+	support = {
+		engineer = { x = 0 y = 1 } 		
+	}
+}

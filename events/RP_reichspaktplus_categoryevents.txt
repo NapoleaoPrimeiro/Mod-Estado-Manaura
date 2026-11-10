@@ -1,0 +1,164 @@
+add_namespace = RP_reichspaktplus_categoryevents
+
+country_event = { # Change Notes (New Features)
+    id = RP_reichspaktplus_categoryevents.1
+    title = RP_reichspaktplus_categoryevents.1.t
+    desc = RP_reichspaktplus_categoryevents.1.d
+    picture = GFX_report_event_fascist_gathering
+
+    is_triggered_only = yes
+
+    option = { # Next Page
+        name = RP_reichspaktplus_categoryevents.1.b
+        
+        country_event = RP_reichspaktplus_categoryevents.6
+    }
+    
+    option = { # Good to Know
+        name = RP_reichspaktplus_categoryevents.1.a
+        
+    }
+}
+
+country_event = { # Change Notes (New Features) (Part Two)
+    id = RP_reichspaktplus_categoryevents.6
+    title = RP_reichspaktplus_categoryevents.6.t
+    desc = RP_reichspaktplus_categoryevents.6.d
+    picture = GFX_report_event_fascist_gathering
+
+    is_triggered_only = yes
+
+    option = { # Last Page
+        name = RP_reichspaktplus_categoryevents.6.b
+        
+        country_event = RP_reichspaktplus_categoryevents.1
+    }
+    
+    option = { # Good to Know
+        name = RP_reichspaktplus_categoryevents.6.a
+        
+    }
+}
+
+country_event = { # Change Notes (Bug Fixes)
+    id = RP_reichspaktplus_categoryevents.2
+    title = RP_reichspaktplus_categoryevents.2.t
+    desc = RP_reichspaktplus_categoryevents.2.d
+    picture = GFX_report_event_fascist_gathering
+
+    is_triggered_only = yes
+
+    option = { # Post-Release Bug Fixes
+        name = RP_reichspaktplus_categoryevents.2.a
+        
+        country_event = RP_reichspaktplus_categoryevents.7
+    }
+
+    option = { # Good to know!
+        name = RP_reichspaktplus_categoryevents.2.b
+        
+    }
+}
+
+country_event = { # Developer Guide - Russia War | Main Event
+    id = RP_reichspaktplus_categoryevents.3
+    title = RP_reichspaktplus_categoryevents.3.t
+    desc = RP_reichspaktplus_categoryevents.3.d
+    picture = GFX_report_event_fascist_gathering
+
+    is_triggered_only = yes
+
+    option = { # War Mechanics
+        name = RP_reichspaktplus_categoryevents.3.a
+        
+        country_event = RP_reichspaktplus_categoryevents.4
+    }
+
+    option = { # Smolensk Proclamation
+        name = RP_reichspaktplus_categoryevents.3.b
+        
+        country_event = RP_reichspaktplus_categoryevents.5
+    }
+
+    #option = { # Russian Civil War
+    #    name = RP_reichspaktplus_categoryevents.3.c
+    #    
+    #}
+
+    option = { # Exit
+        name = RP_reichspaktplus_categoryevents.3.e
+        
+    }
+}
+
+country_event = { # Developer Guide - Russia War | War Mechanics
+    id = RP_reichspaktplus_categoryevents.4
+    title = RP_reichspaktplus_categoryevents.4.t
+    desc = RP_reichspaktplus_categoryevents.4.d
+    picture = GFX_report_event_fascist_gathering
+
+    is_triggered_only = yes
+
+    option = { # Sounds Good
+        name = RP_reichspaktplus_categoryevents.4.a
+        
+        country_event = RP_reichspaktplus_categoryevents.3
+    }
+}
+
+country_event = { # Developer Guide - Russia War | The Smolensk Proclamation
+    id = RP_reichspaktplus_categoryevents.5
+    title = RP_reichspaktplus_categoryevents.5.t
+    desc = RP_reichspaktplus_categoryevents.5.d
+    picture = GFX_report_event_fascist_gathering
+
+    is_triggered_only = yes
+
+    option = { # Sounds Good
+        name = RP_reichspaktplus_categoryevents.5.a
+        
+        country_event = RP_reichspaktplus_categoryevents.3
+    }
+
+    option = { # Show Consolidation Decisions
+        name = RP_reichspaktplus_categoryevents.5.b
+        
+        trigger = {
+            NOT = { has_country_flag = RP_guide_consolidationdecisionhighlights }
+        }
+
+        set_country_flag = RP_guide_consolidationdecisionhighlights
+        country_event = RP_reichspaktplus_categoryevents.3
+    }
+
+    option = { # Hide Consolidation Decisions
+        name = RP_reichspaktplus_categoryevents.5.c
+        
+        trigger = {
+            has_country_flag = RP_guide_consolidationdecisionhighlights
+        }
+
+        clr_country_flag = RP_guide_consolidationdecisionhighlights
+        country_event = RP_reichspaktplus_categoryevents.3
+    }
+}
+
+country_event = { # Change Notes (Bug Fixes) (Post-Release)
+    id = RP_reichspaktplus_categoryevents.7
+    title = RP_reichspaktplus_categoryevents.7.t
+    desc = RP_reichspaktplus_categoryevents.7.d
+    picture = GFX_report_event_fascist_gathering
+
+    is_triggered_only = yes
+
+    option = { # Last Page
+        name = RP_reichspaktplus_categoryevents.7.a
+        
+        country_event = RP_reichspaktplus_categoryevents.2
+    }
+
+    option = { # Good to know!
+        name = RP_reichspaktplus_categoryevents.7.b
+        
+    }
+}

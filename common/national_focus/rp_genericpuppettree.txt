@@ -1,0 +1,1078 @@
+﻿focus_tree = {
+	id = rp_genericpuppettree_focus
+	
+	country = {
+		factor = 0
+
+		modifier = {
+			add = 10
+			OR = {
+				tag = KLU
+				tag = KBE
+				tag = KFL
+				tag = KHO
+				tag = KEP
+				tag = KGZ
+				tag = KAU
+				tag = KCZ
+				tag = KKA
+				tag = KKH
+				tag = KDH
+				tag = KKZ
+				tag = KRM
+				tag = KNC
+				tag = KWR
+				tag = KLI
+				tag = KCS
+				tag = KFI
+				tag = KRO
+				tag = KTR
+				tag = KMO
+				tag = KHU
+				tag = KSL
+				tag = KMR
+				tag = KRU
+				tag = KNV
+				tag = KWI
+				tag = KIT
+				tag = KSZ
+				tag = KNE
+				tag = KTO
+				tag = KVC
+				tag = KVE
+				tag = KMZ
+				tag = KCR
+				tag = KSR
+				tag = KBU
+				tag = KAB
+				tag = KGR
+				tag = KDE
+				tag = KSW
+				tag = KNO
+				tag = KSI
+				tag = KBI
+				tag = KMS
+				tag = KBR
+				tag = KWE
+				tag = KSC
+				tag = KIR
+				tag = KSP
+				tag = KPR
+				tag = KBV
+				tag = KVG
+				tag = KRI
+				tag = KBS
+				tag = KNT
+				tag = KAN
+				tag = KKR
+				tag = KNH
+				tag = KIQ
+				tag = KPS
+				tag = KJS
+				tag = KNJ
+				tag = KHJ
+				tag = KNR
+				tag = KMG
+				tag = KYM
+				tag = KON
+				tag = KGU
+				tag = KPE
+				tag = KFG
+				tag = KTU
+				tag = KAO
+				tag = KWS
+				tag = KFE
+				tag = KMK
+				tag = KIN
+				tag = KKN
+				tag = KBM
+				tag = KBH
+				tag = KTH
+				tag = KCM
+				tag = KLA
+				tag = KVI
+				tag = KTI
+				tag = KCI
+				tag = KFH
+				tag = KXI
+				tag = KMI
+				tag = KMJ
+				tag = KMN
+				tag = KTM
+				tag = KRA
+				tag = KJP
+				tag = KEA
+				tag = KUT
+				tag = KNZ
+				tag = KHW
+				tag = KNA
+				tag = KLB
+				tag = KOA
+				tag = KSA
+				tag = KWA
+				tag = KMC
+				tag = KSD
+				tag = KWZ
+				tag = KEG
+				tag = KKM
+				tag = KKU
+				tag = KBY
+				tag = KPC
+				tag = KPM
+				tag = KIC
+				tag = KTL
+				tag = KGC
+				tag = KCH
+				tag = KCA
+				tag = KKO
+				tag = KZA
+				tag = KRH
+				tag = KNI
+				tag = KJA
+				tag = KTA
+				tag = KSO
+				tag = KMA
+				tag = KSE
+				tag = KNP
+				tag = KRK
+				tag = KMT
+				tag = KDL
+				tag = KRR
+				tag = KFM
+				tag = KDK
+				tag = KRP
+				tag = KNL
+				tag = KFQ
+				tag = KFN
+				tag = KMX
+				tag = KZM
+				tag = KCB
+				tag = KTX
+				tag = KWC
+				tag = KKV
+				tag = KCO
+				tag = KEC
+				tag = KPU
+				tag = KBO
+				tag = KPG
+				tag = KBZ
+				tag = KAM
+				tag = KUG
+				tag = KAG
+				tag = KCL
+				tag = KAP
+				tag = KAC
+			}
+		}
+	}
+	
+	focus = {
+		id = RP_GEN_establishanewgovernment
+		icon = GFX_focus_generic_self_management
+
+		x = -6
+		y = 0
+		cost = 2
+		#relative_position_id = 
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_political_power = 150
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = RP_GEN_reinstate_former_officials
+		icon = GFX_focus_generic_industrialists
+
+		x = -1
+		y = 1
+		cost = 5
+		relative_position_id = RP_GEN_establishanewgovernment
+
+		ai_will_do = {
+			base = 10
+
+			modifier = {
+				factor = 10
+				has_autonomy_state = autonomy_RP_kaiserreich_puppet
+			}
+		}
+
+		prerequisite = { focus = RP_GEN_establishanewgovernment }
+		mutually_exclusive = { focus = RP_GEN_loyalist_advisors }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_ideas = {
+				RP_returnofformerofficials
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GEN_loyalist_advisors
+		icon = GFX_focus_generic_advisors
+
+		x = 1
+		y = 1
+		cost = 5
+		relative_position_id = RP_GEN_establishanewgovernment
+
+		ai_will_do = {
+			base = 10
+
+			modifier = {
+				factor = -10
+				has_autonomy_state = autonomy_RP_kaiserreich_puppet
+			}
+		}
+
+		prerequisite = { focus = RP_GEN_establishanewgovernment }
+		mutually_exclusive = { focus = RP_GEN_reinstate_former_officials }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_ideas = {
+				RP_loyalistadvisors
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GEN_ecip
+		icon = GFX_focus_spr_crush_the_revolution
+
+		x = 1
+		y = 1
+		cost = 3
+		relative_position_id = RP_GEN_reinstate_former_officials
+
+		prerequisite = { focus = RP_GEN_reinstate_former_officials focus = RP_GEN_loyalist_advisors }
+
+		ai_will_do = {
+			base = 5
+
+			modifier = {
+				factor = 10
+				any_state = {
+					NOT = { is_core_of = ROOT }
+				}
+			}
+		}
+
+		available = {
+			any_owned_state = {
+				NOT = { is_core_of = ROOT }
+			}
+		}
+
+		completion_reward = {
+			add_stability = -0.15
+			add_timed_idea = {
+				idea = RP_ecip
+				days = 540
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_to_variable = {
+				var = RP_GEN_integration_atatime_counter@TAG
+				value = 1
+				tooltip = add_1_to_integration_atatime_counter_tt
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GEN_establish_state_police
+		icon = GFX_RP_focus_GER_absorb_the_abwehr
+
+		x = 0
+		y = 1
+		cost = 6
+		relative_position_id = RP_GEN_ecip
+
+		prerequisite = { focus = RP_GEN_ecip }
+
+		ai_will_do = {
+			base = 5
+
+			modifier = {
+				factor = 10
+				any_state = {
+					NOT = { is_core_of = ROOT }
+				}
+			}
+		}
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_ideas = {
+				RP_statepolice
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_to_variable = {
+				var = RP_GEN_integration_atatime_counter@TAG
+				value = 1
+				tooltip = add_1_to_integration_atatime_counter_tt
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GEN_crush_defeatist_opposition
+		icon = GFX_focus_generic_surrender
+
+		x = -1
+		y = 1
+		cost = 5
+		relative_position_id = RP_GEN_establish_state_police
+
+		prerequisite = { focus = RP_GEN_establish_state_police }
+
+		ai_will_do = {
+			base = 5
+
+			modifier = {
+				factor = 10
+				any_state = {
+					NOT = { is_core_of = ROOT }
+				}
+			}
+		}
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = RP_crushdefeatists
+				days = 120
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_to_variable = {
+				var = RP_GEN_integration_atatime_counter@TAG
+				value = 1
+				tooltip = add_1_to_integration_atatime_counter_tt
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GEN_political_trials
+		icon = GFX_focus_generic_court
+
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = RP_GEN_crush_defeatist_opposition
+
+		prerequisite = { focus = RP_GEN_crush_defeatist_opposition }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_political_power = -100
+			add_popularity = {
+				ideology = ROOT
+				popularity = 0.2
+			}
+			add_stability = -0.15
+		}
+	}
+
+	focus = {
+		id = RP_GEN_dismantle_organized_resistance
+		icon = GFX_focus_generic_commission
+
+		x = 1
+		y = 1
+		cost = 1
+		relative_position_id = RP_GEN_establish_state_police
+
+		prerequisite = { focus = RP_GEN_establish_state_police }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_stability = -0.15
+			add_timed_idea = {
+				idea = RP_crushorganizedresistance
+				days = 180
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GEN_invest_nongovernmental_facilities
+		icon = GFX_focus_generic_field_hostpital
+
+		x = 2
+		y = 1
+		cost = 4
+		relative_position_id = RP_GEN_ecip
+
+		prerequisite = { focus = RP_GEN_ecip }
+
+		ai_will_do = {
+			base = 5
+
+			modifier = {
+				factor = 10
+				any_state = {
+					NOT = { is_core_of = ROOT }
+				}
+			}
+		}
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_stability = 0.15
+			add_ideas = {
+				RP_nongovernmentalfunding
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_to_variable = {
+				var = RP_GEN_integration_atatime_counter@TAG
+				value = 1
+				tooltip = add_1_to_integration_atatime_counter_tt
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GEN_propagandacampaigns
+		icon = GFX_focus_generic_public_meetings
+
+		x = 0
+		y = 2
+		cost = 5
+		relative_position_id = RP_GEN_invest_nongovernmental_facilities
+
+		prerequisite = { focus = RP_GEN_invest_nongovernmental_facilities }
+		prerequisite = { focus = RP_GEN_dismantle_organized_resistance }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_stability = 0.15
+			add_popularity = {
+				ideology = ROOT
+				popularity = 0.2
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GEN_integration_deutchesheer
+		icon = GFX_focus_ger_oppose_hitler
+
+		x = 0
+		y = 0
+		cost = 5
+		#relative_position_id = 
+
+		#prerequisite = { focus =  }
+
+		available = {
+			has_completed_focus = RP_GEN_establishanewgovernment
+		}
+
+		completion_reward = {
+			army_experience = 25
+
+			add_ideas = {
+				RP_deutchesheer_i
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GEN_trainingcooperation
+		icon = GFX_focus_generic_full_social_mobilization
+
+		x = -1
+		y = 1
+		cost = 5
+		relative_position_id = RP_GEN_integration_deutchesheer
+
+		prerequisite = { focus = RP_GEN_integration_deutchesheer }
+
+		available = {
+
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = RP_deutchesheer_i
+				add_idea = RP_deutchesheer_ii
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GEN_jointmilitaryoperations
+		icon = GFX_focus_generic_military_academy
+
+		x = -1
+		y = 1
+		cost = 5
+		relative_position_id = RP_GEN_trainingcooperation
+
+		prerequisite = { focus = RP_GEN_trainingcooperation }
+
+		mutually_exclusive = { focus = RP_GEN_autonomousmilitaryoperations }
+
+		available = {
+
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = RP_deutchesheer_ii
+				add_idea = RP_deutchesheer_iii
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GEN_autonomousmilitaryoperations
+		icon = GFX_focus_generic_army_attack
+
+		x = 1
+		y = 1
+		cost = 5
+		relative_position_id = RP_GEN_trainingcooperation
+
+		prerequisite = { focus = RP_GEN_trainingcooperation }
+
+		mutually_exclusive = { focus = RP_GEN_jointmilitaryoperations }
+
+		available = {
+
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = RP_deutchesheer_ii
+				add_idea = RP_autonomousmilitary
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GEN_forcedconscription
+		icon = GFX_focus_generic_limited_social_mobilization
+
+		x = 1
+		y = 1
+		cost = 6
+		relative_position_id = RP_GEN_integration_deutchesheer
+
+		prerequisite = { focus = RP_GEN_integration_deutchesheer }
+
+		mutually_exclusive = { focus = RP_GEN_voluntaryenlistment }
+
+		available = {
+
+		}
+
+		completion_reward = {
+			add_ideas = {
+				RP_forcedconscription
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GEN_voluntaryenlistment
+		icon = GFX_focus_CHI_military_mission
+
+		x = 3
+		y = 1
+		cost = 6
+		relative_position_id = RP_GEN_integration_deutchesheer
+
+		prerequisite = { focus = RP_GEN_integration_deutchesheer }
+
+		mutually_exclusive = { focus = RP_GEN_forcedconscription }
+
+		available = {
+
+		}
+
+		completion_reward = {
+			add_ideas = {
+				RP_voluntaryenlistment
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GEN_establish_defenseindustry
+		icon = GFX_focus_generic_military_industry
+
+		x = 5
+		y = 1
+		cost = 5
+		relative_position_id = RP_GEN_integration_deutchesheer
+
+		prerequisite = { focus = RP_GEN_integration_deutchesheer }
+
+		available = {
+
+		}
+
+		completion_reward = {
+			add_ideas = {
+				RP_defenseindustry
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GEN_urban_military_development
+		icon = GFX_focus_PRC_urbanization
+
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = RP_GEN_establish_defenseindustry
+
+		prerequisite = { focus = RP_GEN_establish_defenseindustry }
+
+		available = {
+			
+		}
+
+		bypass = {
+			NOT = {
+				any_owned_state = {
+					OR = {
+						has_state_category = city
+						has_state_category = large_city
+						has_state_category = metropolis
+						has_state_category = megalopolis
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_owned_by = ROOT
+					OR = {
+						has_state_category = city
+						has_state_category = large_city
+						has_state_category = metropolis
+						has_state_category = megalopolis
+					}
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GEN_prisoner_labor
+		icon = GFX_focus_SOV_penal_battalions
+
+		x = -1
+		y = 1
+		cost = 4
+		relative_position_id = RP_GEN_urban_military_development
+
+		prerequisite = { focus = RP_GEN_urban_military_development }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_ideas = {
+				RP_prisoner_labor
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GEN_improvedworkerefficiency
+		icon = GFX_focus_generic_workers
+
+		x = 1
+		y = 1
+		cost = 5
+		relative_position_id = RP_GEN_urban_military_development
+
+		prerequisite = { focus = RP_GEN_urban_military_development }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_ideas = {
+				RP_improvedworkerefficiency
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GEN_integration_mitteleuropa
+		icon = GFX_focus_GER_mitteleuropa
+
+		x = 15
+		y = 0
+		cost = 10
+		#relative_position_id = 
+
+		available = {
+			has_completed_focus = RP_GEN_establishanewgovernment
+		}
+
+		completion_reward = {
+			add_ideas = {
+				RP_mitteleuropa_i
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GEN_introduce_reichsmark
+		icon = GFX_focus_GER_the_four_year_plan
+
+		x = -3
+		y = 1
+		cost = 4
+		relative_position_id = RP_GEN_integration_mitteleuropa
+
+		available = {
+
+		}
+
+		prerequisite = { focus = RP_GEN_integration_mitteleuropa }
+
+		completion_reward = {
+			add_stability = -0.05
+			swap_ideas = {
+				remove_idea = RP_mitteleuropa_i
+				add_idea = RP_mitteleuropa_ii
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GEN_resourceexploitation
+		icon = GFX_focus_generic_resource_extraction
+
+		x = -2
+		y = 1
+		cost = 6
+		relative_position_id = RP_GEN_introduce_reichsmark
+
+		available = {
+
+		}
+
+		prerequisite = { focus = RP_GEN_introduce_reichsmark }
+
+		completion_reward = {
+			add_stability = -0.10
+			swap_ideas = {
+				remove_idea = RP_mitteleuropa_ii
+				add_idea = RP_mitteleuropa_iii
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GEN_improveminingconditions
+		icon = GFX_focus_generic_mining_industry
+
+		x = -1
+		y = 1
+		cost = 5
+		relative_position_id = RP_GEN_resourceexploitation
+
+		available = {
+
+		}
+
+		prerequisite = { focus = RP_GEN_resourceexploitation }
+		mutually_exclusive = { focus = RP_GEN_disbandworkersunion }
+
+		completion_reward = {
+			add_stability = 0.05
+			swap_ideas = {
+				remove_idea = RP_mitteleuropa_iii
+				add_idea = RP_mitteleuropa_iv
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GEN_disbandworkersunion
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+
+		x = 1
+		y = 1
+		cost = 5
+		relative_position_id = RP_GEN_resourceexploitation
+
+		available = {
+
+		}
+
+		prerequisite = { focus = RP_GEN_resourceexploitation }
+		mutually_exclusive = { focus = RP_GEN_improveminingconditions }
+
+		completion_reward = {
+			add_stability = -0.2
+			swap_ideas = {
+				remove_idea = RP_mitteleuropa_iii
+				add_idea = RP_mitteleuropa_v
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GEN_improvesupplycapabilities
+		icon = GFX_focus_generic_railroad
+
+		x = 2
+		y = 1
+		cost = 4
+		relative_position_id = RP_GEN_introduce_reichsmark
+
+		available = {
+
+		}
+
+		prerequisite = { focus = RP_GEN_introduce_reichsmark }
+
+		completion_reward = {
+			add_ideas = {
+				RP_improvingsupplylines
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GEN_ourownautobahn
+		icon = GFX_focus_generic_road_investment
+
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = RP_GEN_improvesupplycapabilities
+
+		available = {
+
+		}
+
+		prerequisite = { focus = RP_GEN_improvesupplycapabilities }
+
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			swap_ideas = {
+				remove_idea = RP_improvingsupplylines
+				add_idea = RP_autobahn
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GEN_economicsubjugation
+		icon = GFX_focus_GER_integration_of_puppet_economies
+
+		x = -1
+		y = 1
+		cost = 10
+		relative_position_id = RP_GEN_ourownautobahn
+
+		ai_will_do = {
+			base = 10
+
+			modifier = {
+				factor = -10
+				has_autonomy_state = autonomy_RP_kaiserreich_puppet
+			}
+		}
+
+		available = {
+
+		}
+
+		mutually_exclusive = { focus = RP_GEN_limitedeconomicautonomy }
+
+		prerequisite = { focus = RP_GEN_ourownautobahn }
+		prerequisite = { focus = RP_GEN_improveminingconditions focus = RP_GEN_disbandworkersunion }
+
+		completion_reward = {
+			add_ideas = {
+				RP_economicsubjugation
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GEN_limitedeconomicautonomy
+		icon = GFX_focus_RAJ_special_economic_zones
+
+		x = 1
+		y = 1
+		cost = 10
+		relative_position_id = RP_GEN_ourownautobahn
+
+		ai_will_do = {
+			base = 0
+
+			modifier = {
+				factor = 10
+				has_autonomy_state = autonomy_RP_kaiserreich_puppet
+			}
+		}
+
+		available = {
+
+		}
+
+		mutually_exclusive = { focus = RP_GEN_economicsubjugation }
+
+		prerequisite = { focus = RP_GEN_ourownautobahn }
+		prerequisite = { focus = RP_GEN_improveminingconditions focus = RP_GEN_disbandworkersunion }
+
+		completion_reward = {
+			add_ideas = {
+				RP_economicautonomy
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GEN_expandindustrialcapacity
+		icon = GFX_focus_generic_modernize_industry
+
+		x = 4
+		y = 1
+		cost = 10
+		relative_position_id = RP_GEN_introduce_reichsmark
+
+		available = {
+
+		}
+
+		prerequisite = { focus = RP_GEN_introduce_reichsmark }
+
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GEN_costalconstruction
+		icon = GFX_goal_generic_construct_naval_dockyard
+
+		x = 3
+		y = 1
+		cost = 10
+		relative_position_id = RP_GEN_integration_mitteleuropa
+
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+
+		prerequisite = { focus = RP_GEN_integration_mitteleuropa }
+
+		completion_reward = {
+			add_offsite_building = { type = dockyard level = 4 }
+		}
+	}
+
+	focus = {
+		id = RP_GEN_highwayontheseas
+		icon = GFX_focus_JAP_naval_armaments_program
+
+		x = 0
+		y = 3
+		cost = 5
+		relative_position_id = RP_GEN_costalconstruction
+
+		available = {
+			
+		}
+
+		prerequisite = { focus = RP_GEN_costalconstruction }
+		prerequisite = { focus = RP_GEN_ourownautobahn }
+
+		completion_reward = {
+			add_ideas = {
+				RP_seashighway
+			}
+		}
+	}
+
+	focus = {
+		id = RP_GEN_buildjointresearchfacilities
+		icon = GFX_focus_generic_university_1
+
+		x = 5
+		y = 1
+		cost = 10
+		relative_position_id = RP_GEN_integration_mitteleuropa
+
+		available = {
+			
+		}
+
+		prerequisite = { focus = RP_GEN_integration_mitteleuropa }
+
+		completion_reward = {
+			add_research_slot = 2
+			add_ideas = {
+				RP_jointresearchfacilities
+			}
+		}
+	}
+}

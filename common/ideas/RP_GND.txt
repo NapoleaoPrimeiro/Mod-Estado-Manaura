@@ -1,0 +1,351 @@
+ideas = {
+
+	country = {
+
+		RP_warreparations = {
+			picture = HUN_treaty_of_triannon
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.15
+			}
+		}
+
+		RP_warreparations_fromfrance = {
+			picture = NOR_printing_money
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {	
+				consumer_goods_factor = -0.15
+			}
+		}
+
+		RP_minoreconomicsubjugation = {
+			picture = SOV_rebuild_the_nation_ccp_sov_compatibility
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				industrial_capacity_factory = -0.10
+				industrial_capacity_dockyard = -0.10
+				production_speed_industrial_complex_factor = -0.05
+				production_speed_arms_factory_factor = -0.25
+				production_speed_dockyard_factor = -0.25
+			}
+		}
+
+		RP_completeeconomicsubjugation = {
+			picture = generic_economic_crisis
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				industrial_capacity_factory = -0.30
+				industrial_capacity_dockyard = -0.30
+				production_speed_industrial_complex_factor = -0.15
+				production_speed_arms_factory_factor = -0.75
+				production_speed_dockyard_factor = -0.75
+			}
+		}
+
+		RP_governmentofnationaldefense = {
+			picture = generic_army_war_college
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_weekly_factor = -0.005
+				fascism_drift = 0.05
+				democratic_drift = -0.03
+				consumer_goods_factor = 0.5
+				political_power_factor = -0.25
+				surrender_limit = -0.50
+				guarantee_cost = 100.0
+				disabled_ideas = 1
+			}
+		}
+
+		RP_governmentofnationaldefense_enabledideas = {
+			picture = generic_army_war_college
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_weekly_factor = -0.005
+				fascism_drift = 0.05
+				democratic_drift = -0.03
+				consumer_goods_factor = 0.5
+				political_power_factor = -0.25
+				mobilization_laws_cost_factor = 0.25
+				trade_laws_cost_factor = 0.25
+				economy_cost_factor = 0.25
+				political_advisor_cost_factor = 0.25
+				army_advisor_cost_factor = 0.25
+				navy_advisor_cost_factor = 0.25
+				air_advisor_cost_factor = 0.25
+			}
+		}
+
+		RP_comnationalliberation = {
+			picture = generic_army_war_college
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				democratic_drift = 0.05
+				communism_drift = -0.03
+				consumer_goods_factor = 0.1
+				political_power_factor = -0.25
+				surrender_limit = -0.25
+				guarantee_cost = 2.0
+			}
+		}
+
+		RP_GND_movingtowardsgermany_i = {
+			picture = ger_revive_the_kaiserreich
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.30
+				war_support_factor = -0.20
+			}
+		}
+
+		RP_GND_movingtowardsgermany_ii = {
+			picture = ger_revive_the_kaiserreich
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.25
+				war_support_factor = -0.19
+			}
+		}
+
+		RP_GND_movingtowardsgermany_iii = {
+			picture = ger_revive_the_kaiserreich
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.20
+				war_support_factor = -0.18
+				consumer_goods_factor = -0.02
+			}
+		}
+
+		RP_GND_movingtowardsgermany_iv = {
+			picture = ger_revive_the_kaiserreich
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.15
+				war_support_factor = -0.17
+				consumer_goods_factor = -0.04
+			}
+		}
+
+		RP_GND_movingtowardsgermany_v = {
+			picture = ger_revive_the_kaiserreich
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.05
+				war_support_factor = -0.16
+				consumer_goods_factor = -0.06
+			}
+		}
+
+		RP_GND_movingtowardsgermany_vi = {
+			picture = ger_revive_the_kaiserreich
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = -0.15
+				consumer_goods_factor = -0.08
+				production_speed_bunker_factor = 0.1
+			}
+		}
+
+		RP_GND_movingtowardsgermany_vii = {
+			picture = ger_revive_the_kaiserreich
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.1
+				war_support_factor = -0.13
+				consumer_goods_factor = -0.08
+				production_speed_bunker_factor = 0.1
+			}
+		}
+
+		RP_GND_movingtowardsgermany_viii = {
+			picture = ger_revive_the_kaiserreich
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.1
+				war_support_factor = -0.10
+				consumer_goods_factor = -0.1
+				production_speed_bunker_factor = 0.2
+			}
+		}
+
+		RP_GND_limitedrearmament = {
+			picture = FRA_fortification_focus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				war_support_factor = 0.05
+				consumer_goods_factor = 0.05
+				production_speed_arms_factory_factor = 0.1
+				production_speed_dockyard_factor = 0.1
+				production_speed_rail_way_factor = 0.15
+				production_speed_infrastructure_factor = 0.15
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.15
+			}
+		}
+
+		RP_GER_rearmamentpayments = {
+			picture = FRA_fortification_focus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+	}
+} 

@@ -1,0 +1,146 @@
+﻿division_template = {
+		name = "Ukrainian Landeswehr"
+		is_locked = yes
+		#template_counter = 3 # The Crossed Rifles
+
+		regiments = {
+			militia = { x = 0 y = 0 }
+			militia = { x = 0 y = 1 }
+			militia = { x = 0 y = 2 }
+
+			militia = { x = 1 y = 0 }
+			militia = { x = 1 y = 1 }
+
+		}
+		support = {
+			recon = { x = 0 y = 0}
+		}
+	}
+	division_template = {
+		name = "Ukrainian Landeswehr Battalion"
+		is_locked = yes
+		#template_counter = 3 # The Crossed Rifles
+
+		regiments = {
+			militia = { x = 0 y = 0 }
+			militia = { x = 0 y = 1 }
+			militia = { x = 0 y = 2 }
+
+		}
+		support = {
+			recon = { x = 0 y = 0}
+		}
+	}
+
+units = {
+	division = {
+		name = "1st Ukrainian Landeswehr Regiment" 
+		location = 488
+		division_template = "Ukrainian Landeswehr"
+	}
+	division = {
+		name = "2nd Ukrainian Landeswehr Regiment" 
+		location = 488
+		division_template = "Ukrainian Landeswehr"
+	}
+	division = {
+		name = "3rd Ukrainian Landeswehr Regiment" 
+		location = 488
+		division_template = "Ukrainian Landeswehr"
+	}
+	division = {
+		name = "4th Ukrainian Landeswehr Regiment" 
+		location = 488
+		division_template = "Ukrainian Landeswehr"
+	}
+	division = {
+		name = "5th Ukrainian Landeswehr Regiment" 
+		location = 11409
+		division_template = "Ukrainian Landeswehr"
+	}
+	division = {
+		name = "6th Ukrainian Landeswehr Regiment" 
+		location = 11504
+		division_template = "Ukrainian Landeswehr"
+	}
+	division = {
+		name = "7th Ukrainian Landeswehr Regiment" 
+		location = 559
+		division_template = "Ukrainian Landeswehr"
+	}
+	division = {
+		name = "8th Ukrainian Landeswehr Regiment" 
+		location = 11504
+		division_template = "Ukrainian Landeswehr"
+	}
+	division = {
+		name = "9th Ukrainian Landeswehr Regiment" 
+		location = 9566
+		division_template = "Ukrainian Landeswehr"
+	}
+	division = {
+		name = "10th Ukrainian Landeswehr Regiment" 
+		location = 9477
+		division_template = "Ukrainian Landeswehr"
+	}
+	division = {
+		name = "11th Ukrainian Landeswehr Regiment" 
+		location = 9451
+		division_template = "Ukrainian Landeswehr"
+	}
+	division = {
+		name = "12th Ukrainian Landeswehr Regiment" 
+		location = 9451
+		division_template = "Ukrainian Landeswehr"
+	}
+	#division = {
+	#	name = "13th Ukrainian Landeswehr Regiment" 
+	#	location = 9566
+	#	division_template = "Ukrainian Landeswehr"
+	#}
+	#division = {
+	#	name = "14th Ukrainian Landeswehr Regiment" 
+	#	location = 3225
+	#	division_template = "Ukrainian Landeswehr"
+	#}
+	division = {
+		name = "1st Ukrainian Landeswehr Battalion" 
+		location = 3225
+		division_template = "Ukrainian Landeswehr Battalion"
+	}
+	division = {
+		name = "2nd Ukrainian Landeswehr Battalion" 
+		location = 3531
+		division_template = "Ukrainian Landeswehr Battalion"
+	}
+	division = {
+		name = "3rd Ukrainian Landeswehr Battalion" 
+		location = 11461
+		division_template = "Ukrainian Landeswehr Battalion"
+	}
+	division = {
+		name = "4th Ukrainian Landeswehr Battalion" 
+		location = 486
+		division_template = "Ukrainian Landeswehr Battalion"
+	}
+	division = {
+		name = "5th Ukrainian Landeswehr Battalion" 
+		location = 472
+		division_template = "Ukrainian Landeswehr Battalion"
+	}
+	division = {
+		name = "6th Ukrainian Landeswehr Battalion" 
+		location = 3399
+		division_template = "Ukrainian Landeswehr Battalion"
+	}
+	division = {
+		name = "7th Ukrainian Landeswehr Battalion" 
+		location = 3767
+		division_template = "Ukrainian Landeswehr Battalion"
+	}
+	#division = {
+	#	name = "8th Ukrainian Landeswehr Battalion" 
+	#	location = 9729
+	#	division_template = "Ukrainian Landeswehr Battalion"
+	#}
+}

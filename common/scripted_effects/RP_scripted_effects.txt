@@ -1,0 +1,1995 @@
+rpdebug = {
+    dismantle_faction = yes
+        
+    set_politics = {
+        ruling_party = neutrality
+        elections_allowed = no
+    }
+
+    every_state = {
+        limit = {
+            is_owned_by = HOL
+            is_core_of = HOL
+        }
+        transfer_state_to = GER
+    }
+
+    every_state = {
+        limit = {
+            is_demilitarized_zone = yes
+        }
+        set_demilitarized_zone = no
+    }
+
+    unlock_national_focus = GER_oppose_hitler_ww
+    complete_national_focus = GER_monarchist_sentiment
+    complete_national_focus = GER_revive_the_kaiserreich_ww
+    complete_national_focus = GER_return_of_the_kaiser_ww
+    complete_national_focus = GER_mitteleuropa
+    complete_national_focus = GER_realpolitik
+    complete_national_focus = GER_weltpolitik
+
+    every_state = {
+        limit = {
+            is_owned_by = GER
+            is_core_of = HOL
+        }
+        transfer_state_to = HOL
+    }
+}
+
+RP_establish_puppet = {
+
+    for_each_scope_loop = {
+        array = global.RP_puppetstates
+
+        transfer_state_to = PREV
+        add_core_of = PREV
+        set_state_flag = RP_territorialdecision_complete 
+    }
+
+    set_variable = {
+        var = RP_GEN_integration_atatime_counter@tag
+        value = 1
+    }
+
+    add_timed_idea = {
+        idea = RP_new_regime
+        days = 365
+    }
+
+    inherit_technology = GER
+
+    PREV = {
+        GER = {
+            set_autonomy = {
+                target = PREV.PREV
+                autonomous_state = autonomy_RP_kaiserreich_puppet
+            }
+        }
+    }
+}
+
+RP_establish_puppet_split = {
+
+    for_each_scope_loop = {
+        array = global.RP_puppetstates_parttwo
+
+        transfer_state_to = PREV
+        add_core_of = PREV
+        set_state_flag = RP_territorialdecision_complete 
+    }
+
+    set_variable = {
+        var = RP_GEN_integration_atatime_counter@tag
+        value = 1
+    }
+
+    add_timed_idea = {
+        idea = RP_new_regime
+        days = 365
+    }
+
+    inherit_technology = GER
+
+    PREV = {
+        GER = {
+            set_autonomy = {
+                target = PREV.PREV
+                autonomous_state = autonomy_RP_kaiserreich_puppet
+            }
+        }
+    }
+}
+
+RP_establish_puppet_split_2 = {
+
+    for_each_scope_loop = {
+        array = global.RP_puppetstates_partthree
+
+        transfer_state_to = PREV
+        add_core_of = PREV
+        set_state_flag = RP_territorialdecision_complete 
+    }
+
+    set_variable = {
+        var = RP_GEN_integration_atatime_counter@tag
+        value = 1
+    }
+
+    add_timed_idea = {
+        idea = RP_new_regime
+        days = 365
+    }
+
+    inherit_technology = GER
+
+    PREV = {
+        GER = {
+            set_autonomy = {
+                target = PREV.PREV
+                autonomous_state = autonomy_RP_kaiserreich_puppet
+            }
+        }
+    }
+}
+
+RP_establish_colony = {
+
+    for_each_scope_loop = {
+        array = global.RP_puppetstates
+
+        transfer_state_to = PREV
+        set_state_flag = RP_territorialdecision_complete 
+    }
+
+    set_variable = {
+        var = RP_GEN_integration_atatime_counter@tag
+        value = 1
+    }
+
+    add_timed_idea = {
+        idea = RP_new_regime
+        days = 365
+    }
+
+    inherit_technology = GER
+
+    PREV = {
+        GER = {
+            set_autonomy = {
+                target = PREV.PREV
+                autonomous_state = autonomy_RP_imperialcolony
+            }
+        }
+    }
+}
+
+RP_establish_militarystate = {
+
+    for_each_scope_loop = {
+        array = global.RP_puppetstates
+
+        transfer_state_to = PREV
+        set_state_flag = RP_territorialdecision_complete 
+    }
+
+    set_variable = {
+        var = RP_GEN_integration_atatime_counter@tag
+        value = 1
+    }
+
+    add_timed_idea = {
+        idea = RP_new_regime
+        days = 365
+    }
+
+    inherit_technology = GER
+
+    PREV = {
+        GER = {
+            set_autonomy = {
+                target = PREV.PREV
+                autonomous_state = autonomy_RP_militarstaat
+            }
+        }
+    }
+}
+
+RP_establish_navalstate = {
+
+    for_each_scope_loop = {
+        array = global.RP_puppetstates
+
+        transfer_state_to = PREV
+        set_state_flag = RP_territorialdecision_complete 
+    }
+
+    set_variable = {
+        var = RP_GEN_integration_atatime_counter@tag
+        value = 1
+    }
+
+    add_timed_idea = {
+        idea = RP_new_regime
+        days = 365
+    }
+
+    inherit_technology = GER
+
+    PREV = {
+        GER = {
+            set_autonomy = {
+                target = PREV.PREV
+                autonomous_state = autonomy_RP_marinestaat
+            }
+        }
+    }
+}
+
+RP_transferterritory_topuppet = {
+    for_each_scope_loop = {
+        array = global.RP_puppetstatestotransfer
+
+        transfer_state_to = PREV
+        PREV = {
+            if = {
+                limit = {
+                    RP_hasautonomylevel_icmima = no
+                }
+                add_state_core = PREV
+            }
+        }
+        set_state_flag = RP_territorialdecision_complete 
+    }
+}
+
+RP_transferterritory_topuppet_parttwo = { # for dividing events
+    for_each_scope_loop = {
+        array = global.RP_puppetstatestotransfer_parttwo 
+
+        transfer_state_to = PREV
+        PREV = {
+            if = {
+                limit = {
+                    RP_hasautonomylevel_icmima = no
+                }
+                add_state_core = PREV
+            }
+        }
+        set_state_flag = RP_territorialdecision_complete 
+    }
+}
+
+RP_paris_treaty = {
+
+    FRA = {
+        diplomatic_relation = {
+            country = SFC
+            relation = guarantee
+            active = no
+        }
+
+        if = {
+            limit = {
+                has_government = democratic
+            }
+            country_event = {
+                id = RP_parispeaceevents.16
+                days = 14
+                random_days = 14
+            }
+        }
+
+        if = {
+            limit = {
+                has_government = communism
+            }
+            country_event = {
+                id = RP_parispeaceevents.17
+                days = 14
+                random_days = 14
+            }
+        }
+    }
+
+    if = {
+        limit = {
+            has_war_with = BEL
+        }
+        if = {
+            limit = {
+                COG = {
+                    has_cosmetic_tag = COG_belgian_congo
+                }
+            }
+            COG = { country_event = { id = RP_frenchcollapse.1 days = 7 } }
+        }
+        every_state = {
+            limit = {
+                is_owned_by = BEL
+                OR = {
+                    state = 6
+                    state = 34
+                    state = 980
+                    state = 977
+                }
+            }
+            transfer_state_to = GER
+        }
+        if = {
+            limit = {
+                OR = {
+                    16 = { is_controlled_by_ROOT_or_ally = yes }
+                    6 = { is_controlled_by_ROOT_or_ally = yes }
+                    has_war_with = BEL
+                }
+            }
+        }
+        every_state = {
+            limit = {
+                is_owned_by = FRA
+                OR = {
+                    state = 29
+                }
+            }
+            transfer_state_to = GER
+        }
+    }
+
+    if = {
+        limit = {
+            has_war_with = POL
+        }
+        every_state = {
+            limit = {
+                is_owned_by = POL
+                is_controlled_by_ROOT_or_ally = yes
+            }
+            transfer_state_to = GER
+        }
+    }
+    
+    if = {
+        limit = {
+            has_war_with = LUX
+        }
+        every_state = {
+            limit = {
+                is_owned_by = LUX
+                OR = {
+                    state = 8
+                }
+            }
+            transfer_state_to = GER
+        }
+    }
+
+    if = {
+        limit = {
+            has_war_with = HOL
+        }
+        every_state = {
+            limit = {
+                is_owned_by = HOL
+                OR = {
+                    state = 7
+                    state = 35
+                    state = 36
+                }
+            }
+            transfer_state_to = GER
+        }
+    }
+
+    if = {
+        limit = {
+            has_war_with = SWI
+        }
+        every_state = {
+            limit = {
+                is_owned_by = SWI
+                OR = {
+                    state = 3
+                    state = 845
+                    state = 847
+                    state = 151
+                    state = 848
+                }
+            }
+            transfer_state_to = GER
+        }
+    }
+
+    if = {
+        limit = {
+            has_war_with = SWI
+            has_global_flag = RP_FRA_ITA_haswar
+        }
+        every_state = {
+            limit = {
+                is_owned_by = SWI
+                OR = {
+                    state = 846
+                }
+            }
+            transfer_state_to = ITA
+        }
+    }
+
+    else_if = {
+        limit = {
+            has_war_with = SWI
+        }
+        every_state = {
+            limit = {
+                is_owned_by = SWI
+                OR = {
+                    state = 846
+                }
+            }
+            transfer_state_to = GER
+        }
+    }
+
+    if = {
+        limit = {
+            has_global_flag = RP_parispeaceevents_minormainlandconcessions
+        }
+        every_state = {
+            limit = {
+                is_owned_by = FRA
+                OR = {
+                    state = 28
+                }
+            }
+            transfer_state_to = GER
+        }
+    }
+
+    if = {
+        limit = {
+            has_global_flag = RP_FRA_ITA_haswar
+        }
+        every_state = {
+            limit = {
+                is_owned_by = FRA
+                OR = {
+                    state = 735
+                    state = 1
+                }
+            }
+            transfer_state_to = ITA
+        }
+    }
+
+    if = {
+        limit = {
+            has_global_flag = RP_FRA_ITA_haswar
+            has_global_flag = RP_parispeaceevents_minorcolonialconcessions
+        }
+        every_state = {
+            limit = {
+                is_owned_by = FRA
+                OR = {
+                    state = 458
+                    state = 665
+                    state = 268
+                }
+            }
+            transfer_state_to = ITA
+        }
+    }
+
+    if = {
+        limit = {
+            country_exists = KIT
+        }
+        every_state = {
+            limit = {
+                is_owned_by = FRA
+                OR = {
+                    state = 735
+                    state = 1
+                }
+            }
+            transfer_state_to = KIT
+        }
+    }
+
+    if = {
+        limit = {
+            country_exists = KIT
+            has_global_flag = RP_parispeaceevents_minorcolonialconcessions
+        }
+        every_state = {
+            limit = {
+                is_owned_by = FRA
+                OR = {
+                    state = 458
+                    state = 665
+                    state = 268
+                }
+            }
+            transfer_state_to = KIT
+        }
+    }
+
+    if = {
+        limit = {
+            has_global_flag = RP_parispeaceevents_northernmainland
+        }
+        every_state = {
+            limit = {
+                is_owned_by = FRA
+                OR = {
+                    state = 28
+                    state = 29
+                    state = 14
+                    state = 30
+                    state = 24
+                    state = 27
+                    state = 17
+                    state = 15 
+                    state = 16
+                    state = 18
+                    state = 785
+                }
+            }
+            transfer_state_to = GER
+        }
+
+        FRA = {
+            set_capital = { state = 21 }
+        }
+    }
+
+    if = {
+        limit = {
+            has_global_flag = RP_parispeaceevents_bufferstate
+        }
+        every_state = {
+            limit = {
+                is_owned_by = FRA
+                OR = {
+                    state = 15
+                    state = 16
+                    state = 17
+                    state = 18
+                    state = 785
+                    state = 28
+                    state = 29
+                }
+            }
+            transfer_state_to = GER
+        }
+
+        FRA = {
+            set_capital = { state = 21 }
+        }
+    }
+
+    if = {
+        limit = {
+            has_global_flag = RP_parispeaceevents_fullmainland
+        }
+        every_state = {
+            limit = {
+                is_owned_by = FRA
+                OR = {
+                    state = 28
+                    state = 29
+                    state = 14
+                    state = 30
+                    state = 24
+                    state = 27
+                    state = 17
+                    state = 15 
+                    state = 16
+                    state = 18
+                    state = 785
+                    state = 23
+                    state = 33
+                    state = 26
+                    state = 20
+                    state = 22
+                    state = 31
+                    state = 19
+                    state = 806
+                    state = 25
+                    state = 21
+                    state = 32
+                    state = 735
+                    state = 851
+                    state = 1
+                }
+            }
+            transfer_state_to = GER
+
+            FRA = {
+                set_capital = { state = 459 }
+            }
+        }
+    }
+
+    if = {
+        limit = {
+            has_global_flag = RP_parispeaceevents_minorcolonialconcessions
+        }
+        every_state = {
+            limit = {
+                is_owned_by = FRA
+                OR = {
+                    state = 773
+                    state = 776
+                    state = 777
+                }
+            }
+            transfer_state_to = GER
+        }
+    }
+
+    if = {
+        limit = {
+            has_global_flag = RP_parispeaceevents_majorcolonialconcessions
+            has_global_flag = RP_FRA_TUR_haswar
+        }
+        every_state = {
+            limit = {
+                OR = {
+                    is_owned_by = FRA
+                    is_owned_by = SYR
+                    is_owned_by = LEB
+                }
+                OR = {
+                    state = 799
+                    state = 677
+                    state = 680
+                    state = 553
+                    state = 554
+                }
+            }
+            transfer_state_to = TUR
+        }
+    }
+
+    else_if = {
+        limit = {
+            has_global_flag = RP_parispeaceevents_majorcolonialconcessions
+        }
+        every_state = {
+            limit = {
+                OR = {
+                    is_owned_by = FRA
+                    is_owned_by = SYR
+                    is_owned_by = LEB
+                }
+                OR = {
+                    state = 799
+                    state = 677
+                    state = 680
+                    state = 553
+                    state = 554
+                }
+            }
+            transfer_state_to = GER
+        }
+    }
+
+    if = {
+        limit = {
+            has_global_flag = RP_FRA_ITA_haswar
+            has_global_flag = RP_parispeaceevents_majorcolonialconcessions
+        }
+        every_state = {
+            limit = {
+                is_owned_by = FRA
+                OR = {
+                    state = 458
+                    state = 665
+                    state = 268
+                }
+            }
+            transfer_state_to = ITA
+        }
+    }
+
+    if = {
+        limit = {
+            has_global_flag = RP_parispeaceevents_majorcolonialconcessions
+        }
+        every_state = {
+            limit = {
+                OR = {
+                    is_owned_by = FRA
+                    is_owned_by = SYR
+                    is_owned_by = LEB
+                }
+                OR = {
+                    state = 773
+                    state = 776
+                    state = 777
+                    state = 772
+                    state = 774
+                    state = 775
+                    state = 539
+                    state = 660
+                }
+            }
+            transfer_state_to = GER
+        }
+
+        if = {
+            limit = {
+                has_war_with = COG
+            }
+            every_state = {
+                limit = {
+                    is_owned_by = COG
+                    OR = {
+                        state = 888
+                        state = 889
+                        state = 890
+                        state = 295
+                        state = 538
+                        state = 718
+                        state = 768
+                        state = 769
+                    }
+                }
+                transfer_state_to = GER
+            }
+        }
+    }
+
+    if = {
+        limit = {
+            has_global_flag = RP_parispeaceevents_warreparations
+        }
+        GER = {
+            add_timed_idea = {
+                idea = RP_warreparations_fromfrance
+                days = 730
+            }
+        }
+        FRA = {
+            add_timed_idea = {
+                idea = RP_warreparations
+                days = 730
+            }
+        }
+    }
+
+    if = {
+        limit = {
+            has_global_flag = RP_parispeaceevents_minoreconomicsubjugation
+        }
+        GER = {
+            add_timed_idea = {
+                idea = RP_warreparations_fromfrance
+                days = 730
+            }
+        }
+        FRA = {
+            add_timed_idea = {
+                idea = RP_warreparations
+                days = 730
+            }
+            add_ideas = {
+                RP_minoreconomicsubjugation
+            }
+        }
+    }
+
+    if = {
+        limit = {
+            has_global_flag = RP_parispeaceevents_completeeconomicsubjugation
+        }
+        GER = {
+            add_timed_idea = {
+                idea = RP_warreparations_fromfrance
+                days = 730
+            }
+        }
+        FRA = {
+            add_timed_idea = {
+                idea = RP_warreparations
+                days = 730
+            }
+            add_ideas = {
+                RP_completeeconomicsubjugation
+            }
+        }
+    }
+
+    every_state = {
+        limit = {
+            is_owned_by = FRA
+            is_demilitarized_zone = yes
+        }
+        set_demilitarized_zone = no
+    }
+
+    if = {
+        limit = {
+            has_global_flag = RP_parispeaceevents_minormainlandconcessions
+        }
+        every_state = {
+            limit = {
+                is_owned_by = FRA
+                OR = {
+                    state = 17
+                    state = 18
+                    state = 785
+                    state = 29
+                }
+            }
+           set_demilitarized_zone = yes
+        }
+    }
+
+    if = {
+        limit = {
+            has_global_flag = RP_parispeaceevents_minormainlandconcessions
+            has_global_flag = RP_FRA_ITA_haswar
+        }
+        every_state = {
+            limit = {
+                is_owned_by = FRA
+                OR = {
+                    state = 851
+                    state = 32
+                    state = 21
+                }
+            }
+           set_demilitarized_zone = yes
+        }
+    }
+
+    set_global_flag = RP_treatyofsedan_signed
+    set_global_flag = {
+        flag = RP_treatyofsedan_signed_timer
+        days = 365
+        value = 1
+    }
+
+    # Collapse Events # Congo Collapse is further up, since it requires being a puppet of Belgium
+
+    FRA = {
+        country_event = {
+            id = RP_frenchcollapse.3
+            days = 60
+            random_days = 31
+        }
+
+        country_event = {
+            id = RP_frenchcollapse.13
+            days = 80
+            random_days = 11
+        }
+
+        country_event = {
+            id = RP_frenchcollapse.15
+            days = 120
+            random_days = 10
+        }
+    }
+
+    USA = {
+        country_event = {
+            id = RP_frenchcollapse.6
+            days = 45
+            random_days = 15
+        }
+    }
+
+    ENG = {
+        country_event = {
+            id = RP_frenchcollapse.9
+            days = 90
+            random_days = 30
+        }
+
+        country_event = {
+            id = RP_frenchcollapse.11
+            days = 120
+            random_days = 30
+        }
+
+        country_event = {
+            id = RP_frenchcollapse.14
+            days = 90
+            random_days = 10
+        }
+    }
+
+    if = {
+        limit = {
+            NOT = {
+                has_global_flag = RP_parispeaceevents_majorcolonialconcessions
+            }
+        }
+        if = {
+            limit = {
+                SYR = {
+                    is_subject_of = FRA
+                }
+            }
+            FRA = {
+                country_event = {
+                    id = RP_parispeaceevents.14
+                    days = 14
+                }
+            }
+            SYR = {
+                country_event = {
+                    id = RP_frenchcollapse.8
+                    days = 30
+                    random_days = 15
+                }
+            }
+            set_global_flag = RP_GND_syriabreaksoff
+        }
+
+        if = {
+            limit = {
+                LEB = {
+                    is_subject_of = FRA
+                }
+            }
+            FRA = {
+                country_event = {
+                    id = RP_parispeaceevents.15
+                    days = 18
+                }
+            }
+            set_global_flag = RP_GND_lebanonbreaksoff
+        }
+
+        if = {
+            limit = {
+                FRA = {
+                    owns_state = 268
+                }
+            }
+            FRA = {
+                country_event = {
+                    id = RP_frenchcollapse.16
+                    days = 30
+                    random_days = 16
+                }
+            }
+        }
+    }
+}
+
+RP_rgw_russianpeaceachieved = {
+    set_global_flag = RP_GER_easterndeescalation_complete
+    
+    white_peace = {
+        tag = SOV
+        message = RP_rgw_whitepeace_message
+    }
+
+    SOV = {
+        dismantle_faction = yes
+        set_rule = {
+            can_join_factions = no
+            can_create_factions = no
+        }
+
+        news_event = {
+            id = RP_russiancivilwarnewsevents.1
+            days = 180
+            random_days = 185
+        }
+    }
+    every_country = {
+        limit = {
+            has_war_with = SOV
+            OR = {
+                tag = GER
+                is_subject_of = GER
+                is_ally_with = GER
+            }
+            OR = {
+                tag = GER
+                tag = KFI
+                tag = KRU
+                tag = KLV
+                tag = KLI
+                tag = KPO
+                tag = KGZ
+                tag = KEP
+                tag = KWR
+                tag = KWI
+                tag = KNV
+                tag = KUK
+                tag = KCR
+                tag = KKA
+                tag = KDH
+                tag = KNC
+                tag = KKH
+                tag = KKZ
+                tag = KRM
+                tag = FIN
+                tag = EST
+                tag = LAT
+                tag = LIT
+                tag = POL
+                tag = ROM
+                tag = TUR
+            }
+        }
+        add_ideas = { RP_smolenskproclamation }
+    }
+
+    every_state = {
+        limit = {
+            is_owned_by = SOV
+            OR = {
+                state = 188
+                state = 189
+				state = 814
+				state = 11
+				state = 815
+				state = 784
+				state = 97
+                state = 93
+				state = 94
+				state = 95
+				state = 96
+				state = 89
+				state = 91
+				state = 80
+                state = 78
+				state = 766
+            }
+        }
+        transfer_state_to = GER
+    }
+
+    if = {
+        limit = {
+            has_country_flag = RP_rgw_consolidate_karelia_complete
+        }
+
+        every_state = {
+            limit = {
+                is_owned_by = SOV
+                OR = {
+                    state = 146
+                    state = 147
+                    state = 722
+                    state = 216
+                    state = 215
+                    state = 213
+                }
+            }
+            transfer_state_to = GER
+        }
+    }
+
+    if = {
+        limit = {
+            has_country_flag = RP_rgw_consolidate_leningrad_complete
+        }
+        
+        every_state = {
+            limit = {
+                is_owned_by = SOV
+                OR = {
+                    state = 195
+                    state = 244
+                }
+            }
+            transfer_state_to = GER
+        }
+
+        SOV = {
+            add_stability = -0.1
+        }
+    }
+
+    if = {
+        limit = {
+            has_country_flag = RP_rgw_consolidate_livonia_complete
+        }
+        
+        every_state = {
+            limit = {
+                is_owned_by = SOV
+                OR = {
+                    state = 810
+                    state = 12
+                    state = 13
+                    state = 191
+                    state = 813
+                    state = 812
+                    state = 811
+                    state = 808
+                    state = 809
+                    state = 190
+                }
+            }
+            transfer_state_to = GER
+        }
+    }
+
+    if = {
+        limit = {
+            has_country_flag = RP_rgw_consolidate_ruthenia_complete
+        }
+
+        every_state = {
+            limit = {
+                is_owned_by = SOV
+                OR = {
+                    state = 204
+                    state = 206
+                    state = 207
+                    state = 194
+                }
+            }
+            transfer_state_to = GER
+        }
+    }
+
+    if = {
+        limit = {
+            has_country_flag = RP_rgw_consolidate_northernrussia_complete
+        }
+
+        every_state = {
+            limit = {
+                is_owned_by = SOV
+                OR = {
+                    state = 210
+                    state = 246
+                    state = 263
+                    state = 209
+                    state = 208
+                    state = 242
+                }
+            }
+            transfer_state_to = GER
+        }
+    }
+
+    if = {
+        limit = {
+            has_country_flag = RP_rgw_consolidate_southernrussia_complete
+        }
+
+        every_state = {
+            limit = {
+                is_owned_by = SOV
+                OR = {
+                    state = 241
+                    state = 224
+                    state = 243
+                    state = 220
+                    state = 205
+                    state = 222
+                    state = 223
+                    state = 240
+                }
+            }
+            transfer_state_to = GER
+        }
+    }
+
+    if = {
+        limit = {
+            has_country_flag = RP_rgw_consolidate_westernukraine_complete
+        }
+        
+        every_state = {
+            limit = {
+                is_owned_by = SOV
+                OR = {
+                    state = 201
+                    state = 199
+                    state = 198
+                    state = 202
+                    state = 203
+                    state = 197
+                    state = 834
+                    state = 192
+                }
+            }
+            transfer_state_to = GER
+        }
+    }
+
+    if = {
+        limit = {
+            has_country_flag = RP_rgw_consolidate_easternukraine_complete
+        }
+
+        every_state = {
+            limit = {
+                is_owned_by = SOV
+                OR = {
+                    state = 137
+                    state = 196
+                    state = 200
+                    state = 226
+                    state = 227
+                    state = 228
+                    state = 221
+                    state = 259
+                    state = 225
+                    state = 193
+                }
+            }
+            transfer_state_to = GER
+        }
+    }
+
+    if = {
+        limit = {
+            has_country_flag = RP_rgw_consolidate_russianheartland_complete
+        }
+
+        every_state = {
+            limit = {
+                is_owned_by = SOV
+                OR = {
+                    state = 264
+                    state = 247
+                    state = 219
+                    state = 254
+                    state = 257
+                    state = 258
+                    state = 260
+                    state = 265
+                    state = 245
+                    state = 218
+                    state = 217
+                }
+            }
+            transfer_state_to = GER
+        }
+        
+        SOV = {
+            add_stability = -0.25
+            set_capital = { state = 398 remember_old_capital = yes }
+        }
+    }
+
+    if = {
+        limit = {
+            has_country_flag = RP_rgw_consolidate_donregion_complete
+        }
+        
+        every_state = {
+            limit = {
+                is_owned_by = SOV
+                OR = {
+                    state = 238
+                    state = 237
+                    state = 234
+                    state = 235
+                    state = 233
+                    state = 236
+                    state = 827
+                    state = 828
+                    state = 821
+                    state = 232
+                }
+            }
+            transfer_state_to = GER
+        }
+    }
+
+    if = {
+        limit = {
+            has_country_flag = RP_rgw_consolidate_caucasus_complete
+        }
+        
+        every_state = {
+            limit = {
+                is_owned_by = SOV
+                OR = {
+                    state = 826
+                    state = 231
+                    state = 230
+                    state = 229
+                }
+            }
+            transfer_state_to = GER
+        }
+    }
+}
+
+RP_leopoldplot_calculateaverage = {
+    
+    set_variable = {
+        var = RP_leopoldplot_averageinfluence
+        value = 0
+    }
+    
+    add_to_variable = {
+        var = RP_leopoldplot_averageinfluence
+        value = RP_leopoldplot_militaryinfluence
+    }
+
+    add_to_variable = {
+        var = RP_leopoldplot_averageinfluence
+        value = RP_leopoldplot_economyinfluence
+    }
+
+    add_to_variable = {
+        var = RP_leopoldplot_averageinfluence
+        value = RP_leopoldplot_administrativeinfluence
+    }
+
+    divide_variable = {
+        var = RP_leopoldplot_averageinfluence
+        value = 3
+    }
+
+    clamp_variable = {
+        var = RP_leopoldplot_averageinfluence
+        min = 0
+        max = 100
+    }
+
+    clamp_variable = {
+        var = RP_leopoldplot_militaryinfluence
+        min = 0
+        max = 100
+    }
+
+    clamp_variable = {
+        var = RP_leopoldplot_economyinfluence
+        min = 0
+        max = 100
+    }
+
+    clamp_variable = {
+        var = RP_leopoldplot_administrativeinfluence
+        min = 0
+        max = 100
+    }
+}
+
+RP_leopoldplot_raidcompleted = {
+    GER = {
+        if = {
+            limit = {
+                NOT = {
+                    OR = {
+                        has_idea = RP_plunderinginspain_i
+                        has_idea = RP_plunderinginspain_ii
+                        has_idea = RP_plunderinginspain_iii
+                        has_idea = RP_plunderinginspain_iv
+                        has_idea = RP_plunderinginspain_v
+                        has_idea = RP_plunderinginspain_vi
+                        has_idea = RP_plunderinginspain_vii
+                    }
+                } 
+            }
+            add_ideas = {
+                RP_plunderinginspain_i
+            }
+        }
+
+        else_if = {
+            limit = {
+                has_idea = RP_plunderinginspain_i
+            }
+            swap_ideas = {
+                remove_idea = RP_plunderinginspain_i
+                add_idea = RP_plunderinginspain_ii
+            }
+        }
+
+        else_if = {
+            limit = {
+                has_idea = RP_plunderinginspain_ii
+            }
+            swap_ideas = {
+                remove_idea = RP_plunderinginspain_ii
+                add_idea = RP_plunderinginspain_iii
+            }
+        }
+
+        else_if = {
+            limit = {
+                has_idea = RP_plunderinginspain_iii
+            }
+            swap_ideas = {
+                remove_idea = RP_plunderinginspain_iii
+                add_idea = RP_plunderinginspain_iv
+            }
+        }
+
+        else_if = {
+            limit = {
+                has_idea = RP_plunderinginspain_iv
+            }
+            swap_ideas = {
+                remove_idea = RP_plunderinginspain_iv
+                add_idea = RP_plunderinginspain_v
+            }
+        }
+
+        else_if = {
+            limit = {
+                has_idea = RP_plunderinginspain_v
+            }
+            swap_ideas = {
+                remove_idea = RP_plunderinginspain_v
+                add_idea = RP_plunderinginspain_vi
+            }
+        }
+        
+        else_if = {
+            limit = {
+                has_idea = RP_plunderinginspain_vi
+            }
+            swap_ideas = {
+                remove_idea = RP_plunderinginspain_vi
+                add_idea = RP_plunderinginspain_vii
+            }
+        }
+    }
+    
+    FROM.controller = {
+        if = {
+            limit = {
+                NOT = {
+                    OR = {
+                        has_idea = RP_germanplundering_i
+                        has_idea = RP_germanplundering_ii
+                        has_idea = RP_germanplundering_iii
+                        has_idea = RP_germanplundering_iv
+                        has_idea = RP_germanplundering_v
+                        has_idea = RP_germanplundering_vi
+                        has_idea = RP_germanplundering_vii
+                    }
+                } 
+            }
+            add_ideas = {
+                RP_germanplundering_i
+            }
+        }
+
+        else_if = {
+            limit = {
+                has_idea = RP_germanplundering_i
+            }
+            swap_ideas = {
+                remove_idea = RP_germanplundering_i
+                add_idea = RP_germanplundering_ii
+            }
+        }
+
+        else_if = {
+            limit = {
+                has_idea = RP_germanplundering_ii
+            }
+            swap_ideas = {
+                remove_idea = RP_germanplundering_ii
+                add_idea = RP_germanplundering_iii
+            }
+        }
+
+        else_if = {
+            limit = {
+                has_idea = RP_germanplundering_iii
+            }
+            swap_ideas = {
+                remove_idea = RP_germanplundering_iii
+                add_idea = RP_germanplundering_iv
+            }
+        }
+
+        else_if = {
+            limit = {
+                has_idea = RP_germanplundering_iv
+            }
+            swap_ideas = {
+                remove_idea = RP_germanplundering_iv
+                add_idea = RP_germanplundering_v
+            }
+        }
+
+        else_if = {
+            limit = {
+                has_idea = RP_germanplundering_v
+            }
+            swap_ideas = {
+                remove_idea = RP_germanplundering_v
+                add_idea = RP_germanplundering_vi
+            }
+        }
+        
+        else_if = {
+            limit = {
+                has_idea = RP_germanplundering_vi
+            }
+            swap_ideas = {
+                remove_idea = RP_germanplundering_vi
+                add_idea = RP_germanplundering_vii
+            }
+        }
+    }
+}
+
+RP_leopoldplot_coupsuccessful_effect = {
+    set_country_flag = RP_leopoldplot_coupattempt
+    set_country_flag = RP_leopoldplot_coupsuccessful
+    custom_effect_tooltip = RP_leopoldplot_coupsuccessful_tt
+
+    hidden_effect = {
+
+        news_event = {
+            id = RP_leopoldplot_newsevents.1
+            hours = 12
+        }
+
+        every_state = {
+            limit = {
+                has_dynamic_modifier = { modifier = unplanned_offensive }
+            }
+            remove_dynamic_modifier = { modifier = unplanned_offensive }
+        }
+
+        country_event = {
+            id = RP_spanishcoupevents.1
+            hours = 12
+        }
+
+        country_event = {
+            id = RP_spanishcoupevents.2
+            days = 7
+            random_days = 7
+        }
+
+        ITA = {
+            country_event = {
+                id = RP_spanishcoupevents.4
+                days = 14
+                random_days = 28
+            }
+        }
+
+        KSP = {
+
+            annex_country = {
+                target = SPR
+                transfer_troops = yes
+            }
+            
+            set_cosmetic_tag = KSP_militarystate
+            
+            create_country_leader = {
+                name = "Deutsche-Besatzungsregierung"
+                picture = GFX_portrait_GER_oberste_heeresleitung
+                expire = "1999.1.1"
+                ideology = despotism
+                traits = {
+                }
+            }
+            
+            set_party_name = {
+                ideology = neutrality
+                name = KSP_militarystate_neutrality_party
+            }
+
+            add_timed_idea = {
+                idea = RP_new_regime
+                days = 365
+            }
+
+            PREV = {
+                GER = {
+                    set_autonomy = {
+                        target = PREV.PREV
+                        autonomous_state = autonomy_RP_militarstaat
+                    }
+                }
+            }
+
+            declare_war_on = {
+                target = D01
+                type = annex_everything
+            }
+
+            declare_war_on = {
+                target = D02
+                type = annex_everything
+            }
+
+            declare_war_on = {
+                target = D03
+                type = annex_everything
+            }
+        }
+				
+        GER = {
+            declare_war_on = {
+                target = D01
+                type = annex_everything
+            }
+        }
+
+        GER = {
+            declare_war_on = {
+                target = D02
+                type = annex_everything
+            }
+        }
+
+        GER = {
+            declare_war_on = {
+                target = D03
+                type = annex_everything
+            }
+        }
+    }
+}
+
+RP_leopoldplot_coupfailure_effect = {
+    set_country_flag = RP_leopoldplot_coupattempt
+    set_country_flag = RP_leopoldplot_coupfailure
+    custom_effect_tooltip = RP_leopoldplot_coupfailure_tt
+
+    hidden_effect = {
+
+        news_event = {
+            id = RP_leopoldplot_newsevents.2
+            hours = 12
+        }
+
+        every_state = {
+            limit = {
+                has_dynamic_modifier = { modifier = unplanned_offensive }
+            }
+            remove_dynamic_modifier = { modifier = unplanned_offensive }
+        }
+
+        random_list = {
+            5 = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            is_owned_by = SPR
+                            is_controlled_by = SPR
+                        }
+                        OR = {
+                            state = 173
+                            state = 169
+                            state = 789
+                            state = 170
+                        }
+                    }
+                    transfer_state_to = KSP
+                }
+                GER = {
+                    load_oob = RP_KSP_leopoldplot_borderonepossibility
+                }
+            }
+            5 = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            is_owned_by = SPR
+                            is_controlled_by = SPR
+                        }
+                        OR = {
+                            state = 171
+                            state = 790
+                            state = 174
+                            state = 788
+                            state = 170
+                        }
+                    }
+                    transfer_state_to = KSP
+                }
+                GER = {
+                    load_oob = RP_KSP_leopoldplot_bordertwopossibility
+                }
+            }
+            5 = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            is_owned_by = SPR
+                            is_controlled_by = SPR
+                        }
+                        OR = {
+                            state = 171
+                            state = 174
+                            state = 790
+                            state = 791
+                        }
+                    }
+                    transfer_state_to = KSP
+                }
+                GER = {
+                    load_oob = RP_KSP_leopoldplot_borderthreepossibility
+                }
+            }
+        }
+
+        country_event = {
+            id = RP_spanishcoupevents.2
+            days = 7
+            random_days = 7
+        }
+
+        ITA = {
+            country_event = {
+                id = RP_spanishcoupevents.4
+                days = 14
+                random_days = 28
+            }
+        }
+
+        KSP = {
+            
+            set_cosmetic_tag = KSP_militarystate
+            
+            create_country_leader = {
+                name = "Deutsche-Besatzungsregierung"
+                picture = GFX_portrait_GER_oberste_heeresleitung
+                expire = "1999.1.1"
+                ideology = despotism
+                traits = {
+                }
+            }
+            
+            set_party_name = {
+                ideology = neutrality
+                name = KSP_militarystate_neutrality_party
+            }
+
+            add_timed_idea = {
+                idea = RP_new_regime
+                days = 365
+            }
+
+            PREV = {
+                GER = {
+                    set_autonomy = {
+                        target = PREV.PREV
+                        autonomous_state = autonomy_RP_militarstaat
+                    }
+                }
+            }
+
+            declare_war_on = {
+                target = SPR
+                type = annex_everything
+            }
+            
+            declare_war_on = {
+                target = D01
+                type = annex_everything
+            }
+
+            declare_war_on = {
+                target = D02
+                type = annex_everything
+            }
+
+            declare_war_on = {
+                target = D03
+                type = annex_everything
+            }
+        }
+
+        declare_war_on = {
+            target = SPR
+            type = annex_everything
+        }
+				
+        GER = {
+            declare_war_on = {
+                target = D01
+                type = annex_everything
+            }
+        }
+
+        GER = {
+            declare_war_on = {
+                target = D02
+                type = annex_everything
+            }
+        }
+
+        GER = {
+            declare_war_on = {
+                target = D03
+                type = annex_everything
+            }
+        }
+    }
+}
+
+RP_rgw_objective_successful = {
+
+    add_war_support = 0.005
+
+    if = {
+        limit = {
+            NOT = {
+                OR = {
+                    has_idea = RP_GER_snowballoffensive_i
+                    has_idea = RP_GER_snowballoffensive_ii
+                    has_idea = RP_GER_snowballoffensive_iii
+                    has_idea = RP_GER_snowballoffensive_iv
+                    has_idea = RP_GER_snowballoffensive_v
+                    has_idea = RP_GER_snowballoffensive_vi
+                    has_idea = RP_GER_snowballoffensive_vii
+                    has_idea = RP_GER_snowballoffensive_viii
+                    has_idea = RP_GER_snowballoffensive_ix
+                    has_idea = RP_GER_snowballoffensive_x
+                    has_idea = RP_GER_snowballoffensive_xi
+                    has_idea = RP_GER_snowballoffensive_xii
+                    has_idea = RP_GER_snowballoffensive_xiii
+                    has_idea = RP_GER_snowballoffensive_xiv
+                    has_idea = RP_GER_snowballoffensive_xv
+                    has_idea = RP_GER_snowballoffensive_xvi
+                }
+            }
+        }
+        add_ideas = {
+            RP_GER_snowballoffensive_i
+        }
+    }
+
+    else_if = {
+        limit = {
+            has_idea = RP_GER_snowballoffensive_i
+        }
+        swap_ideas = {
+            remove_idea = RP_GER_snowballoffensive_i
+            add_idea = RP_GER_snowballoffensive_ii
+        }
+    }
+
+    else_if = {
+        limit = {
+            has_idea = RP_GER_snowballoffensive_ii
+        }
+        swap_ideas = {
+            remove_idea = RP_GER_snowballoffensive_ii
+            add_idea = RP_GER_snowballoffensive_iii
+        }
+    }
+
+    else_if = {
+        limit = {
+            has_idea = RP_GER_snowballoffensive_iii
+        }
+        swap_ideas = {
+            remove_idea = RP_GER_snowballoffensive_iii
+            add_idea = RP_GER_snowballoffensive_iv
+        }
+    }
+
+    else_if = {
+        limit = {
+            has_idea = RP_GER_snowballoffensive_iv
+        }
+        swap_ideas = {
+            remove_idea = RP_GER_snowballoffensive_iv
+            add_idea = RP_GER_snowballoffensive_v
+        }
+    }
+
+    else_if = {
+        limit = {
+            has_idea = RP_GER_snowballoffensive_v
+        }
+        swap_ideas = {
+            remove_idea = RP_GER_snowballoffensive_v
+            add_idea = RP_GER_snowballoffensive_vi
+        }
+    }
+
+    else_if = {
+        limit = {
+            has_idea = RP_GER_snowballoffensive_vi
+        }
+        swap_ideas = {
+            remove_idea = RP_GER_snowballoffensive_vi
+            add_idea = RP_GER_snowballoffensive_vii
+        }
+    }
+
+    else_if = {
+        limit = {
+            has_idea = RP_GER_snowballoffensive_vii
+        }
+        swap_ideas = {
+            remove_idea = RP_GER_snowballoffensive_vii
+            add_idea = RP_GER_snowballoffensive_viii
+        }
+    }
+
+    else_if = {
+        limit = {
+            has_idea = RP_GER_snowballoffensive_viii
+        }
+        swap_ideas = {
+            remove_idea = RP_GER_snowballoffensive_viii
+            add_idea = RP_GER_snowballoffensive_ix
+        }
+    }
+
+    else_if = {
+        limit = {
+            has_idea = RP_GER_snowballoffensive_ix
+        }
+        swap_ideas = {
+            remove_idea = RP_GER_snowballoffensive_ix
+            add_idea = RP_GER_snowballoffensive_x
+        }
+    }
+
+    else_if = {
+        limit = {
+            has_idea = RP_GER_snowballoffensive_x
+        }
+        swap_ideas = {
+            remove_idea = RP_GER_snowballoffensive_x
+            add_idea = RP_GER_snowballoffensive_xi
+        }
+    }
+
+    else_if = {
+        limit = {
+            has_idea = RP_GER_snowballoffensive_xi
+        }
+        swap_ideas = {
+            remove_idea = RP_GER_snowballoffensive_xi
+            add_idea = RP_GER_snowballoffensive_xii
+        }
+    }
+
+    else_if = {
+        limit = {
+            has_idea = RP_GER_snowballoffensive_xii
+        }
+        swap_ideas = {
+            remove_idea = RP_GER_snowballoffensive_xii
+            add_idea = RP_GER_snowballoffensive_xiii
+        }
+    }
+
+    else_if = {
+        limit = {
+            has_idea = RP_GER_snowballoffensive_xiii
+        }
+        swap_ideas = {
+            remove_idea = RP_GER_snowballoffensive_xiii
+            add_idea = RP_GER_snowballoffensive_xiv
+        }
+    }
+
+    else_if = {
+        limit = {
+            has_idea = RP_GER_snowballoffensive_xiv
+        }
+        swap_ideas = {
+            remove_idea = RP_GER_snowballoffensive_xiv
+            add_idea = RP_GER_snowballoffensive_xv
+        }
+    }
+
+    else_if = {
+        limit = {
+            has_idea = RP_GER_snowballoffensive_xv
+        }
+        swap_ideas = {
+            remove_idea = RP_GER_snowballoffensive_xv
+            add_idea = RP_GER_snowballoffensive_xvi
+        }
+    }
+}

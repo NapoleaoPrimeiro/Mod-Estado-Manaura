@@ -1,0 +1,191 @@
+add_namespace = RP_GND_focustreeevents
+
+country_event = { #Benefits Grow
+    id = RP_GND_focustreeevents.1
+    title = RP_GND_focustreeevents.1.t
+    desc = RP_GND_focustreeevents.1.d
+    picture = GFX_report_event_germany_politician_handshake
+
+    is_triggered_only = yes
+
+    option = { #Wonderful!
+        name = RP_GND_focustreeevents.1.a
+
+        if = {
+            limit = {
+                NOT = {
+                    has_idea = RP_GND_movingtowardsgermany_viii
+                }
+            }
+            hidden_effect = {
+                country_event = {
+                    id = RP_GND_focustreeevents.1
+                    days = 30
+                }
+            }
+            custom_effect_tooltip = RP_GND_focustreeevents.1.effect_tt
+        }
+
+        if = {
+            limit = {
+                has_idea = RP_GND_movingtowardsgermany_i
+            }
+            swap_ideas = {
+                remove_idea = RP_GND_movingtowardsgermany_i
+                add_idea = RP_GND_movingtowardsgermany_ii
+            }
+        }
+
+        else_if = {
+            limit = {
+                has_idea = RP_GND_movingtowardsgermany_ii
+            }
+            swap_ideas = {
+                remove_idea = RP_GND_movingtowardsgermany_ii
+                add_idea = RP_GND_movingtowardsgermany_iii
+            }
+        }
+
+        else_if = {
+            limit = {
+                has_idea = RP_GND_movingtowardsgermany_iii
+            }
+            swap_ideas = {
+                remove_idea = RP_GND_movingtowardsgermany_iii
+                add_idea = RP_GND_movingtowardsgermany_iv
+            }
+        }
+
+        else_if = {
+            limit = {
+                has_idea = RP_GND_movingtowardsgermany_iv
+            }
+            swap_ideas = {
+                remove_idea = RP_GND_movingtowardsgermany_iv
+                add_idea = RP_GND_movingtowardsgermany_v
+            }
+        }
+
+        else_if = {
+            limit = {
+                has_idea = RP_GND_movingtowardsgermany_v
+            }
+            swap_ideas = {
+                remove_idea = RP_GND_movingtowardsgermany_v
+                add_idea = RP_GND_movingtowardsgermany_vi
+            }
+        }
+
+        else_if = {
+            limit = {
+                has_idea = RP_GND_movingtowardsgermany_vi
+            }
+            swap_ideas = {
+                remove_idea = RP_GND_movingtowardsgermany_vi
+                add_idea = RP_GND_movingtowardsgermany_vii
+            }
+        }
+
+        else_if = {
+            limit = {
+                has_idea = RP_GND_movingtowardsgermany_vii
+            }
+            swap_ideas = {
+                remove_idea = RP_GND_movingtowardsgermany_vii
+                add_idea = RP_GND_movingtowardsgermany_viii
+            }
+        }
+    }
+}
+
+country_event = { #GND requests remilitarization
+    id = RP_GND_focustreeevents.2
+    title = RP_GND_focustreeevents.2.t
+    desc = RP_GND_focustreeevents.2.d
+    picture = GFX_report_event_soldiers_in_france
+
+    is_triggered_only = yes
+
+    option = { # Accept
+        name = RP_GND_focustreeevents.2.a
+
+        ai_chance = {
+            base = 10
+        }
+
+        FRA = {
+            country_event = {
+                id = RP_GND_focustreeevents.3
+                hours = 12
+            }
+        }
+    }
+
+    option = { # Reject
+        name = RP_GND_focustreeevents.2.b
+
+        ai_chance = {
+            base = 0
+        }
+
+        FRA = {
+            country_event = {
+                id = RP_GND_focustreeevents.4
+                hours = 12
+            }
+        }
+    }
+}
+
+country_event = { #Germany accepts
+    id = RP_GND_focustreeevents.3
+    title = RP_GND_focustreeevents.3.t
+    desc = RP_GND_focustreeevents.3.d
+    picture = GFX_report_event_soldiers_in_france
+
+    is_triggered_only = yes
+
+    option = { # Accept
+        name = RP_GND_focustreeevents.3.a
+
+        every_state = {
+            limit = {
+                is_owned_by = FRA
+                is_demilitarized_zone = yes
+            }
+            set_demilitarized_zone = no
+        }
+
+        swap_ideas = {
+            remove_idea = RP_governmentofnationaldefense
+            add_idea = RP_governmentofnationaldefense_enabledideas
+        }
+
+        add_ideas = {
+            RP_GND_limitedrearmament
+        }
+
+        GER = {
+            add_ideas = {
+                RP_GER_rearmamentpayments
+            }
+        }
+    }
+
+    option = { # Reject
+        name = RP_GND_focustreeevents.3.b
+    }
+}
+
+country_event = { #Germany rejects
+    id = RP_GND_focustreeevents.4
+    title = RP_GND_focustreeevents.4.t
+    desc = RP_GND_focustreeevents.4.d
+    picture = GFX_report_event_soldiers_in_france
+
+    is_triggered_only = yes
+
+    option = {
+
+    }
+}

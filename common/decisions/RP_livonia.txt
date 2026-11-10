@@ -1,0 +1,799 @@
+KLV_army_managment = {
+	KLV_ritterbruder1 = {
+		icon = generic_cavalry
+		available = {
+			has_completed_focus = KLV_establish_sword_brethren
+		}
+		visible = {
+			has_completed_focus = KLV_establish_sword_brethren
+		}
+		fire_only_once = yes
+		cost = 10
+		complete_effect = {
+		  190 = {
+			create_unit = {
+				division = "name = \"1. Livonian Ritterbrüder Division\" division_template = \"Ritterbrüder\" start_experience_factor = 1.0"
+				owner = ROOT
+				prioritize_location = 3296
+			}
+		  }
+		  add_equipment_to_stockpile = {
+    			type = infantry_equipment
+    			amount = 1800
+   				 producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+    			type = artillery_equipment
+    			amount = 80
+   				 producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+    			type = support_equipment
+    			amount = 100
+   				 producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+    			type = motorized_equipment_1
+    			amount = 100
+   				 producer = ROOT
+			}
+		}
+	}
+	KLV_ritterbruder2 = {
+		icon = generic_cavalry
+		available = {
+			has_completed_focus = KLV_establish_sword_brethren
+		}
+		visible = {
+			has_completed_focus = KLV_establish_sword_brethren
+		}
+		fire_only_once = yes
+		cost = 10
+		complete_effect = {
+		  190 = {
+			create_unit = {
+				division = "name = \"2. Livonian Ritterbrüder Division\" division_template = \"Ritterbrüder\" start_experience_factor = 1.0"
+				owner = ROOT
+				prioritize_location = 3296
+			}
+		  }
+		  add_equipment_to_stockpile = {
+    			type = infantry_equipment
+    			amount = 1800
+   				 producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+    			type = artillery_equipment
+    			amount = 80
+   				 producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+    			type = support_equipment
+    			amount = 100
+   				 producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+    			type = motorized_equipment_1
+    			amount = 100
+   				 producer = ROOT
+			}
+		}
+	}
+	KLV_ritterbruder3 = {
+		icon = generic_cavalry
+		available = {
+			has_completed_focus = KLV_establish_sword_brethren
+		}
+		visible = {
+			has_completed_focus = KLV_establish_sword_brethren
+		}
+		fire_only_once = yes
+		cost = 10
+		complete_effect = {
+		  190 = {
+			create_unit = {
+				division = "name = \"3. Livonian Ritterbrüder Division\" division_template = \"Ritterbrüder\" start_experience_factor = 1.0"
+				owner = ROOT
+				prioritize_location = 3296
+			}
+		  }
+		  add_equipment_to_stockpile = {
+    			type = infantry_equipment
+    			amount = 1800
+   				 producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+    			type = artillery_equipment
+    			amount = 80
+   				 producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+    			type = support_equipment
+    			amount = 100
+   				 producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+    			type = motorized_equipment_1
+    			amount = 100
+   				 producer = ROOT
+			}
+		}
+	}
+	KLV_dienstbruder1 = {
+		icon = hol_draw_up_staff_plans
+		available = {
+			has_completed_focus = KLV_establish_sword_brethren
+		}
+		visible = {
+			has_completed_focus = KLV_establish_sword_brethren
+		}
+		fire_only_once = yes
+		cost = 10
+		complete_effect = {
+		  190 = {
+			create_unit = {
+				division = "name = \"1. Livonian Dienstbrüder Division\" division_template = \"Dienstbrüder\" start_experience_factor = 1.0"
+				owner = ROOT
+				prioritize_location = 9262
+			}
+		  }
+		  add_equipment_to_stockpile = {
+    			type = infantry_equipment
+    			amount = 1800
+   				 producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+    			type = artillery_equipment
+    			amount = 80
+   				 producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+    			type = support_equipment
+    			amount = 100
+   				 producer = ROOT
+			}
+		}
+	}
+	KLV_dienstbruder2 = {
+		icon = hol_draw_up_staff_plans
+		available = {
+			has_completed_focus = KLV_establish_sword_brethren
+		}
+		visible = {
+			has_completed_focus = KLV_establish_sword_brethren
+		}
+		fire_only_once = yes
+		cost = 10
+		complete_effect = {
+		  190 = {
+			create_unit = {
+				division = "name = \"2. Livonian Dienstbrüder Division\" division_template = \"Dienstbrüder\" start_experience_factor = 1.0"
+				owner = ROOT
+				prioritize_location = 11246
+			}
+		  }
+		  add_equipment_to_stockpile = {
+    			type = infantry_equipment
+    			amount = 1800
+   				 producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+    			type = artillery_equipment
+    			amount = 80
+   				 producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+    			type = support_equipment
+    			amount = 100
+   				 producer = ROOT
+			}
+		}
+	}
+	KLV_dienstbruder3 = {
+		icon = hol_draw_up_staff_plans
+		available = {
+			has_completed_focus = KLV_establish_sword_brethren
+		}
+		visible = {
+			has_completed_focus = KLV_establish_sword_brethren
+		}
+		fire_only_once = yes
+		cost = 10
+		complete_effect = {
+		  190 = {
+			create_unit = {
+				division = "name = \"3. Livonian Dienstbrüder Division\" division_template = \"Dienstbrüder\" start_experience_factor = 1.0"
+				owner = ROOT
+				prioritize_location = 310
+			}
+		  }
+		  add_equipment_to_stockpile = {
+    			type = infantry_equipment
+    			amount = 1800
+   				 producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+    			type = artillery_equipment
+    			amount = 80
+   				 producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+    			type = support_equipment
+    			amount = 100
+   				 producer = ROOT
+			}
+		}
+	}
+	KLV_dienstbruder4 = {
+		icon = hol_draw_up_staff_plans
+		available = {
+			has_completed_focus = KLV_establish_sword_brethren
+		}
+		visible = {
+			has_completed_focus = KLV_establish_sword_brethren
+		}
+		fire_only_once = yes
+		cost = 10
+		complete_effect = {
+		  190 = {
+			create_unit = {
+				division = "name = \"4. Livonian Dienstbrüder Division\" division_template = \"Dienstbrüder\" start_experience_factor = 1.0"
+				owner = ROOT
+				prioritize_location = 809
+			}
+		  }
+		  add_equipment_to_stockpile = {
+    			type = infantry_equipment
+    			amount = 1800
+   				 producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+    			type = artillery_equipment
+    			amount = 80
+   				 producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+    			type = support_equipment
+    			amount = 100
+   				 producer = ROOT
+			}
+		}
+	}
+	KLV_gastbruder1 = {
+		icon = generic_reorganize_irregulars
+		available = {
+			OR = {
+				has_country_flag = preparing_bavarian_coup
+				has_war = yes
+			}
+		}
+		visible = {
+			has_completed_focus = KLV_establish_sword_brethren
+		}
+		fire_only_once = yes
+		cost = 10
+		complete_effect = {
+		  812 = {
+			create_unit = {
+				division = "name = \"1. Livonian Gastbrüder Division\" division_template = \"Gastbrüder\" start_experience_factor = 1.0"
+				owner = ROOT
+				prioritize_location = 496
+			}
+		  }
+		  add_equipment_to_stockpile = {
+    			type = infantry_equipment
+    			amount = 1500
+   				 producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+    			type = artillery_equipment
+    			amount = 50
+   				 producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+    			type = support_equipment
+    			amount = 100
+   				 producer = ROOT
+			}
+		}
+	}
+	KLV_gastbruder2 = {
+		icon = generic_reorganize_irregulars
+		available = {
+			OR = {
+				has_country_flag = preparing_bavarian_coup
+				has_war = yes
+			}
+		}
+		visible = {
+			has_completed_focus = KLV_establish_sword_brethren
+		}
+		fire_only_once = yes
+		cost = 10
+		complete_effect = {
+		  812 = {
+			create_unit = {
+				division = "name = \"2. Livonian Gastbrüder Division\" division_template = \"Gastbrüder\" start_experience_factor = 1.0"
+				owner = ROOT
+				prioritize_location = 567
+			}
+		  }
+		  add_equipment_to_stockpile = {
+    			type = infantry_equipment
+    			amount = 1500
+   				 producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+    			type = artillery_equipment
+    			amount = 50
+   				 producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+    			type = support_equipment
+    			amount = 100
+   				 producer = ROOT
+			}
+		}
+	}
+	KLV_gastbruder3 = {
+		icon = generic_reorganize_irregulars
+		available = {
+			OR = {
+				has_country_flag = preparing_bavarian_coup
+				has_war = yes
+			}
+		}
+		visible = {
+			has_completed_focus = KLV_establish_sword_brethren
+		}
+		fire_only_once = yes
+		cost = 10
+		complete_effect = {
+		  812 = {
+			create_unit = {
+				division = "name = \"3. Livonian Gastbrüder Division\" division_template = \"Gastbrüder\" start_experience_factor = 1.0"
+				owner = ROOT
+				prioritize_location = 3152
+			}
+		  }
+		  add_equipment_to_stockpile = {
+    			type = infantry_equipment
+    			amount = 1500
+   				 producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+    			type = artillery_equipment
+    			amount = 50
+   				 producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+    			type = support_equipment
+    			amount = 100
+   				 producer = ROOT
+			}
+		}
+	}
+	KLV_gastbruder4 = {
+		icon = generic_reorganize_irregulars
+		available = {
+			OR = {
+				has_country_flag = preparing_bavarian_coup
+				has_war = yes
+			}
+		}
+		visible = {
+			has_completed_focus = KLV_establish_sword_brethren
+		}
+		fire_only_once = yes
+		cost = 10
+		complete_effect = {
+		  809 = {
+			create_unit = {
+				division = "name = \"4. Livonian Gastbrüder Division\" division_template = \"Gastbrüder\" start_experience_factor = 1.0"
+				owner = ROOT
+				prioritize_location = 6222
+			}
+		  }
+		  add_equipment_to_stockpile = {
+    			type = infantry_equipment
+    			amount = 1500
+   				 producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+    			type = artillery_equipment
+    			amount = 50
+   				 producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+    			type = support_equipment
+    			amount = 100
+   				 producer = ROOT
+			}
+		}
+	}
+}
+
+KLV_bavarian_rebellion_category = {
+	KLV_infiltrate_germany = {
+		icon = infiltrate_state
+		available = {
+			has_completed_focus = KLV_prepare_bavarian_revolt
+		}
+		visible = {
+			has_completed_focus = KLV_prepare_bavarian_revolt
+		}
+		fire_only_once = yes
+		days_remove = 7
+		cost = 15
+		remove_effect = {
+			set_country_flag = KLV_infiltrated_germany
+			add_to_variable = {
+				var = KLV_bavarian_catholic_support
+				value = 5
+				tooltip = KLV_bavarian_addfive_catholic_support
+			}
+			clamp_variable = {
+				var = KLV_bavarian_catholic_support
+				min = 0
+				max = 100
+			}
+		}
+	}
+	KLV_catholic_propaganda = {
+		icon = eng_propaganda_campaigns
+		available = {
+			has_country_flag = KLV_infiltrated_germany
+		}
+		visible = {
+			has_completed_focus = KLV_prepare_bavarian_revolt
+		}
+		fire_only_once = yes
+		days_remove = 35
+		cost = 50
+		remove_effect = {
+			add_to_variable = {
+				var = KLV_bavarian_catholic_support
+				value = 10
+				tooltip = KLV_bavarian_addten_catholic_support
+			}
+			clamp_variable = {
+				var = KLV_bavarian_catholic_support
+				min = 0
+				max = 100
+			}
+		}
+	}
+	KLV_arm_catholic_militias = {
+		icon = CHL_carabineros
+		available = {
+			has_country_flag = KLV_infiltrated_germany
+			has_equipment = {
+            infantry_equipment > 999
+        	}
+		}
+		visible = {
+			has_completed_focus = KLV_prepare_bavarian_revolt
+		}
+		custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 999 }
+		}
+		fire_only_once = yes
+		days_remove = 35
+		custom_cost_text = decision_cost_ie_1000
+		remove_effect = {
+			add_to_variable = {
+				var = KLV_bavarian_catholic_support
+				value = 20
+				tooltip = KLV_bavarian_add20_catholic_support
+			}
+			add_equipment_to_stockpile = {
+            type = infantry_equipment
+            amount = -1000
+        	}
+			clamp_variable = {
+				var = KLV_bavarian_catholic_support
+				min = 0
+				max = 100
+			}
+		}
+	}
+	KLV_sway_german_officials = {
+		icon = eng_trade_unions_support
+		available = {
+			has_country_flag = KLV_infiltrated_germany
+		}
+		visible = {
+			has_completed_focus = KLV_prepare_bavarian_revolt
+		}
+
+		fire_only_once = yes
+		days_remove = 21
+		cost = 50
+		remove_effect = {
+			add_to_variable = {
+				var = KLV_bavarian_catholic_support
+				value = 15
+				tooltip = KLV_bavarian_addfifteen_catholic_support
+			}
+			clamp_variable = {
+				var = KLV_bavarian_catholic_support
+				min = 0
+				max = 100
+			}
+		}
+	}
+	KLV_construct_defenses = {
+		icon = generic_construction
+		available = {
+			has_country_flag = KLV_infiltrated_germany
+			num_of_civilian_factories_available_for_projects > 2
+		}
+		visible = {
+			has_completed_focus = KLV_prepare_bavarian_revolt
+		}
+
+		fire_only_once = yes
+		days_remove = 42
+		cost = 25
+		modifier = {
+			civilian_factory_use = 3
+		}
+		remove_effect = {
+			add_to_variable = {
+				var = KLV_bavarian_catholic_support
+				value = 15
+				tooltip = KLV_bavarian_addfifteen_catholic_support
+			}
+			clamp_variable = {
+				var = KLV_bavarian_catholic_support
+				min = 0
+				max = 100
+			}
+			53 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 586
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 571
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 3299
+				}
+			}	
+			52 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 6540
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 708
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 9666
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 11638
+				}
+			}
+			
+		}
+	}
+	KLV_infiltrate_austria = {
+		icon = infiltrate_state
+		available = {
+			has_completed_focus = KLV_prepare_bavarian_revolt
+		}
+		visible = {
+			has_completed_focus = KLV_prepare_bavarian_revolt
+		}
+		fire_only_once = yes
+		days_remove = 7
+		cost = 15
+		remove_effect = {
+			set_country_flag = KLV_infiltrated_austria
+			add_to_variable = {
+				var = KLV_bavarian_catholic_support
+				value = 5
+				tooltip = KLV_bavarian_addfive_catholic_support
+			}
+			clamp_variable = {
+				var = KLV_bavarian_catholic_support
+				min = 0
+				max = 100
+			}
+			
+		}
+	}
+	KLV_sway_austrian_officials = {
+		icon = eng_trade_unions_support
+		available = {
+			has_country_flag = KLV_infiltrated_austria
+		}
+		visible = {
+			has_completed_focus = KLV_prepare_bavarian_revolt
+		}
+
+		fire_only_once = yes
+		days_remove = 21
+		cost = 50
+		remove_effect = {
+			add_to_variable = {
+				var = KLV_bavarian_catholic_support
+				value = 15
+				tooltip = KLV_bavarian_addfifteen_catholic_support
+			}
+			clamp_variable = {
+				var = KLV_bavarian_catholic_support
+				min = 0
+				max = 100
+			}
+		}
+	}
+	KLV_arm_catholic_militias2 = {
+		icon = CHL_carabineros
+		available = {
+			has_country_flag = KLV_infiltrated_austria
+			has_equipment = {
+            infantry_equipment > 999
+        	}
+		}
+		visible = {
+			has_completed_focus = KLV_prepare_bavarian_revolt
+		}
+		custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 999 }
+		}
+		fire_only_once = yes
+		days_remove = 35
+		custom_cost_text = decision_cost_ie_1000
+		remove_effect = {
+			add_to_variable = {
+				var = KLV_bavarian_catholic_support
+				value = 20
+				tooltip = KLV_bavarian_add20_catholic_support
+			}
+			add_equipment_to_stockpile = {
+            type = infantry_equipment
+            amount = -1000
+        	}
+			clamp_variable = {
+				var = KLV_bavarian_catholic_support
+				min = 0
+				max = 100
+			}
+		}
+	}
+	KLV_puppet_bavaria = {
+		icon = eng_trade_unions_demand
+		available = {
+			has_country_flag = southern_crusade
+			country_exists = BAY
+		}
+		visible = {
+			has_country_flag = southern_crusade
+		}
+
+		fire_only_once = yes
+		days_remove = 21
+		cost = 100
+		remove_effect = {
+			KLV = {
+				set_autonomy = {
+   					target = BAY
+   					autonomous_state = autonomy_RP_holy_order
+    				end_wars = no
+    				end_civil_wars = no
+				}
+			}
+			BAY = {
+				set_cosmetic_tag = BAY_bishopric
+			}
+		}
+	}
+	KLV_peace_germany = {
+		icon = eng_trade_unions_support
+		available = {
+			has_country_flag = southern_crusade
+			763 = {
+				is_controlled_by = KLV
+			}
+			85 = {
+				is_controlled_by = KLV
+			}
+			807 = {
+				is_controlled_by = KLV
+			}
+			63 = {
+				is_controlled_by = KLV
+			}
+			54 = {
+				OR = {
+					is_controlled_by = BAY
+					is_controlled_by = KAU
+				}
+			}
+			50 = {
+				OR = {
+					is_controlled_by = BAY
+					is_controlled_by = KAU
+				}
+			}
+
+		}
+		visible = {
+			has_country_flag = southern_crusade
+		}
+
+		fire_only_once = yes
+		days_remove = 7
+		cost = 15
+		remove_effect = {
+			GER = {
+				country_event = RP_livoniaevents.12
+			}
+		}
+	}
+}
+KUK_ukrainian_border_raids = {
+	KUK_invade_rostov = {
+		icon = decision_border_war
+		available = {
+			has_completed_focus = KUK_pan_ukrainian_state
+			NOT = {
+				218 = {state_is_fully_controlled_by_ROOT_subject_or_faction_member = yes}
+			}
+		}
+		visible = {
+			has_completed_focus = KUK_pan_ukrainian_state
+		}
+		fire_only_once = yes
+		cost = 15
+		days_remove = 1
+		complete_effect = {
+			transfer_state = 218
+			218 = { add_core_of = KUK }
+		}
+	}
+	KUK_invade_pink_ukraine = {
+		icon = decision_border_war
+		available = {
+			has_completed_focus = KUK_pan_ukrainian_state
+			KUK = {
+				owns_state = 218
+			}
+			NOT = {
+				234 = {state_is_fully_controlled_by_ROOT_subject_or_faction_member = yes}
+			}
+		}
+		visible = {
+			has_completed_focus = KUK_pan_ukrainian_state
+		}
+		fire_only_once = yes
+		cost = 25
+		days_remove = 1
+		complete_effect = {
+			transfer_state = 234
+			234 = { add_core_of = KUK }
+		}
+	}
+}

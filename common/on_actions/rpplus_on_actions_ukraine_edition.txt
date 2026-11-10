@@ -1,0 +1,96 @@
+on_actions = {
+	on_capitulation = {		
+		effect = {
+			if = {
+				limit = {
+					ROOT = {
+						tag = KUK
+					}
+					FROM = {
+						OR = {
+							tag = UAN
+							tag = UBA
+							tag = UPR
+						}
+					}
+				}
+				UAN = {
+					white_peace = ROOT
+				}
+				UBA = {
+					white_peace = ROOT
+				}
+				UPR = {
+					white_peace = ROOT
+				}
+				if = {
+					limit = {
+						country_exists = UAN
+					}
+					UAN = {
+						transfer_state = 225
+					}
+				}
+				if = {
+					limit = {
+						country_exists = UBA
+					}
+					UBA = {
+						transfer_state = 221
+						transfer_state = 226
+						transfer_state = 200
+						transfer_state = 196
+					}
+				}
+				if = {
+					limit = {
+						country_exists = UPR
+					}
+					UPR = {
+						every_state = {
+							limit = {
+								is_controlled_by = KUK
+								is_core_of = KUK
+							}
+							transfer_state_to = UPR
+						}
+					}
+				}
+			}
+		}
+	}
+	on_capitulation = {		
+		effect = {
+			if = {
+				limit = {
+					ROOT = {
+						OR = {
+							tag = UAN
+							tag = UBA
+							tag = UPR
+							tag = UWU
+							tag = UMD
+							tag = UCR
+							tag = KKH
+						}
+					}
+					FROM = {
+						OR = {
+							tag = GER
+							is_puppet_of = GER
+						}
+					}
+				}
+				GER = {
+					white_peace = ROOT
+				}
+				every_state = {
+					limit = {
+						is_owned_by = ROOT
+					}
+					transfer_state_to = GER
+				}
+			}
+		}
+	}
+}

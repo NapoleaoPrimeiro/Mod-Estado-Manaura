@@ -1,0 +1,1191 @@
+add_namespace = RP_spanishcrackdownevents
+add_namespace = RP_spanishcoupevents
+add_namespace = RP_leopoldplot_newsevents
+
+country_event = { # Spanish Interference
+    id = RP_spanishcrackdownevents.1
+    title = RP_spanishcrackdownevents.1.t
+    desc = RP_spanishcrackdownevents.1.d
+    picture = GFX_report_event_generic_communist_militia
+
+    is_triggered_only = yes
+
+    option = { # Well that's unfortunate
+        name = RP_spanishcrackdownevents.1.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        custom_effect_tooltip = RP_leopoldplot_crackdowneffect_tt
+
+        hidden_effect = {
+            if = {
+                limit = {
+                    check_variable = {
+                        var = RP_leopoldplot_crackdownchance
+                        value = 25
+                        compare = less_than_or_equals
+                    }
+                }
+
+                random_list = {
+                    20 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_economyinfluence
+                            value = 5
+                            tooltip = RP_leopoldplot_subtractfive_economyinfluence
+                        }
+                    }
+
+                    15 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_economyinfluence
+                            value = 10
+                            tooltip = RP_leopoldplot_subtractten_economyinfluence
+                        }
+                    }
+
+                    10 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_economyinfluence
+                            value = 15
+                            tooltip = RP_leopoldplot_subtractfifteen_economyinfluence
+                        }
+                    }
+
+                    5 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_economyinfluence
+                            value = 20
+                            tooltip = RP_leopoldplot_subtracttwenty_economyinfluence
+                        }
+                    }
+                }
+
+                random_list = {
+                    20 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_militaryinfluence
+                            value = 5
+                            tooltip = RP_leopoldplot_subtractfive_militaryinfluence
+                        }
+                    }
+
+                    15 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_militaryinfluence
+                            value = 10
+                            tooltip = RP_leopoldplot_subtractten_militaryinfluence
+                        }
+                    }
+
+                    10 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_militaryinfluence
+                            value = 15
+                            tooltip = RP_leopoldplot_subtractfifteen_militaryinfluence
+                        }
+                    }
+
+                    5 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_militaryinfluence
+                            value = 20
+                            tooltip = RP_leopoldplot_subtracttwenty_militaryinfluence
+                        }
+                    }
+                }
+
+                random_list = {
+                    20 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_administrativeinfluence
+                            value = 5
+                            tooltip = RP_leopoldplot_subtractfive_administrativeinfluence
+                        }
+                    }
+
+                    15 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_administrativeinfluence
+                            value = 10
+                            tooltip = RP_leopoldplot_subtractten_administrativeinfluence
+                        }
+                    }
+
+                    10 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_administrativeinfluence
+                            value = 15
+                            tooltip = RP_leopoldplot_subtractfifteen_administrativeinfluence
+                        }
+                    }
+
+                    5 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_administrativeinfluence
+                            value = 20
+                            tooltip = RP_leopoldplot_subtracttwenty_administrativeinfluence
+                        }
+                    }
+                }
+            }
+
+            if = {
+                limit = {
+                    check_variable = {
+                        var = RP_leopoldplot_crackdownchance
+                        value = 26
+                        compare = greater_than_or_equals
+                    }
+                    
+                    check_variable = {
+                        var = RP_leopoldplot_crackdownchance
+                        value = 75
+                        compare = less_than_or_equals
+                    }
+                }
+
+                random_list = {
+                    15 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_economyinfluence
+                            value = 5
+                            tooltip = RP_leopoldplot_subtractfive_economyinfluence
+                        }
+                    }
+
+                    20 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_economyinfluence
+                            value = 10
+                            tooltip = RP_leopoldplot_subtractten_economyinfluence
+                        }
+                    }
+
+                    10 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_economyinfluence
+                            value = 15
+                            tooltip = RP_leopoldplot_subtractfifteen_economyinfluence
+                        }
+                    }
+
+                    5 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_economyinfluence
+                            value = 20
+                            tooltip = RP_leopoldplot_subtracttwenty_economyinfluence
+                        }
+                    }
+                }
+
+                random_list = {
+                    15 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_militaryinfluence
+                            value = 5
+                            tooltip = RP_leopoldplot_subtractfive_militaryinfluence
+                        }
+                    }
+
+                    20 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_militaryinfluence
+                            value = 10
+                            tooltip = RP_leopoldplot_subtractten_militaryinfluence
+                        }
+                    }
+
+                    10 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_militaryinfluence
+                            value = 15
+                            tooltip = RP_leopoldplot_subtractfifteen_militaryinfluence
+                        }
+                    }
+
+                    5 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_militaryinfluence
+                            value = 20
+                            tooltip = RP_leopoldplot_subtracttwenty_militaryinfluence
+                        }
+                    }
+                }
+
+                random_list = {
+                    15 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_administrativeinfluence
+                            value = 5
+                            tooltip = RP_leopoldplot_subtractfive_administrativeinfluence
+                        }
+                    }
+
+                    20 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_administrativeinfluence
+                            value = 10
+                            tooltip = RP_leopoldplot_subtractten_administrativeinfluence
+                        }
+                    }
+
+                    10 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_administrativeinfluence
+                            value = 15
+                            tooltip = RP_leopoldplot_subtractfifteen_administrativeinfluence
+                        }
+                    }
+
+                    5 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_administrativeinfluence
+                            value = 20
+                            tooltip = RP_leopoldplot_subtracttwenty_administrativeinfluence
+                        }
+                    }
+                }
+            }
+
+            if = {
+                limit = {
+                    check_variable = {
+                        var = RP_leopoldplot_crackdownchance
+                        value = 76
+                        compare = greater_than_or_equals
+                    }
+                }
+
+                random_list = {
+                    10 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_economyinfluence
+                            value = 5
+                            tooltip = RP_leopoldplot_subtractfive_economyinfluence
+                        }
+                    }
+
+                    15 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_economyinfluence
+                            value = 10
+                            tooltip = RP_leopoldplot_subtractten_economyinfluence
+                        }
+                    }
+
+                    20 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_economyinfluence
+                            value = 15
+                            tooltip = RP_leopoldplot_subtractfifteen_economyinfluence
+                        }
+                    }
+
+                    5 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_economyinfluence
+                            value = 20
+                            tooltip = RP_leopoldplot_subtracttwenty_economyinfluence
+                        }
+                    }
+                }
+
+                random_list = {
+                    10 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_militaryinfluence
+                            value = 5
+                            tooltip = RP_leopoldplot_subtractfive_militaryinfluence
+                        }
+                    }
+
+                    15 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_militaryinfluence
+                            value = 10
+                            tooltip = RP_leopoldplot_subtractten_militaryinfluence
+                        }
+                    }
+
+                    20 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_militaryinfluence
+                            value = 15
+                            tooltip = RP_leopoldplot_subtractfifteen_militaryinfluence
+                        }
+                    }
+
+                    5 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_militaryinfluence
+                            value = 20
+                            tooltip = RP_leopoldplot_subtracttwenty_militaryinfluence
+                        }
+                    }
+                }
+
+                random_list = {
+                    10 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_administrativeinfluence
+                            value = 5
+                            tooltip = RP_leopoldplot_subtractfive_administrativeinfluence
+                        }
+                    }
+
+                    15 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_administrativeinfluence
+                            value = 10
+                            tooltip = RP_leopoldplot_subtractten_administrativeinfluence
+                        }
+                    }
+
+                    20 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_administrativeinfluence
+                            value = 15
+                            tooltip = RP_leopoldplot_subtractfifteen_administrativeinfluence
+                        }
+                    }
+
+                    5 = {
+                        subtract_from_variable = {
+                            var = RP_leopoldplot_administrativeinfluence
+                            value = 20
+                            tooltip = RP_leopoldplot_subtracttwenty_administrativeinfluence
+                        }
+                    }
+                }
+            }
+
+            RP_leopoldplot_calculateaverage = yes
+
+            divide_variable = {
+                var = RP_leopoldplot_crackdownchance
+                value = 2
+            }
+        }
+    }
+}
+
+country_event = { #Coup Successful
+    id = RP_spanishcoupevents.1
+    title = RP_spanishcoupevents.1.t
+    desc = RP_spanishcoupevents.1.d
+    picture = GFX_report_event_generic_communist_militia
+
+    is_triggered_only = yes
+
+    option = { # Yay!
+        name = RP_spanishcoupevents.1.a
+
+        ai_chance = {
+            base = 5
+        }
+    }
+}
+
+country_event = { #Spanish nationalist garrisons in Spanish Africa split 
+    id = RP_spanishcoupevents.2
+    title = RP_spanishcoupevents.2.t
+    desc = RP_spanishcoupevents.2.d
+    picture = GFX_report_event_spr_army_of_africa
+
+    is_triggered_only = yes
+
+    option = { # We will retake the land!
+        name = RP_spanishcoupevents.2.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        every_state = {
+            limit = {
+                is_on_continent = africa
+                OR = {
+                    is_owned_by = SPR
+                    is_owned_by = KSP
+                }
+            }
+            transfer_state_to = SFC
+            add_core_of = SFC
+        }
+
+        ENG = { give_guarantee = SFC }
+        FRA = { give_guarantee = SFC }
+
+        declare_war_on = {
+            target = SFC
+            type = annex_everything
+        }
+
+        news_event = {
+            id = RP_leopoldplot_newsevents.3
+            hours = 12
+        }
+    }
+
+    option = { # Um yeah no I'm good thanks :p
+        name = RP_spanishcoupevents.2.b
+
+        ai_chance = {
+            base = 5
+        }
+
+        every_state = {
+            limit = {
+                is_on_continent = africa
+                OR = {
+                    is_owned_by = SPR
+                    is_owned_by = KSP
+                }
+            }
+            transfer_state_to = SFC
+            add_core_of = SFC
+        }
+
+        news_event = {
+            id = RP_leopoldplot_newsevents.3
+            hours = 12
+        }
+
+        ENG = { give_guarantee = SFC }
+        FRA = { give_guarantee = SFC }
+    }
+}
+
+country_event = { #Coup fails 
+    id = RP_spanishcoupevents.3
+    title = RP_spanishcoupevents.3.t
+    desc = RP_spanishcoupevents.3.d
+    picture = GFX_report_event_spr_carlists2
+
+    is_triggered_only = yes
+
+    option = { # We will keep fighting!
+        name = RP_spanishcoupevents.3.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        RP_leopoldplot_coupfailure_effect = yes
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        add_political_power = -100
+        add_command_power = -50
+        army_experience = -15
+        navy_experience = -5
+        air_experience = -5
+    }
+
+    option = { # It is a useless attempt
+        name = RP_spanishcoupevents.3.b
+
+        ai_chance = {
+            base = 5
+        }
+
+        add_political_power = -100
+        add_command_power = -50
+        army_experience = -15
+        navy_experience = -5
+        air_experience = -5
+    }
+}
+
+country_event = { #Italy - Seize the Balearic Islands? 
+    id = RP_spanishcoupevents.4
+    title = RP_spanishcoupevents.4.t
+    desc = RP_spanishcoupevents.4.d
+    picture = GFX_report_event_ast_navy
+
+    is_triggered_only = yes
+
+    option = { # Yes of course
+        name = RP_spanishcoupevents.4.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        if = {
+            limit = {
+                any_country = {
+                    owns_state = 177
+                    is_subject = no
+                }
+            }
+            177 = {
+                owner = {
+                    country_event = {
+                        id = RP_spanishcoupevents.5
+                        hours = 12
+                    }
+                }
+            }
+        }
+
+        else = {
+            every_country = {
+                limit = {
+                    any_country = {
+                        owns_state = 177
+                        is_subject_of = PREV
+                    }
+                }
+                country_event = {
+                    id = RP_spanishcoupevents.5
+                    hours = 12
+                }
+            }
+        }
+    }
+
+    option = { # Not worth it
+        name = RP_spanishcoupevents.4.b
+
+        ai_chance = {
+            base = 0
+        }
+    }
+}
+
+country_event = { #Owner of Balearic Islands - Italy seizes the islands
+    id = RP_spanishcoupevents.5
+    title = RP_spanishcoupevents.5.t
+    desc = RP_spanishcoupevents.5.d
+    picture = GFX_report_event_ast_navy
+
+    is_triggered_only = yes
+
+    option = { # Um.. no?
+        name = RP_spanishcoupevents.5.b
+
+        ai_chance = {
+            base = 5
+        }
+
+        declare_war_on = {
+            target = ITA
+            type = annex_everything
+        }
+
+        hidden_effect = {
+            news_event = {
+                id = RP_leopoldplot_newsevents.5
+                hours = 12
+            }
+        }
+    }
+
+    option = { # Fighting isn't worth it
+        name = RP_spanishcoupevents.5.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        every_state = {
+            limit = {
+                state = 177
+            }
+            transfer_state_to = ITA
+        }
+
+        hidden_effect = {
+            news_event = {
+                id = RP_leopoldplot_newsevents.4
+                hours = 12
+            }
+        }
+    }
+}
+
+country_event = { # Question of the New Regime
+    id = RP_spanishcoupevents.6
+    title = RP_spanishcoupevents.6.t
+    desc = RP_spanishcoupevents.6.d
+    picture = GFX_report_event_spr_occupation_of_tangiers
+
+    is_triggered_only = yes
+
+    option = { # Install Fredrick Hohenzollern in Spain
+        name = RP_spanishcoupevents.6.a
+
+        ai_chance = {
+            base = 0
+        }
+
+        set_country_flag = RP_fredrichhohenzollern_spain
+
+        custom_effect_tooltip = RP_fateofspainthrone_fredrickhohenzollern_effect_tt
+
+        hidden_effect = {
+            set_autonomy = { target = KSP autonomous_state = autonomy_RP_kaiserreich_puppet }
+
+            KSP = {
+                every_state = {
+                    limit = {
+                        is_owned_by = KSP
+                        OR = {
+                            state = 173
+                            state = 174
+                            state = 790
+                            state = 788
+                            state = 170
+                            state = 41
+                            state = 789
+                            state = 791
+                            state = 176
+                            state = 792
+                            state = 172
+                            state = 166
+                            state = 794
+                            state = 165
+                            state = 793
+                            state = 175
+                            state = 169
+                            state = 168
+                            state = 167
+                        }
+                    }
+                    set_state_flag = RP_territorialdecision_complete
+                }
+
+                drop_cosmetic_tag = yes
+                    
+                create_country_leader = {
+                    name = "Friedrich Viktor Pius"
+                    picture = GFX_portrait_KSP_fredrick_hohenzollern
+                    expire = "1999.1.1"
+                    ideology = despotism
+                    traits = {
+                    }
+                }
+                
+                set_party_name = {
+                    ideology = neutrality
+                    name = KSP_neutrality_party
+                }
+            }
+        }
+    }
+
+    option = { # Install Infante Juan in Spain
+        name = RP_spanishcoupevents.6.b
+
+        ai_chance = {
+            base = 5
+        }
+
+        set_country_flag = RP_infantejuan_spain
+
+        custom_effect_tooltip = RP_fateofspainthrone_infantejuan_effect_tt
+
+        hidden_effect = {
+            set_autonomy = { target = KSP autonomous_state = autonomy_RP_kaiserreich_puppet }
+
+            KSP = {
+                every_state = {
+                    limit = {
+                        is_owned_by = KSP
+                        OR = {
+                            state = 173
+                            state = 174
+                            state = 790
+                            state = 788
+                            state = 170
+                            state = 41
+                            state = 789
+                            state = 791
+                            state = 176
+                            state = 792
+                            state = 172
+                            state = 166
+                            state = 794
+                            state = 165
+                            state = 793
+                            state = 175
+                            state = 169
+                            state = 168
+                            state = 167
+                        }
+                    }
+                    set_state_flag = RP_territorialdecision_complete
+                    add_core_of = KSP
+                }
+
+                set_cosmetic_tag = KSP_bourbon
+                    
+                create_country_leader = {
+                    name = "Infante Juan"
+                    picture = GFX_portrait_KSP_infante_juan
+                    expire = "1999.1.1"
+                    ideology = despotism
+                    traits = {
+                    }
+                }
+                
+                set_party_name = {
+                    ideology = neutrality
+                    name = KSP_bourbon_neutrality_party
+                }
+            }
+        }
+    }
+
+    option = { # Keep the military occupation
+        name = RP_spanishcoupevents.6.c
+
+        custom_effect_tooltip = RP_fateofspainthrone_militarydictatorship_effect_tt
+
+        hidden_effect = {
+            KSP = {
+                every_state = {
+                    limit = {
+                        is_owned_by = KSP
+                        OR = {
+                            state = 173
+                            state = 174
+                            state = 790
+                            state = 788
+                            state = 170
+                            state = 41
+                            state = 789
+                            state = 791
+                            state = 176
+                            state = 792
+                            state = 172
+                            state = 166
+                            state = 794
+                            state = 165
+                            state = 793
+                            state = 175
+                            state = 169
+                            state = 168
+                            state = 167
+                        }
+                    }
+                    set_state_flag = RP_territorialdecision_complete
+                }
+            }
+        }
+
+        ai_chance = {
+            base = 5
+        }
+
+        set_country_flag = RP_militarydictatorship_spain
+    }
+}
+
+news_event = { #Leopold Plot Success
+    id = RP_leopoldplot_newsevents.1
+    title = RP_leopoldplot_newsevents.1.t
+    desc = RP_leopoldplot_newsevents.1.d
+    picture = GFX_news_event_generic_communist_militia
+
+    is_triggered_only = yes
+
+    option = {
+        name = RP_leopoldplot_newsevents.1.a
+
+        trigger = {
+            OR = {
+                tag = GER
+                is_in_faction_with = GER
+            }
+        }
+    }
+
+    option = {
+        name = RP_leopoldplot_newsevents.1.b
+
+        trigger = {
+            OR = {
+                tag = SPR
+                tag = D01
+                tag = D02
+                tag = D03
+                is_in_faction_with = SPR
+                is_in_faction_with = D01
+                is_in_faction_with = D02
+                is_in_faction_with = D03
+            }
+        }
+    }
+
+    option = {
+        name = RP_leopoldplot_newsevents.1.c
+
+        trigger = {
+            OR = {
+                tag = FRA
+                tag = ENG
+                tag = ITA
+            }
+        }
+    }
+
+    option = {
+        name = RP_leopoldplot_newsevents.1.e
+
+        trigger = {
+            NOT = {
+                OR = {
+                    tag = GER
+                    is_in_faction_with = GER
+                }
+                OR = {
+                    tag = SPR
+                    tag = D01
+                    tag = D02
+                    tag = D03
+                    is_in_faction_with = SPR
+                    is_in_faction_with = D01
+                    is_in_faction_with = D02
+                    is_in_faction_with = D03
+                }
+                OR = {
+                    tag = FRA
+                    tag = ENG
+                    tag = ITA
+                }
+            }
+        }
+    }
+}
+
+news_event = { #Leopold Plot Failure
+    id = RP_leopoldplot_newsevents.2
+    title = RP_leopoldplot_newsevents.2.t
+    desc = RP_leopoldplot_newsevents.2.d
+    picture = GFX_news_event_ger_civil_war
+
+    is_triggered_only = yes
+
+    option = {
+        name = RP_leopoldplot_newsevents.2.a
+
+        trigger = {
+            OR = {
+                tag = GER
+                is_in_faction_with = GER
+            }
+        }
+    }
+
+    option = {
+        name = RP_leopoldplot_newsevents.2.b
+
+        trigger = {
+            OR = {
+                tag = SPR
+                tag = D01
+                tag = D02
+                tag = D03
+                is_in_faction_with = SPR
+                is_in_faction_with = D01
+                is_in_faction_with = D02
+                is_in_faction_with = D03
+            }
+        }
+    }
+
+    option = {
+        name = RP_leopoldplot_newsevents.2.c
+
+        trigger = {
+            OR = {
+                tag = FRA
+                tag = ENG
+                tag = ITA
+            }
+        }
+    }
+
+    option = {
+        name = RP_leopoldplot_newsevents.2.e
+
+        trigger = {
+            NOT = {
+                OR = {
+                    tag = GER
+                    is_in_faction_with = GER
+                }
+                OR = {
+                    tag = SPR
+                    tag = D01
+                    tag = D02
+                    tag = D03
+                    is_in_faction_with = SPR
+                    is_in_faction_with = D01
+                    is_in_faction_with = D02
+                    is_in_faction_with = D03
+                }
+                OR = {
+                    tag = FRA
+                    tag = ENG
+                    tag = ITA
+                }
+            }
+        }
+    }
+}
+
+news_event = { #Spanish Africa Splits Off
+    id = RP_leopoldplot_newsevents.3
+    title = RP_leopoldplot_newsevents.3.t
+    desc = RP_leopoldplot_newsevents.3.d
+    picture = GFX_news_event_south_africa_patrol
+
+    is_triggered_only = yes
+
+    option = {
+        name = RP_leopoldplot_newsevents.3.a
+
+        trigger = {
+            OR = {
+                tag = GER
+                is_in_faction_with = GER
+            }
+        }
+    }
+
+    option = {
+        name = RP_leopoldplot_newsevents.3.b
+
+        trigger = {
+            OR = {
+                tag = SPR
+                tag = D01
+                tag = D02
+                tag = D03
+                is_in_faction_with = SPR
+                is_in_faction_with = D01
+                is_in_faction_with = D02
+                is_in_faction_with = D03
+            }
+        }
+    }
+
+    option = {
+        name = RP_leopoldplot_newsevents.3.c
+
+        trigger = {
+            OR = {
+                tag = FRA
+                tag = ENG
+            }
+        }
+    }
+
+    option = {
+        name = RP_leopoldplot_newsevents.3.e
+
+        trigger = {
+            NOT = {
+                OR = {
+                    tag = GER
+                    is_in_faction_with = GER
+                }
+                OR = {
+                    tag = SPR
+                    tag = D01
+                    tag = D02
+                    tag = D03
+                    is_in_faction_with = SPR
+                    is_in_faction_with = D01
+                    is_in_faction_with = D02
+                    is_in_faction_with = D03
+                }
+                OR = {
+                    tag = FRA
+                    tag = ENG
+                }
+            }
+        }
+    }
+}
+
+news_event = { #Italy seizes Balearic Islands
+    id = RP_leopoldplot_newsevents.4
+    title = RP_leopoldplot_newsevents.4.t
+    desc = RP_leopoldplot_newsevents.4.d
+    picture = GFX_news_event_ast_navy
+
+    is_triggered_only = yes
+
+    option = {
+        name = RP_leopoldplot_newsevents.4.a
+
+        trigger = {
+            OR = {
+                tag = GER
+                is_in_faction_with = GER
+            }
+        }
+    }
+
+    option = {
+        name = RP_leopoldplot_newsevents.4.b
+
+        trigger = {
+            OR = {
+                tag = SPR
+                tag = D01
+                tag = D02
+                tag = D03
+                is_in_faction_with = SPR
+                is_in_faction_with = D01
+                is_in_faction_with = D02
+                is_in_faction_with = D03
+            }
+        }
+    }
+
+    option = {
+        name = RP_leopoldplot_newsevents.4.c
+
+        trigger = {
+            OR = {
+                tag = FRA
+                tag = ENG
+            }
+        }
+    }
+
+    option = {
+        name = RP_leopoldplot_newsevents.4.e
+
+        trigger = {
+            NOT = {
+                OR = {
+                    tag = GER
+                    is_in_faction_with = GER
+                }
+                OR = {
+                    tag = SPR
+                    tag = D01
+                    tag = D02
+                    tag = D03
+                    is_in_faction_with = SPR
+                    is_in_faction_with = D01
+                    is_in_faction_with = D02
+                    is_in_faction_with = D03
+                }
+                OR = {
+                    tag = FRA
+                    tag = ENG
+                    tag = ITA
+                }
+            }
+        }
+    }
+
+    option = {
+        name = RP_leopoldplot_newsevents.4.f
+
+        trigger = {
+            OR = {
+                tag = ITA
+                is_in_faction_with = ITA
+            }
+        }
+    }
+}
+
+news_event = { #Balearic War
+    id = RP_leopoldplot_newsevents.5
+    title = RP_leopoldplot_newsevents.5.t
+    desc = RP_leopoldplot_newsevents.5.d
+    picture = GFX_news_event_ast_navy
+
+    is_triggered_only = yes
+
+    option = {
+        name = RP_leopoldplot_newsevents.5.a
+
+        trigger = {
+            OR = {
+                tag = GER
+                is_in_faction_with = GER
+            }
+        }
+    }
+
+    option = {
+        name = RP_leopoldplot_newsevents.5.b
+
+        trigger = {
+            OR = {
+                tag = SPR
+                tag = D01
+                tag = D02
+                tag = D03
+                is_in_faction_with = SPR
+                is_in_faction_with = D01
+                is_in_faction_with = D02
+                is_in_faction_with = D03
+            }
+        }
+    }
+
+    option = {
+        name = RP_leopoldplot_newsevents.5.c
+
+        trigger = {
+            OR = {
+                tag = FRA
+                tag = ENG
+            }
+        }
+    }
+
+    option = {
+        name = RP_leopoldplot_newsevents.5.e
+
+        trigger = {
+            NOT = {
+                OR = {
+                    tag = GER
+                    is_in_faction_with = GER
+                }
+                OR = {
+                    tag = SPR
+                    tag = D01
+                    tag = D02
+                    tag = D03
+                    is_in_faction_with = SPR
+                    is_in_faction_with = D01
+                    is_in_faction_with = D02
+                    is_in_faction_with = D03
+                }
+                OR = {
+                    tag = FRA
+                    tag = ENG
+                    tag = ITA
+                    is_in_faction_with = ITA
+                }
+            }
+        }
+    }
+
+    option = {
+        name = RP_leopoldplot_newsevents.5.f
+
+        trigger = {
+            OR = {
+                tag = ITA
+                is_in_faction_with = ITA
+            }
+        }
+    }
+}

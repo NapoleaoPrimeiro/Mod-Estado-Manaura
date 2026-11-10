@@ -1,0 +1,565 @@
+add_namespace = RP_arabevents
+add_namespace = RP_arabnews
+
+country_event = { # rising tension KNJ KJS
+    id = RP_arabevents.1
+    title = RP_arabevents.1.t
+    desc = RP_arabevents.1.d
+    picture = GFX_report_event_PER_iran_invasion
+
+    is_triggered_only = yes
+
+    option = {
+        name = RP_arabevents.1.a
+
+        ai_chance = {
+            base = 10
+        }
+		
+		custom_effect_tooltip = "We will increase our garrisons in the area to finaly put this petty rivalry to rest."
+		hidden_effect = { 
+			country_event = {
+				id = RP_arabevents.2 #showdown
+				days = 30
+			}
+			set_country_flag = harm_arabia
+		}	
+    }
+
+    option = {
+        name = RP_arabevents.1.b
+
+        ai_chance = {
+            base = 0
+        }
+		
+		custom_effect_tooltip = "This decades old rivalry may just benifit us yet..."
+		hidden_effect = {
+			country_event = {
+				id = RP_arabevents.2 #showdown
+				days = 30
+			}
+			set_country_flag = help_arabia
+		}
+    }
+}
+
+country_event = { # WAR
+    id = RP_arabevents.2
+    title = RP_arabevents.2.t
+    desc = RP_arabevents.2.d
+    picture = GFX_report_event_PER_iran_invasion
+
+    is_triggered_only = yes
+
+    option = { # Pacify Arabia
+        name = RP_arabevents.2.a
+
+        ai_chance = {
+            base = 10
+        }
+		
+		trigger = {
+			has_country_flag = harm_arabia
+			NOT = {
+				has_country_flag = help_arabia
+			}
+		}
+		
+		custom_effect_tooltip = "We will mobilize our troops, seize Ha'il and Riyadh, and arrest their pathetic leaders."
+		hidden_effect = {
+			country_event = {
+				id = RP_arabevents.3 
+				days = 5
+			}
+		}	
+    }
+
+    option = {
+        name = RP_arabevents.2.b # Pick a side
+
+        ai_chance = {
+            base = 0
+        }
+		trigger = {
+			has_country_flag = help_arabia
+			NOT = {
+				has_country_flag = harm_arabia
+			}			
+		}
+		custom_effect_tooltip = "We will take up arms to assist the subject of our choosing."
+		hidden_effect = {
+			country_event = {
+				id = RP_arabevents.4
+				days = 5
+			}
+		}
+    }
+}
+
+
+
+country_event = { # Fate of Arabia
+    id = RP_arabevents.3
+    title = RP_arabevents.3.t
+    desc = RP_arabevents.3.d
+    picture = GFX_report_event_PER_persepolis_party
+
+    is_triggered_only = yes
+
+    option = { # Fuck Nejd in particular
+        name = RP_arabevents.3.a
+
+        ai_chance = {
+            base = 10
+        }
+
+    #    every_state = {
+    #        limit = {
+    #            OR = {
+    #                state = 292
+    #                state = 678
+    #            }
+    #        }
+    #        transfer_state_to = KBV
+    #        add_core_of = KBV
+    #    }
+		custom_effect_tooltip = "We will put Nejd under military occupation, insuring that the insolent House of Saud will never again return to governance."
+		hidden_effect = {
+			KNJ = {
+				set_cosmetic_tag = KNJ_army_state
+			
+				create_country_leader = {
+					name = "Deutsches Heer"
+					picture = GFX_portrait_GER_deutches_heer
+					expire = "1975.1.1"
+					ideology = despotism
+					traits = {
+					}
+				}
+				set_party_name = {
+					ideology = neutrality
+					name = KNJ_army_state_neutrality_party
+				}					
+			}
+		}
+	}
+    option = {
+        name = RP_arabevents.3.b # fuck both of them
+
+        ai_chance = {
+            base = 0
+        }
+		custom_effect_tooltip = "We will put both Nejd and Jabal Shammar under military occupation as punishment for their blantant acts of treason."
+		hidden_effect = {
+			every_state = {
+				limit = {
+					OR = {
+					state = 854
+					state = 857
+				}
+			}
+            transfer_state_to = KNJ
+            add_core_of = KNJ
+			}
+			KNJ = {
+				set_cosmetic_tag = KNJ_army_state
+			
+				create_country_leader = {
+					name = "Deutsches Heer"
+					picture = GFX_portrait_GER_deutches_heer
+					expire = "1975.1.1"
+					ideology = despotism
+					traits = {
+					}
+				}
+				set_party_name = {
+					ideology = neutrality
+					name = KNJ_army_state_neutrality_party
+				}					
+			}	
+		}
+    }
+	
+    option = {
+        name = RP_arabevents.3.c # fuck everyone
+
+        ai_chance = {
+            base = 0
+        }
+		custom_effect_tooltip = "In order to prevent any further acts of rebellion, all of former Saudi Arabia will fall under our jackboot."		
+		hidden_effect = {
+			every_state = {
+				limit = {
+					OR = {
+					state = 854
+					state = 857
+					state = 855
+					state = 856
+					state = 679
+					state = 858
+				}
+			}
+            transfer_state_to = KNJ
+            add_core_of = KNJ
+			}
+			if = {
+				limit = {
+					country_exists = KNH
+					NOT = {
+						country_exists = KPS
+						country_exists = KIQ
+					}
+				}
+				country_event = {
+					id = RP_arabevents.9
+					days = 60
+				}
+			}			
+			KNJ = {
+				set_cosmetic_tag = KNJ_army_state
+			
+				create_country_leader = {
+					name = "Deutsches Heer"
+					picture = GFX_portrait_GER_deutches_heer
+					expire = "1975.1.1"
+					ideology = despotism
+					traits = {
+					}
+				}
+				set_party_name = {
+					ideology = neutrality
+					name = KNJ_army_state_neutrality_party
+				}					
+			}	
+		}
+    }	
+	
+    option = {
+        name = RP_arabevents.3.e # backtrack
+		custom_effect_tooltip = "Somehow, someway, the House of Saud is bailed out last minute. Al Saud returns to governance, but he certainly will never forget the splendor and might of the German Army..."		
+        ai_chance = {
+            base = 0
+        }
+    }	
+}
+
+country_event = { # pick a side
+    id = RP_arabevents.4
+    title = RP_arabevents.4.t
+    desc = RP_arabevents.4.d
+    picture = GFX_report_event_PER_persepolis_party
+
+    is_triggered_only = yes
+
+    option = { # help the rashids
+        name = RP_arabevents.4.a
+
+        ai_chance = {
+            base = 0
+        }
+		custom_effect_tooltip = "We will assist bin Rashid in his war against bin Saud. With our help, he will proudly proclaim the defeat of his lifelong rival. Whatever's left of Nejd will be confined to the scorching deserts of Rub' al Khali."
+		hidden_effect = {
+			every_state = {
+				limit = {
+					OR = {
+					state = 292
+					state = 859
+				}
+			}
+			transfer_state_to = KJS
+            add_core_of = KJS
+			}
+			KNJ = {
+				set_cosmetic_tag = KNJ_cucked
+				create_country_leader = {
+					name = "Brethren of Those Who Obey God"
+					picture = GFX_portrait_KNJ_Ikhwan
+					expire = "1975.1.1"
+					ideology = despotism
+					traits = {
+					}
+				}		
+				set_party_name = {
+					ideology = neutrality
+					name = KNJ_cucked_neutrality_party
+				}				
+			}
+		}
+	}
+    option = {
+        name = RP_arabevents.4.b # help the sauds
+
+        ai_chance = {
+            base = 10
+        }
+		custom_effect_tooltip = "We will help bin Saud conqer his Rashidi enemeies. His men will march through the streets of Ha'il and proclaim a new Saudi State. What's left of the Rashidi Dynasty will be exiled."
+		hidden_effect = {
+			every_state = {
+				limit = {
+					OR = {
+					state = 854
+					state = 857
+				}
+			}
+            transfer_state_to = KNJ
+            add_core_of = KNJ
+			}
+			country_event = {
+				id = RP_arabevents.5 
+				days = 15
+			}			
+		}
+    }	
+    option = {
+        name = RP_arabevents.4.c # de-esclate
+		custom_effect_tooltip = "The German Army will be deployed to keep the peace, and return the region to stability. Nothing will change, but the Saudi Warlords will now be far less likely to rebel in the future."		
+        ai_chance = {
+            base = 0
+        }
+    }	
+}
+
+country_event = { # Al Saud invades hejaz again
+    id = RP_arabevents.5
+    title = RP_arabevents.5.t
+    desc = RP_arabevents.5.d
+    picture = GFX_report_event_PER_persepolis_party
+
+    is_triggered_only = yes
+
+    option = { # help the rashids
+        name = RP_arabevents.5.a
+
+        ai_chance = {
+            base = 0
+        }
+		custom_effect_tooltip = "Al Saud will invade Hejaz without repercussion."
+		hidden_effect = {
+			every_state = {
+				limit = {
+					OR = {
+					state = 855
+					state = 679
+					state = 856
+				}
+			}
+			transfer_state_to = KNJ
+            add_core_of = KNJ
+			}
+			KNJ = {
+				set_cosmetic_tag = KNJ_KHJ
+			}
+			country_event = {
+				id = RP_arabevents.6 
+				days = 15
+			}			
+		}
+	}	
+    option = {
+        name = RP_arabevents.5.c # de-esclate
+		custom_effect_tooltip = "The German Army will be deployed restore the status quo. No borders will change."		
+        ai_chance = {
+            base = 0
+        }
+    }	
+}
+country_event = { # Al Saud invades najran again
+    id = RP_arabevents.6
+    title = RP_arabevents.6.t
+    desc = RP_arabevents.6.d
+    picture = GFX_report_event_PER_persepolis_party
+
+    is_triggered_only = yes
+
+    option = { # YAS
+        name = RP_arabevents.6.a
+
+        ai_chance = {
+            base = 0
+        }
+		custom_effect_tooltip = "Al Saud will invade Najran without repercussion."
+		hidden_effect = {
+			every_state = {
+				limit = {
+					OR = {
+					state = 858
+				}
+			}
+			transfer_state_to = KNJ
+            add_core_of = KNJ
+			}
+			KNJ = {
+				set_cosmetic_tag = KNJ_SAU
+			}
+			news_event = {
+				id = RP_arabnews.1
+				days = 15
+			}	
+			country_event = {
+				id = RP_arabevents.7
+				days = 10
+			}				
+		}
+	}	
+    option = {
+        name = RP_arabevents.6.c # de-esclate
+		custom_effect_tooltip = "The German Army will be deployed restore the status quo. No borders will change."		
+        ai_chance = {
+            base = 0
+        }
+    }	
+}
+country_event = { # what brought me to do this? i went down 1 wikipedia rabbithole and now the DHS has me on a list. 
+    id = RP_arabevents.7
+    title = RP_arabevents.7.t
+    desc = RP_arabevents.7.d
+    picture = GFX_report_event_PER_persepolis_party
+
+    is_triggered_only = yes
+
+    option = { # Forced ally them:trademark:
+        name = RP_arabevents.7.a
+
+        ai_chance = {
+            base = 0
+        }
+		custom_effect_tooltip = "Saudi Arabia will enjoy a unique level of autonomy in the Empire. This may open up new opportunities for them in the future..."
+		hidden_effect = {
+			if = {
+				limit = {
+					country_exists = KNH
+					NOT = {
+						country_exists = KPS
+						country_exists = KIQ
+					}
+				}
+				country_event = {
+					id = RP_arabevents.8
+					days = 60
+				}
+			}
+		}
+	}	
+    option = {
+        name = RP_arabevents.7.c # "Me when my sister texts me to unlock the door but I’m on the other side of Massachusetts :broken_heart:" - the last straight man in southern New England, cheers.
+		custom_effect_tooltip = "The Saudis will agree to demilitarize in exchange for keeping all of their conquered territories."		
+        ai_chance = {
+            base = 0
+        }
+    }
+}
+country_event = { # "Coos please answer my mom is sick and this mod pays her medical bills😢😢"
+    id = RP_arabevents.8
+    title = RP_arabevents.8.t
+    desc = RP_arabevents.8.d
+    picture = GFX_report_event_PER_persepolis_party
+
+    is_triggered_only = yes
+
+    option = { # I AM THE SWORD OF ISLAM!!!!!!11!1111!!!11111111
+        name = RP_arabevents.8.a
+
+        ai_chance = {
+            base = 0
+        }
+		custom_effect_tooltip = "We will pledge to protect and assist the Ikhwan's new Islamic State. Understandably, this will anger some of the more zealous Christians within our borders." ### kristi noem this is for a shitpost hoi4 mod please dont drone strike my house please pelase pealse apelase
+		add_political_power = -50
+		add_stability = -0.05		
+		hidden_effect = {
+			KNH = {
+				set_cosmetic_tag = KNH_overthrown
+				create_country_leader = {
+					name = "Brethren of Those Who Obey God"
+					picture = GFX_portrait_KNJ_Ikhwan
+					expire = "1975.1.1"
+					ideology = despotism
+					traits = {
+					}
+				}		
+				set_party_name = {
+					ideology = neutrality
+					name = KNJ_cucked_neutrality_party
+				}				
+			}
+			country_event = {
+				id = RP_arabevents.10
+				days = 30
+			}
+		}
+	}	
+    option = {
+        name = RP_arabevents.8.c # "Me when my sister texts me to unlock the door but I’m on the other side of Massachusetts :broken_heart:" - the last straight man in southern New England, cheers.
+		custom_effect_tooltip = "The Ikhwan will be quickly disposed of, nothing will happen."		
+        ai_chance = {
+			base = 0
+        }
+    }	
+}	
+
+country_event = { # nahost collapse /// german admin
+    id = RP_arabevents.9
+    title = RP_arabevents.9.t
+    desc = RP_arabevents.9.d
+    picture = GFX_report_event_PER_persepolis_party
+
+    is_triggered_only = yes
+
+    option = { # transfer to the CAMA or whatever i called it its not even in central arabia fuck my life   NOTE !!!!! NAHOST IS INTEGRATING THE ARAB ADMIN, NOT THE OTHER WAY AROUND! THIS IS TO MAKE THE CODING EASIER.
+        name = RP_arabevents.9.a
+
+        ai_chance = {
+            base = 0
+        }
+		custom_effect_tooltip = "The collapsing administration in Nahost will be integrated into its southern neighbor."
+		hidden_effect = {
+			every_state = {
+				limit = {
+					OR = {
+					state = 855
+					state = 679
+					state = 856
+					state = 854
+					state = 857
+					state = 859
+					state = 292
+					state = 858
+				}
+			}
+			transfer_state_to = KNH
+            add_core_of = KNH
+			}
+			KNH = {
+				set_cosmetic_tag = KNJ_army_state_greater	### I KNOW THE TAG SAYS NEJD SHUT THE FUCK UP			
+				
+				create_country_leader = {
+					name = "Deutsches Heer"
+					picture = GFX_portrait_GER_deutches_heer
+					expire = "1975.1.1"
+					ideology = despotism
+					traits = {
+					}
+				}
+				set_party_name = {
+					ideology = neutrality
+					name = KNJ_army_state_neutrality_party ### :3 :# :# :3 :3 :3 :3 :3 :3 :3 :# :# :# 3:3 3:3
+				}				
+			}
+		}
+	}
+    option = {
+        name = RP_arabevents.9.c # dont do that
+		custom_effect_tooltip = "The Nahost administration will be reformed and stabilized. No borders will change."		
+        ai_chance = {
+            base = 0
+        }
+    }	
+}
+### THERE IS NO SECOND B 
+### THERE IS NO arabevents.5.b
+### THERE IS NO arabevents.6.b
+
+
+### coosalicious
+
+### im writing ts isntead of working on coding this slop is due in 9 MINUTES :fire:

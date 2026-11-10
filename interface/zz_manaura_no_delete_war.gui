@@ -1,0 +1,35 @@
+# Manaura: botoes desativados que cobrem o botao de deletar divisao durante a guerra.
+# Posicoes copiadas de interface/unitview.gui (vanilla); o sprite de deletar tem 31x31.
+guiTypes = {
+	# army_division_list_view > content_window (margin top 8) > btn_delete em x=9 y=0
+	containerWindowType = {
+		name = "manaura_no_delete_division_list_window"
+		position = { x = 9 y = 8 }
+		size = { width = 31 height = 31 }
+		Orientation = upper_left
+		clipping = no
+
+		buttonType = {
+			name = "manaura_no_delete_btn"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_NV_btn_delete"
+			pdx_tooltip = "MANAURA_NO_DELETE_WAR_TT"
+		}
+	}
+
+	# army_division_stats_view > btn_delete em x=560 y=2
+	containerWindowType = {
+		name = "manaura_no_delete_division_stats_window"
+		position = { x = 560 y = 2 }
+		size = { width = 31 height = 31 }
+		Orientation = upper_left
+		clipping = no
+
+		buttonType = {
+			name = "manaura_no_delete_btn"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_NV_btn_delete"
+			pdx_tooltip = "MANAURA_NO_DELETE_WAR_TT"
+		}
+	}
+}

@@ -1,0 +1,42 @@
+KLV_army_managment = {
+	icon = GFX_decision_category_eng_organize_the_blackshirts
+
+	picture = GFX_decision_cat_generic_baltic_federation
+	
+	allowed = {
+		original_tag = KLV
+	}
+	visible = {
+		has_government = neutrality
+		has_completed_focus = KLV_establish_sword_brethren
+	}
+	priority = 3
+}
+KLV_bavarian_rebellion_category = {
+	icon = GFX_decision_revolt
+	
+	picture = GFX_decision_cat_picture_antischluss_measures
+
+	allowed = {
+		original_tag = KLV
+	}
+	visible = {
+		has_government = neutrality
+		has_completed_focus = KLV_prepare_bavarian_revolt
+	}
+	priority = 4
+}
+KUK_ukrainian_border_raids = {
+	icon = GFX_decision_category_border_conflicts
+
+	picture = GFX_decision_cat_generic_baltic_federation
+	
+	allowed = {
+		original_tag = KUK
+	}
+	visible = {
+		has_government = neutrality
+		has_completed_focus = KUK_pan_ukrainian_state
+	}
+	priority = 3
+}

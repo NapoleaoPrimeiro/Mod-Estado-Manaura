@@ -1,0 +1,79 @@
+defined_text = {
+    name = RP_focusrequirements_loc
+    text = {
+        trigger = {
+            has_global_flag = RP_nofocus_imperial_puppets
+        }
+        localization_key = RP_focusrequirements_on
+    }
+    text = {
+        trigger = {
+            NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+        }
+        localization_key = RP_focusrequirements_off
+    }
+}
+
+defined_text = {
+    name = RP_GER_hidemittelafrikadecisions_loc
+    text = {
+        trigger = {
+            GER = { has_country_flag = GER_hide_mittelafrika_decisions }
+        }
+        localization_key = RP_GER_hidemittelafrikadecisions_on
+    }
+    text = {
+        trigger = {
+            NOT = { GER = { has_country_flag = GER_hide_mittelafrika_decisions } }
+        }
+        localization_key = RP_GER_hidemittelafrikadecisions_off
+    }
+}
+
+defined_text = {
+    name = RP_GER_specialevents_loc
+    text = {
+        trigger = {
+            GER = { has_country_flag = GER_specialeventson }
+        }
+        localization_key = RP_GER_specialevents_on
+    }
+    text = {
+        trigger = {
+            NOT = { GER = { has_country_flag = GER_specialeventson } }
+        }
+        localization_key = RP_GER_specialevents_off
+    }
+}
+
+defined_text = {
+    name = RP_GER_francealwaysaccepts_loc
+    text = {
+        trigger = {
+            GER = { has_global_flag = GER_francealwaysacceptstreaty_flag }
+        }
+        localization_key = RP_GER_francealwaysaccepts_on
+    }
+    text = {
+        trigger = {
+            NOT = { GER = { has_global_flag = GER_francealwaysacceptstreaty_flag } }
+        }
+        localization_key = RP_GER_francealwaysaccepts_off
+    }
+}
+
+defined_text = {
+    name = RP_GER_russiancivilwar_loc
+    text = {
+        trigger = {
+            GER = { has_global_flag = RP_GER_russiancivilwar_flag }
+        }
+        localization_key = RP_GER_russiancivilwar_on
+    }
+    text = {
+        trigger = {
+            NOT = { GER = { has_global_flag = RP_GER_russiancivilwar_flag } }
+        }
+        localization_key = RP_GER_russiancivilwar_off
+    }
+}

@@ -1,0 +1,31 @@
+KFR_ai_behavior = {
+	name = "KFR_AI_BEHAVIOR"
+	group = "RULE_GROUP_REICHSPAKT_PLUS"
+	
+	default = {
+		name = KFR_HOHENZOLLERN
+		text = "RULE_OPTION_KFR_HOHENZOLLERN"
+		desc = "RULE_OPTION_KFR_HOHENZOLLERN_DESC"
+	}
+
+	option = {
+		name = KFR_REPUBLIC
+		text = "RULE_OPTION_KFR_REPUBLIC"
+		desc = "RULE_OPTION_KFR_REPUBLIC_DESC"
+		allow_achievements = yes
+	}
+
+	option = {
+		name = KFR_DICTATORSHIP
+		text = "RULE_OPTION_KFR_DICTATORSHIP"
+		desc = "RULE_OPTION_KFR_DICTATORSHIP_DESC"
+		allow_achievements = yes
+	}
+
+	option = {
+		name = KFR_BOURBON
+		text = "RULE_OPTION_KFR_BOURBON"
+		desc = "RULE_OPTION_KFR_BOURBON_DESC"
+		allow_achievements = yes
+	}
+}

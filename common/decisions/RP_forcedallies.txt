@@ -1,0 +1,3660 @@
+RP_proclaim_new_kingdoms = {
+	RP_fateofaustrianrealm = {
+
+		icon = GFX_decisions_RP_reformaustria
+
+		ai_will_do = {
+			base = 40
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 848
+				state = 153
+				state = 152
+				state = 976
+				state = 4
+				state = 975
+				state = 39
+				state = 850
+				state = 102
+				state = 853
+				state = 736
+				state = 852
+				state = 972
+				state = 9
+				state = 69
+				state = 75
+				state = 74
+				state = 72
+				state = 70
+				state = 71
+				state = 73
+				state = 664
+				state = 88
+				state = 89
+				state = 91
+				state = 155
+				state = 974
+				state = 973
+				state = 43
+				state = 154
+				state = 82
+				state = 83
+				state = 84
+				state = 76
+				state = 109
+				state = 103
+				state = 104
+				state = 804
+				state = 45
+				state = 764
+				state = 80
+				state = 163
+			}
+		}
+
+		available = {
+			country_exists = KAU
+
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt
+
+				has_country_flag = RP_austrianquestion
+				has_country_flag = RP_burgenlandquestion
+				has_country_flag = RP_southtyrolquestion
+				has_country_flag = RP_czechiaquestion
+				has_country_flag = RP_transolsaquestion
+				has_country_flag = RP_slovakiaquestion
+				has_country_flag = RP_establish_hungary_decision
+				has_country_flag = RP_southslovakiaquestion
+				has_country_flag = RP_carpathianquestion
+				has_country_flag = RP_transylavaniaquestion
+				has_country_flag = RP_vojvodinaquestion
+				has_country_flag = RP_westbanatquestion
+				has_country_flag = RP_establish_illyria_decision
+				has_country_flag = RP_sloveniaquestion
+				has_country_flag = RP_transfer_dalmatia_decision
+				has_country_flag = RP_transfer_zara_decision
+				has_country_flag = RP_triestequestion
+				has_country_flag = RP_istriaquestion
+				has_country_flag = RP_bucovinaquestion
+				has_country_flag = RP_krakowquestion
+				has_country_flag = RP_lembergquestion
+			}
+		} 
+
+		visible = {
+			OR = {
+				NOT = { has_country_flag = RP_austriaquestion }
+				country_exists = KAU
+			}
+			 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_austrian_unification.7
+		}
+	}
+	RP_fateofczechia_austria = {
+
+		icon = GFX_decisions_RP_austriancrown
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_austria_restored
+		} 
+
+		visible = { 
+			has_country_flag = RP_austria_restored
+			country_exists = KCZ
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_austrian_unification.1
+		}
+	}
+
+	RP_fateoflemberg_austria = {
+
+		icon = GFX_decisions_RP_austriancrown
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_austria_restored
+		} 
+
+		visible = { 
+			has_country_flag = RP_austria_restored
+			country_exists = KGZ
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_austrian_unification.2
+		}
+	}
+
+	RP_fateofvenetia_austria = {
+
+		icon = GFX_decisions_RP_austriancrown
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_austria_restored
+		} 
+
+		visible = { 
+			has_country_flag = RP_austria_restored
+			country_exists = KVE
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_austrian_unification.6
+		}
+	}
+
+	RP_fateofhungary_austria = {
+
+		icon = GFX_decisions_RP_hungariancrown
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_austria_restored
+		} 
+
+		visible = { 
+			has_country_flag = RP_austria_restored
+			country_exists = KHU
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_austrian_unification.3
+		}
+	}
+
+	RP_fateofslovakia_austria = {
+
+		icon = GFX_decisions_RP_hungariancrown
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_austria_restored
+		} 
+
+		visible = { 
+			has_country_flag = RP_austria_restored
+			country_exists = KSL
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_austrian_unification.4
+		}
+	}
+
+	RP_fateofillyria_austria = {
+
+		icon = GFX_decisions_RP_hungariancrown
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_austria_restored
+		} 
+
+		visible = { 
+			has_country_flag = RP_austria_restored
+			country_exists = KCR
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_austrian_unification.5
+		}
+	}
+
+	RP_fateoftransylvania_austria = {
+
+		icon = GFX_decisions_RP_hungariancrown
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_austria_restored
+		} 
+
+		visible = { 
+			has_country_flag = RP_austria_restored
+			country_exists = KTR
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_austrian_unification.8
+		}
+	}
+	
+	RP_divide_croatia_austria = {
+
+		icon = GFX_decisions_RP_hungariancrown
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_austria_restored
+		} 
+
+		visible = { 
+			has_country_flag = RP_austria_restored
+			country_exists = KCR
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_hungary_austria_question	
+			NOT = {
+				country_exists = KTR
+				country_exists = KSL
+			}
+			KCR = {
+				owns_state = 163
+				owns_state = 103
+			}			
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_austrian_unification.9
+		}
+	}
+
+	RP_fateofukraine_austria = {
+
+		icon = GFX_decisions_RP_austriancrown
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_austria_restored
+		} 
+
+		visible = { 
+			has_country_flag = RP_austria_restored
+			country_exists = KUK
+			KUK = {
+				has_country_flag = austrian_on_the_throne
+			}
+			OR = {
+				has_country_flag = GER_nofocus_imperial_puppets
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_ukrainianevents.2
+		}
+	}
+	
+	RP_restore_ottoman_sultanate = {
+
+		icon = GFX_decisions_RP_reformottoman
+
+		ai_will_do = {
+			base = 40
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 81
+				state = 46
+				state = 79
+				state = 971
+				state = 77
+				state = 107
+				state = 108
+				state = 105
+				state = 802
+				state = 44
+				state = 934
+				state = 970
+				state = 803
+				state = 106
+				state = 48
+				state = 212
+				state = 211
+				state = 801
+				state = 805
+				state = 47
+				state = 186
+				state = 185
+				state = 731
+				state = 184
+				state = 182
+				state = 187
+				state = 164
+				state = 341
+				state = 797
+				state = 339
+                state = 340
+				state = 342
+				state = 343
+				state = 347
+				state = 49
+				state = 346
+				state = 345
+				state = 348
+				state = 798
+				state = 356
+				state = 344
+				state = 349
+				state = 355
+				state = 354
+				state = 350
+				state = 352
+				state = 353
+				state = 800
+				state = 183
+				state = 799
+				state = 656
+				state = 675
+				state = 680
+				state = 1010
+				state = 291
+				state = 1011
+				state = 676
+				state = 455
+				state = 454
+				state = 553
+				state = 554
+				state = 677	
+				state = 453
+				state = 857
+				state = 854
+				state = 292
+				state = 678
+				state = 859	
+				state = 855
+				state = 679
+				state = 856	
+				state = 858	
+				state = 658
+				state = 765
+				state = 1014	
+				state = 1013
+				state = 293	
+				state = 294
+				state = 1015
+				state = 1016
+				state = 659
+				state = 992
+				state = 906
+				state = 452
+				state = 447
+				state = 456
+				state = 907
+				state = 457
+				state = 551
+				state = 883
+				state = 887
+				state = 549
+				state = 886
+				state = 885
+				state = 884
+			}
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt
+
+				has_country_flag = RP_romaniaquestion
+				has_country_flag = RP_establish_serbia_decision
+				has_country_flag = RP_establish_bulgaria_decision
+				has_country_flag = RP_establish_albania_decision
+				has_country_flag = RP_establish_greece_decision
+				has_country_flag = RP_northdobrujaquestion
+				has_country_flag = RP_dobrujaquestion
+				has_country_flag = RP_kosovoquestion
+				has_country_flag = RP_montenegroquestion
+				has_country_flag = RP_macedoniaquestion
+				has_country_flag = RP_debarquestion
+				has_country_flag = RP_southernepirusquestion
+				has_country_flag = RP_centralmacedoniaquestion
+				has_country_flag = RP_thracequestion
+				has_country_flag = RP_greekislandsquestion
+				has_country_flag = RP_edirnequestion
+				has_country_flag = RP_istanbulquestion
+				has_country_flag = RP_wanatoliaquestion
+				has_country_flag = RP_establish_anatolia_decision
+				has_country_flag = RP_trabzonquestion
+				has_country_flag = RP_kurdistanquestion
+				has_country_flag = RP_cyprusquestion
+				has_country_flag = RP_hatayquestion
+				has_country_flag = RP_nahostquestion
+				has_country_flag = RP_sinaiquestion
+				has_country_flag = RP_establish_JS_decision
+				has_country_flag = RP_establish_hejaz_decision
+				has_country_flag = RP_establish_nejd_decision
+				has_country_flag = RP_establish_najran_decision
+				has_country_flag = RP_establish_gulf_sheikdom_decision
+				has_country_flag = RP_musandamquestion
+				has_country_flag = RP_establish_yemen_decision
+				has_country_flag = RP_establish_oman_decision
+				has_country_flag = RP_transfer_socotra_decision
+				has_country_flag = RP_transfer_south_yemen_decision
+				has_country_flag = RP_transfer_aden_decision
+				has_country_flag = RP_establish_egypt_decision
+				has_country_flag = RP_transfer_sudan_decision
+			}
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_ottoman_unification.1
+		}
+	}
+
+	RP_kurdistanquestion_ottoman = {
+
+		icon = GFX_decisions_RP_reformottoman
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_reunify_ottoman_decision
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_reunify_ottoman_decision
+			country_exists = KKR
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_ottoman_unification.2
+		}
+	}
+
+	RP_syriaquestion_ottoman = {
+
+		icon = GFX_decisions_RP_reformottoman
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_reunify_ottoman_decision
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_reunify_ottoman_decision
+			country_exists = KNH
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_ottoman_unification.3
+		}
+	}
+
+	RP_iraqquestion_ottoman = {
+
+		icon = GFX_decisions_RP_reformottoman
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_reunify_ottoman_decision
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_reunify_ottoman_decision
+			country_exists = KIQ
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_ottoman_unification.17
+		}
+	}
+
+	RP_palestinequestion_ottoman = {
+
+		icon = GFX_decisions_RP_reformottoman
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_reunify_ottoman_decision
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_reunify_ottoman_decision
+			country_exists = KPS
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_ottoman_unification.4
+		}
+	}
+
+	RP_jabalquestion_ottoman = {
+
+		icon = GFX_decisions_RP_reformottoman
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_reunify_ottoman_decision
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_reunify_ottoman_decision
+			country_exists = KJS
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_ottoman_unification.5
+		}
+	}
+
+	RP_hejazquestion_ottoman = {
+
+		icon = GFX_decisions_RP_reformottoman
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_reunify_ottoman_decision
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_reunify_ottoman_decision
+			country_exists = KHJ
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_ottoman_unification.6
+		}
+	}
+
+	RP_nejdquestion_ottoman = {
+
+		icon = GFX_decisions_RP_reformottoman
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_reunify_ottoman_decision
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_reunify_ottoman_decision
+			country_exists = KNJ
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_ottoman_unification.7
+		}
+	}
+
+	RP_najranquestion_ottoman = {
+
+		icon = GFX_decisions_RP_reformottoman
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_reunify_ottoman_decision
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_reunify_ottoman_decision
+			country_exists = KNR
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_ottoman_unification.8
+		}
+	}
+
+	RP_gulfsheikhdomquestion_ottoman = {
+
+		icon = GFX_decisions_RP_reformottoman
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_reunify_ottoman_decision
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_reunify_ottoman_decision
+			country_exists = KGU
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_ottoman_unification.9
+		}
+	}
+
+	RP_yemenquestion_ottoman = {
+
+		icon = GFX_decisions_RP_reformottoman
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_reunify_ottoman_decision
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_reunify_ottoman_decision
+			country_exists = KYM
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_ottoman_unification.10
+		}
+	}
+
+	RP_omanquestion_ottoman = {
+
+		icon = GFX_decisions_RP_reformottoman
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_reunify_ottoman_decision
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_reunify_ottoman_decision
+			country_exists = KON
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_ottoman_unification.11
+		}
+	}
+
+	RP_egyptquestion_ottoman = {
+
+		icon = GFX_decisions_RP_reformottoman
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_reunify_ottoman_decision
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_reunify_ottoman_decision
+			country_exists = KEG
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_ottoman_unification.18
+		}
+	}
+
+	RP_greecequestion_ottoman = {
+
+		icon = GFX_decisions_RP_reformottoman
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_reunify_ottoman_decision
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_reunify_ottoman_decision
+			country_exists = KGR
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_ottoman_unification.12
+		}
+	}
+
+	RP_bulgariaquestion_ottoman = {
+
+		icon = GFX_decisions_RP_reformottoman
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_reunify_ottoman_decision
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_reunify_ottoman_decision
+			country_exists = KBU
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_ottoman_unification.13
+		}
+	}
+
+	RP_albaniaquestion_ottoman = {
+
+		icon = GFX_decisions_RP_reformottoman
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_reunify_ottoman_decision
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_reunify_ottoman_decision
+			country_exists = KAB
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_ottoman_unification.14
+		}
+	}
+
+	RP_serbiaquestion_ottoman = {
+
+		icon = GFX_decisions_RP_reformottoman
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_reunify_ottoman_decision
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_reunify_ottoman_decision
+			country_exists = KSR
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_ottoman_unification.15
+		}
+	}
+
+	RP_romaniaquestion_ottoman = {
+
+		icon = GFX_decisions_RP_reformottoman
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_reunify_ottoman_decision
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_reunify_ottoman_decision
+			country_exists = KRO
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_ottoman_unification.16
+		}
+	}
+	
+	
+	RP_restore_plc = {
+
+		icon = GFX_decisions_RP_reformplc
+
+		ai_will_do = {
+			base = 40
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 10
+				state = 92
+				state = 90
+				state = 87
+				state = 98
+				state = 97
+				state = 94
+				state = 93
+				state = 95
+				state = 96
+				state = 189
+				state = 815
+				state = 11
+				state = 814
+				state = 784
+				state = 190
+				state = 809
+			}
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt
+
+				country_exists = KPO
+				country_exists = KLI
+			}
+
+			custom_trigger_tooltip = {
+				tooltip = RP_restoreplcdecisionrequirement_tt
+
+				KPO = {
+					owns_state = 94
+				}
+			}
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_plc_unification.1
+		}
+	}	
+
+	RP_courlandquestion_plc= {
+
+		icon = GFX_decisions_RP_reformplc
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_reunify_plc_decision
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_reunify_plc_decision
+			country_exists = KCS
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_plc_unification.2
+		}
+	}	
+	
+	RP_galiciaquestion_plc= {
+
+		icon = GFX_decisions_RP_reformplc
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_reunify_plc_decision
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_reunify_plc_decision
+			country_exists = KGZ
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_plc_unification.3
+		}
+	}	
+
+	RP_expandeast_plc= {
+
+		icon = GFX_decisions_RP_reformplc
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_reunify_plc_decision
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_reunify_plc_decision
+			country_exists = KUK
+			country_exists = KWR
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_plc_unification.4
+		}
+	}	
+
+	RP_expandnorth_plc= {
+
+		icon = GFX_decisions_RP_reformplc
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_reunify_plc_decision
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_reunify_plc_decision
+			country_exists = KLV
+			KPO = {
+				owns_state = 809
+			}			
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_plc_unification.5
+		}
+	}	
+
+	RP_iberianunification_decision = {
+
+		icon = GFX_decisions_RP_unifyiberia
+
+		ai_will_do = {
+			base = 40
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 173
+				state = 174
+				state = 790
+				state = 788
+				state = 170
+				state = 41
+				state = 789
+				state = 791
+				state = 176
+				state = 792
+				state = 172
+				state = 166
+				state = 794
+				state = 165
+				state = 793
+				state = 175
+				state = 169
+				state = 168
+				state = 167
+				state = 180
+				state = 181
+				state = 112
+				state = 795
+				state = 179
+				state = 171
+				state = 177
+				state = 178
+				state = 697
+				state = 698
+			}
+		}
+
+		available = {
+			NOT = {
+				has_country_flag = RP_militarydictatorship_spain
+			}
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt
+			
+				has_country_flag = RP_establish_portugal_decision
+				has_country_flag = RP_gibraltarquestion
+				has_country_flag = RP_galiziaquestion
+				has_country_flag = RP_islasbaleresquestion
+				has_country_flag = RP_transfer_islascanarias_decision
+				has_country_flag = RP_transfer_madeira_decision
+				has_country_flag = RP_transfer_azores_decision
+			}
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_iberianunification.1
+		}
+	}
+
+	RP_dutch_collab = {
+
+		icon = GFX_decisions_RP_dutchcollab
+
+		ai_will_do = {
+			base = 40
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 6
+				state = 977
+				state = 34
+				state = 980
+				state = 7
+				state = 35
+				state = 36
+				state = 29
+			}
+		}
+
+		available = {
+			country_exists = KHO
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt
+				has_country_flag = RP_netherlandsquestion
+				has_country_flag = RP_belgiumquestion
+				has_country_flag = RP_ardennesquestion
+				has_country_flag = RP_calaisquestion
+				NOT = {
+					has_country_flag = RP_militaryholland
+				}
+			}	
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_country_flag = RP_netherlandsquestion }
+				country_exists = KHO
+			}
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_dutch_collab.1
+		}
+	}	
+
+	RP_italianrestoration_decision = {
+
+		icon = GFX_decisions_RP_italianrestoration
+
+		ai_will_do = {
+			base = 40
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 114
+				state = 159
+				state = 160
+				state = 156
+				state = 117
+				state = 849
+				state = 2
+				state = 157
+				state = 162
+				state = 161
+				state = 158
+				state = 115
+			}
+		}
+
+		available = {
+			NOT = { country_exists = KVE }
+			NOT = { has_country_flag = RP_risorgimento_reversed }
+
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt
+				
+				has_country_flag = RP_italyquestion
+				has_country_flag = RP_sardiniaquestion
+				has_country_flag = RP_venicequestion
+				has_country_flag = RP_lombardquestion
+			}
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_italianrestoration.1
+		}
+	}
+
+	RP_italianrestoration_croatiaquestion = {
+
+		icon = GFX_decisions_RP_italianrestoration
+
+		ai_will_do = {
+			base = 40
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 103
+				state = 109
+				state = 163
+			}
+		}
+
+		available = {
+
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt
+				
+				has_country_flag = RP_establish_illyria_decision
+				has_country_flag = RP_transfer_dalmatia_decision
+				has_country_flag = RP_transfer_zara_decision
+			}
+		} 
+
+		visible = { 
+			has_country_flag = RP_italianrestoration_flag
+			country_exists = KCR
+
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_italianrestoration.2
+		}
+	}
+
+	RP_italianrestoration_bosniaquestion = {
+
+		icon = GFX_decisions_RP_italianrestoration
+
+		ai_will_do = {
+			base = 40
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 104
+				state = 804
+			}
+		}
+
+		available = {
+
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt
+				
+				has_country_flag = RP_establish_illyria_decision
+				has_country_flag = RP_transfer_dalmatia_decision
+				has_country_flag = RP_transfer_zara_decision
+			}
+		} 
+
+		visible = { 
+			has_country_flag = RP_italianrestoration_flag
+			country_exists = KBS
+
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_italianrestoration.3
+		}
+	}
+
+	RP_italianrestoration_montenegroquestion = {
+
+		icon = GFX_decisions_RP_italianrestoration
+
+		ai_will_do = {
+			base = 40
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 105
+			}
+		}
+
+		available = {
+
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt
+				
+				has_country_flag = RP_montenegroquestion
+			}
+		} 
+
+		visible = { 
+			has_country_flag = RP_italianrestoration_flag
+			country_exists = KNT
+
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_italianrestoration.4
+		}
+	}
+
+	RP_italianrestoration_serbiaquestion = {
+
+		icon = GFX_decisions_RP_italianrestoration
+
+		ai_will_do = {
+			base = 40
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 107
+				state = 108
+			}
+		}
+
+		available = {
+
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt
+				
+				has_country_flag = RP_establish_serbia_decision
+			}
+		} 
+
+		visible = { 
+			has_country_flag = RP_italianrestoration_flag
+			country_exists = KSR
+			
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_italianrestoration.5
+		}
+	}
+
+	RP_italianrestoration_albaniaquestion = {
+
+		icon = GFX_decisions_RP_italianrestoration
+
+		ai_will_do = {
+			base = 40
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 934
+				state = 44
+			}
+		}
+
+		available = {
+
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt
+				
+				has_country_flag = RP_establish_albania_decision
+			}
+		} 
+
+		visible = { 
+			has_country_flag = RP_italianrestoration_flag
+			country_exists = KAB
+			
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_italianrestoration.6
+		}
+	}
+
+	RP_italianrestoration_bulgariaquestion = {
+
+		icon = GFX_decisions_RP_italianrestoration
+
+		ai_will_do = {
+			base = 40
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 48
+				state = 211
+				state = 212
+				state = 801
+			}
+		}
+
+		available = {
+
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt
+				
+				has_country_flag = RP_establish_bulgaria_decision
+			}
+		} 
+
+		visible = { 
+			has_country_flag = RP_italianrestoration_flag
+			country_exists = KBU
+			
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_italianrestoration.7
+		}
+	}
+
+	RP_italianrestoration_greecequestion = {
+
+		icon = GFX_decisions_RP_italianrestoration
+
+		ai_will_do = {
+			base = 40
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 47
+				state = 185
+				state = 186
+			}
+		}
+
+		available = {
+
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt
+				
+				has_country_flag = RP_establish_greece_decision
+			}
+		} 
+
+		visible = { 
+			has_country_flag = RP_italianrestoration_flag
+			country_exists = KGR
+			
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_italianrestoration.8
+		}
+	}
+
+	RP_italianrestoration_libyaquestion = {
+
+		icon = GFX_decisions_RP_italianrestoration
+
+		ai_will_do = {
+			base = 40
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 448
+				state = 449
+				state = 450
+				state = 451
+				state = 661
+				state = 662
+				state = 663
+			}
+		}
+
+		available = {
+
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt
+				
+				has_country_flag = RP_libyaquestion
+			}
+		} 
+
+		visible = { 
+			has_country_flag = RP_italianrestoration_flag
+			country_exists = KLB
+			
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_italianrestoration.9
+		}
+	}
+
+	RP_italianrestoration_egyptquestion = {
+
+		icon = GFX_decisions_RP_italianrestoration
+
+		ai_will_do = {
+			base = 40
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 452
+				state = 447
+				state = 456
+				state = 907
+				state = 457
+			}
+		}
+
+		available = {
+
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt
+				
+				has_country_flag = RP_establish_egypt_decision
+			}
+		} 
+
+		visible = { 
+			has_country_flag = RP_italianrestoration_flag
+			country_exists = KEG
+			
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_italianrestoration.10
+		}
+	}
+
+	RP_italianrestoration_abyssiniaquestion = {
+
+		icon = GFX_decisions_RP_italianrestoration
+
+		ai_will_do = {
+			base = 40
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 835
+				state = 836
+				state = 837
+				state = 838
+				state = 839
+				state = 840
+				state = 841
+				state = 842
+				state = 843
+				state = 271
+			}
+		}
+
+		available = {
+
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt
+				
+				has_country_flag = RP_establish_abyssinia_decision
+			}
+		} 
+
+		visible = { 
+			has_country_flag = RP_italianrestoration_flag
+			country_exists = KBY
+			NOT = { has_country_flag = RP_abyssinia_collab }
+			
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_italianrestoration.11
+		}
+	}
+
+	RP_italianrestoration_antalyaquestion = {
+
+		icon = GFX_decisions_RP_italianrestoration
+
+		ai_will_do = {
+			base = 40
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 342
+			}
+		}
+
+		available = {
+
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt
+				
+				has_country_flag = RP_establish_anatolia_decision
+			}
+		} 
+
+		visible = { 
+			has_country_flag = RP_italianrestoration_flag
+			
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_italianrestoration.12
+		}
+	}
+
+	RP_abyssinia_collab = {
+
+		icon = GFX_decisions_RP_abyssiniacollab
+
+		ai_will_do = {
+			base = 40
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 835
+				state = 836
+				state = 837
+				state = 838
+				state = 839
+				state = 840
+				state = 841
+				state = 842
+				state = 843
+				state = 271
+			}
+		}
+
+		available = {
+
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt
+				
+				has_country_flag = RP_establish_abyssinia_decision
+			}
+		} 
+
+		visible = { 
+			NOT = { has_country_flag = RP_italianrestoration_abyssiniaquestion_flag }
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_miscevents.2
+		}
+	}
+
+	RP_southafrica_collab = {
+
+		icon = GFX_decisions_RP_southafricacollab
+
+		ai_will_do = {
+			base = 40
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 681
+				state = 275
+				state = 719
+				state = 893
+				state = 541
+				state = 894
+				state = 895
+			}
+		}
+
+		available = {
+
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt
+				
+				has_country_flag = RP_establish_sudafrika_decision
+				has_country_flag = RP_establish_sudwestafrika_decision
+			}
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_southafrica_collab.1
+		}
+	}
+	
+	RP_restore_empireofjapan = {
+
+		icon = GFX_decisions_RP_reformjapan
+
+		ai_will_do = {
+			base = 40
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 528
+				state = 529
+				state = 530
+				state = 531
+				state = 532
+				state = 533
+				state = 534
+				state = 535
+				state = 536
+				state = 282
+				state = 1018
+				state = 1019
+				state = 1020
+				state = 537
+				state = 655
+				state = 555
+				state = 526
+				state = 645
+				state = 648
+			}
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt
+				has_country_flag = RP_establish_japan_decision
+				has_country_flag = RP_southsakhalinquestion
+				has_country_flag = RP_northsakhalinquestion
+				has_country_flag = RP_transfer_corejapaneseislands_decision
+				has_country_flag = RP_kurilislandsquestion
+			}	
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_japanese_restoration.1
+		}
+	}	
+
+	RP_empireofjapan_korea = {
+
+		icon = GFX_decisions_RP_reformjapan
+
+		ai_will_do = {
+			base = 40
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 525
+				state = 527
+				state = 1028
+				state = 1029
+				state = 1030
+				state = 1031
+			}
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt
+				has_country_flag = RP_establish_korea_decision
+			}	
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_japanese_restoration_decision	
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_japanese_restoration.2
+		}
+	}
+
+	RP_empireofjapan_manchuria = {
+
+		icon = GFX_decisions_RP_reformjapan
+
+		ai_will_do = {
+			base = 40
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 714
+				state = 715
+				state = 716
+				state = 717
+				state = 761
+				state = 610
+				state = 328
+			}
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt
+				has_country_flag = RP_establish_manchuria_decision
+			}	
+			has_country_flag = RP_empireofjapan_korea_decision
+			NOT = {
+				has_country_flag = RP_empireofjapan_mainlandexpansionlocked
+			}
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_japanese_restoration_decision	
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_japanese_restoration.3
+		}
+	}	
+
+	RP_empireofjapan_menjiang = {
+
+		icon = GFX_decisions_RP_reformjapan
+
+		ai_will_do = {
+			base = 40
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 611
+				state = 612
+				state = 1043
+			}
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt
+				has_country_flag = RP_menjiangquestion
+			}	
+			has_country_flag = RP_empireofjapan_manchuria_decision
+			NOT = {
+				has_country_flag = RP_empireofjapan_mainlandexpansionlocked
+			}
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_japanese_restoration_decision	
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_japanese_restoration.5
+		}
+	}
+
+	RP_empireofjapan_china = {
+
+		icon = GFX_decisions_RP_reformjapan
+
+		ai_will_do = {
+			base = 40
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 596
+				state = 749
+				state = 613
+				state = 606
+				state = 607
+				state = 598
+				state = 597
+				state = 608
+				state = 614
+				state = 615
+				state = 622
+				state = 746
+				state = 1032
+				state = 1034
+				state = 1035
+				state = 1038
+				state = 1039
+				state = 1046
+			}
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt
+				has_country_flag = RP_establish_china_decision
+			}	
+			has_country_flag = RP_empireofjapan_menjiang_decision
+			NOT = {
+				has_country_flag = RP_empireofjapan_bigchina
+			}
+			NOT = {
+				has_country_flag = RP_empireofjapan_mainlandexpansionlocked
+			}
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_japanese_restoration_decision	
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_japanese_restoration.6
+		}
+	}
+	
+	RP_empireofjapan_transamur = {
+
+		icon = GFX_decisions_RP_reformjapan
+
+		ai_will_do = {
+			base = 40
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 408
+				state = 409
+				state = 657
+				state = 560
+			}
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt
+				has_country_flag = RP_transamurquestion
+			}	
+			has_country_flag = RP_empireofjapan_manchuria_decision
+			NOT = {
+				has_country_flag = RP_empireofjapan_mainlandexpansionlocked
+			}
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_japanese_restoration_decision	
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_japanese_restoration.4
+		}
+	}	
+	RP_restore_gran_colombia = {
+
+		icon = GFX_decisions_RP_gran_colombia
+
+		ai_will_do = {
+			base = 40
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 493
+				state = 306
+				state = 486
+				state = 489
+				state = 307
+				state = 488				
+				state = 969				
+				state = 967				
+				state = 687				
+				state = 309				
+				state = 310				
+				state = 304				
+				state = 685				
+				state = 691				
+				state = 695				
+				state = 491			
+				state = 490				
+				state = 305				
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt		
+					has_country_flag = RP_surinamequestion
+					has_country_flag = RP_frenchguianaquestion
+					has_country_flag = RP_britishguyanaquestion
+					has_country_flag = RP_riobrancoquestion
+					has_country_flag = RP_panamaquestion
+					has_country_flag = RP_panamacanalquestion
+					has_country_flag = RP_pastazaquestion
+					has_country_flag = RP_loretoquestion
+					has_country_flag = RP_transfer_trinidad_decision
+					has_country_flag = RP_transfer_curacao_decision
+				}
+			country_exists = KCO
+			country_exists = KKV				
+			country_exists = KEC				
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_gran_colombia.1
+		}
+	}	
+
+	RP_reunite_canada = {
+
+		icon = GFX_decisions_RP_reunite_canada
+
+		ai_will_do = {
+			base = 40
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 473
+				state = 471
+				state = 864
+				state = 740
+				state = 739
+				state = 470
+				state = 472
+				state = 867
+				state = 469
+				state = 865
+				state = 467
+				state = 683
+				state = 866
+				state = 682
+				state = 276
+				state = 465
+				state = 331
+				state = 464
+				state = 332
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt		
+				has_country_flag = RP_establish_british_columbia_decision
+				has_country_flag = RP_establish_praries_decision
+				has_country_flag = RP_establish_ontario_decision
+				has_country_flag = RP_newfoundlandquestion
+				has_country_flag = RP_novascotiaquestion
+			}		
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_reunite_canada.1
+		}
+	}	
+
+	RP_reunite_canada_expandintonewengland = {
+
+		icon = GFX_decisions_RP_reunite_canada
+
+		ai_will_do = {
+			base = 40
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 357
+				state = 358
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt		
+				has_country_flag = RP_establish_newprussia_decision
+			}		
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_reunite_canada
+			country_exists = KNP
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_reunite_canada.2
+		}
+	}
+
+	RP_reunite_canada_expandintoquebec = {
+
+		icon = GFX_decisions_RP_reunite_canada
+
+		ai_will_do = {
+			base = 40
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 468
+				state = 863
+				state = 466
+				state = 862
+				state = 861
+				state = 860
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt		
+				has_country_flag = RP_establish_quebec_decision
+			}	
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_reunite_canada
+			NOT = { has_country_flag = RP_quebeccollab }
+			country_exists = KFQ
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_reunite_canada.3
+		}
+	}
+
+	RP_questionofquebecautonomy = {
+
+		icon = GFX_decisions_RP_quebeccollab
+
+		ai_will_do = {
+			base = 40
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 468
+				state = 863
+				state = 466
+				state = 862
+				state = 861
+				state = 860
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt		
+				has_country_flag = RP_establish_quebec_decision
+			}		
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			NOT = { has_country_flag = RP_kfq_canada }
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_quebeccollab.1
+		}
+	}
+	
+	RP_reunite_unitedstates = {
+
+		icon = GFX_decisions_RP_reunite_america
+
+		ai_will_do = {
+			base = 40
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 357
+				state = 358
+				state = 359
+				state = 360
+				state = 361
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt		
+				has_country_flag = RP_establish_midatlantik_decision
+				has_country_flag = RP_establish_newprussia_decision 
+				has_country_flag = RP_newyorkquestion 
+				has_country_flag = RP_marylandquestion 
+			}		
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_reunite_unitedstates.1
+		}
+	}
+
+	RP_reunite_unitedstates_restorenorthwestterritory = {
+
+		icon = GFX_decisions_RP_reunite_america
+
+		ai_will_do = {
+			base = 40
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 393
+				state = 394
+				state = 395	
+				state = 396
+				state = 261
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt		
+				has_country_flag = RP_establish_rustbelt_decision
+			}
+			custom_trigger_tooltip = {
+				tooltip = RP_reunite_unitedstates_neighbortrigger_tt
+				KFM = {
+					any_neighbor_country = {
+						tag = KRR
+					}
+				}
+			}		
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			NOT = { has_country_flag = RP_USA_westward_expansion_blocked }
+			has_country_flag = RP_reunite_unitedstates
+			country_exists = KRR
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_reunite_unitedstates.2
+		}
+	}
+
+	RP_reunite_unitedstates_restorelouisianapurchase = {
+
+		icon = GFX_decisions_RP_reunite_america
+
+		ai_will_do = {
+			base = 40
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 388
+				state = 389
+				state = 381
+				state = 390
+				state = 382
+				state = 383
+				state = 384
+				state = 373
+				state = 391
+				state = 392
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt		
+				has_country_flag = RP_establish_neu_pfalz_decision
+				has_country_flag = RP_missouriquestion
+				has_country_flag = RP_uppermidwestquestion
+				has_country_flag = RP_coloradoquestion
+			}	
+			custom_trigger_tooltip = {
+				tooltip = RP_reunite_unitedstates_neighbortrigger_tt
+				KFM = {
+					any_neighbor_country = {
+						tag = KMT
+					}
+				}
+			}	
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			NOT = { has_country_flag = RP_USA_westward_expansion_blocked }
+			has_country_flag = RP_reunite_unitedstates
+			country_exists = KMT
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_reunite_unitedstates.3
+		}
+	}
+
+	RP_reunite_unitedstates_restoremexicancession = {
+
+		icon = GFX_decisions_RP_reunite_america
+
+		ai_will_do = {
+			base = 40
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 377
+				state = 378
+				state = 379
+				state = 380
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt		
+				has_country_flag = RP_establish_altacalifornia_decision
+			}		
+			custom_trigger_tooltip = {
+				tooltip = RP_reunite_unitedstates_neighbortrigger_tt
+				KFM = {
+					any_neighbor_country = {
+						tag = KWC
+					}
+				}
+			}
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			NOT = { has_country_flag = RP_USA_westward_expansion_blocked }
+			has_country_flag = RP_reunite_unitedstates
+			country_exists = KWC
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_reunite_unitedstates.4
+		}
+	}
+
+	RP_reunite_unitedstates_restorecascadia = {
+
+		icon = GFX_decisions_RP_reunite_america
+
+		ai_will_do = {
+			base = 40
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 385
+				state = 386
+				state = 387
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt		
+				has_country_flag = RP_cascadiaquestion
+			}		
+			custom_trigger_tooltip = {
+				tooltip = RP_reunite_unitedstates_neighbortrigger_tt
+				KFM = {
+					any_neighbor_country = {
+						tag = KRK
+					}
+				}
+			}
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			NOT = { has_country_flag = RP_USA_westward_expansion_blocked }
+			has_country_flag = RP_reunite_unitedstates
+			country_exists = KRK
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_reunite_unitedstates.5
+		}
+	}
+
+	RP_reunite_unitedstates_restoretexas = {
+
+		icon = GFX_decisions_RP_reunite_america
+
+		ai_will_do = {
+			base = 40
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 374
+				state = 375
+				state = 376
+				state = 371
+				state = 372
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt		
+				has_country_flag = RP_texasquestion
+				has_country_flag = RP_oklahomaquestion
+				has_country_flag = RP_arkansaslouisianaquestion
+				has_country_flag = RP_newmexicoquestion
+			}		
+			custom_trigger_tooltip = {
+				tooltip = RP_reunite_unitedstates_neighbortrigger_tt
+				KFM = {
+					any_neighbor_country = {
+						tag = KTX
+					}
+				}
+			}
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			NOT = { has_country_flag = RP_USA_westward_expansion_blocked }
+			has_country_flag = RP_reunite_unitedstates
+			country_exists = KTX
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_reunite_unitedstates.7
+		}
+	}
+
+	RP_reunite_unitedstates_restoredixieland = {
+
+		icon = GFX_decisions_RP_reunite_america
+
+		ai_will_do = {
+			base = 40
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 368
+				state = 362
+				state = 363
+				state = 364
+				state = 365
+				state = 367
+				state = 370
+				state = 366
+				state = 369
+				state = 816
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt		
+				has_country_flag = RP_establish_dixieland_decision
+				has_country_flag = RP_borderstatesquestion
+				has_country_flag = RP_floridaquestion
+			}		
+			custom_trigger_tooltip = {
+				tooltip = RP_reunite_unitedstates_neighbortrigger_tt
+				KFM = {
+					any_neighbor_country = {
+						tag = KDL
+					}
+				}
+			}
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			NOT = { has_country_flag = RP_restore_confederatestates }
+			has_country_flag = RP_reunite_unitedstates
+			country_exists = KDL
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_reunite_unitedstates.6
+		}
+	}
+
+	RP_restore_confederacy = {
+
+		icon = GFX_decisions_RP_restore_confederacy
+
+		ai_will_do = {
+			base = 40
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 368
+				state = 362
+				state = 363
+				state = 364
+				state = 365
+				state = 367
+				state = 370
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt		
+				has_country_flag = RP_establish_dixieland_decision
+			}		
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			NOT = { has_country_flag = RP_USA_annexdixieland }
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_restore_confederacy.1
+		}
+	}
+
+	RP_restore_mexicanempire = {
+
+		icon = GFX_decisions_RP_mexicanforcedally
+
+		ai_will_do = {
+			base = 40
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 277
+				state = 476
+				state = 477
+				state = 478
+				state = 479
+				state = 480
+				state = 481
+				state = 482
+				state = 483
+				state = 485
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt		
+				has_country_flag = RP_establish_mexico_decision
+			}		
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_restore_mexicanempire.1
+		}
+	}
+
+	RP_restore_mexicanempire_texas = {
+
+		icon = GFX_decisions_RP_mexicanforcedally
+
+		ai_will_do = {
+			base = 40
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 375
+				state = 376
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt		
+				has_country_flag = RP_texasquestion
+				has_country_flag = RP_newmexicoquestion
+			}		
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_restore_mexicanempire
+			country_exists = KTX
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_restore_mexicanempire.2
+		}
+	}
+
+	RP_restore_mexicanempire_california = {
+
+		icon = GFX_decisions_RP_mexicanforcedally
+
+		ai_will_do = {
+			base = 40
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 377
+				state = 378
+				state = 379
+				state = 380
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt		
+				has_country_flag = RP_establish_altacalifornia_decision
+			}		
+			custom_trigger_tooltip = {
+				tooltip = RP_restore_mexicanempire_california_requirement_tt
+				NOT = { has_country_flag = RP_cascadiatocalifornia }
+				NOT = { has_country_flag = RP_alaskatocalifornia }
+			}
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_restore_mexicanempire
+			country_exists = KWC
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_restore_mexicanempire.3
+		}
+	}
+
+	RP_restore_mexicanempire_centralamerica = {
+
+		icon = GFX_decisions_RP_mexicanforcedally
+
+		ai_will_do = {
+			base = 40
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 312
+				state = 313
+				state = 314
+				state = 316
+				state = 317
+				state = 474
+				state = 475
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt		
+				has_country_flag = RP_establish_centralamerica_decision
+				has_country_flag = RP_southernmexicoquestion
+			}		
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_restore_mexicanempire
+			country_exists = KZM
+			NOT = { has_country_flag = RP_restore_federalrepublic }
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_restore_mexicanempire.4
+		}
+	}
+
+	RP_restore_mexicanempire_carribean = {
+
+		icon = GFX_decisions_RP_mexicanforcedally
+
+		ai_will_do = {
+			base = 40
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 694
+				state = 689
+				state = 690
+				state = 692
+				state = 693
+				state = 308
+				state = 686
+				state = 315
+				state = 318
+				state = 319
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt		
+				has_country_flag = RP_establish_westindies_decision
+				has_country_flag = RP_transfer_britishcarribbean_decision
+				has_country_flag = RP_transfer_puertorico_decision
+				has_country_flag = RP_transfer_cuba_decision
+				has_country_flag = RP_transfer_haiti_decision
+				has_country_flag = RP_transfer_dominican_decision
+			}		
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_restore_mexicanempire
+			country_exists = KCB
+			NOT = { has_country_flag = RP_carribeancollab }
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_restore_mexicanempire.5
+		}
+	}
+	
+	RP_restore_federalrepublic = {
+
+		icon = GFX_decisions_RP_centralamericacollab
+
+		ai_will_do = {
+			base = 40
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 312
+				state = 313
+				state = 314
+				state = 316
+				state = 317
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt		
+				has_country_flag = RP_establish_centralamerica_decision
+			}		
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			NOT = { has_country_flag = RP_restore_mexicanempire_centralamerica }
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_centralamericancollab.1
+		}
+	}
+
+	RP_install_carribeancollaborator = {
+
+		icon = GFX_decisions_RP_carribeancollaborator
+
+		ai_will_do = {
+			base = 40
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 694
+				state = 689
+				state = 690
+				state = 692
+				state = 693
+				state = 308
+				state = 686
+				state = 315
+				state = 318
+				state = 319
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt		
+				has_country_flag = RP_establish_westindies_decision
+				has_country_flag = RP_transfer_britishcarribbean_decision
+				has_country_flag = RP_transfer_puertorico_decision
+				has_country_flag = RP_transfer_cuba_decision
+				has_country_flag = RP_transfer_haiti_decision
+				has_country_flag = RP_transfer_dominican_decision
+			}		
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_carribeancollaborator.1
+		}
+	}
+
+	RP_restore_brazilian_empire = {
+
+		icon = GFX_decisions_RP_brazilian_empire
+
+		ai_will_do = {
+			base = 40
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 944
+				state = 501
+				state = 496
+				state = 500
+				state = 943
+				state = 499
+				state = 936
+				state = 498
+				state = 937
+				state = 497
+				state = 935
+				state = 280
+				state = 505
+				state = 941	
+                state = 964
+                state = 495
+                state = 962
+                state = 968
+                state = 939
+                state = 938
+                state = 966
+                state = 942
+                state = 961
+                state = 965
+                state = 963				
+                state = 502				
+                state = 503							
+                state = 540						
+                state = 504				
+                state = 940				
+                state = 967				
+                state = 969				
+                state = 310				
+                state = 309				
+                state = 687				
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt		
+					has_country_flag = RP_puntaporaquestion
+					has_country_flag = RP_acrequestion
+					has_country_flag = RP_riobrancoquestion
+					has_country_flag = RP_rgdsquestion
+					has_country_flag = RP_britishguyanaquestion
+					has_country_flag = RP_surinamequestion
+					has_country_flag = RP_frenchguianaquestion
+				country_exists = KBZ					
+				}
+			NOT = {	
+				country_exists = KAM
+			}
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_brazilian_empire.1
+		}
+	}	
+	RP_uruguay_question_brazil= {
+
+		icon = GFX_decisions_RP_brazilian_empire
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			has_country_flag = RP_brazilian_empire
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			has_country_flag = RP_brazilian_empire
+			NOT = {
+				has_country_flag = RP_LOFP
+			}
+			country_exists = KUG
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_brazilian_empire.2
+		}
+	}	
+	RP_LOFP = {
+
+		icon = GFX_decisions_RP_LOFP
+
+		ai_will_do = {
+			base = 40
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 946
+				state = 945
+				state = 300
+				state = 502
+				state = 503
+				state = 510		
+				state = 956		
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt		
+					has_country_flag = RP_rgdsquestion
+					has_country_flag = RP_mesopotamicaquestion
+					country_exists = KUG					
+					country_exists = KAG					
+				}
+			KUG = {
+				owns_state = 503
+				owns_state = 502
+				owns_state = 510
+			}
+			country_exists = KAG					
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			KUG = {
+				owns_state = 503
+				owns_state = 502
+				owns_state = 510
+			}
+			country_exists = KAG					
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_LOFP.1
+		}
+	}		
+	RP_argentine_collab = {
+
+		icon = GFX_decisions_RP_argentina
+
+		ai_will_do = {
+			base = 40
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 510
+				state = 509
+				state = 960
+				state = 508
+				state = 959
+				state = 957
+				state = 278
+				state = 956
+				state = 958			
+                state = 511
+                state = 512
+                state = 955
+                state = 954				
+                state = 507				
+                state = 953				
+				
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt		
+					has_country_flag = RP_patagoniaquestion
+					has_country_flag = RP_mesopotamicaquestion
+					has_country_flag = RP_losandesquestion
+					has_country_flag = RP_formosaquestion
+					has_country_flag = RP_tdfquestion
+					has_country_flag = RP_magallanesquestion
+					country_exists = KAG					
+				}
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_argentina.1
+		}
+	}		
+	RP_paraguay_collab = {
+
+		icon = GFX_decisions_RP_paraguay
+
+		ai_will_do = {
+			base = 40
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 301
+				state = 688
+				state = 504
+				state = 957
+				
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt		
+					has_country_flag = RP_puntaporaquestion
+					has_country_flag = RP_formosaquestion
+					country_exists = KPG					
+				}
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_paraguay.1
+		}
+	}				
+	RP_chile_collab = {
+
+		icon = GFX_decisions_RP_chile
+
+		ai_will_do = {
+			base = 40
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 279
+				state = 952
+				state = 950
+				state = 949
+				state = 506
+				state = 951
+				state = 947
+                state = 511
+                state = 512
+                state = 955
+                state = 954
+                state = 507
+                state = 953
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt		
+					has_country_flag = RP_antofagastaquestion
+					has_country_flag = RP_aricaquestion
+					has_country_flag = RP_tacnaquestion
+					has_country_flag = RP_patagoniaquestion
+					has_country_flag = RP_tdfquestion
+					has_country_flag = RP_magallanesquestion
+					country_exists = KCL					
+				}
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			NOT = {
+				has_country_flag = RP_incan_empire
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_chile.1
+		}
+	}		
+	RP_restore_peru_bolivia = {
+
+		icon = GFX_decisions_RP_peru_bolivia
+
+		ai_will_do = {
+			base = 40
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 303
+				state = 494
+				state = 492		
+				state = 487
+				state = 302				
+				state = 688				
+				state = 957				
+				state = 959				
+				state = 506				
+				state = 951				
+				state = 947				
+				state = 940				
+				state = 490				
+				state = 491				
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt		
+					has_country_flag = RP_loretoquestion
+					has_country_flag = RP_pastazaquestion
+					has_country_flag = RP_acrequestion
+					has_country_flag = RP_tacnaquestion
+					has_country_flag = RP_aricaquestion
+					has_country_flag = RP_antofagastaquestion
+					has_country_flag = RP_losandesquestion
+					has_country_flag = RP_formosaquestion
+					has_country_flag = RP_chacoquestion
+				}
+			country_exists = KPU
+			country_exists = KBO							
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_peru_bolivia.1
+		}
+	}		
+	RP_restore_incan_empire = {
+
+		icon = GFX_decisions_RP_incan_empire
+
+		ai_will_do = {
+			base = 40
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 303
+				state = 494
+				state = 492		
+				state = 487
+				state = 302				
+				state = 688				
+				state = 957				
+				state = 959				
+				state = 506				
+				state = 951				
+				state = 947				
+				state = 940				
+				state = 490				
+				state = 491				
+				state = 508				
+				state = 960				
+				state = 511				
+				state = 279				
+				state = 952				
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_collabdecisionrequirement_tt		
+					has_country_flag = RP_loretoquestion
+					has_country_flag = RP_pastazaquestion
+					has_country_flag = RP_acrequestion
+					has_country_flag = RP_tacnaquestion
+					has_country_flag = RP_aricaquestion
+					has_country_flag = RP_antofagastaquestion
+					has_country_flag = RP_losandesquestion
+					has_country_flag = RP_formosaquestion
+					has_country_flag = RP_chacoquestion
+					has_country_flag = RP_patagoniaquestion
+					has_country_flag = RP_tdfquestion
+					has_country_flag = RP_magallanesquestion					
+					has_country_flag = RP_incan_empire_check
+				}
+			country_exists = KPU
+			country_exists = KBO							
+			country_exists = KAG							
+			country_exists = KCL							
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik	
+			}
+			has_country_flag = RP_incan_empire_check		
+			country_exists = KPU
+			country_exists = KBO							
+			country_exists = KAG							
+			country_exists = KCL					
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_incan_empire.1
+		}
+	}		
+	RP_ecuador_question = { ### both the incans and the confederation use this decision
+
+		icon = GFX_decisions_RP_decision
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			OR = {
+				has_country_flag = RP_incan_empire
+				has_country_flag = RP_peru_bolivia
+			}		
+			OR = {
+				has_country_flag = RP_gran_colombia
+				country_exists = KEC
+			}
+		} 
+
+		visible = { 
+			OR = {
+				NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+				has_completed_focus = GER_realpolitik
+			}
+			OR = {
+				has_country_flag = RP_incan_empire
+				has_country_flag = RP_peru_bolivia
+			}		
+			OR = {
+				has_country_flag = RP_gran_colombia
+				country_exists = KEC
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = RP_incan_empire.5 ## both the incans and the confederation use this event
+		}
+	}			
+}

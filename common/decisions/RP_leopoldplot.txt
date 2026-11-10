@@ -1,0 +1,890 @@
+RP_leopoldplot = {
+    RP_leopoldplot_questionofthenewregime = {
+        icon = GFX_decision_eng_trade_unions_support
+
+		ai_will_do = {
+			base = 40
+		}
+
+        fire_only_once = yes
+
+		available = {
+			country_exists = KSP
+            KSP = {
+                NOT = {
+                    has_idea = RP_new_regime
+                }
+            }
+            NOT = {
+                country_exists = SPR
+                country_exists = D01
+                country_exists = D02
+                country_exists = D03
+            }
+		}
+
+		complete_effect = {
+			country_event = RP_spanishcoupevents.6
+		}
+    }
+
+    RP_leopoldplot_greenlight = {
+        icon = GFX_decision_eng_support_imperialist_coup
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+                tooltip = RP_leopoldplot_averageinfluence_overfifty
+                check_variable = {
+                    var = RP_leopoldplot_averageinfluence
+                    value = 51
+                    compare = greater_than_or_equals
+                }
+            }
+		}
+
+        days_remove = 30
+		fire_only_once = yes
+        custom_cost_trigger = {
+            command_power > 24
+            has_political_power > 99
+        }
+        custom_cost_text = decision_cost_CP_25_PP_100
+
+        complete_effect = {
+            remove_ideas = {
+                RP_preparationsfortheleopoldplot
+            }
+
+            set_country_flag = RP_leopoldplot_greenlight
+
+            hidden_effect = {
+                add_political_power = -100
+                add_command_power = -25
+            }
+        }
+
+		remove_effect = {
+
+            custom_effect_tooltip = RP_leopoldplot_greenlight_chanceaverage_tt
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            if = {
+                limit = {
+                    check_variable = {
+                        var = RP_leopoldplot_averageinfluence
+                        value = 51
+                        compare = less_than
+                    }
+                }
+                random_list = {
+                    0 = {
+            			RP_leopoldplot_coupsuccessful_effect = yes
+                    }
+                    10 = {
+            			country_event = {
+                            id = RP_spanishcoupevents.3
+                            hours = 12
+                        }
+                    }
+                }
+            }
+
+            if = {
+                limit = {
+                    check_variable = {
+                        var = RP_leopoldplot_averageinfluence
+                        value = 51
+                        compare = greater_than_or_equals
+                    }
+                    check_variable = {
+                        var = RP_leopoldplot_averageinfluence
+                        value = 59
+                        compare = less_than_or_equals
+                    }
+                }
+                random_list = {
+                    55 = {
+            			RP_leopoldplot_coupsuccessful_effect = yes
+                    }
+                    45 = {
+            			country_event = {
+                            id = RP_spanishcoupevents.3
+                            hours = 12
+                        }
+                    }
+                }
+            }
+
+            if = {
+                limit = {
+                    check_variable = {
+                        var = RP_leopoldplot_averageinfluence
+                        value = 60
+                        compare = greater_than_or_equals
+                    }
+                    check_variable = {
+                        var = RP_leopoldplot_averageinfluence
+                        value = 69
+                        compare = less_than_or_equals
+                    }
+                }
+                random_list = {
+                    65 = {
+            			RP_leopoldplot_coupsuccessful_effect = yes
+                    }
+                    35 = {
+            			country_event = {
+                            id = RP_spanishcoupevents.3
+                            hours = 12
+                        }
+                    }
+                }
+            }
+
+            if = {
+                limit = {
+                    check_variable = {
+                        var = RP_leopoldplot_averageinfluence
+                        value = 70
+                        compare = greater_than_or_equals
+                    }
+                    check_variable = {
+                        var = RP_leopoldplot_averageinfluence
+                        value = 79
+                        compare = less_than_or_equals
+                    }
+                }
+                random_list = {
+                    75 = {
+            			RP_leopoldplot_coupsuccessful_effect = yes
+                    }
+                    25 = {
+            			country_event = {
+                            id = RP_spanishcoupevents.3
+                            hours = 12
+                        }
+                    }
+                }
+            }
+
+            if = {
+                limit = {
+                    check_variable = {
+                        var = RP_leopoldplot_averageinfluence
+                        value = 80
+                        compare = greater_than_or_equals
+                    }
+                    check_variable = {
+                        var = RP_leopoldplot_averageinfluence
+                        value = 89
+                        compare = less_than_or_equals
+                    }
+                }
+                random_list = {
+                    85 = {
+            			RP_leopoldplot_coupsuccessful_effect = yes
+                    }
+                    15 = {
+            			country_event = {
+                            id = RP_spanishcoupevents.3
+                            hours = 12
+                        }
+                    }
+                }
+            }
+
+            if = {
+                limit = {
+                    check_variable = {
+                        var = RP_leopoldplot_averageinfluence
+                        value = 90
+                        compare = greater_than_or_equals
+                    }
+                }
+                random_list = {
+                    95 = {
+            			RP_leopoldplot_coupsuccessful_effect = yes
+                    }
+                    5 = {
+            			country_event = {
+                            id = RP_spanishcoupevents.3
+                            hours = 12
+                        }
+                    }
+                }
+            }
+		}
+    }
+
+    RP_leopoldplot_economicaid = {
+        icon = GFX_decision_gre_investment_decisions
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			NOT = {
+                has_idea = RP_economicaid_tospain
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_leopoldplot_economyinfluence_lessthan_100
+            
+                check_variable = {
+                    var = RP_leopoldplot_economyinfluence
+                    value = 100
+                    compare = less_than
+                }
+            }
+		}
+
+        visible = {
+            NOT = {
+                has_country_flag = RP_leopoldplot_greenlight
+            }
+        }
+
+        cancel_trigger = {
+            has_country_flag = RP_leopoldplot_greenlight
+        }
+
+        cost = 25
+        days_remove = 30
+
+		complete_effect = {
+			add_timed_idea = {
+                idea = RP_economicaid_tospain
+                days = 30
+            }
+
+            SPR = {
+                add_timed_idea = {
+                    idea = RP_economicaid_fromgermany
+                    days = 30
+                }
+            }
+		}
+
+        remove_effect = {
+			add_to_variable = {
+                var = RP_leopoldplot_economyinfluence
+                value = 5
+                tooltip = RP_leopoldplot_addfive_economyinfluence
+            }
+
+            subtract_from_variable = {
+                var = RP_leopoldplot_crackdownchance
+                value = 1.50
+                tooltip = RP_leopoldplot_subtractonefifty_crackdownchance
+            }
+
+            RP_leopoldplot_calculateaverage = yes
+		}
+    }
+
+    RP_leopoldplot_pressurelocalgovernments = {
+        icon = GFX_decision_SOV_place_hq
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			NOT = {
+                SPR = { has_idea = RP_germanpressureonlocalgovernments }
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_leopoldplot_administrativeinfluence_lessthan_100
+            
+                check_variable = {
+                    var = RP_leopoldplot_administrativeinfluence
+                    value = 100
+                    compare = less_than
+                }
+            }
+		}
+
+        visible = {
+            NOT = {
+                has_country_flag = RP_leopoldplot_greenlight
+            }
+        }
+
+        cancel_trigger = {
+            has_country_flag = RP_leopoldplot_greenlight
+        }
+
+        cost = 60
+        days_remove = 45
+
+		complete_effect = {
+			SPR = {
+                add_timed_idea = {
+                    idea = RP_germanpressureonlocalgovernments
+                    days = 45
+                }
+            }
+		}
+
+        remove_effect = {
+			add_to_variable = {
+                var = RP_leopoldplot_administrativeinfluence
+                value = 10
+                tooltip = RP_leopoldplot_addten_administrativeinfluence
+            }
+
+            add_to_variable = {
+                var = RP_leopoldplot_crackdownchance
+                value = 5
+                tooltip = RP_leopoldplot_addfive_crackdownchance
+            }
+
+            RP_leopoldplot_calculateaverage = yes
+		}
+    }
+
+    RP_leopoldplot_militaryadvisors = {
+        icon = GFX_decision_generic_army_support
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			NOT = {
+                SPR = { has_idea = RP_germanmilitaryadvisors }
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_leopoldplot_militaryinfluence_lessthan_100
+            
+                check_variable = {
+                    var = RP_leopoldplot_militaryinfluence
+                    value = 100
+                    compare = less_than
+                }
+            }
+		}
+
+        visible = {
+            NOT = {
+                has_country_flag = RP_leopoldplot_greenlight
+            }
+        }
+
+        cancel_trigger = {
+            has_country_flag = RP_leopoldplot_greenlight
+        }
+
+        cost = 70
+        days_remove = 60
+
+		complete_effect = {
+			SPR = {
+                add_timed_idea = {
+                    idea = RP_germanmilitaryadvisors
+                    days = 60
+                }
+            }
+		}
+
+        remove_effect = {
+			add_to_variable = {
+                var = RP_leopoldplot_militaryinfluence
+                value = 15
+                tooltip = RP_leopoldplot_addfifteen_militaryinfluence
+            }
+
+            subtract_from_variable = {
+                var = RP_leopoldplot_crackdownchance
+                value = 0.50
+                tooltip = RP_leopoldplot_subtractzerofifty_crackdownchance
+            }
+
+            RP_leopoldplot_calculateaverage = yes
+		}
+    }
+
+    RP_leopoldplot_trainspanishmilitia = {
+        icon = GFX_decision_generic_civil_support
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			NOT = {
+                SPR = { has_idea = RP_germantrainedmilitia }
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_leopoldplot_militaryinfluence_lessthan_100
+            
+                check_variable = {
+                    var = RP_leopoldplot_administrativeinfluence
+                    value = 100
+                    compare = less_than
+                }
+            }
+		}
+
+        visible = {
+            NOT = {
+                has_country_flag = RP_leopoldplot_greenlight
+            }
+        }
+
+        cancel_trigger = {
+            has_country_flag = RP_leopoldplot_greenlight
+        }
+
+        cost = 50
+        days_remove = 90
+
+		complete_effect = {
+			SPR = {
+                add_timed_idea = {
+                    idea = RP_germantrainedmilitia
+                    days = 90
+                }
+            }
+		}
+
+        remove_effect = {
+			add_to_variable = {
+                var = RP_leopoldplot_militaryinfluence
+                value = 20
+                tooltip = RP_leopoldplot_addtwenty_militaryinfluence
+            }
+
+            subtract_from_variable = {
+                var = RP_leopoldplot_crackdownchance
+                value = 0.50
+                tooltip = RP_leopoldplot_subtractzerofifty_crackdownchance
+            }
+
+            RP_leopoldplot_calculateaverage = yes
+		}
+    }
+
+    RP_leopoldplot_promotemonarchistideals = {
+        icon = GFX_decision_generic_monarchy
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			NOT = {
+                SPR = { has_idea = RP_promotionmonarchistideals }
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_leopoldplot_administrativeinfluence_lessthan_100
+            
+                check_variable = {
+                    var = RP_leopoldplot_administrativeinfluence
+                    value = 100
+                    compare = less_than
+                }
+            }
+		}
+
+        visible = {
+            NOT = {
+                has_country_flag = RP_leopoldplot_greenlight
+            }
+        }
+
+        cancel_trigger = {
+            has_country_flag = RP_leopoldplot_greenlight
+        }
+
+        cost = 60
+        days_remove = 90
+
+		complete_effect = {
+			SPR = {
+                add_timed_idea = {
+                    idea = RP_promotionmonarchistideals
+                    days = 90
+                }
+            }
+		}
+
+        remove_effect = {
+			add_to_variable = {
+                var = RP_leopoldplot_administrativeinfluence
+                value = 10
+                tooltip = RP_leopoldplot_addten_administrativeinfluence
+            }
+
+            add_to_variable = {
+                var = RP_leopoldplot_crackdownchance
+                value = 5
+                tooltip = RP_leopoldplot_addfive_crackdownchance
+            }
+
+            RP_leopoldplot_calculateaverage = yes
+		}
+    }
+    
+    RP_leopoldplot_buildgermansentiment = {
+        icon = GFX_decision_eng_propaganda_campaigns
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			NOT = {
+                SPR = { has_idea = RP_germansentimentsrising }
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_leopoldplot_crackdownchance_morethanfifteen
+            
+                check_variable = {
+                    var = RP_leopoldplot_crackdownchance
+                    value = 15
+                    compare = greater_than_or_equals
+                }
+            }
+		}
+
+        visible = {
+            NOT = {
+                has_country_flag = RP_leopoldplot_greenlight
+            }
+        }
+
+        cancel_trigger = {
+            has_country_flag = RP_leopoldplot_greenlight
+        }
+
+        cost = 50
+        days_remove = 120
+
+		complete_effect = {
+			SPR = {
+                add_timed_idea = {
+                    idea = RP_germansentimentsrising
+                    days = 120
+                }
+            }
+		}
+
+        remove_effect = {
+			subtract_from_variable = {
+                var = RP_leopoldplot_crackdownchance
+                value = 15
+                tooltip = RP_leopoldplot_subtractfifteen_crackdownchance
+            }
+		}
+    }
+
+    RP_leopoldplot_bribespanishofficials = {
+        icon = GFX_decision_generic_political_discourse
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			NOT = {
+                has_idea = RP_bribingspanishofficials
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_leopoldplot_crackdownchance_morethanten
+            
+                check_variable = {
+                    var = RP_leopoldplot_crackdownchance
+                    value = 10
+                    compare = greater_than_or_equals
+                }
+            }
+		}
+
+        visible = {
+            NOT = {
+                has_country_flag = RP_leopoldplot_greenlight
+            }
+        }
+
+        cancel_trigger = {
+            has_country_flag = RP_leopoldplot_greenlight
+        }
+
+        cost = 25
+        days_remove = 45
+
+		complete_effect = {
+			add_timed_idea = {
+                idea = RP_bribingspanishofficials
+                days = 45
+            }
+		}
+
+        remove_effect = {
+			subtract_from_variable = {
+                var = RP_leopoldplot_crackdownchance
+                value = 10
+                tooltip = RP_leopoldplot_subtractten_crackdownchance
+            }
+
+            add_to_variable = {
+                var = RP_leopoldplot_administrativeinfluence
+                value = 5
+                tooltip = RP_leopoldplot_addfive_administrativeinfluence
+            }
+		}
+    }
+
+    RP_leopoldplot_raidintelligenceoffices = {
+        icon = GFX_decision_CHL_carabineros
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+                tooltip = RP_leopoldplot_crackdownchance_morethantwentyfive
+            
+                check_variable = {
+                    var = RP_leopoldplot_crackdownchance
+                    value = 25
+                    compare = greater_than_or_equals
+                }
+            }
+
+            custom_trigger_tooltip = {
+                tooltip = RP_leopoldplot_administrativeinfluence_morethanten
+            
+                check_variable = {
+                    var = RP_leopoldplot_administrativeinfluence
+                    value = 10
+                    compare = greater_than_or_equals
+                }
+            }
+		}
+
+        visible = {
+            NOT = {
+                has_country_flag = RP_leopoldplot_greenlight
+            }
+        }
+
+        cancel_trigger = {
+            has_country_flag = RP_leopoldplot_greenlight
+        }
+
+        cost = 90
+        days_remove = 150
+
+		complete_effect = {
+			subtract_from_variable = {
+                var = RP_leopoldplot_administrativeinfluence
+                value = -10
+                tooltip = RP_leopoldplot_subtractten_administrativeinfluence
+            }
+
+            subtract_from_variable = {
+                var = RP_leopoldplot_crackdownchance
+                value = 25
+                tooltip = RP_leopoldplot_subtracttwentyfive_crackdownchance
+            }
+		}
+    }
+
+    RP_leopoldplot_increaseoperationalintegrity = {
+        icon = GFX_decisions_generic_infiltration
+
+		ai_will_do = {
+			base = 40
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+                tooltip = RP_leopoldplot_crackdownchance_morethanten
+            
+                check_variable = {
+                    var = RP_leopoldplot_crackdownchance
+                    value = 10
+                    compare = greater_than_or_equals
+                }
+            }
+
+            custom_trigger_tooltip = {
+                tooltip = RP_leopoldplot_administrativemilitaryeconomyinfluence_morethanfifteen
+            
+                check_variable = {
+                    var = RP_leopoldplot_administrativeinfluence
+                    value = 15
+                    compare = greater_than_or_equals
+                }
+
+                check_variable = {
+                    var = RP_leopoldplot_militaryinfluence
+                    value = 15
+                    compare = greater_than_or_equals
+                }
+
+                check_variable = {
+                    var = RP_leopoldplot_economyinfluence
+                    value = 15
+                    compare = greater_than_or_equals
+                }
+            }
+		}
+
+        visible = {
+            NOT = {
+                has_country_flag = RP_leopoldplot_greenlight
+            }
+        }
+
+        cancel_trigger = {
+            has_country_flag = RP_leopoldplot_greenlight
+        }
+
+        cost = 50
+
+        days_re_enable = 60
+
+		complete_effect = {
+			subtract_from_variable = {
+                var = RP_leopoldplot_administrativeinfluence
+                value = 15
+                tooltip = RP_leopoldplot_subtractfifteen_administrativeinfluence
+            }
+
+            subtract_from_variable = {
+                var = RP_leopoldplot_militaryinfluence
+                value = 15
+                tooltip = RP_leopoldplot_subtractfifteen_militaryinfluence
+            }
+
+            subtract_from_variable = {
+                var = RP_leopoldplot_economyinfluence
+                value = 15
+                tooltip = RP_leopoldplot_subtractfifteen_economyinfluence
+            }
+
+            subtract_from_variable = {
+                var = RP_leopoldplot_crackdownchance
+                value = 10
+                tooltip = RP_leopoldplot_subtracttwentyfive_crackdownchance
+            }
+		}
+    }
+
+    RP_leopoldplot_raidspanishcities = {
+
+		icon = GFX_decision_eng_support_imperialist_coup
+
+        ai_will_do = {
+			base = 0
+		}
+
+		available = {
+			divisions_in_state = {
+				state = FROM	
+				size > 1
+			}
+            NOT = {
+                has_country_flag = RP_leopoldplot_raidinprogress
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_leopoldplot_economyinfluence_lessthan_100
+            
+                check_variable = {
+                    var = RP_leopoldplot_administrativeinfluence
+                    value = 100
+                    compare = less_than
+                }
+            }
+            custom_trigger_tooltip = {
+                tooltip = RP_leopoldplot_militaryinfluence_lessthan_100
+            
+                check_variable = {
+                    var = RP_leopoldplot_administrativeinfluence
+                    value = 100
+                    compare = less_than
+                }
+            }
+		}
+
+        visible = {
+            NOT = {
+                has_country_flag = RP_leopoldplot_greenlight
+            }
+        }
+
+        cancel_trigger = {
+            has_country_flag = RP_leopoldplot_greenlight
+        }
+
+		state_target = yes
+
+		target_trigger = {
+			FROM = {
+				AND = {
+                    OR = {
+                        has_state_category = large_town
+                        has_state_category = large_city
+                        has_state_category = town
+                        has_state_category = city
+                    }
+                    is_core_of = SPR
+					NOT = { is_owned_by = SPR }
+				}
+			}
+		}
+
+		visible = {
+			SPR_scw_in_progress = yes
+		}
+
+		fire_only_once = yes
+        days_remove = 30
+		cost = 75
+		on_map_mode = map_only
+
+		complete_effect = {
+			set_country_flag = { flag = RP_leopoldplot_raidinprogress days = 30 }
+		}
+
+        remove_effect = {
+            RP_leopoldplot_raidcompleted = yes
+
+            add_to_variable = {
+                var = RP_leopoldplot_crackdownchance
+                value = 25
+                tooltip = RP_leopoldplot_addtwentyfive_crackdownchance
+            }
+
+    		custom_effect_tooltip = generic_skip_one_line_tt
+
+            add_to_variable = {
+                var = RP_leopoldplot_administrativeinfluence
+                value = -10
+                tooltip = RP_leopoldplot_subtractten_administrativeinfluence
+            }
+
+            add_to_variable = {
+                var = RP_leopoldplot_economyinfluence
+                value = 15
+                tooltip = RP_leopoldplot_addfifteen_economyinfluence
+            }
+
+            add_to_variable = {
+                var = RP_leopoldplot_militaryinfluence
+                value = 10
+                tooltip = RP_leopoldplot_addten_militaryinfluence
+            }
+            RP_leopoldplot_calculateaverage = yes
+        }
+	}
+}

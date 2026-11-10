@@ -1,0 +1,34 @@
+add_namespace = RP_russiancivilwarnewsevents
+
+news_event = { # Terror in Russia!
+    id = RP_russiancivilwarnewsevents.1
+    title = RP_russiancivilwarnewsevents.1.t
+    desc = RP_russiancivilwarnewsevents.1.d
+    picture = GFX_news_event_chinese_soldiers_city_ruin
+
+    is_triggered_only = yes
+
+    option = { # How long must their people suffer?
+        name = RP_russiancivilwarnewsevents.1.a
+        
+        trigger = {
+            NOT = {
+                original_tag = SOV
+            }
+        }
+
+        custom_effect_tooltip = "This will continue in a later update.."
+    }
+    
+    option = { # Everything is fine over here guys!
+        name = RP_russiancivilwarnewsevents.1.b
+
+        trigger = {
+            original_tag = SOV
+        }
+
+        add_stability = -0.2
+        
+        custom_effect_tooltip = "This will continue in a later update.."
+    }
+}

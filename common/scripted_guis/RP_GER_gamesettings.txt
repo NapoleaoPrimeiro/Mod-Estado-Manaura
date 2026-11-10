@@ -1,0 +1,75 @@
+scripted_gui = {
+	RP_gamesettingsmenu = {
+		
+		window_name = "RP_GER_gamesettings_mainwindow"
+
+		context_type = decision_category
+
+		effects = {
+			RP_GER_focusrequirements_button_click = {
+				if = {
+					limit = {
+						NOT = { has_global_flag = RP_nofocus_imperial_puppets }
+					}
+					set_global_flag = RP_nofocus_imperial_puppets
+				}
+
+				else = {
+					clr_global_flag = RP_nofocus_imperial_puppets
+				}
+			}
+
+			RP_GER_hidemittelafrikadecisions_button_click = {
+				if = {
+					limit = {
+						NOT = { GER = { has_country_flag = GER_hide_mittelafrika_decisions } }
+					}
+					GER = { set_country_flag = GER_hide_mittelafrika_decisions }
+				}
+
+				else = {
+					GER = { clr_country_flag = GER_hide_mittelafrika_decisions }
+				}
+			}
+
+			RP_GER_specialevents_button_click = {
+				if = {
+					limit = {
+						NOT = { GER = { has_country_flag = GER_specialeventson } }
+					}
+					GER = { set_country_flag = GER_specialeventson }
+				}
+
+				else = {
+					GER = { clr_country_flag = GER_specialeventson }
+				}
+			}
+
+			RP_GER_francealwaysaccepts_button_click = {
+				if = {
+					limit = {
+						NOT = { GER = { has_global_flag = GER_francealwaysacceptstreaty_flag } }
+					}
+					GER = { set_global_flag = GER_francealwaysacceptstreaty_flag }
+				}
+
+				else = {
+					GER = { clr_global_flag = GER_francealwaysacceptstreaty_flag }
+				}
+			}
+
+			#RP_GER_russiancivilwar_button_click = {
+			#	if = {
+			#		limit = {
+			#			NOT = { GER = { has_global_flag = RP_GER_russiancivilwar_flag } }
+			#		}
+			#		GER = { set_global_flag = RP_GER_russiancivilwar_flag }
+			#	}
+			#
+			#	else = {
+			#		GER = { clr_global_flag = RP_GER_russiancivilwar_flag }
+			#	}
+			#}
+		}
+	}
+}

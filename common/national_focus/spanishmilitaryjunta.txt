@@ -1,0 +1,482 @@
+﻿focus_tree = {
+	id = spanishmilitaryjunta_focus
+	
+	country = {
+		factor = 0
+
+		#modifier = {
+		#	add = 100
+		#	tag = SFC
+		#}
+	}
+	
+	focus = {
+		id = RP_SFC_cooperationwiththewest
+		icon = GFX_focus_generic_democratic_europe
+
+		x = -6
+		y = 0
+		cost = 1
+		#relative_position_id = 
+
+		mutually_exclusive = { focus = RP_SFC_rapprochementwithksp }
+		mutually_exclusive = { focus = RP_SFC_kingdomofmorocco }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RP_SFC_jointmilitarytraining
+		icon = GFX_focus_PER_desert_training
+
+		x = -2
+		y = 1
+		cost = 1
+		relative_position_id = RP_SFC_cooperationwiththewest
+
+		prerequisite = { focus = RP_SFC_cooperationwiththewest }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RP_SFC_buildtheresistance
+		icon = GFX_focus_spr_no_pasaran
+
+		x = 0
+		y = 1
+		cost = 1
+		relative_position_id = RP_SFC_cooperationwiththewest
+
+		prerequisite = { focus = RP_SFC_cooperationwiththewest }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RP_SFC_preparecoordinatedlandings
+		icon = GFX_focus_generic_naval_invasion
+
+		x = 0
+		y = 1
+		cost = 1
+		relative_position_id = RP_SFC_jointmilitarytraining
+
+		prerequisite = { focus = RP_SFC_jointmilitarytraining }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RP_SFC_attackspanishofficials
+		icon = GFX_focus_IRQ_attempted_assasination_of_sidqi
+
+		x = 0
+		y = 2
+		cost = 1
+		relative_position_id = RP_SFC_buildtheresistance
+
+		prerequisite = { focus = RP_SFC_buildtheresistance }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RP_SFC_returninghome
+		icon = GFX_focus_generic_free_iberia 
+
+		x = 1
+		y = 2
+		cost = 1
+		relative_position_id = RP_SFC_preparecoordinatedlandings
+
+		prerequisite = { focus = RP_SFC_preparecoordinatedlandings }
+		prerequisite = { focus = RP_SFC_attackspanishofficials }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RP_SFC_endtheresistance
+		icon = GFX_focus_spr_crush_the_revolution
+
+		x = 3
+		y = 1
+		cost = 1
+		relative_position_id = RP_SFC_cooperationwiththewest
+
+		prerequisite = { focus = RP_SFC_cooperationwiththewest focus = RP_SFC_rapprochementwithksp }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RP_SFC_rapprochementwithksp
+		icon = GFX_focus_PHI_reconciliation_with_spain
+
+		x = 0 
+		y = 0
+		cost = 1
+		#relative_position_id = 
+
+		mutually_exclusive = { focus = RP_SFC_cooperationwiththewest }
+		mutually_exclusive = { focus = RP_SFC_kingdomofmorocco }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RP_SFC_enterthereichspakt
+		icon = GFX_focus_ger_revive_kaiserreich
+
+		x = 0 
+		y = 2
+		cost = 1
+		relative_position_id = RP_SFC_rapprochementwithksp
+
+		prerequisite = { focus = RP_SFC_rapprochementwithksp }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RP_SFC_bridgetoafrica
+		icon = GFX_focus_SMB_blue_water_fleet
+
+		x = -1
+		y = 1
+		cost = 1
+		relative_position_id = RP_SFC_enterthereichspakt
+
+		prerequisite = { focus = RP_SFC_enterthereichspakt }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RP_SFC_fortifythestrait
+		icon = GFX_goal_generic_fortify_city
+
+		x = 0
+		y = 1
+		cost = 1
+		relative_position_id = RP_SFC_bridgetoafrica
+
+		prerequisite = { focus = RP_SFC_bridgetoafrica }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RP_SFC_germaninvestments
+		icon = GFX_focus_GER_customs_union
+
+		x = 1
+		y = 1
+		cost = 1
+		relative_position_id = RP_SFC_enterthereichspakt
+
+		prerequisite = { focus = RP_SFC_enterthereichspakt }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RP_SFC_developthemilitaryindustry
+		icon = GFX_focus_generic_military_industry
+
+		x = 0
+		y = 2
+		cost = 1
+		relative_position_id = RP_SFC_germaninvestments
+
+		prerequisite = { focus = RP_SFC_germaninvestments }
+		prerequisite = { focus = RP_SFC_fortifythestrait }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RP_SFC_invadefrenchmorocco
+		icon = GFX_focus_generic_attack_vichy_france
+
+		x = 3
+		y = 1
+		cost = 1
+		relative_position_id = RP_SFC_rapprochementwithksp
+
+		prerequisite = { focus = RP_SFC_rapprochementwithksp focus = RP_SFC_kingdomofmorocco }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RP_SFC_consolidatecontrol
+		icon = GFX_focus_AFG_parliamentary_democracy
+
+		x = 0
+		y = 1
+		cost = 1
+		relative_position_id = RP_SFC_invadefrenchmorocco
+
+		prerequisite = { focus = RP_SFC_invadefrenchmorocco }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RP_SFC_kingdomofmorocco
+		icon = GFX_focus_generic_monarchy_2
+
+		x = 6
+		y = 0
+		cost = 1
+		#relative_position_id = 
+
+		mutually_exclusive = { focus = RP_SFC_cooperationwiththewest }
+		mutually_exclusive = { focus = RP_SFC_rapprochementwithksp }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RP_SFC_africancoalition
+		icon = GFX_focus_generic_africa_liberation
+
+		x = 0
+		y = 1
+		cost = 1
+		relative_position_id = RP_SFC_kingdomofmorocco
+
+		prerequisite = { focus = RP_SFC_kingdomofmorocco }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RP_SFC_continuethefight
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+
+		x = 0
+		y = 1
+		cost = 1
+		relative_position_id = RP_SFC_africancoalition
+
+		prerequisite = { focus = RP_SFC_africancoalition }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RP_SFC_pushsouth
+		icon = GFX_focus_generic_camel_corps
+
+		x = -2
+		y = 1
+		cost = 1
+		relative_position_id = RP_SFC_continuethefight
+
+		prerequisite = { focus = RP_SFC_continuethefight }
+		prerequisite = { focus = RP_SFC_consolidatecontrol }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RP_SFC_striketheheartland
+		icon = GFX_focus_SWE_marauder_bombers
+
+		x = 0
+		y = 1
+		cost = 1
+		relative_position_id = RP_SFC_continuethefight
+
+		prerequisite = { focus = RP_SFC_continuethefight }
+		prerequisite = { focus = RP_SFC_consolidatecontrol }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RP_SFC_declarevictory
+		icon = GFX_goal_generic_alliance
+
+		x = -2
+		y = 1
+		cost = 1
+		relative_position_id = RP_SFC_striketheheartland
+
+		prerequisite = { focus = RP_SFC_striketheheartland }
+		prerequisite = { focus = RP_SFC_pushsouth }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RP_SFC_sultanateoftripolitania
+		icon = GFX_focus_attack_italy
+
+		x = 0
+		y = 1
+		cost = 1
+		relative_position_id = RP_SFC_striketheheartland
+
+		prerequisite = { focus = RP_SFC_striketheheartland }
+		prerequisite = { focus = RP_SFC_pushsouth }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RP_SFC_liberatethekingdomofegypt
+		icon = GFX_focus_attack_britain
+
+		x = 2
+		y = 1
+		cost = 1
+		relative_position_id = RP_SFC_striketheheartland
+
+		prerequisite = { focus = RP_SFC_striketheheartland }
+		prerequisite = { focus = RP_SFC_pushsouth }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			
+		}
+	}
+}

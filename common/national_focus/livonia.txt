@@ -1,0 +1,2163 @@
+focus_tree = {
+	id = livonian_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = KLV
+		}
+	}
+	default = no
+	
+	continuous_focus_position = { x = 50 y = 3000 }
+
+	focus = {
+		id = KLV_under_kaiser
+		icon = GFX_focus_GER_weltpolitik
+		x = 5
+		y = 2
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 0.5
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 15
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = KLV_reinstate_german_officials
+		icon = GFX_focus_GER_appease_the_wehrmacht
+		x = 0
+		y = 1
+		relative_position_id = KLV_under_kaiser
+
+		prerequisite = { focus = KLV_under_kaiser }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 2
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = KLV_army_generals
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+
+    # Livonian branch
+
+	focus = {
+		id = KLV_restore_livonia
+		icon = GFX_focus_generic_vatican_state
+		x = -7
+		y = 1
+		relative_position_id = KLV_reinstate_german_officials
+
+		prerequisite = { focus = KLV_reinstate_german_officials }
+		mutually_exclusive = { focus = KLV_secure_german_rule }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 4
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			GER = {
+				set_autonomy = {
+   					target = KLV
+   					autonomous_state = autonomy_RP_holy_order
+    				end_wars = no
+    				end_civil_wars = no
+				}
+
+				KLV = {
+					set_cosmetic_tag = KLV_livonia2
+				}
+			}
+		}
+	ai_will_do = {
+			base = 1
+			modifier = { has_country_flag = ai_livonia add = 3000}
+		}
+	}
+	focus = {
+		id = KLV_establish_sword_brethren
+		icon = GFX_focus_POL_belarus_army
+		x = 2
+		y = 1.5
+		relative_position_id = KLV_restore_livonia
+
+		prerequisite = { focus = KLV_restore_livonia }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 8
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			division_template = {
+				name = "Schwertbrüderorden"
+
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+
+					artillery_brigade = { x = 3 y = 0 }
+				}
+				support = {
+					engineer = { x = 0 y = 2 }
+					artillery = { x = 0 y = 0 } 
+					recon = { x = 0 y = 1}
+				}
+			}
+			division_template = {
+				name = "Ritterbrüder"
+
+				regiments = {
+					cavalry = { x = 0 y = 0 }
+					cavalry = { x = 0 y = 1 }
+					cavalry = { x = 0 y = 2 }
+					cavalry = { x = 0 y = 3 }
+
+					cavalry = { x = 1 y = 0 }
+					cavalry = { x = 1 y = 1 }
+					cavalry = { x = 1 y = 2 }
+					
+					cavalry = { x = 2 y = 0 }
+					cavalry = { x = 2 y = 1 }
+					cavalry = { x = 2 y = 2 }
+
+					mot_artillery_brigade = { x = 3 y = 0 }
+				}
+				support = {
+					engineer = { x = 0 y = 2 }
+					artillery = { x = 0 y = 0 } 
+					recon = { x = 0 y = 1}
+				}
+			}
+			division_template = {
+				name = "Gastbrüder"
+
+				regiments = {
+					militia = { x = 0 y = 0 }
+					militia = { x = 0 y = 1 }
+					militia = { x = 0 y = 2 }
+
+					militia = { x = 1 y = 0 }
+					militia = { x = 1 y = 1 }
+					militia = { x = 1 y = 2 }
+					
+					militia = { x = 2 y = 0 }
+					militia = { x = 2 y = 1 }
+					militia = { x = 2 y = 2 }
+
+				}
+				support = {
+					engineer = { x = 0 y = 2 }
+					artillery = { x = 0 y = 0 } 
+					recon = { x = 0 y = 1}
+				}
+			}
+			division_template = {
+				name = "Dienstbrüder"
+
+				regiments = {
+					cavalry = { x = 0 y = 0 }
+					cavalry = { x = 0 y = 1 }
+					cavalry = { x = 0 y = 2 }
+					cavalry = { x = 0 y = 3 }
+
+					cavalry = { x = 1 y = 0 }
+					cavalry = { x = 1 y = 1 }
+					cavalry = { x = 1 y = 2 }
+
+				}
+				support = {
+					engineer = { x = 0 y = 2 }
+					artillery = { x = 0 y = 0 } 
+					recon = { x = 0 y = 1}
+				}
+			}
+			808 = {
+				create_unit = {
+					division = "name = \"1. Schwertbrüder Division\" division_template = \"Schwertbrüderorden\" start_experience_factor = 1.0"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"2. Schwertbrüder Division\" division_template = \"Schwertbrüderorden\" start_experience_factor = 1.0"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"3. Schwertbrüder Division\" division_template = \"Schwertbrüderorden\" start_experience_factor = 1.0"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"4. Schwertbrüder Division\" division_template = \"Schwertbrüderorden\" start_experience_factor = 1.0"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"5. Schwertbrüder Division\" division_template = \"Schwertbrüderorden\" start_experience_factor = 1.0"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"6. Schwertbrüder Division\" division_template = \"Schwertbrüderorden\" start_experience_factor = 1.0"
+					owner = ROOT
+				}
+			}
+			add_equipment_to_stockpile = {
+    			type = infantry_equipment
+    			amount = 15000
+   				 producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+    			type = artillery_equipment
+    			amount = 800
+   				 producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+    			type = support_equipment
+    			amount = 1000
+   				 producer = ROOT
+			}
+		}
+	ai_will_do = {
+		
+		}
+	}
+	focus = {
+		id = KLV_expand_urban_industry
+		icon = GFX_focus_generic_modernize_industry
+		x = -1
+		y = 1
+		relative_position_id = KLV_establish_sword_brethren
+
+		prerequisite = { focus = KLV_establish_sword_brethren }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 8
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			808 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 3
+    				instant_build = yes
+				}
+			}
+			812 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 3
+    				instant_build = yes
+				}
+			}
+			add_ideas = KLV_subsidized_industry
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = KLV_build_arms_industry
+		icon = GFX_focus_generic_military_industry
+		x = 0
+		y = 1
+		relative_position_id = KLV_expand_urban_industry
+
+		prerequisite = { focus = KLV_expand_urban_industry }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 8
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			13 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+    				type = arms_factory
+    				level = 3
+    				instant_build = yes
+				}
+			}
+			810 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = arms_factory
+    				level = 2
+    				instant_build = yes
+				}
+			}
+			12 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = arms_factory
+    				level = 2
+    				instant_build = yes
+				}
+			}
+			add_ideas = KLV_subsidized_arms_industry
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = KLV_break_economic_ties
+		icon = GFX_focus_NOR_send_the_king_back_to_denmark
+		x = 1
+		y = 1
+		relative_position_id = KLV_establish_sword_brethren
+
+		prerequisite = { focus = KLV_establish_sword_brethren }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 5
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			GER ={
+			set_autonomy = {
+   				target = KLV
+   				autonomous_state = autonomy_free
+    			end_wars = yes
+    			end_civil_wars = no
+			}
+			country_event = {
+				id = RP_livoniaevents.2
+			}
+		}
+		KLV = {
+			leave_faction = yes
+		}
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = KLV_occupy_litaun
+		icon = GFX_focus_LIT_claim_livonia
+		x = 0
+		y = 1
+		relative_position_id = KLV_break_economic_ties
+
+		prerequisite = { focus = KLV_break_economic_ties }
+		mutually_exclusive = { focus = KLV_request_litaun }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 5
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			IF = {
+				limit = {
+				country_exists = KLI
+				}
+			
+			annex_country = {
+    			target = KLI
+    			transfer_troops = yes
+			}
+			KLV = {
+					every_state = {
+						limit = {
+							is_controlled_by = KLI
+						}
+						add_core_of = KLV
+						
+					}
+
+				}
+				GER = {
+				country_event = {
+   					id = RP_livoniaevents.3
+   					days = 1
+				}
+			}
+			}
+			IF = {
+				limit = {
+				country_exists = KCS
+				}
+				KLV = {
+					annex_country = {
+    					target = KCS
+    					transfer_troops = yes
+					}
+				}
+				KLV = {
+					every_state = {
+						limit = {
+							OR = {
+								state = 809
+								state = 190
+							}
+						}
+						add_core_of = KLV
+						
+					}
+
+				}
+			}
+			IF = {
+				limit = {
+				country_exists = LIT
+				}
+				annex_country = {
+    			target = LIT
+    			transfer_troops = yes
+			}
+			KLV = {
+					every_state = {
+						limit = {
+							OR = {
+								state = 189
+								state = 815
+								state = 784
+								state = 11
+								state = 814
+							}
+						}
+						add_core_of = KLV
+						
+					}
+
+				}
+			}
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = KLV_request_litaun
+		icon = GFX_goal_generic_forceful_treaty
+		x = 2
+		y = 1
+		relative_position_id = KLV_break_economic_ties
+
+		prerequisite = { focus = KLV_break_economic_ties }
+		mutually_exclusive = { focus = KLV_occupy_litaun }
+		
+		available = {
+			country_exists = KLI
+		}
+		bypass = {
+
+		}
+
+		cost = 5
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			GER = {
+			country_event = {
+				id = RP_livoniaevents.7
+				days = 3
+			}
+		}
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = KLV_prepare_bavarian_revolt
+		icon = GFX_focus_generic_infiltration
+		x = 1
+		y = 1
+		relative_position_id = KLV_build_arms_industry
+
+		prerequisite = { focus = KLV_build_arms_industry }
+		prerequisite = { 
+			focus = KLV_occupy_litaun
+			focus = KLV_request_litaun
+		}
+		
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 10
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 25
+			set_variable = {
+				var = KLV_bavarian_catholic_support
+				value = 0
+				tooltip = KLV_bavaria_unlocked
+			}
+			set_country_flag = preparing_bavarian_coup
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = KLV_land_of_mary
+		icon = GFX_focus_mex_restore_the_army_of_christ
+		x = -2
+		y = 1.5
+		relative_position_id = KLV_restore_livonia
+
+		prerequisite = { focus = KLV_restore_livonia }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 5
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = KLV_land_mary
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = KLV_catholic_tradition
+		icon = GFX_focus_generic_pope
+		x = 0
+		y = 1.5
+		relative_position_id = KLV_land_of_mary
+
+		prerequisite = { focus = KLV_land_of_mary }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 5
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = KLV_catholic_traditions
+			add_ideas = KLV_angered_populace
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = KLV_population_exchance
+		icon = GFX_focus_generic_population_growth
+		x = 0
+		y = 1.5
+		relative_position_id = KLV_catholic_tradition
+
+		prerequisite = { focus = KLV_catholic_tradition }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 5
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			GER = {
+				country_event = RP_livoniaevents.6
+			}
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = KLV_southern_crusade
+		icon = GFX_focus_generic_full_social_mobilization
+		x = -2
+		y = 1.5
+		relative_position_id = KLV_prepare_bavarian_revolt
+
+		prerequisite = { focus = KLV_prepare_bavarian_revolt }
+		prerequisite = { focus = KLV_population_exchance }
+		
+		available = {
+			check_variable = {
+    			var = KLV_bavarian_catholic_support
+    			value = 50
+    		 	compare = greater_than_or_equals
+				tooltip = KLV_catholic_support_50
+			}
+		}
+		bypass = {
+
+		}
+
+		cost = 10
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+			GER = {
+				country_event = RP_livoniaevents.8
+			}
+			IF = {
+				limit = {
+					check_variable = {
+    					var = KLV_bavarian_catholic_support
+    					value = 100
+    		 			compare = greater_than_or_equals
+						
+					}
+				}
+				GER = {
+					country_event = RP_livoniaevents.9
+				}
+			}
+			custom_effect_tooltip = KLV_austrian_support
+			KLV = {
+				create_faction_from_template = {
+				template = faction_template_european_dominance_monarchist
+				name = "Holy See"
+				icon = GFX_faction_logo_generic_2
+				color = { 80 83 87 }
+				}
+			}
+			
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# United Baltic Duchy Branch
+	
+	focus = {
+		id = KLV_secure_german_rule
+		icon = GFX_focus_GER_eastern_grand_duchies
+		x = 7
+		y = 1
+		relative_position_id = KLV_reinstate_german_officials
+
+		prerequisite = { focus = KLV_reinstate_german_officials }
+		mutually_exclusive = { focus = KLV_restore_livonia }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 5
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	ai_will_do = {
+			base = 1
+			modifier = { has_country_flag = ai_baltic add = 3000}
+		}
+	}
+	focus = {
+		id = KLV_german_investments
+		icon = GFX_focus_CONGO_gold_and_diamonds
+		x = 0
+		y = 1
+		relative_position_id = KLV_secure_german_rule
+
+		prerequisite = { focus = KLV_secure_german_rule }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 5
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			GER = {
+				country_event = {
+					id = RP_livoniaevents.19
+				}
+			}
+		}
+	ai_will_do = {
+			factor = 1000
+		}
+	}
+	focus = {
+		id = KLV_rebuild_the_army
+		icon = GFX_focus_chi_army_reform
+		x = 2
+		y = 1
+		relative_position_id = KLV_secure_german_rule
+
+		prerequisite = { focus = KLV_secure_german_rule }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 10
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = KLV_rebuildthearmy
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			GER = {
+				country_event = RP_livoniaevents.15
+			}
+		}
+	ai_will_do = {
+			factor = 10
+		}
+	}
+	focus = {
+		id = KLV_german_advisors
+		icon = GFX_goal_generic_small_arms
+		x = 2
+		y = 1
+		relative_position_id = KLV_rebuild_the_army
+
+		prerequisite = { focus = KLV_rebuild_the_army }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 5
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			KLV = {
+				add_ideas = KLV_german_advisors1
+			}
+		}
+	ai_will_do = {
+			factor = 10
+		}
+	}
+	focus = {
+		id = KLV_baltische_landeswehr
+		icon = GFX_focus_GER_glory_to_the_imperial_army
+		x = 0
+		y = 1
+		relative_position_id = KLV_rebuild_the_army
+
+		prerequisite = { focus = KLV_rebuild_the_army }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 10
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			division_template = {
+				name = "Baltische Landeswehr"
+
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+
+					artillery_brigade = { x = 3 y = 0 }
+				}
+				support = {
+					engineer = { x = 0 y = 2 }
+					artillery = { x = 0 y = 0 } 
+					recon = { x = 0 y = 1}
+				}
+			}
+			808 = {
+				create_unit = {
+					division = "name = \"1. Baltische Landeswehr\" division_template = \"Baltische Landeswehr\" start_experience_factor = 1.0 start_equipment_factor = 0.1" 
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"2. Baltische Landeswehr\" division_template = \"Baltische Landeswehr\" start_experience_factor = 1.0 start_equipment_factor = 0.1"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"3. Baltische Landeswehr\" division_template = \"Baltische Landeswehr\" start_experience_factor = 1.0 start_equipment_factor = 0.1"
+					owner = ROOT
+				}
+			}
+			add_stability = 0.05
+		}
+	ai_will_do = {
+			factor = 10
+		}
+	}
+	focus = {
+		id = KLV_expand_freikorps
+		icon = GFX_focus_generic_full_social_mobilization
+		x = 0
+		y = 1
+		relative_position_id = KLV_baltische_landeswehr
+
+		prerequisite = { focus = KLV_baltische_landeswehr }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 8
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			division_template = {
+				name = "Eiserne Division"
+
+				regiments = {
+					militia = { x = 0 y = 0 }
+					militia = { x = 0 y = 1 }
+					militia = { x = 0 y = 2 }
+
+					militia = { x = 1 y = 0 }
+					militia = { x = 1 y = 1 }
+					militia = { x = 1 y = 2 }
+					
+					militia = { x = 2 y = 0 }
+					militia = { x = 2 y = 1 }
+					militia = { x = 2 y = 2 }
+
+				}
+				support = {
+					engineer = { x = 0 y = 2 }
+					artillery = { x = 0 y = 0 } 
+					recon = { x = 0 y = 1}
+				}
+			}
+			812 = {
+				create_unit = {
+					division = "name = \"1. Eiserne Division\" division_template = \"Eiserne Division\" start_experience_factor = 1.0 start_equipment_factor = 0.1"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"2. Eiserne Division\" division_template = \"Eiserne Division\" start_experience_factor = 1.0 start_equipment_factor = 0.1"
+					owner = ROOT
+				}
+			}
+		}
+	ai_will_do = {
+			factor = 10
+		}
+	}
+	focus = {
+		id = KLV_fortify_eastern_border
+		icon = GFX_goal_generic_military_sphere
+		x = 2
+		y = 1
+		relative_position_id = KLV_baltische_landeswehr
+
+		prerequisite = { focus = KLV_baltische_landeswehr }
+		prerequisite = { focus = KLV_german_advisors }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 8
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			813 = {
+				add_building_construction = {
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 4640
+				}
+			}
+			
+			810 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 319
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 222
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 9275
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 6459
+				}
+			}
+		}
+	ai_will_do = {
+			factor = 10
+		}
+	}
+	focus = {
+		id = KLV_raise_army_standards
+		icon = GFX_focus_SWE_varnplikt
+		x = 1
+		y = 1
+		relative_position_id = KLV_expand_freikorps
+
+		prerequisite = { focus = KLV_expand_freikorps }
+		prerequisite = { focus = KLV_fortify_eastern_border }
+
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 5
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = KLV_heightened_army_standards
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = KLV_rebuild_balten_influence
+		icon = GFX_focus_rom_royal_dictatorship
+		x = 0
+		y = 1
+		relative_position_id = KLV_german_investments
+
+		prerequisite = { focus = KLV_german_investments }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 5
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.1
+			add_war_support = 0.05
+			add_popularity = {
+				ideology = ROOT
+				popularity = 0.1
+			}
+		}
+	ai_will_do = {
+			factor = 1000
+		}
+	}
+	focus = {
+		id = KLV_adopt_german
+		icon = GFX_focus_generic_improve_the_administration
+		x = 0
+		y = 1
+		relative_position_id = KLV_rebuild_balten_influence
+
+		prerequisite = { focus = KLV_rebuild_balten_influence }
+
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 5
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			remove_ideas = KLV_estonian_differences
+			add_war_support = 0.05
+		}
+	ai_will_do = {
+			factor = 1000
+		}
+	}
+	focus = {
+		id = KLV_request_courland
+		icon = GFX_focus_generic_treaty
+		x = 0
+		y = 1
+		relative_position_id = KLV_adopt_german
+
+		prerequisite = { focus = KLV_adopt_german }
+
+		
+		available = {}
+		bypass = {
+			KLV = {
+				owns_state = 808
+				owns_state = 809
+				owns_state = 190
+			}
+		}
+
+		cost = 5
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			GER = {
+				country_event = RP_livoniaevents.20
+			}
+		}
+	ai_will_do = {
+			factor = 1000
+		}
+	}
+	focus = {
+		id = KLV_address_the_divide
+		icon = GFX_focus_GER_subduing_the_baltic_states
+		x = 0
+		y = 2
+		relative_position_id = KLV_adopt_german
+
+		prerequisite = { focus = KLV_request_courland }
+
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 2
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			GER = {
+				country_event = {
+					id = RP_livoniaevents.21
+				}
+			}
+		}
+	ai_will_do = {
+			factor = 0
+			modifier = { has_completed_focus = KLV_raise_army_standards add = 3000}
+		}
+	}
+	focus = {
+		id = KLV_peaceful_coexistance
+		icon = GFX_focus_SWE_refuge_from_war
+		x = 0
+		y = 1
+		relative_position_id = KLV_address_the_divide
+
+		prerequisite = { focus = KLV_address_the_divide }
+		mutually_exclusive = { focus = KLV_destroy_baltic_nationalism }
+
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 5
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = KLV_baltic_resistance
+				add_idea = KLV_tempered_resistance
+			}
+		}
+	ai_will_do = {
+			factor = 1
+			modifier = { has_country_flag = KLV_ai_cooperate add = 3000}
+		}
+	}
+	focus = {
+		id = KLV_destroy_baltic_nationalism
+		icon = GFX_focus_CHL_expand_the_forestry
+		x = 2
+		y = 1
+		relative_position_id = KLV_address_the_divide
+
+		prerequisite = { focus = KLV_address_the_divide }
+		prerequisite = { focus = KLV_raise_army_standards }
+		mutually_exclusive = { focus = KLV_peaceful_coexistance }
+
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 10
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = KLV_baltic_resistance
+				add_idea = KLV_shattered_resistance
+			}
+		}
+	ai_will_do = {
+			factor = 1
+			modifier = { has_country_flag = KLV_germanize_focus add = 3000}
+		}
+	}
+	focus = {
+		id = KLV_renewed_germanization
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = KLV_destroy_baltic_nationalism
+
+		prerequisite = { focus = KLV_destroy_baltic_nationalism }
+
+
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 10
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = KLV_shattered_resistance
+				add_idea = KLV_german_immigrants
+			}
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = KLV_appease_baltic_nationalists
+		icon = GFX_goal_generic_forceful_treaty
+		x = 0
+		y = 1
+		relative_position_id = KLV_peaceful_coexistance
+
+		prerequisite = { focus = KLV_peaceful_coexistance }
+
+
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 5
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = KLV_tempered_resistance
+				add_idea = KLV_cooperative_resistance
+			}
+			add_political_power = -100
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = KLV_jewel_of_the_east
+		icon = GFX_RP_focus_KLV_jewel
+		x = -2
+		y = 2
+		relative_position_id = KLV_appease_baltic_nationalists
+
+		prerequisite = { focus = KLV_develop_heavy_industry }
+		prerequisite = { 
+			focus = KLV_appease_baltic_nationalists
+			focus = KLV_renewed_germanization
+		}
+		mutually_exclusive = { focus = KLV_integrate_into_germany }
+
+		available = {
+			KLV = {
+				owns_state = 808
+				owns_state = 809
+				owns_state = 190
+			}
+		}
+		bypass = {
+
+		}
+
+		cost = 52.24285714385715
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = KLV_jewel_of_the_east_tooltip
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = KLV_dotted_line_tooltip
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = KLV_estonian_development_tooltip
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = KLV_latvian_development_tooltip
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = KLV_dockyard_development_tooltip
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_research_slot = 1
+
+			add_ideas = KLV_jewel_of_the_east_modifier
+			
+			GER = {
+				country_event = {
+					id = RP_livoniaevents.23
+				}
+			}
+			hidden_effect = {
+				811 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				812 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}
+				813 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				13 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				191 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+
+				808 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}
+				809 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+				810 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+				12 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+				190 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+
+		}
+	ai_will_do = {
+			factor = 100
+		}
+	}
+	focus = {
+		id = KLV_integrate_into_germany
+		icon = GFX_RP_focus_KLV_integrate
+		x = 0
+		y = 2
+		relative_position_id = KLV_appease_baltic_nationalists
+
+		prerequisite = { focus = KLV_develop_heavy_industry }
+		prerequisite = { 
+			focus = KLV_appease_baltic_nationalists
+			focus = KLV_renewed_germanization
+		}
+		mutually_exclusive = { focus = KLV_jewel_of_the_east }
+
+
+		available = {
+			has_completed_focus = KLV_renewed_germanization 
+		}
+		bypass = {
+
+		}
+
+		cost = 20
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = KLV_integrate_into_germany_tooltip
+			GER = {
+				country_event = {
+					id = RP_livoniaevents.24
+				}
+			}
+		}
+	ai_will_do = {
+			factor = 0
+			modifier = { has_country_flag = KLV_ai_integrate add = 3000}
+		}
+	}
+
+	# Baltic Industry
+
+	focus = {
+		id = KLV_integrate_into_mitteleuropa
+		icon = GFX_focus_GER_mitteleuropa
+		x = -2
+		y = 1
+		relative_position_id = KLV_secure_german_rule
+
+		prerequisite = { focus = KLV_secure_german_rule }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 5
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = KLV_german_trade_mitteleuropa
+			add_popularity = {
+				ideology = ROOT
+				popularity = 0.1
+			}
+			
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = KLV_urbanization_efforts
+		icon = GFX_focus_PRC_bolshevik_urbanization_1
+		x = -1
+		y = 1
+		relative_position_id = KLV_integrate_into_mitteleuropa
+
+		prerequisite = { focus = KLV_integrate_into_mitteleuropa }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 10
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			12 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = infrastructure
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			13 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = infrastructure
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			810 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = infrastructure
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			
+			
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = KLV_legacy_hanseati_states # MoW reference ## yeah so second note 2 hours later that meant to say hanseatic im a fucking retard
+		icon = GFX_goal_generic_positive_trade_relations
+		x = -4
+		y = 1
+		relative_position_id = KLV_integrate_into_mitteleuropa
+
+		prerequisite = { focus = KLV_integrate_into_mitteleuropa }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 5
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+
+			swap_ideas = {
+					remove_idea = KLV_german_trade_mitteleuropa
+					add_idea = KLV_german_trade_mitteleuropa2
+				}
+		
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = KLV_develop_shipping
+		icon = GFX_focus_generic_baltic_sea_fleet
+		x = 0
+		y = 1
+		relative_position_id = KLV_legacy_hanseati_states
+
+		prerequisite = { focus = KLV_legacy_hanseati_states }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 10
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			808 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = 	dockyard
+    				level = 2
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = infrastructure
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			812 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = 	dockyard
+    				level = 2
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = infrastructure
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = KLV_develop_latvia
+		icon = GFX_focus_generic_industry_investment
+		x = -1
+		y = 1
+		relative_position_id = KLV_urbanization_efforts
+
+		prerequisite = { focus = KLV_urbanization_efforts }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 10
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			808 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    				type = 	industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			12 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    				type = 	industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = infrastructure
+    				level = 1
+    				instant_build = yes
+				}
+			}
+
+			IF = {
+				limit = {
+					809 = {	
+						is_owned_by = KLV
+					}
+					190 = {	
+						is_owned_by = KLV
+					}
+					
+				}
+			809 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    				type = 	industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = infrastructure
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			190 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    				type = 	industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = infrastructure
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		}
+			
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = KLV_develop_estonia
+		icon = GFX_focus_generic_industry_investment
+		x = 1
+		y = 1
+		relative_position_id = KLV_urbanization_efforts
+
+		prerequisite = { focus = KLV_urbanization_efforts }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 10
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			812 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = 	industrial_complex
+    				level = 2
+    				instant_build = yes
+				}
+
+			}
+			813 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    				type = 	industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = infrastructure
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			191 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    				type = 	industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = infrastructure
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = KLV_utilize_baltic_resources
+		icon = GFX_focus_generic_resource_extraction
+		x = 0
+		y = 1
+		relative_position_id = KLV_develop_latvia
+
+		prerequisite = { focus = KLV_develop_estonia }
+		prerequisite = { focus = KLV_develop_latvia }
+		prerequisite = { focus = KLV_develop_shipping }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 5
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_resource = {
+				type = coal
+				amount = 5
+				state = 810
+			}
+			add_resource = {
+				type = coal
+				amount = 7
+				state = 191
+			}
+			add_resource = {
+				type = oil
+				amount = 5
+				state = 812
+			}
+			add_resource = {
+				type = oil
+				amount = 5
+				state = 813
+			}
+			813 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    				type = synthetic_refinery
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}	
+	focus = {
+		id = KLV_import_iron
+		icon = GFX_focus_generic_steel
+		x = 1
+		y = 1
+		relative_position_id = KLV_utilize_baltic_resources
+
+		prerequisite = { focus = KLV_utilize_baltic_resources }
+
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 4
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_resource = {
+				type = steel
+				amount = 15
+				state = 808
+			}
+			add_resource = {
+				type = steel
+				amount = 10
+				state = 812
+			}
+			
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}	
+	focus = {
+		id = KLV_import_coal
+		icon = GFX_focus_generic_coal_mining
+		x = -1
+		y = 1
+		relative_position_id = KLV_utilize_baltic_resources
+
+		prerequisite = { focus = KLV_utilize_baltic_resources }
+
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 4
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_resource = {
+				type = coal
+				amount = 10
+				state = 812
+			}
+			add_resource = {
+				type = coal
+				amount = 10
+				state = 808
+			}
+			
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = KLV_develop_heavy_industry
+		icon = GFX_focus_generic_military_industry
+		x = 1
+		y = 1
+		relative_position_id = KLV_import_coal
+
+		prerequisite = { focus = KLV_import_coal }
+		prerequisite = { focus = KLV_import_iron }
+
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 10
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			808 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    				type = 	arms_factory
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			add_resource = {
+				type = steel
+				amount = 6
+				state = 808
+			}
+			812 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    				type = 	arms_factory
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			IF = {
+				limit = {
+					809 = {	
+						is_owned_by = KLV
+					}
+					
+				}
+			809 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    				type = 	arms_factory
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		}
+			
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+
+}
+
+	
+
+	

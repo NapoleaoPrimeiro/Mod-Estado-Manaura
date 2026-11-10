@@ -1,0 +1,1139 @@
+﻿focus_tree = {
+	id = RP_KFR_focustree
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = KFR
+		}
+	}
+
+	focus = {
+		id = RP_KFR_devastationofwar
+		icon = GFX_focus_generic_public_works
+
+		x = -10
+		y = 0
+		cost = 5
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = KFR_office_nationalrevitalization
+				days = 180
+			}
+		}
+	}
+
+	focus = {
+		id = RP_KFR_reapmitteleuropa
+		icon = GFX_focus_GER_extend_mitteleuropa
+
+		x = -3
+		y = 1
+		cost = 4
+		relative_position_id = RP_KFR_devastationofwar
+
+		prerequisite = { focus = RP_KFR_devastationofwar }
+
+		available = {
+			OR = {
+				NOT = {
+					has_completed_focus = RP_KFR_ludendorfplan
+				}
+				has_completed_focus = RP_KFR_finishtheplan
+			}
+			NOT = {
+				has_idea = KFR_office_nationalrevitalization
+			}
+		}
+
+		completion_reward = {
+			add_ideas = {
+				KFR_benefitsofmitteleuropa_i
+			}
+		}
+	}
+
+	focus = {
+		id = RP_KFR_developthemetropol
+		icon = GFX_focus_generic_low_cost_housing
+
+		x = -2
+		y = 1
+		cost = 10
+		relative_position_id = RP_KFR_reapmitteleuropa
+
+		prerequisite = { focus = RP_KFR_reapmitteleuropa }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = RP_KFR_developthemetropol_effect_tt
+			every_state = {
+				limit = {
+					is_owned_by = KFR
+					infrastructure > 3
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = RP_KFR_thehongkongofthewest
+		icon = GFX_focus_generic_approach_the_west
+
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = RP_KFR_reapmitteleuropa
+
+		prerequisite = { focus = RP_KFR_reapmitteleuropa }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_ideas = {
+				RP_KFR_hongkongofthewest_idea
+			}
+		}
+	}
+
+	focus = {
+		id = RP_KFR_establishthethinktanks
+		icon = GFX_focus_generic_university_2
+
+		x = -1
+		y = 1
+		cost = 4
+		relative_position_id = RP_KFR_thehongkongofthewest
+
+		prerequisite = { focus = RP_KFR_thehongkongofthewest }
+		prerequisite = { focus = RP_KFR_developthemetropol }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_research_slot = 2
+		}
+	}
+
+	focus = {
+		id = RP_KFR_frenchautobahn
+		icon = GFX_focus_generic_road_investment
+
+		x = 2
+		y = 1
+		cost = 6
+		relative_position_id = RP_KFR_reapmitteleuropa
+
+		prerequisite = { focus = RP_KFR_reapmitteleuropa }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = KFR_benefitsofmitteleuropa_i
+				add_idea = KFR_benefitsofmitteleuropa_ii
+			}
+		}
+	}
+
+	focus = {
+		id = RP_KFR_exploitthesteelmills
+		icon = GFX_focus_generic_modernize_industry
+
+		x = 1
+		y = 1
+		cost = 5
+		relative_position_id = RP_KFR_thehongkongofthewest
+
+		prerequisite = { focus = RP_KFR_frenchautobahn }
+		prerequisite = { focus = RP_KFR_thehongkongofthewest }
+		prerequisite = { focus = RP_KFR_developthemetropol }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_ideas = {
+				KFR_exploitationofthesteelmills
+			}
+			add_resource = {
+				type = steel
+				amount = 4
+				state = 17
+			}
+			add_resource = {
+				type = steel
+				amount = 4
+				state = 18
+			}
+		}
+	}
+
+	focus = {
+		id = RP_KFR_grandindustry
+		icon = GFX_focus_generic_industry_3
+
+		x = 1
+		y = 1
+		cost = 10
+		relative_position_id = RP_KFR_establishthethinktanks
+
+		prerequisite = { focus = RP_KFR_exploitthesteelmills }
+		prerequisite = { focus = RP_KFR_establishthethinktanks }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_stability = 0.15
+			add_popularity = {
+				ideology = ROOT
+				popularity = 0.25
+			}
+			swap_ideas = {
+				remove_idea = KFR_benefitsofmitteleuropa_ii
+				add_idea = KFR_benefitsofmitteleuropa_iii
+			}
+		}
+	}
+
+	focus = {
+		id = RP_KFR_ludendorfplan
+		icon = GFX_focus_generic_little_entente
+
+		x = 3
+		y = 1
+		cost = 4
+		relative_position_id = RP_KFR_devastationofwar
+
+		prerequisite = { focus = RP_KFR_devastationofwar }
+
+		available = {
+			OR = {
+				NOT = {
+					has_completed_focus = RP_KFR_reapmitteleuropa
+				}
+				has_completed_focus = RP_KFR_grandindustry
+			}
+		}
+
+		completion_reward = {
+			add_ideas = {
+				KFR_ludendorfplan
+			}
+		}
+	}
+
+	focus = {
+		id = RP_KFR_defendingthechannel
+		icon = GFX_goal_generic_navy_submarine
+
+		x = -2
+		y = 1
+		cost = 5
+		relative_position_id = RP_KFR_ludendorfplan
+
+		prerequisite = { focus = RP_KFR_ludendorfplan }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_ideas = {
+				KFR_defenseofthechannel
+			}
+		}
+	}
+
+	focus = {
+		id = RP_KFR_defenseofthesouthernborder
+		icon = GFX_goal_generic_fortify_city
+
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = RP_KFR_ludendorfplan
+
+		prerequisite = { focus = RP_KFR_ludendorfplan }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_ideas = {
+				KFR_defenseofthesouthernborder
+			}
+		}
+	}
+
+	focus = {
+		id = RP_KFR_rivaloftheroyalnavy
+		icon = GFX_focus_generic_atlantic_coast
+
+		x = 1
+		y = 1
+		cost = 10
+		relative_position_id = RP_KFR_defendingthechannel
+
+		prerequisite = { focus = RP_KFR_defendingthechannel }
+		prerequisite = { focus = RP_KFR_defenseofthesouthernborder }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_owned_by = KFR
+					is_coastal = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = RP_KFR_expandthearmy
+		icon = GFX_goal_generic_axis_build_infantry
+
+		x = 2
+		y = 1
+		cost = 5
+		relative_position_id = RP_KFR_ludendorfplan
+
+		prerequisite = { focus = RP_KFR_ludendorfplan }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			army_experience = 25
+
+			swap_ideas = {
+				remove_idea = KFR_ludendorfplan
+				add_idea = KFR_ludendorfplan_ii
+			}
+		}
+	}
+
+	focus = {
+		id = RP_KFR_gloryofprussia
+		icon = GFX_focus_GER_prussian_legacy
+
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = RP_KFR_expandthearmy
+
+		prerequisite = { focus = RP_KFR_expandthearmy }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_ideas = {
+				KFR_gloryofprussia
+			}
+		}
+	}
+
+	focus = {
+		id = RP_KFR_finishtheplan
+		icon = GFX_focus_generic_full_social_mobilization
+
+		x = 1
+		y = 1
+		cost = 10
+		relative_position_id = RP_KFR_rivaloftheroyalnavy
+
+		prerequisite = { focus = RP_KFR_rivaloftheroyalnavy }
+		prerequisite = { focus = RP_KFR_gloryofprussia }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_war_support = 0.15
+			add_stability = 0.1
+			add_popularity = {
+				ideology = ROOT
+				popularity = 0.5
+			}
+			army_experience = 50
+			navy_experience = 25
+			air_experience = 25
+			if = {
+				limit = {
+					has_idea = KFR_ludendorfplan
+				}
+				remove_ideas = KFR_ludendorfplan
+			}
+
+			if = {
+				limit = {
+					has_idea = KFR_ludendorfplan_ii
+				}
+				remove_ideas = KFR_ludendorfplan_ii
+			}
+		}
+	}
+
+	focus = {
+		id = RP_KFR_questionofthenewregime
+		icon = GFX_goal_generic_intelligence_exchange
+
+		x = 11
+		y = 0
+		cost = 2
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			country_event = RP_KFR_focustreeevents.1
+		}
+	}
+
+	focus = {
+		id = RP_KFR_frenchrepublic
+		icon = GFX_focus_fra_french_union
+
+		x = -10
+		y = 1
+		cost = 10
+		relative_position_id = RP_KFR_questionofthenewregime
+
+		mutually_exclusive = { focus = RP_KFR_hohenzollernking }
+		mutually_exclusive = { focus = RP_KFR_continuethedictatorship }
+		mutually_exclusive = { focus = RP_KFR_returnofthebourbons }
+
+		ai_will_do = {
+			base = 0
+
+			modifier = {
+				has_game_rule = { rule = KFR_ai_behavior option = KFR_REPUBLIC }
+
+				add = 10
+			}
+		}
+
+		prerequisite = { focus = RP_KFR_questionofthenewregime }
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_KFR_frenchrepublic_requirement_tt
+
+				has_country_flag = RP_KFR_newregime_frenchrepublic
+				NOT = {
+					has_country_flag = RP_KFR_newregime_timer
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = RP_KFR_frenchrepublic_requirement_tt_2
+
+				NOT = {
+					has_country_flag = RP_KFR_democracyblocked
+				}
+			}
+		}
+
+		completion_reward = {
+			GER = {
+				country_event = RP_KFR_focustreeevents.2
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.25
+			}
+		}
+	}
+
+	focus = {
+		id = RP_KFR_returnoftheexiles
+		icon = GFX_focus_generic_population_growth
+
+		x = -2
+		y = 1
+		cost = 3
+		relative_position_id = RP_KFR_frenchrepublic
+
+		prerequisite = { focus = RP_KFR_frenchrepublic }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_ideas = {
+				KFR_returningexiles
+			}
+		}
+	}
+
+	focus = {
+		id = RP_KFR_coalitionproblem
+		icon = GFX_goal_generic_improve_relations
+
+		x = 0
+		y = 1
+		cost = 2
+		relative_position_id = RP_KFR_frenchrepublic
+
+		prerequisite = { focus = RP_KFR_frenchrepublic }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			country_event = RP_KFR_focustreeevents.5
+		}
+	}
+
+	focus = {
+		id = RP_KFR_freerepublic
+		icon = GFX_focus_fra_le_deluge
+
+		x = -1
+		y = 1
+		cost = 5
+		relative_position_id = RP_KFR_coalitionproblem
+
+		prerequisite = { focus = RP_KFR_returnoftheexiles }
+		prerequisite = { focus = RP_KFR_coalitionproblem }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_popularity = {
+				ideology = ROOT
+				popularity = 0.25
+			}
+			add_stability = 0.1
+		}
+	}
+
+	focus = {
+		id = RP_KFR_dissolvethekbi
+		icon = GFX_focus_BEL_government_resigns
+
+		x = 2
+		y = 1
+		cost = 10
+		relative_position_id = RP_KFR_frenchrepublic
+
+		prerequisite = { focus = RP_KFR_frenchrepublic }
+
+		available = {
+			country_exists = KBI
+		}
+
+		completion_reward = {
+			every_state = {
+				limit = {
+					state = 14
+				}
+				add_core_of = KFR
+			}
+			GER = {
+				country_event = {
+					id = RP_KFR_focustreeevents.6
+					hours = 12
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = RP_KFR_hohenzollernking
+		icon = GFX_focus_ger_revive_kaiserreich
+
+		x = -3
+		y = 1
+		cost = 10
+		relative_position_id = RP_KFR_questionofthenewregime
+
+		mutually_exclusive = { focus = RP_KFR_frenchrepublic }
+		mutually_exclusive = { focus = RP_KFR_continuethedictatorship }
+		mutually_exclusive = { focus = RP_KFR_returnofthebourbons }
+
+		ai_will_do = {
+			base = 10
+
+			modifier = {
+				has_game_rule = { rule = KFR_ai_behavior option = KFR_HOHENZOLLERN }
+
+				add = 10
+			}
+		}
+
+		prerequisite = { focus = RP_KFR_questionofthenewregime }
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_KFR_hohenzollernking_requirement_tt
+
+				has_country_flag = RP_KFR_newregime_germanalignment
+				NOT = {
+					has_country_flag = RP_KFR_newregime_timer
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = RP_KFR_hohenzollernking_requirement_tt_2
+
+				NOT = {
+					has_country_flag = RP_KFR_hohenzollernblocked
+				}
+			}
+		}
+
+		completion_reward = {
+			GER = {
+				country_event = RP_KFR_focustreeevents.9
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.10
+			}
+		}
+	}
+
+	focus = {
+		id = RP_KFR_anewcapital
+		icon = GFX_focus_AFG_parliamentary_democracy
+
+		x = -2
+		y = 1
+		cost = 2
+		relative_position_id = RP_KFR_hohenzollernking
+
+		prerequisite = { focus = RP_KFR_hohenzollernking }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			country_event = RP_KFR_focustreeevents.12
+		}
+	}
+
+	focus = {
+		id = RP_KFR_dissuaderevolution
+		icon = GFX_focus_SWI_dissolve_the_federal_council
+
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = RP_KFR_hohenzollernking
+
+		prerequisite = { focus = RP_KFR_hohenzollernking }
+
+		mutually_exclusive = { focus = RP_KFR_expatriatetheopposition }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_stability = 0.15
+			add_war_support = -0.30
+			add_popularity = {
+				ideology = ROOT
+				popularity = 0.20
+			}
+		}
+	}
+
+	focus = {
+		id = RP_KFR_continuethedictatorship
+		icon = GFX_focus_generic_military_academy
+
+		x = 4
+		y = 1
+		cost = 4
+		relative_position_id = RP_KFR_questionofthenewregime
+
+		mutually_exclusive = { focus = RP_KFR_frenchrepublic }
+		mutually_exclusive = { focus = RP_KFR_hohenzollernking }
+		mutually_exclusive = { focus = RP_KFR_returnofthebourbons }
+
+		ai_will_do = {
+			base = 0
+
+			modifier = {
+				has_game_rule = { rule = KFR_ai_behavior option = KFR_DICTATORSHIP }
+
+				add = 10
+			}
+		}
+
+		prerequisite = { focus = RP_KFR_questionofthenewregime }
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_KFR_continuedictatorship_requirement_tt
+
+				has_country_flag = RP_KFR_newregime_germanalignment
+			}
+		}
+
+		completion_reward = {
+			set_cosmetic_tag = RP_KFR_militarydictatorship
+			add_stability = -0.1
+		}
+	}
+
+	focus = {
+		id = RP_KFR_expatriatetheopposition
+		icon = GFX_goal_anti_comintern_pact
+
+		x = -3
+		y = 1
+		cost = 10
+		relative_position_id = RP_KFR_continuethedictatorship
+
+		prerequisite = { focus = RP_KFR_continuethedictatorship focus = RP_KFR_hohenzollernking }
+
+		mutually_exclusive = { focus = RP_KFR_dissuaderevolution }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_ideas = {
+				KFR_deportingopposition
+			}
+		}
+	}
+
+	focus = {
+		id = RP_KFR_germanizationofthenorth
+		icon = GFX_focus_generic_immigration
+
+		x = -2
+		y = 1
+		cost = 5
+		relative_position_id = RP_KFR_expatriatetheopposition
+
+		prerequisite = { focus = RP_KFR_dissuaderevolution focus = RP_KFR_expatriatetheopposition }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_owned_by = KFR
+					OR = {
+						state = 17
+						state = 18
+						state = 785
+						state = 29
+						state = 980
+						state = 34
+						state = 6
+						state = 977
+						state = 35
+						state = 36
+						state = 7
+					}
+				}
+				add_manpower = -10000
+				every_state = {
+					limit = {
+						is_owned_by = KFR
+						OR = {
+							state = 15
+							state = 16
+							state = 24
+							state = 30
+						}
+					}
+					add_manpower = 27500
+				}
+			}
+
+			add_stability = -0.05
+			country_event = {
+				id = RP_KFR_focustreeevents.14
+				days = 30
+			}
+			hidden_effect = {
+				country_event = {
+					id = RP_KFR_focustreeevents.13
+					days = 60
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = RP_KFR_restartthereignofterror
+		icon = GFX_RP_focus_GER_absorb_the_abwehr
+
+		x = 0
+		y = 2
+		cost = 6
+		relative_position_id = RP_KFR_continuethedictatorship
+
+		prerequisite = { focus = RP_KFR_continuethedictatorship }
+		prerequisite = { focus = RP_KFR_expatriatetheopposition }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = RP_KFR_secondreignofterror
+				days = 720
+			}
+		}
+	}
+
+	focus = {
+		id = RP_KFR_outoldinnew
+		icon = GFX_focus_generic_self_management
+
+		x = 1
+		y = 2
+		cost = 4
+		relative_position_id = RP_KFR_anewcapital
+
+		prerequisite = { focus = RP_KFR_anewcapital }
+		prerequisite = { focus = RP_KFR_germanizationofthenorth focus = RP_KFR_restartthereignofterror }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_ideas = {
+				KFR_thenewbeginning
+			}
+		}
+	}
+
+	focus = {
+		id = RP_KFR_closertogermany
+		icon = GFX_focus_GER_integration_of_puppet_economies
+
+		x = 3
+		y = 1
+		cost = 2
+		relative_position_id = RP_KFR_germanizationofthenorth
+
+		prerequisite = { focus = RP_KFR_germanizationofthenorth }
+		prerequisite = { focus = RP_KFR_restartthereignofterror }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			GER = {
+				add_opinion_modifier = {
+					target = KFR
+					modifier = RP_KFR_closertogermany_opinionmodifier
+				}
+			}
+			add_ideas = {
+				RP_KFR_closertogermany_idea
+			}
+		}
+	}
+
+	focus = {
+		id = RP_KFR_fateofthemilitarycouncil
+		icon = GFX_focus_generic_military_dictatorship
+
+		x = 2
+		y = 1
+		cost = 5
+		relative_position_id = RP_KFR_continuethedictatorship
+
+		prerequisite = { focus = RP_KFR_continuethedictatorship }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			country_event = RP_KFR_focustreeevents.15
+		}
+	}
+
+	focus = {
+		id = RP_KFR_prepareforcaseanton
+		icon = GFX_focus_GER_schlieffen_once_more
+
+		x = 0
+		y = 2
+		cost = 8
+		relative_position_id = RP_KFR_fateofthemilitarycouncil
+
+		prerequisite = { focus = RP_KFR_fateofthemilitarycouncil }
+
+		available = {
+			country_exists = FRA
+		}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = RP_KFR_secretpreparations
+				days = 180
+			}
+		}
+	}
+
+	focus = {
+		id = RP_KFR_preemptivestrike
+		icon = GFX_focus_generic_attack_vichy_france
+
+		x = -2
+		y = 1
+		cost = 2
+		relative_position_id = RP_KFR_prepareforcaseanton
+
+		prerequisite = { focus = RP_KFR_prepareforcaseanton }
+		prerequisite = { focus = RP_KFR_closertogermany }
+
+		available = {
+			NOT = {
+				has_idea = RP_KFR_secretpreparations
+			}
+		}
+
+		completion_reward = {
+			declare_war_on = {
+				target = FRA
+				type = topple_government
+			}
+
+			add_timed_idea = {
+				idea = RP_KFR_operationanton
+				days = 120
+			}
+
+			GER = {
+				country_event = RP_KFR_focustreeevents.16
+			}
+		}
+	}
+
+	focus = {
+		id = RP_KFR_returnofthebourbons
+		icon = GFX_focus_hun_elect_a_king
+
+		x = 11
+		y = 1
+		cost = 10
+		relative_position_id = RP_KFR_questionofthenewregime
+
+		mutually_exclusive = { focus = RP_KFR_frenchrepublic }
+		mutually_exclusive = { focus = RP_KFR_hohenzollernking }
+		mutually_exclusive = { focus = RP_KFR_continuethedictatorship }
+
+		ai_will_do = {
+			base = 0
+
+			modifier = {
+				has_game_rule = { rule = KFR_ai_behavior option = KFR_BOURBON }
+
+				add = 10
+			}
+		}
+
+		prerequisite = { focus = RP_KFR_questionofthenewregime }
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RP_KFR_bourbonking_requirement_tt
+
+				has_country_flag = RP_KFR_newregime_independentkingdom
+				NOT = {
+					has_country_flag = RP_KFR_newregime_timer
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = RP_KFR_bourbonking_requirement_tt_2
+
+				NOT = {
+					has_country_flag = RP_KFR_bourbonblocked
+				}
+			}
+		}
+
+		completion_reward = {
+			GER = {
+				country_event = RP_KFR_focustreeevents.17
+			}
+		}
+	}
+
+	focus = {
+		id = RP_KFR_anewcapital_2
+		icon = GFX_focus_AFG_parliamentary_democracy
+
+		x = -2
+		y = 1
+		cost = 2
+		relative_position_id = RP_KFR_returnofthebourbons
+
+		prerequisite = { focus = RP_KFR_returnofthebourbons }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			country_event = RP_KFR_focustreeevents.12
+		}
+	}
+
+	focus = {
+		id = RP_KFR_forgettingourdifferences
+		icon = GFX_focus_GER_german_hegemony_in_the_middle_east_neutrality
+
+		x = 0
+		y = 1
+		cost = 2
+		relative_position_id = RP_KFR_returnofthebourbons
+
+		prerequisite = { focus = RP_KFR_returnofthebourbons }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			GER = {
+				add_opinion_modifier = {
+					target = KFR
+					modifier = RP_KFR_closertogermany_opinionmodifier
+				}
+			}
+			add_ideas = {
+				RP_KFR_closertogermany_idea
+			}
+		}
+	}
+
+	focus = {
+		id = RP_KFR_neveranotherbonaparte
+		icon = GFX_focus_spr_crush_the_revolution
+
+		x = 1
+		y = 1
+		cost = 4
+		relative_position_id = RP_KFR_anewcapital_2
+
+		prerequisite = { focus = RP_KFR_anewcapital_2 }
+		prerequisite = { focus = RP_KFR_forgettingourdifferences }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = RP_KFR_secondreignofterror
+				days = 720
+			}
+		}
+	}
+
+	focus = {
+		id = RP_KFR_absorbkbi
+		icon = GFX_focus_BEL_government_resigns
+
+		x = 1
+		y = 1
+		cost = 10
+		relative_position_id = RP_KFR_forgettingourdifferences
+
+		prerequisite = { focus = RP_KFR_forgettingourdifferences }
+
+		bypass = {
+			NOT = { country_exists = KBI }
+		}
+
+		completion_reward = {
+			every_state = {
+				limit = {
+					state = 14
+				}
+				add_core_of = KFR
+			}
+			GER = {
+				country_event = {
+					id = RP_KFR_focustreeevents.6
+					hours = 12
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = RP_KFR_thefrenchkingdoms
+		icon = GFX_focus_focus_fra_border
+
+		x = -1
+		y = 1
+		cost = 5
+		relative_position_id = RP_KFR_absorbkbi
+
+		prerequisite = { focus = RP_KFR_neveranotherbonaparte }
+		prerequisite = { focus = RP_KFR_absorbkbi }
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_ideas = {
+				RP_KFR_revivalofthebourbons
+			}
+		}
+	}
+}
+

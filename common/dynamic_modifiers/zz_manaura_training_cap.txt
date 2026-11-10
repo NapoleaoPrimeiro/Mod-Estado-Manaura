@@ -1,0 +1,6 @@
+# Manaura: trava o bonus total de tempo de treino em -95%.
+# Com -100% ou mais o tempo de treino vira zero/negativo e as divisoes param de treinar.
+# O valor e calculado todo dia em common/on_actions/zz_manaura_training_cap.txt.
+manaura_training_cap = {
+	training_time_factor = manaura_training_cap_val
+}

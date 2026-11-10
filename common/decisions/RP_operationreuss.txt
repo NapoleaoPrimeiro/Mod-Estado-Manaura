@@ -1,0 +1,197 @@
+RP_operation_reuss = {
+	
+	RP_GER_declarevictory = {
+		
+		icon = GFX_decision_generic_speech
+
+		available = {
+			all_of_scopes = {
+				array = global.RP_GER_operationreuss_targets
+				tooltip = RP_GER_declarevictory_prerequisite_tt
+				OR = {
+					NOT = { has_war_with = GER }
+					has_capitulated = yes
+				}
+			}
+		}
+
+		visible = {
+			has_global_flag = RP_GER_initiateoperationreuss_reffect_flag
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			for_each_scope_loop = {
+				array = global.RP_GER_operationreuss_noncombatants
+				GER = { add_to_faction = PREV }
+				set_rule = {
+					can_join_factions = yes
+				}
+			}
+		}
+	}
+	
+	RP_GER_initiateoperationreuss = {
+		
+		icon = GFX_decision_generic_ignite_civil_war
+
+		available = {
+			OR = {
+				has_war_with = ENG
+				has_war_with = FRA
+				has_war_with = SOV
+				AND = {
+					has_global_flag = RP_GER_frenchsurrender
+					has_global_flag = RP_GER_easterndeescalation_complete
+					NOT = {
+						has_war_with = ENG
+					}
+				}
+			}
+		}
+
+		custom_cost_trigger = {
+            command_power > 24
+            has_political_power > 99
+        }
+        custom_cost_text = decision_cost_CP_25_PP_100
+
+		days_remove = 60
+		cost = 10
+		fire_only_once = yes
+
+		complete_effect = {
+			hidden_effect = {
+				set_global_flag = RP_GER_initiateoperationreuss_ceffect_flag
+				add_political_power = -100
+                add_command_power = -25
+			}
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = RP_GER_initiateoperationreuss_reffect_tt
+			set_global_flag = RP_GER_initiateoperationreuss_reffect_flag
+			for_each_scope_loop = {
+				array = global.RP_GER_operationreuss_targets
+				set_rule = {
+					can_join_factions = no
+				}
+				for_each_scope_loop = {
+					array = global.RP_GER_operationreuss_participants
+					declare_war_on = {
+						target = PREV
+						type = topple_government
+					}
+				}
+			}
+			for_each_scope_loop = {
+				array = global.RP_GER_operationreuss_noncombatants
+				set_country_flag = RP_GER_operationreuss_noncombatant
+				leave_faction = yes
+				set_rule = {
+					can_join_factions = no
+				}
+			}
+			hidden_effect = {
+				news_event = RP_balkansweepnews.1
+			}
+		}
+	}
+	
+	RP_inviteally_towar = {
+		target_trigger = {
+			FROM = {
+				is_ally_with = GER
+				NOT = {
+					is_puppet_of = GER
+				}
+				NOT = {
+					has_country_flag = RP_balkansweep_invitedflag
+				}
+			}
+		}
+
+		available = {
+			FROM = {
+				is_in_faction_with = GER
+			}
+			country_exists = FROM
+		}
+
+		visible = {
+			NOT = {
+				has_global_flag = RP_GER_initiateoperationreuss_ceffect_flag
+			}
+		}
+
+		icon = GFX_decision_eng_trade_unions_support
+		cost = 10
+
+		complete_effect = {
+			FROM = {
+				country_event = RP_balkansweepevents.1
+				set_country_flag = RP_balkansweep_invitedflag
+			}
+		}
+	}
+
+	RP_designateasenemy = {
+		target_trigger = {
+			FROM = {
+				OR = {
+					tag = HUN
+					tag = ROM
+					tag = YUG
+					tag = ALB
+					tag = BUL
+					tag = GRE
+					tag = SLO
+					tag = CRO
+					tag = BOS
+					tag = HRZ
+					tag = SER
+					tag = MNT
+					tag = KOS
+					tag = MAC
+					tag = MOL
+					tag = TRA
+				}
+				NOT = {
+					is_ally_with = GER
+				}
+				NOT = {
+					has_country_flag = RP_balkansweep_targetedflag
+				}
+			}
+		}
+
+		available = {
+			FROM = {
+				NOT = {
+					is_in_faction_with = GER
+					has_war_with = GER
+				}
+			}
+			country_exists = FROM
+		}
+
+		visible = {
+			NOT = {
+				has_global_flag = RP_GER_initiateoperationreuss_ceffect_flag
+			}
+		}
+
+		icon = GFX_decision_hol_draw_up_staff_plans
+		cost = 25
+
+		complete_effect = {
+			custom_effect_tooltip = RP_designateasenemy_effect_tt
+			FROM = { set_country_flag = RP_balkansweep_targetedflag }
+			add_to_array = {
+				array = global.RP_GER_operationreuss_targets
+				value = FROM
+			}
+		}
+	}
+}

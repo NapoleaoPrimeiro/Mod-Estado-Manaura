@@ -1,0 +1,4911 @@
+add_namespace = RP_countryevents
+
+country_event = { #Fate of Belgium (Page One)
+    id = RP_countryevents.1
+    title = RP_countryevents.1.t
+    desc = RP_countryevents.1.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Form a United Belgium
+        name = RP_countryevents.1.a
+
+        set_country_flag = RP_belgiumquestion
+        set_country_flag = RP_belgiumunited
+
+        hidden_effect = {
+            country_event = RP_namechanges.1
+        }
+        
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KBE = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 34
+                            state = 6
+                            state = 977
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+
+    option = { #Form Wallonia and Flanders
+        name = RP_countryevents.1.b
+
+        set_country_flag = RP_belgiumquestion
+        set_country_flag = RP_belgiumsplit
+
+        ai_chance = {
+            base = 0
+        }
+
+        custom_effect_tooltip = RP.formation_tooltip.5
+        hidden_effect = {
+            KFL = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 6
+                            state = 977
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+
+        hidden_effect = {
+            KBE = {
+                set_cosmetic_tag = KBE_wallonia
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 34
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates_parttwo
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet_split = yes
+            }
+        }
+    }
+
+    option = { #Place it under control of the military
+        name = RP_countryevents.1.e
+
+        set_country_flag = RP_belgiumquestion
+        set_country_flag = RP_militarybelgium
+
+        custom_effect_tooltip = RP.formation_tooltip.6
+        hidden_effect = {
+            KBE = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 34
+                            state = 6
+                            state = 977
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_militarystate = yes
+
+                KBE = {
+
+                    hidden_effect = {
+                        retire_character = KBE_leader
+
+                        create_country_leader = {
+                            name = "Carl-Heinrich von Stülpnagel"
+                            picture = GFX_portrait_KBE_carl_heinrich_stülpnagel
+                            expire = "1965.1.1"
+                            ideology = despotism
+                            traits = {
+                            }
+                        }
+                        
+                        set_cosmetic_tag = RP_militarybelgium
+                        set_party_name = {
+                            ideology = neutrality
+                            name = KBE_militarygovernment_neutrality_party
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    option = { #Next page
+        name = RP_countryevents.1.c
+
+        hidden_effect = {
+            country_event = RP_countryevents.2
+        }
+    }
+}
+
+country_event = { #Fate of Belgium (Page Two)
+    id = RP_countryevents.2
+    title = RP_countryevents.2.t
+    desc = RP_countryevents.2.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Give it all to France
+        name = RP_countryevents.2.b
+
+        set_country_flag = RP_belgiumquestion
+
+        trigger = {
+            country_exists = KFR
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KFR = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 34
+                            state = 6
+                            state = 977
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+
+    option = { #Split between Holland and France
+        name = RP_countryevents.2.c
+
+        set_country_flag = RP_belgiumquestion
+
+        trigger = {
+            country_exists = KFR
+            country_exists = KHO
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KFR = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 34
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+
+        hidden_effect = {
+            KHO = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 34
+                            state = 6
+                            state = 977
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer_parttwo
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet_parttwo = yes
+            }
+        }
+    }
+
+    option = { #Last Page
+        name = RP_countryevents.2.e
+
+        hidden_effect = {
+            country_event = RP_countryevents.1
+        }
+    }
+}
+
+country_event = { #Fate of the Netherlands
+    id = RP_countryevents.3
+    title = RP_countryevents.3.t
+    desc = RP_countryevents.3.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Establish a Dutch State
+        name = RP_countryevents.3.a
+
+        set_country_flag = RP_netherlandsquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KHO = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 7
+                            state = 35
+                            state = 36
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+
+    option = { #Place it under control of the military
+        name = RP_countryevents.3.c
+
+        set_country_flag = RP_netherlandsquestion
+        set_country_flag = RP_militaryholland
+
+        custom_effect_tooltip = RP.formation_tooltip.6
+        hidden_effect = {
+            KHO = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 7
+                            state = 35
+                            state = 36
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_militarystate = yes
+
+                hidden_effect = {
+                    retire_character = KHO_leader
+
+                    create_country_leader = {
+                        name = "Friedrich Christiansen"
+                        picture = GFX_portrait_KHO_friedrich_christiansen
+                        expire = "1965.1.1"
+                        ideology = despotism
+                        traits = {
+                        }
+                    }
+                    
+                    set_cosmetic_tag = RP_militaryholland
+                    set_party_name = {
+                        ideology = neutrality
+                        name = KHO_militarygovernment_neutrality_party
+                    }
+                }
+            }
+        }
+    }
+
+    option = { #Give it all to France
+        name = RP_countryevents.3.b
+
+        set_country_flag = RP_netherlandsquestion
+
+        trigger = {
+            country_exists = KFR
+            KFR = {
+                owns_state = 6
+            }
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KFR = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 7
+                            state = 35
+                            state = 36
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+}
+
+country_event = { #Fate of Austria
+    id = RP_countryevents.4
+    title = RP_countryevents.4.t
+    desc = RP_countryevents.4.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Form an Austrian State
+        name = RP_countryevents.4.b
+
+        set_country_flag = RP_austrianquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KAU = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 848
+                            state = 153
+                            state = 152
+                            state = 4
+                            state = 976
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+
+    option = { #Annex it
+        name = RP_countryevents.4.a
+
+        set_country_flag = RP_austrianquestion
+
+        every_state = {
+            limit = {
+                OR = {
+                    state = 848
+                    state = 153
+                    state = 152
+                    state = 4
+                    state = 976
+                }
+            }
+            transfer_state_to = GER
+        }
+    }
+}
+
+country_event = { #Fate of Czechia
+    id = RP_countryevents.5
+    title = RP_countryevents.5.t
+    desc = RP_countryevents.5.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Form an Czech State
+        name = RP_countryevents.5.e
+
+        set_country_flag = RP_czechiaquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KCZ = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 69
+                            state = 972
+                            state = 74
+                            state = 75
+                            state = 9
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+
+    option = { #Annex Sudetenland, form a Czech State
+        name = RP_countryevents.5.a
+
+        set_country_flag = RP_czechiaquestion
+
+        trigger = {
+            owns_state = 4
+        }
+
+        every_state = {
+            limit = {
+                OR = {
+                    state = 69
+                    state = 972
+                    state = 74
+                }
+            }
+            transfer_state_to = GER
+        }
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KCZ = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 75
+                            state = 9
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+    
+    option = { #Annex it
+        name = RP_countryevents.5.b
+
+        set_country_flag = RP_czechiaquestion
+
+        trigger = {
+            owns_state = 4
+        }
+
+        every_state = {
+            limit = {
+                OR = {
+                    state = 69
+                    state = 74
+                    state = 75
+                    state = 9
+                    state = 972
+                }
+            }
+            transfer_state_to = GER
+        }
+    }
+
+    option = { #Give it to Osterreich
+        name = RP_countryevents.5.c
+
+        set_country_flag = RP_czechiaquestion
+
+        trigger = {
+            country_exists = KAU
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KAU = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 69
+                            state = 972
+                            state = 74
+                            state = 75
+                            state = 9
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+}
+
+country_event = { #Slovakia Question
+    id = RP_countryevents.6
+    title = RP_countryevents.6.t
+    desc = RP_countryevents.6.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Form a Slovak State
+        name = RP_countryevents.6.c
+
+        set_country_flag = RP_slovakiaquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KSL = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 70
+                            state = 71
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+
+    option = { #Give it to Hungary
+        name = RP_countryevents.6.a
+
+        set_country_flag = RP_slovakiaquestion
+
+        trigger = {
+            country_exists = KHU
+            KHU = {
+                owns_state = 664
+            }
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KHU = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 70
+                            state = 71
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+
+    option = { #Give it to Czechia
+        name = RP_countryevents.6.b
+
+        set_country_flag = RP_slovakiaquestion
+        set_country_flag = RP_czechoslovakiaunited
+
+        trigger = {
+            country_exists = KCZ
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KCZ = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 70
+                            state = 71
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+            KCZ = {
+                set_cosmetic_tag = KCZ_czechoslovakia
+            }
+        }
+    }
+}
+
+country_event = { #Romania Question
+    id = RP_countryevents.7
+    title = RP_countryevents.7.t
+    desc = RP_countryevents.7.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Unite
+        name = RP_countryevents.7.a
+
+        set_country_flag = RP_romaniaquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KRO = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 81
+                            state = 46
+                            state = 79
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+
+    option = { #Split
+        name = RP_countryevents.7.b
+
+        set_country_flag = RP_romaniaquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.5
+        hidden_effect = {
+            KRO = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 81
+                            state = 46
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+
+            KRO = {
+                set_cosmetic_tag = KRO_wallachia
+            }
+        }
+
+        hidden_effect = {
+            KMO = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 79
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates_parttwo
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet_split = yes
+            }
+
+            KRO = {
+                set_cosmetic_tag = KRO_wallachia
+            }
+        }
+    }
+}
+
+country_event = { #Norway Question
+    id = RP_countryevents.8
+    title = RP_countryevents.8.t
+    desc = RP_countryevents.8.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Establish Norway
+        name = RP_countryevents.8.a
+
+        set_country_flag = RP_norwayquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KNO = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 110
+                            state = 921
+                            state = 922
+                            state = 142
+                            state = 143
+                            state = 144
+                            state = 923
+                            state = 924
+                            state = 925
+                            state = 920
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+
+    option = { #Give it to Denmark
+        name = RP_countryevents.8.b
+
+        set_country_flag = RP_norwayquestion
+        set_country_flag = RP_denmarknorwayformed
+
+        trigger = {
+            country_exists = KDE
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KDE = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 110
+                            state = 921
+                            state = 922
+                            state = 142
+                            state = 143
+                            state = 144
+                            state = 923
+                            state = 924
+                            state = 925
+                            state = 920
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+            KDE = {
+                set_cosmetic_tag = KDE_denmarknorway
+            }
+        }
+    }
+
+    option = { #Give it to Sweden
+        name = RP_countryevents.8.c
+
+        set_country_flag = RP_norwayquestion
+
+        trigger = {
+            country_exists = KSW
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KSW = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 110
+                            state = 921
+                            state = 922
+                            state = 142
+                            state = 143
+                            state = 144
+                            state = 923
+                            state = 924
+                            state = 925
+                            state = 920
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+            KDE = {
+                set_cosmetic_tag = KDE_denmarknorway
+            }
+        }
+    }
+}
+
+country_event = { #Fate of Kurdistan
+    id = RP_countryevents.9
+    title = RP_countryevents.9.t
+    desc = RP_countryevents.9.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Form Kurdistan
+        name = RP_countryevents.9.a
+
+        set_country_flag = RP_kurdistanquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KKR = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 350
+                            state = 352
+                            state = 353
+                            state = 800
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+
+    option = { #Give to Anatolia
+        name = RP_countryevents.9.b
+
+        set_country_flag = RP_kurdistanquestion
+
+        trigger = {
+            KAN = {
+                owns_state = 354
+            }
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KAN = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 350
+                            state = 352
+                            state = 353
+                            state = 800
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+}
+
+country_event = { #Fate of Nepal
+    id = RP_countryevents.10
+    title = RP_countryevents.10.t
+    desc = RP_countryevents.10.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Form Nepal
+        name = RP_countryevents.10.a
+
+        set_country_flag = RP_nepalquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KKN = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 323
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+
+    option = { #Give it to India
+        name = RP_countryevents.10.b
+
+        set_country_flag = RP_nepalquestion
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KIN = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 323
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+}
+
+country_event = { #Fate of Bhutan
+    id = RP_countryevents.11
+    title = RP_countryevents.11.t
+    desc = RP_countryevents.11.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Form Bhutan
+        name = RP_countryevents.11.a
+
+        set_country_flag = RP_bhutanquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KBH = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 324
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+
+    option = { #Give it to India
+        name = RP_countryevents.11.b
+
+        set_country_flag = RP_bhutanquestion
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KIN = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 324
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+}
+
+country_event = { #Fate of Brittany
+    id = RP_countryevents.12
+    title = RP_countryevents.12.t
+    desc = RP_countryevents.12.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Form Brittany
+        name = RP_countryevents.12.a
+
+        set_country_flag = RP_brittanyquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KBI = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 14
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+
+    option = { #Give it to France
+        name = RP_countryevents.12.b
+
+        set_country_flag = RP_brittanyquestion
+
+        trigger = {
+            country_exists = KFR
+        }
+        
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KFR = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 14
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+
+    option = { #Give it to Celtic Union
+        name = RP_countryevents.12.c
+
+        set_country_flag = RP_brittanyquestion
+
+        trigger = {
+            KIR = {
+                has_cosmetic_tag = KIR_celticunion
+            }
+        }
+        
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KIR = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 14
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+}
+
+country_event = { #Fate of Ireland
+    id = RP_countryevents.13
+    title = RP_countryevents.13.t
+    desc = RP_countryevents.13.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Form Irish State
+        name = RP_countryevents.13.a
+
+        set_country_flag = RP_irelandquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KIR = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 134
+                            state = 135
+                            state = 113
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+
+    option = { #Give it to Britain
+        name = RP_countryevents.13.b
+
+        set_country_flag = RP_irelandquestion
+
+        trigger = {
+            country_exists = KBR
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KBR = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 134
+                            state = 135
+                            state = 113
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+}
+
+country_event = { #Fate of Burma
+    id = RP_countryevents.14
+    title = RP_countryevents.14.t
+    desc = RP_countryevents.14.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Form Burma
+        name = RP_countryevents.14.a
+
+        set_country_flag = RP_burmaquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KBM = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 288
+                            state = 640
+                            state = 994
+                            state = 995
+                            state = 996
+                            state = 997
+                            state = 993
+                            state = 998
+                            state = 999
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+
+    option = { #Give it to India
+        name = RP_countryevents.14.b
+
+        set_country_flag = RP_burmaquestion
+
+        trigger = {
+            country_exists = KIN
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KIN = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 288
+                            state = 640
+                            state = 994
+                            state = 995
+                            state = 996
+                            state = 997
+                            state = 993
+                            state = 998
+                            state = 999
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+}
+
+country_event = { #Fate of Wales
+    id = RP_countryevents.15
+    title = RP_countryevents.15.t
+    desc = RP_countryevents.15.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Form Wales
+        name = RP_countryevents.15.a
+
+        set_country_flag = RP_walesquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KWE = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 122
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+
+    option = { #Give it to England
+        name = RP_countryevents.15.b
+
+        set_country_flag = RP_walesquestion
+
+        trigger = {
+            country_exists = KBR
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KBR = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 122
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+
+    option = { #Give it to Ireland
+        name = RP_countryevents.15.c
+
+        set_country_flag = RP_walesquestion
+
+        trigger = {
+            country_exists = KIR
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KIR = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 122
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+}
+
+country_event = { #Fate of Scotland
+    id = RP_countryevents.16
+    title = RP_countryevents.16.t
+    desc = RP_countryevents.16.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Form Scotland
+        name = RP_countryevents.16.a
+
+        set_country_flag = RP_scotlandquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KSC = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 133
+                            state = 121
+                            state = 136
+                            state = 120
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+
+    option = { #Give it to England
+        name = RP_countryevents.16.b
+
+        set_country_flag = RP_scotlandquestion
+        set_country_flag = RP_britainunited
+        
+        trigger = {
+            country_exists = KBR
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KBR = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 133
+                            state = 121
+                            state = 136
+                            state = 120
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+
+            KBR = {
+                set_cosmetic_tag = KBR_brittania
+            }
+        }
+    }
+
+    option = { #Give it to Ireland
+        name = RP_countryevents.16.c
+
+        set_country_flag = RP_scotlandquestion
+        set_country_flag = RP_celticunion
+
+        trigger = {
+            country_exists = KIR
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KIR = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 133
+                            state = 121
+                            state = 136
+                            state = 120
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+
+            KIR = {
+                set_cosmetic_tag = KIR_celticunion
+            }
+        }
+    }
+}
+
+country_event = { #Fate of Venice
+    id = RP_countryevents.17
+    title = RP_countryevents.17.t
+    desc = RP_countryevents.17.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Form Venice
+        name = RP_countryevents.17.a
+
+        set_country_flag = RP_venicequestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KVE = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 160
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+    
+    option = { #Give it to Italy
+        name = RP_countryevents.17.b
+
+        set_country_flag = RP_venicequestion
+
+        trigger = {
+            KIT = {
+                owns_state = 161
+            }
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KIT = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 160
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+
+    option = { #Give it to Austria
+        name = RP_countryevents.17.c
+
+        set_country_flag = RP_venicequestion
+
+        trigger = {
+            country_exists = KAU
+
+            KAU = {
+                owns_state = 850
+                owns_state = 39
+            }
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KAU = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 160
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+}
+
+country_event = { #Fate of Italy
+    id = RP_countryevents.18
+    title = RP_countryevents.18.t
+    desc = RP_countryevents.18.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Keep it united
+        name = RP_countryevents.18.a
+
+        set_country_flag = RP_italyquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KIT = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 156
+                            state = 117
+                            state = 849
+                            state = 2
+                            state = 157
+                            state = 162
+                            state = 161
+                            state = 158
+                            state = 115
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+    
+    option = { #Dissolve it
+        name = RP_countryevents.18.b
+
+        set_country_flag = RP_italyquestion
+        custom_effect_tooltip = RP_risorgimento_tooltip
+            
+        hidden_effect = {
+            set_country_flag = RP_risorgimento_reversed
+            KIT = { set_cosmetic_tag = KIT_piedmont }
+        }
+    }
+}
+
+
+country_event = { #Fate of Transylvania
+    id = RP_countryevents.19
+    title = RP_countryevents.19.t
+    desc = RP_countryevents.19.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Form Transylvania
+        name = RP_countryevents.19.a
+
+        set_country_flag = RP_transylavaniaquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KTR = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 76
+                            state = 84
+                            state = 83
+                            state = 82
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+
+    option = { #Give it to Hungary
+        name = RP_countryevents.19.b
+
+        set_country_flag = RP_transylavaniaquestion
+
+        trigger = {
+            country_exists = KHU
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KHU = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 76
+                            state = 84
+                            state = 83
+                            state = 82
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+
+    option = { #Give it to Romania
+        name = RP_countryevents.19.c
+
+        set_country_flag = RP_transylavaniaquestion
+
+        trigger = {
+            country_exists = KRO
+            NOT = {
+                KRO = {
+                    has_cosmetic_tag = KRO_wallachia
+                }
+            }
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KRO = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 76
+                            state = 84
+                            state = 83
+                            state = 82
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+
+    option = { #Split it
+        name = RP_countryevents.19.e
+
+        set_country_flag = RP_transylavaniaquestion
+
+        trigger = {
+            country_exists = KRO
+            NOT = {
+                KRO = {
+                    has_cosmetic_tag = KRO_wallachia
+                }
+            }
+            country_exists = KHU
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KHU = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 76
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+
+        hidden_effect = {
+            KRO = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 84
+                            state = 83
+                            state = 82
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer_parttwo
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet_parttwo = yes
+            }
+        }
+    }
+}
+
+country_event = { #Fate of Lemberg
+    id = RP_countryevents.20
+    title = RP_countryevents.20.t
+    desc = RP_countryevents.20.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Establish Galizia
+        name = RP_countryevents.20.a
+
+        set_country_flag = RP_lembergquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KGZ = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 89
+                            state = 91
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+    
+    option = { #Give it to Poland
+        name = RP_countryevents.20.b
+
+        set_country_flag = RP_lembergquestion
+
+        trigger = {
+            country_exists = KPO
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KPO = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 89
+                            state = 91
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+
+    option = { #Give it to Ukraine
+        name = RP_countryevents.20.c
+
+        set_country_flag = RP_lembergquestion
+
+        trigger = {
+            country_exists = KUK
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KUK = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 89
+                            state = 91
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+}
+
+country_event = { #Fate of Naples
+    id = RP_countryevents.21
+    title = RP_countryevents.21.t
+    desc = RP_countryevents.21.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Form Naples
+        name = RP_countryevents.21.a
+
+        set_country_flag = RP_naplesquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KNE = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 156
+                            state = 117
+                            state = 849
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+    
+    option = { #Unite Sicily and Naples
+        name = RP_countryevents.21.b
+        
+        set_country_flag = RP_naplesquestion
+        set_country_flag = two_sicilies_back_again #look whos back
+
+        trigger = {
+            country_exists = KSZ
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KSZ = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 156
+                            state = 117
+                            state = 849
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+
+            KSZ = {
+                set_cosmetic_tag = KSZ_twosicilies
+            }
+        }
+    }
+}
+
+country_event = { #Fate of Rome
+    id = RP_countryevents.22
+    title = RP_countryevents.22.t
+    desc = RP_countryevents.22.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Form Kirchenstaat
+        name = RP_countryevents.22.a
+
+        set_country_flag = RP_romequestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KVC = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 157
+                            state = 2
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+    
+    option = { #Give it to naples
+        name = RP_countryevents.22.b
+        
+        set_country_flag = RP_naplesquestion
+
+        trigger = {
+            country_exists = KNE
+        }
+        
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KNE = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 157
+                            state = 2
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+
+    option = { #Split the lands
+        name = RP_countryevents.22.c
+
+        set_country_flag = RP_romequestion
+
+        trigger = {
+            country_exists = KNE
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KNE = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 2
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+        
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KVC = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 157
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+}
+
+country_event = { #Fate of Finland
+    id = RP_countryevents.23
+    title = RP_countryevents.23.t
+    desc = RP_countryevents.23.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Form Finland
+        name = RP_countryevents.23.a
+
+        set_country_flag = RP_finlandquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KFI = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 111
+                            state = 928
+                            state = 930
+                            state = 927
+                            state = 926
+                            state = 149
+                            state = 150
+                            state = 148
+                            state = 929
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+
+    option = { #Give it to Sweden
+        name = RP_countryevents.23.b
+
+        set_country_flag = RP_finlandquestion
+
+        trigger = {
+            country_exists = KSW
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KSW = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 111
+                            state = 928
+                            state = 930
+                            state = 927
+                            state = 926
+                            state = 149
+                            state = 150
+                            state = 148
+                            state = 929
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+
+    option = { #Give it to Russia
+        name = RP_countryevents.23.c
+
+        set_country_flag = RP_finlandquestion
+        set_country_flag = RP_finlandtorussia
+
+        trigger = {
+            KRU = {
+                owns_state = 146
+            }
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KRU = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 111
+                            state = 928
+                            state = 930
+                            state = 927
+                            state = 926
+                            state = 149
+                            state = 150
+                            state = 148
+                            state = 929
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+}
+
+country_event = { #Fate of North Caucasus
+    id = RP_countryevents.24
+    title = RP_countryevents.24.t
+    desc = RP_countryevents.24.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Unite It
+        name = RP_countryevents.24.a
+
+        set_country_flag = RP_northcaucasusquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KDH = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 238
+                            state = 237
+                            state = 234
+                            state = 235
+                            state = 233
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+                set_cosmetic_tag = KDH_donkubancossackunion
+            }
+        }
+    }
+
+    option = { #Split it into two puppets
+        name = RP_countryevents.24.b
+
+        set_country_flag = RP_northcaucasusquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.5
+        hidden_effect = {
+            KDH = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 238
+                            state = 237
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+
+        hidden_effect = {
+            KKH = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 234
+                            state = 235
+                            state = 233
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates_parttwo
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet_split = yes
+            }
+        }
+    }
+}
+
+country_event = { #Fate of Grozny
+    id = RP_countryevents.25
+    title = RP_countryevents.25.t
+    desc = RP_countryevents.25.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Form North Caucasia
+        name = RP_countryevents.25.a
+
+        set_country_flag = RP_groznyquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KNC = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 827
+                            state = 828
+                            state = 821
+                            state = 232
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+
+    option = { #Give it to Kuban Host
+        name = RP_countryevents.25.b
+
+        trigger = {
+            country_exists = KKH
+        }
+
+        set_country_flag = RP_groznyquestion
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KKH = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 827
+                            state = 828
+                            state = 821
+                            state = 232
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+
+    option = { #Give it to Don-Kuban
+        name = RP_countryevents.25.c
+
+        trigger = {
+            KDH = {
+                has_cosmetic_tag = KDH_donkubancossackunion
+            }
+        }
+
+        set_country_flag = RP_groznyquestion
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KDH = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 827
+                            state = 828
+                            state = 821
+                            state = 232
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+}
+
+
+country_event = { # Fate of Nahost
+    id = RP_countryevents.26
+    title = RP_countryevents.26.t
+    desc = RP_countryevents.26.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Divide It
+        name = RP_countryevents.26.a
+
+        set_country_flag = RP_nahostfragmented
+        set_country_flag = RP_nahostquestion
+
+        custom_effect_tooltip = RP_countryevents.26.effect_tt
+        hidden_effect = {
+            every_state = {
+                limit = {
+                    OR = {
+                        state = 656
+                        state = 1011
+                        state = 675
+                        state = 291
+                        state = 656
+                        state = 676
+                        state = 1010				
+                    }
+                }
+                transfer_state_to = KIQ
+                add_core_of = KIQ
+            }
+            set_autonomy = { target = KIQ autonomous_state = autonomy_RP_kaiserreich_puppet }
+            
+            
+            every_state = {
+                limit = {
+                    is_owned_by = KNH
+                    OR = {
+                        state = 453
+                        state = 454
+                        state = 455			
+                    }
+                }
+                transfer_state_to = KPS
+                add_core_of = KPS
+            }		
+            set_autonomy = { target = KPS autonomous_state = autonomy_RP_kaiserreich_puppet }
+            
+            KNH = {
+                set_cosmetic_tag = KNH_syria
+        
+                retire_character = KNH_leader
+                
+                create_country_leader = {
+                    name = "Azza I"
+                    picture = GFX_portrait_KPS_azza_iraq
+                    expire = "1975.1.1"
+                    ideology = despotism
+                    traits = {
+                    }
+                }
+                
+                set_party_name = {
+                    ideology = neutrality
+                    name = KNH_syria_collab_neutrality_party
+                }
+            }
+
+            set_autonomy = { target = KNH autonomous_state = autonomy_RP_kaiserreich_puppet }
+        }
+	}
+	
+    option = { #Keep it!1111
+        name = RP_countryevents.26.b
+		
+		set_country_flag = RP_nahostquestion
+		
+    }
+}
+
+country_event = { # Fate of Eastern Poland
+    id = RP_countryevents.27
+    title = RP_countryevents.27.t
+    desc = RP_countryevents.27.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Give it to Poland
+        name = RP_countryevents.27.a
+
+        set_country_flag = RP_easternpolandquestion
+
+        trigger = {
+            KPO = {
+                owns_state = 97
+            }
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KPO = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 93
+                            state = 94
+                            state = 95
+                            state = 96
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+	}
+
+    option = { #Split it
+        name = RP_countryevents.27.b
+
+        set_country_flag = RP_easternpolandquestion
+
+        trigger = {
+            country_exists = KUK
+            country_exists = KWR
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KUK = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 93
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+
+        hidden_effect = {
+            KWR = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 94
+                            state = 95
+                            state = 96
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer_parttwo
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet_parttwo = yes
+            }
+        }
+	}
+
+    option = { # There is no need to get rid of it
+        name = RP_countryevents.27.c
+
+        set_country_flag = RP_easternpolandquestion
+	}
+}
+
+country_event = { # Fate of South Turkestan
+    id = RP_countryevents.28
+    title = RP_countryevents.28.t
+    desc = RP_countryevents.28.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Form Islamic Turkestan
+        name = RP_countryevents.28.a
+
+        set_country_flag = RP_southturkestanquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KTU = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 584
+                            state = 832
+                            state = 831
+                            state = 830
+                            state = 823
+                            state = 585
+                            state = 405
+                            state = 742
+                            state = 732
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+	}
+
+    option = { #Give it to Alash Orda
+        name = RP_countryevents.28.b
+
+        set_country_flag = RP_southturkestanquestion
+
+        trigger = {
+            country_exists = KAO
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KAO = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 584
+                            state = 832
+                            state = 831
+                            state = 830
+                            state = 823
+                            state = 585
+                            state = 405
+                            state = 742
+                            state = 732
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+
+            KAO = {
+                set_cosmetic_tag = KAO_turkestan
+            }
+        }
+	}
+}
+
+country_event = { # Fate of West Siberia
+    id = RP_countryevents.29
+    title = RP_countryevents.29.t
+    desc = RP_countryevents.29.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Form West Siberia
+        name = RP_countryevents.29.a
+
+        set_country_flag = RP_westsiberiaquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.7
+        hidden_effect = {
+            KWS = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 579
+                            state = 580
+                            state = 653
+                            state = 572
+                            state = 403
+                            state = 824
+                            state = 577
+                            state = 571
+                            state = 578
+                            state = 570
+                            state = 569
+                            state = 40
+                            state = 654
+                            state = 516
+                            state = 878
+                            state = 576
+                            state = 568
+                            state = 878		
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_colony = yes
+            }
+        }
+	}
+
+    option = { #Give it to Russia
+        name = RP_countryevents.29.b
+
+        set_country_flag = RP_westsiberiaquestion
+
+        trigger = {
+            country_exists = KRU
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KRU = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 579
+                            state = 580
+                            state = 653
+                            state = 572
+                            state = 403
+                            state = 824
+                            state = 577
+                            state = 571
+                            state = 578
+                            state = 570
+                            state = 569
+                            state = 40
+                            state = 654
+                            state = 516
+                            state = 878
+                            state = 576
+                            state = 568
+                            state = 878		
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+	}
+}
+
+country_event = { # Fate of Crimea
+    id = RP_countryevents.30
+    title = RP_countryevents.30.t
+    desc = RP_countryevents.30.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Form Krimstaat
+        name = RP_countryevents.30.a
+
+        set_country_flag = RP_crimeaquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KRI = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 137	
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+	}
+
+    option = { #Give it to Ukraine
+        name = RP_countryevents.30.b
+
+        set_country_flag = RP_crimeaquestion
+
+        trigger = {
+            KUK = {
+                owns_state = 196
+            }
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KUK = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 137
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+	}
+
+    option = { #Give it to Kaukasus
+        name = RP_countryevents.30.c
+
+        set_country_flag = RP_crimeaquestion
+
+        trigger = {
+            has_country_flag = RP_unite_caucasus
+            country_exists = KKA
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KKA = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 137
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+	}
+}
+
+country_event = { # Fate of Volga Germany
+    id = RP_countryevents.31
+    title = RP_countryevents.31.t
+    desc = RP_countryevents.31.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Form Volga Germany
+        name = RP_countryevents.31.a
+
+        set_country_flag = RP_volgagermanyquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KVG = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 829
+                            state = 239
+                            state = 401
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+	}
+
+    option = { #Give it to Moscow
+        name = RP_countryevents.31.b
+
+        set_country_flag = RP_volgagermanyquestion
+
+        trigger = {
+            country_exists = KRU
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KRU = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 829
+                            state = 239
+                            state = 401
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+	}
+}
+
+country_event = { # Fate of the Far East
+    id = RP_countryevents.32
+    title = RP_countryevents.32.t
+    desc = RP_countryevents.32.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Form a Far Eastern Puppet
+        name = RP_countryevents.32.a
+
+        set_country_flag = RP_fareastquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KFE = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 567
+                            state = 566
+                            state = 565
+                            state = 564
+                            state = 563
+                            state = 562
+                            state = 561
+                            state = 575
+                            state = 574
+                            state = 874
+                            state = 875
+                            state = 876
+                            state = 877
+                            state = 644
+                            state = 822
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+	}
+
+    option = { # Give it to West Siberia
+        name = RP_countryevents.32.b
+
+        set_country_flag = RP_fareastquestion
+
+        trigger = {
+            country_exists = KWS
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KWS = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 567
+                            state = 566
+                            state = 565
+                            state = 564
+                            state = 563
+                            state = 562
+                            state = 561
+                            state = 575
+                            state = 574
+                            state = 874
+                            state = 875
+                            state = 876
+                            state = 877
+                            state = 644
+                            state = 822
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+                set_cosmetic_tag = KWS_siberiaunited
+            }
+        }
+	}
+
+    option = { # Give it to Russia
+        name = RP_countryevents.32.c
+
+        set_country_flag = RP_fareastquestion
+
+        trigger = {
+            KRU = { owns_state = 653 }
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KRU = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 567
+                            state = 566
+                            state = 565
+                            state = 564
+                            state = 563
+                            state = 562
+                            state = 561
+                            state = 575
+                            state = 574
+                            state = 874
+                            state = 875
+                            state = 876
+                            state = 877
+                            state = 644
+                            state = 822
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+	}
+}
+
+country_event = { #Fate of Courland
+    id = RP_countryevents.33
+    title = RP_countryevents.33.t
+    desc = RP_countryevents.33.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Form a Courland Puppet
+        name = RP_countryevents.33.a
+
+        set_country_flag = RP_courlandquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KCS = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 809
+                            state = 190
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+	}
+
+    option = { #Give it to Livonia
+        name = RP_countryevents.33.b
+
+        set_country_flag = RP_courlandquestion
+
+        trigger = {
+            country_exists = KLV
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KLV = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 809
+                            state = 190
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+
+    option = { #Give it to Lithuania
+        name = RP_countryevents.33.c
+
+        set_country_flag = RP_courlandquestion
+
+        trigger = {
+            country_exists = KLI
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KLI = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 809
+                            state = 190
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+}
+
+country_event = { #Fate of Indochina
+    id = RP_countryevents.34
+    title = RP_countryevents.34.t
+    desc = RP_countryevents.34.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Split it into three kingdoms
+        name = RP_countryevents.34.a
+
+        set_country_flag = RP_indochinaquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.8
+        hidden_effect = {
+            KVI = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 671
+                            state = 286
+                            state = 1017
+                            state = 1066
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+        
+        hidden_effect = {
+            KLA = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 670
+                            state = 1068
+                            state = 1069
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates_parttwo
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet_split = yes
+            }
+        }
+
+        hidden_effect = {
+            KCM = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 741
+                            state = 1067
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates_partthree
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet_split_2 = yes
+            }
+        }
+	}
+
+    option = { #Form a united Indochinese kingdom
+        name = RP_countryevents.34.b
+
+        set_country_flag = RP_indochinaquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KVI = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 670
+                            state = 741
+                            state = 671
+                            state = 286
+                            state = 1017
+                            state = 1066
+                            state = 1067
+                            state = 1068
+                            state = 1069
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+
+            KVI = {
+                set_cosmetic_tag = KVI_indochina
+            }
+        }
+    }
+
+    option = { #Give it to Deutsch-Sudostasia
+        name = RP_countryevents.34.c
+
+        set_country_flag = RP_indochinaquestion
+
+        trigger = {
+            country_exists = KEA
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KEA = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 670
+                            state = 741
+                            state = 671
+                            state = 286
+                            state = 1017
+                            state = 1066
+                            state = 1067
+                            state = 1068
+                            state = 1069
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+}
+
+country_event = { #Fate of Western China
+    id = RP_countryevents.35
+    title = RP_countryevents.35.t
+    desc = RP_countryevents.35.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Establish a military state in the rest of china (besides xinjiang, fuck you)
+        name = RP_countryevents.35.a
+
+        set_country_flag = RP_westernchinaquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.6
+        hidden_effect = {
+            KFH = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 595
+                            state = 600
+                            state = 620
+                            state = 744
+                            state = 602
+                            state = 750
+                            state = 605
+                            state = 748
+                            state = 603
+                            state = 751
+                            state = 752
+                            state = 747
+                            state = 325
+                            state = 599
+                            state = 594
+                            state = 591
+                            state = 592
+                            state = 593
+                            state = 753
+                            state = 754
+                            state = 755
+                            state = 756
+                            state = 616
+                            state = 283
+                            state = 1033
+                            state = 1036
+                            state = 1037
+                            state = 1040
+                            state = 1041
+                            state = 1044
+                            state = 1045
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_militarystate = yes
+            }
+        }
+	}
+
+    option = { #Option A, but give the rest of China to Falkenhausen as well
+        name = RP_countryevents.35.b
+
+        trigger = {
+            country_exists = KCI 
+        }
+
+        set_country_flag = RP_westernchinaquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.6
+        hidden_effect = {
+            KFH = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            is_owned_by = KCI
+                            state = 595
+                            state = 600
+                            state = 620
+                            state = 744
+                            state = 602
+                            state = 750
+                            state = 605
+                            state = 748
+                            state = 603
+                            state = 751
+                            state = 752
+                            state = 747
+                            state = 325
+                            state = 599
+                            state = 594
+                            state = 591
+                            state = 592
+                            state = 593
+                            state = 753
+                            state = 754
+                            state = 755
+                            state = 756
+                            state = 616
+                            state = 283
+                            state = 1033
+                            state = 1036
+                            state = 1037
+                            state = 1040
+                            state = 1041
+                            state = 1044
+                            state = 1045
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_militarystate = yes
+            }
+        }
+    }
+
+    option = { #No, give it all to Beiyang
+        name = RP_countryevents.35.c
+
+        trigger = {
+            country_exists = KCI 
+        }
+
+        set_country_flag = RP_westernchinaquestion
+        set_country_flag = RP_empireofjapan_bigchina
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KCI = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 595
+                            state = 600
+                            state = 620
+                            state = 744
+                            state = 602
+                            state = 750
+                            state = 605
+                            state = 748
+                            state = 603
+                            state = 751
+                            state = 752
+                            state = 747
+                            state = 325
+                            state = 599
+                            state = 594
+                            state = 591
+                            state = 592
+                            state = 593
+                            state = 753
+                            state = 754
+                            state = 755
+                            state = 756
+                            state = 616
+                            state = 283
+                            state = 1033
+                            state = 1036
+                            state = 1037
+                            state = 1040
+                            state = 1041
+                            state = 1044
+                            state = 1045
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+}
+
+country_event = { #Fate of New Zealand
+    id = RP_countryevents.36
+    title = RP_countryevents.36.t
+    desc = RP_countryevents.36.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Establish Deutsch-Neuzeeland or however the fuck you spell it
+        name = RP_countryevents.36.a
+
+        set_country_flag = RP_newzealandquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.7
+        hidden_effect = {
+            KNZ = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 284
+                            state = 723
+                            state = 1079
+                            state = 1080
+                            state = 1081
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_colony = yes
+            }
+        }
+	}
+
+    option = { #Give it to Sudland
+        name = RP_countryevents.36.b
+
+        trigger = {
+            country_exists = KUT 
+        }
+
+        set_country_flag = RP_newzealandquestion
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KUT = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 284
+                            state = 723
+                            state = 1079
+                            state = 1080
+                            state = 1081
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+}
+
+country_event = { #Fate of Menjiang
+    id = RP_countryevents.37
+    title = RP_countryevents.37.t
+    desc = RP_countryevents.37.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Establish a Menjiang Puppet State
+        name = RP_countryevents.37.a
+
+        set_country_flag = RP_menjiangquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KMJ = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 611
+                            state = 612
+                            state = 1043
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+    
+    option = { #Give it to Mongolia
+        name = RP_countryevents.37.b
+
+        set_country_flag = RP_menjiangquestion
+
+        trigger = {
+            country_exists = KMI
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KMI = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 611
+                            state = 612
+                            state = 1043
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+
+    option = { #Give it to Beiyang
+        name = RP_countryevents.37.c
+
+        set_country_flag = RP_menjiangquestion
+
+        trigger = {
+            country_exists = KCI
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KCI = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 611
+                            state = 612
+                            state = 1043
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+
+    option = { #Give it to Falkenhausen
+        name = RP_countryevents.37.e
+
+        set_country_flag = RP_menjiangquestion
+
+        trigger = {
+            KFH = {
+                owns_state = 608
+            }
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KFH = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 611
+                            state = 612
+                            state = 1043
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+}
+
+country_event = { #Fate of Transamur
+    id = RP_countryevents.38
+    title = RP_countryevents.38.t
+    desc = RP_countryevents.38.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Establish a Transamur Puppet State
+        name = RP_countryevents.38.a
+
+        set_country_flag = RP_transamurquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KTM = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 408
+                            state = 409
+                            state = 657
+                            state = 560
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+    
+    option = { #Give it to Manchuria
+        name = RP_countryevents.38.b
+
+        set_country_flag = RP_transamurquestion
+
+        trigger = {
+            country_exists = KMN
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KMN = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 408
+                            state = 409
+                            state = 657
+                            state = 560
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+
+    option = { #Give it to the Far East
+        name = RP_countryevents.38.c
+
+        set_country_flag = RP_transamurquestion
+
+        trigger = {
+            country_exists = KFE
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KFE = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 408
+                            state = 409
+                            state = 657
+                            state = 560
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+
+    option = { #Give it to Siberia
+        name = RP_countryevents.38.e
+
+        set_country_flag = RP_transamurquestion
+
+        trigger = {
+            KWS = {
+                owns_state = 563
+            }
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KWS = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 408
+                            state = 409
+                            state = 657
+                            state = 560
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+
+    option = { #Give it to Russia
+        name = RP_countryevents.38.f
+
+        set_country_flag = RP_transamurquestion
+
+        trigger = {
+            KRU = {
+                owns_state = 563
+            }
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KRU = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 408
+                            state = 409
+                            state = 657
+                            state = 560
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+}
+
+country_event = { #Fate of Cascadia
+    id = RP_countryevents.39
+    title = RP_countryevents.39.t
+    desc = RP_countryevents.39.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Establish a Cascadian Puppet
+        name = RP_countryevents.39.a
+
+        set_country_flag = RP_cascadiaquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.7
+        hidden_effect = {
+            KRK = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 385
+                            state = 386
+                            state = 387
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_colony = yes
+            }
+        }
+    }
+    
+    option = { #Give it to Alta California
+        name = RP_countryevents.39.b
+
+        set_country_flag = RP_cascadiaquestion
+        set_country_flag = RP_alaskatocalifornia
+
+        trigger = {
+            country_exists = KWC
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KWC = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 385
+                            state = 386
+                            state = 387
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+
+    option = { #Give it to British Columbia
+        name = RP_countryevents.39.c
+
+        set_country_flag = RP_cascadiaquestion
+
+        trigger = {
+            country_exists = KDK
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KDK = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 385
+                            state = 386
+                            state = 387
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+                set_cosmetic_tag = KDK_cascadia
+            }
+        }
+    }
+}
+
+country_event = { #Fate of the amazon
+    id = RP_countryevents.40
+    title = RP_countryevents.40.t
+    desc = RP_countryevents.40.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Establish a turbo super ultra nazi rubber regime led by IG farbem
+        name = RP_countryevents.40.a
+
+        set_country_flag = RP_amazonquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.7
+        hidden_effect = {
+            KAM = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 964
+                            state = 495
+                            state = 962
+                            state = 968
+                            state = 939
+                            state = 938
+                            state = 966
+                            state = 942
+                            state = 961
+                            state = 965
+                            state = 963
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_colony = yes
+            }
+        }
+
+        KBZ = {
+            add_stability = -0.1
+            add_war_support = -0.1
+        }
+    }
+    
+    option = { #Give it to brazil
+        name = RP_countryevents.40.b
+
+        set_country_flag = RP_amazonquestion
+
+        trigger = {
+            country_exists = KBZ
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KBZ = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 964
+                            state = 495
+                            state = 962
+                            state = 968
+                            state = 939
+                            state = 938
+                            state = 966
+                            state = 942
+                            state = 961
+                            state = 965
+                            state = 963
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }		
+    }
+}
+
+country_event = { #Fate of Bosnia
+    id = RP_countryevents.41
+    title = RP_countryevents.41.t
+    desc = RP_countryevents.41.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Establish a Bosnian Puppet
+        name = RP_countryevents.41.a
+
+        set_country_flag = RP_bosniaquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KBS = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 104
+                            state = 804
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+    
+    option = { #Give it to Croatia
+        name = RP_countryevents.41.b
+
+        set_country_flag = RP_bosniaquestion
+
+        trigger = {
+            country_exists = KCR
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KCR = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 104
+                            state = 804
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+
+    option = { #Give it to Serbia
+        name = RP_countryevents.41.c
+
+        set_country_flag = RP_bosniaquestion
+
+        trigger = {
+            country_exists = KSR
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KSR = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 104
+                            state = 804
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+}
+
+country_event = { #Fate of Montenegro
+    id = RP_countryevents.42
+    title = RP_countryevents.42.t
+    desc = RP_countryevents.42.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { #Establish a Montenegrin Puppet
+        name = RP_countryevents.42.a
+
+        set_country_flag = RP_montenegroquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KNT = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 105
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+    
+    option = { #Give it to Croatia
+        name = RP_countryevents.42.b
+
+        set_country_flag = RP_montenegroquestion
+
+        trigger = {
+            country_exists = KCR
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KCR = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 105
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+
+    option = { #Give it to Serbia
+        name = RP_countryevents.42.c
+
+        set_country_flag = RP_montenegroquestion
+
+        trigger = {
+            country_exists = KSR
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KSR = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 105
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+
+    option = { #Give it to Albania
+        name = RP_countryevents.42.e
+
+        set_country_flag = RP_montenegroquestion
+
+        trigger = {
+            country_exists = KAB
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KAB = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 105
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+}
+
+country_event = { # Fate of Libya
+    id = RP_countryevents.43
+    title = RP_countryevents.43.t
+    desc = RP_countryevents.43.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { # Establish a Libyan Puppet
+        name = RP_countryevents.43.a
+
+        set_country_flag = RP_libyaquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KLB = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 448
+                            state = 449
+                            state = 450
+                            state = 451
+                            state = 661
+                            state = 662
+                            state = 663
+                            state = 273
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+
+    option = { # Give it to Nordafrika
+        name = RP_countryevents.43.b
+
+        set_country_flag = RP_libyaquestion
+
+        trigger = {
+            KNA = {
+                owns_state = 665
+            }
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KNA = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 448
+                            state = 449
+                            state = 450
+                            state = 451
+                            state = 661
+                            state = 662
+                            state = 663
+                            state = 273
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+
+    option = { # Give it to Egypt
+        name = RP_countryevents.43.c
+
+        set_country_flag = RP_libyaquestion
+
+        trigger = {
+            country_exists = KEG
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KEG = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 448
+                            state = 449
+                            state = 450
+                            state = 451
+                            state = 661
+                            state = 662
+                            state = 663
+                            state = 273
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+}
+
+country_event = { # Fate of Novgorod
+    id = RP_countryevents.44
+    title = RP_countryevents.44.t
+    desc = RP_countryevents.44.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { # Establish a Novgorodian Puppet
+        name = RP_countryevents.44.a
+
+        set_country_flag = RP_novgorodquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KNV = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 210
+                            state = 246
+                            state = 263
+                            state = 209
+                            state = 208
+                            state = 242
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+
+    option = { # Give it to Russia
+        name = RP_countryevents.44.b
+
+        set_country_flag = RP_novgorodquestion
+
+        trigger = {
+            country_exists = KRU
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KRU = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 210
+                            state = 246
+                            state = 263
+                            state = 209
+                            state = 208
+                            state = 242
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+}
+
+country_event = { # Fate of Severia
+    id = RP_countryevents.45
+    title = RP_countryevents.45.t
+    desc = RP_countryevents.45.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { # Establish a Severian Puppet
+        name = RP_countryevents.45.a
+
+        set_country_flag = RP_severiaquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KWI = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 224
+                            state = 243
+                            state = 220
+                            state = 205
+                            state = 222
+                            state = 223
+                            state = 240
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+
+    option = { # Give it to Russia
+        name = RP_countryevents.45.b
+
+        set_country_flag = RP_severiaquestion
+
+        trigger = {
+            country_exists = KRU
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KRU = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 224
+                            state = 243
+                            state = 220
+                            state = 205
+                            state = 222
+                            state = 223
+                            state = 240
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+}
+
+country_event = { # Fate of Caucasus
+    id = RP_countryevents.46
+    title = RP_countryevents.46.t
+    desc = RP_countryevents.46.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { # Split it into three kingdoms
+        name = RP_countryevents.46.a
+
+        set_country_flag = RP_caucasusquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.8
+        hidden_effect = {
+            KKA = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 826
+                            state = 231
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+
+        hidden_effect = {
+            KRM = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 230
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates_parttwo
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet_split = yes
+            }
+        }
+
+        hidden_effect = {
+            KKZ = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 229
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates_partthree
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet_split_2 = yes
+            }
+        }
+    }
+
+    option = { # Form a united caucasus state
+        name = RP_countryevents.46.b
+
+        set_country_flag = RP_caucasusquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KKA = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 826
+                            state = 231
+                            state = 230
+                            state = 229
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+                set_capital = {
+                    state = 229
+                    remember_old_capital = no
+                }
+
+                set_cosmetic_tag = KKA_unitedcaucasusregion
+                RP_establish_puppet = yes
+            }
+        }
+    }
+
+    option = { # Form a united caucasus state
+        name = RP_countryevents.46.c
+
+        set_country_flag = RP_caucasusquestion
+
+        trigger = {
+            KDH = {
+                owns_state = 232
+            }
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KDH = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 826
+                            state = 231
+                            state = 230
+                            state = 229
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+                set_cosmetic_tag = KDH_unitedcaucasus
+                RP_transferterritory_topuppet = yes
+
+                set_capital = {
+                    state = 229
+                    remember_old_capital = no
+                }
+            }
+
+            if = {
+                limit = {
+                    has_country_flag = GER_specialeventson
+                }
+                country_event = {
+                    id = RP_miscevents.1
+                    days = 65
+                    random_days = 300
+                }
+            }
+        }
+    }
+}
+
+country_event = { # Fate of Texas
+    id = RP_countryevents.47
+    title = RP_countryevents.47.t
+    desc = RP_countryevents.47.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { # Establish a Texan State
+        name = RP_countryevents.47.a
+
+        set_country_flag = RP_texasquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KTX = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 375
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+
+    option = { # Give it to Alta California
+        name = RP_countryevents.47.b
+
+        set_country_flag = RP_texasquestion
+
+        trigger = {
+            KWC = {
+                owns_state = 376
+            }
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KWC = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 375
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+				RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+
+    option = { # Give it to New Pfalz
+        name = RP_countryevents.47.c
+
+        set_country_flag = RP_texasquestion
+
+        trigger = {
+            KMT = {
+                owns_state = 374
+            }
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KMT = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 375
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+				RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+
+    option = { # Give it to Dixieland
+        name = RP_countryevents.47.e
+
+        set_country_flag = RP_texasquestion
+
+        trigger = {
+            KDL = {
+                owns_state = 372
+            }
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KDL = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 375
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+				RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+}
+
+country_event = { # Fate of Newfoundland
+    id = RP_countryevents.48
+    title = RP_countryevents.48.t
+    desc = RP_countryevents.48.d
+    picture = GFX_report_event_military_planning
+
+    is_triggered_only = yes
+
+    option = { # Establish a Newfoundland Puppet
+        name = RP_countryevents.48.a
+
+        set_country_flag = RP_newfoundlandquestion
+
+        custom_effect_tooltip = RP.formation_tooltip.1
+        hidden_effect = {
+            KFN = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 331
+                            state = 332
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstates
+                        value = THIS.id
+                    }
+                }
+
+				RP_establish_puppet = yes
+            }
+        }
+    }
+
+    option = { # Give it to Quebec
+        name = RP_countryevents.48.b
+
+        set_country_flag = RP_newfoundlandquestion
+
+        trigger = {
+            country_exists = KFQ
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KFQ = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 331
+                            state = 332
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+				RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+
+    option = { # Give it to Denmark
+        name = RP_countryevents.48.c
+
+        set_country_flag = RP_newfoundlandquestion
+
+        trigger = {
+            KDE = {
+                owns_state = 101
+            }
+        }
+
+        custom_effect_tooltip = RP_transferterritory_topuppet_effect_tt
+        hidden_effect = {
+            KDE = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            state = 331
+                            state = 332
+                        }
+                    }
+                    add_to_temp_array = {
+                        array = global.RP_puppetstatestotransfer
+                        value = THIS.id
+                    }
+                }
+
+				RP_transferterritory_topuppet = yes
+            }
+        }
+    }
+}

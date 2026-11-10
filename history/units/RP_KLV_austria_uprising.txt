@@ -1,0 +1,294 @@
+﻿division_template = {
+	name = "Österreichisch Landeswehr"
+	is_locked = yes
+	template_counter = 3 # The Crossed Rifles
+	division_names_group = GER_Inf_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 1 }
+		artillery = { x = 0 y = 0 } 
+	}
+}
+division_template = {
+	name = "Livländische Freiwilligenbrigade" 
+	is_locked = yes
+	division_names_group = GER_Inf_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+					
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+
+		artillery_brigade = { x = 3 y = 0 }
+	}
+	support = {
+		engineer = { x = 0 y = 2 }
+		artillery = { x = 0 y = 0 } 
+		recon = { x = 0 y = 1}
+	}
+}
+division_template = {
+	name = "Livländische Freiwilligenkavallerie" 
+	is_locked = yes
+	division_names_group = GER_Inf_01
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 0 y = 3 }
+
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+
+	}
+	support = {
+		engineer = { x = 0 y = 2 }
+		artillery = { x = 0 y = 0 } 
+		recon = { x = 0 y = 1}
+	}
+}
+division_template = {
+	name = "Standschützen" 
+	is_locked = yes
+	division_names_group = GER_Inf_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+
+	}
+	support = {
+		engineer = { x = 0 y = 2 }
+		recon = { x = 0 y = 1}
+	}
+}
+	
+
+units = {
+	division = {
+		name = "1. Österreichisch Landeswehr"
+		location = 6680
+		division_template = "Österreichisch Landeswehr"
+	}
+	division = {
+		name = "2. Österreichisch Landeswehr"
+		location = 6678
+		division_template = "Österreichisch Landeswehr"
+	}
+	division = {
+		name = "3. Österreichisch Landeswehr"
+		location = 9636
+		division_template = "Österreichisch Landeswehr"
+	}
+	division = {
+		name = "4. Österreichisch Landeswehr"
+		location = 673
+		division_template = "Österreichisch Landeswehr"
+	}
+	division = {
+		name = "5. Österreichisch Landeswehr"
+		location = 11634
+		division_template = "Österreichisch Landeswehr"
+	}
+	division = {
+		name = "6. Österreichisch Landeswehr"
+		location = 3675
+		division_template = "Österreichisch Landeswehr"
+	}
+	division = {
+		name = "7. Österreichisch Landeswehr"
+		location = 688
+		division_template = "Österreichisch Landeswehr"
+	}
+	division = {
+		name = "8. Österreichisch Landeswehr"
+		location = 6708
+		division_template = "Österreichisch Landeswehr"
+	}
+	division = {
+		name = "9. Österreichisch Landeswehr"
+		location = 3703
+		division_template = "Österreichisch Landeswehr"
+	}
+	division = {
+		name = "10. Österreichisch Landeswehr"
+		location = 732
+		division_template = "Österreichisch Landeswehr"
+	}
+	division = {
+		name = "11. Österreichisch Landeswehr"
+		location = 6723
+		division_template = "Österreichisch Landeswehr"
+	}
+	division = {
+		name = "12. Österreichisch Landeswehr"
+		location = 6552
+		division_template = "Österreichisch Landeswehr"
+	}
+	division = {
+		name = "13. Österreichisch Landeswehr"
+		location = 9527
+		division_template = "Österreichisch Landeswehr"
+	}
+	division = {
+		name = "14. Österreichisch Landeswehr"
+		location = 3718
+		division_template = "Österreichisch Landeswehr"
+	}
+	division = {
+		name = "15. Österreichisch Landeswehr"
+		location = 6739
+		division_template = "Österreichisch Landeswehr"
+	}
+	division = {
+		name = "16. Österreichisch Landeswehr"
+		location = 3700
+		division_template = "Österreichisch Landeswehr"
+	}
+	division = {
+		name = "17. Österreichisch Landeswehr"
+		location = 688
+		division_template = "Österreichisch Landeswehr"
+	}
+	division = {
+		name = "18. Österreichisch Landeswehr"
+		location = 688
+		division_template = "Österreichisch Landeswehr"
+	}
+	division = {
+		name = "19. Österreichisch Landeswehr"
+		location = 3703
+		division_template = "Österreichisch Landeswehr"
+	}
+	division = {
+		name = "20. Österreichisch Landeswehr"
+		location = 3703
+		division_template = "Österreichisch Landeswehr"
+	}
+	division = {
+		name = "21. Österreichisch Landeswehr"
+		location = 673
+		division_template = "Österreichisch Landeswehr"
+	}
+	division = {
+		name = "22. Österreichisch Landeswehr"
+		location = 11634
+		division_template = "Österreichisch Landeswehr"
+	}
+	division = {
+		name = "23. Österreichisch Landeswehr"
+		location = 6680
+		division_template = "Österreichisch Landeswehr"
+	}
+	division = {
+		name = "24. Österreichisch Landeswehr"
+		location = 6678
+		division_template = "Österreichisch Landeswehr"
+	}
+	 division = {
+		name = "4. Livländische Freiwilligenbrigade"
+		location = 9648
+		division_template = "Livländische Freiwilligenbrigade"
+	}
+	 division = {
+		name = "5. Livländische Freiwilligenbrigade"
+		location = 9648
+		division_template = "Livländische Freiwilligenbrigade"
+	}
+	 division = {
+		name = "6. Livländische Freiwilligenbrigade"
+		location = 11666
+		division_template = "Livländische Freiwilligenbrigade"
+	}
+	division = {
+		name = "7. Livländische Freiwilligenbrigade"
+		location = 11666
+		division_template = "Livländische Freiwilligenbrigade"
+	}
+	 division = {
+		name = "8. Livländische Freiwilligenbrigade"
+		location = 11666
+		division_template = "Livländische Freiwilligenbrigade"
+	}
+	division = {
+		name = "9. Livländische Freiwilligenbrigade"
+		location = 688
+		division_template = "Livländische Freiwilligenbrigade"
+	}
+	division = {
+		name = "4. Livländische Freiwilligenkavallerie"
+		location = 9648
+		division_template = "Livländische Freiwilligenkavallerie"
+	}
+	 division = {
+		name = "5. Livländische Freiwilligenkavallerie"
+		location = 9648
+		division_template = "Livländische Freiwilligenkavallerie"
+	}
+	 division = {
+		name = "6. Livländische Freiwilligenkavallerie"
+		location = 11666
+		division_template = "Livländische Freiwilligenkavallerie"
+	}
+	division = {
+		name = "7. Livländische Freiwilligenkavallerie"
+		location = 11666
+		division_template = "Livländische Freiwilligenkavallerie"
+	}
+	 division = {
+		name = "8. Livländische Freiwilligenkavallerie"
+		location = 11666
+		division_template = "Livländische Freiwilligenkavallerie"
+	}
+	division = {
+		name = "9. Livländische Freiwilligenkavallerie"
+		location = 688
+		division_template = "Livländische Freiwilligenkavallerie"
+	}
+	division = {
+		name = "1. Standschützen Division"
+		location = 11618
+		division_template = "Standschützen"
+	}
+	division = {
+		name = "2. Standschützen Division"
+		location = 671
+		division_template = "Standschützen"
+	}
+	division = {
+		name = "3. Standschützen Division"
+		location = 6673
+		division_template = "Standschützen"
+	}
+	division = {
+		name = "4. Standschützen Division"
+		location = 668
+		division_template = "Standschützen"
+	}
+}

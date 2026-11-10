@@ -1,0 +1,204 @@
+add_namespace = RP_yugoslavrestoration
+
+country_event = { # KSR requests talks to restore Yugoslavia
+    id = RP_yugoslavrestoration.1
+    title = RP_yugoslavrestoration.1.t
+    desc = RP_yugoslavrestoration.1.d
+    picture = GFX_report_event_yugoslavian_split
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_yugoslavrestoration.1.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        set_country_flag = RP_GER_yugoslavrestorationaccepted
+        custom_effect_tooltip = RP_GER_yugoslavrestoration_tt.1
+        hidden_effect = {
+            country_event = {
+                id = RP_yugoslavrestoration.2
+                days = 30
+                random_days = 5
+            }
+        }
+    }
+
+    option = { # No
+        name = RP_yugoslavrestoration.1.b
+
+        ai_chance = {
+            base = 0
+        }
+    }
+}
+
+country_event = { # KSR requests control over Croatia/Bosnia/Montenegro
+    id = RP_yugoslavrestoration.2
+    title = RP_yugoslavrestoration.2.t
+    desc = RP_yugoslavrestoration.2.d
+    picture = GFX_report_event_yugoslavian_split
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_yugoslavrestoration.2.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        every_state = {
+            limit = {
+                OR = {
+                    is_owned_by = KNT
+                    is_owned_by = KBS
+                    is_owned_by = KCR
+                }
+            }
+            add_claim_by = KSR
+        }
+
+        set_country_flag = RP_GER_yugoslavrestoration_croatiaintegration_accepted
+        custom_effect_tooltip = RP_GER_yugoslavrestoration_tt.2
+        hidden_effect = {
+            country_event = {
+                id = RP_yugoslavrestoration.3
+                days = 30
+                random_days = 5
+            }
+        }
+    }
+
+    option = {
+        name = RP_yugoslavrestoration.2.b
+
+        ai_chance = {
+            base = 0
+        }
+    }
+}
+
+country_event = { # KSR requests control over Bulgaria
+    id = RP_yugoslavrestoration.3
+    title = RP_yugoslavrestoration.3.t
+    desc = RP_yugoslavrestoration.3.d
+    picture = GFX_report_event_yugoslavian_split
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_yugoslavrestoration.3.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        every_state = {
+            limit = {
+                OR = {
+                    is_owned_by = KBU
+                }
+            }
+            add_claim_by = KSR
+        }
+
+        set_country_flag = RP_GER_yugoslavrestoration_bulgariaintegration_accepted
+        custom_effect_tooltip = RP_GER_yugoslavrestoration_tt.3
+        hidden_effect = {
+            country_event = {
+                id = RP_yugoslavrestoration.4
+                days = 30
+                random_days = 5
+            }
+        }
+    }
+
+    option = {
+        name = RP_yugoslavrestoration.3.b
+
+        ai_chance = {
+            base = 5
+        }
+
+        country_event = {
+            id = RP_yugoslavrestoration.5
+            days = 30
+            random_days = 5
+        }
+    }
+}
+
+country_event = { # KSR requests control over Albania
+    id = RP_yugoslavrestoration.4
+    title = RP_yugoslavrestoration.4.t
+    desc = RP_yugoslavrestoration.4.d
+    picture = GFX_report_event_yugoslavian_split
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_yugoslavrestoration.4.a
+
+        ai_chance = {
+            base = 0
+        }
+
+        every_state = {
+            limit = {
+                OR = {
+                    is_owned_by = KAB
+                }
+            }
+            add_claim_by = KSR
+        }
+
+        set_country_flag = RP_GER_yugoslavrestoration_albaniaintegration_accepted
+        custom_effect_tooltip = RP_GER_yugoslavrestoration_tt.4
+        country_event = RP_yugoslavrestoration.5
+    }
+
+    option = {
+        name = RP_yugoslavrestoration.4.b
+
+        ai_chance = {
+            base = 5
+        }
+
+        country_event = RP_yugoslavrestoration.5
+    }
+}
+
+country_event = { # Talks Conclude
+    id = RP_yugoslavrestoration.5
+    title = RP_yugoslavrestoration.5.t
+    desc = RP_yugoslavrestoration.5.d
+    picture = GFX_report_event_generic_conference
+
+    is_triggered_only = yes
+
+    option = { # Peak
+        name = RP_yugoslavrestoration.5.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        every_state = {
+            limit = {
+                is_claimed_by = KSR
+            }
+            transfer_state_to = KSR
+            add_core_of = KSR
+        }
+
+        KSR = {
+            add_stability = -0.2
+            set_cosmetic_tag = RP_KSR_yugoslavia
+        }
+
+        set_country_flag = RP_GER_yugoslavrestoration_complete
+    }
+}

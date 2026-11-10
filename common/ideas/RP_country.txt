@@ -1,0 +1,513 @@
+ideas = {
+
+	country = {
+
+		RP_new_regime = {
+			picture = generic_disjointed_gov
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.15
+				political_power_factor = -0.1
+				neutrality_drift = 0.05
+				surrender_limit = -0.50
+			}
+		}
+
+		RP_GER_germaneurope = {
+			picture = GER_rebuild_the_nation
+
+			allowed = {
+				always = no
+			}
+			
+			modifier = {	
+				stability_factor = 0.25
+				war_support_factor = 0.15
+				monthly_population = 0.10
+				production_speed_buildings_factor = 0.25
+				political_power_factor = 0.10
+				army_core_attack_factor = 0.15
+				army_core_defence_factor = 0.15
+			}
+		}
+
+		RP_corporate_state = {
+			picture = generic_industrial_concern_1
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.1
+				industrial_capacity_factory = 0.25
+				cic_construction_boost_factor = 0.10
+				consumer_goods_factor = -0.50
+			}
+		}
+
+		RP_recovering_from_unification = {
+			picture = generic_political_support
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_weekly = 0.001
+				neutrality_drift = 0.03
+				consumer_goods_factor = 0.05
+			}
+		}
+
+		RP_operation_oscar = {
+			picture = GER_fan_prussian_militarism
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			targeted_modifier = {
+				tag = HOL
+				attack_bonus_against = 0.05
+				defense_bonus_against = 0.1
+			}
+		}
+
+		RP_disorganized_troops = {
+			picture = generic_army_problems
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_org_regain = -0.25
+				offence = -0.50
+				defence = -0.50
+				army_org = -0.75
+				army_speed_factor = -0.75
+				surrender_limit = -0.75
+			}
+		}
+
+		RP_whydiefortraitors = {
+			picture = chi_war_of_resistance
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+				NOT = {
+					has_war_with = GER 
+				}
+				any_state = {
+
+					is_core_of = ENG
+					is_owned_by = ENG
+					is_controlled_by = GER
+				}
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.05
+				recruitable_population_factor = -0.10
+				industrial_capacity_factory = -0.15
+				industrial_capacity_dockyard = -0.15
+				mobilization_speed = -0.50
+				war_support_factor = -0.10
+				stability_weekly_factor = -0.005
+			}
+		}
+
+		RP_preparationsfortheleopoldplot = {
+			picture = generic_spy_coup
+
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+				has_war_with = SPR
+			}
+			
+			modifier = {	
+				send_volunteers_tension = -0.35
+				command_power_gain = 0.25
+				political_power_factor = 0.1
+				consumer_goods_factor = 0.1
+			}
+		}
+		
+		RP_economicaid_tospain = {
+			picture = SPR_seize_the_gold_reserves
+
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+				has_war_with = SPR
+			}
+			
+			modifier = {	
+				consumer_goods_factor = 0.05
+			}
+		}
+
+		RP_economicaid_fromgermany = {
+			picture = SPR_seize_the_gold_reserves
+
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+				has_war_with = GER
+			}
+			
+			modifier = {	
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		RP_germanpressureonlocalgovernments = {
+			picture = generic_spy_political
+
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+				has_country_flag = RP_leopoldplot_greenlight
+			}
+			
+			modifier = {	
+				stability_weekly_factor = -0.0005
+				political_power_factor = -0.15
+			}
+		}
+
+		RP_germanmilitaryadvisors = {
+			picture = GER_german_military
+
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+				has_country_flag = RP_leopoldplot_greenlight
+			}
+			
+			modifier = {	
+				army_org_regain = 0.1
+				army_infantry_attack_factor = 0.10
+				army_infantry_defence_factor = 0.05
+			}
+		}
+
+		RP_germantrainedmilitia = {
+			picture = GER_fan_prussian_militarism
+
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+				has_country_flag = RP_leopoldplot_greenlight
+			}
+			
+			modifier = {	
+				training_time_factor = -0.15
+				max_training = 0.1
+			}
+		}
+
+		RP_promotionmonarchistideals = {
+			picture = generic_monarchist_uprising
+
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+				has_country_flag = RP_leopoldplot_greenlight
+			}
+			
+			modifier = {	
+				neutrality_drift = 0.05
+			}
+		}
+		
+		RP_germansentimentsrising = {
+			picture = generic_deal_with_the_devil
+
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+				has_country_flag = RP_leopoldplot_greenlight
+			}
+			
+			modifier = {	
+				fascism_drift = -0.05
+				communism_drift = -0.05
+			}
+		}
+
+		RP_bribingspanishofficials = {
+			picture = generic_disjointed_gov
+
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+				has_country_flag = RP_leopoldplot_greenlight
+			}
+			
+			modifier = {	
+				consumer_goods_factor = 0.025
+			}
+		}
+
+		RP_germanplundering_i = {
+			picture = generic_supply_depot
+
+			allowed = {
+				always = no
+			}
+			
+			modifier = {	
+				consumer_goods_factor = 0.05
+				stability_weekly_factor = -0.0002
+			}
+		}
+
+		RP_germanplundering_ii = {
+			picture = generic_supply_depot
+
+			allowed = {
+				always = no
+			}
+			
+			modifier = {	
+				consumer_goods_factor = 0.10
+				stability_weekly_factor = -0.0004
+			}
+		}
+
+		RP_germanplundering_iii = {
+			picture = generic_supply_depot
+
+			allowed = {
+				always = no
+			}
+			
+			modifier = {	
+				consumer_goods_factor = 0.15
+				stability_weekly_factor = -0.0006
+			}
+		}
+
+		RP_germanplundering_iv = {
+			picture = generic_supply_depot
+
+			allowed = {
+				always = no
+			}
+			
+			modifier = {	
+				consumer_goods_factor = 0.20
+				stability_weekly_factor = -0.0008
+			}
+		}
+
+		RP_germanplundering_v = {
+			picture = generic_supply_depot
+
+			allowed = {
+				always = no
+			}
+			
+			modifier = {	
+				consumer_goods_factor = 0.25
+				stability_weekly_factor = -0.0010
+			}
+		}
+
+		RP_germanplundering_vi = {
+			picture = generic_supply_depot
+
+			allowed = {
+				always = no
+			}
+			
+			modifier = {	
+				consumer_goods_factor = 0.30
+				stability_weekly_factor = -0.0012
+			}
+		}
+
+		RP_germanplundering_vii = {
+			picture = generic_supply_depot
+
+			allowed = {
+				always = no
+			}
+			
+			modifier = {	
+				consumer_goods_factor = 0.35
+				stability_weekly_factor = -0.0014
+			}
+		}
+
+		RP_plunderinginspain_i = {
+			picture = generic_supply_depot
+
+			allowed = {
+				always = no
+			}
+			
+			modifier = {	
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		RP_plunderinginspain_ii = {
+			picture = generic_supply_depot
+
+			allowed = {
+				always = no
+			}
+			
+			modifier = {	
+				consumer_goods_factor = -0.10
+			}
+		}
+
+		RP_plunderinginspain_iii = {
+			picture = generic_supply_depot
+
+			allowed = {
+				always = no
+			}
+			
+			modifier = {	
+				consumer_goods_factor = -0.15
+			}
+		}
+
+		RP_plunderinginspain_iv = {
+			picture = generic_supply_depot
+
+			allowed = {
+				always = no
+			}
+			
+			modifier = {	
+				consumer_goods_factor = -0.20
+			}
+		}
+
+		RP_plunderinginspain_v = {
+			picture = generic_supply_depot
+
+			allowed = {
+				always = no
+			}
+			
+			modifier = {	
+				consumer_goods_factor = -0.25
+			}
+		}
+
+		RP_plunderinginspain_vi = {
+			picture = generic_supply_depot
+
+			allowed = {
+				always = no
+			}
+			
+			modifier = {	
+				consumer_goods_factor = -0.30
+			}
+		}
+
+		RP_plunderinginspain_vii = {
+			picture = generic_supply_depot
+
+			allowed = {
+				always = no
+			}
+			
+			modifier = {	
+				consumer_goods_factor = -0.35
+			}
+		}
+
+		RP_crackdownoninfluence = {
+			picture = generic_oppression
+
+			allowed = {
+				always = no
+			}
+			
+			modifier = {	
+				political_power_factor = -0.05
+			}
+		}
+
+		RP_smolenskproclamation = {
+			picture = generic_fortify_the_borders
+
+			allowed = {
+				always = no
+			}
+			
+			modifier = {	
+				stability_factor = -0.05
+				war_support_factor = -0.15
+				production_speed_bunker_factor = 0.15
+				production_speed_infrastructure_factor = 0.05
+				army_core_defence_factor = 0.05
+			}
+		}
+	}
+} 

@@ -1,0 +1,3597 @@
+add_namespace = RP_austrian_unification
+add_namespace = RP_ottoman_unification
+add_namespace = RP_plc_unification
+add_namespace = RP_japanese_restoration
+add_namespace = RP_iberianunification
+add_namespace = RP_france_collab
+add_namespace = RP_dutch_collab
+add_namespace = RP_italianrestoration
+add_namespace = RP_reunite_canada
+add_namespace = RP_quebeccollab
+add_namespace = RP_reunite_unitedstates
+add_namespace = RP_restore_confederacy
+add_namespace = RP_restore_mexicanempire
+add_namespace = RP_centralamericancollab
+add_namespace = RP_carribeancollaborator
+add_namespace = RP_gran_colombia
+add_namespace = RP_brazilian_empire
+add_namespace = RP_LOFP
+add_namespace = RP_argentina
+add_namespace = RP_paraguay
+add_namespace = RP_chile
+add_namespace = RP_peru_bolivia
+add_namespace = RP_incan_empire
+add_namespace = RP_southafrica_collab
+
+country_event = { #Fate of Bohemia
+    id = RP_austrian_unification.1
+    title = RP_austrian_unification.1.t
+    desc = RP_austrian_unification.1.d
+    picture = GFX_report_event_AUS_political_rally
+
+    is_triggered_only = yes
+
+    option = { #Give it to Osterreich
+        name = RP_austrian_unification.1.a
+
+        set_country_flag = RP_bohemia_austria_question
+
+        every_state = {
+            limit = {
+                is_owned_by = KCZ
+            }
+            transfer_state_to = KAU
+            add_core_of = KAU
+        }
+    }
+
+    option = { #Form it's own crown
+        name = RP_austrian_unification.1.b
+
+        set_country_flag = RP_bohemia_austria_question
+
+        if = {
+            limit = {
+                KCZ = {
+                    has_cosmetic_tag = KCZ_czechoslovakia
+                }
+            }
+            KCZ = {
+                set_cosmetic_tag = KCZ_czechoslovakia_independent_crown   
+            }
+        }
+
+        else = {
+            KCZ = {
+                set_cosmetic_tag = KCZ_independent_crown
+            }
+        }
+    }
+
+    option = { #Keep it independent
+        name = RP_austrian_unification.1.c
+    }
+}
+
+country_event = { #Fate of Galicia
+    id = RP_austrian_unification.2
+    title = RP_austrian_unification.2.t
+    desc = RP_austrian_unification.2.d
+    picture = GFX_report_event_AUS_political_rally
+
+    is_triggered_only = yes
+
+    option = { #Give it to Osterreich
+        name = RP_austrian_unification.2.a
+
+        set_country_flag = RP_galicia_austria_question
+
+        trigger = {
+            country_exists = KAU
+            KAU = {
+                owns_state = 972
+                owns_state = 75
+                owns_state = 972
+                owns_state = 74
+                owns_state = 9
+                owns_state = 69
+            }
+        }
+
+        every_state = {
+            limit = {
+                is_owned_by = KGZ
+            }
+            transfer_state_to = KAU
+            add_core_of = KAU
+        }
+    }
+
+    option = { #Give it to Hungary
+        name = RP_austrian_unification.2.e
+
+        set_country_flag = RP_galicia_austria_question
+
+        trigger = {
+            country_exists = KHU
+            KHU = {
+                owns_state = 71
+                owns_state = 70
+            }
+        }
+
+        every_state = {
+            limit = {
+                is_owned_by = KGZ
+            }
+            transfer_state_to = KHU
+            add_core_of = KHU
+        }
+    }
+
+    option = { #Form it's own crown
+        name = RP_austrian_unification.2.b
+
+        set_country_flag = RP_galicia_austria_question
+
+        KGZ = {
+            set_cosmetic_tag = KGZ_independent_crown
+        }
+    }
+
+    option = { #Keep it independent
+        name = RP_austrian_unification.2.c
+    }
+}
+
+country_event = { #Fate of Hungary
+    id = RP_austrian_unification.3
+    title = RP_austrian_unification.3.t
+    desc = RP_austrian_unification.3.d
+    picture = GFX_report_event_AUS_political_rally
+
+    is_triggered_only = yes
+
+    option = { #Give it to Osterreich
+        name = RP_austrian_unification.3.a
+
+        set_country_flag = RP_hungary_austria_question
+
+        trigger = {
+            country_exists = KAU
+        }
+
+        every_state = {
+            limit = {
+                is_owned_by = KHU
+            }
+            transfer_state_to = KAU
+            add_core_of = KAU
+        }
+
+        KAU = {
+            set_cosmetic_tag = KAU_empire
+        }
+    }
+
+    option = { #Form it's own crown
+        name = RP_austrian_unification.3.b
+
+        set_country_flag = RP_hungary_austria_question
+
+        KHU = {
+            set_cosmetic_tag = KHU_independent_crown
+        }
+    }
+	
+    option = { # Revive the dual monarchy
+        name = RP_austrian_unification.3.c
+
+        set_country_flag = RP_hungary_austria_question
+        set_country_flag = RP_austria_hungary_restored
+        trigger = {
+            country_exists = KAU
+        }
+
+        every_state = {
+            limit = {
+                is_owned_by = KHU
+            }
+            transfer_state_to = KAU
+            add_core_of = KAU
+        }
+
+        KAU = {
+            set_cosmetic_tag = KAU_dual_monarchy
+        }
+		add_stability = 0.1
+    }
+
+    option = { #Keep it independent
+        name = RP_austrian_unification.3.e
+    }
+}
+
+country_event = { #Fate of Slovakia
+    id = RP_austrian_unification.4
+    title = RP_austrian_unification.4.t
+    desc = RP_austrian_unification.4.d
+    picture = GFX_report_event_AUS_political_rally
+
+    is_triggered_only = yes
+
+    option = { #Give it to Osterreich
+        name = RP_austrian_unification.4.a
+
+        set_country_flag = RP_slovakia_austria_question
+
+        trigger = {
+            country_exists = KAU
+            KAU = {
+                owns_state = 972
+                owns_state = 75
+                owns_state = 972
+                owns_state = 74
+                owns_state = 9
+                owns_state = 69
+            }
+        }
+
+        every_state = {
+            limit = {
+                is_owned_by = KSL
+            }
+            transfer_state_to = KAU
+            add_core_of = KAU
+        }
+    }
+
+    option = { #Give it to Hungary
+        name = RP_austrian_unification.4.b
+
+        set_country_flag = RP_slovakia_austria_question
+
+        trigger = {
+            country_exists = KHU
+        }
+
+        every_state = {
+            limit = {
+                is_owned_by = KSL
+            }
+            transfer_state_to = KHU
+            add_core_of = KHU
+        }
+    }
+
+    option = { #Form it's own crown
+        name = RP_austrian_unification.4.c
+
+        set_country_flag = RP_slovakia_austria_question
+
+        KSL = {
+            set_cosmetic_tag = KSL_independent_crown
+        }
+    }
+
+    option = { #Keep it independent
+        name = RP_austrian_unification.4.e
+    }
+}
+
+country_event = { #Fate of Illyria
+    id = RP_austrian_unification.5
+    title = RP_austrian_unification.5.t
+    desc = RP_austrian_unification.5.d
+    picture = GFX_report_event_AUS_political_rally
+
+    is_triggered_only = yes
+
+    option = { #Give it to Osterreich
+        name = RP_austrian_unification.5.a
+
+        set_country_flag = RP_illyria_austria_question
+
+        trigger = {
+            country_exists = KAU
+        }
+
+        every_state = {
+            limit = {
+                is_owned_by = KCR
+            }
+            transfer_state_to = KAU
+            add_core_of = KAU
+        }
+    }
+    option = { #Give it to Hungary
+        name = RP_austrian_unification.5.b
+
+        set_country_flag = RP_illyria_austria_question
+
+        trigger = {
+            country_exists = KHU
+        }
+
+        every_state = {
+            limit = {
+                is_owned_by = KCR
+            }
+            transfer_state_to = KHU
+            add_core_of = KHU
+        }
+    }
+
+    option = { #Form it's own crown
+        name = RP_austrian_unification.5.c
+
+        set_country_flag = RP_illyria_austria_question
+
+        KCR = {
+            set_cosmetic_tag = KCR_independent_crown
+        }
+    }
+
+    option = { #Keep it independent
+        name = RP_austrian_unification.5.e
+    }
+}
+
+country_event = { #Fate of Venetia
+    id = RP_austrian_unification.6
+    title = RP_austrian_unification.6.t
+    desc = RP_austrian_unification.6.d
+    picture = GFX_report_event_AUS_political_rally
+
+    is_triggered_only = yes
+
+    option = { #Give it to Osterreich
+        name = RP_austrian_unification.6.a
+
+        set_country_flag = RP_venetia_austria_question
+
+        trigger = {
+            country_exists = KAU
+        }
+
+        every_state = {
+            limit = {
+                is_owned_by = KVE
+            }
+            transfer_state_to = KAU
+            add_core_of = KAU
+        }
+    }
+
+    option = { #Form it's own crown
+        name = RP_austrian_unification.6.b
+
+        set_country_flag = RP_venetia_austria_question
+
+        if = {
+            limit = {
+                KVE = {
+                    has_cosmetic_tag = KVE_lombardeivenetien
+                }
+            }
+            KVE = {
+                set_cosmetic_tag = KVE_lombardeivenetien_independent_crown
+            }
+        }
+
+        else = {
+            KVE = {
+                set_cosmetic_tag = KVE_independent_crown
+            }
+        }
+    }
+
+    option = { #Keep it independent
+        name = RP_austrian_unification.6.c
+    }
+}
+
+country_event = { #Fate of the Austrian Realm (the one that allows you to make the puppets and restore austria yk yk)
+    id = RP_austrian_unification.7
+    title = RP_austrian_unification.7.t
+    desc = RP_austrian_unification.7.d
+    picture = GFX_report_event_AUS_political_rally
+
+    is_triggered_only = yes
+
+    option = { #Restore the Realm
+        name = RP_austrian_unification.7.a
+
+        set_country_flag = RP_austria_question
+
+        trigger = {
+            country_exists = KAU
+        }
+
+        set_country_flag = RP_austria_restored
+        custom_effect_tooltip = RP_austria_restored_tooltipedition
+        KAU = {
+            set_cosmetic_tag = KAU_independent_crown
+        }
+    }
+
+    option = { #Austria failed (keep them as a direct subject
+        name = RP_austrian_unification.7.b
+
+        set_country_flag = RP_austria_question
+
+        custom_effect_tooltip = RP_austria_subjugated
+    }
+
+}
+country_event = { #Fate of transylvabnnaiinan
+    id = RP_austrian_unification.8
+    title = RP_austrian_unification.8.t
+    desc = RP_austrian_unification.8.d
+    picture = GFX_report_event_AUS_political_rally
+
+    is_triggered_only = yes
+
+    option = { #Give it to hungary
+        name = RP_austrian_unification.8.a
+
+        set_country_flag = RP_transylvania_austria_question
+
+        trigger = {
+            country_exists = KHU
+        }
+
+        every_state = {
+            limit = {
+                is_owned_by = KTR
+            }
+            transfer_state_to = KHU
+            add_core_of = KHU
+        }
+    }
+
+    option = { #Give it to hungary
+        name = RP_austrian_unification.8.e
+
+        set_country_flag = RP_transylvania_austria_question
+
+        trigger = {
+            KAU = {
+                owns_state = 154
+            }
+        }
+
+        every_state = {
+            limit = {
+                is_owned_by = KTR
+            }
+            transfer_state_to = KAU
+            add_core_of = KAU
+        }
+    }
+
+    option = { #Form it's own crown
+        name = RP_austrian_unification.8.b
+
+        set_country_flag = RP_transylvania_austria_question
+
+        KTR = {
+            set_cosmetic_tag = KTR_independent_crown
+        }
+    }
+
+    option = { #Keep it independent
+        name = RP_austrian_unification.8.c
+    }
+}
+country_event = { # divide slavonia
+    id = RP_austrian_unification.9
+    title = RP_austrian_unification.9.t
+    desc = RP_austrian_unification.9.d
+    picture = GFX_report_event_AUS_political_rally
+
+    is_triggered_only = yes
+
+    option = { # Austria and Hungary unified - all to KAU 
+        name = RP_austrian_unification.9.a
+
+        set_country_flag = RP_transylvania_austria_question
+
+        trigger = {
+            NOT = { 
+				country_exists = KHU
+			}
+        }
+		every_state = {
+			limit = {
+				OR = {
+					state = 109
+					state = 103
+					state = 163
+					state = 102
+					state = 736
+					state = 852
+					state = 853
+				}
+			}
+			KAU = {
+				transfer_state = PREV
+				hidden_effect = {
+					Add_state_core = PREV
+				}
+		    }
+		}	
+    }
+
+    option = { # Cis-Trans Kingdoms (dude we can totally capitalize on that) split Slavonia
+        name = RP_austrian_unification.9.b
+
+        set_country_flag = RP_transylvania_austria_question
+
+        trigger = {
+			country_exists = KHU
+        }
+		every_state = {
+			limit = {
+				OR = {
+					state = 102
+					state = 736
+					state = 852
+					state = 853
+					state = 103
+					state = 163					
+				}
+			}
+			KAU = {
+				transfer_state = PREV
+				hidden_effect = {
+					Add_state_core = PREV
+				}
+		    }
+		}
+		every_state = {
+			limit = {
+				OR = {
+					state = 109		
+				}
+			}
+			KHU = {
+				transfer_state = PREV
+				hidden_effect = {
+					Add_state_core = PREV
+				}
+		    }
+		}		
+		
+    }
+
+    option = { #nuh uh
+        name = RP_austrian_unification.9.c
+		trigger = {
+			has_country_flag = RP_austria_hungary_restored
+			country_exists = KAU
+		}
+        every_state = {
+            limit = {
+                is_owned_by = KCR
+            }
+            transfer_state_to = KAU
+            add_core_of = KAU
+        }		
+		KAU = {
+			set_cosmetic_tag = KAU_triple_monarchy
+		}
+    }
+    option = { #nuh uh
+        name = RP_austrian_unification.9.e
+	}
+}
+
+country_event = { #Reunify the Ottomans?
+    id = RP_ottoman_unification.1
+    title = RP_ottoman_unification.1.t
+    desc = RP_ottoman_unification.1.d
+    picture = GFX_report_event_tur_political_rally
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_ottoman_unification.1.a
+
+        set_country_flag = RP_reunify_ottoman_decision
+
+        KAN = {
+            set_cosmetic_tag = KAN_ottoman
+            set_capital = { state = 797 }
+        }
+
+        797 = {
+            set_state_name = "Konstantinopolis"
+        }
+
+        set_province_name = {
+            id = 9833
+            name = "Konstantinopolis"
+        }
+		add_stability = 0.1		
+    }
+
+    option = { #No
+        name = RP_ottoman_unification.1.b
+    }
+}
+
+country_event = { #Fate of Kurdistan
+    id = RP_ottoman_unification.2
+    title = RP_ottoman_unification.2.t
+    desc = RP_ottoman_unification.2.d
+    picture = GFX_report_event_tur_political_rally
+
+    is_triggered_only = yes
+
+    option = { #Give it to the Ottoman Sultanate
+        name = RP_ottoman_unification.2.a
+
+        set_country_flag = RP_reunify_ottoman_kurdistan_decision
+
+        every_state = {
+            limit = {
+                is_owned_by = KKR
+            }
+            transfer_state_to = KAN
+            add_core_of = KAN
+        }
+    }
+
+    option = { #Keep it as a subject of Germany
+        name = RP_ottoman_unification.2.b
+    }
+}
+
+country_event = { #Fate of Syria
+    id = RP_ottoman_unification.3
+    title = RP_ottoman_unification.3.t
+    desc = RP_ottoman_unification.3.d
+    picture = GFX_report_event_tur_political_rally
+
+    is_triggered_only = yes
+
+    option = { #Give it to the Ottoman Sultanate
+        name = RP_ottoman_unification.3.a
+
+        set_country_flag = RP_reunify_ottoman_syria_decision
+
+        every_state = {
+            limit = {
+                is_owned_by = KNH
+            }
+            transfer_state_to = KAN
+            add_core_of = KAN
+        }
+    }
+
+    option = { #Keep it as a subject of Germany
+        name = RP_ottoman_unification.3.b
+    }
+}
+
+country_event = { #Fate of Iraq
+    id = RP_ottoman_unification.17
+    title = RP_ottoman_unification.17.t
+    desc = RP_ottoman_unification.17.d
+    picture = GFX_report_event_tur_political_rally
+
+    is_triggered_only = yes
+
+    option = { #Give it to the Ottoman Sultanate
+        name = RP_ottoman_unification.17.a
+
+        set_country_flag = RP_reunify_ottoman_iraq_decision
+
+        every_state = {
+            limit = {
+                is_owned_by = KIQ
+            }
+            transfer_state_to = KAN
+            add_core_of = KAN
+        }
+    }
+
+    option = { #Keep it as a subject of Germany
+        name = RP_ottoman_unification.17.b
+    }
+}
+
+country_event = { #Fate of Palestine
+    id = RP_ottoman_unification.4
+    title = RP_ottoman_unification.4.t
+    desc = RP_ottoman_unification.4.d
+    picture = GFX_report_event_tur_political_rally
+
+    is_triggered_only = yes
+
+    option = { #Give it to the Ottoman Sultanate
+        name = RP_ottoman_unification.4.a
+
+        set_country_flag = RP_reunify_ottoman_palestine_decision
+
+        every_state = {
+            limit = {
+                is_owned_by = KPS
+            }
+            transfer_state_to = KAN
+            add_core_of = KAN
+        }
+    }
+
+    option = { #Keep it as a subject of Germany
+        name = RP_ottoman_unification.4.b
+    }
+}
+
+country_event = { #Fate of Jabal
+    id = RP_ottoman_unification.5
+    title = RP_ottoman_unification.5.t
+    desc = RP_ottoman_unification.5.d
+    picture = GFX_report_event_tur_political_rally
+
+    is_triggered_only = yes
+
+    option = { #Give it to the Ottoman Sultanate
+        name = RP_ottoman_unification.5.a
+
+        set_country_flag = RP_reunify_ottoman_jabal_decision
+
+        every_state = {
+            limit = {
+                is_owned_by = KJS
+            }
+            transfer_state_to = KAN
+            add_core_of = KAN
+        }
+    }
+
+    option = { #Keep it as a subject of Germany
+        name = RP_ottoman_unification.5.b
+    }
+}
+
+country_event = { #Fate of Hejaz
+    id = RP_ottoman_unification.6
+    title = RP_ottoman_unification.6.t
+    desc = RP_ottoman_unification.6.d
+    picture = GFX_report_event_tur_political_rally
+
+    is_triggered_only = yes
+
+    option = { #Give it to the Ottoman Sultanate
+        name = RP_ottoman_unification.6.a
+
+        set_country_flag = RP_reunify_ottoman_hejaz_decision
+
+        every_state = {
+            limit = {
+                is_owned_by = KHJ
+            }
+            transfer_state_to = KAN
+            add_core_of = KAN
+        }
+    }
+
+    option = { #Keep it as a subject of Germany
+        name = RP_ottoman_unification.6.b
+    }
+}
+
+country_event = { #Fate of Nejd
+    id = RP_ottoman_unification.7
+    title = RP_ottoman_unification.7.t
+    desc = RP_ottoman_unification.7.d
+    picture = GFX_report_event_tur_political_rally
+
+    is_triggered_only = yes
+
+    option = { #Give it to the Ottoman Sultanate
+        name = RP_ottoman_unification.7.a
+
+        set_country_flag = RP_reunify_ottoman_nejd_decision
+
+        every_state = {
+            limit = {
+                is_owned_by = KNJ
+            }
+            transfer_state_to = KAN
+            add_core_of = KAN
+        }
+    }
+
+    option = { #Keep it as a subject of Germany
+        name = RP_ottoman_unification.7.b
+    }
+}
+
+country_event = { #Fate of Najran
+    id = RP_ottoman_unification.8
+    title = RP_ottoman_unification.8.t
+    desc = RP_ottoman_unification.8.d
+    picture = GFX_report_event_tur_political_rally
+
+    is_triggered_only = yes
+
+    option = { #Give it to the Ottoman Sultanate
+        name = RP_ottoman_unification.8.a
+
+        set_country_flag = RP_reunify_ottoman_najran_decision
+
+        every_state = {
+            limit = {
+                is_owned_by = KNR
+            }
+            transfer_state_to = KAN
+            add_core_of = KAN
+        }
+    }
+
+    option = { #Keep it as a subject of Germany
+        name = RP_ottoman_unification.8.b
+    }
+}
+
+country_event = { #Fate of the Gulf Sheikhdom
+    id = RP_ottoman_unification.9
+    title = RP_ottoman_unification.9.t
+    desc = RP_ottoman_unification.9.d
+    picture = GFX_report_event_tur_political_rally
+
+    is_triggered_only = yes
+
+    option = { #Give it to the Ottoman Sultanate
+        name = RP_ottoman_unification.9.a
+
+        set_country_flag = RP_reunify_ottoman_gulfsheikhdom_decision
+
+        every_state = {
+            limit = {
+                is_owned_by = KGU
+            }
+            transfer_state_to = KAN
+            add_core_of = KAN
+        }
+    }
+
+    option = { #Keep it as a subject of Germany
+        name = RP_ottoman_unification.9.b
+    }
+}
+
+country_event = { #Fate of Yemen
+    id = RP_ottoman_unification.10
+    title = RP_ottoman_unification.10.t
+    desc = RP_ottoman_unification.10.d
+    picture = GFX_report_event_tur_political_rally
+
+    is_triggered_only = yes
+
+    option = { #Give it to the Ottoman Sultanate
+        name = RP_ottoman_unification.10.a
+
+        set_country_flag = RP_reunify_ottoman_yemen_decision
+
+        every_state = {
+            limit = {
+                is_owned_by = KYM
+            }
+            transfer_state_to = KAN
+            add_core_of = KAN
+        }
+    }
+
+    option = { #Keep it as a subject of Germany
+        name = RP_ottoman_unification.10.b
+    }
+}
+
+country_event = { #Fate of Oman
+    id = RP_ottoman_unification.11
+    title = RP_ottoman_unification.11.t
+    desc = RP_ottoman_unification.11.d
+    picture = GFX_report_event_tur_political_rally
+
+    is_triggered_only = yes
+
+    option = { #Give it to the Ottoman Sultanate
+        name = RP_ottoman_unification.11.a
+
+        set_country_flag = RP_reunify_ottoman_oman_decision
+
+        every_state = {
+            limit = {
+                is_owned_by = KON
+            }
+            transfer_state_to = KAN
+            add_core_of = KAN
+        }
+    }
+
+    option = { #Keep it as a subject of Germany
+        name = RP_ottoman_unification.11.b
+    }
+}
+
+country_event = { #Fate of Greece
+    id = RP_ottoman_unification.12
+    title = RP_ottoman_unification.12.t
+    desc = RP_ottoman_unification.12.d
+    picture = GFX_report_event_tur_political_rally
+
+    is_triggered_only = yes
+
+    option = { #Give it to the Ottoman Sultanate
+        name = RP_ottoman_unification.12.a
+
+        set_country_flag = RP_reunify_ottoman_greece_decision
+
+        every_state = {
+            limit = {
+                is_owned_by = KGR
+            }
+            transfer_state_to = KAN
+            add_core_of = KAN
+        }
+    }
+
+    option = { #Keep it as a subject of Germany
+        name = RP_ottoman_unification.12.b
+    }
+}
+
+country_event = { #Fate of Bulgaria
+    id = RP_ottoman_unification.13
+    title = RP_ottoman_unification.13.t
+    desc = RP_ottoman_unification.13.d
+    picture = GFX_report_event_tur_political_rally
+
+    is_triggered_only = yes
+
+    option = { #Give it to the Ottoman Sultanate
+        name = RP_ottoman_unification.13.a
+
+        set_country_flag = RP_reunify_ottoman_bulgaria_decision
+
+        every_state = {
+            limit = {
+                is_owned_by = KBU
+            }
+            transfer_state_to = KAN
+            add_core_of = KAN
+        }
+    }
+
+    option = { #Keep it as a subject of Germany
+        name = RP_ottoman_unification.13.b
+    }
+}
+
+country_event = { #Fate of Albania
+    id = RP_ottoman_unification.14
+    title = RP_ottoman_unification.14.t
+    desc = RP_ottoman_unification.14.d
+    picture = GFX_report_event_tur_political_rally
+
+    is_triggered_only = yes
+
+    option = { #Give it to the Ottoman Sultanate
+        name = RP_ottoman_unification.14.a
+
+        set_country_flag = RP_reunify_ottoman_albania_decision
+
+        every_state = {
+            limit = {
+                is_owned_by = KAB
+            }
+            transfer_state_to = KAN
+            add_core_of = KAN
+        }
+    }
+
+    option = { #Keep it as a subject of Germany
+        name = RP_ottoman_unification.14.b
+    }
+}
+
+country_event = { #Fate of Serbia
+    id = RP_ottoman_unification.15
+    title = RP_ottoman_unification.15.t
+    desc = RP_ottoman_unification.15.d
+    picture = GFX_report_event_tur_political_rally
+
+    is_triggered_only = yes
+
+    option = { #Give it to the Ottoman Sultanate
+        name = RP_ottoman_unification.15.a
+
+        set_country_flag = RP_reunify_ottoman_serbia_decision
+
+        every_state = {
+            limit = {
+                is_owned_by = KSR
+            }
+            transfer_state_to = KAN
+            add_core_of = KAN
+        }
+    }
+
+    option = { #Keep it as a subject of Germany
+        name = RP_ottoman_unification.15.b
+    }
+}
+
+country_event = { #Fate of Romania
+    id = RP_ottoman_unification.16
+    title = RP_ottoman_unification.16.t
+    desc = RP_ottoman_unification.16.d
+    picture = GFX_report_event_tur_political_rally
+
+    is_triggered_only = yes
+
+    option = { #Give it to the Ottoman Sultanate
+        name = RP_ottoman_unification.16.a
+
+        set_country_flag = RP_reunify_ottoman_romania_decision
+
+        every_state = {
+            limit = {
+                is_owned_by = KRO
+            }
+            transfer_state_to = KAN
+            add_core_of = KAN
+        }
+    }
+
+    option = { #Keep it as a subject of Germany
+        name = RP_ottoman_unification.16.b
+    }
+}
+
+country_event = { #Fate of Egypt
+    id = RP_ottoman_unification.18
+    title = RP_ottoman_unification.18.t
+    desc = RP_ottoman_unification.18.d
+    picture = GFX_report_event_tur_political_rally
+
+    is_triggered_only = yes
+
+    option = { #Give it to the Ottoman Sultanate
+        name = RP_ottoman_unification.18.a
+
+        set_country_flag = RP_reunify_ottoman_egypt_decision
+
+        every_state = {
+            limit = {
+                is_owned_by = KEG
+            }
+            transfer_state_to = KAN
+            add_core_of = KAN
+        }
+    }
+
+    option = { #Keep it as a subject of Germany
+        name = RP_ottoman_unification.18.b
+    }
+}
+
+country_event = { #Reunify PLC?
+    id = RP_plc_unification.1
+    title = RP_plc_unification.1.t
+    desc = RP_plc_unification.1.d
+    picture = GFX_report_event_poland_rejects
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_plc_unification.1.a
+
+        set_country_flag = RP_reunify_plc_decision
+
+        KPO = {
+            set_cosmetic_tag = KPO_PLC
+        }
+        every_state = {
+            limit = {
+                is_owned_by = KLI
+            }
+            transfer_state_to = KPO
+            add_core_of = KPO
+        }		
+    }
+
+    option = { #No
+        name = RP_plc_unification.1.b
+    }
+}
+country_event = { #Fate of Courland
+    id = RP_plc_unification.2
+    title = RP_plc_unification.2.t
+    desc = RP_plc_unification.2.d
+    picture = GFX_report_event_poland_rejects
+
+    is_triggered_only = yes
+
+    option = { #Give it to the Ottoman Sultanate
+        name = RP_plc_unification.2.a
+
+        set_country_flag = RP_reunify_plc_courland_decision
+
+        every_state = {
+            limit = {
+                is_owned_by = KCS
+            }
+            transfer_state_to = KPO
+            add_core_of = KPO
+        }
+    }
+
+    option = { #Keep it as a subject of Germany
+        name = RP_plc_unification.2.b
+    }
+}
+country_event = { #Fate of galicia
+    id = RP_plc_unification.3
+    title = RP_plc_unification.3.t
+    desc = RP_plc_unification.3.d
+    picture = GFX_report_event_poland_rejects
+
+    is_triggered_only = yes
+
+    option = { #Give it to the Ottoman Sultanate
+        name = RP_plc_unification.3.a
+
+        set_country_flag = RP_reunify_plc_galicia_decision
+
+        every_state = {
+            limit = {
+                is_owned_by = KGZ
+            }
+            transfer_state_to = KPO
+            add_core_of = KPO
+        }
+    }
+
+    option = { #Keep it as a subject of Germany
+        name = RP_plc_unification.3.b
+    }
+}
+country_event = { #split eastern SOV
+    id = RP_plc_unification.4
+    title = RP_plc_unification.4.t
+    desc = RP_plc_unification.4.d
+    picture = GFX_report_event_poland_rejects
+
+    is_triggered_only = yes
+
+    option = { #Give it to the PLC
+        name = RP_plc_unification.4.a
+
+        set_country_flag = RP_reunify_plc_east_decision
+        every_state = {
+            limit = {
+                is_owned_by = KWR
+            }
+            transfer_state_to = KPO
+            add_core_of = KPO
+        }
+		every_state = {
+			limit = {
+				OR = {
+                    state = 241
+					state = 242
+					state = 243
+					state = 224
+					state = 199
+					state = 201
+					state = 198
+					state = 202
+					state = 193
+					state = 225
+					state = 259
+					state = 203
+				}
+			}
+			KPO = {
+				transfer_state = PREV
+				hidden_effect = {
+					Add_state_core = PREV
+				}
+		    }
+		}		
+    }
+
+    option = { #Keep it as a subject of Germany
+        name = RP_plc_unification.4.b
+    }	
+}
+country_event = { # split UBD/livonia
+    id = RP_plc_unification.5
+    title = RP_plc_unification.5.t
+    desc = RP_plc_unification.5.d
+    picture = GFX_report_event_poland_rejects
+
+    is_triggered_only = yes
+
+    option = { #Give it to the PLC
+        name = RP_plc_unification.5.a
+
+        set_country_flag = RP_reunify_plc_north_decision
+		every_state = {
+			limit = {
+				OR = {
+					state = 808
+					state = 12
+					state = 810
+				}
+			}
+			KPO = {
+				transfer_state = PREV
+				hidden_effect = {
+					Add_state_core = PREV
+				}
+		    }
+		}	
+		add_offsite_building = { type = industrial_complex level = 3 }		
+    }
+
+    option = { #Keep it as a subject of Germany
+        name = RP_plc_unification.5.b
+    }	
+}
+
+country_event = { #french collab?
+    id = RP_france_collab.1
+    title = RP_france_collab.1.t
+    desc = RP_france_collab.1.d
+    picture = GFX_report_event_france_parade
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_france_collab.1.a
+
+        set_country_flag = RP_france_collab
+
+        KFR = {
+            set_cosmetic_tag = KFR_collab
+			
+			create_country_leader = {
+				name = "Henry VI"
+				picture = GFX_portrait_KFR_henry_count_of_paris
+				expire = "1999.1.1"
+				ideology = despotism
+				traits = {
+				}
+			}
+			
+			set_party_name = {
+				ideology = neutrality
+				name = KFR_collab_neutrality_party
+			}
+		}
+
+        set_autonomy = { target = KFR autonomous_state = autonomy_RP_kaiserreich_puppet }
+    }
+
+    option = { #No
+        name = RP_france_collab.1.b
+    }
+}
+
+country_event = { #dutch collab?
+    id = RP_dutch_collab.1
+    title = RP_dutch_collab.1.t
+    desc = RP_dutch_collab.1.d
+    picture = GFX_report_event_hol_cabinet_gerbrandy
+
+    is_triggered_only = yes
+
+    option = { #Yes, but only expand their land
+        name = RP_dutch_collab.1.a
+
+        set_country_flag = RP_dutchcollab_decision
+
+        KHO = {
+            set_cosmetic_tag = KHO_collab
+		}
+
+        country_event = RP_dutch_collab.2
+    }
+
+    option = { #Yes, and install the dutch monarchy
+        name = RP_dutch_collab.1.b
+
+        set_country_flag = RP_dutchcollab_decision
+
+        KHO = {
+            set_cosmetic_tag = KHO_collab
+			
+			create_country_leader = {
+				name = "Wilhelmina Helena Pauline Maria"
+				picture = GFX_portrait_HOL_wilhelmina
+				expire = "1999.1.1"
+				ideology = despotism
+				traits = {
+				}
+			}
+			
+			set_party_name = {
+				ideology = neutrality
+				name = KHO_collab_neutrality_party
+			}
+		}
+
+        country_event = RP_dutch_collab.2
+    }
+
+    option = { #No
+        name = RP_dutch_collab.1.c
+    }
+}
+
+country_event = { #expand holland
+    id = RP_dutch_collab.2
+    title = RP_dutch_collab.2.t
+    desc = RP_dutch_collab.2.d
+    picture = GFX_report_event_hol_cabinet_gerbrandy
+
+    is_triggered_only = yes
+
+    option = { #Give them half of belgium
+        name = RP_dutch_collab.2.a
+
+        set_country_flag = RP_dutchcollab_decision
+
+        every_state = {
+            limit = {
+                OR = {
+                    is_owned_by = KBE
+                    is_owned_by = KFL
+                }
+                OR = {
+                    state = 6
+                    state = 977
+                }
+            }
+            transfer_state_to = KHO
+            add_core_of = KHO
+        }
+    }
+
+    option = { #Give them all of belgium
+        name = RP_dutch_collab.2.b
+
+        set_country_flag = RP_dutch_expansion
+
+        every_state = {
+            limit = {
+                OR = {
+                    is_owned_by = KBE
+                    is_owned_by = KFL
+                }
+            }
+            transfer_state_to = KHO
+            add_core_of = KHO
+        }
+    }
+
+    option = { #Give them all of belgium and calais
+        name = RP_dutch_collab.2.c
+
+        set_country_flag = RP_dutch_expansion
+
+        every_state = {
+            limit = {
+                OR = {
+                    is_owned_by = KBE
+                    is_owned_by = KFL
+                }
+            }
+            transfer_state_to = KHO
+            add_core_of = KHO
+        }
+
+        every_state = {
+            limit = {
+                state = 29
+                OR = {
+                    is_owned_by = KBE
+                    is_owned_by = KFL
+                    is_owned_by = KFR
+                }
+            }
+            transfer_state_to = KHO
+            add_core_of = KHO
+        }
+    }
+
+    option = { #No, we will not give them land
+        name = RP_dutch_collab.2.e
+
+        set_country_flag = RP_dutch_expansion
+    }
+}
+
+country_event = { #Restore Japan?
+    id = RP_japanese_restoration.1
+    title = RP_japanese_restoration.1.t
+    desc = RP_japanese_restoration.1.d
+    picture = GFX_report_event_japanese_army_parade
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_japanese_restoration.1.a
+
+        set_country_flag = RP_japanese_restoration_decision
+
+        KJP = {
+            set_cosmetic_tag = KJP_forcedally
+        }
+    }
+
+    option = { #No
+        name = RP_japanese_restoration.1.b
+    }
+}
+
+country_event = { #Fate of Korea 
+    id = RP_japanese_restoration.2
+    title = RP_japanese_restoration.2.t
+    desc = RP_japanese_restoration.2.d
+    picture = GFX_report_event_japanese_army_parade
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_japanese_restoration.2.a
+
+        set_country_flag = RP_empireofjapan_korea_decision
+
+        every_state = {
+            limit = {
+                is_owned_by = KRA
+            }
+            transfer_state_to = KJP
+            add_core_of = KJP
+        }
+    }
+
+    option = { #Yes, but let them stay independent
+        name = RP_japanese_restoration.2.b
+
+        set_country_flag = RP_empireofjapan_korea_decision
+        
+        KRA = {
+            set_cosmetic_tag = KRA_japan
+        }
+    }
+
+    option = { #No
+        name = RP_japanese_restoration.2.c
+
+        set_country_flag = RP_empireofjapan_korea_decision
+        set_country_flag = RP_empireofjapan_mainlandexpansionlocked
+        custom_effect_tooltip = RP_empireofjapan_mainlandexpansionlocked_tt
+    }
+}
+
+country_event = { #Fate of Manchuria 
+    id = RP_japanese_restoration.3
+    title = RP_japanese_restoration.3.t
+    desc = RP_japanese_restoration.3.d
+    picture = GFX_report_event_japanese_army_parade
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_japanese_restoration.3.a
+
+        set_country_flag = RP_empireofjapan_manchuria_decision
+        
+        KMN = {
+            set_cosmetic_tag = KMN_japan
+        }
+    }
+
+    option = { #No
+        name = RP_japanese_restoration.3.b
+
+        set_country_flag = RP_empireofjapan_manchuria_decision
+        set_country_flag = RP_empireofjapan_mainlandexpansionlocked
+        custom_effect_tooltip = RP_empireofjapan_mainlandexpansionlocked_tt
+    }
+}
+
+country_event = { #Fate of Transamur 
+    id = RP_japanese_restoration.4
+    title = RP_japanese_restoration.4.t
+    desc = RP_japanese_restoration.4.d
+    picture = GFX_report_event_japanese_army_parade
+
+    is_triggered_only = yes
+
+    option = { #Yes, give Japan partial control
+        name = RP_japanese_restoration.4.a
+
+        set_country_flag = RP_empireofjapan_transamur_decision
+        
+        KTM = {
+            set_cosmetic_tag = KTM_japan
+        }
+    }
+
+    option = { #Yes, give it to Manchuria
+        name = RP_japanese_restoration.4.b
+
+        trigger = {
+            KMN = {
+                has_cosmetic_tag = KMN_japan
+            }
+        }
+
+        every_state = {
+            limit = {
+                is_owned_by = KTM
+            }
+            transfer_state_to = KMN
+            add_core_of = KMN
+        }
+
+        set_country_flag = RP_empireofjapan_transamur_decision
+    }
+
+    option = { #No
+        name = RP_japanese_restoration.4.c
+
+        set_country_flag = RP_empireofjapan_transamur_decision
+    }
+}
+
+country_event = { #Fate of Menjiang 
+    id = RP_japanese_restoration.5
+    title = RP_japanese_restoration.5.t
+    desc = RP_japanese_restoration.5.d
+    picture = GFX_report_event_japanese_army_parade
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_japanese_restoration.5.a
+
+        set_country_flag = RP_empireofjapan_menjiang_decision
+        
+        KMJ = {
+            set_cosmetic_tag = KMJ_japan
+        }
+    }
+
+    option = { #No
+        name = RP_japanese_restoration.5.b
+
+        set_country_flag = RP_empireofjapan_menjiang_decision
+    }
+}
+
+country_event = { #Fate of Beiyang 
+    id = RP_japanese_restoration.6
+    title = RP_japanese_restoration.6.t
+    desc = RP_japanese_restoration.6.d
+    picture = GFX_report_event_japanese_army_parade
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_japanese_restoration.6.a
+
+        set_country_flag = RP_empireofjapan_beiyang_decision
+        
+        KCI = {
+            set_cosmetic_tag = KCI_japan
+        }
+    }
+
+    option = { #No
+        name = RP_japanese_restoration.6.b
+
+        set_country_flag = RP_empireofjapan_beiyang_decision
+    }
+}
+
+country_event = { #Form a union in Iberia?
+    id = RP_iberianunification.1
+    title = RP_iberianunification.1.t
+    desc = RP_iberianunification.1.d
+    picture = GFX_report_event_spr_franco_victory
+
+    is_triggered_only = yes
+
+    option = {
+        name = RP_iberianunification.1.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        country_event =  RP_iberianunification.2
+    }
+
+    option = {
+        name = RP_iberianunification.1.b
+
+        ai_chance = {
+            base = 5
+        }
+
+        KPR = { add_stability = -0.05 }
+        KSP = { add_stability = -0.05 }
+    }
+}
+
+country_event = { #Who will lead?
+    id = RP_iberianunification.2
+    title = RP_iberianunification.2.t
+    desc = RP_iberianunification.2.d
+    picture = GFX_report_event_spr_franco_victory
+
+    is_triggered_only = yes
+
+    option = { #Portugal takes charge
+        name = RP_iberianunification.2.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        set_country_flag = RP_iberianunion_lisbon
+
+        KPR = {
+            every_state = {
+                limit = {
+                    is_owned_by = KSP
+                }
+                transfer_state_to = KPR
+                add_core_of = KPR
+            }
+            set_cosmetic_tag = RP_iberianunion
+            set_capital = { state = 41 }
+        }
+    }
+
+    option = { #Spain takes charge
+        name = RP_iberianunification.2.b
+
+        ai_chance = {
+            base = 5
+        }
+
+        set_country_flag = RP_iberianunion_madrid
+
+        KSP = {
+            every_state = {
+                limit = {
+                    is_owned_by = KPR
+                }
+                transfer_state_to = KSP
+                add_core_of = KSP
+            }
+            if = {
+                limit = {
+                    KSP = {
+                        has_cosmetic_tag = KSP_bourbon
+                    }
+                }
+                set_cosmetic_tag = RP_bourbon_iberianunion
+            }
+            else = {
+                set_cosmetic_tag = RP_iberianunion
+            }
+        }
+    }
+}
+
+country_event = { # Restoring the Italian Empire
+    id = RP_italianrestoration.1
+    title = RP_italianrestoration.1.t
+    desc = RP_italianrestoration.1.d
+    picture = GFX_report_event_generic_italian_celebration
+
+    is_triggered_only = yes
+
+    option = { # Of course!
+        name = RP_italianrestoration.1.a
+
+        set_country_flag = RP_italianrestoration_flag
+
+        KIT = {
+            set_cosmetic_tag = KIT_forcedally
+		}
+    }
+
+    option = { # We conquered them, thus it is ours!
+        name = RP_italianrestoration.1.b
+
+        
+    }
+}
+
+country_event = { #Fate of Croatia
+    id = RP_italianrestoration.2
+    title = RP_italianrestoration.2.t
+    desc = RP_italianrestoration.2.d
+    picture = GFX_report_event_generic_italian_celebration
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_italianrestoration.2.a
+
+        set_country_flag = RP_italianrestoration_croatiaquestion_flag
+
+        KCR = {
+            set_cosmetic_tag = KCR_italianpuppet
+
+            create_country_leader = {
+                name = "Prince Aimone"
+                picture = GFX_portrait_ITA_prince_aimone
+                expire = "1965.1.1"
+                ideology = despotism
+                traits = {
+                }
+            }
+
+            set_party_name = {
+                ideology = neutrality
+                name = KCR_savoy_neutrality_party
+            }
+        }
+    }
+
+    option = { # Yes, and give Dalmatia/Ljubliana to Italy
+        name = RP_italianrestoration.2.b
+
+        set_country_flag = RP_italianrestoration_croatiaquestion_flag
+
+        trigger = {
+            KCR = {
+                OR = {
+                    AND = {
+                        owns_state = 103
+                        owns_state = 163
+                    }
+                    owns_state = 853
+                }
+            }
+        }
+
+        every_state = {
+            limit = {
+                OR = {
+                    state = 103
+                    state = 163
+                    state = 853
+                }
+                is_owned_by = KCR
+            }
+            transfer_state_to = KIT
+        }
+
+        KCR = {
+            set_cosmetic_tag = KCR_italianpuppet
+
+            create_country_leader = {
+                name = "Prince Aimone"
+                picture = GFX_portrait_ITA_prince_aimone
+                expire = "1965.1.1"
+                ideology = despotism
+                traits = {
+                }
+            }
+
+            set_party_name = {
+                ideology = neutrality
+                name = KCR_savoy_neutrality_party
+            }
+        }
+    }
+
+    option = { # Keep it independent
+        name = RP_italianrestoration.2.c
+    }
+}
+
+country_event = { #Fate of Bosnia
+    id = RP_italianrestoration.3
+    title = RP_italianrestoration.3.t
+    desc = RP_italianrestoration.3.d
+    picture = GFX_report_event_generic_italian_celebration
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_italianrestoration.3.a
+
+        set_country_flag = RP_italianrestoration_bosniaquestion_flag
+
+        KBS = {
+            set_cosmetic_tag = KBS_italianpuppet
+        }
+    }
+
+    option = { # Keep it independent
+        name = RP_italianrestoration.3.b
+    }
+}
+
+country_event = { #Fate of Montenegro
+    id = RP_italianrestoration.4
+    title = RP_italianrestoration.4.t
+    desc = RP_italianrestoration.4.d
+    picture = GFX_report_event_generic_italian_celebration
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_italianrestoration.4.a
+
+        set_country_flag = RP_italianrestoration_montenegroquestion_flag
+
+        KNT = {
+            set_cosmetic_tag = KNT_italianpuppet
+        }
+    }
+
+    option = { # Keep it independent
+        name = RP_italianrestoration.4.b
+    }
+}
+
+country_event = { #Fate of Serbia
+    id = RP_italianrestoration.5
+    title = RP_italianrestoration.5.t
+    desc = RP_italianrestoration.5.d
+    picture = GFX_report_event_generic_italian_celebration
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_italianrestoration.5.a
+
+        set_country_flag = RP_italianrestoration_serbiaquestion_flag
+
+        KSR = {
+            set_cosmetic_tag = KSR_italianpuppet
+        }
+    }
+
+    option = { # Keep it independent
+        name = RP_italianrestoration.5.b
+    }
+}
+
+country_event = { #Fate of Albania
+    id = RP_italianrestoration.6
+    title = RP_italianrestoration.6.t
+    desc = RP_italianrestoration.6.d
+    picture = GFX_report_event_generic_italian_celebration
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_italianrestoration.6.a
+
+        set_country_flag = RP_italianrestoration_albaniaquestion_flag
+
+        KAB = {
+            set_cosmetic_tag = KAB_italianpuppet
+        }
+    }
+
+    option = { # It will come under direct Italian control
+        name = RP_italianrestoration.6.b
+
+        set_country_flag = RP_italianrestoration_albaniaquestion_flag
+
+        KIT = {
+            annex_country = {
+                target = KAB
+                transfer_troops = no
+            }
+        }
+    }
+
+    option = { # Keep it independent
+        name = RP_italianrestoration.6.c
+    }
+}
+
+country_event = { #Fate of Bulgaria
+    id = RP_italianrestoration.7
+    title = RP_italianrestoration.7.t
+    desc = RP_italianrestoration.7.d
+    picture = GFX_report_event_generic_italian_celebration
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_italianrestoration.7.a
+
+        set_country_flag = RP_italianrestoration_bulgariaquestion_flag
+
+        KBU = {
+            set_cosmetic_tag = KBU_italianpuppet
+
+            create_country_leader = {
+                name = "Giovanna of Savoy"
+                picture = GFX_portrait_KBU_giovanna
+                expire = "1965.1.1"
+                ideology = despotism
+                traits = {
+                }
+            }
+
+            set_party_name = {
+                ideology = neutrality
+                name = KBU_savoy_neutrality_party
+            }
+        }
+    } 
+
+    option = { # Keep it independent
+        name = RP_italianrestoration.7.b
+    }
+}
+
+country_event = { #Fate of Greece
+    id = RP_italianrestoration.8
+    title = RP_italianrestoration.8.t
+    desc = RP_italianrestoration.8.d
+    picture = GFX_report_event_generic_italian_celebration
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_italianrestoration.8.a
+
+        set_country_flag = RP_italianrestoration_greecequestion_flag
+
+        KGR = {
+            set_cosmetic_tag = KGR_italianpuppet
+
+            create_country_leader = {
+                name = "Georgios Tsolakoglou"
+                picture = GFX_portrait_KGR_georgios_tsolakoglou
+                expire = "1965.1.1"
+                ideology = despotism
+                traits = {
+                }
+            }
+
+            set_party_name = {
+                ideology = neutrality
+                name = KGR_savoy_neutrality_party
+            }
+        }
+    } 
+
+    option = { # Yes, and give Italy control over the Greek islands
+        name = RP_italianrestoration.8.b
+
+        set_country_flag = RP_italianrestoration_greecequestion_flag
+
+        trigger = {
+            KGR = {
+                owns_state = 164
+                owns_state = 182
+                owns_state = 187
+            }
+        }
+
+        every_state = {
+            limit = {
+                OR = {
+                    state = 164
+                    state = 182
+                    state = 187
+                }
+                is_owned_by = KGR
+            }
+            transfer_state_to = KIT
+        }
+
+        KGR = {
+            set_cosmetic_tag = KGR_italianpuppet
+
+            create_country_leader = {
+                name = "Georgios Tsolakoglou"
+                picture = GFX_portrait_KGR_georgios_tsolakoglou
+                expire = "1965.1.1"
+                ideology = despotism
+                traits = {
+                }
+            }
+
+            set_party_name = {
+                ideology = neutrality
+                name = KGR_savoy_neutrality_party
+            }
+        }
+    } 
+
+    option = { # Keep it independent
+        name = RP_italianrestoration.8.c
+    }
+}
+
+country_event = { # Fate of Libya
+    id = RP_italianrestoration.9
+    title = RP_italianrestoration.9.t
+    desc = RP_italianrestoration.9.d
+    picture = GFX_report_event_generic_italian_celebration
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_italianrestoration.9.a
+
+        set_country_flag = RP_italianrestoration_libyaquestion_flag
+
+        KLB = {
+            set_cosmetic_tag = KLB_italianpuppet
+        }
+    } 
+
+    option = { # Just give it to them lwk who wants this fuckass desert anyway
+        name = RP_italianrestoration.9.b
+
+        set_country_flag = RP_italianrestoration_libyaquestion_flag
+
+        every_state = {
+            limit = {
+                OR = {
+                    state = 448
+                    state = 449
+                    state = 450
+                    state = 451
+                    state = 661
+                    state = 662
+                    state = 663
+                    state = 665
+                    state = 458
+                    state = 273
+                }
+                OR = {
+                    is_owned_by = KNA
+                    is_owned_by = KLB
+                    is_owned_by = KEG
+                }
+            }
+            transfer_state_to = KIT
+        }
+    } 
+
+    option = { # Keep it independent
+        name = RP_italianrestoration.9.c
+    }
+}
+
+country_event = { # Fate of Egypt
+    id = RP_italianrestoration.10
+    title = RP_italianrestoration.10.t
+    desc = RP_italianrestoration.10.d
+    picture = GFX_report_event_generic_italian_celebration
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_italianrestoration.10.a
+
+        set_country_flag = RP_italianrestoration_egyptquestion_flag
+
+        KEG = {
+            set_cosmetic_tag = KEG_italianpuppet
+        }
+    }
+
+    option = { # Keep it independent
+        name = RP_italianrestoration.10.b
+    }
+}
+
+country_event = { # Fate of Abyssinia
+    id = RP_italianrestoration.11
+    title = RP_italianrestoration.11.t
+    desc = RP_italianrestoration.11.d
+    picture = GFX_report_event_generic_italian_celebration
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_italianrestoration.11.a
+
+        set_country_flag = RP_italianrestoration_abyssiniaquestion_flag
+
+        KBY = {
+            set_cosmetic_tag = KBY_italianpuppet
+
+            create_country_leader = {
+                name = "Rodolfo Graziani"
+                picture = GFX_portrait_ITA_rodolfo_graziani
+                expire = "1965.1.1"
+                ideology = despotism
+                traits = {
+                }
+            }
+
+            set_party_name = {
+                ideology = neutrality
+                name = KBY_savoy_neutrality_party
+            }
+        }
+    }
+
+    option = { # Keep it independent
+        name = RP_italianrestoration.11.b
+    }
+}
+
+country_event = { # Transfer Antalya?
+    id = RP_italianrestoration.12
+    title = RP_italianrestoration.12.t
+    desc = RP_italianrestoration.12.d
+    picture = GFX_report_event_generic_italian_celebration
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_italianrestoration.12.a
+
+        set_country_flag = RP_italianrestoration_antalyaquestion_flag
+
+        342 = {
+            transfer_state_to = KIT
+        }
+    }
+
+    option = { # Keep it independent
+        name = RP_italianrestoration.12.b
+    }
+}
+
+country_event = { # Restore Canada
+    id = RP_reunite_canada.1
+    title = RP_reunite_canada.1.t
+    desc = RP_reunite_canada.1.d
+    picture = GFX_report_event_france_parade
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_reunite_canada.1.a
+
+        set_country_flag = RP_reunite_canada
+
+        set_country_flag = {
+            flag = RP_northamerica_forcedally_timer
+            days = 360
+            value = 1
+        }
+
+        KRP = {
+
+            set_cosmetic_tag = KRP_canada
+
+            every_state = {
+                limit = {
+                    is_owned_by = KDK
+                }
+                transfer_state_to = PREV
+                add_core_of = PREV
+            }
+
+            every_state = {
+                limit = {
+                    is_owned_by = KNL
+                }
+                transfer_state_to = PREV
+                add_core_of = PREV
+            }
+
+            every_state = {
+                limit = {
+                    is_owned_by = KFN
+                }
+                transfer_state_to = PREV
+                add_core_of = PREV
+            }
+        }
+    }
+
+    option = { #No
+        name = RP_reunite_canada.1.b
+
+    }
+}
+
+country_event = { # KNP to Canada?
+    id = RP_reunite_canada.2
+    title = RP_reunite_canada.2.t
+    desc = RP_reunite_canada.2.d
+    picture = GFX_report_event_france_parade
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_reunite_canada.2.a
+
+        set_country_flag = RP_knp_canada
+
+        KRP = {
+            every_state = {
+                limit = {
+                    is_owned_by = KNP
+                }
+                transfer_state_to = PREV
+                add_core_of = PREV
+            }
+        }
+    }
+
+    option = { #No
+        name = RP_reunite_canada.2.b
+
+    }
+}
+
+country_event = { # KFQ to Canada?
+    id = RP_reunite_canada.3
+    title = RP_reunite_canada.3.t
+    desc = RP_reunite_canada.3.d
+    picture = GFX_report_event_france_parade
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_reunite_canada.3.a
+
+        set_country_flag = RP_kfq_canada
+
+        KRP = {
+            every_state = {
+                limit = {
+                    is_owned_by = KFQ
+                }
+                transfer_state_to = PREV
+                add_core_of = PREV
+            }
+        }
+    }
+
+    option = { #No
+        name = RP_reunite_canada.3.b
+
+    }
+}
+
+country_event = { # Quebec Collab
+    id = RP_quebeccollab.1
+    title = RP_quebeccollab.1.t
+    desc = RP_quebeccollab.1.d
+    picture = GFX_report_event_france_parade
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_quebeccollab.1.a
+
+        set_country_flag = RP_quebeccollab
+
+        KFQ = {
+            create_country_leader = {
+				name = "Maurice Duplessis"
+				picture = GFX_portrait_KFQ_maurice_duplessis
+				expire = "1999.1.1"
+				ideology = despotism
+				traits = {
+				}
+			}
+
+			set_party_name = {
+				ideology = neutrality
+				name = KFQ_collab_neutrality_party
+			}
+
+            set_cosmetic_tag = KFQ_collab
+        }
+    }
+
+    option = { #No
+        name = RP_carribeancollaborator.1.b
+
+    }
+}
+
+country_event = { # Reunite America
+    id = RP_reunite_unitedstates.1
+    title = RP_reunite_unitedstates.1.t
+    desc = RP_reunite_unitedstates.1.d
+    picture = GFX_report_event_usa_election_generic
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_reunite_unitedstates.1.a
+
+        set_country_flag = RP_reunite_unitedstates
+
+        set_country_flag = {
+            flag = RP_northamerica_forcedally_timer
+            days = 360
+            value = 1
+        }
+
+        KFM = {
+
+            create_country_leader = {
+				name = "Alf Landon"
+				picture = GFX_portrait_Alf_Landon
+				expire = "1999.1.1"
+				ideology = despotism
+				traits = {
+				}
+			}
+
+			set_party_name = {
+				ideology = neutrality
+				name = KFM_unitedstates_neutrality_party
+			}
+
+            set_cosmetic_tag = KFM_unitedstates
+
+            KFM = {
+                every_state = {
+                    limit = {
+                        is_owned_by = KNP
+                    }
+                    transfer_state_to = PREV
+                    add_core_of = PREV
+                }
+            }
+
+            if = {
+                limit = {
+                    owns_state = 361
+                }
+                set_capital = { state = 361 }
+            }
+
+            else = {
+                set_capital = { state = 360 }
+            }
+        }
+    }
+
+    option = { # Kingdom of America
+        name = RP_reunite_unitedstates.1.b
+
+        set_country_flag = RP_kingdomofamerica
+
+        KFM = {
+            
+            set_cosmetic_tag = KFM_kingdomofamerica
+
+            KFM = {
+                every_state = {
+                    limit = {
+                        is_owned_by = KNP
+                    }
+                    transfer_state_to = PREV
+                    add_core_of = PREV
+                }
+            }
+
+            if = {
+                limit = {
+                    owns_state = 361
+                }
+                set_capital = { state = 361 }
+            }
+
+            else = {
+                set_capital = { state = 360 }
+            }
+        }
+    }
+
+    option = { #No
+        name = RP_reunite_unitedstates.1.c
+
+    }
+}
+
+country_event = { # Restore control over the Northwest Territories
+    id = RP_reunite_unitedstates.2
+    title = RP_reunite_unitedstates.2.t
+    desc = RP_reunite_unitedstates.2.d
+    picture = GFX_report_event_usa_election_generic
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_reunite_unitedstates.2.a
+
+        set_country_flag = RP_USA_annexrustbelt
+
+        KFM = {
+            every_state = {
+                limit = {
+                    is_owned_by = KRR
+                }
+                transfer_state_to = PREV
+                add_core_of = PREV
+            }
+        }
+    }
+
+    option = { #No
+        name = RP_reunite_unitedstates.2.b
+
+        set_country_flag = RP_USA_westward_expansion_blocked
+        custom_effect_tooltip = RP_USA_westward_expansion_blocked_tt
+    }
+}
+
+country_event = { # Restore the Louisiana Purchase
+    id = RP_reunite_unitedstates.3
+    title = RP_reunite_unitedstates.3.t
+    desc = RP_reunite_unitedstates.3.d
+    picture = GFX_report_event_usa_election_generic
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_reunite_unitedstates.3.a
+
+        set_country_flag = RP_USA_annexnewpfalz
+
+        KFM = {
+            every_state = {
+                limit = {
+                    is_owned_by = KMT
+                }
+                transfer_state_to = PREV
+                add_core_of = PREV
+            }
+        }
+    }
+
+    option = { #No
+        name = RP_reunite_unitedstates.3.b
+
+        set_country_flag = RP_USA_westward_expansion_blocked
+        custom_effect_tooltip = RP_USA_westward_expansion_blocked_tt
+    }
+}
+
+country_event = { # Restore the Mexican Cession
+    id = RP_reunite_unitedstates.4
+    title = RP_reunite_unitedstates.4.t
+    desc = RP_reunite_unitedstates.4.d
+    picture = GFX_report_event_usa_election_generic
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_reunite_unitedstates.4.a
+
+        set_country_flag = RP_USA_annexcalifornia
+
+        KFM = {
+            every_state = {
+                limit = {
+                    is_owned_by = KWC
+                }
+                transfer_state_to = PREV
+                add_core_of = PREV
+            }
+        }
+    }
+
+    option = { #No
+        name = RP_reunite_unitedstates.4.b
+
+        set_country_flag = RP_USA_westward_expansion_blocked
+        custom_effect_tooltip = RP_USA_westward_expansion_blocked_tt
+    }
+}
+
+country_event = { # Restore Control over Cascadia?
+    id = RP_reunite_unitedstates.5
+    title = RP_reunite_unitedstates.5.t
+    desc = RP_reunite_unitedstates.5.d
+    picture = GFX_report_event_usa_election_generic
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_reunite_unitedstates.5.a
+
+        set_country_flag = RP_USA_annexcascadia
+
+        KFM = {
+            every_state = {
+                limit = {
+                    is_owned_by = KRK
+                }
+                transfer_state_to = PREV
+                add_core_of = PREV
+            }
+        }
+    }
+
+    option = { #No
+        name = RP_reunite_unitedstates.5.b
+
+        set_country_flag = RP_USA_westward_expansion_blocked
+        custom_effect_tooltip = RP_USA_westward_expansion_blocked_tt
+    }
+}
+
+country_event = { # Restore Control over Dixieland?
+    id = RP_reunite_unitedstates.6
+    title = RP_reunite_unitedstates.6.t
+    desc = RP_reunite_unitedstates.6.d
+    picture = GFX_report_event_usa_election_generic
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_reunite_unitedstates.6.a
+
+        set_country_flag = RP_USA_annexdixieland
+
+        KFM = {
+            every_state = {
+                limit = {
+                    is_owned_by = KDL
+                }
+                transfer_state_to = PREV
+                add_core_of = PREV
+            }
+        }
+    }
+
+    option = { #No
+        name = RP_reunite_unitedstates.6.b
+
+    }
+}
+
+country_event = { # Restore Control over Texas?
+    id = RP_reunite_unitedstates.7
+    title = RP_reunite_unitedstates.7.t
+    desc = RP_reunite_unitedstates.7.d
+    picture = GFX_report_event_usa_election_generic
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_reunite_unitedstates.7.a
+
+        set_country_flag = RP_USA_annextexas
+
+        KFM = {
+            every_state = {
+                limit = {
+                    is_owned_by = KTX
+                }
+                transfer_state_to = PREV
+                add_core_of = PREV
+            }
+        }
+    }
+
+    option = { #No
+        name = RP_reunite_unitedstates.7.b
+
+        set_country_flag = RP_USA_westward_expansion_blocked
+        custom_effect_tooltip = RP_USA_westward_expansion_blocked_tt
+    }
+}
+
+country_event = { # Restore the Confederate States
+    id = RP_restore_confederacy.1
+    title = RP_restore_confederacy.1.t
+    desc = RP_restore_confederacy.1.d
+    picture = GFX_report_event_france_parade
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_restore_confederacy.1.a
+
+        set_country_flag = RP_restore_confederatestates
+
+        set_country_flag = {
+            flag = RP_northamerica_forcedally_timer
+            days = 360
+            value = 1
+        }
+
+        KDL = {
+
+            create_country_leader = {
+				name = "Richard Russell Jr."
+				picture = GFX_portrait_KDL_richardrusseljr
+				expire = "1999.1.1"
+				ideology = despotism
+				traits = {
+				}
+			}
+
+			set_party_name = {
+				ideology = neutrality
+				name = KDL_confederatestates_neutrality_party
+			}
+
+            set_cosmetic_tag = KDL_CSA
+        }
+    }
+
+    option = { #No
+        name = RP_restore_confederacy.1.b
+
+    }
+}
+
+country_event = { # Restore the Mexican Empire
+    id = RP_restore_mexicanempire.1
+    title = RP_restore_mexicanempire.1.t
+    desc = RP_restore_mexicanempire.1.d
+    picture = GFX_report_event_france_parade
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_restore_mexicanempire.1.a
+
+        set_country_flag = RP_restore_mexicanempire
+
+        set_country_flag = {
+            flag = RP_northamerica_forcedally_timer
+            days = 360
+            value = 1
+        }
+
+        KMX = {
+            set_cosmetic_tag = KMX_empire
+        }
+    }
+
+    option = { #No
+        name = RP_restore_mexicanempire.1.b
+
+    }
+}
+
+country_event = { # Reincorporate Texas into Mexico?
+    id = RP_restore_mexicanempire.2
+    title = RP_restore_mexicanempire.2.t
+    desc = RP_restore_mexicanempire.2.d
+    picture = GFX_report_event_france_parade
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_restore_mexicanempire.2.a
+
+        set_country_flag = RP_restore_mexicanempire_texas
+
+        KMX = {
+            every_state = {
+                limit = {
+                    is_owned_by = KTX
+                }
+                transfer_state_to = PREV
+                add_core_of = PREV
+            }
+        }
+
+        if = {
+            limit = {
+                has_country_flag = RP_restore_mexicanempire_texas
+                has_country_flag = RP_restore_mexicanempire_california
+                has_country_flag = RP_restore_mexicanempire_centralamerica
+                has_country_flag = RP_restore_mexicanempire_carribean
+            }
+            country_event = RP_restore_mexicanempire.6
+        }
+    }
+
+    option = { #No
+        name = RP_restore_mexicanempire.2.b
+
+    }
+}
+
+country_event = { # Reverse the Mexican Cession?
+    id = RP_restore_mexicanempire.3
+    title = RP_restore_mexicanempire.3.t
+    desc = RP_restore_mexicanempire.3.d
+    picture = GFX_report_event_france_parade
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_restore_mexicanempire.3.a
+
+        set_country_flag = RP_restore_mexicanempire_california
+
+        KMX = {
+            every_state = {
+                limit = {
+                    is_owned_by = KWC
+                }
+                transfer_state_to = PREV
+                add_core_of = PREV
+            }
+        }
+
+        if = {
+            limit = {
+                has_country_flag = RP_restore_mexicanempire_texas
+                has_country_flag = RP_restore_mexicanempire_california
+                has_country_flag = RP_restore_mexicanempire_centralamerica
+                has_country_flag = RP_restore_mexicanempire_carribean
+            }
+            country_event = RP_restore_mexicanempire.6
+        }
+    }
+
+    option = { #No
+        name = RP_restore_mexicanempire.3.b
+
+    }
+}
+
+country_event = { # Reincorporate Central America into Mexico?
+    id = RP_restore_mexicanempire.4
+    title = RP_restore_mexicanempire.4.t
+    desc = RP_restore_mexicanempire.4.d
+    picture = GFX_report_event_france_parade
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_restore_mexicanempire.4.a
+
+        set_country_flag = RP_restore_mexicanempire_centralamerica
+
+        KMX = {
+            every_state = {
+                limit = {
+                    is_owned_by = KZM
+                }
+                transfer_state_to = PREV
+                add_core_of = PREV
+            }
+        }
+
+        if = {
+            limit = {
+                has_country_flag = RP_restore_mexicanempire_texas
+                has_country_flag = RP_restore_mexicanempire_california
+                has_country_flag = RP_restore_mexicanempire_centralamerica
+                has_country_flag = RP_restore_mexicanempire_carribean
+            }
+            country_event = RP_restore_mexicanempire.6
+        }
+    }
+
+    option = { #No
+        name = RP_restore_mexicanempire.4.b
+
+    }
+}
+
+country_event = { # Give the Carribean to Mexico?
+    id = RP_restore_mexicanempire.5
+    title = RP_restore_mexicanempire.5.t
+    desc = RP_restore_mexicanempire.5.d
+    picture = GFX_report_event_france_parade
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_restore_mexicanempire.5.a
+
+        set_country_flag = RP_restore_mexicanempire_carribean
+
+        KMX = {
+            every_state = {
+                limit = {
+                    is_owned_by = KCB
+                }
+                transfer_state_to = PREV
+                add_core_of = PREV
+            }
+        }
+
+        if = {
+            limit = {
+                has_country_flag = RP_restore_mexicanempire_texas
+                has_country_flag = RP_restore_mexicanempire_california
+                has_country_flag = RP_restore_mexicanempire_centralamerica
+                has_country_flag = RP_restore_mexicanempire_carribean
+            }
+            country_event = RP_restore_mexicanempire.6
+        }
+    }
+
+    option = { #No
+        name = RP_restore_mexicanempire.5.b
+
+    }
+}
+
+country_event = { # Rename Mexico to New Spain??
+    id = RP_restore_mexicanempire.6
+    title = RP_restore_mexicanempire.6.t
+    desc = RP_restore_mexicanempire.6.d
+    picture = GFX_report_event_france_parade
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_restore_mexicanempire.6.a
+
+        set_country_flag = RP_restore_mexicanempire_newspain
+
+        KMX = {
+            set_cosmetic_tag = KMX_newspain
+        }
+    }
+
+    option = { #No
+        name = RP_restore_mexicanempire.6.b
+
+    }
+}
+
+country_event = { # Restore the Federal Republic
+    id = RP_centralamericancollab.1
+    title = RP_centralamericancollab.1.t
+    desc = RP_centralamericancollab.1.d
+    picture = GFX_report_event_france_parade
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_centralamericancollab.1.a
+
+        set_country_flag = RP_restore_federalrepublic
+
+        set_country_flag = {
+            flag = RP_northamerica_forcedally_timer
+            days = 360
+            value = 1
+        }
+
+        KZM = {
+            create_country_leader = {
+				name = "Vicente Mejía Colindres"
+				picture = GFX_portrait_KZM_vicentecolindres
+				expire = "1999.1.1"
+				ideology = despotism
+				traits = {
+				}
+			}
+
+			set_party_name = {
+				ideology = neutrality
+				name = KZM_federalrepublic_neutrality_party
+			}
+
+            set_cosmetic_tag = KZM_federalrepublic
+
+            set_capital = {
+                state = 312
+            }
+        }
+    }
+
+    option = { #No
+        name = RP_centralamericancollab.1.b
+
+    }
+}
+
+country_event = { # Install a Carribean Collaborator?
+    id = RP_carribeancollaborator.1
+    title = RP_carribeancollaborator.1.t
+    desc = RP_carribeancollaborator.1.d
+    picture = GFX_report_event_france_parade
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_carribeancollaborator.1.a
+
+        set_country_flag = RP_carribeancollab
+
+        set_country_flag = {
+            flag = RP_northamerica_forcedally_timer
+            days = 360
+            value = 1
+        }
+
+        KCB = {
+            create_country_leader = {
+				name = "T. Albert Marryshow"
+				picture = GFX_portrait_KCB_albert_marryshow
+				expire = "1999.1.1"
+				ideology = despotism
+				traits = {
+				}
+			}
+
+			set_party_name = {
+				ideology = neutrality
+				name = KCB_collab_neutrality_party
+			}
+
+            set_cosmetic_tag = KCB_collab
+        }
+    }
+
+    option = { #No
+        name = RP_carribeancollaborator.1.b
+
+    }
+}
+
+country_event = { # gran columbia
+    id = RP_gran_colombia.1
+    title = RP_gran_colombia.1.t
+    desc = RP_gran_colombia.1.d
+    picture = GFX_report_event_france_parade
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_gran_colombia.1.a
+
+        set_country_flag = RP_gran_colombia
+
+        KCO = {
+            set_cosmetic_tag = KCO_gran
+			
+			create_country_leader = {
+				name = "Jorge Eliécer Gaitán"
+				picture = GFX_portrait_KCO_jorge_gaitan
+				expire = "1999.1.1"
+				ideology = despotism
+				traits = {
+				}
+			}
+
+			set_party_name = {
+				ideology = neutrality
+				name = KCO_collab_neutrality_party
+			}
+		}
+        every_state = {
+            limit = {
+                is_owned_by = KEC
+            }
+            transfer_state_to = KCO
+            add_core_of = KCO
+        }
+        every_state = {
+            limit = {
+                is_owned_by = KKV
+            }
+            transfer_state_to = KCO
+            add_core_of = KCO
+        }
+		
+    }
+    option = { #No
+        name = RP_gran_colombia.1.b
+    }
+}
+country_event = { # brazilian empire
+    id = RP_brazilian_empire.1
+    title = RP_brazilian_empire.1.t
+    desc = RP_brazilian_empire.1.d
+    picture = GFX_report_event_france_parade
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_brazilian_empire.1.a
+
+        set_country_flag = RP_brazilian_empire
+
+        KBZ = {
+            set_cosmetic_tag = KBZ_empire
+			
+			create_country_leader = {
+				name = "Pedro Henrique"
+				picture = GFX_portrait_KBZ_pedro_brazil
+				expire = "1999.1.1"
+				ideology = despotism
+				traits = {
+				}
+			}
+
+			set_party_name = {
+				ideology = neutrality
+				name = KBZ_collab_neutrality_party
+			}
+		}
+		
+    }
+    option = { #No
+        name = RP_brazilian_empire.1.b
+    }
+}
+country_event = { #Fate of uruguay (Brazil) 
+    id = RP_brazilian_empire.2
+    title = RP_brazilian_empire.2.t
+    desc = RP_brazilian_empire.2.d
+    picture = GFX_report_event_france_parade
+
+    is_triggered_only = yes
+
+
+    option = { #Yes, give it to brazil
+        name = RP_brazilian_empire.2.a
+
+        trigger = {
+            KBZ = {
+                has_cosmetic_tag = KBZ_empire
+            }
+			NOT = {
+				has_country_flag = RP_LOFP
+			}			
+        }
+
+        every_state = {
+            limit = {
+                is_owned_by = KUG
+            }
+            transfer_state_to = KBZ
+            add_core_of = KBZ
+        }
+
+        set_country_flag = RP_brazil_takes_KUG ### take note
+    }
+	
+    option = { # No
+        name = RP_brazilian_empire.2.b
+    }
+}
+country_event = { #federal leauegegre? (uruguay) ((i cannot spell))
+    id = RP_LOFP.1
+    title = RP_LOFP.1.t
+    desc = RP_LOFP.1.d
+    picture = GFX_report_event_france_parade
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_LOFP.1.a
+
+        set_country_flag = RP_LOFP
+		
+        every_state = {
+            limit = {
+                OR = {
+                    state = 956
+                }
+            }
+            transfer_state_to = KUG
+            add_core_of = KUG
+        }
+		
+        KUG = {
+            set_cosmetic_tag = KUG_LOFP
+
+			set_party_name = {
+				ideology = neutrality
+				name = KUG_collab_neutrality_party
+			}
+		}
+		
+    }
+    option = { #No
+        name = RP_LOFP.1.b
+    }
+}
+country_event = { # collaborate with the argentines?
+    id = RP_argentina.1
+    title = RP_argentina.1.t
+    desc = RP_argentina.1.d
+    picture = GFX_report_event_france_parade
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_argentina.1.a
+
+        set_country_flag = RP_argentina
+
+        KAG = {
+            set_cosmetic_tag = KAG_collab
+
+			set_party_name = {
+				ideology = neutrality
+				name = KAG_collab_neutrality_party
+			}
+		}
+		
+    }
+    option = { #No
+        name = RP_argentina.1.b
+    }
+}
+country_event = { # collaborate with the paragueneners?? Paraguay
+    id = RP_paraguay.1
+    title = RP_paraguay.1.t
+    desc = RP_paraguay.1.d
+    picture = GFX_report_event_france_parade
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_paraguay.1.a
+
+        set_country_flag = RP_paraguay
+
+        KPG = {
+            set_cosmetic_tag = KPG_collab
+
+			set_party_name = {
+				ideology = neutrality
+				name = KPG_collab_neutrality_party
+			}
+		}
+		
+    }
+    option = { #No
+        name = RP_paraguay.1.b
+    }
+}
+country_event = { # collaborate with the chileans
+    id = RP_chile.1
+    title = RP_chile.1.t
+    desc = RP_chile.1.d
+    picture = GFX_report_event_france_parade
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_chile.1.a
+
+        set_country_flag = RP_chile
+
+        KCL = {
+            set_cosmetic_tag = KCL_collab
+
+			set_party_name = {
+				ideology = neutrality
+				name = KCL_collab_neutrality_party
+			}
+		}
+		
+    }
+    option = { #No
+        name = RP_chile.1.b
+    }
+}
+country_event = { # peru bolivia
+    id = RP_peru_bolivia.1
+    title = RP_peru_bolivia.1.t
+    desc = RP_peru_bolivia.1.d
+    picture = GFX_report_event_france_parade
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_peru_bolivia.1.a
+
+        set_country_flag = RP_peru_bolivia
+
+        KPU = {
+            set_cosmetic_tag = KPU_KBO
+			
+			create_country_leader = {
+				name = "Óscar R. Benavides"
+				picture = GFX_portrait_KPU_oscar_benavides
+				expire = "1999.1.1"
+				ideology = despotism
+				traits = {
+				}
+			}
+
+			set_party_name = {
+				ideology = neutrality
+				name = KPU_KBO_neutrality_party
+			}		
+		} 
+		
+        every_state = {
+            limit = {
+                is_owned_by = KBO
+            }
+            transfer_state_to = KPU
+            add_core_of = KPU
+        }	
+		
+    }
+    option = { #No
+        name = RP_peru_bolivia.1.b
+		hidden_effect = {
+			set_country_flag = RP_incan_empire_check #### used to trigger the incan empire decision
+		}
+    }
+}
+
+country_event = { # incan empire
+    id = RP_incan_empire.1
+    title = RP_incan_empire.1.t
+    desc = RP_incan_empire.1.d
+    picture = GFX_report_event_france_parade
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_incan_empire.1.a
+
+        set_country_flag = RP_incan_empire
+
+        KPU = {
+            set_cosmetic_tag = KPU_incan_1 # with the gay flag
+			
+			create_country_leader = {
+				name = "The Sapa Inca"
+				picture = GFX_portrait_KPU_sapa_inca
+				expire = "1999.1.1"
+				ideology = despotism
+				traits = {
+				}
+			}
+
+			set_party_name = {
+				ideology = neutrality
+				name = KPU_incan_neutrality_party
+			}	
+			set_capital = { state = 494 }		
+		
+		} 
+		
+        every_state = {
+            limit = {
+                is_owned_by = KBO
+            }
+            transfer_state_to = KPU
+            add_core_of = KPU
+        }	   
+		
+		every_state = {
+            limit = {
+				OR = {
+					state = 508				
+					state = 960				
+					state = 511				
+					state = 279				
+					state = 952		
+					state = 959		
+					state = 506		
+					state = 951		
+					state = 947		
+				}
+            }
+            transfer_state_to = KPU
+            add_core_of = KPU
+        }	
+		
+		add_victory_points = {
+			province = 5166	
+			value = 12
+		}			
+		
+		if = {
+			limit = {
+				has_country_flag = RP_LOFP 
+			}
+			country_event = {
+				id = RP_incan_empire.4 # put argentina out of her misery
+			}
+		}
+	
+		country_event = {
+			id = RP_incan_empire.2 #chile
+		}			
+		country_event = {
+			id = RP_incan_empire.3 #flag
+		}				
+    }
+    option = { #No
+        name = RP_incan_empire.1.b
+
+    }
+}
+country_event = { # fate of chile incan
+    id = RP_incan_empire.2
+    title = RP_incan_empire.2.t
+    desc = RP_incan_empire.2.d
+    picture = GFX_report_event_france_parade
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_incan_empire.2.a
+		
+		custom_effect_tooltip = "Due to losing most of their territory to the Incans, the Chilean state will be preemptively dissolved. A Mapuche state run by local collaborators will be created to encompass most of the Patagonian region. To ensure an easy transition, German observers will be sent to monitor the new government."		
+		hidden_effect = {
+			every_state = {
+				limit = {
+					OR = {
+						state = 512				
+						state = 955				
+						state = 954				
+						state = 953				
+						state = 507					
+						state = 949					
+						state = 950		
+					}
+				}
+				transfer_state_to = KCL
+				add_core_of = KCL
+			}	
+
+			KCL = {
+				set_cosmetic_tag = KCL_mapuche
+			
+				create_country_leader = {
+					name = "German-Mapuche Provisional Council"
+					picture = GFX_portrait_KCL_mapuche
+					expire = "1999.2.2"
+					ideology = despotism
+					traits = {
+					}
+				}
+
+				set_party_name = {
+					ideology = neutrality
+					name = KCL_mapuche_neutrality_party
+				}	
+			}
+		} 		
+    }
+}
+country_event = { # FLAG
+    id = RP_incan_empire.3
+    title = RP_incan_empire.3.t
+    desc = RP_incan_empire.3.d
+    picture = GFX_report_event_france_parade
+
+    is_triggered_only = yes
+
+    option = { # gay flag (the TRUE and UNDESPUTED FLAG of FAIR AND VALIENT CUSCO)
+        name = RP_incan_empire.3.a
+		KPU = {
+			set_cosmetic_tag = KPU_incan_1
+		}			
+	}
+	
+    option = { # sapa inca banner
+        name = RP_incan_empire.3.b
+		KPU = {
+			set_cosmetic_tag = KPU_incan_2
+		}		
+	}
+	
+    option = { # FLAG OF SPANISH PRETENDERS
+        name = RP_incan_empire.3.c
+		KPU = {
+			set_cosmetic_tag = KPU_incan_3
+		}			
+	}
+	
+}
+
+country_event = { # fate of argentina incan
+    id = RP_incan_empire.4
+    title = RP_incan_empire.4.t
+    desc = RP_incan_empire.4.d
+    picture = GFX_report_event_france_parade
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_incan_empire.4.a
+			
+		every_state = {
+			limit = {
+				OR = {
+					state = 958					
+				}
+			}
+			transfer_state_to = KAP
+			add_core_of = KAP
+		}	
+			
+		every_state = {
+			limit = {
+				OR = {
+					state = 509					
+				}
+			}
+			transfer_state_to = KAC
+			add_core_of = KAC
+		}	
+			
+		if = {
+			limit = {
+				KAG = {
+					owns_state = 957
+				}
+			}
+			every_state = {
+				limit = {
+					OR = {
+						state = 957				
+					}
+				}
+				transfer_state_to = KAC
+				add_core_of = KAC	
+			}
+		}
+        GER = {
+            set_autonomy = {
+                target = KAP
+                autonomous_state = autonomy_RP_kaiserreich_puppet
+            }         
+			set_autonomy = {
+                target = KAC
+                autonomous_state = autonomy_RP_kaiserreich_puppet
+            }
+        }		
+		KAG = {
+			set_cosmetic_tag = KAG_province
+		} 		
+    }
+   option = { #Yes
+        name = RP_incan_empire.4.b
+	}
+}
+
+country_event = { ## ECUDAOR
+    id = RP_incan_empire.5
+    title = RP_incan_empire.5.t
+    desc = RP_incan_empire.5.d
+    picture = GFX_report_event_france_parade
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_incan_empire.5.a
+		
+        trigger = {
+            country_exists = KEC
+        }
+		
+        every_state = {
+            limit = {
+                OR = {
+					is_owned_by = KBO
+                }
+            }
+            transfer_state_to = KPU
+            add_core_of = KPU
+        }
+		
+    }
+    option = { #No
+        name = RP_incan_empire.5.b
+		
+        trigger = {
+			has_country_flag = RP_gran_colombia
+        }
+		
+        every_state = {
+            limit = {
+                OR = {
+					state = 491
+					state = 490
+					state = 305
+					state = 649
+                }
+            }
+            transfer_state_to = KPU
+            add_core_of = KPU
+        }		
+    }
+    option = { #No
+        name = RP_incan_empire.5.c
+	}
+}
+
+country_event = { # South Africa Collab?
+    id = RP_southafrica_collab.1
+    title = RP_southafrica_collab.1.t
+    desc = RP_southafrica_collab.1.d
+    picture = GFX_report_event_hol_cabinet_gerbrandy
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_southafrica_collab.1.a
+
+        set_country_flag = RP_southafricacollab_decision
+
+        KSA = {
+            set_cosmetic_tag = KSA_collab
+
+            create_country_leader = {
+				name = "Manie Maritz"
+				picture = GFX_portrait_KSA_manie_maritz
+				expire = "1999.1.1"
+				ideology = despotism
+				traits = {
+				}
+			}
+			
+			set_party_name = {
+				ideology = neutrality
+				name = KSA_collab_neutrality_party
+			}
+		}
+
+        set_autonomy = {
+            target = KSA
+            autonomous_state = autonomy_RP_kaiserreich_puppet
+        }   
+
+        country_event = RP_southafrica_collab.2
+    }
+
+    option = { # No
+        name = RP_southafrica_collab.1.b
+    }
+}
+
+country_event = { # Expand into Namibia?
+    id = RP_southafrica_collab.2
+    title = RP_southafrica_collab.2.t
+    desc = RP_southafrica_collab.2.d
+    picture = GFX_report_event_hol_cabinet_gerbrandy
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_southafrica_collab.2.a
+
+        set_country_flag = RP_southafricacollab_transfernamibia_decision
+
+        KSA = {
+            annex_country = {
+                target = KSD
+                transfer_troops = yes
+            }
+		}
+    }
+
+    option = { # No
+        name = RP_southafrica_collab.2.b
+    }
+}

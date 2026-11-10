@@ -1,0 +1,222 @@
+﻿division_template = {
+	name = "Bayerischer Landeswehr"
+	is_locked = yes
+	template_counter = 3 # The Crossed Rifles
+	division_names_group = GER_Inf_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 1 }
+		artillery = { x = 0 y = 0 } 
+	}
+}
+division_template = {
+	name = "Livländische Freiwilligenbrigade" 
+	is_locked = yes
+	division_names_group = GER_Inf_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+					
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+
+		artillery_brigade = { x = 3 y = 0 }
+	}
+	support = {
+		engineer = { x = 0 y = 2 }
+		artillery = { x = 0 y = 0 } 
+		recon = { x = 0 y = 1}
+	}
+}
+division_template = {
+	name = "Livländische Freiwilligenkavallerie" 
+	is_locked = yes
+	division_names_group = GER_Inf_01
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 0 y = 3 }
+
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+
+	}
+	support = {
+		engineer = { x = 0 y = 2 }
+		artillery = { x = 0 y = 0 } 
+		recon = { x = 0 y = 1}
+	}
+}
+
+units = {
+	division = {
+		name = "1. Bayerischer Landeswehr"
+		location = 11638
+		division_template = "Bayerischer Landeswehr"
+	}
+	division = {
+		name = "2. Bayerischer Landeswehr"
+		location = 9666
+		division_template = "Bayerischer Landeswehr"
+	}
+	division = {
+		name = "3. Bayerischer Landeswehr"
+		location = 708
+		division_template = "Bayerischer Landeswehr"
+	}
+	division = {
+		name = "4. Bayerischer Landeswehr"
+		location = 6540
+		division_template = "Bayerischer Landeswehr"
+	}
+	division = {
+		name = "5. Bayerischer Landeswehr"
+		location = 3299
+		division_template = "Bayerischer Landeswehr"
+	}
+	division = {
+		name = "6. Bayerischer Landeswehr"
+		location = 571
+		division_template = "Bayerischer Landeswehr"
+	}
+	division = {
+		name = "7. Bayerischer Landeswehr"
+		location = 586
+		division_template = "Bayerischer Landeswehr"
+	}
+	division = {
+		name = "8. Bayerischer Landeswehr"
+		location = 692
+		division_template = "Bayerischer Landeswehr"
+	}
+	division = {
+		name = "9. Bayerischer Landeswehr"
+		location = 692
+		division_template = "Bayerischer Landeswehr"
+	}
+	division = {
+		name = "10. Bayerischer Landeswehr"
+		location = 692
+		division_template = "Bayerischer Landeswehr"
+	}
+	division = {
+		name = "11. Bayerischer Landeswehr"
+		location = 9515
+		division_template = "Bayerischer Landeswehr"
+	}
+	division = {
+		name = "12. Bayerischer Landeswehr"
+		location = 9515
+		division_template = "Bayerischer Landeswehr"
+	}
+	division = {
+		name = "13. Bayerischer Landeswehr"
+		location = 708
+		division_template = "Bayerischer Landeswehr"
+	}
+	division = {
+		name = "14. Bayerischer Landeswehr"
+		location = 11638
+		division_template = "Bayerischer Landeswehr"
+	}
+	division = {
+		name = "15. Bayerischer Landeswehr"
+		location = 3571
+		division_template = "Bayerischer Landeswehr"
+	}
+	division = {
+		name = "16. Bayerischer Landeswehr"
+		location = 11497
+		division_template = "Bayerischer Landeswehr"
+	}
+	division = {
+		name = "17. Bayerischer Landeswehr"
+		location = 11497
+		division_template = "Bayerischer Landeswehr"
+	}
+	division = {
+		name = "18. Bayerischer Landeswehr"
+		location = 532
+		division_template = "Bayerischer Landeswehr"
+	}
+	division = {
+		name = "19. Bayerischer Landeswehr"
+		location = 532
+		division_template = "Bayerischer Landeswehr"
+	}
+	division = {
+		name = "20. Bayerischer Landeswehr"
+		location = 586
+		division_template = "Bayerischer Landeswehr"
+	}
+	division = {
+		name = "21. Bayerischer Landeswehr"
+		location = 3299
+		division_template = "Bayerischer Landeswehr"
+	}
+	division = {
+		name = "22. Bayerischer Landeswehr"
+		location = 6540
+		division_template = "Bayerischer Landeswehr"
+	}
+	division = {
+		name = "23. Bayerischer Landeswehr"
+		location = 692 
+		division_template = "Bayerischer Landeswehr"
+	}
+	division = {
+		name = "24. Bayerischer Landeswehr"
+		location = 9515
+		division_template = "Bayerischer Landeswehr"
+	}
+	division = {
+		name = "1. Livländische Freiwilligenbrigade"
+		location = 3705
+		division_template = "Livländische Freiwilligenbrigade"
+	}
+	division = {
+		name = "2. Livländische Freiwilligenbrigade"
+		location = 11653
+		division_template = "Livländische Freiwilligenbrigade"
+	}
+	division = {
+		name = "3. Livländische Freiwilligenbrigade"
+		location = 6693
+		division_template = "Livländische Freiwilligenbrigade"
+	}
+	division = {
+		name = "1. Livländische Freiwilligenkavallerie"
+		location = 3541
+		division_template = "Livländische Freiwilligenkavallerie"
+	}
+	division = {
+		name = "2. Livländische Freiwilligenkavallerie"
+		location = 3299
+		division_template = "Livländische Freiwilligenkavallerie"
+	}
+	division = {
+		name = "3. Livländische Freiwilligenkavallerie"
+		location = 9681
+		division_template = "Livländische Freiwilligenkavallerie"
+	}
+}

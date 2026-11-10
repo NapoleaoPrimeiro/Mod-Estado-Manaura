@@ -1,0 +1,32 @@
+characters={
+	KUK_leader ={
+		name= "Pavlo Skoropadskyi"
+		portraits={
+			civilian={
+				large=GFX_portrait_KUK_Pavlo_Skoropadskyi
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1989.1.1.1"
+			id=-1
+			traits = { hetman_ukraine }
+			desc = KUK_leader_desc
+		}
+	}
+	KUK_austrian_leader ={
+		name= "Grand Duke Vasyl Vyshyvanyi of Austria"
+		portraits={
+			civilian={
+				large=GFX_portrait_UKR_vasyl_vyshyvany
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1989.1.1.1"
+			id=-1
+			traits = { beloved_by_ukrainians }
+			desc = KUK_austrian_leader_desc
+		}
+	}
+}

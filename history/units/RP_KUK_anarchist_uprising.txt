@@ -1,0 +1,121 @@
+﻿division_template = {
+		name = "Revolutionary Insurgent Army of Ukraine"
+		is_locked = no
+		template_counter = 3 # The Crossed Rifles
+
+		regiments = {
+			militia = { x = 0 y = 0 }
+			militia = { x = 0 y = 1 }
+			militia = { x = 0 y = 2 }
+
+			militia = { x = 1 y = 0 }
+			militia = { x = 1 y = 1 }
+			militia = { x = 1 y = 2 }
+			
+			militia = { x = 2 y = 0 }
+			militia = { x = 2 y = 1 }
+			militia = { x = 2 y = 2 }
+
+		}
+		support = {
+			engineer = { x = 0 y = 1 }
+			recon = { x = 0 y = 0}
+		}
+	}
+	division_template = {
+		name = "Revolutionary Insurgent Cell"
+		is_locked = no
+		template_counter = 3 # The Crossed Rifles
+
+		regiments = {
+			militia = { x = 0 y = 0 }
+			militia = { x = 0 y = 1 }
+			militia = { x = 0 y = 2 }
+
+			militia = { x = 1 y = 0 }
+			militia = { x = 1 y = 1 }
+
+		}
+		support = {
+			recon = { x = 0 y = 0}
+		}
+	}
+
+units = {
+	division = {
+		name = "1st Consolidated Infantry Regiment of the RIAU" 
+		location = 525
+		division_template = "Revolutionary Insurgent Army of Ukraine"
+	}
+	division = {
+		name = "2nd Consolidated Infantry Regiment of the RIAU" 
+		location = 525
+		division_template = "Revolutionary Insurgent Army of Ukraine"
+	}
+	division = {
+		name = "3rd Consolidated Infantry Regiment of the RIAU" 
+		location = 525
+		division_template = "Revolutionary Insurgent Army of Ukraine"
+	}
+	division = {
+		name = "1st Revolutionary Insurgent Cell" 
+		location = 6497
+		division_template = "Revolutionary Insurgent Cell"
+	}
+	division = {
+		name = "2nd Revolutionary Insurgent Cell" 
+		location = 9465
+		division_template = "Revolutionary Insurgent Cell"
+	}
+	division = {
+		name = "3rd Revolutionary Insurgent Cell" 
+		location = 3494
+		division_template = "Revolutionary Insurgent Cell"
+	}
+	division = {
+		name = "4th Revolutionary Insurgent Cell" 
+		location = 9543
+		division_template = "Revolutionary Insurgent Cell"
+	}
+	division = {
+		name = "5th Revolutionary Insurgent Cell" 
+		location = 582
+		division_template = "Revolutionary Insurgent Cell"
+	}
+	division = {
+		name = "6th Revolutionary Insurgent Cell" 
+		location = 9437
+		division_template = "Revolutionary Insurgent Cell"
+	}
+	division = {
+		name = "7th Revolutionary Insurgent Cell" 
+		location = 3584
+		division_template = "Revolutionary Insurgent Cell"
+	}
+	division = {
+		name = "8th Revolutionary Insurgent Cell" 
+		location = 11425
+		division_template = "Revolutionary Insurgent Cell"
+	}
+	division = {
+		name = "9th Revolutionary Insurgent Cell" 
+		location = 6508
+		division_template = "Revolutionary Insurgent Cell"
+	}
+	division = {
+		name = "10th Revolutionary Insurgent Cell" 
+		location = 3542
+		division_template = "Revolutionary Insurgent Cell"
+	}
+	division = {
+		name = "11th Revolutionary Insurgent Cell" 
+		location = 238
+		division_template = "Revolutionary Insurgent Cell"
+	}
+	division = {
+		name = "12th Revolutionary Insurgent Cell" 
+		location = 504
+		division_template = "Revolutionary Insurgent Cell"
+	}
+	
+}

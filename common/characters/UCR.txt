@@ -1,0 +1,32 @@
+characters={
+	UCR_leader ={
+		name= "Crimean Regional Authority"
+		portraits={
+			civilian={
+				large=GFX_portrait_UCR_Regional_Authority
+			}
+		}
+		country_leader={
+			ideology=liberalism
+			expire="1989.1.1.1"
+			id=-1
+			traits = { dysfunctional_cabinet }
+			#desc = UCR_leader_desc
+		}
+	}
+	UCR_leader_puppet ={
+		name= "Crimean Regional Authority"
+		portraits={
+			civilian={
+				large=GFX_portrait_UCR_Regional_Authority
+			}
+		}
+		country_leader={
+			ideology=oligarchism
+			expire="1989.1.1.1"
+			id=-1
+			traits = { dysfunctional_cabinet }
+			#desc = UCR_leader_desc
+		}
+	}
+}

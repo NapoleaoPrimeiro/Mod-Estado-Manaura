@@ -1,0 +1,1280 @@
+focus_tree = {
+	id = mittelafrikan_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+		}
+	}
+	default = no
+	
+	continuous_focus_position = { x = 50 y = 2000 }
+
+	focus = {
+		id = KOA_unite_the_administrations
+		icon = GFX_focus_POL_complete_april_constitution
+		x = 5
+		y = 2
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 1
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 25
+			add_ideas = KOA_mittelafrika_stability_abysmal
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# Stabilizing branch
+
+	focus = {
+		id = KOA_expand_governor_office
+		icon = GFX_goal_generic_improve_relations
+		x = -4
+		y = 1
+		relative_position_id = KOA_unite_the_administrations
+
+		prerequisite = { focus = KOA_unite_the_administrations }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 5
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.1
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = KOA_expand_schutztruppe
+		icon = GFX_focus_GER_schutztruppe
+		x = -1
+		y = 1
+		relative_position_id = KOA_expand_governor_office
+
+		prerequisite = { focus = KOA_expand_governor_office }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 10
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = KOA_mittelafrika_stability_abysmal
+				add_idea = KOA_mittelafrika_stability_verylow
+			}
+		}
+	ai_will_do = {
+			
+			
+		}
+	}
+	focus = {
+		id = KOA_rebuild_askari_corps
+		icon = GFX_focus_generic_advanced_military_studies
+		x = 0
+		y = 1
+		relative_position_id = KOA_expand_schutztruppe
+
+		prerequisite = { focus = KOA_expand_schutztruppe }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 10
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = KOA_mittelafrika_stability_verylow
+				add_idea = KOA_mittelafrika_stability_low
+			}
+		}
+	ai_will_do = {
+			
+			
+		}
+	}
+	focus = {
+		id = KOA_expand_east_african_railway
+		icon = GFX_focus_generic_africa_infrastructure
+		x = 1
+		y = 1
+		relative_position_id = KOA_expand_governor_office
+
+		prerequisite = { focus = KOA_expand_governor_office }
+		
+		available = { has_completed_focus = KOA_rebuild_askari_corps }
+		bypass = {
+
+		}
+
+		cost = 5
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = KOA_mittelafrika_stability_low
+				add_idea = KOA_mittelafrika_stability_recovering
+			}
+		}
+	ai_will_do = {
+			
+			
+		}
+	}
+	focus = {
+		id = KOA_unified_legal_structure
+		icon = GFX_focus_generic_court
+		x = 0
+		y = 1
+		relative_position_id = KOA_expand_east_african_railway
+
+		prerequisite = { focus = KOA_expand_east_african_railway }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 5
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = KOA_mittelafrika_stability_recovering
+				add_idea = KOA_mittelafrika_stability_stabilizing
+			}
+		}
+	ai_will_do = {
+			
+			
+		}
+	}
+	focus = {
+		id = KOA_crush_tribal_rebellions
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 1
+		y = 1
+		relative_position_id = KOA_rebuild_askari_corps
+
+		prerequisite = { focus = KOA_unified_legal_structure }
+		prerequisite = { focus = KOA_rebuild_askari_corps }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 20
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = KOA_mittelafrika_stability_stabilizing
+				add_idea = KOA_mittelafrika_stability_stable
+			}
+		}
+	ai_will_do = {
+			
+			
+		}
+	}
+	focus = {
+		id = KOA_german_language_schools
+		icon = GFX_focus_generic_university_2
+		x = -2
+		y = 1
+		relative_position_id = KOA_crush_tribal_rebellions
+
+		prerequisite = { focus = KOA_crush_tribal_rebellions }
+		
+		available = { has_completed_focus = KOA_german_resettlement_programs }
+		bypass = {
+
+		}
+
+		cost = 10
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = KOA_mittelafrika_stability_stable1
+				add_idea = KOA_mittelafrika_stability_stable2
+			}
+		}
+	ai_will_do = {
+			
+			
+		}
+	}
+	focus = {
+		id = KOA_german_resettlement_programs
+		icon = GFX_focus_generic_immigration
+		x = 0
+		y = 1
+		relative_position_id = KOA_crush_tribal_rebellions
+
+		prerequisite = { focus = KOA_crush_tribal_rebellions }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 10
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = KOA_mittelafrika_stability_stable
+				add_idea = KOA_mittelafrika_stability_stable1
+			}
+		}
+	ai_will_do = {
+			
+			
+		}
+	}
+	focus = {
+		id = KOA_expand_civil_administration
+		icon = GFX_focus_generic_improve_the_administration
+		x = 2
+		y = 1
+		relative_position_id = KOA_crush_tribal_rebellions
+
+		prerequisite = { focus = KOA_crush_tribal_rebellions }
+		
+		available = { has_completed_focus = KOA_german_language_schools }
+		bypass = {
+
+		}
+
+		cost = 10
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = KOA_mittelafrika_stability_stable2
+				add_idea = KOA_mittelafrika_stability_stable3
+			}
+		}
+	ai_will_do = {
+			
+			
+		}
+	}
+	focus = {
+		id = KOA_extended_citizenship_program
+		icon = GFX_focus_generic_treaty
+		x = 0
+		y = 1
+		relative_position_id = KOA_german_resettlement_programs
+
+		prerequisite = { focus = KOA_german_resettlement_programs }
+		prerequisite = { focus = KOA_german_language_schools }
+		prerequisite = { focus = KOA_expand_civil_administration }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 10
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = KOA_mittelafrika_stability_stable3
+				add_idea = KOA_mittelafrika_stability_stable4
+			}
+		}
+	ai_will_do = {
+			
+			
+		}
+	}
+	focus = {
+		id = KOA_mittelafrika_secure
+		icon = GFX_focus_GER_realize_mittelafrika
+		x = 0
+		y = 1
+		relative_position_id = KOA_extended_citizenship_program
+
+		prerequisite = { focus = KOA_extended_citizenship_program }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 10
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = KOA_mittelafrika_stability_stable4
+				add_idea = KOA_mittelafrika_forwards
+			}
+			custom_effect_tooltip = KOA_unlock_industry
+		}
+	ai_will_do = {
+			
+			
+		}
+	}
+
+	# Economic branch
+
+	focus = {
+		id = KOA_form_economic
+		icon = GFX_focus_generic_africa_factory
+		x = 4
+		y = 1
+		relative_position_id = KOA_unite_the_administrations
+
+		prerequisite = { focus = KOA_unite_the_administrations }
+		
+		available = {
+			has_completed_focus = KOA_mittelafrika_secure
+		}
+		bypass = {
+
+		}
+
+		cost = 4
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_dynamic_modifier = {
+				modifier = RP_mittelafrikan_economy
+			}
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = KOA_exploit_gold
+		icon = GFX_focus_generic_expand_gold_mining
+		x = -3
+		y = 1
+		relative_position_id = KOA_form_economic
+
+		prerequisite = { focus = KOA_form_economic }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 10
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_to_variable = {
+				RP_KOA_consumer_goods_factor = -0.1
+			}
+			add_to_variable = {
+				RP_KOA_production_speed_buildings_factor = 0.05
+			}
+			546 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+			}
+			custom_effect_tooltip = modify_mittelafrikan_economy_consumer_10
+			custom_effect_tooltip = modify_mittelafrikan_economy_construction_5
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = KOA_exploit_diamonds
+		icon = GFX_focus_CONGO_bakwanga_mine
+		x = -1
+		y = 1
+		relative_position_id = KOA_form_economic
+
+		prerequisite = { focus = KOA_form_economic }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 10
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_to_variable = {
+				RP_KOA_consumer_goods_factor = -0.1
+			}
+			add_to_variable = {
+				RP_KOA_production_speed_buildings_factor = 0.05
+			}
+			546 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+			}
+			custom_effect_tooltip = modify_mittelafrikan_economy_consumer_10
+			custom_effect_tooltip = modify_mittelafrikan_economy_construction_5
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = KOA_develop_east_africa
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 1
+		y = 1
+		relative_position_id = KOA_exploit_gold
+
+		prerequisite = { focus = KOA_exploit_diamonds }
+		prerequisite = { focus = KOA_exploit_gold }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 10
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_to_variable = {
+				RP_KOA_local_resources_factor = 0.05
+			}
+			546 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+			}
+			769 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+			}
+			768 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+			}
+			custom_effect_tooltip = modify_mittelafrikan_economy_resources_5
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = KOA_construct_synthetics
+		icon = GFX_focus_generic_rubber
+		x = 1
+		y = 1
+		relative_position_id = KOA_form_economic
+		mutually_exclusive = { focus = KOA_continue_rubber_quotas }
+		prerequisite = { focus = KOA_form_economic }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 10
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_to_variable = {
+				RP_KOA_production_oil_factor = 0.1
+			}
+			add_to_variable = {
+				RP_KOA_consumer_goods_factor = 0.1
+			}
+			295 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 1
+						instant_build = yes
+					}
+			}
+			538 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 1
+						instant_build = yes
+					}
+			}
+			718 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 1
+						instant_build = yes
+					}
+			}
+			888 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 1
+						instant_build = yes
+					}
+			}
+			custom_effect_tooltip = modify_mittelafrikan_economy_consumer_10_evil
+			custom_effect_tooltip = modify_mittelafrikan_economy_oil_10
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = KOA_continue_rubber_quotas
+		icon = GFX_focus_generic_rubber_plantations
+		x = 3
+		y = 1
+		relative_position_id = KOA_form_economic
+		mutually_exclusive = { focus = KOA_construct_synthetics }
+		prerequisite = { focus = KOA_form_economic }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 5
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_to_variable = {
+				RP_KOA_local_resources_factor = 0.1
+			}
+			add_to_variable = {
+				RP_KOA_stability_factor = -0.15
+			}
+			add_resource = {
+				type = rubber
+				amount = 5
+				state = 295
+			}
+			add_resource = {
+				type = rubber
+				amount = 5
+				state = 888
+			}
+			add_resource = {
+				type = rubber
+				amount = 3
+				state = 890
+			}
+			add_resource = {
+				type = rubber
+				amount = 6
+				state = 889
+			}
+			custom_effect_tooltip = modify_mittelafrikan_economy_resources_10
+			custom_effect_tooltip = modify_mittelafrikan_economy_stability_15
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = KOA_develop_congo
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 1
+		y = 1
+		relative_position_id = KOA_construct_synthetics
+
+		prerequisite = { 
+			focus = KOA_construct_synthetics 
+			focus = KOA_continue_rubber_quotas
+		}
+
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 10
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_to_variable = {
+				RP_KOA_local_resources_factor = 0.05
+			}
+			295 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+			}
+			890 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+			}
+			889 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+			}
+			888 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+			}
+			custom_effect_tooltip = modify_mittelafrikan_economy_resources_5
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = KOA_expand_economic_reach
+		icon = GFX_focus_generic_improve_the_administration_2
+		x = 0
+		y = 3
+		relative_position_id = KOA_form_economic
+
+		prerequisite = { focus = KOA_develop_congo }
+		prerequisite = { focus = KOA_develop_east_africa }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 5
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_to_variable = {
+				RP_KOA_production_speed_buildings_factor = 0.05
+			}
+			add_to_variable = {
+				RP_KOA_local_resources_factor = 0.05
+			}
+			custom_effect_tooltip = modify_mittelafrikan_economy_resources_5
+			custom_effect_tooltip = modify_mittelafrikan_economy_construction_5
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = KOA_connect_west_africa
+		icon = GFX_goal_generic_construct_civilian
+		x = -2
+		y = 1
+		relative_position_id = KOA_expand_economic_reach
+
+		prerequisite = { focus = KOA_expand_economic_reach }
+		
+		available = {
+			KOA = {
+				owns_state = 900
+				owns_state = 901
+				owns_state = 902
+				owns_state = 558
+				owns_state = 776
+				owns_state = 777
+				owns_state = 274
+				owns_state = 779
+			}
+		}
+		bypass = {
+
+		}
+
+		cost = 10
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_to_variable = {
+				RP_KOA_local_resources_factor = 0.05
+			}
+			900 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+			}
+			901 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+			}
+			902 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+			}
+			558 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+			}
+			776 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+			}
+			777 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+			}
+			274 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+			}
+			779 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+			}
+			custom_effect_tooltip = modify_mittelafrikan_economy_resources_5
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = KOA_expand_mining
+		icon = GFX_focus_generic_coal_mining
+		x = 0
+		y = 1
+		relative_position_id = KOA_expand_economic_reach
+
+		prerequisite = { focus = KOA_expand_economic_reach }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 5
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_to_variable = {
+				RP_KOA_local_resources_factor = 0.1
+			}
+			custom_effect_tooltip = modify_mittelafrikan_economy_resources_10
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = KOA_connect_south_africa
+		icon = GFX_goal_generic_construct_civilian
+		x = 2
+		y = 1
+		relative_position_id = KOA_expand_economic_reach
+
+		prerequisite = { focus = KOA_expand_economic_reach }
+		
+		available = {
+			KOA = {
+				owns_state = 895
+				owns_state = 894
+				owns_state = 541
+				owns_state = 893
+			}
+		}
+		bypass = {
+
+		}
+
+		cost = 10
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_to_variable = {
+				RP_KOA_local_resources_factor = 0.05
+			}
+			895 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+			}
+			894 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+			}
+			893 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+			}
+			541 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+			}
+			custom_effect_tooltip = modify_mittelafrikan_economy_resources_5
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = KOA_develop_nigeria
+		icon = GFX_focus_generic_agricultural_subsidies
+		x = -1
+		y = 1
+		relative_position_id = KOA_connect_west_africa
+
+		prerequisite = { focus = KOA_connect_west_africa }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 10
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_to_variable = {
+				RP_KOA_consumer_goods_factor = -0.1
+			}
+			900 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+			}
+			558 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+			}
+			902 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+			}
+			custom_effect_tooltip = modify_mittelafrikan_economy_consumer_10
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = KOA_develop_ghana_ivory
+		icon = GFX_focus_generic_coffee
+		x = 1
+		y = 1
+		relative_position_id = KOA_connect_west_africa
+
+		prerequisite = { focus = KOA_connect_west_africa }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 10
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_to_variable = {
+				RP_KOA_consumer_goods_factor = -0.1
+			}
+			274 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+			}
+			779 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+			}
+			custom_effect_tooltip = modify_mittelafrikan_economy_consumer_10
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = KOA_develop_namibia
+		icon = GFX_focus_CONGO_gold_and_diamonds
+		x = -1
+		y = 1
+		relative_position_id = KOA_connect_south_africa
+
+		prerequisite = { focus = KOA_connect_south_africa }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 10
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_to_variable = {
+				RP_KOA_local_resources_factor = 0.1
+			}
+			541 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+			}
+			894 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+			}
+			custom_effect_tooltip = modify_mittelafrikan_economy_resources_10
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = KOA_develop_rhodesia_malawi
+		icon = GFX_focus_generic_mineral_prospecting
+		x = 1
+		y = 1
+		relative_position_id = KOA_connect_south_africa
+
+		prerequisite = { focus = KOA_connect_south_africa }
+		
+		available = {
+			KOA = {
+				owns_state = 545
+				owns_state = 771
+				owns_state = 981
+			}
+		}
+		bypass = {
+
+		}
+
+		cost = 10
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_to_variable = {
+				RP_KOA_consumer_goods_factor = -0.1
+			}
+			545 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+			}
+			771 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+			}
+			981 = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+			}
+			custom_effect_tooltip = modify_mittelafrikan_economy_consumer_10
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = KOA_funnel_profits
+		icon = GFX_focus_GER_weltpolitik
+		x = 0
+		y = 2
+		relative_position_id = KOA_expand_mining
+
+		prerequisite = { focus = KOA_develop_nigeria }
+		prerequisite = { focus = KOA_develop_ghana_ivory }
+		prerequisite = { focus = KOA_develop_namibia }
+		prerequisite = { focus = KOA_develop_rhodesia_malawi }
+		prerequisite = { focus = KOA_expand_mining }
+		
+		available = {}
+		bypass = {
+
+		}
+
+		cost = 5
+
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_to_variable = {
+				RP_KOA_consumer_goods_factor = 0.45
+			}
+			GER = {
+				add_ideas = KOA_mittelafrikan_profits
+			}
+			custom_effect_tooltip = modify_mittelafrikan_economy_consumer_45_evil
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+
+}
+
+	
+
+	

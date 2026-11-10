@@ -1,0 +1,36 @@
+add_namespace = RP_sovietpeacetreatyevents
+add_namespace = RP_sovietwarevents
+add_namespace = RP_sovietwarnewsevents
+
+country_event = { #Player choice to make the war a bit difficult
+    id = RP_sovietwarevents.1
+    title = RP_sovietwarevents.1.t
+    desc = RP_sovietwarevents.1.d
+    picture = GFX_report_event_soviet_purge_trial
+
+    is_triggered_only = yes
+
+    option = {
+        name = RP_sovietwarevents.1.a
+    }
+
+    option = {
+        name = RP_sovietwarevents.1.b
+    
+        ai_chance = {
+            base = 0
+        }
+
+        add_timed_idea = {
+            idea = RP_GER_prolongedwar
+            days = 720
+        }
+
+        SOV = {
+            add_timed_idea = {
+                idea = RP_SOV_prolongedwar
+                days = 720
+            }
+        }
+    }
+}

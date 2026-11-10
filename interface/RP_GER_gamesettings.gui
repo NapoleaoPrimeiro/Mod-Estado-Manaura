@@ -1,0 +1,55 @@
+guiTypes = {
+	containerWindowType = {
+		name = "RP_GER_gamesettings_mainwindow"
+		size = { width = 500 height = 250 } #height was 325 with next layer
+		Orientation = upper_left
+		moveable = no
+		position = { x = 0 y = 0 }
+
+		instantTextBoxType = {
+			name = "RP_gamesettings_devmessage"
+			position = { x = 15 y = 0 }
+			maxWidth = 485
+			maxHeight = 10
+			Orientation = upper_left
+			font = "hoi_16mbs"
+			text = "RP_gamesettings_devmessage_loc"
+		}
+
+		buttonType = {
+			name = "RP_GER_focusrequirements_button"
+			quadTextureSprite ="GFX_button_238x38"
+			position = { x=10 y=100 }
+			buttonText = "[RP_focusrequirements_loc]"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "RP_GER_focusrequirements_button_tt"
+		}
+
+		buttonType = {
+			name = "RP_GER_hidemittelafrikadecisions_button"
+			quadTextureSprite ="GFX_button_238x38"
+			position = { x=10 y=175 }
+			buttonText = "[RP_GER_hidemittelafrikadecisions_loc]"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "RP_GER_hidemittelafrikadecisions_button_tt"
+		}
+
+		buttonType = {
+			name = "RP_GER_specialevents_button"
+			quadTextureSprite ="GFX_button_238x38"
+			position = { x=260 y=100 }
+			buttonText = "[RP_GER_specialevents_loc]"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "RP_GER_specialevents_button_tt"
+		}
+
+		buttonType = {
+			name = "RP_GER_francealwaysaccepts_button"
+			quadTextureSprite ="GFX_button_238x38"
+			position = { x=260 y=175 }
+			buttonText = "[RP_GER_francealwaysaccepts_loc]"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "RP_GER_francealwaysaccepts_button_tt"
+		}
+	}
+}

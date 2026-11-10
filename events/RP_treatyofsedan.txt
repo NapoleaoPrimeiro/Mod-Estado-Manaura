@@ -1,0 +1,1221 @@
+add_namespace = RP_parispeaceevents
+
+country_event = { #French decision to offer peace
+    id = RP_parispeaceevents.1
+    title = RP_parispeaceevents.1.t
+    desc = RP_parispeaceevents.1.d
+    picture = GFX_report_event_ITA_italian_civil_war
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_parispeaceevents.1.a
+
+        ai_chance = {
+            base = 10
+
+            modifier = {
+                factor = 1000
+
+                OR = {
+                    has_global_flag = rpdebug
+                    has_global_flag = GER_francealwaysacceptstreaty_flag
+                }
+            }
+        }
+
+        GER = {
+            country_event = RP_parispeaceevents.2
+        }
+    }
+
+    option = { #No
+        name = RP_parispeaceevents.1.b
+
+        ai_chance = {
+            base = 1
+        }
+    }
+}
+
+country_event = { #Germany: France Surrenders
+    id = RP_parispeaceevents.2
+    title = RP_parispeaceevents.2.t
+    desc = RP_parispeaceevents.2.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_parispeaceevents.2.a
+
+        set_global_flag = RP_GER_frenchsurrender
+
+        ai_chance = {
+            base = 10
+        }
+    
+        custom_effect_tooltip = RP_parispeaceevents.armistaceeffect_tt
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+        hidden_effect = {
+            GER = {
+                country_event = RP_parispeaceevents.4
+            }
+        }
+
+        hidden_effect = {
+
+            every_state = {
+                limit = {
+                    is_owned_by = FRA
+                    controller = {
+                        NOT = {
+                            tag = FRA 
+                        }
+                        is_ally_with = GER
+                        has_war_with = FRA
+                    }
+                }
+                add_to_array = {
+                    array = global.RP_statestodemilitarize
+                    value = THIS.id
+                }
+            }
+
+            if = {
+                limit = {
+                    FRA = {
+                        has_war_with = ITA
+                    }
+                }
+                set_global_flag = RP_FRA_ITA_haswar
+            }
+
+            if = {
+                limit = {
+                    FRA = {
+                        has_war_with = TUR
+                    }
+                }
+                set_global_flag = RP_FRA_TUR_haswar
+            }
+
+            every_country = {
+                limit = {
+                    is_ally_with = GER 
+                    has_war_with = FRA
+                }
+                white_peace = FRA
+            }
+
+            every_state = {
+                limit = {
+                    is_in_array = {
+                        array = global.RP_statestodemilitarize
+                        value = THIS.id
+                    }
+                    is_owned_by = FRA
+                }
+                set_demilitarized_zone = yes
+            }
+
+            FRA = {
+                add_timed_idea = {
+                    idea = RP_disorganized_troops
+                    days = 365
+                }
+
+                add_popularity = {
+                    ideology = democratic
+                    popularity = -0.5
+                }
+
+                add_popularity = {
+                    ideology = communism
+                    popularity = -0.5
+                }
+
+                leave_faction = yes
+                
+                set_rule = {
+                    can_join_factions = no
+                }
+
+                set_variable = {
+                    var = RP_germanywar_casualtyamount
+                    value = casualties_k
+                }
+            }
+
+            if = {
+                limit = {
+                    country_exists = SFC
+                }
+                SFC = {
+                    country_event = {
+                        id = RP_parispeaceevents.12
+                        days = 30
+                        random_days = 30
+                    }
+                }
+            }
+        }
+    }
+
+    option = { #No
+        name = RP_parispeaceevents.2.b
+
+        ai_chance = {
+            base = 1
+        }
+
+        FRA = {
+            country_event = RP_parispeaceevents.3
+        }
+    }
+}
+
+country_event = { #France: Germany Rejects
+    id = RP_parispeaceevents.3
+    title = RP_parispeaceevents.3.t
+    desc = RP_parispeaceevents.3.d
+    picture = GFX_report_event_german_inspect_troops
+
+    is_triggered_only = yes
+
+    option = { 
+        name = RP_parispeaceevents.3.a
+
+        ai_chance = {
+            base = 1
+        }
+    }
+}
+
+country_event = { #Germany: Fate of Mainland France
+    id = RP_parispeaceevents.4
+    title = RP_parispeaceevents.4.t
+    desc = RP_parispeaceevents.4.d
+    picture = GFX_report_event_generic_conference
+
+    is_triggered_only = yes
+
+    option = { #Minor concessions
+        name = RP_parispeaceevents.4.a
+
+        ai_chance = {
+            base = 0
+        }
+
+        custom_effect_tooltip = RP_parispeaceevents.minormainlandconcessions_tt
+        set_global_flag = RP_parispeaceevents_minormainlandconcessions
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+        hidden_effect = {
+            GER = {
+                country_event = RP_parispeaceevents.5
+            }
+        }
+    }
+
+    option = { #Northern France Option 2
+        name = RP_parispeaceevents.4.e
+
+        ai_chance = {
+            base = 5
+        }
+
+        custom_effect_tooltip = RP_parispeaceevents.bufferstate_tt
+        set_global_flag = RP_parispeaceevents_bufferstate
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+        hidden_effect = {
+            GER = {
+                country_event = RP_parispeaceevents.5
+            }
+        }
+    }
+
+    option = { #Northern France
+        name = RP_parispeaceevents.4.b
+
+        ai_chance = {
+            base = 5
+        }
+
+        custom_effect_tooltip = RP_parispeaceevents.northernmainland_tt
+        set_global_flag = RP_parispeaceevents_northernmainland
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+        hidden_effect = {
+            GER = {
+                country_event = RP_parispeaceevents.5
+            }
+        }
+    }
+}
+
+country_event = { #Germany: Fate of Colonial France
+    id = RP_parispeaceevents.5
+    title = RP_parispeaceevents.5.t
+    desc = RP_parispeaceevents.5.d
+    picture = GFX_report_event_generic_conference
+
+    is_triggered_only = yes
+
+    option = { #None of it
+        name = RP_parispeaceevents.5.a
+
+        ai_chance = {
+            base = 0
+        }
+
+        custom_effect_tooltip = RP_parispeaceevents.nocolonialconcessions_tt
+        set_global_flag = RP_parispeaceevents_nocolonialconcessions
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+        hidden_effect = {
+            GER = {
+                country_event = RP_parispeaceevents.11
+            }
+        }
+    }
+
+    option = { #Minor concessions
+        name = RP_parispeaceevents.5.b
+
+        ai_chance = {
+            base = 5
+        }
+
+        custom_effect_tooltip = RP_parispeaceevents.minorcolonialconcessions_tt
+        set_global_flag = RP_parispeaceevents_minorcolonialconcessions
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+        hidden_effect = {
+            GER = {
+                country_event = RP_parispeaceevents.11
+            }
+        }
+    }
+
+    option = { #Major concessions
+        name = RP_parispeaceevents.5.c
+
+        ai_chance = {
+            base = 0
+        }
+
+        custom_effect_tooltip = RP_parispeaceevents.majorcolonialconcessions_tt
+        set_global_flag = RP_parispeaceevents_majorcolonialconcessions
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+        hidden_effect = {
+            GER = {
+                country_event = RP_parispeaceevents.11
+            }
+        }
+    }
+}
+
+country_event = { #France: German Terms
+    id = RP_parispeaceevents.6
+    title = RP_parispeaceevents.6.t
+    desc = RP_parispeaceevents.6.d
+    picture = GFX_report_event_generic_conference
+
+    is_triggered_only = yes
+
+    option = { #Accept
+        name = RP_parispeaceevents.6.a
+
+        ai_chance = {
+            base = 1
+
+            modifier = {
+                factor = 1000
+
+                OR = {
+                    has_global_flag = rpdebug
+                    has_global_flag = GER_francealwaysacceptstreaty_flag
+                }
+            }
+            
+            modifier = {
+                factor = 10
+
+                has_global_flag = RP_parispeaceevents_minormainlandconcessions
+            }
+
+            modifier = {
+                factor = 7.25
+
+                has_global_flag = RP_parispeaceevents_bufferstate
+            }
+            
+            modifier = {
+                factor = 5
+
+                has_global_flag = RP_parispeaceevents_northernmainland
+            }
+
+            modifier = {
+                factor = 1
+
+                has_global_flag = RP_parispeaceevents_fullmainland
+            }
+
+            modifier = {
+                factor = 10
+
+                has_global_flag = RP_parispeaceevents_nocolonialconcessions
+            }
+
+            modifier = {
+                factor = 5
+
+                has_global_flag = RP_parispeaceevents_minorcolonialconcessions
+            }
+
+            modifier = {
+                factor = 2
+
+                has_global_flag = RP_parispeaceevents_majorcolonialconcessions
+            }
+
+            modifier = {
+                factor = 1
+
+                has_global_flag = RP_parispeaceevents_allfrenchcolonies
+            }
+
+            modifier = {
+                factor = 7
+
+                has_global_flag = RP_parispeaceevents_noreparations
+            }
+
+            modifier = {
+                factor = 6
+
+                has_global_flag = RP_parispeaceevents_warreparations
+            }
+
+            modifier = {
+                factor = 3
+
+                has_global_flag = RP_parispeaceevents_minoreconomicsubjugation
+            }
+
+            modifier = {
+                factor = 2
+
+                has_global_flag = RP_parispeaceevents_completeeconomicsubjugation
+            }
+
+            modifier = {
+                factor = 5
+
+                check_variable = {
+                    RP_germanywar_casualtyamount > 500
+                    RP_germanywar_casualtyamount < 1000
+                }
+            }
+
+            modifier = {
+                factor = 10
+
+                check_variable = {
+                    RP_germanywar_casualtyamount > 1000
+                }
+            }
+        }
+
+        if = {
+            limit = {
+                has_global_flag = RP_parispeaceevents_minormainlandconcessions
+            }
+            custom_effect_tooltip = RP_parispeaceevents.minormainlandconcessions_tt.2
+        }
+
+        if = {
+            limit = {
+                has_global_flag = RP_parispeaceevents_northernmainland
+            }
+            custom_effect_tooltip = RP_parispeaceevents.northernmainland_tt.2
+        }
+
+        if = {
+            limit = {
+                has_global_flag = RP_parispeaceevents_fullmainland
+            }
+            custom_effect_tooltip = RP_parispeaceevents.fullmainland_tt.2
+        }
+
+        if = {
+            limit = {
+                has_global_flag = RP_parispeaceevents_nocolonialconcessions
+            }
+            custom_effect_tooltip = RP_parispeaceevents.nocolonialconcessions_tt.2
+        }
+
+        if = {
+            limit = {
+                has_global_flag = RP_parispeaceevents_minorcolonialconcessions
+            }
+            custom_effect_tooltip = RP_parispeaceevents.minorcolonialconcessions_tt.2
+        }
+
+        if = {
+            limit = {
+                has_global_flag = RP_parispeaceevents_majorcolonialconcessions
+            }
+            custom_effect_tooltip = RP_parispeaceevents.majorcolonialconcessions_tt.2
+        }
+
+        if = {
+            limit = {
+                has_global_flag = RP_parispeaceevents_allfrenchcolonies 
+            }
+            custom_effect_tooltip = RP_parispeaceevents.allfrenchcolonies_tt.2
+        }
+
+		if = {
+            limit = {
+                has_global_flag = RP_parispeaceevents_warreparations 
+            }
+            custom_effect_tooltip = RP_parispeaceevents.warreparations_tt.2
+        }
+
+        if = {
+            limit = {
+                has_global_flag = RP_parispeaceevents_minoreconomicsubjugation 
+            }
+            custom_effect_tooltip = RP_parispeaceevents.minoreconomicsubjugation_tt.2
+        }
+
+        if = {
+            limit = {
+                has_global_flag = RP_parispeaceevents_completeeconomicsubjugation 
+            }
+            custom_effect_tooltip = RP_parispeaceevents.completeeconomicsubjugation_tt.2
+        }
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+        GER = {
+            country_event = RP_parispeaceevents.7
+        }
+    }
+
+    option = { #Reject
+        name = RP_parispeaceevents.6.b
+
+        ai_chance = {
+            base = 1
+
+            modifier = {
+                factor = -10
+
+                has_global_flag = RP_parispeaceevents_minormainlandconcessions
+            }
+
+            modifier = {
+                factor = 5
+
+                has_global_flag = RP_parispeaceevents_northernmainland
+            }
+
+            modifier = {
+                factor = 10
+
+                has_global_flag = RP_parispeaceevents_fullmainland
+            }
+
+            modifier = {
+                factor = -2
+
+                has_global_flag = RP_parispeaceevents_minorcolonialconcessions
+            }
+
+            modifier = {
+                factor = 5
+
+                has_global_flag = RP_parispeaceevents_majorcolonialconcessions
+            }
+
+            modifier = {
+                factor = -2
+
+                has_global_flag = RP_parispeaceevents_noreparations
+            }
+
+            modifier = {
+                factor = 1
+
+                has_global_flag = RP_parispeaceevents_warreparations
+            }
+
+            modifier = {
+                factor = 3
+
+                has_global_flag = RP_parispeaceevents_minoreconomicsubjugation
+            }
+
+            modifier = {
+                factor = 4
+
+                has_global_flag = RP_parispeaceevents_completeeconomicsubjugation
+            }
+
+            modifier = {
+                factor = -5
+
+                check_variable = {
+                    RP_germanywar_casualtyamount > 500
+                    RP_germanywar_casualtyamount < 1000
+                }
+            }
+
+            modifier = {
+                factor = -10
+
+                check_variable = {
+                    RP_germanywar_casualtyamount > 1000
+                }
+            }
+        }
+
+        if = {
+            limit = {
+                has_global_flag = RP_parispeaceevents_minormainlandconcessions
+            }
+            custom_effect_tooltip = RP_parispeaceevents.minormainlandconcessions_tt.2
+        }
+
+        if = {
+            limit = {
+                has_global_flag = RP_parispeaceevents_northernmainland
+            }
+            custom_effect_tooltip = RP_parispeaceevents.northernmainland_tt.2
+        }
+
+        if = {
+            limit = {
+                has_global_flag = RP_parispeaceevents_fullmainland
+            }
+            custom_effect_tooltip = RP_parispeaceevents.fullmainland_tt.2
+        }
+
+        if = {
+            limit = {
+                has_global_flag = RP_parispeaceevents_nocolonialconcessions
+            }
+            custom_effect_tooltip = RP_parispeaceevents.nocolonialconcessions_tt.2
+        }
+
+        if = {
+            limit = {
+                has_global_flag = RP_parispeaceevents_minorcolonialconcessions
+            }
+            custom_effect_tooltip = RP_parispeaceevents.minorcolonialconcessions_tt.2
+        }
+
+        if = {
+            limit = {
+                has_global_flag = RP_parispeaceevents_majorcolonialconcessions
+            }
+            custom_effect_tooltip = RP_parispeaceevents.majorcolonialconcessions_tt.2
+        }
+
+        if = {
+            limit = {
+                has_global_flag = RP_parispeaceevents_allfrenchcolonies 
+            }
+            custom_effect_tooltip = RP_parispeaceevents.allfrenchcolonies_tt.2
+        }
+
+        if = {
+            limit = {
+                has_global_flag = RP_parispeaceevents_warreparations 
+            }
+            custom_effect_tooltip = RP_parispeaceevents.warreparations_tt.2
+        }
+
+        if = {
+            limit = {
+                has_global_flag = RP_parispeaceevents_minoreconomicsubjugation 
+            }
+            custom_effect_tooltip = RP_parispeaceevents.minoreconomicsubjugation_tt.2
+        }
+
+        if = {
+            limit = {
+                has_global_flag = RP_parispeaceevents_completeeconomicsubjugation 
+            }
+            custom_effect_tooltip = RP_parispeaceevents.completeeconomicsubjugation_tt.2
+        }
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+        GER = {
+            country_event = RP_parispeaceevents.8
+        }
+    }
+}
+
+country_event = { #Germany: France Accepts Terms
+    id = RP_parispeaceevents.7
+    title = RP_parispeaceevents.7.t
+    desc = RP_parispeaceevents.7.d
+    picture = GFX_report_event_generic_conference
+
+    is_triggered_only = yes
+
+    option = {
+        name = RP_parispeaceevents.7.a
+
+        hidden_effect = {
+            RP_paris_treaty = yes
+    
+            if = {
+                limit = {
+                    has_war_with = ENG 
+                }
+                ENG = {
+                    country_event = {
+                        id = RP_parispeaceevents.9
+                        days = 14
+                    }
+                }
+            }
+            news_event = {
+                id = RP_newsevents.1
+                hours = 12
+            }
+        }
+    }
+}
+
+country_event = { #Germany: France Rejects Terms
+    id = RP_parispeaceevents.8
+    title = RP_parispeaceevents.8.t
+    desc = RP_parispeaceevents.8.d
+    picture = GFX_report_event_generic_conference
+
+    is_triggered_only = yes
+
+    option = {
+        name = RP_parispeaceevents.8.a
+
+        FRA = {
+            declare_war_on = {
+                target = GER
+                type = topple_government
+            }
+            add_timed_idea = {
+                idea = RP_disorganized_troops
+                days = 365
+            }
+            if = {
+                limit = {
+                    OR = {
+                        AND = {
+                            ENG = {
+                                has_war_with = GER
+                                has_government = democratic
+                            }
+                            FRA = {
+                                has_government = democratic
+                            }
+                        }
+                    }
+                }
+                ENG = {
+                    add_to_faction = FRA
+                }
+            }
+
+            else_if = {
+                limit = {
+                    OR = {
+                        AND = {
+                            ENG = {
+                                has_war_with = GER
+                                has_government = communism
+                            }
+                            FRA = {
+                                has_government = communism
+                            }
+                        }
+                    }
+                }
+                ENG = {
+                    add_to_faction = FRA
+                }
+            }
+
+            else_if = {
+                limit = {
+                    OR = {
+                        AND = {
+                            SOV = {
+                                has_war_with = GER
+                                has_government = communism
+                            }
+                            FRA = {
+                                has_government = communism
+                            }
+                        }
+                    }
+                }
+                SOV = {
+                    add_to_faction = FRA
+                }
+            }
+        }
+        
+        every_state = {
+            limit = {
+                is_in_array = {
+                    array = global.RP_statestodemilitarize
+                    value = THIS.id
+                }
+                is_owned_by = FRA
+            }
+            set_state_controller_to = GER
+        }
+    }
+}
+
+country_event = { #Britain: Offer White Peace?
+    id = RP_parispeaceevents.9
+    title = RP_parispeaceevents.9.t
+    desc = RP_parispeaceevents.9.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_parispeaceevents.9.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        GER = {
+            country_event = RP_parispeaceevents.10
+        }
+    }
+
+    option = { #No
+        name = RP_parispeaceevents.9.b
+
+        ai_chance = {
+            base = 0
+        }
+
+        ENG = {
+            add_ideas = {
+                RP_whydiefortraitors
+            }
+        }
+    }
+}
+
+country_event = { #Germany: Britain offers White Peace
+    id = RP_parispeaceevents.10
+    title = RP_parispeaceevents.10.t
+    desc = RP_parispeaceevents.10.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_parispeaceevents.10.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        white_peace = ENG 
+    }
+
+    option = { #No
+        name = RP_parispeaceevents.10.b
+
+        ai_chance = {
+            base = 0
+        }
+    }
+}
+
+country_event = { #Germany: Economic Subjugation of France?
+    id = RP_parispeaceevents.11
+    title = RP_parispeaceevents.11.t
+    desc = RP_parispeaceevents.11.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+
+    option = { #No
+        name = RP_parispeaceevents.11.a
+
+        ai_chance = {
+            base = 0
+        }
+
+        custom_effect_tooltip = RP_parispeaceevents.noreparations_tt
+        set_global_flag = RP_parispeaceevents_noreparations
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+        FRA = {
+            country_event = {
+                id = RP_parispeaceevents.6
+                days = 3
+            }
+        }
+    }
+
+    option = { #Only Reparations
+        name = RP_parispeaceevents.11.b
+
+        ai_chance = {
+            base = 0
+        }
+
+        custom_effect_tooltip = RP_parispeaceevents.warreparations_tt
+        set_global_flag = RP_parispeaceevents_warreparations
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+        FRA = {
+            country_event = {
+                id = RP_parispeaceevents.6
+                days = 3
+            }
+        }
+    }
+
+    option = { #Minor Economic Subjugation
+        name = RP_parispeaceevents.11.c
+
+        ai_chance = {
+            base = 5
+        }
+
+        custom_effect_tooltip = RP_parispeaceevents.minoreconomicsubjugation_tt
+        set_global_flag = RP_parispeaceevents_minoreconomicsubjugation
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+        FRA = {
+            country_event = {
+                id = RP_parispeaceevents.6
+                days = 3
+            }
+        }
+    }
+
+    option = { #Major Economic Subjugation
+        name = RP_parispeaceevents.11.e
+
+        ai_chance = {
+            base = 0
+        }
+
+        custom_effect_tooltip = RP_parispeaceevents.completeeconomicsubjugation_tt
+        set_global_flag = RP_parispeaceevents_completeeconomicsubjugation
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+        FRA = {
+            country_event = {
+                id = RP_parispeaceevents.6
+                days = 3
+            }
+        }
+    }
+}
+
+country_event = { #Spanish Africa: Seize French Morocco?
+    id = RP_parispeaceevents.12
+    title = RP_parispeaceevents.12.t
+    desc = RP_parispeaceevents.12.d
+    picture = GFX_report_event_generic_peaceful_annexation
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_parispeaceevents.12.a
+
+        FRA = {
+            country_event = {
+                id = RP_parispeaceevents.13
+                hours = 6
+            }
+        }
+    }
+
+    option = { #No
+        name = RP_parispeaceevents.12.b
+
+        ai_chance = {
+            base = 0
+        }
+    }
+}
+
+country_event = { #Government of National Defense: Defend French Morocco?
+    id = RP_parispeaceevents.13
+    title = RP_parispeaceevents.13.t
+    desc = RP_parispeaceevents.13.d
+    picture = GFX_report_event_generic_peaceful_annexation
+
+    is_triggered_only = yes
+
+    option = { #Yes (reject)
+        name = RP_parispeaceevents.13.a
+
+        ai_chance = {
+            base = 10
+        }
+
+        SFC = {
+            declare_war_on = {
+                target = FRA
+                type = annex_everything
+            }
+        }
+    }
+
+    option = { #No (accept)
+        name = RP_parispeaceevents.13.b
+
+        ai_chance = {
+            base = 90
+        }
+
+        every_state = {
+            limit = {
+                OR = {
+                    state = 461
+                    state = 462
+                }
+            }
+            transfer_state_to = SFC
+            add_core_of = SFC
+        }
+
+        diplomatic_relation = {
+            country = SFC
+            relation = guarantee
+            active = no
+        }
+    }
+}
+
+country_event = { #Government of National Defense: Syria Breaks Away
+    id = RP_parispeaceevents.14
+    title = RP_parispeaceevents.14.t
+    desc = RP_parispeaceevents.14.d
+    picture = GFX_report_event_second_vienna_award_pact
+
+    is_triggered_only = yes
+
+    option = { #We will fight to the death
+        name = RP_parispeaceevents.14.a
+
+        ai_chance = {
+            base = 0
+        }
+
+        FRA = {
+            end_puppet = SYR
+            declare_war_on = {
+                target = SYR
+                type = topple_government
+            }
+        }
+
+        SYR = {
+            set_cosmetic_tag = RP_SYR_freestate
+        }
+    }
+
+    option = { #No point in fighting
+        name = RP_parispeaceevents.14.b
+
+        ai_chance = {
+            base = 90
+        }
+
+        FRA = {
+            end_puppet = SYR
+        }
+
+        SYR = {
+            set_cosmetic_tag = RP_SYR_freestate
+        }
+    }
+}
+
+country_event = { #Government of National Defense: Lebanon Breaks Away
+    id = RP_parispeaceevents.15
+    title = RP_parispeaceevents.15.t
+    desc = RP_parispeaceevents.15.d
+    picture = GFX_report_event_second_vienna_award_pact
+
+    is_triggered_only = yes
+
+    option = { #We will fight to the death
+        name = RP_parispeaceevents.15.a
+
+        ai_chance = {
+            base = 0
+        }
+
+        FRA = {
+            end_puppet = LEB
+            declare_war_on = {
+                target = LEB
+                type = topple_government
+            }
+        }
+
+        LEB = {
+            set_cosmetic_tag = RP_LEB_freestate
+        }
+    }
+
+    option = { #No point in fighting
+        name = RP_parispeaceevents.15.b
+
+        ai_chance = {
+            base = 90
+        }
+
+        FRA = {
+            end_puppet = LEB
+        }
+
+        LEB = {
+            set_cosmetic_tag = RP_LEB_freestate
+        }
+    }
+}
+
+country_event = { # Petain coups the government
+    id = RP_parispeaceevents.16
+    title = RP_parispeaceevents.16.t
+    desc = RP_parispeaceevents.16.d
+    picture = GFX_report_event_generic_army
+
+    is_triggered_only = yes
+
+    option = { # There is nothing we can do
+        name = RP_parispeaceevents.16.a
+
+        ai_chance = {
+            base = 10
+        }
+
+        set_politics = {
+            ruling_party = neutrality
+            elections_allowed = no
+        }
+
+        set_cosmetic_tag = RP_FRA_govnationaldefense
+        load_focus_tree = governmentofnationaldefense_focus
+        
+        set_party_name = {
+            ideology = neutrality
+            name = FRA_govnationaldefenseparty
+        }
+
+        load_focus_tree = generic_focus
+    
+        add_ideas = {
+            RP_governmentofnationaldefense
+        }
+
+        remove_ideas = {
+            MTG_naval_treaty_adherent
+            FRA_victors_of_wwi
+            FRA_protected_by_the_maginot_line
+        }
+
+        create_country_leader = {
+            name = "Philippe Pétain"
+            picture = GFX_portrait_Philippe_Petain
+            expire = "1965.1.1"
+            ideology = oligarchism
+            traits = {
+            }
+        }
+
+        news_event = { id = RP_newsevents.3 hours = 24 }
+    }
+}
+
+country_event = { # De Gaulle coups the government
+    id = RP_parispeaceevents.17
+    title = RP_parispeaceevents.17.t
+    desc = RP_parispeaceevents.17.d
+    picture = GFX_report_event_generic_army
+
+    is_triggered_only = yes
+
+    option = { # There is nothing we can do
+        name = RP_parispeaceevents.17.a
+
+        ai_chance = {
+            base = 10
+        }
+
+        set_politics = {
+            ruling_party = democratic
+            elections_allowed = yes
+        }
+
+        set_cosmetic_tag = RP_FRA_comnationalliberation
+        load_focus_tree = governmentofnationaldefense_focus
+        
+        set_party_name = {
+            ideology = democratic
+            name = FRA_comnationalliberationparty
+        }
+
+        load_focus_tree = generic_focus
+    
+        add_ideas = {
+            RP_comnationalliberation
+        }
+
+        remove_ideas = {
+            MTG_naval_treaty_adherent
+            FRA_victors_of_wwi
+            FRA_protected_by_the_maginot_line
+        }
+
+        create_country_leader = {
+            name = "Charles de Gaulle"
+            picture = GFX_portrait_FRA_charles_de_gaulle
+            expire = "1965.1.1"
+            ideology = liberalism
+            traits = {
+            }
+        }
+
+        news_event = { id = RP_newsevents.4 hours = 24 }
+    }
+}

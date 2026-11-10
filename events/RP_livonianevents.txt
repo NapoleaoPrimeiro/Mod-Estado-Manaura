@@ -1,0 +1,1814 @@
+add_namespace = RP_livoniaevents
+add_namespace = RP_ukrainianevents
+
+country_event = { # umm ukraine austria put in charge event yeah woohooo 😏😏😏😏😏😏😏😏
+    id = RP_ukrainianevents.1
+    title = RP_ukrainianevents.1.t
+    desc = RP_ukrainianevents.1.d
+    picture = GFX_report_event_royal_parade
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_ukrainianevents.1.a
+
+        ai_chance = {
+            base = 0
+        }
+
+        KUK = {
+            retire_character = KUK_leader
+            set_cosmetic_tag = KUK_grandduchy
+            promote_character = KUK_austrian_leader
+            set_party_name = {
+                ideology = neutrality
+                long_name = KUK_austrian_monarchy_party_long
+                name = KUK_austrian_monarchy_party
+            }
+            set_country_flag = austrian_on_the_throne
+            remove_ideas = KUK_sceptic_resistance
+        }
+    }
+
+    option = { #No
+        name = RP_ukrainianevents.1.b
+
+        ai_chance = {
+            base = 10
+        }
+
+    }
+}
+country_event = { # return ukraine to austria hahvcahvbhadshghjkhjtkeiopak
+    id = RP_ukrainianevents.2
+    title = RP_ukrainianevents.2.t
+    desc = RP_ukrainianevents.2.d
+    picture = GFX_report_event_royal_parade
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_ukrainianevents.2.a
+
+        ai_chance = {
+            base = 0
+        }
+
+        KUK = {
+            set_cosmetic_tag = KUK_grandduchy_austria_edition
+        }
+    }
+
+    option = { #No
+        name = RP_ukrainianevents.2.b
+
+        ai_chance = {
+            base = 10
+        }
+
+    }
+}
+country_event = { # The Breadbasket of Europe
+    id = RP_ukrainianevents.3
+    title = RP_ukrainianevents.3.t
+    desc = RP_ukrainianevents.3.d
+    picture = GFX_report_event_royal_parade
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_ukrainianevents.3.a
+
+        ai_chance = {
+            base = 100000
+        }
+
+        GER = {
+            set_variable = {
+				var = KUK_requisitioned_amount
+				value = 0
+			}
+            set_country_flag = RP_requisitioning_unlocked
+        }
+        custom_effect_tooltip = KUK_requisitioning_unlocked
+    }
+    option = { # No thanks
+        name = RP_ukrainianevents.3.b
+
+        ai_chance = {
+            base = 0
+        }
+
+        GER = {
+            
+        }
+        custom_effect_tooltip = KUK_requisitioning_locked
+    }
+}
+country_event = { # The Ukrainian Famine
+    id = RP_ukrainianevents.4
+    title = RP_ukrainianevents.4.t
+    desc = RP_ukrainianevents.4.d
+    picture = GFX_report_event_gathering_protest
+
+    is_triggered_only = yes
+
+    option = { # horror and fear and horrorer
+        name = RP_ukrainianevents.4.a
+
+        ai_chance = {
+            base = 1
+        }
+        add_war_support = -0.05
+
+        KUK = {
+            set_country_flag = KUK_ukrainian_famine_started
+            IF = {
+                limit = {
+                has_country_flag = KUK_grain_surplus_rationed
+                }
+                add_ideas = KUK_the_cooler_famine
+                else = {
+                    add_ideas = KUK_famine
+                }
+            }
+        }
+    }
+}
+country_event = { # The Ukrainian Famine Ends
+    id = RP_ukrainianevents.5
+    title = RP_ukrainianevents.5.t
+    desc = RP_ukrainianevents.5.d
+    picture = GFX_report_event_royal_parade
+
+    is_triggered_only = yes
+
+    option = { # joyousness
+        name = RP_ukrainianevents.5.a
+
+        ai_chance = {
+            base = 1
+        }
+
+        KUK = {
+            clr_country_flag = KUK_ukrainian_famine_started
+            IF = {
+                limit = {
+                has_idea = KUK_the_cooler_famine
+                }
+                remove_ideas = KUK_the_cooler_famine
+                else = {
+                    remove_ideas = KUK_famine
+                }
+            }
+        }
+    }
+}
+country_event = { # Ukrainian Collapse
+    id = RP_ukrainianevents.6
+    title = RP_ukrainianevents.6.t
+    desc = RP_ukrainianevents.6.d
+    picture = GFX_report_event_worker_protests
+
+    is_triggered_only = yes
+
+    option = { # pensive
+        name = RP_ukrainianevents.6.a
+
+        ai_chance = {
+            base = 1
+        }
+        add_war_support = -0.1
+
+        GER = {
+            set_autonomy = {
+                target = KUK
+                autonomous_state = autonomy_free
+                end_wars = no
+                end_civil_wars = no
+            }
+            remove_from_faction = KUK
+        }
+        KUK = {
+           set_country_flag = KUK_collapsed
+           add_ideas = KUK_ukrainian_civil_war
+           hidden_effect = {
+            load_oob = RP_KUK_loyalist_army
+           }
+        }
+
+        hidden_effect = {
+            UAN = {
+                every_state = {
+                    limit = {
+                        is_core_of = KUK
+                    }
+                    add_claim_by = UAN
+                            
+                }
+                add_state_core = 202
+                add_state_core = 193
+                transfer_state = 202
+                transfer_state = 193
+                load_oob = "RP_KUK_anarchist_uprising"
+                declare_war_on = {
+                    target = KUK
+                    type = annex_everything
+                }
+                IF = {
+                    limit = {
+                        KUK = {
+                            has_idea = KUK_famine
+                        }
+                    }
+                    add_ideas = KUK_famine
+                }
+                else_if = {
+                    limit = {
+                        KUK = {
+                            has_idea = KUK_the_cooler_famine
+                        }
+                    }
+                    add_ideas = KUK_the_cooler_famine
+                }
+            }
+            UPR = {
+                every_state = {
+                    limit = {
+                        is_core_of = KUK
+                    }
+                    add_claim_by = UPR
+                            
+                }
+                add_state_core = 198
+                add_state_core = 199
+                add_state_core = 201
+                transfer_state = 198
+                transfer_state = 199
+                transfer_state = 201
+                load_oob = "RP_KUK_socialist_uprising"
+                declare_war_on = {
+                    target = UAN
+                    type = annex_everything
+                }
+                declare_war_on = {
+                    target = KUK
+                    type = annex_everything
+                }
+                IF = {
+                    limit = {
+                        KUK = {
+                            owns_state = 192
+                        }
+                    }
+                    add_state_core = 834
+                    transfer_state = 834
+                }
+                IF = {
+                    limit = {
+                        KUK = {
+                            owns_state = 93
+                        }
+                    }
+                    add_state_core = 93
+                    transfer_state = 93
+                }
+                IF = {
+                    limit = {
+                        KUK = {
+                            has_idea = KUK_famine
+                        }
+                    }
+                    add_ideas = KUK_famine
+                }
+                else_if = {
+                    limit = {
+                        KUK = {
+                            has_idea = KUK_the_cooler_famine
+                        }
+                    }
+                    add_ideas = KUK_the_cooler_famine
+                }   
+            }
+            UBA = {
+                every_state = {
+                    limit = {
+                        is_core_of = KUK
+                    }
+                    add_claim_by = UBA
+                            
+                }
+                add_state_core = 228
+                add_state_core = 227
+                transfer_state = 228
+                transfer_state = 227
+                load_oob = "RP_KUK_communist_uprising"
+                declare_war_on = {
+                    target = KUK
+                    type = annex_everything
+                }
+                declare_war_on = {
+                    target = UPR
+                    type = annex_everything
+                }
+                declare_war_on = {
+                    target = UAN
+                    type = annex_everything
+                }
+                IF = {
+                    limit = {
+                        KUK = {
+                            owns_state = 218
+                        }
+                    }
+                    add_state_core = 218
+                    transfer_state = 218
+                }
+                IF = {
+                    limit = {
+                        KUK = {
+                            has_idea = KUK_famine
+                        }
+                    }
+                    add_ideas = KUK_famine
+                }
+                else_if = {
+                    limit = {
+                        KUK = {
+                            has_idea = KUK_the_cooler_famine
+                        }
+                    }
+                    add_ideas = KUK_the_cooler_famine
+                }
+            }
+            UWU = {
+                IF = {
+                    limit = {
+                        KUK = {
+                            owns_state = 91
+                        }
+                    }
+                    add_state_core = 89
+                    add_state_core = 91
+                    transfer_state = 91
+                    transfer_state = 89
+                    division_template = {
+                        name = "Ukrainian Galician Army"
+
+                        regiments = {
+                            Militia = { x = 0 y = 0 }
+                            militia = { x = 0 y = 1 }
+                            militia = { x = 0 y = 2 }
+
+                            militia = { x = 1 y = 0 }
+                            militia = { x = 1 y = 1 }
+                            militia = { x = 1 y = 2 }
+                            
+                            militia = { x = 2 y = 0 }
+                            militia = { x = 2 y = 1 }
+                            artillery_brigade = { x = 2 y = 2 }
+
+                        }
+                        support = {
+                            recon = { x = 0 y = 0}
+                            artillery = { x = 0 y = 1 }
+                        }
+                    }
+                    division_template = {
+                        name = "Jewish Battalion of the Ukrainian Galician Army"
+
+                        regiments = {
+                            Militia = { x = 0 y = 0 }
+                            militia = { x = 0 y = 1 }
+                            militia = { x = 0 y = 2 }
+                            artillery_brigade = { x = 0 y = 3 }
+
+                        }
+                        support = {
+                            recon = { x = 0 y = 0}
+                            artillery = { x = 0 y = 1 }
+                        }
+                    }
+                    91 = {
+                        create_unit = {
+                            division = "name = \"1st Galician Corps\" division_template = \"Ukrainian Galician Army\" start_experience_factor = 0.5"
+                            owner = UWU
+                            allow_spawning_on_enemy_provs = yes
+                        }
+                        create_unit = {
+                            division = "name = \"2nd Galician Corps\" division_template = \"Ukrainian Galician Army\" start_experience_factor = 0.5"
+                            owner = UWU
+                            allow_spawning_on_enemy_provs = yes
+                        }
+                        create_unit = {
+                            division = "name = \"Jewish Battalion\" division_template = \"Jewish Battalion of the Ukrainian Galician Army\" start_experience_factor = 0.5"
+                            owner = UWU
+                            allow_spawning_on_enemy_provs = yes
+                        }
+                    }
+                }
+                IF = {
+                    limit = {
+                        KUK = {
+                            owns_state = 80
+                        }
+                    }
+                    add_state_core = 80
+                    transfer_state = 80
+                }
+                IF = {
+                    limit = {
+                        KUK = {
+                            owns_state = 73
+                        }
+                    }
+                    add_state_core = 73
+                    transfer_state = 73
+                }
+                IF = {
+                    limit = {
+                        KUK = {
+                            has_idea = KUK_famine
+                        }
+                    }
+                    add_ideas = KUK_famine
+                }
+                else_if = {
+                    limit = {
+                        KUK = {
+                            has_idea = KUK_the_cooler_famine
+                        }
+                    }
+                    add_ideas = KUK_the_cooler_famine
+                }
+            }
+            UMD = {
+                IF = {
+                    limit = {
+                        KUK = {
+                            owns_state = 78
+                        }
+                    }
+                    add_state_core = 78
+                    transfer_state = 78
+                    add_state_core = 766
+                    transfer_state = 766
+                    division_template = {
+                        name = "Moldovan National Defense Force"
+
+                        regiments = {
+                            militia = { x = 0 y = 0 }
+                            militia = { x = 0 y = 1 }
+                            militia = { x = 0 y = 2 }
+
+                            militia = { x = 1 y = 0 }
+                            militia = { x = 1 y = 1 }
+                            militia = { x = 1 y = 2 }
+                            
+                            militia = { x = 2 y = 0 }
+                            militia = { x = 2 y = 1 }
+                            militia = { x = 2 y = 2 }
+
+                        }
+                        support = {
+                            recon = { x = 0 y = 0}
+                            artillery = { x = 0 y = 1 }
+                        }
+                    }
+                    78 = {
+                        create_unit = {
+                            division = "name = \"Moldovan National Defense Force\" division_template = \"Moldovan National Defense Force\" start_experience_factor = 0.5"
+                            owner = UMD
+                            allow_spawning_on_enemy_provs = yes
+                        }
+                    }
+                }
+                IF = {
+                    limit = {
+                        KUK = {
+                            has_idea = KUK_famine
+                        }
+                    }
+                    add_ideas = KUK_famine
+                }
+                else_if = {
+                    limit = {
+                        KUK = {
+                            has_idea = KUK_the_cooler_famine
+                        }
+                    }
+                    add_ideas = KUK_the_cooler_famine
+                }
+            }
+            UCR = {
+                IF = {
+                    limit = {
+                        KUK = {
+                            owns_state = 137
+                        }
+                    }
+                    add_state_core = 137
+                    transfer_state = 137
+                    division_template = {
+                        name = "Sevastopol Militia"
+
+                        regiments = {
+                            Militia = { x = 0 y = 0 }
+                            militia = { x = 0 y = 1 }
+                            militia = { x = 0 y = 2 }
+
+                            militia = { x = 1 y = 0 }
+                            militia = { x = 1 y = 1 }
+                            militia = { x = 1 y = 2 }
+
+                        }
+                        support = {
+                            recon = { x = 0 y = 0}
+                            artillery = { x = 0 y = 1 }
+                        }
+                    }
+                    137 = {
+                        create_unit = {
+                            division = "name = \"1st Sevastopol Militia Regiment\" division_template = \"Sevastopol Militia\" start_experience_factor = 0.5"
+                            owner = UCR
+                            allow_spawning_on_enemy_provs = yes
+                        }
+                        create_unit = {
+                            division = "name = \"2nd Sevastopol Militia Regiment\" division_template = \"Sevastopol Militia\" start_experience_factor = 0.5"
+                            owner = UCR
+                            allow_spawning_on_enemy_provs = yes
+                        }
+                    }
+                }
+                IF = {
+                    limit = {
+                        KUK = {
+                            has_idea = KUK_famine
+                        }
+                    }
+                    add_ideas = KUK_famine
+                }
+                else_if = {
+                    limit = {
+                        KUK = {
+                            has_idea = KUK_the_cooler_famine
+                        }
+                    }
+                    add_ideas = KUK_the_cooler_famine
+                }
+            }
+            KKH = {
+                IF = {
+                    limit = {
+                        KUK = {
+                            owns_state = 234
+                        }
+                        NOT = {
+                            country_exists = KKH
+                        }
+                    }
+                    add_state_core = 234
+                    transfer_state = 234
+                    set_cosmetic_tag = KKH_independent
+                    division_template = {
+                        name = "Kuban Cossacks"
+
+                        regiments = {
+                            cavalry = { x = 0 y = 0 }
+                            cavalry = { x = 0 y = 1 }
+                            cavalry = { x = 0 y = 2 }
+
+                            cavalry = { x = 1 y = 0 }
+                            cavalry = { x = 1 y = 1 }
+                            cavalry = { x = 1 y = 2 }
+                            
+                            cavalry = { x = 2 y = 0 }
+                            cavalry = { x = 2 y = 1 }
+                            cavalry = { x = 2 y = 2 }
+
+                        }
+                        support = {
+                            recon = { x = 0 y = 0}
+                            artillery = { x = 0 y = 1 }
+                        }
+                    }
+                    234 = {
+                        create_unit = {
+                            division = "name = \"1st Cossack Cavalry Division\" division_template = \"Kuban Cossacks\" start_experience_factor = 0.5"
+                            owner = KKH
+                            allow_spawning_on_enemy_provs = yes
+                        }
+                        create_unit = {
+                            division = "name = \"2nd Cossack Cavalry Division\" division_template = \"Kuban Cossacks\" start_experience_factor = 0.5"
+                            owner = KKH
+                            allow_spawning_on_enemy_provs = yes
+                        }
+                        create_unit = {
+                            division = "name = \"3rd Cossack Cavalry Division\" division_template = \"Kuban Cossacks\" start_experience_factor = 0.5"
+                            owner = KKH
+                            allow_spawning_on_enemy_provs = yes
+                        }
+                    }
+                }
+                IF = {
+                    limit = {
+                        country_exists = UCR
+                    }
+                    UCR = {
+                        country_event = {
+                            id = RP_ukrainianevents.10
+                            days = 45
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+country_event = { # Ukraine requests western ukraine
+    id = RP_ukrainianevents.7
+    title = RP_ukrainianevents.7.t
+    desc = RP_ukrainianevents.7.d
+    picture = GFX_report_event_generic_sign_treaty2
+
+    is_triggered_only = yes
+
+    option = { # Sure
+        name = RP_ukrainianevents.7.a
+
+        ai_chance = {
+            base = 1
+        }
+
+        KUK = {
+            transfer_state = 91
+            add_state_core = 91
+            transfer_state = 89
+            add_state_core = 89
+        }
+    }
+    option = { # They can have Bucovina too
+        name = RP_ukrainianevents.7.b
+
+        ai_chance = {
+            base = 1
+        }
+
+        KUK = {
+            transfer_state = 91
+            add_state_core = 91
+            transfer_state = 89
+            add_state_core = 89
+            transfer_state = 80
+            add_state_core = 80
+        }
+    }
+    option = { # No
+        name = RP_ukrainianevents.7.c
+
+        ai_chance = {
+            base = 1
+        }
+
+    }
+}
+country_event = { # Ukraine proposes unification
+    id = RP_ukrainianevents.8
+    title = RP_ukrainianevents.8.t
+    desc = RP_ukrainianevents.8.d
+    picture = GFX_report_event_worker_protests
+
+    is_triggered_only = yes
+
+    option = { # ok
+        name = RP_ukrainianevents.8.a
+
+        ai_chance = {
+            base = 1
+        }
+
+        KUK = {
+            set_country_flag = KUK_crimea_accepted
+        }
+    }
+}
+country_event = { # Ukraine requests unification with Crimea
+    id = RP_ukrainianevents.9
+    title = RP_ukrainianevents.9.t
+    desc = RP_ukrainianevents.9.d
+    picture = GFX_report_event_gre_diplomacy
+
+    is_triggered_only = yes
+
+    option = { # ok
+        name = RP_ukrainianevents.9.a
+
+        ai_chance = {
+            base = 1
+        }
+
+        KUK = {
+            
+        }
+    }
+    option = { # no
+        name = RP_ukrainianevents.9.b
+
+        ai_chance = {
+            base = 1
+        }
+
+        KUK = {
+            
+        }
+    }
+}
+country_event = { # Kuban Cossacks offer protection
+    id = RP_ukrainianevents.10
+    title = RP_ukrainianevents.10.t
+    desc = RP_ukrainianevents.10.d
+    picture = GFX_report_event_worker_protests
+
+    is_triggered_only = yes
+
+    option = { # no
+        name = RP_ukrainianevents.10.a
+
+        ai_chance = {
+            base = 1
+        }
+
+        KKH = {
+            declare_war_on = {
+                target = UCR
+                type = puppet_wargoal_focus
+            }
+        }
+    }
+    option = { # OK
+        name = RP_ukrainianevents.10.b
+
+        ai_chance = {
+            base = 1
+        }
+
+        KKH = {
+            set_autonomy = {
+                target = UCR
+                autonomous_state = autonomy_puppet
+                end_wars = no
+                end_civil_wars = no
+                keep_subjects = no
+            }
+        }
+    }
+}
+
+country_event = { # Should the United baltic Duchy restore Livonia?
+    id = RP_livoniaevents.1
+    title = RP_livoniaevents.1.t
+    desc = RP_livoniaevents.1.d
+    picture = GFX_report_event_germany_politician_handshake
+
+    is_triggered_only = yes
+
+    option = { #Yes
+        name = RP_livoniaevents.1.a
+
+        ai_chance = {
+            base = 0
+        }
+
+        KLV = {
+            set_country_flag = ai_livonia
+        }
+    }
+
+    option = { #No
+        name = RP_livoniaevents.1.b
+
+        ai_chance = {
+            base = 10
+        }
+		KLV = {
+			set_country_flag = ai_baltic
+		}
+    }
+}
+country_event = { # Livonia declares independance!
+    id = RP_livoniaevents.2
+    title = RP_livoniaevents.2.t
+    desc = RP_livoniaevents.2.d
+    picture = GFX_report_event_generic_sign_treaty1
+
+    is_triggered_only = yes
+
+    option = { #Embargo!
+        name = RP_livoniaevents.2.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        KLV = {
+            add_ideas = KLV_mitteleuropa_reprecussions
+        }
+    }
+	option = { #Mobilize the army!
+        name = RP_livoniaevents.2.b
+
+        ai_chance = {
+            base = 0
+        }
+		declare_war_on = {
+    		target = KLV
+   			 type = annex_everything
+		}
+    }
+
+    option = { #They are of no consequence
+        name = RP_livoniaevents.2.c
+
+        ai_chance = {
+            base = 5
+        }
+    }
+}
+country_event = { # Livonia invades Lithuania!
+    id = RP_livoniaevents.3
+    title = RP_livoniaevents.3.t
+    desc = RP_livoniaevents.3.d
+    picture = GFX_report_event_gre_militaristic_march
+
+    is_triggered_only = yes
+
+option = { #Mobilize the army!
+        name = RP_livoniaevents.3.a
+
+        ai_chance = {
+            base = 0
+        }
+		declare_war_on = {
+    		target = KLV
+   			 type = annex_everything
+		}
+    }
+    option = { #Demand reparations
+        name = RP_livoniaevents.3.b
+
+        ai_chance = {
+            base = 5
+        }
+
+        KLV = {
+            country_event = RP_livoniaevents.4
+        }
+    }
+	
+
+    option = { #They are of no consequence
+        name = RP_livoniaevents.3.c
+
+        ai_chance = {
+            base = 5
+        }
+    }
+}
+country_event = { # Germany demands reparations
+    id = RP_livoniaevents.4
+    title = RP_livoniaevents.4.t
+    desc = RP_livoniaevents.4.d
+    picture = GFX_report_event_german_reichstag_gathering
+
+    is_triggered_only = yes
+
+    option = { #Agree
+        name = RP_livoniaevents.4.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        KLV = {
+            add_timed_idea = {
+                idea = KLV_german_payments
+                days = 180
+            }
+        }
+        GER = {
+            add_timed_idea = {
+                idea = KLV_german_payments2
+                days = 180
+            }
+        }
+    }
+	option = { #Reject
+        name = RP_livoniaevents.4.b
+
+        ai_chance = {
+            base = 0
+        }
+		
+    }
+}
+country_event = { # Livonia Rejects!
+    id = RP_livoniaevents.5
+    title = RP_livoniaevents.5.t
+    desc = RP_livoniaevents.5.d
+    picture = GFX_report_event_german_troops
+
+    is_triggered_only = yes
+
+    option = { #War
+        name = RP_livoniaevents.5.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        declare_war_on = {
+    		target = KLV
+   			 type = annex_everything
+		}
+    }
+}
+country_event = { # Livonia proposes population exchange
+    id = RP_livoniaevents.6 # 7
+    title = RP_livoniaevents.6.t
+    desc = RP_livoniaevents.6.d
+    picture = GFX_report_event_generic_sign_treaty3
+
+    is_triggered_only = yes
+
+    option = { # Ok
+        name = RP_livoniaevents.6.a
+
+        ai_chance = {
+            base = 5
+        }
+        KLV = {
+            country_event = {
+                id = RP_livoniaevents.11
+                days = 3
+            }
+        }
+    }
+    option = { # No???
+        name = RP_livoniaevents.6.b
+
+        ai_chance = {
+            base = 0
+        }
+    }
+}
+country_event = { # Livonia requests Lithuania
+    id = RP_livoniaevents.7
+    title = RP_livoniaevents.7.t
+    desc = RP_livoniaevents.7.d
+    picture = GFX_report_event_generic_battle
+
+    is_triggered_only = yes
+
+option = { #No!
+        name = RP_livoniaevents.7.a
+
+        ai_chance = {
+            base = 0
+        }
+		declare_war_on = {
+    		target = KLV
+   			 type = annex_everything
+		}
+    }
+    option = { #Demand reparations
+        name = RP_livoniaevents.7.b
+
+        ai_chance = {
+            base = 5
+        }
+
+        KLV = {
+            
+        }
+    }
+	
+
+    option = { #They can have it
+        name = RP_livoniaevents.7.c
+
+        ai_chance = {
+            base = 5
+        }
+        KLV = {
+            IF = {
+				limit = {
+				country_exists = KLI
+				}
+			
+			annex_country = {
+    			target = KLI
+    			transfer_troops = yes
+			}
+			KLV = {
+					every_state = {
+						limit = {
+							OR = {
+								state = 189
+								state = 815
+								state = 784
+								state = 11
+								state = 814
+							}
+						}
+						add_core_of = KLV
+						
+					}
+
+				}
+				
+			}
+            IF = {
+				limit = {
+				country_exists = KCS
+				}
+				KLV = {
+					annex_country = {
+    					target = KCS
+    					transfer_troops = yes
+					}
+				}
+				KLV = {
+					every_state = {
+						limit = {
+							OR = {
+								state = 809
+								state = 190
+							}
+						}
+						add_core_of = KLV
+						
+					}
+
+				}
+			}
+        }
+    }
+}
+country_event = { # Catholic rebellion
+    id = RP_livoniaevents.8
+    title = RP_livoniaevents.8.t
+    desc = RP_livoniaevents.8.d
+    picture = GFX_report_event_ger_civil_war
+
+    is_triggered_only = yes
+
+option = { #What?!
+        name = RP_livoniaevents.8.a
+
+        ai_chance = {
+            base = 10
+        }
+		BAY = {
+			every_state = {
+				limit = {
+					OR = {
+					    state = 52
+						state = 53
+					}
+				}
+					transfer_state_to = BAY
+						
+			}
+			declare_war_on = {
+				target = GER
+				type = annex_everything
+			}
+            hidden_effect = {
+                load_oob = "RP_KLV_bavaria_uprising"
+            }
+            set_cosmetic_tag = BAY_rebellion
+            add_timed_idea = {
+                idea = KLV_bavarian_rebellion
+                days = 250
+            }
+            KLV = { add_to_faction = PREV }
+		}
+        KLV = {
+            country_event = RP_livoniaevents.10
+        }
+        GER = {
+            add_stability = -0.1
+        }
+    }
+    
+    
+}
+country_event = { # Austria sides with Bavaria!
+    id = RP_livoniaevents.9
+    title = RP_livoniaevents.9.t
+    desc = RP_livoniaevents.9.d
+    picture = GFX_report_event_ger_civil_war
+
+    is_triggered_only = yes
+
+option = { #We will crush them!
+        name = RP_livoniaevents.9.a
+
+        ai_chance = {
+            base = 10
+        }
+		IF = {
+            limit = {
+                country_exists = KAU
+            }
+            KAU = {
+                declare_war_on = {
+				target = GER
+				type = annex_everything
+			    }
+                hidden_effect = {
+                    load_oob = "RP_KLV_austria_uprising"
+                }
+                set_cosmetic_tag = KAU_rebellion
+                add_timed_idea = {
+                    idea = KLV_bavarian_rebellion
+                    days = 250
+                }
+                KLV = { add_to_faction = PREV }
+            }
+        }
+        IF = {
+            limit = {
+                country_exists = AUS
+            }
+            every_state = {
+				limit = {
+					is_owned_by = AUS
+				}
+					transfer_state_to = KAU
+                    add_core_of = KAU
+						
+			}
+            KAU = {
+                declare_war_on = {
+				target = GER
+				type = annex_everything
+			    }
+                hidden_effect = {
+                    load_oob = "RP_KLV_austria_uprising"
+                }
+                set_cosmetic_tag = KAU_rebellion
+                    add_timed_idea = {
+                    idea = KLV_bavarian_rebellion
+                    days = 250
+                }
+                KLV = { add_to_faction = PREV }
+            }
+        }
+        KLV = {
+                set_autonomy = {
+   			        target = KAU
+   				    autonomous_state = autonomy_RP_holy_order
+    			    end_wars = no
+    			    end_civil_wars = no
+				}
+            }
+            GER = {
+                add_timed_idea = {
+                    idea = KLV_shattered_command1
+                    days = 70
+                }
+                add_stability = -0.1
+            }
+        
+    }
+    
+    
+}
+country_event = { # Rebellion succesful!
+    id = RP_livoniaevents.10
+    title = RP_livoniaevents.10.t
+    desc = RP_livoniaevents.10.d
+    picture = GFX_report_event_germany_politician_handshake
+
+    is_triggered_only = yes
+
+    option = { # Yay
+        name = RP_livoniaevents.10.a
+
+        ai_chance = {
+            base = 5
+        }
+        KLV = {
+            add_timed_idea = {
+                idea = KLV_southern_crusade1
+                days = 250
+            }
+            declare_war_on = {
+				target = GER
+				type = annex_everything
+			}
+            set_country_flag = southern_crusade
+        }
+        
+    }
+   
+}
+country_event = { # Germany accepts population exchange!
+    id = RP_livoniaevents.11
+    title = RP_livoniaevents.11.t
+    desc = RP_livoniaevents.11.d
+    picture = GFX_report_event_germany_politician_handshake
+
+    is_triggered_only = yes
+
+    option = { # Yay
+        name = RP_livoniaevents.11.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        KLV = {
+            add_ideas = KLV_population_exchange
+            remove_ideas = KLV_angered_populace
+        }
+        
+    }
+   
+}
+country_event = { # Livonia offers peace
+    id = RP_livoniaevents.12
+    title = RP_livoniaevents.12.t
+    desc = RP_livoniaevents.12.d
+    picture = GFX_report_event_germany_politician_handshake
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_livoniaevents.12.a
+
+        ai_chance = {
+            base = 50
+        }
+
+        KLV = {
+            country_event = RP_livoniaevents.13
+        }
+        GER = {
+            add_stability = -0.25
+            add_war_support = -0.25
+        }
+        
+    }
+    option = { # No
+        name = RP_livoniaevents.12.b
+
+        ai_chance = {
+            base = 0
+        }
+
+        KLV = {
+            country_event = RP_livoniaevents.14
+        }
+        
+    }
+   
+}
+country_event = { # Germany accepts!
+    id = RP_livoniaevents.13
+    title = RP_livoniaevents.13.t
+    desc = RP_livoniaevents.13.d
+    picture = GFX_report_event_germany_politician_handshake
+
+    is_triggered_only = yes
+
+    option = { # Wonderful!
+        name = RP_livoniaevents.13.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        PRE = {
+			every_state = {
+				limit = {
+				    OR = {
+                        state = 188
+                        state = 763
+                        state = 5
+                        state = 85
+                        state = 807
+
+                    }
+				}
+					add_core_of = PRE
+                    transfer_state_to = PRE
+						
+			}
+            set_cosmetic_tag = PRE_teutonic_order
+            retire_character = PRE_eitel_friedrich
+
+		}
+        54 = {
+            transfer_state_to = BAY
+        }
+        WUR = {
+			every_state = {
+				limit = {
+				    OR = {
+                        state = 978
+                        state = 50
+
+
+                    }
+				}
+                    transfer_state_to = WUR	
+			}
+            set_cosmetic_tag = WUR_benedictine_order
+
+		}
+        KLV = {
+                set_autonomy = {
+   					target = PRE
+   					autonomous_state = autonomy_RP_holy_order
+    				end_wars = no
+    				end_civil_wars = no
+				}
+            }
+        KLV = {
+                set_autonomy = {
+   			        target = WUR
+   				    autonomous_state = autonomy_RP_holy_order
+    			    end_wars = no
+    			    end_civil_wars = no
+				}
+            }
+        GER = {
+            white_peace = KLV
+            white_peace = BAY
+            white_peace = KAU
+        }
+        
+    }
+   
+}
+country_event = { # Germany rejects peace
+    id = RP_livoniaevents.14
+    title = RP_livoniaevents.14.t
+    desc = RP_livoniaevents.14.d
+    picture = GFX_report_event_germany_politician_handshake
+
+    is_triggered_only = yes
+
+    option = { #NOOO
+        name = RP_livoniaevents.14.a
+
+        ai_chance = {
+            base = 1
+        }
+
+        KLV = {
+            add_stability = -0.1
+            add_war_support = -0.15
+        }
+    }
+
+}
+country_event = { # The UBD requests arms
+    id = RP_livoniaevents.15
+    title = RP_livoniaevents.15.t
+    desc = RP_livoniaevents.15.d
+    picture = GFX_report_event_GER_grenzshutz_forces
+
+    is_triggered_only = yes
+
+    option = { # We will send a large shipment
+        name = RP_livoniaevents.15.a
+
+        ai_chance = {
+            base = 100
+        }
+
+        GER = {
+           send_equipment = {
+                equipment = infantry_equipment
+                amount = 12500
+                target = KLV
+            }
+            send_equipment = {
+                equipment = support_equipment
+                amount = 1000
+                target = KLV
+            }
+            send_equipment = {
+                equipment = artillery_equipment
+                amount = 1350
+                target = KLV
+            }
+            add_political_power = 50
+            add_war_support = 0.03
+        }
+        KLV = {
+            country_event = RP_livoniaevents.16
+        }
+    }
+    option = { # We will send a medium shipment 
+        name = RP_livoniaevents.15.b
+
+        ai_chance = {
+            base = 0
+        }
+
+        GER = {
+           send_equipment = {
+                equipment = infantry_equipment
+                amount = 7500
+                target = KLV
+            }
+            send_equipment = {
+                equipment = support_equipment
+                amount = 500
+                target = KLV
+            }
+            send_equipment = {
+                equipment = artillery_equipment
+                amount = 600
+                target = KLV
+            }
+            add_political_power = 25
+            add_war_support = 0.01
+        }
+        KLV = {
+            country_event = RP_livoniaevents.17
+        }
+    }
+    option = { # We can't spare anything
+        name = RP_livoniaevents.15.c
+
+        ai_chance = {
+            base = 0
+        }
+
+        KLV = {
+            country_event = RP_livoniaevents.18
+        }
+        GER = {
+            add_war_support = -0.01
+        }
+    }
+
+}
+country_event = { # Germany sends a large shipment!
+    id = RP_livoniaevents.16
+    title = RP_livoniaevents.16.t
+    desc = RP_livoniaevents.16.d
+    picture = GFX_report_event_germany_politician_handshake
+
+    is_triggered_only = yes
+
+    option = { # Wonderful!
+        name = RP_livoniaevents.16.a
+
+        ai_chance = {
+            base = 1
+        }
+
+        KLV = {
+            add_stability = 0.03
+        }
+    }
+
+}
+country_event = { # Germany sends a medium shipment!
+    id = RP_livoniaevents.17
+    title = RP_livoniaevents.17.t
+    desc = RP_livoniaevents.17.d
+    picture = GFX_report_event_germany_politician_handshake
+
+    is_triggered_only = yes
+
+    option = { # Anything helps
+        name = RP_livoniaevents.17.a
+
+        ai_chance = {
+            base = 1
+        }
+
+        KLV = {
+            add_stability = 0.01
+        }
+    }
+
+}
+country_event = { # Germany refuses to aid us :(
+    id = RP_livoniaevents.18
+    title = RP_livoniaevents.18.t
+    desc = RP_livoniaevents.18.d
+    picture = GFX_report_event_germany_politician_handshake
+
+    is_triggered_only = yes
+
+    option = { # Damn
+        name = RP_livoniaevents.18.a
+
+        ai_chance = {
+            base = 1
+        }
+
+        KLV = {
+            add_stability = -0.01
+        }
+    }
+
+}
+country_event = { # The UBD requests investment
+    id = RP_livoniaevents.19
+    title = RP_livoniaevents.19.t
+    desc = RP_livoniaevents.19.d
+    picture = GFX_report_event_generic_sign_treaty1
+
+    is_triggered_only = yes
+
+    option = { # We will make major investments
+        name = RP_livoniaevents.19.a
+
+        ai_chance = {
+            base = 100
+        }
+
+        #custom_effect_tooltip = KLV_large_german_investment
+
+        #custom_effect_tooltip = generic_skip_one_line_tt
+
+        GER = {
+          add_timed_idea = {
+                idea = KLV_germany_paying_baltics_large
+                days = 180
+            }
+            add_political_power = 50
+        }
+        KLV = {
+            add_timed_idea = {
+                idea = KLV_german_investments1
+                days = 180
+            }
+            reduce_focus_completion_cost = {
+                focus = { KLV_urbanization_efforts KLV_develop_estonia KLV_develop_latvia }
+                cost = 35
+            }
+        }
+    }
+    option = { # We will make some investments
+        name = RP_livoniaevents.19.b
+
+        ai_chance = {
+            base = 0
+        }
+
+        #custom_effect_tooltip = KLV_german_investment
+
+        #custom_effect_tooltip = generic_skip_one_line_tt
+
+        GER = {
+           add_timed_idea = {
+                idea = KLV_germany_paying_baltics
+                days = 180
+            }
+            add_political_power = 25
+        }
+        KLV = {
+            add_timed_idea = {
+                idea = KLV_german_investments1
+                days = 120
+            }
+            reduce_focus_completion_cost = {
+                focus = { KLV_urbanization_efforts KLV_develop_estonia KLV_develop_latvia }
+                cost = 14
+            }
+        }
+    }
+    option = { # We can't spare anything
+        name = RP_livoniaevents.19.c
+
+        ai_chance = {
+            base = 0
+        }
+
+        
+    }
+
+}
+country_event = { # the UBD requests Courland
+    id = RP_livoniaevents.20
+    title = RP_livoniaevents.20.t
+    desc = RP_livoniaevents.20.d
+    picture = GFX_report_event_germany_politician_handshake
+
+    is_triggered_only = yes
+
+    option = { # We will give them Courland
+        name = RP_livoniaevents.20.a
+
+        ai_chance = {
+            base = 1
+        }
+
+
+        KLV = {
+            transfer_state = 809
+            transfer_state = 190
+            add_state_core = 890
+            add_state_core = 190
+        }
+
+    }
+    option = { # No
+        name = RP_livoniaevents.20.b
+
+        ai_chance = {
+            base = 0
+        }
+
+
+        GER = {
+            add_political_power = -10
+        }
+
+    }
+    option = { # We will give them Courland AND Riga
+        name = RP_livoniaevents.20.c
+
+         trigger = {
+            GER = {
+                owns_state = 808
+            }
+        }
+
+        ai_chance = {
+            base = 100
+        }
+
+
+        KLV = {
+            transfer_state = 809
+            transfer_state = 808
+            transfer_state = 190
+            add_state_core = 890
+            add_state_core = 190
+            add_state_core = 808
+        }
+
+    }
+
+}
+country_event = { # The fate of the Baltic Resistance
+    id = RP_livoniaevents.21
+    title = RP_livoniaevents.21.t
+    desc = RP_livoniaevents.21.d
+    picture = GFX_report_event_germany_politician_handshake
+
+    is_triggered_only = yes
+
+    option = { # We don't negotiate with terrorists
+        name = RP_livoniaevents.21.a
+
+        ai_chance = {
+            base = 1
+        }
+
+        custom_effect_tooltip = KLV_germanize_focus
+        KLV = {
+            set_country_flag = KLV_ai_germanize
+        }
+
+    }
+    option = { # peaceful cooperation and sunshines and rainbows
+        name = RP_livoniaevents.21.b
+
+        ai_chance = {
+            base = 0
+        }
+
+        custom_effect_tooltip = KLV_cooperation_focus
+        KLV = {
+            set_country_flag = KLV_ai_cooperate
+        }
+
+    }
+    option = { # integrate into deeeeeetscuhclnad
+        name = RP_livoniaevents.21.c
+
+        ai_chance = {
+            base = 0
+        }
+
+        custom_effect_tooltip = KLV_germanize_integration_focus
+        KLV = {
+            set_country_flag = KLV_ai_integrate
+        }
+
+    }
+
+}
+country_event = { # The Baltic Jewel
+    id = RP_livoniaevents.23
+    title = RP_livoniaevents.23.t
+    desc = RP_livoniaevents.23.d
+    picture = GFX_report_event_royal_visit
+
+    is_triggered_only = yes
+
+    option = { # Woohoo
+        name = RP_livoniaevents.23.a
+
+        ai_chance = {
+            base = 100
+        }
+
+
+        GER = {
+            add_ideas = KLV_jewel_of_the_east_modifier_germany
+        }
+
+    }
+
+}
+country_event = { # Baltic Integration
+    id = RP_livoniaevents.24
+    title = RP_livoniaevents.24.t
+    desc = RP_livoniaevents.24.d
+    picture = GFX_report_event_germany_politician_handshake
+
+    is_triggered_only = yes
+
+    option = { # Woohoo
+        name = RP_livoniaevents.24.a
+
+        ai_chance = {
+            base = 100
+        }
+
+
+        GER = {
+            every_state = {
+				limit = {
+				    is_controlled_by = KLV
+				}
+				    add_core_of = GER
+						
+			}
+            annex_country = {
+    			target = KLV
+    			transfer_troops = yes
+			}
+        }
+
+    }
+
+}
+country_event = { # Baltic Integration
+    id = RP_livoniaevents.25
+    title = RP_livoniaevents.25.t
+    desc = RP_livoniaevents.25.d
+    picture = GFX_report_event_germany_politician_handshake
+
+    is_triggered_only = yes
+
+    option = { # We can't spare anything
+        name = RP_livoniaevents.25.a
+
+        ai_chance = {
+            base = 0
+        }
+
+
+        GER = {
+
+        }
+
+    }
+    option = { # We will fund their project
+        name = RP_livoniaevents.25.b
+
+        ai_chance = {
+            base = 100
+        }
+
+
+        GER = {
+            add_timed_idea = {
+                idea = KLV_germany_funding_baltics
+                days = 240
+            }
+        }
+        KLV = {
+            reduce_focus_completion_cost = {
+                focus = { KLV_jewel_of_the_east }
+                cost = 125
+            }
+        }
+
+    }
+
+}

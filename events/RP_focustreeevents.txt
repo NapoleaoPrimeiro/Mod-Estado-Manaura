@@ -1,0 +1,319 @@
+add_namespace = RP_focustreeevents
+
+country_event = { # GER demands dismantling of democratic institutions
+    id = RP_focustreeevents.1
+    title = RP_focustreeevents.1.t
+    desc = RP_focustreeevents.1.d
+    picture = GFX_report_event_SWE_riksdag
+
+    is_triggered_only = yes
+
+    option = { # We have no choice
+        name = RP_focustreeevents.1.a
+
+        ai_chance = {
+            base = 5
+        }
+
+		GER = {
+			country_event = {
+				id = RP_focustreeevents.2
+				hours = 12
+			}
+		}
+	}
+
+	option = { # We will fight for our democracy!
+        name = RP_focustreeevents.1.b
+
+        ai_chance = {
+            base = 10
+        }
+
+		GER = {
+			country_event = {
+				id = RP_focustreeevents.3
+				hours = 12
+			}
+		}
+	}
+}
+
+country_event = { # SWE accepts
+    id = RP_focustreeevents.2
+    title = RP_focustreeevents.2.t
+    desc = RP_focustreeevents.2.d
+    picture = GFX_report_event_SWE_riksdag
+
+    is_triggered_only = yes
+
+    option = { # As they should..
+        name = RP_focustreeevents.2.a
+
+        ai_chance = {
+            base = 5
+        }
+
+		set_autonomy = { target = SWE autonomous_state = autonomy_integrated_puppet }
+
+	}
+}
+
+country_event = { # SWE refuses
+    id = RP_focustreeevents.3
+    title = RP_focustreeevents.3.t
+    desc = RP_focustreeevents.3.d
+    picture = GFX_report_event_SWE_riksdag
+
+    is_triggered_only = yes
+
+    option = { # Wrong choice
+        name = RP_focustreeevents.3.a
+
+        ai_chance = {
+            base = 5
+        }
+		
+		create_wargoal = {
+			target = SWE
+			type = topple_government
+		}
+	}
+}
+
+country_event = { # What to do with Yemen
+    id = RP_focustreeevents.5
+    title = RP_focustreeevents.5.t
+    desc = RP_focustreeevents.5.d
+    picture = GFX_report_event_hol_cabinet_gerbrandy
+
+    is_triggered_only = yes
+
+    option = {
+        name = RP_focustreeevents.5.a
+
+        ai_chance = {
+            base = 10
+        }
+
+		YEM = {
+			country_event = generic.5
+		}
+	}
+
+	option = {
+        name = RP_focustreeevents.5.b
+
+        ai_chance = {
+            base = 10
+        }
+
+		create_wargoal = {
+			type = annex_everything
+			target = YEM
+		}
+	}
+}
+
+country_event = { # Germany - What to do with Italy
+    id = RP_focustreeevents.9
+    title = RP_focustreeevents.9.t
+    desc = RP_focustreeevents.9.d
+    picture = GFX_report_event_hol_cabinet_gerbrandy
+
+    is_triggered_only = yes
+
+    option = {
+        name = RP_focustreeevents.9.a
+
+        ai_chance = {
+            base = 10
+        }
+
+		trigger = {
+			any_country = {
+				original_tag = ITA
+				has_government = fascism
+			}
+		}
+
+		every_country = {
+			limit = {
+				original_tag = ITA
+				has_government = fascism
+			}
+			GER = {
+				declare_war_on = {
+					target = PREV
+					type = topple_government
+				}
+			}
+		}
+	}
+
+	option = {
+        name = RP_focustreeevents.9.b
+
+        ai_chance = {
+            base = 10
+        }
+
+		trigger = {
+			any_country = {
+				original_tag = ITA
+				OR = {
+					has_government = communism
+					has_government = democratic
+				}
+			}
+		}
+
+		every_country = {
+			limit = {
+				original_tag = ITA
+				OR = {
+					has_government = communism
+					has_government = democratic
+				}
+			}
+			GER = {
+				declare_war_on = {
+					target = PREV
+					type = topple_government
+				}
+			}
+		}
+	}
+
+	option = {
+        name = RP_focustreeevents.9.c
+
+        ai_chance = {
+            base = 10
+        }
+
+		trigger = {
+			any_country = {
+				original_tag = ITA
+			}
+		}
+
+		every_country = {
+			limit = {
+				original_tag = ITA
+			}
+			GER = {
+				declare_war_on = {
+					target = PREV
+					type = topple_government
+				}
+			}
+		}
+	}
+}
+
+country_event = { # Owner of Galicia demands establishment of KGZ
+    id = RP_focustreeevents.10
+    title = RP_focustreeevents.10.t
+    desc = RP_focustreeevents.10.d
+    picture = GFX_report_event_poland_rejects
+
+    is_triggered_only = yes
+
+    option = { # We have no choice
+        name = RP_focustreeevents.10.a
+
+        ai_chance = {
+            base = 10
+        }
+
+		GER = {
+			country_event = {
+				id = RP_focustreeevents.11
+				hours = 12
+			}
+		}
+	}
+
+	option = { # We fought for this land, it is ours!
+        name = RP_focustreeevents.10.b
+
+        ai_chance = {
+            base = 5
+			modifier = {
+				factor = 15
+
+				tag = SOV
+			}
+        }
+
+		GER = {
+			country_event = {
+				id = RP_focustreeevents.12
+				hours = 12
+			}
+		}
+	}
+}
+
+country_event = { # Owner of Galicia accepts
+    id = RP_focustreeevents.11
+    title = RP_focustreeevents.11.t
+    desc = RP_focustreeevents.11.d
+    picture = GFX_report_event_poland_rejects
+
+    is_triggered_only = yes
+
+    option = { # As they should..
+        name = RP_focustreeevents.11.a
+
+        ai_chance = {
+            base = 5
+        }
+
+		every_state = {
+			limit = {
+				is_owned_by = FROM
+				OR = {
+					state = 88
+					state = 89
+					state = 91
+					state = 72
+				}
+			}
+			transfer_state_to = GER
+		}
+	}
+}
+
+country_event = { # Owner of galicia refuses
+    id = RP_focustreeevents.12
+    title = RP_focustreeevents.12.t
+    desc = RP_focustreeevents.12.d
+    picture = GFX_report_event_poland_rejects
+
+    is_triggered_only = yes
+
+    option = { # Wrong choice
+        name = RP_focustreeevents.12.a
+
+        ai_chance = {
+            base = 5
+        }
+		
+		create_wargoal = {
+			type = take_state
+			target = FROM
+			generator = { 88 89 91 }
+		}
+	}
+
+	option = { # We don't have time for this
+        name = RP_focustreeevents.12.b
+
+        ai_chance = {
+            base = 0
+        }
+
+	}
+}

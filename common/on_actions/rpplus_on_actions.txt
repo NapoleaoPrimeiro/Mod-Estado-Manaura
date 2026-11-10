@@ -1,0 +1,672 @@
+on_actions = {
+	# country
+	on_startup = {		
+		effect = {
+			GER = {
+				set_country_flag = GER_specialeventson
+				set_global_flag = RP_nofocus_imperial_puppets
+				set_global_flag = RP_GER_russiancivilwar_flag
+			}
+		}
+	}
+
+	on_weekly = {		
+		effect = {
+			if = {
+				limit = {
+					GER = {
+						has_country_leader = {
+							character = GER_wilhelm_iii
+							ruling_only = yes
+						}
+					}
+				}
+				KNP = {
+					retire_character = KNP_leader
+
+					create_country_leader = {
+						name = "Adalbert Ferdinand Berengar"
+						picture = GFX_portrait_KNP_prince_aldabert
+						expire = "1965.1.1"
+						ideology = despotism
+						traits = {
+						}
+					}
+				}
+			}
+		}
+	}
+
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					FROM.FROM = { state = 16 }
+					NOT = {
+						has_global_flag = RP_FRA_paris_falls
+					}
+				}
+				if = {
+					limit = {
+						FROM = {
+							tag = FRA
+						}
+						ROOT = {
+							OR = {
+								tag = GER
+								is_ally_with = GER
+							}
+							has_war_with = FRA
+						}
+					}
+					FRA = {
+						country_event = RP_parispeaceevents.1
+					}
+					set_global_flag = RP_FRA_paris_falls
+				}
+			}
+		}
+	}
+
+	on_government_change = {
+		effect = {
+			if = {
+				limit = {
+					FRA = {
+						has_government = communism
+					}
+					NOT = { has_global_flag = RP_FRA_colorchange_successful }
+				}
+				FRA = {
+					set_cosmetic_tag = RP_france_communist
+				}
+				if = {
+					limit = {
+						LEB = { is_subject_of = FRA }
+					}
+					LEB = {
+						set_cosmetic_tag = RP_lebanon_france_communist
+					}
+				}
+				if = {
+					limit = {
+						SYR = { is_subject_of = FRA }
+					}
+					SYR = {
+						set_cosmetic_tag = RP_syria_france_communist
+					}
+				}
+				set_global_flag = RP_FRA_colorchange_successful
+			}
+		}
+	}
+
+	on_weekly = {
+		effect = {
+			if = {
+				limit = {
+					GER = {
+						has_war_with = FRA
+						NOT = { has_country_flag = RP_GER_FRA_war }
+					}
+				}
+				set_country_flag = RP_GER_FRA_war
+
+				KCS = {
+					create_country_leader = {
+						name = "Berthold, Margrave of Baden"
+						picture = GFX_portrait_KCS_berthold_of_baden
+						expire = "1965.1.1"
+						ideology = despotism
+						traits = {
+						}
+					}
+
+					set_party_name = {
+						ideology = neutrality
+						name = KCS_neutrality_party_german
+					}
+				}
+			}
+		}
+	}
+
+	on_send_volunteers = {
+		effect = { 
+			if = {
+				limit = {
+					ROOT = {
+						tag = GER
+					}
+					FROM = {
+						tag = SPR
+					}
+					GER = {
+						has_completed_focus = RP_GER_operation_leopold
+					}
+				}
+				add_to_variable = {
+					var = RP_leopoldplot_militaryinfluence
+					value = 0.5
+				}
+				RP_leopoldplot_calculateaverage = yes
+			}
+		}
+	}
+	
+	on_weekly = {
+		effect = {
+			if = {
+				limit = {
+					GER = { has_country_flag = RP_leopoldplot_coupattempt }
+					country_exists = D01
+					KSP = {
+						NOT = {
+							has_war_with = D01
+						}
+					}
+				}
+				
+				KSP = {
+					declare_war_on = {
+						target = D01
+						type = annex_everything
+					}
+				}
+				
+				GER = {
+					declare_war_on = {
+						target = D01
+						type = annex_everything
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					GER = { has_country_flag = RP_leopoldplot_coupattempt }
+					country_exists = D02
+					KSP = {
+						NOT = {
+							has_war_with = D02
+						}
+					}
+				}
+				
+				KSP = {
+					declare_war_on = {
+						target = D02
+						type = annex_everything
+					}
+				}
+				
+				GER = {
+					declare_war_on = {
+						target = D02
+						type = annex_everything
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					GER = { has_country_flag = RP_leopoldplot_coupattempt }
+					country_exists = D03
+					KSP = {
+						NOT = {
+							has_war_with = D03
+						}
+					}
+				}
+				
+				KSP = {
+					declare_war_on = {
+						target = D03
+						type = annex_everything
+					}
+				}
+				
+				GER = {
+					declare_war_on = {
+						target = D03
+						type = annex_everything
+					}
+				}
+			}
+		}
+	}
+
+	on_weekly_GER = { # Influence Every Week
+		effect = {
+			if = {
+				limit = {
+					has_completed_focus = RP_GER_operation_leopold
+					NOT = { has_country_flag = RP_leopoldplot_greenlight }
+				}
+				if = {
+					limit = {
+						check_variable = {
+							var = RP_leopoldplot_averageinfluence
+							value = 0
+							compare = greater_than_or_equals
+						}
+						check_variable = {
+							var = RP_leopoldplot_averageinfluence
+							value = 50
+							compare = less_than_or_equals
+						}
+					}
+					set_temp_variable_to_random = {
+						var = RP_leopoldplot_weeklyrandomamount
+    					min = 0.25
+						max = 0.5
+					}
+					add_to_variable = {
+						var = RP_leopoldplot_crackdownchance
+						value = RP_leopoldplot_weeklyrandomamount
+					}
+				}
+
+				if = {
+					limit = {
+						check_variable = {
+							var = RP_leopoldplot_averageinfluence
+							value = 51
+							compare = greater_than_or_equals
+						}
+						check_variable = {
+							var = RP_leopoldplot_averageinfluence
+							value = 75
+							compare = less_than_or_equals
+						}
+					}
+					set_temp_variable_to_random = {
+						var = RP_leopoldplot_weeklyrandomamount
+    					min = 0.5
+						max = 1.25
+					}
+					add_to_variable = {
+						var = RP_leopoldplot_crackdownchance
+						value = RP_leopoldplot_weeklyrandomamount
+					}
+				}
+
+				if = {
+					limit = {
+						check_variable = {
+							var = RP_leopoldplot_averageinfluence
+							value = 76
+							compare = greater_than_or_equals
+						}
+						check_variable = {
+							var = RP_leopoldplot_averageinfluence
+							value = 90
+							compare = less_than_or_equals
+						}
+					}
+					set_temp_variable_to_random = {
+						var = RP_leopoldplot_weeklyrandomamount
+    					min = 1.25
+						max = 2
+					}
+					add_to_variable = {
+						var = RP_leopoldplot_crackdownchance
+						value = RP_leopoldplot_weeklyrandomamount
+					}
+				}
+
+				if = {
+					limit = {
+						check_variable = {
+							var = RP_leopoldplot_averageinfluence
+							value = 91
+							compare = greater_than_or_equals
+						}
+						check_variable = {
+							var = RP_leopoldplot_averageinfluence
+							value = 100
+							compare = less_than_or_equals
+						}
+					}
+					set_temp_variable_to_random = {
+						var = RP_leopoldplot_weeklyrandomamount
+    					min = 2
+						max = 3
+					}
+					add_to_variable = {
+						var = RP_leopoldplot_crackdownchance
+						value = RP_leopoldplot_weeklyrandomamount
+					}
+				}
+			}
+		}
+	}
+
+	on_monthly_GER = {
+		effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = RP_leopoldplot_coupattempt
+					}
+				}
+				random = {
+					chance = RP_leopoldplot_crackdownchance
+					country_event = RP_spanishcrackdownevents.1
+				}
+			}
+		}
+	}
+
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						tag = FRA
+					}
+					ROOT = {
+						tag = SFC
+					}
+					FROM.FROM = {
+						state = 459
+					}
+				}
+				FRA = {
+					white_peace = SFC
+				}
+				every_state = {
+					limit = {
+						is_owned_by = FRA
+						OR = {
+							state = 461
+							state = 462
+						}
+					}
+					transfer_state_to = SFC
+					add_core_of = SFC
+				}
+			}
+		}
+	}
+
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					ROOT = {
+						tag = SFC
+					}
+					FROM = {
+						tag = FRA
+						has_cosmetic_tag = RP_FRA_govnationaldefense
+					}
+				}
+				FRA = {
+					white_peace = SFC
+					annex_country = {
+						target = SFC
+						transfer_troops = no
+					}
+					release_autonomy = {
+						target = MOR
+						autonomy_state = autonomy_dominion
+						freedom_level = 0.45
+					}
+					MOR = {
+						set_cosmetic_tag = RP_MOR_frenchprotectorate
+					}
+					699 = {
+						transfer_state_to = MOR
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					ROOT = {
+						tag = VIN
+						has_cosmetic_tag = RP_VIN_indochinabreakaway
+					}
+					FROM = {
+						OR = {
+							tag = JAP
+							tag = SIA
+						}
+					}
+				}
+				VIN = {
+					white_peace = JAP
+					white_peace = SIA
+					drop_cosmetic_tag = yes
+				}
+				every_state = {
+					limit = {
+						is_owned_by = VIN
+						OR = {
+							state = 741
+							state = 670
+							state = 671
+							state = 1017
+							state = 1066
+							state = 1068
+							state = 286
+							state = 728
+						}
+					}
+					transfer_state_to = JAP
+				}
+				every_state = {
+					limit = {
+						is_owned_by = VIN
+						OR = {
+							state = 1067
+							state = 1069
+						}
+					}
+					transfer_state_to = SIA
+				}
+
+				every_state = {
+					limit = {
+						OR = {
+							state = 1066
+							state = 1017
+							state = 286
+							state = 671
+						}
+					}
+					add_core_of = VIN
+				}
+			}
+
+			#if = {
+			#	limit = {
+			#		ROOT = {
+			#			tag = LUX
+			#		}
+			#		FROM = {
+			#			NOT = { has_country_flag = RP_GER_capitulateluxembourg_minimumtimer }
+			#			has_completed_focus = GER_schlieffen_once_more_ww
+			#		}
+			#	}
+			#	GER = {
+			#		set_country_flag = {
+			#			flag = RP_GER_holdluxembourg_minimumtimer
+			#			days = 90
+			#			value = 1
+			#		}
+			#	}
+			#}
+
+			if = {
+				limit = {
+					has_global_flag = RP_congocivilwar
+					ROOT = {
+						OR = {
+							tag = BEL
+							tag = COG
+						}
+					}
+					FROM = {
+						OR = {
+							tag = BEL
+							tag = COG
+						}
+					}
+				}
+				FROM = {
+					annex_country = {
+						target = ROOT
+						transfer_troops = no
+					}
+					if = {
+						limit = {
+							tag = COG
+						}
+						set_cosmetic_tag = RP_COG_peoplesrepublic
+					}
+				}
+			}
+		}
+	}
+
+	on_weekly = {
+		effect = {
+			if = {
+				limit = {
+					GER = { 
+						has_country_flag = RP_leopoldplot_greenlight 
+						NOT = { has_country_flag = RP_GER_ceutacoup_triggered }
+					}
+					290 = {
+						owner = {
+							OR = {
+								original_tag = GER
+								is_subject_of = GER
+								is_in_faction_with = GER
+							}
+						}
+					}
+				}
+				GER = {
+					country_event = {
+						id = RP_spanishcoupevents.2
+						days = 30
+						random = 31
+					}
+					set_country_flag = RP_GER_ceutacoup_triggered
+				}
+			}
+
+			if = {
+				limit = {
+					GER = { 
+						has_country_flag = RP_leopoldplot_greenlight 
+						NOT = { has_country_flag = RP_GER_balearicseize_triggered }
+					}
+					177 = {
+						owner = {
+							OR = {
+								original_tag = GER
+								is_subject_of = GER
+								is_in_faction_with = GER
+							}
+						}
+					}
+				}
+				ITA = {
+					country_event = {
+						id = RP_spanishcoupevents.4
+						days = 30
+						random = 31
+					}
+				}
+				GER = { set_country_flag = RP_GER_balearicseize_triggered }
+			}
+		}
+	}
+
+	on_monthly_GER = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_global_flag = RP_yugoslavrestoration_onaction_triggered }
+					has_country_flag = RP_establish_serbia_decision
+					has_country_flag = RP_establish_illyria_decision
+					has_country_flag = RP_establish_bulgaria_decision
+					has_country_flag = RP_establish_albania_decision
+					has_country_flag = RP_macedoniaquestion
+					has_country_flag = RP_debarquestion
+					has_country_flag = RP_kosovoquestion
+					has_country_flag = RP_montenegroquestion
+					has_country_flag = RP_bosniaquestion
+					has_country_flag = RP_sloveniaquestion
+					has_country_flag = RP_istriaquestion
+					has_country_flag = RP_triestequestion
+					has_country_flag = RP_transfer_dalmatia_decision
+					has_country_flag = RP_transfer_zara_decision
+					has_country_flag = RP_southernepirusquestion
+				}
+				country_event = RP_yugoslavrestoration.1
+				set_global_flag = RP_yugoslavrestoration_onaction_triggered
+			}
+		}
+	}
+
+	#on_weekly_GER = {
+	#	effect = {
+	#		if = {
+	#			limit = {
+	#				NOT = { has_country_flag = RP_GER_holdluxembourg_minimumtimer }
+	#				has_country_flag = RP_GER_capitulateluxembourg_secretflag
+	#				controls_state = 8
+	#				NOT = { owns_state = 8 }
+	#			}
+	#			country_event = RP_miscevents.7
+	#		}
+	#	}
+	#}
+
+	on_weekly_FRA = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_country_flag = RP_frenchcollapse_fwarevolt_timer }
+					has_country_flag = RP_frenchcollapse_fwarevolt
+					OR = {
+						has_war_with = FCL
+						has_war_with = VOL
+						has_war_with = MLI
+						has_war_with = CAR
+					}
+				}
+				white_peace = FCL
+				white_peace = VOL
+				white_peace = MLI
+				white_peace = CAR
+				VOL = {
+					set_cosmetic_tag = RP_VOL_westafricansocialistrepublic
+					create_faction = "African Revolutionary Front"
+					add_to_faction = CAR
+					if = {
+						limit = {
+							COG = { has_cosmetic_tag = RP_COG_freefighters }
+							country_exists = CAR
+						}
+						add_to_faction = COG
+					}
+				}
+				CAR = {
+					set_cosmetic_tag = RP_CAR_centralafricansocialistunion
+				}
+				FRA = {
+					country_event = {
+						id = RP_frenchcollapse.19
+						days = 10
+					}
+				}
+			}
+		}
+	}
+}

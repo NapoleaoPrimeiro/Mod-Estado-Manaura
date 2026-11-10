@@ -1,0 +1,803 @@
+add_namespace = RP_KFR_focustreeevents
+
+country_event = { # Question of the New Regime
+    id = RP_KFR_focustreeevents.1
+    title = RP_KFR_focustreeevents.1.t
+    desc = RP_KFR_focustreeevents.1.d
+    picture = GFX_report_event_communists_cheer
+
+    is_triggered_only = yes
+
+    option = { # We should stick with full German alignment (Hohenzollern/Military Dictatorship)
+        name = RP_KFR_focustreeevents.1.a
+
+        ai_chance = {
+            base = 0
+
+            modifier = {
+				has_game_rule = { rule = KFR_ai_behavior option = KFR_HOHENZOLLERN }
+
+				add = 10
+			}
+
+            modifier = {
+				has_game_rule = { rule = KFR_ai_behavior option = KFR_DICTATORSHIP }
+
+				add = 10
+			}
+        }
+
+        custom_effect_tooltip = RP_KFR_focustreeevents.1a.effect_tt
+        set_country_flag = RP_KFR_newregime_germanalignment
+        set_country_flag = {
+            flag = RP_KFR_newregime_timer
+            days = 90    
+            value = 1   
+        }
+    }
+
+    option = { # We should aim for an independent kingdom (Bourbon)
+        name = RP_KFR_focustreeevents.1.b
+
+        ai_chance = {
+            base = 0
+
+            modifier = {
+				has_game_rule = { rule = KFR_ai_behavior option = KFR_BOURBON }
+
+				add = 10
+			}
+        }
+
+        custom_effect_tooltip = RP_KFR_focustreeevents.1b.effect_tt
+        set_country_flag = RP_KFR_newregime_independentkingdom
+        set_country_flag = {
+            flag = RP_KFR_newregime_timer
+            days = 120    
+            value = 1    
+        }
+    }
+
+    option = { # Perhaps we could go a different route? (Republic)
+        name = RP_KFR_focustreeevents.1.c
+
+        ai_chance = {
+            base = 0
+
+            modifier = {
+				has_game_rule = { rule = KFR_ai_behavior option = KFR_REPUBLIC }
+
+				add = 10
+			}
+        }
+
+        custom_effect_tooltip = RP_KFR_focustreeevents.1c.effect_tt
+        set_country_flag = RP_KFR_newregime_frenchrepublic
+        set_country_flag = {
+            flag = RP_KFR_newregime_timer
+            days = 180    
+            value = 1
+        }
+    }
+}
+
+country_event = { # KFR requests democratic government
+    id = RP_KFR_focustreeevents.2
+    title = RP_KFR_focustreeevents.2.t
+    desc = RP_KFR_focustreeevents.2.d
+    picture = GFX_report_event_german_parade_paris
+
+    is_triggered_only = yes
+
+    option = { # It's such an insane idea, it might work!
+        name = RP_KFR_focustreeevents.2.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        KFR = {
+            country_event = {
+                id = RP_KFR_focustreeevents.3
+                hours = 12
+            }
+        }
+    }
+
+    option = { # No! That is insane! 
+        name = RP_KFR_focustreeevents.2.b
+
+        ai_chance = {
+            base = 0
+        }
+
+        KFR = {
+            country_event = {
+                id = RP_KFR_focustreeevents.4
+                hours = 12
+            }
+        }
+    }
+}
+
+country_event = { # Germany accepts democratic government
+    id = RP_KFR_focustreeevents.3
+    title = RP_KFR_focustreeevents.3.t
+    desc = RP_KFR_focustreeevents.3.d
+    picture = GFX_report_event_german_parade_paris
+
+    is_triggered_only = yes
+
+    option = { # Perfect!
+        name = RP_KFR_focustreeevents.3.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        GER = {
+            set_autonomy = { target = KFR autonomous_state = autonomy_RP_kaiserreich_puppet }
+        }
+
+        set_cosmetic_tag = RP_KFR_frenchrepublic
+        set_party_name = {
+            ideology = democratic
+            name = KFR_frenchrepublic_neutrality_party
+        }
+        set_politics = {
+            ruling_party = democratic
+            elections_allowed = yes
+            last_election = "1935.12.17"
+            election_frequency = 48
+        }
+        add_popularity = {
+            ideology = democratic
+            popularity = 0.25
+        }
+        add_popularity = {
+            ideology = communism
+            popularity = 0.05
+        }
+    }
+}
+
+country_event = { # Germany refuses democratic government
+    id = RP_KFR_focustreeevents.4
+    title = RP_KFR_focustreeevents.4.t
+    desc = RP_KFR_focustreeevents.4.d
+    picture = GFX_report_event_german_troops
+
+    is_triggered_only = yes
+
+    option = { # Shame..
+        name = RP_KFR_focustreeevents.4.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        set_country_flag = RP_KFR_democracyblocked
+
+        uncomplete_national_focus = {
+            focus = RP_KFR_frenchrepublic
+            uncomplete_children = yes
+            refund_political_power = no
+        }
+    }
+}
+
+country_event = { # Germany refuses democratic government
+    id = RP_KFR_focustreeevents.5
+    title = RP_KFR_focustreeevents.5.t
+    desc = RP_KFR_focustreeevents.5.d
+    picture = GFX_report_event_generic_communist_congress
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_KFR_focustreeevents.5.a
+
+        ai_chance = {
+            base = 0
+        }
+
+        add_stability = 0.1
+        add_popularity = {
+            ideology = democratic
+            popularity = 0.15
+        }
+        add_popularity = {
+            ideology = communism
+            popularity = 0.20
+        }
+        add_opinion_modifier = {
+            target = GER
+            modifier = RP_KFR_negative_coalitionproblem
+        }
+    }
+
+    option = { # No
+        name = RP_KFR_focustreeevents.5.b
+
+        add_stability = -0.15
+        add_popularity = {
+            ideology = democratic
+            popularity = -0.15
+        }
+        add_popularity = {
+            ideology = communism
+            popularity = -1.00
+        }
+        add_opinion_modifier = {
+            target = GER
+            modifier = RP_KFR_positive_coalitionproblem
+        }
+    }
+}
+
+country_event = { # KFR requests control over Brittany
+    id = RP_KFR_focustreeevents.6
+    title = RP_KFR_focustreeevents.6.t
+    desc = RP_KFR_focustreeevents.6.d
+    picture = GFX_report_event_soldiers_in_france
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_KFR_focustreeevents.6.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        KFR = {
+            country_event = RP_KFR_focustreeevents.7
+        }
+    }
+
+    option = { # No
+        name = RP_KFR_focustreeevents.6.b
+        
+        ai_chance = {
+            base = 0
+        }
+
+        KFR = {
+            country_event = RP_KFR_focustreeevents.8
+        }
+    }
+}
+
+country_event = { # Germany accepts handing over Brittany
+    id = RP_KFR_focustreeevents.7
+    title = RP_KFR_focustreeevents.7.t
+    desc = RP_KFR_focustreeevents.7.d
+    picture = GFX_report_event_soldiers_in_france
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_KFR_focustreeevents.7.a
+
+        ai_chance = {
+            base = 0
+        }
+
+        annex_country = {
+            target = KBI
+            transfer_troops = yes
+        }
+    }
+}
+
+country_event = { # Germany refuses handing over Brittany
+    id = RP_KFR_focustreeevents.8
+    title = RP_KFR_focustreeevents.8.t
+    desc = RP_KFR_focustreeevents.8.d
+    picture = GFX_report_event_soldiers_in_france
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_KFR_focustreeevents.8.a
+
+        ai_chance = {
+            base = 0
+        }
+    }
+}
+
+country_event = { # KFR requests hohenzollern king
+    id = RP_KFR_focustreeevents.9
+    title = RP_KFR_focustreeevents.9.t
+    desc = RP_KFR_focustreeevents.9.d
+    picture = GFX_report_event_german_parade_paris
+
+    is_triggered_only = yes
+
+    option = { # What a great idea!
+        name = RP_KFR_focustreeevents.9.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        KFR = {
+            country_event = {
+                id = RP_KFR_focustreeevents.10
+                hours = 12
+            }
+        }
+    }
+
+    option = { # No, it is too risky
+        name = RP_KFR_focustreeevents.9.b
+
+        ai_chance = {
+            base = 0
+        }
+
+        KFR = {
+            country_event = {
+                id = RP_KFR_focustreeevents.11
+                hours = 12
+            }
+        }
+    }
+}
+
+country_event = { # Germany accepts hohenzollern government
+    id = RP_KFR_focustreeevents.10
+    title = RP_KFR_focustreeevents.10.t
+    desc = RP_KFR_focustreeevents.10.d
+    picture = GFX_report_event_german_parade_paris
+
+    is_triggered_only = yes
+
+    option = { # Perfect!
+        name = RP_KFR_focustreeevents.10.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        GER = {
+            set_autonomy = { target = KFR autonomous_state = autonomy_RP_kaiserreich_puppet }
+        }
+
+        create_country_leader = {
+            name = "Eitel Friedrich"
+            picture = GFX_portrait_PRE_eitel_friedrich
+            expire = "1965.1.1"
+            ideology = despotism
+            traits = {
+            }
+        }
+
+        set_cosmetic_tag = RP_KFR_hohenzollernkingcosmetictag
+        set_party_name = {
+            ideology = neutrality
+            name = KFR_hohenzollernking_neutrality_party
+        }
+    }
+}
+
+country_event = { # Germany refuses hohenzollern government
+    id = RP_KFR_focustreeevents.11
+    title = RP_KFR_focustreeevents.11.t
+    desc = RP_KFR_focustreeevents.11.d
+    picture = GFX_report_event_german_troops
+
+    is_triggered_only = yes
+
+    option = { # Shame..
+        name = RP_KFR_focustreeevents.11.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        set_country_flag = RP_KFR_hohenzollernblocked
+
+        uncomplete_national_focus = {
+            focus = RP_KFR_hohenzollernking
+            uncomplete_children = yes
+            refund_political_power = no
+        }
+    }
+}
+
+country_event = { # A New Capital?
+    id = RP_KFR_focustreeevents.12
+    title = RP_KFR_focustreeevents.12.t
+    desc = RP_KFR_focustreeevents.12.d
+    picture = GFX_report_event_german_troops
+
+    is_triggered_only = yes
+
+    option = { # Yes
+        name = RP_KFR_focustreeevents.12.a
+
+        ai_chance = {
+            base = 5
+        }
+        
+        add_stability = -0.15
+    }
+
+    option = { # Yes
+        name = RP_KFR_focustreeevents.12.b
+
+        ai_chance = {
+            base = 5
+        }
+
+        add_victory_points = {
+            province = 9523
+            value = 35
+        }
+
+        add_victory_points = {
+            province = 11506
+            value = -20
+        }
+
+        add_political_power = -150
+        add_stability = 0.10
+    }
+}
+
+country_event = { # Deportations Continue
+    id = RP_KFR_focustreeevents.13
+    title = RP_KFR_focustreeevents.13.t
+    desc = RP_KFR_focustreeevents.13.d
+    picture = GFX_report_event_german_troops
+
+    is_triggered_only = yes
+
+    option = { # Keep going
+        name = RP_KFR_focustreeevents.13.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        every_state = {
+            limit = {
+                is_owned_by = KFR
+                OR = {
+                    state = 17
+                    state = 18
+                    state = 785
+                    state = 29
+                    state = 980
+                    state = 34
+                    state = 6
+                    state = 977
+                    state = 35
+                    state = 36
+                    state = 7
+                }
+            }
+            add_manpower = -10000
+            every_state = {
+                limit = {
+                    is_owned_by = KFR
+                    OR = {
+                        state = 15
+                        state = 16
+                        state = 17
+                        state = 24
+                        state = 30
+                    }
+                }
+                add_manpower = 2000
+            }
+        }
+
+        add_stability = -0.05
+        hidden_effect = {
+            country_event = {
+                id = RP_KFR_focustreeevents.13
+                days = 60
+            }
+            country_event = {
+                id = RP_KFR_focustreeevents.14
+                days = 30
+            }
+        }
+    }
+
+    option = { # End it
+        name = RP_KFR_focustreeevents.13.b
+
+        ai_chance = {
+            base = 5
+        }
+
+        add_stability = -0.15
+
+        every_state = {
+            limit = {
+                is_owned_by = KFR
+                OR = {
+                    state = 17
+                    state = 18
+                    state = 785
+                    state = 29
+                    state = 980
+                    state = 34
+                    state = 6
+                    state = 977
+                    state = 35
+                    state = 36
+                    state = 7
+                }
+            }
+            add_manpower = -10000
+            every_state = {
+                limit = {
+                    is_owned_by = KFR
+                    OR = {
+                        state = 15
+                        state = 16
+                        state = 17
+                        state = 24
+                        state = 30
+                    }
+                }
+                add_manpower = 2000
+            }
+        }
+
+        add_stability = -0.05
+
+        hidden_effect = {
+            country_event = {
+                id = RP_KFR_focustreeevents.14
+                days = 30
+            }
+        }
+    }
+}
+
+country_event = { # Germans arrive
+    id = RP_KFR_focustreeevents.14
+    title = RP_KFR_focustreeevents.14.t
+    desc = RP_KFR_focustreeevents.14.d
+    picture = GFX_report_event_german_troops
+
+    is_triggered_only = yes
+
+    option = { # Cool
+        name = RP_KFR_focustreeevents.14.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        every_state = {
+            limit = {
+                is_owned_by = GER
+                OR = {
+                    state = 978
+                    state = 28
+                    state = 8
+                    state = 42
+                    state = 51
+                }
+            }
+            add_manpower = -2000
+            every_state = {
+                limit = {
+                    is_owned_by = KFR
+                    OR = {
+                        state = 17
+                        state = 18
+                        state = 785
+                        state = 29
+                        state = 980
+                        state = 34
+                        state = 6
+                        state = 977
+                        state = 35
+                        state = 36
+                        state = 7
+                    }
+                }
+                add_manpower = 181
+            }
+        }
+    }
+}
+
+country_event = { # Fate of the Military Council
+    id = RP_KFR_focustreeevents.15
+    title = RP_KFR_focustreeevents.15.t
+    desc = RP_KFR_focustreeevents.15.d
+    picture = GFX_report_event_german_troops
+
+    is_triggered_only = yes
+
+    option = { # Keep it
+        name = RP_KFR_focustreeevents.15.a
+
+        ai_chance = {
+            base = 5
+        }
+    }
+
+    option = { # Install Walther Luttwitz
+        name = RP_KFR_focustreeevents.15.b
+
+        ai_chance = {
+            base = 5
+        }
+
+        add_ideas = {
+            RP_KFR_centralizedcontrol
+        }
+
+        create_country_leader = {
+            name = "Walther Luttwitz"
+            picture = GFX_portrait_KFR_walther_luttwitz
+            expire = "1965.1.1"
+            ideology = despotism
+            traits = {
+            }
+        }
+    }
+}
+
+country_event = { # Military France launches an invasion into GND
+    id = RP_KFR_focustreeevents.16
+    title = RP_KFR_focustreeevents.16.t
+    desc = RP_KFR_focustreeevents.16.d
+    picture = GFX_report_event_german_troops
+
+    is_triggered_only = yes
+
+    option = { # This must stop!
+        name = RP_KFR_focustreeevents.16.a
+
+        ai_chance = {
+            base = 0
+        }
+
+        KFR = {
+            white_peace = FRA
+        }
+    }
+
+    option = { # Sure, but we aren't gonna directly intervene
+        name = RP_KFR_focustreeevents.16.b
+
+        ai_chance = {
+            base = 5
+        }
+
+        KFR = {
+            add_ideas = RP_KFR_limitedgermansupport
+        }
+
+        add_ai_strategy = {
+            type = dont_join_wars_with
+            id = KFR
+            value = 100
+            target_country = FRA
+        }
+    }
+
+    option = { # Only a full-scale intervention will work
+        name = RP_KFR_focustreeevents.16.c
+
+        ai_chance = {
+            base = 0
+        }
+
+        declare_war_on = {
+            target = FRA
+            type = topple_government
+        }
+    }
+}
+
+country_event = { # KFR requests bourbon king
+    id = RP_KFR_focustreeevents.17
+    title = RP_KFR_focustreeevents.17.t
+    desc = RP_KFR_focustreeevents.17.d
+    picture = GFX_report_event_german_parade_paris
+
+    is_triggered_only = yes
+
+    option = { # What a great idea!
+        name = RP_KFR_focustreeevents.17.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        KFR = {
+            country_event = {
+                id = RP_KFR_focustreeevents.18
+                hours = 12
+            }
+        }
+    }
+
+    option = { # No, are they insane?
+        name = RP_KFR_focustreeevents.17.b
+
+        ai_chance = {
+            base = 0
+        }
+
+        KFR = {
+            country_event = {
+                id = RP_KFR_focustreeevents.19
+                hours = 12
+            }
+        }
+    }
+}
+
+country_event = { # Germany accepts bourbon government
+    id = RP_KFR_focustreeevents.18
+    title = RP_KFR_focustreeevents.18.t
+    desc = RP_KFR_focustreeevents.18.d
+    picture = GFX_report_event_german_parade_paris
+
+    is_triggered_only = yes
+
+    option = { # Perfect!
+        name = RP_KFR_focustreeevents.18.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        GER = {
+            set_autonomy = { target = KFR autonomous_state = autonomy_RP_kaiserreich_puppet }
+        }
+
+        create_country_leader = {
+            name = "Infante Jaime"
+            picture = GFX_portrait_KFR_infante_jaime
+            expire = "1965.1.1"
+            ideology = despotism
+            traits = {
+            }
+        }
+
+        set_cosmetic_tag = RP_KFR_bourbonkingcosmetictag
+        set_party_name = {
+            ideology = neutrality
+            name = KFR_bourbonking_neutrality_party
+        }
+    }
+}
+
+country_event = { # Germany refuses hohenzollern government
+    id = RP_KFR_focustreeevents.19
+    title = RP_KFR_focustreeevents.19.t
+    desc = RP_KFR_focustreeevents.19.d
+    picture = GFX_report_event_german_troops
+
+    is_triggered_only = yes
+
+    option = { # Shame..
+        name = RP_KFR_focustreeevents.19.a
+
+        ai_chance = {
+            base = 5
+        }
+
+        set_country_flag = RP_KFR_bourbonblocked
+
+        uncomplete_national_focus = {
+            focus = RP_KFR_returnofthebourbons
+            uncomplete_children = yes
+            refund_political_power = no
+        }
+    }
+}

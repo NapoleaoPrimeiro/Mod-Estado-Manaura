@@ -1,0 +1,33 @@
+# Manaura: compensa o excesso de reducao de tempo de treino para o total nunca passar de -95%.
+on_actions = {
+	on_daily = {
+		effect = {
+			every_country = {
+				# soma de todos os bonus de treino, sem contar a propria correcao
+				set_temp_variable = { manaura_train_total = modifier@training_time_factor }
+				add_to_temp_variable = { manaura_train_total = modifier@training_time_army_factor }
+				subtract_from_temp_variable = { manaura_train_total = manaura_training_cap_val }
+
+				# correcao = quanto passou de -95% (0 se nao passou)
+				set_temp_variable = { manaura_train_fix = -0.95 }
+				subtract_from_temp_variable = { manaura_train_fix = manaura_train_total }
+				clamp_temp_variable = { var = manaura_train_fix min = 0 }
+
+				if = {
+					limit = { check_variable = { manaura_train_fix > 0 } }
+					set_variable = { manaura_training_cap_val = manaura_train_fix }
+					if = {
+						limit = { NOT = { has_dynamic_modifier = { modifier = manaura_training_cap } } }
+						add_dynamic_modifier = { modifier = manaura_training_cap }
+					}
+					force_update_dynamic_modifier = yes
+				}
+				else_if = {
+					limit = { has_dynamic_modifier = { modifier = manaura_training_cap } }
+					remove_dynamic_modifier = { modifier = manaura_training_cap }
+					set_variable = { manaura_training_cap_val = 0 }
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,225 @@
+ideas = {
+	country = {
+		KFR_office_nationalrevitalization = {
+			picture = ARG_public_works_investment
+
+			modifier = {
+				industry_repair_factor = 0.25
+				consumer_goods_factor = 0.10
+			}
+		}
+
+		KFR_benefitsofmitteleuropa_i = {
+			picture = GER_german_trade
+
+			modifier = {
+				production_speed_infrastructure_factor = 0.15
+				production_speed_industrial_complex_factor = 0.10
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		KFR_benefitsofmitteleuropa_ii = {
+			picture = GER_german_trade
+
+			modifier = {
+				production_speed_infrastructure_factor = 0.25
+				production_speed_industrial_complex_factor = 0.10
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		KFR_benefitsofmitteleuropa_iii = {
+			picture = MAN_five_year_plan_industry
+
+			modifier = {
+				production_speed_infrastructure_factor = 0.35
+				production_speed_industrial_complex_factor = 0.20
+				consumer_goods_factor = -0.30
+			}
+		}
+
+		RP_KFR_hongkongofthewest_idea = {
+			picture = RAJ_special_economic_zones
+
+			modifier = {
+				production_speed_naval_base_factor = 0.10
+				production_speed_rail_way_factor = 0.20
+				production_speed_infrastructure_factor = 0.15
+				production_speed_industrial_complex_factor = 0.5
+				consumer_goods_factor = 0.15
+			}
+		}
+
+		KFR_exploitationofthesteelmills = {
+			picture = PRC_jianguo_ironwork_cooperative
+
+			modifier = {
+				stability_factor = -0.1
+				consumer_goods_factor = -0.25
+			}
+		}
+
+		KFR_ludendorfplan = {
+			picture = SOV_third_five_year_plan_military
+
+			modifier = {
+				production_speed_arms_factory_factor = 0.10
+				production_speed_rail_way_factor = 0.05
+				production_speed_supply_node_factor = 0.15
+				industrial_capacity_factory = 0.1
+				consumer_goods_factor = 0.25
+			}
+		}
+
+		KFR_ludendorfplan_ii = {
+			picture = SOV_third_five_year_plan_military
+
+			modifier = {
+				production_speed_arms_factory_factor = 0.10
+				production_speed_rail_way_factor = 0.05
+				production_speed_supply_node_factor = 0.15
+				industrial_capacity_factory = 0.1
+				training_time_factor = -0.2
+				recruitable_population_factor = 0.02
+				consumer_goods_factor = 0.25
+			}
+		}
+
+		KFR_defenseofthechannel = {
+			picture = generic_navy_submarines
+
+			modifier = {
+				sub_retreat_speed = 0.3
+				navy_submarine_attack_factor = 0.15
+				navy_submarine_defence_factor = 0.10
+				spotting_chance = 0.25
+				coastal_bunker_effectiveness_factor = 0.2
+			}
+		}
+
+		KFR_defenseofthesouthernborder = {
+			picture = generic_fortify_the_borders
+
+			modifier = {
+				production_speed_coastal_bunker_factor = 0.3
+				production_speed_bunker_factor = 0.3
+			}
+		}
+
+		KFR_gloryofprussia = {
+			picture = GER_fan_prussian_militarism
+
+			modifier = {
+				army_infantry_attack_factor = 0.15
+				army_infantry_defence_factor = 0.15
+				army_org_factor = 0.1
+			}
+		}
+
+		KFR_returningexiles = {
+			picture = FRA_undividable
+
+			modifier = {
+				democratic_drift = 0.02
+				monthly_population = 0.05
+				stability_weekly_factor = 0.05
+			}
+		}
+
+		KFR_deportingopposition = {
+			picture = generic_democratic_opposition
+
+			modifier = {
+				stability_factor = -0.2
+				stability_weekly_factor = 0.0005
+				neutrality_drift = 0.05
+			}
+		}
+
+		KFR_thenewbeginning = {
+			picture = GER_fan_prussian_militarism
+
+			modifier = {
+				stability_factor = 0.15
+				political_power_factor = 0.05
+				neutrality_drift = 0.1 
+			}
+		}
+
+		RP_KFR_centralizedcontrol = {
+			picture = CHI_army_corruption2
+
+			modifier = {
+				stability_factor = 0.05
+				political_power_factor = 0.15
+				neutrality_drift = 0.05
+			}
+		}
+
+		RP_KFR_closertogermany_idea = {
+			picture = CHI_army_corruption2
+
+			modifier = {
+				stability_factor = -0.05
+				neutrality_drift = 0.02
+				consumer_goods_factor = -0.1
+			}
+		}
+
+		RP_KFR_secondreignofterror = {
+			picture = FRA_political_violence
+
+			modifier = {
+				stability_factor = -0.35
+				neutrality_drift = 0.05
+				consumer_goods_factor = -0.2
+				political_power_factor = 0.15
+				monthly_population = -0.005
+			}
+		}
+
+		RP_KFR_secretpreparations = {
+			picture = MEX_politicised_army_2
+
+			modifier = {
+				consumer_goods_factor = 0.15
+				political_power_factor = -0.05
+				production_speed_arms_factory_factor = 0.25
+				industrial_capacity_factory = 0.15
+			}
+		}
+
+		RP_KFR_operationanton = {
+			picture = RAJ_private_military_complex
+
+			modifier = {
+				stability_factor = -0.1
+				army_attack_factor = 0.15
+				army_defence_factor = 0.15
+				army_speed_factor = 0.1
+			}
+		}
+
+		RP_KFR_limitedgermansupport = {
+			picture = GER_army
+
+			modifier = {
+				training_time_factor = -0.05
+				army_org_factor = 0.15
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+			}
+		}
+
+		RP_KFR_revivalofthebourbons = {
+			picture = BEL_the_kings_surrender
+
+			modifier = {
+				stability_weekly_factor = 0.05
+				neutrality_drift = 0.02
+				political_power_factor = 0.15
+			}
+		}
+	}
+}

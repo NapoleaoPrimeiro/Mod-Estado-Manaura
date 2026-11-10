@@ -1,0 +1,63 @@
+#category = short_term medium_term or long_term
+# ROOT is faction leader, FROM is faction member who opens UI and views goals, completed/cancel/complete_effect do not have FROM scopes
+
+RP_faction_goal_restore_brestlitovsk = {
+	name = restore_brestlitovsk_factiongoal_name
+	description = restore_brestlitovsk_factiongoal_desc
+	category = medium_term
+	group = FOCUS_FILTER_WAR_SUPPORT
+	visible = {
+		FROM = { original_tag = GER }
+	}
+	completed = {
+		country_exists = KUK
+		country_exists = KWR
+		country_exists = KLI
+		country_exists = KLV
+		country_exists = KFI
+		OR = {
+			country_exists = KCS
+			KLI = {
+				owns_state = 809
+			}
+			KLV = {
+				owns_state = 809
+			}
+		}
+		OR = {
+			country_exists = KRI
+			KUK = {
+				owns_state = 137
+			}
+			KKA = {
+				owns_state = 137
+			}
+		}
+	}
+	complete_effect = {
+		add_faction_power_projection = 100
+		every_faction_member = {
+			limit = {
+				original_tag = GER
+			}
+			add_faction_initiative = 1
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		every_faction_member = { 
+			tooltip = INFLUENCE_ABOVE_30_PERCENT
+			visible_when_empty = yes
+			limit = {
+				faction_influence_ratio > 0.3
+			}
+			add_war_support = 0.15
+			add_political_power = 100
+		}
+	}
+	ai_will_do = {
+		base = 1
+		modifier = {
+			add = 9
+			is_historical_focus_on = yes
+		}
+	}
+}

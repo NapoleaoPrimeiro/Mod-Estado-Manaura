@@ -1,0 +1,174 @@
+guiTypes = {
+	containerWindowType = {
+		name = "RP_GER_balkansweeplist_mainwindow"
+		size = { width = 500 height = 450 }
+		Orientation = upper_left
+		moveable = no
+		position = { x = 0 y = 0 }
+
+		containerWindowType = {
+			name = "RP_GER_participantslist_gridcontainerwindow"
+			size = { width = 250 height = 300 }
+			Orientation = upper_left
+			moveable = no
+			position = { x = 0 y = 0 }
+			verticalScrollbar = "right_vertical_slider_intel"
+			scroll_wheel_factor = 40
+			smooth_scrolling = yes
+			autohide_scrollbars = no
+
+			background = {
+				name = "Background"
+				quadTextureSprite = "GFX_tiled_window2_1b_border"
+			}
+
+			gridBoxType = {
+				name = "RP_GER_participants_gridbox"
+				position = { x = 0 y = 0}
+				size = { width = 100%% height = 100%% }
+				Orientation = upper_left
+				slotsize = {width=400 height=50 }
+				format = "UPPER_LEFT"
+				max_slots_horizontal = 1
+			}
+
+			instantTextBoxType = {
+				name = "RP_GER_participants_textbox_title"
+				position = { x = 20 y = 15 }
+				maxWidth = 250
+				maxHeight = 10
+				Orientation = upper_left
+				font = "hoi_16mbs"
+				text = "Participants:"
+			}
+		}
+
+		containerWindowType = {
+			name = "RP_GER_targetslist_gridcontainerwindow"
+			size = { width = 250 height = 300 }
+			Orientation = upper_left
+			moveable = no
+			position = { x = 250 y = 0 }
+			verticalScrollbar = "right_vertical_slider_intel"
+			scroll_wheel_factor = 40
+			smooth_scrolling = yes
+			autohide_scrollbars = no
+
+			background = {
+				name = "Background"
+				quadTextureSprite = "GFX_tiled_window2_1b_border"
+			}
+
+			gridBoxType = {
+				name = "RP_GER_targets_gridbox"
+				position = { x = 0 y = 0}
+				size = { width = 100%% height = 100%% }
+				Orientation = upper_left
+				slotsize = {width=400 height=50 }
+				format = "UPPER_LEFT"
+				max_slots_horizontal = 1
+			}
+
+			instantTextBoxType = {
+				name = "RP_GER_targets_textbox_title"
+				position = { x = 20 y = 15 }
+				maxWidth = 250
+				maxHeight = 10
+				Orientation = upper_left
+				font = "hoi_16mbs"
+				text = "Targets:"
+			}
+		}
+
+		containerWindowType = {
+			name = "RP_GER_noncombatantlist_gridcontainerwindow"
+			size = { width = 500 height = 150 }
+			Orientation = upper_left
+			moveable = no
+			position = { x = 0 y = 300 }
+			verticalScrollbar = "right_vertical_slider_intel"
+			scroll_wheel_factor = 40
+			smooth_scrolling = yes
+			autohide_scrollbars = no
+
+			background = {
+				name = "Background"
+				quadTextureSprite = "GFX_tiled_window2_1b_border"
+			}
+
+			gridBoxType = {
+				name = "RP_GER_noncombatants_gridbox"
+				position = { x = 0 y = 0}
+				size = { width = 100%% height = 100%% }
+				Orientation = upper_left
+				slotsize = {width=200 height=50 }
+				format = "UPPER_LEFT"
+				max_slots_horizontal = 2
+			}
+
+			instantTextBoxType = {
+				name = "RP_GER_noncombatants_textbox_title"
+				position = { x = 185 y = 15 }
+				maxWidth = 250
+				maxHeight = 10
+				Orientation = upper_left
+				font = "hoi_16mbs"
+				text = "Non-Combatants:"
+			}
+		}
+	}
+
+	containerWindowType = {
+		name = "RP_GER_participantslist_entrywindow"
+		size = { width = 250 height = 50 }
+		Orientation = upper_left
+		moveable = no
+		position = { x = 0 y = 50 }
+		
+		instantTextBoxType = {
+			name = "RP_GER_participants_textbox_arraytext"
+			position = { x = 20 y = 5}
+			maxWidth = 205
+			maxHeight = 10
+			Orientation = upper_left
+			font = "hoi_16mbs"
+			text = "     [?v.GetFlag] [?v.GetNameDefCap]"
+		}
+	}
+
+	containerWindowType = {
+		name = "RP_GER_targetslist_entrywindow"
+		size = { width = 250 height = 50 }
+		Orientation = upper_left
+		moveable = no
+		position = { x = 0 y = 50 }
+		
+		instantTextBoxType = {
+			name = "RP_GER_targets_textbox_arraytext"
+			position = { x = 20 y = 5}
+			maxWidth = 205
+			maxHeight = 10
+			Orientation = upper_left
+			font = "hoi_16mbs"
+			text = "     [?v.GetFlag] [?v.GetNameDefCap]"
+		}
+	}
+
+	containerWindowType = {
+		name = "RP_GER_noncombatantslist_entrywindow"
+		size = { width = 250 height = 50 }
+		Orientation = upper_left
+		moveable = no
+		position = { x = 0 y = 50 }
+		
+		instantTextBoxType = {
+			name = "RP_GER_noncombatants_textbox_arraytext"
+			position = { x = 20 y = 5}
+			maxWidth = 200
+			maxHeight = 10
+			Orientation = upper_left
+			font = "hoi_16mbs"
+			text = "     [?v.GetFlag] [?v.GetNameDefCap]"
+		}
+	}
+}

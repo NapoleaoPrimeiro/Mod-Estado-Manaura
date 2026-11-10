@@ -1,0 +1,553 @@
+ideas = {
+
+	country = {
+
+		RP_returnofformerofficials = {
+			picture = generic_disjointed_gov
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.05
+				stability_weekly_factor = 0.00025
+				political_power_factor = 0.25
+			}
+		}
+
+		RP_loyalistadvisors = {
+			picture = generic_disjointed_gov
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.05
+				political_power_factor = 0.1
+				surrender_limit = 0.15
+				neutrality_drift = 0.02
+			}
+		}
+
+		RP_ecip = {
+			picture = generic_morale_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_weekly_factor = 0.0005
+				consumer_goods_factor = 0.25
+				political_power_factor = 0.05
+			}
+		}
+
+		RP_statepolice = {
+			picture = generic_secret_police
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_weekly_factor = 0.00025
+				neutrality_drift = 0.05
+			}
+		}
+
+		RP_crushdefeatists = {
+			picture = EST_democratic_opposition
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				surrender_limit = -0.3
+				stability_factor = -0.15
+				stability_weekly_factor = 0.005
+			}
+		}
+
+		RP_crushorganizedresistance = {
+			picture = chi_war_of_resistance
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_weekly_factor = 0.02
+				neutrality_drift = 0.05
+			}
+		}
+
+		RP_nongovernmentalfunding = {
+			picture = NOR_printing_money
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_weekly_factor = 0.01
+				consumer_goods_factor = 0.15
+			}
+		}
+
+		RP_deutchesheer_i = {
+			picture = GER_german_military
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				experience_gain_army_factor = 0.1
+				experience_gain_army = 0.2
+			}
+		}
+
+		RP_deutchesheer_ii = {
+			picture = GER_german_military
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				experience_gain_army_factor = 0.1
+				experience_gain_army = 0.2
+				training_time_factor = 0.15
+			}
+		}
+
+		RP_deutchesheer_iii = {
+			picture = GER_german_military
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				experience_gain_army_factor = 0.1
+				experience_gain_army = 0.25
+				command_power_gain_mult = 0.05
+				training_time_factor = 0.15
+				surrender_limit = 0.1
+				political_power_factor = -0.05
+			}
+		}
+
+		RP_autonomousmilitary = {
+			picture = generic_manpower_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				experience_gain_army_factor = 0.15
+				experience_gain_army = 0.2
+				training_time_factor = 0.15
+				surrender_limit = 0.05
+				command_power_gain_mult = 0.1
+			}
+		}
+
+		RP_forcedconscription = {
+			picture = chi_forced_conscription
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.15
+				war_support_factor = -0.25
+				conscription_factor = 0.15
+				non_core_manpower = 0.02
+			}
+		}
+
+		RP_voluntaryenlistment = {
+			picture = chi_forced_conscription
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				war_support_factor = 0.05
+				conscription_factor = 0.05
+				non_core_manpower = 0.01
+				army_infantry_attack_factor = 0.05
+				army_infantry_defence_factor = 0.05
+				experience_gain_army_factor = 0.05
+			}
+		}
+
+		RP_defenseindustry = {
+			picture = generic_improved_industries
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.15
+				production_speed_arms_factory_factor = 0.15
+				production_speed_infrastructure_factor = 0.05
+			}
+		}
+
+		RP_prisoner_labor = {
+			picture = generic_prisoner
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+			}
+		}
+
+		RP_improvedworkerefficiency = {
+			picture = ger_rebuild_the_nation
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.1
+				industrial_capacity_factory = 0.15
+				industrial_capacity_dockyard = 0.1
+				production_factory_max_efficiency_factor = 0.25
+				production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+
+		RP_mitteleuropa_i = {
+			picture = RAJ_special_economic_zones
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.15
+				production_speed_buildings_factor = 0.1
+			}
+		}
+
+		RP_mitteleuropa_ii = {
+			picture = RAJ_special_economic_zones
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.20
+				production_speed_buildings_factor = 0.1
+			}
+		}
+
+		RP_mitteleuropa_iii = {
+			picture = RAJ_special_economic_zones
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.20
+				production_speed_buildings_factor = 0.1
+				local_resources_factor = 0.15
+			}
+		}
+
+		RP_mitteleuropa_iv = {
+			picture = RAJ_special_economic_zones
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.15
+				production_speed_buildings_factor = 0.1
+				local_resources_factor = 0.10
+				neutrality_drift = 0.01
+			}
+		}
+
+		RP_mitteleuropa_v = {
+			picture = RAJ_special_economic_zones
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.25
+				production_speed_buildings_factor = 0.15
+				local_resources_factor = 0.20
+				industrial_capacity_factory = 0.05
+			}
+		}
+
+		RP_improvingsupplylines = {
+			picture = generic_train_tracks
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_supply_node_factor = 0.15
+				production_speed_rail_way_factor = 0.1
+				production_speed_infrastructure_factor = 0.05
+				supply_node_range = 0.05
+			}
+		}
+
+		RP_autobahn = {
+			picture = generic_industrial_concern_1
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				
+				production_speed_supply_node_factor = 0.2
+				production_speed_rail_way_factor = 0.15
+				production_speed_infrastructure_factor = 0.10
+				supply_node_range = 0.05
+				supply_consumption_factor = -0.05
+			}
+		}
+
+		RP_economicsubjugation = {
+			picture = GER_economy_of_conquest
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.1
+				cic_to_overlord_factor = 0.75
+				mic_to_overlord_factor = 0.75
+				extra_trade_to_overlord_factor = 1.0
+			}
+		}
+
+		RP_economicautonomy = {
+			picture = GER_recovering_economy
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.15
+				cic_to_overlord_factor = 0.25
+				mic_to_overlord_factor = 0.25
+				extra_trade_to_overlord_factor = 0.1
+			}
+		}
+
+		RP_seashighway = {
+			picture = generic_coastal_defense_ships
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_dockyard_factor = 0.10
+				production_speed_naval_base_factor = 0.25
+				industrial_capacity_dockyard = 0.15
+			}
+		}
+
+		RP_jointresearchfacilities = {
+			picture = generic_research_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				research_speed_factor = 0.25
+			}
+		}
+	}
+} 

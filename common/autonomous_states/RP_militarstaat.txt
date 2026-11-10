@@ -1,0 +1,66 @@
+autonomy_state = {
+	id = autonomy_RP_militarstaat
+	
+	is_puppet = yes
+	
+	min_freedom_level = 0.0
+	
+	manpower_influence = 100
+	use_overlord_color = no
+	rule = {
+		desc = "RULE_DESC_IS_A_SUBJECT"
+		
+		can_not_declare_war = yes
+		can_decline_call_to_war = no
+		units_deployed_to_overlord = yes
+		can_be_spymaster = no
+		contributes_operatives = yes
+		can_create_collaboration_government = no
+	}
+	
+	modifier = {
+		autonomy_manpower_share = 1
+		can_master_build_for_us = 1
+		overlord_trade_cost_factor = -0.75
+		cic_to_overlord_factor = 0.90
+		mic_to_overlord_factor = 1.00
+		autonomy_gain_global_factor = -1.0
+		peace_score_ratio_transferred_to_overlord = 1.0
+		lend_lease_tension_with_overlord = -0.100
+
+		stability_factor = -0.25
+		resistance_growth_on_our_occupied_states = -0.1
+		compliance_growth_on_our_occupied_states = -0.1
+		experience_gain_army_factor = 0.05
+		experience_gain_navy_factor = 0.05
+		experience_gain_air_factor = 0.05
+		production_speed_arms_factory_factor = 0.05 
+	}
+	
+	ai_subject_wants_higher = {
+		factor = 0
+	}
+	
+	ai_overlord_wants_lower = {
+		factor = 0.0
+	}
+
+	ai_overlord_wants_garrison = {
+		always = yes
+	}
+
+	allowed = {
+		overlord = {
+			original_tag = GER
+			has_government = neutrality
+		}
+	}
+	
+	can_take_level = {
+		always = no
+	}
+
+	can_lose_level = {
+		always = no
+	}
+}

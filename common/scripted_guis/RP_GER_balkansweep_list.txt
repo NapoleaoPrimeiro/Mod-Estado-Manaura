@@ -1,0 +1,40 @@
+scripted_gui = {
+	RP_GER_balkansweeplist = {
+		
+		window_name = "RP_GER_balkansweeplist_mainwindow"
+
+		context_type = decision_category
+
+		dynamic_lists = {
+			RP_GER_participants_gridbox = {
+				array = global.RP_GER_operationreuss_participants
+
+				value = v
+				index = i
+				change_scope = yes
+
+				entry_container = "RP_GER_participantslist_entrywindow"
+			}
+
+			RP_GER_targets_gridbox = {
+				array = global.RP_GER_operationreuss_targets
+
+				value = v
+				index = i
+				change_scope = yes
+
+				entry_container = "RP_GER_targetslist_entrywindow"
+			}
+
+			RP_GER_noncombatants_gridbox = {
+				array = global.RP_GER_operationreuss_noncombatants
+
+				value = v
+				index = i
+				change_scope = yes
+
+				entry_container = "RP_GER_noncombatantslist_entrywindow"
+			}
+		}
+	}
+}

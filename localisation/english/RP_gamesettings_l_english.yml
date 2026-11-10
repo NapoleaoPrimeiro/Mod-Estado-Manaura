@@ -1,0 +1,99 @@
+﻿l_english:
+
+ # Game Rules
+ 
+ RULE_GROUP_REICHSPAKT_PLUS:0 "Reichspakt Plus"
+ KFR_AI_BEHAVIOR: "@KFR Militärverwaltung Nordfrankreich"
+ RULE_OPTION_KFR_HOHENZOLLERN:0 "Install the Hohenzollern King"
+ RULE_OPTION_KFR_HOHENZOLLERN_DESC:0 "The Provisional Military Government will work to install a German king to the throne."
+ RULE_OPTION_KFR_REPUBLIC:0 "Restore the French Republic"
+ RULE_OPTION_KFR_REPUBLIC_DESC:0 "The Provisional Military Government will attempt to restore the French Republic."
+ RULE_OPTION_KFR_DICTATORSHIP:0 "The Military Dictatorship"
+ RULE_OPTION_KFR_DICTATORSHIP_DESC:0 "The Provisional Military Government will consolidate power and install a permanent government."
+ RULE_OPTION_KFR_BOURBON:0 "Return of the Bourbons"
+ RULE_OPTION_KFR_BOURBON_DESC:0 "The Provisional Military Government will work to install a Bourbon King to the throne."
+
+ # Decision Category
+
+ RP_reichspaktplus:0 "Reichspakt Plus"
+
+ RP_gamesettings_devmessage_loc:0 "Hello! Thank you for playing Reichspakt+! This mod was the first major mod I (the lead dev), have managed to keep going for so long. Here are some settings to change the way this mod operates, whether to add mod compatibility or just make the game less or more challenging."
+ 
+ RP_focusrequirements_on:0 "Focus Requirements: §GON§!"
+ RP_focusrequirements_off:0 "Focus Requirements: §ROFF§!"
+ RP_GER_focusrequirements_button_tt:0 "This setting toggles the focus requirement for the §YImperial Puppets Management§! categories. If this is on, you will need to complete the §YRealpolitik§! or §YWeltpolitik§! focuses to unlock the decisions.\n\nYou will still need to be non-aligned, even with this option off."
+
+ RP_GER_hidemittelafrikadecisions_on:0 "Mittelafrika Decisions: §ROFF§!"
+ RP_GER_hidemittelafrikadecisions_off:0 "Mittelafrika Decisions: §GON§!"
+ RP_GER_hidemittelafrikadecisions_button_tt:0 "This setting toggles the visibility of the decisions to unite §YMittelafrika§!, if you don't want to do so."
+
+ RP_GER_specialevents_on:0 "Special Events: §GON§!"
+ RP_GER_specialevents_off:0 "Special Events: §ROFF§!"
+ RP_GER_specialevents_button_tt:0 "If this is off, any and all flavor events will not be triggered. Events that impact the game or trigger mechanics will still trigger."
+
+ RP_GER_francealwaysaccepts_on:0 "France Always Accepts: §GON§!"
+ RP_GER_francealwaysaccepts_off:0 "France Always Accepts: §ROFF§!"
+ RP_GER_francealwaysaccepts_button_tt:0 "If this is on, §Y[FRA.GetNameDef]§! is programmed to always accept the §YTreaty of Sedan§!, no matter the terms you give them.\n\nAdditionally, §Y[ENG.GetNameDef]§! will always offer a white peace, if they are in the same faction."
+
+ RP_GER_russiancivilwar_on:0 "Russian Civil War: §GON§!"
+ RP_GER_russiancivilwar_off:0 "Russian Civil War: §ROFF§!"
+ RP_GER_russiancivilwar_button_tt:0 "If this is off, the §YRussian Civil War§! will not fire, and all additional mechanics made by the civil war will not be enabled either.\n\nRecommended if you want to avoid lag."
+
+ RP_GER_changenotes_button_tt:0 "Open the §YChange Notes§! Menu"
+ RP_GER_bugfixes_button_tt:0 "Open the §YBug Fixes§! Menu"
+ RP_GER_countryselection_button_tt:0 "Open the §YCountry Selection§! Menu"
+ RP_GER_customization_button_tt:0 "Open the §YCustomization§! Menu"
+
+ RP_newfeatures_decision:0 "Reichspakt+ Developer Notes: §YNew Features + Changes§!"
+ RP_bugfixes_decision:0 "Reichspakt+ Developer Notes: §YBug Fixes§!"
+ RP_devguide_russiawar_decision:0 "Reichspakt+ Developer Guide: §YRusso-German War§!"
+
+ RP_reichspaktplus_categoryevents.1.t:0 "1.8 | The Kremlin to Versailles | 2/2, Kremlin | New Features and Changes | Page One" 
+ RP_reichspaktplus_categoryevents.1.d:0 "Hello, thank you for playing Reichspakt+. We have been working on this update for 8 or 9 months now, since February 2026, and we have added a lot of content and reworks to the mod. This update was supposed to be centered on content for Russia, however has expanded to adding at least a little bit of content for every continent. Here is a full list of everything that has been updated, minus bug fixes.\n\n- Added new Mechanics for the Russo-German War\n- Made eastern territorial decisions impossible if at war with [SOV.GetNameDef]\n- Added Imperial puppets for all of South America, making a world conquest truly possible\n- Added a new puppet "[KNV.GetName]" \n- Added a new puppet "[KWI.GetName]"\n- Added a new puppet "[KLB.GetName]"\n- Added new territorial decisions in Eastern Europe\n- Added new territorial decisions in the Caucasus\n- Added new territorial decisions in Africa\n- Added new territorial decisions in North America\n- Added "Rhodes Question”\n- Added a forced ally for [KIT.GetNameDef]\n- Added a forced ally for [KSA.GetNameDef]\n- Added a forced ally decision for [KBY.GetNameDef]\n- Added a forced ally for [KIN.GetNameDef]\n- Added a forced ally for [KUT.GetNameDef]\n- Added a forced ally for [KNZ.GetNameDef]\n- Added a forced ally for [KRP.GetNameDef]\n- Added a forced ally for [KFM.GetNameDef]\n- Added a forced ally for [KDL.GetNameDef]\n- Added a forced ally for [KMX.GetNameDef]\n- Added a forced ally for [KZM.GetNameDef]\n- Added a forced ally for [KCB.GetNameDef]\n- Added a forced ally for [KFQ.GetNameDef]\n- Added forced allies for every imperial puppet in South America\n- Added one secret forced ally in South America\n- Added the possibility to return [KUK.GetNameDef] to the Austro-Hungarian Forced Ally\n- Added “Operation Portal” focus in the German focus tree\n- Added “Kingdom of Galicia-Lodermania” focus in the German focus tree\n- Added “Proclaim the New Europe” focus in the German focus tree\n- Added “End the Southern Crisis” focus in the German focus tree\n- Added “Backstab our Brothers” focus in the German focus tree\n- Added “Operation Emerald” focus in the German focus tree\n- Added a focus branch to conquer the Middle East in the German focus tree\n- Added a focus branch to conquer Scandinavia in the German focus tree\n- Readded and reworked the “Sweep the Balkans” focus in the German focus tree\n- The "Strike Eastward" focus in the German Focus Tree can now be unlocked by completing the "Ensure Finnish Loyalty" or "Incorporate the Polish Rump State" Focus\n- Swapped "Ukrainischer Hetmanat" and "Ukrainischer Staat" in the name change event decision\n- Removed several irrelevant focuses from the German tree"
+ RP_reichspaktplus_categoryevents.1.b:0 "Next Page"
+ RP_reichspaktplus_categoryevents.1.a:0 "Cool!"
+
+ RP_reichspaktplus_categoryevents.6.t:0 "1.8 | The Kremlin to Versailles | 2/2, Kremlin | New Features and Changes | Page Two" 
+ RP_reichspaktplus_categoryevents.6.d:0 "Hello, thank you for playing Reichspakt+. We have been working on this update for 8 or 9 months now, since February 2026, and we have added a lot of content and reworks to the mod. This update was supposed to be centered on content for Russia, however has expanded to adding at least a little bit of content for every continent. Here is a full list of everything that has been updated, minus bug fixes.\n\n- Added a generic focus tree for all imperial puppets\n- Added a focus tree for [KUK.GetNameDef]\n- Added a focus tree for Deutsch-Mittelafrika\n- Added a focus tree for [KFR.GetNameDef]\n- Reworked the focus tree for [KLV.GetNameDef]\n- Reworked the formation of the Government of National Defense\n- Added a postwar collapse of the French Empire\n- Added a new mainland border option in the Treaty of Sedan\n- Removed the "Full Mainland" and "All Colonies" option in the Treaty of Sedan\n- Overhauled the Crackdown system for the Leopold Plot\n- Decreased time and cost of Leopold Plot decisions\n- Leopold Plot decisions are now no longer available if their relative influence value is 100\n- Added a timer on Leopold Plot decisions\n- Leopold Plot decisions now grants influence after idea expires\n- German military advisors spirit in the Leopold Plot now grants infantry attack/defence instead of flat attack/defence bonuses\n- Added the possibility of the Restoration of Yugoslavia\n- Overhauled the Reichspakt Settings Menu (now located in decisions)\n- Reworked event options (mostly for other modders)\n- Added new leaders for die Deutsche-Militärverwaltung Belgien and die Deutsche-Militärverwaltung der Niederlande\n- Changed the flag of [KBE.GetNameDef]\n- Changed the leader of Königreich Polen, more content will be added for them soon\n- Added leader traits and descriptions for [KLV.GetNameDef]\n- Added leader traits and descriptions for [KUK.GetNameDef]\n- Added new leader option for [KUK.GetNameDef]\n- Imperial puppets will now get the same technology as Germany upon formation\n- Added new game rules to determine AI behavior\n- The Fate of Nahost Decision is now always visible to the player\n- Added an option to keep the government of [KEP.GetNameDef]\n- Added a new minigame "The Breadbasket of Europe"\n- Readded the map changes from 1.7, including a new name change for [SOV.GetNameDef]\n- Other changes I either forgot about or are too small to list"
+ RP_reichspaktplus_categoryevents.6.b:0 "Last Page"
+ RP_reichspaktplus_categoryevents.6.a:0 "Cool!"
+
+ RP_reichspaktplus_categoryevents.2.t:0 "1.8 | The Kremlin to Versailles | 2/2, Kremlin | Bug Fixes"
+ RP_reichspaktplus_categoryevents.2.d:0 "- Fixed bug where Leopold Plot related events would fire for each Spanish Faction capitulation\n- Fixed bug where Leopold Plot would result in a war with random nations \n- Fixed bug where Leopold Plot focuses overlapped with German Civil War management focuses\n- Fixed bug where [SPR.GetNameDef] would get consumer goods rather than lose them upon sending Economic Aid\n- Fixed bug where the Balearic Islands event options in the Leopold Plot were swapped\n- Fixed bug where it was possible to give Ireland to [KBR.GetNameDef], even if the puppet doesn't exist\n- Fixed bug where it was possible to give Burma to [KIN.GetNameDef], even if the puppet doesn't exist\n- Fixed bug where the player can't take Sinai Question, even if [KEG.GetNameDef] owns the Suez\n- Fixed bug where giving [KZM.GetNameDef] the Panama Canal wouldn't work\n- Fixed bug where [KCI.GetNameDef] could be given Taiwan without control over it\n- Fixed bug where [KLV.GetNameDef] would go down the breakaway path without player decision\n- Fixed bug where [KRI.GetNameDef] was an Imperial Colony instead of a Kaiserstaat\n- Fixed bug where certain North American puppets have the wrong autonomy type\n- Updated modifications to Vanilla Files (mostly for other modders)\n- Fixed bug where [KNZ.GetLeader] in [KNZ.GetNameDef] didn't have a portrait\n- More bug fixes, probably"
+ RP_reichspaktplus_categoryevents.2.a:0 "Post-Release Bug Fixes"
+ RP_reichspaktplus_categoryevents.2.b:0 "Good to know!"
+
+ RP_reichspaktplus_categoryevents.7.t:0 "1.8 | The Kremlin to Versailles | 2/2, Kremlin | Post-Release Bug Fixes"
+ RP_reichspaktplus_categoryevents.7.d:0 "10/12 -\n     - Fixed bug where taking the Pradesh Question decision would not give the selected nation control over [434.GetName], but rather [343.GetName]\n     - Fixed bug where the Yugoslav Restoration event would appear forever, nonstop\n     - Fixed bug where you could take the Establish [KSP.GetNameDef] decision if you completed the Leopold Plot and then united Iberia\n     - Fixed bug where the "Invest in Border Defenses" focus in the [KUK.GetName] Focus Tree would build forts in [8.GetName], rather than [228.GetName]\n\n10/13-\n     - Fixed bug where taking the "Split Slovenia between us and [KCR.GetNameDef]" creates the Austrian puppet tag\n     - Fixed bug where the player could form [KNV.GetName], [KWI.GetName], or [KRU.GetName] without owning the states\n     - Fixed bug where taking the Military Dictatorship option in the Netherlands would rename Germany instead of [KHO.GetNameDef]\n     - Added some forgotten changes to the changelog\n     - Changed the decision requirement for Eastern European decisions\n\n10/18\n     - Fixed a bug where taking the option to split Transylvania in the Fate of Transylvania would give it all to [KHU.GetNameDef] instead\n-     Fixed a bug where the Constituent Republic of Mauritania would have the wrong color and name\n     - Fixed a bug where the Fate of Severia option to give it to [KRU.GetNameDef] had the wrong localisation on it.\n     - Fixed a bug with the leader of [KLV.GetNameDef]\n\n10/21\n     - Fixed a bug where the Fate of Finland decision was missing localisation\n     - Fixed a bug where you could take the Canada Forced Ally decision without having taken the Nova Scotia Question decision\n    - Fixed a bug where the Fate of Quebec in the Canada Forced Ally title had the wrong localisation\n     - Fixed a bug where the accept option in the Fate of Quebec in the Canada Forced Ally event was broken\n     - Fixed a bug where [KTH.GetNameDef] and [KVI.GetNameDef] had the wrong capital\n     - Fixed a bug where Gomel would not be given to the PLC if it was owned by [KWI.GetName]\n     - Added a bandaid fix for the Jan Mayen decision, this will be removed and patched better in the next update\n     - Added the Northern Ireland Question decision"
+ RP_reichspaktplus_categoryevents.7.a:0 "Last Page"
+ RP_reichspaktplus_categoryevents.7.b:0 "Good to know!"
+
+ RP_reichspaktplus_categoryevents.3.t:0 "Developer Guide - Russo-German War" 
+ RP_reichspaktplus_categoryevents.3.d:0 "Hello, Reichspakt+ adds quite a few mechanics for the Russo-German War, and there's a lot you should know before starting the war itself, in order to maximize the experience of the new content.\n\nThere are three main sections: the war itself, the peace process, and the Russian Civil War." 
+ RP_reichspaktplus_categoryevents.3.a:0 "Tell me about the War Mechanics" 
+ RP_reichspaktplus_categoryevents.3.b:0 "Tell me about the Peace Process" 
+ RP_reichspaktplus_categoryevents.3.c:0 "Tell me about the Russian Civil War" 
+ RP_reichspaktplus_categoryevents.3.e:0 "Exit" 
+
+ RP_reichspaktplus_categoryevents.4.t:0 "Developer Guide - Russo-German War | War Mechanics" 
+ RP_reichspaktplus_categoryevents.4.d:0 "First off, it's highly recommended to let [SOV.GetNameDef] achieve their Molotov-Ribbentrop Borders (as in, all of Eastern Poland, the Baltics, Bessarabia, and Finnish Karelia. We will go more in-depth with the reasoning for this later.\n\nUpon entering a state of war with [SOV.GetNameDef], a new decision category will be unlocked, where you will be able to select a various amount of operational targets against [SOV.GetAdjective] cities. You can select at max 4 targets at a time.\n\nIf [SOV.GetNameDef] does not own or control a target, it will not be available to select the target. For this reason, it's recommended to micromanage the front heavily to get the max benefits of each target. If an objective fails, it will still be available to complete and will reappear after a few days, however, your war support will take a hit.\n\nUpon completing an objective, you will gain extra war support, as well as a modifier that improves attack and defense against [SOV.GetNameDef]. This modifier increases by 0.15% each time an objective is completed. This modifier caps at +25% attack, and +27.5% defense." 
+ RP_reichspaktplus_categoryevents.4.a:0 "Sounds Good" 
+
+ RP_reichspaktplus_categoryevents.5.t:0 "Developer Guide - Russo-German War | The Smolensk Proclamation" 
+ RP_reichspaktplus_categoryevents.5.d:0 "The Smolensk Proclamation is supposed to simulate a more realistic and likely end of the war on the Eastern Front. The Soviet Union was very unlikely to accept a real peace treaty with the Germans historically. Despite the Nazis not being present in this timeline, the Germans still have heavy anti-slavic, anti-bolshevik agendas and thus a peace treaty with the Germans would be likely to mean the destruction of the Soviet government in particular. \n\nThe Smolensk Proclamation is not a typical "Peace Treaty" in the Hearts of Iron IV sense with a conference and instead the formation and solidification of a de-facto border with [SOV.GetNameDef]. So how does it work?\n\nFirst off, to take the decision, you need to control Lithuania, Eastern Poland, Belarus, and all of Ukraine up to the Dnieper River. Additionally, you must control Livonia (Estonia and Latvia) and/or the rest of Ukraine, past the Dnieper. You can see all the states you need to control by hovering over the Smolensk Proclamation decision and looking at the highlighted states. Unfortunately, there is no way to distinguish the either/or territory from the required territory with the current HOI4 engine. The last thing to complete before unlocking the decision is at least 4 other objectives outside of the highlighted area. Please note that states that aren't owned by [SOV.GetNameDef] do not count. Example: if [SOV.GetNameDef] doesn't own Eastern Poland, you do not need to control it to take the decision.\n\nAfter taking the decision, you will gain a modifier that prevents any offensive attacks against [SOV.GetNameDef]. During the 180 day timer, you will gain decisions to consolidate conquered territories. These are split into 10 different regions, all with varying costs to take. Each decision takes 35 days, and you can select two at a time. Using the option provided below, you can review what states are in each region. It is very important that you take each state in a region before the Smolensk Proclamation, if you miss a state, you can't annex it in the peace.\n\nYou can view the regions you have consolidated by hovering over the Smolensk Proclamation decision and looking at the effects portion, it will be highlighted in yellow. You do not have to consolidate Lithuania, Eastern Poland, and Bessarabia, as they will always be annexed no matter what and will appear on the list right after taking the decision.\n\nAfter the timer runs out, you will peace out with [SOV.GetNameDef], and you will annex all the land you consolidated." 
+ RP_reichspaktplus_categoryevents.5.a:0 "Sounds Good" 
+ RP_reichspaktplus_categoryevents.5.b:0 "Consolidation Decision Preview: §ROFF§!" 
+ RP_reichspaktplus_categoryevents.5.c:0 "Consolidation Decision Preview: §GON§!" 
+
+ RP_rgw_justforshow_tt:0 "This decision is just a preview, feel free to disable the visibility of the decisions in the Dev Guide."
+ RP_rgw_consolidate_karelia_preview:0 "Consolidation Preview - §YKarelia and Murmansk§!"
+ RP_rgw_consolidate_leningrad_preview:0 "Consolidation Preview - §YLeningrad§!"
+ RP_rgw_consolidate_livonia_preview:0 "Consolidation Preview - §YLatvia and Estonia§!"
+ RP_rgw_consolidate_ruthenia_preview:0 "Consolidation Preview - §YRuthenia§!"
+ RP_rgw_consolidate_northernrussia_preview:0 "Consolidation Preview - §YNorthern Russia§!"
+ RP_rgw_consolidate_southernrussia_preview:0 "Consolidation Preview - §YSouthern Russia§!"
+ RP_rgw_consolidate_westernukraine_preview:0 "Consolidation Preview - §YWestern Ukraine§!"
+ RP_rgw_consolidate_easternukraine_preview:0 "Consolidation Preview - §YEastern Ukraine§!"
+ RP_rgw_consolidate_russianheartland_preview:0 "Consolidation Preview - §YRussian Heartland§!"
+ RP_rgw_consolidate_donregion_preview:0 "Consolidation Preview - §YNorth Caucasus§!"
+ RP_rgw_consolidate_caucasus_preview:0 "Consolidation Preview - §YSouth Caucasus§!"

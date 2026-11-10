@@ -1,0 +1,98 @@
+add_namespace = RP_balkansweepevents
+add_namespace = RP_balkansweepnews
+
+country_event = { # FROM - GER invites us to Operation Reuss
+    id = RP_balkansweepevents.1
+    title = RP_balkansweepevents.1.t
+    desc = RP_balkansweepevents.1.d
+    picture = GFX_report_event_generic_conference
+
+    is_triggered_only = yes
+
+    option = { # Of Course!
+        name = RP_balkansweepevents.1.a
+
+        ai_chance = {
+            base = 5
+        }
+		
+		GER = {
+			country_event = RP_balkansweepevents.2
+		}
+    }
+
+	option = { # We have our own stuff to worry about
+        name = RP_balkansweepevents.1.b
+
+        ai_chance = {
+            base = 2
+        }
+		
+		GER = {
+			country_event = RP_balkansweepevents.3
+		}
+    }
+}
+
+country_event = { # GER - FROM accepts invitation to Op. Reuss
+    id = RP_balkansweepevents.2
+    title = RP_balkansweepevents.2.t
+    desc = RP_balkansweepevents.2.d
+    picture = GFX_report_event_generic_conference
+
+    is_triggered_only = yes
+
+    option = { # Wonderful!
+        name = RP_balkansweepevents.2.a
+
+        ai_chance = {
+            base = 5
+        }
+		
+		add_to_array = {
+			array = global.RP_GER_operationreuss_participants
+			value = FROM
+		}
+
+		add_named_threat = {
+			threat = 0.5
+			name = "Joined War Preparations"
+		}
+    }
+}
+
+country_event = { # GER - FROM rejects invitation to Op. Reuss
+    id = RP_balkansweepevents.3
+    title = RP_balkansweepevents.3.t
+    desc = RP_balkansweepevents.3.d
+    picture = GFX_report_event_generic_conference
+
+    is_triggered_only = yes
+
+    option = { # Wonderful!
+        name = RP_balkansweepevents.3.a
+
+        ai_chance = {
+            base = 5
+        }
+		
+		add_to_array = {
+			array = global.RP_GER_operationreuss_noncombatants
+			value = FROM
+		}
+    }
+}
+
+news_event = { # GER Faction announces start of Operation Reuss
+    id = RP_balkansweepnews.1
+    title = RP_balkansweepnews.1.t
+    desc = RP_balkansweepnews.1.d
+    picture = GFX_news_event_german_officers
+
+    is_triggered_only = yes
+    major = yes
+
+    option = { # The war in Europe develops further..
+        name = RP_balkansweepnews.1.a
+    }
+}
